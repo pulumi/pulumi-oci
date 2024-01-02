@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetDataMaskRulesDataMaskRuleCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetDataMaskRulesDataMaskRuleCollection {
 
         @CustomType.Setter
         public Builder items(List<GetDataMaskRulesDataMaskRuleCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetDataMaskRulesDataMaskRuleCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetDataMaskRulesDataMaskRuleCollectionItem... items) {

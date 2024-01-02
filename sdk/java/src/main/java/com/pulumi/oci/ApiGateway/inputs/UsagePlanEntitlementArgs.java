@@ -5,6 +5,7 @@ package com.pulumi.oci.ApiGateway.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.inputs.UsagePlanEntitlementQuotaArgs;
 import com.pulumi.oci.ApiGateway.inputs.UsagePlanEntitlementRateLimitArgs;
 import com.pulumi.oci.ApiGateway.inputs.UsagePlanEntitlementTargetArgs;
@@ -238,7 +239,9 @@ public final class UsagePlanEntitlementArgs extends com.pulumi.resources.Resourc
         }
 
         public UsagePlanEntitlementArgs build() {
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("UsagePlanEntitlementArgs", "name");
+            }
             return $;
         }
     }

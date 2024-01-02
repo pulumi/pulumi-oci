@@ -5,6 +5,7 @@ package com.pulumi.oci.AiLanguage;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiLanguage.inputs.ModelModelDetailsArgs;
 import com.pulumi.oci.AiLanguage.inputs.ModelTestStrategyArgs;
 import com.pulumi.oci.AiLanguage.inputs.ModelTrainingDatasetArgs;
@@ -377,10 +378,18 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ModelArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.modelDetails = Objects.requireNonNull($.modelDetails, "expected parameter 'modelDetails' to be non-null");
-            $.projectId = Objects.requireNonNull($.projectId, "expected parameter 'projectId' to be non-null");
-            $.trainingDataset = Objects.requireNonNull($.trainingDataset, "expected parameter 'trainingDataset' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ModelArgs", "compartmentId");
+            }
+            if ($.modelDetails == null) {
+                throw new MissingRequiredPropertyException("ModelArgs", "modelDetails");
+            }
+            if ($.projectId == null) {
+                throw new MissingRequiredPropertyException("ModelArgs", "projectId");
+            }
+            if ($.trainingDataset == null) {
+                throw new MissingRequiredPropertyException("ModelArgs", "trainingDataset");
+            }
             return $;
         }
     }

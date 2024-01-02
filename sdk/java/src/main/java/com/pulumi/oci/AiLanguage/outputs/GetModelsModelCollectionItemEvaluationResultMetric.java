@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiLanguage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.util.Objects;
 
@@ -168,52 +169,82 @@ public final class GetModelsModelCollectionItemEvaluationResultMetric {
 
         @CustomType.Setter
         public Builder accuracy(Double accuracy) {
-            this.accuracy = Objects.requireNonNull(accuracy);
+            if (accuracy == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResultMetric", "accuracy");
+            }
+            this.accuracy = accuracy;
             return this;
         }
         @CustomType.Setter
         public Builder macroF1(Double macroF1) {
-            this.macroF1 = Objects.requireNonNull(macroF1);
+            if (macroF1 == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResultMetric", "macroF1");
+            }
+            this.macroF1 = macroF1;
             return this;
         }
         @CustomType.Setter
         public Builder macroPrecision(Double macroPrecision) {
-            this.macroPrecision = Objects.requireNonNull(macroPrecision);
+            if (macroPrecision == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResultMetric", "macroPrecision");
+            }
+            this.macroPrecision = macroPrecision;
             return this;
         }
         @CustomType.Setter
         public Builder macroRecall(Double macroRecall) {
-            this.macroRecall = Objects.requireNonNull(macroRecall);
+            if (macroRecall == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResultMetric", "macroRecall");
+            }
+            this.macroRecall = macroRecall;
             return this;
         }
         @CustomType.Setter
         public Builder microF1(Double microF1) {
-            this.microF1 = Objects.requireNonNull(microF1);
+            if (microF1 == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResultMetric", "microF1");
+            }
+            this.microF1 = microF1;
             return this;
         }
         @CustomType.Setter
         public Builder microPrecision(Double microPrecision) {
-            this.microPrecision = Objects.requireNonNull(microPrecision);
+            if (microPrecision == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResultMetric", "microPrecision");
+            }
+            this.microPrecision = microPrecision;
             return this;
         }
         @CustomType.Setter
         public Builder microRecall(Double microRecall) {
-            this.microRecall = Objects.requireNonNull(microRecall);
+            if (microRecall == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResultMetric", "microRecall");
+            }
+            this.microRecall = microRecall;
             return this;
         }
         @CustomType.Setter
         public Builder weightedF1(Double weightedF1) {
-            this.weightedF1 = Objects.requireNonNull(weightedF1);
+            if (weightedF1 == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResultMetric", "weightedF1");
+            }
+            this.weightedF1 = weightedF1;
             return this;
         }
         @CustomType.Setter
         public Builder weightedPrecision(Double weightedPrecision) {
-            this.weightedPrecision = Objects.requireNonNull(weightedPrecision);
+            if (weightedPrecision == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResultMetric", "weightedPrecision");
+            }
+            this.weightedPrecision = weightedPrecision;
             return this;
         }
         @CustomType.Setter
         public Builder weightedRecall(Double weightedRecall) {
-            this.weightedRecall = Objects.requireNonNull(weightedRecall);
+            if (weightedRecall == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResultMetric", "weightedRecall");
+            }
+            this.weightedRecall = weightedRecall;
             return this;
         }
         public GetModelsModelCollectionItemEvaluationResultMetric build() {

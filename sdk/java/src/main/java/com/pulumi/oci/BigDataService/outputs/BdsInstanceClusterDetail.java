@@ -240,76 +240,91 @@ public final class BdsInstanceClusterDetail {
 
         @CustomType.Setter
         public Builder ambariUrl(@Nullable String ambariUrl) {
+
             this.ambariUrl = ambariUrl;
             return this;
         }
         @CustomType.Setter
         public Builder bdCellVersion(@Nullable String bdCellVersion) {
+
             this.bdCellVersion = bdCellVersion;
             return this;
         }
         @CustomType.Setter
         public Builder bdaVersion(@Nullable String bdaVersion) {
+
             this.bdaVersion = bdaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder bdmVersion(@Nullable String bdmVersion) {
+
             this.bdmVersion = bdmVersion;
             return this;
         }
         @CustomType.Setter
         public Builder bdsVersion(@Nullable String bdsVersion) {
+
             this.bdsVersion = bdsVersion;
             return this;
         }
         @CustomType.Setter
         public Builder bigDataManagerUrl(@Nullable String bigDataManagerUrl) {
+
             this.bigDataManagerUrl = bigDataManagerUrl;
             return this;
         }
         @CustomType.Setter
         public Builder clouderaManagerUrl(@Nullable String clouderaManagerUrl) {
+
             this.clouderaManagerUrl = clouderaManagerUrl;
             return this;
         }
         @CustomType.Setter
         public Builder csqlCellVersion(@Nullable String csqlCellVersion) {
+
             this.csqlCellVersion = csqlCellVersion;
             return this;
         }
         @CustomType.Setter
         public Builder dbVersion(@Nullable String dbVersion) {
+
             this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder hueServerUrl(@Nullable String hueServerUrl) {
+
             this.hueServerUrl = hueServerUrl;
             return this;
         }
         @CustomType.Setter
         public Builder jupyterHubUrl(@Nullable String jupyterHubUrl) {
+
             this.jupyterHubUrl = jupyterHubUrl;
             return this;
         }
         @CustomType.Setter
         public Builder odhVersion(@Nullable String odhVersion) {
+
             this.odhVersion = odhVersion;
             return this;
         }
         @CustomType.Setter
         public Builder osVersion(@Nullable String osVersion) {
+
             this.osVersion = osVersion;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeRefreshed(@Nullable String timeRefreshed) {
+
             this.timeRefreshed = timeRefreshed;
             return this;
         }

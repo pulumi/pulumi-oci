@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCri
 
         @CustomType.Setter
         public Builder waitDuration(String waitDuration) {
-            this.waitDuration = Objects.requireNonNull(waitDuration);
+            if (waitDuration == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria", "waitDuration");
+            }
+            this.waitDuration = waitDuration;
             return this;
         }
         @CustomType.Setter
         public Builder waitType(String waitType) {
-            this.waitType = Objects.requireNonNull(waitType);
+            if (waitType == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria", "waitType");
+            }
+            this.waitType = waitType;
             return this;
         }
         public GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria build() {

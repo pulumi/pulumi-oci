@@ -129,36 +129,43 @@ public final class ClusterNetworkInstancePoolLoadBalancer {
 
         @CustomType.Setter
         public Builder backendSetName(@Nullable String backendSetName) {
+
             this.backendSetName = backendSetName;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instancePoolId(@Nullable String instancePoolId) {
+
             this.instancePoolId = instancePoolId;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(@Nullable String loadBalancerId) {
+
             this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder port(@Nullable Integer port) {
+
             this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vnicSelection(@Nullable String vnicSelection) {
+
             this.vnicSelection = vnicSelection;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunBuildRunSourceTriggerInfo;
 import java.lang.String;
 import java.util.List;
@@ -86,22 +87,34 @@ public final class GetBuildRunBuildRunSource {
 
         @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+            if (repositoryId == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildRunSource", "repositoryId");
+            }
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildRunSource", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
         public Builder triggerId(String triggerId) {
-            this.triggerId = Objects.requireNonNull(triggerId);
+            if (triggerId == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildRunSource", "triggerId");
+            }
+            this.triggerId = triggerId;
             return this;
         }
         @CustomType.Setter
         public Builder triggerInfos(List<GetBuildRunBuildRunSourceTriggerInfo> triggerInfos) {
-            this.triggerInfos = Objects.requireNonNull(triggerInfos);
+            if (triggerInfos == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildRunSource", "triggerInfos");
+            }
+            this.triggerInfos = triggerInfos;
             return this;
         }
         public Builder triggerInfos(GetBuildRunBuildRunSourceTriggerInfo... triggerInfos) {

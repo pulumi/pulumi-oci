@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetail;
 import java.lang.Boolean;
 import java.lang.String;
@@ -81,6 +82,7 @@ public final class ClusterNetworkPlacementConfigurationPrimaryVnicSubnets {
 
         @CustomType.Setter
         public Builder ipv6addressIpv6subnetCidrPairDetails(@Nullable List<ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails) {
+
             this.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             return this;
         }
@@ -89,12 +91,16 @@ public final class ClusterNetworkPlacementConfigurationPrimaryVnicSubnets {
         }
         @CustomType.Setter
         public Builder isAssignIpv6ip(@Nullable Boolean isAssignIpv6ip) {
+
             this.isAssignIpv6ip = isAssignIpv6ip;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("ClusterNetworkPlacementConfigurationPrimaryVnicSubnets", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         public ClusterNetworkPlacementConfigurationPrimaryVnicSubnets build() {

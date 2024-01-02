@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -187,8 +188,12 @@ public final class GetDomainsOauthClientCertificateArgs extends com.pulumi.resou
         }
 
         public GetDomainsOauthClientCertificateArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.oAuthClientCertificateId = Objects.requireNonNull($.oAuthClientCertificateId, "expected parameter 'oAuthClientCertificateId' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateArgs", "idcsEndpoint");
+            }
+            if ($.oAuthClientCertificateId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateArgs", "oAuthClientCertificateId");
+            }
             return $;
         }
     }

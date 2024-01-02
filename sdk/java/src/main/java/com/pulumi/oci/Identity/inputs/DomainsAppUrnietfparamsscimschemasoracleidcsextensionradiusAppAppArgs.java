@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturnArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -1275,10 +1276,18 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAp
         }
 
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs build() {
-            $.clientIp = Objects.requireNonNull($.clientIp, "expected parameter 'clientIp' to be non-null");
-            $.includeGroupInResponse = Objects.requireNonNull($.includeGroupInResponse, "expected parameter 'includeGroupInResponse' to be non-null");
-            $.port = Objects.requireNonNull($.port, "expected parameter 'port' to be non-null");
-            $.secretKey = Objects.requireNonNull($.secretKey, "expected parameter 'secretKey' to be non-null");
+            if ($.clientIp == null) {
+                throw new MissingRequiredPropertyException("DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs", "clientIp");
+            }
+            if ($.includeGroupInResponse == null) {
+                throw new MissingRequiredPropertyException("DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs", "includeGroupInResponse");
+            }
+            if ($.port == null) {
+                throw new MissingRequiredPropertyException("DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs", "port");
+            }
+            if ($.secretKey == null) {
+                throw new MissingRequiredPropertyException("DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs", "secretKey");
+            }
             return $;
         }
     }

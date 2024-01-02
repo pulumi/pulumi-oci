@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.RouteTableRouteRuleArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -287,8 +288,12 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public RouteTableArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.vcnId = Objects.requireNonNull($.vcnId, "expected parameter 'vcnId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("RouteTableArgs", "compartmentId");
+            }
+            if ($.vcnId == null) {
+                throw new MissingRequiredPropertyException("RouteTableArgs", "vcnId");
+            }
             return $;
         }
     }

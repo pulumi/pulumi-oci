@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -127,37 +128,58 @@ public final class GetAwrHubAwrSnapshotItem {
 
         @CustomType.Setter
         public Builder awrSourceDatabaseId(String awrSourceDatabaseId) {
-            this.awrSourceDatabaseId = Objects.requireNonNull(awrSourceDatabaseId);
+            if (awrSourceDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSnapshotItem", "awrSourceDatabaseId");
+            }
+            this.awrSourceDatabaseId = awrSourceDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder errorCount(String errorCount) {
-            this.errorCount = Objects.requireNonNull(errorCount);
+            if (errorCount == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSnapshotItem", "errorCount");
+            }
+            this.errorCount = errorCount;
             return this;
         }
         @CustomType.Setter
         public Builder instanceNumber(Integer instanceNumber) {
-            this.instanceNumber = Objects.requireNonNull(instanceNumber);
+            if (instanceNumber == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSnapshotItem", "instanceNumber");
+            }
+            this.instanceNumber = instanceNumber;
             return this;
         }
         @CustomType.Setter
         public Builder snapshotIdentifier(Integer snapshotIdentifier) {
-            this.snapshotIdentifier = Objects.requireNonNull(snapshotIdentifier);
+            if (snapshotIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSnapshotItem", "snapshotIdentifier");
+            }
+            this.snapshotIdentifier = snapshotIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder timeDbStartup(String timeDbStartup) {
-            this.timeDbStartup = Objects.requireNonNull(timeDbStartup);
+            if (timeDbStartup == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSnapshotItem", "timeDbStartup");
+            }
+            this.timeDbStartup = timeDbStartup;
             return this;
         }
         @CustomType.Setter
         public Builder timeSnapshotBegin(String timeSnapshotBegin) {
-            this.timeSnapshotBegin = Objects.requireNonNull(timeSnapshotBegin);
+            if (timeSnapshotBegin == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSnapshotItem", "timeSnapshotBegin");
+            }
+            this.timeSnapshotBegin = timeSnapshotBegin;
             return this;
         }
         @CustomType.Setter
         public Builder timeSnapshotEnd(String timeSnapshotEnd) {
-            this.timeSnapshotEnd = Objects.requireNonNull(timeSnapshotEnd);
+            if (timeSnapshotEnd == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSnapshotItem", "timeSnapshotEnd");
+            }
+            this.timeSnapshotEnd = timeSnapshotEnd;
             return this;
         }
         public GetAwrHubAwrSnapshotItem build() {

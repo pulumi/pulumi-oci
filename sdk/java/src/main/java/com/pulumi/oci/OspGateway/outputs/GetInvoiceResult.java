@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OspGateway.outputs.GetInvoiceBillToAddress;
 import com.pulumi.oci.OspGateway.outputs.GetInvoiceCurrency;
 import com.pulumi.oci.OspGateway.outputs.GetInvoiceLastPaymentDetail;
@@ -410,7 +411,10 @@ public final class GetInvoiceResult {
 
         @CustomType.Setter
         public Builder billToAddresses(List<GetInvoiceBillToAddress> billToAddresses) {
-            this.billToAddresses = Objects.requireNonNull(billToAddresses);
+            if (billToAddresses == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "billToAddresses");
+            }
+            this.billToAddresses = billToAddresses;
             return this;
         }
         public Builder billToAddresses(GetInvoiceBillToAddress... billToAddresses) {
@@ -418,12 +422,18 @@ public final class GetInvoiceResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder currencies(List<GetInvoiceCurrency> currencies) {
-            this.currencies = Objects.requireNonNull(currencies);
+            if (currencies == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "currencies");
+            }
+            this.currencies = currencies;
             return this;
         }
         public Builder currencies(GetInvoiceCurrency... currencies) {
@@ -431,92 +441,146 @@ public final class GetInvoiceResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder internalInvoiceId(String internalInvoiceId) {
-            this.internalInvoiceId = Objects.requireNonNull(internalInvoiceId);
+            if (internalInvoiceId == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "internalInvoiceId");
+            }
+            this.internalInvoiceId = internalInvoiceId;
             return this;
         }
         @CustomType.Setter
         public Builder invoiceAmount(Double invoiceAmount) {
-            this.invoiceAmount = Objects.requireNonNull(invoiceAmount);
+            if (invoiceAmount == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "invoiceAmount");
+            }
+            this.invoiceAmount = invoiceAmount;
             return this;
         }
         @CustomType.Setter
         public Builder invoiceAmountAdjusted(Double invoiceAmountAdjusted) {
-            this.invoiceAmountAdjusted = Objects.requireNonNull(invoiceAmountAdjusted);
+            if (invoiceAmountAdjusted == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "invoiceAmountAdjusted");
+            }
+            this.invoiceAmountAdjusted = invoiceAmountAdjusted;
             return this;
         }
         @CustomType.Setter
         public Builder invoiceAmountApplied(Double invoiceAmountApplied) {
-            this.invoiceAmountApplied = Objects.requireNonNull(invoiceAmountApplied);
+            if (invoiceAmountApplied == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "invoiceAmountApplied");
+            }
+            this.invoiceAmountApplied = invoiceAmountApplied;
             return this;
         }
         @CustomType.Setter
         public Builder invoiceAmountCredited(Double invoiceAmountCredited) {
-            this.invoiceAmountCredited = Objects.requireNonNull(invoiceAmountCredited);
+            if (invoiceAmountCredited == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "invoiceAmountCredited");
+            }
+            this.invoiceAmountCredited = invoiceAmountCredited;
             return this;
         }
         @CustomType.Setter
         public Builder invoiceAmountDue(Double invoiceAmountDue) {
-            this.invoiceAmountDue = Objects.requireNonNull(invoiceAmountDue);
+            if (invoiceAmountDue == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "invoiceAmountDue");
+            }
+            this.invoiceAmountDue = invoiceAmountDue;
             return this;
         }
         @CustomType.Setter
         public Builder invoiceId(String invoiceId) {
-            this.invoiceId = Objects.requireNonNull(invoiceId);
+            if (invoiceId == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "invoiceId");
+            }
+            this.invoiceId = invoiceId;
             return this;
         }
         @CustomType.Setter
         public Builder invoiceNumber(String invoiceNumber) {
-            this.invoiceNumber = Objects.requireNonNull(invoiceNumber);
+            if (invoiceNumber == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "invoiceNumber");
+            }
+            this.invoiceNumber = invoiceNumber;
             return this;
         }
         @CustomType.Setter
         public Builder invoicePoNumber(String invoicePoNumber) {
-            this.invoicePoNumber = Objects.requireNonNull(invoicePoNumber);
+            if (invoicePoNumber == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "invoicePoNumber");
+            }
+            this.invoicePoNumber = invoicePoNumber;
             return this;
         }
         @CustomType.Setter
         public Builder invoiceRefNumber(String invoiceRefNumber) {
-            this.invoiceRefNumber = Objects.requireNonNull(invoiceRefNumber);
+            if (invoiceRefNumber == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "invoiceRefNumber");
+            }
+            this.invoiceRefNumber = invoiceRefNumber;
             return this;
         }
         @CustomType.Setter
         public Builder invoiceStatus(String invoiceStatus) {
-            this.invoiceStatus = Objects.requireNonNull(invoiceStatus);
+            if (invoiceStatus == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "invoiceStatus");
+            }
+            this.invoiceStatus = invoiceStatus;
             return this;
         }
         @CustomType.Setter
         public Builder invoiceType(String invoiceType) {
-            this.invoiceType = Objects.requireNonNull(invoiceType);
+            if (invoiceType == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "invoiceType");
+            }
+            this.invoiceType = invoiceType;
             return this;
         }
         @CustomType.Setter
         public Builder isCreditCardPayable(Boolean isCreditCardPayable) {
-            this.isCreditCardPayable = Objects.requireNonNull(isCreditCardPayable);
+            if (isCreditCardPayable == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "isCreditCardPayable");
+            }
+            this.isCreditCardPayable = isCreditCardPayable;
             return this;
         }
         @CustomType.Setter
         public Builder isDisplayDownloadPdf(Boolean isDisplayDownloadPdf) {
-            this.isDisplayDownloadPdf = Objects.requireNonNull(isDisplayDownloadPdf);
+            if (isDisplayDownloadPdf == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "isDisplayDownloadPdf");
+            }
+            this.isDisplayDownloadPdf = isDisplayDownloadPdf;
             return this;
         }
         @CustomType.Setter
         public Builder isPayable(Boolean isPayable) {
-            this.isPayable = Objects.requireNonNull(isPayable);
+            if (isPayable == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "isPayable");
+            }
+            this.isPayable = isPayable;
             return this;
         }
         @CustomType.Setter
         public Builder isPdfEmailAvailable(Boolean isPdfEmailAvailable) {
-            this.isPdfEmailAvailable = Objects.requireNonNull(isPdfEmailAvailable);
+            if (isPdfEmailAvailable == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "isPdfEmailAvailable");
+            }
+            this.isPdfEmailAvailable = isPdfEmailAvailable;
             return this;
         }
         @CustomType.Setter
         public Builder lastPaymentDetails(List<GetInvoiceLastPaymentDetail> lastPaymentDetails) {
-            this.lastPaymentDetails = Objects.requireNonNull(lastPaymentDetails);
+            if (lastPaymentDetails == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "lastPaymentDetails");
+            }
+            this.lastPaymentDetails = lastPaymentDetails;
             return this;
         }
         public Builder lastPaymentDetails(GetInvoiceLastPaymentDetail... lastPaymentDetails) {
@@ -524,22 +588,34 @@ public final class GetInvoiceResult {
         }
         @CustomType.Setter
         public Builder ospHomeRegion(String ospHomeRegion) {
-            this.ospHomeRegion = Objects.requireNonNull(ospHomeRegion);
+            if (ospHomeRegion == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "ospHomeRegion");
+            }
+            this.ospHomeRegion = ospHomeRegion;
             return this;
         }
         @CustomType.Setter
         public Builder paymentTerms(String paymentTerms) {
-            this.paymentTerms = Objects.requireNonNull(paymentTerms);
+            if (paymentTerms == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "paymentTerms");
+            }
+            this.paymentTerms = paymentTerms;
             return this;
         }
         @CustomType.Setter
         public Builder preferredEmail(String preferredEmail) {
-            this.preferredEmail = Objects.requireNonNull(preferredEmail);
+            if (preferredEmail == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "preferredEmail");
+            }
+            this.preferredEmail = preferredEmail;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptionIds(List<String> subscriptionIds) {
-            this.subscriptionIds = Objects.requireNonNull(subscriptionIds);
+            if (subscriptionIds == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "subscriptionIds");
+            }
+            this.subscriptionIds = subscriptionIds;
             return this;
         }
         public Builder subscriptionIds(String... subscriptionIds) {
@@ -547,17 +623,26 @@ public final class GetInvoiceResult {
         }
         @CustomType.Setter
         public Builder tax(Double tax) {
-            this.tax = Objects.requireNonNull(tax);
+            if (tax == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "tax");
+            }
+            this.tax = tax;
             return this;
         }
         @CustomType.Setter
         public Builder timeInvoice(String timeInvoice) {
-            this.timeInvoice = Objects.requireNonNull(timeInvoice);
+            if (timeInvoice == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "timeInvoice");
+            }
+            this.timeInvoice = timeInvoice;
             return this;
         }
         @CustomType.Setter
         public Builder timeInvoiceDue(String timeInvoiceDue) {
-            this.timeInvoiceDue = Objects.requireNonNull(timeInvoiceDue);
+            if (timeInvoiceDue == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceResult", "timeInvoiceDue");
+            }
+            this.timeInvoiceDue = timeInvoiceDue;
             return this;
         }
         public GetInvoiceResult build() {

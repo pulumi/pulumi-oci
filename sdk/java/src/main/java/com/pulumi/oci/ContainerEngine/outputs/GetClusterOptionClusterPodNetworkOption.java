@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetClusterOptionClusterPodNetworkOption {
 
         @CustomType.Setter
         public Builder cniType(String cniType) {
-            this.cniType = Objects.requireNonNull(cniType);
+            if (cniType == null) {
+              throw new MissingRequiredPropertyException("GetClusterOptionClusterPodNetworkOption", "cniType");
+            }
+            this.cniType = cniType;
             return this;
         }
         public GetClusterOptionClusterPodNetworkOption build() {

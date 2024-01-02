@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.inputs.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs;
 import com.pulumi.oci.CloudGuard.inputs.CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs;
 import java.lang.Integer;
@@ -423,7 +424,9 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         public CloudGuardDataSourceDataSourceDetailsArgs build() {
-            $.dataSourceFeedProvider = Objects.requireNonNull($.dataSourceFeedProvider, "expected parameter 'dataSourceFeedProvider' to be non-null");
+            if ($.dataSourceFeedProvider == null) {
+                throw new MissingRequiredPropertyException("CloudGuardDataSourceDataSourceDetailsArgs", "dataSourceFeedProvider");
+            }
             return $;
         }
     }

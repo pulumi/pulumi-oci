@@ -59,11 +59,13 @@ public final class PoolPoolMetricActivelyUsedNodeCount {
 
         @CustomType.Setter
         public Builder logicalShape(@Nullable String logicalShape) {
+
             this.logicalShape = logicalShape;
             return this;
         }
         @CustomType.Setter
         public Builder poolCount(@Nullable Integer poolCount) {
+
             this.poolCount = poolCount;
             return this;
         }

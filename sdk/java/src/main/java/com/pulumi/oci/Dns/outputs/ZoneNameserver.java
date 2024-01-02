@@ -44,6 +44,7 @@ public final class ZoneNameserver {
 
         @CustomType.Setter
         public Builder hostname(@Nullable String hostname) {
+
             this.hostname = hostname;
             return this;
         }

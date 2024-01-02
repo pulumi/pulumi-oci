@@ -74,16 +74,19 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
 
         @CustomType.Setter
         public Builder isRequired(@Nullable Boolean isRequired) {
+
             this.isRequired = isRequired;
             return this;
         }
         @CustomType.Setter
         public Builder key(@Nullable String key) {
+
             this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder values(@Nullable List<String> values) {
+
             this.values = values;
             return this;
         }

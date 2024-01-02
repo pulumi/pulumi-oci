@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetMaintenanceRunsFilter;
 import com.pulumi.oci.Database.outputs.GetMaintenanceRunsMaintenanceRun;
 import java.lang.String;
@@ -157,16 +158,21 @@ public final class GetMaintenanceRunsResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceRunsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMaintenanceRunsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -175,12 +181,18 @@ public final class GetMaintenanceRunsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceRunsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder maintenanceRuns(List<GetMaintenanceRunsMaintenanceRun> maintenanceRuns) {
-            this.maintenanceRuns = Objects.requireNonNull(maintenanceRuns);
+            if (maintenanceRuns == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceRunsResult", "maintenanceRuns");
+            }
+            this.maintenanceRuns = maintenanceRuns;
             return this;
         }
         public Builder maintenanceRuns(GetMaintenanceRunsMaintenanceRun... maintenanceRuns) {
@@ -188,26 +200,31 @@ public final class GetMaintenanceRunsResult {
         }
         @CustomType.Setter
         public Builder maintenanceSubtype(@Nullable String maintenanceSubtype) {
+
             this.maintenanceSubtype = maintenanceSubtype;
             return this;
         }
         @CustomType.Setter
         public Builder maintenanceType(@Nullable String maintenanceType) {
+
             this.maintenanceType = maintenanceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourceId(@Nullable String targetResourceId) {
+
             this.targetResourceId = targetResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourceType(@Nullable String targetResourceType) {
+
             this.targetResourceType = targetResourceType;
             return this;
         }

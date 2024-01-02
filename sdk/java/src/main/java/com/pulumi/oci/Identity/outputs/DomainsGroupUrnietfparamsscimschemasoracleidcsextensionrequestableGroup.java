@@ -76,6 +76,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionreques
 
         @CustomType.Setter
         public Builder requestable(@Nullable Boolean requestable) {
+
             this.requestable = requestable;
             return this;
         }

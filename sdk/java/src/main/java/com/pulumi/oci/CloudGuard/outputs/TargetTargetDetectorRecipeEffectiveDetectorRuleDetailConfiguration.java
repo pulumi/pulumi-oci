@@ -102,26 +102,31 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
 
         @CustomType.Setter
         public Builder configKey(@Nullable String configKey) {
+
             this.configKey = configKey;
             return this;
         }
         @CustomType.Setter
         public Builder dataType(@Nullable String dataType) {
+
             this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder value(@Nullable String value) {
+
             this.value = value;
             return this;
         }
         @CustomType.Setter
         public Builder values(@Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue> values) {
+
             this.values = values;
             return this;
         }

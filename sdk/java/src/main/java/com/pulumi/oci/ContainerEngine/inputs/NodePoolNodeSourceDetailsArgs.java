@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -150,8 +151,12 @@ public final class NodePoolNodeSourceDetailsArgs extends com.pulumi.resources.Re
         }
 
         public NodePoolNodeSourceDetailsArgs build() {
-            $.imageId = Objects.requireNonNull($.imageId, "expected parameter 'imageId' to be non-null");
-            $.sourceType = Objects.requireNonNull($.sourceType, "expected parameter 'sourceType' to be non-null");
+            if ($.imageId == null) {
+                throw new MissingRequiredPropertyException("NodePoolNodeSourceDetailsArgs", "imageId");
+            }
+            if ($.sourceType == null) {
+                throw new MissingRequiredPropertyException("NodePoolNodeSourceDetailsArgs", "sourceType");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkFirewall.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionRulesFilter;
 import java.lang.Integer;
 import java.lang.String;
@@ -139,7 +140,9 @@ public final class GetNetworkFirewallPolicyDecryptionRulesPlainArgs extends com.
         }
 
         public GetNetworkFirewallPolicyDecryptionRulesPlainArgs build() {
-            $.networkFirewallPolicyId = Objects.requireNonNull($.networkFirewallPolicyId, "expected parameter 'networkFirewallPolicyId' to be non-null");
+            if ($.networkFirewallPolicyId == null) {
+                throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionRulesPlainArgs", "networkFirewallPolicyId");
+            }
             return $;
         }
     }

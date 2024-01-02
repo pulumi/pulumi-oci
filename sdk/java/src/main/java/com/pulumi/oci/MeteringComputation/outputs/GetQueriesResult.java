@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.GetQueriesFilter;
 import com.pulumi.oci.MeteringComputation.outputs.GetQueriesQueryCollection;
 import java.lang.String;
@@ -88,11 +89,15 @@ public final class GetQueriesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetQueriesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetQueriesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -101,12 +106,18 @@ public final class GetQueriesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetQueriesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder queryCollections(List<GetQueriesQueryCollection> queryCollections) {
-            this.queryCollections = Objects.requireNonNull(queryCollections);
+            if (queryCollections == null) {
+              throw new MissingRequiredPropertyException("GetQueriesResult", "queryCollections");
+            }
+            this.queryCollections = queryCollections;
             return this;
         }
         public Builder queryCollections(GetQueriesQueryCollection... queryCollections) {

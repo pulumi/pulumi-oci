@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyTrustedUserAgentsMyTrustedUserAgentIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyTrustedUserAgentsMyTrustedUserAgentIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyTrustedUserAgentsMyTrustedUserAgentMeta;
@@ -420,7 +421,10 @@ public final class GetDomainsMyTrustedUserAgentsMyTrustedUserAgent {
 
         @CustomType.Setter
         public Builder attributeSets(List<String> attributeSets) {
-            this.attributeSets = Objects.requireNonNull(attributeSets);
+            if (attributeSets == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "attributeSets");
+            }
+            this.attributeSets = attributeSets;
             return this;
         }
         public Builder attributeSets(String... attributeSets) {
@@ -428,42 +432,66 @@ public final class GetDomainsMyTrustedUserAgentsMyTrustedUserAgent {
         }
         @CustomType.Setter
         public Builder attributes(String attributes) {
-            this.attributes = Objects.requireNonNull(attributes);
+            if (attributes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "attributes");
+            }
+            this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(String authorization) {
-            this.authorization = Objects.requireNonNull(authorization);
+            if (authorization == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "authorization");
+            }
+            this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder expiryTime(String expiryTime) {
-            this.expiryTime = Objects.requireNonNull(expiryTime);
+            if (expiryTime == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "expiryTime");
+            }
+            this.expiryTime = expiryTime;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsMyTrustedUserAgentsMyTrustedUserAgentIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsMyTrustedUserAgentsMyTrustedUserAgentIdcsCreatedBy... idcsCreatedBies) {
@@ -471,12 +499,18 @@ public final class GetDomainsMyTrustedUserAgentsMyTrustedUserAgent {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsMyTrustedUserAgentsMyTrustedUserAgentIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsMyTrustedUserAgentsMyTrustedUserAgentIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -484,12 +518,18 @@ public final class GetDomainsMyTrustedUserAgentsMyTrustedUserAgent {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -497,17 +537,26 @@ public final class GetDomainsMyTrustedUserAgentsMyTrustedUserAgent {
         }
         @CustomType.Setter
         public Builder lastUsedOn(String lastUsedOn) {
-            this.lastUsedOn = Objects.requireNonNull(lastUsedOn);
+            if (lastUsedOn == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "lastUsedOn");
+            }
+            this.lastUsedOn = lastUsedOn;
             return this;
         }
         @CustomType.Setter
         public Builder location(String location) {
-            this.location = Objects.requireNonNull(location);
+            if (location == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "location");
+            }
+            this.location = location;
             return this;
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsMyTrustedUserAgentsMyTrustedUserAgentMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsMyTrustedUserAgentsMyTrustedUserAgentMeta... metas) {
@@ -515,32 +564,50 @@ public final class GetDomainsMyTrustedUserAgentsMyTrustedUserAgent {
         }
         @CustomType.Setter
         public Builder myTrustedUserAgentId(String myTrustedUserAgentId) {
-            this.myTrustedUserAgentId = Objects.requireNonNull(myTrustedUserAgentId);
+            if (myTrustedUserAgentId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "myTrustedUserAgentId");
+            }
+            this.myTrustedUserAgentId = myTrustedUserAgentId;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder platform(String platform) {
-            this.platform = Objects.requireNonNull(platform);
+            if (platform == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "platform");
+            }
+            this.platform = platform;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(String resourceTypeSchemaVersion) {
-            this.resourceTypeSchemaVersion = Objects.requireNonNull(resourceTypeSchemaVersion);
+            if (resourceTypeSchemaVersion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "resourceTypeSchemaVersion");
+            }
+            this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -548,7 +615,10 @@ public final class GetDomainsMyTrustedUserAgentsMyTrustedUserAgent {
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsMyTrustedUserAgentsMyTrustedUserAgentTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsMyTrustedUserAgentsMyTrustedUserAgentTag... tags) {
@@ -556,22 +626,34 @@ public final class GetDomainsMyTrustedUserAgentsMyTrustedUserAgent {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder tokenType(String tokenType) {
-            this.tokenType = Objects.requireNonNull(tokenType);
+            if (tokenType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "tokenType");
+            }
+            this.tokenType = tokenType;
             return this;
         }
         @CustomType.Setter
         public Builder trustToken(String trustToken) {
-            this.trustToken = Objects.requireNonNull(trustToken);
+            if (trustToken == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "trustToken");
+            }
+            this.trustToken = trustToken;
             return this;
         }
         @CustomType.Setter
         public Builder trustedFactors(List<GetDomainsMyTrustedUserAgentsMyTrustedUserAgentTrustedFactor> trustedFactors) {
-            this.trustedFactors = Objects.requireNonNull(trustedFactors);
+            if (trustedFactors == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "trustedFactors");
+            }
+            this.trustedFactors = trustedFactors;
             return this;
         }
         public Builder trustedFactors(GetDomainsMyTrustedUserAgentsMyTrustedUserAgentTrustedFactor... trustedFactors) {
@@ -579,7 +661,10 @@ public final class GetDomainsMyTrustedUserAgentsMyTrustedUserAgent {
         }
         @CustomType.Setter
         public Builder users(List<GetDomainsMyTrustedUserAgentsMyTrustedUserAgentUser> users) {
-            this.users = Objects.requireNonNull(users);
+            if (users == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgent", "users");
+            }
+            this.users = users;
             return this;
         }
         public Builder users(GetDomainsMyTrustedUserAgentsMyTrustedUserAgentUser... users) {

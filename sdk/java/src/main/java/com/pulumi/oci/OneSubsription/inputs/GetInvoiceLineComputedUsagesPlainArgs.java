@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OneSubsription.inputs.GetInvoiceLineComputedUsagesFilter;
 import java.lang.String;
 import java.util.List;
@@ -148,8 +149,12 @@ public final class GetInvoiceLineComputedUsagesPlainArgs extends com.pulumi.reso
         }
 
         public GetInvoiceLineComputedUsagesPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.invoiceLineId = Objects.requireNonNull($.invoiceLineId, "expected parameter 'invoiceLineId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetInvoiceLineComputedUsagesPlainArgs", "compartmentId");
+            }
+            if ($.invoiceLineId == null) {
+                throw new MissingRequiredPropertyException("GetInvoiceLineComputedUsagesPlainArgs", "invoiceLineId");
+            }
             return $;
         }
     }

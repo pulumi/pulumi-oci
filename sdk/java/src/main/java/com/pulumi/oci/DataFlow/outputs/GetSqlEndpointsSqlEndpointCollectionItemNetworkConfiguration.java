@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.outputs.GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule;
 import java.lang.String;
 import java.util.List;
@@ -128,7 +129,10 @@ public final class GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration 
 
         @CustomType.Setter
         public Builder accessControlRules(List<GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule> accessControlRules) {
-            this.accessControlRules = Objects.requireNonNull(accessControlRules);
+            if (accessControlRules == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration", "accessControlRules");
+            }
+            this.accessControlRules = accessControlRules;
             return this;
         }
         public Builder accessControlRules(GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule... accessControlRules) {
@@ -136,32 +140,50 @@ public final class GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration 
         }
         @CustomType.Setter
         public Builder hostNamePrefix(String hostNamePrefix) {
-            this.hostNamePrefix = Objects.requireNonNull(hostNamePrefix);
+            if (hostNamePrefix == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration", "hostNamePrefix");
+            }
+            this.hostNamePrefix = hostNamePrefix;
             return this;
         }
         @CustomType.Setter
         public Builder networkType(String networkType) {
-            this.networkType = Objects.requireNonNull(networkType);
+            if (networkType == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration", "networkType");
+            }
+            this.networkType = networkType;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpointIp(String privateEndpointIp) {
-            this.privateEndpointIp = Objects.requireNonNull(privateEndpointIp);
+            if (privateEndpointIp == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration", "privateEndpointIp");
+            }
+            this.privateEndpointIp = privateEndpointIp;
             return this;
         }
         @CustomType.Setter
         public Builder publicEndpointIp(String publicEndpointIp) {
-            this.publicEndpointIp = Objects.requireNonNull(publicEndpointIp);
+            if (publicEndpointIp == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration", "publicEndpointIp");
+            }
+            this.publicEndpointIp = publicEndpointIp;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+            if (vcnId == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration", "vcnId");
+            }
+            this.vcnId = vcnId;
             return this;
         }
         public GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleIcmpOption;
 import com.pulumi.oci.Core.outputs.GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleTcpOption;
 import com.pulumi.oci.Core.outputs.GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOption;
@@ -198,17 +199,26 @@ public final class GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRule {
 
         @CustomType.Setter
         public Builder destinationCidr(String destinationCidr) {
-            this.destinationCidr = Objects.requireNonNull(destinationCidr);
+            if (destinationCidr == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRule", "destinationCidr");
+            }
+            this.destinationCidr = destinationCidr;
             return this;
         }
         @CustomType.Setter
         public Builder flowLogType(String flowLogType) {
-            this.flowLogType = Objects.requireNonNull(flowLogType);
+            if (flowLogType == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRule", "flowLogType");
+            }
+            this.flowLogType = flowLogType;
             return this;
         }
         @CustomType.Setter
         public Builder icmpOptions(List<GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleIcmpOption> icmpOptions) {
-            this.icmpOptions = Objects.requireNonNull(icmpOptions);
+            if (icmpOptions == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRule", "icmpOptions");
+            }
+            this.icmpOptions = icmpOptions;
             return this;
         }
         public Builder icmpOptions(GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleIcmpOption... icmpOptions) {
@@ -216,37 +226,58 @@ public final class GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRule {
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRule", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder priority(Integer priority) {
-            this.priority = Objects.requireNonNull(priority);
+            if (priority == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRule", "priority");
+            }
+            this.priority = priority;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRule", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder ruleAction(String ruleAction) {
-            this.ruleAction = Objects.requireNonNull(ruleAction);
+            if (ruleAction == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRule", "ruleAction");
+            }
+            this.ruleAction = ruleAction;
             return this;
         }
         @CustomType.Setter
         public Builder samplingRate(Integer samplingRate) {
-            this.samplingRate = Objects.requireNonNull(samplingRate);
+            if (samplingRate == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRule", "samplingRate");
+            }
+            this.samplingRate = samplingRate;
             return this;
         }
         @CustomType.Setter
         public Builder sourceCidr(String sourceCidr) {
-            this.sourceCidr = Objects.requireNonNull(sourceCidr);
+            if (sourceCidr == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRule", "sourceCidr");
+            }
+            this.sourceCidr = sourceCidr;
             return this;
         }
         @CustomType.Setter
         public Builder tcpOptions(List<GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleTcpOption> tcpOptions) {
-            this.tcpOptions = Objects.requireNonNull(tcpOptions);
+            if (tcpOptions == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRule", "tcpOptions");
+            }
+            this.tcpOptions = tcpOptions;
             return this;
         }
         public Builder tcpOptions(GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleTcpOption... tcpOptions) {
@@ -254,7 +285,10 @@ public final class GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRule {
         }
         @CustomType.Setter
         public Builder udpOptions(List<GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOption> udpOptions) {
-            this.udpOptions = Objects.requireNonNull(udpOptions);
+            if (udpOptions == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRule", "udpOptions");
+            }
+            this.udpOptions = udpOptions;
             return this;
         }
         public Builder udpOptions(GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOption... udpOptions) {

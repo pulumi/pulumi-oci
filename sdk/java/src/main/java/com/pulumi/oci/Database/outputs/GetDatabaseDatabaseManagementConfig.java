@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetDatabaseDatabaseManagementConfig {
 
         @CustomType.Setter
         public Builder managementStatus(String managementStatus) {
-            this.managementStatus = Objects.requireNonNull(managementStatus);
+            if (managementStatus == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDatabaseManagementConfig", "managementStatus");
+            }
+            this.managementStatus = managementStatus;
             return this;
         }
         @CustomType.Setter
         public Builder managementType(String managementType) {
-            this.managementType = Objects.requireNonNull(managementType);
+            if (managementType == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDatabaseManagementConfig", "managementType");
+            }
+            this.managementType = managementType;
             return this;
         }
         public GetDatabaseDatabaseManagementConfig build() {

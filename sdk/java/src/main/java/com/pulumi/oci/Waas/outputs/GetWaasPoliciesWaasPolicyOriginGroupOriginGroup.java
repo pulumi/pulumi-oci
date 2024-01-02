@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -49,12 +50,18 @@ public final class GetWaasPoliciesWaasPolicyOriginGroupOriginGroup {
 
         @CustomType.Setter
         public Builder origin(String origin) {
-            this.origin = Objects.requireNonNull(origin);
+            if (origin == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyOriginGroupOriginGroup", "origin");
+            }
+            this.origin = origin;
             return this;
         }
         @CustomType.Setter
         public Builder weight(Integer weight) {
-            this.weight = Objects.requireNonNull(weight);
+            if (weight == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyOriginGroupOriginGroup", "weight");
+            }
+            this.weight = weight;
             return this;
         }
         public GetWaasPoliciesWaasPolicyOriginGroupOriginGroup build() {

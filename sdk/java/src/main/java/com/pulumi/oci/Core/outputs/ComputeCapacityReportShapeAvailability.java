@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.ComputeCapacityReportShapeAvailabilityInstanceShapeConfig;
 import java.lang.String;
 import java.util.Objects;
@@ -105,26 +106,33 @@ public final class ComputeCapacityReportShapeAvailability {
 
         @CustomType.Setter
         public Builder availabilityStatus(@Nullable String availabilityStatus) {
+
             this.availabilityStatus = availabilityStatus;
             return this;
         }
         @CustomType.Setter
         public Builder availableCount(@Nullable String availableCount) {
+
             this.availableCount = availableCount;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomain(@Nullable String faultDomain) {
+
             this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder instanceShape(String instanceShape) {
-            this.instanceShape = Objects.requireNonNull(instanceShape);
+            if (instanceShape == null) {
+              throw new MissingRequiredPropertyException("ComputeCapacityReportShapeAvailability", "instanceShape");
+            }
+            this.instanceShape = instanceShape;
             return this;
         }
         @CustomType.Setter
         public Builder instanceShapeConfig(@Nullable ComputeCapacityReportShapeAvailabilityInstanceShapeConfig instanceShapeConfig) {
+
             this.instanceShapeConfig = instanceShapeConfig;
             return this;
         }

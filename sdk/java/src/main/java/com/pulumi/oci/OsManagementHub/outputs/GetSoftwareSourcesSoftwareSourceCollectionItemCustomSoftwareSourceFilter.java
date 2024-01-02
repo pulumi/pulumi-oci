@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilter;
@@ -73,7 +74,10 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareS
 
         @CustomType.Setter
         public Builder moduleStreamProfileFilters(List<GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter> moduleStreamProfileFilters) {
-            this.moduleStreamProfileFilters = Objects.requireNonNull(moduleStreamProfileFilters);
+            if (moduleStreamProfileFilters == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter", "moduleStreamProfileFilters");
+            }
+            this.moduleStreamProfileFilters = moduleStreamProfileFilters;
             return this;
         }
         public Builder moduleStreamProfileFilters(GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter... moduleStreamProfileFilters) {
@@ -81,7 +85,10 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareS
         }
         @CustomType.Setter
         public Builder packageFilters(List<GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter> packageFilters) {
-            this.packageFilters = Objects.requireNonNull(packageFilters);
+            if (packageFilters == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter", "packageFilters");
+            }
+            this.packageFilters = packageFilters;
             return this;
         }
         public Builder packageFilters(GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter... packageFilters) {
@@ -89,7 +96,10 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareS
         }
         @CustomType.Setter
         public Builder packageGroupFilters(List<GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilter> packageGroupFilters) {
-            this.packageGroupFilters = Objects.requireNonNull(packageGroupFilters);
+            if (packageGroupFilters == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter", "packageGroupFilters");
+            }
+            this.packageGroupFilters = packageGroupFilters;
             return this;
         }
         public Builder packageGroupFilters(GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilter... packageGroupFilters) {

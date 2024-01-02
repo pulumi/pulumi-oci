@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderItem;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationValid
 
         @CustomType.Setter
         public Builder items(List<GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeader", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderItem... items) {
@@ -66,7 +70,10 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationValid
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeader", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeader build() {

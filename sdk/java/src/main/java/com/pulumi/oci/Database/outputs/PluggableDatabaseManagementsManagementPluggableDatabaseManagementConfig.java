@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -65,11 +66,15 @@ public final class PluggableDatabaseManagementsManagementPluggableDatabaseManage
 
         @CustomType.Setter
         public Builder enablePluggabledatabasemanagement(Boolean enablePluggabledatabasemanagement) {
-            this.enablePluggabledatabasemanagement = Objects.requireNonNull(enablePluggabledatabasemanagement);
+            if (enablePluggabledatabasemanagement == null) {
+              throw new MissingRequiredPropertyException("PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig", "enablePluggabledatabasemanagement");
+            }
+            this.enablePluggabledatabasemanagement = enablePluggabledatabasemanagement;
             return this;
         }
         @CustomType.Setter
         public Builder managementStatus(@Nullable String managementStatus) {
+
             this.managementStatus = managementStatus;
             return this;
         }

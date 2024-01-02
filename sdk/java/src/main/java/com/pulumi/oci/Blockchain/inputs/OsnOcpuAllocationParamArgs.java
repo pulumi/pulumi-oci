@@ -5,6 +5,7 @@ package com.pulumi.oci.Blockchain.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.util.Objects;
 
@@ -86,7 +87,9 @@ public final class OsnOcpuAllocationParamArgs extends com.pulumi.resources.Resou
         }
 
         public OsnOcpuAllocationParamArgs build() {
-            $.ocpuAllocationNumber = Objects.requireNonNull($.ocpuAllocationNumber, "expected parameter 'ocpuAllocationNumber' to be non-null");
+            if ($.ocpuAllocationNumber == null) {
+                throw new MissingRequiredPropertyException("OsnOcpuAllocationParamArgs", "ocpuAllocationNumber");
+            }
             return $;
         }
     }

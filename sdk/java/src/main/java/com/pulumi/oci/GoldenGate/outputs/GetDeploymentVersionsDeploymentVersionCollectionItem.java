@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -113,32 +114,50 @@ public final class GetDeploymentVersionsDeploymentVersionCollectionItem {
 
         @CustomType.Setter
         public Builder deploymentType(String deploymentType) {
-            this.deploymentType = Objects.requireNonNull(deploymentType);
+            if (deploymentType == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentVersionsDeploymentVersionCollectionItem", "deploymentType");
+            }
+            this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
         public Builder isSecurityFix(Boolean isSecurityFix) {
-            this.isSecurityFix = Objects.requireNonNull(isSecurityFix);
+            if (isSecurityFix == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentVersionsDeploymentVersionCollectionItem", "isSecurityFix");
+            }
+            this.isSecurityFix = isSecurityFix;
             return this;
         }
         @CustomType.Setter
         public Builder oggVersion(String oggVersion) {
-            this.oggVersion = Objects.requireNonNull(oggVersion);
+            if (oggVersion == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentVersionsDeploymentVersionCollectionItem", "oggVersion");
+            }
+            this.oggVersion = oggVersion;
             return this;
         }
         @CustomType.Setter
         public Builder releaseType(String releaseType) {
-            this.releaseType = Objects.requireNonNull(releaseType);
+            if (releaseType == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentVersionsDeploymentVersionCollectionItem", "releaseType");
+            }
+            this.releaseType = releaseType;
             return this;
         }
         @CustomType.Setter
         public Builder timeReleased(String timeReleased) {
-            this.timeReleased = Objects.requireNonNull(timeReleased);
+            if (timeReleased == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentVersionsDeploymentVersionCollectionItem", "timeReleased");
+            }
+            this.timeReleased = timeReleased;
             return this;
         }
         @CustomType.Setter
         public Builder timeSupportedUntil(String timeSupportedUntil) {
-            this.timeSupportedUntil = Objects.requireNonNull(timeSupportedUntil);
+            if (timeSupportedUntil == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentVersionsDeploymentVersionCollectionItem", "timeSupportedUntil");
+            }
+            this.timeSupportedUntil = timeSupportedUntil;
             return this;
         }
         public GetDeploymentVersionsDeploymentVersionCollectionItem build() {

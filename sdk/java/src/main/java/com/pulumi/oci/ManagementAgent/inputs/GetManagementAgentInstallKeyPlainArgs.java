@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetManagementAgentInstallKeyPlainArgs extends com.pulumi.reso
         }
 
         public GetManagementAgentInstallKeyPlainArgs build() {
-            $.managementAgentInstallKeyId = Objects.requireNonNull($.managementAgentInstallKeyId, "expected parameter 'managementAgentInstallKeyId' to be non-null");
+            if ($.managementAgentInstallKeyId == null) {
+                throw new MissingRequiredPropertyException("GetManagementAgentInstallKeyPlainArgs", "managementAgentInstallKeyId");
+            }
             return $;
         }
     }

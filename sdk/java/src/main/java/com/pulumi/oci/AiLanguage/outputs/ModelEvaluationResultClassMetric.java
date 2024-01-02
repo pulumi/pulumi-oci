@@ -101,26 +101,31 @@ public final class ModelEvaluationResultClassMetric {
 
         @CustomType.Setter
         public Builder f1(@Nullable Double f1) {
+
             this.f1 = f1;
             return this;
         }
         @CustomType.Setter
         public Builder label(@Nullable String label) {
+
             this.label = label;
             return this;
         }
         @CustomType.Setter
         public Builder precision(@Nullable Double precision) {
+
             this.precision = precision;
             return this;
         }
         @CustomType.Setter
         public Builder recall(@Nullable Double recall) {
+
             this.recall = recall;
             return this;
         }
         @CustomType.Setter
         public Builder support(@Nullable Double support) {
+
             this.support = support;
             return this;
         }

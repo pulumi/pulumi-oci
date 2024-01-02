@@ -5,6 +5,7 @@ package com.pulumi.oci.Secrets.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Secrets.inputs.GetSecretbundleVersionsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -99,7 +100,9 @@ public final class GetSecretbundleVersionsArgs extends com.pulumi.resources.Invo
         }
 
         public GetSecretbundleVersionsArgs build() {
-            $.secretId = Objects.requireNonNull($.secretId, "expected parameter 'secretId' to be non-null");
+            if ($.secretId == null) {
+                throw new MissingRequiredPropertyException("GetSecretbundleVersionsArgs", "secretId");
+            }
             return $;
         }
     }

@@ -58,6 +58,7 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityEx
 
         @CustomType.Setter
         public Builder args(@Nullable List<String> args) {
+
             this.args = args;
             return this;
         }
@@ -66,6 +67,7 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityEx
         }
         @CustomType.Setter
         public Builder requestCookies(@Nullable List<String> requestCookies) {
+
             this.requestCookies = requestCookies;
             return this;
         }

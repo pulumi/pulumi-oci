@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadata;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceProjectsProjectSummaryCollectionItemParentRef;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata;
@@ -215,27 +216,42 @@ public final class GetWorkspaceProjectsProjectSummaryCollectionItem {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectsProjectSummaryCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder identifier(String identifier) {
-            this.identifier = Objects.requireNonNull(identifier);
+            if (identifier == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectsProjectSummaryCollectionItem", "identifier");
+            }
+            this.identifier = identifier;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectsProjectSummaryCollectionItem", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder keyMap(Map<String,Object> keyMap) {
-            this.keyMap = Objects.requireNonNull(keyMap);
+            if (keyMap == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectsProjectSummaryCollectionItem", "keyMap");
+            }
+            this.keyMap = keyMap;
             return this;
         }
         @CustomType.Setter
         public Builder metadatas(List<GetWorkspaceProjectsProjectSummaryCollectionItemMetadata> metadatas) {
-            this.metadatas = Objects.requireNonNull(metadatas);
+            if (metadatas == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectsProjectSummaryCollectionItem", "metadatas");
+            }
+            this.metadatas = metadatas;
             return this;
         }
         public Builder metadatas(GetWorkspaceProjectsProjectSummaryCollectionItemMetadata... metadatas) {
@@ -243,32 +259,50 @@ public final class GetWorkspaceProjectsProjectSummaryCollectionItem {
         }
         @CustomType.Setter
         public Builder modelType(String modelType) {
-            this.modelType = Objects.requireNonNull(modelType);
+            if (modelType == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectsProjectSummaryCollectionItem", "modelType");
+            }
+            this.modelType = modelType;
             return this;
         }
         @CustomType.Setter
         public Builder modelVersion(String modelVersion) {
-            this.modelVersion = Objects.requireNonNull(modelVersion);
+            if (modelVersion == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectsProjectSummaryCollectionItem", "modelVersion");
+            }
+            this.modelVersion = modelVersion;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectsProjectSummaryCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder objectStatus(Integer objectStatus) {
-            this.objectStatus = Objects.requireNonNull(objectStatus);
+            if (objectStatus == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectsProjectSummaryCollectionItem", "objectStatus");
+            }
+            this.objectStatus = objectStatus;
             return this;
         }
         @CustomType.Setter
         public Builder objectVersion(Integer objectVersion) {
-            this.objectVersion = Objects.requireNonNull(objectVersion);
+            if (objectVersion == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectsProjectSummaryCollectionItem", "objectVersion");
+            }
+            this.objectVersion = objectVersion;
             return this;
         }
         @CustomType.Setter
         public Builder parentReves(List<GetWorkspaceProjectsProjectSummaryCollectionItemParentRef> parentReves) {
-            this.parentReves = Objects.requireNonNull(parentReves);
+            if (parentReves == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectsProjectSummaryCollectionItem", "parentReves");
+            }
+            this.parentReves = parentReves;
             return this;
         }
         public Builder parentReves(GetWorkspaceProjectsProjectSummaryCollectionItemParentRef... parentReves) {
@@ -276,17 +310,26 @@ public final class GetWorkspaceProjectsProjectSummaryCollectionItem {
         }
         @CustomType.Setter
         public Builder projectKey(String projectKey) {
-            this.projectKey = Objects.requireNonNull(projectKey);
+            if (projectKey == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectsProjectSummaryCollectionItem", "projectKey");
+            }
+            this.projectKey = projectKey;
             return this;
         }
         @CustomType.Setter
         public Builder registryMetadata(GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata registryMetadata) {
-            this.registryMetadata = Objects.requireNonNull(registryMetadata);
+            if (registryMetadata == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectsProjectSummaryCollectionItem", "registryMetadata");
+            }
+            this.registryMetadata = registryMetadata;
             return this;
         }
         @CustomType.Setter
         public Builder workspaceId(String workspaceId) {
-            this.workspaceId = Objects.requireNonNull(workspaceId);
+            if (workspaceId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectsProjectSummaryCollectionItem", "workspaceId");
+            }
+            this.workspaceId = workspaceId;
             return this;
         }
         public GetWorkspaceProjectsProjectSummaryCollectionItem build() {

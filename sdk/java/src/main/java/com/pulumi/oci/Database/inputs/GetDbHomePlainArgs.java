@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetDbHomePlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetDbHomePlainArgs build() {
-            $.dbHomeId = Objects.requireNonNull($.dbHomeId, "expected parameter 'dbHomeId' to be non-null");
+            if ($.dbHomeId == null) {
+                throw new MissingRequiredPropertyException("GetDbHomePlainArgs", "dbHomeId");
+            }
             return $;
         }
     }

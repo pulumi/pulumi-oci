@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsApprovalWorkflowStepApproverArgs;
 import com.pulumi.oci.Identity.inputs.DomainsApprovalWorkflowStepTagArgs;
 import java.lang.Integer;
@@ -963,10 +964,18 @@ public final class DomainsApprovalWorkflowStepArgs extends com.pulumi.resources.
         }
 
         public DomainsApprovalWorkflowStepArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.order = Objects.requireNonNull($.order, "expected parameter 'order' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsApprovalWorkflowStepArgs", "idcsEndpoint");
+            }
+            if ($.order == null) {
+                throw new MissingRequiredPropertyException("DomainsApprovalWorkflowStepArgs", "order");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsApprovalWorkflowStepArgs", "schemas");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("DomainsApprovalWorkflowStepArgs", "type");
+            }
             return $;
         }
     }

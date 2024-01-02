@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Dns.outputs.GetResolverAttachedView;
 import com.pulumi.oci.Dns.outputs.GetResolverEndpoint;
 import com.pulumi.oci.Dns.outputs.GetResolverRule;
@@ -259,12 +260,18 @@ public final class GetResolverResult {
 
         @CustomType.Setter
         public Builder attachedVcnId(String attachedVcnId) {
-            this.attachedVcnId = Objects.requireNonNull(attachedVcnId);
+            if (attachedVcnId == null) {
+              throw new MissingRequiredPropertyException("GetResolverResult", "attachedVcnId");
+            }
+            this.attachedVcnId = attachedVcnId;
             return this;
         }
         @CustomType.Setter
         public Builder attachedViews(List<GetResolverAttachedView> attachedViews) {
-            this.attachedViews = Objects.requireNonNull(attachedViews);
+            if (attachedViews == null) {
+              throw new MissingRequiredPropertyException("GetResolverResult", "attachedViews");
+            }
+            this.attachedViews = attachedViews;
             return this;
         }
         public Builder attachedViews(GetResolverAttachedView... attachedViews) {
@@ -272,27 +279,42 @@ public final class GetResolverResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetResolverResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder defaultViewId(String defaultViewId) {
-            this.defaultViewId = Objects.requireNonNull(defaultViewId);
+            if (defaultViewId == null) {
+              throw new MissingRequiredPropertyException("GetResolverResult", "defaultViewId");
+            }
+            this.defaultViewId = defaultViewId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetResolverResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetResolverResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder endpoints(List<GetResolverEndpoint> endpoints) {
-            this.endpoints = Objects.requireNonNull(endpoints);
+            if (endpoints == null) {
+              throw new MissingRequiredPropertyException("GetResolverResult", "endpoints");
+            }
+            this.endpoints = endpoints;
             return this;
         }
         public Builder endpoints(GetResolverEndpoint... endpoints) {
@@ -300,27 +322,42 @@ public final class GetResolverResult {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetResolverResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetResolverResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isProtected(Boolean isProtected) {
-            this.isProtected = Objects.requireNonNull(isProtected);
+            if (isProtected == null) {
+              throw new MissingRequiredPropertyException("GetResolverResult", "isProtected");
+            }
+            this.isProtected = isProtected;
             return this;
         }
         @CustomType.Setter
         public Builder resolverId(String resolverId) {
-            this.resolverId = Objects.requireNonNull(resolverId);
+            if (resolverId == null) {
+              throw new MissingRequiredPropertyException("GetResolverResult", "resolverId");
+            }
+            this.resolverId = resolverId;
             return this;
         }
         @CustomType.Setter
         public Builder rules(List<GetResolverRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+            if (rules == null) {
+              throw new MissingRequiredPropertyException("GetResolverResult", "rules");
+            }
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetResolverRule... rules) {
@@ -328,27 +365,40 @@ public final class GetResolverResult {
         }
         @CustomType.Setter
         public Builder scope(@Nullable String scope) {
+
             this.scope = scope;
             return this;
         }
         @CustomType.Setter
         public Builder self(String self) {
-            this.self = Objects.requireNonNull(self);
+            if (self == null) {
+              throw new MissingRequiredPropertyException("GetResolverResult", "self");
+            }
+            this.self = self;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetResolverResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetResolverResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetResolverResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetResolverResult build() {

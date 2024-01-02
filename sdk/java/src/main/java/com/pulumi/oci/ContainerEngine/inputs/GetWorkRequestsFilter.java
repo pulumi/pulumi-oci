@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -83,8 +84,12 @@ public final class GetWorkRequestsFilter extends com.pulumi.resources.InvokeArgs
         }
 
         public GetWorkRequestsFilter build() {
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
-            $.values = Objects.requireNonNull($.values, "expected parameter 'values' to be non-null");
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("GetWorkRequestsFilter", "name");
+            }
+            if ($.values == null) {
+                throw new MissingRequiredPropertyException("GetWorkRequestsFilter", "values");
+            }
             return $;
         }
     }

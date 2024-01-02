@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CertificatesManagement.outputs.CertificateCertificateConfigSubject;
 import com.pulumi.oci.CertificatesManagement.outputs.CertificateCertificateConfigSubjectAlternativeName;
 import com.pulumi.oci.CertificatesManagement.outputs.CertificateCertificateConfigValidity;
@@ -174,41 +175,51 @@ public final class CertificateCertificateConfig {
 
         @CustomType.Setter
         public Builder certificateProfileType(@Nullable String certificateProfileType) {
+
             this.certificateProfileType = certificateProfileType;
             return this;
         }
         @CustomType.Setter
         public Builder configType(String configType) {
-            this.configType = Objects.requireNonNull(configType);
+            if (configType == null) {
+              throw new MissingRequiredPropertyException("CertificateCertificateConfig", "configType");
+            }
+            this.configType = configType;
             return this;
         }
         @CustomType.Setter
         public Builder csrPem(@Nullable String csrPem) {
+
             this.csrPem = csrPem;
             return this;
         }
         @CustomType.Setter
         public Builder issuerCertificateAuthorityId(@Nullable String issuerCertificateAuthorityId) {
+
             this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             return this;
         }
         @CustomType.Setter
         public Builder keyAlgorithm(@Nullable String keyAlgorithm) {
+
             this.keyAlgorithm = keyAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder signatureAlgorithm(@Nullable String signatureAlgorithm) {
+
             this.signatureAlgorithm = signatureAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder subject(@Nullable CertificateCertificateConfigSubject subject) {
+
             this.subject = subject;
             return this;
         }
         @CustomType.Setter
         public Builder subjectAlternativeNames(@Nullable List<CertificateCertificateConfigSubjectAlternativeName> subjectAlternativeNames) {
+
             this.subjectAlternativeNames = subjectAlternativeNames;
             return this;
         }
@@ -217,11 +228,13 @@ public final class CertificateCertificateConfig {
         }
         @CustomType.Setter
         public Builder validity(@Nullable CertificateCertificateConfigValidity validity) {
+
             this.validity = validity;
             return this;
         }
         @CustomType.Setter
         public Builder versionName(@Nullable String versionName) {
+
             this.versionName = versionName;
             return this;
         }

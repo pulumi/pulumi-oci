@@ -209,6 +209,7 @@ public final class PolicyWafConfig {
 
         @CustomType.Setter
         public Builder accessRules(@Nullable List<PolicyWafConfigAccessRule> accessRules) {
+
             this.accessRules = accessRules;
             return this;
         }
@@ -217,11 +218,13 @@ public final class PolicyWafConfig {
         }
         @CustomType.Setter
         public Builder addressRateLimiting(@Nullable PolicyWafConfigAddressRateLimiting addressRateLimiting) {
+
             this.addressRateLimiting = addressRateLimiting;
             return this;
         }
         @CustomType.Setter
         public Builder cachingRules(@Nullable List<PolicyWafConfigCachingRule> cachingRules) {
+
             this.cachingRules = cachingRules;
             return this;
         }
@@ -230,6 +233,7 @@ public final class PolicyWafConfig {
         }
         @CustomType.Setter
         public Builder captchas(@Nullable List<PolicyWafConfigCaptcha> captchas) {
+
             this.captchas = captchas;
             return this;
         }
@@ -238,6 +242,7 @@ public final class PolicyWafConfig {
         }
         @CustomType.Setter
         public Builder customProtectionRules(@Nullable List<PolicyWafConfigCustomProtectionRule> customProtectionRules) {
+
             this.customProtectionRules = customProtectionRules;
             return this;
         }
@@ -246,26 +251,31 @@ public final class PolicyWafConfig {
         }
         @CustomType.Setter
         public Builder deviceFingerprintChallenge(@Nullable PolicyWafConfigDeviceFingerprintChallenge deviceFingerprintChallenge) {
+
             this.deviceFingerprintChallenge = deviceFingerprintChallenge;
             return this;
         }
         @CustomType.Setter
         public Builder humanInteractionChallenge(@Nullable PolicyWafConfigHumanInteractionChallenge humanInteractionChallenge) {
+
             this.humanInteractionChallenge = humanInteractionChallenge;
             return this;
         }
         @CustomType.Setter
         public Builder jsChallenge(@Nullable PolicyWafConfigJsChallenge jsChallenge) {
+
             this.jsChallenge = jsChallenge;
             return this;
         }
         @CustomType.Setter
         public Builder origin(@Nullable String origin) {
+
             this.origin = origin;
             return this;
         }
         @CustomType.Setter
         public Builder originGroups(@Nullable List<String> originGroups) {
+
             this.originGroups = originGroups;
             return this;
         }
@@ -274,11 +284,13 @@ public final class PolicyWafConfig {
         }
         @CustomType.Setter
         public Builder protectionSettings(@Nullable PolicyWafConfigProtectionSettings protectionSettings) {
+
             this.protectionSettings = protectionSettings;
             return this;
         }
         @CustomType.Setter
         public Builder whitelists(@Nullable List<PolicyWafConfigWhitelist> whitelists) {
+
             this.whitelists = whitelists;
             return this;
         }

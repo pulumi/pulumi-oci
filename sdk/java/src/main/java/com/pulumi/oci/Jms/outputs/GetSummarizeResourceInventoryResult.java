@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -133,46 +134,67 @@ public final class GetSummarizeResourceInventoryResult {
 
         @CustomType.Setter
         public Builder activeFleetCount(Integer activeFleetCount) {
-            this.activeFleetCount = Objects.requireNonNull(activeFleetCount);
+            if (activeFleetCount == null) {
+              throw new MissingRequiredPropertyException("GetSummarizeResourceInventoryResult", "activeFleetCount");
+            }
+            this.activeFleetCount = activeFleetCount;
             return this;
         }
         @CustomType.Setter
         public Builder applicationCount(Integer applicationCount) {
-            this.applicationCount = Objects.requireNonNull(applicationCount);
+            if (applicationCount == null) {
+              throw new MissingRequiredPropertyException("GetSummarizeResourceInventoryResult", "applicationCount");
+            }
+            this.applicationCount = applicationCount;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSummarizeResourceInventoryResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder installationCount(Integer installationCount) {
-            this.installationCount = Objects.requireNonNull(installationCount);
+            if (installationCount == null) {
+              throw new MissingRequiredPropertyException("GetSummarizeResourceInventoryResult", "installationCount");
+            }
+            this.installationCount = installationCount;
             return this;
         }
         @CustomType.Setter
         public Builder jreCount(Integer jreCount) {
-            this.jreCount = Objects.requireNonNull(jreCount);
+            if (jreCount == null) {
+              throw new MissingRequiredPropertyException("GetSummarizeResourceInventoryResult", "jreCount");
+            }
+            this.jreCount = jreCount;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceCount(Integer managedInstanceCount) {
-            this.managedInstanceCount = Objects.requireNonNull(managedInstanceCount);
+            if (managedInstanceCount == null) {
+              throw new MissingRequiredPropertyException("GetSummarizeResourceInventoryResult", "managedInstanceCount");
+            }
+            this.managedInstanceCount = managedInstanceCount;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnd(@Nullable String timeEnd) {
+
             this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(@Nullable String timeStart) {
+
             this.timeStart = timeStart;
             return this;
         }

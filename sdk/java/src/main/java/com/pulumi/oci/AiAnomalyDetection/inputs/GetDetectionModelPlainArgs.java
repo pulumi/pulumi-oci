@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetDetectionModelPlainArgs extends com.pulumi.resources.Invok
         }
 
         public GetDetectionModelPlainArgs build() {
-            $.modelId = Objects.requireNonNull($.modelId, "expected parameter 'modelId' to be non-null");
+            if ($.modelId == null) {
+                throw new MissingRequiredPropertyException("GetDetectionModelPlainArgs", "modelId");
+            }
             return $;
         }
     }

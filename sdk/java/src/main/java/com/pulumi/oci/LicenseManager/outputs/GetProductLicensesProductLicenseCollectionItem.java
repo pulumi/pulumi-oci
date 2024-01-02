@@ -4,6 +4,7 @@
 package com.pulumi.oci.LicenseManager.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LicenseManager.outputs.GetProductLicensesProductLicenseCollectionItemImage;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -329,37 +330,58 @@ public final class GetProductLicensesProductLicenseCollectionItem {
 
         @CustomType.Setter
         public Builder activeLicenseRecordCount(Integer activeLicenseRecordCount) {
-            this.activeLicenseRecordCount = Objects.requireNonNull(activeLicenseRecordCount);
+            if (activeLicenseRecordCount == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "activeLicenseRecordCount");
+            }
+            this.activeLicenseRecordCount = activeLicenseRecordCount;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder images(List<GetProductLicensesProductLicenseCollectionItemImage> images) {
-            this.images = Objects.requireNonNull(images);
+            if (images == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "images");
+            }
+            this.images = images;
             return this;
         }
         public Builder images(GetProductLicensesProductLicenseCollectionItemImage... images) {
@@ -367,72 +389,114 @@ public final class GetProductLicensesProductLicenseCollectionItem {
         }
         @CustomType.Setter
         public Builder isOverSubscribed(Boolean isOverSubscribed) {
-            this.isOverSubscribed = Objects.requireNonNull(isOverSubscribed);
+            if (isOverSubscribed == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "isOverSubscribed");
+            }
+            this.isOverSubscribed = isOverSubscribed;
             return this;
         }
         @CustomType.Setter
         public Builder isUnlimited(Boolean isUnlimited) {
-            this.isUnlimited = Objects.requireNonNull(isUnlimited);
+            if (isUnlimited == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "isUnlimited");
+            }
+            this.isUnlimited = isUnlimited;
             return this;
         }
         @CustomType.Setter
         public Builder isVendorOracle(Boolean isVendorOracle) {
-            this.isVendorOracle = Objects.requireNonNull(isVendorOracle);
+            if (isVendorOracle == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "isVendorOracle");
+            }
+            this.isVendorOracle = isVendorOracle;
             return this;
         }
         @CustomType.Setter
         public Builder licenseUnit(String licenseUnit) {
-            this.licenseUnit = Objects.requireNonNull(licenseUnit);
+            if (licenseUnit == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "licenseUnit");
+            }
+            this.licenseUnit = licenseUnit;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder statusDescription(String statusDescription) {
-            this.statusDescription = Objects.requireNonNull(statusDescription);
+            if (statusDescription == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "statusDescription");
+            }
+            this.statusDescription = statusDescription;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder totalActiveLicenseUnitCount(Integer totalActiveLicenseUnitCount) {
-            this.totalActiveLicenseUnitCount = Objects.requireNonNull(totalActiveLicenseUnitCount);
+            if (totalActiveLicenseUnitCount == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "totalActiveLicenseUnitCount");
+            }
+            this.totalActiveLicenseUnitCount = totalActiveLicenseUnitCount;
             return this;
         }
         @CustomType.Setter
         public Builder totalLicenseRecordCount(Integer totalLicenseRecordCount) {
-            this.totalLicenseRecordCount = Objects.requireNonNull(totalLicenseRecordCount);
+            if (totalLicenseRecordCount == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "totalLicenseRecordCount");
+            }
+            this.totalLicenseRecordCount = totalLicenseRecordCount;
             return this;
         }
         @CustomType.Setter
         public Builder totalLicenseUnitsConsumed(Double totalLicenseUnitsConsumed) {
-            this.totalLicenseUnitsConsumed = Objects.requireNonNull(totalLicenseUnitsConsumed);
+            if (totalLicenseUnitsConsumed == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "totalLicenseUnitsConsumed");
+            }
+            this.totalLicenseUnitsConsumed = totalLicenseUnitsConsumed;
             return this;
         }
         @CustomType.Setter
         public Builder vendorName(String vendorName) {
-            this.vendorName = Objects.requireNonNull(vendorName);
+            if (vendorName == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesProductLicenseCollectionItem", "vendorName");
+            }
+            this.vendorName = vendorName;
             return this;
         }
         public GetProductLicensesProductLicenseCollectionItem build() {

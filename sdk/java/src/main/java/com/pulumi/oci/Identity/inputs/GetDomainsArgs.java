@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.GetDomainsFilterArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -396,7 +397,9 @@ public final class GetDomainsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetDomainsArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsArgs", "compartmentId");
+            }
             return $;
         }
     }

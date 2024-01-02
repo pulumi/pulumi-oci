@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbc
 
         @CustomType.Setter
         public Builder dbInstanceId(String dbInstanceId) {
-            this.dbInstanceId = Objects.requireNonNull(dbInstanceId);
+            if (dbInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName", "dbInstanceId");
+            }
+            this.dbInstanceId = dbInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+            if (schemaName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName", "schemaName");
+            }
+            this.schemaName = schemaName;
             return this;
         }
         public GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName build() {

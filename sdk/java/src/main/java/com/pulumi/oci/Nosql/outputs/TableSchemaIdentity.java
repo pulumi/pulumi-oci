@@ -73,16 +73,19 @@ public final class TableSchemaIdentity {
 
         @CustomType.Setter
         public Builder columnName(@Nullable String columnName) {
+
             this.columnName = columnName;
             return this;
         }
         @CustomType.Setter
         public Builder isAlways(@Nullable Boolean isAlways) {
+
             this.isAlways = isAlways;
             return this;
         }
         @CustomType.Setter
         public Builder isNull(@Nullable Boolean isNull) {
+
             this.isNull = isNull;
             return this;
         }

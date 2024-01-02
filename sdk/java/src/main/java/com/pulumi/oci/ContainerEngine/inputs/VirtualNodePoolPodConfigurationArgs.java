@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -161,8 +162,12 @@ public final class VirtualNodePoolPodConfigurationArgs extends com.pulumi.resour
         }
 
         public VirtualNodePoolPodConfigurationArgs build() {
-            $.shape = Objects.requireNonNull($.shape, "expected parameter 'shape' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.shape == null) {
+                throw new MissingRequiredPropertyException("VirtualNodePoolPodConfigurationArgs", "shape");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("VirtualNodePoolPodConfigurationArgs", "subnetId");
+            }
             return $;
         }
     }

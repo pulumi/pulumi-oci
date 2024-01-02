@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -72,17 +73,24 @@ public final class VaultRestoreFromFile {
 
         @CustomType.Setter
         public Builder contentLength(String contentLength) {
-            this.contentLength = Objects.requireNonNull(contentLength);
+            if (contentLength == null) {
+              throw new MissingRequiredPropertyException("VaultRestoreFromFile", "contentLength");
+            }
+            this.contentLength = contentLength;
             return this;
         }
         @CustomType.Setter
         public Builder contentMd5(@Nullable String contentMd5) {
+
             this.contentMd5 = contentMd5;
             return this;
         }
         @CustomType.Setter
         public Builder restoreVaultFromFileDetails(String restoreVaultFromFileDetails) {
-            this.restoreVaultFromFileDetails = Objects.requireNonNull(restoreVaultFromFileDetails);
+            if (restoreVaultFromFileDetails == null) {
+              throw new MissingRequiredPropertyException("VaultRestoreFromFile", "restoreVaultFromFileDetails");
+            }
+            this.restoreVaultFromFileDetails = restoreVaultFromFileDetails;
             return this;
         }
         public VaultRestoreFromFile build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Dns.outputs.GetRrsetItem;
 import java.lang.String;
 import java.util.List;
@@ -102,22 +103,32 @@ public final class GetRrsetResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder domain(String domain) {
-            this.domain = Objects.requireNonNull(domain);
+            if (domain == null) {
+              throw new MissingRequiredPropertyException("GetRrsetResult", "domain");
+            }
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRrsetResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetRrsetItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetRrsetResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetRrsetItem... items) {
@@ -125,26 +136,35 @@ public final class GetRrsetResult {
         }
         @CustomType.Setter
         public Builder rtype(String rtype) {
-            this.rtype = Objects.requireNonNull(rtype);
+            if (rtype == null) {
+              throw new MissingRequiredPropertyException("GetRrsetResult", "rtype");
+            }
+            this.rtype = rtype;
             return this;
         }
         @CustomType.Setter
         public Builder scope(@Nullable String scope) {
+
             this.scope = scope;
             return this;
         }
         @CustomType.Setter
         public Builder viewId(@Nullable String viewId) {
+
             this.viewId = viewId;
             return this;
         }
         @CustomType.Setter
         public Builder zoneNameOrId(String zoneNameOrId) {
-            this.zoneNameOrId = Objects.requireNonNull(zoneNameOrId);
+            if (zoneNameOrId == null) {
+              throw new MissingRequiredPropertyException("GetRrsetResult", "zoneNameOrId");
+            }
+            this.zoneNameOrId = zoneNameOrId;
             return this;
         }
         @CustomType.Setter
         public Builder zoneVersion(@Nullable String zoneVersion) {
+
             this.zoneVersion = zoneVersion;
             return this;
         }

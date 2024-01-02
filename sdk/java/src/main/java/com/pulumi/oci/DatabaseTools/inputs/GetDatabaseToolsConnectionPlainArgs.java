@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseTools.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetDatabaseToolsConnectionPlainArgs extends com.pulumi.resour
         }
 
         public GetDatabaseToolsConnectionPlainArgs build() {
-            $.databaseToolsConnectionId = Objects.requireNonNull($.databaseToolsConnectionId, "expected parameter 'databaseToolsConnectionId' to be non-null");
+            if ($.databaseToolsConnectionId == null) {
+                throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionPlainArgs", "databaseToolsConnectionId");
+            }
             return $;
         }
     }

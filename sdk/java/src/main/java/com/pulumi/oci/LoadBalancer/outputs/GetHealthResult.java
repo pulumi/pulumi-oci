@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -136,7 +137,10 @@ public final class GetHealthResult {
 
         @CustomType.Setter
         public Builder criticalStateBackendSetNames(List<String> criticalStateBackendSetNames) {
-            this.criticalStateBackendSetNames = Objects.requireNonNull(criticalStateBackendSetNames);
+            if (criticalStateBackendSetNames == null) {
+              throw new MissingRequiredPropertyException("GetHealthResult", "criticalStateBackendSetNames");
+            }
+            this.criticalStateBackendSetNames = criticalStateBackendSetNames;
             return this;
         }
         public Builder criticalStateBackendSetNames(String... criticalStateBackendSetNames) {
@@ -144,27 +148,42 @@ public final class GetHealthResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetHealthResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetHealthResult", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetHealthResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder totalBackendSetCount(Integer totalBackendSetCount) {
-            this.totalBackendSetCount = Objects.requireNonNull(totalBackendSetCount);
+            if (totalBackendSetCount == null) {
+              throw new MissingRequiredPropertyException("GetHealthResult", "totalBackendSetCount");
+            }
+            this.totalBackendSetCount = totalBackendSetCount;
             return this;
         }
         @CustomType.Setter
         public Builder unknownStateBackendSetNames(List<String> unknownStateBackendSetNames) {
-            this.unknownStateBackendSetNames = Objects.requireNonNull(unknownStateBackendSetNames);
+            if (unknownStateBackendSetNames == null) {
+              throw new MissingRequiredPropertyException("GetHealthResult", "unknownStateBackendSetNames");
+            }
+            this.unknownStateBackendSetNames = unknownStateBackendSetNames;
             return this;
         }
         public Builder unknownStateBackendSetNames(String... unknownStateBackendSetNames) {
@@ -172,7 +191,10 @@ public final class GetHealthResult {
         }
         @CustomType.Setter
         public Builder warningStateBackendSetNames(List<String> warningStateBackendSetNames) {
-            this.warningStateBackendSetNames = Objects.requireNonNull(warningStateBackendSetNames);
+            if (warningStateBackendSetNames == null) {
+              throw new MissingRequiredPropertyException("GetHealthResult", "warningStateBackendSetNames");
+            }
+            this.warningStateBackendSetNames = warningStateBackendSetNames;
             return this;
         }
         public Builder warningStateBackendSetNames(String... warningStateBackendSetNames) {

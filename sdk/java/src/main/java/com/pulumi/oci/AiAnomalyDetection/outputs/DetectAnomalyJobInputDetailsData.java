@@ -60,11 +60,13 @@ public final class DetectAnomalyJobInputDetailsData {
 
         @CustomType.Setter
         public Builder timestamp(@Nullable String timestamp) {
+
             this.timestamp = timestamp;
             return this;
         }
         @CustomType.Setter
         public Builder values(@Nullable List<Double> values) {
+
             this.values = values;
             return this;
         }

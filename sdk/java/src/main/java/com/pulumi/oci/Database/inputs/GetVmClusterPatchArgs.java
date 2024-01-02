@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class GetVmClusterPatchArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetVmClusterPatchArgs build() {
-            $.patchId = Objects.requireNonNull($.patchId, "expected parameter 'patchId' to be non-null");
-            $.vmClusterId = Objects.requireNonNull($.vmClusterId, "expected parameter 'vmClusterId' to be non-null");
+            if ($.patchId == null) {
+                throw new MissingRequiredPropertyException("GetVmClusterPatchArgs", "patchId");
+            }
+            if ($.vmClusterId == null) {
+                throw new MissingRequiredPropertyException("GetVmClusterPatchArgs", "vmClusterId");
+            }
             return $;
         }
     }

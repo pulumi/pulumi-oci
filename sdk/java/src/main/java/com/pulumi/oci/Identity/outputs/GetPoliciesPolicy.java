@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -239,62 +240,98 @@ public final class GetPoliciesPolicy {
 
         @CustomType.Setter
         public Builder ETag(String ETag) {
-            this.ETag = Objects.requireNonNull(ETag);
+            if (ETag == null) {
+              throw new MissingRequiredPropertyException("GetPoliciesPolicy", "ETag");
+            }
+            this.ETag = ETag;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetPoliciesPolicy", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetPoliciesPolicy", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetPoliciesPolicy", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetPoliciesPolicy", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPoliciesPolicy", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inactiveState(String inactiveState) {
-            this.inactiveState = Objects.requireNonNull(inactiveState);
+            if (inactiveState == null) {
+              throw new MissingRequiredPropertyException("GetPoliciesPolicy", "inactiveState");
+            }
+            this.inactiveState = inactiveState;
             return this;
         }
         @CustomType.Setter
         public Builder lastUpdateETag(String lastUpdateETag) {
-            this.lastUpdateETag = Objects.requireNonNull(lastUpdateETag);
+            if (lastUpdateETag == null) {
+              throw new MissingRequiredPropertyException("GetPoliciesPolicy", "lastUpdateETag");
+            }
+            this.lastUpdateETag = lastUpdateETag;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetPoliciesPolicy", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder policyHash(String policyHash) {
-            this.policyHash = Objects.requireNonNull(policyHash);
+            if (policyHash == null) {
+              throw new MissingRequiredPropertyException("GetPoliciesPolicy", "policyHash");
+            }
+            this.policyHash = policyHash;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetPoliciesPolicy", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder statements(List<String> statements) {
-            this.statements = Objects.requireNonNull(statements);
+            if (statements == null) {
+              throw new MissingRequiredPropertyException("GetPoliciesPolicy", "statements");
+            }
+            this.statements = statements;
             return this;
         }
         public Builder statements(String... statements) {
@@ -302,12 +339,18 @@ public final class GetPoliciesPolicy {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetPoliciesPolicy", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder versionDate(String versionDate) {
-            this.versionDate = Objects.requireNonNull(versionDate);
+            if (versionDate == null) {
+              throw new MissingRequiredPropertyException("GetPoliciesPolicy", "versionDate");
+            }
+            this.versionDate = versionDate;
             return this;
         }
         public GetPoliciesPolicy build() {

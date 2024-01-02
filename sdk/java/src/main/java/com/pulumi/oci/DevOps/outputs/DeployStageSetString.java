@@ -44,6 +44,7 @@ public final class DeployStageSetString {
 
         @CustomType.Setter
         public Builder items(@Nullable List<DeployStageSetStringItem> items) {
+
             this.items = items;
             return this;
         }

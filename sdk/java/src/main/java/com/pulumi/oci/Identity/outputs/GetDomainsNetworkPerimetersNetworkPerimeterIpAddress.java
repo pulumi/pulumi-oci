@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetDomainsNetworkPerimetersNetworkPerimeterIpAddress {
 
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNetworkPerimetersNetworkPerimeterIpAddress", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNetworkPerimetersNetworkPerimeterIpAddress", "value");
+            }
+            this.value = value;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNetworkPerimetersNetworkPerimeterIpAddress", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetDomainsNetworkPerimetersNetworkPerimeterIpAddress build() {

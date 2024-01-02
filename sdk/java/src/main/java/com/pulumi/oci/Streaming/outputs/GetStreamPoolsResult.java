@@ -4,6 +4,7 @@
 package com.pulumi.oci.Streaming.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Streaming.outputs.GetStreamPoolsFilter;
 import com.pulumi.oci.Streaming.outputs.GetStreamPoolsStreamPool;
 import java.lang.String;
@@ -109,11 +110,15 @@ public final class GetStreamPoolsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetStreamPoolsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -122,22 +127,28 @@ public final class GetStreamPoolsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder streamPools(List<GetStreamPoolsStreamPool> streamPools) {
-            this.streamPools = Objects.requireNonNull(streamPools);
+            if (streamPools == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolsResult", "streamPools");
+            }
+            this.streamPools = streamPools;
             return this;
         }
         public Builder streamPools(GetStreamPoolsStreamPool... streamPools) {

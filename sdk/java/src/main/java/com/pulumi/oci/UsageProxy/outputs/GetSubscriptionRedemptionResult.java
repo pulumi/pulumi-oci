@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRedemptionItem;
 import java.lang.String;
 import java.util.List;
@@ -84,12 +85,18 @@ public final class GetSubscriptionRedemptionResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedemptionResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetSubscriptionRedemptionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedemptionResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetSubscriptionRedemptionItem... items) {
@@ -97,21 +104,29 @@ public final class GetSubscriptionRedemptionResult {
         }
         @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedemptionResult", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
-            this.tenancyId = Objects.requireNonNull(tenancyId);
+            if (tenancyId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedemptionResult", "tenancyId");
+            }
+            this.tenancyId = tenancyId;
             return this;
         }
         @CustomType.Setter
         public Builder timeRedeemedGreaterThanOrEqualTo(@Nullable String timeRedeemedGreaterThanOrEqualTo) {
+
             this.timeRedeemedGreaterThanOrEqualTo = timeRedeemedGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeRedeemedLessThan(@Nullable String timeRedeemedLessThan) {
+
             this.timeRedeemedLessThan = timeRedeemedLessThan;
             return this;
         }

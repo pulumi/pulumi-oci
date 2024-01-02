@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -196,8 +197,12 @@ public final class DomainsApprovalWorkflowMaxDurationArgs extends com.pulumi.res
         }
 
         public DomainsApprovalWorkflowMaxDurationArgs build() {
-            $.unit = Objects.requireNonNull($.unit, "expected parameter 'unit' to be non-null");
-            $.value = Objects.requireNonNull($.value, "expected parameter 'value' to be non-null");
+            if ($.unit == null) {
+                throw new MissingRequiredPropertyException("DomainsApprovalWorkflowMaxDurationArgs", "unit");
+            }
+            if ($.value == null) {
+                throw new MissingRequiredPropertyException("DomainsApprovalWorkflowMaxDurationArgs", "value");
+            }
             return $;
         }
     }

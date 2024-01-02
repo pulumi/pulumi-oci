@@ -5,6 +5,7 @@ package com.pulumi.oci.LoadBalancer;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.inputs.LoadBalancerReservedIpArgs;
 import com.pulumi.oci.LoadBalancer.inputs.LoadBalancerShapeDetailsArgs;
 import java.lang.Boolean;
@@ -593,10 +594,18 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public LoadBalancerArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.shape = Objects.requireNonNull($.shape, "expected parameter 'shape' to be non-null");
-            $.subnetIds = Objects.requireNonNull($.subnetIds, "expected parameter 'subnetIds' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("LoadBalancerArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("LoadBalancerArgs", "displayName");
+            }
+            if ($.shape == null) {
+                throw new MissingRequiredPropertyException("LoadBalancerArgs", "shape");
+            }
+            if ($.subnetIds == null) {
+                throw new MissingRequiredPropertyException("LoadBalancerArgs", "subnetIds");
+            }
             return $;
         }
     }

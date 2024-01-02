@@ -44,6 +44,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleI
 
         @CustomType.Setter
         public Builder preemptionAction(@Nullable InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction preemptionAction) {
+
             this.preemptionAction = preemptionAction;
             return this;
         }

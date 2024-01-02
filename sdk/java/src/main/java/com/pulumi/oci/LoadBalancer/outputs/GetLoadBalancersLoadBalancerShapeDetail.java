@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetLoadBalancersLoadBalancerShapeDetail {
 
         @CustomType.Setter
         public Builder maximumBandwidthInMbps(Integer maximumBandwidthInMbps) {
-            this.maximumBandwidthInMbps = Objects.requireNonNull(maximumBandwidthInMbps);
+            if (maximumBandwidthInMbps == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancerShapeDetail", "maximumBandwidthInMbps");
+            }
+            this.maximumBandwidthInMbps = maximumBandwidthInMbps;
             return this;
         }
         @CustomType.Setter
         public Builder minimumBandwidthInMbps(Integer minimumBandwidthInMbps) {
-            this.minimumBandwidthInMbps = Objects.requireNonNull(minimumBandwidthInMbps);
+            if (minimumBandwidthInMbps == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancerShapeDetail", "minimumBandwidthInMbps");
+            }
+            this.minimumBandwidthInMbps = minimumBandwidthInMbps;
             return this;
         }
         public GetLoadBalancersLoadBalancerShapeDetail build() {

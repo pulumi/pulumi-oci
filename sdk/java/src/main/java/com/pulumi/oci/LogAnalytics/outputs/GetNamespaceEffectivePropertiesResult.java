@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceEffectivePropertiesEffectivePropertyCollection;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceEffectivePropertiesFilter;
 import java.lang.Boolean;
@@ -119,12 +120,16 @@ public final class GetNamespaceEffectivePropertiesResult {
 
         @CustomType.Setter
         public Builder agentId(@Nullable String agentId) {
+
             this.agentId = agentId;
             return this;
         }
         @CustomType.Setter
         public Builder effectivePropertyCollections(List<GetNamespaceEffectivePropertiesEffectivePropertyCollection> effectivePropertyCollections) {
-            this.effectivePropertyCollections = Objects.requireNonNull(effectivePropertyCollections);
+            if (effectivePropertyCollections == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceEffectivePropertiesResult", "effectivePropertyCollections");
+            }
+            this.effectivePropertyCollections = effectivePropertyCollections;
             return this;
         }
         public Builder effectivePropertyCollections(GetNamespaceEffectivePropertiesEffectivePropertyCollection... effectivePropertyCollections) {
@@ -132,11 +137,13 @@ public final class GetNamespaceEffectivePropertiesResult {
         }
         @CustomType.Setter
         public Builder entityId(@Nullable String entityId) {
+
             this.entityId = entityId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNamespaceEffectivePropertiesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -145,31 +152,41 @@ public final class GetNamespaceEffectivePropertiesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceEffectivePropertiesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isIncludePatterns(@Nullable Boolean isIncludePatterns) {
+
             this.isIncludePatterns = isIncludePatterns;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceEffectivePropertiesResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder patternId(@Nullable Integer patternId) {
+
             this.patternId = patternId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceName(@Nullable String sourceName) {
+
             this.sourceName = sourceName;
             return this;
         }

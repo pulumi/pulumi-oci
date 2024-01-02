@@ -4,6 +4,7 @@
 package com.pulumi.oci.Artifacts.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -69,22 +70,34 @@ public final class GetContainerConfigurationResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetContainerConfigurationResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetContainerConfigurationResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isRepositoryCreatedOnFirstPush(Boolean isRepositoryCreatedOnFirstPush) {
-            this.isRepositoryCreatedOnFirstPush = Objects.requireNonNull(isRepositoryCreatedOnFirstPush);
+            if (isRepositoryCreatedOnFirstPush == null) {
+              throw new MissingRequiredPropertyException("GetContainerConfigurationResult", "isRepositoryCreatedOnFirstPush");
+            }
+            this.isRepositoryCreatedOnFirstPush = isRepositoryCreatedOnFirstPush;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetContainerConfigurationResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         public GetContainerConfigurationResult build() {

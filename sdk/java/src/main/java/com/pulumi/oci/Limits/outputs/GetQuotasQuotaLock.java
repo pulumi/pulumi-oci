@@ -4,6 +4,7 @@
 package com.pulumi.oci.Limits.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetQuotasQuotaLock {
 
         @CustomType.Setter
         public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+            if (message == null) {
+              throw new MissingRequiredPropertyException("GetQuotasQuotaLock", "message");
+            }
+            this.message = message;
             return this;
         }
         @CustomType.Setter
         public Builder relatedResourceId(String relatedResourceId) {
-            this.relatedResourceId = Objects.requireNonNull(relatedResourceId);
+            if (relatedResourceId == null) {
+              throw new MissingRequiredPropertyException("GetQuotasQuotaLock", "relatedResourceId");
+            }
+            this.relatedResourceId = relatedResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetQuotasQuotaLock", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetQuotasQuotaLock", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetQuotasQuotaLock build() {

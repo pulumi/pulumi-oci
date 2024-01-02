@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OspGateway.outputs.GetSubscriptionPaymentGatewayMerchantDefinedData;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetSubscriptionPaymentGateway {
 
         @CustomType.Setter
         public Builder merchantDefinedDatas(List<GetSubscriptionPaymentGatewayMerchantDefinedData> merchantDefinedDatas) {
-            this.merchantDefinedDatas = Objects.requireNonNull(merchantDefinedDatas);
+            if (merchantDefinedDatas == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionPaymentGateway", "merchantDefinedDatas");
+            }
+            this.merchantDefinedDatas = merchantDefinedDatas;
             return this;
         }
         public Builder merchantDefinedDatas(GetSubscriptionPaymentGatewayMerchantDefinedData... merchantDefinedDatas) {

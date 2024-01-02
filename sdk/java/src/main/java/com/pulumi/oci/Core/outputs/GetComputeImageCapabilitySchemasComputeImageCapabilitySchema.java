@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -170,52 +171,82 @@ public final class GetComputeImageCapabilitySchemasComputeImageCapabilitySchema 
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetComputeImageCapabilitySchemasComputeImageCapabilitySchema", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeGlobalImageCapabilitySchemaId(String computeGlobalImageCapabilitySchemaId) {
-            this.computeGlobalImageCapabilitySchemaId = Objects.requireNonNull(computeGlobalImageCapabilitySchemaId);
+            if (computeGlobalImageCapabilitySchemaId == null) {
+              throw new MissingRequiredPropertyException("GetComputeImageCapabilitySchemasComputeImageCapabilitySchema", "computeGlobalImageCapabilitySchemaId");
+            }
+            this.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
             return this;
         }
         @CustomType.Setter
         public Builder computeGlobalImageCapabilitySchemaVersionName(String computeGlobalImageCapabilitySchemaVersionName) {
-            this.computeGlobalImageCapabilitySchemaVersionName = Objects.requireNonNull(computeGlobalImageCapabilitySchemaVersionName);
+            if (computeGlobalImageCapabilitySchemaVersionName == null) {
+              throw new MissingRequiredPropertyException("GetComputeImageCapabilitySchemasComputeImageCapabilitySchema", "computeGlobalImageCapabilitySchemaVersionName");
+            }
+            this.computeGlobalImageCapabilitySchemaVersionName = computeGlobalImageCapabilitySchemaVersionName;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetComputeImageCapabilitySchemasComputeImageCapabilitySchema", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetComputeImageCapabilitySchemasComputeImageCapabilitySchema", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetComputeImageCapabilitySchemasComputeImageCapabilitySchema", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetComputeImageCapabilitySchemasComputeImageCapabilitySchema", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imageId(String imageId) {
-            this.imageId = Objects.requireNonNull(imageId);
+            if (imageId == null) {
+              throw new MissingRequiredPropertyException("GetComputeImageCapabilitySchemasComputeImageCapabilitySchema", "imageId");
+            }
+            this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder schemaData(Map<String,Object> schemaData) {
-            this.schemaData = Objects.requireNonNull(schemaData);
+            if (schemaData == null) {
+              throw new MissingRequiredPropertyException("GetComputeImageCapabilitySchemasComputeImageCapabilitySchema", "schemaData");
+            }
+            this.schemaData = schemaData;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetComputeImageCapabilitySchemasComputeImageCapabilitySchema", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetComputeImageCapabilitySchemasComputeImageCapabilitySchema build() {

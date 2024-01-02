@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetPublicationPackagesPublicationPackage {
 
         @CustomType.Setter
         public Builder listingId(String listingId) {
-            this.listingId = Objects.requireNonNull(listingId);
+            if (listingId == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackagesPublicationPackage", "listingId");
+            }
+            this.listingId = listingId;
             return this;
         }
         @CustomType.Setter
         public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+            if (packageType == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackagesPublicationPackage", "packageType");
+            }
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
         public Builder packageVersion(String packageVersion) {
-            this.packageVersion = Objects.requireNonNull(packageVersion);
+            if (packageVersion == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackagesPublicationPackage", "packageVersion");
+            }
+            this.packageVersion = packageVersion;
             return this;
         }
         @CustomType.Setter
         public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+            if (resourceId == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackagesPublicationPackage", "resourceId");
+            }
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackagesPublicationPackage", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetPublicationPackagesPublicationPackage build() {

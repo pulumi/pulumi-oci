@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -1553,9 +1554,15 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         }
 
         public DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs build() {
-            $.certMatchAttribute = Objects.requireNonNull($.certMatchAttribute, "expected parameter 'certMatchAttribute' to be non-null");
-            $.signingCertificateChains = Objects.requireNonNull($.signingCertificateChains, "expected parameter 'signingCertificateChains' to be non-null");
-            $.userMatchAttribute = Objects.requireNonNull($.userMatchAttribute, "expected parameter 'userMatchAttribute' to be non-null");
+            if ($.certMatchAttribute == null) {
+                throw new MissingRequiredPropertyException("DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs", "certMatchAttribute");
+            }
+            if ($.signingCertificateChains == null) {
+                throw new MissingRequiredPropertyException("DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs", "signingCertificateChains");
+            }
+            if ($.userMatchAttribute == null) {
+                throw new MissingRequiredPropertyException("DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs", "userMatchAttribute");
+            }
             return $;
         }
     }

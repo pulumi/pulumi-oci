@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.GetSchedulesScheduleCollectionItemQueryProperty;
 import com.pulumi.oci.MeteringComputation.outputs.GetSchedulesScheduleCollectionItemResultLocation;
 import java.lang.Object;
@@ -257,42 +258,66 @@ public final class GetSchedulesScheduleCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder outputFileFormat(String outputFileFormat) {
-            this.outputFileFormat = Objects.requireNonNull(outputFileFormat);
+            if (outputFileFormat == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItem", "outputFileFormat");
+            }
+            this.outputFileFormat = outputFileFormat;
             return this;
         }
         @CustomType.Setter
         public Builder queryProperties(List<GetSchedulesScheduleCollectionItemQueryProperty> queryProperties) {
-            this.queryProperties = Objects.requireNonNull(queryProperties);
+            if (queryProperties == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItem", "queryProperties");
+            }
+            this.queryProperties = queryProperties;
             return this;
         }
         public Builder queryProperties(GetSchedulesScheduleCollectionItemQueryProperty... queryProperties) {
@@ -300,7 +325,10 @@ public final class GetSchedulesScheduleCollectionItem {
         }
         @CustomType.Setter
         public Builder resultLocations(List<GetSchedulesScheduleCollectionItemResultLocation> resultLocations) {
-            this.resultLocations = Objects.requireNonNull(resultLocations);
+            if (resultLocations == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItem", "resultLocations");
+            }
+            this.resultLocations = resultLocations;
             return this;
         }
         public Builder resultLocations(GetSchedulesScheduleCollectionItemResultLocation... resultLocations) {
@@ -308,37 +336,58 @@ public final class GetSchedulesScheduleCollectionItem {
         }
         @CustomType.Setter
         public Builder savedReportId(String savedReportId) {
-            this.savedReportId = Objects.requireNonNull(savedReportId);
+            if (savedReportId == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItem", "savedReportId");
+            }
+            this.savedReportId = savedReportId;
             return this;
         }
         @CustomType.Setter
         public Builder scheduleRecurrences(String scheduleRecurrences) {
-            this.scheduleRecurrences = Objects.requireNonNull(scheduleRecurrences);
+            if (scheduleRecurrences == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItem", "scheduleRecurrences");
+            }
+            this.scheduleRecurrences = scheduleRecurrences;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeNextRun(String timeNextRun) {
-            this.timeNextRun = Objects.requireNonNull(timeNextRun);
+            if (timeNextRun == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItem", "timeNextRun");
+            }
+            this.timeNextRun = timeNextRun;
             return this;
         }
         @CustomType.Setter
         public Builder timeScheduled(String timeScheduled) {
-            this.timeScheduled = Objects.requireNonNull(timeScheduled);
+            if (timeScheduled == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItem", "timeScheduled");
+            }
+            this.timeScheduled = timeScheduled;
             return this;
         }
         public GetSchedulesScheduleCollectionItem build() {

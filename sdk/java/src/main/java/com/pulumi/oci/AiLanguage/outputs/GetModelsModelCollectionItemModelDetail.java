@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiLanguage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiLanguage.outputs.GetModelsModelCollectionItemModelDetailClassificationMode;
 import java.lang.String;
 import java.util.List;
@@ -86,7 +87,10 @@ public final class GetModelsModelCollectionItemModelDetail {
 
         @CustomType.Setter
         public Builder classificationModes(List<GetModelsModelCollectionItemModelDetailClassificationMode> classificationModes) {
-            this.classificationModes = Objects.requireNonNull(classificationModes);
+            if (classificationModes == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemModelDetail", "classificationModes");
+            }
+            this.classificationModes = classificationModes;
             return this;
         }
         public Builder classificationModes(GetModelsModelCollectionItemModelDetailClassificationMode... classificationModes) {
@@ -94,17 +98,26 @@ public final class GetModelsModelCollectionItemModelDetail {
         }
         @CustomType.Setter
         public Builder languageCode(String languageCode) {
-            this.languageCode = Objects.requireNonNull(languageCode);
+            if (languageCode == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemModelDetail", "languageCode");
+            }
+            this.languageCode = languageCode;
             return this;
         }
         @CustomType.Setter
         public Builder modelType(String modelType) {
-            this.modelType = Objects.requireNonNull(modelType);
+            if (modelType == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemModelDetail", "modelType");
+            }
+            this.modelType = modelType;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemModelDetail", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetModelsModelCollectionItemModelDetail build() {

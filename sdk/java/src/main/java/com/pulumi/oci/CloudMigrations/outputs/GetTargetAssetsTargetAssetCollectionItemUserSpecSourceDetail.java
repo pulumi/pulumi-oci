@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -112,32 +113,50 @@ public final class GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetail 
 
         @CustomType.Setter
         public Builder bootVolumeId(String bootVolumeId) {
-            this.bootVolumeId = Objects.requireNonNull(bootVolumeId);
+            if (bootVolumeId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetail", "bootVolumeId");
+            }
+            this.bootVolumeId = bootVolumeId;
             return this;
         }
         @CustomType.Setter
         public Builder bootVolumeSizeInGbs(String bootVolumeSizeInGbs) {
-            this.bootVolumeSizeInGbs = Objects.requireNonNull(bootVolumeSizeInGbs);
+            if (bootVolumeSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetail", "bootVolumeSizeInGbs");
+            }
+            this.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder bootVolumeVpusPerGb(String bootVolumeVpusPerGb) {
-            this.bootVolumeVpusPerGb = Objects.requireNonNull(bootVolumeVpusPerGb);
+            if (bootVolumeVpusPerGb == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetail", "bootVolumeVpusPerGb");
+            }
+            this.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
             return this;
         }
         @CustomType.Setter
         public Builder imageId(String imageId) {
-            this.imageId = Objects.requireNonNull(imageId);
+            if (imageId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetail", "imageId");
+            }
+            this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetail", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetail", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         public GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetail build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria;
 import java.lang.Integer;
 import java.lang.String;
@@ -87,17 +88,26 @@ public final class GetDrgRouteDistributionStatementsDrgRouteDistributionStatemen
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteDistributionStatementsDrgRouteDistributionStatement", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteDistributionStatementsDrgRouteDistributionStatement", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder matchCriterias(List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria> matchCriterias) {
-            this.matchCriterias = Objects.requireNonNull(matchCriterias);
+            if (matchCriterias == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteDistributionStatementsDrgRouteDistributionStatement", "matchCriterias");
+            }
+            this.matchCriterias = matchCriterias;
             return this;
         }
         public Builder matchCriterias(GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria... matchCriterias) {
@@ -105,7 +115,10 @@ public final class GetDrgRouteDistributionStatementsDrgRouteDistributionStatemen
         }
         @CustomType.Setter
         public Builder priority(Integer priority) {
-            this.priority = Objects.requireNonNull(priority);
+            if (priority == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteDistributionStatementsDrgRouteDistributionStatement", "priority");
+            }
+            this.priority = priority;
             return this;
         }
         public GetDrgRouteDistributionStatementsDrgRouteDistributionStatement build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
@@ -966,7 +967,9 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs exte
         }
 
         public MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs build() {
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs", "type");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.DataFlow;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.inputs.PoolConfigurationArgs;
 import com.pulumi.oci.DataFlow.inputs.PoolScheduleArgs;
 import java.lang.Integer;
@@ -410,9 +411,15 @@ public final class PoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public PoolArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.configurations = Objects.requireNonNull($.configurations, "expected parameter 'configurations' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("PoolArgs", "compartmentId");
+            }
+            if ($.configurations == null) {
+                throw new MissingRequiredPropertyException("PoolArgs", "configurations");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("PoolArgs", "displayName");
+            }
             return $;
         }
     }

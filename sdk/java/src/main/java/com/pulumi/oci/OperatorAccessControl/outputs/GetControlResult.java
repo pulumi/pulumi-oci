@@ -4,6 +4,7 @@
 package com.pulumi.oci.OperatorAccessControl.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -318,7 +319,10 @@ public final class GetControlResult {
 
         @CustomType.Setter
         public Builder approvalRequiredOpActionLists(List<String> approvalRequiredOpActionLists) {
-            this.approvalRequiredOpActionLists = Objects.requireNonNull(approvalRequiredOpActionLists);
+            if (approvalRequiredOpActionLists == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "approvalRequiredOpActionLists");
+            }
+            this.approvalRequiredOpActionLists = approvalRequiredOpActionLists;
             return this;
         }
         public Builder approvalRequiredOpActionLists(String... approvalRequiredOpActionLists) {
@@ -326,7 +330,10 @@ public final class GetControlResult {
         }
         @CustomType.Setter
         public Builder approverGroupsLists(List<String> approverGroupsLists) {
-            this.approverGroupsLists = Objects.requireNonNull(approverGroupsLists);
+            if (approverGroupsLists == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "approverGroupsLists");
+            }
+            this.approverGroupsLists = approverGroupsLists;
             return this;
         }
         public Builder approverGroupsLists(String... approverGroupsLists) {
@@ -334,7 +341,10 @@ public final class GetControlResult {
         }
         @CustomType.Setter
         public Builder approversLists(List<String> approversLists) {
-            this.approversLists = Objects.requireNonNull(approversLists);
+            if (approversLists == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "approversLists");
+            }
+            this.approversLists = approversLists;
             return this;
         }
         public Builder approversLists(String... approversLists) {
@@ -342,22 +352,34 @@ public final class GetControlResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder emailIdLists(List<String> emailIdLists) {
-            this.emailIdLists = Objects.requireNonNull(emailIdLists);
+            if (emailIdLists == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "emailIdLists");
+            }
+            this.emailIdLists = emailIdLists;
             return this;
         }
         public Builder emailIdLists(String... emailIdLists) {
@@ -365,42 +387,66 @@ public final class GetControlResult {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isDefaultOperatorControl(Boolean isDefaultOperatorControl) {
-            this.isDefaultOperatorControl = Objects.requireNonNull(isDefaultOperatorControl);
+            if (isDefaultOperatorControl == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "isDefaultOperatorControl");
+            }
+            this.isDefaultOperatorControl = isDefaultOperatorControl;
             return this;
         }
         @CustomType.Setter
         public Builder isFullyPreApproved(Boolean isFullyPreApproved) {
-            this.isFullyPreApproved = Objects.requireNonNull(isFullyPreApproved);
+            if (isFullyPreApproved == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "isFullyPreApproved");
+            }
+            this.isFullyPreApproved = isFullyPreApproved;
             return this;
         }
         @CustomType.Setter
         public Builder lastModifiedInfo(String lastModifiedInfo) {
-            this.lastModifiedInfo = Objects.requireNonNull(lastModifiedInfo);
+            if (lastModifiedInfo == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "lastModifiedInfo");
+            }
+            this.lastModifiedInfo = lastModifiedInfo;
             return this;
         }
         @CustomType.Setter
         public Builder operatorControlId(String operatorControlId) {
-            this.operatorControlId = Objects.requireNonNull(operatorControlId);
+            if (operatorControlId == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "operatorControlId");
+            }
+            this.operatorControlId = operatorControlId;
             return this;
         }
         @CustomType.Setter
         public Builder operatorControlName(String operatorControlName) {
-            this.operatorControlName = Objects.requireNonNull(operatorControlName);
+            if (operatorControlName == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "operatorControlName");
+            }
+            this.operatorControlName = operatorControlName;
             return this;
         }
         @CustomType.Setter
         public Builder preApprovedOpActionLists(List<String> preApprovedOpActionLists) {
-            this.preApprovedOpActionLists = Objects.requireNonNull(preApprovedOpActionLists);
+            if (preApprovedOpActionLists == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "preApprovedOpActionLists");
+            }
+            this.preApprovedOpActionLists = preApprovedOpActionLists;
             return this;
         }
         public Builder preApprovedOpActionLists(String... preApprovedOpActionLists) {
@@ -408,32 +454,50 @@ public final class GetControlResult {
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemMessage(String systemMessage) {
-            this.systemMessage = Objects.requireNonNull(systemMessage);
+            if (systemMessage == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "systemMessage");
+            }
+            this.systemMessage = systemMessage;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfCreation(String timeOfCreation) {
-            this.timeOfCreation = Objects.requireNonNull(timeOfCreation);
+            if (timeOfCreation == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "timeOfCreation");
+            }
+            this.timeOfCreation = timeOfCreation;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfDeletion(String timeOfDeletion) {
-            this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
+            if (timeOfDeletion == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "timeOfDeletion");
+            }
+            this.timeOfDeletion = timeOfDeletion;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfModification(String timeOfModification) {
-            this.timeOfModification = Objects.requireNonNull(timeOfModification);
+            if (timeOfModification == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "timeOfModification");
+            }
+            this.timeOfModification = timeOfModification;
             return this;
         }
         public GetControlResult build() {

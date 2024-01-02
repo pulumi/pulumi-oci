@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -100,12 +101,18 @@ public final class GetVmClusterNetworkScan {
 
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkScan", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder ips(List<String> ips) {
-            this.ips = Objects.requireNonNull(ips);
+            if (ips == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkScan", "ips");
+            }
+            this.ips = ips;
             return this;
         }
         public Builder ips(String... ips) {
@@ -113,17 +120,26 @@ public final class GetVmClusterNetworkScan {
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkScan", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder scanListenerPortTcp(Integer scanListenerPortTcp) {
-            this.scanListenerPortTcp = Objects.requireNonNull(scanListenerPortTcp);
+            if (scanListenerPortTcp == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkScan", "scanListenerPortTcp");
+            }
+            this.scanListenerPortTcp = scanListenerPortTcp;
             return this;
         }
         @CustomType.Setter
         public Builder scanListenerPortTcpSsl(Integer scanListenerPortTcpSsl) {
-            this.scanListenerPortTcpSsl = Objects.requireNonNull(scanListenerPortTcpSsl);
+            if (scanListenerPortTcpSsl == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkScan", "scanListenerPortTcpSsl");
+            }
+            this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
             return this;
         }
         public GetVmClusterNetworkScan build() {

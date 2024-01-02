@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.GetDbSystemPatchesFilter;
 import java.lang.String;
 import java.util.List;
@@ -84,7 +85,9 @@ public final class GetDbSystemPatchesPlainArgs extends com.pulumi.resources.Invo
         }
 
         public GetDbSystemPatchesPlainArgs build() {
-            $.dbSystemId = Objects.requireNonNull($.dbSystemId, "expected parameter 'dbSystemId' to be non-null");
+            if ($.dbSystemId == null) {
+                throw new MissingRequiredPropertyException("GetDbSystemPatchesPlainArgs", "dbSystemId");
+            }
             return $;
         }
     }

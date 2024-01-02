@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowJobFactsFilter;
 import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection;
 import java.lang.String;
@@ -109,6 +110,7 @@ public final class GetMediaWorkflowJobFactsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMediaWorkflowJobFactsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -117,17 +119,24 @@ public final class GetMediaWorkflowJobFactsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobFactsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder key(@Nullable String key) {
+
             this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder mediaWorkflowJobFactCollections(List<GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection> mediaWorkflowJobFactCollections) {
-            this.mediaWorkflowJobFactCollections = Objects.requireNonNull(mediaWorkflowJobFactCollections);
+            if (mediaWorkflowJobFactCollections == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobFactsResult", "mediaWorkflowJobFactCollections");
+            }
+            this.mediaWorkflowJobFactCollections = mediaWorkflowJobFactCollections;
             return this;
         }
         public Builder mediaWorkflowJobFactCollections(GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection... mediaWorkflowJobFactCollections) {
@@ -135,11 +144,15 @@ public final class GetMediaWorkflowJobFactsResult {
         }
         @CustomType.Setter
         public Builder mediaWorkflowJobId(String mediaWorkflowJobId) {
-            this.mediaWorkflowJobId = Objects.requireNonNull(mediaWorkflowJobId);
+            if (mediaWorkflowJobId == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobFactsResult", "mediaWorkflowJobId");
+            }
+            this.mediaWorkflowJobId = mediaWorkflowJobId;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }

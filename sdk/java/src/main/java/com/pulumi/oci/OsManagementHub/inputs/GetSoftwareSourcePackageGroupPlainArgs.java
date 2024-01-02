@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetSoftwareSourcePackageGroupPlainArgs extends com.pulumi.res
         }
 
         public GetSoftwareSourcePackageGroupPlainArgs build() {
-            $.packageGroupId = Objects.requireNonNull($.packageGroupId, "expected parameter 'packageGroupId' to be non-null");
-            $.softwareSourceId = Objects.requireNonNull($.softwareSourceId, "expected parameter 'softwareSourceId' to be non-null");
+            if ($.packageGroupId == null) {
+                throw new MissingRequiredPropertyException("GetSoftwareSourcePackageGroupPlainArgs", "packageGroupId");
+            }
+            if ($.softwareSourceId == null) {
+                throw new MissingRequiredPropertyException("GetSoftwareSourcePackageGroupPlainArgs", "softwareSourceId");
+            }
             return $;
         }
     }

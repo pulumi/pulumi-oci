@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetKeyStoreArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetKeyStoreArgs build() {
-            $.keyStoreId = Objects.requireNonNull($.keyStoreId, "expected parameter 'keyStoreId' to be non-null");
+            if ($.keyStoreId == null) {
+                throw new MissingRequiredPropertyException("GetKeyStoreArgs", "keyStoreId");
+            }
             return $;
         }
     }

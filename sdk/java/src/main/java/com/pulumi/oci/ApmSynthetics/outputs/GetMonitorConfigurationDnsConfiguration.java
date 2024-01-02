@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetMonitorConfigurationDnsConfiguration {
 
         @CustomType.Setter
         public Builder isOverrideDns(Boolean isOverrideDns) {
-            this.isOverrideDns = Objects.requireNonNull(isOverrideDns);
+            if (isOverrideDns == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfigurationDnsConfiguration", "isOverrideDns");
+            }
+            this.isOverrideDns = isOverrideDns;
             return this;
         }
         @CustomType.Setter
         public Builder overrideDnsIp(String overrideDnsIp) {
-            this.overrideDnsIp = Objects.requireNonNull(overrideDnsIp);
+            if (overrideDnsIp == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfigurationDnsConfiguration", "overrideDnsIp");
+            }
+            this.overrideDnsIp = overrideDnsIp;
             return this;
         }
         public GetMonitorConfigurationDnsConfiguration build() {

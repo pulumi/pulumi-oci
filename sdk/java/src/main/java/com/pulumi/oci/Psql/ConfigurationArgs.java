@@ -5,6 +5,7 @@ package com.pulumi.oci.Psql;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.inputs.ConfigurationDbConfigurationOverridesArgs;
 import java.lang.Integer;
 import java.lang.Object;
@@ -462,13 +463,27 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ConfigurationArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.dbConfigurationOverrides = Objects.requireNonNull($.dbConfigurationOverrides, "expected parameter 'dbConfigurationOverrides' to be non-null");
-            $.dbVersion = Objects.requireNonNull($.dbVersion, "expected parameter 'dbVersion' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.instanceMemorySizeInGbs = Objects.requireNonNull($.instanceMemorySizeInGbs, "expected parameter 'instanceMemorySizeInGbs' to be non-null");
-            $.instanceOcpuCount = Objects.requireNonNull($.instanceOcpuCount, "expected parameter 'instanceOcpuCount' to be non-null");
-            $.shape = Objects.requireNonNull($.shape, "expected parameter 'shape' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ConfigurationArgs", "compartmentId");
+            }
+            if ($.dbConfigurationOverrides == null) {
+                throw new MissingRequiredPropertyException("ConfigurationArgs", "dbConfigurationOverrides");
+            }
+            if ($.dbVersion == null) {
+                throw new MissingRequiredPropertyException("ConfigurationArgs", "dbVersion");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ConfigurationArgs", "displayName");
+            }
+            if ($.instanceMemorySizeInGbs == null) {
+                throw new MissingRequiredPropertyException("ConfigurationArgs", "instanceMemorySizeInGbs");
+            }
+            if ($.instanceOcpuCount == null) {
+                throw new MissingRequiredPropertyException("ConfigurationArgs", "instanceOcpuCount");
+            }
+            if ($.shape == null) {
+                throw new MissingRequiredPropertyException("ConfigurationArgs", "shape");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowJobsFilter;
 import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowJobsMediaWorkflowJobCollection;
 import java.lang.String;
@@ -123,16 +124,19 @@ public final class GetMediaWorkflowJobsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMediaWorkflowJobsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -141,17 +145,22 @@ public final class GetMediaWorkflowJobsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder mediaWorkflowId(@Nullable String mediaWorkflowId) {
+
             this.mediaWorkflowId = mediaWorkflowId;
             return this;
         }
         @CustomType.Setter
         public Builder mediaWorkflowJobCollections(List<GetMediaWorkflowJobsMediaWorkflowJobCollection> mediaWorkflowJobCollections) {
-            this.mediaWorkflowJobCollections = Objects.requireNonNull(mediaWorkflowJobCollections);
+            if (mediaWorkflowJobCollections == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsResult", "mediaWorkflowJobCollections");
+            }
+            this.mediaWorkflowJobCollections = mediaWorkflowJobCollections;
             return this;
         }
         public Builder mediaWorkflowJobCollections(GetMediaWorkflowJobsMediaWorkflowJobCollection... mediaWorkflowJobCollections) {
@@ -159,6 +168,7 @@ public final class GetMediaWorkflowJobsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

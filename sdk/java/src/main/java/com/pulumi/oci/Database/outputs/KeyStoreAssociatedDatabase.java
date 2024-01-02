@@ -58,11 +58,13 @@ public final class KeyStoreAssociatedDatabase {
 
         @CustomType.Setter
         public Builder dbName(@Nullable String dbName) {
+
             this.dbName = dbName;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }

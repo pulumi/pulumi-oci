@@ -5,6 +5,7 @@ package com.pulumi.oci.Dns.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -225,9 +226,15 @@ public final class SteeringPolicyAnswerArgs extends com.pulumi.resources.Resourc
         }
 
         public SteeringPolicyAnswerArgs build() {
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
-            $.rdata = Objects.requireNonNull($.rdata, "expected parameter 'rdata' to be non-null");
-            $.rtype = Objects.requireNonNull($.rtype, "expected parameter 'rtype' to be non-null");
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("SteeringPolicyAnswerArgs", "name");
+            }
+            if ($.rdata == null) {
+                throw new MissingRequiredPropertyException("SteeringPolicyAnswerArgs", "rdata");
+            }
+            if ($.rtype == null) {
+                throw new MissingRequiredPropertyException("SteeringPolicyAnswerArgs", "rtype");
+            }
             return $;
         }
     }

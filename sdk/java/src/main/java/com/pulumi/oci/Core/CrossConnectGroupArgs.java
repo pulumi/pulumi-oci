@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.CrossConnectGroupMacsecPropertiesArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -264,7 +265,9 @@ public final class CrossConnectGroupArgs extends com.pulumi.resources.ResourceAr
         }
 
         public CrossConnectGroupArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("CrossConnectGroupArgs", "compartmentId");
+            }
             return $;
         }
     }

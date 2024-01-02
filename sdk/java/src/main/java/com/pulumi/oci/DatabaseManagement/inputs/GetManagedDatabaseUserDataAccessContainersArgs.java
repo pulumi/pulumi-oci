@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserDataAccessContainersFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -173,8 +174,12 @@ public final class GetManagedDatabaseUserDataAccessContainersArgs extends com.pu
         }
 
         public GetManagedDatabaseUserDataAccessContainersArgs build() {
-            $.managedDatabaseId = Objects.requireNonNull($.managedDatabaseId, "expected parameter 'managedDatabaseId' to be non-null");
-            $.userName = Objects.requireNonNull($.userName, "expected parameter 'userName' to be non-null");
+            if ($.managedDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseUserDataAccessContainersArgs", "managedDatabaseId");
+            }
+            if ($.userName == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseUserDataAccessContainersArgs", "userName");
+            }
             return $;
         }
     }

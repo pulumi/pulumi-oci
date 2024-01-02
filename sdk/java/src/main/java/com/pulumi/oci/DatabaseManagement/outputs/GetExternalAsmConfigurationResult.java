@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmConfigurationInitParameter;
 import java.lang.String;
 import java.util.List;
@@ -64,17 +65,26 @@ public final class GetExternalAsmConfigurationResult {
 
         @CustomType.Setter
         public Builder externalAsmId(String externalAsmId) {
-            this.externalAsmId = Objects.requireNonNull(externalAsmId);
+            if (externalAsmId == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmConfigurationResult", "externalAsmId");
+            }
+            this.externalAsmId = externalAsmId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmConfigurationResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder initParameters(List<GetExternalAsmConfigurationInitParameter> initParameters) {
-            this.initParameters = Objects.requireNonNull(initParameters);
+            if (initParameters == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmConfigurationResult", "initParameters");
+            }
+            this.initParameters = initParameters;
             return this;
         }
         public Builder initParameters(GetExternalAsmConfigurationInitParameter... initParameters) {

@@ -213,26 +213,31 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         @CustomType.Setter
         public Builder active(@Nullable Boolean active) {
+
             this.active = active;
             return this;
         }
         @CustomType.Setter
         public Builder appId(@Nullable String appId) {
+
             this.appId = appId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder ref(@Nullable String ref) {
+
             this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder value(@Nullable String value) {
+
             this.value = value;
             return this;
         }

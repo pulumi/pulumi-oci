@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagementHub;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.inputs.SoftwareSourceCustomSoftwareSourceFilterArgs;
 import com.pulumi.oci.OsManagementHub.inputs.SoftwareSourceVendorSoftwareSourceArgs;
 import java.lang.Boolean;
@@ -425,10 +426,18 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public SoftwareSourceArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.softwareSourceType = Objects.requireNonNull($.softwareSourceType, "expected parameter 'softwareSourceType' to be non-null");
-            $.vendorSoftwareSources = Objects.requireNonNull($.vendorSoftwareSources, "expected parameter 'vendorSoftwareSources' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("SoftwareSourceArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("SoftwareSourceArgs", "displayName");
+            }
+            if ($.softwareSourceType == null) {
+                throw new MissingRequiredPropertyException("SoftwareSourceArgs", "softwareSourceType");
+            }
+            if ($.vendorSoftwareSources == null) {
+                throw new MissingRequiredPropertyException("SoftwareSourceArgs", "vendorSoftwareSources");
+            }
             return $;
         }
     }

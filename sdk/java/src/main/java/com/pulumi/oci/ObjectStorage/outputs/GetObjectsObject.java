@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -134,42 +135,66 @@ public final class GetObjectsObject {
 
         @CustomType.Setter
         public Builder archivalState(String archivalState) {
-            this.archivalState = Objects.requireNonNull(archivalState);
+            if (archivalState == null) {
+              throw new MissingRequiredPropertyException("GetObjectsObject", "archivalState");
+            }
+            this.archivalState = archivalState;
             return this;
         }
         @CustomType.Setter
         public Builder etag(String etag) {
-            this.etag = Objects.requireNonNull(etag);
+            if (etag == null) {
+              throw new MissingRequiredPropertyException("GetObjectsObject", "etag");
+            }
+            this.etag = etag;
             return this;
         }
         @CustomType.Setter
         public Builder md5(String md5) {
-            this.md5 = Objects.requireNonNull(md5);
+            if (md5 == null) {
+              throw new MissingRequiredPropertyException("GetObjectsObject", "md5");
+            }
+            this.md5 = md5;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetObjectsObject", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder size(String size) {
-            this.size = Objects.requireNonNull(size);
+            if (size == null) {
+              throw new MissingRequiredPropertyException("GetObjectsObject", "size");
+            }
+            this.size = size;
             return this;
         }
         @CustomType.Setter
         public Builder storageTier(String storageTier) {
-            this.storageTier = Objects.requireNonNull(storageTier);
+            if (storageTier == null) {
+              throw new MissingRequiredPropertyException("GetObjectsObject", "storageTier");
+            }
+            this.storageTier = storageTier;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetObjectsObject", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeModified(String timeModified) {
-            this.timeModified = Objects.requireNonNull(timeModified);
+            if (timeModified == null) {
+              throw new MissingRequiredPropertyException("GetObjectsObject", "timeModified");
+            }
+            this.timeModified = timeModified;
             return this;
         }
         public GetObjectsObject build() {

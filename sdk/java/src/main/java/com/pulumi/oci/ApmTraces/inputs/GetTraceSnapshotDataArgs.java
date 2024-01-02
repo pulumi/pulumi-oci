@@ -5,6 +5,7 @@ package com.pulumi.oci.ApmTraces.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -225,8 +226,12 @@ public final class GetTraceSnapshotDataArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetTraceSnapshotDataArgs build() {
-            $.apmDomainId = Objects.requireNonNull($.apmDomainId, "expected parameter 'apmDomainId' to be non-null");
-            $.traceKey = Objects.requireNonNull($.traceKey, "expected parameter 'traceKey' to be non-null");
+            if ($.apmDomainId == null) {
+                throw new MissingRequiredPropertyException("GetTraceSnapshotDataArgs", "apmDomainId");
+            }
+            if ($.traceKey == null) {
+                throw new MissingRequiredPropertyException("GetTraceSnapshotDataArgs", "traceKey");
+            }
             return $;
         }
     }

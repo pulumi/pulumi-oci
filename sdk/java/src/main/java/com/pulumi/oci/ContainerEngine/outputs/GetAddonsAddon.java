@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetAddonsAddonAddonError;
 import com.pulumi.oci.ContainerEngine.outputs.GetAddonsAddonConfiguration;
 import java.lang.Boolean;
@@ -150,7 +151,10 @@ public final class GetAddonsAddon {
 
         @CustomType.Setter
         public Builder addonErrors(List<GetAddonsAddonAddonError> addonErrors) {
-            this.addonErrors = Objects.requireNonNull(addonErrors);
+            if (addonErrors == null) {
+              throw new MissingRequiredPropertyException("GetAddonsAddon", "addonErrors");
+            }
+            this.addonErrors = addonErrors;
             return this;
         }
         public Builder addonErrors(GetAddonsAddonAddonError... addonErrors) {
@@ -158,17 +162,26 @@ public final class GetAddonsAddon {
         }
         @CustomType.Setter
         public Builder addonName(String addonName) {
-            this.addonName = Objects.requireNonNull(addonName);
+            if (addonName == null) {
+              throw new MissingRequiredPropertyException("GetAddonsAddon", "addonName");
+            }
+            this.addonName = addonName;
             return this;
         }
         @CustomType.Setter
         public Builder clusterId(String clusterId) {
-            this.clusterId = Objects.requireNonNull(clusterId);
+            if (clusterId == null) {
+              throw new MissingRequiredPropertyException("GetAddonsAddon", "clusterId");
+            }
+            this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
         public Builder configurations(List<GetAddonsAddonConfiguration> configurations) {
-            this.configurations = Objects.requireNonNull(configurations);
+            if (configurations == null) {
+              throw new MissingRequiredPropertyException("GetAddonsAddon", "configurations");
+            }
+            this.configurations = configurations;
             return this;
         }
         public Builder configurations(GetAddonsAddonConfiguration... configurations) {
@@ -176,27 +189,42 @@ public final class GetAddonsAddon {
         }
         @CustomType.Setter
         public Builder currentInstalledVersion(String currentInstalledVersion) {
-            this.currentInstalledVersion = Objects.requireNonNull(currentInstalledVersion);
+            if (currentInstalledVersion == null) {
+              throw new MissingRequiredPropertyException("GetAddonsAddon", "currentInstalledVersion");
+            }
+            this.currentInstalledVersion = currentInstalledVersion;
             return this;
         }
         @CustomType.Setter
         public Builder removeAddonResourcesOnDelete(Boolean removeAddonResourcesOnDelete) {
-            this.removeAddonResourcesOnDelete = Objects.requireNonNull(removeAddonResourcesOnDelete);
+            if (removeAddonResourcesOnDelete == null) {
+              throw new MissingRequiredPropertyException("GetAddonsAddon", "removeAddonResourcesOnDelete");
+            }
+            this.removeAddonResourcesOnDelete = removeAddonResourcesOnDelete;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAddonsAddon", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAddonsAddon", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetAddonsAddon", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetAddonsAddon build() {

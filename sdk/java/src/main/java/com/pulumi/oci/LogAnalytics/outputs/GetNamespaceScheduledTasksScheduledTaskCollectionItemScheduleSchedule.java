@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -113,32 +114,50 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule
 
         @CustomType.Setter
         public Builder expression(String expression) {
-            this.expression = Objects.requireNonNull(expression);
+            if (expression == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule", "expression");
+            }
+            this.expression = expression;
             return this;
         }
         @CustomType.Setter
         public Builder misfirePolicy(String misfirePolicy) {
-            this.misfirePolicy = Objects.requireNonNull(misfirePolicy);
+            if (misfirePolicy == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule", "misfirePolicy");
+            }
+            this.misfirePolicy = misfirePolicy;
             return this;
         }
         @CustomType.Setter
         public Builder recurringInterval(String recurringInterval) {
-            this.recurringInterval = Objects.requireNonNull(recurringInterval);
+            if (recurringInterval == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule", "recurringInterval");
+            }
+            this.recurringInterval = recurringInterval;
             return this;
         }
         @CustomType.Setter
         public Builder repeatCount(Integer repeatCount) {
-            this.repeatCount = Objects.requireNonNull(repeatCount);
+            if (repeatCount == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule", "repeatCount");
+            }
+            this.repeatCount = repeatCount;
             return this;
         }
         @CustomType.Setter
         public Builder timeZone(String timeZone) {
-            this.timeZone = Objects.requireNonNull(timeZone);
+            if (timeZone == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule", "timeZone");
+            }
+            this.timeZone = timeZone;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule build() {

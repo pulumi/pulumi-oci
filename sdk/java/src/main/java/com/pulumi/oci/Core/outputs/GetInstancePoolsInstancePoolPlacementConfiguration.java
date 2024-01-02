@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnet;
 import com.pulumi.oci.Core.outputs.GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnet;
 import java.lang.String;
@@ -101,12 +102,18 @@ public final class GetInstancePoolsInstancePoolPlacementConfiguration {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolsInstancePoolPlacementConfiguration", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomains(List<String> faultDomains) {
-            this.faultDomains = Objects.requireNonNull(faultDomains);
+            if (faultDomains == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolsInstancePoolPlacementConfiguration", "faultDomains");
+            }
+            this.faultDomains = faultDomains;
             return this;
         }
         public Builder faultDomains(String... faultDomains) {
@@ -114,12 +121,18 @@ public final class GetInstancePoolsInstancePoolPlacementConfiguration {
         }
         @CustomType.Setter
         public Builder primarySubnetId(String primarySubnetId) {
-            this.primarySubnetId = Objects.requireNonNull(primarySubnetId);
+            if (primarySubnetId == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolsInstancePoolPlacementConfiguration", "primarySubnetId");
+            }
+            this.primarySubnetId = primarySubnetId;
             return this;
         }
         @CustomType.Setter
         public Builder primaryVnicSubnets(List<GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnet> primaryVnicSubnets) {
-            this.primaryVnicSubnets = Objects.requireNonNull(primaryVnicSubnets);
+            if (primaryVnicSubnets == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolsInstancePoolPlacementConfiguration", "primaryVnicSubnets");
+            }
+            this.primaryVnicSubnets = primaryVnicSubnets;
             return this;
         }
         public Builder primaryVnicSubnets(GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnet... primaryVnicSubnets) {
@@ -127,7 +140,10 @@ public final class GetInstancePoolsInstancePoolPlacementConfiguration {
         }
         @CustomType.Setter
         public Builder secondaryVnicSubnets(List<GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets) {
-            this.secondaryVnicSubnets = Objects.requireNonNull(secondaryVnicSubnets);
+            if (secondaryVnicSubnets == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolsInstancePoolPlacementConfiguration", "secondaryVnicSubnets");
+            }
+            this.secondaryVnicSubnets = secondaryVnicSubnets;
             return this;
         }
         public Builder secondaryVnicSubnets(GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnet... secondaryVnicSubnets) {

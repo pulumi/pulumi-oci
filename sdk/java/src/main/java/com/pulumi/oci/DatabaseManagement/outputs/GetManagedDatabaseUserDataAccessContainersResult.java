@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserDataAccessContainersFilter;
 import java.lang.String;
@@ -93,7 +94,10 @@ public final class GetManagedDatabaseUserDataAccessContainersResult {
 
         @CustomType.Setter
         public Builder dataAccessContainerCollections(List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection> dataAccessContainerCollections) {
-            this.dataAccessContainerCollections = Objects.requireNonNull(dataAccessContainerCollections);
+            if (dataAccessContainerCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserDataAccessContainersResult", "dataAccessContainerCollections");
+            }
+            this.dataAccessContainerCollections = dataAccessContainerCollections;
             return this;
         }
         public Builder dataAccessContainerCollections(GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection... dataAccessContainerCollections) {
@@ -101,6 +105,7 @@ public final class GetManagedDatabaseUserDataAccessContainersResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseUserDataAccessContainersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -109,22 +114,32 @@ public final class GetManagedDatabaseUserDataAccessContainersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserDataAccessContainersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserDataAccessContainersResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+            if (userName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserDataAccessContainersResult", "userName");
+            }
+            this.userName = userName;
             return this;
         }
         public GetManagedDatabaseUserDataAccessContainersResult build() {

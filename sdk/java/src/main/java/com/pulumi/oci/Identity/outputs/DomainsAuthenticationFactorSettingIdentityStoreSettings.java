@@ -94,11 +94,13 @@ public final class DomainsAuthenticationFactorSettingIdentityStoreSettings {
 
         @CustomType.Setter
         public Builder mobileNumberEnabled(@Nullable Boolean mobileNumberEnabled) {
+
             this.mobileNumberEnabled = mobileNumberEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder mobileNumberUpdateEnabled(@Nullable Boolean mobileNumberUpdateEnabled) {
+
             this.mobileNumberUpdateEnabled = mobileNumberUpdateEnabled;
             return this;
         }

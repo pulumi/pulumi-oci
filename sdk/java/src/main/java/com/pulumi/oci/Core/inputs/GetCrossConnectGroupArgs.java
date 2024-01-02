@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetCrossConnectGroupArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetCrossConnectGroupArgs build() {
-            $.crossConnectGroupId = Objects.requireNonNull($.crossConnectGroupId, "expected parameter 'crossConnectGroupId' to be non-null");
+            if ($.crossConnectGroupId == null) {
+                throw new MissingRequiredPropertyException("GetCrossConnectGroupArgs", "crossConnectGroupId");
+            }
             return $;
         }
     }

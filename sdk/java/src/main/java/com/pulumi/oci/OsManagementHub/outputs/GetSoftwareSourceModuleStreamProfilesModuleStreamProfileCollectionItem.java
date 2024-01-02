@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -114,27 +115,42 @@ public final class GetSoftwareSourceModuleStreamProfilesModuleStreamProfileColle
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder isDefault(Boolean isDefault) {
-            this.isDefault = Objects.requireNonNull(isDefault);
+            if (isDefault == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem", "isDefault");
+            }
+            this.isDefault = isDefault;
             return this;
         }
         @CustomType.Setter
         public Builder moduleName(String moduleName) {
-            this.moduleName = Objects.requireNonNull(moduleName);
+            if (moduleName == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem", "moduleName");
+            }
+            this.moduleName = moduleName;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder packages(List<String> packages) {
-            this.packages = Objects.requireNonNull(packages);
+            if (packages == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem", "packages");
+            }
+            this.packages = packages;
             return this;
         }
         public Builder packages(String... packages) {
@@ -142,7 +158,10 @@ public final class GetSoftwareSourceModuleStreamProfilesModuleStreamProfileColle
         }
         @CustomType.Setter
         public Builder streamName(String streamName) {
-            this.streamName = Objects.requireNonNull(streamName);
+            if (streamName == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem", "streamName");
+            }
+            this.streamName = streamName;
             return this;
         }
         public GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem build() {

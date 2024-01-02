@@ -4,6 +4,7 @@
 package com.pulumi.oci.Streaming.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Streaming.outputs.GetConnectHarnessesConnectHarness;
 import com.pulumi.oci.Streaming.outputs.GetConnectHarnessesFilter;
 import java.lang.String;
@@ -109,12 +110,18 @@ public final class GetConnectHarnessesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetConnectHarnessesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectHarnesses(List<GetConnectHarnessesConnectHarness> connectHarnesses) {
-            this.connectHarnesses = Objects.requireNonNull(connectHarnesses);
+            if (connectHarnesses == null) {
+              throw new MissingRequiredPropertyException("GetConnectHarnessesResult", "connectHarnesses");
+            }
+            this.connectHarnesses = connectHarnesses;
             return this;
         }
         public Builder connectHarnesses(GetConnectHarnessesConnectHarness... connectHarnesses) {
@@ -122,6 +129,7 @@ public final class GetConnectHarnessesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetConnectHarnessesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -130,16 +138,19 @@ public final class GetConnectHarnessesResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

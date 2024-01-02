@@ -5,6 +5,7 @@ package com.pulumi.oci.Marketplace;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -349,11 +350,21 @@ public final class AcceptedAgreementArgs extends com.pulumi.resources.ResourceAr
         }
 
         public AcceptedAgreementArgs build() {
-            $.agreementId = Objects.requireNonNull($.agreementId, "expected parameter 'agreementId' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.listingId = Objects.requireNonNull($.listingId, "expected parameter 'listingId' to be non-null");
-            $.packageVersion = Objects.requireNonNull($.packageVersion, "expected parameter 'packageVersion' to be non-null");
-            $.signature = Objects.requireNonNull($.signature, "expected parameter 'signature' to be non-null");
+            if ($.agreementId == null) {
+                throw new MissingRequiredPropertyException("AcceptedAgreementArgs", "agreementId");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AcceptedAgreementArgs", "compartmentId");
+            }
+            if ($.listingId == null) {
+                throw new MissingRequiredPropertyException("AcceptedAgreementArgs", "listingId");
+            }
+            if ($.packageVersion == null) {
+                throw new MissingRequiredPropertyException("AcceptedAgreementArgs", "packageVersion");
+            }
+            if ($.signature == null) {
+                throw new MissingRequiredPropertyException("AcceptedAgreementArgs", "signature");
+            }
             return $;
         }
     }

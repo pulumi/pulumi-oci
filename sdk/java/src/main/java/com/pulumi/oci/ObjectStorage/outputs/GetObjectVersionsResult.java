@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ObjectStorage.outputs.GetObjectVersionsFilter;
 import com.pulumi.oci.ObjectStorage.outputs.GetObjectVersionsItem;
 import java.lang.String;
@@ -129,26 +130,33 @@ public final class GetObjectVersionsResult {
 
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetObjectVersionsResult", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder delimiter(@Nullable String delimiter) {
+
             this.delimiter = delimiter;
             return this;
         }
         @CustomType.Setter
         public Builder end(@Nullable String end) {
+
             this.end = end;
             return this;
         }
         @CustomType.Setter
         public Builder fields(@Nullable String fields) {
+
             this.fields = fields;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetObjectVersionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -157,12 +165,18 @@ public final class GetObjectVersionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetObjectVersionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetObjectVersionsItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetObjectVersionsResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetObjectVersionsItem... items) {
@@ -170,17 +184,24 @@ public final class GetObjectVersionsResult {
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetObjectVersionsResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder prefix(@Nullable String prefix) {
+
             this.prefix = prefix;
             return this;
         }
         @CustomType.Setter
         public Builder prefixes(List<String> prefixes) {
-            this.prefixes = Objects.requireNonNull(prefixes);
+            if (prefixes == null) {
+              throw new MissingRequiredPropertyException("GetObjectVersionsResult", "prefixes");
+            }
+            this.prefixes = prefixes;
             return this;
         }
         public Builder prefixes(String... prefixes) {
@@ -188,11 +209,13 @@ public final class GetObjectVersionsResult {
         }
         @CustomType.Setter
         public Builder start(@Nullable String start) {
+
             this.start = start;
             return this;
         }
         @CustomType.Setter
         public Builder startAfter(@Nullable String startAfter) {
+
             this.startAfter = startAfter;
             return this;
         }

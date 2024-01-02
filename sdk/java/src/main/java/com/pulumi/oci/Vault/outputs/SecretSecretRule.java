@@ -4,6 +4,7 @@
 package com.pulumi.oci.Vault.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -101,26 +102,33 @@ public final class SecretSecretRule {
 
         @CustomType.Setter
         public Builder isEnforcedOnDeletedSecretVersions(@Nullable Boolean isEnforcedOnDeletedSecretVersions) {
+
             this.isEnforcedOnDeletedSecretVersions = isEnforcedOnDeletedSecretVersions;
             return this;
         }
         @CustomType.Setter
         public Builder isSecretContentRetrievalBlockedOnExpiry(@Nullable Boolean isSecretContentRetrievalBlockedOnExpiry) {
+
             this.isSecretContentRetrievalBlockedOnExpiry = isSecretContentRetrievalBlockedOnExpiry;
             return this;
         }
         @CustomType.Setter
         public Builder ruleType(String ruleType) {
-            this.ruleType = Objects.requireNonNull(ruleType);
+            if (ruleType == null) {
+              throw new MissingRequiredPropertyException("SecretSecretRule", "ruleType");
+            }
+            this.ruleType = ruleType;
             return this;
         }
         @CustomType.Setter
         public Builder secretVersionExpiryInterval(@Nullable String secretVersionExpiryInterval) {
+
             this.secretVersionExpiryInterval = secretVersionExpiryInterval;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfAbsoluteExpiry(@Nullable String timeOfAbsoluteExpiry) {
+
             this.timeOfAbsoluteExpiry = timeOfAbsoluteExpiry;
             return this;
         }

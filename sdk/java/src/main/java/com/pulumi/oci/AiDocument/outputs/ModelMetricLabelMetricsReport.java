@@ -90,6 +90,7 @@ public final class ModelMetricLabelMetricsReport {
 
         @CustomType.Setter
         public Builder confidenceEntries(@Nullable List<ModelMetricLabelMetricsReportConfidenceEntry> confidenceEntries) {
+
             this.confidenceEntries = confidenceEntries;
             return this;
         }
@@ -98,16 +99,19 @@ public final class ModelMetricLabelMetricsReport {
         }
         @CustomType.Setter
         public Builder documentCount(@Nullable Integer documentCount) {
+
             this.documentCount = documentCount;
             return this;
         }
         @CustomType.Setter
         public Builder label(@Nullable String label) {
+
             this.label = label;
             return this;
         }
         @CustomType.Setter
         public Builder meanAveragePrecision(@Nullable Double meanAveragePrecision) {
+
             this.meanAveragePrecision = meanAveragePrecision;
             return this;
         }

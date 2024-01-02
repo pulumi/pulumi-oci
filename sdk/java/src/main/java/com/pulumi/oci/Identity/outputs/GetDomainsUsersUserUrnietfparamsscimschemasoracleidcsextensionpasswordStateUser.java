@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy;
 import java.lang.Boolean;
 import java.lang.String;
@@ -143,7 +144,10 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
 
         @CustomType.Setter
         public Builder applicablePasswordPolicies(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy> applicablePasswordPolicies) {
-            this.applicablePasswordPolicies = Objects.requireNonNull(applicablePasswordPolicies);
+            if (applicablePasswordPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser", "applicablePasswordPolicies");
+            }
+            this.applicablePasswordPolicies = applicablePasswordPolicies;
             return this;
         }
         public Builder applicablePasswordPolicies(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy... applicablePasswordPolicies) {
@@ -151,37 +155,58 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
         @CustomType.Setter
         public Builder cantChange(Boolean cantChange) {
-            this.cantChange = Objects.requireNonNull(cantChange);
+            if (cantChange == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser", "cantChange");
+            }
+            this.cantChange = cantChange;
             return this;
         }
         @CustomType.Setter
         public Builder cantExpire(Boolean cantExpire) {
-            this.cantExpire = Objects.requireNonNull(cantExpire);
+            if (cantExpire == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser", "cantExpire");
+            }
+            this.cantExpire = cantExpire;
             return this;
         }
         @CustomType.Setter
         public Builder expired(Boolean expired) {
-            this.expired = Objects.requireNonNull(expired);
+            if (expired == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser", "expired");
+            }
+            this.expired = expired;
             return this;
         }
         @CustomType.Setter
         public Builder lastFailedValidationDate(String lastFailedValidationDate) {
-            this.lastFailedValidationDate = Objects.requireNonNull(lastFailedValidationDate);
+            if (lastFailedValidationDate == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser", "lastFailedValidationDate");
+            }
+            this.lastFailedValidationDate = lastFailedValidationDate;
             return this;
         }
         @CustomType.Setter
         public Builder lastSuccessfulSetDate(String lastSuccessfulSetDate) {
-            this.lastSuccessfulSetDate = Objects.requireNonNull(lastSuccessfulSetDate);
+            if (lastSuccessfulSetDate == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser", "lastSuccessfulSetDate");
+            }
+            this.lastSuccessfulSetDate = lastSuccessfulSetDate;
             return this;
         }
         @CustomType.Setter
         public Builder lastSuccessfulValidationDate(String lastSuccessfulValidationDate) {
-            this.lastSuccessfulValidationDate = Objects.requireNonNull(lastSuccessfulValidationDate);
+            if (lastSuccessfulValidationDate == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser", "lastSuccessfulValidationDate");
+            }
+            this.lastSuccessfulValidationDate = lastSuccessfulValidationDate;
             return this;
         }
         @CustomType.Setter
         public Builder mustChange(Boolean mustChange) {
-            this.mustChange = Objects.requireNonNull(mustChange);
+            if (mustChange == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser", "mustChange");
+            }
+            this.mustChange = mustChange;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser build() {

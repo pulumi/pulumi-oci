@@ -4,6 +4,7 @@
 package com.pulumi.oci.Monitoring.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -146,7 +147,9 @@ public final class GetAlarmHistoryCollectionPlainArgs extends com.pulumi.resourc
         }
 
         public GetAlarmHistoryCollectionPlainArgs build() {
-            $.alarmId = Objects.requireNonNull($.alarmId, "expected parameter 'alarmId' to be non-null");
+            if ($.alarmId == null) {
+                throw new MissingRequiredPropertyException("GetAlarmHistoryCollectionPlainArgs", "alarmId");
+            }
             return $;
         }
     }

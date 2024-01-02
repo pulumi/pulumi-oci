@@ -4,6 +4,7 @@
 package com.pulumi.oci.Secrets.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetSecretbundleSecretBundleContent {
 
         @CustomType.Setter
         public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+            if (content == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleSecretBundleContent", "content");
+            }
+            this.content = content;
             return this;
         }
         @CustomType.Setter
         public Builder contentType(String contentType) {
-            this.contentType = Objects.requireNonNull(contentType);
+            if (contentType == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleSecretBundleContent", "contentType");
+            }
+            this.contentType = contentType;
             return this;
         }
         public GetSecretbundleSecretBundleContent build() {

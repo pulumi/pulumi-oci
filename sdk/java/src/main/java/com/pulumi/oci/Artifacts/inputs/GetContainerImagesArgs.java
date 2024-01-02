@@ -5,6 +5,7 @@ package com.pulumi.oci.Artifacts.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Artifacts.inputs.GetContainerImagesFilterArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -396,7 +397,9 @@ public final class GetContainerImagesArgs extends com.pulumi.resources.InvokeArg
         }
 
         public GetContainerImagesArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetContainerImagesArgs", "compartmentId");
+            }
             return $;
         }
     }

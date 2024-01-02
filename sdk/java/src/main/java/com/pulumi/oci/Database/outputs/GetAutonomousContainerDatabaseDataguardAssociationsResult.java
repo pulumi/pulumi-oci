@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguardAssociationsFilter;
 import java.lang.String;
@@ -80,7 +81,10 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsResult {
 
         @CustomType.Setter
         public Builder autonomousContainerDatabaseDataguardAssociations(List<GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation> autonomousContainerDatabaseDataguardAssociations) {
-            this.autonomousContainerDatabaseDataguardAssociations = Objects.requireNonNull(autonomousContainerDatabaseDataguardAssociations);
+            if (autonomousContainerDatabaseDataguardAssociations == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsResult", "autonomousContainerDatabaseDataguardAssociations");
+            }
+            this.autonomousContainerDatabaseDataguardAssociations = autonomousContainerDatabaseDataguardAssociations;
             return this;
         }
         public Builder autonomousContainerDatabaseDataguardAssociations(GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation... autonomousContainerDatabaseDataguardAssociations) {
@@ -88,11 +92,15 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsResult {
         }
         @CustomType.Setter
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
-            this.autonomousContainerDatabaseId = Objects.requireNonNull(autonomousContainerDatabaseId);
+            if (autonomousContainerDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsResult", "autonomousContainerDatabaseId");
+            }
+            this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousContainerDatabaseDataguardAssociationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -101,7 +109,10 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetAutonomousContainerDatabaseDataguardAssociationsResult build() {

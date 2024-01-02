@@ -5,6 +5,7 @@ package com.pulumi.oci.Psql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetDbSystemConnectionDetailArgs extends com.pulumi.resources.
         }
 
         public GetDbSystemConnectionDetailArgs build() {
-            $.dbSystemId = Objects.requireNonNull($.dbSystemId, "expected parameter 'dbSystemId' to be non-null");
+            if ($.dbSystemId == null) {
+                throw new MissingRequiredPropertyException("GetDbSystemConnectionDetailArgs", "dbSystemId");
+            }
             return $;
         }
     }

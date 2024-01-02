@@ -129,36 +129,43 @@ public final class AssetComputeDisk {
 
         @CustomType.Setter
         public Builder bootOrder(@Nullable Integer bootOrder) {
+
             this.bootOrder = bootOrder;
             return this;
         }
         @CustomType.Setter
         public Builder location(@Nullable String location) {
+
             this.location = location;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder persistentMode(@Nullable String persistentMode) {
+
             this.persistentMode = persistentMode;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInMbs(@Nullable String sizeInMbs) {
+
             this.sizeInMbs = sizeInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder uuid(@Nullable String uuid) {
+
             this.uuid = uuid;
             return this;
         }
         @CustomType.Setter
         public Builder uuidLun(@Nullable String uuidLun) {
+
             this.uuidLun = uuidLun;
             return this;
         }

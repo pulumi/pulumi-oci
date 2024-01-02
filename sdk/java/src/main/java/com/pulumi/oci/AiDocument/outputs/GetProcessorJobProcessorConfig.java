@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiDocument.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiDocument.outputs.GetProcessorJobProcessorConfigFeature;
 import java.lang.Boolean;
 import java.lang.String;
@@ -101,12 +102,18 @@ public final class GetProcessorJobProcessorConfig {
 
         @CustomType.Setter
         public Builder documentType(String documentType) {
-            this.documentType = Objects.requireNonNull(documentType);
+            if (documentType == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobProcessorConfig", "documentType");
+            }
+            this.documentType = documentType;
             return this;
         }
         @CustomType.Setter
         public Builder features(List<GetProcessorJobProcessorConfigFeature> features) {
-            this.features = Objects.requireNonNull(features);
+            if (features == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobProcessorConfig", "features");
+            }
+            this.features = features;
             return this;
         }
         public Builder features(GetProcessorJobProcessorConfigFeature... features) {
@@ -114,17 +121,26 @@ public final class GetProcessorJobProcessorConfig {
         }
         @CustomType.Setter
         public Builder isZipOutputEnabled(Boolean isZipOutputEnabled) {
-            this.isZipOutputEnabled = Objects.requireNonNull(isZipOutputEnabled);
+            if (isZipOutputEnabled == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobProcessorConfig", "isZipOutputEnabled");
+            }
+            this.isZipOutputEnabled = isZipOutputEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder language(String language) {
-            this.language = Objects.requireNonNull(language);
+            if (language == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobProcessorConfig", "language");
+            }
+            this.language = language;
             return this;
         }
         @CustomType.Setter
         public Builder processorType(String processorType) {
-            this.processorType = Objects.requireNonNull(processorType);
+            if (processorType == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobProcessorConfig", "processorType");
+            }
+            this.processorType = processorType;
             return this;
         }
         public GetProcessorJobProcessorConfig build() {

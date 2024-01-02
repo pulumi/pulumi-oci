@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetReportDefinitionsFilter;
 import com.pulumi.oci.DataSafe.outputs.GetReportDefinitionsReportDefinitionCollection;
 import java.lang.Boolean;
@@ -164,36 +165,45 @@ public final class GetReportDefinitionsResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder category(@Nullable String category) {
+
             this.category = category;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder dataSource(@Nullable String dataSource) {
+
             this.dataSource = dataSource;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetReportDefinitionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -202,17 +212,24 @@ public final class GetReportDefinitionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isSeeded(@Nullable Boolean isSeeded) {
+
             this.isSeeded = isSeeded;
             return this;
         }
         @CustomType.Setter
         public Builder reportDefinitionCollections(List<GetReportDefinitionsReportDefinitionCollection> reportDefinitionCollections) {
-            this.reportDefinitionCollections = Objects.requireNonNull(reportDefinitionCollections);
+            if (reportDefinitionCollections == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionsResult", "reportDefinitionCollections");
+            }
+            this.reportDefinitionCollections = reportDefinitionCollections;
             return this;
         }
         public Builder reportDefinitionCollections(GetReportDefinitionsReportDefinitionCollection... reportDefinitionCollections) {
@@ -220,6 +237,7 @@ public final class GetReportDefinitionsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

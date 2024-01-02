@@ -143,41 +143,49 @@ public final class ConfigurationConfigurationDetailItem {
 
         @CustomType.Setter
         public Builder allowedValues(@Nullable String allowedValues) {
+
             this.allowedValues = allowedValues;
             return this;
         }
         @CustomType.Setter
         public Builder configKey(@Nullable String configKey) {
+
             this.configKey = configKey;
             return this;
         }
         @CustomType.Setter
         public Builder dataType(@Nullable String dataType) {
+
             this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
         public Builder defaultConfigValue(@Nullable String defaultConfigValue) {
+
             this.defaultConfigValue = defaultConfigValue;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder isOverridable(@Nullable Boolean isOverridable) {
+
             this.isOverridable = isOverridable;
             return this;
         }
         @CustomType.Setter
         public Builder isRestartRequired(@Nullable Boolean isRestartRequired) {
+
             this.isRestartRequired = isRestartRequired;
             return this;
         }
         @CustomType.Setter
         public Builder overridenConfigValue(@Nullable String overridenConfigValue) {
+
             this.overridenConfigValue = overridenConfigValue;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetExternalAsmPlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetExternalAsmPlainArgs build() {
-            $.externalAsmId = Objects.requireNonNull($.externalAsmId, "expected parameter 'externalAsmId' to be non-null");
+            if ($.externalAsmId == null) {
+                throw new MissingRequiredPropertyException("GetExternalAsmPlainArgs", "externalAsmId");
+            }
             return $;
         }
     }

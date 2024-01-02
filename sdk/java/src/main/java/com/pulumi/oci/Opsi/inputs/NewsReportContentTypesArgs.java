@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -85,7 +86,9 @@ public final class NewsReportContentTypesArgs extends com.pulumi.resources.Resou
         }
 
         public NewsReportContentTypesArgs build() {
-            $.capacityPlanningResources = Objects.requireNonNull($.capacityPlanningResources, "expected parameter 'capacityPlanningResources' to be non-null");
+            if ($.capacityPlanningResources == null) {
+                throw new MissingRequiredPropertyException("NewsReportContentTypesArgs", "capacityPlanningResources");
+            }
             return $;
         }
     }

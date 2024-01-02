@@ -58,11 +58,13 @@ public final class JobRunLogDetail {
 
         @CustomType.Setter
         public Builder logGroupId(@Nullable String logGroupId) {
+
             this.logGroupId = logGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder logId(@Nullable String logId) {
+
             this.logId = logId;
             return this;
         }

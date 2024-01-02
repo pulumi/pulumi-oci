@@ -5,6 +5,7 @@ package com.pulumi.oci.LogAnalytics.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -148,9 +149,15 @@ public final class NamespaceIngestTimeRuleConditionsAdditionalConditionArgs exte
         }
 
         public NamespaceIngestTimeRuleConditionsAdditionalConditionArgs build() {
-            $.conditionField = Objects.requireNonNull($.conditionField, "expected parameter 'conditionField' to be non-null");
-            $.conditionOperator = Objects.requireNonNull($.conditionOperator, "expected parameter 'conditionOperator' to be non-null");
-            $.conditionValue = Objects.requireNonNull($.conditionValue, "expected parameter 'conditionValue' to be non-null");
+            if ($.conditionField == null) {
+                throw new MissingRequiredPropertyException("NamespaceIngestTimeRuleConditionsAdditionalConditionArgs", "conditionField");
+            }
+            if ($.conditionOperator == null) {
+                throw new MissingRequiredPropertyException("NamespaceIngestTimeRuleConditionsAdditionalConditionArgs", "conditionOperator");
+            }
+            if ($.conditionValue == null) {
+                throw new MissingRequiredPropertyException("NamespaceIngestTimeRuleConditionsAdditionalConditionArgs", "conditionValue");
+            }
             return $;
         }
     }

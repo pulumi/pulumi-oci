@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetLifecycleEnvironmentStageManagedInstanceId;
 import com.pulumi.oci.OsManagementHub.outputs.GetLifecycleEnvironmentStageSoftwareSourceId;
 import java.lang.Integer;
@@ -258,42 +259,66 @@ public final class GetLifecycleEnvironmentStage {
 
         @CustomType.Setter
         public Builder archType(String archType) {
-            this.archType = Objects.requireNonNull(archType);
+            if (archType == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentStage", "archType");
+            }
+            this.archType = archType;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentStage", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentStage", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentStage", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentStage", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentStage", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleEnvironmentId(String lifecycleEnvironmentId) {
-            this.lifecycleEnvironmentId = Objects.requireNonNull(lifecycleEnvironmentId);
+            if (lifecycleEnvironmentId == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentStage", "lifecycleEnvironmentId");
+            }
+            this.lifecycleEnvironmentId = lifecycleEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceIds(List<GetLifecycleEnvironmentStageManagedInstanceId> managedInstanceIds) {
-            this.managedInstanceIds = Objects.requireNonNull(managedInstanceIds);
+            if (managedInstanceIds == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentStage", "managedInstanceIds");
+            }
+            this.managedInstanceIds = managedInstanceIds;
             return this;
         }
         public Builder managedInstanceIds(GetLifecycleEnvironmentStageManagedInstanceId... managedInstanceIds) {
@@ -301,17 +326,26 @@ public final class GetLifecycleEnvironmentStage {
         }
         @CustomType.Setter
         public Builder osFamily(String osFamily) {
-            this.osFamily = Objects.requireNonNull(osFamily);
+            if (osFamily == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentStage", "osFamily");
+            }
+            this.osFamily = osFamily;
             return this;
         }
         @CustomType.Setter
         public Builder rank(Integer rank) {
-            this.rank = Objects.requireNonNull(rank);
+            if (rank == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentStage", "rank");
+            }
+            this.rank = rank;
             return this;
         }
         @CustomType.Setter
         public Builder softwareSourceIds(List<GetLifecycleEnvironmentStageSoftwareSourceId> softwareSourceIds) {
-            this.softwareSourceIds = Objects.requireNonNull(softwareSourceIds);
+            if (softwareSourceIds == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentStage", "softwareSourceIds");
+            }
+            this.softwareSourceIds = softwareSourceIds;
             return this;
         }
         public Builder softwareSourceIds(GetLifecycleEnvironmentStageSoftwareSourceId... softwareSourceIds) {
@@ -319,27 +353,42 @@ public final class GetLifecycleEnvironmentStage {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentStage", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentStage", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentStage", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeModified(String timeModified) {
-            this.timeModified = Objects.requireNonNull(timeModified);
+            if (timeModified == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentStage", "timeModified");
+            }
+            this.timeModified = timeModified;
             return this;
         }
         @CustomType.Setter
         public Builder vendorName(String vendorName) {
-            this.vendorName = Objects.requireNonNull(vendorName);
+            if (vendorName == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentStage", "vendorName");
+            }
+            this.vendorName = vendorName;
             return this;
         }
         public GetLifecycleEnvironmentStage build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsOauth2clientCredentialsOauth2clientCredential;
 import java.lang.Integer;
 import java.lang.String;
@@ -153,6 +154,7 @@ public final class GetDomainsOauth2clientCredentialsResult {
 
         @CustomType.Setter
         public Builder attributeSets(@Nullable List<String> attributeSets) {
+
             this.attributeSets = attributeSets;
             return this;
         }
@@ -161,47 +163,64 @@ public final class GetDomainsOauth2clientCredentialsResult {
         }
         @CustomType.Setter
         public Builder attributes(@Nullable String attributes) {
+
             this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauth2clientCredentialsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauth2clientCredentialsResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder itemsPerPage(Integer itemsPerPage) {
-            this.itemsPerPage = Objects.requireNonNull(itemsPerPage);
+            if (itemsPerPage == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauth2clientCredentialsResult", "itemsPerPage");
+            }
+            this.itemsPerPage = itemsPerPage;
             return this;
         }
         @CustomType.Setter
         public Builder oauth2clientCredentialCount(@Nullable Integer oauth2clientCredentialCount) {
+
             this.oauth2clientCredentialCount = oauth2clientCredentialCount;
             return this;
         }
         @CustomType.Setter
         public Builder oauth2clientCredentialFilter(@Nullable String oauth2clientCredentialFilter) {
+
             this.oauth2clientCredentialFilter = oauth2clientCredentialFilter;
             return this;
         }
         @CustomType.Setter
         public Builder oauth2clientCredentials(List<GetDomainsOauth2clientCredentialsOauth2clientCredential> oauth2clientCredentials) {
-            this.oauth2clientCredentials = Objects.requireNonNull(oauth2clientCredentials);
+            if (oauth2clientCredentials == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauth2clientCredentialsResult", "oauth2clientCredentials");
+            }
+            this.oauth2clientCredentials = oauth2clientCredentials;
             return this;
         }
         public Builder oauth2clientCredentials(GetDomainsOauth2clientCredentialsOauth2clientCredential... oauth2clientCredentials) {
@@ -209,12 +228,16 @@ public final class GetDomainsOauth2clientCredentialsResult {
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauth2clientCredentialsResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -222,22 +245,28 @@ public final class GetDomainsOauth2clientCredentialsResult {
         }
         @CustomType.Setter
         public Builder sortBy(@Nullable String sortBy) {
+
             this.sortBy = sortBy;
             return this;
         }
         @CustomType.Setter
         public Builder sortOrder(@Nullable String sortOrder) {
+
             this.sortOrder = sortOrder;
             return this;
         }
         @CustomType.Setter
         public Builder startIndex(@Nullable Integer startIndex) {
+
             this.startIndex = startIndex;
             return this;
         }
         @CustomType.Setter
         public Builder totalResults(Integer totalResults) {
-            this.totalResults = Objects.requireNonNull(totalResults);
+            if (totalResults == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauth2clientCredentialsResult", "totalResults");
+            }
+            this.totalResults = totalResults;
             return this;
         }
         public GetDomainsOauth2clientCredentialsResult build() {

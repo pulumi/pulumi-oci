@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetExternalNonContainerDatabaseArgs extends com.pulumi.resour
         }
 
         public GetExternalNonContainerDatabaseArgs build() {
-            $.externalNonContainerDatabaseId = Objects.requireNonNull($.externalNonContainerDatabaseId, "expected parameter 'externalNonContainerDatabaseId' to be non-null");
+            if ($.externalNonContainerDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseArgs", "externalNonContainerDatabaseId");
+            }
             return $;
         }
     }

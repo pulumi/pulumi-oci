@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseDbBackupConfig;
 import java.lang.Object;
 import java.lang.String;
@@ -308,81 +309,101 @@ public final class DatabaseDatabase {
 
         @CustomType.Setter
         public Builder adminPassword(String adminPassword) {
-            this.adminPassword = Objects.requireNonNull(adminPassword);
+            if (adminPassword == null) {
+              throw new MissingRequiredPropertyException("DatabaseDatabase", "adminPassword");
+            }
+            this.adminPassword = adminPassword;
             return this;
         }
         @CustomType.Setter
         public Builder backupId(@Nullable String backupId) {
+
             this.backupId = backupId;
             return this;
         }
         @CustomType.Setter
         public Builder backupTdePassword(@Nullable String backupTdePassword) {
+
             this.backupTdePassword = backupTdePassword;
             return this;
         }
         @CustomType.Setter
         public Builder characterSet(@Nullable String characterSet) {
+
             this.characterSet = characterSet;
             return this;
         }
         @CustomType.Setter
         public Builder databaseSoftwareImageId(@Nullable String databaseSoftwareImageId) {
+
             this.databaseSoftwareImageId = databaseSoftwareImageId;
             return this;
         }
         @CustomType.Setter
         public Builder dbBackupConfig(@Nullable DatabaseDatabaseDbBackupConfig dbBackupConfig) {
+
             this.dbBackupConfig = dbBackupConfig;
             return this;
         }
         @CustomType.Setter
         public Builder dbName(String dbName) {
-            this.dbName = Objects.requireNonNull(dbName);
+            if (dbName == null) {
+              throw new MissingRequiredPropertyException("DatabaseDatabase", "dbName");
+            }
+            this.dbName = dbName;
             return this;
         }
         @CustomType.Setter
         public Builder dbUniqueName(@Nullable String dbUniqueName) {
+
             this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
         public Builder dbWorkload(@Nullable String dbWorkload) {
+
             this.dbWorkload = dbWorkload;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+
             this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+
             this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
+
             this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyVersionId(@Nullable String kmsKeyVersionId) {
+
             this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
         @CustomType.Setter
         public Builder ncharacterSet(@Nullable String ncharacterSet) {
+
             this.ncharacterSet = ncharacterSet;
             return this;
         }
         @CustomType.Setter
         public Builder pdbName(@Nullable String pdbName) {
+
             this.pdbName = pdbName;
             return this;
         }
         @CustomType.Setter
         public Builder pluggableDatabases(@Nullable List<String> pluggableDatabases) {
+
             this.pluggableDatabases = pluggableDatabases;
             return this;
         }
@@ -391,16 +412,19 @@ public final class DatabaseDatabase {
         }
         @CustomType.Setter
         public Builder sidPrefix(@Nullable String sidPrefix) {
+
             this.sidPrefix = sidPrefix;
             return this;
         }
         @CustomType.Setter
         public Builder tdeWalletPassword(@Nullable String tdeWalletPassword) {
+
             this.tdeWalletPassword = tdeWalletPassword;
             return this;
         }
         @CustomType.Setter
         public Builder vaultId(@Nullable String vaultId) {
+
             this.vaultId = vaultId;
             return this;
         }

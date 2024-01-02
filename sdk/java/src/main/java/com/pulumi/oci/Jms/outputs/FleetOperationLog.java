@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -62,12 +63,18 @@ public final class FleetOperationLog {
 
         @CustomType.Setter
         public Builder logGroupId(String logGroupId) {
-            this.logGroupId = Objects.requireNonNull(logGroupId);
+            if (logGroupId == null) {
+              throw new MissingRequiredPropertyException("FleetOperationLog", "logGroupId");
+            }
+            this.logGroupId = logGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder logId(String logId) {
-            this.logId = Objects.requireNonNull(logId);
+            if (logId == null) {
+              throw new MissingRequiredPropertyException("FleetOperationLog", "logId");
+            }
+            this.logId = logId;
             return this;
         }
         public FleetOperationLog build() {

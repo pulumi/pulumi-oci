@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemChannelTargetFilter;
 import java.lang.Integer;
 import java.lang.String;
@@ -129,27 +130,42 @@ public final class GetMysqlDbSystemsDbSystemChannelTarget {
 
         @CustomType.Setter
         public Builder applierUsername(String applierUsername) {
-            this.applierUsername = Objects.requireNonNull(applierUsername);
+            if (applierUsername == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystemChannelTarget", "applierUsername");
+            }
+            this.applierUsername = applierUsername;
             return this;
         }
         @CustomType.Setter
         public Builder channelName(String channelName) {
-            this.channelName = Objects.requireNonNull(channelName);
+            if (channelName == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystemChannelTarget", "channelName");
+            }
+            this.channelName = channelName;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystemChannelTarget", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder delayInSeconds(Integer delayInSeconds) {
-            this.delayInSeconds = Objects.requireNonNull(delayInSeconds);
+            if (delayInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystemChannelTarget", "delayInSeconds");
+            }
+            this.delayInSeconds = delayInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder filters(List<GetMysqlDbSystemsDbSystemChannelTargetFilter> filters) {
-            this.filters = Objects.requireNonNull(filters);
+            if (filters == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystemChannelTarget", "filters");
+            }
+            this.filters = filters;
             return this;
         }
         public Builder filters(GetMysqlDbSystemsDbSystemChannelTargetFilter... filters) {
@@ -157,12 +173,18 @@ public final class GetMysqlDbSystemsDbSystemChannelTarget {
         }
         @CustomType.Setter
         public Builder tablesWithoutPrimaryKeyHandling(String tablesWithoutPrimaryKeyHandling) {
-            this.tablesWithoutPrimaryKeyHandling = Objects.requireNonNull(tablesWithoutPrimaryKeyHandling);
+            if (tablesWithoutPrimaryKeyHandling == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystemChannelTarget", "tablesWithoutPrimaryKeyHandling");
+            }
+            this.tablesWithoutPrimaryKeyHandling = tablesWithoutPrimaryKeyHandling;
             return this;
         }
         @CustomType.Setter
         public Builder targetType(String targetType) {
-            this.targetType = Objects.requireNonNull(targetType);
+            if (targetType == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystemChannelTarget", "targetType");
+            }
+            this.targetType = targetType;
             return this;
         }
         public GetMysqlDbSystemsDbSystemChannelTarget build() {

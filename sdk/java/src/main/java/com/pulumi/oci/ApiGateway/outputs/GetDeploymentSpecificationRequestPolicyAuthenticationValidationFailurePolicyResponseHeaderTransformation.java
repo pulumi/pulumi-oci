@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeader;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeader;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeader;
@@ -73,7 +74,10 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationValidati
 
         @CustomType.Setter
         public Builder filterHeaders(List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeader> filterHeaders) {
-            this.filterHeaders = Objects.requireNonNull(filterHeaders);
+            if (filterHeaders == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformation", "filterHeaders");
+            }
+            this.filterHeaders = filterHeaders;
             return this;
         }
         public Builder filterHeaders(GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeader... filterHeaders) {
@@ -81,7 +85,10 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationValidati
         }
         @CustomType.Setter
         public Builder renameHeaders(List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeader> renameHeaders) {
-            this.renameHeaders = Objects.requireNonNull(renameHeaders);
+            if (renameHeaders == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformation", "renameHeaders");
+            }
+            this.renameHeaders = renameHeaders;
             return this;
         }
         public Builder renameHeaders(GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeader... renameHeaders) {
@@ -89,7 +96,10 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationValidati
         }
         @CustomType.Setter
         public Builder setHeaders(List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeader> setHeaders) {
-            this.setHeaders = Objects.requireNonNull(setHeaders);
+            if (setHeaders == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformation", "setHeaders");
+            }
+            this.setHeaders = setHeaders;
             return this;
         }
         public Builder setHeaders(GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeader... setHeaders) {

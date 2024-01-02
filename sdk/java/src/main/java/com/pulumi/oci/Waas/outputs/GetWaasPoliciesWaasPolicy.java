@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.GetWaasPoliciesWaasPolicyOrigin;
 import com.pulumi.oci.Waas.outputs.GetWaasPoliciesWaasPolicyOriginGroup;
 import com.pulumi.oci.Waas.outputs.GetWaasPoliciesWaasPolicyPolicyConfig;
@@ -231,7 +232,10 @@ public final class GetWaasPoliciesWaasPolicy {
 
         @CustomType.Setter
         public Builder additionalDomains(List<String> additionalDomains) {
-            this.additionalDomains = Objects.requireNonNull(additionalDomains);
+            if (additionalDomains == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicy", "additionalDomains");
+            }
+            this.additionalDomains = additionalDomains;
             return this;
         }
         public Builder additionalDomains(String... additionalDomains) {
@@ -239,42 +243,66 @@ public final class GetWaasPoliciesWaasPolicy {
         }
         @CustomType.Setter
         public Builder cname(String cname) {
-            this.cname = Objects.requireNonNull(cname);
+            if (cname == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicy", "cname");
+            }
+            this.cname = cname;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicy", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicy", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicy", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder domain(String domain) {
-            this.domain = Objects.requireNonNull(domain);
+            if (domain == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicy", "domain");
+            }
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicy", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicy", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder originGroups(List<GetWaasPoliciesWaasPolicyOriginGroup> originGroups) {
-            this.originGroups = Objects.requireNonNull(originGroups);
+            if (originGroups == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicy", "originGroups");
+            }
+            this.originGroups = originGroups;
             return this;
         }
         public Builder originGroups(GetWaasPoliciesWaasPolicyOriginGroup... originGroups) {
@@ -282,7 +310,10 @@ public final class GetWaasPoliciesWaasPolicy {
         }
         @CustomType.Setter
         public Builder origins(List<GetWaasPoliciesWaasPolicyOrigin> origins) {
-            this.origins = Objects.requireNonNull(origins);
+            if (origins == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicy", "origins");
+            }
+            this.origins = origins;
             return this;
         }
         public Builder origins(GetWaasPoliciesWaasPolicyOrigin... origins) {
@@ -290,7 +321,10 @@ public final class GetWaasPoliciesWaasPolicy {
         }
         @CustomType.Setter
         public Builder policyConfigs(List<GetWaasPoliciesWaasPolicyPolicyConfig> policyConfigs) {
-            this.policyConfigs = Objects.requireNonNull(policyConfigs);
+            if (policyConfigs == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicy", "policyConfigs");
+            }
+            this.policyConfigs = policyConfigs;
             return this;
         }
         public Builder policyConfigs(GetWaasPoliciesWaasPolicyPolicyConfig... policyConfigs) {
@@ -298,17 +332,26 @@ public final class GetWaasPoliciesWaasPolicy {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicy", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicy", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder wafConfigs(List<GetWaasPoliciesWaasPolicyWafConfig> wafConfigs) {
-            this.wafConfigs = Objects.requireNonNull(wafConfigs);
+            if (wafConfigs == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicy", "wafConfigs");
+            }
+            this.wafConfigs = wafConfigs;
             return this;
         }
         public Builder wafConfigs(GetWaasPoliciesWaasPolicyWafConfig... wafConfigs) {

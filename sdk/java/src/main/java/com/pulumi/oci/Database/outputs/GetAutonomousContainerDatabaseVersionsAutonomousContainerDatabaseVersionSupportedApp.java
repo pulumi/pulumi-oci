@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetAutonomousContainerDatabaseVersionsAutonomousContainerData
 
         @CustomType.Setter
         public Builder endOfSupport(String endOfSupport) {
-            this.endOfSupport = Objects.requireNonNull(endOfSupport);
+            if (endOfSupport == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp", "endOfSupport");
+            }
+            this.endOfSupport = endOfSupport;
             return this;
         }
         @CustomType.Setter
         public Builder isCertified(Boolean isCertified) {
-            this.isCertified = Objects.requireNonNull(isCertified);
+            if (isCertified == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp", "isCertified");
+            }
+            this.isCertified = isCertified;
             return this;
         }
         @CustomType.Setter
         public Builder releaseDate(String releaseDate) {
-            this.releaseDate = Objects.requireNonNull(releaseDate);
+            if (releaseDate == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp", "releaseDate");
+            }
+            this.releaseDate = releaseDate;
             return this;
         }
         @CustomType.Setter
         public Builder supportedAppName(String supportedAppName) {
-            this.supportedAppName = Objects.requireNonNull(supportedAppName);
+            if (supportedAppName == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp", "supportedAppName");
+            }
+            this.supportedAppName = supportedAppName;
             return this;
         }
         public GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp build() {

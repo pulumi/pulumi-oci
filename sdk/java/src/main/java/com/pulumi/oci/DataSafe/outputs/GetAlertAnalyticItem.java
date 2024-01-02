@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetAlertAnalyticItemDimension;
 import java.lang.String;
 import java.util.List;
@@ -100,12 +101,18 @@ public final class GetAlertAnalyticItem {
 
         @CustomType.Setter
         public Builder count(String count) {
-            this.count = Objects.requireNonNull(count);
+            if (count == null) {
+              throw new MissingRequiredPropertyException("GetAlertAnalyticItem", "count");
+            }
+            this.count = count;
             return this;
         }
         @CustomType.Setter
         public Builder dimensions(List<GetAlertAnalyticItemDimension> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+            if (dimensions == null) {
+              throw new MissingRequiredPropertyException("GetAlertAnalyticItem", "dimensions");
+            }
+            this.dimensions = dimensions;
             return this;
         }
         public Builder dimensions(GetAlertAnalyticItemDimension... dimensions) {
@@ -113,17 +120,26 @@ public final class GetAlertAnalyticItem {
         }
         @CustomType.Setter
         public Builder metricName(String metricName) {
-            this.metricName = Objects.requireNonNull(metricName);
+            if (metricName == null) {
+              throw new MissingRequiredPropertyException("GetAlertAnalyticItem", "metricName");
+            }
+            this.metricName = metricName;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+            if (timeEnded == null) {
+              throw new MissingRequiredPropertyException("GetAlertAnalyticItem", "timeEnded");
+            }
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetAlertAnalyticItem", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetAlertAnalyticItem build() {

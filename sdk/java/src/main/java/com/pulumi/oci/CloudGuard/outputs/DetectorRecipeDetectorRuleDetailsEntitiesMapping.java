@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -76,17 +77,22 @@ public final class DetectorRecipeDetectorRuleDetailsEntitiesMapping {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder entityType(@Nullable String entityType) {
+
             this.entityType = entityType;
             return this;
         }
         @CustomType.Setter
         public Builder queryField(String queryField) {
-            this.queryField = Objects.requireNonNull(queryField);
+            if (queryField == null) {
+              throw new MissingRequiredPropertyException("DetectorRecipeDetectorRuleDetailsEntitiesMapping", "queryField");
+            }
+            this.queryField = queryField;
             return this;
         }
         public DetectorRecipeDetectorRuleDetailsEntitiesMapping build() {

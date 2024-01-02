@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetOneoffPatchesFilter;
 import com.pulumi.oci.Database.outputs.GetOneoffPatchesOneoffPatch;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetOneoffPatchesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOneoffPatchesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetOneoffPatchesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +133,18 @@ public final class GetOneoffPatchesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOneoffPatchesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder oneoffPatches(List<GetOneoffPatchesOneoffPatch> oneoffPatches) {
-            this.oneoffPatches = Objects.requireNonNull(oneoffPatches);
+            if (oneoffPatches == null) {
+              throw new MissingRequiredPropertyException("GetOneoffPatchesResult", "oneoffPatches");
+            }
+            this.oneoffPatches = oneoffPatches;
             return this;
         }
         public Builder oneoffPatches(GetOneoffPatchesOneoffPatch... oneoffPatches) {
@@ -140,6 +152,7 @@ public final class GetOneoffPatchesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

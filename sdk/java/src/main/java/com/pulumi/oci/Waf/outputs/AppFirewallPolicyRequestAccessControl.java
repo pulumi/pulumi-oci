@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.AppFirewallPolicyRequestAccessControlRule;
 import java.lang.String;
 import java.util.List;
@@ -63,11 +64,15 @@ public final class AppFirewallPolicyRequestAccessControl {
 
         @CustomType.Setter
         public Builder defaultActionName(String defaultActionName) {
-            this.defaultActionName = Objects.requireNonNull(defaultActionName);
+            if (defaultActionName == null) {
+              throw new MissingRequiredPropertyException("AppFirewallPolicyRequestAccessControl", "defaultActionName");
+            }
+            this.defaultActionName = defaultActionName;
             return this;
         }
         @CustomType.Setter
         public Builder rules(@Nullable List<AppFirewallPolicyRequestAccessControlRule> rules) {
+
             this.rules = rules;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetRegionSubscriptionsFilter;
 import com.pulumi.oci.Identity.outputs.GetRegionSubscriptionsRegionSubscription;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetRegionSubscriptionsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRegionSubscriptionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,12 +82,18 @@ public final class GetRegionSubscriptionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRegionSubscriptionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder regionSubscriptions(List<GetRegionSubscriptionsRegionSubscription> regionSubscriptions) {
-            this.regionSubscriptions = Objects.requireNonNull(regionSubscriptions);
+            if (regionSubscriptions == null) {
+              throw new MissingRequiredPropertyException("GetRegionSubscriptionsResult", "regionSubscriptions");
+            }
+            this.regionSubscriptions = regionSubscriptions;
             return this;
         }
         public Builder regionSubscriptions(GetRegionSubscriptionsRegionSubscription... regionSubscriptions) {
@@ -93,7 +101,10 @@ public final class GetRegionSubscriptionsResult {
         }
         @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
-            this.tenancyId = Objects.requireNonNull(tenancyId);
+            if (tenancyId == null) {
+              throw new MissingRequiredPropertyException("GetRegionSubscriptionsResult", "tenancyId");
+            }
+            this.tenancyId = tenancyId;
             return this;
         }
         public GetRegionSubscriptionsResult build() {

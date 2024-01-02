@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -300,10 +301,18 @@ public final class ComputeImageCapabilitySchemaArgs extends com.pulumi.resources
         }
 
         public ComputeImageCapabilitySchemaArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.computeGlobalImageCapabilitySchemaVersionName = Objects.requireNonNull($.computeGlobalImageCapabilitySchemaVersionName, "expected parameter 'computeGlobalImageCapabilitySchemaVersionName' to be non-null");
-            $.imageId = Objects.requireNonNull($.imageId, "expected parameter 'imageId' to be non-null");
-            $.schemaData = Objects.requireNonNull($.schemaData, "expected parameter 'schemaData' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ComputeImageCapabilitySchemaArgs", "compartmentId");
+            }
+            if ($.computeGlobalImageCapabilitySchemaVersionName == null) {
+                throw new MissingRequiredPropertyException("ComputeImageCapabilitySchemaArgs", "computeGlobalImageCapabilitySchemaVersionName");
+            }
+            if ($.imageId == null) {
+                throw new MissingRequiredPropertyException("ComputeImageCapabilitySchemaArgs", "imageId");
+            }
+            if ($.schemaData == null) {
+                throw new MissingRequiredPropertyException("ComputeImageCapabilitySchemaArgs", "schemaData");
+            }
             return $;
         }
     }

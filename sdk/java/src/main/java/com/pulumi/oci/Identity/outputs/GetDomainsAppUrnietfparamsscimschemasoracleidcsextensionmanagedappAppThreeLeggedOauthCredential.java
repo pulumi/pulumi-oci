@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
 
         @CustomType.Setter
         public Builder accessToken(String accessToken) {
-            this.accessToken = Objects.requireNonNull(accessToken);
+            if (accessToken == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential", "accessToken");
+            }
+            this.accessToken = accessToken;
             return this;
         }
         @CustomType.Setter
         public Builder accessTokenExpiry(String accessTokenExpiry) {
-            this.accessTokenExpiry = Objects.requireNonNull(accessTokenExpiry);
+            if (accessTokenExpiry == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential", "accessTokenExpiry");
+            }
+            this.accessTokenExpiry = accessTokenExpiry;
             return this;
         }
         @CustomType.Setter
         public Builder refreshToken(String refreshToken) {
-            this.refreshToken = Objects.requireNonNull(refreshToken);
+            if (refreshToken == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential", "refreshToken");
+            }
+            this.refreshToken = refreshToken;
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential build() {

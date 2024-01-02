@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetResponderRecipeEffectiveResponderRule;
 import com.pulumi.oci.CloudGuard.outputs.GetResponderRecipeResponderRule;
 import java.lang.Object;
@@ -249,27 +250,42 @@ public final class GetResponderRecipeResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipeResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipeResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipeResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipeResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder effectiveResponderRules(List<GetResponderRecipeEffectiveResponderRule> effectiveResponderRules) {
-            this.effectiveResponderRules = Objects.requireNonNull(effectiveResponderRules);
+            if (effectiveResponderRules == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipeResult", "effectiveResponderRules");
+            }
+            this.effectiveResponderRules = effectiveResponderRules;
             return this;
         }
         public Builder effectiveResponderRules(GetResponderRecipeEffectiveResponderRule... effectiveResponderRules) {
@@ -277,32 +293,50 @@ public final class GetResponderRecipeResult {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipeResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipeResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipeResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder owner(String owner) {
-            this.owner = Objects.requireNonNull(owner);
+            if (owner == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipeResult", "owner");
+            }
+            this.owner = owner;
             return this;
         }
         @CustomType.Setter
         public Builder responderRecipeId(String responderRecipeId) {
-            this.responderRecipeId = Objects.requireNonNull(responderRecipeId);
+            if (responderRecipeId == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipeResult", "responderRecipeId");
+            }
+            this.responderRecipeId = responderRecipeId;
             return this;
         }
         @CustomType.Setter
         public Builder responderRules(List<GetResponderRecipeResponderRule> responderRules) {
-            this.responderRules = Objects.requireNonNull(responderRules);
+            if (responderRules == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipeResult", "responderRules");
+            }
+            this.responderRules = responderRules;
             return this;
         }
         public Builder responderRules(GetResponderRecipeResponderRule... responderRules) {
@@ -310,27 +344,42 @@ public final class GetResponderRecipeResult {
         }
         @CustomType.Setter
         public Builder sourceResponderRecipeId(String sourceResponderRecipeId) {
-            this.sourceResponderRecipeId = Objects.requireNonNull(sourceResponderRecipeId);
+            if (sourceResponderRecipeId == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipeResult", "sourceResponderRecipeId");
+            }
+            this.sourceResponderRecipeId = sourceResponderRecipeId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipeResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipeResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipeResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipeResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetResponderRecipeResult build() {

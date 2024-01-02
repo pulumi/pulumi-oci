@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.DefaultSecurityListEgressSecurityRuleArgs;
 import com.pulumi.oci.Core.inputs.DefaultSecurityListIngressSecurityRuleArgs;
 import java.lang.Object;
@@ -171,7 +172,9 @@ public final class DefaultSecurityListArgs extends com.pulumi.resources.Resource
         }
 
         public DefaultSecurityListArgs build() {
-            $.manageDefaultResourceId = Objects.requireNonNull($.manageDefaultResourceId, "expected parameter 'manageDefaultResourceId' to be non-null");
+            if ($.manageDefaultResourceId == null) {
+                throw new MissingRequiredPropertyException("DefaultSecurityListArgs", "manageDefaultResourceId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -183,7 +184,10 @@ public final class GetAuditEventAnalyticItemDimension {
 
         @CustomType.Setter
         public Builder auditEventTimes(List<String> auditEventTimes) {
-            this.auditEventTimes = Objects.requireNonNull(auditEventTimes);
+            if (auditEventTimes == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventAnalyticItemDimension", "auditEventTimes");
+            }
+            this.auditEventTimes = auditEventTimes;
             return this;
         }
         public Builder auditEventTimes(String... auditEventTimes) {
@@ -191,7 +195,10 @@ public final class GetAuditEventAnalyticItemDimension {
         }
         @CustomType.Setter
         public Builder auditTypes(List<String> auditTypes) {
-            this.auditTypes = Objects.requireNonNull(auditTypes);
+            if (auditTypes == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventAnalyticItemDimension", "auditTypes");
+            }
+            this.auditTypes = auditTypes;
             return this;
         }
         public Builder auditTypes(String... auditTypes) {
@@ -199,7 +206,10 @@ public final class GetAuditEventAnalyticItemDimension {
         }
         @CustomType.Setter
         public Builder clientHostnames(List<String> clientHostnames) {
-            this.clientHostnames = Objects.requireNonNull(clientHostnames);
+            if (clientHostnames == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventAnalyticItemDimension", "clientHostnames");
+            }
+            this.clientHostnames = clientHostnames;
             return this;
         }
         public Builder clientHostnames(String... clientHostnames) {
@@ -207,7 +217,10 @@ public final class GetAuditEventAnalyticItemDimension {
         }
         @CustomType.Setter
         public Builder clientIds(List<String> clientIds) {
-            this.clientIds = Objects.requireNonNull(clientIds);
+            if (clientIds == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventAnalyticItemDimension", "clientIds");
+            }
+            this.clientIds = clientIds;
             return this;
         }
         public Builder clientIds(String... clientIds) {
@@ -215,7 +228,10 @@ public final class GetAuditEventAnalyticItemDimension {
         }
         @CustomType.Setter
         public Builder clientPrograms(List<String> clientPrograms) {
-            this.clientPrograms = Objects.requireNonNull(clientPrograms);
+            if (clientPrograms == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventAnalyticItemDimension", "clientPrograms");
+            }
+            this.clientPrograms = clientPrograms;
             return this;
         }
         public Builder clientPrograms(String... clientPrograms) {
@@ -223,7 +239,10 @@ public final class GetAuditEventAnalyticItemDimension {
         }
         @CustomType.Setter
         public Builder dbUserNames(List<String> dbUserNames) {
-            this.dbUserNames = Objects.requireNonNull(dbUserNames);
+            if (dbUserNames == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventAnalyticItemDimension", "dbUserNames");
+            }
+            this.dbUserNames = dbUserNames;
             return this;
         }
         public Builder dbUserNames(String... dbUserNames) {
@@ -231,7 +250,10 @@ public final class GetAuditEventAnalyticItemDimension {
         }
         @CustomType.Setter
         public Builder eventNames(List<String> eventNames) {
-            this.eventNames = Objects.requireNonNull(eventNames);
+            if (eventNames == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventAnalyticItemDimension", "eventNames");
+            }
+            this.eventNames = eventNames;
             return this;
         }
         public Builder eventNames(String... eventNames) {
@@ -239,7 +261,10 @@ public final class GetAuditEventAnalyticItemDimension {
         }
         @CustomType.Setter
         public Builder objectTypes(List<String> objectTypes) {
-            this.objectTypes = Objects.requireNonNull(objectTypes);
+            if (objectTypes == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventAnalyticItemDimension", "objectTypes");
+            }
+            this.objectTypes = objectTypes;
             return this;
         }
         public Builder objectTypes(String... objectTypes) {
@@ -247,7 +272,10 @@ public final class GetAuditEventAnalyticItemDimension {
         }
         @CustomType.Setter
         public Builder targetClasses(List<String> targetClasses) {
-            this.targetClasses = Objects.requireNonNull(targetClasses);
+            if (targetClasses == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventAnalyticItemDimension", "targetClasses");
+            }
+            this.targetClasses = targetClasses;
             return this;
         }
         public Builder targetClasses(String... targetClasses) {
@@ -255,7 +283,10 @@ public final class GetAuditEventAnalyticItemDimension {
         }
         @CustomType.Setter
         public Builder targetIds(List<String> targetIds) {
-            this.targetIds = Objects.requireNonNull(targetIds);
+            if (targetIds == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventAnalyticItemDimension", "targetIds");
+            }
+            this.targetIds = targetIds;
             return this;
         }
         public Builder targetIds(String... targetIds) {
@@ -263,7 +294,10 @@ public final class GetAuditEventAnalyticItemDimension {
         }
         @CustomType.Setter
         public Builder targetNames(List<String> targetNames) {
-            this.targetNames = Objects.requireNonNull(targetNames);
+            if (targetNames == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventAnalyticItemDimension", "targetNames");
+            }
+            this.targetNames = targetNames;
             return this;
         }
         public Builder targetNames(String... targetNames) {

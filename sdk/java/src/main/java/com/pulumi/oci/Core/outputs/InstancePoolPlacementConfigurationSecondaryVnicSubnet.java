@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail;
 import java.lang.Boolean;
 import java.lang.String;
@@ -89,11 +90,13 @@ public final class InstancePoolPlacementConfigurationSecondaryVnicSubnet {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder ipv6addressIpv6subnetCidrPairDetails(@Nullable List<InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails) {
+
             this.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             return this;
         }
@@ -102,12 +105,16 @@ public final class InstancePoolPlacementConfigurationSecondaryVnicSubnet {
         }
         @CustomType.Setter
         public Builder isAssignIpv6ip(@Nullable Boolean isAssignIpv6ip) {
+
             this.isAssignIpv6ip = isAssignIpv6ip;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("InstancePoolPlacementConfigurationSecondaryVnicSubnet", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         public InstancePoolPlacementConfigurationSecondaryVnicSubnet build() {

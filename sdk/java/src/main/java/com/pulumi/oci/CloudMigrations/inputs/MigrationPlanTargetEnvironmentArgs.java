@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudMigrations.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -384,9 +385,15 @@ public final class MigrationPlanTargetEnvironmentArgs extends com.pulumi.resourc
         }
 
         public MigrationPlanTargetEnvironmentArgs build() {
-            $.subnet = Objects.requireNonNull($.subnet, "expected parameter 'subnet' to be non-null");
-            $.targetEnvironmentType = Objects.requireNonNull($.targetEnvironmentType, "expected parameter 'targetEnvironmentType' to be non-null");
-            $.vcn = Objects.requireNonNull($.vcn, "expected parameter 'vcn' to be non-null");
+            if ($.subnet == null) {
+                throw new MissingRequiredPropertyException("MigrationPlanTargetEnvironmentArgs", "subnet");
+            }
+            if ($.targetEnvironmentType == null) {
+                throw new MissingRequiredPropertyException("MigrationPlanTargetEnvironmentArgs", "targetEnvironmentType");
+            }
+            if ($.vcn == null) {
+                throw new MissingRequiredPropertyException("MigrationPlanTargetEnvironmentArgs", "vcn");
+            }
             return $;
         }
     }

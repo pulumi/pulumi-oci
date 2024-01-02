@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OneSubsription.outputs.GetSubscribedServicesSubscribedServiceServiceToAddressLocation;
 import java.lang.Boolean;
 import java.lang.String;
@@ -157,22 +158,34 @@ public final class GetSubscribedServicesSubscribedServiceServiceToAddress {
 
         @CustomType.Setter
         public Builder billSiteUseId(String billSiteUseId) {
-            this.billSiteUseId = Objects.requireNonNull(billSiteUseId);
+            if (billSiteUseId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServiceServiceToAddress", "billSiteUseId");
+            }
+            this.billSiteUseId = billSiteUseId;
             return this;
         }
         @CustomType.Setter
         public Builder isBillTo(Boolean isBillTo) {
-            this.isBillTo = Objects.requireNonNull(isBillTo);
+            if (isBillTo == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServiceServiceToAddress", "isBillTo");
+            }
+            this.isBillTo = isBillTo;
             return this;
         }
         @CustomType.Setter
         public Builder isShipTo(Boolean isShipTo) {
-            this.isShipTo = Objects.requireNonNull(isShipTo);
+            if (isShipTo == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServiceServiceToAddress", "isShipTo");
+            }
+            this.isShipTo = isShipTo;
             return this;
         }
         @CustomType.Setter
         public Builder locations(List<GetSubscribedServicesSubscribedServiceServiceToAddressLocation> locations) {
-            this.locations = Objects.requireNonNull(locations);
+            if (locations == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServiceServiceToAddress", "locations");
+            }
+            this.locations = locations;
             return this;
         }
         public Builder locations(GetSubscribedServicesSubscribedServiceServiceToAddressLocation... locations) {
@@ -180,27 +193,42 @@ public final class GetSubscribedServicesSubscribedServiceServiceToAddress {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServiceServiceToAddress", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder phone(String phone) {
-            this.phone = Objects.requireNonNull(phone);
+            if (phone == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServiceServiceToAddress", "phone");
+            }
+            this.phone = phone;
             return this;
         }
         @CustomType.Setter
         public Builder service2siteUseId(String service2siteUseId) {
-            this.service2siteUseId = Objects.requireNonNull(service2siteUseId);
+            if (service2siteUseId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServiceServiceToAddress", "service2siteUseId");
+            }
+            this.service2siteUseId = service2siteUseId;
             return this;
         }
         @CustomType.Setter
         public Builder tcaCustAcctSiteId(String tcaCustAcctSiteId) {
-            this.tcaCustAcctSiteId = Objects.requireNonNull(tcaCustAcctSiteId);
+            if (tcaCustAcctSiteId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServiceServiceToAddress", "tcaCustAcctSiteId");
+            }
+            this.tcaCustAcctSiteId = tcaCustAcctSiteId;
             return this;
         }
         @CustomType.Setter
         public Builder tcaPartySiteNumber(String tcaPartySiteNumber) {
-            this.tcaPartySiteNumber = Objects.requireNonNull(tcaPartySiteNumber);
+            if (tcaPartySiteNumber == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServiceServiceToAddress", "tcaPartySiteNumber");
+            }
+            this.tcaPartySiteNumber = tcaPartySiteNumber;
             return this;
         }
         public GetSubscribedServicesSubscribedServiceServiceToAddress build() {

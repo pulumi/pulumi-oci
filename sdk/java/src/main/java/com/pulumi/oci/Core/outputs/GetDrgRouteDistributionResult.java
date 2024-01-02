@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -162,52 +163,82 @@ public final class GetDrgRouteDistributionResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteDistributionResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteDistributionResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteDistributionResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder distributionType(String distributionType) {
-            this.distributionType = Objects.requireNonNull(distributionType);
+            if (distributionType == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteDistributionResult", "distributionType");
+            }
+            this.distributionType = distributionType;
             return this;
         }
         @CustomType.Setter
         public Builder drgId(String drgId) {
-            this.drgId = Objects.requireNonNull(drgId);
+            if (drgId == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteDistributionResult", "drgId");
+            }
+            this.drgId = drgId;
             return this;
         }
         @CustomType.Setter
         public Builder drgRouteDistributionId(String drgRouteDistributionId) {
-            this.drgRouteDistributionId = Objects.requireNonNull(drgRouteDistributionId);
+            if (drgRouteDistributionId == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteDistributionResult", "drgRouteDistributionId");
+            }
+            this.drgRouteDistributionId = drgRouteDistributionId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteDistributionResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteDistributionResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteDistributionResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteDistributionResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetDrgRouteDistributionResult build() {

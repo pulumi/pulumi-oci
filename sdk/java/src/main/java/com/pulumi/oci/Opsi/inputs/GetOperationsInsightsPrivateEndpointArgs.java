@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetOperationsInsightsPrivateEndpointArgs extends com.pulumi.r
         }
 
         public GetOperationsInsightsPrivateEndpointArgs build() {
-            $.operationsInsightsPrivateEndpointId = Objects.requireNonNull($.operationsInsightsPrivateEndpointId, "expected parameter 'operationsInsightsPrivateEndpointId' to be non-null");
+            if ($.operationsInsightsPrivateEndpointId == null) {
+                throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointArgs", "operationsInsightsPrivateEndpointId");
+            }
             return $;
         }
     }

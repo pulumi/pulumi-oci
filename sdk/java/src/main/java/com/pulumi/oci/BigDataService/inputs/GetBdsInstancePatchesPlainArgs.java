@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchesFilter;
 import java.lang.String;
 import java.util.List;
@@ -84,7 +85,9 @@ public final class GetBdsInstancePatchesPlainArgs extends com.pulumi.resources.I
         }
 
         public GetBdsInstancePatchesPlainArgs build() {
-            $.bdsInstanceId = Objects.requireNonNull($.bdsInstanceId, "expected parameter 'bdsInstanceId' to be non-null");
+            if ($.bdsInstanceId == null) {
+                throw new MissingRequiredPropertyException("GetBdsInstancePatchesPlainArgs", "bdsInstanceId");
+            }
             return $;
         }
     }

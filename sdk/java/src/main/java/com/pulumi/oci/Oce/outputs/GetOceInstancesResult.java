@@ -4,6 +4,7 @@
 package com.pulumi.oci.Oce.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Oce.outputs.GetOceInstancesFilter;
 import com.pulumi.oci.Oce.outputs.GetOceInstancesOceInstance;
 import java.lang.String;
@@ -115,16 +116,21 @@ public final class GetOceInstancesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetOceInstancesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -133,12 +139,18 @@ public final class GetOceInstancesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder oceInstances(List<GetOceInstancesOceInstance> oceInstances) {
-            this.oceInstances = Objects.requireNonNull(oceInstances);
+            if (oceInstances == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesResult", "oceInstances");
+            }
+            this.oceInstances = oceInstances;
             return this;
         }
         public Builder oceInstances(GetOceInstancesOceInstance... oceInstances) {
@@ -146,11 +158,13 @@ public final class GetOceInstancesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder tenancyId(@Nullable String tenancyId) {
+
             this.tenancyId = tenancyId;
             return this;
         }

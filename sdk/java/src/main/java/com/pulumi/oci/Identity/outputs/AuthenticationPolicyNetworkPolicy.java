@@ -44,6 +44,7 @@ public final class AuthenticationPolicyNetworkPolicy {
 
         @CustomType.Setter
         public Builder networkSourceIds(@Nullable List<String> networkSourceIds) {
+
             this.networkSourceIds = networkSourceIds;
             return this;
         }

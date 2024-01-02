@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseTools.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPassword;
 import java.lang.String;
 import java.util.List;
@@ -86,12 +87,18 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
 
         @CustomType.Setter
         public Builder proxyAuthenticationType(String proxyAuthenticationType) {
-            this.proxyAuthenticationType = Objects.requireNonNull(proxyAuthenticationType);
+            if (proxyAuthenticationType == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient", "proxyAuthenticationType");
+            }
+            this.proxyAuthenticationType = proxyAuthenticationType;
             return this;
         }
         @CustomType.Setter
         public Builder roles(List<String> roles) {
-            this.roles = Objects.requireNonNull(roles);
+            if (roles == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient", "roles");
+            }
+            this.roles = roles;
             return this;
         }
         public Builder roles(String... roles) {
@@ -99,12 +106,18 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         }
         @CustomType.Setter
         public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+            if (userName == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient", "userName");
+            }
+            this.userName = userName;
             return this;
         }
         @CustomType.Setter
         public Builder userPasswords(List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPassword> userPasswords) {
-            this.userPasswords = Objects.requireNonNull(userPasswords);
+            if (userPasswords == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient", "userPasswords");
+            }
+            this.userPasswords = userPasswords;
             return this;
         }
         public Builder userPasswords(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPassword... userPasswords) {

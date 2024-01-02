@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetListUserGrantsGrant {
 
         @CustomType.Setter
         public Builder depthLevel(Integer depthLevel) {
-            this.depthLevel = Objects.requireNonNull(depthLevel);
+            if (depthLevel == null) {
+              throw new MissingRequiredPropertyException("GetListUserGrantsGrant", "depthLevel");
+            }
+            this.depthLevel = depthLevel;
             return this;
         }
         @CustomType.Setter
         public Builder grantName(String grantName) {
-            this.grantName = Objects.requireNonNull(grantName);
+            if (grantName == null) {
+              throw new MissingRequiredPropertyException("GetListUserGrantsGrant", "grantName");
+            }
+            this.grantName = grantName;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetListUserGrantsGrant", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder privilegeCategory(String privilegeCategory) {
-            this.privilegeCategory = Objects.requireNonNull(privilegeCategory);
+            if (privilegeCategory == null) {
+              throw new MissingRequiredPropertyException("GetListUserGrantsGrant", "privilegeCategory");
+            }
+            this.privilegeCategory = privilegeCategory;
             return this;
         }
         @CustomType.Setter
         public Builder privilegeType(String privilegeType) {
-            this.privilegeType = Objects.requireNonNull(privilegeType);
+            if (privilegeType == null) {
+              throw new MissingRequiredPropertyException("GetListUserGrantsGrant", "privilegeType");
+            }
+            this.privilegeType = privilegeType;
             return this;
         }
         public GetListUserGrantsGrant build() {

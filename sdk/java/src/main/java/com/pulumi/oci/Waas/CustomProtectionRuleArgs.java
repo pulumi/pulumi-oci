@@ -5,6 +5,7 @@ package com.pulumi.oci.Waas;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -339,9 +340,15 @@ public final class CustomProtectionRuleArgs extends com.pulumi.resources.Resourc
         }
 
         public CustomProtectionRuleArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.template = Objects.requireNonNull($.template, "expected parameter 'template' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("CustomProtectionRuleArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("CustomProtectionRuleArgs", "displayName");
+            }
+            if ($.template == null) {
+                throw new MissingRequiredPropertyException("CustomProtectionRuleArgs", "template");
+            }
             return $;
         }
     }

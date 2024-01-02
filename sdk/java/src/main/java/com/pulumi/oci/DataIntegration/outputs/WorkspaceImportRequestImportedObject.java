@@ -170,51 +170,61 @@ public final class WorkspaceImportRequestImportedObject {
 
         @CustomType.Setter
         public Builder aggregatorKey(@Nullable String aggregatorKey) {
+
             this.aggregatorKey = aggregatorKey;
             return this;
         }
         @CustomType.Setter
         public Builder identifier(@Nullable String identifier) {
+
             this.identifier = identifier;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder namePath(@Nullable String namePath) {
+
             this.namePath = namePath;
             return this;
         }
         @CustomType.Setter
         public Builder newKey(@Nullable String newKey) {
+
             this.newKey = newKey;
             return this;
         }
         @CustomType.Setter
         public Builder objectType(@Nullable String objectType) {
+
             this.objectType = objectType;
             return this;
         }
         @CustomType.Setter
         public Builder objectVersion(@Nullable String objectVersion) {
+
             this.objectVersion = objectVersion;
             return this;
         }
         @CustomType.Setter
         public Builder oldKey(@Nullable String oldKey) {
+
             this.oldKey = oldKey;
             return this;
         }
         @CustomType.Setter
         public Builder resolutionAction(@Nullable String resolutionAction) {
+
             this.resolutionAction = resolutionAction;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdatedInMillis(@Nullable String timeUpdatedInMillis) {
+
             this.timeUpdatedInMillis = timeUpdatedInMillis;
             return this;
         }

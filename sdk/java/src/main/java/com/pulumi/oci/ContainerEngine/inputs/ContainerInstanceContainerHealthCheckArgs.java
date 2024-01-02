@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceContainerHealthCheckHeaderArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -540,7 +541,9 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
         }
 
         public ContainerInstanceContainerHealthCheckArgs build() {
-            $.healthCheckType = Objects.requireNonNull($.healthCheckType, "expected parameter 'healthCheckType' to be non-null");
+            if ($.healthCheckType == null) {
+                throw new MissingRequiredPropertyException("ContainerInstanceContainerHealthCheckArgs", "healthCheckType");
+            }
             return $;
         }
     }

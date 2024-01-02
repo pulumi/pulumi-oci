@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -556,8 +557,12 @@ public final class SensitiveDataModelArgs extends com.pulumi.resources.ResourceA
         }
 
         public SensitiveDataModelArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.targetId = Objects.requireNonNull($.targetId, "expected parameter 'targetId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("SensitiveDataModelArgs", "compartmentId");
+            }
+            if ($.targetId == null) {
+                throw new MissingRequiredPropertyException("SensitiveDataModelArgs", "targetId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.PolicyWafConfigJsChallengeChallengeSettings;
 import com.pulumi.oci.Waas.outputs.PolicyWafConfigJsChallengeCriteria;
 import com.pulumi.oci.Waas.outputs.PolicyWafConfigJsChallengeSetHttpHeader;
@@ -162,26 +163,31 @@ public final class PolicyWafConfigJsChallenge {
 
         @CustomType.Setter
         public Builder action(@Nullable String action) {
+
             this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder actionExpirationInSeconds(@Nullable Integer actionExpirationInSeconds) {
+
             this.actionExpirationInSeconds = actionExpirationInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder areRedirectsChallenged(@Nullable Boolean areRedirectsChallenged) {
+
             this.areRedirectsChallenged = areRedirectsChallenged;
             return this;
         }
         @CustomType.Setter
         public Builder challengeSettings(@Nullable PolicyWafConfigJsChallengeChallengeSettings challengeSettings) {
+
             this.challengeSettings = challengeSettings;
             return this;
         }
         @CustomType.Setter
         public Builder criterias(@Nullable List<PolicyWafConfigJsChallengeCriteria> criterias) {
+
             this.criterias = criterias;
             return this;
         }
@@ -190,21 +196,27 @@ public final class PolicyWafConfigJsChallenge {
         }
         @CustomType.Setter
         public Builder failureThreshold(@Nullable Integer failureThreshold) {
+
             this.failureThreshold = failureThreshold;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("PolicyWafConfigJsChallenge", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isNatEnabled(@Nullable Boolean isNatEnabled) {
+
             this.isNatEnabled = isNatEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder setHttpHeader(@Nullable PolicyWafConfigJsChallengeSetHttpHeader setHttpHeader) {
+
             this.setHttpHeader = setHttpHeader;
             return this;
         }

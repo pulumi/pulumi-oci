@@ -4,6 +4,7 @@
 package com.pulumi.oci.HealthChecks.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -243,62 +244,98 @@ public final class GetPingMonitorsPingMonitor {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetPingMonitorsPingMonitor", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetPingMonitorsPingMonitor", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetPingMonitorsPingMonitor", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetPingMonitorsPingMonitor", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder homeRegion(String homeRegion) {
-            this.homeRegion = Objects.requireNonNull(homeRegion);
+            if (homeRegion == null) {
+              throw new MissingRequiredPropertyException("GetPingMonitorsPingMonitor", "homeRegion");
+            }
+            this.homeRegion = homeRegion;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPingMonitorsPingMonitor", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder intervalInSeconds(Integer intervalInSeconds) {
-            this.intervalInSeconds = Objects.requireNonNull(intervalInSeconds);
+            if (intervalInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetPingMonitorsPingMonitor", "intervalInSeconds");
+            }
+            this.intervalInSeconds = intervalInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetPingMonitorsPingMonitor", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetPingMonitorsPingMonitor", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetPingMonitorsPingMonitor", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder resultsUrl(String resultsUrl) {
-            this.resultsUrl = Objects.requireNonNull(resultsUrl);
+            if (resultsUrl == null) {
+              throw new MissingRequiredPropertyException("GetPingMonitorsPingMonitor", "resultsUrl");
+            }
+            this.resultsUrl = resultsUrl;
             return this;
         }
         @CustomType.Setter
         public Builder targets(List<String> targets) {
-            this.targets = Objects.requireNonNull(targets);
+            if (targets == null) {
+              throw new MissingRequiredPropertyException("GetPingMonitorsPingMonitor", "targets");
+            }
+            this.targets = targets;
             return this;
         }
         public Builder targets(String... targets) {
@@ -306,17 +343,26 @@ public final class GetPingMonitorsPingMonitor {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetPingMonitorsPingMonitor", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeoutInSeconds(Integer timeoutInSeconds) {
-            this.timeoutInSeconds = Objects.requireNonNull(timeoutInSeconds);
+            if (timeoutInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetPingMonitorsPingMonitor", "timeoutInSeconds");
+            }
+            this.timeoutInSeconds = timeoutInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder vantagePointNames(List<String> vantagePointNames) {
-            this.vantagePointNames = Objects.requireNonNull(vantagePointNames);
+            if (vantagePointNames == null) {
+              throw new MissingRequiredPropertyException("GetPingMonitorsPingMonitor", "vantagePointNames");
+            }
+            this.vantagePointNames = vantagePointNames;
             return this;
         }
         public Builder vantagePointNames(String... vantagePointNames) {

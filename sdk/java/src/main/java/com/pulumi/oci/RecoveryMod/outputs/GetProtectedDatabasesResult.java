@@ -4,6 +4,7 @@
 package com.pulumi.oci.RecoveryMod.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.RecoveryMod.outputs.GetProtectedDatabasesFilter;
 import com.pulumi.oci.RecoveryMod.outputs.GetProtectedDatabasesProtectedDatabaseCollection;
 import java.lang.String;
@@ -137,16 +138,21 @@ public final class GetProtectedDatabasesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetProtectedDatabasesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -155,12 +161,16 @@ public final class GetProtectedDatabasesResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder protectedDatabaseCollections(List<GetProtectedDatabasesProtectedDatabaseCollection> protectedDatabaseCollections) {
-            this.protectedDatabaseCollections = Objects.requireNonNull(protectedDatabaseCollections);
+            if (protectedDatabaseCollections == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesResult", "protectedDatabaseCollections");
+            }
+            this.protectedDatabaseCollections = protectedDatabaseCollections;
             return this;
         }
         public Builder protectedDatabaseCollections(GetProtectedDatabasesProtectedDatabaseCollection... protectedDatabaseCollections) {
@@ -168,16 +178,19 @@ public final class GetProtectedDatabasesResult {
         }
         @CustomType.Setter
         public Builder protectionPolicyId(@Nullable String protectionPolicyId) {
+
             this.protectionPolicyId = protectionPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder recoveryServiceSubnetId(@Nullable String recoveryServiceSubnetId) {
+
             this.recoveryServiceSubnetId = recoveryServiceSubnetId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

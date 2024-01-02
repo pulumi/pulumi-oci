@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.inputs.GetTrailSequencesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -210,10 +211,18 @@ public final class GetTrailSequencesArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetTrailSequencesArgs build() {
-            $.deploymentId = Objects.requireNonNull($.deploymentId, "expected parameter 'deploymentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.trailFileId = Objects.requireNonNull($.trailFileId, "expected parameter 'trailFileId' to be non-null");
-            $.trailSequenceId = Objects.requireNonNull($.trailSequenceId, "expected parameter 'trailSequenceId' to be non-null");
+            if ($.deploymentId == null) {
+                throw new MissingRequiredPropertyException("GetTrailSequencesArgs", "deploymentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("GetTrailSequencesArgs", "displayName");
+            }
+            if ($.trailFileId == null) {
+                throw new MissingRequiredPropertyException("GetTrailSequencesArgs", "trailFileId");
+            }
+            if ($.trailSequenceId == null) {
+                throw new MissingRequiredPropertyException("GetTrailSequencesArgs", "trailSequenceId");
+            }
             return $;
         }
     }

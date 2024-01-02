@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetBackupPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetBackupPlainArgs build() {
-            $.backupId = Objects.requireNonNull($.backupId, "expected parameter 'backupId' to be non-null");
+            if ($.backupId == null) {
+                throw new MissingRequiredPropertyException("GetBackupPlainArgs", "backupId");
+            }
             return $;
         }
     }

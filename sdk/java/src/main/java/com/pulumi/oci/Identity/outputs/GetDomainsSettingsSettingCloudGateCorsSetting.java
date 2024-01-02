@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -101,12 +102,18 @@ public final class GetDomainsSettingsSettingCloudGateCorsSetting {
 
         @CustomType.Setter
         public Builder cloudGateCorsAllowNullOrigin(Boolean cloudGateCorsAllowNullOrigin) {
-            this.cloudGateCorsAllowNullOrigin = Objects.requireNonNull(cloudGateCorsAllowNullOrigin);
+            if (cloudGateCorsAllowNullOrigin == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingsSettingCloudGateCorsSetting", "cloudGateCorsAllowNullOrigin");
+            }
+            this.cloudGateCorsAllowNullOrigin = cloudGateCorsAllowNullOrigin;
             return this;
         }
         @CustomType.Setter
         public Builder cloudGateCorsAllowedOrigins(List<String> cloudGateCorsAllowedOrigins) {
-            this.cloudGateCorsAllowedOrigins = Objects.requireNonNull(cloudGateCorsAllowedOrigins);
+            if (cloudGateCorsAllowedOrigins == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingsSettingCloudGateCorsSetting", "cloudGateCorsAllowedOrigins");
+            }
+            this.cloudGateCorsAllowedOrigins = cloudGateCorsAllowedOrigins;
             return this;
         }
         public Builder cloudGateCorsAllowedOrigins(String... cloudGateCorsAllowedOrigins) {
@@ -114,12 +121,18 @@ public final class GetDomainsSettingsSettingCloudGateCorsSetting {
         }
         @CustomType.Setter
         public Builder cloudGateCorsEnabled(Boolean cloudGateCorsEnabled) {
-            this.cloudGateCorsEnabled = Objects.requireNonNull(cloudGateCorsEnabled);
+            if (cloudGateCorsEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingsSettingCloudGateCorsSetting", "cloudGateCorsEnabled");
+            }
+            this.cloudGateCorsEnabled = cloudGateCorsEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder cloudGateCorsExposedHeaders(List<String> cloudGateCorsExposedHeaders) {
-            this.cloudGateCorsExposedHeaders = Objects.requireNonNull(cloudGateCorsExposedHeaders);
+            if (cloudGateCorsExposedHeaders == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingsSettingCloudGateCorsSetting", "cloudGateCorsExposedHeaders");
+            }
+            this.cloudGateCorsExposedHeaders = cloudGateCorsExposedHeaders;
             return this;
         }
         public Builder cloudGateCorsExposedHeaders(String... cloudGateCorsExposedHeaders) {
@@ -127,7 +140,10 @@ public final class GetDomainsSettingsSettingCloudGateCorsSetting {
         }
         @CustomType.Setter
         public Builder cloudGateCorsMaxAge(Integer cloudGateCorsMaxAge) {
-            this.cloudGateCorsMaxAge = Objects.requireNonNull(cloudGateCorsMaxAge);
+            if (cloudGateCorsMaxAge == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingsSettingCloudGateCorsSetting", "cloudGateCorsMaxAge");
+            }
+            this.cloudGateCorsMaxAge = cloudGateCorsMaxAge;
             return this;
         }
         public GetDomainsSettingsSettingCloudGateCorsSetting build() {

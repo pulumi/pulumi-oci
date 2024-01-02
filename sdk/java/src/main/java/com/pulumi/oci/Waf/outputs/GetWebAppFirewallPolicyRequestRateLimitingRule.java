@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPolicyRequestRateLimitingRuleConfiguration;
 import java.lang.String;
 import java.util.List;
@@ -116,22 +117,34 @@ public final class GetWebAppFirewallPolicyRequestRateLimitingRule {
 
         @CustomType.Setter
         public Builder actionName(String actionName) {
-            this.actionName = Objects.requireNonNull(actionName);
+            if (actionName == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyRequestRateLimitingRule", "actionName");
+            }
+            this.actionName = actionName;
             return this;
         }
         @CustomType.Setter
         public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+            if (condition == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyRequestRateLimitingRule", "condition");
+            }
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
         public Builder conditionLanguage(String conditionLanguage) {
-            this.conditionLanguage = Objects.requireNonNull(conditionLanguage);
+            if (conditionLanguage == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyRequestRateLimitingRule", "conditionLanguage");
+            }
+            this.conditionLanguage = conditionLanguage;
             return this;
         }
         @CustomType.Setter
         public Builder configurations(List<GetWebAppFirewallPolicyRequestRateLimitingRuleConfiguration> configurations) {
-            this.configurations = Objects.requireNonNull(configurations);
+            if (configurations == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyRequestRateLimitingRule", "configurations");
+            }
+            this.configurations = configurations;
             return this;
         }
         public Builder configurations(GetWebAppFirewallPolicyRequestRateLimitingRuleConfiguration... configurations) {
@@ -139,12 +152,18 @@ public final class GetWebAppFirewallPolicyRequestRateLimitingRule {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyRequestRateLimitingRule", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyRequestRateLimitingRule", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetWebAppFirewallPolicyRequestRateLimitingRule build() {

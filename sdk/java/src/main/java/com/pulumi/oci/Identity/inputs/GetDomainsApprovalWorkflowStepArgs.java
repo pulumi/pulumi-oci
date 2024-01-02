@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -272,8 +273,12 @@ public final class GetDomainsApprovalWorkflowStepArgs extends com.pulumi.resourc
         }
 
         public GetDomainsApprovalWorkflowStepArgs build() {
-            $.approvalWorkflowStepId = Objects.requireNonNull($.approvalWorkflowStepId, "expected parameter 'approvalWorkflowStepId' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
+            if ($.approvalWorkflowStepId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepArgs", "approvalWorkflowStepId");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepArgs", "idcsEndpoint");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -174,31 +175,37 @@ public final class ContainerInstanceVnic {
 
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+
             this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+
             this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostnameLabel(@Nullable String hostnameLabel) {
+
             this.hostnameLabel = hostnameLabel;
             return this;
         }
         @CustomType.Setter
         public Builder isPublicIpAssigned(@Nullable Boolean isPublicIpAssigned) {
+
             this.isPublicIpAssigned = isPublicIpAssigned;
             return this;
         }
         @CustomType.Setter
         public Builder nsgIds(@Nullable List<String> nsgIds) {
+
             this.nsgIds = nsgIds;
             return this;
         }
@@ -207,21 +214,27 @@ public final class ContainerInstanceVnic {
         }
         @CustomType.Setter
         public Builder privateIp(@Nullable String privateIp) {
+
             this.privateIp = privateIp;
             return this;
         }
         @CustomType.Setter
         public Builder skipSourceDestCheck(@Nullable Boolean skipSourceDestCheck) {
+
             this.skipSourceDestCheck = skipSourceDestCheck;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("ContainerInstanceVnic", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder vnicId(@Nullable String vnicId) {
+
             this.vnicId = vnicId;
             return this;
         }

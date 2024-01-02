@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation;
 import java.lang.String;
 import java.util.List;
@@ -156,17 +157,26 @@ public final class GetDrPlanPlanGroupStepUserDefinedStep {
 
         @CustomType.Setter
         public Builder functionId(String functionId) {
-            this.functionId = Objects.requireNonNull(functionId);
+            if (functionId == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroupStepUserDefinedStep", "functionId");
+            }
+            this.functionId = functionId;
             return this;
         }
         @CustomType.Setter
         public Builder functionRegion(String functionRegion) {
-            this.functionRegion = Objects.requireNonNull(functionRegion);
+            if (functionRegion == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroupStepUserDefinedStep", "functionRegion");
+            }
+            this.functionRegion = functionRegion;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageScriptLocations(List<GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation> objectStorageScriptLocations) {
-            this.objectStorageScriptLocations = Objects.requireNonNull(objectStorageScriptLocations);
+            if (objectStorageScriptLocations == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroupStepUserDefinedStep", "objectStorageScriptLocations");
+            }
+            this.objectStorageScriptLocations = objectStorageScriptLocations;
             return this;
         }
         public Builder objectStorageScriptLocations(GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation... objectStorageScriptLocations) {
@@ -174,32 +184,50 @@ public final class GetDrPlanPlanGroupStepUserDefinedStep {
         }
         @CustomType.Setter
         public Builder requestBody(String requestBody) {
-            this.requestBody = Objects.requireNonNull(requestBody);
+            if (requestBody == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroupStepUserDefinedStep", "requestBody");
+            }
+            this.requestBody = requestBody;
             return this;
         }
         @CustomType.Setter
         public Builder runAsUser(String runAsUser) {
-            this.runAsUser = Objects.requireNonNull(runAsUser);
+            if (runAsUser == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroupStepUserDefinedStep", "runAsUser");
+            }
+            this.runAsUser = runAsUser;
             return this;
         }
         @CustomType.Setter
         public Builder runOnInstanceId(String runOnInstanceId) {
-            this.runOnInstanceId = Objects.requireNonNull(runOnInstanceId);
+            if (runOnInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroupStepUserDefinedStep", "runOnInstanceId");
+            }
+            this.runOnInstanceId = runOnInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder runOnInstanceRegion(String runOnInstanceRegion) {
-            this.runOnInstanceRegion = Objects.requireNonNull(runOnInstanceRegion);
+            if (runOnInstanceRegion == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroupStepUserDefinedStep", "runOnInstanceRegion");
+            }
+            this.runOnInstanceRegion = runOnInstanceRegion;
             return this;
         }
         @CustomType.Setter
         public Builder scriptCommand(String scriptCommand) {
-            this.scriptCommand = Objects.requireNonNull(scriptCommand);
+            if (scriptCommand == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroupStepUserDefinedStep", "scriptCommand");
+            }
+            this.scriptCommand = scriptCommand;
             return this;
         }
         @CustomType.Setter
         public Builder stepType(String stepType) {
-            this.stepType = Objects.requireNonNull(stepType);
+            if (stepType == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroupStepUserDefinedStep", "stepType");
+            }
+            this.stepType = stepType;
             return this;
         }
         public GetDrPlanPlanGroupStepUserDefinedStep build() {

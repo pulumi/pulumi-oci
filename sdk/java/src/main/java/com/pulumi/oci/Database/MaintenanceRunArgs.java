@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -282,9 +283,15 @@ public final class MaintenanceRunArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public MaintenanceRunArgs build() {
-            $.patchType = Objects.requireNonNull($.patchType, "expected parameter 'patchType' to be non-null");
-            $.targetResourceId = Objects.requireNonNull($.targetResourceId, "expected parameter 'targetResourceId' to be non-null");
-            $.timeScheduled = Objects.requireNonNull($.timeScheduled, "expected parameter 'timeScheduled' to be non-null");
+            if ($.patchType == null) {
+                throw new MissingRequiredPropertyException("MaintenanceRunArgs", "patchType");
+            }
+            if ($.targetResourceId == null) {
+                throw new MissingRequiredPropertyException("MaintenanceRunArgs", "targetResourceId");
+            }
+            if ($.timeScheduled == null) {
+                throw new MissingRequiredPropertyException("MaintenanceRunArgs", "timeScheduled");
+            }
             return $;
         }
     }

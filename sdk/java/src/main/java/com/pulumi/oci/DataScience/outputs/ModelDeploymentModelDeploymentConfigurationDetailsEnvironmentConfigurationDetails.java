@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -146,6 +147,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
 
         @CustomType.Setter
         public Builder cmds(@Nullable List<String> cmds) {
+
             this.cmds = cmds;
             return this;
         }
@@ -154,6 +156,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
         }
         @CustomType.Setter
         public Builder entrypoints(@Nullable List<String> entrypoints) {
+
             this.entrypoints = entrypoints;
             return this;
         }
@@ -162,31 +165,39 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
         }
         @CustomType.Setter
         public Builder environmentConfigurationType(String environmentConfigurationType) {
-            this.environmentConfigurationType = Objects.requireNonNull(environmentConfigurationType);
+            if (environmentConfigurationType == null) {
+              throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails", "environmentConfigurationType");
+            }
+            this.environmentConfigurationType = environmentConfigurationType;
             return this;
         }
         @CustomType.Setter
         public Builder environmentVariables(@Nullable Map<String,Object> environmentVariables) {
+
             this.environmentVariables = environmentVariables;
             return this;
         }
         @CustomType.Setter
         public Builder healthCheckPort(@Nullable Integer healthCheckPort) {
+
             this.healthCheckPort = healthCheckPort;
             return this;
         }
         @CustomType.Setter
         public Builder image(@Nullable String image) {
+
             this.image = image;
             return this;
         }
         @CustomType.Setter
         public Builder imageDigest(@Nullable String imageDigest) {
+
             this.imageDigest = imageDigest;
             return this;
         }
         @CustomType.Setter
         public Builder serverPort(@Nullable Integer serverPort) {
+
             this.serverPort = serverPort;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructuresExadataInfrastructureContact;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructuresExadataInfrastructureMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetail;
@@ -693,62 +694,98 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
 
         @CustomType.Setter
         public Builder activatedStorageCount(Integer activatedStorageCount) {
-            this.activatedStorageCount = Objects.requireNonNull(activatedStorageCount);
+            if (activatedStorageCount == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "activatedStorageCount");
+            }
+            this.activatedStorageCount = activatedStorageCount;
             return this;
         }
         @CustomType.Setter
         public Builder activationFile(String activationFile) {
-            this.activationFile = Objects.requireNonNull(activationFile);
+            if (activationFile == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "activationFile");
+            }
+            this.activationFile = activationFile;
             return this;
         }
         @CustomType.Setter
         public Builder additionalComputeCount(Integer additionalComputeCount) {
-            this.additionalComputeCount = Objects.requireNonNull(additionalComputeCount);
+            if (additionalComputeCount == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "additionalComputeCount");
+            }
+            this.additionalComputeCount = additionalComputeCount;
             return this;
         }
         @CustomType.Setter
         public Builder additionalComputeSystemModel(String additionalComputeSystemModel) {
-            this.additionalComputeSystemModel = Objects.requireNonNull(additionalComputeSystemModel);
+            if (additionalComputeSystemModel == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "additionalComputeSystemModel");
+            }
+            this.additionalComputeSystemModel = additionalComputeSystemModel;
             return this;
         }
         @CustomType.Setter
         public Builder additionalStorageCount(Integer additionalStorageCount) {
-            this.additionalStorageCount = Objects.requireNonNull(additionalStorageCount);
+            if (additionalStorageCount == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "additionalStorageCount");
+            }
+            this.additionalStorageCount = additionalStorageCount;
             return this;
         }
         @CustomType.Setter
         public Builder adminNetworkCidr(String adminNetworkCidr) {
-            this.adminNetworkCidr = Objects.requireNonNull(adminNetworkCidr);
+            if (adminNetworkCidr == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "adminNetworkCidr");
+            }
+            this.adminNetworkCidr = adminNetworkCidr;
             return this;
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder cloudControlPlaneServer1(String cloudControlPlaneServer1) {
-            this.cloudControlPlaneServer1 = Objects.requireNonNull(cloudControlPlaneServer1);
+            if (cloudControlPlaneServer1 == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "cloudControlPlaneServer1");
+            }
+            this.cloudControlPlaneServer1 = cloudControlPlaneServer1;
             return this;
         }
         @CustomType.Setter
         public Builder cloudControlPlaneServer2(String cloudControlPlaneServer2) {
-            this.cloudControlPlaneServer2 = Objects.requireNonNull(cloudControlPlaneServer2);
+            if (cloudControlPlaneServer2 == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "cloudControlPlaneServer2");
+            }
+            this.cloudControlPlaneServer2 = cloudControlPlaneServer2;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeCount(Integer computeCount) {
-            this.computeCount = Objects.requireNonNull(computeCount);
+            if (computeCount == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "computeCount");
+            }
+            this.computeCount = computeCount;
             return this;
         }
         @CustomType.Setter
         public Builder contacts(List<GetExadataInfrastructuresExadataInfrastructureContact> contacts) {
-            this.contacts = Objects.requireNonNull(contacts);
+            if (contacts == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "contacts");
+            }
+            this.contacts = contacts;
             return this;
         }
         public Builder contacts(GetExadataInfrastructuresExadataInfrastructureContact... contacts) {
@@ -756,52 +793,82 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         }
         @CustomType.Setter
         public Builder corporateProxy(String corporateProxy) {
-            this.corporateProxy = Objects.requireNonNull(corporateProxy);
+            if (corporateProxy == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "corporateProxy");
+            }
+            this.corporateProxy = corporateProxy;
             return this;
         }
         @CustomType.Setter
         public Builder cpusEnabled(Integer cpusEnabled) {
-            this.cpusEnabled = Objects.requireNonNull(cpusEnabled);
+            if (cpusEnabled == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "cpusEnabled");
+            }
+            this.cpusEnabled = cpusEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder createAsync(Boolean createAsync) {
-            this.createAsync = Objects.requireNonNull(createAsync);
+            if (createAsync == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "createAsync");
+            }
+            this.createAsync = createAsync;
             return this;
         }
         @CustomType.Setter
         public Builder csiNumber(String csiNumber) {
-            this.csiNumber = Objects.requireNonNull(csiNumber);
+            if (csiNumber == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "csiNumber");
+            }
+            this.csiNumber = csiNumber;
             return this;
         }
         @CustomType.Setter
         public Builder dataStorageSizeInTbs(Double dataStorageSizeInTbs) {
-            this.dataStorageSizeInTbs = Objects.requireNonNull(dataStorageSizeInTbs);
+            if (dataStorageSizeInTbs == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "dataStorageSizeInTbs");
+            }
+            this.dataStorageSizeInTbs = dataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
-            this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
+            if (dbNodeStorageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "dbNodeStorageSizeInGbs");
+            }
+            this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder dbServerVersion(String dbServerVersion) {
-            this.dbServerVersion = Objects.requireNonNull(dbServerVersion);
+            if (dbServerVersion == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "dbServerVersion");
+            }
+            this.dbServerVersion = dbServerVersion;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder dnsServers(List<String> dnsServers) {
-            this.dnsServers = Objects.requireNonNull(dnsServers);
+            if (dnsServers == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "dnsServers");
+            }
+            this.dnsServers = dnsServers;
             return this;
         }
         public Builder dnsServers(String... dnsServers) {
@@ -809,47 +876,74 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder gateway(String gateway) {
-            this.gateway = Objects.requireNonNull(gateway);
+            if (gateway == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "gateway");
+            }
+            this.gateway = gateway;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder infiniBandNetworkCidr(String infiniBandNetworkCidr) {
-            this.infiniBandNetworkCidr = Objects.requireNonNull(infiniBandNetworkCidr);
+            if (infiniBandNetworkCidr == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "infiniBandNetworkCidr");
+            }
+            this.infiniBandNetworkCidr = infiniBandNetworkCidr;
             return this;
         }
         @CustomType.Setter
         public Builder isCpsOfflineReportEnabled(Boolean isCpsOfflineReportEnabled) {
-            this.isCpsOfflineReportEnabled = Objects.requireNonNull(isCpsOfflineReportEnabled);
+            if (isCpsOfflineReportEnabled == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "isCpsOfflineReportEnabled");
+            }
+            this.isCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isMultiRackDeployment(Boolean isMultiRackDeployment) {
-            this.isMultiRackDeployment = Objects.requireNonNull(isMultiRackDeployment);
+            if (isMultiRackDeployment == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "isMultiRackDeployment");
+            }
+            this.isMultiRackDeployment = isMultiRackDeployment;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder maintenanceSloStatus(String maintenanceSloStatus) {
-            this.maintenanceSloStatus = Objects.requireNonNull(maintenanceSloStatus);
+            if (maintenanceSloStatus == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "maintenanceSloStatus");
+            }
+            this.maintenanceSloStatus = maintenanceSloStatus;
             return this;
         }
         @CustomType.Setter
         public Builder maintenanceWindows(List<GetExadataInfrastructuresExadataInfrastructureMaintenanceWindow> maintenanceWindows) {
-            this.maintenanceWindows = Objects.requireNonNull(maintenanceWindows);
+            if (maintenanceWindows == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "maintenanceWindows");
+            }
+            this.maintenanceWindows = maintenanceWindows;
             return this;
         }
         public Builder maintenanceWindows(GetExadataInfrastructuresExadataInfrastructureMaintenanceWindow... maintenanceWindows) {
@@ -857,47 +951,74 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         }
         @CustomType.Setter
         public Builder maxCpuCount(Integer maxCpuCount) {
-            this.maxCpuCount = Objects.requireNonNull(maxCpuCount);
+            if (maxCpuCount == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "maxCpuCount");
+            }
+            this.maxCpuCount = maxCpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder maxDataStorageInTbs(Double maxDataStorageInTbs) {
-            this.maxDataStorageInTbs = Objects.requireNonNull(maxDataStorageInTbs);
+            if (maxDataStorageInTbs == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "maxDataStorageInTbs");
+            }
+            this.maxDataStorageInTbs = maxDataStorageInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder maxDbNodeStorageInGbs(Integer maxDbNodeStorageInGbs) {
-            this.maxDbNodeStorageInGbs = Objects.requireNonNull(maxDbNodeStorageInGbs);
+            if (maxDbNodeStorageInGbs == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "maxDbNodeStorageInGbs");
+            }
+            this.maxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder maxMemoryInGbs(Integer maxMemoryInGbs) {
-            this.maxMemoryInGbs = Objects.requireNonNull(maxMemoryInGbs);
+            if (maxMemoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "maxMemoryInGbs");
+            }
+            this.maxMemoryInGbs = maxMemoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder memorySizeInGbs(Integer memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+            if (memorySizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "memorySizeInGbs");
+            }
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder monthlyDbServerVersion(String monthlyDbServerVersion) {
-            this.monthlyDbServerVersion = Objects.requireNonNull(monthlyDbServerVersion);
+            if (monthlyDbServerVersion == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "monthlyDbServerVersion");
+            }
+            this.monthlyDbServerVersion = monthlyDbServerVersion;
             return this;
         }
         @CustomType.Setter
         public Builder multiRackConfigurationFile(String multiRackConfigurationFile) {
-            this.multiRackConfigurationFile = Objects.requireNonNull(multiRackConfigurationFile);
+            if (multiRackConfigurationFile == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "multiRackConfigurationFile");
+            }
+            this.multiRackConfigurationFile = multiRackConfigurationFile;
             return this;
         }
         @CustomType.Setter
         public Builder netmask(String netmask) {
-            this.netmask = Objects.requireNonNull(netmask);
+            if (netmask == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "netmask");
+            }
+            this.netmask = netmask;
             return this;
         }
         @CustomType.Setter
         public Builder networkBondingModeDetails(List<GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetail> networkBondingModeDetails) {
-            this.networkBondingModeDetails = Objects.requireNonNull(networkBondingModeDetails);
+            if (networkBondingModeDetails == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "networkBondingModeDetails");
+            }
+            this.networkBondingModeDetails = networkBondingModeDetails;
             return this;
         }
         public Builder networkBondingModeDetails(GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetail... networkBondingModeDetails) {
@@ -905,7 +1026,10 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         }
         @CustomType.Setter
         public Builder ntpServers(List<String> ntpServers) {
-            this.ntpServers = Objects.requireNonNull(ntpServers);
+            if (ntpServers == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "ntpServers");
+            }
+            this.ntpServers = ntpServers;
             return this;
         }
         public Builder ntpServers(String... ntpServers) {
@@ -913,37 +1037,58 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         }
         @CustomType.Setter
         public Builder rackSerialNumber(String rackSerialNumber) {
-            this.rackSerialNumber = Objects.requireNonNull(rackSerialNumber);
+            if (rackSerialNumber == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "rackSerialNumber");
+            }
+            this.rackSerialNumber = rackSerialNumber;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder storageCount(Integer storageCount) {
-            this.storageCount = Objects.requireNonNull(storageCount);
+            if (storageCount == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "storageCount");
+            }
+            this.storageCount = storageCount;
             return this;
         }
         @CustomType.Setter
         public Builder storageServerVersion(String storageServerVersion) {
-            this.storageServerVersion = Objects.requireNonNull(storageServerVersion);
+            if (storageServerVersion == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "storageServerVersion");
+            }
+            this.storageServerVersion = storageServerVersion;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeZone(String timeZone) {
-            this.timeZone = Objects.requireNonNull(timeZone);
+            if (timeZone == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "timeZone");
+            }
+            this.timeZone = timeZone;
             return this;
         }
         public GetExadataInfrastructuresExadataInfrastructure build() {

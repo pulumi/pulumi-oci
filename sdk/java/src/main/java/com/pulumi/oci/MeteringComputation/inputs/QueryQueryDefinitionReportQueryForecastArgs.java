@@ -5,6 +5,7 @@ package com.pulumi.oci.MeteringComputation.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -150,7 +151,9 @@ public final class QueryQueryDefinitionReportQueryForecastArgs extends com.pulum
         }
 
         public QueryQueryDefinitionReportQueryForecastArgs build() {
-            $.timeForecastEnded = Objects.requireNonNull($.timeForecastEnded, "expected parameter 'timeForecastEnded' to be non-null");
+            if ($.timeForecastEnded == null) {
+                throw new MissingRequiredPropertyException("QueryQueryDefinitionReportQueryForecastArgs", "timeForecastEnded");
+            }
             return $;
         }
     }

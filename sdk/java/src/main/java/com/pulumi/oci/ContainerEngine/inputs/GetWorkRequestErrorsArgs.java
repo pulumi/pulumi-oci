@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestErrorsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -136,8 +137,12 @@ public final class GetWorkRequestErrorsArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetWorkRequestErrorsArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.workRequestId = Objects.requireNonNull($.workRequestId, "expected parameter 'workRequestId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetWorkRequestErrorsArgs", "compartmentId");
+            }
+            if ($.workRequestId == null) {
+                throw new MissingRequiredPropertyException("GetWorkRequestErrorsArgs", "workRequestId");
+            }
             return $;
         }
     }

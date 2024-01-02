@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -154,47 +155,74 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
 
         @CustomType.Setter
         public Builder authenticationMethod(String authenticationMethod) {
-            this.authenticationMethod = Objects.requireNonNull(authenticationMethod);
+            if (authenticationMethod == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice", "authenticationMethod");
+            }
+            this.authenticationMethod = authenticationMethod;
             return this;
         }
         @CustomType.Setter
         public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+            if (display == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice", "display");
+            }
+            this.display = display;
             return this;
         }
         @CustomType.Setter
         public Builder factorStatus(String factorStatus) {
-            this.factorStatus = Objects.requireNonNull(factorStatus);
+            if (factorStatus == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice", "factorStatus");
+            }
+            this.factorStatus = factorStatus;
             return this;
         }
         @CustomType.Setter
         public Builder factorType(String factorType) {
-            this.factorType = Objects.requireNonNull(factorType);
+            if (factorType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice", "factorType");
+            }
+            this.factorType = factorType;
             return this;
         }
         @CustomType.Setter
         public Builder lastSyncTime(String lastSyncTime) {
-            this.lastSyncTime = Objects.requireNonNull(lastSyncTime);
+            if (lastSyncTime == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice", "lastSyncTime");
+            }
+            this.lastSyncTime = lastSyncTime;
             return this;
         }
         @CustomType.Setter
         public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+            if (ref == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice", "ref");
+            }
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder thirdPartyVendorName(String thirdPartyVendorName) {
-            this.thirdPartyVendorName = Objects.requireNonNull(thirdPartyVendorName);
+            if (thirdPartyVendorName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice", "thirdPartyVendorName");
+            }
+            this.thirdPartyVendorName = thirdPartyVendorName;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice build() {

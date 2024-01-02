@@ -5,6 +5,7 @@ package com.pulumi.oci.LicenseManager.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetProductLicenseArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetProductLicenseArgs build() {
-            $.productLicenseId = Objects.requireNonNull($.productLicenseId, "expected parameter 'productLicenseId' to be non-null");
+            if ($.productLicenseId == null) {
+                throw new MissingRequiredPropertyException("GetProductLicenseArgs", "productLicenseId");
+            }
             return $;
         }
     }

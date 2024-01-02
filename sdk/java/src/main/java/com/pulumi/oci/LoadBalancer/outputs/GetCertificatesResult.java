@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.GetCertificatesCertificate;
 import com.pulumi.oci.LoadBalancer.outputs.GetCertificatesFilter;
 import java.lang.String;
@@ -72,7 +73,10 @@ public final class GetCertificatesResult {
 
         @CustomType.Setter
         public Builder certificates(List<GetCertificatesCertificate> certificates) {
-            this.certificates = Objects.requireNonNull(certificates);
+            if (certificates == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesResult", "certificates");
+            }
+            this.certificates = certificates;
             return this;
         }
         public Builder certificates(GetCertificatesCertificate... certificates) {
@@ -80,6 +84,7 @@ public final class GetCertificatesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCertificatesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -88,12 +93,18 @@ public final class GetCertificatesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesResult", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         public GetCertificatesResult build() {

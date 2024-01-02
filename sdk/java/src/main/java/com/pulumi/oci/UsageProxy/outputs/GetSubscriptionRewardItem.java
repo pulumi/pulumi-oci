@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
@@ -198,62 +199,98 @@ public final class GetSubscriptionRewardItem {
 
         @CustomType.Setter
         public Builder availableRewards(Double availableRewards) {
-            this.availableRewards = Objects.requireNonNull(availableRewards);
+            if (availableRewards == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRewardItem", "availableRewards");
+            }
+            this.availableRewards = availableRewards;
             return this;
         }
         @CustomType.Setter
         public Builder earnedRewards(Double earnedRewards) {
-            this.earnedRewards = Objects.requireNonNull(earnedRewards);
+            if (earnedRewards == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRewardItem", "earnedRewards");
+            }
+            this.earnedRewards = earnedRewards;
             return this;
         }
         @CustomType.Setter
         public Builder eligibleUsageAmount(Double eligibleUsageAmount) {
-            this.eligibleUsageAmount = Objects.requireNonNull(eligibleUsageAmount);
+            if (eligibleUsageAmount == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRewardItem", "eligibleUsageAmount");
+            }
+            this.eligibleUsageAmount = eligibleUsageAmount;
             return this;
         }
         @CustomType.Setter
         public Builder ineligibleUsageAmount(Double ineligibleUsageAmount) {
-            this.ineligibleUsageAmount = Objects.requireNonNull(ineligibleUsageAmount);
+            if (ineligibleUsageAmount == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRewardItem", "ineligibleUsageAmount");
+            }
+            this.ineligibleUsageAmount = ineligibleUsageAmount;
             return this;
         }
         @CustomType.Setter
         public Builder isManual(Boolean isManual) {
-            this.isManual = Objects.requireNonNull(isManual);
+            if (isManual == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRewardItem", "isManual");
+            }
+            this.isManual = isManual;
             return this;
         }
         @CustomType.Setter
         public Builder redeemedRewards(Double redeemedRewards) {
-            this.redeemedRewards = Objects.requireNonNull(redeemedRewards);
+            if (redeemedRewards == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRewardItem", "redeemedRewards");
+            }
+            this.redeemedRewards = redeemedRewards;
             return this;
         }
         @CustomType.Setter
         public Builder timeRewardsEarned(String timeRewardsEarned) {
-            this.timeRewardsEarned = Objects.requireNonNull(timeRewardsEarned);
+            if (timeRewardsEarned == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRewardItem", "timeRewardsEarned");
+            }
+            this.timeRewardsEarned = timeRewardsEarned;
             return this;
         }
         @CustomType.Setter
         public Builder timeRewardsExpired(String timeRewardsExpired) {
-            this.timeRewardsExpired = Objects.requireNonNull(timeRewardsExpired);
+            if (timeRewardsExpired == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRewardItem", "timeRewardsExpired");
+            }
+            this.timeRewardsExpired = timeRewardsExpired;
             return this;
         }
         @CustomType.Setter
         public Builder timeUsageEnded(String timeUsageEnded) {
-            this.timeUsageEnded = Objects.requireNonNull(timeUsageEnded);
+            if (timeUsageEnded == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRewardItem", "timeUsageEnded");
+            }
+            this.timeUsageEnded = timeUsageEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeUsageStarted(String timeUsageStarted) {
-            this.timeUsageStarted = Objects.requireNonNull(timeUsageStarted);
+            if (timeUsageStarted == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRewardItem", "timeUsageStarted");
+            }
+            this.timeUsageStarted = timeUsageStarted;
             return this;
         }
         @CustomType.Setter
         public Builder usageAmount(Double usageAmount) {
-            this.usageAmount = Objects.requireNonNull(usageAmount);
+            if (usageAmount == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRewardItem", "usageAmount");
+            }
+            this.usageAmount = usageAmount;
             return this;
         }
         @CustomType.Setter
         public Builder usagePeriodKey(String usagePeriodKey) {
-            this.usagePeriodKey = Objects.requireNonNull(usagePeriodKey);
+            if (usagePeriodKey == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRewardItem", "usagePeriodKey");
+            }
+            this.usagePeriodKey = usagePeriodKey;
             return this;
         }
         public GetSubscriptionRewardItem build() {

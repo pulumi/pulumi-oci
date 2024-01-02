@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -143,41 +144,53 @@ public final class MetricExtensionMetricList {
 
         @CustomType.Setter
         public Builder computeExpression(@Nullable String computeExpression) {
+
             this.computeExpression = computeExpression;
             return this;
         }
         @CustomType.Setter
         public Builder dataType(String dataType) {
-            this.dataType = Objects.requireNonNull(dataType);
+            if (dataType == null) {
+              throw new MissingRequiredPropertyException("MetricExtensionMetricList", "dataType");
+            }
+            this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder isDimension(@Nullable Boolean isDimension) {
+
             this.isDimension = isDimension;
             return this;
         }
         @CustomType.Setter
         public Builder isHidden(@Nullable Boolean isHidden) {
+
             this.isHidden = isHidden;
             return this;
         }
         @CustomType.Setter
         public Builder metricCategory(@Nullable String metricCategory) {
+
             this.metricCategory = metricCategory;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("MetricExtensionMetricList", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder unit(@Nullable String unit) {
+
             this.unit = unit;
             return this;
         }

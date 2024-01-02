@@ -72,16 +72,19 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentAssociatedCompone
 
         @CustomType.Setter
         public Builder associationType(@Nullable String associationType) {
+
             this.associationType = associationType;
             return this;
         }
         @CustomType.Setter
         public Builder componentId(@Nullable String componentId) {
+
             this.componentId = componentId;
             return this;
         }
         @CustomType.Setter
         public Builder componentType(@Nullable String componentType) {
+
             this.componentType = componentType;
             return this;
         }

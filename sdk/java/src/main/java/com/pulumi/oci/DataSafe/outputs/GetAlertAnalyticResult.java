@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetAlertAnalyticItem;
 import java.lang.Boolean;
 import java.lang.String;
@@ -139,21 +140,27 @@ public final class GetAlertAnalyticResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAlertAnalyticResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder groupBies(@Nullable List<String> groupBies) {
+
             this.groupBies = groupBies;
             return this;
         }
@@ -162,12 +169,18 @@ public final class GetAlertAnalyticResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAlertAnalyticResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetAlertAnalyticItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetAlertAnalyticResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetAlertAnalyticItem... items) {
@@ -175,16 +188,19 @@ public final class GetAlertAnalyticResult {
         }
         @CustomType.Setter
         public Builder queryTimeZone(@Nullable String queryTimeZone) {
+
             this.queryTimeZone = queryTimeZone;
             return this;
         }
         @CustomType.Setter
         public Builder scimQuery(@Nullable String scimQuery) {
+
             this.scimQuery = scimQuery;
             return this;
         }
         @CustomType.Setter
         public Builder summaryFields(@Nullable List<String> summaryFields) {
+
             this.summaryFields = summaryFields;
             return this;
         }
@@ -193,11 +209,13 @@ public final class GetAlertAnalyticResult {
         }
         @CustomType.Setter
         public Builder timeEnded(@Nullable String timeEnded) {
+
             this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(@Nullable String timeStarted) {
+
             this.timeStarted = timeStarted;
             return this;
         }

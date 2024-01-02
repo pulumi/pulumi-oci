@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetFunctionProvisionedConcurrencyConfig {
 
         @CustomType.Setter
         public Builder count(Integer count) {
-            this.count = Objects.requireNonNull(count);
+            if (count == null) {
+              throw new MissingRequiredPropertyException("GetFunctionProvisionedConcurrencyConfig", "count");
+            }
+            this.count = count;
             return this;
         }
         @CustomType.Setter
         public Builder strategy(String strategy) {
-            this.strategy = Objects.requireNonNull(strategy);
+            if (strategy == null) {
+              throw new MissingRequiredPropertyException("GetFunctionProvisionedConcurrencyConfig", "strategy");
+            }
+            this.strategy = strategy;
             return this;
         }
         public GetFunctionProvisionedConcurrencyConfig build() {

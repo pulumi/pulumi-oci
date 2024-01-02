@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsBrandingSettingsBrandingSettingCompanyName;
 import com.pulumi.oci.Identity.outputs.GetDomainsBrandingSettingsBrandingSettingDefaultCompanyName;
 import com.pulumi.oci.Identity.outputs.GetDomainsBrandingSettingsBrandingSettingDefaultImage;
@@ -550,7 +551,10 @@ public final class GetDomainsBrandingSettingsBrandingSetting {
 
         @CustomType.Setter
         public Builder attributeSets(List<String> attributeSets) {
-            this.attributeSets = Objects.requireNonNull(attributeSets);
+            if (attributeSets == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "attributeSets");
+            }
+            this.attributeSets = attributeSets;
             return this;
         }
         public Builder attributeSets(String... attributeSets) {
@@ -558,22 +562,34 @@ public final class GetDomainsBrandingSettingsBrandingSetting {
         }
         @CustomType.Setter
         public Builder attributes(String attributes) {
-            this.attributes = Objects.requireNonNull(attributes);
+            if (attributes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "attributes");
+            }
+            this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(String authorization) {
-            this.authorization = Objects.requireNonNull(authorization);
+            if (authorization == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "authorization");
+            }
+            this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder brandingSettingId(String brandingSettingId) {
-            this.brandingSettingId = Objects.requireNonNull(brandingSettingId);
+            if (brandingSettingId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "brandingSettingId");
+            }
+            this.brandingSettingId = brandingSettingId;
             return this;
         }
         @CustomType.Setter
         public Builder companyNames(List<GetDomainsBrandingSettingsBrandingSettingCompanyName> companyNames) {
-            this.companyNames = Objects.requireNonNull(companyNames);
+            if (companyNames == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "companyNames");
+            }
+            this.companyNames = companyNames;
             return this;
         }
         public Builder companyNames(GetDomainsBrandingSettingsBrandingSettingCompanyName... companyNames) {
@@ -581,32 +597,50 @@ public final class GetDomainsBrandingSettingsBrandingSetting {
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder customBranding(Boolean customBranding) {
-            this.customBranding = Objects.requireNonNull(customBranding);
+            if (customBranding == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "customBranding");
+            }
+            this.customBranding = customBranding;
             return this;
         }
         @CustomType.Setter
         public Builder customCssLocation(String customCssLocation) {
-            this.customCssLocation = Objects.requireNonNull(customCssLocation);
+            if (customCssLocation == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "customCssLocation");
+            }
+            this.customCssLocation = customCssLocation;
             return this;
         }
         @CustomType.Setter
         public Builder customHtmlLocation(String customHtmlLocation) {
-            this.customHtmlLocation = Objects.requireNonNull(customHtmlLocation);
+            if (customHtmlLocation == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "customHtmlLocation");
+            }
+            this.customHtmlLocation = customHtmlLocation;
             return this;
         }
         @CustomType.Setter
         public Builder customTranslation(String customTranslation) {
-            this.customTranslation = Objects.requireNonNull(customTranslation);
+            if (customTranslation == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "customTranslation");
+            }
+            this.customTranslation = customTranslation;
             return this;
         }
         @CustomType.Setter
         public Builder defaultCompanyNames(List<GetDomainsBrandingSettingsBrandingSettingDefaultCompanyName> defaultCompanyNames) {
-            this.defaultCompanyNames = Objects.requireNonNull(defaultCompanyNames);
+            if (defaultCompanyNames == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "defaultCompanyNames");
+            }
+            this.defaultCompanyNames = defaultCompanyNames;
             return this;
         }
         public Builder defaultCompanyNames(GetDomainsBrandingSettingsBrandingSettingDefaultCompanyName... defaultCompanyNames) {
@@ -614,7 +648,10 @@ public final class GetDomainsBrandingSettingsBrandingSetting {
         }
         @CustomType.Setter
         public Builder defaultImages(List<GetDomainsBrandingSettingsBrandingSettingDefaultImage> defaultImages) {
-            this.defaultImages = Objects.requireNonNull(defaultImages);
+            if (defaultImages == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "defaultImages");
+            }
+            this.defaultImages = defaultImages;
             return this;
         }
         public Builder defaultImages(GetDomainsBrandingSettingsBrandingSettingDefaultImage... defaultImages) {
@@ -622,7 +659,10 @@ public final class GetDomainsBrandingSettingsBrandingSetting {
         }
         @CustomType.Setter
         public Builder defaultLoginTexts(List<GetDomainsBrandingSettingsBrandingSettingDefaultLoginText> defaultLoginTexts) {
-            this.defaultLoginTexts = Objects.requireNonNull(defaultLoginTexts);
+            if (defaultLoginTexts == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "defaultLoginTexts");
+            }
+            this.defaultLoginTexts = defaultLoginTexts;
             return this;
         }
         public Builder defaultLoginTexts(GetDomainsBrandingSettingsBrandingSettingDefaultLoginText... defaultLoginTexts) {
@@ -630,32 +670,50 @@ public final class GetDomainsBrandingSettingsBrandingSetting {
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder enableTermsOfUse(Boolean enableTermsOfUse) {
-            this.enableTermsOfUse = Objects.requireNonNull(enableTermsOfUse);
+            if (enableTermsOfUse == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "enableTermsOfUse");
+            }
+            this.enableTermsOfUse = enableTermsOfUse;
             return this;
         }
         @CustomType.Setter
         public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+            if (externalId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "externalId");
+            }
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsBrandingSettingsBrandingSettingIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsBrandingSettingsBrandingSettingIdcsCreatedBy... idcsCreatedBies) {
@@ -663,12 +721,18 @@ public final class GetDomainsBrandingSettingsBrandingSetting {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsBrandingSettingsBrandingSettingIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsBrandingSettingsBrandingSettingIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -676,12 +740,18 @@ public final class GetDomainsBrandingSettingsBrandingSetting {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -689,7 +759,10 @@ public final class GetDomainsBrandingSettingsBrandingSetting {
         }
         @CustomType.Setter
         public Builder images(List<GetDomainsBrandingSettingsBrandingSettingImage> images) {
-            this.images = Objects.requireNonNull(images);
+            if (images == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "images");
+            }
+            this.images = images;
             return this;
         }
         public Builder images(GetDomainsBrandingSettingsBrandingSettingImage... images) {
@@ -697,17 +770,26 @@ public final class GetDomainsBrandingSettingsBrandingSetting {
         }
         @CustomType.Setter
         public Builder isHostedPage(Boolean isHostedPage) {
-            this.isHostedPage = Objects.requireNonNull(isHostedPage);
+            if (isHostedPage == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "isHostedPage");
+            }
+            this.isHostedPage = isHostedPage;
             return this;
         }
         @CustomType.Setter
         public Builder locale(String locale) {
-            this.locale = Objects.requireNonNull(locale);
+            if (locale == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "locale");
+            }
+            this.locale = locale;
             return this;
         }
         @CustomType.Setter
         public Builder loginTexts(List<GetDomainsBrandingSettingsBrandingSettingLoginText> loginTexts) {
-            this.loginTexts = Objects.requireNonNull(loginTexts);
+            if (loginTexts == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "loginTexts");
+            }
+            this.loginTexts = loginTexts;
             return this;
         }
         public Builder loginTexts(GetDomainsBrandingSettingsBrandingSettingLoginText... loginTexts) {
@@ -715,7 +797,10 @@ public final class GetDomainsBrandingSettingsBrandingSetting {
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsBrandingSettingsBrandingSettingMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsBrandingSettingsBrandingSettingMeta... metas) {
@@ -723,27 +808,42 @@ public final class GetDomainsBrandingSettingsBrandingSetting {
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder preferredLanguage(String preferredLanguage) {
-            this.preferredLanguage = Objects.requireNonNull(preferredLanguage);
+            if (preferredLanguage == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "preferredLanguage");
+            }
+            this.preferredLanguage = preferredLanguage;
             return this;
         }
         @CustomType.Setter
         public Builder privacyPolicyUrl(String privacyPolicyUrl) {
-            this.privacyPolicyUrl = Objects.requireNonNull(privacyPolicyUrl);
+            if (privacyPolicyUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "privacyPolicyUrl");
+            }
+            this.privacyPolicyUrl = privacyPolicyUrl;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(String resourceTypeSchemaVersion) {
-            this.resourceTypeSchemaVersion = Objects.requireNonNull(resourceTypeSchemaVersion);
+            if (resourceTypeSchemaVersion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "resourceTypeSchemaVersion");
+            }
+            this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -751,7 +851,10 @@ public final class GetDomainsBrandingSettingsBrandingSetting {
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsBrandingSettingsBrandingSettingTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsBrandingSettingsBrandingSettingTag... tags) {
@@ -759,17 +862,26 @@ public final class GetDomainsBrandingSettingsBrandingSetting {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder termsOfUseUrl(String termsOfUseUrl) {
-            this.termsOfUseUrl = Objects.requireNonNull(termsOfUseUrl);
+            if (termsOfUseUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "termsOfUseUrl");
+            }
+            this.termsOfUseUrl = termsOfUseUrl;
             return this;
         }
         @CustomType.Setter
         public Builder timezone(String timezone) {
-            this.timezone = Objects.requireNonNull(timezone);
+            if (timezone == null) {
+              throw new MissingRequiredPropertyException("GetDomainsBrandingSettingsBrandingSetting", "timezone");
+            }
+            this.timezone = timezone;
             return this;
         }
         public GetDomainsBrandingSettingsBrandingSetting build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OspGateway.outputs.GetInvoicesInvoiceLineItemCurrency;
 import java.lang.Double;
 import java.lang.String;
@@ -157,7 +158,10 @@ public final class GetInvoicesInvoiceLineItem {
 
         @CustomType.Setter
         public Builder currencies(List<GetInvoicesInvoiceLineItemCurrency> currencies) {
-            this.currencies = Objects.requireNonNull(currencies);
+            if (currencies == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineItem", "currencies");
+            }
+            this.currencies = currencies;
             return this;
         }
         public Builder currencies(GetInvoicesInvoiceLineItemCurrency... currencies) {
@@ -165,42 +169,66 @@ public final class GetInvoicesInvoiceLineItem {
         }
         @CustomType.Setter
         public Builder netUnitPrice(Double netUnitPrice) {
-            this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
+            if (netUnitPrice == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineItem", "netUnitPrice");
+            }
+            this.netUnitPrice = netUnitPrice;
             return this;
         }
         @CustomType.Setter
         public Builder orderNo(String orderNo) {
-            this.orderNo = Objects.requireNonNull(orderNo);
+            if (orderNo == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineItem", "orderNo");
+            }
+            this.orderNo = orderNo;
             return this;
         }
         @CustomType.Setter
         public Builder partNumber(String partNumber) {
-            this.partNumber = Objects.requireNonNull(partNumber);
+            if (partNumber == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineItem", "partNumber");
+            }
+            this.partNumber = partNumber;
             return this;
         }
         @CustomType.Setter
         public Builder product(String product) {
-            this.product = Objects.requireNonNull(product);
+            if (product == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineItem", "product");
+            }
+            this.product = product;
             return this;
         }
         @CustomType.Setter
         public Builder quantity(Double quantity) {
-            this.quantity = Objects.requireNonNull(quantity);
+            if (quantity == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineItem", "quantity");
+            }
+            this.quantity = quantity;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+            if (timeEnd == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineItem", "timeEnd");
+            }
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+            if (timeStart == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineItem", "timeStart");
+            }
+            this.timeStart = timeStart;
             return this;
         }
         @CustomType.Setter
         public Builder totalPrice(Double totalPrice) {
-            this.totalPrice = Objects.requireNonNull(totalPrice);
+            if (totalPrice == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineItem", "totalPrice");
+            }
+            this.totalPrice = totalPrice;
             return this;
         }
         public GetInvoicesInvoiceLineItem build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.ApiGateway.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -304,7 +305,9 @@ public final class DeploymentSpecificationRouteRequestPoliciesCorsArgs extends c
         }
 
         public DeploymentSpecificationRouteRequestPoliciesCorsArgs build() {
-            $.allowedOrigins = Objects.requireNonNull($.allowedOrigins, "expected parameter 'allowedOrigins' to be non-null");
+            if ($.allowedOrigins == null) {
+                throw new MissingRequiredPropertyException("DeploymentSpecificationRouteRequestPoliciesCorsArgs", "allowedOrigins");
+            }
             return $;
         }
     }

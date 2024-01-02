@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -600,12 +601,24 @@ public final class DomainsSettingTenantCustomClaimArgs extends com.pulumi.resour
         }
 
         public DomainsSettingTenantCustomClaimArgs build() {
-            $.allScopes = Objects.requireNonNull($.allScopes, "expected parameter 'allScopes' to be non-null");
-            $.expression = Objects.requireNonNull($.expression, "expected parameter 'expression' to be non-null");
-            $.mode = Objects.requireNonNull($.mode, "expected parameter 'mode' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
-            $.tokenType = Objects.requireNonNull($.tokenType, "expected parameter 'tokenType' to be non-null");
-            $.value = Objects.requireNonNull($.value, "expected parameter 'value' to be non-null");
+            if ($.allScopes == null) {
+                throw new MissingRequiredPropertyException("DomainsSettingTenantCustomClaimArgs", "allScopes");
+            }
+            if ($.expression == null) {
+                throw new MissingRequiredPropertyException("DomainsSettingTenantCustomClaimArgs", "expression");
+            }
+            if ($.mode == null) {
+                throw new MissingRequiredPropertyException("DomainsSettingTenantCustomClaimArgs", "mode");
+            }
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("DomainsSettingTenantCustomClaimArgs", "name");
+            }
+            if ($.tokenType == null) {
+                throw new MissingRequiredPropertyException("DomainsSettingTenantCustomClaimArgs", "tokenType");
+            }
+            if ($.value == null) {
+                throw new MissingRequiredPropertyException("DomainsSettingTenantCustomClaimArgs", "value");
+            }
             return $;
         }
     }

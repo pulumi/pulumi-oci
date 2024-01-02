@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem 
 
         @CustomType.Setter
         public Builder category(String category) {
-            this.category = Objects.requireNonNull(category);
+            if (category == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem", "category");
+            }
+            this.category = category;
             return this;
         }
         @CustomType.Setter
         public Builder count(Integer count) {
-            this.count = Objects.requireNonNull(count);
+            if (count == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem", "count");
+            }
+            this.count = count;
             return this;
         }
         public GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem build() {

@@ -58,11 +58,13 @@ public final class CloudGuardDataSourceDataSourceDetectorMappingInfo {
 
         @CustomType.Setter
         public Builder detectorRecipeId(@Nullable String detectorRecipeId) {
+
             this.detectorRecipeId = detectorRecipeId;
             return this;
         }
         @CustomType.Setter
         public Builder detectorRuleId(@Nullable String detectorRuleId) {
+
             this.detectorRuleId = detectorRuleId;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetManagementStationsManagementStationCollectionItemMirrorSyn
 
         @CustomType.Setter
         public Builder failed(Integer failed) {
-            this.failed = Objects.requireNonNull(failed);
+            if (failed == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItemMirrorSyncStatus", "failed");
+            }
+            this.failed = failed;
             return this;
         }
         @CustomType.Setter
         public Builder queued(Integer queued) {
-            this.queued = Objects.requireNonNull(queued);
+            if (queued == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItemMirrorSyncStatus", "queued");
+            }
+            this.queued = queued;
             return this;
         }
         @CustomType.Setter
         public Builder synced(Integer synced) {
-            this.synced = Objects.requireNonNull(synced);
+            if (synced == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItemMirrorSyncStatus", "synced");
+            }
+            this.synced = synced;
             return this;
         }
         @CustomType.Setter
         public Builder syncing(Integer syncing) {
-            this.syncing = Objects.requireNonNull(syncing);
+            if (syncing == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItemMirrorSyncStatus", "syncing");
+            }
+            this.syncing = syncing;
             return this;
         }
         @CustomType.Setter
         public Builder unsynced(Integer unsynced) {
-            this.unsynced = Objects.requireNonNull(unsynced);
+            if (unsynced == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItemMirrorSyncStatus", "unsynced");
+            }
+            this.unsynced = unsynced;
             return this;
         }
         public GetManagementStationsManagementStationCollectionItemMirrorSyncStatus build() {

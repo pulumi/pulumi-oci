@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -169,22 +170,30 @@ public final class DomainsPolicyRule {
 
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder ref(@Nullable String ref) {
+
             this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder sequence(Integer sequence) {
-            this.sequence = Objects.requireNonNull(sequence);
+            if (sequence == null) {
+              throw new MissingRequiredPropertyException("DomainsPolicyRule", "sequence");
+            }
+            this.sequence = sequence;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("DomainsPolicyRule", "value");
+            }
+            this.value = value;
             return this;
         }
         public DomainsPolicyRule build() {

@@ -72,16 +72,19 @@ public final class FusionEnvironmentRefresh {
 
         @CustomType.Setter
         public Builder sourceFusionEnvironmentId(@Nullable String sourceFusionEnvironmentId) {
+
             this.sourceFusionEnvironmentId = sourceFusionEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder timeFinished(@Nullable String timeFinished) {
+
             this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfRestorationPoint(@Nullable String timeOfRestorationPoint) {
+
             this.timeOfRestorationPoint = timeOfRestorationPoint;
             return this;
         }

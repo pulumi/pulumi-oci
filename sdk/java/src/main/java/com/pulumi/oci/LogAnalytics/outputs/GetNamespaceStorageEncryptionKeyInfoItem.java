@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetNamespaceStorageEncryptionKeyInfoItem {
 
         @CustomType.Setter
         public Builder keyId(String keyId) {
-            this.keyId = Objects.requireNonNull(keyId);
+            if (keyId == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageEncryptionKeyInfoItem", "keyId");
+            }
+            this.keyId = keyId;
             return this;
         }
         @CustomType.Setter
         public Builder keySource(String keySource) {
-            this.keySource = Objects.requireNonNull(keySource);
+            if (keySource == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageEncryptionKeyInfoItem", "keySource");
+            }
+            this.keySource = keySource;
             return this;
         }
         @CustomType.Setter
         public Builder keyType(String keyType) {
-            this.keyType = Objects.requireNonNull(keyType);
+            if (keyType == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageEncryptionKeyInfoItem", "keyType");
+            }
+            this.keyType = keyType;
             return this;
         }
         public GetNamespaceStorageEncryptionKeyInfoItem build() {

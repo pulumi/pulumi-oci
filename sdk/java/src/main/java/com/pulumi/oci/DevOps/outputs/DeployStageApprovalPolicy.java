@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class DeployStageApprovalPolicy {
 
         @CustomType.Setter
         public Builder approvalPolicyType(String approvalPolicyType) {
-            this.approvalPolicyType = Objects.requireNonNull(approvalPolicyType);
+            if (approvalPolicyType == null) {
+              throw new MissingRequiredPropertyException("DeployStageApprovalPolicy", "approvalPolicyType");
+            }
+            this.approvalPolicyType = approvalPolicyType;
             return this;
         }
         @CustomType.Setter
         public Builder numberOfApprovalsRequired(Integer numberOfApprovalsRequired) {
-            this.numberOfApprovalsRequired = Objects.requireNonNull(numberOfApprovalsRequired);
+            if (numberOfApprovalsRequired == null) {
+              throw new MissingRequiredPropertyException("DeployStageApprovalPolicy", "numberOfApprovalsRequired");
+            }
+            this.numberOfApprovalsRequired = numberOfApprovalsRequired;
             return this;
         }
         public DeployStageApprovalPolicy build() {

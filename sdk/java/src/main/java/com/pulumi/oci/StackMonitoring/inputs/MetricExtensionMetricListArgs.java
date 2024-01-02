@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -336,8 +337,12 @@ public final class MetricExtensionMetricListArgs extends com.pulumi.resources.Re
         }
 
         public MetricExtensionMetricListArgs build() {
-            $.dataType = Objects.requireNonNull($.dataType, "expected parameter 'dataType' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
+            if ($.dataType == null) {
+                throw new MissingRequiredPropertyException("MetricExtensionMetricListArgs", "dataType");
+            }
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("MetricExtensionMetricListArgs", "name");
+            }
             return $;
         }
     }

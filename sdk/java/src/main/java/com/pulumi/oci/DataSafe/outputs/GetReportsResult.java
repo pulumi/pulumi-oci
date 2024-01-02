@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetReportsFilter;
 import com.pulumi.oci.DataSafe.outputs.GetReportsReportCollection;
 import java.lang.Boolean;
@@ -150,26 +151,33 @@ public final class GetReportsResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetReportsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetReportsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -178,12 +186,18 @@ public final class GetReportsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetReportsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder reportCollections(List<GetReportsReportCollection> reportCollections) {
-            this.reportCollections = Objects.requireNonNull(reportCollections);
+            if (reportCollections == null) {
+              throw new MissingRequiredPropertyException("GetReportsResult", "reportCollections");
+            }
+            this.reportCollections = reportCollections;
             return this;
         }
         public Builder reportCollections(GetReportsReportCollection... reportCollections) {
@@ -191,16 +205,19 @@ public final class GetReportsResult {
         }
         @CustomType.Setter
         public Builder reportDefinitionId(@Nullable String reportDefinitionId) {
+
             this.reportDefinitionId = reportDefinitionId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }

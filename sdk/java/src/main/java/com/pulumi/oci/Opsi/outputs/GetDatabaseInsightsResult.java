@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetDatabaseInsightsDatabaseInsightsCollection;
 import com.pulumi.oci.Opsi.outputs.GetDatabaseInsightsFilter;
 import java.lang.Boolean;
@@ -192,16 +193,19 @@ public final class GetDatabaseInsightsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder databaseIds(@Nullable List<String> databaseIds) {
+
             this.databaseIds = databaseIds;
             return this;
         }
@@ -210,7 +214,10 @@ public final class GetDatabaseInsightsResult {
         }
         @CustomType.Setter
         public Builder databaseInsightsCollections(List<GetDatabaseInsightsDatabaseInsightsCollection> databaseInsightsCollections) {
-            this.databaseInsightsCollections = Objects.requireNonNull(databaseInsightsCollections);
+            if (databaseInsightsCollections == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightsResult", "databaseInsightsCollections");
+            }
+            this.databaseInsightsCollections = databaseInsightsCollections;
             return this;
         }
         public Builder databaseInsightsCollections(GetDatabaseInsightsDatabaseInsightsCollection... databaseInsightsCollections) {
@@ -218,6 +225,7 @@ public final class GetDatabaseInsightsResult {
         }
         @CustomType.Setter
         public Builder databaseTypes(@Nullable List<String> databaseTypes) {
+
             this.databaseTypes = databaseTypes;
             return this;
         }
@@ -226,16 +234,19 @@ public final class GetDatabaseInsightsResult {
         }
         @CustomType.Setter
         public Builder enterpriseManagerBridgeId(@Nullable String enterpriseManagerBridgeId) {
+
             this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             return this;
         }
         @CustomType.Setter
         public Builder exadataInsightId(@Nullable String exadataInsightId) {
+
             this.exadataInsightId = exadataInsightId;
             return this;
         }
         @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
+
             this.fields = fields;
             return this;
         }
@@ -244,6 +255,7 @@ public final class GetDatabaseInsightsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDatabaseInsightsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -252,16 +264,19 @@ public final class GetDatabaseInsightsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder opsiPrivateEndpointId(@Nullable String opsiPrivateEndpointId) {
+
             this.opsiPrivateEndpointId = opsiPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
+
             this.states = states;
             return this;
         }
@@ -270,6 +285,7 @@ public final class GetDatabaseInsightsResult {
         }
         @CustomType.Setter
         public Builder statuses(@Nullable List<String> statuses) {
+
             this.statuses = statuses;
             return this;
         }

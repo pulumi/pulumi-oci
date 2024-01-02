@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -526,76 +527,93 @@ public final class DomainsAppAttrRenderingMetadata {
 
         @CustomType.Setter
         public Builder datatype(@Nullable String datatype) {
+
             this.datatype = datatype;
             return this;
         }
         @CustomType.Setter
         public Builder helptext(@Nullable String helptext) {
+
             this.helptext = helptext;
             return this;
         }
         @CustomType.Setter
         public Builder label(@Nullable String label) {
+
             this.label = label;
             return this;
         }
         @CustomType.Setter
         public Builder maxLength(@Nullable Integer maxLength) {
+
             this.maxLength = maxLength;
             return this;
         }
         @CustomType.Setter
         public Builder maxSize(@Nullable Integer maxSize) {
+
             this.maxSize = maxSize;
             return this;
         }
         @CustomType.Setter
         public Builder minLength(@Nullable Integer minLength) {
+
             this.minLength = minLength;
             return this;
         }
         @CustomType.Setter
         public Builder minSize(@Nullable Integer minSize) {
+
             this.minSize = minSize;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("DomainsAppAttrRenderingMetadata", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder order(@Nullable Integer order) {
+
             this.order = order;
             return this;
         }
         @CustomType.Setter
         public Builder readOnly(@Nullable Boolean readOnly) {
+
             this.readOnly = readOnly;
             return this;
         }
         @CustomType.Setter
         public Builder regexp(@Nullable String regexp) {
+
             this.regexp = regexp;
             return this;
         }
         @CustomType.Setter
         public Builder required(@Nullable Boolean required) {
+
             this.required = required;
             return this;
         }
         @CustomType.Setter
         public Builder section(@Nullable String section) {
+
             this.section = section;
             return this;
         }
         @CustomType.Setter
         public Builder visible(@Nullable Boolean visible) {
+
             this.visible = visible;
             return this;
         }
         @CustomType.Setter
         public Builder widget(@Nullable String widget) {
+
             this.widget = widget;
             return this;
         }

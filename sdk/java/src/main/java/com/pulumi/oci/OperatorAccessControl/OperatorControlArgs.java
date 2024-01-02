@@ -5,6 +5,7 @@ package com.pulumi.oci.OperatorAccessControl;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -539,11 +540,21 @@ public final class OperatorControlArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public OperatorControlArgs build() {
-            $.approverGroupsLists = Objects.requireNonNull($.approverGroupsLists, "expected parameter 'approverGroupsLists' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.isFullyPreApproved = Objects.requireNonNull($.isFullyPreApproved, "expected parameter 'isFullyPreApproved' to be non-null");
-            $.operatorControlName = Objects.requireNonNull($.operatorControlName, "expected parameter 'operatorControlName' to be non-null");
-            $.resourceType = Objects.requireNonNull($.resourceType, "expected parameter 'resourceType' to be non-null");
+            if ($.approverGroupsLists == null) {
+                throw new MissingRequiredPropertyException("OperatorControlArgs", "approverGroupsLists");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("OperatorControlArgs", "compartmentId");
+            }
+            if ($.isFullyPreApproved == null) {
+                throw new MissingRequiredPropertyException("OperatorControlArgs", "isFullyPreApproved");
+            }
+            if ($.operatorControlName == null) {
+                throw new MissingRequiredPropertyException("OperatorControlArgs", "operatorControlName");
+            }
+            if ($.resourceType == null) {
+                throw new MissingRequiredPropertyException("OperatorControlArgs", "resourceType");
+            }
             return $;
         }
     }

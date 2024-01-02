@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetProfilesProfileCollectionItemLifecycleEnvironment;
 import com.pulumi.oci.OsManagementHub.outputs.GetProfilesProfileCollectionItemLifecycleStage;
 import com.pulumi.oci.OsManagementHub.outputs.GetProfilesProfileCollectionItemManagedInstanceGroup;
@@ -305,42 +306,66 @@ public final class GetProfilesProfileCollectionItem {
 
         @CustomType.Setter
         public Builder archType(String archType) {
-            this.archType = Objects.requireNonNull(archType);
+            if (archType == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "archType");
+            }
+            this.archType = archType;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleEnvironments(List<GetProfilesProfileCollectionItemLifecycleEnvironment> lifecycleEnvironments) {
-            this.lifecycleEnvironments = Objects.requireNonNull(lifecycleEnvironments);
+            if (lifecycleEnvironments == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "lifecycleEnvironments");
+            }
+            this.lifecycleEnvironments = lifecycleEnvironments;
             return this;
         }
         public Builder lifecycleEnvironments(GetProfilesProfileCollectionItemLifecycleEnvironment... lifecycleEnvironments) {
@@ -348,12 +373,18 @@ public final class GetProfilesProfileCollectionItem {
         }
         @CustomType.Setter
         public Builder lifecycleStageId(String lifecycleStageId) {
-            this.lifecycleStageId = Objects.requireNonNull(lifecycleStageId);
+            if (lifecycleStageId == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "lifecycleStageId");
+            }
+            this.lifecycleStageId = lifecycleStageId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleStages(List<GetProfilesProfileCollectionItemLifecycleStage> lifecycleStages) {
-            this.lifecycleStages = Objects.requireNonNull(lifecycleStages);
+            if (lifecycleStages == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "lifecycleStages");
+            }
+            this.lifecycleStages = lifecycleStages;
             return this;
         }
         public Builder lifecycleStages(GetProfilesProfileCollectionItemLifecycleStage... lifecycleStages) {
@@ -361,12 +392,18 @@ public final class GetProfilesProfileCollectionItem {
         }
         @CustomType.Setter
         public Builder managedInstanceGroupId(String managedInstanceGroupId) {
-            this.managedInstanceGroupId = Objects.requireNonNull(managedInstanceGroupId);
+            if (managedInstanceGroupId == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "managedInstanceGroupId");
+            }
+            this.managedInstanceGroupId = managedInstanceGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceGroups(List<GetProfilesProfileCollectionItemManagedInstanceGroup> managedInstanceGroups) {
-            this.managedInstanceGroups = Objects.requireNonNull(managedInstanceGroups);
+            if (managedInstanceGroups == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "managedInstanceGroups");
+            }
+            this.managedInstanceGroups = managedInstanceGroups;
             return this;
         }
         public Builder managedInstanceGroups(GetProfilesProfileCollectionItemManagedInstanceGroup... managedInstanceGroups) {
@@ -374,22 +411,34 @@ public final class GetProfilesProfileCollectionItem {
         }
         @CustomType.Setter
         public Builder managementStationId(String managementStationId) {
-            this.managementStationId = Objects.requireNonNull(managementStationId);
+            if (managementStationId == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "managementStationId");
+            }
+            this.managementStationId = managementStationId;
             return this;
         }
         @CustomType.Setter
         public Builder osFamily(String osFamily) {
-            this.osFamily = Objects.requireNonNull(osFamily);
+            if (osFamily == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "osFamily");
+            }
+            this.osFamily = osFamily;
             return this;
         }
         @CustomType.Setter
         public Builder profileType(String profileType) {
-            this.profileType = Objects.requireNonNull(profileType);
+            if (profileType == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "profileType");
+            }
+            this.profileType = profileType;
             return this;
         }
         @CustomType.Setter
         public Builder softwareSourceIds(List<String> softwareSourceIds) {
-            this.softwareSourceIds = Objects.requireNonNull(softwareSourceIds);
+            if (softwareSourceIds == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "softwareSourceIds");
+            }
+            this.softwareSourceIds = softwareSourceIds;
             return this;
         }
         public Builder softwareSourceIds(String... softwareSourceIds) {
@@ -397,7 +446,10 @@ public final class GetProfilesProfileCollectionItem {
         }
         @CustomType.Setter
         public Builder softwareSources(List<GetProfilesProfileCollectionItemSoftwareSource> softwareSources) {
-            this.softwareSources = Objects.requireNonNull(softwareSources);
+            if (softwareSources == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "softwareSources");
+            }
+            this.softwareSources = softwareSources;
             return this;
         }
         public Builder softwareSources(GetProfilesProfileCollectionItemSoftwareSource... softwareSources) {
@@ -405,22 +457,34 @@ public final class GetProfilesProfileCollectionItem {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder vendorName(String vendorName) {
-            this.vendorName = Objects.requireNonNull(vendorName);
+            if (vendorName == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "vendorName");
+            }
+            this.vendorName = vendorName;
             return this;
         }
         public GetProfilesProfileCollectionItem build() {

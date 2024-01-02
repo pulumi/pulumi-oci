@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetDeploymentBackupPlainArgs extends com.pulumi.resources.Inv
         }
 
         public GetDeploymentBackupPlainArgs build() {
-            $.deploymentBackupId = Objects.requireNonNull($.deploymentBackupId, "expected parameter 'deploymentBackupId' to be non-null");
+            if ($.deploymentBackupId == null) {
+                throw new MissingRequiredPropertyException("GetDeploymentBackupPlainArgs", "deploymentBackupId");
+            }
             return $;
         }
     }

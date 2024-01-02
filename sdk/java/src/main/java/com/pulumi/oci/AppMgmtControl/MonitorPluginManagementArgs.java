@@ -5,6 +5,7 @@ package com.pulumi.oci.AppMgmtControl;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -86,7 +87,9 @@ public final class MonitorPluginManagementArgs extends com.pulumi.resources.Reso
         }
 
         public MonitorPluginManagementArgs build() {
-            $.monitoredInstanceId = Objects.requireNonNull($.monitoredInstanceId, "expected parameter 'monitoredInstanceId' to be non-null");
+            if ($.monitoredInstanceId == null) {
+                throw new MissingRequiredPropertyException("MonitorPluginManagementArgs", "monitoredInstanceId");
+            }
             return $;
         }
     }

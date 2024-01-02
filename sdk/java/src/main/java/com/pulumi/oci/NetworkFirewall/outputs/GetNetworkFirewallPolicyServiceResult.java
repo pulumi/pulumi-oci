@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyServicePortRange;
 import java.lang.String;
 import java.util.List;
@@ -98,27 +99,42 @@ public final class GetNetworkFirewallPolicyServiceResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyServiceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyServiceResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder networkFirewallPolicyId(String networkFirewallPolicyId) {
-            this.networkFirewallPolicyId = Objects.requireNonNull(networkFirewallPolicyId);
+            if (networkFirewallPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyServiceResult", "networkFirewallPolicyId");
+            }
+            this.networkFirewallPolicyId = networkFirewallPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+            if (parentResourceId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyServiceResult", "parentResourceId");
+            }
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder portRanges(List<GetNetworkFirewallPolicyServicePortRange> portRanges) {
-            this.portRanges = Objects.requireNonNull(portRanges);
+            if (portRanges == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyServiceResult", "portRanges");
+            }
+            this.portRanges = portRanges;
             return this;
         }
         public Builder portRanges(GetNetworkFirewallPolicyServicePortRange... portRanges) {
@@ -126,7 +142,10 @@ public final class GetNetworkFirewallPolicyServiceResult {
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyServiceResult", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetNetworkFirewallPolicyServiceResult build() {

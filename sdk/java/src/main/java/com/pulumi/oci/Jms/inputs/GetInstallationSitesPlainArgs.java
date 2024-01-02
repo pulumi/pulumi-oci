@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.inputs.GetInstallationSitesFilter;
 import java.lang.String;
 import java.util.List;
@@ -391,7 +392,9 @@ public final class GetInstallationSitesPlainArgs extends com.pulumi.resources.In
         }
 
         public GetInstallationSitesPlainArgs build() {
-            $.fleetId = Objects.requireNonNull($.fleetId, "expected parameter 'fleetId' to be non-null");
+            if ($.fleetId == null) {
+                throw new MissingRequiredPropertyException("GetInstallationSitesPlainArgs", "fleetId");
+            }
             return $;
         }
     }

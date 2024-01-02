@@ -5,6 +5,7 @@ package com.pulumi.oci.DataFlow;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.inputs.PrivateEndpointScanDetailArgs;
 import java.lang.Integer;
 import java.lang.Object;
@@ -456,9 +457,15 @@ public final class PrivateEndpointArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public PrivateEndpointArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.dnsZones = Objects.requireNonNull($.dnsZones, "expected parameter 'dnsZones' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("PrivateEndpointArgs", "compartmentId");
+            }
+            if ($.dnsZones == null) {
+                throw new MissingRequiredPropertyException("PrivateEndpointArgs", "dnsZones");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("PrivateEndpointArgs", "subnetId");
+            }
             return $;
         }
     }

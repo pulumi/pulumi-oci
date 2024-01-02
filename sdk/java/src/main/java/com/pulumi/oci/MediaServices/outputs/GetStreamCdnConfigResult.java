@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.outputs.GetStreamCdnConfigConfig;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -221,12 +222,18 @@ public final class GetStreamCdnConfigResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder configs(List<GetStreamCdnConfigConfig> configs) {
-            this.configs = Objects.requireNonNull(configs);
+            if (configs == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigResult", "configs");
+            }
+            this.configs = configs;
             return this;
         }
         public Builder configs(GetStreamCdnConfigConfig... configs) {
@@ -234,62 +241,98 @@ public final class GetStreamCdnConfigResult {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder distributionChannelId(String distributionChannelId) {
-            this.distributionChannelId = Objects.requireNonNull(distributionChannelId);
+            if (distributionChannelId == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigResult", "distributionChannelId");
+            }
+            this.distributionChannelId = distributionChannelId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigResult", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder lifecyleDetails(String lifecyleDetails) {
-            this.lifecyleDetails = Objects.requireNonNull(lifecyleDetails);
+            if (lifecyleDetails == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigResult", "lifecyleDetails");
+            }
+            this.lifecyleDetails = lifecyleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder streamCdnConfigId(String streamCdnConfigId) {
-            this.streamCdnConfigId = Objects.requireNonNull(streamCdnConfigId);
+            if (streamCdnConfigId == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigResult", "streamCdnConfigId");
+            }
+            this.streamCdnConfigId = streamCdnConfigId;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetStreamCdnConfigResult build() {

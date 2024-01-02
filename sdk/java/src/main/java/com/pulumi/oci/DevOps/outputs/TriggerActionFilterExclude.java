@@ -44,6 +44,7 @@ public final class TriggerActionFilterExclude {
 
         @CustomType.Setter
         public Builder fileFilter(@Nullable TriggerActionFilterExcludeFileFilter fileFilter) {
+
             this.fileFilter = fileFilter;
             return this;
         }

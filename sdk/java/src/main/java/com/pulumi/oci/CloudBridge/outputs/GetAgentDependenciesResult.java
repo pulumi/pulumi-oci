@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudBridge.outputs.GetAgentDependenciesAgentDependencyCollection;
 import com.pulumi.oci.CloudBridge.outputs.GetAgentDependenciesFilter;
 import java.lang.String;
@@ -121,7 +122,10 @@ public final class GetAgentDependenciesResult {
 
         @CustomType.Setter
         public Builder agentDependencyCollections(List<GetAgentDependenciesAgentDependencyCollection> agentDependencyCollections) {
-            this.agentDependencyCollections = Objects.requireNonNull(agentDependencyCollections);
+            if (agentDependencyCollections == null) {
+              throw new MissingRequiredPropertyException("GetAgentDependenciesResult", "agentDependencyCollections");
+            }
+            this.agentDependencyCollections = agentDependencyCollections;
             return this;
         }
         public Builder agentDependencyCollections(GetAgentDependenciesAgentDependencyCollection... agentDependencyCollections) {
@@ -129,26 +133,33 @@ public final class GetAgentDependenciesResult {
         }
         @CustomType.Setter
         public Builder agentId(@Nullable String agentId) {
+
             this.agentId = agentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAgentDependenciesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder environmentId(@Nullable String environmentId) {
+
             this.environmentId = environmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAgentDependenciesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -157,11 +168,15 @@ public final class GetAgentDependenciesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAgentDependenciesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

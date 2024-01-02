@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetTagStandardTagNamespaceTemplatesFilter;
 import com.pulumi.oci.Identity.outputs.GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate;
 import java.lang.String;
@@ -72,11 +73,15 @@ public final class GetTagStandardTagNamespaceTemplatesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetTagStandardTagNamespaceTemplatesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetTagStandardTagNamespaceTemplatesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -85,12 +90,18 @@ public final class GetTagStandardTagNamespaceTemplatesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTagStandardTagNamespaceTemplatesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder standardTagNamespaceTemplates(List<GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate> standardTagNamespaceTemplates) {
-            this.standardTagNamespaceTemplates = Objects.requireNonNull(standardTagNamespaceTemplates);
+            if (standardTagNamespaceTemplates == null) {
+              throw new MissingRequiredPropertyException("GetTagStandardTagNamespaceTemplatesResult", "standardTagNamespaceTemplates");
+            }
+            this.standardTagNamespaceTemplates = standardTagNamespaceTemplates;
             return this;
         }
         public Builder standardTagNamespaceTemplates(GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate... standardTagNamespaceTemplates) {

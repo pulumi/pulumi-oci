@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.DbSystemDbHomeDatabaseConnectionStringArgs;
 import com.pulumi.oci.Database.inputs.DbSystemDbHomeDatabaseDbBackupConfigArgs;
 import java.lang.Object;
@@ -996,7 +997,9 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
         }
 
         public DbSystemDbHomeDatabaseArgs build() {
-            $.adminPassword = Objects.requireNonNull($.adminPassword, "expected parameter 'adminPassword' to be non-null");
+            if ($.adminPassword == null) {
+                throw new MissingRequiredPropertyException("DbSystemDbHomeDatabaseArgs", "adminPassword");
+            }
             return $;
         }
     }

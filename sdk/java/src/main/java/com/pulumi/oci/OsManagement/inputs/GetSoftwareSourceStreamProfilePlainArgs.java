@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceStreamProfileFilter;
 import java.lang.String;
 import java.util.List;
@@ -192,7 +193,9 @@ public final class GetSoftwareSourceStreamProfilePlainArgs extends com.pulumi.re
         }
 
         public GetSoftwareSourceStreamProfilePlainArgs build() {
-            $.softwareSourceId = Objects.requireNonNull($.softwareSourceId, "expected parameter 'softwareSourceId' to be non-null");
+            if ($.softwareSourceId == null) {
+                throw new MissingRequiredPropertyException("GetSoftwareSourceStreamProfilePlainArgs", "softwareSourceId");
+            }
             return $;
         }
     }

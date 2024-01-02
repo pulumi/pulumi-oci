@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyServicesFilter;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyServicesServiceSummaryCollection;
 import java.lang.String;
@@ -79,11 +80,13 @@ public final class GetNetworkFirewallPolicyServicesResult {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNetworkFirewallPolicyServicesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -92,17 +95,26 @@ public final class GetNetworkFirewallPolicyServicesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyServicesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder networkFirewallPolicyId(String networkFirewallPolicyId) {
-            this.networkFirewallPolicyId = Objects.requireNonNull(networkFirewallPolicyId);
+            if (networkFirewallPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyServicesResult", "networkFirewallPolicyId");
+            }
+            this.networkFirewallPolicyId = networkFirewallPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder serviceSummaryCollections(List<GetNetworkFirewallPolicyServicesServiceSummaryCollection> serviceSummaryCollections) {
-            this.serviceSummaryCollections = Objects.requireNonNull(serviceSummaryCollections);
+            if (serviceSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyServicesResult", "serviceSummaryCollections");
+            }
+            this.serviceSummaryCollections = serviceSummaryCollections;
             return this;
         }
         public Builder serviceSummaryCollections(GetNetworkFirewallPolicyServicesServiceSummaryCollection... serviceSummaryCollections) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetBdsInstancePatchHistoriesPatchHistory {
 
         @CustomType.Setter
         public Builder patchType(String patchType) {
-            this.patchType = Objects.requireNonNull(patchType);
+            if (patchType == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancePatchHistoriesPatchHistory", "patchType");
+            }
+            this.patchType = patchType;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancePatchHistoriesPatchHistory", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancePatchHistoriesPatchHistory", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancePatchHistoriesPatchHistory", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetBdsInstancePatchHistoriesPatchHistory build() {

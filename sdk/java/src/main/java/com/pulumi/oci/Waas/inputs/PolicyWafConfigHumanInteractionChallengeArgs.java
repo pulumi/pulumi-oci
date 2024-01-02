@@ -5,6 +5,7 @@ package com.pulumi.oci.Waas.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.inputs.PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs;
 import com.pulumi.oci.Waas.inputs.PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs;
 import java.lang.Boolean;
@@ -413,7 +414,9 @@ public final class PolicyWafConfigHumanInteractionChallengeArgs extends com.pulu
         }
 
         public PolicyWafConfigHumanInteractionChallengeArgs build() {
-            $.isEnabled = Objects.requireNonNull($.isEnabled, "expected parameter 'isEnabled' to be non-null");
+            if ($.isEnabled == null) {
+                throw new MissingRequiredPropertyException("PolicyWafConfigHumanInteractionChallengeArgs", "isEnabled");
+            }
             return $;
         }
     }

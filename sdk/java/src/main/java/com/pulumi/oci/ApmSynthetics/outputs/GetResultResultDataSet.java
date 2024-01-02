@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetResultResultDataSet {
 
         @CustomType.Setter
         public Builder byteContent(String byteContent) {
-            this.byteContent = Objects.requireNonNull(byteContent);
+            if (byteContent == null) {
+              throw new MissingRequiredPropertyException("GetResultResultDataSet", "byteContent");
+            }
+            this.byteContent = byteContent;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetResultResultDataSet", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder stringContent(String stringContent) {
-            this.stringContent = Objects.requireNonNull(stringContent);
+            if (stringContent == null) {
+              throw new MissingRequiredPropertyException("GetResultResultDataSet", "stringContent");
+            }
+            this.stringContent = stringContent;
             return this;
         }
         @CustomType.Setter
         public Builder timestamp(String timestamp) {
-            this.timestamp = Objects.requireNonNull(timestamp);
+            if (timestamp == null) {
+              throw new MissingRequiredPropertyException("GetResultResultDataSet", "timestamp");
+            }
+            this.timestamp = timestamp;
             return this;
         }
         public GetResultResultDataSet build() {

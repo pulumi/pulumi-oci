@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstancePoolInstancesInstanceLoadBalancerBackend;
 import java.lang.Boolean;
 import java.lang.String;
@@ -217,57 +218,90 @@ public final class GetInstancePoolInstancesInstance {
 
         @CustomType.Setter
         public Builder autoTerminateInstanceOnDelete(Boolean autoTerminateInstanceOnDelete) {
-            this.autoTerminateInstanceOnDelete = Objects.requireNonNull(autoTerminateInstanceOnDelete);
+            if (autoTerminateInstanceOnDelete == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolInstancesInstance", "autoTerminateInstanceOnDelete");
+            }
+            this.autoTerminateInstanceOnDelete = autoTerminateInstanceOnDelete;
             return this;
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolInstancesInstance", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolInstancesInstance", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder decrementSizeOnDelete(Boolean decrementSizeOnDelete) {
-            this.decrementSizeOnDelete = Objects.requireNonNull(decrementSizeOnDelete);
+            if (decrementSizeOnDelete == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolInstancesInstance", "decrementSizeOnDelete");
+            }
+            this.decrementSizeOnDelete = decrementSizeOnDelete;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolInstancesInstance", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+            if (faultDomain == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolInstancesInstance", "faultDomain");
+            }
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolInstancesInstance", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceConfigurationId(String instanceConfigurationId) {
-            this.instanceConfigurationId = Objects.requireNonNull(instanceConfigurationId);
+            if (instanceConfigurationId == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolInstancesInstance", "instanceConfigurationId");
+            }
+            this.instanceConfigurationId = instanceConfigurationId;
             return this;
         }
         @CustomType.Setter
         public Builder instanceId(String instanceId) {
-            this.instanceId = Objects.requireNonNull(instanceId);
+            if (instanceId == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolInstancesInstance", "instanceId");
+            }
+            this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
         public Builder instancePoolId(String instancePoolId) {
-            this.instancePoolId = Objects.requireNonNull(instancePoolId);
+            if (instancePoolId == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolInstancesInstance", "instancePoolId");
+            }
+            this.instancePoolId = instancePoolId;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerBackends(List<GetInstancePoolInstancesInstanceLoadBalancerBackend> loadBalancerBackends) {
-            this.loadBalancerBackends = Objects.requireNonNull(loadBalancerBackends);
+            if (loadBalancerBackends == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolInstancesInstance", "loadBalancerBackends");
+            }
+            this.loadBalancerBackends = loadBalancerBackends;
             return this;
         }
         public Builder loadBalancerBackends(GetInstancePoolInstancesInstanceLoadBalancerBackend... loadBalancerBackends) {
@@ -275,22 +309,34 @@ public final class GetInstancePoolInstancesInstance {
         }
         @CustomType.Setter
         public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+            if (region == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolInstancesInstance", "region");
+            }
+            this.region = region;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolInstancesInstance", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolInstancesInstance", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolInstancesInstance", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetInstancePoolInstancesInstance build() {

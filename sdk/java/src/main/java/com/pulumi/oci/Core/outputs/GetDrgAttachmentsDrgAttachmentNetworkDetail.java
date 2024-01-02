@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -142,12 +143,18 @@ public final class GetDrgAttachmentsDrgAttachmentNetworkDetail {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDrgAttachmentsDrgAttachmentNetworkDetail", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ids(List<String> ids) {
-            this.ids = Objects.requireNonNull(ids);
+            if (ids == null) {
+              throw new MissingRequiredPropertyException("GetDrgAttachmentsDrgAttachmentNetworkDetail", "ids");
+            }
+            this.ids = ids;
             return this;
         }
         public Builder ids(String... ids) {
@@ -155,32 +162,50 @@ public final class GetDrgAttachmentsDrgAttachmentNetworkDetail {
         }
         @CustomType.Setter
         public Builder ipsecConnectionId(String ipsecConnectionId) {
-            this.ipsecConnectionId = Objects.requireNonNull(ipsecConnectionId);
+            if (ipsecConnectionId == null) {
+              throw new MissingRequiredPropertyException("GetDrgAttachmentsDrgAttachmentNetworkDetail", "ipsecConnectionId");
+            }
+            this.ipsecConnectionId = ipsecConnectionId;
             return this;
         }
         @CustomType.Setter
         public Builder routeTableId(String routeTableId) {
-            this.routeTableId = Objects.requireNonNull(routeTableId);
+            if (routeTableId == null) {
+              throw new MissingRequiredPropertyException("GetDrgAttachmentsDrgAttachmentNetworkDetail", "routeTableId");
+            }
+            this.routeTableId = routeTableId;
             return this;
         }
         @CustomType.Setter
         public Builder transportAttachmentId(String transportAttachmentId) {
-            this.transportAttachmentId = Objects.requireNonNull(transportAttachmentId);
+            if (transportAttachmentId == null) {
+              throw new MissingRequiredPropertyException("GetDrgAttachmentsDrgAttachmentNetworkDetail", "transportAttachmentId");
+            }
+            this.transportAttachmentId = transportAttachmentId;
             return this;
         }
         @CustomType.Setter
         public Builder transportOnlyMode(Boolean transportOnlyMode) {
-            this.transportOnlyMode = Objects.requireNonNull(transportOnlyMode);
+            if (transportOnlyMode == null) {
+              throw new MissingRequiredPropertyException("GetDrgAttachmentsDrgAttachmentNetworkDetail", "transportOnlyMode");
+            }
+            this.transportOnlyMode = transportOnlyMode;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDrgAttachmentsDrgAttachmentNetworkDetail", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder vcnRouteType(String vcnRouteType) {
-            this.vcnRouteType = Objects.requireNonNull(vcnRouteType);
+            if (vcnRouteType == null) {
+              throw new MissingRequiredPropertyException("GetDrgAttachmentsDrgAttachmentNetworkDetail", "vcnRouteType");
+            }
+            this.vcnRouteType = vcnRouteType;
             return this;
         }
         public GetDrgAttachmentsDrgAttachmentNetworkDetail build() {

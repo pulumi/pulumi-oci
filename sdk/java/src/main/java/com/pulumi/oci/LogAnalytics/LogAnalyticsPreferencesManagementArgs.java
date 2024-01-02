@@ -5,6 +5,7 @@ package com.pulumi.oci.LogAnalytics;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.inputs.LogAnalyticsPreferencesManagementItemArgs;
 import java.lang.String;
 import java.util.List;
@@ -137,7 +138,9 @@ public final class LogAnalyticsPreferencesManagementArgs extends com.pulumi.reso
         }
 
         public LogAnalyticsPreferencesManagementArgs build() {
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("LogAnalyticsPreferencesManagementArgs", "namespace");
+            }
             return $;
         }
     }

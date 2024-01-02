@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -238,8 +239,12 @@ public final class DrgRouteDistributionArgs extends com.pulumi.resources.Resourc
         }
 
         public DrgRouteDistributionArgs build() {
-            $.distributionType = Objects.requireNonNull($.distributionType, "expected parameter 'distributionType' to be non-null");
-            $.drgId = Objects.requireNonNull($.drgId, "expected parameter 'drgId' to be non-null");
+            if ($.distributionType == null) {
+                throw new MissingRequiredPropertyException("DrgRouteDistributionArgs", "distributionType");
+            }
+            if ($.drgId == null) {
+                throw new MissingRequiredPropertyException("DrgRouteDistributionArgs", "drgId");
+            }
             return $;
         }
     }

@@ -101,26 +101,31 @@ public final class ConfigConfigurationNetworkConfiguration {
 
         @CustomType.Setter
         public Builder numberOfHops(@Nullable Integer numberOfHops) {
+
             this.numberOfHops = numberOfHops;
             return this;
         }
         @CustomType.Setter
         public Builder probeMode(@Nullable String probeMode) {
+
             this.probeMode = probeMode;
             return this;
         }
         @CustomType.Setter
         public Builder probePerHop(@Nullable Integer probePerHop) {
+
             this.probePerHop = probePerHop;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(@Nullable String protocol) {
+
             this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder transmissionRate(@Nullable Integer transmissionRate) {
+
             this.transmissionRate = transmissionRate;
             return this;
         }

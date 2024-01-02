@@ -5,6 +5,7 @@ package com.pulumi.oci.MeteringComputation.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.inputs.QueryQueryDefinitionCostAnalysisUiArgs;
 import com.pulumi.oci.MeteringComputation.inputs.QueryQueryDefinitionReportQueryArgs;
 import java.lang.Double;
@@ -200,10 +201,18 @@ public final class QueryQueryDefinitionArgs extends com.pulumi.resources.Resourc
         }
 
         public QueryQueryDefinitionArgs build() {
-            $.costAnalysisUi = Objects.requireNonNull($.costAnalysisUi, "expected parameter 'costAnalysisUi' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.reportQuery = Objects.requireNonNull($.reportQuery, "expected parameter 'reportQuery' to be non-null");
-            $.version = Objects.requireNonNull($.version, "expected parameter 'version' to be non-null");
+            if ($.costAnalysisUi == null) {
+                throw new MissingRequiredPropertyException("QueryQueryDefinitionArgs", "costAnalysisUi");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("QueryQueryDefinitionArgs", "displayName");
+            }
+            if ($.reportQuery == null) {
+                throw new MissingRequiredPropertyException("QueryQueryDefinitionArgs", "reportQuery");
+            }
+            if ($.version == null) {
+                throw new MissingRequiredPropertyException("QueryQueryDefinitionArgs", "version");
+            }
             return $;
         }
     }

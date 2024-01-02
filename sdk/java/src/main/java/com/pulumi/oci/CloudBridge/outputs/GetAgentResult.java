@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudBridge.outputs.GetAgentPluginList;
 import java.lang.Object;
 import java.lang.String;
@@ -312,72 +313,114 @@ public final class GetAgentResult {
 
         @CustomType.Setter
         public Builder agentId(String agentId) {
-            this.agentId = Objects.requireNonNull(agentId);
+            if (agentId == null) {
+              throw new MissingRequiredPropertyException("GetAgentResult", "agentId");
+            }
+            this.agentId = agentId;
             return this;
         }
         @CustomType.Setter
         public Builder agentPubKey(String agentPubKey) {
-            this.agentPubKey = Objects.requireNonNull(agentPubKey);
+            if (agentPubKey == null) {
+              throw new MissingRequiredPropertyException("GetAgentResult", "agentPubKey");
+            }
+            this.agentPubKey = agentPubKey;
             return this;
         }
         @CustomType.Setter
         public Builder agentType(String agentType) {
-            this.agentType = Objects.requireNonNull(agentType);
+            if (agentType == null) {
+              throw new MissingRequiredPropertyException("GetAgentResult", "agentType");
+            }
+            this.agentType = agentType;
             return this;
         }
         @CustomType.Setter
         public Builder agentVersion(String agentVersion) {
-            this.agentVersion = Objects.requireNonNull(agentVersion);
+            if (agentVersion == null) {
+              throw new MissingRequiredPropertyException("GetAgentResult", "agentVersion");
+            }
+            this.agentVersion = agentVersion;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAgentResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAgentResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAgentResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder environmentId(String environmentId) {
-            this.environmentId = Objects.requireNonNull(environmentId);
+            if (environmentId == null) {
+              throw new MissingRequiredPropertyException("GetAgentResult", "environmentId");
+            }
+            this.environmentId = environmentId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAgentResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder heartBeatStatus(String heartBeatStatus) {
-            this.heartBeatStatus = Objects.requireNonNull(heartBeatStatus);
+            if (heartBeatStatus == null) {
+              throw new MissingRequiredPropertyException("GetAgentResult", "heartBeatStatus");
+            }
+            this.heartBeatStatus = heartBeatStatus;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAgentResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAgentResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder osVersion(String osVersion) {
-            this.osVersion = Objects.requireNonNull(osVersion);
+            if (osVersion == null) {
+              throw new MissingRequiredPropertyException("GetAgentResult", "osVersion");
+            }
+            this.osVersion = osVersion;
             return this;
         }
         @CustomType.Setter
         public Builder pluginLists(List<GetAgentPluginList> pluginLists) {
-            this.pluginLists = Objects.requireNonNull(pluginLists);
+            if (pluginLists == null) {
+              throw new MissingRequiredPropertyException("GetAgentResult", "pluginLists");
+            }
+            this.pluginLists = pluginLists;
             return this;
         }
         public Builder pluginLists(GetAgentPluginList... pluginLists) {
@@ -385,32 +428,50 @@ public final class GetAgentResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAgentResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetAgentResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAgentResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeExpireAgentKeyInMs(String timeExpireAgentKeyInMs) {
-            this.timeExpireAgentKeyInMs = Objects.requireNonNull(timeExpireAgentKeyInMs);
+            if (timeExpireAgentKeyInMs == null) {
+              throw new MissingRequiredPropertyException("GetAgentResult", "timeExpireAgentKeyInMs");
+            }
+            this.timeExpireAgentKeyInMs = timeExpireAgentKeyInMs;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastSyncReceived(String timeLastSyncReceived) {
-            this.timeLastSyncReceived = Objects.requireNonNull(timeLastSyncReceived);
+            if (timeLastSyncReceived == null) {
+              throw new MissingRequiredPropertyException("GetAgentResult", "timeLastSyncReceived");
+            }
+            this.timeLastSyncReceived = timeLastSyncReceived;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetAgentResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetAgentResult build() {

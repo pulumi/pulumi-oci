@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlS
 
         @CustomType.Setter
         public Builder format(String format) {
-            this.format = Objects.requireNonNull(format);
+            if (format == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute", "format");
+            }
+            this.format = format;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder userStoreAttributeName(String userStoreAttributeName) {
-            this.userStoreAttributeName = Objects.requireNonNull(userStoreAttributeName);
+            if (userStoreAttributeName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute", "userStoreAttributeName");
+            }
+            this.userStoreAttributeName = userStoreAttributeName;
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute build() {

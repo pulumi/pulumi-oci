@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbServersDbServer;
 import com.pulumi.oci.Database.outputs.GetDbServersFilter;
 import java.lang.String;
@@ -123,12 +124,18 @@ public final class GetDbServersResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDbServersResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dbServers(List<GetDbServersDbServer> dbServers) {
-            this.dbServers = Objects.requireNonNull(dbServers);
+            if (dbServers == null) {
+              throw new MissingRequiredPropertyException("GetDbServersResult", "dbServers");
+            }
+            this.dbServers = dbServers;
             return this;
         }
         public Builder dbServers(GetDbServersDbServer... dbServers) {
@@ -136,16 +143,21 @@ public final class GetDbServersResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
-            this.exadataInfrastructureId = Objects.requireNonNull(exadataInfrastructureId);
+            if (exadataInfrastructureId == null) {
+              throw new MissingRequiredPropertyException("GetDbServersResult", "exadataInfrastructureId");
+            }
+            this.exadataInfrastructureId = exadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDbServersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -154,11 +166,15 @@ public final class GetDbServersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbServersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

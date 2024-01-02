@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetail;
 import java.lang.Boolean;
@@ -336,67 +337,106 @@ public final class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastru
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createAsync(Boolean createAsync) {
-            this.createAsync = Objects.requireNonNull(createAsync);
+            if (createAsync == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "createAsync");
+            }
+            this.createAsync = createAsync;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder domain(String domain) {
-            this.domain = Objects.requireNonNull(domain);
+            if (domain == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "domain");
+            }
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lastMaintenanceRunId(String lastMaintenanceRunId) {
-            this.lastMaintenanceRunId = Objects.requireNonNull(lastMaintenanceRunId);
+            if (lastMaintenanceRunId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "lastMaintenanceRunId");
+            }
+            this.lastMaintenanceRunId = lastMaintenanceRunId;
             return this;
         }
         @CustomType.Setter
         public Builder licenseModel(String licenseModel) {
-            this.licenseModel = Objects.requireNonNull(licenseModel);
+            if (licenseModel == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "licenseModel");
+            }
+            this.licenseModel = licenseModel;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder maintenanceWindowDetails(List<GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetail> maintenanceWindowDetails) {
-            this.maintenanceWindowDetails = Objects.requireNonNull(maintenanceWindowDetails);
+            if (maintenanceWindowDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "maintenanceWindowDetails");
+            }
+            this.maintenanceWindowDetails = maintenanceWindowDetails;
             return this;
         }
         public Builder maintenanceWindowDetails(GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetail... maintenanceWindowDetails) {
@@ -404,7 +444,10 @@ public final class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastru
         }
         @CustomType.Setter
         public Builder maintenanceWindows(List<GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindow> maintenanceWindows) {
-            this.maintenanceWindows = Objects.requireNonNull(maintenanceWindows);
+            if (maintenanceWindows == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "maintenanceWindows");
+            }
+            this.maintenanceWindows = maintenanceWindows;
             return this;
         }
         public Builder maintenanceWindows(GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindow... maintenanceWindows) {
@@ -412,12 +455,18 @@ public final class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastru
         }
         @CustomType.Setter
         public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
-            this.nextMaintenanceRunId = Objects.requireNonNull(nextMaintenanceRunId);
+            if (nextMaintenanceRunId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "nextMaintenanceRunId");
+            }
+            this.nextMaintenanceRunId = nextMaintenanceRunId;
             return this;
         }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
@@ -425,32 +474,50 @@ public final class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastru
         }
         @CustomType.Setter
         public Builder scanDnsName(String scanDnsName) {
-            this.scanDnsName = Objects.requireNonNull(scanDnsName);
+            if (scanDnsName == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "scanDnsName");
+            }
+            this.scanDnsName = scanDnsName;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder zoneId(String zoneId) {
-            this.zoneId = Objects.requireNonNull(zoneId);
+            if (zoneId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure", "zoneId");
+            }
+            this.zoneId = zoneId;
             return this;
         }
         public GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure build() {

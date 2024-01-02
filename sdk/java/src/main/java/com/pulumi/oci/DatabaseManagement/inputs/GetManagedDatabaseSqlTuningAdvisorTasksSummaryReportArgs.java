@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -298,8 +299,12 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs exte
         }
 
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs build() {
-            $.managedDatabaseId = Objects.requireNonNull($.managedDatabaseId, "expected parameter 'managedDatabaseId' to be non-null");
-            $.sqlTuningAdvisorTaskId = Objects.requireNonNull($.sqlTuningAdvisorTaskId, "expected parameter 'sqlTuningAdvisorTaskId' to be non-null");
+            if ($.managedDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs", "managedDatabaseId");
+            }
+            if ($.sqlTuningAdvisorTaskId == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs", "sqlTuningAdvisorTaskId");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetGuardTargetArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetGuardTargetArgs build() {
-            $.targetId = Objects.requireNonNull($.targetId, "expected parameter 'targetId' to be non-null");
+            if ($.targetId == null) {
+                throw new MissingRequiredPropertyException("GetGuardTargetArgs", "targetId");
+            }
             return $;
         }
     }

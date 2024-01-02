@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.outputs.GetListingPackagesFilter;
 import com.pulumi.oci.Marketplace.outputs.GetListingPackagesListingPackage;
 import java.lang.String;
@@ -107,11 +108,13 @@ public final class GetListingPackagesResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetListingPackagesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -120,17 +123,26 @@ public final class GetListingPackagesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetListingPackagesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder listingId(String listingId) {
-            this.listingId = Objects.requireNonNull(listingId);
+            if (listingId == null) {
+              throw new MissingRequiredPropertyException("GetListingPackagesResult", "listingId");
+            }
+            this.listingId = listingId;
             return this;
         }
         @CustomType.Setter
         public Builder listingPackages(List<GetListingPackagesListingPackage> listingPackages) {
-            this.listingPackages = Objects.requireNonNull(listingPackages);
+            if (listingPackages == null) {
+              throw new MissingRequiredPropertyException("GetListingPackagesResult", "listingPackages");
+            }
+            this.listingPackages = listingPackages;
             return this;
         }
         public Builder listingPackages(GetListingPackagesListingPackage... listingPackages) {
@@ -138,11 +150,13 @@ public final class GetListingPackagesResult {
         }
         @CustomType.Setter
         public Builder packageType(@Nullable String packageType) {
+
             this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
         public Builder packageVersion(@Nullable String packageVersion) {
+
             this.packageVersion = packageVersion;
             return this;
         }

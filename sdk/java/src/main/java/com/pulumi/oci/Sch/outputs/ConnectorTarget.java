@@ -4,6 +4,7 @@
 package com.pulumi.oci.Sch.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Sch.outputs.ConnectorTargetDimension;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -258,26 +259,31 @@ public final class ConnectorTarget {
 
         @CustomType.Setter
         public Builder batchRolloverSizeInMbs(@Nullable Integer batchRolloverSizeInMbs) {
+
             this.batchRolloverSizeInMbs = batchRolloverSizeInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder batchRolloverTimeInMs(@Nullable Integer batchRolloverTimeInMs) {
+
             this.batchRolloverTimeInMs = batchRolloverTimeInMs;
             return this;
         }
         @CustomType.Setter
         public Builder bucket(@Nullable String bucket) {
+
             this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dimensions(@Nullable List<ConnectorTargetDimension> dimensions) {
+
             this.dimensions = dimensions;
             return this;
         }
@@ -286,56 +292,69 @@ public final class ConnectorTarget {
         }
         @CustomType.Setter
         public Builder enableFormattedMessaging(@Nullable Boolean enableFormattedMessaging) {
+
             this.enableFormattedMessaging = enableFormattedMessaging;
             return this;
         }
         @CustomType.Setter
         public Builder functionId(@Nullable String functionId) {
+
             this.functionId = functionId;
             return this;
         }
         @CustomType.Setter
         public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+            if (kind == null) {
+              throw new MissingRequiredPropertyException("ConnectorTarget", "kind");
+            }
+            this.kind = kind;
             return this;
         }
         @CustomType.Setter
         public Builder logGroupId(@Nullable String logGroupId) {
+
             this.logGroupId = logGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder logSourceIdentifier(@Nullable String logSourceIdentifier) {
+
             this.logSourceIdentifier = logSourceIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder metric(@Nullable String metric) {
+
             this.metric = metric;
             return this;
         }
         @CustomType.Setter
         public Builder metricNamespace(@Nullable String metricNamespace) {
+
             this.metricNamespace = metricNamespace;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(@Nullable String namespace) {
+
             this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder objectNamePrefix(@Nullable String objectNamePrefix) {
+
             this.objectNamePrefix = objectNamePrefix;
             return this;
         }
         @CustomType.Setter
         public Builder streamId(@Nullable String streamId) {
+
             this.streamId = streamId;
             return this;
         }
         @CustomType.Setter
         public Builder topicId(@Nullable String topicId) {
+
             this.topicId = topicId;
             return this;
         }

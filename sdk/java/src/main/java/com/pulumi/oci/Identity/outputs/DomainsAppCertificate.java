@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -200,26 +201,33 @@ public final class DomainsAppCertificate {
 
         @CustomType.Setter
         public Builder certAlias(String certAlias) {
-            this.certAlias = Objects.requireNonNull(certAlias);
+            if (certAlias == null) {
+              throw new MissingRequiredPropertyException("DomainsAppCertificate", "certAlias");
+            }
+            this.certAlias = certAlias;
             return this;
         }
         @CustomType.Setter
         public Builder kid(@Nullable String kid) {
+
             this.kid = kid;
             return this;
         }
         @CustomType.Setter
         public Builder sha1thumbprint(@Nullable String sha1thumbprint) {
+
             this.sha1thumbprint = sha1thumbprint;
             return this;
         }
         @CustomType.Setter
         public Builder x509base64certificate(@Nullable String x509base64certificate) {
+
             this.x509base64certificate = x509base64certificate;
             return this;
         }
         @CustomType.Setter
         public Builder x5t(@Nullable String x5t) {
+
             this.x5t = x5t;
             return this;
         }

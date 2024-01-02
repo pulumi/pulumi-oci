@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Kms.outputs.VaultExternalKeyManagerMetadataOauthMetadata;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class VaultExternalKeyManagerMetadata {
 
         @CustomType.Setter
         public Builder externalVaultEndpointUrl(String externalVaultEndpointUrl) {
-            this.externalVaultEndpointUrl = Objects.requireNonNull(externalVaultEndpointUrl);
+            if (externalVaultEndpointUrl == null) {
+              throw new MissingRequiredPropertyException("VaultExternalKeyManagerMetadata", "externalVaultEndpointUrl");
+            }
+            this.externalVaultEndpointUrl = externalVaultEndpointUrl;
             return this;
         }
         @CustomType.Setter
         public Builder oauthMetadata(VaultExternalKeyManagerMetadataOauthMetadata oauthMetadata) {
-            this.oauthMetadata = Objects.requireNonNull(oauthMetadata);
+            if (oauthMetadata == null) {
+              throw new MissingRequiredPropertyException("VaultExternalKeyManagerMetadata", "oauthMetadata");
+            }
+            this.oauthMetadata = oauthMetadata;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpointId(String privateEndpointId) {
-            this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
+            if (privateEndpointId == null) {
+              throw new MissingRequiredPropertyException("VaultExternalKeyManagerMetadata", "privateEndpointId");
+            }
+            this.privateEndpointId = privateEndpointId;
             return this;
         }
         public VaultExternalKeyManagerMetadata build() {

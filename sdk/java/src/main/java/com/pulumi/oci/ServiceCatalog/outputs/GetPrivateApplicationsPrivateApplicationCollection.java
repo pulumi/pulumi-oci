@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceCatalog.outputs.GetPrivateApplicationsPrivateApplicationCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetPrivateApplicationsPrivateApplicationCollection {
 
         @CustomType.Setter
         public Builder items(List<GetPrivateApplicationsPrivateApplicationCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationsPrivateApplicationCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetPrivateApplicationsPrivateApplicationCollectionItem... items) {

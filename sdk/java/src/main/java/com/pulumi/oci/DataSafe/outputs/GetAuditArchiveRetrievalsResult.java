@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection;
 import com.pulumi.oci.DataSafe.outputs.GetAuditArchiveRetrievalsFilter;
 import java.lang.Boolean;
@@ -156,12 +157,16 @@ public final class GetAuditArchiveRetrievalsResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder auditArchiveRetrievalCollections(List<GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection> auditArchiveRetrievalCollections) {
-            this.auditArchiveRetrievalCollections = Objects.requireNonNull(auditArchiveRetrievalCollections);
+            if (auditArchiveRetrievalCollections == null) {
+              throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalsResult", "auditArchiveRetrievalCollections");
+            }
+            this.auditArchiveRetrievalCollections = auditArchiveRetrievalCollections;
             return this;
         }
         public Builder auditArchiveRetrievalCollections(GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection... auditArchiveRetrievalCollections) {
@@ -169,26 +174,33 @@ public final class GetAuditArchiveRetrievalsResult {
         }
         @CustomType.Setter
         public Builder auditArchiveRetrievalId(@Nullable String auditArchiveRetrievalId) {
+
             this.auditArchiveRetrievalId = auditArchiveRetrievalId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAuditArchiveRetrievalsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -197,21 +209,27 @@ public final class GetAuditArchiveRetrievalsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
+
             this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfExpiry(@Nullable String timeOfExpiry) {
+
             this.timeOfExpiry = timeOfExpiry;
             return this;
         }

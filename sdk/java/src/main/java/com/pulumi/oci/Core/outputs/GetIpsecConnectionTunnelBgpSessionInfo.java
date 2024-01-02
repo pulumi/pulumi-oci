@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -158,47 +159,74 @@ public final class GetIpsecConnectionTunnelBgpSessionInfo {
 
         @CustomType.Setter
         public Builder bgpIpv6State(String bgpIpv6State) {
-            this.bgpIpv6State = Objects.requireNonNull(bgpIpv6State);
+            if (bgpIpv6State == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelBgpSessionInfo", "bgpIpv6State");
+            }
+            this.bgpIpv6State = bgpIpv6State;
             return this;
         }
         @CustomType.Setter
         public Builder bgpIpv6state(String bgpIpv6state) {
-            this.bgpIpv6state = Objects.requireNonNull(bgpIpv6state);
+            if (bgpIpv6state == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelBgpSessionInfo", "bgpIpv6state");
+            }
+            this.bgpIpv6state = bgpIpv6state;
             return this;
         }
         @CustomType.Setter
         public Builder bgpState(String bgpState) {
-            this.bgpState = Objects.requireNonNull(bgpState);
+            if (bgpState == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelBgpSessionInfo", "bgpState");
+            }
+            this.bgpState = bgpState;
             return this;
         }
         @CustomType.Setter
         public Builder customerBgpAsn(String customerBgpAsn) {
-            this.customerBgpAsn = Objects.requireNonNull(customerBgpAsn);
+            if (customerBgpAsn == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelBgpSessionInfo", "customerBgpAsn");
+            }
+            this.customerBgpAsn = customerBgpAsn;
             return this;
         }
         @CustomType.Setter
         public Builder customerInterfaceIp(String customerInterfaceIp) {
-            this.customerInterfaceIp = Objects.requireNonNull(customerInterfaceIp);
+            if (customerInterfaceIp == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelBgpSessionInfo", "customerInterfaceIp");
+            }
+            this.customerInterfaceIp = customerInterfaceIp;
             return this;
         }
         @CustomType.Setter
         public Builder customerInterfaceIpv6(String customerInterfaceIpv6) {
-            this.customerInterfaceIpv6 = Objects.requireNonNull(customerInterfaceIpv6);
+            if (customerInterfaceIpv6 == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelBgpSessionInfo", "customerInterfaceIpv6");
+            }
+            this.customerInterfaceIpv6 = customerInterfaceIpv6;
             return this;
         }
         @CustomType.Setter
         public Builder oracleBgpAsn(String oracleBgpAsn) {
-            this.oracleBgpAsn = Objects.requireNonNull(oracleBgpAsn);
+            if (oracleBgpAsn == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelBgpSessionInfo", "oracleBgpAsn");
+            }
+            this.oracleBgpAsn = oracleBgpAsn;
             return this;
         }
         @CustomType.Setter
         public Builder oracleInterfaceIp(String oracleInterfaceIp) {
-            this.oracleInterfaceIp = Objects.requireNonNull(oracleInterfaceIp);
+            if (oracleInterfaceIp == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelBgpSessionInfo", "oracleInterfaceIp");
+            }
+            this.oracleInterfaceIp = oracleInterfaceIp;
             return this;
         }
         @CustomType.Setter
         public Builder oracleInterfaceIpv6(String oracleInterfaceIpv6) {
-            this.oracleInterfaceIpv6 = Objects.requireNonNull(oracleInterfaceIpv6);
+            if (oracleInterfaceIpv6 == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelBgpSessionInfo", "oracleInterfaceIpv6");
+            }
+            this.oracleInterfaceIpv6 = oracleInterfaceIpv6;
             return this;
         }
         public GetIpsecConnectionTunnelBgpSessionInfo build() {

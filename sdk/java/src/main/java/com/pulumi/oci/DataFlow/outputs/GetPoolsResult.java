@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.outputs.GetPoolsFilter;
 import com.pulumi.oci.DataFlow.outputs.GetPoolsPoolCollection;
 import java.lang.String;
@@ -129,21 +130,27 @@ public final class GetPoolsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetPoolsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder displayNameStartsWith(@Nullable String displayNameStartsWith) {
+
             this.displayNameStartsWith = displayNameStartsWith;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPoolsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -152,17 +159,24 @@ public final class GetPoolsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPoolsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ownerPrincipalId(@Nullable String ownerPrincipalId) {
+
             this.ownerPrincipalId = ownerPrincipalId;
             return this;
         }
         @CustomType.Setter
         public Builder poolCollections(List<GetPoolsPoolCollection> poolCollections) {
-            this.poolCollections = Objects.requireNonNull(poolCollections);
+            if (poolCollections == null) {
+              throw new MissingRequiredPropertyException("GetPoolsResult", "poolCollections");
+            }
+            this.poolCollections = poolCollections;
             return this;
         }
         public Builder poolCollections(GetPoolsPoolCollection... poolCollections) {
@@ -170,6 +184,7 @@ public final class GetPoolsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

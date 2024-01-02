@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -169,52 +170,82 @@ public final class GetVolumeBackupPoliciesVolumeBackupPolicySchedule {
 
         @CustomType.Setter
         public Builder backupType(String backupType) {
-            this.backupType = Objects.requireNonNull(backupType);
+            if (backupType == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPoliciesVolumeBackupPolicySchedule", "backupType");
+            }
+            this.backupType = backupType;
             return this;
         }
         @CustomType.Setter
         public Builder dayOfMonth(Integer dayOfMonth) {
-            this.dayOfMonth = Objects.requireNonNull(dayOfMonth);
+            if (dayOfMonth == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPoliciesVolumeBackupPolicySchedule", "dayOfMonth");
+            }
+            this.dayOfMonth = dayOfMonth;
             return this;
         }
         @CustomType.Setter
         public Builder dayOfWeek(String dayOfWeek) {
-            this.dayOfWeek = Objects.requireNonNull(dayOfWeek);
+            if (dayOfWeek == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPoliciesVolumeBackupPolicySchedule", "dayOfWeek");
+            }
+            this.dayOfWeek = dayOfWeek;
             return this;
         }
         @CustomType.Setter
         public Builder hourOfDay(Integer hourOfDay) {
-            this.hourOfDay = Objects.requireNonNull(hourOfDay);
+            if (hourOfDay == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPoliciesVolumeBackupPolicySchedule", "hourOfDay");
+            }
+            this.hourOfDay = hourOfDay;
             return this;
         }
         @CustomType.Setter
         public Builder month(String month) {
-            this.month = Objects.requireNonNull(month);
+            if (month == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPoliciesVolumeBackupPolicySchedule", "month");
+            }
+            this.month = month;
             return this;
         }
         @CustomType.Setter
         public Builder offsetSeconds(Integer offsetSeconds) {
-            this.offsetSeconds = Objects.requireNonNull(offsetSeconds);
+            if (offsetSeconds == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPoliciesVolumeBackupPolicySchedule", "offsetSeconds");
+            }
+            this.offsetSeconds = offsetSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder offsetType(String offsetType) {
-            this.offsetType = Objects.requireNonNull(offsetType);
+            if (offsetType == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPoliciesVolumeBackupPolicySchedule", "offsetType");
+            }
+            this.offsetType = offsetType;
             return this;
         }
         @CustomType.Setter
         public Builder period(String period) {
-            this.period = Objects.requireNonNull(period);
+            if (period == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPoliciesVolumeBackupPolicySchedule", "period");
+            }
+            this.period = period;
             return this;
         }
         @CustomType.Setter
         public Builder retentionSeconds(Integer retentionSeconds) {
-            this.retentionSeconds = Objects.requireNonNull(retentionSeconds);
+            if (retentionSeconds == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPoliciesVolumeBackupPolicySchedule", "retentionSeconds");
+            }
+            this.retentionSeconds = retentionSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder timeZone(String timeZone) {
-            this.timeZone = Objects.requireNonNull(timeZone);
+            if (timeZone == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPoliciesVolumeBackupPolicySchedule", "timeZone");
+            }
+            this.timeZone = timeZone;
             return this;
         }
         public GetVolumeBackupPoliciesVolumeBackupPolicySchedule build() {

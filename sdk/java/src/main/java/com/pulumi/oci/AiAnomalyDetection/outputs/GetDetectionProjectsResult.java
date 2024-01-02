@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectionProjectsFilter;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectionProjectsProjectCollection;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetDetectionProjectsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDetectionProjectsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDetectionProjectsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +133,18 @@ public final class GetDetectionProjectsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDetectionProjectsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder projectCollections(List<GetDetectionProjectsProjectCollection> projectCollections) {
-            this.projectCollections = Objects.requireNonNull(projectCollections);
+            if (projectCollections == null) {
+              throw new MissingRequiredPropertyException("GetDetectionProjectsResult", "projectCollections");
+            }
+            this.projectCollections = projectCollections;
             return this;
         }
         public Builder projectCollections(GetDetectionProjectsProjectCollection... projectCollections) {
@@ -140,6 +152,7 @@ public final class GetDetectionProjectsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

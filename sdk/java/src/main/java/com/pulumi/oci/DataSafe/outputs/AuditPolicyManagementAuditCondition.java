@@ -101,11 +101,13 @@ public final class AuditPolicyManagementAuditCondition {
 
         @CustomType.Setter
         public Builder auditPolicyName(@Nullable String auditPolicyName) {
+
             this.auditPolicyName = auditPolicyName;
             return this;
         }
         @CustomType.Setter
         public Builder enableConditions(@Nullable List<AuditPolicyManagementAuditConditionEnableCondition> enableConditions) {
+
             this.enableConditions = enableConditions;
             return this;
         }
@@ -114,16 +116,19 @@ public final class AuditPolicyManagementAuditCondition {
         }
         @CustomType.Setter
         public Builder isDataSafeServiceAccountAudited(@Nullable Boolean isDataSafeServiceAccountAudited) {
+
             this.isDataSafeServiceAccountAudited = isDataSafeServiceAccountAudited;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
+
             this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isPrivUsersManagedByDataSafe(@Nullable Boolean isPrivUsersManagedByDataSafe) {
+
             this.isPrivUsersManagedByDataSafe = isPrivUsersManagedByDataSafe;
             return this;
         }

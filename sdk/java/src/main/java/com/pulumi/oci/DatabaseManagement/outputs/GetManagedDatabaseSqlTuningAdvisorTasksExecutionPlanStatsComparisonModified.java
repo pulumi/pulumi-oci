@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -72,17 +73,26 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
 
         @CustomType.Setter
         public Builder planStats(Map<String,Object> planStats) {
-            this.planStats = Objects.requireNonNull(planStats);
+            if (planStats == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified", "planStats");
+            }
+            this.planStats = planStats;
             return this;
         }
         @CustomType.Setter
         public Builder planStatus(String planStatus) {
-            this.planStatus = Objects.requireNonNull(planStatus);
+            if (planStatus == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified", "planStatus");
+            }
+            this.planStatus = planStatus;
             return this;
         }
         @CustomType.Setter
         public Builder planType(String planType) {
-            this.planType = Objects.requireNonNull(planType);
+            if (planType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified", "planType");
+            }
+            this.planType = planType;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified build() {

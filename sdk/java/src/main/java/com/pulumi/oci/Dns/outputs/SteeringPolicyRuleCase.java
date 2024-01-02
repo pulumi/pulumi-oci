@@ -75,6 +75,7 @@ public final class SteeringPolicyRuleCase {
 
         @CustomType.Setter
         public Builder answerDatas(@Nullable List<SteeringPolicyRuleCaseAnswerData> answerDatas) {
+
             this.answerDatas = answerDatas;
             return this;
         }
@@ -83,11 +84,13 @@ public final class SteeringPolicyRuleCase {
         }
         @CustomType.Setter
         public Builder caseCondition(@Nullable String caseCondition) {
+
             this.caseCondition = caseCondition;
             return this;
         }
         @CustomType.Setter
         public Builder count(@Nullable Integer count) {
+
             this.count = count;
             return this;
         }

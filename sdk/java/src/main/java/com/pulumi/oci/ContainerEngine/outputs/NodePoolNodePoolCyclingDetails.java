@@ -73,16 +73,19 @@ public final class NodePoolNodePoolCyclingDetails {
 
         @CustomType.Setter
         public Builder isNodeCyclingEnabled(@Nullable Boolean isNodeCyclingEnabled) {
+
             this.isNodeCyclingEnabled = isNodeCyclingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder maximumSurge(@Nullable String maximumSurge) {
+
             this.maximumSurge = maximumSurge;
             return this;
         }
         @CustomType.Setter
         public Builder maximumUnavailable(@Nullable String maximumUnavailable) {
+
             this.maximumUnavailable = maximumUnavailable;
             return this;
         }

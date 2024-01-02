@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetByoipAllocatedRangesByoipAllocatedRangeCollection;
 import com.pulumi.oci.Core.outputs.GetByoipAllocatedRangesFilter;
 import java.lang.String;
@@ -72,7 +73,10 @@ public final class GetByoipAllocatedRangesResult {
 
         @CustomType.Setter
         public Builder byoipAllocatedRangeCollections(List<GetByoipAllocatedRangesByoipAllocatedRangeCollection> byoipAllocatedRangeCollections) {
-            this.byoipAllocatedRangeCollections = Objects.requireNonNull(byoipAllocatedRangeCollections);
+            if (byoipAllocatedRangeCollections == null) {
+              throw new MissingRequiredPropertyException("GetByoipAllocatedRangesResult", "byoipAllocatedRangeCollections");
+            }
+            this.byoipAllocatedRangeCollections = byoipAllocatedRangeCollections;
             return this;
         }
         public Builder byoipAllocatedRangeCollections(GetByoipAllocatedRangesByoipAllocatedRangeCollection... byoipAllocatedRangeCollections) {
@@ -80,11 +84,15 @@ public final class GetByoipAllocatedRangesResult {
         }
         @CustomType.Setter
         public Builder byoipRangeId(String byoipRangeId) {
-            this.byoipRangeId = Objects.requireNonNull(byoipRangeId);
+            if (byoipRangeId == null) {
+              throw new MissingRequiredPropertyException("GetByoipAllocatedRangesResult", "byoipRangeId");
+            }
+            this.byoipRangeId = byoipRangeId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetByoipAllocatedRangesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -93,7 +101,10 @@ public final class GetByoipAllocatedRangesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetByoipAllocatedRangesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetByoipAllocatedRangesResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannel;
 import com.pulumi.oci.DevOps.outputs.GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfig;
 import java.lang.String;
@@ -115,22 +116,34 @@ public final class GetDeployStagesDeployStageCollectionItemContainerConfig {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetDeployStagesDeployStageCollectionItemContainerConfig", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDeployStagesDeployStageCollectionItemContainerConfig", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder containerConfigType(String containerConfigType) {
-            this.containerConfigType = Objects.requireNonNull(containerConfigType);
+            if (containerConfigType == null) {
+              throw new MissingRequiredPropertyException("GetDeployStagesDeployStageCollectionItemContainerConfig", "containerConfigType");
+            }
+            this.containerConfigType = containerConfigType;
             return this;
         }
         @CustomType.Setter
         public Builder networkChannels(List<GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannel> networkChannels) {
-            this.networkChannels = Objects.requireNonNull(networkChannels);
+            if (networkChannels == null) {
+              throw new MissingRequiredPropertyException("GetDeployStagesDeployStageCollectionItemContainerConfig", "networkChannels");
+            }
+            this.networkChannels = networkChannels;
             return this;
         }
         public Builder networkChannels(GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannel... networkChannels) {
@@ -138,7 +151,10 @@ public final class GetDeployStagesDeployStageCollectionItemContainerConfig {
         }
         @CustomType.Setter
         public Builder shapeConfigs(List<GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfig> shapeConfigs) {
-            this.shapeConfigs = Objects.requireNonNull(shapeConfigs);
+            if (shapeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetDeployStagesDeployStageCollectionItemContainerConfig", "shapeConfigs");
+            }
+            this.shapeConfigs = shapeConfigs;
             return this;
         }
         public Builder shapeConfigs(GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfig... shapeConfigs) {
@@ -146,7 +162,10 @@ public final class GetDeployStagesDeployStageCollectionItemContainerConfig {
         }
         @CustomType.Setter
         public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+            if (shapeName == null) {
+              throw new MissingRequiredPropertyException("GetDeployStagesDeployStageCollectionItemContainerConfig", "shapeName");
+            }
+            this.shapeName = shapeName;
             return this;
         }
         public GetDeployStagesDeployStageCollectionItemContainerConfig build() {

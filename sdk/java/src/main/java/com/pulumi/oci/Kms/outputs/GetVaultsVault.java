@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Kms.outputs.GetVaultsVaultExternalKeyManagerMetadata;
 import com.pulumi.oci.Kms.outputs.GetVaultsVaultExternalKeyManagerMetadataSummary;
 import com.pulumi.oci.Kms.outputs.GetVaultsVaultReplicaDetail;
@@ -271,27 +272,42 @@ public final class GetVaultsVault {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVault", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder cryptoEndpoint(String cryptoEndpoint) {
-            this.cryptoEndpoint = Objects.requireNonNull(cryptoEndpoint);
+            if (cryptoEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVault", "cryptoEndpoint");
+            }
+            this.cryptoEndpoint = cryptoEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVault", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVault", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalKeyManagerMetadataSummaries(List<GetVaultsVaultExternalKeyManagerMetadataSummary> externalKeyManagerMetadataSummaries) {
-            this.externalKeyManagerMetadataSummaries = Objects.requireNonNull(externalKeyManagerMetadataSummaries);
+            if (externalKeyManagerMetadataSummaries == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVault", "externalKeyManagerMetadataSummaries");
+            }
+            this.externalKeyManagerMetadataSummaries = externalKeyManagerMetadataSummaries;
             return this;
         }
         public Builder externalKeyManagerMetadataSummaries(GetVaultsVaultExternalKeyManagerMetadataSummary... externalKeyManagerMetadataSummaries) {
@@ -299,7 +315,10 @@ public final class GetVaultsVault {
         }
         @CustomType.Setter
         public Builder externalKeyManagerMetadatas(List<GetVaultsVaultExternalKeyManagerMetadata> externalKeyManagerMetadatas) {
-            this.externalKeyManagerMetadatas = Objects.requireNonNull(externalKeyManagerMetadatas);
+            if (externalKeyManagerMetadatas == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVault", "externalKeyManagerMetadatas");
+            }
+            this.externalKeyManagerMetadatas = externalKeyManagerMetadatas;
             return this;
         }
         public Builder externalKeyManagerMetadatas(GetVaultsVaultExternalKeyManagerMetadata... externalKeyManagerMetadatas) {
@@ -307,27 +326,42 @@ public final class GetVaultsVault {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVault", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVault", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isPrimary(Boolean isPrimary) {
-            this.isPrimary = Objects.requireNonNull(isPrimary);
+            if (isPrimary == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVault", "isPrimary");
+            }
+            this.isPrimary = isPrimary;
             return this;
         }
         @CustomType.Setter
         public Builder managementEndpoint(String managementEndpoint) {
-            this.managementEndpoint = Objects.requireNonNull(managementEndpoint);
+            if (managementEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVault", "managementEndpoint");
+            }
+            this.managementEndpoint = managementEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder replicaDetails(List<GetVaultsVaultReplicaDetail> replicaDetails) {
-            this.replicaDetails = Objects.requireNonNull(replicaDetails);
+            if (replicaDetails == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVault", "replicaDetails");
+            }
+            this.replicaDetails = replicaDetails;
             return this;
         }
         public Builder replicaDetails(GetVaultsVaultReplicaDetail... replicaDetails) {
@@ -335,7 +369,10 @@ public final class GetVaultsVault {
         }
         @CustomType.Setter
         public Builder restoreFromFiles(List<GetVaultsVaultRestoreFromFile> restoreFromFiles) {
-            this.restoreFromFiles = Objects.requireNonNull(restoreFromFiles);
+            if (restoreFromFiles == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVault", "restoreFromFiles");
+            }
+            this.restoreFromFiles = restoreFromFiles;
             return this;
         }
         public Builder restoreFromFiles(GetVaultsVaultRestoreFromFile... restoreFromFiles) {
@@ -343,7 +380,10 @@ public final class GetVaultsVault {
         }
         @CustomType.Setter
         public Builder restoreFromObjectStores(List<GetVaultsVaultRestoreFromObjectStore> restoreFromObjectStores) {
-            this.restoreFromObjectStores = Objects.requireNonNull(restoreFromObjectStores);
+            if (restoreFromObjectStores == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVault", "restoreFromObjectStores");
+            }
+            this.restoreFromObjectStores = restoreFromObjectStores;
             return this;
         }
         public Builder restoreFromObjectStores(GetVaultsVaultRestoreFromObjectStore... restoreFromObjectStores) {
@@ -351,32 +391,50 @@ public final class GetVaultsVault {
         }
         @CustomType.Setter
         public Builder restoreTrigger(Boolean restoreTrigger) {
-            this.restoreTrigger = Objects.requireNonNull(restoreTrigger);
+            if (restoreTrigger == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVault", "restoreTrigger");
+            }
+            this.restoreTrigger = restoreTrigger;
             return this;
         }
         @CustomType.Setter
         public Builder restoredFromVaultId(String restoredFromVaultId) {
-            this.restoredFromVaultId = Objects.requireNonNull(restoredFromVaultId);
+            if (restoredFromVaultId == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVault", "restoredFromVaultId");
+            }
+            this.restoredFromVaultId = restoredFromVaultId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVault", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVault", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfDeletion(String timeOfDeletion) {
-            this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
+            if (timeOfDeletion == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVault", "timeOfDeletion");
+            }
+            this.timeOfDeletion = timeOfDeletion;
             return this;
         }
         @CustomType.Setter
         public Builder vaultType(String vaultType) {
-            this.vaultType = Objects.requireNonNull(vaultType);
+            if (vaultType == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVault", "vaultType");
+            }
+            this.vaultType = vaultType;
             return this;
         }
         public GetVaultsVault build() {

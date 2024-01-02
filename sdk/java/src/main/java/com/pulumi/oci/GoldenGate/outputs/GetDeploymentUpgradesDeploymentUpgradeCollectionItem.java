@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -441,147 +442,234 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentId(String deploymentId) {
-            this.deploymentId = Objects.requireNonNull(deploymentId);
+            if (deploymentId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "deploymentId");
+            }
+            this.deploymentId = deploymentId;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentUpgradeType(String deploymentUpgradeType) {
-            this.deploymentUpgradeType = Objects.requireNonNull(deploymentUpgradeType);
+            if (deploymentUpgradeType == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "deploymentUpgradeType");
+            }
+            this.deploymentUpgradeType = deploymentUpgradeType;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCancelAllowed(Boolean isCancelAllowed) {
-            this.isCancelAllowed = Objects.requireNonNull(isCancelAllowed);
+            if (isCancelAllowed == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "isCancelAllowed");
+            }
+            this.isCancelAllowed = isCancelAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder isRescheduleAllowed(Boolean isRescheduleAllowed) {
-            this.isRescheduleAllowed = Objects.requireNonNull(isRescheduleAllowed);
+            if (isRescheduleAllowed == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "isRescheduleAllowed");
+            }
+            this.isRescheduleAllowed = isRescheduleAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder isRollbackAllowed(Boolean isRollbackAllowed) {
-            this.isRollbackAllowed = Objects.requireNonNull(isRollbackAllowed);
+            if (isRollbackAllowed == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "isRollbackAllowed");
+            }
+            this.isRollbackAllowed = isRollbackAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder isSecurityFix(Boolean isSecurityFix) {
-            this.isSecurityFix = Objects.requireNonNull(isSecurityFix);
+            if (isSecurityFix == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "isSecurityFix");
+            }
+            this.isSecurityFix = isSecurityFix;
             return this;
         }
         @CustomType.Setter
         public Builder isSnoozed(Boolean isSnoozed) {
-            this.isSnoozed = Objects.requireNonNull(isSnoozed);
+            if (isSnoozed == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "isSnoozed");
+            }
+            this.isSnoozed = isSnoozed;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleSubState(String lifecycleSubState) {
-            this.lifecycleSubState = Objects.requireNonNull(lifecycleSubState);
+            if (lifecycleSubState == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "lifecycleSubState");
+            }
+            this.lifecycleSubState = lifecycleSubState;
             return this;
         }
         @CustomType.Setter
         public Builder oggVersion(String oggVersion) {
-            this.oggVersion = Objects.requireNonNull(oggVersion);
+            if (oggVersion == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "oggVersion");
+            }
+            this.oggVersion = oggVersion;
             return this;
         }
         @CustomType.Setter
         public Builder previousOggVersion(String previousOggVersion) {
-            this.previousOggVersion = Objects.requireNonNull(previousOggVersion);
+            if (previousOggVersion == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "previousOggVersion");
+            }
+            this.previousOggVersion = previousOggVersion;
             return this;
         }
         @CustomType.Setter
         public Builder releaseType(String releaseType) {
-            this.releaseType = Objects.requireNonNull(releaseType);
+            if (releaseType == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "releaseType");
+            }
+            this.releaseType = releaseType;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+            if (timeFinished == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "timeFinished");
+            }
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
         public Builder timeOggVersionSupportedUntil(String timeOggVersionSupportedUntil) {
-            this.timeOggVersionSupportedUntil = Objects.requireNonNull(timeOggVersionSupportedUntil);
+            if (timeOggVersionSupportedUntil == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "timeOggVersionSupportedUntil");
+            }
+            this.timeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
             return this;
         }
         @CustomType.Setter
         public Builder timeReleased(String timeReleased) {
-            this.timeReleased = Objects.requireNonNull(timeReleased);
+            if (timeReleased == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "timeReleased");
+            }
+            this.timeReleased = timeReleased;
             return this;
         }
         @CustomType.Setter
         public Builder timeSchedule(String timeSchedule) {
-            this.timeSchedule = Objects.requireNonNull(timeSchedule);
+            if (timeSchedule == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "timeSchedule");
+            }
+            this.timeSchedule = timeSchedule;
             return this;
         }
         @CustomType.Setter
         public Builder timeScheduleMax(String timeScheduleMax) {
-            this.timeScheduleMax = Objects.requireNonNull(timeScheduleMax);
+            if (timeScheduleMax == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "timeScheduleMax");
+            }
+            this.timeScheduleMax = timeScheduleMax;
             return this;
         }
         @CustomType.Setter
         public Builder timeSnoozedUntil(String timeSnoozedUntil) {
-            this.timeSnoozedUntil = Objects.requireNonNull(timeSnoozedUntil);
+            if (timeSnoozedUntil == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "timeSnoozedUntil");
+            }
+            this.timeSnoozedUntil = timeSnoozedUntil;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDeploymentUpgradesDeploymentUpgradeCollectionItem build() {

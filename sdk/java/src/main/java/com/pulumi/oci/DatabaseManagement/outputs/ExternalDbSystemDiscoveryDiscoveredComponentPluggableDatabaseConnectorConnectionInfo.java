@@ -75,11 +75,13 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase
 
         @CustomType.Setter
         public Builder componentType(@Nullable String componentType) {
+
             this.componentType = componentType;
             return this;
         }
         @CustomType.Setter
         public Builder connectionCredentials(@Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential> connectionCredentials) {
+
             this.connectionCredentials = connectionCredentials;
             return this;
         }
@@ -88,6 +90,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase
         }
         @CustomType.Setter
         public Builder connectionStrings(@Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString> connectionStrings) {
+
             this.connectionStrings = connectionStrings;
             return this;
         }

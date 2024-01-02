@@ -5,6 +5,7 @@ package com.pulumi.oci.Dns;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Dns.inputs.RrsetItemArgs;
 import java.lang.String;
 import java.util.List;
@@ -331,9 +332,15 @@ public final class RrsetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public RrsetArgs build() {
-            $.domain = Objects.requireNonNull($.domain, "expected parameter 'domain' to be non-null");
-            $.rtype = Objects.requireNonNull($.rtype, "expected parameter 'rtype' to be non-null");
-            $.zoneNameOrId = Objects.requireNonNull($.zoneNameOrId, "expected parameter 'zoneNameOrId' to be non-null");
+            if ($.domain == null) {
+                throw new MissingRequiredPropertyException("RrsetArgs", "domain");
+            }
+            if ($.rtype == null) {
+                throw new MissingRequiredPropertyException("RrsetArgs", "rtype");
+            }
+            if ($.zoneNameOrId == null) {
+                throw new MissingRequiredPropertyException("RrsetArgs", "zoneNameOrId");
+            }
             return $;
         }
     }

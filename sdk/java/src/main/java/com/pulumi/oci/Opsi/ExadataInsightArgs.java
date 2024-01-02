@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.inputs.ExadataInsightMemberVmClusterDetailArgs;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -427,8 +428,12 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public ExadataInsightArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.entitySource = Objects.requireNonNull($.entitySource, "expected parameter 'entitySource' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ExadataInsightArgs", "compartmentId");
+            }
+            if ($.entitySource == null) {
+                throw new MissingRequiredPropertyException("ExadataInsightArgs", "entitySource");
+            }
             return $;
         }
     }

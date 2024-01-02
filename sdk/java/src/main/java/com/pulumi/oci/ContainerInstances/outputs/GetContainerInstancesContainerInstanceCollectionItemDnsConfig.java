@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerInstances.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -71,7 +72,10 @@ public final class GetContainerInstancesContainerInstanceCollectionItemDnsConfig
 
         @CustomType.Setter
         public Builder nameservers(List<String> nameservers) {
-            this.nameservers = Objects.requireNonNull(nameservers);
+            if (nameservers == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemDnsConfig", "nameservers");
+            }
+            this.nameservers = nameservers;
             return this;
         }
         public Builder nameservers(String... nameservers) {
@@ -79,7 +83,10 @@ public final class GetContainerInstancesContainerInstanceCollectionItemDnsConfig
         }
         @CustomType.Setter
         public Builder options(List<String> options) {
-            this.options = Objects.requireNonNull(options);
+            if (options == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemDnsConfig", "options");
+            }
+            this.options = options;
             return this;
         }
         public Builder options(String... options) {
@@ -87,7 +94,10 @@ public final class GetContainerInstancesContainerInstanceCollectionItemDnsConfig
         }
         @CustomType.Setter
         public Builder searches(List<String> searches) {
-            this.searches = Objects.requireNonNull(searches);
+            if (searches == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemDnsConfig", "searches");
+            }
+            this.searches = searches;
             return this;
         }
         public Builder searches(String... searches) {

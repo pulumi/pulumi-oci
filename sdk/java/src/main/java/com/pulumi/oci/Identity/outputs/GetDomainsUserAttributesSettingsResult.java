@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserAttributesSettingsUserAttributesSetting;
 import java.lang.Integer;
 import java.lang.String;
@@ -129,6 +130,7 @@ public final class GetDomainsUserAttributesSettingsResult {
 
         @CustomType.Setter
         public Builder attributeSets(@Nullable List<String> attributeSets) {
+
             this.attributeSets = attributeSets;
             return this;
         }
@@ -137,42 +139,58 @@ public final class GetDomainsUserAttributesSettingsResult {
         }
         @CustomType.Setter
         public Builder attributes(@Nullable String attributes) {
+
             this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder itemsPerPage(Integer itemsPerPage) {
-            this.itemsPerPage = Objects.requireNonNull(itemsPerPage);
+            if (itemsPerPage == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsResult", "itemsPerPage");
+            }
+            this.itemsPerPage = itemsPerPage;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -180,17 +198,26 @@ public final class GetDomainsUserAttributesSettingsResult {
         }
         @CustomType.Setter
         public Builder startIndex(Integer startIndex) {
-            this.startIndex = Objects.requireNonNull(startIndex);
+            if (startIndex == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsResult", "startIndex");
+            }
+            this.startIndex = startIndex;
             return this;
         }
         @CustomType.Setter
         public Builder totalResults(Integer totalResults) {
-            this.totalResults = Objects.requireNonNull(totalResults);
+            if (totalResults == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsResult", "totalResults");
+            }
+            this.totalResults = totalResults;
             return this;
         }
         @CustomType.Setter
         public Builder userAttributesSettings(List<GetDomainsUserAttributesSettingsUserAttributesSetting> userAttributesSettings) {
-            this.userAttributesSettings = Objects.requireNonNull(userAttributesSettings);
+            if (userAttributesSettings == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsResult", "userAttributesSettings");
+            }
+            this.userAttributesSettings = userAttributesSettings;
             return this;
         }
         public Builder userAttributesSettings(GetDomainsUserAttributesSettingsUserAttributesSetting... userAttributesSettings) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetConnectionConnectDescriptor {
 
         @CustomType.Setter
         public Builder connectString(String connectString) {
-            this.connectString = Objects.requireNonNull(connectString);
+            if (connectString == null) {
+              throw new MissingRequiredPropertyException("GetConnectionConnectDescriptor", "connectString");
+            }
+            this.connectString = connectString;
             return this;
         }
         @CustomType.Setter
         public Builder databaseServiceName(String databaseServiceName) {
-            this.databaseServiceName = Objects.requireNonNull(databaseServiceName);
+            if (databaseServiceName == null) {
+              throw new MissingRequiredPropertyException("GetConnectionConnectDescriptor", "databaseServiceName");
+            }
+            this.databaseServiceName = databaseServiceName;
             return this;
         }
         @CustomType.Setter
         public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+            if (host == null) {
+              throw new MissingRequiredPropertyException("GetConnectionConnectDescriptor", "host");
+            }
+            this.host = host;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetConnectionConnectDescriptor", "port");
+            }
+            this.port = port;
             return this;
         }
         public GetConnectionConnectDescriptor build() {

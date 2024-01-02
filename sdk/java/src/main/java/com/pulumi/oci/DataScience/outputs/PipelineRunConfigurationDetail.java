@@ -88,21 +88,25 @@ public final class PipelineRunConfigurationDetail {
 
         @CustomType.Setter
         public Builder commandLineArguments(@Nullable String commandLineArguments) {
+
             this.commandLineArguments = commandLineArguments;
             return this;
         }
         @CustomType.Setter
         public Builder environmentVariables(@Nullable Map<String,Object> environmentVariables) {
+
             this.environmentVariables = environmentVariables;
             return this;
         }
         @CustomType.Setter
         public Builder maximumRuntimeInMinutes(@Nullable String maximumRuntimeInMinutes) {
+
             this.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }

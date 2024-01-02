@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetRecommendationPlainArgs extends com.pulumi.resources.Invok
         }
 
         public GetRecommendationPlainArgs build() {
-            $.recommendationId = Objects.requireNonNull($.recommendationId, "expected parameter 'recommendationId' to be non-null");
+            if ($.recommendationId == null) {
+                throw new MissingRequiredPropertyException("GetRecommendationPlainArgs", "recommendationId");
+            }
             return $;
         }
     }

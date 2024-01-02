@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -438,42 +439,66 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMainte
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder currentCustomActionTimeoutInMins(Integer currentCustomActionTimeoutInMins) {
-            this.currentCustomActionTimeoutInMins = Objects.requireNonNull(currentCustomActionTimeoutInMins);
+            if (currentCustomActionTimeoutInMins == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "currentCustomActionTimeoutInMins");
+            }
+            this.currentCustomActionTimeoutInMins = currentCustomActionTimeoutInMins;
             return this;
         }
         @CustomType.Setter
         public Builder currentPatchingComponent(String currentPatchingComponent) {
-            this.currentPatchingComponent = Objects.requireNonNull(currentPatchingComponent);
+            if (currentPatchingComponent == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "currentPatchingComponent");
+            }
+            this.currentPatchingComponent = currentPatchingComponent;
             return this;
         }
         @CustomType.Setter
         public Builder customActionTimeoutInMins(Integer customActionTimeoutInMins) {
-            this.customActionTimeoutInMins = Objects.requireNonNull(customActionTimeoutInMins);
+            if (customActionTimeoutInMins == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "customActionTimeoutInMins");
+            }
+            this.customActionTimeoutInMins = customActionTimeoutInMins;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder estimatedComponentPatchingStartTime(String estimatedComponentPatchingStartTime) {
-            this.estimatedComponentPatchingStartTime = Objects.requireNonNull(estimatedComponentPatchingStartTime);
+            if (estimatedComponentPatchingStartTime == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "estimatedComponentPatchingStartTime");
+            }
+            this.estimatedComponentPatchingStartTime = estimatedComponentPatchingStartTime;
             return this;
         }
         @CustomType.Setter
         public Builder estimatedPatchingTimes(List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime> estimatedPatchingTimes) {
-            this.estimatedPatchingTimes = Objects.requireNonNull(estimatedPatchingTimes);
+            if (estimatedPatchingTimes == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "estimatedPatchingTimes");
+            }
+            this.estimatedPatchingTimes = estimatedPatchingTimes;
             return this;
         }
         public Builder estimatedPatchingTimes(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime... estimatedPatchingTimes) {
@@ -481,107 +506,170 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMainte
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCustomActionTimeoutEnabled(Boolean isCustomActionTimeoutEnabled) {
-            this.isCustomActionTimeoutEnabled = Objects.requireNonNull(isCustomActionTimeoutEnabled);
+            if (isCustomActionTimeoutEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "isCustomActionTimeoutEnabled");
+            }
+            this.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isDstFileUpdateEnabled(Boolean isDstFileUpdateEnabled) {
-            this.isDstFileUpdateEnabled = Objects.requireNonNull(isDstFileUpdateEnabled);
+            if (isDstFileUpdateEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "isDstFileUpdateEnabled");
+            }
+            this.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder maintenanceSubtype(String maintenanceSubtype) {
-            this.maintenanceSubtype = Objects.requireNonNull(maintenanceSubtype);
+            if (maintenanceSubtype == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "maintenanceSubtype");
+            }
+            this.maintenanceSubtype = maintenanceSubtype;
             return this;
         }
         @CustomType.Setter
         public Builder maintenanceType(String maintenanceType) {
-            this.maintenanceType = Objects.requireNonNull(maintenanceType);
+            if (maintenanceType == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "maintenanceType");
+            }
+            this.maintenanceType = maintenanceType;
             return this;
         }
         @CustomType.Setter
         public Builder patchFailureCount(Integer patchFailureCount) {
-            this.patchFailureCount = Objects.requireNonNull(patchFailureCount);
+            if (patchFailureCount == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "patchFailureCount");
+            }
+            this.patchFailureCount = patchFailureCount;
             return this;
         }
         @CustomType.Setter
         public Builder patchId(String patchId) {
-            this.patchId = Objects.requireNonNull(patchId);
+            if (patchId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "patchId");
+            }
+            this.patchId = patchId;
             return this;
         }
         @CustomType.Setter
         public Builder patchingEndTime(String patchingEndTime) {
-            this.patchingEndTime = Objects.requireNonNull(patchingEndTime);
+            if (patchingEndTime == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "patchingEndTime");
+            }
+            this.patchingEndTime = patchingEndTime;
             return this;
         }
         @CustomType.Setter
         public Builder patchingMode(String patchingMode) {
-            this.patchingMode = Objects.requireNonNull(patchingMode);
+            if (patchingMode == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "patchingMode");
+            }
+            this.patchingMode = patchingMode;
             return this;
         }
         @CustomType.Setter
         public Builder patchingStartTime(String patchingStartTime) {
-            this.patchingStartTime = Objects.requireNonNull(patchingStartTime);
+            if (patchingStartTime == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "patchingStartTime");
+            }
+            this.patchingStartTime = patchingStartTime;
             return this;
         }
         @CustomType.Setter
         public Builder patchingStatus(String patchingStatus) {
-            this.patchingStatus = Objects.requireNonNull(patchingStatus);
+            if (patchingStatus == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "patchingStatus");
+            }
+            this.patchingStatus = patchingStatus;
             return this;
         }
         @CustomType.Setter
         public Builder peerMaintenanceRunId(String peerMaintenanceRunId) {
-            this.peerMaintenanceRunId = Objects.requireNonNull(peerMaintenanceRunId);
+            if (peerMaintenanceRunId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "peerMaintenanceRunId");
+            }
+            this.peerMaintenanceRunId = peerMaintenanceRunId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targetDbServerVersion(String targetDbServerVersion) {
-            this.targetDbServerVersion = Objects.requireNonNull(targetDbServerVersion);
+            if (targetDbServerVersion == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "targetDbServerVersion");
+            }
+            this.targetDbServerVersion = targetDbServerVersion;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourceId(String targetResourceId) {
-            this.targetResourceId = Objects.requireNonNull(targetResourceId);
+            if (targetResourceId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "targetResourceId");
+            }
+            this.targetResourceId = targetResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourceType(String targetResourceType) {
-            this.targetResourceType = Objects.requireNonNull(targetResourceType);
+            if (targetResourceType == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "targetResourceType");
+            }
+            this.targetResourceType = targetResourceType;
             return this;
         }
         @CustomType.Setter
         public Builder targetStorageServerVersion(String targetStorageServerVersion) {
-            this.targetStorageServerVersion = Objects.requireNonNull(targetStorageServerVersion);
+            if (targetStorageServerVersion == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "targetStorageServerVersion");
+            }
+            this.targetStorageServerVersion = targetStorageServerVersion;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+            if (timeEnded == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "timeEnded");
+            }
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeScheduled(String timeScheduled) {
-            this.timeScheduled = Objects.requireNonNull(timeScheduled);
+            if (timeScheduled == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "timeScheduled");
+            }
+            this.timeScheduled = timeScheduled;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail build() {

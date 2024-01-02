@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetDomainsUserPhoto {
 
         @CustomType.Setter
         public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+            if (display == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserPhoto", "display");
+            }
+            this.display = display;
             return this;
         }
         @CustomType.Setter
         public Builder primary(Boolean primary) {
-            this.primary = Objects.requireNonNull(primary);
+            if (primary == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserPhoto", "primary");
+            }
+            this.primary = primary;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserPhoto", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserPhoto", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDomainsUserPhoto build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceManagerProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceManagerProxy.outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition;
 import com.pulumi.oci.ServiceManagerProxy.outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint;
 import java.lang.Object;
@@ -143,32 +144,50 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentsServiceEnvironmentCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder consoleUrl(String consoleUrl) {
-            this.consoleUrl = Objects.requireNonNull(consoleUrl);
+            if (consoleUrl == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentsServiceEnvironmentCollectionItem", "consoleUrl");
+            }
+            this.consoleUrl = consoleUrl;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentsServiceEnvironmentCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentsServiceEnvironmentCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentsServiceEnvironmentCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder serviceDefinitions(List<GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition> serviceDefinitions) {
-            this.serviceDefinitions = Objects.requireNonNull(serviceDefinitions);
+            if (serviceDefinitions == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentsServiceEnvironmentCollectionItem", "serviceDefinitions");
+            }
+            this.serviceDefinitions = serviceDefinitions;
             return this;
         }
         public Builder serviceDefinitions(GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition... serviceDefinitions) {
@@ -176,7 +195,10 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItem {
         }
         @CustomType.Setter
         public Builder serviceEnvironmentEndpoints(List<GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint> serviceEnvironmentEndpoints) {
-            this.serviceEnvironmentEndpoints = Objects.requireNonNull(serviceEnvironmentEndpoints);
+            if (serviceEnvironmentEndpoints == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentsServiceEnvironmentCollectionItem", "serviceEnvironmentEndpoints");
+            }
+            this.serviceEnvironmentEndpoints = serviceEnvironmentEndpoints;
             return this;
         }
         public Builder serviceEnvironmentEndpoints(GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint... serviceEnvironmentEndpoints) {
@@ -184,12 +206,18 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItem {
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentsServiceEnvironmentCollectionItem", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentsServiceEnvironmentCollectionItem", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
             return this;
         }
         public GetServiceEnvironmentsServiceEnvironmentCollectionItem build() {

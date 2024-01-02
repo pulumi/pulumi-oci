@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.inputs.TriggerActionFilterExcludeArgs;
 import com.pulumi.oci.DevOps.inputs.TriggerActionFilterIncludeArgs;
 import java.lang.String;
@@ -212,7 +213,9 @@ public final class TriggerActionFilterArgs extends com.pulumi.resources.Resource
         }
 
         public TriggerActionFilterArgs build() {
-            $.triggerSource = Objects.requireNonNull($.triggerSource, "expected parameter 'triggerSource' to be non-null");
+            if ($.triggerSource == null) {
+                throw new MissingRequiredPropertyException("TriggerActionFilterArgs", "triggerSource");
+            }
             return $;
         }
     }

@@ -72,16 +72,19 @@ public final class AssetVmwareVcenter {
 
         @CustomType.Setter
         public Builder dataCenter(@Nullable String dataCenter) {
+
             this.dataCenter = dataCenter;
             return this;
         }
         @CustomType.Setter
         public Builder vcenterKey(@Nullable String vcenterKey) {
+
             this.vcenterKey = vcenterKey;
             return this;
         }
         @CustomType.Setter
         public Builder vcenterVersion(@Nullable String vcenterVersion) {
+
             this.vcenterVersion = vcenterVersion;
             return this;
         }

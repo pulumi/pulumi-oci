@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetDomainsMyDeviceThirdPartyFactor {
 
         @CustomType.Setter
         public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+            if (ref == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDeviceThirdPartyFactor", "ref");
+            }
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder thirdPartyFactorType(String thirdPartyFactorType) {
-            this.thirdPartyFactorType = Objects.requireNonNull(thirdPartyFactorType);
+            if (thirdPartyFactorType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDeviceThirdPartyFactor", "thirdPartyFactorType");
+            }
+            this.thirdPartyFactorType = thirdPartyFactorType;
             return this;
         }
         @CustomType.Setter
         public Builder thirdPartyVendorName(String thirdPartyVendorName) {
-            this.thirdPartyVendorName = Objects.requireNonNull(thirdPartyVendorName);
+            if (thirdPartyVendorName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDeviceThirdPartyFactor", "thirdPartyVendorName");
+            }
+            this.thirdPartyVendorName = thirdPartyVendorName;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDeviceThirdPartyFactor", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDomainsMyDeviceThirdPartyFactor build() {

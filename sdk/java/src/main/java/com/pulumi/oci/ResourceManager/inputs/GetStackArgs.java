@@ -5,6 +5,7 @@ package com.pulumi.oci.ResourceManager.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetStackArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetStackArgs build() {
-            $.stackId = Objects.requireNonNull($.stackId, "expected parameter 'stackId' to be non-null");
+            if ($.stackId == null) {
+                throw new MissingRequiredPropertyException("GetStackArgs", "stackId");
+            }
             return $;
         }
     }

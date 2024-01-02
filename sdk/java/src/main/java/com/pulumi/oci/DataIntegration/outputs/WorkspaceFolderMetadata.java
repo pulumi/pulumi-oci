@@ -233,11 +233,13 @@ public final class WorkspaceFolderMetadata {
 
         @CustomType.Setter
         public Builder aggregatorKey(@Nullable String aggregatorKey) {
+
             this.aggregatorKey = aggregatorKey;
             return this;
         }
         @CustomType.Setter
         public Builder aggregators(@Nullable List<WorkspaceFolderMetadataAggregator> aggregators) {
+
             this.aggregators = aggregators;
             return this;
         }
@@ -246,6 +248,7 @@ public final class WorkspaceFolderMetadata {
         }
         @CustomType.Setter
         public Builder countStatistics(@Nullable List<WorkspaceFolderMetadataCountStatistic> countStatistics) {
+
             this.countStatistics = countStatistics;
             return this;
         }
@@ -254,31 +257,37 @@ public final class WorkspaceFolderMetadata {
         }
         @CustomType.Setter
         public Builder createdBy(@Nullable String createdBy) {
+
             this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder createdByName(@Nullable String createdByName) {
+
             this.createdByName = createdByName;
             return this;
         }
         @CustomType.Setter
         public Builder identifierPath(@Nullable String identifierPath) {
+
             this.identifierPath = identifierPath;
             return this;
         }
         @CustomType.Setter
         public Builder infoFields(@Nullable Map<String,Object> infoFields) {
+
             this.infoFields = infoFields;
             return this;
         }
         @CustomType.Setter
         public Builder isFavorite(@Nullable Boolean isFavorite) {
+
             this.isFavorite = isFavorite;
             return this;
         }
         @CustomType.Setter
         public Builder labels(@Nullable List<String> labels) {
+
             this.labels = labels;
             return this;
         }
@@ -287,26 +296,31 @@ public final class WorkspaceFolderMetadata {
         }
         @CustomType.Setter
         public Builder registryVersion(@Nullable Integer registryVersion) {
+
             this.registryVersion = registryVersion;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
+
             this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder updatedBy(@Nullable String updatedBy) {
+
             this.updatedBy = updatedBy;
             return this;
         }
         @CustomType.Setter
         public Builder updatedByName(@Nullable String updatedByName) {
+
             this.updatedByName = updatedByName;
             return this;
         }

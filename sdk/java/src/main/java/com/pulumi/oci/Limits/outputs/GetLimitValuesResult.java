@@ -4,6 +4,7 @@
 package com.pulumi.oci.Limits.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Limits.outputs.GetLimitValuesFilter;
 import com.pulumi.oci.Limits.outputs.GetLimitValuesLimitValue;
 import java.lang.String;
@@ -121,16 +122,21 @@ public final class GetLimitValuesResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLimitValuesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetLimitValuesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -139,12 +145,18 @@ public final class GetLimitValuesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLimitValuesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder limitValues(List<GetLimitValuesLimitValue> limitValues) {
-            this.limitValues = Objects.requireNonNull(limitValues);
+            if (limitValues == null) {
+              throw new MissingRequiredPropertyException("GetLimitValuesResult", "limitValues");
+            }
+            this.limitValues = limitValues;
             return this;
         }
         public Builder limitValues(GetLimitValuesLimitValue... limitValues) {
@@ -152,17 +164,22 @@ public final class GetLimitValuesResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder scopeType(@Nullable String scopeType) {
+
             this.scopeType = scopeType;
             return this;
         }
         @CustomType.Setter
         public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+            if (serviceName == null) {
+              throw new MissingRequiredPropertyException("GetLimitValuesResult", "serviceName");
+            }
+            this.serviceName = serviceName;
             return this;
         }
         public GetLimitValuesResult build() {

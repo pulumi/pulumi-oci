@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCaBundlesCaBundleCollection;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCaBundlesFilter;
 import java.lang.String;
@@ -115,7 +116,10 @@ public final class GetCaBundlesResult {
 
         @CustomType.Setter
         public Builder caBundleCollections(List<GetCaBundlesCaBundleCollection> caBundleCollections) {
-            this.caBundleCollections = Objects.requireNonNull(caBundleCollections);
+            if (caBundleCollections == null) {
+              throw new MissingRequiredPropertyException("GetCaBundlesResult", "caBundleCollections");
+            }
+            this.caBundleCollections = caBundleCollections;
             return this;
         }
         public Builder caBundleCollections(GetCaBundlesCaBundleCollection... caBundleCollections) {
@@ -123,16 +127,19 @@ public final class GetCaBundlesResult {
         }
         @CustomType.Setter
         public Builder caBundleId(@Nullable String caBundleId) {
+
             this.caBundleId = caBundleId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCaBundlesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -141,16 +148,21 @@ public final class GetCaBundlesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCaBundlesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

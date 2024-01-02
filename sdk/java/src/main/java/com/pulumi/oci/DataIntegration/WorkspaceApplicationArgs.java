@@ -5,6 +5,7 @@ package com.pulumi.oci.DataIntegration;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.inputs.WorkspaceApplicationRegistryMetadataArgs;
 import com.pulumi.oci.DataIntegration.inputs.WorkspaceApplicationSourceApplicationInfoArgs;
 import java.lang.Integer;
@@ -574,9 +575,15 @@ public final class WorkspaceApplicationArgs extends com.pulumi.resources.Resourc
         }
 
         public WorkspaceApplicationArgs build() {
-            $.identifier = Objects.requireNonNull($.identifier, "expected parameter 'identifier' to be non-null");
-            $.modelType = Objects.requireNonNull($.modelType, "expected parameter 'modelType' to be non-null");
-            $.workspaceId = Objects.requireNonNull($.workspaceId, "expected parameter 'workspaceId' to be non-null");
+            if ($.identifier == null) {
+                throw new MissingRequiredPropertyException("WorkspaceApplicationArgs", "identifier");
+            }
+            if ($.modelType == null) {
+                throw new MissingRequiredPropertyException("WorkspaceApplicationArgs", "modelType");
+            }
+            if ($.workspaceId == null) {
+                throw new MissingRequiredPropertyException("WorkspaceApplicationArgs", "workspaceId");
+            }
             return $;
         }
     }

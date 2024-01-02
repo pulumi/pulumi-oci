@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiDocument.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiDocument.outputs.GetModelsModelCollectionItemMetricDatasetSummary;
 import com.pulumi.oci.AiDocument.outputs.GetModelsModelCollectionItemMetricLabelMetricsReport;
 import com.pulumi.oci.AiDocument.outputs.GetModelsModelCollectionItemMetricOverallMetricsReport;
@@ -88,7 +89,10 @@ public final class GetModelsModelCollectionItemMetric {
 
         @CustomType.Setter
         public Builder datasetSummaries(List<GetModelsModelCollectionItemMetricDatasetSummary> datasetSummaries) {
-            this.datasetSummaries = Objects.requireNonNull(datasetSummaries);
+            if (datasetSummaries == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemMetric", "datasetSummaries");
+            }
+            this.datasetSummaries = datasetSummaries;
             return this;
         }
         public Builder datasetSummaries(GetModelsModelCollectionItemMetricDatasetSummary... datasetSummaries) {
@@ -96,7 +100,10 @@ public final class GetModelsModelCollectionItemMetric {
         }
         @CustomType.Setter
         public Builder labelMetricsReports(List<GetModelsModelCollectionItemMetricLabelMetricsReport> labelMetricsReports) {
-            this.labelMetricsReports = Objects.requireNonNull(labelMetricsReports);
+            if (labelMetricsReports == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemMetric", "labelMetricsReports");
+            }
+            this.labelMetricsReports = labelMetricsReports;
             return this;
         }
         public Builder labelMetricsReports(GetModelsModelCollectionItemMetricLabelMetricsReport... labelMetricsReports) {
@@ -104,12 +111,18 @@ public final class GetModelsModelCollectionItemMetric {
         }
         @CustomType.Setter
         public Builder modelType(String modelType) {
-            this.modelType = Objects.requireNonNull(modelType);
+            if (modelType == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemMetric", "modelType");
+            }
+            this.modelType = modelType;
             return this;
         }
         @CustomType.Setter
         public Builder overallMetricsReports(List<GetModelsModelCollectionItemMetricOverallMetricsReport> overallMetricsReports) {
-            this.overallMetricsReports = Objects.requireNonNull(overallMetricsReports);
+            if (overallMetricsReports == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemMetric", "overallMetricsReports");
+            }
+            this.overallMetricsReports = overallMetricsReports;
             return this;
         }
         public Builder overallMetricsReports(GetModelsModelCollectionItemMetricOverallMetricsReport... overallMetricsReports) {

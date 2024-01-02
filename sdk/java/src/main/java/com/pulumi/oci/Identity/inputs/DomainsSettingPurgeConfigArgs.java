@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -184,8 +185,12 @@ public final class DomainsSettingPurgeConfigArgs extends com.pulumi.resources.Re
         }
 
         public DomainsSettingPurgeConfigArgs build() {
-            $.resourceName = Objects.requireNonNull($.resourceName, "expected parameter 'resourceName' to be non-null");
-            $.retentionPeriod = Objects.requireNonNull($.retentionPeriod, "expected parameter 'retentionPeriod' to be non-null");
+            if ($.resourceName == null) {
+                throw new MissingRequiredPropertyException("DomainsSettingPurgeConfigArgs", "resourceName");
+            }
+            if ($.retentionPeriod == null) {
+                throw new MissingRequiredPropertyException("DomainsSettingPurgeConfigArgs", "retentionPeriod");
+            }
             return $;
         }
     }

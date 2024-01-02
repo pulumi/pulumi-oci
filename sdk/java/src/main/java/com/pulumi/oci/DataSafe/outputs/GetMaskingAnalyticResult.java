@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingAnalyticItem;
 import java.lang.Boolean;
 import java.lang.String;
@@ -99,27 +100,38 @@ public final class GetMaskingAnalyticResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMaskingAnalyticResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder groupBy(@Nullable String groupBy) {
+
             this.groupBy = groupBy;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMaskingAnalyticResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetMaskingAnalyticItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetMaskingAnalyticResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetMaskingAnalyticItem... items) {
@@ -127,11 +139,13 @@ public final class GetMaskingAnalyticResult {
         }
         @CustomType.Setter
         public Builder maskingPolicyId(@Nullable String maskingPolicyId) {
+
             this.maskingPolicyId = maskingPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
+
             this.targetId = targetId;
             return this;
         }

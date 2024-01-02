@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.TriggerActionFilterExclude;
 import com.pulumi.oci.DevOps.outputs.TriggerActionFilterInclude;
 import java.lang.String;
@@ -95,6 +96,7 @@ public final class TriggerActionFilter {
 
         @CustomType.Setter
         public Builder events(@Nullable List<String> events) {
+
             this.events = events;
             return this;
         }
@@ -103,17 +105,22 @@ public final class TriggerActionFilter {
         }
         @CustomType.Setter
         public Builder exclude(@Nullable TriggerActionFilterExclude exclude) {
+
             this.exclude = exclude;
             return this;
         }
         @CustomType.Setter
         public Builder include(@Nullable TriggerActionFilterInclude include) {
+
             this.include = include;
             return this;
         }
         @CustomType.Setter
         public Builder triggerSource(String triggerSource) {
-            this.triggerSource = Objects.requireNonNull(triggerSource);
+            if (triggerSource == null) {
+              throw new MissingRequiredPropertyException("TriggerActionFilter", "triggerSource");
+            }
+            this.triggerSource = triggerSource;
             return this;
         }
         public TriggerActionFilter build() {

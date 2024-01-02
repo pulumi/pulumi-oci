@@ -74,16 +74,19 @@ public final class FusionEnvironmentMaintenancePolicy {
 
         @CustomType.Setter
         public Builder environmentMaintenanceOverride(@Nullable String environmentMaintenanceOverride) {
+
             this.environmentMaintenanceOverride = environmentMaintenanceOverride;
             return this;
         }
         @CustomType.Setter
         public Builder monthlyPatchingOverride(@Nullable String monthlyPatchingOverride) {
+
             this.monthlyPatchingOverride = monthlyPatchingOverride;
             return this;
         }
         @CustomType.Setter
         public Builder quarterlyUpgradeBeginTimes(@Nullable List<FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime> quarterlyUpgradeBeginTimes) {
+
             this.quarterlyUpgradeBeginTimes = quarterlyUpgradeBeginTimes;
             return this;
         }

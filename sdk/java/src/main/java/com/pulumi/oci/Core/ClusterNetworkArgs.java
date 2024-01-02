@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.ClusterNetworkClusterConfigurationArgs;
 import com.pulumi.oci.Core.inputs.ClusterNetworkInstancePoolArgs;
 import com.pulumi.oci.Core.inputs.ClusterNetworkPlacementConfigurationArgs;
@@ -332,9 +333,15 @@ public final class ClusterNetworkArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public ClusterNetworkArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.instancePools = Objects.requireNonNull($.instancePools, "expected parameter 'instancePools' to be non-null");
-            $.placementConfiguration = Objects.requireNonNull($.placementConfiguration, "expected parameter 'placementConfiguration' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ClusterNetworkArgs", "compartmentId");
+            }
+            if ($.instancePools == null) {
+                throw new MissingRequiredPropertyException("ClusterNetworkArgs", "instancePools");
+            }
+            if ($.placementConfiguration == null) {
+                throw new MissingRequiredPropertyException("ClusterNetworkArgs", "placementConfiguration");
+            }
             return $;
         }
     }

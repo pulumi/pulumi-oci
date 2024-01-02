@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionreq
 
         @CustomType.Setter
         public Builder requestable(Boolean requestable) {
-            this.requestable = Objects.requireNonNull(requestable);
+            if (requestable == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup", "requestable");
+            }
+            this.requestable = requestable;
             return this;
         }
         public GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup build() {

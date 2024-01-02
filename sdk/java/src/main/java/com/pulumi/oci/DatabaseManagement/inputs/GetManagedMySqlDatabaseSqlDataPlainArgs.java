@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseSqlDataFilter;
 import java.lang.String;
 import java.util.List;
@@ -165,9 +166,15 @@ public final class GetManagedMySqlDatabaseSqlDataPlainArgs extends com.pulumi.re
         }
 
         public GetManagedMySqlDatabaseSqlDataPlainArgs build() {
-            $.endTime = Objects.requireNonNull($.endTime, "expected parameter 'endTime' to be non-null");
-            $.managedMySqlDatabaseId = Objects.requireNonNull($.managedMySqlDatabaseId, "expected parameter 'managedMySqlDatabaseId' to be non-null");
-            $.startTime = Objects.requireNonNull($.startTime, "expected parameter 'startTime' to be non-null");
+            if ($.endTime == null) {
+                throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataPlainArgs", "endTime");
+            }
+            if ($.managedMySqlDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataPlainArgs", "managedMySqlDatabaseId");
+            }
+            if ($.startTime == null) {
+                throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataPlainArgs", "startTime");
+            }
             return $;
         }
     }

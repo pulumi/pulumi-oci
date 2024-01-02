@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -154,47 +155,74 @@ public final class GetFusionEnvironmentScheduledActivityAction {
 
         @CustomType.Setter
         public Builder actionType(String actionType) {
-            this.actionType = Objects.requireNonNull(actionType);
+            if (actionType == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivityAction", "actionType");
+            }
+            this.actionType = actionType;
             return this;
         }
         @CustomType.Setter
         public Builder artifact(String artifact) {
-            this.artifact = Objects.requireNonNull(artifact);
+            if (artifact == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivityAction", "artifact");
+            }
+            this.artifact = artifact;
             return this;
         }
         @CustomType.Setter
         public Builder category(String category) {
-            this.category = Objects.requireNonNull(category);
+            if (category == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivityAction", "category");
+            }
+            this.category = category;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivityAction", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder mode(String mode) {
-            this.mode = Objects.requireNonNull(mode);
+            if (mode == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivityAction", "mode");
+            }
+            this.mode = mode;
             return this;
         }
         @CustomType.Setter
         public Builder qualifier(String qualifier) {
-            this.qualifier = Objects.requireNonNull(qualifier);
+            if (qualifier == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivityAction", "qualifier");
+            }
+            this.qualifier = qualifier;
             return this;
         }
         @CustomType.Setter
         public Builder referenceKey(String referenceKey) {
-            this.referenceKey = Objects.requireNonNull(referenceKey);
+            if (referenceKey == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivityAction", "referenceKey");
+            }
+            this.referenceKey = referenceKey;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivityAction", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivityAction", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetFusionEnvironmentScheduledActivityAction build() {

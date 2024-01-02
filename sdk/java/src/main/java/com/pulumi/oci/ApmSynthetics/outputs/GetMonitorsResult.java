@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsFilter;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollection;
 import java.lang.Boolean;
@@ -148,16 +149,21 @@ public final class GetMonitorsResult {
 
         @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
-            this.apmDomainId = Objects.requireNonNull(apmDomainId);
+            if (apmDomainId == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsResult", "apmDomainId");
+            }
+            this.apmDomainId = apmDomainId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMonitorsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -166,22 +172,30 @@ public final class GetMonitorsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isMaintenanceWindowActive(@Nullable Boolean isMaintenanceWindowActive) {
+
             this.isMaintenanceWindowActive = isMaintenanceWindowActive;
             return this;
         }
         @CustomType.Setter
         public Builder isMaintenanceWindowSet(@Nullable Boolean isMaintenanceWindowSet) {
+
             this.isMaintenanceWindowSet = isMaintenanceWindowSet;
             return this;
         }
         @CustomType.Setter
         public Builder monitorCollections(List<GetMonitorsMonitorCollection> monitorCollections) {
-            this.monitorCollections = Objects.requireNonNull(monitorCollections);
+            if (monitorCollections == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsResult", "monitorCollections");
+            }
+            this.monitorCollections = monitorCollections;
             return this;
         }
         public Builder monitorCollections(GetMonitorsMonitorCollection... monitorCollections) {
@@ -189,21 +203,25 @@ public final class GetMonitorsResult {
         }
         @CustomType.Setter
         public Builder monitorType(@Nullable String monitorType) {
+
             this.monitorType = monitorType;
             return this;
         }
         @CustomType.Setter
         public Builder scriptId(@Nullable String scriptId) {
+
             this.scriptId = scriptId;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder vantagePoint(@Nullable String vantagePoint) {
+
             this.vantagePoint = vantagePoint;
             return this;
         }

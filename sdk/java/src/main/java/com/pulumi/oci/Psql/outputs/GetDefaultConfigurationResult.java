@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetDefaultConfigurationConfigurationDetail;
 import java.lang.Integer;
 import java.lang.String;
@@ -191,7 +192,10 @@ public final class GetDefaultConfigurationResult {
 
         @CustomType.Setter
         public Builder configurationDetails(List<GetDefaultConfigurationConfigurationDetail> configurationDetails) {
-            this.configurationDetails = Objects.requireNonNull(configurationDetails);
+            if (configurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetDefaultConfigurationResult", "configurationDetails");
+            }
+            this.configurationDetails = configurationDetails;
             return this;
         }
         public Builder configurationDetails(GetDefaultConfigurationConfigurationDetail... configurationDetails) {
@@ -199,57 +203,90 @@ public final class GetDefaultConfigurationResult {
         }
         @CustomType.Setter
         public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+            if (dbVersion == null) {
+              throw new MissingRequiredPropertyException("GetDefaultConfigurationResult", "dbVersion");
+            }
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder defaultConfigurationId(String defaultConfigurationId) {
-            this.defaultConfigurationId = Objects.requireNonNull(defaultConfigurationId);
+            if (defaultConfigurationId == null) {
+              throw new MissingRequiredPropertyException("GetDefaultConfigurationResult", "defaultConfigurationId");
+            }
+            this.defaultConfigurationId = defaultConfigurationId;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDefaultConfigurationResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDefaultConfigurationResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDefaultConfigurationResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceMemorySizeInGbs(Integer instanceMemorySizeInGbs) {
-            this.instanceMemorySizeInGbs = Objects.requireNonNull(instanceMemorySizeInGbs);
+            if (instanceMemorySizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDefaultConfigurationResult", "instanceMemorySizeInGbs");
+            }
+            this.instanceMemorySizeInGbs = instanceMemorySizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder instanceOcpuCount(Integer instanceOcpuCount) {
-            this.instanceOcpuCount = Objects.requireNonNull(instanceOcpuCount);
+            if (instanceOcpuCount == null) {
+              throw new MissingRequiredPropertyException("GetDefaultConfigurationResult", "instanceOcpuCount");
+            }
+            this.instanceOcpuCount = instanceOcpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDefaultConfigurationResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetDefaultConfigurationResult", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDefaultConfigurationResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDefaultConfigurationResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetDefaultConfigurationResult build() {

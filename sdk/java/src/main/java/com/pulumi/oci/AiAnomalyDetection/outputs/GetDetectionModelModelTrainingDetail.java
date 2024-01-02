@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
@@ -101,12 +102,18 @@ public final class GetDetectionModelModelTrainingDetail {
 
         @CustomType.Setter
         public Builder algorithmHint(String algorithmHint) {
-            this.algorithmHint = Objects.requireNonNull(algorithmHint);
+            if (algorithmHint == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelModelTrainingDetail", "algorithmHint");
+            }
+            this.algorithmHint = algorithmHint;
             return this;
         }
         @CustomType.Setter
         public Builder dataAssetIds(List<String> dataAssetIds) {
-            this.dataAssetIds = Objects.requireNonNull(dataAssetIds);
+            if (dataAssetIds == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelModelTrainingDetail", "dataAssetIds");
+            }
+            this.dataAssetIds = dataAssetIds;
             return this;
         }
         public Builder dataAssetIds(String... dataAssetIds) {
@@ -114,17 +121,26 @@ public final class GetDetectionModelModelTrainingDetail {
         }
         @CustomType.Setter
         public Builder targetFap(Double targetFap) {
-            this.targetFap = Objects.requireNonNull(targetFap);
+            if (targetFap == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelModelTrainingDetail", "targetFap");
+            }
+            this.targetFap = targetFap;
             return this;
         }
         @CustomType.Setter
         public Builder trainingFraction(Double trainingFraction) {
-            this.trainingFraction = Objects.requireNonNull(trainingFraction);
+            if (trainingFraction == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelModelTrainingDetail", "trainingFraction");
+            }
+            this.trainingFraction = trainingFraction;
             return this;
         }
         @CustomType.Setter
         public Builder windowSize(Integer windowSize) {
-            this.windowSize = Objects.requireNonNull(windowSize);
+            if (windowSize == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelModelTrainingDetail", "windowSize");
+            }
+            this.windowSize = windowSize;
             return this;
         }
         public GetDetectionModelModelTrainingDetail build() {

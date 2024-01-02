@@ -5,6 +5,7 @@ package com.pulumi.oci.MediaServices.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -113,7 +114,9 @@ public final class StreamPackagingConfigEncryptionArgs extends com.pulumi.resour
         }
 
         public StreamPackagingConfigEncryptionArgs build() {
-            $.algorithm = Objects.requireNonNull($.algorithm, "expected parameter 'algorithm' to be non-null");
+            if ($.algorithm == null) {
+                throw new MissingRequiredPropertyException("StreamPackagingConfigEncryptionArgs", "algorithm");
+            }
             return $;
         }
     }

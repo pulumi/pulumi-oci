@@ -5,6 +5,7 @@ package com.pulumi.oci.Sch.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -150,7 +151,9 @@ public final class ConnectorTargetDimensionDimensionValueArgs extends com.pulumi
         }
 
         public ConnectorTargetDimensionDimensionValueArgs build() {
-            $.kind = Objects.requireNonNull($.kind, "expected parameter 'kind' to be non-null");
+            if ($.kind == null) {
+                throw new MissingRequiredPropertyException("ConnectorTargetDimensionDimensionValueArgs", "kind");
+            }
             return $;
         }
     }

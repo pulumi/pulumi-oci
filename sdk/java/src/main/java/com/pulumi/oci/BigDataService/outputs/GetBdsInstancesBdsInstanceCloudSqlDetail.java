@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -144,22 +145,34 @@ public final class GetBdsInstancesBdsInstanceCloudSqlDetail {
 
         @CustomType.Setter
         public Builder blockVolumeSizeInGbs(String blockVolumeSizeInGbs) {
-            this.blockVolumeSizeInGbs = Objects.requireNonNull(blockVolumeSizeInGbs);
+            if (blockVolumeSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstanceCloudSqlDetail", "blockVolumeSizeInGbs");
+            }
+            this.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+            if (ipAddress == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstanceCloudSqlDetail", "ipAddress");
+            }
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder isKerberosMappedToDatabaseUsers(Boolean isKerberosMappedToDatabaseUsers) {
-            this.isKerberosMappedToDatabaseUsers = Objects.requireNonNull(isKerberosMappedToDatabaseUsers);
+            if (isKerberosMappedToDatabaseUsers == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstanceCloudSqlDetail", "isKerberosMappedToDatabaseUsers");
+            }
+            this.isKerberosMappedToDatabaseUsers = isKerberosMappedToDatabaseUsers;
             return this;
         }
         @CustomType.Setter
         public Builder kerberosDetails(List<GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails) {
-            this.kerberosDetails = Objects.requireNonNull(kerberosDetails);
+            if (kerberosDetails == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstanceCloudSqlDetail", "kerberosDetails");
+            }
+            this.kerberosDetails = kerberosDetails;
             return this;
         }
         public Builder kerberosDetails(GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail... kerberosDetails) {
@@ -167,22 +180,34 @@ public final class GetBdsInstancesBdsInstanceCloudSqlDetail {
         }
         @CustomType.Setter
         public Builder memoryInGbs(Integer memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+            if (memoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstanceCloudSqlDetail", "memoryInGbs");
+            }
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder nvmes(Integer nvmes) {
-            this.nvmes = Objects.requireNonNull(nvmes);
+            if (nvmes == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstanceCloudSqlDetail", "nvmes");
+            }
+            this.nvmes = nvmes;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(Integer ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+            if (ocpus == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstanceCloudSqlDetail", "ocpus");
+            }
+            this.ocpus = ocpus;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstanceCloudSqlDetail", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         public GetBdsInstancesBdsInstanceCloudSqlDetail build() {

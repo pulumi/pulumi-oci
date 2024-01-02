@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent;
 import java.lang.Boolean;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetDeploymentSpecificationRouteRequestPolicyBodyValidation {
 
         @CustomType.Setter
         public Builder contents(List<GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent> contents) {
-            this.contents = Objects.requireNonNull(contents);
+            if (contents == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRouteRequestPolicyBodyValidation", "contents");
+            }
+            this.contents = contents;
             return this;
         }
         public Builder contents(GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent... contents) {
@@ -81,12 +85,18 @@ public final class GetDeploymentSpecificationRouteRequestPolicyBodyValidation {
         }
         @CustomType.Setter
         public Builder required(Boolean required) {
-            this.required = Objects.requireNonNull(required);
+            if (required == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRouteRequestPolicyBodyValidation", "required");
+            }
+            this.required = required;
             return this;
         }
         @CustomType.Setter
         public Builder validationMode(String validationMode) {
-            this.validationMode = Objects.requireNonNull(validationMode);
+            if (validationMode == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRouteRequestPolicyBodyValidation", "validationMode");
+            }
+            this.validationMode = validationMode;
             return this;
         }
         public GetDeploymentSpecificationRouteRequestPolicyBodyValidation build() {

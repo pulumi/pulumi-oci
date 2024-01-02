@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -139,12 +140,24 @@ public final class ModelArtifactExportArgs extends com.pulumi.resources.Resource
         }
 
         public ModelArtifactExportArgs build() {
-            $.artifactSourceType = Objects.requireNonNull($.artifactSourceType, "expected parameter 'artifactSourceType' to be non-null");
-            $.modelId = Objects.requireNonNull($.modelId, "expected parameter 'modelId' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
-            $.sourceBucket = Objects.requireNonNull($.sourceBucket, "expected parameter 'sourceBucket' to be non-null");
-            $.sourceObjectName = Objects.requireNonNull($.sourceObjectName, "expected parameter 'sourceObjectName' to be non-null");
-            $.sourceRegion = Objects.requireNonNull($.sourceRegion, "expected parameter 'sourceRegion' to be non-null");
+            if ($.artifactSourceType == null) {
+                throw new MissingRequiredPropertyException("ModelArtifactExportArgs", "artifactSourceType");
+            }
+            if ($.modelId == null) {
+                throw new MissingRequiredPropertyException("ModelArtifactExportArgs", "modelId");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("ModelArtifactExportArgs", "namespace");
+            }
+            if ($.sourceBucket == null) {
+                throw new MissingRequiredPropertyException("ModelArtifactExportArgs", "sourceBucket");
+            }
+            if ($.sourceObjectName == null) {
+                throw new MissingRequiredPropertyException("ModelArtifactExportArgs", "sourceObjectName");
+            }
+            if ($.sourceRegion == null) {
+                throw new MissingRequiredPropertyException("ModelArtifactExportArgs", "sourceRegion");
+            }
             return $;
         }
     }

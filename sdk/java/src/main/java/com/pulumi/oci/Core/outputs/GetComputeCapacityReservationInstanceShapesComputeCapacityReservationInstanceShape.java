@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetComputeCapacityReservationInstanceShapesComputeCapacityRes
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder instanceShape(String instanceShape) {
-            this.instanceShape = Objects.requireNonNull(instanceShape);
+            if (instanceShape == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape", "instanceShape");
+            }
+            this.instanceShape = instanceShape;
             return this;
         }
         public GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape build() {

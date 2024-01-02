@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.CrossConnectMacsecPropertiesArgs;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -499,9 +500,15 @@ public final class CrossConnectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public CrossConnectArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.locationName = Objects.requireNonNull($.locationName, "expected parameter 'locationName' to be non-null");
-            $.portSpeedShapeName = Objects.requireNonNull($.portSpeedShapeName, "expected parameter 'portSpeedShapeName' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("CrossConnectArgs", "compartmentId");
+            }
+            if ($.locationName == null) {
+                throw new MissingRequiredPropertyException("CrossConnectArgs", "locationName");
+            }
+            if ($.portSpeedShapeName == null) {
+                throw new MissingRequiredPropertyException("CrossConnectArgs", "portSpeedShapeName");
+            }
             return $;
         }
     }

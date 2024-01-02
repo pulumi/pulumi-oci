@@ -5,6 +5,7 @@ package com.pulumi.oci.Integration.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Integration.inputs.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -210,7 +211,9 @@ public final class IntegrationInstanceNetworkEndpointDetailsArgs extends com.pul
         }
 
         public IntegrationInstanceNetworkEndpointDetailsArgs build() {
-            $.networkEndpointType = Objects.requireNonNull($.networkEndpointType, "expected parameter 'networkEndpointType' to be non-null");
+            if ($.networkEndpointType == null) {
+                throw new MissingRequiredPropertyException("IntegrationInstanceNetworkEndpointDetailsArgs", "networkEndpointType");
+            }
             return $;
         }
     }

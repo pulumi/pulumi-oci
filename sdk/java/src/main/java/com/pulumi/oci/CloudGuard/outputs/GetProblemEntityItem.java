@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetProblemEntityItemEntityDetail;
 import java.lang.String;
 import java.util.List;
@@ -114,7 +115,10 @@ public final class GetProblemEntityItem {
 
         @CustomType.Setter
         public Builder entityDetails(List<GetProblemEntityItemEntityDetail> entityDetails) {
-            this.entityDetails = Objects.requireNonNull(entityDetails);
+            if (entityDetails == null) {
+              throw new MissingRequiredPropertyException("GetProblemEntityItem", "entityDetails");
+            }
+            this.entityDetails = entityDetails;
             return this;
         }
         public Builder entityDetails(GetProblemEntityItemEntityDetail... entityDetails) {
@@ -122,12 +126,18 @@ public final class GetProblemEntityItem {
         }
         @CustomType.Setter
         public Builder problemId(String problemId) {
-            this.problemId = Objects.requireNonNull(problemId);
+            if (problemId == null) {
+              throw new MissingRequiredPropertyException("GetProblemEntityItem", "problemId");
+            }
+            this.problemId = problemId;
             return this;
         }
         @CustomType.Setter
         public Builder regions(List<String> regions) {
-            this.regions = Objects.requireNonNull(regions);
+            if (regions == null) {
+              throw new MissingRequiredPropertyException("GetProblemEntityItem", "regions");
+            }
+            this.regions = regions;
             return this;
         }
         public Builder regions(String... regions) {
@@ -135,17 +145,26 @@ public final class GetProblemEntityItem {
         }
         @CustomType.Setter
         public Builder resultUrl(String resultUrl) {
-            this.resultUrl = Objects.requireNonNull(resultUrl);
+            if (resultUrl == null) {
+              throw new MissingRequiredPropertyException("GetProblemEntityItem", "resultUrl");
+            }
+            this.resultUrl = resultUrl;
             return this;
         }
         @CustomType.Setter
         public Builder timeFirstDetected(String timeFirstDetected) {
-            this.timeFirstDetected = Objects.requireNonNull(timeFirstDetected);
+            if (timeFirstDetected == null) {
+              throw new MissingRequiredPropertyException("GetProblemEntityItem", "timeFirstDetected");
+            }
+            this.timeFirstDetected = timeFirstDetected;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastDetected(String timeLastDetected) {
-            this.timeLastDetected = Objects.requireNonNull(timeLastDetected);
+            if (timeLastDetected == null) {
+              throw new MissingRequiredPropertyException("GetProblemEntityItem", "timeLastDetected");
+            }
+            this.timeLastDetected = timeLastDetected;
             return this;
         }
         public GetProblemEntityItem build() {

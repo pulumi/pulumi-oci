@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.outputs.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfiguration;
 import java.lang.String;
 import java.util.Objects;
@@ -59,11 +60,15 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestination {
 
         @CustomType.Setter
         public Builder logObjectId(String logObjectId) {
-            this.logObjectId = Objects.requireNonNull(logObjectId);
+            if (logObjectId == null) {
+              throw new MissingRequiredPropertyException("UnifiedAgentConfigurationServiceConfigurationDestination", "logObjectId");
+            }
+            this.logObjectId = logObjectId;
             return this;
         }
         @CustomType.Setter
         public Builder operationalMetricsConfiguration(@Nullable UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfiguration operationalMetricsConfiguration) {
+
             this.operationalMetricsConfiguration = operationalMetricsConfiguration;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList;
 import java.lang.String;
 import java.util.List;
@@ -210,32 +211,50 @@ public final class GetFusionEnvironmentRefreshActivityResult {
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentRefreshActivityResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder fusionEnvironmentId(String fusionEnvironmentId) {
-            this.fusionEnvironmentId = Objects.requireNonNull(fusionEnvironmentId);
+            if (fusionEnvironmentId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentRefreshActivityResult", "fusionEnvironmentId");
+            }
+            this.fusionEnvironmentId = fusionEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentRefreshActivityResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentRefreshActivityResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder refreshActivityId(String refreshActivityId) {
-            this.refreshActivityId = Objects.requireNonNull(refreshActivityId);
+            if (refreshActivityId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentRefreshActivityResult", "refreshActivityId");
+            }
+            this.refreshActivityId = refreshActivityId;
             return this;
         }
         @CustomType.Setter
         public Builder refreshIssueDetailsLists(List<GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList> refreshIssueDetailsLists) {
-            this.refreshIssueDetailsLists = Objects.requireNonNull(refreshIssueDetailsLists);
+            if (refreshIssueDetailsLists == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentRefreshActivityResult", "refreshIssueDetailsLists");
+            }
+            this.refreshIssueDetailsLists = refreshIssueDetailsLists;
             return this;
         }
         public Builder refreshIssueDetailsLists(GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList... refreshIssueDetailsLists) {
@@ -243,42 +262,66 @@ public final class GetFusionEnvironmentRefreshActivityResult {
         }
         @CustomType.Setter
         public Builder serviceAvailability(String serviceAvailability) {
-            this.serviceAvailability = Objects.requireNonNull(serviceAvailability);
+            if (serviceAvailability == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentRefreshActivityResult", "serviceAvailability");
+            }
+            this.serviceAvailability = serviceAvailability;
             return this;
         }
         @CustomType.Setter
         public Builder sourceFusionEnvironmentId(String sourceFusionEnvironmentId) {
-            this.sourceFusionEnvironmentId = Objects.requireNonNull(sourceFusionEnvironmentId);
+            if (sourceFusionEnvironmentId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentRefreshActivityResult", "sourceFusionEnvironmentId");
+            }
+            this.sourceFusionEnvironmentId = sourceFusionEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentRefreshActivityResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeAccepted(String timeAccepted) {
-            this.timeAccepted = Objects.requireNonNull(timeAccepted);
+            if (timeAccepted == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentRefreshActivityResult", "timeAccepted");
+            }
+            this.timeAccepted = timeAccepted;
             return this;
         }
         @CustomType.Setter
         public Builder timeExpectedFinish(String timeExpectedFinish) {
-            this.timeExpectedFinish = Objects.requireNonNull(timeExpectedFinish);
+            if (timeExpectedFinish == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentRefreshActivityResult", "timeExpectedFinish");
+            }
+            this.timeExpectedFinish = timeExpectedFinish;
             return this;
         }
         @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+            if (timeFinished == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentRefreshActivityResult", "timeFinished");
+            }
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfRestorationPoint(String timeOfRestorationPoint) {
-            this.timeOfRestorationPoint = Objects.requireNonNull(timeOfRestorationPoint);
+            if (timeOfRestorationPoint == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentRefreshActivityResult", "timeOfRestorationPoint");
+            }
+            this.timeOfRestorationPoint = timeOfRestorationPoint;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentRefreshActivityResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetFusionEnvironmentRefreshActivityResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetExternalListenerServicesExternalListenerServiceCollectionI
 
         @CustomType.Setter
         public Builder listenerId(String listenerId) {
-            this.listenerId = Objects.requireNonNull(listenerId);
+            if (listenerId == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenerServicesExternalListenerServiceCollectionItem", "listenerId");
+            }
+            this.listenerId = listenerId;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenerServicesExternalListenerServiceCollectionItem", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenerServicesExternalListenerServiceCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetExternalListenerServicesExternalListenerServiceCollectionItem build() {

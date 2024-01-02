@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCo
 
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder weight(Integer weight) {
-            this.weight = Objects.requireNonNull(weight);
+            if (weight == null) {
+              throw new MissingRequiredPropertyException("AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight", "weight");
+            }
+            this.weight = weight;
             return this;
         }
         public AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight build() {

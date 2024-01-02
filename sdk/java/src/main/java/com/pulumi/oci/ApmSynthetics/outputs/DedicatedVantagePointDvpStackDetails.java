@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class DedicatedVantagePointDvpStackDetails {
 
         @CustomType.Setter
         public Builder dvpStackId(String dvpStackId) {
-            this.dvpStackId = Objects.requireNonNull(dvpStackId);
+            if (dvpStackId == null) {
+              throw new MissingRequiredPropertyException("DedicatedVantagePointDvpStackDetails", "dvpStackId");
+            }
+            this.dvpStackId = dvpStackId;
             return this;
         }
         @CustomType.Setter
         public Builder dvpStackType(String dvpStackType) {
-            this.dvpStackType = Objects.requireNonNull(dvpStackType);
+            if (dvpStackType == null) {
+              throw new MissingRequiredPropertyException("DedicatedVantagePointDvpStackDetails", "dvpStackType");
+            }
+            this.dvpStackType = dvpStackType;
             return this;
         }
         @CustomType.Setter
         public Builder dvpStreamId(String dvpStreamId) {
-            this.dvpStreamId = Objects.requireNonNull(dvpStreamId);
+            if (dvpStreamId == null) {
+              throw new MissingRequiredPropertyException("DedicatedVantagePointDvpStackDetails", "dvpStreamId");
+            }
+            this.dvpStreamId = dvpStreamId;
             return this;
         }
         @CustomType.Setter
         public Builder dvpVersion(String dvpVersion) {
-            this.dvpVersion = Objects.requireNonNull(dvpVersion);
+            if (dvpVersion == null) {
+              throw new MissingRequiredPropertyException("DedicatedVantagePointDvpStackDetails", "dvpVersion");
+            }
+            this.dvpVersion = dvpVersion;
             return this;
         }
         public DedicatedVantagePointDvpStackDetails build() {

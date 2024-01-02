@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage;
 import java.lang.Double;
 import java.lang.Object;
@@ -207,12 +208,18 @@ public final class GetAutonomousContainerDatabaseResourceUsageResult {
 
         @CustomType.Setter
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
-            this.autonomousContainerDatabaseId = Objects.requireNonNull(autonomousContainerDatabaseId);
+            if (autonomousContainerDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResourceUsageResult", "autonomousContainerDatabaseId");
+            }
+            this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder autonomousContainerDatabaseVmUsages(List<GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage> autonomousContainerDatabaseVmUsages) {
-            this.autonomousContainerDatabaseVmUsages = Objects.requireNonNull(autonomousContainerDatabaseVmUsages);
+            if (autonomousContainerDatabaseVmUsages == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResourceUsageResult", "autonomousContainerDatabaseVmUsages");
+            }
+            this.autonomousContainerDatabaseVmUsages = autonomousContainerDatabaseVmUsages;
             return this;
         }
         public Builder autonomousContainerDatabaseVmUsages(GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage... autonomousContainerDatabaseVmUsages) {
@@ -220,37 +227,58 @@ public final class GetAutonomousContainerDatabaseResourceUsageResult {
         }
         @CustomType.Setter
         public Builder availableCpus(Double availableCpus) {
-            this.availableCpus = Objects.requireNonNull(availableCpus);
+            if (availableCpus == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResourceUsageResult", "availableCpus");
+            }
+            this.availableCpus = availableCpus;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResourceUsageResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResourceUsageResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResourceUsageResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResourceUsageResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder largestProvisionableAutonomousDatabaseInCpus(Double largestProvisionableAutonomousDatabaseInCpus) {
-            this.largestProvisionableAutonomousDatabaseInCpus = Objects.requireNonNull(largestProvisionableAutonomousDatabaseInCpus);
+            if (largestProvisionableAutonomousDatabaseInCpus == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResourceUsageResult", "largestProvisionableAutonomousDatabaseInCpus");
+            }
+            this.largestProvisionableAutonomousDatabaseInCpus = largestProvisionableAutonomousDatabaseInCpus;
             return this;
         }
         @CustomType.Setter
         public Builder provisionableCpuses(List<Double> provisionableCpuses) {
-            this.provisionableCpuses = Objects.requireNonNull(provisionableCpuses);
+            if (provisionableCpuses == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResourceUsageResult", "provisionableCpuses");
+            }
+            this.provisionableCpuses = provisionableCpuses;
             return this;
         }
         public Builder provisionableCpuses(Double... provisionableCpuses) {
@@ -258,22 +286,34 @@ public final class GetAutonomousContainerDatabaseResourceUsageResult {
         }
         @CustomType.Setter
         public Builder provisionedCpus(Double provisionedCpus) {
-            this.provisionedCpus = Objects.requireNonNull(provisionedCpus);
+            if (provisionedCpus == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResourceUsageResult", "provisionedCpus");
+            }
+            this.provisionedCpus = provisionedCpus;
             return this;
         }
         @CustomType.Setter
         public Builder reclaimableCpus(Double reclaimableCpus) {
-            this.reclaimableCpus = Objects.requireNonNull(reclaimableCpus);
+            if (reclaimableCpus == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResourceUsageResult", "reclaimableCpus");
+            }
+            this.reclaimableCpus = reclaimableCpus;
             return this;
         }
         @CustomType.Setter
         public Builder reservedCpus(Double reservedCpus) {
-            this.reservedCpus = Objects.requireNonNull(reservedCpus);
+            if (reservedCpus == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResourceUsageResult", "reservedCpus");
+            }
+            this.reservedCpus = reservedCpus;
             return this;
         }
         @CustomType.Setter
         public Builder usedCpus(Double usedCpus) {
-            this.usedCpus = Objects.requireNonNull(usedCpus);
+            if (usedCpus == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResourceUsageResult", "usedCpus");
+            }
+            this.usedCpus = usedCpus;
             return this;
         }
         public GetAutonomousContainerDatabaseResourceUsageResult build() {

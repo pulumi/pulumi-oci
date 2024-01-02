@@ -44,6 +44,7 @@ public final class ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSu
 
         @CustomType.Setter
         public Builder ipv6subnetCidr(@Nullable String ipv6subnetCidr) {
+
             this.ipv6subnetCidr = ipv6subnetCidr;
             return this;
         }

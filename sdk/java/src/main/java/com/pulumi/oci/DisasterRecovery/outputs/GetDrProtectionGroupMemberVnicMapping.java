@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -99,7 +100,10 @@ public final class GetDrProtectionGroupMemberVnicMapping {
 
         @CustomType.Setter
         public Builder destinationNsgIdLists(List<String> destinationNsgIdLists) {
-            this.destinationNsgIdLists = Objects.requireNonNull(destinationNsgIdLists);
+            if (destinationNsgIdLists == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMemberVnicMapping", "destinationNsgIdLists");
+            }
+            this.destinationNsgIdLists = destinationNsgIdLists;
             return this;
         }
         public Builder destinationNsgIdLists(String... destinationNsgIdLists) {
@@ -107,22 +111,34 @@ public final class GetDrProtectionGroupMemberVnicMapping {
         }
         @CustomType.Setter
         public Builder destinationPrimaryPrivateIpAddress(String destinationPrimaryPrivateIpAddress) {
-            this.destinationPrimaryPrivateIpAddress = Objects.requireNonNull(destinationPrimaryPrivateIpAddress);
+            if (destinationPrimaryPrivateIpAddress == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMemberVnicMapping", "destinationPrimaryPrivateIpAddress");
+            }
+            this.destinationPrimaryPrivateIpAddress = destinationPrimaryPrivateIpAddress;
             return this;
         }
         @CustomType.Setter
         public Builder destinationPrimaryPrivateIpHostnameLabel(String destinationPrimaryPrivateIpHostnameLabel) {
-            this.destinationPrimaryPrivateIpHostnameLabel = Objects.requireNonNull(destinationPrimaryPrivateIpHostnameLabel);
+            if (destinationPrimaryPrivateIpHostnameLabel == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMemberVnicMapping", "destinationPrimaryPrivateIpHostnameLabel");
+            }
+            this.destinationPrimaryPrivateIpHostnameLabel = destinationPrimaryPrivateIpHostnameLabel;
             return this;
         }
         @CustomType.Setter
         public Builder destinationSubnetId(String destinationSubnetId) {
-            this.destinationSubnetId = Objects.requireNonNull(destinationSubnetId);
+            if (destinationSubnetId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMemberVnicMapping", "destinationSubnetId");
+            }
+            this.destinationSubnetId = destinationSubnetId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceVnicId(String sourceVnicId) {
-            this.sourceVnicId = Objects.requireNonNull(sourceVnicId);
+            if (sourceVnicId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMemberVnicMapping", "sourceVnicId");
+            }
+            this.sourceVnicId = sourceVnicId;
             return this;
         }
         public GetDrProtectionGroupMemberVnicMapping build() {

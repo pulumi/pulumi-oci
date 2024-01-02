@@ -4,6 +4,7 @@
 package com.pulumi.oci.Bastion.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Bastion.outputs.GetSessionsSessionKeyDetail;
 import com.pulumi.oci.Bastion.outputs.GetSessionsSessionTargetResourceDetail;
 import java.lang.Integer;
@@ -244,37 +245,58 @@ public final class GetSessionsSession {
 
         @CustomType.Setter
         public Builder bastionId(String bastionId) {
-            this.bastionId = Objects.requireNonNull(bastionId);
+            if (bastionId == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSession", "bastionId");
+            }
+            this.bastionId = bastionId;
             return this;
         }
         @CustomType.Setter
         public Builder bastionName(String bastionName) {
-            this.bastionName = Objects.requireNonNull(bastionName);
+            if (bastionName == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSession", "bastionName");
+            }
+            this.bastionName = bastionName;
             return this;
         }
         @CustomType.Setter
         public Builder bastionPublicHostKeyInfo(String bastionPublicHostKeyInfo) {
-            this.bastionPublicHostKeyInfo = Objects.requireNonNull(bastionPublicHostKeyInfo);
+            if (bastionPublicHostKeyInfo == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSession", "bastionPublicHostKeyInfo");
+            }
+            this.bastionPublicHostKeyInfo = bastionPublicHostKeyInfo;
             return this;
         }
         @CustomType.Setter
         public Builder bastionUserName(String bastionUserName) {
-            this.bastionUserName = Objects.requireNonNull(bastionUserName);
+            if (bastionUserName == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSession", "bastionUserName");
+            }
+            this.bastionUserName = bastionUserName;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSession", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSession", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder keyDetails(List<GetSessionsSessionKeyDetail> keyDetails) {
-            this.keyDetails = Objects.requireNonNull(keyDetails);
+            if (keyDetails == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSession", "keyDetails");
+            }
+            this.keyDetails = keyDetails;
             return this;
         }
         public Builder keyDetails(GetSessionsSessionKeyDetail... keyDetails) {
@@ -282,32 +304,50 @@ public final class GetSessionsSession {
         }
         @CustomType.Setter
         public Builder keyType(String keyType) {
-            this.keyType = Objects.requireNonNull(keyType);
+            if (keyType == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSession", "keyType");
+            }
+            this.keyType = keyType;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSession", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder sessionTtlInSeconds(Integer sessionTtlInSeconds) {
-            this.sessionTtlInSeconds = Objects.requireNonNull(sessionTtlInSeconds);
+            if (sessionTtlInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSession", "sessionTtlInSeconds");
+            }
+            this.sessionTtlInSeconds = sessionTtlInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder sshMetadata(Map<String,Object> sshMetadata) {
-            this.sshMetadata = Objects.requireNonNull(sshMetadata);
+            if (sshMetadata == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSession", "sshMetadata");
+            }
+            this.sshMetadata = sshMetadata;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSession", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourceDetails(List<GetSessionsSessionTargetResourceDetail> targetResourceDetails) {
-            this.targetResourceDetails = Objects.requireNonNull(targetResourceDetails);
+            if (targetResourceDetails == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSession", "targetResourceDetails");
+            }
+            this.targetResourceDetails = targetResourceDetails;
             return this;
         }
         public Builder targetResourceDetails(GetSessionsSessionTargetResourceDetail... targetResourceDetails) {
@@ -315,12 +355,18 @@ public final class GetSessionsSession {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSession", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSession", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetSessionsSession build() {

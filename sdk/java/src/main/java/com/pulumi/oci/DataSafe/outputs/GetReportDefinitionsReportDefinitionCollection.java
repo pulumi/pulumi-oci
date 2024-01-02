@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetReportDefinitionsReportDefinitionCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetReportDefinitionsReportDefinitionCollection {
 
         @CustomType.Setter
         public Builder items(List<GetReportDefinitionsReportDefinitionCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionsReportDefinitionCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetReportDefinitionsReportDefinitionCollectionItem... items) {

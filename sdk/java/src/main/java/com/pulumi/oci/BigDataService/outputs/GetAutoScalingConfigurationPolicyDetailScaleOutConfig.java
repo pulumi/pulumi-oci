@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric;
 import java.lang.Integer;
 import java.util.List;
@@ -72,12 +73,18 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleOutConfig {
 
         @CustomType.Setter
         public Builder maxNodeCount(Integer maxNodeCount) {
-            this.maxNodeCount = Objects.requireNonNull(maxNodeCount);
+            if (maxNodeCount == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScaleOutConfig", "maxNodeCount");
+            }
+            this.maxNodeCount = maxNodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder metrics(List<GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+            if (metrics == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScaleOutConfig", "metrics");
+            }
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric... metrics) {
@@ -85,7 +92,10 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleOutConfig {
         }
         @CustomType.Setter
         public Builder stepSize(Integer stepSize) {
-            this.stepSize = Objects.requireNonNull(stepSize);
+            if (stepSize == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScaleOutConfig", "stepSize");
+            }
+            this.stepSize = stepSize;
             return this;
         }
         public GetAutoScalingConfigurationPolicyDetailScaleOutConfig build() {

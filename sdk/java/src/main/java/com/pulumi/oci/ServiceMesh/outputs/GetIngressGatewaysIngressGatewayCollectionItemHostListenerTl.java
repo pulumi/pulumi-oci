@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation;
 import com.pulumi.oci.ServiceMesh.outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl 
 
         @CustomType.Setter
         public Builder clientValidations(List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation> clientValidations) {
-            this.clientValidations = Objects.requireNonNull(clientValidations);
+            if (clientValidations == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl", "clientValidations");
+            }
+            this.clientValidations = clientValidations;
             return this;
         }
         public Builder clientValidations(GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation... clientValidations) {
@@ -81,12 +85,18 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl 
         }
         @CustomType.Setter
         public Builder mode(String mode) {
-            this.mode = Objects.requireNonNull(mode);
+            if (mode == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl", "mode");
+            }
+            this.mode = mode;
             return this;
         }
         @CustomType.Setter
         public Builder serverCertificates(List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate> serverCertificates) {
-            this.serverCertificates = Objects.requireNonNull(serverCertificates);
+            if (serverCertificates == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl", "serverCertificates");
+            }
+            this.serverCertificates = serverCertificates;
             return this;
         }
         public Builder serverCertificates(GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate... serverCertificates) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem {
 
         @CustomType.Setter
         public Builder detail(String detail) {
-            this.detail = Objects.requireNonNull(detail);
+            if (detail == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem", "detail");
+            }
+            this.detail = detail;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder mediaWorkflowJobId(String mediaWorkflowJobId) {
-            this.mediaWorkflowJobId = Objects.requireNonNull(mediaWorkflowJobId);
+            if (mediaWorkflowJobId == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem", "mediaWorkflowJobId");
+            }
+            this.mediaWorkflowJobId = mediaWorkflowJobId;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem build() {

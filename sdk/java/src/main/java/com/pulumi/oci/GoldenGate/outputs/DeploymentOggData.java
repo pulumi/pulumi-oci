@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -156,46 +157,57 @@ public final class DeploymentOggData {
 
         @CustomType.Setter
         public Builder adminPassword(@Nullable String adminPassword) {
+
             this.adminPassword = adminPassword;
             return this;
         }
         @CustomType.Setter
         public Builder adminUsername(@Nullable String adminUsername) {
+
             this.adminUsername = adminUsername;
             return this;
         }
         @CustomType.Setter
         public Builder certificate(@Nullable String certificate) {
+
             this.certificate = certificate;
             return this;
         }
         @CustomType.Setter
         public Builder credentialStore(@Nullable String credentialStore) {
+
             this.credentialStore = credentialStore;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentName(String deploymentName) {
-            this.deploymentName = Objects.requireNonNull(deploymentName);
+            if (deploymentName == null) {
+              throw new MissingRequiredPropertyException("DeploymentOggData", "deploymentName");
+            }
+            this.deploymentName = deploymentName;
             return this;
         }
         @CustomType.Setter
         public Builder identityDomainId(@Nullable String identityDomainId) {
+
             this.identityDomainId = identityDomainId;
             return this;
         }
         @CustomType.Setter
         public Builder key(@Nullable String key) {
+
             this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder oggVersion(@Nullable String oggVersion) {
+
             this.oggVersion = oggVersion;
             return this;
         }
         @CustomType.Setter
         public Builder passwordSecretId(@Nullable String passwordSecretId) {
+
             this.passwordSecretId = passwordSecretId;
             return this;
         }

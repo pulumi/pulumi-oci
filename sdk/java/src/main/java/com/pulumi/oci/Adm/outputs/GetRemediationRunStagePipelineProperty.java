@@ -4,6 +4,7 @@
 package com.pulumi.oci.Adm.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetRemediationRunStagePipelineProperty {
 
         @CustomType.Setter
         public Builder pipelineIdentifier(String pipelineIdentifier) {
-            this.pipelineIdentifier = Objects.requireNonNull(pipelineIdentifier);
+            if (pipelineIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStagePipelineProperty", "pipelineIdentifier");
+            }
+            this.pipelineIdentifier = pipelineIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder pipelineUrl(String pipelineUrl) {
-            this.pipelineUrl = Objects.requireNonNull(pipelineUrl);
+            if (pipelineUrl == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStagePipelineProperty", "pipelineUrl");
+            }
+            this.pipelineUrl = pipelineUrl;
             return this;
         }
         public GetRemediationRunStagePipelineProperty build() {

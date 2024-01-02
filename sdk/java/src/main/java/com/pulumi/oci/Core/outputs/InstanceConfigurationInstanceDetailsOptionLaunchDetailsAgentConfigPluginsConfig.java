@@ -62,11 +62,13 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentC
 
         @CustomType.Setter
         public Builder desiredState(@Nullable String desiredState) {
+
             this.desiredState = desiredState;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }

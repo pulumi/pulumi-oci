@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -140,42 +141,66 @@ public final class GetDomainsMyGroupsMyGroupMember {
 
         @CustomType.Setter
         public Builder dateAdded(String dateAdded) {
-            this.dateAdded = Objects.requireNonNull(dateAdded);
+            if (dateAdded == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyGroupsMyGroupMember", "dateAdded");
+            }
+            this.dateAdded = dateAdded;
             return this;
         }
         @CustomType.Setter
         public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+            if (display == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyGroupsMyGroupMember", "display");
+            }
+            this.display = display;
             return this;
         }
         @CustomType.Setter
         public Builder membershipOcid(String membershipOcid) {
-            this.membershipOcid = Objects.requireNonNull(membershipOcid);
+            if (membershipOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyGroupsMyGroupMember", "membershipOcid");
+            }
+            this.membershipOcid = membershipOcid;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyGroupsMyGroupMember", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyGroupsMyGroupMember", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+            if (ref == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyGroupsMyGroupMember", "ref");
+            }
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyGroupsMyGroupMember", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyGroupsMyGroupMember", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDomainsMyGroupsMyGroupMember build() {

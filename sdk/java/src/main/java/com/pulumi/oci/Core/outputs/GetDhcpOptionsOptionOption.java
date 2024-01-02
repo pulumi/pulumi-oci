@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -89,7 +90,10 @@ public final class GetDhcpOptionsOptionOption {
 
         @CustomType.Setter
         public Builder customDnsServers(List<String> customDnsServers) {
-            this.customDnsServers = Objects.requireNonNull(customDnsServers);
+            if (customDnsServers == null) {
+              throw new MissingRequiredPropertyException("GetDhcpOptionsOptionOption", "customDnsServers");
+            }
+            this.customDnsServers = customDnsServers;
             return this;
         }
         public Builder customDnsServers(String... customDnsServers) {
@@ -97,7 +101,10 @@ public final class GetDhcpOptionsOptionOption {
         }
         @CustomType.Setter
         public Builder searchDomainNames(List<String> searchDomainNames) {
-            this.searchDomainNames = Objects.requireNonNull(searchDomainNames);
+            if (searchDomainNames == null) {
+              throw new MissingRequiredPropertyException("GetDhcpOptionsOptionOption", "searchDomainNames");
+            }
+            this.searchDomainNames = searchDomainNames;
             return this;
         }
         public Builder searchDomainNames(String... searchDomainNames) {
@@ -105,12 +112,18 @@ public final class GetDhcpOptionsOptionOption {
         }
         @CustomType.Setter
         public Builder serverType(String serverType) {
-            this.serverType = Objects.requireNonNull(serverType);
+            if (serverType == null) {
+              throw new MissingRequiredPropertyException("GetDhcpOptionsOptionOption", "serverType");
+            }
+            this.serverType = serverType;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDhcpOptionsOptionOption", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetDhcpOptionsOptionOption build() {

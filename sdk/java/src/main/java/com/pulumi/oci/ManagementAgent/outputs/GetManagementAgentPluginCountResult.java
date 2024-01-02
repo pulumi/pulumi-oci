@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentPluginCountItem;
 import java.lang.String;
 import java.util.List;
@@ -70,22 +71,34 @@ public final class GetManagementAgentPluginCountResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentPluginCountResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder groupBy(String groupBy) {
-            this.groupBy = Objects.requireNonNull(groupBy);
+            if (groupBy == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentPluginCountResult", "groupBy");
+            }
+            this.groupBy = groupBy;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentPluginCountResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetManagementAgentPluginCountItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentPluginCountResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetManagementAgentPluginCountItem... items) {

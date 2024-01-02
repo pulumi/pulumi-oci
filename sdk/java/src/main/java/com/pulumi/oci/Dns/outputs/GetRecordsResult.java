@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Dns.outputs.GetRecordsFilter;
 import com.pulumi.oci.Dns.outputs.GetRecordsRecord;
 import java.lang.String;
@@ -147,21 +148,25 @@ public final class GetRecordsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder domain(@Nullable String domain) {
+
             this.domain = domain;
             return this;
         }
         @CustomType.Setter
         public Builder domainContains(@Nullable String domainContains) {
+
             this.domainContains = domainContains;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRecordsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -170,12 +175,18 @@ public final class GetRecordsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRecordsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder records(List<GetRecordsRecord> records) {
-            this.records = Objects.requireNonNull(records);
+            if (records == null) {
+              throw new MissingRequiredPropertyException("GetRecordsResult", "records");
+            }
+            this.records = records;
             return this;
         }
         public Builder records(GetRecordsRecord... records) {
@@ -183,26 +194,33 @@ public final class GetRecordsResult {
         }
         @CustomType.Setter
         public Builder rtype(@Nullable String rtype) {
+
             this.rtype = rtype;
             return this;
         }
         @CustomType.Setter
         public Builder sortBy(@Nullable String sortBy) {
+
             this.sortBy = sortBy;
             return this;
         }
         @CustomType.Setter
         public Builder sortOrder(@Nullable String sortOrder) {
+
             this.sortOrder = sortOrder;
             return this;
         }
         @CustomType.Setter
         public Builder zoneNameOrId(String zoneNameOrId) {
-            this.zoneNameOrId = Objects.requireNonNull(zoneNameOrId);
+            if (zoneNameOrId == null) {
+              throw new MissingRequiredPropertyException("GetRecordsResult", "zoneNameOrId");
+            }
+            this.zoneNameOrId = zoneNameOrId;
             return this;
         }
         @CustomType.Setter
         public Builder zoneVersion(@Nullable String zoneVersion) {
+
             this.zoneVersion = zoneVersion;
             return this;
         }

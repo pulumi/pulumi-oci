@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataCatalog.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -130,8 +131,12 @@ public final class GetCatalogTypePlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetCatalogTypePlainArgs build() {
-            $.catalogId = Objects.requireNonNull($.catalogId, "expected parameter 'catalogId' to be non-null");
-            $.typeKey = Objects.requireNonNull($.typeKey, "expected parameter 'typeKey' to be non-null");
+            if ($.catalogId == null) {
+                throw new MissingRequiredPropertyException("GetCatalogTypePlainArgs", "catalogId");
+            }
+            if ($.typeKey == null) {
+                throw new MissingRequiredPropertyException("GetCatalogTypePlainArgs", "typeKey");
+            }
             return $;
         }
     }

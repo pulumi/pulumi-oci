@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waa.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waa.outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection 
 
         @CustomType.Setter
         public Builder items(List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem... items) {

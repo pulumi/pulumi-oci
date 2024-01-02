@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -224,7 +225,9 @@ public final class VaultRestoreFromObjectStoreArgs extends com.pulumi.resources.
         }
 
         public VaultRestoreFromObjectStoreArgs build() {
-            $.destination = Objects.requireNonNull($.destination, "expected parameter 'destination' to be non-null");
+            if ($.destination == null) {
+                throw new MissingRequiredPropertyException("VaultRestoreFromObjectStoreArgs", "destination");
+            }
             return $;
         }
     }

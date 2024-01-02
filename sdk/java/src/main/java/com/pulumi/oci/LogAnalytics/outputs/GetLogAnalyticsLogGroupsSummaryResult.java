@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -61,22 +62,34 @@ public final class GetLogAnalyticsLogGroupsSummaryResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsLogGroupsSummaryResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsLogGroupsSummaryResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder logGroupCount(Integer logGroupCount) {
-            this.logGroupCount = Objects.requireNonNull(logGroupCount);
+            if (logGroupCount == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsLogGroupsSummaryResult", "logGroupCount");
+            }
+            this.logGroupCount = logGroupCount;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsLogGroupsSummaryResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         public GetLogAnalyticsLogGroupsSummaryResult build() {

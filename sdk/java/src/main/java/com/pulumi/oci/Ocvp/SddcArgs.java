@@ -5,6 +5,7 @@ package com.pulumi.oci.Ocvp;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ocvp.inputs.SddcDatastoreArgs;
 import com.pulumi.oci.Ocvp.inputs.SddcInitialConfigurationArgs;
 import java.lang.Boolean;
@@ -1707,9 +1708,15 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public SddcArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.sshAuthorizedKeys = Objects.requireNonNull($.sshAuthorizedKeys, "expected parameter 'sshAuthorizedKeys' to be non-null");
-            $.vmwareSoftwareVersion = Objects.requireNonNull($.vmwareSoftwareVersion, "expected parameter 'vmwareSoftwareVersion' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("SddcArgs", "compartmentId");
+            }
+            if ($.sshAuthorizedKeys == null) {
+                throw new MissingRequiredPropertyException("SddcArgs", "sshAuthorizedKeys");
+            }
+            if ($.vmwareSoftwareVersion == null) {
+                throw new MissingRequiredPropertyException("SddcArgs", "vmwareSoftwareVersion");
+            }
             return $;
         }
     }

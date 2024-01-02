@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmDiskGroupsExternalAsmDiskGroupCollection;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmDiskGroupsFilter;
 import java.lang.String;
@@ -72,7 +73,10 @@ public final class GetExternalAsmDiskGroupsResult {
 
         @CustomType.Setter
         public Builder externalAsmDiskGroupCollections(List<GetExternalAsmDiskGroupsExternalAsmDiskGroupCollection> externalAsmDiskGroupCollections) {
-            this.externalAsmDiskGroupCollections = Objects.requireNonNull(externalAsmDiskGroupCollections);
+            if (externalAsmDiskGroupCollections == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmDiskGroupsResult", "externalAsmDiskGroupCollections");
+            }
+            this.externalAsmDiskGroupCollections = externalAsmDiskGroupCollections;
             return this;
         }
         public Builder externalAsmDiskGroupCollections(GetExternalAsmDiskGroupsExternalAsmDiskGroupCollection... externalAsmDiskGroupCollections) {
@@ -80,11 +84,15 @@ public final class GetExternalAsmDiskGroupsResult {
         }
         @CustomType.Setter
         public Builder externalAsmId(String externalAsmId) {
-            this.externalAsmId = Objects.requireNonNull(externalAsmId);
+            if (externalAsmId == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmDiskGroupsResult", "externalAsmId");
+            }
+            this.externalAsmId = externalAsmId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetExternalAsmDiskGroupsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -93,7 +101,10 @@ public final class GetExternalAsmDiskGroupsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmDiskGroupsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetExternalAsmDiskGroupsResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmServicedDatabase;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -263,67 +264,106 @@ public final class GetExternalAsmResult {
 
         @CustomType.Setter
         public Builder additionalDetails(Map<String,Object> additionalDetails) {
-            this.additionalDetails = Objects.requireNonNull(additionalDetails);
+            if (additionalDetails == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmResult", "additionalDetails");
+            }
+            this.additionalDetails = additionalDetails;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder componentName(String componentName) {
-            this.componentName = Objects.requireNonNull(componentName);
+            if (componentName == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmResult", "componentName");
+            }
+            this.componentName = componentName;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalAsmId(String externalAsmId) {
-            this.externalAsmId = Objects.requireNonNull(externalAsmId);
+            if (externalAsmId == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmResult", "externalAsmId");
+            }
+            this.externalAsmId = externalAsmId;
             return this;
         }
         @CustomType.Setter
         public Builder externalConnectorId(String externalConnectorId) {
-            this.externalConnectorId = Objects.requireNonNull(externalConnectorId);
+            if (externalConnectorId == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmResult", "externalConnectorId");
+            }
+            this.externalConnectorId = externalConnectorId;
             return this;
         }
         @CustomType.Setter
         public Builder externalDbSystemId(String externalDbSystemId) {
-            this.externalDbSystemId = Objects.requireNonNull(externalDbSystemId);
+            if (externalDbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmResult", "externalDbSystemId");
+            }
+            this.externalDbSystemId = externalDbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder gridHome(String gridHome) {
-            this.gridHome = Objects.requireNonNull(gridHome);
+            if (gridHome == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmResult", "gridHome");
+            }
+            this.gridHome = gridHome;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCluster(Boolean isCluster) {
-            this.isCluster = Objects.requireNonNull(isCluster);
+            if (isCluster == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmResult", "isCluster");
+            }
+            this.isCluster = isCluster;
             return this;
         }
         @CustomType.Setter
         public Builder isFlexEnabled(Boolean isFlexEnabled) {
-            this.isFlexEnabled = Objects.requireNonNull(isFlexEnabled);
+            if (isFlexEnabled == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmResult", "isFlexEnabled");
+            }
+            this.isFlexEnabled = isFlexEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder servicedDatabases(List<GetExternalAsmServicedDatabase> servicedDatabases) {
-            this.servicedDatabases = Objects.requireNonNull(servicedDatabases);
+            if (servicedDatabases == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmResult", "servicedDatabases");
+            }
+            this.servicedDatabases = servicedDatabases;
             return this;
         }
         public Builder servicedDatabases(GetExternalAsmServicedDatabase... servicedDatabases) {
@@ -331,22 +371,34 @@ public final class GetExternalAsmResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmResult", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetExternalAsmResult build() {

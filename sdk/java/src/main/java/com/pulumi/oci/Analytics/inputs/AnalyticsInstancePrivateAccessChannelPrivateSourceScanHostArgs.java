@@ -5,6 +5,7 @@ package com.pulumi.oci.Analytics.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -151,8 +152,12 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArg
         }
 
         public AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs build() {
-            $.scanHostname = Objects.requireNonNull($.scanHostname, "expected parameter 'scanHostname' to be non-null");
-            $.scanPort = Objects.requireNonNull($.scanPort, "expected parameter 'scanPort' to be non-null");
+            if ($.scanHostname == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs", "scanHostname");
+            }
+            if ($.scanPort == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs", "scanPort");
+            }
             return $;
         }
     }

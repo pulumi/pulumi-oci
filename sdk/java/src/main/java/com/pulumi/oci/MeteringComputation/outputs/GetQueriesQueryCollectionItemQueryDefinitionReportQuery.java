@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast;
 import com.pulumi.oci.MeteringComputation.outputs.GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag;
 import java.lang.Boolean;
@@ -201,22 +202,34 @@ public final class GetQueriesQueryCollectionItemQueryDefinitionReportQuery {
 
         @CustomType.Setter
         public Builder compartmentDepth(Double compartmentDepth) {
-            this.compartmentDepth = Objects.requireNonNull(compartmentDepth);
+            if (compartmentDepth == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItemQueryDefinitionReportQuery", "compartmentDepth");
+            }
+            this.compartmentDepth = compartmentDepth;
             return this;
         }
         @CustomType.Setter
         public Builder dateRangeName(String dateRangeName) {
-            this.dateRangeName = Objects.requireNonNull(dateRangeName);
+            if (dateRangeName == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItemQueryDefinitionReportQuery", "dateRangeName");
+            }
+            this.dateRangeName = dateRangeName;
             return this;
         }
         @CustomType.Setter
         public Builder filter(String filter) {
-            this.filter = Objects.requireNonNull(filter);
+            if (filter == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItemQueryDefinitionReportQuery", "filter");
+            }
+            this.filter = filter;
             return this;
         }
         @CustomType.Setter
         public Builder forecasts(List<GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast> forecasts) {
-            this.forecasts = Objects.requireNonNull(forecasts);
+            if (forecasts == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItemQueryDefinitionReportQuery", "forecasts");
+            }
+            this.forecasts = forecasts;
             return this;
         }
         public Builder forecasts(GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast... forecasts) {
@@ -224,12 +237,18 @@ public final class GetQueriesQueryCollectionItemQueryDefinitionReportQuery {
         }
         @CustomType.Setter
         public Builder granularity(String granularity) {
-            this.granularity = Objects.requireNonNull(granularity);
+            if (granularity == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItemQueryDefinitionReportQuery", "granularity");
+            }
+            this.granularity = granularity;
             return this;
         }
         @CustomType.Setter
         public Builder groupBies(List<String> groupBies) {
-            this.groupBies = Objects.requireNonNull(groupBies);
+            if (groupBies == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItemQueryDefinitionReportQuery", "groupBies");
+            }
+            this.groupBies = groupBies;
             return this;
         }
         public Builder groupBies(String... groupBies) {
@@ -237,7 +256,10 @@ public final class GetQueriesQueryCollectionItemQueryDefinitionReportQuery {
         }
         @CustomType.Setter
         public Builder groupByTags(List<GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag> groupByTags) {
-            this.groupByTags = Objects.requireNonNull(groupByTags);
+            if (groupByTags == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItemQueryDefinitionReportQuery", "groupByTags");
+            }
+            this.groupByTags = groupByTags;
             return this;
         }
         public Builder groupByTags(GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag... groupByTags) {
@@ -245,27 +267,42 @@ public final class GetQueriesQueryCollectionItemQueryDefinitionReportQuery {
         }
         @CustomType.Setter
         public Builder isAggregateByTime(Boolean isAggregateByTime) {
-            this.isAggregateByTime = Objects.requireNonNull(isAggregateByTime);
+            if (isAggregateByTime == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItemQueryDefinitionReportQuery", "isAggregateByTime");
+            }
+            this.isAggregateByTime = isAggregateByTime;
             return this;
         }
         @CustomType.Setter
         public Builder queryType(String queryType) {
-            this.queryType = Objects.requireNonNull(queryType);
+            if (queryType == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItemQueryDefinitionReportQuery", "queryType");
+            }
+            this.queryType = queryType;
             return this;
         }
         @CustomType.Setter
         public Builder tenantId(String tenantId) {
-            this.tenantId = Objects.requireNonNull(tenantId);
+            if (tenantId == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItemQueryDefinitionReportQuery", "tenantId");
+            }
+            this.tenantId = tenantId;
             return this;
         }
         @CustomType.Setter
         public Builder timeUsageEnded(String timeUsageEnded) {
-            this.timeUsageEnded = Objects.requireNonNull(timeUsageEnded);
+            if (timeUsageEnded == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItemQueryDefinitionReportQuery", "timeUsageEnded");
+            }
+            this.timeUsageEnded = timeUsageEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeUsageStarted(String timeUsageStarted) {
-            this.timeUsageStarted = Objects.requireNonNull(timeUsageStarted);
+            if (timeUsageStarted == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItemQueryDefinitionReportQuery", "timeUsageStarted");
+            }
+            this.timeUsageStarted = timeUsageStarted;
             return this;
         }
         public GetQueriesQueryCollectionItemQueryDefinitionReportQuery build() {

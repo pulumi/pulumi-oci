@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting {
 
         @CustomType.Setter
         public Builder allowedRatePerAddress(Integer allowedRatePerAddress) {
-            this.allowedRatePerAddress = Objects.requireNonNull(allowedRatePerAddress);
+            if (allowedRatePerAddress == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting", "allowedRatePerAddress");
+            }
+            this.allowedRatePerAddress = allowedRatePerAddress;
             return this;
         }
         @CustomType.Setter
         public Builder blockResponseCode(Integer blockResponseCode) {
-            this.blockResponseCode = Objects.requireNonNull(blockResponseCode);
+            if (blockResponseCode == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting", "blockResponseCode");
+            }
+            this.blockResponseCode = blockResponseCode;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder maxDelayedCountPerAddress(Integer maxDelayedCountPerAddress) {
-            this.maxDelayedCountPerAddress = Objects.requireNonNull(maxDelayedCountPerAddress);
+            if (maxDelayedCountPerAddress == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting", "maxDelayedCountPerAddress");
+            }
+            this.maxDelayedCountPerAddress = maxDelayedCountPerAddress;
             return this;
         }
         public GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting build() {

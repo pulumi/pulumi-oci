@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail;
 import com.pulumi.oci.Opsi.outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail;
 import java.lang.String;
@@ -115,27 +116,42 @@ public final class GetOpsiConfigurationConfigurationItemConfigItemMetadata {
 
         @CustomType.Setter
         public Builder configItemType(String configItemType) {
-            this.configItemType = Objects.requireNonNull(configItemType);
+            if (configItemType == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemConfigItemMetadata", "configItemType");
+            }
+            this.configItemType = configItemType;
             return this;
         }
         @CustomType.Setter
         public Builder dataType(String dataType) {
-            this.dataType = Objects.requireNonNull(dataType);
+            if (dataType == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemConfigItemMetadata", "dataType");
+            }
+            this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemConfigItemMetadata", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemConfigItemMetadata", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder unitDetails(List<GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail> unitDetails) {
-            this.unitDetails = Objects.requireNonNull(unitDetails);
+            if (unitDetails == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemConfigItemMetadata", "unitDetails");
+            }
+            this.unitDetails = unitDetails;
             return this;
         }
         public Builder unitDetails(GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetail... unitDetails) {
@@ -143,7 +159,10 @@ public final class GetOpsiConfigurationConfigurationItemConfigItemMetadata {
         }
         @CustomType.Setter
         public Builder valueInputDetails(List<GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail> valueInputDetails) {
-            this.valueInputDetails = Objects.requireNonNull(valueInputDetails);
+            if (valueInputDetails == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemConfigItemMetadata", "valueInputDetails");
+            }
+            this.valueInputDetails = valueInputDetails;
             return this;
         }
         public Builder valueInputDetails(GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail... valueInputDetails) {

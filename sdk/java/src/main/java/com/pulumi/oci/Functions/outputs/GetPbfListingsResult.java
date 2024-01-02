@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetPbfListingsFilter;
 import com.pulumi.oci.Functions.outputs.GetPbfListingsPbfListingsCollection;
 import java.lang.String;
@@ -119,6 +120,7 @@ public final class GetPbfListingsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPbfListingsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,32 +129,42 @@ public final class GetPbfListingsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder nameContains(@Nullable String nameContains) {
+
             this.nameContains = nameContains;
             return this;
         }
         @CustomType.Setter
         public Builder nameStartsWith(@Nullable String nameStartsWith) {
+
             this.nameStartsWith = nameStartsWith;
             return this;
         }
         @CustomType.Setter
         public Builder pbfListingId(@Nullable String pbfListingId) {
+
             this.pbfListingId = pbfListingId;
             return this;
         }
         @CustomType.Setter
         public Builder pbfListingsCollections(List<GetPbfListingsPbfListingsCollection> pbfListingsCollections) {
-            this.pbfListingsCollections = Objects.requireNonNull(pbfListingsCollections);
+            if (pbfListingsCollections == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingsResult", "pbfListingsCollections");
+            }
+            this.pbfListingsCollections = pbfListingsCollections;
             return this;
         }
         public Builder pbfListingsCollections(GetPbfListingsPbfListingsCollection... pbfListingsCollections) {
@@ -160,11 +172,13 @@ public final class GetPbfListingsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder triggers(@Nullable List<String> triggers) {
+
             this.triggers = triggers;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl;
 import java.lang.Integer;
 import java.lang.String;
@@ -73,17 +74,26 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHostListener {
 
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewaysIngressGatewayCollectionItemHostListener", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewaysIngressGatewayCollectionItemHostListener", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder tls(List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl> tls) {
-            this.tls = Objects.requireNonNull(tls);
+            if (tls == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewaysIngressGatewayCollectionItemHostListener", "tls");
+            }
+            this.tls = tls;
             return this;
         }
         public Builder tls(GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl... tls) {

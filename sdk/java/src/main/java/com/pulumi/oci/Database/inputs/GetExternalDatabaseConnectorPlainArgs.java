@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetExternalDatabaseConnectorPlainArgs extends com.pulumi.reso
         }
 
         public GetExternalDatabaseConnectorPlainArgs build() {
-            $.externalDatabaseConnectorId = Objects.requireNonNull($.externalDatabaseConnectorId, "expected parameter 'externalDatabaseConnectorId' to be non-null");
+            if ($.externalDatabaseConnectorId == null) {
+                throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorPlainArgs", "externalDatabaseConnectorId");
+            }
             return $;
         }
     }

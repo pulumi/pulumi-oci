@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAlertLogCountItem;
 import java.lang.Boolean;
 import java.lang.String;
@@ -117,22 +118,30 @@ public final class GetManagedDatabaseAlertLogCountResult {
 
         @CustomType.Setter
         public Builder groupBy(@Nullable String groupBy) {
+
             this.groupBy = groupBy;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAlertLogCountResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isRegularExpression(@Nullable Boolean isRegularExpression) {
+
             this.isRegularExpression = isRegularExpression;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetManagedDatabaseAlertLogCountItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAlertLogCountResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseAlertLogCountItem... items) {
@@ -140,31 +149,39 @@ public final class GetManagedDatabaseAlertLogCountResult {
         }
         @CustomType.Setter
         public Builder levelFilter(@Nullable String levelFilter) {
+
             this.levelFilter = levelFilter;
             return this;
         }
         @CustomType.Setter
         public Builder logSearchText(@Nullable String logSearchText) {
+
             this.logSearchText = logSearchText;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAlertLogCountResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder timeGreaterThanOrEqualTo(@Nullable String timeGreaterThanOrEqualTo) {
+
             this.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeLessThanOrEqualTo(@Nullable String timeLessThanOrEqualTo) {
+
             this.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder typeFilter(@Nullable String typeFilter) {
+
             this.typeFilter = typeFilter;
             return this;
         }

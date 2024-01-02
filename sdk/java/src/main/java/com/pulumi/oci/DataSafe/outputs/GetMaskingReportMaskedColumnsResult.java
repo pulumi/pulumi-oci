@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingReportMaskedColumnsFilter;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingReportMaskedColumnsMaskedColumnCollection;
 import java.lang.String;
@@ -157,6 +158,7 @@ public final class GetMaskingReportMaskedColumnsResult {
 
         @CustomType.Setter
         public Builder columnNames(@Nullable List<String> columnNames) {
+
             this.columnNames = columnNames;
             return this;
         }
@@ -165,6 +167,7 @@ public final class GetMaskingReportMaskedColumnsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMaskingReportMaskedColumnsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -173,12 +176,18 @@ public final class GetMaskingReportMaskedColumnsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportMaskedColumnsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder maskedColumnCollections(List<GetMaskingReportMaskedColumnsMaskedColumnCollection> maskedColumnCollections) {
-            this.maskedColumnCollections = Objects.requireNonNull(maskedColumnCollections);
+            if (maskedColumnCollections == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportMaskedColumnsResult", "maskedColumnCollections");
+            }
+            this.maskedColumnCollections = maskedColumnCollections;
             return this;
         }
         public Builder maskedColumnCollections(GetMaskingReportMaskedColumnsMaskedColumnCollection... maskedColumnCollections) {
@@ -186,6 +195,7 @@ public final class GetMaskingReportMaskedColumnsResult {
         }
         @CustomType.Setter
         public Builder maskingColumnGroups(@Nullable List<String> maskingColumnGroups) {
+
             this.maskingColumnGroups = maskingColumnGroups;
             return this;
         }
@@ -194,11 +204,15 @@ public final class GetMaskingReportMaskedColumnsResult {
         }
         @CustomType.Setter
         public Builder maskingReportId(String maskingReportId) {
-            this.maskingReportId = Objects.requireNonNull(maskingReportId);
+            if (maskingReportId == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportMaskedColumnsResult", "maskingReportId");
+            }
+            this.maskingReportId = maskingReportId;
             return this;
         }
         @CustomType.Setter
         public Builder objectTypes(@Nullable List<String> objectTypes) {
+
             this.objectTypes = objectTypes;
             return this;
         }
@@ -207,6 +221,7 @@ public final class GetMaskingReportMaskedColumnsResult {
         }
         @CustomType.Setter
         public Builder objects(@Nullable List<String> objects) {
+
             this.objects = objects;
             return this;
         }
@@ -215,6 +230,7 @@ public final class GetMaskingReportMaskedColumnsResult {
         }
         @CustomType.Setter
         public Builder schemaNames(@Nullable List<String> schemaNames) {
+
             this.schemaNames = schemaNames;
             return this;
         }
@@ -223,6 +239,7 @@ public final class GetMaskingReportMaskedColumnsResult {
         }
         @CustomType.Setter
         public Builder sensitiveTypeId(@Nullable String sensitiveTypeId) {
+
             this.sensitiveTypeId = sensitiveTypeId;
             return this;
         }

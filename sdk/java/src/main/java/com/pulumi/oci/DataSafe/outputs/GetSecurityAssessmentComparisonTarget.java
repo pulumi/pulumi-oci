@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentComparisonTargetAuditing;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentComparisonTargetAuthorizationControl;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentComparisonTargetDataEncryption;
@@ -162,7 +163,10 @@ public final class GetSecurityAssessmentComparisonTarget {
 
         @CustomType.Setter
         public Builder auditings(List<GetSecurityAssessmentComparisonTargetAuditing> auditings) {
-            this.auditings = Objects.requireNonNull(auditings);
+            if (auditings == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTarget", "auditings");
+            }
+            this.auditings = auditings;
             return this;
         }
         public Builder auditings(GetSecurityAssessmentComparisonTargetAuditing... auditings) {
@@ -170,7 +174,10 @@ public final class GetSecurityAssessmentComparisonTarget {
         }
         @CustomType.Setter
         public Builder authorizationControls(List<GetSecurityAssessmentComparisonTargetAuthorizationControl> authorizationControls) {
-            this.authorizationControls = Objects.requireNonNull(authorizationControls);
+            if (authorizationControls == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTarget", "authorizationControls");
+            }
+            this.authorizationControls = authorizationControls;
             return this;
         }
         public Builder authorizationControls(GetSecurityAssessmentComparisonTargetAuthorizationControl... authorizationControls) {
@@ -178,17 +185,26 @@ public final class GetSecurityAssessmentComparisonTarget {
         }
         @CustomType.Setter
         public Builder baselineTargetId(String baselineTargetId) {
-            this.baselineTargetId = Objects.requireNonNull(baselineTargetId);
+            if (baselineTargetId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTarget", "baselineTargetId");
+            }
+            this.baselineTargetId = baselineTargetId;
             return this;
         }
         @CustomType.Setter
         public Builder currentTargetId(String currentTargetId) {
-            this.currentTargetId = Objects.requireNonNull(currentTargetId);
+            if (currentTargetId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTarget", "currentTargetId");
+            }
+            this.currentTargetId = currentTargetId;
             return this;
         }
         @CustomType.Setter
         public Builder dataEncryptions(List<GetSecurityAssessmentComparisonTargetDataEncryption> dataEncryptions) {
-            this.dataEncryptions = Objects.requireNonNull(dataEncryptions);
+            if (dataEncryptions == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTarget", "dataEncryptions");
+            }
+            this.dataEncryptions = dataEncryptions;
             return this;
         }
         public Builder dataEncryptions(GetSecurityAssessmentComparisonTargetDataEncryption... dataEncryptions) {
@@ -196,7 +212,10 @@ public final class GetSecurityAssessmentComparisonTarget {
         }
         @CustomType.Setter
         public Builder dbConfigurations(List<GetSecurityAssessmentComparisonTargetDbConfiguration> dbConfigurations) {
-            this.dbConfigurations = Objects.requireNonNull(dbConfigurations);
+            if (dbConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTarget", "dbConfigurations");
+            }
+            this.dbConfigurations = dbConfigurations;
             return this;
         }
         public Builder dbConfigurations(GetSecurityAssessmentComparisonTargetDbConfiguration... dbConfigurations) {
@@ -204,7 +223,10 @@ public final class GetSecurityAssessmentComparisonTarget {
         }
         @CustomType.Setter
         public Builder fineGrainedAccessControls(List<GetSecurityAssessmentComparisonTargetFineGrainedAccessControl> fineGrainedAccessControls) {
-            this.fineGrainedAccessControls = Objects.requireNonNull(fineGrainedAccessControls);
+            if (fineGrainedAccessControls == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTarget", "fineGrainedAccessControls");
+            }
+            this.fineGrainedAccessControls = fineGrainedAccessControls;
             return this;
         }
         public Builder fineGrainedAccessControls(GetSecurityAssessmentComparisonTargetFineGrainedAccessControl... fineGrainedAccessControls) {
@@ -212,7 +234,10 @@ public final class GetSecurityAssessmentComparisonTarget {
         }
         @CustomType.Setter
         public Builder privilegesAndRoles(List<GetSecurityAssessmentComparisonTargetPrivilegesAndRole> privilegesAndRoles) {
-            this.privilegesAndRoles = Objects.requireNonNull(privilegesAndRoles);
+            if (privilegesAndRoles == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTarget", "privilegesAndRoles");
+            }
+            this.privilegesAndRoles = privilegesAndRoles;
             return this;
         }
         public Builder privilegesAndRoles(GetSecurityAssessmentComparisonTargetPrivilegesAndRole... privilegesAndRoles) {
@@ -220,7 +245,10 @@ public final class GetSecurityAssessmentComparisonTarget {
         }
         @CustomType.Setter
         public Builder userAccounts(List<GetSecurityAssessmentComparisonTargetUserAccount> userAccounts) {
-            this.userAccounts = Objects.requireNonNull(userAccounts);
+            if (userAccounts == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTarget", "userAccounts");
+            }
+            this.userAccounts = userAccounts;
             return this;
         }
         public Builder userAccounts(GetSecurityAssessmentComparisonTargetUserAccount... userAccounts) {

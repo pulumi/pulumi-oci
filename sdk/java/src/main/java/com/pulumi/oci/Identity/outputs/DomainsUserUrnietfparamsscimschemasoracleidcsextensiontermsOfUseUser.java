@@ -68,6 +68,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOf
 
         @CustomType.Setter
         public Builder termsOfUseConsents(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent> termsOfUseConsents) {
+
             this.termsOfUseConsents = termsOfUseConsents;
             return this;
         }

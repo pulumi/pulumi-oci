@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -209,7 +210,9 @@ public final class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs 
         }
 
         public NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs build() {
-            $.cniType = Objects.requireNonNull($.cniType, "expected parameter 'cniType' to be non-null");
+            if ($.cniType == null) {
+                throw new MissingRequiredPropertyException("NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs", "cniType");
+            }
             return $;
         }
     }

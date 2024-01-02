@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetExternalDbHomeArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetExternalDbHomeArgs build() {
-            $.externalDbHomeId = Objects.requireNonNull($.externalDbHomeId, "expected parameter 'externalDbHomeId' to be non-null");
+            if ($.externalDbHomeId == null) {
+                throw new MissingRequiredPropertyException("GetExternalDbHomeArgs", "externalDbHomeId");
+            }
             return $;
         }
     }

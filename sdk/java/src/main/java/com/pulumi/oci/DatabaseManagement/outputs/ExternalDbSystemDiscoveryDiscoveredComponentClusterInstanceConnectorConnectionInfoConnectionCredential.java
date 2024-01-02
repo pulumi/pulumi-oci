@@ -114,31 +114,37 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceCo
 
         @CustomType.Setter
         public Builder credentialName(@Nullable String credentialName) {
+
             this.credentialName = credentialName;
             return this;
         }
         @CustomType.Setter
         public Builder credentialType(@Nullable String credentialType) {
+
             this.credentialType = credentialType;
             return this;
         }
         @CustomType.Setter
         public Builder passwordSecretId(@Nullable String passwordSecretId) {
+
             this.passwordSecretId = passwordSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder role(@Nullable String role) {
+
             this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder sslSecretId(@Nullable String sslSecretId) {
+
             this.sslSecretId = sslSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder userName(@Nullable String userName) {
+
             this.userName = userName;
             return this;
         }

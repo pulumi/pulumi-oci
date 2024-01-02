@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.GetJobOutputItem;
 import java.lang.String;
 import java.util.List;
@@ -64,12 +65,18 @@ public final class GetJobOutputResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetJobOutputResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetJobOutputItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetJobOutputResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetJobOutputItem... items) {
@@ -77,7 +84,10 @@ public final class GetJobOutputResult {
         }
         @CustomType.Setter
         public Builder jobId(String jobId) {
-            this.jobId = Objects.requireNonNull(jobId);
+            if (jobId == null) {
+              throw new MissingRequiredPropertyException("GetJobOutputResult", "jobId");
+            }
+            this.jobId = jobId;
             return this;
         }
         public GetJobOutputResult build() {

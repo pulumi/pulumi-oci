@@ -4,6 +4,7 @@
 package com.pulumi.oci.Budget.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetBudgetPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetBudgetPlainArgs build() {
-            $.budgetId = Objects.requireNonNull($.budgetId, "expected parameter 'budgetId' to be non-null");
+            if ($.budgetId == null) {
+                throw new MissingRequiredPropertyException("GetBudgetPlainArgs", "budgetId");
+            }
             return $;
         }
     }

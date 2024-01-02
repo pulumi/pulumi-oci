@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetMysqlConfigurationArgs extends com.pulumi.resources.Invoke
         }
 
         public GetMysqlConfigurationArgs build() {
-            $.configurationId = Objects.requireNonNull($.configurationId, "expected parameter 'configurationId' to be non-null");
+            if ($.configurationId == null) {
+                throw new MissingRequiredPropertyException("GetMysqlConfigurationArgs", "configurationId");
+            }
             return $;
         }
     }

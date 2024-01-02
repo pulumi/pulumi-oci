@@ -4,6 +4,7 @@
 package com.pulumi.oci.Email.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Email.outputs.GetSuppressionsFilter;
 import com.pulumi.oci.Email.outputs.GetSuppressionsSuppression;
 import java.lang.String;
@@ -107,16 +108,21 @@ public final class GetSuppressionsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder emailAddress(@Nullable String emailAddress) {
+
             this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSuppressionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -125,12 +131,18 @@ public final class GetSuppressionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder suppressions(List<GetSuppressionsSuppression> suppressions) {
-            this.suppressions = Objects.requireNonNull(suppressions);
+            if (suppressions == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionsResult", "suppressions");
+            }
+            this.suppressions = suppressions;
             return this;
         }
         public Builder suppressions(GetSuppressionsSuppression... suppressions) {
@@ -138,11 +150,13 @@ public final class GetSuppressionsResult {
         }
         @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
+
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
+
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }

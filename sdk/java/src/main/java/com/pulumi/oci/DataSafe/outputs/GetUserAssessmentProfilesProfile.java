@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -410,137 +411,218 @@ public final class GetUserAssessmentProfilesProfile {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compositeLimit(String compositeLimit) {
-            this.compositeLimit = Objects.requireNonNull(compositeLimit);
+            if (compositeLimit == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "compositeLimit");
+            }
+            this.compositeLimit = compositeLimit;
             return this;
         }
         @CustomType.Setter
         public Builder connectTime(String connectTime) {
-            this.connectTime = Objects.requireNonNull(connectTime);
+            if (connectTime == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "connectTime");
+            }
+            this.connectTime = connectTime;
             return this;
         }
         @CustomType.Setter
         public Builder cpuPerCall(String cpuPerCall) {
-            this.cpuPerCall = Objects.requireNonNull(cpuPerCall);
+            if (cpuPerCall == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "cpuPerCall");
+            }
+            this.cpuPerCall = cpuPerCall;
             return this;
         }
         @CustomType.Setter
         public Builder cpuPerSession(String cpuPerSession) {
-            this.cpuPerSession = Objects.requireNonNull(cpuPerSession);
+            if (cpuPerSession == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "cpuPerSession");
+            }
+            this.cpuPerSession = cpuPerSession;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder failedLoginAttempts(String failedLoginAttempts) {
-            this.failedLoginAttempts = Objects.requireNonNull(failedLoginAttempts);
+            if (failedLoginAttempts == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "failedLoginAttempts");
+            }
+            this.failedLoginAttempts = failedLoginAttempts;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder idleTime(String idleTime) {
-            this.idleTime = Objects.requireNonNull(idleTime);
+            if (idleTime == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "idleTime");
+            }
+            this.idleTime = idleTime;
             return this;
         }
         @CustomType.Setter
         public Builder inactiveAccountTime(String inactiveAccountTime) {
-            this.inactiveAccountTime = Objects.requireNonNull(inactiveAccountTime);
+            if (inactiveAccountTime == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "inactiveAccountTime");
+            }
+            this.inactiveAccountTime = inactiveAccountTime;
             return this;
         }
         @CustomType.Setter
         public Builder isUserCreated(Boolean isUserCreated) {
-            this.isUserCreated = Objects.requireNonNull(isUserCreated);
+            if (isUserCreated == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "isUserCreated");
+            }
+            this.isUserCreated = isUserCreated;
             return this;
         }
         @CustomType.Setter
         public Builder logicalReadsPerCall(String logicalReadsPerCall) {
-            this.logicalReadsPerCall = Objects.requireNonNull(logicalReadsPerCall);
+            if (logicalReadsPerCall == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "logicalReadsPerCall");
+            }
+            this.logicalReadsPerCall = logicalReadsPerCall;
             return this;
         }
         @CustomType.Setter
         public Builder logicalReadsPerSession(String logicalReadsPerSession) {
-            this.logicalReadsPerSession = Objects.requireNonNull(logicalReadsPerSession);
+            if (logicalReadsPerSession == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "logicalReadsPerSession");
+            }
+            this.logicalReadsPerSession = logicalReadsPerSession;
             return this;
         }
         @CustomType.Setter
         public Builder passwordGraceTime(String passwordGraceTime) {
-            this.passwordGraceTime = Objects.requireNonNull(passwordGraceTime);
+            if (passwordGraceTime == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "passwordGraceTime");
+            }
+            this.passwordGraceTime = passwordGraceTime;
             return this;
         }
         @CustomType.Setter
         public Builder passwordLifeTime(String passwordLifeTime) {
-            this.passwordLifeTime = Objects.requireNonNull(passwordLifeTime);
+            if (passwordLifeTime == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "passwordLifeTime");
+            }
+            this.passwordLifeTime = passwordLifeTime;
             return this;
         }
         @CustomType.Setter
         public Builder passwordLockTime(String passwordLockTime) {
-            this.passwordLockTime = Objects.requireNonNull(passwordLockTime);
+            if (passwordLockTime == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "passwordLockTime");
+            }
+            this.passwordLockTime = passwordLockTime;
             return this;
         }
         @CustomType.Setter
         public Builder passwordReuseMax(String passwordReuseMax) {
-            this.passwordReuseMax = Objects.requireNonNull(passwordReuseMax);
+            if (passwordReuseMax == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "passwordReuseMax");
+            }
+            this.passwordReuseMax = passwordReuseMax;
             return this;
         }
         @CustomType.Setter
         public Builder passwordReuseTime(String passwordReuseTime) {
-            this.passwordReuseTime = Objects.requireNonNull(passwordReuseTime);
+            if (passwordReuseTime == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "passwordReuseTime");
+            }
+            this.passwordReuseTime = passwordReuseTime;
             return this;
         }
         @CustomType.Setter
         public Builder passwordRolloverTime(String passwordRolloverTime) {
-            this.passwordRolloverTime = Objects.requireNonNull(passwordRolloverTime);
+            if (passwordRolloverTime == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "passwordRolloverTime");
+            }
+            this.passwordRolloverTime = passwordRolloverTime;
             return this;
         }
         @CustomType.Setter
         public Builder passwordVerificationFunction(String passwordVerificationFunction) {
-            this.passwordVerificationFunction = Objects.requireNonNull(passwordVerificationFunction);
+            if (passwordVerificationFunction == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "passwordVerificationFunction");
+            }
+            this.passwordVerificationFunction = passwordVerificationFunction;
             return this;
         }
         @CustomType.Setter
         public Builder passwordVerificationFunctionDetails(String passwordVerificationFunctionDetails) {
-            this.passwordVerificationFunctionDetails = Objects.requireNonNull(passwordVerificationFunctionDetails);
+            if (passwordVerificationFunctionDetails == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "passwordVerificationFunctionDetails");
+            }
+            this.passwordVerificationFunctionDetails = passwordVerificationFunctionDetails;
             return this;
         }
         @CustomType.Setter
         public Builder privateSga(String privateSga) {
-            this.privateSga = Objects.requireNonNull(privateSga);
+            if (privateSga == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "privateSga");
+            }
+            this.privateSga = privateSga;
             return this;
         }
         @CustomType.Setter
         public Builder profileName(String profileName) {
-            this.profileName = Objects.requireNonNull(profileName);
+            if (profileName == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "profileName");
+            }
+            this.profileName = profileName;
             return this;
         }
         @CustomType.Setter
         public Builder sessionsPerUser(String sessionsPerUser) {
-            this.sessionsPerUser = Objects.requireNonNull(sessionsPerUser);
+            if (sessionsPerUser == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "sessionsPerUser");
+            }
+            this.sessionsPerUser = sessionsPerUser;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "targetId");
+            }
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder userAssessmentId(String userAssessmentId) {
-            this.userAssessmentId = Objects.requireNonNull(userAssessmentId);
+            if (userAssessmentId == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "userAssessmentId");
+            }
+            this.userAssessmentId = userAssessmentId;
             return this;
         }
         @CustomType.Setter
         public Builder userCount(Integer userCount) {
-            this.userCount = Objects.requireNonNull(userCount);
+            if (userCount == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "userCount");
+            }
+            this.userCount = userCount;
             return this;
         }
         public GetUserAssessmentProfilesProfile build() {

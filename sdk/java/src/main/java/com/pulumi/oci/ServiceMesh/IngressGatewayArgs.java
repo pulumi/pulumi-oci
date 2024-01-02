@@ -5,6 +5,7 @@ package com.pulumi.oci.ServiceMesh;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.inputs.IngressGatewayAccessLoggingArgs;
 import com.pulumi.oci.ServiceMesh.inputs.IngressGatewayHostArgs;
 import com.pulumi.oci.ServiceMesh.inputs.IngressGatewayMtlsArgs;
@@ -400,9 +401,15 @@ public final class IngressGatewayArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public IngressGatewayArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.hosts = Objects.requireNonNull($.hosts, "expected parameter 'hosts' to be non-null");
-            $.meshId = Objects.requireNonNull($.meshId, "expected parameter 'meshId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("IngressGatewayArgs", "compartmentId");
+            }
+            if ($.hosts == null) {
+                throw new MissingRequiredPropertyException("IngressGatewayArgs", "hosts");
+            }
+            if ($.meshId == null) {
+                throw new MissingRequiredPropertyException("IngressGatewayArgs", "meshId");
+            }
             return $;
         }
     }

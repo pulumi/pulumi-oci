@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetSecurityListsSecurityListIngressSecurityRuleIcmpOption;
 import com.pulumi.oci.Core.outputs.GetSecurityListsSecurityListIngressSecurityRuleTcpOption;
 import com.pulumi.oci.Core.outputs.GetSecurityListsSecurityListIngressSecurityRuleUdpOption;
@@ -153,12 +154,18 @@ public final class GetSecurityListsSecurityListIngressSecurityRule {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetSecurityListsSecurityListIngressSecurityRule", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder icmpOptions(List<GetSecurityListsSecurityListIngressSecurityRuleIcmpOption> icmpOptions) {
-            this.icmpOptions = Objects.requireNonNull(icmpOptions);
+            if (icmpOptions == null) {
+              throw new MissingRequiredPropertyException("GetSecurityListsSecurityListIngressSecurityRule", "icmpOptions");
+            }
+            this.icmpOptions = icmpOptions;
             return this;
         }
         public Builder icmpOptions(GetSecurityListsSecurityListIngressSecurityRuleIcmpOption... icmpOptions) {
@@ -166,27 +173,42 @@ public final class GetSecurityListsSecurityListIngressSecurityRule {
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetSecurityListsSecurityListIngressSecurityRule", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("GetSecurityListsSecurityListIngressSecurityRule", "source");
+            }
+            this.source = source;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetSecurityListsSecurityListIngressSecurityRule", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
         public Builder stateless(Boolean stateless) {
-            this.stateless = Objects.requireNonNull(stateless);
+            if (stateless == null) {
+              throw new MissingRequiredPropertyException("GetSecurityListsSecurityListIngressSecurityRule", "stateless");
+            }
+            this.stateless = stateless;
             return this;
         }
         @CustomType.Setter
         public Builder tcpOptions(List<GetSecurityListsSecurityListIngressSecurityRuleTcpOption> tcpOptions) {
-            this.tcpOptions = Objects.requireNonNull(tcpOptions);
+            if (tcpOptions == null) {
+              throw new MissingRequiredPropertyException("GetSecurityListsSecurityListIngressSecurityRule", "tcpOptions");
+            }
+            this.tcpOptions = tcpOptions;
             return this;
         }
         public Builder tcpOptions(GetSecurityListsSecurityListIngressSecurityRuleTcpOption... tcpOptions) {
@@ -194,7 +216,10 @@ public final class GetSecurityListsSecurityListIngressSecurityRule {
         }
         @CustomType.Setter
         public Builder udpOptions(List<GetSecurityListsSecurityListIngressSecurityRuleUdpOption> udpOptions) {
-            this.udpOptions = Objects.requireNonNull(udpOptions);
+            if (udpOptions == null) {
+              throw new MissingRequiredPropertyException("GetSecurityListsSecurityListIngressSecurityRule", "udpOptions");
+            }
+            this.udpOptions = udpOptions;
             return this;
         }
         public Builder udpOptions(GetSecurityListsSecurityListIngressSecurityRuleUdpOption... udpOptions) {

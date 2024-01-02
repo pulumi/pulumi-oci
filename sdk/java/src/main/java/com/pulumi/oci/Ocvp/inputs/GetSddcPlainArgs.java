@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetSddcPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetSddcPlainArgs build() {
-            $.sddcId = Objects.requireNonNull($.sddcId, "expected parameter 'sddcId' to be non-null");
+            if ($.sddcId == null) {
+                throw new MissingRequiredPropertyException("GetSddcPlainArgs", "sddcId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsCloudGateServersCloudGateServerCloudGate;
 import com.pulumi.oci.Identity.outputs.GetDomainsCloudGateServersCloudGateServerIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsCloudGateServersCloudGateServerIdcsLastModifiedBy;
@@ -392,7 +393,10 @@ public final class GetDomainsCloudGateServersCloudGateServer {
 
         @CustomType.Setter
         public Builder attributeSets(List<String> attributeSets) {
-            this.attributeSets = Objects.requireNonNull(attributeSets);
+            if (attributeSets == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "attributeSets");
+            }
+            this.attributeSets = attributeSets;
             return this;
         }
         public Builder attributeSets(String... attributeSets) {
@@ -400,17 +404,26 @@ public final class GetDomainsCloudGateServersCloudGateServer {
         }
         @CustomType.Setter
         public Builder attributes(String attributes) {
-            this.attributes = Objects.requireNonNull(attributes);
+            if (attributes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "attributes");
+            }
+            this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(String authorization) {
-            this.authorization = Objects.requireNonNull(authorization);
+            if (authorization == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "authorization");
+            }
+            this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder cloudGates(List<GetDomainsCloudGateServersCloudGateServerCloudGate> cloudGates) {
-            this.cloudGates = Objects.requireNonNull(cloudGates);
+            if (cloudGates == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "cloudGates");
+            }
+            this.cloudGates = cloudGates;
             return this;
         }
         public Builder cloudGates(GetDomainsCloudGateServersCloudGateServerCloudGate... cloudGates) {
@@ -418,42 +431,66 @@ public final class GetDomainsCloudGateServersCloudGateServer {
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+            if (hostName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "hostName");
+            }
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsCloudGateServersCloudGateServerIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsCloudGateServersCloudGateServerIdcsCreatedBy... idcsCreatedBies) {
@@ -461,12 +498,18 @@ public final class GetDomainsCloudGateServersCloudGateServer {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsCloudGateServersCloudGateServerIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsCloudGateServersCloudGateServerIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -474,12 +517,18 @@ public final class GetDomainsCloudGateServersCloudGateServer {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -487,12 +536,18 @@ public final class GetDomainsCloudGateServersCloudGateServer {
         }
         @CustomType.Setter
         public Builder isOpcService(Boolean isOpcService) {
-            this.isOpcService = Objects.requireNonNull(isOpcService);
+            if (isOpcService == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "isOpcService");
+            }
+            this.isOpcService = isOpcService;
             return this;
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsCloudGateServersCloudGateServerMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsCloudGateServersCloudGateServerMeta... metas) {
@@ -500,27 +555,42 @@ public final class GetDomainsCloudGateServersCloudGateServer {
         }
         @CustomType.Setter
         public Builder nginxSettings(String nginxSettings) {
-            this.nginxSettings = Objects.requireNonNull(nginxSettings);
+            if (nginxSettings == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "nginxSettings");
+            }
+            this.nginxSettings = nginxSettings;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(String resourceTypeSchemaVersion) {
-            this.resourceTypeSchemaVersion = Objects.requireNonNull(resourceTypeSchemaVersion);
+            if (resourceTypeSchemaVersion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "resourceTypeSchemaVersion");
+            }
+            this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -528,12 +598,18 @@ public final class GetDomainsCloudGateServersCloudGateServer {
         }
         @CustomType.Setter
         public Builder ssl(Boolean ssl) {
-            this.ssl = Objects.requireNonNull(ssl);
+            if (ssl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "ssl");
+            }
+            this.ssl = ssl;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsCloudGateServersCloudGateServerTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsCloudGateServersCloudGateServerTag... tags) {
@@ -541,7 +617,10 @@ public final class GetDomainsCloudGateServersCloudGateServer {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateServersCloudGateServer", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         public GetDomainsCloudGateServersCloudGateServer build() {

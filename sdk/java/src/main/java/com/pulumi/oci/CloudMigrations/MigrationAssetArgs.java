@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudMigrations;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -332,11 +333,21 @@ public final class MigrationAssetArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public MigrationAssetArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
-            $.inventoryAssetId = Objects.requireNonNull($.inventoryAssetId, "expected parameter 'inventoryAssetId' to be non-null");
-            $.migrationId = Objects.requireNonNull($.migrationId, "expected parameter 'migrationId' to be non-null");
-            $.replicationCompartmentId = Objects.requireNonNull($.replicationCompartmentId, "expected parameter 'replicationCompartmentId' to be non-null");
-            $.snapShotBucketName = Objects.requireNonNull($.snapShotBucketName, "expected parameter 'snapShotBucketName' to be non-null");
+            if ($.availabilityDomain == null) {
+                throw new MissingRequiredPropertyException("MigrationAssetArgs", "availabilityDomain");
+            }
+            if ($.inventoryAssetId == null) {
+                throw new MissingRequiredPropertyException("MigrationAssetArgs", "inventoryAssetId");
+            }
+            if ($.migrationId == null) {
+                throw new MissingRequiredPropertyException("MigrationAssetArgs", "migrationId");
+            }
+            if ($.replicationCompartmentId == null) {
+                throw new MissingRequiredPropertyException("MigrationAssetArgs", "replicationCompartmentId");
+            }
+            if ($.snapShotBucketName == null) {
+                throw new MissingRequiredPropertyException("MigrationAssetArgs", "snapShotBucketName");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.OsubSubscription.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsubSubscription.inputs.GetCommitmentsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -210,8 +211,12 @@ public final class GetCommitmentsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetCommitmentsArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.subscribedServiceId = Objects.requireNonNull($.subscribedServiceId, "expected parameter 'subscribedServiceId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetCommitmentsArgs", "compartmentId");
+            }
+            if ($.subscribedServiceId == null) {
+                throw new MissingRequiredPropertyException("GetCommitmentsArgs", "subscribedServiceId");
+            }
             return $;
         }
     }

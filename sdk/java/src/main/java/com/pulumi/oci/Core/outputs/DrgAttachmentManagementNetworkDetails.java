@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -94,22 +95,30 @@ public final class DrgAttachmentManagementNetworkDetails {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("DrgAttachmentManagementNetworkDetails", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipsecConnectionId(@Nullable String ipsecConnectionId) {
+
             this.ipsecConnectionId = ipsecConnectionId;
             return this;
         }
         @CustomType.Setter
         public Builder routeTableId(@Nullable String routeTableId) {
+
             this.routeTableId = routeTableId;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("DrgAttachmentManagementNetworkDetails", "type");
+            }
+            this.type = type;
             return this;
         }
         public DrgAttachmentManagementNetworkDetails build() {

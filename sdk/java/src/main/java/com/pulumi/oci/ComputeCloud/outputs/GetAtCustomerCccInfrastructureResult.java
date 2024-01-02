@@ -4,6 +4,7 @@
 package com.pulumi.oci.ComputeCloud.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ComputeCloud.outputs.GetAtCustomerCccInfrastructureInfrastructureInventory;
 import com.pulumi.oci.ComputeCloud.outputs.GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration;
 import com.pulumi.oci.ComputeCloud.outputs.GetAtCustomerCccInfrastructureUpgradeInformation;
@@ -334,57 +335,90 @@ public final class GetAtCustomerCccInfrastructureResult {
 
         @CustomType.Setter
         public Builder cccInfrastructureId(String cccInfrastructureId) {
-            this.cccInfrastructureId = Objects.requireNonNull(cccInfrastructureId);
+            if (cccInfrastructureId == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "cccInfrastructureId");
+            }
+            this.cccInfrastructureId = cccInfrastructureId;
             return this;
         }
         @CustomType.Setter
         public Builder cccUpgradeScheduleId(String cccUpgradeScheduleId) {
-            this.cccUpgradeScheduleId = Objects.requireNonNull(cccUpgradeScheduleId);
+            if (cccUpgradeScheduleId == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "cccUpgradeScheduleId");
+            }
+            this.cccUpgradeScheduleId = cccUpgradeScheduleId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionDetails(String connectionDetails) {
-            this.connectionDetails = Objects.requireNonNull(connectionDetails);
+            if (connectionDetails == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "connectionDetails");
+            }
+            this.connectionDetails = connectionDetails;
             return this;
         }
         @CustomType.Setter
         public Builder connectionState(String connectionState) {
-            this.connectionState = Objects.requireNonNull(connectionState);
+            if (connectionState == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "connectionState");
+            }
+            this.connectionState = connectionState;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder infrastructureInventories(List<GetAtCustomerCccInfrastructureInfrastructureInventory> infrastructureInventories) {
-            this.infrastructureInventories = Objects.requireNonNull(infrastructureInventories);
+            if (infrastructureInventories == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "infrastructureInventories");
+            }
+            this.infrastructureInventories = infrastructureInventories;
             return this;
         }
         public Builder infrastructureInventories(GetAtCustomerCccInfrastructureInfrastructureInventory... infrastructureInventories) {
@@ -392,7 +426,10 @@ public final class GetAtCustomerCccInfrastructureResult {
         }
         @CustomType.Setter
         public Builder infrastructureNetworkConfigurations(List<GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration> infrastructureNetworkConfigurations) {
-            this.infrastructureNetworkConfigurations = Objects.requireNonNull(infrastructureNetworkConfigurations);
+            if (infrastructureNetworkConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "infrastructureNetworkConfigurations");
+            }
+            this.infrastructureNetworkConfigurations = infrastructureNetworkConfigurations;
             return this;
         }
         public Builder infrastructureNetworkConfigurations(GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration... infrastructureNetworkConfigurations) {
@@ -400,52 +437,82 @@ public final class GetAtCustomerCccInfrastructureResult {
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder provisioningFingerprint(String provisioningFingerprint) {
-            this.provisioningFingerprint = Objects.requireNonNull(provisioningFingerprint);
+            if (provisioningFingerprint == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "provisioningFingerprint");
+            }
+            this.provisioningFingerprint = provisioningFingerprint;
             return this;
         }
         @CustomType.Setter
         public Builder provisioningPin(String provisioningPin) {
-            this.provisioningPin = Objects.requireNonNull(provisioningPin);
+            if (provisioningPin == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "provisioningPin");
+            }
+            this.provisioningPin = provisioningPin;
             return this;
         }
         @CustomType.Setter
         public Builder shortName(String shortName) {
-            this.shortName = Objects.requireNonNull(shortName);
+            if (shortName == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "shortName");
+            }
+            this.shortName = shortName;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder upgradeInformations(List<GetAtCustomerCccInfrastructureUpgradeInformation> upgradeInformations) {
-            this.upgradeInformations = Objects.requireNonNull(upgradeInformations);
+            if (upgradeInformations == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureResult", "upgradeInformations");
+            }
+            this.upgradeInformations = upgradeInformations;
             return this;
         }
         public Builder upgradeInformations(GetAtCustomerCccInfrastructureUpgradeInformation... upgradeInformations) {

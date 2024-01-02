@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetCrossConnectPortSpeedShapeFilter;
 import java.lang.String;
 import java.util.List;
@@ -84,7 +85,9 @@ public final class GetCrossConnectPortSpeedShapePlainArgs extends com.pulumi.res
         }
 
         public GetCrossConnectPortSpeedShapePlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetCrossConnectPortSpeedShapePlainArgs", "compartmentId");
+            }
             return $;
         }
     }

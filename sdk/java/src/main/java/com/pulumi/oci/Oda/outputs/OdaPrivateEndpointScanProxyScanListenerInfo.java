@@ -73,16 +73,19 @@ public final class OdaPrivateEndpointScanProxyScanListenerInfo {
 
         @CustomType.Setter
         public Builder scanListenerFqdn(@Nullable String scanListenerFqdn) {
+
             this.scanListenerFqdn = scanListenerFqdn;
             return this;
         }
         @CustomType.Setter
         public Builder scanListenerIp(@Nullable String scanListenerIp) {
+
             this.scanListenerIp = scanListenerIp;
             return this;
         }
         @CustomType.Setter
         public Builder scanListenerPort(@Nullable Integer scanListenerPort) {
+
             this.scanListenerPort = scanListenerPort;
             return this;
         }

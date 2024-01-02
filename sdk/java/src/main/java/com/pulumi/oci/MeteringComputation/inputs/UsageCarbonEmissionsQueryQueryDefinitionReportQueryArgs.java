@@ -5,6 +5,7 @@ package com.pulumi.oci.MeteringComputation.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.inputs.UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -396,7 +397,9 @@ public final class UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs exten
         }
 
         public UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs build() {
-            $.tenantId = Objects.requireNonNull($.tenantId, "expected parameter 'tenantId' to be non-null");
+            if ($.tenantId == null) {
+                throw new MissingRequiredPropertyException("UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs", "tenantId");
+            }
             return $;
         }
     }

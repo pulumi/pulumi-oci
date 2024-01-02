@@ -58,11 +58,13 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
 
         @CustomType.Setter
         public Builder uplinkHsrpGroup(@Nullable Integer uplinkHsrpGroup) {
+
             this.uplinkHsrpGroup = uplinkHsrpGroup;
             return this;
         }
         @CustomType.Setter
         public Builder uplinkVlan(@Nullable Integer uplinkVlan) {
+
             this.uplinkVlan = uplinkVlan;
             return this;
         }

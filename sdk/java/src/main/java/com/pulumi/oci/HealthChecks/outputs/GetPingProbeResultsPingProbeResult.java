@@ -4,6 +4,7 @@
 package com.pulumi.oci.HealthChecks.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.HealthChecks.outputs.GetPingProbeResultsPingProbeResultConnection;
 import com.pulumi.oci.HealthChecks.outputs.GetPingProbeResultsPingProbeResultDn;
 import java.lang.Boolean;
@@ -268,7 +269,10 @@ public final class GetPingProbeResultsPingProbeResult {
 
         @CustomType.Setter
         public Builder connections(List<GetPingProbeResultsPingProbeResultConnection> connections) {
-            this.connections = Objects.requireNonNull(connections);
+            if (connections == null) {
+              throw new MissingRequiredPropertyException("GetPingProbeResultsPingProbeResult", "connections");
+            }
+            this.connections = connections;
             return this;
         }
         public Builder connections(GetPingProbeResultsPingProbeResultConnection... connections) {
@@ -276,7 +280,10 @@ public final class GetPingProbeResultsPingProbeResult {
         }
         @CustomType.Setter
         public Builder dns(List<GetPingProbeResultsPingProbeResultDn> dns) {
-            this.dns = Objects.requireNonNull(dns);
+            if (dns == null) {
+              throw new MissingRequiredPropertyException("GetPingProbeResultsPingProbeResult", "dns");
+            }
+            this.dns = dns;
             return this;
         }
         public Builder dns(GetPingProbeResultsPingProbeResultDn... dns) {
@@ -284,72 +291,114 @@ public final class GetPingProbeResultsPingProbeResult {
         }
         @CustomType.Setter
         public Builder domainLookupEnd(Double domainLookupEnd) {
-            this.domainLookupEnd = Objects.requireNonNull(domainLookupEnd);
+            if (domainLookupEnd == null) {
+              throw new MissingRequiredPropertyException("GetPingProbeResultsPingProbeResult", "domainLookupEnd");
+            }
+            this.domainLookupEnd = domainLookupEnd;
             return this;
         }
         @CustomType.Setter
         public Builder domainLookupStart(Double domainLookupStart) {
-            this.domainLookupStart = Objects.requireNonNull(domainLookupStart);
+            if (domainLookupStart == null) {
+              throw new MissingRequiredPropertyException("GetPingProbeResultsPingProbeResult", "domainLookupStart");
+            }
+            this.domainLookupStart = domainLookupStart;
             return this;
         }
         @CustomType.Setter
         public Builder errorCategory(String errorCategory) {
-            this.errorCategory = Objects.requireNonNull(errorCategory);
+            if (errorCategory == null) {
+              throw new MissingRequiredPropertyException("GetPingProbeResultsPingProbeResult", "errorCategory");
+            }
+            this.errorCategory = errorCategory;
             return this;
         }
         @CustomType.Setter
         public Builder errorMessage(String errorMessage) {
-            this.errorMessage = Objects.requireNonNull(errorMessage);
+            if (errorMessage == null) {
+              throw new MissingRequiredPropertyException("GetPingProbeResultsPingProbeResult", "errorMessage");
+            }
+            this.errorMessage = errorMessage;
             return this;
         }
         @CustomType.Setter
         public Builder icmpCode(Integer icmpCode) {
-            this.icmpCode = Objects.requireNonNull(icmpCode);
+            if (icmpCode == null) {
+              throw new MissingRequiredPropertyException("GetPingProbeResultsPingProbeResult", "icmpCode");
+            }
+            this.icmpCode = icmpCode;
             return this;
         }
         @CustomType.Setter
         public Builder isHealthy(Boolean isHealthy) {
-            this.isHealthy = Objects.requireNonNull(isHealthy);
+            if (isHealthy == null) {
+              throw new MissingRequiredPropertyException("GetPingProbeResultsPingProbeResult", "isHealthy");
+            }
+            this.isHealthy = isHealthy;
             return this;
         }
         @CustomType.Setter
         public Builder isTimedOut(Boolean isTimedOut) {
-            this.isTimedOut = Objects.requireNonNull(isTimedOut);
+            if (isTimedOut == null) {
+              throw new MissingRequiredPropertyException("GetPingProbeResultsPingProbeResult", "isTimedOut");
+            }
+            this.isTimedOut = isTimedOut;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetPingProbeResultsPingProbeResult", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder latencyInMs(Double latencyInMs) {
-            this.latencyInMs = Objects.requireNonNull(latencyInMs);
+            if (latencyInMs == null) {
+              throw new MissingRequiredPropertyException("GetPingProbeResultsPingProbeResult", "latencyInMs");
+            }
+            this.latencyInMs = latencyInMs;
             return this;
         }
         @CustomType.Setter
         public Builder probeConfigurationId(String probeConfigurationId) {
-            this.probeConfigurationId = Objects.requireNonNull(probeConfigurationId);
+            if (probeConfigurationId == null) {
+              throw new MissingRequiredPropertyException("GetPingProbeResultsPingProbeResult", "probeConfigurationId");
+            }
+            this.probeConfigurationId = probeConfigurationId;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetPingProbeResultsPingProbeResult", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder startTime(Double startTime) {
-            this.startTime = Objects.requireNonNull(startTime);
+            if (startTime == null) {
+              throw new MissingRequiredPropertyException("GetPingProbeResultsPingProbeResult", "startTime");
+            }
+            this.startTime = startTime;
             return this;
         }
         @CustomType.Setter
         public Builder target(String target) {
-            this.target = Objects.requireNonNull(target);
+            if (target == null) {
+              throw new MissingRequiredPropertyException("GetPingProbeResultsPingProbeResult", "target");
+            }
+            this.target = target;
             return this;
         }
         @CustomType.Setter
         public Builder vantagePointName(String vantagePointName) {
-            this.vantagePointName = Objects.requireNonNull(vantagePointName);
+            if (vantagePointName == null) {
+              throw new MissingRequiredPropertyException("GetPingProbeResultsPingProbeResult", "vantagePointName");
+            }
+            this.vantagePointName = vantagePointName;
             return this;
         }
         public GetPingProbeResultsPingProbeResult build() {

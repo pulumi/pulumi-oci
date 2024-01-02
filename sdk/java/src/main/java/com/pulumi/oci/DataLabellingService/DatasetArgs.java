@@ -5,6 +5,7 @@ package com.pulumi.oci.DataLabellingService;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataLabellingService.inputs.DatasetDatasetFormatDetailsArgs;
 import com.pulumi.oci.DataLabellingService.inputs.DatasetDatasetSourceDetailsArgs;
 import com.pulumi.oci.DataLabellingService.inputs.DatasetInitialImportDatasetConfigurationArgs;
@@ -502,11 +503,21 @@ public final class DatasetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DatasetArgs build() {
-            $.annotationFormat = Objects.requireNonNull($.annotationFormat, "expected parameter 'annotationFormat' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.datasetFormatDetails = Objects.requireNonNull($.datasetFormatDetails, "expected parameter 'datasetFormatDetails' to be non-null");
-            $.datasetSourceDetails = Objects.requireNonNull($.datasetSourceDetails, "expected parameter 'datasetSourceDetails' to be non-null");
-            $.labelSet = Objects.requireNonNull($.labelSet, "expected parameter 'labelSet' to be non-null");
+            if ($.annotationFormat == null) {
+                throw new MissingRequiredPropertyException("DatasetArgs", "annotationFormat");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("DatasetArgs", "compartmentId");
+            }
+            if ($.datasetFormatDetails == null) {
+                throw new MissingRequiredPropertyException("DatasetArgs", "datasetFormatDetails");
+            }
+            if ($.datasetSourceDetails == null) {
+                throw new MissingRequiredPropertyException("DatasetArgs", "datasetSourceDetails");
+            }
+            if ($.labelSet == null) {
+                throw new MissingRequiredPropertyException("DatasetArgs", "labelSet");
+            }
             return $;
         }
     }

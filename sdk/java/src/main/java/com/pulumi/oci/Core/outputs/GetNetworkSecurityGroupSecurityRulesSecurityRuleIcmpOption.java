@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption {
 
         @CustomType.Setter
         public Builder code(Integer code) {
-            this.code = Objects.requireNonNull(code);
+            if (code == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption", "code");
+            }
+            this.code = code;
             return this;
         }
         @CustomType.Setter
         public Builder type(Integer type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption build() {

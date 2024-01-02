@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataLabellingService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetLabelSetItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetDatasetLabelSet {
 
         @CustomType.Setter
         public Builder items(List<GetDatasetLabelSetItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetDatasetLabelSet", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetDatasetLabelSetItem... items) {

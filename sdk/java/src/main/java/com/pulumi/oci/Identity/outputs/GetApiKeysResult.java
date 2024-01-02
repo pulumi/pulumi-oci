@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetApiKeysApiKey;
 import com.pulumi.oci.Identity.outputs.GetApiKeysFilter;
 import java.lang.String;
@@ -80,7 +81,10 @@ public final class GetApiKeysResult {
 
         @CustomType.Setter
         public Builder apiKeys(List<GetApiKeysApiKey> apiKeys) {
-            this.apiKeys = Objects.requireNonNull(apiKeys);
+            if (apiKeys == null) {
+              throw new MissingRequiredPropertyException("GetApiKeysResult", "apiKeys");
+            }
+            this.apiKeys = apiKeys;
             return this;
         }
         public Builder apiKeys(GetApiKeysApiKey... apiKeys) {
@@ -88,6 +92,7 @@ public final class GetApiKeysResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetApiKeysFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -96,12 +101,18 @@ public final class GetApiKeysResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetApiKeysResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+            if (userId == null) {
+              throw new MissingRequiredPropertyException("GetApiKeysResult", "userId");
+            }
+            this.userId = userId;
             return this;
         }
         public GetApiKeysResult build() {

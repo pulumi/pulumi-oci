@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.GetCustomTableSavedCustomTableGroupByTag;
 import java.lang.Double;
 import java.lang.String;
@@ -115,7 +116,10 @@ public final class GetCustomTableSavedCustomTable {
 
         @CustomType.Setter
         public Builder columnGroupBies(List<String> columnGroupBies) {
-            this.columnGroupBies = Objects.requireNonNull(columnGroupBies);
+            if (columnGroupBies == null) {
+              throw new MissingRequiredPropertyException("GetCustomTableSavedCustomTable", "columnGroupBies");
+            }
+            this.columnGroupBies = columnGroupBies;
             return this;
         }
         public Builder columnGroupBies(String... columnGroupBies) {
@@ -123,17 +127,26 @@ public final class GetCustomTableSavedCustomTable {
         }
         @CustomType.Setter
         public Builder compartmentDepth(Double compartmentDepth) {
-            this.compartmentDepth = Objects.requireNonNull(compartmentDepth);
+            if (compartmentDepth == null) {
+              throw new MissingRequiredPropertyException("GetCustomTableSavedCustomTable", "compartmentDepth");
+            }
+            this.compartmentDepth = compartmentDepth;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetCustomTableSavedCustomTable", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder groupByTags(List<GetCustomTableSavedCustomTableGroupByTag> groupByTags) {
-            this.groupByTags = Objects.requireNonNull(groupByTags);
+            if (groupByTags == null) {
+              throw new MissingRequiredPropertyException("GetCustomTableSavedCustomTable", "groupByTags");
+            }
+            this.groupByTags = groupByTags;
             return this;
         }
         public Builder groupByTags(GetCustomTableSavedCustomTableGroupByTag... groupByTags) {
@@ -141,7 +154,10 @@ public final class GetCustomTableSavedCustomTable {
         }
         @CustomType.Setter
         public Builder rowGroupBies(List<String> rowGroupBies) {
-            this.rowGroupBies = Objects.requireNonNull(rowGroupBies);
+            if (rowGroupBies == null) {
+              throw new MissingRequiredPropertyException("GetCustomTableSavedCustomTable", "rowGroupBies");
+            }
+            this.rowGroupBies = rowGroupBies;
             return this;
         }
         public Builder rowGroupBies(String... rowGroupBies) {
@@ -149,7 +165,10 @@ public final class GetCustomTableSavedCustomTable {
         }
         @CustomType.Setter
         public Builder version(Double version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetCustomTableSavedCustomTable", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetCustomTableSavedCustomTable build() {

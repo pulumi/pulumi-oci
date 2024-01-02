@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionProductItem;
 import java.lang.String;
 import java.util.List;
@@ -84,12 +85,18 @@ public final class GetSubscriptionProductResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionProductResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetSubscriptionProductItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionProductResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetSubscriptionProductItem... items) {
@@ -97,22 +104,32 @@ public final class GetSubscriptionProductResult {
         }
         @CustomType.Setter
         public Builder producttype(@Nullable String producttype) {
+
             this.producttype = producttype;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionProductResult", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
-            this.tenancyId = Objects.requireNonNull(tenancyId);
+            if (tenancyId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionProductResult", "tenancyId");
+            }
+            this.tenancyId = tenancyId;
             return this;
         }
         @CustomType.Setter
         public Builder usagePeriodKey(String usagePeriodKey) {
-            this.usagePeriodKey = Objects.requireNonNull(usagePeriodKey);
+            if (usagePeriodKey == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionProductResult", "usagePeriodKey");
+            }
+            this.usagePeriodKey = usagePeriodKey;
             return this;
         }
         public GetSubscriptionProductResult build() {

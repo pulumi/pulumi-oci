@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -112,32 +113,50 @@ public final class GetImportableComputeEntitiesItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetImportableComputeEntitiesItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeDisplayName(String computeDisplayName) {
-            this.computeDisplayName = Objects.requireNonNull(computeDisplayName);
+            if (computeDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetImportableComputeEntitiesItem", "computeDisplayName");
+            }
+            this.computeDisplayName = computeDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder computeId(String computeId) {
-            this.computeId = Objects.requireNonNull(computeId);
+            if (computeId == null) {
+              throw new MissingRequiredPropertyException("GetImportableComputeEntitiesItem", "computeId");
+            }
+            this.computeId = computeId;
             return this;
         }
         @CustomType.Setter
         public Builder entitySource(String entitySource) {
-            this.entitySource = Objects.requireNonNull(entitySource);
+            if (entitySource == null) {
+              throw new MissingRequiredPropertyException("GetImportableComputeEntitiesItem", "entitySource");
+            }
+            this.entitySource = entitySource;
             return this;
         }
         @CustomType.Setter
         public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+            if (hostName == null) {
+              throw new MissingRequiredPropertyException("GetImportableComputeEntitiesItem", "hostName");
+            }
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder platformType(String platformType) {
-            this.platformType = Objects.requireNonNull(platformType);
+            if (platformType == null) {
+              throw new MissingRequiredPropertyException("GetImportableComputeEntitiesItem", "platformType");
+            }
+            this.platformType = platformType;
             return this;
         }
         public GetImportableComputeEntitiesItem build() {

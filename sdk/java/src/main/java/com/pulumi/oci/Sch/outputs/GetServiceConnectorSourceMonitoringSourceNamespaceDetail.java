@@ -4,6 +4,7 @@
 package com.pulumi.oci.Sch.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Sch.outputs.GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace;
 import java.lang.String;
 import java.util.List;
@@ -58,12 +59,18 @@ public final class GetServiceConnectorSourceMonitoringSourceNamespaceDetail {
 
         @CustomType.Setter
         public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+            if (kind == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorSourceMonitoringSourceNamespaceDetail", "kind");
+            }
+            this.kind = kind;
             return this;
         }
         @CustomType.Setter
         public Builder namespaces(List<GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace> namespaces) {
-            this.namespaces = Objects.requireNonNull(namespaces);
+            if (namespaces == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorSourceMonitoringSourceNamespaceDetail", "namespaces");
+            }
+            this.namespaces = namespaces;
             return this;
         }
         public Builder namespaces(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace... namespaces) {

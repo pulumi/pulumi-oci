@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberBackendSetMapping;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberBlockVolumeOperation;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberExportMapping;
@@ -289,6 +290,7 @@ public final class DrProtectionGroupMember {
 
         @CustomType.Setter
         public Builder backendSetMappings(@Nullable List<DrProtectionGroupMemberBackendSetMapping> backendSetMappings) {
+
             this.backendSetMappings = backendSetMappings;
             return this;
         }
@@ -297,6 +299,7 @@ public final class DrProtectionGroupMember {
         }
         @CustomType.Setter
         public Builder blockVolumeOperations(@Nullable List<DrProtectionGroupMemberBlockVolumeOperation> blockVolumeOperations) {
+
             this.blockVolumeOperations = blockVolumeOperations;
             return this;
         }
@@ -305,36 +308,43 @@ public final class DrProtectionGroupMember {
         }
         @CustomType.Setter
         public Builder destinationAvailabilityDomain(@Nullable String destinationAvailabilityDomain) {
+
             this.destinationAvailabilityDomain = destinationAvailabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder destinationCapacityReservationId(@Nullable String destinationCapacityReservationId) {
+
             this.destinationCapacityReservationId = destinationCapacityReservationId;
             return this;
         }
         @CustomType.Setter
         public Builder destinationCompartmentId(@Nullable String destinationCompartmentId) {
+
             this.destinationCompartmentId = destinationCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder destinationDedicatedVmHostId(@Nullable String destinationDedicatedVmHostId) {
+
             this.destinationDedicatedVmHostId = destinationDedicatedVmHostId;
             return this;
         }
         @CustomType.Setter
         public Builder destinationLoadBalancerId(@Nullable String destinationLoadBalancerId) {
+
             this.destinationLoadBalancerId = destinationLoadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder destinationNetworkLoadBalancerId(@Nullable String destinationNetworkLoadBalancerId) {
+
             this.destinationNetworkLoadBalancerId = destinationNetworkLoadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder exportMappings(@Nullable List<DrProtectionGroupMemberExportMapping> exportMappings) {
+
             this.exportMappings = exportMappings;
             return this;
         }
@@ -343,6 +353,7 @@ public final class DrProtectionGroupMember {
         }
         @CustomType.Setter
         public Builder fileSystemOperations(@Nullable List<DrProtectionGroupMemberFileSystemOperation> fileSystemOperations) {
+
             this.fileSystemOperations = fileSystemOperations;
             return this;
         }
@@ -351,36 +362,47 @@ public final class DrProtectionGroupMember {
         }
         @CustomType.Setter
         public Builder isMovable(@Nullable Boolean isMovable) {
+
             this.isMovable = isMovable;
             return this;
         }
         @CustomType.Setter
         public Builder isRetainFaultDomain(@Nullable Boolean isRetainFaultDomain) {
+
             this.isRetainFaultDomain = isRetainFaultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder isStartStopEnabled(@Nullable Boolean isStartStopEnabled) {
+
             this.isStartStopEnabled = isStartStopEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder memberId(String memberId) {
-            this.memberId = Objects.requireNonNull(memberId);
+            if (memberId == null) {
+              throw new MissingRequiredPropertyException("DrProtectionGroupMember", "memberId");
+            }
+            this.memberId = memberId;
             return this;
         }
         @CustomType.Setter
         public Builder memberType(String memberType) {
-            this.memberType = Objects.requireNonNull(memberType);
+            if (memberType == null) {
+              throw new MissingRequiredPropertyException("DrProtectionGroupMember", "memberType");
+            }
+            this.memberType = memberType;
             return this;
         }
         @CustomType.Setter
         public Builder passwordVaultSecretId(@Nullable String passwordVaultSecretId) {
+
             this.passwordVaultSecretId = passwordVaultSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder vnicMapping(@Nullable List<DrProtectionGroupMemberVnicMapping> vnicMapping) {
+
             this.vnicMapping = vnicMapping;
             return this;
         }
@@ -389,6 +411,7 @@ public final class DrProtectionGroupMember {
         }
         @CustomType.Setter
         public Builder vnicMappings(@Nullable List<DrProtectionGroupMemberVnicMapping> vnicMappings) {
+
             this.vnicMappings = vnicMappings;
             return this;
         }

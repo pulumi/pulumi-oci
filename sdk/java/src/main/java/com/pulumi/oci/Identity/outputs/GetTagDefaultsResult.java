@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetTagDefaultsFilter;
 import com.pulumi.oci.Identity.outputs.GetTagDefaultsTagDefault;
 import java.lang.String;
@@ -109,11 +110,13 @@ public final class GetTagDefaultsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetTagDefaultsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -122,17 +125,22 @@ public final class GetTagDefaultsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder tagDefaults(List<GetTagDefaultsTagDefault> tagDefaults) {
-            this.tagDefaults = Objects.requireNonNull(tagDefaults);
+            if (tagDefaults == null) {
+              throw new MissingRequiredPropertyException("GetTagDefaultsResult", "tagDefaults");
+            }
+            this.tagDefaults = tagDefaults;
             return this;
         }
         public Builder tagDefaults(GetTagDefaultsTagDefault... tagDefaults) {
@@ -140,6 +148,7 @@ public final class GetTagDefaultsResult {
         }
         @CustomType.Setter
         public Builder tagDefinitionId(@Nullable String tagDefinitionId) {
+
             this.tagDefinitionId = tagDefinitionId;
             return this;
         }

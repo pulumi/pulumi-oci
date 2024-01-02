@@ -44,6 +44,7 @@ public final class DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails 
 
         @CustomType.Setter
         public Builder volumeAttachmentReferenceInstanceId(@Nullable String volumeAttachmentReferenceInstanceId) {
+
             this.volumeAttachmentReferenceInstanceId = volumeAttachmentReferenceInstanceId;
             return this;
         }

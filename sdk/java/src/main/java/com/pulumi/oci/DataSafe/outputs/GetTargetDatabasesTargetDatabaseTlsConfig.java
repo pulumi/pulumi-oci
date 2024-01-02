@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetTargetDatabasesTargetDatabaseTlsConfig {
 
         @CustomType.Setter
         public Builder certificateStoreType(String certificateStoreType) {
-            this.certificateStoreType = Objects.requireNonNull(certificateStoreType);
+            if (certificateStoreType == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabaseTlsConfig", "certificateStoreType");
+            }
+            this.certificateStoreType = certificateStoreType;
             return this;
         }
         @CustomType.Setter
         public Builder keyStoreContent(String keyStoreContent) {
-            this.keyStoreContent = Objects.requireNonNull(keyStoreContent);
+            if (keyStoreContent == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabaseTlsConfig", "keyStoreContent");
+            }
+            this.keyStoreContent = keyStoreContent;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabaseTlsConfig", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder storePassword(String storePassword) {
-            this.storePassword = Objects.requireNonNull(storePassword);
+            if (storePassword == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabaseTlsConfig", "storePassword");
+            }
+            this.storePassword = storePassword;
             return this;
         }
         @CustomType.Setter
         public Builder trustStoreContent(String trustStoreContent) {
-            this.trustStoreContent = Objects.requireNonNull(trustStoreContent);
+            if (trustStoreContent == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabaseTlsConfig", "trustStoreContent");
+            }
+            this.trustStoreContent = trustStoreContent;
             return this;
         }
         public GetTargetDatabasesTargetDatabaseTlsConfig build() {

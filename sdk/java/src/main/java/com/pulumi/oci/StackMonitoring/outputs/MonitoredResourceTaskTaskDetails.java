@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -126,11 +127,13 @@ public final class MonitoredResourceTaskTaskDetails {
 
         @CustomType.Setter
         public Builder availabilityProxyMetricCollectionInterval(@Nullable Integer availabilityProxyMetricCollectionInterval) {
+
             this.availabilityProxyMetricCollectionInterval = availabilityProxyMetricCollectionInterval;
             return this;
         }
         @CustomType.Setter
         public Builder availabilityProxyMetrics(@Nullable List<String> availabilityProxyMetrics) {
+
             this.availabilityProxyMetrics = availabilityProxyMetrics;
             return this;
         }
@@ -139,22 +142,32 @@ public final class MonitoredResourceTaskTaskDetails {
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("MonitoredResourceTaskTaskDetails", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder resourceGroup(@Nullable String resourceGroup) {
+
             this.resourceGroup = resourceGroup;
             return this;
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("MonitoredResourceTaskTaskDetails", "source");
+            }
+            this.source = source;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("MonitoredResourceTaskTaskDetails", "type");
+            }
+            this.type = type;
             return this;
         }
         public MonitoredResourceTaskTaskDetails build() {

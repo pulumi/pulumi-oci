@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAttentionLogCountsFilter;
 import java.lang.Boolean;
 import java.lang.String;
@@ -274,7 +275,9 @@ public final class GetManagedDatabaseAttentionLogCountsPlainArgs extends com.pul
         }
 
         public GetManagedDatabaseAttentionLogCountsPlainArgs build() {
-            $.managedDatabaseId = Objects.requireNonNull($.managedDatabaseId, "expected parameter 'managedDatabaseId' to be non-null");
+            if ($.managedDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseAttentionLogCountsPlainArgs", "managedDatabaseId");
+            }
             return $;
         }
     }

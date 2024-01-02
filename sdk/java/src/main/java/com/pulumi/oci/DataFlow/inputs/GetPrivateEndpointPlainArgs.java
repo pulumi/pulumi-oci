@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetPrivateEndpointPlainArgs extends com.pulumi.resources.Invo
         }
 
         public GetPrivateEndpointPlainArgs build() {
-            $.privateEndpointId = Objects.requireNonNull($.privateEndpointId, "expected parameter 'privateEndpointId' to be non-null");
+            if ($.privateEndpointId == null) {
+                throw new MissingRequiredPropertyException("GetPrivateEndpointPlainArgs", "privateEndpointId");
+            }
             return $;
         }
     }

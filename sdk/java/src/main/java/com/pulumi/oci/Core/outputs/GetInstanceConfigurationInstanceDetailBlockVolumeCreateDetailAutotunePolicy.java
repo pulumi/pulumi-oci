@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail
 
         @CustomType.Setter
         public Builder autotuneType(String autotuneType) {
-            this.autotuneType = Objects.requireNonNull(autotuneType);
+            if (autotuneType == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy", "autotuneType");
+            }
+            this.autotuneType = autotuneType;
             return this;
         }
         @CustomType.Setter
         public Builder maxVpusPerGb(String maxVpusPerGb) {
-            this.maxVpusPerGb = Objects.requireNonNull(maxVpusPerGb);
+            if (maxVpusPerGb == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy", "maxVpusPerGb");
+            }
+            this.maxVpusPerGb = maxVpusPerGb;
             return this;
         }
         public GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy build() {

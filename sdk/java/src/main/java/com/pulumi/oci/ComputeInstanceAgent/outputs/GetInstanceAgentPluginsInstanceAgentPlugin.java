@@ -4,6 +4,7 @@
 package com.pulumi.oci.ComputeInstanceAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetInstanceAgentPluginsInstanceAgentPlugin {
 
         @CustomType.Setter
         public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+            if (message == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAgentPluginsInstanceAgentPlugin", "message");
+            }
+            this.message = message;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAgentPluginsInstanceAgentPlugin", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAgentPluginsInstanceAgentPlugin", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastUpdatedUtc(String timeLastUpdatedUtc) {
-            this.timeLastUpdatedUtc = Objects.requireNonNull(timeLastUpdatedUtc);
+            if (timeLastUpdatedUtc == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAgentPluginsInstanceAgentPlugin", "timeLastUpdatedUtc");
+            }
+            this.timeLastUpdatedUtc = timeLastUpdatedUtc;
             return this;
         }
         public GetInstanceAgentPluginsInstanceAgentPlugin build() {

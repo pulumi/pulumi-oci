@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -210,67 +211,106 @@ public final class GetJavaFamilyLatestReleaseArtifact {
 
         @CustomType.Setter
         public Builder approximateFileSizeInBytes(String approximateFileSizeInBytes) {
-            this.approximateFileSizeInBytes = Objects.requireNonNull(approximateFileSizeInBytes);
+            if (approximateFileSizeInBytes == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyLatestReleaseArtifact", "approximateFileSizeInBytes");
+            }
+            this.approximateFileSizeInBytes = approximateFileSizeInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder architecture(String architecture) {
-            this.architecture = Objects.requireNonNull(architecture);
+            if (architecture == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyLatestReleaseArtifact", "architecture");
+            }
+            this.architecture = architecture;
             return this;
         }
         @CustomType.Setter
         public Builder artifactContentType(String artifactContentType) {
-            this.artifactContentType = Objects.requireNonNull(artifactContentType);
+            if (artifactContentType == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyLatestReleaseArtifact", "artifactContentType");
+            }
+            this.artifactContentType = artifactContentType;
             return this;
         }
         @CustomType.Setter
         public Builder artifactDescription(String artifactDescription) {
-            this.artifactDescription = Objects.requireNonNull(artifactDescription);
+            if (artifactDescription == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyLatestReleaseArtifact", "artifactDescription");
+            }
+            this.artifactDescription = artifactDescription;
             return this;
         }
         @CustomType.Setter
         public Builder artifactFileName(String artifactFileName) {
-            this.artifactFileName = Objects.requireNonNull(artifactFileName);
+            if (artifactFileName == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyLatestReleaseArtifact", "artifactFileName");
+            }
+            this.artifactFileName = artifactFileName;
             return this;
         }
         @CustomType.Setter
         public Builder artifactId(String artifactId) {
-            this.artifactId = Objects.requireNonNull(artifactId);
+            if (artifactId == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyLatestReleaseArtifact", "artifactId");
+            }
+            this.artifactId = artifactId;
             return this;
         }
         @CustomType.Setter
         public Builder downloadUrl(String downloadUrl) {
-            this.downloadUrl = Objects.requireNonNull(downloadUrl);
+            if (downloadUrl == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyLatestReleaseArtifact", "downloadUrl");
+            }
+            this.downloadUrl = downloadUrl;
             return this;
         }
         @CustomType.Setter
         public Builder osFamily(String osFamily) {
-            this.osFamily = Objects.requireNonNull(osFamily);
+            if (osFamily == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyLatestReleaseArtifact", "osFamily");
+            }
+            this.osFamily = osFamily;
             return this;
         }
         @CustomType.Setter
         public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+            if (packageType == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyLatestReleaseArtifact", "packageType");
+            }
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
         public Builder packageTypeDetail(String packageTypeDetail) {
-            this.packageTypeDetail = Objects.requireNonNull(packageTypeDetail);
+            if (packageTypeDetail == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyLatestReleaseArtifact", "packageTypeDetail");
+            }
+            this.packageTypeDetail = packageTypeDetail;
             return this;
         }
         @CustomType.Setter
         public Builder scriptChecksumUrl(String scriptChecksumUrl) {
-            this.scriptChecksumUrl = Objects.requireNonNull(scriptChecksumUrl);
+            if (scriptChecksumUrl == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyLatestReleaseArtifact", "scriptChecksumUrl");
+            }
+            this.scriptChecksumUrl = scriptChecksumUrl;
             return this;
         }
         @CustomType.Setter
         public Builder scriptDownloadUrl(String scriptDownloadUrl) {
-            this.scriptDownloadUrl = Objects.requireNonNull(scriptDownloadUrl);
+            if (scriptDownloadUrl == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyLatestReleaseArtifact", "scriptDownloadUrl");
+            }
+            this.scriptDownloadUrl = scriptDownloadUrl;
             return this;
         }
         @CustomType.Setter
         public Builder sha256(String sha256) {
-            this.sha256 = Objects.requireNonNull(sha256);
+            if (sha256 == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyLatestReleaseArtifact", "sha256");
+            }
+            this.sha256 = sha256;
             return this;
         }
         public GetJavaFamilyLatestReleaseArtifact build() {

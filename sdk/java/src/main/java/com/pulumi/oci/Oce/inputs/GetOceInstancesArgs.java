@@ -5,6 +5,7 @@ package com.pulumi.oci.Oce.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Oce.inputs.GetOceInstancesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -210,7 +211,9 @@ public final class GetOceInstancesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetOceInstancesArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetOceInstancesArgs", "compartmentId");
+            }
             return $;
         }
     }

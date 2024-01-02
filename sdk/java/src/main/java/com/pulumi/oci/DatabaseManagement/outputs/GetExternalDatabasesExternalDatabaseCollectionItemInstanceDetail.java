@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemInstanceDet
 
         @CustomType.Setter
         public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+            if (hostName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail", "hostName");
+            }
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder instanceName(String instanceName) {
-            this.instanceName = Objects.requireNonNull(instanceName);
+            if (instanceName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail", "instanceName");
+            }
+            this.instanceName = instanceName;
             return this;
         }
         @CustomType.Setter
         public Builder instanceNumber(Integer instanceNumber) {
-            this.instanceNumber = Objects.requireNonNull(instanceNumber);
+            if (instanceNumber == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail", "instanceNumber");
+            }
+            this.instanceNumber = instanceNumber;
             return this;
         }
         public GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail build() {

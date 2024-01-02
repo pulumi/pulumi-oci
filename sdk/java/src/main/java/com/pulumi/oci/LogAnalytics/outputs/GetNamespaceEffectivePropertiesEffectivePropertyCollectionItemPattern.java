@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetNamespaceEffectivePropertiesEffectivePropertyCollectionIte
 
         @CustomType.Setter
         public Builder effectiveLevel(String effectiveLevel) {
-            this.effectiveLevel = Objects.requireNonNull(effectiveLevel);
+            if (effectiveLevel == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern", "effectiveLevel");
+            }
+            this.effectiveLevel = effectiveLevel;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern build() {

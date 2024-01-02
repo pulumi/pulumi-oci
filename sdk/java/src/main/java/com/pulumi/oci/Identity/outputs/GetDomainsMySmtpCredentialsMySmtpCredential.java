@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsMySmtpCredentialsMySmtpCredentialIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsMySmtpCredentialsMySmtpCredentialIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsMySmtpCredentialsMySmtpCredentialMeta;
@@ -329,42 +330,66 @@ public final class GetDomainsMySmtpCredentialsMySmtpCredential {
 
         @CustomType.Setter
         public Builder authorization(String authorization) {
-            this.authorization = Objects.requireNonNull(authorization);
+            if (authorization == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "authorization");
+            }
+            this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder expiresOn(String expiresOn) {
-            this.expiresOn = Objects.requireNonNull(expiresOn);
+            if (expiresOn == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "expiresOn");
+            }
+            this.expiresOn = expiresOn;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsMySmtpCredentialsMySmtpCredentialIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsMySmtpCredentialsMySmtpCredentialIdcsCreatedBy... idcsCreatedBies) {
@@ -372,12 +397,18 @@ public final class GetDomainsMySmtpCredentialsMySmtpCredential {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsMySmtpCredentialsMySmtpCredentialIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsMySmtpCredentialsMySmtpCredentialIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -385,12 +416,18 @@ public final class GetDomainsMySmtpCredentialsMySmtpCredential {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -398,7 +435,10 @@ public final class GetDomainsMySmtpCredentialsMySmtpCredential {
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsMySmtpCredentialsMySmtpCredentialMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsMySmtpCredentialsMySmtpCredentialMeta... metas) {
@@ -406,17 +446,26 @@ public final class GetDomainsMySmtpCredentialsMySmtpCredential {
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(String resourceTypeSchemaVersion) {
-            this.resourceTypeSchemaVersion = Objects.requireNonNull(resourceTypeSchemaVersion);
+            if (resourceTypeSchemaVersion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "resourceTypeSchemaVersion");
+            }
+            this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -424,12 +473,18 @@ public final class GetDomainsMySmtpCredentialsMySmtpCredential {
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsMySmtpCredentialsMySmtpCredentialTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsMySmtpCredentialsMySmtpCredentialTag... tags) {
@@ -437,17 +492,26 @@ public final class GetDomainsMySmtpCredentialsMySmtpCredential {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+            if (userName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "userName");
+            }
+            this.userName = userName;
             return this;
         }
         @CustomType.Setter
         public Builder users(List<GetDomainsMySmtpCredentialsMySmtpCredentialUser> users) {
-            this.users = Objects.requireNonNull(users);
+            if (users == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialsMySmtpCredential", "users");
+            }
+            this.users = users;
             return this;
         }
         public Builder users(GetDomainsMySmtpCredentialsMySmtpCredentialUser... users) {

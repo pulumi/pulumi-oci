@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opa.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opa.outputs.GetOpaInstancesOpaInstanceCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetOpaInstancesOpaInstanceCollection {
 
         @CustomType.Setter
         public Builder items(List<GetOpaInstancesOpaInstanceCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstancesOpaInstanceCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetOpaInstancesOpaInstanceCollectionItem... items) {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Monitoring;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Monitoring.inputs.AlarmSuppressionArgs;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -885,14 +886,30 @@ public final class AlarmArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public AlarmArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.destinations = Objects.requireNonNull($.destinations, "expected parameter 'destinations' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.isEnabled = Objects.requireNonNull($.isEnabled, "expected parameter 'isEnabled' to be non-null");
-            $.metricCompartmentId = Objects.requireNonNull($.metricCompartmentId, "expected parameter 'metricCompartmentId' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
-            $.query = Objects.requireNonNull($.query, "expected parameter 'query' to be non-null");
-            $.severity = Objects.requireNonNull($.severity, "expected parameter 'severity' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AlarmArgs", "compartmentId");
+            }
+            if ($.destinations == null) {
+                throw new MissingRequiredPropertyException("AlarmArgs", "destinations");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("AlarmArgs", "displayName");
+            }
+            if ($.isEnabled == null) {
+                throw new MissingRequiredPropertyException("AlarmArgs", "isEnabled");
+            }
+            if ($.metricCompartmentId == null) {
+                throw new MissingRequiredPropertyException("AlarmArgs", "metricCompartmentId");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("AlarmArgs", "namespace");
+            }
+            if ($.query == null) {
+                throw new MissingRequiredPropertyException("AlarmArgs", "query");
+            }
+            if ($.severity == null) {
+                throw new MissingRequiredPropertyException("AlarmArgs", "severity");
+            }
             return $;
         }
     }

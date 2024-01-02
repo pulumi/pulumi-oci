@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -48,12 +49,18 @@ public final class GetReportContentResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetReportContentResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder reportId(String reportId) {
-            this.reportId = Objects.requireNonNull(reportId);
+            if (reportId == null) {
+              throw new MissingRequiredPropertyException("GetReportContentResult", "reportId");
+            }
+            this.reportId = reportId;
             return this;
         }
         public GetReportContentResult build() {

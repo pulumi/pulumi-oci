@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetChannelSourceAnonymousTransactionsHandling;
 import com.pulumi.oci.Mysql.outputs.GetChannelSourceSslCaCertificate;
 import java.lang.Integer;
@@ -136,7 +137,10 @@ public final class GetChannelSource {
 
         @CustomType.Setter
         public Builder anonymousTransactionsHandlings(List<GetChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings) {
-            this.anonymousTransactionsHandlings = Objects.requireNonNull(anonymousTransactionsHandlings);
+            if (anonymousTransactionsHandlings == null) {
+              throw new MissingRequiredPropertyException("GetChannelSource", "anonymousTransactionsHandlings");
+            }
+            this.anonymousTransactionsHandlings = anonymousTransactionsHandlings;
             return this;
         }
         public Builder anonymousTransactionsHandlings(GetChannelSourceAnonymousTransactionsHandling... anonymousTransactionsHandlings) {
@@ -144,27 +148,42 @@ public final class GetChannelSource {
         }
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("GetChannelSource", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+            if (password == null) {
+              throw new MissingRequiredPropertyException("GetChannelSource", "password");
+            }
+            this.password = password;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetChannelSource", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetChannelSource", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
         public Builder sslCaCertificates(List<GetChannelSourceSslCaCertificate> sslCaCertificates) {
-            this.sslCaCertificates = Objects.requireNonNull(sslCaCertificates);
+            if (sslCaCertificates == null) {
+              throw new MissingRequiredPropertyException("GetChannelSource", "sslCaCertificates");
+            }
+            this.sslCaCertificates = sslCaCertificates;
             return this;
         }
         public Builder sslCaCertificates(GetChannelSourceSslCaCertificate... sslCaCertificates) {
@@ -172,12 +191,18 @@ public final class GetChannelSource {
         }
         @CustomType.Setter
         public Builder sslMode(String sslMode) {
-            this.sslMode = Objects.requireNonNull(sslMode);
+            if (sslMode == null) {
+              throw new MissingRequiredPropertyException("GetChannelSource", "sslMode");
+            }
+            this.sslMode = sslMode;
             return this;
         }
         @CustomType.Setter
         public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+            if (username == null) {
+              throw new MissingRequiredPropertyException("GetChannelSource", "username");
+            }
+            this.username = username;
             return this;
         }
         public GetChannelSource build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -112,32 +113,50 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
 
         @CustomType.Setter
         public Builder checksum(String checksum) {
-            this.checksum = Objects.requireNonNull(checksum);
+            if (checksum == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile", "checksum");
+            }
+            this.checksum = checksum;
             return this;
         }
         @CustomType.Setter
         public Builder checksumType(String checksumType) {
-            this.checksumType = Objects.requireNonNull(checksumType);
+            if (checksumType == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile", "checksumType");
+            }
+            this.checksumType = checksumType;
             return this;
         }
         @CustomType.Setter
         public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+            if (path == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile", "path");
+            }
+            this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInBytes(String sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+            if (sizeInBytes == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile", "sizeInBytes");
+            }
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder timeModified(String timeModified) {
-            this.timeModified = Objects.requireNonNull(timeModified);
+            if (timeModified == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile", "timeModified");
+            }
+            this.timeModified = timeModified;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile build() {

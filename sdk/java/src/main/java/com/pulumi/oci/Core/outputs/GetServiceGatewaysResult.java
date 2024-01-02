@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetServiceGatewaysFilter;
 import com.pulumi.oci.Core.outputs.GetServiceGatewaysServiceGateway;
 import java.lang.String;
@@ -109,11 +110,15 @@ public final class GetServiceGatewaysResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetServiceGatewaysResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetServiceGatewaysFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -122,12 +127,18 @@ public final class GetServiceGatewaysResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetServiceGatewaysResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder serviceGateways(List<GetServiceGatewaysServiceGateway> serviceGateways) {
-            this.serviceGateways = Objects.requireNonNull(serviceGateways);
+            if (serviceGateways == null) {
+              throw new MissingRequiredPropertyException("GetServiceGatewaysResult", "serviceGateways");
+            }
+            this.serviceGateways = serviceGateways;
             return this;
         }
         public Builder serviceGateways(GetServiceGatewaysServiceGateway... serviceGateways) {
@@ -135,11 +146,13 @@ public final class GetServiceGatewaysResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
+
             this.vcnId = vcnId;
             return this;
         }

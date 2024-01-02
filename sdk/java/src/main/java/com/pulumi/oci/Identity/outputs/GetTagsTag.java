@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetTagsTagValidator;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -187,57 +188,90 @@ public final class GetTagsTag {
 
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetTagsTag", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetTagsTag", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetTagsTag", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTagsTag", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCostTracking(Boolean isCostTracking) {
-            this.isCostTracking = Objects.requireNonNull(isCostTracking);
+            if (isCostTracking == null) {
+              throw new MissingRequiredPropertyException("GetTagsTag", "isCostTracking");
+            }
+            this.isCostTracking = isCostTracking;
             return this;
         }
         @CustomType.Setter
         public Builder isRetired(Boolean isRetired) {
-            this.isRetired = Objects.requireNonNull(isRetired);
+            if (isRetired == null) {
+              throw new MissingRequiredPropertyException("GetTagsTag", "isRetired");
+            }
+            this.isRetired = isRetired;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetTagsTag", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetTagsTag", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder tagNamespaceId(String tagNamespaceId) {
-            this.tagNamespaceId = Objects.requireNonNull(tagNamespaceId);
+            if (tagNamespaceId == null) {
+              throw new MissingRequiredPropertyException("GetTagsTag", "tagNamespaceId");
+            }
+            this.tagNamespaceId = tagNamespaceId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetTagsTag", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder validators(List<GetTagsTagValidator> validators) {
-            this.validators = Objects.requireNonNull(validators);
+            if (validators == null) {
+              throw new MissingRequiredPropertyException("GetTagsTag", "validators");
+            }
+            this.validators = validators;
             return this;
         }
         public Builder validators(GetTagsTagValidator... validators) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformF
 
         @CustomType.Setter
         public Builder formUrl(String formUrl) {
-            this.formUrl = Objects.requireNonNull(formUrl);
+            if (formUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatch", "formUrl");
+            }
+            this.formUrl = formUrl;
             return this;
         }
         @CustomType.Setter
         public Builder formUrlMatchType(String formUrlMatchType) {
-            this.formUrlMatchType = Objects.requireNonNull(formUrlMatchType);
+            if (formUrlMatchType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatch", "formUrlMatchType");
+            }
+            this.formUrlMatchType = formUrlMatchType;
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatch build() {

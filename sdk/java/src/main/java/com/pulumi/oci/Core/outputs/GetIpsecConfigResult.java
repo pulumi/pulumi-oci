@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetIpsecConfigFilter;
 import com.pulumi.oci.Core.outputs.GetIpsecConfigTunnel;
 import java.lang.String;
@@ -100,11 +101,15 @@ public final class GetIpsecConfigResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConfigResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetIpsecConfigFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -113,22 +118,34 @@ public final class GetIpsecConfigResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConfigResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipsecId(String ipsecId) {
-            this.ipsecId = Objects.requireNonNull(ipsecId);
+            if (ipsecId == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConfigResult", "ipsecId");
+            }
+            this.ipsecId = ipsecId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConfigResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder tunnels(List<GetIpsecConfigTunnel> tunnels) {
-            this.tunnels = Objects.requireNonNull(tunnels);
+            if (tunnels == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConfigResult", "tunnels");
+            }
+            this.tunnels = tunnels;
             return this;
         }
         public Builder tunnels(GetIpsecConfigTunnel... tunnels) {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -272,8 +273,12 @@ public final class GetDomainsMyTrustedUserAgentArgs extends com.pulumi.resources
         }
 
         public GetDomainsMyTrustedUserAgentArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.myTrustedUserAgentId = Objects.requireNonNull($.myTrustedUserAgentId, "expected parameter 'myTrustedUserAgentId' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentArgs", "idcsEndpoint");
+            }
+            if ($.myTrustedUserAgentId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentArgs", "myTrustedUserAgentId");
+            }
             return $;
         }
     }

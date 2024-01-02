@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -72,16 +73,23 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulation {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("PolicyWafConfigAccessRuleResponseHeaderManipulation", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder header(String header) {
-            this.header = Objects.requireNonNull(header);
+            if (header == null) {
+              throw new MissingRequiredPropertyException("PolicyWafConfigAccessRuleResponseHeaderManipulation", "header");
+            }
+            this.header = header;
             return this;
         }
         @CustomType.Setter
         public Builder value(@Nullable String value) {
+
             this.value = value;
             return this;
         }

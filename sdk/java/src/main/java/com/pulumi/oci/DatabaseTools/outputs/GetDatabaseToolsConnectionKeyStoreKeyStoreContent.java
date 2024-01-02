@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseTools.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetDatabaseToolsConnectionKeyStoreKeyStoreContent {
 
         @CustomType.Setter
         public Builder secretId(String secretId) {
-            this.secretId = Objects.requireNonNull(secretId);
+            if (secretId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionKeyStoreKeyStoreContent", "secretId");
+            }
+            this.secretId = secretId;
             return this;
         }
         @CustomType.Setter
         public Builder valueType(String valueType) {
-            this.valueType = Objects.requireNonNull(valueType);
+            if (valueType == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionKeyStoreKeyStoreContent", "valueType");
+            }
+            this.valueType = valueType;
             return this;
         }
         public GetDatabaseToolsConnectionKeyStoreKeyStoreContent build() {

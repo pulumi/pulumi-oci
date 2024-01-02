@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbSystemHistoryEntriesFilter;
 import com.pulumi.oci.Database.outputs.GetDbSystemHistoryEntriesPatchHistoryEntry;
 import java.lang.String;
@@ -72,11 +73,15 @@ public final class GetDbSystemHistoryEntriesResult {
 
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemHistoryEntriesResult", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDbSystemHistoryEntriesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -85,12 +90,18 @@ public final class GetDbSystemHistoryEntriesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemHistoryEntriesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder patchHistoryEntries(List<GetDbSystemHistoryEntriesPatchHistoryEntry> patchHistoryEntries) {
-            this.patchHistoryEntries = Objects.requireNonNull(patchHistoryEntries);
+            if (patchHistoryEntries == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemHistoryEntriesResult", "patchHistoryEntries");
+            }
+            this.patchHistoryEntries = patchHistoryEntries;
             return this;
         }
         public Builder patchHistoryEntries(GetDbSystemHistoryEntriesPatchHistoryEntry... patchHistoryEntries) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetIamWorkRequestResource;
 import java.lang.Double;
 import java.lang.String;
@@ -163,32 +164,50 @@ public final class GetIamWorkRequestResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder iamWorkRequestId(String iamWorkRequestId) {
-            this.iamWorkRequestId = Objects.requireNonNull(iamWorkRequestId);
+            if (iamWorkRequestId == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestResult", "iamWorkRequestId");
+            }
+            this.iamWorkRequestId = iamWorkRequestId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder operationType(String operationType) {
-            this.operationType = Objects.requireNonNull(operationType);
+            if (operationType == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestResult", "operationType");
+            }
+            this.operationType = operationType;
             return this;
         }
         @CustomType.Setter
         public Builder percentComplete(Double percentComplete) {
-            this.percentComplete = Objects.requireNonNull(percentComplete);
+            if (percentComplete == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestResult", "percentComplete");
+            }
+            this.percentComplete = percentComplete;
             return this;
         }
         @CustomType.Setter
         public Builder resources(List<GetIamWorkRequestResource> resources) {
-            this.resources = Objects.requireNonNull(resources);
+            if (resources == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestResult", "resources");
+            }
+            this.resources = resources;
             return this;
         }
         public Builder resources(GetIamWorkRequestResource... resources) {
@@ -196,22 +215,34 @@ public final class GetIamWorkRequestResult {
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder timeAccepted(String timeAccepted) {
-            this.timeAccepted = Objects.requireNonNull(timeAccepted);
+            if (timeAccepted == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestResult", "timeAccepted");
+            }
+            this.timeAccepted = timeAccepted;
             return this;
         }
         @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+            if (timeFinished == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestResult", "timeFinished");
+            }
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestResult", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetIamWorkRequestResult build() {

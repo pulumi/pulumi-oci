@@ -5,6 +5,7 @@ package com.pulumi.oci.Oce.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetOceInstanceArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetOceInstanceArgs build() {
-            $.oceInstanceId = Objects.requireNonNull($.oceInstanceId, "expected parameter 'oceInstanceId' to be non-null");
+            if ($.oceInstanceId == null) {
+                throw new MissingRequiredPropertyException("GetOceInstanceArgs", "oceInstanceId");
+            }
             return $;
         }
     }

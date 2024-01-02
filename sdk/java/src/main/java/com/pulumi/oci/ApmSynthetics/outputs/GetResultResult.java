@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.outputs.GetResultResultDataSet;
 import java.lang.String;
 import java.util.List;
@@ -134,32 +135,50 @@ public final class GetResultResult {
 
         @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
-            this.apmDomainId = Objects.requireNonNull(apmDomainId);
+            if (apmDomainId == null) {
+              throw new MissingRequiredPropertyException("GetResultResult", "apmDomainId");
+            }
+            this.apmDomainId = apmDomainId;
             return this;
         }
         @CustomType.Setter
         public Builder executionTime(String executionTime) {
-            this.executionTime = Objects.requireNonNull(executionTime);
+            if (executionTime == null) {
+              throw new MissingRequiredPropertyException("GetResultResult", "executionTime");
+            }
+            this.executionTime = executionTime;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetResultResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder monitorId(String monitorId) {
-            this.monitorId = Objects.requireNonNull(monitorId);
+            if (monitorId == null) {
+              throw new MissingRequiredPropertyException("GetResultResult", "monitorId");
+            }
+            this.monitorId = monitorId;
             return this;
         }
         @CustomType.Setter
         public Builder resultContentType(String resultContentType) {
-            this.resultContentType = Objects.requireNonNull(resultContentType);
+            if (resultContentType == null) {
+              throw new MissingRequiredPropertyException("GetResultResult", "resultContentType");
+            }
+            this.resultContentType = resultContentType;
             return this;
         }
         @CustomType.Setter
         public Builder resultDataSets(List<GetResultResultDataSet> resultDataSets) {
-            this.resultDataSets = Objects.requireNonNull(resultDataSets);
+            if (resultDataSets == null) {
+              throw new MissingRequiredPropertyException("GetResultResult", "resultDataSets");
+            }
+            this.resultDataSets = resultDataSets;
             return this;
         }
         public Builder resultDataSets(GetResultResultDataSet... resultDataSets) {
@@ -167,12 +186,18 @@ public final class GetResultResult {
         }
         @CustomType.Setter
         public Builder resultType(String resultType) {
-            this.resultType = Objects.requireNonNull(resultType);
+            if (resultType == null) {
+              throw new MissingRequiredPropertyException("GetResultResult", "resultType");
+            }
+            this.resultType = resultType;
             return this;
         }
         @CustomType.Setter
         public Builder vantagePoint(String vantagePoint) {
-            this.vantagePoint = Objects.requireNonNull(vantagePoint);
+            if (vantagePoint == null) {
+              throw new MissingRequiredPropertyException("GetResultResult", "vantagePoint");
+            }
+            this.vantagePoint = vantagePoint;
             return this;
         }
         public GetResultResult build() {

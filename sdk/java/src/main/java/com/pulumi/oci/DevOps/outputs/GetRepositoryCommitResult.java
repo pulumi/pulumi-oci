@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -175,42 +176,66 @@ public final class GetRepositoryCommitResult {
 
         @CustomType.Setter
         public Builder authorEmail(String authorEmail) {
-            this.authorEmail = Objects.requireNonNull(authorEmail);
+            if (authorEmail == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryCommitResult", "authorEmail");
+            }
+            this.authorEmail = authorEmail;
             return this;
         }
         @CustomType.Setter
         public Builder authorName(String authorName) {
-            this.authorName = Objects.requireNonNull(authorName);
+            if (authorName == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryCommitResult", "authorName");
+            }
+            this.authorName = authorName;
             return this;
         }
         @CustomType.Setter
         public Builder commitId(String commitId) {
-            this.commitId = Objects.requireNonNull(commitId);
+            if (commitId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryCommitResult", "commitId");
+            }
+            this.commitId = commitId;
             return this;
         }
         @CustomType.Setter
         public Builder commitMessage(String commitMessage) {
-            this.commitMessage = Objects.requireNonNull(commitMessage);
+            if (commitMessage == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryCommitResult", "commitMessage");
+            }
+            this.commitMessage = commitMessage;
             return this;
         }
         @CustomType.Setter
         public Builder committerEmail(String committerEmail) {
-            this.committerEmail = Objects.requireNonNull(committerEmail);
+            if (committerEmail == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryCommitResult", "committerEmail");
+            }
+            this.committerEmail = committerEmail;
             return this;
         }
         @CustomType.Setter
         public Builder committerName(String committerName) {
-            this.committerName = Objects.requireNonNull(committerName);
+            if (committerName == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryCommitResult", "committerName");
+            }
+            this.committerName = committerName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryCommitResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder parentCommitIds(List<String> parentCommitIds) {
-            this.parentCommitIds = Objects.requireNonNull(parentCommitIds);
+            if (parentCommitIds == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryCommitResult", "parentCommitIds");
+            }
+            this.parentCommitIds = parentCommitIds;
             return this;
         }
         public Builder parentCommitIds(String... parentCommitIds) {
@@ -218,17 +243,26 @@ public final class GetRepositoryCommitResult {
         }
         @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+            if (repositoryId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryCommitResult", "repositoryId");
+            }
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryCommitResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder treeId(String treeId) {
-            this.treeId = Objects.requireNonNull(treeId);
+            if (treeId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryCommitResult", "treeId");
+            }
+            this.treeId = treeId;
             return this;
         }
         public GetRepositoryCommitResult build() {

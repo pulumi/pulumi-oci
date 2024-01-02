@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.outputs.GetApplicationApplicationLogConfig;
 import com.pulumi.oci.DataFlow.outputs.GetApplicationDriverShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.GetApplicationExecutorShapeConfig;
@@ -518,12 +519,18 @@ public final class GetApplicationResult {
 
         @CustomType.Setter
         public Builder applicationId(String applicationId) {
-            this.applicationId = Objects.requireNonNull(applicationId);
+            if (applicationId == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "applicationId");
+            }
+            this.applicationId = applicationId;
             return this;
         }
         @CustomType.Setter
         public Builder applicationLogConfigs(List<GetApplicationApplicationLogConfig> applicationLogConfigs) {
-            this.applicationLogConfigs = Objects.requireNonNull(applicationLogConfigs);
+            if (applicationLogConfigs == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "applicationLogConfigs");
+            }
+            this.applicationLogConfigs = applicationLogConfigs;
             return this;
         }
         public Builder applicationLogConfigs(GetApplicationApplicationLogConfig... applicationLogConfigs) {
@@ -531,12 +538,18 @@ public final class GetApplicationResult {
         }
         @CustomType.Setter
         public Builder archiveUri(String archiveUri) {
-            this.archiveUri = Objects.requireNonNull(archiveUri);
+            if (archiveUri == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "archiveUri");
+            }
+            this.archiveUri = archiveUri;
             return this;
         }
         @CustomType.Setter
         public Builder arguments(List<String> arguments) {
-            this.arguments = Objects.requireNonNull(arguments);
+            if (arguments == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "arguments");
+            }
+            this.arguments = arguments;
             return this;
         }
         public Builder arguments(String... arguments) {
@@ -544,42 +557,66 @@ public final class GetApplicationResult {
         }
         @CustomType.Setter
         public Builder className(String className) {
-            this.className = Objects.requireNonNull(className);
+            if (className == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "className");
+            }
+            this.className = className;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder configuration(Map<String,Object> configuration) {
-            this.configuration = Objects.requireNonNull(configuration);
+            if (configuration == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "configuration");
+            }
+            this.configuration = configuration;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder driverShape(String driverShape) {
-            this.driverShape = Objects.requireNonNull(driverShape);
+            if (driverShape == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "driverShape");
+            }
+            this.driverShape = driverShape;
             return this;
         }
         @CustomType.Setter
         public Builder driverShapeConfigs(List<GetApplicationDriverShapeConfig> driverShapeConfigs) {
-            this.driverShapeConfigs = Objects.requireNonNull(driverShapeConfigs);
+            if (driverShapeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "driverShapeConfigs");
+            }
+            this.driverShapeConfigs = driverShapeConfigs;
             return this;
         }
         public Builder driverShapeConfigs(GetApplicationDriverShapeConfig... driverShapeConfigs) {
@@ -587,17 +624,26 @@ public final class GetApplicationResult {
         }
         @CustomType.Setter
         public Builder execute(String execute) {
-            this.execute = Objects.requireNonNull(execute);
+            if (execute == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "execute");
+            }
+            this.execute = execute;
             return this;
         }
         @CustomType.Setter
         public Builder executorShape(String executorShape) {
-            this.executorShape = Objects.requireNonNull(executorShape);
+            if (executorShape == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "executorShape");
+            }
+            this.executorShape = executorShape;
             return this;
         }
         @CustomType.Setter
         public Builder executorShapeConfigs(List<GetApplicationExecutorShapeConfig> executorShapeConfigs) {
-            this.executorShapeConfigs = Objects.requireNonNull(executorShapeConfigs);
+            if (executorShapeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "executorShapeConfigs");
+            }
+            this.executorShapeConfigs = executorShapeConfigs;
             return this;
         }
         public Builder executorShapeConfigs(GetApplicationExecutorShapeConfig... executorShapeConfigs) {
@@ -605,62 +651,98 @@ public final class GetApplicationResult {
         }
         @CustomType.Setter
         public Builder fileUri(String fileUri) {
-            this.fileUri = Objects.requireNonNull(fileUri);
+            if (fileUri == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "fileUri");
+            }
+            this.fileUri = fileUri;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idleTimeoutInMinutes(String idleTimeoutInMinutes) {
-            this.idleTimeoutInMinutes = Objects.requireNonNull(idleTimeoutInMinutes);
+            if (idleTimeoutInMinutes == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "idleTimeoutInMinutes");
+            }
+            this.idleTimeoutInMinutes = idleTimeoutInMinutes;
             return this;
         }
         @CustomType.Setter
         public Builder language(String language) {
-            this.language = Objects.requireNonNull(language);
+            if (language == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "language");
+            }
+            this.language = language;
             return this;
         }
         @CustomType.Setter
         public Builder logsBucketUri(String logsBucketUri) {
-            this.logsBucketUri = Objects.requireNonNull(logsBucketUri);
+            if (logsBucketUri == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "logsBucketUri");
+            }
+            this.logsBucketUri = logsBucketUri;
             return this;
         }
         @CustomType.Setter
         public Builder maxDurationInMinutes(String maxDurationInMinutes) {
-            this.maxDurationInMinutes = Objects.requireNonNull(maxDurationInMinutes);
+            if (maxDurationInMinutes == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "maxDurationInMinutes");
+            }
+            this.maxDurationInMinutes = maxDurationInMinutes;
             return this;
         }
         @CustomType.Setter
         public Builder metastoreId(String metastoreId) {
-            this.metastoreId = Objects.requireNonNull(metastoreId);
+            if (metastoreId == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "metastoreId");
+            }
+            this.metastoreId = metastoreId;
             return this;
         }
         @CustomType.Setter
         public Builder numExecutors(Integer numExecutors) {
-            this.numExecutors = Objects.requireNonNull(numExecutors);
+            if (numExecutors == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "numExecutors");
+            }
+            this.numExecutors = numExecutors;
             return this;
         }
         @CustomType.Setter
         public Builder ownerPrincipalId(String ownerPrincipalId) {
-            this.ownerPrincipalId = Objects.requireNonNull(ownerPrincipalId);
+            if (ownerPrincipalId == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "ownerPrincipalId");
+            }
+            this.ownerPrincipalId = ownerPrincipalId;
             return this;
         }
         @CustomType.Setter
         public Builder ownerUserName(String ownerUserName) {
-            this.ownerUserName = Objects.requireNonNull(ownerUserName);
+            if (ownerUserName == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "ownerUserName");
+            }
+            this.ownerUserName = ownerUserName;
             return this;
         }
         @CustomType.Setter
         public Builder parameters(List<GetApplicationParameter> parameters) {
-            this.parameters = Objects.requireNonNull(parameters);
+            if (parameters == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "parameters");
+            }
+            this.parameters = parameters;
             return this;
         }
         public Builder parameters(GetApplicationParameter... parameters) {
@@ -668,42 +750,66 @@ public final class GetApplicationResult {
         }
         @CustomType.Setter
         public Builder poolId(String poolId) {
-            this.poolId = Objects.requireNonNull(poolId);
+            if (poolId == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "poolId");
+            }
+            this.poolId = poolId;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpointId(String privateEndpointId) {
-            this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
+            if (privateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "privateEndpointId");
+            }
+            this.privateEndpointId = privateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder sparkVersion(String sparkVersion) {
-            this.sparkVersion = Objects.requireNonNull(sparkVersion);
+            if (sparkVersion == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "sparkVersion");
+            }
+            this.sparkVersion = sparkVersion;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder warehouseBucketUri(String warehouseBucketUri) {
-            this.warehouseBucketUri = Objects.requireNonNull(warehouseBucketUri);
+            if (warehouseBucketUri == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "warehouseBucketUri");
+            }
+            this.warehouseBucketUri = warehouseBucketUri;
             return this;
         }
         public GetApplicationResult build() {

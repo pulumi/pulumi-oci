@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class TagValidator {
 
         @CustomType.Setter
         public Builder validatorType(String validatorType) {
-            this.validatorType = Objects.requireNonNull(validatorType);
+            if (validatorType == null) {
+              throw new MissingRequiredPropertyException("TagValidator", "validatorType");
+            }
+            this.validatorType = validatorType;
             return this;
         }
         @CustomType.Setter
         public Builder values(List<String> values) {
-            this.values = Objects.requireNonNull(values);
+            if (values == null) {
+              throw new MissingRequiredPropertyException("TagValidator", "values");
+            }
+            this.values = values;
             return this;
         }
         public Builder values(String... values) {

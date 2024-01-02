@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseTools.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContent;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
 
         @CustomType.Setter
         public Builder keyStoreContents(List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContent> keyStoreContents) {
-            this.keyStoreContents = Objects.requireNonNull(keyStoreContents);
+            if (keyStoreContents == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore", "keyStoreContents");
+            }
+            this.keyStoreContents = keyStoreContents;
             return this;
         }
         public Builder keyStoreContents(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContent... keyStoreContents) {
@@ -81,7 +85,10 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         }
         @CustomType.Setter
         public Builder keyStorePasswords(List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword> keyStorePasswords) {
-            this.keyStorePasswords = Objects.requireNonNull(keyStorePasswords);
+            if (keyStorePasswords == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore", "keyStorePasswords");
+            }
+            this.keyStorePasswords = keyStorePasswords;
             return this;
         }
         public Builder keyStorePasswords(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword... keyStorePasswords) {
@@ -89,7 +96,10 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         }
         @CustomType.Setter
         public Builder keyStoreType(String keyStoreType) {
-            this.keyStoreType = Objects.requireNonNull(keyStoreType);
+            if (keyStoreType == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore", "keyStoreType");
+            }
+            this.keyStoreType = keyStoreType;
             return this;
         }
         public GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore build() {

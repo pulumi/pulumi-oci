@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject;
 import java.lang.Integer;
@@ -258,32 +259,50 @@ public final class GetWorkspaceImportRequestsImportRequestSummaryCollectionItem 
 
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestsImportRequestSummaryCollectionItem", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestsImportRequestSummaryCollectionItem", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder errorMessages(Map<String,Object> errorMessages) {
-            this.errorMessages = Objects.requireNonNull(errorMessages);
+            if (errorMessages == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestsImportRequestSummaryCollectionItem", "errorMessages");
+            }
+            this.errorMessages = errorMessages;
             return this;
         }
         @CustomType.Setter
         public Builder fileName(String fileName) {
-            this.fileName = Objects.requireNonNull(fileName);
+            if (fileName == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestsImportRequestSummaryCollectionItem", "fileName");
+            }
+            this.fileName = fileName;
             return this;
         }
         @CustomType.Setter
         public Builder importConflictResolution(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution importConflictResolution) {
-            this.importConflictResolution = Objects.requireNonNull(importConflictResolution);
+            if (importConflictResolution == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestsImportRequestSummaryCollectionItem", "importConflictResolution");
+            }
+            this.importConflictResolution = importConflictResolution;
             return this;
         }
         @CustomType.Setter
         public Builder importedObjects(List<GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject> importedObjects) {
-            this.importedObjects = Objects.requireNonNull(importedObjects);
+            if (importedObjects == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestsImportRequestSummaryCollectionItem", "importedObjects");
+            }
+            this.importedObjects = importedObjects;
             return this;
         }
         public Builder importedObjects(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject... importedObjects) {
@@ -291,52 +310,82 @@ public final class GetWorkspaceImportRequestsImportRequestSummaryCollectionItem 
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestsImportRequestSummaryCollectionItem", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestsImportRequestSummaryCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder objectKeyForImport(String objectKeyForImport) {
-            this.objectKeyForImport = Objects.requireNonNull(objectKeyForImport);
+            if (objectKeyForImport == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestsImportRequestSummaryCollectionItem", "objectKeyForImport");
+            }
+            this.objectKeyForImport = objectKeyForImport;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageRegion(String objectStorageRegion) {
-            this.objectStorageRegion = Objects.requireNonNull(objectStorageRegion);
+            if (objectStorageRegion == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestsImportRequestSummaryCollectionItem", "objectStorageRegion");
+            }
+            this.objectStorageRegion = objectStorageRegion;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageTenancyId(String objectStorageTenancyId) {
-            this.objectStorageTenancyId = Objects.requireNonNull(objectStorageTenancyId);
+            if (objectStorageTenancyId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestsImportRequestSummaryCollectionItem", "objectStorageTenancyId");
+            }
+            this.objectStorageTenancyId = objectStorageTenancyId;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestsImportRequestSummaryCollectionItem", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder timeEndedInMillis(String timeEndedInMillis) {
-            this.timeEndedInMillis = Objects.requireNonNull(timeEndedInMillis);
+            if (timeEndedInMillis == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestsImportRequestSummaryCollectionItem", "timeEndedInMillis");
+            }
+            this.timeEndedInMillis = timeEndedInMillis;
             return this;
         }
         @CustomType.Setter
         public Builder timeStartedInMillis(String timeStartedInMillis) {
-            this.timeStartedInMillis = Objects.requireNonNull(timeStartedInMillis);
+            if (timeStartedInMillis == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestsImportRequestSummaryCollectionItem", "timeStartedInMillis");
+            }
+            this.timeStartedInMillis = timeStartedInMillis;
             return this;
         }
         @CustomType.Setter
         public Builder totalImportedObjectCount(Integer totalImportedObjectCount) {
-            this.totalImportedObjectCount = Objects.requireNonNull(totalImportedObjectCount);
+            if (totalImportedObjectCount == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestsImportRequestSummaryCollectionItem", "totalImportedObjectCount");
+            }
+            this.totalImportedObjectCount = totalImportedObjectCount;
             return this;
         }
         @CustomType.Setter
         public Builder workspaceId(String workspaceId) {
-            this.workspaceId = Objects.requireNonNull(workspaceId);
+            if (workspaceId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestsImportRequestSummaryCollectionItem", "workspaceId");
+            }
+            this.workspaceId = workspaceId;
             return this;
         }
         public GetWorkspaceImportRequestsImportRequestSummaryCollectionItem build() {

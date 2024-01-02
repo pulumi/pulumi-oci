@@ -58,11 +58,13 @@ public final class ConfigScriptParameterMonitorScriptParameter {
 
         @CustomType.Setter
         public Builder paramName(@Nullable String paramName) {
+
             this.paramName = paramName;
             return this;
         }
         @CustomType.Setter
         public Builder paramValue(@Nullable String paramValue) {
+
             this.paramValue = paramValue;
             return this;
         }

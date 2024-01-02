@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -118,7 +119,9 @@ public final class DomainsAuthenticationFactorSettingNotificationSettingsArgs ex
         }
 
         public DomainsAuthenticationFactorSettingNotificationSettingsArgs build() {
-            $.pullEnabled = Objects.requireNonNull($.pullEnabled, "expected parameter 'pullEnabled' to be non-null");
+            if ($.pullEnabled == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingNotificationSettingsArgs", "pullEnabled");
+            }
             return $;
         }
     }

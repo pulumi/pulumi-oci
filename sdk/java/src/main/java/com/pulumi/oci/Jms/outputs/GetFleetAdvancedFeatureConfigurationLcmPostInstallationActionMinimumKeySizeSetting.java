@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath;
 import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar;
 import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl;
@@ -87,7 +88,10 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
 
         @CustomType.Setter
         public Builder certpaths(List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath> certpaths) {
-            this.certpaths = Objects.requireNonNull(certpaths);
+            if (certpaths == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting", "certpaths");
+            }
+            this.certpaths = certpaths;
             return this;
         }
         public Builder certpaths(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath... certpaths) {
@@ -95,7 +99,10 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
         }
         @CustomType.Setter
         public Builder jars(List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar> jars) {
-            this.jars = Objects.requireNonNull(jars);
+            if (jars == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting", "jars");
+            }
+            this.jars = jars;
             return this;
         }
         public Builder jars(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar... jars) {
@@ -103,7 +110,10 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
         }
         @CustomType.Setter
         public Builder tls(List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl> tls) {
-            this.tls = Objects.requireNonNull(tls);
+            if (tls == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting", "tls");
+            }
+            this.tls = tls;
             return this;
         }
         public Builder tls(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl... tls) {

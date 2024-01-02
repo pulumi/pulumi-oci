@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -100,27 +101,42 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalIm
 
         @CustomType.Setter
         public Builder computeGlobalImageCapabilitySchemaId(String computeGlobalImageCapabilitySchemaId) {
-            this.computeGlobalImageCapabilitySchemaId = Objects.requireNonNull(computeGlobalImageCapabilitySchemaId);
+            if (computeGlobalImageCapabilitySchemaId == null) {
+              throw new MissingRequiredPropertyException("GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion", "computeGlobalImageCapabilitySchemaId");
+            }
+            this.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder schemaData(Map<String,Object> schemaData) {
-            this.schemaData = Objects.requireNonNull(schemaData);
+            if (schemaData == null) {
+              throw new MissingRequiredPropertyException("GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion", "schemaData");
+            }
+            this.schemaData = schemaData;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion build() {

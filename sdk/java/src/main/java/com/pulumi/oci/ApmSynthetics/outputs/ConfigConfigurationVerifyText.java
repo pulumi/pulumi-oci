@@ -44,6 +44,7 @@ public final class ConfigConfigurationVerifyText {
 
         @CustomType.Setter
         public Builder text(@Nullable String text) {
+
             this.text = text;
             return this;
         }

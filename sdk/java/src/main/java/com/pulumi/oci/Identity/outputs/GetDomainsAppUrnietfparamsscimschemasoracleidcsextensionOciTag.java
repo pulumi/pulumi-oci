@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTa
 
         @CustomType.Setter
         public Builder definedTags(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTag", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         public Builder definedTags(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag... definedTags) {
@@ -81,7 +85,10 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTa
         }
         @CustomType.Setter
         public Builder freeformTags(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTag", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         public Builder freeformTags(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag... freeformTags) {
@@ -89,7 +96,10 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTa
         }
         @CustomType.Setter
         public Builder tagSlug(String tagSlug) {
-            this.tagSlug = Objects.requireNonNull(tagSlug);
+            if (tagSlug == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTag", "tagSlug");
+            }
+            this.tagSlug = tagSlug;
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTag build() {

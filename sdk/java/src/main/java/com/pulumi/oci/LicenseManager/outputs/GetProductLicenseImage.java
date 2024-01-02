@@ -4,6 +4,7 @@
 package com.pulumi.oci.LicenseManager.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetProductLicenseImage {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseImage", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder listingId(String listingId) {
-            this.listingId = Objects.requireNonNull(listingId);
+            if (listingId == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseImage", "listingId");
+            }
+            this.listingId = listingId;
             return this;
         }
         @CustomType.Setter
         public Builder listingName(String listingName) {
-            this.listingName = Objects.requireNonNull(listingName);
+            if (listingName == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseImage", "listingName");
+            }
+            this.listingName = listingName;
             return this;
         }
         @CustomType.Setter
         public Builder packageVersion(String packageVersion) {
-            this.packageVersion = Objects.requireNonNull(packageVersion);
+            if (packageVersion == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseImage", "packageVersion");
+            }
+            this.packageVersion = packageVersion;
             return this;
         }
         @CustomType.Setter
         public Builder publisher(String publisher) {
-            this.publisher = Objects.requireNonNull(publisher);
+            if (publisher == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseImage", "publisher");
+            }
+            this.publisher = publisher;
             return this;
         }
         public GetProductLicenseImage build() {

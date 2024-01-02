@@ -5,6 +5,7 @@ package com.pulumi.oci.Monitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -178,8 +179,12 @@ public final class AlarmSuppressionArgs extends com.pulumi.resources.ResourceArg
         }
 
         public AlarmSuppressionArgs build() {
-            $.timeSuppressFrom = Objects.requireNonNull($.timeSuppressFrom, "expected parameter 'timeSuppressFrom' to be non-null");
-            $.timeSuppressUntil = Objects.requireNonNull($.timeSuppressUntil, "expected parameter 'timeSuppressUntil' to be non-null");
+            if ($.timeSuppressFrom == null) {
+                throw new MissingRequiredPropertyException("AlarmSuppressionArgs", "timeSuppressFrom");
+            }
+            if ($.timeSuppressUntil == null) {
+                throw new MissingRequiredPropertyException("AlarmSuppressionArgs", "timeSuppressUntil");
+            }
             return $;
         }
     }

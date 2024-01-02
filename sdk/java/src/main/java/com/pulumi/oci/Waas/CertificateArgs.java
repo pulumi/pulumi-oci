@@ -5,6 +5,7 @@ package com.pulumi.oci.Waas;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -329,9 +330,15 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public CertificateArgs build() {
-            $.certificateData = Objects.requireNonNull($.certificateData, "expected parameter 'certificateData' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.privateKeyData = Objects.requireNonNull($.privateKeyData, "expected parameter 'privateKeyData' to be non-null");
+            if ($.certificateData == null) {
+                throw new MissingRequiredPropertyException("CertificateArgs", "certificateData");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("CertificateArgs", "compartmentId");
+            }
+            if ($.privateKeyData == null) {
+                throw new MissingRequiredPropertyException("CertificateArgs", "privateKeyData");
+            }
             return $;
         }
     }

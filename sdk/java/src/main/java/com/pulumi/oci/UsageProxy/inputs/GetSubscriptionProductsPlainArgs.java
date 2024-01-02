@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductsFilter;
 import java.lang.String;
 import java.util.List;
@@ -165,9 +166,15 @@ public final class GetSubscriptionProductsPlainArgs extends com.pulumi.resources
         }
 
         public GetSubscriptionProductsPlainArgs build() {
-            $.subscriptionId = Objects.requireNonNull($.subscriptionId, "expected parameter 'subscriptionId' to be non-null");
-            $.tenancyId = Objects.requireNonNull($.tenancyId, "expected parameter 'tenancyId' to be non-null");
-            $.usagePeriodKey = Objects.requireNonNull($.usagePeriodKey, "expected parameter 'usagePeriodKey' to be non-null");
+            if ($.subscriptionId == null) {
+                throw new MissingRequiredPropertyException("GetSubscriptionProductsPlainArgs", "subscriptionId");
+            }
+            if ($.tenancyId == null) {
+                throw new MissingRequiredPropertyException("GetSubscriptionProductsPlainArgs", "tenancyId");
+            }
+            if ($.usagePeriodKey == null) {
+                throw new MissingRequiredPropertyException("GetSubscriptionProductsPlainArgs", "usagePeriodKey");
+            }
             return $;
         }
     }

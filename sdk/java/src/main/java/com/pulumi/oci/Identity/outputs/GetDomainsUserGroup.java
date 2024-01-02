@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -154,47 +155,74 @@ public final class GetDomainsUserGroup {
 
         @CustomType.Setter
         public Builder dateAdded(String dateAdded) {
-            this.dateAdded = Objects.requireNonNull(dateAdded);
+            if (dateAdded == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserGroup", "dateAdded");
+            }
+            this.dateAdded = dateAdded;
             return this;
         }
         @CustomType.Setter
         public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+            if (display == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserGroup", "display");
+            }
+            this.display = display;
             return this;
         }
         @CustomType.Setter
         public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+            if (externalId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserGroup", "externalId");
+            }
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
         public Builder membershipOcid(String membershipOcid) {
-            this.membershipOcid = Objects.requireNonNull(membershipOcid);
+            if (membershipOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserGroup", "membershipOcid");
+            }
+            this.membershipOcid = membershipOcid;
             return this;
         }
         @CustomType.Setter
         public Builder nonUniqueDisplay(String nonUniqueDisplay) {
-            this.nonUniqueDisplay = Objects.requireNonNull(nonUniqueDisplay);
+            if (nonUniqueDisplay == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserGroup", "nonUniqueDisplay");
+            }
+            this.nonUniqueDisplay = nonUniqueDisplay;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserGroup", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+            if (ref == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserGroup", "ref");
+            }
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserGroup", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserGroup", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDomainsUserGroup build() {

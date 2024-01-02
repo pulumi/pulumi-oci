@@ -5,6 +5,7 @@ package com.pulumi.oci.UsageProxy.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.UsageProxy.inputs.GetUsagelimitsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -247,8 +248,12 @@ public final class GetUsagelimitsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetUsagelimitsArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.subscriptionId = Objects.requireNonNull($.subscriptionId, "expected parameter 'subscriptionId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetUsagelimitsArgs", "compartmentId");
+            }
+            if ($.subscriptionId == null) {
+                throw new MissingRequiredPropertyException("GetUsagelimitsArgs", "subscriptionId");
+            }
             return $;
         }
     }

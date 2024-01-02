@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetInstancePoolInstancesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -173,8 +174,12 @@ public final class GetInstancePoolInstancesArgs extends com.pulumi.resources.Inv
         }
 
         public GetInstancePoolInstancesArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.instancePoolId = Objects.requireNonNull($.instancePoolId, "expected parameter 'instancePoolId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetInstancePoolInstancesArgs", "compartmentId");
+            }
+            if ($.instancePoolId == null) {
+                throw new MissingRequiredPropertyException("GetInstancePoolInstancesArgs", "instancePoolId");
+            }
             return $;
         }
     }

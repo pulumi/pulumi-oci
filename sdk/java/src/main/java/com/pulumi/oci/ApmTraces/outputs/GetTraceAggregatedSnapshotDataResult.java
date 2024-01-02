@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmTraces.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmTraces.outputs.GetTraceAggregatedSnapshotDataDetail;
 import java.lang.String;
 import java.util.List;
@@ -70,12 +71,18 @@ public final class GetTraceAggregatedSnapshotDataResult {
 
         @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
-            this.apmDomainId = Objects.requireNonNull(apmDomainId);
+            if (apmDomainId == null) {
+              throw new MissingRequiredPropertyException("GetTraceAggregatedSnapshotDataResult", "apmDomainId");
+            }
+            this.apmDomainId = apmDomainId;
             return this;
         }
         @CustomType.Setter
         public Builder details(List<GetTraceAggregatedSnapshotDataDetail> details) {
-            this.details = Objects.requireNonNull(details);
+            if (details == null) {
+              throw new MissingRequiredPropertyException("GetTraceAggregatedSnapshotDataResult", "details");
+            }
+            this.details = details;
             return this;
         }
         public Builder details(GetTraceAggregatedSnapshotDataDetail... details) {
@@ -83,12 +90,18 @@ public final class GetTraceAggregatedSnapshotDataResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTraceAggregatedSnapshotDataResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder traceKey(String traceKey) {
-            this.traceKey = Objects.requireNonNull(traceKey);
+            if (traceKey == null) {
+              throw new MissingRequiredPropertyException("GetTraceAggregatedSnapshotDataResult", "traceKey");
+            }
+            this.traceKey = traceKey;
             return this;
         }
         public GetTraceAggregatedSnapshotDataResult build() {

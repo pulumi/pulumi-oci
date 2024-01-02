@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetVolumeGroupsVolumeGroupSourceDetail {
 
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupsVolumeGroupSourceDetail", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder volumeGroupBackupId(String volumeGroupBackupId) {
-            this.volumeGroupBackupId = Objects.requireNonNull(volumeGroupBackupId);
+            if (volumeGroupBackupId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupsVolumeGroupSourceDetail", "volumeGroupBackupId");
+            }
+            this.volumeGroupBackupId = volumeGroupBackupId;
             return this;
         }
         @CustomType.Setter
         public Builder volumeGroupId(String volumeGroupId) {
-            this.volumeGroupId = Objects.requireNonNull(volumeGroupId);
+            if (volumeGroupId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupsVolumeGroupSourceDetail", "volumeGroupId");
+            }
+            this.volumeGroupId = volumeGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder volumeGroupReplicaId(String volumeGroupReplicaId) {
-            this.volumeGroupReplicaId = Objects.requireNonNull(volumeGroupReplicaId);
+            if (volumeGroupReplicaId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupsVolumeGroupSourceDetail", "volumeGroupReplicaId");
+            }
+            this.volumeGroupReplicaId = volumeGroupReplicaId;
             return this;
         }
         @CustomType.Setter
         public Builder volumeIds(List<String> volumeIds) {
-            this.volumeIds = Objects.requireNonNull(volumeIds);
+            if (volumeIds == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupsVolumeGroupSourceDetail", "volumeIds");
+            }
+            this.volumeIds = volumeIds;
             return this;
         }
         public Builder volumeIds(String... volumeIds) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.UsageProxy.inputs.GetResourcesFilter;
 import java.lang.String;
 import java.util.List;
@@ -138,8 +139,12 @@ public final class GetResourcesPlainArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetResourcesPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.serviceName = Objects.requireNonNull($.serviceName, "expected parameter 'serviceName' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetResourcesPlainArgs", "compartmentId");
+            }
+            if ($.serviceName == null) {
+                throw new MissingRequiredPropertyException("GetResourcesPlainArgs", "serviceName");
+            }
             return $;
         }
     }

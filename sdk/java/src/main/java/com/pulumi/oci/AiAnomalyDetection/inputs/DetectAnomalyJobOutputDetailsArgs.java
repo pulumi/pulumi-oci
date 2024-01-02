@@ -5,6 +5,7 @@ package com.pulumi.oci.AiAnomalyDetection.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -187,9 +188,15 @@ public final class DetectAnomalyJobOutputDetailsArgs extends com.pulumi.resource
         }
 
         public DetectAnomalyJobOutputDetailsArgs build() {
-            $.bucket = Objects.requireNonNull($.bucket, "expected parameter 'bucket' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
-            $.outputType = Objects.requireNonNull($.outputType, "expected parameter 'outputType' to be non-null");
+            if ($.bucket == null) {
+                throw new MissingRequiredPropertyException("DetectAnomalyJobOutputDetailsArgs", "bucket");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("DetectAnomalyJobOutputDetailsArgs", "namespace");
+            }
+            if ($.outputType == null) {
+                throw new MissingRequiredPropertyException("DetectAnomalyJobOutputDetailsArgs", "outputType");
+            }
             return $;
         }
     }

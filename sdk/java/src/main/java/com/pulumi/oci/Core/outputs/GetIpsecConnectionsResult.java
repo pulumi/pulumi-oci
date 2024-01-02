@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetIpsecConnectionsConnection;
 import com.pulumi.oci.Core.outputs.GetIpsecConnectionsFilter;
 import java.lang.String;
@@ -109,12 +110,18 @@ public final class GetIpsecConnectionsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connections(List<GetIpsecConnectionsConnection> connections) {
-            this.connections = Objects.requireNonNull(connections);
+            if (connections == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionsResult", "connections");
+            }
+            this.connections = connections;
             return this;
         }
         public Builder connections(GetIpsecConnectionsConnection... connections) {
@@ -122,16 +129,19 @@ public final class GetIpsecConnectionsResult {
         }
         @CustomType.Setter
         public Builder cpeId(@Nullable String cpeId) {
+
             this.cpeId = cpeId;
             return this;
         }
         @CustomType.Setter
         public Builder drgId(@Nullable String drgId) {
+
             this.drgId = drgId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetIpsecConnectionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -140,7 +150,10 @@ public final class GetIpsecConnectionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetIpsecConnectionsResult build() {

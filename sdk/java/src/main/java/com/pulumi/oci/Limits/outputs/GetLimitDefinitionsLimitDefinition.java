@@ -4,6 +4,7 @@
 package com.pulumi.oci.Limits.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -155,47 +156,74 @@ public final class GetLimitDefinitionsLimitDefinition {
 
         @CustomType.Setter
         public Builder areQuotasSupported(Boolean areQuotasSupported) {
-            this.areQuotasSupported = Objects.requireNonNull(areQuotasSupported);
+            if (areQuotasSupported == null) {
+              throw new MissingRequiredPropertyException("GetLimitDefinitionsLimitDefinition", "areQuotasSupported");
+            }
+            this.areQuotasSupported = areQuotasSupported;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetLimitDefinitionsLimitDefinition", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder isDeprecated(Boolean isDeprecated) {
-            this.isDeprecated = Objects.requireNonNull(isDeprecated);
+            if (isDeprecated == null) {
+              throw new MissingRequiredPropertyException("GetLimitDefinitionsLimitDefinition", "isDeprecated");
+            }
+            this.isDeprecated = isDeprecated;
             return this;
         }
         @CustomType.Setter
         public Builder isDynamic(Boolean isDynamic) {
-            this.isDynamic = Objects.requireNonNull(isDynamic);
+            if (isDynamic == null) {
+              throw new MissingRequiredPropertyException("GetLimitDefinitionsLimitDefinition", "isDynamic");
+            }
+            this.isDynamic = isDynamic;
             return this;
         }
         @CustomType.Setter
         public Builder isEligibleForLimitIncrease(Boolean isEligibleForLimitIncrease) {
-            this.isEligibleForLimitIncrease = Objects.requireNonNull(isEligibleForLimitIncrease);
+            if (isEligibleForLimitIncrease == null) {
+              throw new MissingRequiredPropertyException("GetLimitDefinitionsLimitDefinition", "isEligibleForLimitIncrease");
+            }
+            this.isEligibleForLimitIncrease = isEligibleForLimitIncrease;
             return this;
         }
         @CustomType.Setter
         public Builder isResourceAvailabilitySupported(Boolean isResourceAvailabilitySupported) {
-            this.isResourceAvailabilitySupported = Objects.requireNonNull(isResourceAvailabilitySupported);
+            if (isResourceAvailabilitySupported == null) {
+              throw new MissingRequiredPropertyException("GetLimitDefinitionsLimitDefinition", "isResourceAvailabilitySupported");
+            }
+            this.isResourceAvailabilitySupported = isResourceAvailabilitySupported;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetLimitDefinitionsLimitDefinition", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder scopeType(String scopeType) {
-            this.scopeType = Objects.requireNonNull(scopeType);
+            if (scopeType == null) {
+              throw new MissingRequiredPropertyException("GetLimitDefinitionsLimitDefinition", "scopeType");
+            }
+            this.scopeType = scopeType;
             return this;
         }
         @CustomType.Setter
         public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+            if (serviceName == null) {
+              throw new MissingRequiredPropertyException("GetLimitDefinitionsLimitDefinition", "serviceName");
+            }
+            this.serviceName = serviceName;
             return this;
         }
         public GetLimitDefinitionsLimitDefinition build() {

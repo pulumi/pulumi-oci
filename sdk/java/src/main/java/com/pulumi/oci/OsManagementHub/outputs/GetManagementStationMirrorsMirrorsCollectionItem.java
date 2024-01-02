@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -155,47 +156,74 @@ public final class GetManagementStationMirrorsMirrorsCollectionItem {
 
         @CustomType.Setter
         public Builder archType(String archType) {
-            this.archType = Objects.requireNonNull(archType);
+            if (archType == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationMirrorsMirrorsCollectionItem", "archType");
+            }
+            this.archType = archType;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationMirrorsMirrorsCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationMirrorsMirrorsCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder log(String log) {
-            this.log = Objects.requireNonNull(log);
+            if (log == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationMirrorsMirrorsCollectionItem", "log");
+            }
+            this.log = log;
             return this;
         }
         @CustomType.Setter
         public Builder osFamily(String osFamily) {
-            this.osFamily = Objects.requireNonNull(osFamily);
+            if (osFamily == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationMirrorsMirrorsCollectionItem", "osFamily");
+            }
+            this.osFamily = osFamily;
             return this;
         }
         @CustomType.Setter
         public Builder percentage(Integer percentage) {
-            this.percentage = Objects.requireNonNull(percentage);
+            if (percentage == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationMirrorsMirrorsCollectionItem", "percentage");
+            }
+            this.percentage = percentage;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationMirrorsMirrorsCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastSynced(String timeLastSynced) {
-            this.timeLastSynced = Objects.requireNonNull(timeLastSynced);
+            if (timeLastSynced == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationMirrorsMirrorsCollectionItem", "timeLastSynced");
+            }
+            this.timeLastSynced = timeLastSynced;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationMirrorsMirrorsCollectionItem", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetManagementStationMirrorsMirrorsCollectionItem build() {

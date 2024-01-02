@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetIpsecConnectionTunnelRoutesFilter;
 import com.pulumi.oci.Core.outputs.GetIpsecConnectionTunnelRoutesTunnelRoute;
 import java.lang.String;
@@ -93,11 +94,13 @@ public final class GetIpsecConnectionTunnelRoutesResult {
 
         @CustomType.Setter
         public Builder advertiser(@Nullable String advertiser) {
+
             this.advertiser = advertiser;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetIpsecConnectionTunnelRoutesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -106,22 +109,34 @@ public final class GetIpsecConnectionTunnelRoutesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelRoutesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipsecId(String ipsecId) {
-            this.ipsecId = Objects.requireNonNull(ipsecId);
+            if (ipsecId == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelRoutesResult", "ipsecId");
+            }
+            this.ipsecId = ipsecId;
             return this;
         }
         @CustomType.Setter
         public Builder tunnelId(String tunnelId) {
-            this.tunnelId = Objects.requireNonNull(tunnelId);
+            if (tunnelId == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelRoutesResult", "tunnelId");
+            }
+            this.tunnelId = tunnelId;
             return this;
         }
         @CustomType.Setter
         public Builder tunnelRoutes(List<GetIpsecConnectionTunnelRoutesTunnelRoute> tunnelRoutes) {
-            this.tunnelRoutes = Objects.requireNonNull(tunnelRoutes);
+            if (tunnelRoutes == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelRoutesResult", "tunnelRoutes");
+            }
+            this.tunnelRoutes = tunnelRoutes;
             return this;
         }
         public Builder tunnelRoutes(GetIpsecConnectionTunnelRoutesTunnelRoute... tunnelRoutes) {

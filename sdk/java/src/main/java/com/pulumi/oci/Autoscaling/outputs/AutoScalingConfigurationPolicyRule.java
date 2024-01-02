@@ -4,6 +4,7 @@
 package com.pulumi.oci.Autoscaling.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Autoscaling.outputs.AutoScalingConfigurationPolicyRuleAction;
 import com.pulumi.oci.Autoscaling.outputs.AutoScalingConfigurationPolicyRuleMetric;
 import java.lang.String;
@@ -80,21 +81,27 @@ public final class AutoScalingConfigurationPolicyRule {
 
         @CustomType.Setter
         public Builder action(@Nullable AutoScalingConfigurationPolicyRuleAction action) {
+
             this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("AutoScalingConfigurationPolicyRule", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder metric(@Nullable AutoScalingConfigurationPolicyRuleMetric metric) {
+
             this.metric = metric;
             return this;
         }

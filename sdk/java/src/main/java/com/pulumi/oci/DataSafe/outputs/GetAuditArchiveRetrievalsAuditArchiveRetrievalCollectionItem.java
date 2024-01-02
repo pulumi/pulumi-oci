@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -268,87 +269,138 @@ public final class GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem 
 
         @CustomType.Setter
         public Builder auditEventCount(String auditEventCount) {
-            this.auditEventCount = Objects.requireNonNull(auditEventCount);
+            if (auditEventCount == null) {
+              throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem", "auditEventCount");
+            }
+            this.auditEventCount = auditEventCount;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder endDate(String endDate) {
-            this.endDate = Objects.requireNonNull(endDate);
+            if (endDate == null) {
+              throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem", "endDate");
+            }
+            this.endDate = endDate;
             return this;
         }
         @CustomType.Setter
         public Builder errorInfo(String errorInfo) {
-            this.errorInfo = Objects.requireNonNull(errorInfo);
+            if (errorInfo == null) {
+              throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem", "errorInfo");
+            }
+            this.errorInfo = errorInfo;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder startDate(String startDate) {
-            this.startDate = Objects.requireNonNull(startDate);
+            if (startDate == null) {
+              throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem", "startDate");
+            }
+            this.startDate = startDate;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem", "targetId");
+            }
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCompleted(String timeCompleted) {
-            this.timeCompleted = Objects.requireNonNull(timeCompleted);
+            if (timeCompleted == null) {
+              throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem", "timeCompleted");
+            }
+            this.timeCompleted = timeCompleted;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfExpiry(String timeOfExpiry) {
-            this.timeOfExpiry = Objects.requireNonNull(timeOfExpiry);
+            if (timeOfExpiry == null) {
+              throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem", "timeOfExpiry");
+            }
+            this.timeOfExpiry = timeOfExpiry;
             return this;
         }
         @CustomType.Setter
         public Builder timeRequested(String timeRequested) {
-            this.timeRequested = Objects.requireNonNull(timeRequested);
+            if (timeRequested == null) {
+              throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem", "timeRequested");
+            }
+            this.timeRequested = timeRequested;
             return this;
         }
         public GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem build() {

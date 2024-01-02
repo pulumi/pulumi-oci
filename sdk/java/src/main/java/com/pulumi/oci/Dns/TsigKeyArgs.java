@@ -5,6 +5,7 @@ package com.pulumi.oci.Dns;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -291,9 +292,15 @@ public final class TsigKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public TsigKeyArgs build() {
-            $.algorithm = Objects.requireNonNull($.algorithm, "expected parameter 'algorithm' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.secret = Objects.requireNonNull($.secret, "expected parameter 'secret' to be non-null");
+            if ($.algorithm == null) {
+                throw new MissingRequiredPropertyException("TsigKeyArgs", "algorithm");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("TsigKeyArgs", "compartmentId");
+            }
+            if ($.secret == null) {
+                throw new MissingRequiredPropertyException("TsigKeyArgs", "secret");
+            }
             return $;
         }
     }

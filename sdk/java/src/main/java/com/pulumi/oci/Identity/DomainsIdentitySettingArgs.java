@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsIdentitySettingMyProfileArgs;
 import com.pulumi.oci.Identity.inputs.DomainsIdentitySettingPosixGidArgs;
 import com.pulumi.oci.Identity.inputs.DomainsIdentitySettingPosixUidArgs;
@@ -1248,9 +1249,15 @@ public final class DomainsIdentitySettingArgs extends com.pulumi.resources.Resou
         }
 
         public DomainsIdentitySettingArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.identitySettingId = Objects.requireNonNull($.identitySettingId, "expected parameter 'identitySettingId' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsIdentitySettingArgs", "idcsEndpoint");
+            }
+            if ($.identitySettingId == null) {
+                throw new MissingRequiredPropertyException("DomainsIdentitySettingArgs", "identitySettingId");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsIdentitySettingArgs", "schemas");
+            }
             return $;
         }
     }

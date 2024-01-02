@@ -59,11 +59,13 @@ public final class ConnectorSourceMonitoringSource {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder namespaceDetails(@Nullable ConnectorSourceMonitoringSourceNamespaceDetails namespaceDetails) {
+
             this.namespaceDetails = namespaceDetails;
             return this;
         }

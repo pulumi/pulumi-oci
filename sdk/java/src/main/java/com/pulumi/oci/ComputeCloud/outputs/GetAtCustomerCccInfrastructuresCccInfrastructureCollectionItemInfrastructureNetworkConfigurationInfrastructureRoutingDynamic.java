@@ -4,6 +4,7 @@
 package com.pulumi.oci.ComputeCloud.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ComputeCloud.outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation;
 import java.lang.Integer;
 import java.lang.String;
@@ -73,17 +74,26 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
 
         @CustomType.Setter
         public Builder bgpTopology(String bgpTopology) {
-            this.bgpTopology = Objects.requireNonNull(bgpTopology);
+            if (bgpTopology == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic", "bgpTopology");
+            }
+            this.bgpTopology = bgpTopology;
             return this;
         }
         @CustomType.Setter
         public Builder oracleAsn(Integer oracleAsn) {
-            this.oracleAsn = Objects.requireNonNull(oracleAsn);
+            if (oracleAsn == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic", "oracleAsn");
+            }
+            this.oracleAsn = oracleAsn;
             return this;
         }
         @CustomType.Setter
         public Builder peerInformations(List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation> peerInformations) {
-            this.peerInformations = Objects.requireNonNull(peerInformations);
+            if (peerInformations == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic", "peerInformations");
+            }
+            this.peerInformations = peerInformations;
             return this;
         }
         public Builder peerInformations(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation... peerInformations) {

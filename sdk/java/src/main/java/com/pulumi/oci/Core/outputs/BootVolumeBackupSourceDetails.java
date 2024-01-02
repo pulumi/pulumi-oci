@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -64,17 +65,24 @@ public final class BootVolumeBackupSourceDetails {
 
         @CustomType.Setter
         public Builder bootVolumeBackupId(String bootVolumeBackupId) {
-            this.bootVolumeBackupId = Objects.requireNonNull(bootVolumeBackupId);
+            if (bootVolumeBackupId == null) {
+              throw new MissingRequiredPropertyException("BootVolumeBackupSourceDetails", "bootVolumeBackupId");
+            }
+            this.bootVolumeBackupId = bootVolumeBackupId;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
+
             this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+            if (region == null) {
+              throw new MissingRequiredPropertyException("BootVolumeBackupSourceDetails", "region");
+            }
+            this.region = region;
             return this;
         }
         public BootVolumeBackupSourceDetails build() {

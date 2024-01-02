@@ -5,6 +5,7 @@ package com.pulumi.oci.FileStorage.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetReplicationTargetArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetReplicationTargetArgs build() {
-            $.replicationTargetId = Objects.requireNonNull($.replicationTargetId, "expected parameter 'replicationTargetId' to be non-null");
+            if ($.replicationTargetId == null) {
+                throw new MissingRequiredPropertyException("GetReplicationTargetArgs", "replicationTargetId");
+            }
             return $;
         }
     }

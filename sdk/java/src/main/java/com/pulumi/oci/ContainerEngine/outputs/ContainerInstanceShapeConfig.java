@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -87,21 +88,27 @@ public final class ContainerInstanceShapeConfig {
 
         @CustomType.Setter
         public Builder memoryInGbs(@Nullable Double memoryInGbs) {
+
             this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder networkingBandwidthInGbps(@Nullable Double networkingBandwidthInGbps) {
+
             this.networkingBandwidthInGbps = networkingBandwidthInGbps;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(Double ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+            if (ocpus == null) {
+              throw new MissingRequiredPropertyException("ContainerInstanceShapeConfig", "ocpus");
+            }
+            this.ocpus = ocpus;
             return this;
         }
         @CustomType.Setter
         public Builder processorDescription(@Nullable String processorDescription) {
+
             this.processorDescription = processorDescription;
             return this;
         }

@@ -116,16 +116,19 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstance {
 
         @CustomType.Setter
         public Builder adrHomeDirectory(@Nullable String adrHomeDirectory) {
+
             this.adrHomeDirectory = adrHomeDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder clusterId(@Nullable String clusterId) {
+
             this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
         public Builder connectors(@Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnector> connectors) {
+
             this.connectors = connectors;
             return this;
         }
@@ -134,16 +137,19 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstance {
         }
         @CustomType.Setter
         public Builder crsBaseDirectory(@Nullable String crsBaseDirectory) {
+
             this.crsBaseDirectory = crsBaseDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder hostName(@Nullable String hostName) {
+
             this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder nodeRole(@Nullable String nodeRole) {
+
             this.nodeRole = nodeRole;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupAr
         }
 
         public TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.condition = Objects.requireNonNull($.condition, "expected parameter 'condition' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs", "compartmentId");
+            }
+            if ($.condition == null) {
+                throw new MissingRequiredPropertyException("TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs", "condition");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -165,22 +166,30 @@ public final class DomainsUserRole {
 
         @CustomType.Setter
         public Builder display(@Nullable String display) {
+
             this.display = display;
             return this;
         }
         @CustomType.Setter
         public Builder primary(@Nullable Boolean primary) {
+
             this.primary = primary;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("DomainsUserRole", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("DomainsUserRole", "value");
+            }
+            this.value = value;
             return this;
         }
         public DomainsUserRole build() {

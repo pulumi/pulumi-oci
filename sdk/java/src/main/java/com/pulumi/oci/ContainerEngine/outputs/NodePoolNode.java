@@ -230,16 +230,19 @@ public final class NodePoolNode {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+
             this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder errors(@Nullable List<NodePoolNodeError> errors) {
+
             this.errors = errors;
             return this;
         }
@@ -248,56 +251,67 @@ public final class NodePoolNode {
         }
         @CustomType.Setter
         public Builder faultDomain(@Nullable String faultDomain) {
+
             this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+
             this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder kubernetesVersion(@Nullable String kubernetesVersion) {
+
             this.kubernetesVersion = kubernetesVersion;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder nodePoolId(@Nullable String nodePoolId) {
+
             this.nodePoolId = nodePoolId;
             return this;
         }
         @CustomType.Setter
         public Builder privateIp(@Nullable String privateIp) {
+
             this.privateIp = privateIp;
             return this;
         }
         @CustomType.Setter
         public Builder publicIp(@Nullable String publicIp) {
+
             this.publicIp = publicIp;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
+
             this.subnetId = subnetId;
             return this;
         }

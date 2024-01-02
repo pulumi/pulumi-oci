@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection;
 import com.pulumi.oci.Jms.outputs.GetFleetCryptoAnalysisResultsFilter;
 import java.lang.String;
@@ -121,12 +122,16 @@ public final class GetFleetCryptoAnalysisResultsResult {
 
         @CustomType.Setter
         public Builder aggregationMode(@Nullable String aggregationMode) {
+
             this.aggregationMode = aggregationMode;
             return this;
         }
         @CustomType.Setter
         public Builder cryptoAnalysisResultCollections(List<GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection> cryptoAnalysisResultCollections) {
-            this.cryptoAnalysisResultCollections = Objects.requireNonNull(cryptoAnalysisResultCollections);
+            if (cryptoAnalysisResultCollections == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsResult", "cryptoAnalysisResultCollections");
+            }
+            this.cryptoAnalysisResultCollections = cryptoAnalysisResultCollections;
             return this;
         }
         public Builder cryptoAnalysisResultCollections(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection... cryptoAnalysisResultCollections) {
@@ -134,6 +139,7 @@ public final class GetFleetCryptoAnalysisResultsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetFleetCryptoAnalysisResultsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -142,26 +148,35 @@ public final class GetFleetCryptoAnalysisResultsResult {
         }
         @CustomType.Setter
         public Builder fleetId(String fleetId) {
-            this.fleetId = Objects.requireNonNull(fleetId);
+            if (fleetId == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsResult", "fleetId");
+            }
+            this.fleetId = fleetId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceId(@Nullable String managedInstanceId) {
+
             this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnd(@Nullable String timeEnd) {
+
             this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(@Nullable String timeStart) {
+
             this.timeStart = timeStart;
             return this;
         }

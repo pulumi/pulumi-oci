@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsFilter;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfiguration;
 import java.lang.String;
@@ -80,11 +81,15 @@ public final class GetInstanceConfigurationsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetInstanceConfigurationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -93,12 +98,18 @@ public final class GetInstanceConfigurationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceConfigurations(List<GetInstanceConfigurationsInstanceConfiguration> instanceConfigurations) {
-            this.instanceConfigurations = Objects.requireNonNull(instanceConfigurations);
+            if (instanceConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsResult", "instanceConfigurations");
+            }
+            this.instanceConfigurations = instanceConfigurations;
             return this;
         }
         public Builder instanceConfigurations(GetInstanceConfigurationsInstanceConfiguration... instanceConfigurations) {

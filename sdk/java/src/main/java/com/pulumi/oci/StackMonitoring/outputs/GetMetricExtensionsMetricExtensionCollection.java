@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetMetricExtensionsMetricExtensionCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetMetricExtensionsMetricExtensionCollection {
 
         @CustomType.Setter
         public Builder items(List<GetMetricExtensionsMetricExtensionCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetMetricExtensionsMetricExtensionCollectionItem... items) {

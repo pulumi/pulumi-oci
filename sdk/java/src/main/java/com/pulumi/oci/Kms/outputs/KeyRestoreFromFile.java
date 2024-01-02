@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -72,17 +73,24 @@ public final class KeyRestoreFromFile {
 
         @CustomType.Setter
         public Builder contentLength(String contentLength) {
-            this.contentLength = Objects.requireNonNull(contentLength);
+            if (contentLength == null) {
+              throw new MissingRequiredPropertyException("KeyRestoreFromFile", "contentLength");
+            }
+            this.contentLength = contentLength;
             return this;
         }
         @CustomType.Setter
         public Builder contentMd5(@Nullable String contentMd5) {
+
             this.contentMd5 = contentMd5;
             return this;
         }
         @CustomType.Setter
         public Builder restoreKeyFromFileDetails(String restoreKeyFromFileDetails) {
-            this.restoreKeyFromFileDetails = Objects.requireNonNull(restoreKeyFromFileDetails);
+            if (restoreKeyFromFileDetails == null) {
+              throw new MissingRequiredPropertyException("KeyRestoreFromFile", "restoreKeyFromFileDetails");
+            }
+            this.restoreKeyFromFileDetails = restoreKeyFromFileDetails;
             return this;
         }
         public KeyRestoreFromFile build() {

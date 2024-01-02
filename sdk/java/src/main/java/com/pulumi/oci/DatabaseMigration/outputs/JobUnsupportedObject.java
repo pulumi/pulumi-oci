@@ -72,16 +72,19 @@ public final class JobUnsupportedObject {
 
         @CustomType.Setter
         public Builder object(@Nullable String object) {
+
             this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder owner(@Nullable String owner) {
+
             this.owner = owner;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }

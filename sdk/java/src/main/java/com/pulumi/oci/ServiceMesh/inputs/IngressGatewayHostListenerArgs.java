@@ -5,6 +5,7 @@ package com.pulumi.oci.ServiceMesh.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.inputs.IngressGatewayHostListenerTlsArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -152,8 +153,12 @@ public final class IngressGatewayHostListenerArgs extends com.pulumi.resources.R
         }
 
         public IngressGatewayHostListenerArgs build() {
-            $.port = Objects.requireNonNull($.port, "expected parameter 'port' to be non-null");
-            $.protocol = Objects.requireNonNull($.protocol, "expected parameter 'protocol' to be non-null");
+            if ($.port == null) {
+                throw new MissingRequiredPropertyException("IngressGatewayHostListenerArgs", "port");
+            }
+            if ($.protocol == null) {
+                throw new MissingRequiredPropertyException("IngressGatewayHostListenerArgs", "protocol");
+            }
             return $;
         }
     }

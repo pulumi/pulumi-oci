@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -236,10 +237,18 @@ public final class BdsInstanceApiKeyArgs extends com.pulumi.resources.ResourceAr
         }
 
         public BdsInstanceApiKeyArgs build() {
-            $.bdsInstanceId = Objects.requireNonNull($.bdsInstanceId, "expected parameter 'bdsInstanceId' to be non-null");
-            $.keyAlias = Objects.requireNonNull($.keyAlias, "expected parameter 'keyAlias' to be non-null");
-            $.passphrase = Objects.requireNonNull($.passphrase, "expected parameter 'passphrase' to be non-null");
-            $.userId = Objects.requireNonNull($.userId, "expected parameter 'userId' to be non-null");
+            if ($.bdsInstanceId == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceApiKeyArgs", "bdsInstanceId");
+            }
+            if ($.keyAlias == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceApiKeyArgs", "keyAlias");
+            }
+            if ($.passphrase == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceApiKeyArgs", "passphrase");
+            }
+            if ($.userId == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceApiKeyArgs", "userId");
+            }
             return $;
         }
     }

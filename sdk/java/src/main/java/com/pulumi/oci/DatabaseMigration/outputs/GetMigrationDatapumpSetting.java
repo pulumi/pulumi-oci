@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDatapumpSettingDataPumpParameter;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDatapumpSettingExportDirectoryObject;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDatapumpSettingImportDirectoryObject;
@@ -103,7 +104,10 @@ public final class GetMigrationDatapumpSetting {
 
         @CustomType.Setter
         public Builder dataPumpParameters(List<GetMigrationDatapumpSettingDataPumpParameter> dataPumpParameters) {
-            this.dataPumpParameters = Objects.requireNonNull(dataPumpParameters);
+            if (dataPumpParameters == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDatapumpSetting", "dataPumpParameters");
+            }
+            this.dataPumpParameters = dataPumpParameters;
             return this;
         }
         public Builder dataPumpParameters(GetMigrationDatapumpSettingDataPumpParameter... dataPumpParameters) {
@@ -111,7 +115,10 @@ public final class GetMigrationDatapumpSetting {
         }
         @CustomType.Setter
         public Builder exportDirectoryObjects(List<GetMigrationDatapumpSettingExportDirectoryObject> exportDirectoryObjects) {
-            this.exportDirectoryObjects = Objects.requireNonNull(exportDirectoryObjects);
+            if (exportDirectoryObjects == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDatapumpSetting", "exportDirectoryObjects");
+            }
+            this.exportDirectoryObjects = exportDirectoryObjects;
             return this;
         }
         public Builder exportDirectoryObjects(GetMigrationDatapumpSettingExportDirectoryObject... exportDirectoryObjects) {
@@ -119,7 +126,10 @@ public final class GetMigrationDatapumpSetting {
         }
         @CustomType.Setter
         public Builder importDirectoryObjects(List<GetMigrationDatapumpSettingImportDirectoryObject> importDirectoryObjects) {
-            this.importDirectoryObjects = Objects.requireNonNull(importDirectoryObjects);
+            if (importDirectoryObjects == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDatapumpSetting", "importDirectoryObjects");
+            }
+            this.importDirectoryObjects = importDirectoryObjects;
             return this;
         }
         public Builder importDirectoryObjects(GetMigrationDatapumpSettingImportDirectoryObject... importDirectoryObjects) {
@@ -127,12 +137,18 @@ public final class GetMigrationDatapumpSetting {
         }
         @CustomType.Setter
         public Builder jobMode(String jobMode) {
-            this.jobMode = Objects.requireNonNull(jobMode);
+            if (jobMode == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDatapumpSetting", "jobMode");
+            }
+            this.jobMode = jobMode;
             return this;
         }
         @CustomType.Setter
         public Builder metadataRemaps(List<GetMigrationDatapumpSettingMetadataRemap> metadataRemaps) {
-            this.metadataRemaps = Objects.requireNonNull(metadataRemaps);
+            if (metadataRemaps == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDatapumpSetting", "metadataRemaps");
+            }
+            this.metadataRemaps = metadataRemaps;
             return this;
         }
         public Builder metadataRemaps(GetMigrationDatapumpSettingMetadataRemap... metadataRemaps) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetAuditEventsAuditEventCollection;
 import com.pulumi.oci.DataSafe.outputs.GetAuditEventsFilter;
 import java.lang.Boolean;
@@ -100,12 +101,16 @@ public final class GetAuditEventsResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder auditEventCollections(List<GetAuditEventsAuditEventCollection> auditEventCollections) {
-            this.auditEventCollections = Objects.requireNonNull(auditEventCollections);
+            if (auditEventCollections == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsResult", "auditEventCollections");
+            }
+            this.auditEventCollections = auditEventCollections;
             return this;
         }
         public Builder auditEventCollections(GetAuditEventsAuditEventCollection... auditEventCollections) {
@@ -113,16 +118,21 @@ public final class GetAuditEventsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAuditEventsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -131,11 +141,15 @@ public final class GetAuditEventsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder scimQuery(@Nullable String scimQuery) {
+
             this.scimQuery = scimQuery;
             return this;
         }

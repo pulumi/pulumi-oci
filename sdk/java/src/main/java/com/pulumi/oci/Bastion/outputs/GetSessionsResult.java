@@ -4,6 +4,7 @@
 package com.pulumi.oci.Bastion.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Bastion.outputs.GetSessionsFilter;
 import com.pulumi.oci.Bastion.outputs.GetSessionsSession;
 import java.lang.String;
@@ -107,16 +108,21 @@ public final class GetSessionsResult {
 
         @CustomType.Setter
         public Builder bastionId(String bastionId) {
-            this.bastionId = Objects.requireNonNull(bastionId);
+            if (bastionId == null) {
+              throw new MissingRequiredPropertyException("GetSessionsResult", "bastionId");
+            }
+            this.bastionId = bastionId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSessionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -125,22 +131,30 @@ public final class GetSessionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSessionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder sessionId(@Nullable String sessionId) {
+
             this.sessionId = sessionId;
             return this;
         }
         @CustomType.Setter
         public Builder sessionLifecycleState(@Nullable String sessionLifecycleState) {
+
             this.sessionLifecycleState = sessionLifecycleState;
             return this;
         }
         @CustomType.Setter
         public Builder sessions(List<GetSessionsSession> sessions) {
-            this.sessions = Objects.requireNonNull(sessions);
+            if (sessions == null) {
+              throw new MissingRequiredPropertyException("GetSessionsResult", "sessions");
+            }
+            this.sessions = sessions;
             return this;
         }
         public Builder sessions(GetSessionsSession... sessions) {

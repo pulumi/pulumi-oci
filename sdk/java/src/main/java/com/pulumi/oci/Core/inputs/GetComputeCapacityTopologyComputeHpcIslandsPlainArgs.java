@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeHpcIslandsFilter;
 import java.lang.String;
 import java.util.List;
@@ -138,7 +139,9 @@ public final class GetComputeCapacityTopologyComputeHpcIslandsPlainArgs extends 
         }
 
         public GetComputeCapacityTopologyComputeHpcIslandsPlainArgs build() {
-            $.computeCapacityTopologyId = Objects.requireNonNull($.computeCapacityTopologyId, "expected parameter 'computeCapacityTopologyId' to be non-null");
+            if ($.computeCapacityTopologyId == null) {
+                throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeHpcIslandsPlainArgs", "computeCapacityTopologyId");
+            }
             return $;
         }
     }

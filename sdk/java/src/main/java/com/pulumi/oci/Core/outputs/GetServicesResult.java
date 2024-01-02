@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetServicesFilter;
 import com.pulumi.oci.Core.outputs.GetServicesService;
 import java.lang.String;
@@ -66,6 +67,7 @@ public final class GetServicesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetServicesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -74,12 +76,18 @@ public final class GetServicesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetServicesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder services(List<GetServicesService> services) {
-            this.services = Objects.requireNonNull(services);
+            if (services == null) {
+              throw new MissingRequiredPropertyException("GetServicesResult", "services");
+            }
+            this.services = services;
             return this;
         }
         public Builder services(GetServicesService... services) {

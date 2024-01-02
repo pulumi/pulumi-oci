@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -182,57 +183,90 @@ public final class GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMet
 
         @CustomType.Setter
         public Builder computeCapacityTopologyId(String computeCapacityTopologyId) {
-            this.computeCapacityTopologyId = Objects.requireNonNull(computeCapacityTopologyId);
+            if (computeCapacityTopologyId == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollectionItem", "computeCapacityTopologyId");
+            }
+            this.computeCapacityTopologyId = computeCapacityTopologyId;
             return this;
         }
         @CustomType.Setter
         public Builder computeHpcIslandId(String computeHpcIslandId) {
-            this.computeHpcIslandId = Objects.requireNonNull(computeHpcIslandId);
+            if (computeHpcIslandId == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollectionItem", "computeHpcIslandId");
+            }
+            this.computeHpcIslandId = computeHpcIslandId;
             return this;
         }
         @CustomType.Setter
         public Builder computeLocalBlockId(String computeLocalBlockId) {
-            this.computeLocalBlockId = Objects.requireNonNull(computeLocalBlockId);
+            if (computeLocalBlockId == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollectionItem", "computeLocalBlockId");
+            }
+            this.computeLocalBlockId = computeLocalBlockId;
             return this;
         }
         @CustomType.Setter
         public Builder computeNetworkBlockId(String computeNetworkBlockId) {
-            this.computeNetworkBlockId = Objects.requireNonNull(computeNetworkBlockId);
+            if (computeNetworkBlockId == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollectionItem", "computeNetworkBlockId");
+            }
+            this.computeNetworkBlockId = computeNetworkBlockId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceId(String instanceId) {
-            this.instanceId = Objects.requireNonNull(instanceId);
+            if (instanceId == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollectionItem", "instanceId");
+            }
+            this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
         public Builder instanceShape(String instanceShape) {
-            this.instanceShape = Objects.requireNonNull(instanceShape);
+            if (instanceShape == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollectionItem", "instanceShape");
+            }
+            this.instanceShape = instanceShape;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollectionItem build() {

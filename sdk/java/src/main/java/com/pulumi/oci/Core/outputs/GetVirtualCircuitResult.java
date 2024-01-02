@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetVirtualCircuitCrossConnectMapping;
 import com.pulumi.oci.Core.outputs.GetVirtualCircuitPublicPrefix;
 import java.lang.Boolean;
@@ -463,37 +464,58 @@ public final class GetVirtualCircuitResult {
 
         @CustomType.Setter
         public Builder bandwidthShapeName(String bandwidthShapeName) {
-            this.bandwidthShapeName = Objects.requireNonNull(bandwidthShapeName);
+            if (bandwidthShapeName == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "bandwidthShapeName");
+            }
+            this.bandwidthShapeName = bandwidthShapeName;
             return this;
         }
         @CustomType.Setter
         public Builder bgpAdminState(String bgpAdminState) {
-            this.bgpAdminState = Objects.requireNonNull(bgpAdminState);
+            if (bgpAdminState == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "bgpAdminState");
+            }
+            this.bgpAdminState = bgpAdminState;
             return this;
         }
         @CustomType.Setter
         public Builder bgpIpv6sessionState(String bgpIpv6sessionState) {
-            this.bgpIpv6sessionState = Objects.requireNonNull(bgpIpv6sessionState);
+            if (bgpIpv6sessionState == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "bgpIpv6sessionState");
+            }
+            this.bgpIpv6sessionState = bgpIpv6sessionState;
             return this;
         }
         @CustomType.Setter
         public Builder bgpManagement(String bgpManagement) {
-            this.bgpManagement = Objects.requireNonNull(bgpManagement);
+            if (bgpManagement == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "bgpManagement");
+            }
+            this.bgpManagement = bgpManagement;
             return this;
         }
         @CustomType.Setter
         public Builder bgpSessionState(String bgpSessionState) {
-            this.bgpSessionState = Objects.requireNonNull(bgpSessionState);
+            if (bgpSessionState == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "bgpSessionState");
+            }
+            this.bgpSessionState = bgpSessionState;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder crossConnectMappings(List<GetVirtualCircuitCrossConnectMapping> crossConnectMappings) {
-            this.crossConnectMappings = Objects.requireNonNull(crossConnectMappings);
+            if (crossConnectMappings == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "crossConnectMappings");
+            }
+            this.crossConnectMappings = crossConnectMappings;
             return this;
         }
         public Builder crossConnectMappings(GetVirtualCircuitCrossConnectMapping... crossConnectMappings) {
@@ -501,77 +523,122 @@ public final class GetVirtualCircuitResult {
         }
         @CustomType.Setter
         public Builder customerAsn(String customerAsn) {
-            this.customerAsn = Objects.requireNonNull(customerAsn);
+            if (customerAsn == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "customerAsn");
+            }
+            this.customerAsn = customerAsn;
             return this;
         }
         @CustomType.Setter
         public Builder customerBgpAsn(Integer customerBgpAsn) {
-            this.customerBgpAsn = Objects.requireNonNull(customerBgpAsn);
+            if (customerBgpAsn == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "customerBgpAsn");
+            }
+            this.customerBgpAsn = customerBgpAsn;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder gatewayId(String gatewayId) {
-            this.gatewayId = Objects.requireNonNull(gatewayId);
+            if (gatewayId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "gatewayId");
+            }
+            this.gatewayId = gatewayId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipMtu(String ipMtu) {
-            this.ipMtu = Objects.requireNonNull(ipMtu);
+            if (ipMtu == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "ipMtu");
+            }
+            this.ipMtu = ipMtu;
             return this;
         }
         @CustomType.Setter
         public Builder isBfdEnabled(Boolean isBfdEnabled) {
-            this.isBfdEnabled = Objects.requireNonNull(isBfdEnabled);
+            if (isBfdEnabled == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "isBfdEnabled");
+            }
+            this.isBfdEnabled = isBfdEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isTransportMode(Boolean isTransportMode) {
-            this.isTransportMode = Objects.requireNonNull(isTransportMode);
+            if (isTransportMode == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "isTransportMode");
+            }
+            this.isTransportMode = isTransportMode;
             return this;
         }
         @CustomType.Setter
         public Builder oracleBgpAsn(Integer oracleBgpAsn) {
-            this.oracleBgpAsn = Objects.requireNonNull(oracleBgpAsn);
+            if (oracleBgpAsn == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "oracleBgpAsn");
+            }
+            this.oracleBgpAsn = oracleBgpAsn;
             return this;
         }
         @CustomType.Setter
         public Builder providerServiceId(String providerServiceId) {
-            this.providerServiceId = Objects.requireNonNull(providerServiceId);
+            if (providerServiceId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "providerServiceId");
+            }
+            this.providerServiceId = providerServiceId;
             return this;
         }
         @CustomType.Setter
         public Builder providerServiceKeyName(String providerServiceKeyName) {
-            this.providerServiceKeyName = Objects.requireNonNull(providerServiceKeyName);
+            if (providerServiceKeyName == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "providerServiceKeyName");
+            }
+            this.providerServiceKeyName = providerServiceKeyName;
             return this;
         }
         @CustomType.Setter
         public Builder providerState(String providerState) {
-            this.providerState = Objects.requireNonNull(providerState);
+            if (providerState == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "providerState");
+            }
+            this.providerState = providerState;
             return this;
         }
         @CustomType.Setter
         public Builder publicPrefixes(List<GetVirtualCircuitPublicPrefix> publicPrefixes) {
-            this.publicPrefixes = Objects.requireNonNull(publicPrefixes);
+            if (publicPrefixes == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "publicPrefixes");
+            }
+            this.publicPrefixes = publicPrefixes;
             return this;
         }
         public Builder publicPrefixes(GetVirtualCircuitPublicPrefix... publicPrefixes) {
@@ -579,17 +646,26 @@ public final class GetVirtualCircuitResult {
         }
         @CustomType.Setter
         public Builder referenceComment(String referenceComment) {
-            this.referenceComment = Objects.requireNonNull(referenceComment);
+            if (referenceComment == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "referenceComment");
+            }
+            this.referenceComment = referenceComment;
             return this;
         }
         @CustomType.Setter
         public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+            if (region == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "region");
+            }
+            this.region = region;
             return this;
         }
         @CustomType.Setter
         public Builder routingPolicies(List<String> routingPolicies) {
-            this.routingPolicies = Objects.requireNonNull(routingPolicies);
+            if (routingPolicies == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "routingPolicies");
+            }
+            this.routingPolicies = routingPolicies;
             return this;
         }
         public Builder routingPolicies(String... routingPolicies) {
@@ -597,27 +673,42 @@ public final class GetVirtualCircuitResult {
         }
         @CustomType.Setter
         public Builder serviceType(String serviceType) {
-            this.serviceType = Objects.requireNonNull(serviceType);
+            if (serviceType == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "serviceType");
+            }
+            this.serviceType = serviceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder virtualCircuitId(String virtualCircuitId) {
-            this.virtualCircuitId = Objects.requireNonNull(virtualCircuitId);
+            if (virtualCircuitId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "virtualCircuitId");
+            }
+            this.virtualCircuitId = virtualCircuitId;
             return this;
         }
         public GetVirtualCircuitResult build() {

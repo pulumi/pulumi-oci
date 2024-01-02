@@ -102,16 +102,19 @@ public final class ExadataInsightMemberVmClusterDetail {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dbmPrivateEndpointId(@Nullable String dbmPrivateEndpointId) {
+
             this.dbmPrivateEndpointId = dbmPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder memberDatabaseDetails(@Nullable List<ExadataInsightMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails) {
+
             this.memberDatabaseDetails = memberDatabaseDetails;
             return this;
         }
@@ -120,11 +123,13 @@ public final class ExadataInsightMemberVmClusterDetail {
         }
         @CustomType.Setter
         public Builder opsiPrivateEndpointId(@Nullable String opsiPrivateEndpointId) {
+
             this.opsiPrivateEndpointId = opsiPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder vmclusterId(@Nullable String vmclusterId) {
+
             this.vmclusterId = vmclusterId;
             return this;
         }

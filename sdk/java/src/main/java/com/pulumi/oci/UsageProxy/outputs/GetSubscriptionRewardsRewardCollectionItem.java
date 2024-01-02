@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRewardsRewardCollectionItemItem;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRewardsRewardCollectionItemSummary;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetSubscriptionRewardsRewardCollectionItem {
 
         @CustomType.Setter
         public Builder items(List<GetSubscriptionRewardsRewardCollectionItemItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRewardsRewardCollectionItem", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetSubscriptionRewardsRewardCollectionItemItem... items) {
@@ -66,7 +70,10 @@ public final class GetSubscriptionRewardsRewardCollectionItem {
         }
         @CustomType.Setter
         public Builder summaries(List<GetSubscriptionRewardsRewardCollectionItemSummary> summaries) {
-            this.summaries = Objects.requireNonNull(summaries);
+            if (summaries == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRewardsRewardCollectionItem", "summaries");
+            }
+            this.summaries = summaries;
             return this;
         }
         public Builder summaries(GetSubscriptionRewardsRewardCollectionItemSummary... summaries) {

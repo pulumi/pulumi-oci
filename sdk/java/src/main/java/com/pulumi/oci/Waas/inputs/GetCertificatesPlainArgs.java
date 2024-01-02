@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.inputs.GetCertificatesFilter;
 import java.lang.String;
 import java.util.List;
@@ -249,7 +250,9 @@ public final class GetCertificatesPlainArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetCertificatesPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetCertificatesPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

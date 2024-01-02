@@ -58,11 +58,13 @@ public final class OdaInstanceRestrictedOperation {
 
         @CustomType.Setter
         public Builder operationName(@Nullable String operationName) {
+
             this.operationName = operationName;
             return this;
         }
         @CustomType.Setter
         public Builder restrictingService(@Nullable String restrictingService) {
+
             this.restrictingService = restrictingService;
             return this;
         }

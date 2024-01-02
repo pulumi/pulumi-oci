@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeight;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion;
 import java.lang.Integer;
@@ -116,17 +117,26 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
 
         @CustomType.Setter
         public Builder actionName(String actionName) {
-            this.actionName = Objects.requireNonNull(actionName);
+            if (actionName == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability", "actionName");
+            }
+            this.actionName = actionName;
             return this;
         }
         @CustomType.Setter
         public Builder collaborativeActionThreshold(Integer collaborativeActionThreshold) {
-            this.collaborativeActionThreshold = Objects.requireNonNull(collaborativeActionThreshold);
+            if (collaborativeActionThreshold == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability", "collaborativeActionThreshold");
+            }
+            this.collaborativeActionThreshold = collaborativeActionThreshold;
             return this;
         }
         @CustomType.Setter
         public Builder collaborativeWeights(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeight> collaborativeWeights) {
-            this.collaborativeWeights = Objects.requireNonNull(collaborativeWeights);
+            if (collaborativeWeights == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability", "collaborativeWeights");
+            }
+            this.collaborativeWeights = collaborativeWeights;
             return this;
         }
         public Builder collaborativeWeights(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeight... collaborativeWeights) {
@@ -134,7 +144,10 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
         }
         @CustomType.Setter
         public Builder exclusions(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion> exclusions) {
-            this.exclusions = Objects.requireNonNull(exclusions);
+            if (exclusions == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability", "exclusions");
+            }
+            this.exclusions = exclusions;
             return this;
         }
         public Builder exclusions(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion... exclusions) {
@@ -142,12 +155,18 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder version(Integer version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability build() {

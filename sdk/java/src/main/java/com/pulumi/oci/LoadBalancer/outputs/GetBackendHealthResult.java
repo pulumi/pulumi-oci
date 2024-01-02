@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.GetBackendHealthHealthCheckResult;
 import java.lang.String;
 import java.util.List;
@@ -98,17 +99,26 @@ public final class GetBackendHealthResult {
 
         @CustomType.Setter
         public Builder backendName(String backendName) {
-            this.backendName = Objects.requireNonNull(backendName);
+            if (backendName == null) {
+              throw new MissingRequiredPropertyException("GetBackendHealthResult", "backendName");
+            }
+            this.backendName = backendName;
             return this;
         }
         @CustomType.Setter
         public Builder backendSetName(String backendSetName) {
-            this.backendSetName = Objects.requireNonNull(backendSetName);
+            if (backendSetName == null) {
+              throw new MissingRequiredPropertyException("GetBackendHealthResult", "backendSetName");
+            }
+            this.backendSetName = backendSetName;
             return this;
         }
         @CustomType.Setter
         public Builder healthCheckResults(List<GetBackendHealthHealthCheckResult> healthCheckResults) {
-            this.healthCheckResults = Objects.requireNonNull(healthCheckResults);
+            if (healthCheckResults == null) {
+              throw new MissingRequiredPropertyException("GetBackendHealthResult", "healthCheckResults");
+            }
+            this.healthCheckResults = healthCheckResults;
             return this;
         }
         public Builder healthCheckResults(GetBackendHealthHealthCheckResult... healthCheckResults) {
@@ -116,17 +126,26 @@ public final class GetBackendHealthResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBackendHealthResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetBackendHealthResult", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetBackendHealthResult", "status");
+            }
+            this.status = status;
             return this;
         }
         public GetBackendHealthResult build() {

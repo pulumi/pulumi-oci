@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.AppFirewallPolicyActionBody;
 import com.pulumi.oci.Waf.outputs.AppFirewallPolicyActionHeader;
 import java.lang.Integer;
@@ -156,16 +157,19 @@ public final class AppFirewallPolicyAction {
 
         @CustomType.Setter
         public Builder body(@Nullable AppFirewallPolicyActionBody body) {
+
             this.body = body;
             return this;
         }
         @CustomType.Setter
         public Builder code(@Nullable Integer code) {
+
             this.code = code;
             return this;
         }
         @CustomType.Setter
         public Builder headers(@Nullable List<AppFirewallPolicyActionHeader> headers) {
+
             this.headers = headers;
             return this;
         }
@@ -174,12 +178,18 @@ public final class AppFirewallPolicyAction {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("AppFirewallPolicyAction", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("AppFirewallPolicyAction", "type");
+            }
+            this.type = type;
             return this;
         }
         public AppFirewallPolicyAction build() {

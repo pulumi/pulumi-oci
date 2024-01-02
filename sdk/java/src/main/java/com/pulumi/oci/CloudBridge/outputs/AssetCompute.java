@@ -445,26 +445,31 @@ public final class AssetCompute {
 
         @CustomType.Setter
         public Builder connectedNetworks(@Nullable Integer connectedNetworks) {
+
             this.connectedNetworks = connectedNetworks;
             return this;
         }
         @CustomType.Setter
         public Builder coresCount(@Nullable Integer coresCount) {
+
             this.coresCount = coresCount;
             return this;
         }
         @CustomType.Setter
         public Builder cpuModel(@Nullable String cpuModel) {
+
             this.cpuModel = cpuModel;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder disks(@Nullable List<AssetComputeDisk> disks) {
+
             this.disks = disks;
             return this;
         }
@@ -473,21 +478,25 @@ public final class AssetCompute {
         }
         @CustomType.Setter
         public Builder disksCount(@Nullable Integer disksCount) {
+
             this.disksCount = disksCount;
             return this;
         }
         @CustomType.Setter
         public Builder dnsName(@Nullable String dnsName) {
+
             this.dnsName = dnsName;
             return this;
         }
         @CustomType.Setter
         public Builder firmware(@Nullable String firmware) {
+
             this.firmware = firmware;
             return this;
         }
         @CustomType.Setter
         public Builder gpuDevices(@Nullable List<AssetComputeGpuDevice> gpuDevices) {
+
             this.gpuDevices = gpuDevices;
             return this;
         }
@@ -496,46 +505,55 @@ public final class AssetCompute {
         }
         @CustomType.Setter
         public Builder gpuDevicesCount(@Nullable Integer gpuDevicesCount) {
+
             this.gpuDevicesCount = gpuDevicesCount;
             return this;
         }
         @CustomType.Setter
         public Builder guestState(@Nullable String guestState) {
+
             this.guestState = guestState;
             return this;
         }
         @CustomType.Setter
         public Builder hardwareVersion(@Nullable String hardwareVersion) {
+
             this.hardwareVersion = hardwareVersion;
             return this;
         }
         @CustomType.Setter
         public Builder hostName(@Nullable String hostName) {
+
             this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder isPmemEnabled(@Nullable Boolean isPmemEnabled) {
+
             this.isPmemEnabled = isPmemEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isTpmEnabled(@Nullable Boolean isTpmEnabled) {
+
             this.isTpmEnabled = isTpmEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder latencySensitivity(@Nullable String latencySensitivity) {
+
             this.latencySensitivity = latencySensitivity;
             return this;
         }
         @CustomType.Setter
         public Builder memoryInMbs(@Nullable String memoryInMbs) {
+
             this.memoryInMbs = memoryInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder nics(@Nullable List<AssetComputeNic> nics) {
+
             this.nics = nics;
             return this;
         }
@@ -544,16 +562,19 @@ public final class AssetCompute {
         }
         @CustomType.Setter
         public Builder nicsCount(@Nullable Integer nicsCount) {
+
             this.nicsCount = nicsCount;
             return this;
         }
         @CustomType.Setter
         public Builder nvdimmController(@Nullable AssetComputeNvdimmController nvdimmController) {
+
             this.nvdimmController = nvdimmController;
             return this;
         }
         @CustomType.Setter
         public Builder nvdimms(@Nullable List<AssetComputeNvdimm> nvdimms) {
+
             this.nvdimms = nvdimms;
             return this;
         }
@@ -562,41 +583,49 @@ public final class AssetCompute {
         }
         @CustomType.Setter
         public Builder operatingSystem(@Nullable String operatingSystem) {
+
             this.operatingSystem = operatingSystem;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystemVersion(@Nullable String operatingSystemVersion) {
+
             this.operatingSystemVersion = operatingSystemVersion;
             return this;
         }
         @CustomType.Setter
         public Builder pmemInMbs(@Nullable String pmemInMbs) {
+
             this.pmemInMbs = pmemInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder powerState(@Nullable String powerState) {
+
             this.powerState = powerState;
             return this;
         }
         @CustomType.Setter
         public Builder primaryIp(@Nullable String primaryIp) {
+
             this.primaryIp = primaryIp;
             return this;
         }
         @CustomType.Setter
         public Builder scsiController(@Nullable AssetComputeScsiController scsiController) {
+
             this.scsiController = scsiController;
             return this;
         }
         @CustomType.Setter
         public Builder storageProvisionedInMbs(@Nullable String storageProvisionedInMbs) {
+
             this.storageProvisionedInMbs = storageProvisionedInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder threadsPerCoreCount(@Nullable Integer threadsPerCoreCount) {
+
             this.threadsPerCoreCount = threadsPerCoreCount;
             return this;
         }

@@ -72,16 +72,19 @@ public final class RedisClusterNodeCollectionItem {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpointFqdn(@Nullable String privateEndpointFqdn) {
+
             this.privateEndpointFqdn = privateEndpointFqdn;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpointIpAddress(@Nullable String privateEndpointIpAddress) {
+
             this.privateEndpointIpAddress = privateEndpointIpAddress;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Autoscaling.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Autoscaling.outputs.AutoScalingConfigurationPolicyCapacity;
 import com.pulumi.oci.Autoscaling.outputs.AutoScalingConfigurationPolicyExecutionSchedule;
 import com.pulumi.oci.Autoscaling.outputs.AutoScalingConfigurationPolicyResourceAction;
@@ -146,41 +147,51 @@ public final class AutoScalingConfigurationPolicy {
 
         @CustomType.Setter
         public Builder capacity(@Nullable AutoScalingConfigurationPolicyCapacity capacity) {
+
             this.capacity = capacity;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder executionSchedule(@Nullable AutoScalingConfigurationPolicyExecutionSchedule executionSchedule) {
+
             this.executionSchedule = executionSchedule;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
+
             this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder policyType(String policyType) {
-            this.policyType = Objects.requireNonNull(policyType);
+            if (policyType == null) {
+              throw new MissingRequiredPropertyException("AutoScalingConfigurationPolicy", "policyType");
+            }
+            this.policyType = policyType;
             return this;
         }
         @CustomType.Setter
         public Builder resourceAction(@Nullable AutoScalingConfigurationPolicyResourceAction resourceAction) {
+
             this.resourceAction = resourceAction;
             return this;
         }
         @CustomType.Setter
         public Builder rules(@Nullable List<AutoScalingConfigurationPolicyRule> rules) {
+
             this.rules = rules;
             return this;
         }
@@ -189,6 +200,7 @@ public final class AutoScalingConfigurationPolicy {
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }

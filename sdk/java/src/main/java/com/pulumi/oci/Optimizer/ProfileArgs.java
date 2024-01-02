@@ -5,6 +5,7 @@ package com.pulumi.oci.Optimizer;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.inputs.ProfileLevelsConfigurationArgs;
 import com.pulumi.oci.Optimizer.inputs.ProfileTargetCompartmentsArgs;
 import com.pulumi.oci.Optimizer.inputs.ProfileTargetTagsArgs;
@@ -378,9 +379,15 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ProfileArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.description = Objects.requireNonNull($.description, "expected parameter 'description' to be non-null");
-            $.levelsConfiguration = Objects.requireNonNull($.levelsConfiguration, "expected parameter 'levelsConfiguration' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ProfileArgs", "compartmentId");
+            }
+            if ($.description == null) {
+                throw new MissingRequiredPropertyException("ProfileArgs", "description");
+            }
+            if ($.levelsConfiguration == null) {
+                throw new MissingRequiredPropertyException("ProfileArgs", "levelsConfiguration");
+            }
             return $;
         }
     }

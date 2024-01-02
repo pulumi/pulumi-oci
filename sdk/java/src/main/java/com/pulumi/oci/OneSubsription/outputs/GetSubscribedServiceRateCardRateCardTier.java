@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetSubscribedServiceRateCardRateCardTier {
 
         @CustomType.Setter
         public Builder netUnitPrice(String netUnitPrice) {
-            this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
+            if (netUnitPrice == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServiceRateCardRateCardTier", "netUnitPrice");
+            }
+            this.netUnitPrice = netUnitPrice;
             return this;
         }
         @CustomType.Setter
         public Builder overagePrice(String overagePrice) {
-            this.overagePrice = Objects.requireNonNull(overagePrice);
+            if (overagePrice == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServiceRateCardRateCardTier", "overagePrice");
+            }
+            this.overagePrice = overagePrice;
             return this;
         }
         @CustomType.Setter
         public Builder upToQuantity(String upToQuantity) {
-            this.upToQuantity = Objects.requireNonNull(upToQuantity);
+            if (upToQuantity == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServiceRateCardRateCardTier", "upToQuantity");
+            }
+            this.upToQuantity = upToQuantity;
             return this;
         }
         public GetSubscribedServiceRateCardRateCardTier build() {

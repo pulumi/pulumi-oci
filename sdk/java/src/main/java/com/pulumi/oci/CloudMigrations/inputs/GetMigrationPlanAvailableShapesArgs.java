@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudMigrations.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlanAvailableShapesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -247,7 +248,9 @@ public final class GetMigrationPlanAvailableShapesArgs extends com.pulumi.resour
         }
 
         public GetMigrationPlanAvailableShapesArgs build() {
-            $.migrationPlanId = Objects.requireNonNull($.migrationPlanId, "expected parameter 'migrationPlanId' to be non-null");
+            if ($.migrationPlanId == null) {
+                throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesArgs", "migrationPlanId");
+            }
             return $;
         }
     }

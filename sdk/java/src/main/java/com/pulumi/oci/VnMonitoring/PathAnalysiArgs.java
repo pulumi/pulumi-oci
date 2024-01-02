@@ -5,6 +5,7 @@ package com.pulumi.oci.VnMonitoring;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.VnMonitoring.inputs.PathAnalysiDestinationEndpointArgs;
 import com.pulumi.oci.VnMonitoring.inputs.PathAnalysiProtocolParametersArgs;
 import com.pulumi.oci.VnMonitoring.inputs.PathAnalysiQueryOptionsArgs;
@@ -389,7 +390,9 @@ public final class PathAnalysiArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public PathAnalysiArgs build() {
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("PathAnalysiArgs", "type");
+            }
             return $;
         }
     }

@@ -102,21 +102,25 @@ public final class ModelCustomMetadataList {
 
         @CustomType.Setter
         public Builder category(@Nullable String category) {
+
             this.category = category;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder key(@Nullable String key) {
+
             this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder value(@Nullable String value) {
+
             this.value = value;
             return this;
         }

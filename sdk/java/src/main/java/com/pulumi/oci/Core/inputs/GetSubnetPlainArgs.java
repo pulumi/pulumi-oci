@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetSubnetPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetSubnetPlainArgs build() {
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("GetSubnetPlainArgs", "subnetId");
+            }
             return $;
         }
     }

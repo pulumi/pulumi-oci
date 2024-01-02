@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetBdsInstancesBdsInstanceNetworkConfig {
 
         @CustomType.Setter
         public Builder cidrBlock(String cidrBlock) {
-            this.cidrBlock = Objects.requireNonNull(cidrBlock);
+            if (cidrBlock == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstanceNetworkConfig", "cidrBlock");
+            }
+            this.cidrBlock = cidrBlock;
             return this;
         }
         @CustomType.Setter
         public Builder isNatGatewayRequired(Boolean isNatGatewayRequired) {
-            this.isNatGatewayRequired = Objects.requireNonNull(isNatGatewayRequired);
+            if (isNatGatewayRequired == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstanceNetworkConfig", "isNatGatewayRequired");
+            }
+            this.isNatGatewayRequired = isNatGatewayRequired;
             return this;
         }
         public GetBdsInstancesBdsInstanceNetworkConfig build() {

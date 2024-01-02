@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -115,7 +116,10 @@ public final class GetDeploymentSpecificationRouteRequestPolicyCor {
 
         @CustomType.Setter
         public Builder allowedHeaders(List<String> allowedHeaders) {
-            this.allowedHeaders = Objects.requireNonNull(allowedHeaders);
+            if (allowedHeaders == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRouteRequestPolicyCor", "allowedHeaders");
+            }
+            this.allowedHeaders = allowedHeaders;
             return this;
         }
         public Builder allowedHeaders(String... allowedHeaders) {
@@ -123,7 +127,10 @@ public final class GetDeploymentSpecificationRouteRequestPolicyCor {
         }
         @CustomType.Setter
         public Builder allowedMethods(List<String> allowedMethods) {
-            this.allowedMethods = Objects.requireNonNull(allowedMethods);
+            if (allowedMethods == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRouteRequestPolicyCor", "allowedMethods");
+            }
+            this.allowedMethods = allowedMethods;
             return this;
         }
         public Builder allowedMethods(String... allowedMethods) {
@@ -131,7 +138,10 @@ public final class GetDeploymentSpecificationRouteRequestPolicyCor {
         }
         @CustomType.Setter
         public Builder allowedOrigins(List<String> allowedOrigins) {
-            this.allowedOrigins = Objects.requireNonNull(allowedOrigins);
+            if (allowedOrigins == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRouteRequestPolicyCor", "allowedOrigins");
+            }
+            this.allowedOrigins = allowedOrigins;
             return this;
         }
         public Builder allowedOrigins(String... allowedOrigins) {
@@ -139,7 +149,10 @@ public final class GetDeploymentSpecificationRouteRequestPolicyCor {
         }
         @CustomType.Setter
         public Builder exposedHeaders(List<String> exposedHeaders) {
-            this.exposedHeaders = Objects.requireNonNull(exposedHeaders);
+            if (exposedHeaders == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRouteRequestPolicyCor", "exposedHeaders");
+            }
+            this.exposedHeaders = exposedHeaders;
             return this;
         }
         public Builder exposedHeaders(String... exposedHeaders) {
@@ -147,12 +160,18 @@ public final class GetDeploymentSpecificationRouteRequestPolicyCor {
         }
         @CustomType.Setter
         public Builder isAllowCredentialsEnabled(Boolean isAllowCredentialsEnabled) {
-            this.isAllowCredentialsEnabled = Objects.requireNonNull(isAllowCredentialsEnabled);
+            if (isAllowCredentialsEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRouteRequestPolicyCor", "isAllowCredentialsEnabled");
+            }
+            this.isAllowCredentialsEnabled = isAllowCredentialsEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder maxAgeInSeconds(Integer maxAgeInSeconds) {
-            this.maxAgeInSeconds = Objects.requireNonNull(maxAgeInSeconds);
+            if (maxAgeInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRouteRequestPolicyCor", "maxAgeInSeconds");
+            }
+            this.maxAgeInSeconds = maxAgeInSeconds;
             return this;
         }
         public GetDeploymentSpecificationRouteRequestPolicyCor build() {

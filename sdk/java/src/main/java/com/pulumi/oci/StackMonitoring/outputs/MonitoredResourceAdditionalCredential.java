@@ -142,26 +142,31 @@ public final class MonitoredResourceAdditionalCredential {
 
         @CustomType.Setter
         public Builder credentialType(@Nullable String credentialType) {
+
             this.credentialType = credentialType;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder keyId(@Nullable String keyId) {
+
             this.keyId = keyId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder properties(@Nullable List<MonitoredResourceAdditionalCredentialProperty> properties) {
+
             this.properties = properties;
             return this;
         }
@@ -170,11 +175,13 @@ public final class MonitoredResourceAdditionalCredential {
         }
         @CustomType.Setter
         public Builder source(@Nullable String source) {
+
             this.source = source;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -100,26 +101,33 @@ public final class DataAssetDataSourceDetailsVersionSpecificDetails {
 
         @CustomType.Setter
         public Builder bucket(@Nullable String bucket) {
+
             this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder databaseName(@Nullable String databaseName) {
+
             this.databaseName = databaseName;
             return this;
         }
         @CustomType.Setter
         public Builder influxVersion(String influxVersion) {
-            this.influxVersion = Objects.requireNonNull(influxVersion);
+            if (influxVersion == null) {
+              throw new MissingRequiredPropertyException("DataAssetDataSourceDetailsVersionSpecificDetails", "influxVersion");
+            }
+            this.influxVersion = influxVersion;
             return this;
         }
         @CustomType.Setter
         public Builder organizationName(@Nullable String organizationName) {
+
             this.organizationName = organizationName;
             return this;
         }
         @CustomType.Setter
         public Builder retentionPolicyName(@Nullable String retentionPolicyName) {
+
             this.retentionPolicyName = retentionPolicyName;
             return this;
         }

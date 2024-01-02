@@ -5,6 +5,7 @@ package com.pulumi.oci.Waf.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.inputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs;
 import com.pulumi.oci.Waf.inputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs;
 import java.lang.Integer;
@@ -275,8 +276,12 @@ public final class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArg
         }
 
         public AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs build() {
-            $.key = Objects.requireNonNull($.key, "expected parameter 'key' to be non-null");
-            $.version = Objects.requireNonNull($.version, "expected parameter 'version' to be non-null");
+            if ($.key == null) {
+                throw new MissingRequiredPropertyException("AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs", "key");
+            }
+            if ($.version == null) {
+                throw new MissingRequiredPropertyException("AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs", "version");
+            }
             return $;
         }
     }

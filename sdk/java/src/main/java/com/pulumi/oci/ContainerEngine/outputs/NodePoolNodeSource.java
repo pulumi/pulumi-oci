@@ -72,16 +72,19 @@ public final class NodePoolNodeSource {
 
         @CustomType.Setter
         public Builder imageId(@Nullable String imageId) {
+
             this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceName(@Nullable String sourceName) {
+
             this.sourceName = sourceName;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(@Nullable String sourceType) {
+
             this.sourceType = sourceType;
             return this;
         }

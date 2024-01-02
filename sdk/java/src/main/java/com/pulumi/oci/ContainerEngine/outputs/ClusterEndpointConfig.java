@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -74,11 +75,13 @@ public final class ClusterEndpointConfig {
 
         @CustomType.Setter
         public Builder isPublicIpEnabled(@Nullable Boolean isPublicIpEnabled) {
+
             this.isPublicIpEnabled = isPublicIpEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder nsgIds(@Nullable List<String> nsgIds) {
+
             this.nsgIds = nsgIds;
             return this;
         }
@@ -87,7 +90,10 @@ public final class ClusterEndpointConfig {
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("ClusterEndpointConfig", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         public ClusterEndpointConfig build() {

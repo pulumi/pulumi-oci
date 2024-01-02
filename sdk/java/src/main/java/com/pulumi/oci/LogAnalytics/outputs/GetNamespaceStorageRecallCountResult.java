@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -119,37 +120,58 @@ public final class GetNamespaceStorageRecallCountResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageRecallCountResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageRecallCountResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder recallCount(Integer recallCount) {
-            this.recallCount = Objects.requireNonNull(recallCount);
+            if (recallCount == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageRecallCountResult", "recallCount");
+            }
+            this.recallCount = recallCount;
             return this;
         }
         @CustomType.Setter
         public Builder recallFailed(Integer recallFailed) {
-            this.recallFailed = Objects.requireNonNull(recallFailed);
+            if (recallFailed == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageRecallCountResult", "recallFailed");
+            }
+            this.recallFailed = recallFailed;
             return this;
         }
         @CustomType.Setter
         public Builder recallLimit(Integer recallLimit) {
-            this.recallLimit = Objects.requireNonNull(recallLimit);
+            if (recallLimit == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageRecallCountResult", "recallLimit");
+            }
+            this.recallLimit = recallLimit;
             return this;
         }
         @CustomType.Setter
         public Builder recallPending(Integer recallPending) {
-            this.recallPending = Objects.requireNonNull(recallPending);
+            if (recallPending == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageRecallCountResult", "recallPending");
+            }
+            this.recallPending = recallPending;
             return this;
         }
         @CustomType.Setter
         public Builder recallSucceeded(Integer recallSucceeded) {
-            this.recallSucceeded = Objects.requireNonNull(recallSucceeded);
+            if (recallSucceeded == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageRecallCountResult", "recallSucceeded");
+            }
+            this.recallSucceeded = recallSucceeded;
             return this;
         }
         public GetNamespaceStorageRecallCountResult build() {

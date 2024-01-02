@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem {
 
         @CustomType.Setter
         public Builder cidrBlock(String cidrBlock) {
-            this.cidrBlock = Objects.requireNonNull(cidrBlock);
+            if (cidrBlock == null) {
+              throw new MissingRequiredPropertyException("GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem", "cidrBlock");
+            }
+            this.cidrBlock = cidrBlock;
             return this;
         }
         @CustomType.Setter
         public Builder publicIpPoolId(String publicIpPoolId) {
-            this.publicIpPoolId = Objects.requireNonNull(publicIpPoolId);
+            if (publicIpPoolId == null) {
+              throw new MissingRequiredPropertyException("GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem", "publicIpPoolId");
+            }
+            this.publicIpPoolId = publicIpPoolId;
             return this;
         }
         public GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem build() {

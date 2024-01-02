@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -51,7 +52,10 @@ public final class DeploymentSpecificationRequestPoliciesUsagePlans {
 
         @CustomType.Setter
         public Builder tokenLocations(List<String> tokenLocations) {
-            this.tokenLocations = Objects.requireNonNull(tokenLocations);
+            if (tokenLocations == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRequestPoliciesUsagePlans", "tokenLocations");
+            }
+            this.tokenLocations = tokenLocations;
             return this;
         }
         public Builder tokenLocations(String... tokenLocations) {

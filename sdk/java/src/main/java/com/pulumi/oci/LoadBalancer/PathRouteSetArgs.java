@@ -5,6 +5,7 @@ package com.pulumi.oci.LoadBalancer;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.inputs.PathRouteSetPathRouteArgs;
 import java.lang.String;
 import java.util.List;
@@ -162,8 +163,12 @@ public final class PathRouteSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public PathRouteSetArgs build() {
-            $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
-            $.pathRoutes = Objects.requireNonNull($.pathRoutes, "expected parameter 'pathRoutes' to be non-null");
+            if ($.loadBalancerId == null) {
+                throw new MissingRequiredPropertyException("PathRouteSetArgs", "loadBalancerId");
+            }
+            if ($.pathRoutes == null) {
+                throw new MissingRequiredPropertyException("PathRouteSetArgs", "pathRoutes");
+            }
             return $;
         }
     }

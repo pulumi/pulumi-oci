@@ -87,21 +87,25 @@ public final class ExternalClusterScanConfiguration {
 
         @CustomType.Setter
         public Builder networkNumber(@Nullable Integer networkNumber) {
+
             this.networkNumber = networkNumber;
             return this;
         }
         @CustomType.Setter
         public Builder scanName(@Nullable String scanName) {
+
             this.scanName = scanName;
             return this;
         }
         @CustomType.Setter
         public Builder scanPort(@Nullable Integer scanPort) {
+
             this.scanPort = scanPort;
             return this;
         }
         @CustomType.Setter
         public Builder scanProtocol(@Nullable String scanProtocol) {
+
             this.scanProtocol = scanProtocol;
             return this;
         }

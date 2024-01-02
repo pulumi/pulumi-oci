@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -430,56 +431,71 @@ public final class DomainsCloudGateMapping {
 
         @CustomType.Setter
         public Builder appId(@Nullable String appId) {
+
             this.appId = appId;
             return this;
         }
         @CustomType.Setter
         public Builder mappingId(@Nullable String mappingId) {
+
             this.mappingId = mappingId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder nginxSettings(@Nullable String nginxSettings) {
+
             this.nginxSettings = nginxSettings;
             return this;
         }
         @CustomType.Setter
         public Builder policyName(@Nullable String policyName) {
+
             this.policyName = policyName;
             return this;
         }
         @CustomType.Setter
         public Builder proxyPass(@Nullable String proxyPass) {
+
             this.proxyPass = proxyPass;
             return this;
         }
         @CustomType.Setter
         public Builder ref(@Nullable String ref) {
+
             this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder resourcePrefix(String resourcePrefix) {
-            this.resourcePrefix = Objects.requireNonNull(resourcePrefix);
+            if (resourcePrefix == null) {
+              throw new MissingRequiredPropertyException("DomainsCloudGateMapping", "resourcePrefix");
+            }
+            this.resourcePrefix = resourcePrefix;
             return this;
         }
         @CustomType.Setter
         public Builder serverId(String serverId) {
-            this.serverId = Objects.requireNonNull(serverId);
+            if (serverId == null) {
+              throw new MissingRequiredPropertyException("DomainsCloudGateMapping", "serverId");
+            }
+            this.serverId = serverId;
             return this;
         }
         @CustomType.Setter
         public Builder upstreamServerGroupId(@Nullable String upstreamServerGroupId) {
+
             this.upstreamServerGroupId = upstreamServerGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder value(@Nullable String value) {
+
             this.value = value;
             return this;
         }

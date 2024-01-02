@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetAuditProfileAuditTrail;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -306,17 +307,26 @@ public final class GetAuditProfileResult {
 
         @CustomType.Setter
         public Builder auditCollectedVolume(String auditCollectedVolume) {
-            this.auditCollectedVolume = Objects.requireNonNull(auditCollectedVolume);
+            if (auditCollectedVolume == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "auditCollectedVolume");
+            }
+            this.auditCollectedVolume = auditCollectedVolume;
             return this;
         }
         @CustomType.Setter
         public Builder auditProfileId(String auditProfileId) {
-            this.auditProfileId = Objects.requireNonNull(auditProfileId);
+            if (auditProfileId == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "auditProfileId");
+            }
+            this.auditProfileId = auditProfileId;
             return this;
         }
         @CustomType.Setter
         public Builder auditTrails(List<GetAuditProfileAuditTrail> auditTrails) {
-            this.auditTrails = Objects.requireNonNull(auditTrails);
+            if (auditTrails == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "auditTrails");
+            }
+            this.auditTrails = auditTrails;
             return this;
         }
         public Builder auditTrails(GetAuditProfileAuditTrail... auditTrails) {
@@ -324,87 +334,138 @@ public final class GetAuditProfileResult {
         }
         @CustomType.Setter
         public Builder changeRetentionTrigger(Integer changeRetentionTrigger) {
-            this.changeRetentionTrigger = Objects.requireNonNull(changeRetentionTrigger);
+            if (changeRetentionTrigger == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "changeRetentionTrigger");
+            }
+            this.changeRetentionTrigger = changeRetentionTrigger;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isOverrideGlobalRetentionSetting(Boolean isOverrideGlobalRetentionSetting) {
-            this.isOverrideGlobalRetentionSetting = Objects.requireNonNull(isOverrideGlobalRetentionSetting);
+            if (isOverrideGlobalRetentionSetting == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "isOverrideGlobalRetentionSetting");
+            }
+            this.isOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
             return this;
         }
         @CustomType.Setter
         public Builder isPaidUsageEnabled(Boolean isPaidUsageEnabled) {
-            this.isPaidUsageEnabled = Objects.requireNonNull(isPaidUsageEnabled);
+            if (isPaidUsageEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "isPaidUsageEnabled");
+            }
+            this.isPaidUsageEnabled = isPaidUsageEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder offlineMonths(Integer offlineMonths) {
-            this.offlineMonths = Objects.requireNonNull(offlineMonths);
+            if (offlineMonths == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "offlineMonths");
+            }
+            this.offlineMonths = offlineMonths;
             return this;
         }
         @CustomType.Setter
         public Builder onlineMonths(Integer onlineMonths) {
-            this.onlineMonths = Objects.requireNonNull(onlineMonths);
+            if (onlineMonths == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "onlineMonths");
+            }
+            this.onlineMonths = onlineMonths;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "targetId");
+            }
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetAuditProfileResult build() {

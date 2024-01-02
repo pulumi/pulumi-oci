@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseTools.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetDatabaseToolsPrivateEndpointArgs extends com.pulumi.resour
         }
 
         public GetDatabaseToolsPrivateEndpointArgs build() {
-            $.databaseToolsPrivateEndpointId = Objects.requireNonNull($.databaseToolsPrivateEndpointId, "expected parameter 'databaseToolsPrivateEndpointId' to be non-null");
+            if ($.databaseToolsPrivateEndpointId == null) {
+                throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointArgs", "databaseToolsPrivateEndpointId");
+            }
             return $;
         }
     }

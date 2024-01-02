@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceEdgeNodeShapeConfigArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -226,9 +227,15 @@ public final class BdsInstanceEdgeNodeArgs extends com.pulumi.resources.Resource
         }
 
         public BdsInstanceEdgeNodeArgs build() {
-            $.numberOfNodes = Objects.requireNonNull($.numberOfNodes, "expected parameter 'numberOfNodes' to be non-null");
-            $.shape = Objects.requireNonNull($.shape, "expected parameter 'shape' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.numberOfNodes == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceEdgeNodeArgs", "numberOfNodes");
+            }
+            if ($.shape == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceEdgeNodeArgs", "shape");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceEdgeNodeArgs", "subnetId");
+            }
             return $;
         }
     }

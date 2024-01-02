@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy {
 
         @CustomType.Setter
         public Builder automaticBackupRetention(String automaticBackupRetention) {
-            this.automaticBackupRetention = Objects.requireNonNull(automaticBackupRetention);
+            if (automaticBackupRetention == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy", "automaticBackupRetention");
+            }
+            this.automaticBackupRetention = automaticBackupRetention;
             return this;
         }
         @CustomType.Setter
         public Builder finalBackup(String finalBackup) {
-            this.finalBackup = Objects.requireNonNull(finalBackup);
+            if (finalBackup == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy", "finalBackup");
+            }
+            this.finalBackup = finalBackup;
             return this;
         }
         @CustomType.Setter
         public Builder isDeleteProtected(Boolean isDeleteProtected) {
-            this.isDeleteProtected = Objects.requireNonNull(isDeleteProtected);
+            if (isDeleteProtected == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy", "isDeleteProtected");
+            }
+            this.isDeleteProtected = isDeleteProtected;
             return this;
         }
         public GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy build() {

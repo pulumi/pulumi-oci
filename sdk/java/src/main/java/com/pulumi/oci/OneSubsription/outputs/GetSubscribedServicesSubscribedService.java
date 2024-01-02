@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OneSubsription.outputs.GetSubscribedServicesSubscribedServiceBillToAddress;
 import com.pulumi.oci.OneSubsription.outputs.GetSubscribedServicesSubscribedServiceBillToContact;
 import com.pulumi.oci.OneSubsription.outputs.GetSubscribedServicesSubscribedServiceBillToCustomer;
@@ -1603,32 +1604,50 @@ public final class GetSubscribedServicesSubscribedService {
 
         @CustomType.Setter
         public Builder adminEmail(String adminEmail) {
-            this.adminEmail = Objects.requireNonNull(adminEmail);
+            if (adminEmail == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "adminEmail");
+            }
+            this.adminEmail = adminEmail;
             return this;
         }
         @CustomType.Setter
         public Builder agreementId(String agreementId) {
-            this.agreementId = Objects.requireNonNull(agreementId);
+            if (agreementId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "agreementId");
+            }
+            this.agreementId = agreementId;
             return this;
         }
         @CustomType.Setter
         public Builder agreementName(String agreementName) {
-            this.agreementName = Objects.requireNonNull(agreementName);
+            if (agreementName == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "agreementName");
+            }
+            this.agreementName = agreementName;
             return this;
         }
         @CustomType.Setter
         public Builder agreementType(String agreementType) {
-            this.agreementType = Objects.requireNonNull(agreementType);
+            if (agreementType == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "agreementType");
+            }
+            this.agreementType = agreementType;
             return this;
         }
         @CustomType.Setter
         public Builder availableAmount(String availableAmount) {
-            this.availableAmount = Objects.requireNonNull(availableAmount);
+            if (availableAmount == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "availableAmount");
+            }
+            this.availableAmount = availableAmount;
             return this;
         }
         @CustomType.Setter
         public Builder billToAddresses(List<GetSubscribedServicesSubscribedServiceBillToAddress> billToAddresses) {
-            this.billToAddresses = Objects.requireNonNull(billToAddresses);
+            if (billToAddresses == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "billToAddresses");
+            }
+            this.billToAddresses = billToAddresses;
             return this;
         }
         public Builder billToAddresses(GetSubscribedServicesSubscribedServiceBillToAddress... billToAddresses) {
@@ -1636,7 +1655,10 @@ public final class GetSubscribedServicesSubscribedService {
         }
         @CustomType.Setter
         public Builder billToContacts(List<GetSubscribedServicesSubscribedServiceBillToContact> billToContacts) {
-            this.billToContacts = Objects.requireNonNull(billToContacts);
+            if (billToContacts == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "billToContacts");
+            }
+            this.billToContacts = billToContacts;
             return this;
         }
         public Builder billToContacts(GetSubscribedServicesSubscribedServiceBillToContact... billToContacts) {
@@ -1644,7 +1666,10 @@ public final class GetSubscribedServicesSubscribedService {
         }
         @CustomType.Setter
         public Builder billToCustomers(List<GetSubscribedServicesSubscribedServiceBillToCustomer> billToCustomers) {
-            this.billToCustomers = Objects.requireNonNull(billToCustomers);
+            if (billToCustomers == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "billToCustomers");
+            }
+            this.billToCustomers = billToCustomers;
             return this;
         }
         public Builder billToCustomers(GetSubscribedServicesSubscribedServiceBillToCustomer... billToCustomers) {
@@ -1652,27 +1677,42 @@ public final class GetSubscribedServicesSubscribedService {
         }
         @CustomType.Setter
         public Builder billingFrequency(String billingFrequency) {
-            this.billingFrequency = Objects.requireNonNull(billingFrequency);
+            if (billingFrequency == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "billingFrequency");
+            }
+            this.billingFrequency = billingFrequency;
             return this;
         }
         @CustomType.Setter
         public Builder bookingOptyNumber(String bookingOptyNumber) {
-            this.bookingOptyNumber = Objects.requireNonNull(bookingOptyNumber);
+            if (bookingOptyNumber == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "bookingOptyNumber");
+            }
+            this.bookingOptyNumber = bookingOptyNumber;
             return this;
         }
         @CustomType.Setter
         public Builder buyerEmail(String buyerEmail) {
-            this.buyerEmail = Objects.requireNonNull(buyerEmail);
+            if (buyerEmail == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "buyerEmail");
+            }
+            this.buyerEmail = buyerEmail;
             return this;
         }
         @CustomType.Setter
         public Builder commitmentScheduleId(String commitmentScheduleId) {
-            this.commitmentScheduleId = Objects.requireNonNull(commitmentScheduleId);
+            if (commitmentScheduleId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "commitmentScheduleId");
+            }
+            this.commitmentScheduleId = commitmentScheduleId;
             return this;
         }
         @CustomType.Setter
         public Builder commitmentServices(List<GetSubscribedServicesSubscribedServiceCommitmentService> commitmentServices) {
-            this.commitmentServices = Objects.requireNonNull(commitmentServices);
+            if (commitmentServices == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "commitmentServices");
+            }
+            this.commitmentServices = commitmentServices;
             return this;
         }
         public Builder commitmentServices(GetSubscribedServicesSubscribedServiceCommitmentService... commitmentServices) {
@@ -1680,42 +1720,66 @@ public final class GetSubscribedServicesSubscribedService {
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder creditPercentage(String creditPercentage) {
-            this.creditPercentage = Objects.requireNonNull(creditPercentage);
+            if (creditPercentage == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "creditPercentage");
+            }
+            this.creditPercentage = creditPercentage;
             return this;
         }
         @CustomType.Setter
         public Builder csi(String csi) {
-            this.csi = Objects.requireNonNull(csi);
+            if (csi == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "csi");
+            }
+            this.csi = csi;
             return this;
         }
         @CustomType.Setter
         public Builder customerTransactionReference(String customerTransactionReference) {
-            this.customerTransactionReference = Objects.requireNonNull(customerTransactionReference);
+            if (customerTransactionReference == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "customerTransactionReference");
+            }
+            this.customerTransactionReference = customerTransactionReference;
             return this;
         }
         @CustomType.Setter
         public Builder dataCenter(String dataCenter) {
-            this.dataCenter = Objects.requireNonNull(dataCenter);
+            if (dataCenter == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "dataCenter");
+            }
+            this.dataCenter = dataCenter;
             return this;
         }
         @CustomType.Setter
         public Builder dataCenterRegion(String dataCenterRegion) {
-            this.dataCenterRegion = Objects.requireNonNull(dataCenterRegion);
+            if (dataCenterRegion == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "dataCenterRegion");
+            }
+            this.dataCenterRegion = dataCenterRegion;
             return this;
         }
         @CustomType.Setter
         public Builder eligibleToRenew(String eligibleToRenew) {
-            this.eligibleToRenew = Objects.requireNonNull(eligibleToRenew);
+            if (eligibleToRenew == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "eligibleToRenew");
+            }
+            this.eligibleToRenew = eligibleToRenew;
             return this;
         }
         @CustomType.Setter
         public Builder endUserAddresses(List<GetSubscribedServicesSubscribedServiceEndUserAddress> endUserAddresses) {
-            this.endUserAddresses = Objects.requireNonNull(endUserAddresses);
+            if (endUserAddresses == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "endUserAddresses");
+            }
+            this.endUserAddresses = endUserAddresses;
             return this;
         }
         public Builder endUserAddresses(GetSubscribedServicesSubscribedServiceEndUserAddress... endUserAddresses) {
@@ -1723,7 +1787,10 @@ public final class GetSubscribedServicesSubscribedService {
         }
         @CustomType.Setter
         public Builder endUserContacts(List<GetSubscribedServicesSubscribedServiceEndUserContact> endUserContacts) {
-            this.endUserContacts = Objects.requireNonNull(endUserContacts);
+            if (endUserContacts == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "endUserContacts");
+            }
+            this.endUserContacts = endUserContacts;
             return this;
         }
         public Builder endUserContacts(GetSubscribedServicesSubscribedServiceEndUserContact... endUserContacts) {
@@ -1731,7 +1798,10 @@ public final class GetSubscribedServicesSubscribedService {
         }
         @CustomType.Setter
         public Builder endUserCustomers(List<GetSubscribedServicesSubscribedServiceEndUserCustomer> endUserCustomers) {
-            this.endUserCustomers = Objects.requireNonNull(endUserCustomers);
+            if (endUserCustomers == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "endUserCustomers");
+            }
+            this.endUserCustomers = endUserCustomers;
             return this;
         }
         public Builder endUserCustomers(GetSubscribedServicesSubscribedServiceEndUserCustomer... endUserCustomers) {
@@ -1739,152 +1809,242 @@ public final class GetSubscribedServicesSubscribedService {
         }
         @CustomType.Setter
         public Builder fulfillmentSet(String fulfillmentSet) {
-            this.fulfillmentSet = Objects.requireNonNull(fulfillmentSet);
+            if (fulfillmentSet == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "fulfillmentSet");
+            }
+            this.fulfillmentSet = fulfillmentSet;
             return this;
         }
         @CustomType.Setter
         public Builder fundedAllocationValue(String fundedAllocationValue) {
-            this.fundedAllocationValue = Objects.requireNonNull(fundedAllocationValue);
+            if (fundedAllocationValue == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "fundedAllocationValue");
+            }
+            this.fundedAllocationValue = fundedAllocationValue;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAllowance(Boolean isAllowance) {
-            this.isAllowance = Objects.requireNonNull(isAllowance);
+            if (isAllowance == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "isAllowance");
+            }
+            this.isAllowance = isAllowance;
             return this;
         }
         @CustomType.Setter
         public Builder isCapToPriceList(Boolean isCapToPriceList) {
-            this.isCapToPriceList = Objects.requireNonNull(isCapToPriceList);
+            if (isCapToPriceList == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "isCapToPriceList");
+            }
+            this.isCapToPriceList = isCapToPriceList;
             return this;
         }
         @CustomType.Setter
         public Builder isCreditEnabled(Boolean isCreditEnabled) {
-            this.isCreditEnabled = Objects.requireNonNull(isCreditEnabled);
+            if (isCreditEnabled == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "isCreditEnabled");
+            }
+            this.isCreditEnabled = isCreditEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isHavingUsage(Boolean isHavingUsage) {
-            this.isHavingUsage = Objects.requireNonNull(isHavingUsage);
+            if (isHavingUsage == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "isHavingUsage");
+            }
+            this.isHavingUsage = isHavingUsage;
             return this;
         }
         @CustomType.Setter
         public Builder isIntentToPay(Boolean isIntentToPay) {
-            this.isIntentToPay = Objects.requireNonNull(isIntentToPay);
+            if (isIntentToPay == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "isIntentToPay");
+            }
+            this.isIntentToPay = isIntentToPay;
             return this;
         }
         @CustomType.Setter
         public Builder isPayg(Boolean isPayg) {
-            this.isPayg = Objects.requireNonNull(isPayg);
+            if (isPayg == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "isPayg");
+            }
+            this.isPayg = isPayg;
             return this;
         }
         @CustomType.Setter
         public Builder isSingleRateCard(Boolean isSingleRateCard) {
-            this.isSingleRateCard = Objects.requireNonNull(isSingleRateCard);
+            if (isSingleRateCard == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "isSingleRateCard");
+            }
+            this.isSingleRateCard = isSingleRateCard;
             return this;
         }
         @CustomType.Setter
         public Builder isVariableCommitment(Boolean isVariableCommitment) {
-            this.isVariableCommitment = Objects.requireNonNull(isVariableCommitment);
+            if (isVariableCommitment == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "isVariableCommitment");
+            }
+            this.isVariableCommitment = isVariableCommitment;
             return this;
         }
         @CustomType.Setter
         public Builder lineNetAmount(String lineNetAmount) {
-            this.lineNetAmount = Objects.requireNonNull(lineNetAmount);
+            if (lineNetAmount == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "lineNetAmount");
+            }
+            this.lineNetAmount = lineNetAmount;
             return this;
         }
         @CustomType.Setter
         public Builder majorSet(String majorSet) {
-            this.majorSet = Objects.requireNonNull(majorSet);
+            if (majorSet == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "majorSet");
+            }
+            this.majorSet = majorSet;
             return this;
         }
         @CustomType.Setter
         public Builder netUnitPrice(String netUnitPrice) {
-            this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
+            if (netUnitPrice == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "netUnitPrice");
+            }
+            this.netUnitPrice = netUnitPrice;
             return this;
         }
         @CustomType.Setter
         public Builder operationType(String operationType) {
-            this.operationType = Objects.requireNonNull(operationType);
+            if (operationType == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "operationType");
+            }
+            this.operationType = operationType;
             return this;
         }
         @CustomType.Setter
         public Builder orderHeaderId(String orderHeaderId) {
-            this.orderHeaderId = Objects.requireNonNull(orderHeaderId);
+            if (orderHeaderId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "orderHeaderId");
+            }
+            this.orderHeaderId = orderHeaderId;
             return this;
         }
         @CustomType.Setter
         public Builder orderLineId(String orderLineId) {
-            this.orderLineId = Objects.requireNonNull(orderLineId);
+            if (orderLineId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "orderLineId");
+            }
+            this.orderLineId = orderLineId;
             return this;
         }
         @CustomType.Setter
         public Builder orderLineNumber(Integer orderLineNumber) {
-            this.orderLineNumber = Objects.requireNonNull(orderLineNumber);
+            if (orderLineNumber == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "orderLineNumber");
+            }
+            this.orderLineNumber = orderLineNumber;
             return this;
         }
         @CustomType.Setter
         public Builder orderNumber(String orderNumber) {
-            this.orderNumber = Objects.requireNonNull(orderNumber);
+            if (orderNumber == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "orderNumber");
+            }
+            this.orderNumber = orderNumber;
             return this;
         }
         @CustomType.Setter
         public Builder orderType(String orderType) {
-            this.orderType = Objects.requireNonNull(orderType);
+            if (orderType == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "orderType");
+            }
+            this.orderType = orderType;
             return this;
         }
         @CustomType.Setter
         public Builder originalPromoAmount(String originalPromoAmount) {
-            this.originalPromoAmount = Objects.requireNonNull(originalPromoAmount);
+            if (originalPromoAmount == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "originalPromoAmount");
+            }
+            this.originalPromoAmount = originalPromoAmount;
             return this;
         }
         @CustomType.Setter
         public Builder overageBillTo(String overageBillTo) {
-            this.overageBillTo = Objects.requireNonNull(overageBillTo);
+            if (overageBillTo == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "overageBillTo");
+            }
+            this.overageBillTo = overageBillTo;
             return this;
         }
         @CustomType.Setter
         public Builder overageDiscountPercentage(String overageDiscountPercentage) {
-            this.overageDiscountPercentage = Objects.requireNonNull(overageDiscountPercentage);
+            if (overageDiscountPercentage == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "overageDiscountPercentage");
+            }
+            this.overageDiscountPercentage = overageDiscountPercentage;
             return this;
         }
         @CustomType.Setter
         public Builder overagePolicy(String overagePolicy) {
-            this.overagePolicy = Objects.requireNonNull(overagePolicy);
+            if (overagePolicy == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "overagePolicy");
+            }
+            this.overagePolicy = overagePolicy;
             return this;
         }
         @CustomType.Setter
         public Builder partnerCreditAmount(String partnerCreditAmount) {
-            this.partnerCreditAmount = Objects.requireNonNull(partnerCreditAmount);
+            if (partnerCreditAmount == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "partnerCreditAmount");
+            }
+            this.partnerCreditAmount = partnerCreditAmount;
             return this;
         }
         @CustomType.Setter
         public Builder partnerTransactionType(String partnerTransactionType) {
-            this.partnerTransactionType = Objects.requireNonNull(partnerTransactionType);
+            if (partnerTransactionType == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "partnerTransactionType");
+            }
+            this.partnerTransactionType = partnerTransactionType;
             return this;
         }
         @CustomType.Setter
         public Builder paygPolicy(String paygPolicy) {
-            this.paygPolicy = Objects.requireNonNull(paygPolicy);
+            if (paygPolicy == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "paygPolicy");
+            }
+            this.paygPolicy = paygPolicy;
             return this;
         }
         @CustomType.Setter
         public Builder paymentMethod(String paymentMethod) {
-            this.paymentMethod = Objects.requireNonNull(paymentMethod);
+            if (paymentMethod == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "paymentMethod");
+            }
+            this.paymentMethod = paymentMethod;
             return this;
         }
         @CustomType.Setter
         public Builder paymentNumber(String paymentNumber) {
-            this.paymentNumber = Objects.requireNonNull(paymentNumber);
+            if (paymentNumber == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "paymentNumber");
+            }
+            this.paymentNumber = paymentNumber;
             return this;
         }
         @CustomType.Setter
         public Builder paymentTerms(List<GetSubscribedServicesSubscribedServicePaymentTerm> paymentTerms) {
-            this.paymentTerms = Objects.requireNonNull(paymentTerms);
+            if (paymentTerms == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "paymentTerms");
+            }
+            this.paymentTerms = paymentTerms;
             return this;
         }
         public Builder paymentTerms(GetSubscribedServicesSubscribedServicePaymentTerm... paymentTerms) {
@@ -1892,17 +2052,26 @@ public final class GetSubscribedServicesSubscribedService {
         }
         @CustomType.Setter
         public Builder pricePeriod(String pricePeriod) {
-            this.pricePeriod = Objects.requireNonNull(pricePeriod);
+            if (pricePeriod == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "pricePeriod");
+            }
+            this.pricePeriod = pricePeriod;
             return this;
         }
         @CustomType.Setter
         public Builder pricingModel(String pricingModel) {
-            this.pricingModel = Objects.requireNonNull(pricingModel);
+            if (pricingModel == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "pricingModel");
+            }
+            this.pricingModel = pricingModel;
             return this;
         }
         @CustomType.Setter
         public Builder products(List<GetSubscribedServicesSubscribedServiceProduct> products) {
-            this.products = Objects.requireNonNull(products);
+            if (products == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "products");
+            }
+            this.products = products;
             return this;
         }
         public Builder products(GetSubscribedServicesSubscribedServiceProduct... products) {
@@ -1910,42 +2079,66 @@ public final class GetSubscribedServicesSubscribedService {
         }
         @CustomType.Setter
         public Builder programType(String programType) {
-            this.programType = Objects.requireNonNull(programType);
+            if (programType == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "programType");
+            }
+            this.programType = programType;
             return this;
         }
         @CustomType.Setter
         public Builder promoOrderLineId(String promoOrderLineId) {
-            this.promoOrderLineId = Objects.requireNonNull(promoOrderLineId);
+            if (promoOrderLineId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "promoOrderLineId");
+            }
+            this.promoOrderLineId = promoOrderLineId;
             return this;
         }
         @CustomType.Setter
         public Builder promoType(String promoType) {
-            this.promoType = Objects.requireNonNull(promoType);
+            if (promoType == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "promoType");
+            }
+            this.promoType = promoType;
             return this;
         }
         @CustomType.Setter
         public Builder promotionPricingType(String promotionPricingType) {
-            this.promotionPricingType = Objects.requireNonNull(promotionPricingType);
+            if (promotionPricingType == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "promotionPricingType");
+            }
+            this.promotionPricingType = promotionPricingType;
             return this;
         }
         @CustomType.Setter
         public Builder provisioningSource(String provisioningSource) {
-            this.provisioningSource = Objects.requireNonNull(provisioningSource);
+            if (provisioningSource == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "provisioningSource");
+            }
+            this.provisioningSource = provisioningSource;
             return this;
         }
         @CustomType.Setter
         public Builder quantity(String quantity) {
-            this.quantity = Objects.requireNonNull(quantity);
+            if (quantity == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "quantity");
+            }
+            this.quantity = quantity;
             return this;
         }
         @CustomType.Setter
         public Builder rateCardDiscountPercentage(String rateCardDiscountPercentage) {
-            this.rateCardDiscountPercentage = Objects.requireNonNull(rateCardDiscountPercentage);
+            if (rateCardDiscountPercentage == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "rateCardDiscountPercentage");
+            }
+            this.rateCardDiscountPercentage = rateCardDiscountPercentage;
             return this;
         }
         @CustomType.Setter
         public Builder rateCards(List<GetSubscribedServicesSubscribedServiceRateCard> rateCards) {
-            this.rateCards = Objects.requireNonNull(rateCards);
+            if (rateCards == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "rateCards");
+            }
+            this.rateCards = rateCards;
             return this;
         }
         public Builder rateCards(GetSubscribedServicesSubscribedServiceRateCard... rateCards) {
@@ -1953,32 +2146,50 @@ public final class GetSubscribedServicesSubscribedService {
         }
         @CustomType.Setter
         public Builder ratecardType(String ratecardType) {
-            this.ratecardType = Objects.requireNonNull(ratecardType);
+            if (ratecardType == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "ratecardType");
+            }
+            this.ratecardType = ratecardType;
             return this;
         }
         @CustomType.Setter
         public Builder renewalOptyId(String renewalOptyId) {
-            this.renewalOptyId = Objects.requireNonNull(renewalOptyId);
+            if (renewalOptyId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "renewalOptyId");
+            }
+            this.renewalOptyId = renewalOptyId;
             return this;
         }
         @CustomType.Setter
         public Builder renewalOptyNumber(String renewalOptyNumber) {
-            this.renewalOptyNumber = Objects.requireNonNull(renewalOptyNumber);
+            if (renewalOptyNumber == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "renewalOptyNumber");
+            }
+            this.renewalOptyNumber = renewalOptyNumber;
             return this;
         }
         @CustomType.Setter
         public Builder renewalOptyType(String renewalOptyType) {
-            this.renewalOptyType = Objects.requireNonNull(renewalOptyType);
+            if (renewalOptyType == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "renewalOptyType");
+            }
+            this.renewalOptyType = renewalOptyType;
             return this;
         }
         @CustomType.Setter
         public Builder renewedSubscribedServiceId(String renewedSubscribedServiceId) {
-            this.renewedSubscribedServiceId = Objects.requireNonNull(renewedSubscribedServiceId);
+            if (renewedSubscribedServiceId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "renewedSubscribedServiceId");
+            }
+            this.renewedSubscribedServiceId = renewedSubscribedServiceId;
             return this;
         }
         @CustomType.Setter
         public Builder resellerAddresses(List<GetSubscribedServicesSubscribedServiceResellerAddress> resellerAddresses) {
-            this.resellerAddresses = Objects.requireNonNull(resellerAddresses);
+            if (resellerAddresses == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "resellerAddresses");
+            }
+            this.resellerAddresses = resellerAddresses;
             return this;
         }
         public Builder resellerAddresses(GetSubscribedServicesSubscribedServiceResellerAddress... resellerAddresses) {
@@ -1986,7 +2197,10 @@ public final class GetSubscribedServicesSubscribedService {
         }
         @CustomType.Setter
         public Builder resellerContacts(List<GetSubscribedServicesSubscribedServiceResellerContact> resellerContacts) {
-            this.resellerContacts = Objects.requireNonNull(resellerContacts);
+            if (resellerContacts == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "resellerContacts");
+            }
+            this.resellerContacts = resellerContacts;
             return this;
         }
         public Builder resellerContacts(GetSubscribedServicesSubscribedServiceResellerContact... resellerContacts) {
@@ -1994,7 +2208,10 @@ public final class GetSubscribedServicesSubscribedService {
         }
         @CustomType.Setter
         public Builder resellerCustomers(List<GetSubscribedServicesSubscribedServiceResellerCustomer> resellerCustomers) {
-            this.resellerCustomers = Objects.requireNonNull(resellerCustomers);
+            if (resellerCustomers == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "resellerCustomers");
+            }
+            this.resellerCustomers = resellerCustomers;
             return this;
         }
         public Builder resellerCustomers(GetSubscribedServicesSubscribedServiceResellerCustomer... resellerCustomers) {
@@ -2002,42 +2219,66 @@ public final class GetSubscribedServicesSubscribedService {
         }
         @CustomType.Setter
         public Builder revenueLineId(String revenueLineId) {
-            this.revenueLineId = Objects.requireNonNull(revenueLineId);
+            if (revenueLineId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "revenueLineId");
+            }
+            this.revenueLineId = revenueLineId;
             return this;
         }
         @CustomType.Setter
         public Builder revenueLineNumber(String revenueLineNumber) {
-            this.revenueLineNumber = Objects.requireNonNull(revenueLineNumber);
+            if (revenueLineNumber == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "revenueLineNumber");
+            }
+            this.revenueLineNumber = revenueLineNumber;
             return this;
         }
         @CustomType.Setter
         public Builder revisedArrInLc(String revisedArrInLc) {
-            this.revisedArrInLc = Objects.requireNonNull(revisedArrInLc);
+            if (revisedArrInLc == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "revisedArrInLc");
+            }
+            this.revisedArrInLc = revisedArrInLc;
             return this;
         }
         @CustomType.Setter
         public Builder revisedArrInSc(String revisedArrInSc) {
-            this.revisedArrInSc = Objects.requireNonNull(revisedArrInSc);
+            if (revisedArrInSc == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "revisedArrInSc");
+            }
+            this.revisedArrInSc = revisedArrInSc;
             return this;
         }
         @CustomType.Setter
         public Builder salesAccountPartyId(String salesAccountPartyId) {
-            this.salesAccountPartyId = Objects.requireNonNull(salesAccountPartyId);
+            if (salesAccountPartyId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "salesAccountPartyId");
+            }
+            this.salesAccountPartyId = salesAccountPartyId;
             return this;
         }
         @CustomType.Setter
         public Builder salesChannel(String salesChannel) {
-            this.salesChannel = Objects.requireNonNull(salesChannel);
+            if (salesChannel == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "salesChannel");
+            }
+            this.salesChannel = salesChannel;
             return this;
         }
         @CustomType.Setter
         public Builder serialNumber(String serialNumber) {
-            this.serialNumber = Objects.requireNonNull(serialNumber);
+            if (serialNumber == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "serialNumber");
+            }
+            this.serialNumber = serialNumber;
             return this;
         }
         @CustomType.Setter
         public Builder serviceToAddresses(List<GetSubscribedServicesSubscribedServiceServiceToAddress> serviceToAddresses) {
-            this.serviceToAddresses = Objects.requireNonNull(serviceToAddresses);
+            if (serviceToAddresses == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "serviceToAddresses");
+            }
+            this.serviceToAddresses = serviceToAddresses;
             return this;
         }
         public Builder serviceToAddresses(GetSubscribedServicesSubscribedServiceServiceToAddress... serviceToAddresses) {
@@ -2045,7 +2286,10 @@ public final class GetSubscribedServicesSubscribedService {
         }
         @CustomType.Setter
         public Builder serviceToContacts(List<GetSubscribedServicesSubscribedServiceServiceToContact> serviceToContacts) {
-            this.serviceToContacts = Objects.requireNonNull(serviceToContacts);
+            if (serviceToContacts == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "serviceToContacts");
+            }
+            this.serviceToContacts = serviceToContacts;
             return this;
         }
         public Builder serviceToContacts(GetSubscribedServicesSubscribedServiceServiceToContact... serviceToContacts) {
@@ -2053,7 +2297,10 @@ public final class GetSubscribedServicesSubscribedService {
         }
         @CustomType.Setter
         public Builder serviceToCustomers(List<GetSubscribedServicesSubscribedServiceServiceToCustomer> serviceToCustomers) {
-            this.serviceToCustomers = Objects.requireNonNull(serviceToCustomers);
+            if (serviceToCustomers == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "serviceToCustomers");
+            }
+            this.serviceToCustomers = serviceToCustomers;
             return this;
         }
         public Builder serviceToCustomers(GetSubscribedServicesSubscribedServiceServiceToCustomer... serviceToCustomers) {
@@ -2061,7 +2308,10 @@ public final class GetSubscribedServicesSubscribedService {
         }
         @CustomType.Setter
         public Builder soldToContacts(List<GetSubscribedServicesSubscribedServiceSoldToContact> soldToContacts) {
-            this.soldToContacts = Objects.requireNonNull(soldToContacts);
+            if (soldToContacts == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "soldToContacts");
+            }
+            this.soldToContacts = soldToContacts;
             return this;
         }
         public Builder soldToContacts(GetSubscribedServicesSubscribedServiceSoldToContact... soldToContacts) {
@@ -2069,7 +2319,10 @@ public final class GetSubscribedServicesSubscribedService {
         }
         @CustomType.Setter
         public Builder soldToCustomers(List<GetSubscribedServicesSubscribedServiceSoldToCustomer> soldToCustomers) {
-            this.soldToCustomers = Objects.requireNonNull(soldToCustomers);
+            if (soldToCustomers == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "soldToCustomers");
+            }
+            this.soldToCustomers = soldToCustomers;
             return this;
         }
         public Builder soldToCustomers(GetSubscribedServicesSubscribedServiceSoldToCustomer... soldToCustomers) {
@@ -2077,137 +2330,218 @@ public final class GetSubscribedServicesSubscribedService {
         }
         @CustomType.Setter
         public Builder startDateType(String startDateType) {
-            this.startDateType = Objects.requireNonNull(startDateType);
+            if (startDateType == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "startDateType");
+            }
+            this.startDateType = startDateType;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptionSource(String subscriptionSource) {
-            this.subscriptionSource = Objects.requireNonNull(subscriptionSource);
+            if (subscriptionSource == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "subscriptionSource");
+            }
+            this.subscriptionSource = subscriptionSource;
             return this;
         }
         @CustomType.Setter
         public Builder systemArrInLc(String systemArrInLc) {
-            this.systemArrInLc = Objects.requireNonNull(systemArrInLc);
+            if (systemArrInLc == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "systemArrInLc");
+            }
+            this.systemArrInLc = systemArrInLc;
             return this;
         }
         @CustomType.Setter
         public Builder systemArrInSc(String systemArrInSc) {
-            this.systemArrInSc = Objects.requireNonNull(systemArrInSc);
+            if (systemArrInSc == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "systemArrInSc");
+            }
+            this.systemArrInSc = systemArrInSc;
             return this;
         }
         @CustomType.Setter
         public Builder systemAtrArrInLc(String systemAtrArrInLc) {
-            this.systemAtrArrInLc = Objects.requireNonNull(systemAtrArrInLc);
+            if (systemAtrArrInLc == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "systemAtrArrInLc");
+            }
+            this.systemAtrArrInLc = systemAtrArrInLc;
             return this;
         }
         @CustomType.Setter
         public Builder systemAtrArrInSc(String systemAtrArrInSc) {
-            this.systemAtrArrInSc = Objects.requireNonNull(systemAtrArrInSc);
+            if (systemAtrArrInSc == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "systemAtrArrInSc");
+            }
+            this.systemAtrArrInSc = systemAtrArrInSc;
             return this;
         }
         @CustomType.Setter
         public Builder termValue(String termValue) {
-            this.termValue = Objects.requireNonNull(termValue);
+            if (termValue == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "termValue");
+            }
+            this.termValue = termValue;
             return this;
         }
         @CustomType.Setter
         public Builder termValueUom(String termValueUom) {
-            this.termValueUom = Objects.requireNonNull(termValueUom);
+            if (termValueUom == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "termValueUom");
+            }
+            this.termValueUom = termValueUom;
             return this;
         }
         @CustomType.Setter
         public Builder timeAgreementEnd(String timeAgreementEnd) {
-            this.timeAgreementEnd = Objects.requireNonNull(timeAgreementEnd);
+            if (timeAgreementEnd == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "timeAgreementEnd");
+            }
+            this.timeAgreementEnd = timeAgreementEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeCustomerConfig(String timeCustomerConfig) {
-            this.timeCustomerConfig = Objects.requireNonNull(timeCustomerConfig);
+            if (timeCustomerConfig == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "timeCustomerConfig");
+            }
+            this.timeCustomerConfig = timeCustomerConfig;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+            if (timeEnd == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "timeEnd");
+            }
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeMajorsetEnd(String timeMajorsetEnd) {
-            this.timeMajorsetEnd = Objects.requireNonNull(timeMajorsetEnd);
+            if (timeMajorsetEnd == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "timeMajorsetEnd");
+            }
+            this.timeMajorsetEnd = timeMajorsetEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeMajorsetStart(String timeMajorsetStart) {
-            this.timeMajorsetStart = Objects.requireNonNull(timeMajorsetStart);
+            if (timeMajorsetStart == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "timeMajorsetStart");
+            }
+            this.timeMajorsetStart = timeMajorsetStart;
             return this;
         }
         @CustomType.Setter
         public Builder timePaymentExpiry(String timePaymentExpiry) {
-            this.timePaymentExpiry = Objects.requireNonNull(timePaymentExpiry);
+            if (timePaymentExpiry == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "timePaymentExpiry");
+            }
+            this.timePaymentExpiry = timePaymentExpiry;
             return this;
         }
         @CustomType.Setter
         public Builder timeProvisioned(String timeProvisioned) {
-            this.timeProvisioned = Objects.requireNonNull(timeProvisioned);
+            if (timeProvisioned == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "timeProvisioned");
+            }
+            this.timeProvisioned = timeProvisioned;
             return this;
         }
         @CustomType.Setter
         public Builder timeServiceConfigurationEmailSent(String timeServiceConfigurationEmailSent) {
-            this.timeServiceConfigurationEmailSent = Objects.requireNonNull(timeServiceConfigurationEmailSent);
+            if (timeServiceConfigurationEmailSent == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "timeServiceConfigurationEmailSent");
+            }
+            this.timeServiceConfigurationEmailSent = timeServiceConfigurationEmailSent;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+            if (timeStart == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "timeStart");
+            }
+            this.timeStart = timeStart;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder timeWelcomeEmailSent(String timeWelcomeEmailSent) {
-            this.timeWelcomeEmailSent = Objects.requireNonNull(timeWelcomeEmailSent);
+            if (timeWelcomeEmailSent == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "timeWelcomeEmailSent");
+            }
+            this.timeWelcomeEmailSent = timeWelcomeEmailSent;
             return this;
         }
         @CustomType.Setter
         public Builder totalValue(String totalValue) {
-            this.totalValue = Objects.requireNonNull(totalValue);
+            if (totalValue == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "totalValue");
+            }
+            this.totalValue = totalValue;
             return this;
         }
         @CustomType.Setter
         public Builder transactionExtensionId(String transactionExtensionId) {
-            this.transactionExtensionId = Objects.requireNonNull(transactionExtensionId);
+            if (transactionExtensionId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "transactionExtensionId");
+            }
+            this.transactionExtensionId = transactionExtensionId;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder updatedBy(String updatedBy) {
-            this.updatedBy = Objects.requireNonNull(updatedBy);
+            if (updatedBy == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "updatedBy");
+            }
+            this.updatedBy = updatedBy;
             return this;
         }
         @CustomType.Setter
         public Builder usedAmount(String usedAmount) {
-            this.usedAmount = Objects.requireNonNull(usedAmount);
+            if (usedAmount == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedService", "usedAmount");
+            }
+            this.usedAmount = usedAmount;
             return this;
         }
         public GetSubscribedServicesSubscribedService build() {

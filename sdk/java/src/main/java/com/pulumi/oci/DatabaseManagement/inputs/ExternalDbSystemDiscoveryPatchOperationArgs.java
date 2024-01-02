@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemDiscoveryPatchOperationValueArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -163,8 +164,12 @@ public final class ExternalDbSystemDiscoveryPatchOperationArgs extends com.pulum
         }
 
         public ExternalDbSystemDiscoveryPatchOperationArgs build() {
-            $.operation = Objects.requireNonNull($.operation, "expected parameter 'operation' to be non-null");
-            $.selection = Objects.requireNonNull($.selection, "expected parameter 'selection' to be non-null");
+            if ($.operation == null) {
+                throw new MissingRequiredPropertyException("ExternalDbSystemDiscoveryPatchOperationArgs", "operation");
+            }
+            if ($.selection == null) {
+                throw new MissingRequiredPropertyException("ExternalDbSystemDiscoveryPatchOperationArgs", "selection");
+            }
             return $;
         }
     }

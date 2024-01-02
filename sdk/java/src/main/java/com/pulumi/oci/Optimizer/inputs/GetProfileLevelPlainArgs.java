@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -153,8 +154,12 @@ public final class GetProfileLevelPlainArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetProfileLevelPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.compartmentIdInSubtree = Objects.requireNonNull($.compartmentIdInSubtree, "expected parameter 'compartmentIdInSubtree' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetProfileLevelPlainArgs", "compartmentId");
+            }
+            if ($.compartmentIdInSubtree == null) {
+                throw new MissingRequiredPropertyException("GetProfileLevelPlainArgs", "compartmentIdInSubtree");
+            }
             return $;
         }
     }

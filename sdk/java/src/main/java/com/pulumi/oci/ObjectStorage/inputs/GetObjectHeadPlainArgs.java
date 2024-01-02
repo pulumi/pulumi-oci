@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -117,9 +118,15 @@ public final class GetObjectHeadPlainArgs extends com.pulumi.resources.InvokeArg
         }
 
         public GetObjectHeadPlainArgs build() {
-            $.bucket = Objects.requireNonNull($.bucket, "expected parameter 'bucket' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
-            $.object = Objects.requireNonNull($.object, "expected parameter 'object' to be non-null");
+            if ($.bucket == null) {
+                throw new MissingRequiredPropertyException("GetObjectHeadPlainArgs", "bucket");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("GetObjectHeadPlainArgs", "namespace");
+            }
+            if ($.object == null) {
+                throw new MissingRequiredPropertyException("GetObjectHeadPlainArgs", "object");
+            }
             return $;
         }
     }

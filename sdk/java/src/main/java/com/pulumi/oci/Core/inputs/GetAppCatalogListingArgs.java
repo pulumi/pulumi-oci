@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetAppCatalogListingArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetAppCatalogListingArgs build() {
-            $.listingId = Objects.requireNonNull($.listingId, "expected parameter 'listingId' to be non-null");
+            if ($.listingId == null) {
+                throw new MissingRequiredPropertyException("GetAppCatalogListingArgs", "listingId");
+            }
             return $;
         }
     }

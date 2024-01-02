@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUsersFilter;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUsersUserCollection;
 import java.lang.String;
@@ -87,6 +88,7 @@ public final class GetManagedDatabaseUsersResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseUsersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -95,22 +97,32 @@ public final class GetManagedDatabaseUsersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder userCollections(List<GetManagedDatabaseUsersUserCollection> userCollections) {
-            this.userCollections = Objects.requireNonNull(userCollections);
+            if (userCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersResult", "userCollections");
+            }
+            this.userCollections = userCollections;
             return this;
         }
         public Builder userCollections(GetManagedDatabaseUsersUserCollection... userCollections) {

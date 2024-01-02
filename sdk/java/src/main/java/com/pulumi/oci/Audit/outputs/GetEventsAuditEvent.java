@@ -4,6 +4,7 @@
 package com.pulumi.oci.Audit.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Audit.outputs.GetEventsAuditEventData;
 import java.lang.String;
 import java.util.List;
@@ -142,17 +143,26 @@ public final class GetEventsAuditEvent {
 
         @CustomType.Setter
         public Builder cloudEventsVersion(String cloudEventsVersion) {
-            this.cloudEventsVersion = Objects.requireNonNull(cloudEventsVersion);
+            if (cloudEventsVersion == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEvent", "cloudEventsVersion");
+            }
+            this.cloudEventsVersion = cloudEventsVersion;
             return this;
         }
         @CustomType.Setter
         public Builder contentType(String contentType) {
-            this.contentType = Objects.requireNonNull(contentType);
+            if (contentType == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEvent", "contentType");
+            }
+            this.contentType = contentType;
             return this;
         }
         @CustomType.Setter
         public Builder datas(List<GetEventsAuditEventData> datas) {
-            this.datas = Objects.requireNonNull(datas);
+            if (datas == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEvent", "datas");
+            }
+            this.datas = datas;
             return this;
         }
         public Builder datas(GetEventsAuditEventData... datas) {
@@ -160,27 +170,42 @@ public final class GetEventsAuditEvent {
         }
         @CustomType.Setter
         public Builder eventId(String eventId) {
-            this.eventId = Objects.requireNonNull(eventId);
+            if (eventId == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEvent", "eventId");
+            }
+            this.eventId = eventId;
             return this;
         }
         @CustomType.Setter
         public Builder eventTime(String eventTime) {
-            this.eventTime = Objects.requireNonNull(eventTime);
+            if (eventTime == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEvent", "eventTime");
+            }
+            this.eventTime = eventTime;
             return this;
         }
         @CustomType.Setter
         public Builder eventType(String eventType) {
-            this.eventType = Objects.requireNonNull(eventType);
+            if (eventType == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEvent", "eventType");
+            }
+            this.eventType = eventType;
             return this;
         }
         @CustomType.Setter
         public Builder eventTypeVersion(String eventTypeVersion) {
-            this.eventTypeVersion = Objects.requireNonNull(eventTypeVersion);
+            if (eventTypeVersion == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEvent", "eventTypeVersion");
+            }
+            this.eventTypeVersion = eventTypeVersion;
             return this;
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEvent", "source");
+            }
+            this.source = source;
             return this;
         }
         public GetEventsAuditEvent build() {

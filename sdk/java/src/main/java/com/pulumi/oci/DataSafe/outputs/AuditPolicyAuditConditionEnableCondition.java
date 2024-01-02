@@ -87,6 +87,7 @@ public final class AuditPolicyAuditConditionEnableCondition {
 
         @CustomType.Setter
         public Builder entityNames(@Nullable List<String> entityNames) {
+
             this.entityNames = entityNames;
             return this;
         }
@@ -95,16 +96,19 @@ public final class AuditPolicyAuditConditionEnableCondition {
         }
         @CustomType.Setter
         public Builder entitySelection(@Nullable String entitySelection) {
+
             this.entitySelection = entitySelection;
             return this;
         }
         @CustomType.Setter
         public Builder entityType(@Nullable String entityType) {
+
             this.entityType = entityType;
             return this;
         }
         @CustomType.Setter
         public Builder operationStatus(@Nullable String operationStatus) {
+
             this.operationStatus = operationStatus;
             return this;
         }

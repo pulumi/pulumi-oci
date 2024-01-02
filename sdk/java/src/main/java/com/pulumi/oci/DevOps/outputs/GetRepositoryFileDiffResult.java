@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryFileDiffChange;
 import java.lang.Boolean;
 import java.lang.String;
@@ -189,17 +190,26 @@ public final class GetRepositoryFileDiffResult {
 
         @CustomType.Setter
         public Builder areConflictsInFile(Boolean areConflictsInFile) {
-            this.areConflictsInFile = Objects.requireNonNull(areConflictsInFile);
+            if (areConflictsInFile == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryFileDiffResult", "areConflictsInFile");
+            }
+            this.areConflictsInFile = areConflictsInFile;
             return this;
         }
         @CustomType.Setter
         public Builder baseVersion(String baseVersion) {
-            this.baseVersion = Objects.requireNonNull(baseVersion);
+            if (baseVersion == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryFileDiffResult", "baseVersion");
+            }
+            this.baseVersion = baseVersion;
             return this;
         }
         @CustomType.Setter
         public Builder changes(List<GetRepositoryFileDiffChange> changes) {
-            this.changes = Objects.requireNonNull(changes);
+            if (changes == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryFileDiffResult", "changes");
+            }
+            this.changes = changes;
             return this;
         }
         public Builder changes(GetRepositoryFileDiffChange... changes) {
@@ -207,57 +217,88 @@ public final class GetRepositoryFileDiffResult {
         }
         @CustomType.Setter
         public Builder filePath(String filePath) {
-            this.filePath = Objects.requireNonNull(filePath);
+            if (filePath == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryFileDiffResult", "filePath");
+            }
+            this.filePath = filePath;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryFileDiffResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isBinary(Boolean isBinary) {
-            this.isBinary = Objects.requireNonNull(isBinary);
+            if (isBinary == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryFileDiffResult", "isBinary");
+            }
+            this.isBinary = isBinary;
             return this;
         }
         @CustomType.Setter
         public Builder isComparisonFromMergeBase(@Nullable Boolean isComparisonFromMergeBase) {
+
             this.isComparisonFromMergeBase = isComparisonFromMergeBase;
             return this;
         }
         @CustomType.Setter
         public Builder isLarge(Boolean isLarge) {
-            this.isLarge = Objects.requireNonNull(isLarge);
+            if (isLarge == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryFileDiffResult", "isLarge");
+            }
+            this.isLarge = isLarge;
             return this;
         }
         @CustomType.Setter
         public Builder newId(String newId) {
-            this.newId = Objects.requireNonNull(newId);
+            if (newId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryFileDiffResult", "newId");
+            }
+            this.newId = newId;
             return this;
         }
         @CustomType.Setter
         public Builder newPath(String newPath) {
-            this.newPath = Objects.requireNonNull(newPath);
+            if (newPath == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryFileDiffResult", "newPath");
+            }
+            this.newPath = newPath;
             return this;
         }
         @CustomType.Setter
         public Builder oldId(String oldId) {
-            this.oldId = Objects.requireNonNull(oldId);
+            if (oldId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryFileDiffResult", "oldId");
+            }
+            this.oldId = oldId;
             return this;
         }
         @CustomType.Setter
         public Builder oldPath(String oldPath) {
-            this.oldPath = Objects.requireNonNull(oldPath);
+            if (oldPath == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryFileDiffResult", "oldPath");
+            }
+            this.oldPath = oldPath;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+            if (repositoryId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryFileDiffResult", "repositoryId");
+            }
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder targetVersion(String targetVersion) {
-            this.targetVersion = Objects.requireNonNull(targetVersion);
+            if (targetVersion == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryFileDiffResult", "targetVersion");
+            }
+            this.targetVersion = targetVersion;
             return this;
         }
         public GetRepositoryFileDiffResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmTraces.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetTraceSpanTag {
 
         @CustomType.Setter
         public Builder tagName(String tagName) {
-            this.tagName = Objects.requireNonNull(tagName);
+            if (tagName == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanTag", "tagName");
+            }
+            this.tagName = tagName;
             return this;
         }
         @CustomType.Setter
         public Builder tagValue(String tagValue) {
-            this.tagValue = Objects.requireNonNull(tagValue);
+            if (tagValue == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanTag", "tagValue");
+            }
+            this.tagValue = tagValue;
             return this;
         }
         public GetTraceSpanTag build() {

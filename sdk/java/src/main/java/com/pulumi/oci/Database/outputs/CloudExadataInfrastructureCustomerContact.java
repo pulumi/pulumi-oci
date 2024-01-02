@@ -44,6 +44,7 @@ public final class CloudExadataInfrastructureCustomerContact {
 
         @CustomType.Setter
         public Builder email(@Nullable String email) {
+
             this.email = email;
             return this;
         }

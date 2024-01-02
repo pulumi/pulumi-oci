@@ -4,6 +4,7 @@
 package com.pulumi.oci.Queue.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Queue.outputs.GetQueuesFilter;
 import com.pulumi.oci.Queue.outputs.GetQueuesQueueCollection;
 import java.lang.String;
@@ -109,16 +110,19 @@ public final class GetQueuesResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetQueuesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +131,16 @@ public final class GetQueuesResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder queueCollections(List<GetQueuesQueueCollection> queueCollections) {
-            this.queueCollections = Objects.requireNonNull(queueCollections);
+            if (queueCollections == null) {
+              throw new MissingRequiredPropertyException("GetQueuesResult", "queueCollections");
+            }
+            this.queueCollections = queueCollections;
             return this;
         }
         public Builder queueCollections(GetQueuesQueueCollection... queueCollections) {
@@ -140,6 +148,7 @@ public final class GetQueuesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

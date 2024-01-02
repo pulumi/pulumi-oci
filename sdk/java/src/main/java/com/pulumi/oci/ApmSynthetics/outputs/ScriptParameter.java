@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.outputs.ScriptParameterScriptParameter;
 import java.lang.Boolean;
 import java.lang.String;
@@ -109,26 +110,33 @@ public final class ScriptParameter {
 
         @CustomType.Setter
         public Builder isOverwritten(@Nullable Boolean isOverwritten) {
+
             this.isOverwritten = isOverwritten;
             return this;
         }
         @CustomType.Setter
         public Builder isSecret(@Nullable Boolean isSecret) {
+
             this.isSecret = isSecret;
             return this;
         }
         @CustomType.Setter
         public Builder paramName(String paramName) {
-            this.paramName = Objects.requireNonNull(paramName);
+            if (paramName == null) {
+              throw new MissingRequiredPropertyException("ScriptParameter", "paramName");
+            }
+            this.paramName = paramName;
             return this;
         }
         @CustomType.Setter
         public Builder paramValue(@Nullable String paramValue) {
+
             this.paramValue = paramValue;
             return this;
         }
         @CustomType.Setter
         public Builder scriptParameters(@Nullable List<ScriptParameterScriptParameter> scriptParameters) {
+
             this.scriptParameters = scriptParameters;
             return this;
         }

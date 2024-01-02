@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetModelVersionSetsFilter;
 import com.pulumi.oci.DataScience.outputs.GetModelVersionSetsModelVersionSet;
 import java.lang.String;
@@ -137,16 +138,21 @@ public final class GetModelVersionSetsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetModelVersionSetsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(@Nullable String createdBy) {
+
             this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetModelVersionSetsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -155,12 +161,16 @@ public final class GetModelVersionSetsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder modelVersionSets(List<GetModelVersionSetsModelVersionSet> modelVersionSets) {
-            this.modelVersionSets = Objects.requireNonNull(modelVersionSets);
+            if (modelVersionSets == null) {
+              throw new MissingRequiredPropertyException("GetModelVersionSetsResult", "modelVersionSets");
+            }
+            this.modelVersionSets = modelVersionSets;
             return this;
         }
         public Builder modelVersionSets(GetModelVersionSetsModelVersionSet... modelVersionSets) {
@@ -168,16 +178,19 @@ public final class GetModelVersionSetsResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
+
             this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

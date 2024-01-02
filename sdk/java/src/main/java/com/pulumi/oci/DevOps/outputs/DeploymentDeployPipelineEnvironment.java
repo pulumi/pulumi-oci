@@ -44,6 +44,7 @@ public final class DeploymentDeployPipelineEnvironment {
 
         @CustomType.Setter
         public Builder items(@Nullable List<DeploymentDeployPipelineEnvironmentItem> items) {
+
             this.items = items;
             return this;
         }

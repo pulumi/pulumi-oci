@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentTimeAvailableForRefreshsFilter;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetFusionEnvironmentTimeAvailableForRefreshsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetFusionEnvironmentTimeAvailableForRefreshsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,17 +82,26 @@ public final class GetFusionEnvironmentTimeAvailableForRefreshsResult {
         }
         @CustomType.Setter
         public Builder fusionEnvironmentId(String fusionEnvironmentId) {
-            this.fusionEnvironmentId = Objects.requireNonNull(fusionEnvironmentId);
+            if (fusionEnvironmentId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentTimeAvailableForRefreshsResult", "fusionEnvironmentId");
+            }
+            this.fusionEnvironmentId = fusionEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentTimeAvailableForRefreshsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder timeAvailableForRefreshCollections(List<GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection> timeAvailableForRefreshCollections) {
-            this.timeAvailableForRefreshCollections = Objects.requireNonNull(timeAvailableForRefreshCollections);
+            if (timeAvailableForRefreshCollections == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentTimeAvailableForRefreshsResult", "timeAvailableForRefreshCollections");
+            }
+            this.timeAvailableForRefreshCollections = timeAvailableForRefreshCollections;
             return this;
         }
         public Builder timeAvailableForRefreshCollections(GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection... timeAvailableForRefreshCollections) {

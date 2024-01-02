@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -269,37 +270,58 @@ public final class GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcse
 
         @CustomType.Setter
         public Builder certMatchAttribute(String certMatchAttribute) {
-            this.certMatchAttribute = Objects.requireNonNull(certMatchAttribute);
+            if (certMatchAttribute == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider", "certMatchAttribute");
+            }
+            this.certMatchAttribute = certMatchAttribute;
             return this;
         }
         @CustomType.Setter
         public Builder crlCheckOnOcspFailureEnabled(Boolean crlCheckOnOcspFailureEnabled) {
-            this.crlCheckOnOcspFailureEnabled = Objects.requireNonNull(crlCheckOnOcspFailureEnabled);
+            if (crlCheckOnOcspFailureEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider", "crlCheckOnOcspFailureEnabled");
+            }
+            this.crlCheckOnOcspFailureEnabled = crlCheckOnOcspFailureEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder crlEnabled(Boolean crlEnabled) {
-            this.crlEnabled = Objects.requireNonNull(crlEnabled);
+            if (crlEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider", "crlEnabled");
+            }
+            this.crlEnabled = crlEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder crlLocation(String crlLocation) {
-            this.crlLocation = Objects.requireNonNull(crlLocation);
+            if (crlLocation == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider", "crlLocation");
+            }
+            this.crlLocation = crlLocation;
             return this;
         }
         @CustomType.Setter
         public Builder crlReloadDuration(Integer crlReloadDuration) {
-            this.crlReloadDuration = Objects.requireNonNull(crlReloadDuration);
+            if (crlReloadDuration == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider", "crlReloadDuration");
+            }
+            this.crlReloadDuration = crlReloadDuration;
             return this;
         }
         @CustomType.Setter
         public Builder ekuValidationEnabled(Boolean ekuValidationEnabled) {
-            this.ekuValidationEnabled = Objects.requireNonNull(ekuValidationEnabled);
+            if (ekuValidationEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider", "ekuValidationEnabled");
+            }
+            this.ekuValidationEnabled = ekuValidationEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder ekuValues(List<String> ekuValues) {
-            this.ekuValues = Objects.requireNonNull(ekuValues);
+            if (ekuValues == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider", "ekuValues");
+            }
+            this.ekuValues = ekuValues;
             return this;
         }
         public Builder ekuValues(String... ekuValues) {
@@ -307,37 +329,58 @@ public final class GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcse
         }
         @CustomType.Setter
         public Builder ocspAllowUnknownResponseStatus(Boolean ocspAllowUnknownResponseStatus) {
-            this.ocspAllowUnknownResponseStatus = Objects.requireNonNull(ocspAllowUnknownResponseStatus);
+            if (ocspAllowUnknownResponseStatus == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider", "ocspAllowUnknownResponseStatus");
+            }
+            this.ocspAllowUnknownResponseStatus = ocspAllowUnknownResponseStatus;
             return this;
         }
         @CustomType.Setter
         public Builder ocspEnableSignedResponse(Boolean ocspEnableSignedResponse) {
-            this.ocspEnableSignedResponse = Objects.requireNonNull(ocspEnableSignedResponse);
+            if (ocspEnableSignedResponse == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider", "ocspEnableSignedResponse");
+            }
+            this.ocspEnableSignedResponse = ocspEnableSignedResponse;
             return this;
         }
         @CustomType.Setter
         public Builder ocspEnabled(Boolean ocspEnabled) {
-            this.ocspEnabled = Objects.requireNonNull(ocspEnabled);
+            if (ocspEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider", "ocspEnabled");
+            }
+            this.ocspEnabled = ocspEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder ocspResponderUrl(String ocspResponderUrl) {
-            this.ocspResponderUrl = Objects.requireNonNull(ocspResponderUrl);
+            if (ocspResponderUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider", "ocspResponderUrl");
+            }
+            this.ocspResponderUrl = ocspResponderUrl;
             return this;
         }
         @CustomType.Setter
         public Builder ocspRevalidateTime(Integer ocspRevalidateTime) {
-            this.ocspRevalidateTime = Objects.requireNonNull(ocspRevalidateTime);
+            if (ocspRevalidateTime == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider", "ocspRevalidateTime");
+            }
+            this.ocspRevalidateTime = ocspRevalidateTime;
             return this;
         }
         @CustomType.Setter
         public Builder ocspServerName(String ocspServerName) {
-            this.ocspServerName = Objects.requireNonNull(ocspServerName);
+            if (ocspServerName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider", "ocspServerName");
+            }
+            this.ocspServerName = ocspServerName;
             return this;
         }
         @CustomType.Setter
         public Builder ocspTrustCertChains(List<String> ocspTrustCertChains) {
-            this.ocspTrustCertChains = Objects.requireNonNull(ocspTrustCertChains);
+            if (ocspTrustCertChains == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider", "ocspTrustCertChains");
+            }
+            this.ocspTrustCertChains = ocspTrustCertChains;
             return this;
         }
         public Builder ocspTrustCertChains(String... ocspTrustCertChains) {
@@ -345,12 +388,18 @@ public final class GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcse
         }
         @CustomType.Setter
         public Builder otherCertMatchAttribute(String otherCertMatchAttribute) {
-            this.otherCertMatchAttribute = Objects.requireNonNull(otherCertMatchAttribute);
+            if (otherCertMatchAttribute == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider", "otherCertMatchAttribute");
+            }
+            this.otherCertMatchAttribute = otherCertMatchAttribute;
             return this;
         }
         @CustomType.Setter
         public Builder signingCertificateChains(List<String> signingCertificateChains) {
-            this.signingCertificateChains = Objects.requireNonNull(signingCertificateChains);
+            if (signingCertificateChains == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider", "signingCertificateChains");
+            }
+            this.signingCertificateChains = signingCertificateChains;
             return this;
         }
         public Builder signingCertificateChains(String... signingCertificateChains) {
@@ -358,7 +407,10 @@ public final class GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcse
         }
         @CustomType.Setter
         public Builder userMatchAttribute(String userMatchAttribute) {
-            this.userMatchAttribute = Objects.requireNonNull(userMatchAttribute);
+            if (userMatchAttribute == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider", "userMatchAttribute");
+            }
+            this.userMatchAttribute = userMatchAttribute;
             return this;
         }
         public GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider build() {

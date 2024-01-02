@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceCloudSqlDetailKerberosDetailArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -357,7 +358,9 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
         }
 
         public BdsInstanceCloudSqlDetailArgs build() {
-            $.shape = Objects.requireNonNull($.shape, "expected parameter 'shape' to be non-null");
+            if ($.shape == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceCloudSqlDetailArgs", "shape");
+            }
             return $;
         }
     }

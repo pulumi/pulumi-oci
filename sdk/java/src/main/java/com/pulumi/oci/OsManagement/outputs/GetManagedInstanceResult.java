@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagement.outputs.GetManagedInstanceAutonomouse;
 import com.pulumi.oci.OsManagement.outputs.GetManagedInstanceChildSoftwareSource;
 import com.pulumi.oci.OsManagement.outputs.GetManagedInstanceManagedInstanceGroup;
@@ -405,7 +406,10 @@ public final class GetManagedInstanceResult {
 
         @CustomType.Setter
         public Builder autonomouses(List<GetManagedInstanceAutonomouse> autonomouses) {
-            this.autonomouses = Objects.requireNonNull(autonomouses);
+            if (autonomouses == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "autonomouses");
+            }
+            this.autonomouses = autonomouses;
             return this;
         }
         public Builder autonomouses(GetManagedInstanceAutonomouse... autonomouses) {
@@ -413,12 +417,18 @@ public final class GetManagedInstanceResult {
         }
         @CustomType.Setter
         public Builder bugUpdatesAvailable(Integer bugUpdatesAvailable) {
-            this.bugUpdatesAvailable = Objects.requireNonNull(bugUpdatesAvailable);
+            if (bugUpdatesAvailable == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "bugUpdatesAvailable");
+            }
+            this.bugUpdatesAvailable = bugUpdatesAvailable;
             return this;
         }
         @CustomType.Setter
         public Builder childSoftwareSources(List<GetManagedInstanceChildSoftwareSource> childSoftwareSources) {
-            this.childSoftwareSources = Objects.requireNonNull(childSoftwareSources);
+            if (childSoftwareSources == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "childSoftwareSources");
+            }
+            this.childSoftwareSources = childSoftwareSources;
             return this;
         }
         public Builder childSoftwareSources(GetManagedInstanceChildSoftwareSource... childSoftwareSources) {
@@ -426,57 +436,90 @@ public final class GetManagedInstanceResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder enhancementUpdatesAvailable(Integer enhancementUpdatesAvailable) {
-            this.enhancementUpdatesAvailable = Objects.requireNonNull(enhancementUpdatesAvailable);
+            if (enhancementUpdatesAvailable == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "enhancementUpdatesAvailable");
+            }
+            this.enhancementUpdatesAvailable = enhancementUpdatesAvailable;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isDataCollectionAuthorized(Boolean isDataCollectionAuthorized) {
-            this.isDataCollectionAuthorized = Objects.requireNonNull(isDataCollectionAuthorized);
+            if (isDataCollectionAuthorized == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "isDataCollectionAuthorized");
+            }
+            this.isDataCollectionAuthorized = isDataCollectionAuthorized;
             return this;
         }
         @CustomType.Setter
         public Builder isRebootRequired(Boolean isRebootRequired) {
-            this.isRebootRequired = Objects.requireNonNull(isRebootRequired);
+            if (isRebootRequired == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "isRebootRequired");
+            }
+            this.isRebootRequired = isRebootRequired;
             return this;
         }
         @CustomType.Setter
         public Builder kspliceEffectiveKernelVersion(String kspliceEffectiveKernelVersion) {
-            this.kspliceEffectiveKernelVersion = Objects.requireNonNull(kspliceEffectiveKernelVersion);
+            if (kspliceEffectiveKernelVersion == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "kspliceEffectiveKernelVersion");
+            }
+            this.kspliceEffectiveKernelVersion = kspliceEffectiveKernelVersion;
             return this;
         }
         @CustomType.Setter
         public Builder lastBoot(String lastBoot) {
-            this.lastBoot = Objects.requireNonNull(lastBoot);
+            if (lastBoot == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "lastBoot");
+            }
+            this.lastBoot = lastBoot;
             return this;
         }
         @CustomType.Setter
         public Builder lastCheckin(String lastCheckin) {
-            this.lastCheckin = Objects.requireNonNull(lastCheckin);
+            if (lastCheckin == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "lastCheckin");
+            }
+            this.lastCheckin = lastCheckin;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceGroups(List<GetManagedInstanceManagedInstanceGroup> managedInstanceGroups) {
-            this.managedInstanceGroups = Objects.requireNonNull(managedInstanceGroups);
+            if (managedInstanceGroups == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "managedInstanceGroups");
+            }
+            this.managedInstanceGroups = managedInstanceGroups;
             return this;
         }
         public Builder managedInstanceGroups(GetManagedInstanceManagedInstanceGroup... managedInstanceGroups) {
@@ -484,42 +527,66 @@ public final class GetManagedInstanceResult {
         }
         @CustomType.Setter
         public Builder managedInstanceId(String managedInstanceId) {
-            this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
+            if (managedInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "managedInstanceId");
+            }
+            this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder notificationTopicId(String notificationTopicId) {
-            this.notificationTopicId = Objects.requireNonNull(notificationTopicId);
+            if (notificationTopicId == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "notificationTopicId");
+            }
+            this.notificationTopicId = notificationTopicId;
             return this;
         }
         @CustomType.Setter
         public Builder osFamily(String osFamily) {
-            this.osFamily = Objects.requireNonNull(osFamily);
+            if (osFamily == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "osFamily");
+            }
+            this.osFamily = osFamily;
             return this;
         }
         @CustomType.Setter
         public Builder osKernelVersion(String osKernelVersion) {
-            this.osKernelVersion = Objects.requireNonNull(osKernelVersion);
+            if (osKernelVersion == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "osKernelVersion");
+            }
+            this.osKernelVersion = osKernelVersion;
             return this;
         }
         @CustomType.Setter
         public Builder osName(String osName) {
-            this.osName = Objects.requireNonNull(osName);
+            if (osName == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "osName");
+            }
+            this.osName = osName;
             return this;
         }
         @CustomType.Setter
         public Builder osVersion(String osVersion) {
-            this.osVersion = Objects.requireNonNull(osVersion);
+            if (osVersion == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "osVersion");
+            }
+            this.osVersion = osVersion;
             return this;
         }
         @CustomType.Setter
         public Builder otherUpdatesAvailable(Integer otherUpdatesAvailable) {
-            this.otherUpdatesAvailable = Objects.requireNonNull(otherUpdatesAvailable);
+            if (otherUpdatesAvailable == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "otherUpdatesAvailable");
+            }
+            this.otherUpdatesAvailable = otherUpdatesAvailable;
             return this;
         }
         @CustomType.Setter
         public Builder parentSoftwareSources(List<GetManagedInstanceParentSoftwareSource> parentSoftwareSources) {
-            this.parentSoftwareSources = Objects.requireNonNull(parentSoftwareSources);
+            if (parentSoftwareSources == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "parentSoftwareSources");
+            }
+            this.parentSoftwareSources = parentSoftwareSources;
             return this;
         }
         public Builder parentSoftwareSources(GetManagedInstanceParentSoftwareSource... parentSoftwareSources) {
@@ -527,27 +594,42 @@ public final class GetManagedInstanceResult {
         }
         @CustomType.Setter
         public Builder scheduledJobCount(Integer scheduledJobCount) {
-            this.scheduledJobCount = Objects.requireNonNull(scheduledJobCount);
+            if (scheduledJobCount == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "scheduledJobCount");
+            }
+            this.scheduledJobCount = scheduledJobCount;
             return this;
         }
         @CustomType.Setter
         public Builder securityUpdatesAvailable(Integer securityUpdatesAvailable) {
-            this.securityUpdatesAvailable = Objects.requireNonNull(securityUpdatesAvailable);
+            if (securityUpdatesAvailable == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "securityUpdatesAvailable");
+            }
+            this.securityUpdatesAvailable = securityUpdatesAvailable;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder updatesAvailable(Integer updatesAvailable) {
-            this.updatesAvailable = Objects.requireNonNull(updatesAvailable);
+            if (updatesAvailable == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "updatesAvailable");
+            }
+            this.updatesAvailable = updatesAvailable;
             return this;
         }
         @CustomType.Setter
         public Builder workRequestCount(Integer workRequestCount) {
-            this.workRequestCount = Objects.requireNonNull(workRequestCount);
+            if (workRequestCount == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "workRequestCount");
+            }
+            this.workRequestCount = workRequestCount;
             return this;
         }
         public GetManagedInstanceResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationGoldenGateDetailHubRestAdminCredential;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredential;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationGoldenGateDetailHubSourceDbAdminCredential;
@@ -145,12 +146,18 @@ public final class GetMigrationGoldenGateDetailHub {
 
         @CustomType.Setter
         public Builder computeId(String computeId) {
-            this.computeId = Objects.requireNonNull(computeId);
+            if (computeId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateDetailHub", "computeId");
+            }
+            this.computeId = computeId;
             return this;
         }
         @CustomType.Setter
         public Builder restAdminCredentials(List<GetMigrationGoldenGateDetailHubRestAdminCredential> restAdminCredentials) {
-            this.restAdminCredentials = Objects.requireNonNull(restAdminCredentials);
+            if (restAdminCredentials == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateDetailHub", "restAdminCredentials");
+            }
+            this.restAdminCredentials = restAdminCredentials;
             return this;
         }
         public Builder restAdminCredentials(GetMigrationGoldenGateDetailHubRestAdminCredential... restAdminCredentials) {
@@ -158,7 +165,10 @@ public final class GetMigrationGoldenGateDetailHub {
         }
         @CustomType.Setter
         public Builder sourceContainerDbAdminCredentials(List<GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredential> sourceContainerDbAdminCredentials) {
-            this.sourceContainerDbAdminCredentials = Objects.requireNonNull(sourceContainerDbAdminCredentials);
+            if (sourceContainerDbAdminCredentials == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateDetailHub", "sourceContainerDbAdminCredentials");
+            }
+            this.sourceContainerDbAdminCredentials = sourceContainerDbAdminCredentials;
             return this;
         }
         public Builder sourceContainerDbAdminCredentials(GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredential... sourceContainerDbAdminCredentials) {
@@ -166,7 +176,10 @@ public final class GetMigrationGoldenGateDetailHub {
         }
         @CustomType.Setter
         public Builder sourceDbAdminCredentials(List<GetMigrationGoldenGateDetailHubSourceDbAdminCredential> sourceDbAdminCredentials) {
-            this.sourceDbAdminCredentials = Objects.requireNonNull(sourceDbAdminCredentials);
+            if (sourceDbAdminCredentials == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateDetailHub", "sourceDbAdminCredentials");
+            }
+            this.sourceDbAdminCredentials = sourceDbAdminCredentials;
             return this;
         }
         public Builder sourceDbAdminCredentials(GetMigrationGoldenGateDetailHubSourceDbAdminCredential... sourceDbAdminCredentials) {
@@ -174,12 +187,18 @@ public final class GetMigrationGoldenGateDetailHub {
         }
         @CustomType.Setter
         public Builder sourceMicroservicesDeploymentName(String sourceMicroservicesDeploymentName) {
-            this.sourceMicroservicesDeploymentName = Objects.requireNonNull(sourceMicroservicesDeploymentName);
+            if (sourceMicroservicesDeploymentName == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateDetailHub", "sourceMicroservicesDeploymentName");
+            }
+            this.sourceMicroservicesDeploymentName = sourceMicroservicesDeploymentName;
             return this;
         }
         @CustomType.Setter
         public Builder targetDbAdminCredentials(List<GetMigrationGoldenGateDetailHubTargetDbAdminCredential> targetDbAdminCredentials) {
-            this.targetDbAdminCredentials = Objects.requireNonNull(targetDbAdminCredentials);
+            if (targetDbAdminCredentials == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateDetailHub", "targetDbAdminCredentials");
+            }
+            this.targetDbAdminCredentials = targetDbAdminCredentials;
             return this;
         }
         public Builder targetDbAdminCredentials(GetMigrationGoldenGateDetailHubTargetDbAdminCredential... targetDbAdminCredentials) {
@@ -187,12 +206,18 @@ public final class GetMigrationGoldenGateDetailHub {
         }
         @CustomType.Setter
         public Builder targetMicroservicesDeploymentName(String targetMicroservicesDeploymentName) {
-            this.targetMicroservicesDeploymentName = Objects.requireNonNull(targetMicroservicesDeploymentName);
+            if (targetMicroservicesDeploymentName == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateDetailHub", "targetMicroservicesDeploymentName");
+            }
+            this.targetMicroservicesDeploymentName = targetMicroservicesDeploymentName;
             return this;
         }
         @CustomType.Setter
         public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+            if (url == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateDetailHub", "url");
+            }
+            this.url = url;
             return this;
         }
         public GetMigrationGoldenGateDetailHub build() {

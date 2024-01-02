@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceProjectsFilter;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceProjectsProjectSummaryCollection;
 import java.lang.String;
@@ -113,6 +114,7 @@ public final class GetWorkspaceProjectsResult {
 
         @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
+
             this.fields = fields;
             return this;
         }
@@ -121,6 +123,7 @@ public final class GetWorkspaceProjectsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetWorkspaceProjectsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -129,11 +132,15 @@ public final class GetWorkspaceProjectsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder identifiers(@Nullable List<String> identifiers) {
+
             this.identifiers = identifiers;
             return this;
         }
@@ -142,17 +149,22 @@ public final class GetWorkspaceProjectsResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder nameContains(@Nullable String nameContains) {
+
             this.nameContains = nameContains;
             return this;
         }
         @CustomType.Setter
         public Builder projectSummaryCollections(List<GetWorkspaceProjectsProjectSummaryCollection> projectSummaryCollections) {
-            this.projectSummaryCollections = Objects.requireNonNull(projectSummaryCollections);
+            if (projectSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectsResult", "projectSummaryCollections");
+            }
+            this.projectSummaryCollections = projectSummaryCollections;
             return this;
         }
         public Builder projectSummaryCollections(GetWorkspaceProjectsProjectSummaryCollection... projectSummaryCollections) {
@@ -160,7 +172,10 @@ public final class GetWorkspaceProjectsResult {
         }
         @CustomType.Setter
         public Builder workspaceId(String workspaceId) {
-            this.workspaceId = Objects.requireNonNull(workspaceId);
+            if (workspaceId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectsResult", "workspaceId");
+            }
+            this.workspaceId = workspaceId;
             return this;
         }
         public GetWorkspaceProjectsResult build() {

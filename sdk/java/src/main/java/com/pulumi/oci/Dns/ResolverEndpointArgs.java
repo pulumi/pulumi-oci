@@ -5,6 +5,7 @@ package com.pulumi.oci.Dns;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -433,10 +434,18 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         public ResolverEndpointArgs build() {
-            $.isForwarding = Objects.requireNonNull($.isForwarding, "expected parameter 'isForwarding' to be non-null");
-            $.isListening = Objects.requireNonNull($.isListening, "expected parameter 'isListening' to be non-null");
-            $.resolverId = Objects.requireNonNull($.resolverId, "expected parameter 'resolverId' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.isForwarding == null) {
+                throw new MissingRequiredPropertyException("ResolverEndpointArgs", "isForwarding");
+            }
+            if ($.isListening == null) {
+                throw new MissingRequiredPropertyException("ResolverEndpointArgs", "isListening");
+            }
+            if ($.resolverId == null) {
+                throw new MissingRequiredPropertyException("ResolverEndpointArgs", "resolverId");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("ResolverEndpointArgs", "subnetId");
+            }
             return $;
         }
     }

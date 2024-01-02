@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling {
 
         @CustomType.Setter
         public Builder lastConfiguredLogFilename(String lastConfiguredLogFilename) {
-            this.lastConfiguredLogFilename = Objects.requireNonNull(lastConfiguredLogFilename);
+            if (lastConfiguredLogFilename == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling", "lastConfiguredLogFilename");
+            }
+            this.lastConfiguredLogFilename = lastConfiguredLogFilename;
             return this;
         }
         @CustomType.Setter
         public Builder lastConfiguredLogOffset(String lastConfiguredLogOffset) {
-            this.lastConfiguredLogOffset = Objects.requireNonNull(lastConfiguredLogOffset);
+            if (lastConfiguredLogOffset == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling", "lastConfiguredLogOffset");
+            }
+            this.lastConfiguredLogOffset = lastConfiguredLogOffset;
             return this;
         }
         @CustomType.Setter
         public Builder policy(String policy) {
-            this.policy = Objects.requireNonNull(policy);
+            if (policy == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling", "policy");
+            }
+            this.policy = policy;
             return this;
         }
         @CustomType.Setter
         public Builder uuid(String uuid) {
-            this.uuid = Objects.requireNonNull(uuid);
+            if (uuid == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling", "uuid");
+            }
+            this.uuid = uuid;
             return this;
         }
         public GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling build() {

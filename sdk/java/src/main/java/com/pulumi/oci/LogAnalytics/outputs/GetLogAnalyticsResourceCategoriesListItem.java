@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetLogAnalyticsResourceCategoriesListItem {
 
         @CustomType.Setter
         public Builder categoryName(String categoryName) {
-            this.categoryName = Objects.requireNonNull(categoryName);
+            if (categoryName == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsResourceCategoriesListItem", "categoryName");
+            }
+            this.categoryName = categoryName;
             return this;
         }
         @CustomType.Setter
         public Builder isSystem(Boolean isSystem) {
-            this.isSystem = Objects.requireNonNull(isSystem);
+            if (isSystem == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsResourceCategoriesListItem", "isSystem");
+            }
+            this.isSystem = isSystem;
             return this;
         }
         @CustomType.Setter
         public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+            if (resourceId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsResourceCategoriesListItem", "resourceId");
+            }
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsResourceCategoriesListItem", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         public GetLogAnalyticsResourceCategoriesListItem build() {

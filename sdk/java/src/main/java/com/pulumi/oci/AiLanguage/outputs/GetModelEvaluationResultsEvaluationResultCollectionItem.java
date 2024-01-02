@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiLanguage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiLanguage.outputs.GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntity;
 import com.pulumi.oci.AiLanguage.outputs.GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntity;
 import java.lang.Object;
@@ -159,27 +160,42 @@ public final class GetModelEvaluationResultsEvaluationResultCollectionItem {
 
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetModelEvaluationResultsEvaluationResultCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetModelEvaluationResultsEvaluationResultCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder location(String location) {
-            this.location = Objects.requireNonNull(location);
+            if (location == null) {
+              throw new MissingRequiredPropertyException("GetModelEvaluationResultsEvaluationResultCollectionItem", "location");
+            }
+            this.location = location;
             return this;
         }
         @CustomType.Setter
         public Builder modelType(String modelType) {
-            this.modelType = Objects.requireNonNull(modelType);
+            if (modelType == null) {
+              throw new MissingRequiredPropertyException("GetModelEvaluationResultsEvaluationResultCollectionItem", "modelType");
+            }
+            this.modelType = modelType;
             return this;
         }
         @CustomType.Setter
         public Builder predictedEntities(List<GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntity> predictedEntities) {
-            this.predictedEntities = Objects.requireNonNull(predictedEntities);
+            if (predictedEntities == null) {
+              throw new MissingRequiredPropertyException("GetModelEvaluationResultsEvaluationResultCollectionItem", "predictedEntities");
+            }
+            this.predictedEntities = predictedEntities;
             return this;
         }
         public Builder predictedEntities(GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntity... predictedEntities) {
@@ -187,7 +203,10 @@ public final class GetModelEvaluationResultsEvaluationResultCollectionItem {
         }
         @CustomType.Setter
         public Builder predictedLabels(List<String> predictedLabels) {
-            this.predictedLabels = Objects.requireNonNull(predictedLabels);
+            if (predictedLabels == null) {
+              throw new MissingRequiredPropertyException("GetModelEvaluationResultsEvaluationResultCollectionItem", "predictedLabels");
+            }
+            this.predictedLabels = predictedLabels;
             return this;
         }
         public Builder predictedLabels(String... predictedLabels) {
@@ -195,12 +214,18 @@ public final class GetModelEvaluationResultsEvaluationResultCollectionItem {
         }
         @CustomType.Setter
         public Builder record(String record) {
-            this.record = Objects.requireNonNull(record);
+            if (record == null) {
+              throw new MissingRequiredPropertyException("GetModelEvaluationResultsEvaluationResultCollectionItem", "record");
+            }
+            this.record = record;
             return this;
         }
         @CustomType.Setter
         public Builder trueEntities(List<GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntity> trueEntities) {
-            this.trueEntities = Objects.requireNonNull(trueEntities);
+            if (trueEntities == null) {
+              throw new MissingRequiredPropertyException("GetModelEvaluationResultsEvaluationResultCollectionItem", "trueEntities");
+            }
+            this.trueEntities = trueEntities;
             return this;
         }
         public Builder trueEntities(GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntity... trueEntities) {
@@ -208,7 +233,10 @@ public final class GetModelEvaluationResultsEvaluationResultCollectionItem {
         }
         @CustomType.Setter
         public Builder trueLabels(List<String> trueLabels) {
-            this.trueLabels = Objects.requireNonNull(trueLabels);
+            if (trueLabels == null) {
+              throw new MissingRequiredPropertyException("GetModelEvaluationResultsEvaluationResultCollectionItem", "trueLabels");
+            }
+            this.trueLabels = trueLabels;
             return this;
         }
         public Builder trueLabels(String... trueLabels) {

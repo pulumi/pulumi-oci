@@ -119,31 +119,37 @@ public final class DeploymentSpecificationRequestPolicies {
 
         @CustomType.Setter
         public Builder authentication(@Nullable DeploymentSpecificationRequestPoliciesAuthentication authentication) {
+
             this.authentication = authentication;
             return this;
         }
         @CustomType.Setter
         public Builder cors(@Nullable DeploymentSpecificationRequestPoliciesCors cors) {
+
             this.cors = cors;
             return this;
         }
         @CustomType.Setter
         public Builder dynamicAuthentication(@Nullable DeploymentSpecificationRequestPoliciesDynamicAuthentication dynamicAuthentication) {
+
             this.dynamicAuthentication = dynamicAuthentication;
             return this;
         }
         @CustomType.Setter
         public Builder mutualTls(@Nullable DeploymentSpecificationRequestPoliciesMutualTls mutualTls) {
+
             this.mutualTls = mutualTls;
             return this;
         }
         @CustomType.Setter
         public Builder rateLimiting(@Nullable DeploymentSpecificationRequestPoliciesRateLimiting rateLimiting) {
+
             this.rateLimiting = rateLimiting;
             return this;
         }
         @CustomType.Setter
         public Builder usagePlans(@Nullable DeploymentSpecificationRequestPoliciesUsagePlans usagePlans) {
+
             this.usagePlans = usagePlans;
             return this;
         }

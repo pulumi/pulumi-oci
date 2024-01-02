@@ -58,11 +58,13 @@ public final class ClusterOptionsKubernetesNetworkConfig {
 
         @CustomType.Setter
         public Builder podsCidr(@Nullable String podsCidr) {
+
             this.podsCidr = podsCidr;
             return this;
         }
         @CustomType.Setter
         public Builder servicesCidr(@Nullable String servicesCidr) {
+
             this.servicesCidr = servicesCidr;
             return this;
         }

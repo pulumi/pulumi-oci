@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -146,8 +147,12 @@ public final class GetAwrHubAwrSnapshotPlainArgs extends com.pulumi.resources.In
         }
 
         public GetAwrHubAwrSnapshotPlainArgs build() {
-            $.awrHubId = Objects.requireNonNull($.awrHubId, "expected parameter 'awrHubId' to be non-null");
-            $.awrSourceDatabaseIdentifier = Objects.requireNonNull($.awrSourceDatabaseIdentifier, "expected parameter 'awrSourceDatabaseIdentifier' to be non-null");
+            if ($.awrHubId == null) {
+                throw new MissingRequiredPropertyException("GetAwrHubAwrSnapshotPlainArgs", "awrHubId");
+            }
+            if ($.awrSourceDatabaseIdentifier == null) {
+                throw new MissingRequiredPropertyException("GetAwrHubAwrSnapshotPlainArgs", "awrSourceDatabaseIdentifier");
+            }
             return $;
         }
     }

@@ -72,16 +72,19 @@ public final class SqlEndpointNetworkConfigurationAccessControlRule {
 
         @CustomType.Setter
         public Builder ipNotation(@Nullable String ipNotation) {
+
             this.ipNotation = ipNotation;
             return this;
         }
         @CustomType.Setter
         public Builder value(@Nullable String value) {
+
             this.value = value;
             return this;
         }
         @CustomType.Setter
         public Builder vcnIps(@Nullable String vcnIps) {
+
             this.vcnIps = vcnIps;
             return this;
         }

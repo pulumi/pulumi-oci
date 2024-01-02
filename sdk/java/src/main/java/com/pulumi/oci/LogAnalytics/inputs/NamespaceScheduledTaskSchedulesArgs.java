@@ -5,6 +5,7 @@ package com.pulumi.oci.LogAnalytics.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.inputs.NamespaceScheduledTaskSchedulesScheduleArgs;
 import java.util.List;
 import java.util.Objects;
@@ -59,7 +60,9 @@ public final class NamespaceScheduledTaskSchedulesArgs extends com.pulumi.resour
         }
 
         public NamespaceScheduledTaskSchedulesArgs build() {
-            $.schedules = Objects.requireNonNull($.schedules, "expected parameter 'schedules' to be non-null");
+            if ($.schedules == null) {
+                throw new MissingRequiredPropertyException("NamespaceScheduledTaskSchedulesArgs", "schedules");
+            }
             return $;
         }
     }

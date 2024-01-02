@@ -4,6 +4,7 @@
 package com.pulumi.oci.HealthChecks.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
@@ -86,22 +87,34 @@ public final class GetHttpProbeResultsHttpProbeResultConnection {
 
         @CustomType.Setter
         public Builder address(String address) {
-            this.address = Objects.requireNonNull(address);
+            if (address == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResultConnection", "address");
+            }
+            this.address = address;
             return this;
         }
         @CustomType.Setter
         public Builder connectDuration(Double connectDuration) {
-            this.connectDuration = Objects.requireNonNull(connectDuration);
+            if (connectDuration == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResultConnection", "connectDuration");
+            }
+            this.connectDuration = connectDuration;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResultConnection", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder secureConnectDuration(Double secureConnectDuration) {
-            this.secureConnectDuration = Objects.requireNonNull(secureConnectDuration);
+            if (secureConnectDuration == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResultConnection", "secureConnectDuration");
+            }
+            this.secureConnectDuration = secureConnectDuration;
             return this;
         }
         public GetHttpProbeResultsHttpProbeResultConnection build() {

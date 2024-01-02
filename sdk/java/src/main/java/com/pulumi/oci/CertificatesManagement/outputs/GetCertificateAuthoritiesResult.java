@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateAuthoritiesCertificateAuthorityCollection;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateAuthoritiesFilter;
 import java.lang.String;
@@ -137,7 +138,10 @@ public final class GetCertificateAuthoritiesResult {
 
         @CustomType.Setter
         public Builder certificateAuthorityCollections(List<GetCertificateAuthoritiesCertificateAuthorityCollection> certificateAuthorityCollections) {
-            this.certificateAuthorityCollections = Objects.requireNonNull(certificateAuthorityCollections);
+            if (certificateAuthorityCollections == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesResult", "certificateAuthorityCollections");
+            }
+            this.certificateAuthorityCollections = certificateAuthorityCollections;
             return this;
         }
         public Builder certificateAuthorityCollections(GetCertificateAuthoritiesCertificateAuthorityCollection... certificateAuthorityCollections) {
@@ -145,16 +149,19 @@ public final class GetCertificateAuthoritiesResult {
         }
         @CustomType.Setter
         public Builder certificateAuthorityId(@Nullable String certificateAuthorityId) {
+
             this.certificateAuthorityId = certificateAuthorityId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCertificateAuthoritiesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -163,21 +170,27 @@ public final class GetCertificateAuthoritiesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder issuerCertificateAuthorityId(@Nullable String issuerCertificateAuthorityId) {
+
             this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

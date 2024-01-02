@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetIpsecConnectionTunnelBgpSessionInfo;
 import com.pulumi.oci.Core.outputs.GetIpsecConnectionTunnelDpdConfig;
 import com.pulumi.oci.Core.outputs.GetIpsecConnectionTunnelEncryptionDomainConfig;
@@ -331,7 +332,10 @@ public final class GetIpsecConnectionTunnelResult {
 
         @CustomType.Setter
         public Builder associatedVirtualCircuits(List<String> associatedVirtualCircuits) {
-            this.associatedVirtualCircuits = Objects.requireNonNull(associatedVirtualCircuits);
+            if (associatedVirtualCircuits == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "associatedVirtualCircuits");
+            }
+            this.associatedVirtualCircuits = associatedVirtualCircuits;
             return this;
         }
         public Builder associatedVirtualCircuits(String... associatedVirtualCircuits) {
@@ -339,7 +343,10 @@ public final class GetIpsecConnectionTunnelResult {
         }
         @CustomType.Setter
         public Builder bgpSessionInfos(List<GetIpsecConnectionTunnelBgpSessionInfo> bgpSessionInfos) {
-            this.bgpSessionInfos = Objects.requireNonNull(bgpSessionInfos);
+            if (bgpSessionInfos == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "bgpSessionInfos");
+            }
+            this.bgpSessionInfos = bgpSessionInfos;
             return this;
         }
         public Builder bgpSessionInfos(GetIpsecConnectionTunnelBgpSessionInfo... bgpSessionInfos) {
@@ -347,22 +354,34 @@ public final class GetIpsecConnectionTunnelResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder cpeIp(String cpeIp) {
-            this.cpeIp = Objects.requireNonNull(cpeIp);
+            if (cpeIp == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "cpeIp");
+            }
+            this.cpeIp = cpeIp;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder dpdConfigs(List<GetIpsecConnectionTunnelDpdConfig> dpdConfigs) {
-            this.dpdConfigs = Objects.requireNonNull(dpdConfigs);
+            if (dpdConfigs == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "dpdConfigs");
+            }
+            this.dpdConfigs = dpdConfigs;
             return this;
         }
         public Builder dpdConfigs(GetIpsecConnectionTunnelDpdConfig... dpdConfigs) {
@@ -370,17 +389,26 @@ public final class GetIpsecConnectionTunnelResult {
         }
         @CustomType.Setter
         public Builder dpdMode(String dpdMode) {
-            this.dpdMode = Objects.requireNonNull(dpdMode);
+            if (dpdMode == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "dpdMode");
+            }
+            this.dpdMode = dpdMode;
             return this;
         }
         @CustomType.Setter
         public Builder dpdTimeoutInSec(Integer dpdTimeoutInSec) {
-            this.dpdTimeoutInSec = Objects.requireNonNull(dpdTimeoutInSec);
+            if (dpdTimeoutInSec == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "dpdTimeoutInSec");
+            }
+            this.dpdTimeoutInSec = dpdTimeoutInSec;
             return this;
         }
         @CustomType.Setter
         public Builder encryptionDomainConfigs(List<GetIpsecConnectionTunnelEncryptionDomainConfig> encryptionDomainConfigs) {
-            this.encryptionDomainConfigs = Objects.requireNonNull(encryptionDomainConfigs);
+            if (encryptionDomainConfigs == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "encryptionDomainConfigs");
+            }
+            this.encryptionDomainConfigs = encryptionDomainConfigs;
             return this;
         }
         public Builder encryptionDomainConfigs(GetIpsecConnectionTunnelEncryptionDomainConfig... encryptionDomainConfigs) {
@@ -388,32 +416,50 @@ public final class GetIpsecConnectionTunnelResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ikeVersion(String ikeVersion) {
-            this.ikeVersion = Objects.requireNonNull(ikeVersion);
+            if (ikeVersion == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "ikeVersion");
+            }
+            this.ikeVersion = ikeVersion;
             return this;
         }
         @CustomType.Setter
         public Builder ipsecId(String ipsecId) {
-            this.ipsecId = Objects.requireNonNull(ipsecId);
+            if (ipsecId == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "ipsecId");
+            }
+            this.ipsecId = ipsecId;
             return this;
         }
         @CustomType.Setter
         public Builder natTranslationEnabled(String natTranslationEnabled) {
-            this.natTranslationEnabled = Objects.requireNonNull(natTranslationEnabled);
+            if (natTranslationEnabled == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "natTranslationEnabled");
+            }
+            this.natTranslationEnabled = natTranslationEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder oracleCanInitiate(String oracleCanInitiate) {
-            this.oracleCanInitiate = Objects.requireNonNull(oracleCanInitiate);
+            if (oracleCanInitiate == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "oracleCanInitiate");
+            }
+            this.oracleCanInitiate = oracleCanInitiate;
             return this;
         }
         @CustomType.Setter
         public Builder phaseOneDetails(List<GetIpsecConnectionTunnelPhaseOneDetail> phaseOneDetails) {
-            this.phaseOneDetails = Objects.requireNonNull(phaseOneDetails);
+            if (phaseOneDetails == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "phaseOneDetails");
+            }
+            this.phaseOneDetails = phaseOneDetails;
             return this;
         }
         public Builder phaseOneDetails(GetIpsecConnectionTunnelPhaseOneDetail... phaseOneDetails) {
@@ -421,7 +467,10 @@ public final class GetIpsecConnectionTunnelResult {
         }
         @CustomType.Setter
         public Builder phaseTwoDetails(List<GetIpsecConnectionTunnelPhaseTwoDetail> phaseTwoDetails) {
-            this.phaseTwoDetails = Objects.requireNonNull(phaseTwoDetails);
+            if (phaseTwoDetails == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "phaseTwoDetails");
+            }
+            this.phaseTwoDetails = phaseTwoDetails;
             return this;
         }
         public Builder phaseTwoDetails(GetIpsecConnectionTunnelPhaseTwoDetail... phaseTwoDetails) {
@@ -429,42 +478,66 @@ public final class GetIpsecConnectionTunnelResult {
         }
         @CustomType.Setter
         public Builder routing(String routing) {
-            this.routing = Objects.requireNonNull(routing);
+            if (routing == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "routing");
+            }
+            this.routing = routing;
             return this;
         }
         @CustomType.Setter
         public Builder sharedSecret(String sharedSecret) {
-            this.sharedSecret = Objects.requireNonNull(sharedSecret);
+            if (sharedSecret == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "sharedSecret");
+            }
+            this.sharedSecret = sharedSecret;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeStatusUpdated(String timeStatusUpdated) {
-            this.timeStatusUpdated = Objects.requireNonNull(timeStatusUpdated);
+            if (timeStatusUpdated == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "timeStatusUpdated");
+            }
+            this.timeStatusUpdated = timeStatusUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder tunnelId(String tunnelId) {
-            this.tunnelId = Objects.requireNonNull(tunnelId);
+            if (tunnelId == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "tunnelId");
+            }
+            this.tunnelId = tunnelId;
             return this;
         }
         @CustomType.Setter
         public Builder vpnIp(String vpnIp) {
-            this.vpnIp = Objects.requireNonNull(vpnIp);
+            if (vpnIp == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelResult", "vpnIp");
+            }
+            this.vpnIp = vpnIp;
             return this;
         }
         public GetIpsecConnectionTunnelResult build() {

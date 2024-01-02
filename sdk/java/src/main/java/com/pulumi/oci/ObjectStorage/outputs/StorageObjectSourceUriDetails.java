@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -148,41 +149,57 @@ public final class StorageObjectSourceUriDetails {
 
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("StorageObjectSourceUriDetails", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder destinationObjectIfMatchEtag(@Nullable String destinationObjectIfMatchEtag) {
+
             this.destinationObjectIfMatchEtag = destinationObjectIfMatchEtag;
             return this;
         }
         @CustomType.Setter
         public Builder destinationObjectIfNoneMatchEtag(@Nullable String destinationObjectIfNoneMatchEtag) {
+
             this.destinationObjectIfNoneMatchEtag = destinationObjectIfNoneMatchEtag;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("StorageObjectSourceUriDetails", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+            if (object == null) {
+              throw new MissingRequiredPropertyException("StorageObjectSourceUriDetails", "object");
+            }
+            this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+            if (region == null) {
+              throw new MissingRequiredPropertyException("StorageObjectSourceUriDetails", "region");
+            }
+            this.region = region;
             return this;
         }
         @CustomType.Setter
         public Builder sourceObjectIfMatchEtag(@Nullable String sourceObjectIfMatchEtag) {
+
             this.sourceObjectIfMatchEtag = sourceObjectIfMatchEtag;
             return this;
         }
         @CustomType.Setter
         public Builder sourceVersionId(@Nullable String sourceVersionId) {
+
             this.sourceVersionId = sourceVersionId;
             return this;
         }

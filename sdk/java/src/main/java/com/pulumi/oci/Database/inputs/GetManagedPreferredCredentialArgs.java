@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class GetManagedPreferredCredentialArgs extends com.pulumi.resource
         }
 
         public GetManagedPreferredCredentialArgs build() {
-            $.credentialName = Objects.requireNonNull($.credentialName, "expected parameter 'credentialName' to be non-null");
-            $.managedDatabaseId = Objects.requireNonNull($.managedDatabaseId, "expected parameter 'managedDatabaseId' to be non-null");
+            if ($.credentialName == null) {
+                throw new MissingRequiredPropertyException("GetManagedPreferredCredentialArgs", "credentialName");
+            }
+            if ($.managedDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetManagedPreferredCredentialArgs", "managedDatabaseId");
+            }
             return $;
         }
     }

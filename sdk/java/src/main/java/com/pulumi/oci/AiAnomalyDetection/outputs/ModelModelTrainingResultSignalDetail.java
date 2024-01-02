@@ -164,46 +164,55 @@ public final class ModelModelTrainingResultSignalDetail {
 
         @CustomType.Setter
         public Builder details(@Nullable String details) {
+
             this.details = details;
             return this;
         }
         @CustomType.Setter
         public Builder fap(@Nullable Double fap) {
+
             this.fap = fap;
             return this;
         }
         @CustomType.Setter
         public Builder isQuantized(@Nullable Boolean isQuantized) {
+
             this.isQuantized = isQuantized;
             return this;
         }
         @CustomType.Setter
         public Builder max(@Nullable Double max) {
+
             this.max = max;
             return this;
         }
         @CustomType.Setter
         public Builder min(@Nullable Double min) {
+
             this.min = min;
             return this;
         }
         @CustomType.Setter
         public Builder mviRatio(@Nullable Double mviRatio) {
+
             this.mviRatio = mviRatio;
             return this;
         }
         @CustomType.Setter
         public Builder signalName(@Nullable String signalName) {
+
             this.signalName = signalName;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder std(@Nullable Double std) {
+
             this.std = std;
             return this;
         }

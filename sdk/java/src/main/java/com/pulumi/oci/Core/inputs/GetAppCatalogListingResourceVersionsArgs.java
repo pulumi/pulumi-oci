@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -99,7 +100,9 @@ public final class GetAppCatalogListingResourceVersionsArgs extends com.pulumi.r
         }
 
         public GetAppCatalogListingResourceVersionsArgs build() {
-            $.listingId = Objects.requireNonNull($.listingId, "expected parameter 'listingId' to be non-null");
+            if ($.listingId == null) {
+                throw new MissingRequiredPropertyException("GetAppCatalogListingResourceVersionsArgs", "listingId");
+            }
             return $;
         }
     }

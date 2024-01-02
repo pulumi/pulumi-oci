@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbServersDbServerDbServerPatchingDetail;
 import java.lang.Integer;
 import java.lang.Object;
@@ -327,7 +328,10 @@ public final class GetDbServersDbServer {
 
         @CustomType.Setter
         public Builder autonomousVirtualMachineIds(List<String> autonomousVirtualMachineIds) {
-            this.autonomousVirtualMachineIds = Objects.requireNonNull(autonomousVirtualMachineIds);
+            if (autonomousVirtualMachineIds == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "autonomousVirtualMachineIds");
+            }
+            this.autonomousVirtualMachineIds = autonomousVirtualMachineIds;
             return this;
         }
         public Builder autonomousVirtualMachineIds(String... autonomousVirtualMachineIds) {
@@ -335,7 +339,10 @@ public final class GetDbServersDbServer {
         }
         @CustomType.Setter
         public Builder autonomousVmClusterIds(List<String> autonomousVmClusterIds) {
-            this.autonomousVmClusterIds = Objects.requireNonNull(autonomousVmClusterIds);
+            if (autonomousVmClusterIds == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "autonomousVmClusterIds");
+            }
+            this.autonomousVmClusterIds = autonomousVmClusterIds;
             return this;
         }
         public Builder autonomousVmClusterIds(String... autonomousVmClusterIds) {
@@ -343,17 +350,26 @@ public final class GetDbServersDbServer {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+            if (cpuCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "cpuCoreCount");
+            }
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
         public Builder dbNodeIds(List<String> dbNodeIds) {
-            this.dbNodeIds = Objects.requireNonNull(dbNodeIds);
+            if (dbNodeIds == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "dbNodeIds");
+            }
+            this.dbNodeIds = dbNodeIds;
             return this;
         }
         public Builder dbNodeIds(String... dbNodeIds) {
@@ -361,12 +377,18 @@ public final class GetDbServersDbServer {
         }
         @CustomType.Setter
         public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
-            this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
+            if (dbNodeStorageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "dbNodeStorageSizeInGbs");
+            }
+            this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder dbServerPatchingDetails(List<GetDbServersDbServerDbServerPatchingDetail> dbServerPatchingDetails) {
-            this.dbServerPatchingDetails = Objects.requireNonNull(dbServerPatchingDetails);
+            if (dbServerPatchingDetails == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "dbServerPatchingDetails");
+            }
+            this.dbServerPatchingDetails = dbServerPatchingDetails;
             return this;
         }
         public Builder dbServerPatchingDetails(GetDbServersDbServerDbServerPatchingDetail... dbServerPatchingDetails) {
@@ -374,72 +396,114 @@ public final class GetDbServersDbServer {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
-            this.exadataInfrastructureId = Objects.requireNonNull(exadataInfrastructureId);
+            if (exadataInfrastructureId == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "exadataInfrastructureId");
+            }
+            this.exadataInfrastructureId = exadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder maxCpuCount(Integer maxCpuCount) {
-            this.maxCpuCount = Objects.requireNonNull(maxCpuCount);
+            if (maxCpuCount == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "maxCpuCount");
+            }
+            this.maxCpuCount = maxCpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder maxDbNodeStorageInGbs(Integer maxDbNodeStorageInGbs) {
-            this.maxDbNodeStorageInGbs = Objects.requireNonNull(maxDbNodeStorageInGbs);
+            if (maxDbNodeStorageInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "maxDbNodeStorageInGbs");
+            }
+            this.maxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder maxMemoryInGbs(Integer maxMemoryInGbs) {
-            this.maxMemoryInGbs = Objects.requireNonNull(maxMemoryInGbs);
+            if (maxMemoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "maxMemoryInGbs");
+            }
+            this.maxMemoryInGbs = maxMemoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder memorySizeInGbs(Integer memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+            if (memorySizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "memorySizeInGbs");
+            }
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder vmClusterIds(List<String> vmClusterIds) {
-            this.vmClusterIds = Objects.requireNonNull(vmClusterIds);
+            if (vmClusterIds == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "vmClusterIds");
+            }
+            this.vmClusterIds = vmClusterIds;
             return this;
         }
         public Builder vmClusterIds(String... vmClusterIds) {

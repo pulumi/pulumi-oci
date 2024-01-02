@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -182,57 +183,90 @@ public final class GetDomainsCloudGateMapping {
 
         @CustomType.Setter
         public Builder appId(String appId) {
-            this.appId = Objects.requireNonNull(appId);
+            if (appId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMapping", "appId");
+            }
+            this.appId = appId;
             return this;
         }
         @CustomType.Setter
         public Builder mappingId(String mappingId) {
-            this.mappingId = Objects.requireNonNull(mappingId);
+            if (mappingId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMapping", "mappingId");
+            }
+            this.mappingId = mappingId;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMapping", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder nginxSettings(String nginxSettings) {
-            this.nginxSettings = Objects.requireNonNull(nginxSettings);
+            if (nginxSettings == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMapping", "nginxSettings");
+            }
+            this.nginxSettings = nginxSettings;
             return this;
         }
         @CustomType.Setter
         public Builder policyName(String policyName) {
-            this.policyName = Objects.requireNonNull(policyName);
+            if (policyName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMapping", "policyName");
+            }
+            this.policyName = policyName;
             return this;
         }
         @CustomType.Setter
         public Builder proxyPass(String proxyPass) {
-            this.proxyPass = Objects.requireNonNull(proxyPass);
+            if (proxyPass == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMapping", "proxyPass");
+            }
+            this.proxyPass = proxyPass;
             return this;
         }
         @CustomType.Setter
         public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+            if (ref == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMapping", "ref");
+            }
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder resourcePrefix(String resourcePrefix) {
-            this.resourcePrefix = Objects.requireNonNull(resourcePrefix);
+            if (resourcePrefix == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMapping", "resourcePrefix");
+            }
+            this.resourcePrefix = resourcePrefix;
             return this;
         }
         @CustomType.Setter
         public Builder serverId(String serverId) {
-            this.serverId = Objects.requireNonNull(serverId);
+            if (serverId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMapping", "serverId");
+            }
+            this.serverId = serverId;
             return this;
         }
         @CustomType.Setter
         public Builder upstreamServerGroupId(String upstreamServerGroupId) {
-            this.upstreamServerGroupId = Objects.requireNonNull(upstreamServerGroupId);
+            if (upstreamServerGroupId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMapping", "upstreamServerGroupId");
+            }
+            this.upstreamServerGroupId = upstreamServerGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMapping", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDomainsCloudGateMapping build() {

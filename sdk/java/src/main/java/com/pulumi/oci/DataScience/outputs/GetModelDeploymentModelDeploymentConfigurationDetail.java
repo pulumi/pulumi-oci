@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail;
 import java.lang.String;
@@ -73,12 +74,18 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetail {
 
         @CustomType.Setter
         public Builder deploymentType(String deploymentType) {
-            this.deploymentType = Objects.requireNonNull(deploymentType);
+            if (deploymentType == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentModelDeploymentConfigurationDetail", "deploymentType");
+            }
+            this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
         public Builder environmentConfigurationDetails(List<GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail> environmentConfigurationDetails) {
-            this.environmentConfigurationDetails = Objects.requireNonNull(environmentConfigurationDetails);
+            if (environmentConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentModelDeploymentConfigurationDetail", "environmentConfigurationDetails");
+            }
+            this.environmentConfigurationDetails = environmentConfigurationDetails;
             return this;
         }
         public Builder environmentConfigurationDetails(GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail... environmentConfigurationDetails) {
@@ -86,7 +93,10 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetail {
         }
         @CustomType.Setter
         public Builder modelConfigurationDetails(List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail> modelConfigurationDetails) {
-            this.modelConfigurationDetails = Objects.requireNonNull(modelConfigurationDetails);
+            if (modelConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentModelDeploymentConfigurationDetail", "modelConfigurationDetails");
+            }
+            this.modelConfigurationDetails = modelConfigurationDetails;
             return this;
         }
         public Builder modelConfigurationDetails(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail... modelConfigurationDetails) {

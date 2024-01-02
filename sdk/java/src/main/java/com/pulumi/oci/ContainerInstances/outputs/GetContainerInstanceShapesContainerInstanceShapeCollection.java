@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerInstances.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetContainerInstanceShapesContainerInstanceShapeCollection {
 
         @CustomType.Setter
         public Builder items(List<GetContainerInstanceShapesContainerInstanceShapeCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceShapesContainerInstanceShapeCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetContainerInstanceShapesContainerInstanceShapeCollectionItem... items) {

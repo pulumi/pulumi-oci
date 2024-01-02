@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerInstances.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -60,27 +61,42 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
 
         @CustomType.Setter
         public Builder isNonRootUserCheckEnabled(Boolean isNonRootUserCheckEnabled) {
-            this.isNonRootUserCheckEnabled = Objects.requireNonNull(isNonRootUserCheckEnabled);
+            if (isNonRootUserCheckEnabled == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext", "isNonRootUserCheckEnabled");
+            }
+            this.isNonRootUserCheckEnabled = isNonRootUserCheckEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isRootFileSystemReadonly(Boolean isRootFileSystemReadonly) {
-            this.isRootFileSystemReadonly = Objects.requireNonNull(isRootFileSystemReadonly);
+            if (isRootFileSystemReadonly == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext", "isRootFileSystemReadonly");
+            }
+            this.isRootFileSystemReadonly = isRootFileSystemReadonly;
             return this;
         }
         @CustomType.Setter
         public Builder runAsGroup(Integer runAsGroup) {
-            this.runAsGroup = Objects.requireNonNull(runAsGroup);
+            if (runAsGroup == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext", "runAsGroup");
+            }
+            this.runAsGroup = runAsGroup;
             return this;
         }
         @CustomType.Setter
         public Builder runAsUser(Integer runAsUser) {
-            this.runAsUser = Objects.requireNonNull(runAsUser);
+            if (runAsUser == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext", "runAsUser");
+            }
+            this.runAsUser = runAsUser;
             return this;
         }
         @CustomType.Setter
         public Builder securityContextType(String securityContextType) {
-            this.securityContextType = Objects.requireNonNull(securityContextType);
+            if (securityContextType == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext", "securityContextType");
+            }
+            this.securityContextType = securityContextType;
             return this;
         }
         public GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext build() {

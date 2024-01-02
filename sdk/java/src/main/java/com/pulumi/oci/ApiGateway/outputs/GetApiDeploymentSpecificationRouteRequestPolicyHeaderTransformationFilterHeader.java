@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransfor
 
         @CustomType.Setter
         public Builder items(List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeader", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem... items) {
@@ -66,7 +70,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransfor
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeader", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeader build() {

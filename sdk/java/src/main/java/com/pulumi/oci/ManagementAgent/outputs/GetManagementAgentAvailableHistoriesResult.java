@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentAvailableHistoriesAvailabilityHistory;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentAvailableHistoriesFilter;
 import java.lang.String;
@@ -93,7 +94,10 @@ public final class GetManagementAgentAvailableHistoriesResult {
 
         @CustomType.Setter
         public Builder availabilityHistories(List<GetManagementAgentAvailableHistoriesAvailabilityHistory> availabilityHistories) {
-            this.availabilityHistories = Objects.requireNonNull(availabilityHistories);
+            if (availabilityHistories == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentAvailableHistoriesResult", "availabilityHistories");
+            }
+            this.availabilityHistories = availabilityHistories;
             return this;
         }
         public Builder availabilityHistories(GetManagementAgentAvailableHistoriesAvailabilityHistory... availabilityHistories) {
@@ -101,6 +105,7 @@ public final class GetManagementAgentAvailableHistoriesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagementAgentAvailableHistoriesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -109,21 +114,29 @@ public final class GetManagementAgentAvailableHistoriesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentAvailableHistoriesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managementAgentId(String managementAgentId) {
-            this.managementAgentId = Objects.requireNonNull(managementAgentId);
+            if (managementAgentId == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentAvailableHistoriesResult", "managementAgentId");
+            }
+            this.managementAgentId = managementAgentId;
             return this;
         }
         @CustomType.Setter
         public Builder timeAvailabilityStatusEndedGreaterThan(@Nullable String timeAvailabilityStatusEndedGreaterThan) {
+
             this.timeAvailabilityStatusEndedGreaterThan = timeAvailabilityStatusEndedGreaterThan;
             return this;
         }
         @CustomType.Setter
         public Builder timeAvailabilityStatusStartedLessThan(@Nullable String timeAvailabilityStatusStartedLessThan) {
+
             this.timeAvailabilityStatusStartedLessThan = timeAvailabilityStatusStartedLessThan;
             return this;
         }

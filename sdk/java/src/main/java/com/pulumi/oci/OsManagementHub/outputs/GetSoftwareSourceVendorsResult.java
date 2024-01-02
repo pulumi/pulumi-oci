@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceVendorsFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceVendorsSoftwareSourceVendorCollection;
 import java.lang.String;
@@ -87,11 +88,15 @@ public final class GetSoftwareSourceVendorsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceVendorsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSoftwareSourceVendorsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -100,17 +105,24 @@ public final class GetSoftwareSourceVendorsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceVendorsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder softwareSourceVendorCollections(List<GetSoftwareSourceVendorsSoftwareSourceVendorCollection> softwareSourceVendorCollections) {
-            this.softwareSourceVendorCollections = Objects.requireNonNull(softwareSourceVendorCollections);
+            if (softwareSourceVendorCollections == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceVendorsResult", "softwareSourceVendorCollections");
+            }
+            this.softwareSourceVendorCollections = softwareSourceVendorCollections;
             return this;
         }
         public Builder softwareSourceVendorCollections(GetSoftwareSourceVendorsSoftwareSourceVendorCollection... softwareSourceVendorCollections) {

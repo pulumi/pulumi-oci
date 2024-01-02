@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -141,42 +142,66 @@ public final class GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongro
 
         @CustomType.Setter
         public Builder adminRole(Boolean adminRole) {
-            this.adminRole = Objects.requireNonNull(adminRole);
+            if (adminRole == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole", "adminRole");
+            }
+            this.adminRole = adminRole;
             return this;
         }
         @CustomType.Setter
         public Builder appId(String appId) {
-            this.appId = Objects.requireNonNull(appId);
+            if (appId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole", "appId");
+            }
+            this.appId = appId;
             return this;
         }
         @CustomType.Setter
         public Builder appName(String appName) {
-            this.appName = Objects.requireNonNull(appName);
+            if (appName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole", "appName");
+            }
+            this.appName = appName;
             return this;
         }
         @CustomType.Setter
         public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+            if (display == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole", "display");
+            }
+            this.display = display;
             return this;
         }
         @CustomType.Setter
         public Builder legacyGroupName(String legacyGroupName) {
-            this.legacyGroupName = Objects.requireNonNull(legacyGroupName);
+            if (legacyGroupName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole", "legacyGroupName");
+            }
+            this.legacyGroupName = legacyGroupName;
             return this;
         }
         @CustomType.Setter
         public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+            if (ref == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole", "ref");
+            }
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole build() {

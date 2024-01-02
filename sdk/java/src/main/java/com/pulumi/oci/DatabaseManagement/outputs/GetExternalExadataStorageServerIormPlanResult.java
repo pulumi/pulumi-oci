@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageServerIormPlanDbPlan;
 import java.lang.String;
 import java.util.List;
@@ -92,7 +93,10 @@ public final class GetExternalExadataStorageServerIormPlanResult {
 
         @CustomType.Setter
         public Builder dbPlans(List<GetExternalExadataStorageServerIormPlanDbPlan> dbPlans) {
-            this.dbPlans = Objects.requireNonNull(dbPlans);
+            if (dbPlans == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanResult", "dbPlans");
+            }
+            this.dbPlans = dbPlans;
             return this;
         }
         public Builder dbPlans(GetExternalExadataStorageServerIormPlanDbPlan... dbPlans) {
@@ -100,22 +104,34 @@ public final class GetExternalExadataStorageServerIormPlanResult {
         }
         @CustomType.Setter
         public Builder externalExadataStorageServerId(String externalExadataStorageServerId) {
-            this.externalExadataStorageServerId = Objects.requireNonNull(externalExadataStorageServerId);
+            if (externalExadataStorageServerId == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanResult", "externalExadataStorageServerId");
+            }
+            this.externalExadataStorageServerId = externalExadataStorageServerId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder planObjective(String planObjective) {
-            this.planObjective = Objects.requireNonNull(planObjective);
+            if (planObjective == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanResult", "planObjective");
+            }
+            this.planObjective = planObjective;
             return this;
         }
         @CustomType.Setter
         public Builder planStatus(String planStatus) {
-            this.planStatus = Objects.requireNonNull(planStatus);
+            if (planStatus == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanResult", "planStatus");
+            }
+            this.planStatus = planStatus;
             return this;
         }
         public GetExternalExadataStorageServerIormPlanResult build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -565,7 +566,9 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         public SqlFirewallPolicyArgs build() {
-            $.sqlFirewallPolicyId = Objects.requireNonNull($.sqlFirewallPolicyId, "expected parameter 'sqlFirewallPolicyId' to be non-null");
+            if ($.sqlFirewallPolicyId == null) {
+                throw new MissingRequiredPropertyException("SqlFirewallPolicyArgs", "sqlFirewallPolicyId");
+            }
             return $;
         }
     }

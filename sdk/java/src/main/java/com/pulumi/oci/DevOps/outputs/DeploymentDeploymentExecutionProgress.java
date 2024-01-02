@@ -74,16 +74,19 @@ public final class DeploymentDeploymentExecutionProgress {
 
         @CustomType.Setter
         public Builder deployStageExecutionProgress(@Nullable Map<String,Object> deployStageExecutionProgress) {
+
             this.deployStageExecutionProgress = deployStageExecutionProgress;
             return this;
         }
         @CustomType.Setter
         public Builder timeFinished(@Nullable String timeFinished) {
+
             this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(@Nullable String timeStarted) {
+
             this.timeStarted = timeStarted;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCo
 
         @CustomType.Setter
         public Builder schema(String schema) {
-            this.schema = Objects.requireNonNull(schema);
+            if (schema == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem", "schema");
+            }
+            this.schema = schema;
             return this;
         }
         @CustomType.Setter
         public Builder sqlId(String sqlId) {
-            this.sqlId = Objects.requireNonNull(sqlId);
+            if (sqlId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem", "sqlId");
+            }
+            this.sqlId = sqlId;
             return this;
         }
         @CustomType.Setter
         public Builder sqlText(String sqlText) {
-            this.sqlText = Objects.requireNonNull(sqlText);
+            if (sqlText == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem", "sqlText");
+            }
+            this.sqlText = sqlText;
             return this;
         }
         public GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem build() {

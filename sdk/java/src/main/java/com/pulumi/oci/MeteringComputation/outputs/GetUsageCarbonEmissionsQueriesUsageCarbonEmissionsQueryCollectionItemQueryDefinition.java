@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUi;
 import com.pulumi.oci.MeteringComputation.outputs.GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery;
 import java.lang.Integer;
@@ -88,7 +89,10 @@ public final class GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollec
 
         @CustomType.Setter
         public Builder costAnalysisUis(List<GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUi> costAnalysisUis) {
-            this.costAnalysisUis = Objects.requireNonNull(costAnalysisUis);
+            if (costAnalysisUis == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition", "costAnalysisUis");
+            }
+            this.costAnalysisUis = costAnalysisUis;
             return this;
         }
         public Builder costAnalysisUis(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUi... costAnalysisUis) {
@@ -96,12 +100,18 @@ public final class GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollec
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder reportQueries(List<GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery> reportQueries) {
-            this.reportQueries = Objects.requireNonNull(reportQueries);
+            if (reportQueries == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition", "reportQueries");
+            }
+            this.reportQueries = reportQueries;
             return this;
         }
         public Builder reportQueries(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery... reportQueries) {
@@ -109,7 +119,10 @@ public final class GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollec
         }
         @CustomType.Setter
         public Builder version(Integer version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition build() {

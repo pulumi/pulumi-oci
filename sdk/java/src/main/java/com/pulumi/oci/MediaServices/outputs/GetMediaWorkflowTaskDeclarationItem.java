@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetMediaWorkflowTaskDeclarationItem {
 
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowTaskDeclarationItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder parametersSchema(String parametersSchema) {
-            this.parametersSchema = Objects.requireNonNull(parametersSchema);
+            if (parametersSchema == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowTaskDeclarationItem", "parametersSchema");
+            }
+            this.parametersSchema = parametersSchema;
             return this;
         }
         @CustomType.Setter
         public Builder parametersSchemaAllowingReferences(String parametersSchemaAllowingReferences) {
-            this.parametersSchemaAllowingReferences = Objects.requireNonNull(parametersSchemaAllowingReferences);
+            if (parametersSchemaAllowingReferences == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowTaskDeclarationItem", "parametersSchemaAllowingReferences");
+            }
+            this.parametersSchemaAllowingReferences = parametersSchemaAllowingReferences;
             return this;
         }
         @CustomType.Setter
         public Builder version(Integer version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowTaskDeclarationItem", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetMediaWorkflowTaskDeclarationItem build() {

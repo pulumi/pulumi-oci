@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbNodesDbNode;
 import com.pulumi.oci.Database.outputs.GetDbNodesFilter;
 import java.lang.String;
@@ -121,12 +122,18 @@ public final class GetDbNodesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dbNodes(List<GetDbNodesDbNode> dbNodes) {
-            this.dbNodes = Objects.requireNonNull(dbNodes);
+            if (dbNodes == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesResult", "dbNodes");
+            }
+            this.dbNodes = dbNodes;
             return this;
         }
         public Builder dbNodes(GetDbNodesDbNode... dbNodes) {
@@ -134,16 +141,19 @@ public final class GetDbNodesResult {
         }
         @CustomType.Setter
         public Builder dbServerId(@Nullable String dbServerId) {
+
             this.dbServerId = dbServerId;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(@Nullable String dbSystemId) {
+
             this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDbNodesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -152,16 +162,21 @@ public final class GetDbNodesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vmClusterId(@Nullable String vmClusterId) {
+
             this.vmClusterId = vmClusterId;
             return this;
         }

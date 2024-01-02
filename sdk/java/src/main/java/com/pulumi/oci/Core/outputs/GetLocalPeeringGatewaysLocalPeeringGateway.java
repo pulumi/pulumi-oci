@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -242,42 +243,66 @@ public final class GetLocalPeeringGatewaysLocalPeeringGateway {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLocalPeeringGatewaysLocalPeeringGateway", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetLocalPeeringGatewaysLocalPeeringGateway", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetLocalPeeringGatewaysLocalPeeringGateway", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetLocalPeeringGatewaysLocalPeeringGateway", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLocalPeeringGatewaysLocalPeeringGateway", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCrossTenancyPeering(Boolean isCrossTenancyPeering) {
-            this.isCrossTenancyPeering = Objects.requireNonNull(isCrossTenancyPeering);
+            if (isCrossTenancyPeering == null) {
+              throw new MissingRequiredPropertyException("GetLocalPeeringGatewaysLocalPeeringGateway", "isCrossTenancyPeering");
+            }
+            this.isCrossTenancyPeering = isCrossTenancyPeering;
             return this;
         }
         @CustomType.Setter
         public Builder peerAdvertisedCidr(String peerAdvertisedCidr) {
-            this.peerAdvertisedCidr = Objects.requireNonNull(peerAdvertisedCidr);
+            if (peerAdvertisedCidr == null) {
+              throw new MissingRequiredPropertyException("GetLocalPeeringGatewaysLocalPeeringGateway", "peerAdvertisedCidr");
+            }
+            this.peerAdvertisedCidr = peerAdvertisedCidr;
             return this;
         }
         @CustomType.Setter
         public Builder peerAdvertisedCidrDetails(List<String> peerAdvertisedCidrDetails) {
-            this.peerAdvertisedCidrDetails = Objects.requireNonNull(peerAdvertisedCidrDetails);
+            if (peerAdvertisedCidrDetails == null) {
+              throw new MissingRequiredPropertyException("GetLocalPeeringGatewaysLocalPeeringGateway", "peerAdvertisedCidrDetails");
+            }
+            this.peerAdvertisedCidrDetails = peerAdvertisedCidrDetails;
             return this;
         }
         public Builder peerAdvertisedCidrDetails(String... peerAdvertisedCidrDetails) {
@@ -285,37 +310,58 @@ public final class GetLocalPeeringGatewaysLocalPeeringGateway {
         }
         @CustomType.Setter
         public Builder peerId(String peerId) {
-            this.peerId = Objects.requireNonNull(peerId);
+            if (peerId == null) {
+              throw new MissingRequiredPropertyException("GetLocalPeeringGatewaysLocalPeeringGateway", "peerId");
+            }
+            this.peerId = peerId;
             return this;
         }
         @CustomType.Setter
         public Builder peeringStatus(String peeringStatus) {
-            this.peeringStatus = Objects.requireNonNull(peeringStatus);
+            if (peeringStatus == null) {
+              throw new MissingRequiredPropertyException("GetLocalPeeringGatewaysLocalPeeringGateway", "peeringStatus");
+            }
+            this.peeringStatus = peeringStatus;
             return this;
         }
         @CustomType.Setter
         public Builder peeringStatusDetails(String peeringStatusDetails) {
-            this.peeringStatusDetails = Objects.requireNonNull(peeringStatusDetails);
+            if (peeringStatusDetails == null) {
+              throw new MissingRequiredPropertyException("GetLocalPeeringGatewaysLocalPeeringGateway", "peeringStatusDetails");
+            }
+            this.peeringStatusDetails = peeringStatusDetails;
             return this;
         }
         @CustomType.Setter
         public Builder routeTableId(String routeTableId) {
-            this.routeTableId = Objects.requireNonNull(routeTableId);
+            if (routeTableId == null) {
+              throw new MissingRequiredPropertyException("GetLocalPeeringGatewaysLocalPeeringGateway", "routeTableId");
+            }
+            this.routeTableId = routeTableId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetLocalPeeringGatewaysLocalPeeringGateway", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetLocalPeeringGatewaysLocalPeeringGateway", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+            if (vcnId == null) {
+              throw new MissingRequiredPropertyException("GetLocalPeeringGatewaysLocalPeeringGateway", "vcnId");
+            }
+            this.vcnId = vcnId;
             return this;
         }
         public GetLocalPeeringGatewaysLocalPeeringGateway build() {

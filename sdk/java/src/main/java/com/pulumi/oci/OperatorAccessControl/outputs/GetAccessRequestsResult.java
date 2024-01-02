@@ -4,6 +4,7 @@
 package com.pulumi.oci.OperatorAccessControl.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OperatorAccessControl.outputs.GetAccessRequestsAccessRequestCollection;
 import com.pulumi.oci.OperatorAccessControl.outputs.GetAccessRequestsFilter;
 import java.lang.String;
@@ -135,7 +136,10 @@ public final class GetAccessRequestsResult {
 
         @CustomType.Setter
         public Builder accessRequestCollections(List<GetAccessRequestsAccessRequestCollection> accessRequestCollections) {
-            this.accessRequestCollections = Objects.requireNonNull(accessRequestCollections);
+            if (accessRequestCollections == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestsResult", "accessRequestCollections");
+            }
+            this.accessRequestCollections = accessRequestCollections;
             return this;
         }
         public Builder accessRequestCollections(GetAccessRequestsAccessRequestCollection... accessRequestCollections) {
@@ -143,11 +147,15 @@ public final class GetAccessRequestsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAccessRequestsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -156,31 +164,39 @@ public final class GetAccessRequestsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder resourceName(@Nullable String resourceName) {
+
             this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(@Nullable String resourceType) {
+
             this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnd(@Nullable String timeEnd) {
+
             this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(@Nullable String timeStart) {
+
             this.timeStart = timeStart;
             return this;
         }

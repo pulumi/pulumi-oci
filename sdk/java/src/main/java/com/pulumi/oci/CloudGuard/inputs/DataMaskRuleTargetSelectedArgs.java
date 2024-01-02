@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -139,7 +140,9 @@ public final class DataMaskRuleTargetSelectedArgs extends com.pulumi.resources.R
         }
 
         public DataMaskRuleTargetSelectedArgs build() {
-            $.kind = Objects.requireNonNull($.kind, "expected parameter 'kind' to be non-null");
+            if ($.kind == null) {
+                throw new MissingRequiredPropertyException("DataMaskRuleTargetSelectedArgs", "kind");
+            }
             return $;
         }
     }

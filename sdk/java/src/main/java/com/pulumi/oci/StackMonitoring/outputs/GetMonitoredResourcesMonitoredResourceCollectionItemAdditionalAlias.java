@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential;
 import java.lang.String;
 import java.util.List;
@@ -72,7 +73,10 @@ public final class GetMonitoredResourcesMonitoredResourceCollectionItemAdditiona
 
         @CustomType.Setter
         public Builder credentials(List<GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential> credentials) {
-            this.credentials = Objects.requireNonNull(credentials);
+            if (credentials == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias", "credentials");
+            }
+            this.credentials = credentials;
             return this;
         }
         public Builder credentials(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential... credentials) {
@@ -80,12 +84,18 @@ public final class GetMonitoredResourcesMonitoredResourceCollectionItemAdditiona
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias", "source");
+            }
+            this.source = source;
             return this;
         }
         public GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias build() {

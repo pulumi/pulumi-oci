@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberFileSystemOperationMountDetail;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberFileSystemOperationUnmountDetail;
 import java.lang.String;
@@ -101,12 +102,18 @@ public final class GetDrProtectionGroupMemberFileSystemOperation {
 
         @CustomType.Setter
         public Builder exportPath(String exportPath) {
-            this.exportPath = Objects.requireNonNull(exportPath);
+            if (exportPath == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMemberFileSystemOperation", "exportPath");
+            }
+            this.exportPath = exportPath;
             return this;
         }
         @CustomType.Setter
         public Builder mountDetails(List<GetDrProtectionGroupMemberFileSystemOperationMountDetail> mountDetails) {
-            this.mountDetails = Objects.requireNonNull(mountDetails);
+            if (mountDetails == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMemberFileSystemOperation", "mountDetails");
+            }
+            this.mountDetails = mountDetails;
             return this;
         }
         public Builder mountDetails(GetDrProtectionGroupMemberFileSystemOperationMountDetail... mountDetails) {
@@ -114,17 +121,26 @@ public final class GetDrProtectionGroupMemberFileSystemOperation {
         }
         @CustomType.Setter
         public Builder mountPoint(String mountPoint) {
-            this.mountPoint = Objects.requireNonNull(mountPoint);
+            if (mountPoint == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMemberFileSystemOperation", "mountPoint");
+            }
+            this.mountPoint = mountPoint;
             return this;
         }
         @CustomType.Setter
         public Builder mountTargetId(String mountTargetId) {
-            this.mountTargetId = Objects.requireNonNull(mountTargetId);
+            if (mountTargetId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMemberFileSystemOperation", "mountTargetId");
+            }
+            this.mountTargetId = mountTargetId;
             return this;
         }
         @CustomType.Setter
         public Builder unmountDetails(List<GetDrProtectionGroupMemberFileSystemOperationUnmountDetail> unmountDetails) {
-            this.unmountDetails = Objects.requireNonNull(unmountDetails);
+            if (unmountDetails == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMemberFileSystemOperation", "unmountDetails");
+            }
+            this.unmountDetails = unmountDetails;
             return this;
         }
         public Builder unmountDetails(GetDrProtectionGroupMemberFileSystemOperationUnmountDetail... unmountDetails) {

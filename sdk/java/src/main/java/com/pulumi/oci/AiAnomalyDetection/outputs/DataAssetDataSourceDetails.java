@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiAnomalyDetection.outputs.DataAssetDataSourceDetailsVersionSpecificDetails;
 import java.lang.String;
 import java.util.Objects;
@@ -311,101 +312,123 @@ public final class DataAssetDataSourceDetails {
 
         @CustomType.Setter
         public Builder atpPasswordSecretId(@Nullable String atpPasswordSecretId) {
+
             this.atpPasswordSecretId = atpPasswordSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder atpUserName(@Nullable String atpUserName) {
+
             this.atpUserName = atpUserName;
             return this;
         }
         @CustomType.Setter
         public Builder bucket(@Nullable String bucket) {
+
             this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder cwalletFileSecretId(@Nullable String cwalletFileSecretId) {
+
             this.cwalletFileSecretId = cwalletFileSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder dataSourceType(String dataSourceType) {
-            this.dataSourceType = Objects.requireNonNull(dataSourceType);
+            if (dataSourceType == null) {
+              throw new MissingRequiredPropertyException("DataAssetDataSourceDetails", "dataSourceType");
+            }
+            this.dataSourceType = dataSourceType;
             return this;
         }
         @CustomType.Setter
         public Builder databaseName(@Nullable String databaseName) {
+
             this.databaseName = databaseName;
             return this;
         }
         @CustomType.Setter
         public Builder ewalletFileSecretId(@Nullable String ewalletFileSecretId) {
+
             this.ewalletFileSecretId = ewalletFileSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder keyStoreFileSecretId(@Nullable String keyStoreFileSecretId) {
+
             this.keyStoreFileSecretId = keyStoreFileSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder measurementName(@Nullable String measurementName) {
+
             this.measurementName = measurementName;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(@Nullable String namespace) {
+
             this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder object(@Nullable String object) {
+
             this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder ojdbcFileSecretId(@Nullable String ojdbcFileSecretId) {
+
             this.ojdbcFileSecretId = ojdbcFileSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder passwordSecretId(@Nullable String passwordSecretId) {
+
             this.passwordSecretId = passwordSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder tableName(@Nullable String tableName) {
+
             this.tableName = tableName;
             return this;
         }
         @CustomType.Setter
         public Builder tnsnamesFileSecretId(@Nullable String tnsnamesFileSecretId) {
+
             this.tnsnamesFileSecretId = tnsnamesFileSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder truststoreFileSecretId(@Nullable String truststoreFileSecretId) {
+
             this.truststoreFileSecretId = truststoreFileSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder url(@Nullable String url) {
+
             this.url = url;
             return this;
         }
         @CustomType.Setter
         public Builder userName(@Nullable String userName) {
+
             this.userName = userName;
             return this;
         }
         @CustomType.Setter
         public Builder versionSpecificDetails(@Nullable DataAssetDataSourceDetailsVersionSpecificDetails versionSpecificDetails) {
+
             this.versionSpecificDetails = versionSpecificDetails;
             return this;
         }
         @CustomType.Setter
         public Builder walletPasswordSecretId(@Nullable String walletPasswordSecretId) {
+
             this.walletPasswordSecretId = walletPasswordSecretId;
             return this;
         }

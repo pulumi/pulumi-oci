@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.outputs.GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration;
@@ -385,32 +386,50 @@ public final class GetSqlEndpointsSqlEndpointCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder driverShape(String driverShape) {
-            this.driverShape = Objects.requireNonNull(driverShape);
+            if (driverShape == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "driverShape");
+            }
+            this.driverShape = driverShape;
             return this;
         }
         @CustomType.Setter
         public Builder driverShapeConfigs(List<GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig> driverShapeConfigs) {
-            this.driverShapeConfigs = Objects.requireNonNull(driverShapeConfigs);
+            if (driverShapeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "driverShapeConfigs");
+            }
+            this.driverShapeConfigs = driverShapeConfigs;
             return this;
         }
         public Builder driverShapeConfigs(GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig... driverShapeConfigs) {
@@ -418,12 +437,18 @@ public final class GetSqlEndpointsSqlEndpointCollectionItem {
         }
         @CustomType.Setter
         public Builder executorShape(String executorShape) {
-            this.executorShape = Objects.requireNonNull(executorShape);
+            if (executorShape == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "executorShape");
+            }
+            this.executorShape = executorShape;
             return this;
         }
         @CustomType.Setter
         public Builder executorShapeConfigs(List<GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig> executorShapeConfigs) {
-            this.executorShapeConfigs = Objects.requireNonNull(executorShapeConfigs);
+            if (executorShapeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "executorShapeConfigs");
+            }
+            this.executorShapeConfigs = executorShapeConfigs;
             return this;
         }
         public Builder executorShapeConfigs(GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig... executorShapeConfigs) {
@@ -431,47 +456,74 @@ public final class GetSqlEndpointsSqlEndpointCollectionItem {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder jdbcEndpointUrl(String jdbcEndpointUrl) {
-            this.jdbcEndpointUrl = Objects.requireNonNull(jdbcEndpointUrl);
+            if (jdbcEndpointUrl == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "jdbcEndpointUrl");
+            }
+            this.jdbcEndpointUrl = jdbcEndpointUrl;
             return this;
         }
         @CustomType.Setter
         public Builder lakeId(String lakeId) {
-            this.lakeId = Objects.requireNonNull(lakeId);
+            if (lakeId == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "lakeId");
+            }
+            this.lakeId = lakeId;
             return this;
         }
         @CustomType.Setter
         public Builder lastAcceptedRequestToken(String lastAcceptedRequestToken) {
-            this.lastAcceptedRequestToken = Objects.requireNonNull(lastAcceptedRequestToken);
+            if (lastAcceptedRequestToken == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "lastAcceptedRequestToken");
+            }
+            this.lastAcceptedRequestToken = lastAcceptedRequestToken;
             return this;
         }
         @CustomType.Setter
         public Builder maxExecutorCount(Integer maxExecutorCount) {
-            this.maxExecutorCount = Objects.requireNonNull(maxExecutorCount);
+            if (maxExecutorCount == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "maxExecutorCount");
+            }
+            this.maxExecutorCount = maxExecutorCount;
             return this;
         }
         @CustomType.Setter
         public Builder metastoreId(String metastoreId) {
-            this.metastoreId = Objects.requireNonNull(metastoreId);
+            if (metastoreId == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "metastoreId");
+            }
+            this.metastoreId = metastoreId;
             return this;
         }
         @CustomType.Setter
         public Builder minExecutorCount(Integer minExecutorCount) {
-            this.minExecutorCount = Objects.requireNonNull(minExecutorCount);
+            if (minExecutorCount == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "minExecutorCount");
+            }
+            this.minExecutorCount = minExecutorCount;
             return this;
         }
         @CustomType.Setter
         public Builder networkConfigurations(List<GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration> networkConfigurations) {
-            this.networkConfigurations = Objects.requireNonNull(networkConfigurations);
+            if (networkConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "networkConfigurations");
+            }
+            this.networkConfigurations = networkConfigurations;
             return this;
         }
         public Builder networkConfigurations(GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration... networkConfigurations) {
@@ -479,42 +531,66 @@ public final class GetSqlEndpointsSqlEndpointCollectionItem {
         }
         @CustomType.Setter
         public Builder sparkAdvancedConfigurations(Map<String,Object> sparkAdvancedConfigurations) {
-            this.sparkAdvancedConfigurations = Objects.requireNonNull(sparkAdvancedConfigurations);
+            if (sparkAdvancedConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "sparkAdvancedConfigurations");
+            }
+            this.sparkAdvancedConfigurations = sparkAdvancedConfigurations;
             return this;
         }
         @CustomType.Setter
         public Builder sqlEndpointVersion(String sqlEndpointVersion) {
-            this.sqlEndpointVersion = Objects.requireNonNull(sqlEndpointVersion);
+            if (sqlEndpointVersion == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "sqlEndpointVersion");
+            }
+            this.sqlEndpointVersion = sqlEndpointVersion;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder stateMessage(String stateMessage) {
-            this.stateMessage = Objects.requireNonNull(stateMessage);
+            if (stateMessage == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "stateMessage");
+            }
+            this.stateMessage = stateMessage;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder warehouseBucketUri(String warehouseBucketUri) {
-            this.warehouseBucketUri = Objects.requireNonNull(warehouseBucketUri);
+            if (warehouseBucketUri == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItem", "warehouseBucketUri");
+            }
+            this.warehouseBucketUri = warehouseBucketUri;
             return this;
         }
         public GetSqlEndpointsSqlEndpointCollectionItem build() {

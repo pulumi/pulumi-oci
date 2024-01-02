@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.outputs.IngressGatewayHostListenerTlsClientValidation;
 import com.pulumi.oci.ServiceMesh.outputs.IngressGatewayHostListenerTlsServerCertificate;
 import java.lang.String;
@@ -74,16 +75,21 @@ public final class IngressGatewayHostListenerTls {
 
         @CustomType.Setter
         public Builder clientValidation(@Nullable IngressGatewayHostListenerTlsClientValidation clientValidation) {
+
             this.clientValidation = clientValidation;
             return this;
         }
         @CustomType.Setter
         public Builder mode(String mode) {
-            this.mode = Objects.requireNonNull(mode);
+            if (mode == null) {
+              throw new MissingRequiredPropertyException("IngressGatewayHostListenerTls", "mode");
+            }
+            this.mode = mode;
             return this;
         }
         @CustomType.Setter
         public Builder serverCertificate(@Nullable IngressGatewayHostListenerTlsServerCertificate serverCertificate) {
+
             this.serverCertificate = serverCertificate;
             return this;
         }

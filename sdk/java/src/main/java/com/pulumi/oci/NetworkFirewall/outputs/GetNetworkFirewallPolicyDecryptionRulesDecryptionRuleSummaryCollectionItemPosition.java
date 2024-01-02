@@ -58,11 +58,13 @@ public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryC
 
         @CustomType.Setter
         public Builder afterRule(@Nullable String afterRule) {
+
             this.afterRule = afterRule;
             return this;
         }
         @CustomType.Setter
         public Builder beforeRule(@Nullable String beforeRule) {
+
             this.beforeRule = beforeRule;
             return this;
         }

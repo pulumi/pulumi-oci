@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetNodePoolOptionSource {
 
         @CustomType.Setter
         public Builder imageId(String imageId) {
-            this.imageId = Objects.requireNonNull(imageId);
+            if (imageId == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolOptionSource", "imageId");
+            }
+            this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceName(String sourceName) {
-            this.sourceName = Objects.requireNonNull(sourceName);
+            if (sourceName == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolOptionSource", "sourceName");
+            }
+            this.sourceName = sourceName;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolOptionSource", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         public GetNodePoolOptionSource build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -198,7 +199,9 @@ public final class DeployEnvironmentComputeInstanceGroupSelectorsItemArgs extend
         }
 
         public DeployEnvironmentComputeInstanceGroupSelectorsItemArgs build() {
-            $.selectorType = Objects.requireNonNull($.selectorType, "expected parameter 'selectorType' to be non-null");
+            if ($.selectorType == null) {
+                throw new MissingRequiredPropertyException("DeployEnvironmentComputeInstanceGroupSelectorsItemArgs", "selectorType");
+            }
             return $;
         }
     }

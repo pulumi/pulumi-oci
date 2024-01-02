@@ -5,6 +5,7 @@ package com.pulumi.oci.Analytics.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -112,8 +113,12 @@ public final class AnalyticsInstanceCapacityArgs extends com.pulumi.resources.Re
         }
 
         public AnalyticsInstanceCapacityArgs build() {
-            $.capacityType = Objects.requireNonNull($.capacityType, "expected parameter 'capacityType' to be non-null");
-            $.capacityValue = Objects.requireNonNull($.capacityValue, "expected parameter 'capacityValue' to be non-null");
+            if ($.capacityType == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstanceCapacityArgs", "capacityType");
+            }
+            if ($.capacityValue == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstanceCapacityArgs", "capacityValue");
+            }
             return $;
         }
     }

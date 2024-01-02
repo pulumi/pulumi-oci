@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespacesFilter;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespacesNamespaceCollection;
 import java.lang.String;
@@ -80,11 +81,15 @@ public final class GetNamespacesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNamespacesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNamespacesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -93,12 +98,18 @@ public final class GetNamespacesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNamespacesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder namespaceCollections(List<GetNamespacesNamespaceCollection> namespaceCollections) {
-            this.namespaceCollections = Objects.requireNonNull(namespaceCollections);
+            if (namespaceCollections == null) {
+              throw new MissingRequiredPropertyException("GetNamespacesResult", "namespaceCollections");
+            }
+            this.namespaceCollections = namespaceCollections;
             return this;
         }
         public Builder namespaceCollections(GetNamespacesNamespaceCollection... namespaceCollections) {

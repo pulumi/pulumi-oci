@@ -102,26 +102,31 @@ public final class DeployStageRolloutPolicy {
 
         @CustomType.Setter
         public Builder batchCount(@Nullable Integer batchCount) {
+
             this.batchCount = batchCount;
             return this;
         }
         @CustomType.Setter
         public Builder batchDelayInSeconds(@Nullable Integer batchDelayInSeconds) {
+
             this.batchDelayInSeconds = batchDelayInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder batchPercentage(@Nullable Integer batchPercentage) {
+
             this.batchPercentage = batchPercentage;
             return this;
         }
         @CustomType.Setter
         public Builder policyType(@Nullable String policyType) {
+
             this.policyType = policyType;
             return this;
         }
         @CustomType.Setter
         public Builder rampLimitPercent(@Nullable Double rampLimitPercent) {
+
             this.rampLimitPercent = rampLimitPercent;
             return this;
         }

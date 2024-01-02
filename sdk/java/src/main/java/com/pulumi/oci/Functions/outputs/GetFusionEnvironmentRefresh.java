@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetFusionEnvironmentRefresh {
 
         @CustomType.Setter
         public Builder sourceFusionEnvironmentId(String sourceFusionEnvironmentId) {
-            this.sourceFusionEnvironmentId = Objects.requireNonNull(sourceFusionEnvironmentId);
+            if (sourceFusionEnvironmentId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentRefresh", "sourceFusionEnvironmentId");
+            }
+            this.sourceFusionEnvironmentId = sourceFusionEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+            if (timeFinished == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentRefresh", "timeFinished");
+            }
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfRestorationPoint(String timeOfRestorationPoint) {
-            this.timeOfRestorationPoint = Objects.requireNonNull(timeOfRestorationPoint);
+            if (timeOfRestorationPoint == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentRefresh", "timeOfRestorationPoint");
+            }
+            this.timeOfRestorationPoint = timeOfRestorationPoint;
             return this;
         }
         public GetFusionEnvironmentRefresh build() {

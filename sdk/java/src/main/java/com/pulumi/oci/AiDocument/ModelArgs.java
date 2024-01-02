@@ -5,6 +5,7 @@ package com.pulumi.oci.AiDocument;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiDocument.inputs.ModelComponentModelArgs;
 import com.pulumi.oci.AiDocument.inputs.ModelTestingDatasetArgs;
 import com.pulumi.oci.AiDocument.inputs.ModelTrainingDatasetArgs;
@@ -593,9 +594,15 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ModelArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.modelType = Objects.requireNonNull($.modelType, "expected parameter 'modelType' to be non-null");
-            $.projectId = Objects.requireNonNull($.projectId, "expected parameter 'projectId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ModelArgs", "compartmentId");
+            }
+            if ($.modelType == null) {
+                throw new MissingRequiredPropertyException("ModelArgs", "modelType");
+            }
+            if ($.projectId == null) {
+                throw new MissingRequiredPropertyException("ModelArgs", "projectId");
+            }
             return $;
         }
     }

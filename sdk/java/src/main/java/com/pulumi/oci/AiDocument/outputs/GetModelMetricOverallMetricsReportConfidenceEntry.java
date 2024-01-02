@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiDocument.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetModelMetricOverallMetricsReportConfidenceEntry {
 
         @CustomType.Setter
         public Builder accuracy(Double accuracy) {
-            this.accuracy = Objects.requireNonNull(accuracy);
+            if (accuracy == null) {
+              throw new MissingRequiredPropertyException("GetModelMetricOverallMetricsReportConfidenceEntry", "accuracy");
+            }
+            this.accuracy = accuracy;
             return this;
         }
         @CustomType.Setter
         public Builder f1score(Double f1score) {
-            this.f1score = Objects.requireNonNull(f1score);
+            if (f1score == null) {
+              throw new MissingRequiredPropertyException("GetModelMetricOverallMetricsReportConfidenceEntry", "f1score");
+            }
+            this.f1score = f1score;
             return this;
         }
         @CustomType.Setter
         public Builder precision(Double precision) {
-            this.precision = Objects.requireNonNull(precision);
+            if (precision == null) {
+              throw new MissingRequiredPropertyException("GetModelMetricOverallMetricsReportConfidenceEntry", "precision");
+            }
+            this.precision = precision;
             return this;
         }
         @CustomType.Setter
         public Builder recall(Double recall) {
-            this.recall = Objects.requireNonNull(recall);
+            if (recall == null) {
+              throw new MissingRequiredPropertyException("GetModelMetricOverallMetricsReportConfidenceEntry", "recall");
+            }
+            this.recall = recall;
             return this;
         }
         @CustomType.Setter
         public Builder threshold(Double threshold) {
-            this.threshold = Objects.requireNonNull(threshold);
+            if (threshold == null) {
+              throw new MissingRequiredPropertyException("GetModelMetricOverallMetricsReportConfidenceEntry", "threshold");
+            }
+            this.threshold = threshold;
             return this;
         }
         public GetModelMetricOverallMetricsReportConfidenceEntry build() {

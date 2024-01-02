@@ -5,6 +5,7 @@ package com.pulumi.oci.OspGateway.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OspGateway.inputs.SubscriptionSubscriptionBillingAddressArgs;
 import com.pulumi.oci.OspGateway.inputs.SubscriptionSubscriptionPaymentGatewayArgs;
 import com.pulumi.oci.OspGateway.inputs.SubscriptionSubscriptionPaymentOptionArgs;
@@ -842,7 +843,9 @@ public final class SubscriptionSubscriptionArgs extends com.pulumi.resources.Res
         }
 
         public SubscriptionSubscriptionArgs build() {
-            $.subscriptionPlanNumber = Objects.requireNonNull($.subscriptionPlanNumber, "expected parameter 'subscriptionPlanNumber' to be non-null");
+            if ($.subscriptionPlanNumber == null) {
+                throw new MissingRequiredPropertyException("SubscriptionSubscriptionArgs", "subscriptionPlanNumber");
+            }
             return $;
         }
     }

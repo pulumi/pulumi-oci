@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationsFilter;
 import java.lang.Boolean;
 import java.lang.String;
@@ -220,7 +221,9 @@ public final class GetUnifiedAgentConfigurationsPlainArgs extends com.pulumi.res
         }
 
         public GetUnifiedAgentConfigurationsPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationsPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

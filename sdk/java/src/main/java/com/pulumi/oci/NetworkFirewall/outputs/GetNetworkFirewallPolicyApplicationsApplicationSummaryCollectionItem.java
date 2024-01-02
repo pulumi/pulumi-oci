@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -113,32 +114,50 @@ public final class GetNetworkFirewallPolicyApplicationsApplicationSummaryCollect
 
         @CustomType.Setter
         public Builder icmpCode(Integer icmpCode) {
-            this.icmpCode = Objects.requireNonNull(icmpCode);
+            if (icmpCode == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem", "icmpCode");
+            }
+            this.icmpCode = icmpCode;
             return this;
         }
         @CustomType.Setter
         public Builder icmpType(Integer icmpType) {
-            this.icmpType = Objects.requireNonNull(icmpType);
+            if (icmpType == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem", "icmpType");
+            }
+            this.icmpType = icmpType;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder networkFirewallPolicyId(String networkFirewallPolicyId) {
-            this.networkFirewallPolicyId = Objects.requireNonNull(networkFirewallPolicyId);
+            if (networkFirewallPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem", "networkFirewallPolicyId");
+            }
+            this.networkFirewallPolicyId = networkFirewallPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+            if (parentResourceId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem", "parentResourceId");
+            }
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem build() {

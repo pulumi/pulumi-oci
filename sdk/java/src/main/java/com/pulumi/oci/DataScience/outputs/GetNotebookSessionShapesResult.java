@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionShapesFilter;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionShapesNotebookSessionShape;
 import java.lang.String;
@@ -72,11 +73,15 @@ public final class GetNotebookSessionShapesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionShapesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNotebookSessionShapesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -85,12 +90,18 @@ public final class GetNotebookSessionShapesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionShapesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder notebookSessionShapes(List<GetNotebookSessionShapesNotebookSessionShape> notebookSessionShapes) {
-            this.notebookSessionShapes = Objects.requireNonNull(notebookSessionShapes);
+            if (notebookSessionShapes == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionShapesResult", "notebookSessionShapes");
+            }
+            this.notebookSessionShapes = notebookSessionShapes;
             return this;
         }
         public Builder notebookSessionShapes(GetNotebookSessionShapesNotebookSessionShape... notebookSessionShapes) {

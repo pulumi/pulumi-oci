@@ -65,11 +65,13 @@ public final class ApplicationTraceConfig {
 
         @CustomType.Setter
         public Builder domainId(@Nullable String domainId) {
+
             this.domainId = domainId;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
+
             this.isEnabled = isEnabled;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.inputs.TargetTargetDetectorRecipeArgs;
 import com.pulumi.oci.CloudGuard.inputs.TargetTargetResponderRecipeArgs;
 import java.lang.Object;
@@ -458,10 +459,18 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public TargetArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.targetResourceId = Objects.requireNonNull($.targetResourceId, "expected parameter 'targetResourceId' to be non-null");
-            $.targetResourceType = Objects.requireNonNull($.targetResourceType, "expected parameter 'targetResourceType' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("TargetArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("TargetArgs", "displayName");
+            }
+            if ($.targetResourceId == null) {
+                throw new MissingRequiredPropertyException("TargetArgs", "targetResourceId");
+            }
+            if ($.targetResourceType == null) {
+                throw new MissingRequiredPropertyException("TargetArgs", "targetResourceType");
+            }
             return $;
         }
     }

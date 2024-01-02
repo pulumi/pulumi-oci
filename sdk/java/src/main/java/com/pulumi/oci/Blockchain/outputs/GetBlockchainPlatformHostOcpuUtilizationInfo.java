@@ -4,6 +4,7 @@
 package com.pulumi.oci.Blockchain.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetBlockchainPlatformHostOcpuUtilizationInfo {
 
         @CustomType.Setter
         public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+            if (host == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformHostOcpuUtilizationInfo", "host");
+            }
+            this.host = host;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuCapacityNumber(Double ocpuCapacityNumber) {
-            this.ocpuCapacityNumber = Objects.requireNonNull(ocpuCapacityNumber);
+            if (ocpuCapacityNumber == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformHostOcpuUtilizationInfo", "ocpuCapacityNumber");
+            }
+            this.ocpuCapacityNumber = ocpuCapacityNumber;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuUtilizationNumber(Double ocpuUtilizationNumber) {
-            this.ocpuUtilizationNumber = Objects.requireNonNull(ocpuUtilizationNumber);
+            if (ocpuUtilizationNumber == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformHostOcpuUtilizationInfo", "ocpuUtilizationNumber");
+            }
+            this.ocpuUtilizationNumber = ocpuUtilizationNumber;
             return this;
         }
         public GetBlockchainPlatformHostOcpuUtilizationInfo build() {

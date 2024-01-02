@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -137,26 +138,35 @@ public final class MediaWorkflowTask {
 
         @CustomType.Setter
         public Builder enableParameterReference(@Nullable String enableParameterReference) {
+
             this.enableParameterReference = enableParameterReference;
             return this;
         }
         @CustomType.Setter
         public Builder enableWhenReferencedParameterEquals(@Nullable Map<String,Object> enableWhenReferencedParameterEquals) {
+
             this.enableWhenReferencedParameterEquals = enableWhenReferencedParameterEquals;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("MediaWorkflowTask", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder parameters(String parameters) {
-            this.parameters = Objects.requireNonNull(parameters);
+            if (parameters == null) {
+              throw new MissingRequiredPropertyException("MediaWorkflowTask", "parameters");
+            }
+            this.parameters = parameters;
             return this;
         }
         @CustomType.Setter
         public Builder prerequisites(@Nullable List<String> prerequisites) {
+
             this.prerequisites = prerequisites;
             return this;
         }
@@ -165,12 +175,18 @@ public final class MediaWorkflowTask {
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("MediaWorkflowTask", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("MediaWorkflowTask", "version");
+            }
+            this.version = version;
             return this;
         }
         public MediaWorkflowTask build() {

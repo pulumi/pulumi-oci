@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount {
 
         @CustomType.Setter
         public Builder logicalShape(String logicalShape) {
-            this.logicalShape = Objects.requireNonNull(logicalShape);
+            if (logicalShape == null) {
+              throw new MissingRequiredPropertyException("GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount", "logicalShape");
+            }
+            this.logicalShape = logicalShape;
             return this;
         }
         @CustomType.Setter
         public Builder poolCount(Integer poolCount) {
-            this.poolCount = Objects.requireNonNull(poolCount);
+            if (poolCount == null) {
+              throw new MissingRequiredPropertyException("GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount", "poolCount");
+            }
+            this.poolCount = poolCount;
             return this;
         }
         public GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount build() {

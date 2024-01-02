@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class ChannelSourceSslCaCertificateArgs extends com.pulumi.resource
         }
 
         public ChannelSourceSslCaCertificateArgs build() {
-            $.certificateType = Objects.requireNonNull($.certificateType, "expected parameter 'certificateType' to be non-null");
-            $.contents = Objects.requireNonNull($.contents, "expected parameter 'contents' to be non-null");
+            if ($.certificateType == null) {
+                throw new MissingRequiredPropertyException("ChannelSourceSslCaCertificateArgs", "certificateType");
+            }
+            if ($.contents == null) {
+                throw new MissingRequiredPropertyException("ChannelSourceSslCaCertificateArgs", "contents");
+            }
             return $;
         }
     }

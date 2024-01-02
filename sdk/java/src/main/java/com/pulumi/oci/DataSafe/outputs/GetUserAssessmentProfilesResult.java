@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentProfilesFilter;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentProfilesProfile;
 import java.lang.Boolean;
@@ -224,31 +225,39 @@ public final class GetUserAssessmentProfilesResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder failedLoginAttemptsGreaterThanOrEqual(@Nullable String failedLoginAttemptsGreaterThanOrEqual) {
+
             this.failedLoginAttemptsGreaterThanOrEqual = failedLoginAttemptsGreaterThanOrEqual;
             return this;
         }
         @CustomType.Setter
         public Builder failedLoginAttemptsLessThan(@Nullable String failedLoginAttemptsLessThan) {
+
             this.failedLoginAttemptsLessThan = failedLoginAttemptsLessThan;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetUserAssessmentProfilesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -257,47 +266,60 @@ public final class GetUserAssessmentProfilesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inactiveAccountTimeGreaterThanOrEqual(@Nullable String inactiveAccountTimeGreaterThanOrEqual) {
+
             this.inactiveAccountTimeGreaterThanOrEqual = inactiveAccountTimeGreaterThanOrEqual;
             return this;
         }
         @CustomType.Setter
         public Builder inactiveAccountTimeLessThan(@Nullable String inactiveAccountTimeLessThan) {
+
             this.inactiveAccountTimeLessThan = inactiveAccountTimeLessThan;
             return this;
         }
         @CustomType.Setter
         public Builder isUserCreated(@Nullable Boolean isUserCreated) {
+
             this.isUserCreated = isUserCreated;
             return this;
         }
         @CustomType.Setter
         public Builder passwordLockTimeGreaterThanOrEqual(@Nullable String passwordLockTimeGreaterThanOrEqual) {
+
             this.passwordLockTimeGreaterThanOrEqual = passwordLockTimeGreaterThanOrEqual;
             return this;
         }
         @CustomType.Setter
         public Builder passwordLockTimeLessThan(@Nullable String passwordLockTimeLessThan) {
+
             this.passwordLockTimeLessThan = passwordLockTimeLessThan;
             return this;
         }
         @CustomType.Setter
         public Builder passwordVerificationFunction(@Nullable String passwordVerificationFunction) {
+
             this.passwordVerificationFunction = passwordVerificationFunction;
             return this;
         }
         @CustomType.Setter
         public Builder profileName(@Nullable String profileName) {
+
             this.profileName = profileName;
             return this;
         }
         @CustomType.Setter
         public Builder profiles(List<GetUserAssessmentProfilesProfile> profiles) {
-            this.profiles = Objects.requireNonNull(profiles);
+            if (profiles == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesResult", "profiles");
+            }
+            this.profiles = profiles;
             return this;
         }
         public Builder profiles(GetUserAssessmentProfilesProfile... profiles) {
@@ -305,31 +327,39 @@ public final class GetUserAssessmentProfilesResult {
         }
         @CustomType.Setter
         public Builder sessionsPerUserGreaterThanOrEqual(@Nullable String sessionsPerUserGreaterThanOrEqual) {
+
             this.sessionsPerUserGreaterThanOrEqual = sessionsPerUserGreaterThanOrEqual;
             return this;
         }
         @CustomType.Setter
         public Builder sessionsPerUserLessThan(@Nullable String sessionsPerUserLessThan) {
+
             this.sessionsPerUserLessThan = sessionsPerUserLessThan;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
+
             this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder userAssessmentId(String userAssessmentId) {
-            this.userAssessmentId = Objects.requireNonNull(userAssessmentId);
+            if (userAssessmentId == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfilesResult", "userAssessmentId");
+            }
+            this.userAssessmentId = userAssessmentId;
             return this;
         }
         @CustomType.Setter
         public Builder userCountGreaterThanOrEqual(@Nullable String userCountGreaterThanOrEqual) {
+
             this.userCountGreaterThanOrEqual = userCountGreaterThanOrEqual;
             return this;
         }
         @CustomType.Setter
         public Builder userCountLessThan(@Nullable String userCountLessThan) {
+
             this.userCountLessThan = userCountLessThan;
             return this;
         }

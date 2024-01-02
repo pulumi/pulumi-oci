@@ -58,11 +58,13 @@ public final class VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary {
 
         @CustomType.Setter
         public Builder clientAppId(@Nullable String clientAppId) {
+
             this.clientAppId = clientAppId;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAccountNameUrl(@Nullable String idcsAccountNameUrl) {
+
             this.idcsAccountNameUrl = idcsAccountNameUrl;
             return this;
         }

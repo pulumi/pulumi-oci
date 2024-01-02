@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetMonitorsMonitorCollectionItemConfigurationClientCertificat
 
         @CustomType.Setter
         public Builder clientCertificates(List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate> clientCertificates) {
-            this.clientCertificates = Objects.requireNonNull(clientCertificates);
+            if (clientCertificates == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail", "clientCertificates");
+            }
+            this.clientCertificates = clientCertificates;
             return this;
         }
         public Builder clientCertificates(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate... clientCertificates) {
@@ -66,7 +70,10 @@ public final class GetMonitorsMonitorCollectionItemConfigurationClientCertificat
         }
         @CustomType.Setter
         public Builder privateKeys(List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey> privateKeys) {
-            this.privateKeys = Objects.requireNonNull(privateKeys);
+            if (privateKeys == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail", "privateKeys");
+            }
+            this.privateKeys = privateKeys;
             return this;
         }
         public Builder privateKeys(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey... privateKeys) {

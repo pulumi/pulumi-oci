@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -86,21 +87,27 @@ public final class ChannelSourceAnonymousTransactionsHandling {
 
         @CustomType.Setter
         public Builder lastConfiguredLogFilename(@Nullable String lastConfiguredLogFilename) {
+
             this.lastConfiguredLogFilename = lastConfiguredLogFilename;
             return this;
         }
         @CustomType.Setter
         public Builder lastConfiguredLogOffset(@Nullable String lastConfiguredLogOffset) {
+
             this.lastConfiguredLogOffset = lastConfiguredLogOffset;
             return this;
         }
         @CustomType.Setter
         public Builder policy(String policy) {
-            this.policy = Objects.requireNonNull(policy);
+            if (policy == null) {
+              throw new MissingRequiredPropertyException("ChannelSourceAnonymousTransactionsHandling", "policy");
+            }
+            this.policy = policy;
             return this;
         }
         @CustomType.Setter
         public Builder uuid(@Nullable String uuid) {
+
             this.uuid = uuid;
             return this;
         }

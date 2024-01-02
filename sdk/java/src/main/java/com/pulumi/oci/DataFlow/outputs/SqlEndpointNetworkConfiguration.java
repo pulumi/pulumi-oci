@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.outputs.SqlEndpointNetworkConfigurationAccessControlRule;
 import java.lang.String;
 import java.util.List;
@@ -130,6 +131,7 @@ public final class SqlEndpointNetworkConfiguration {
 
         @CustomType.Setter
         public Builder accessControlRules(@Nullable List<SqlEndpointNetworkConfigurationAccessControlRule> accessControlRules) {
+
             this.accessControlRules = accessControlRules;
             return this;
         }
@@ -138,31 +140,39 @@ public final class SqlEndpointNetworkConfiguration {
         }
         @CustomType.Setter
         public Builder hostNamePrefix(@Nullable String hostNamePrefix) {
+
             this.hostNamePrefix = hostNamePrefix;
             return this;
         }
         @CustomType.Setter
         public Builder networkType(String networkType) {
-            this.networkType = Objects.requireNonNull(networkType);
+            if (networkType == null) {
+              throw new MissingRequiredPropertyException("SqlEndpointNetworkConfiguration", "networkType");
+            }
+            this.networkType = networkType;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpointIp(@Nullable String privateEndpointIp) {
+
             this.privateEndpointIp = privateEndpointIp;
             return this;
         }
         @CustomType.Setter
         public Builder publicEndpointIp(@Nullable String publicEndpointIp) {
+
             this.publicEndpointIp = publicEndpointIp;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
+
             this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
+
             this.vcnId = vcnId;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetVolumeAttachmentsFilter;
 import com.pulumi.oci.Core.outputs.GetVolumeAttachmentsVolumeAttachment;
 import java.lang.String;
@@ -123,16 +124,21 @@ public final class GetVolumeAttachmentsResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVolumeAttachmentsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -141,17 +147,24 @@ public final class GetVolumeAttachmentsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceId(@Nullable String instanceId) {
+
             this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
         public Builder volumeAttachments(List<GetVolumeAttachmentsVolumeAttachment> volumeAttachments) {
-            this.volumeAttachments = Objects.requireNonNull(volumeAttachments);
+            if (volumeAttachments == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsResult", "volumeAttachments");
+            }
+            this.volumeAttachments = volumeAttachments;
             return this;
         }
         public Builder volumeAttachments(GetVolumeAttachmentsVolumeAttachment... volumeAttachments) {
@@ -159,6 +172,7 @@ public final class GetVolumeAttachmentsResult {
         }
         @CustomType.Setter
         public Builder volumeId(@Nullable String volumeId) {
+
             this.volumeId = volumeId;
             return this;
         }

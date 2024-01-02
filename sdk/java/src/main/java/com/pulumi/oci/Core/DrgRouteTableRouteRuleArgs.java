@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -221,10 +222,18 @@ public final class DrgRouteTableRouteRuleArgs extends com.pulumi.resources.Resou
         }
 
         public DrgRouteTableRouteRuleArgs build() {
-            $.destination = Objects.requireNonNull($.destination, "expected parameter 'destination' to be non-null");
-            $.destinationType = Objects.requireNonNull($.destinationType, "expected parameter 'destinationType' to be non-null");
-            $.drgRouteTableId = Objects.requireNonNull($.drgRouteTableId, "expected parameter 'drgRouteTableId' to be non-null");
-            $.nextHopDrgAttachmentId = Objects.requireNonNull($.nextHopDrgAttachmentId, "expected parameter 'nextHopDrgAttachmentId' to be non-null");
+            if ($.destination == null) {
+                throw new MissingRequiredPropertyException("DrgRouteTableRouteRuleArgs", "destination");
+            }
+            if ($.destinationType == null) {
+                throw new MissingRequiredPropertyException("DrgRouteTableRouteRuleArgs", "destinationType");
+            }
+            if ($.drgRouteTableId == null) {
+                throw new MissingRequiredPropertyException("DrgRouteTableRouteRuleArgs", "drgRouteTableId");
+            }
+            if ($.nextHopDrgAttachmentId == null) {
+                throw new MissingRequiredPropertyException("DrgRouteTableRouteRuleArgs", "nextHopDrgAttachmentId");
+            }
             return $;
         }
     }

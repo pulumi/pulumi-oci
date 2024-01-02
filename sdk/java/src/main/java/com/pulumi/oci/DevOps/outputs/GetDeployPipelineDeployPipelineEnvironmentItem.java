@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStage;
 import java.lang.String;
 import java.util.List;
@@ -72,12 +73,18 @@ public final class GetDeployPipelineDeployPipelineEnvironmentItem {
 
         @CustomType.Setter
         public Builder deployEnvironmentId(String deployEnvironmentId) {
-            this.deployEnvironmentId = Objects.requireNonNull(deployEnvironmentId);
+            if (deployEnvironmentId == null) {
+              throw new MissingRequiredPropertyException("GetDeployPipelineDeployPipelineEnvironmentItem", "deployEnvironmentId");
+            }
+            this.deployEnvironmentId = deployEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder deployPipelineStages(List<GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStage> deployPipelineStages) {
-            this.deployPipelineStages = Objects.requireNonNull(deployPipelineStages);
+            if (deployPipelineStages == null) {
+              throw new MissingRequiredPropertyException("GetDeployPipelineDeployPipelineEnvironmentItem", "deployPipelineStages");
+            }
+            this.deployPipelineStages = deployPipelineStages;
             return this;
         }
         public Builder deployPipelineStages(GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStage... deployPipelineStages) {
@@ -85,7 +92,10 @@ public final class GetDeployPipelineDeployPipelineEnvironmentItem {
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDeployPipelineDeployPipelineEnvironmentItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         public GetDeployPipelineDeployPipelineEnvironmentItem build() {

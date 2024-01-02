@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -158,7 +159,9 @@ public final class TargetDatabaseConnectionOptionArgs extends com.pulumi.resourc
         }
 
         public TargetDatabaseConnectionOptionArgs build() {
-            $.connectionType = Objects.requireNonNull($.connectionType, "expected parameter 'connectionType' to be non-null");
+            if ($.connectionType == null) {
+                throw new MissingRequiredPropertyException("TargetDatabaseConnectionOptionArgs", "connectionType");
+            }
             return $;
         }
     }

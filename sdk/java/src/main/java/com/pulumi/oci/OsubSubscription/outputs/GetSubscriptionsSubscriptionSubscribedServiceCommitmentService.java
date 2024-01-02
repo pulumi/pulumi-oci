@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsubSubscription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -112,32 +113,50 @@ public final class GetSubscriptionsSubscriptionSubscribedServiceCommitmentServic
 
         @CustomType.Setter
         public Builder availableAmount(String availableAmount) {
-            this.availableAmount = Objects.requireNonNull(availableAmount);
+            if (availableAmount == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionSubscribedServiceCommitmentService", "availableAmount");
+            }
+            this.availableAmount = availableAmount;
             return this;
         }
         @CustomType.Setter
         public Builder fundedAllocationValue(String fundedAllocationValue) {
-            this.fundedAllocationValue = Objects.requireNonNull(fundedAllocationValue);
+            if (fundedAllocationValue == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionSubscribedServiceCommitmentService", "fundedAllocationValue");
+            }
+            this.fundedAllocationValue = fundedAllocationValue;
             return this;
         }
         @CustomType.Setter
         public Builder lineNetAmount(String lineNetAmount) {
-            this.lineNetAmount = Objects.requireNonNull(lineNetAmount);
+            if (lineNetAmount == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionSubscribedServiceCommitmentService", "lineNetAmount");
+            }
+            this.lineNetAmount = lineNetAmount;
             return this;
         }
         @CustomType.Setter
         public Builder quantity(String quantity) {
-            this.quantity = Objects.requireNonNull(quantity);
+            if (quantity == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionSubscribedServiceCommitmentService", "quantity");
+            }
+            this.quantity = quantity;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+            if (timeEnd == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionSubscribedServiceCommitmentService", "timeEnd");
+            }
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+            if (timeStart == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionSubscribedServiceCommitmentService", "timeStart");
+            }
+            this.timeStart = timeStart;
             return this;
         }
         public GetSubscriptionsSubscriptionSubscribedServiceCommitmentService build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Autoscaling;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Autoscaling.inputs.AutoScalingConfigurationAutoScalingResourcesArgs;
 import com.pulumi.oci.Autoscaling.inputs.AutoScalingConfigurationPolicyArgs;
 import java.lang.Boolean;
@@ -348,9 +349,15 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
         }
 
         public AutoScalingConfigurationArgs build() {
-            $.autoScalingResources = Objects.requireNonNull($.autoScalingResources, "expected parameter 'autoScalingResources' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.policies = Objects.requireNonNull($.policies, "expected parameter 'policies' to be non-null");
+            if ($.autoScalingResources == null) {
+                throw new MissingRequiredPropertyException("AutoScalingConfigurationArgs", "autoScalingResources");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AutoScalingConfigurationArgs", "compartmentId");
+            }
+            if ($.policies == null) {
+                throw new MissingRequiredPropertyException("AutoScalingConfigurationArgs", "policies");
+            }
             return $;
         }
     }

@@ -59,11 +59,13 @@ public final class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHor
 
         @CustomType.Setter
         public Builder targetNodeCount(@Nullable Integer targetNodeCount) {
+
             this.targetNodeCount = targetNodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder timeRecurrence(@Nullable String timeRecurrence) {
+
             this.timeRecurrence = timeRecurrence;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsNotificationSettingEventSettingArgs;
 import com.pulumi.oci.Identity.inputs.DomainsNotificationSettingFromEmailAddressArgs;
 import com.pulumi.oci.Identity.inputs.DomainsNotificationSettingTagArgs;
@@ -1223,12 +1224,24 @@ public final class DomainsNotificationSettingArgs extends com.pulumi.resources.R
         }
 
         public DomainsNotificationSettingArgs build() {
-            $.eventSettings = Objects.requireNonNull($.eventSettings, "expected parameter 'eventSettings' to be non-null");
-            $.fromEmailAddress = Objects.requireNonNull($.fromEmailAddress, "expected parameter 'fromEmailAddress' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.notificationEnabled = Objects.requireNonNull($.notificationEnabled, "expected parameter 'notificationEnabled' to be non-null");
-            $.notificationSettingId = Objects.requireNonNull($.notificationSettingId, "expected parameter 'notificationSettingId' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.eventSettings == null) {
+                throw new MissingRequiredPropertyException("DomainsNotificationSettingArgs", "eventSettings");
+            }
+            if ($.fromEmailAddress == null) {
+                throw new MissingRequiredPropertyException("DomainsNotificationSettingArgs", "fromEmailAddress");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsNotificationSettingArgs", "idcsEndpoint");
+            }
+            if ($.notificationEnabled == null) {
+                throw new MissingRequiredPropertyException("DomainsNotificationSettingArgs", "notificationEnabled");
+            }
+            if ($.notificationSettingId == null) {
+                throw new MissingRequiredPropertyException("DomainsNotificationSettingArgs", "notificationSettingId");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsNotificationSettingArgs", "schemas");
+            }
             return $;
         }
     }

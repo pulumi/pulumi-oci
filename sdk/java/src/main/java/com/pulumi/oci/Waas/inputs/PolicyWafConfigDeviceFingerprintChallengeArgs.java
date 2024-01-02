@@ -5,6 +5,7 @@ package com.pulumi.oci.Waas.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.inputs.PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -338,7 +339,9 @@ public final class PolicyWafConfigDeviceFingerprintChallengeArgs extends com.pul
         }
 
         public PolicyWafConfigDeviceFingerprintChallengeArgs build() {
-            $.isEnabled = Objects.requireNonNull($.isEnabled, "expected parameter 'isEnabled' to be non-null");
+            if ($.isEnabled == null) {
+                throw new MissingRequiredPropertyException("PolicyWafConfigDeviceFingerprintChallengeArgs", "isEnabled");
+            }
             return $;
         }
     }

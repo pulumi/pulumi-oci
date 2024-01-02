@@ -5,6 +5,7 @@ package com.pulumi.oci.VnMonitoring;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.VnMonitoring.inputs.PathAnalyzerTestDestinationEndpointArgs;
 import com.pulumi.oci.VnMonitoring.inputs.PathAnalyzerTestProtocolParametersArgs;
 import com.pulumi.oci.VnMonitoring.inputs.PathAnalyzerTestQueryOptionsArgs;
@@ -379,10 +380,18 @@ public final class PathAnalyzerTestArgs extends com.pulumi.resources.ResourceArg
         }
 
         public PathAnalyzerTestArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.destinationEndpoint = Objects.requireNonNull($.destinationEndpoint, "expected parameter 'destinationEndpoint' to be non-null");
-            $.protocol = Objects.requireNonNull($.protocol, "expected parameter 'protocol' to be non-null");
-            $.sourceEndpoint = Objects.requireNonNull($.sourceEndpoint, "expected parameter 'sourceEndpoint' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("PathAnalyzerTestArgs", "compartmentId");
+            }
+            if ($.destinationEndpoint == null) {
+                throw new MissingRequiredPropertyException("PathAnalyzerTestArgs", "destinationEndpoint");
+            }
+            if ($.protocol == null) {
+                throw new MissingRequiredPropertyException("PathAnalyzerTestArgs", "protocol");
+            }
+            if ($.sourceEndpoint == null) {
+                throw new MissingRequiredPropertyException("PathAnalyzerTestArgs", "sourceEndpoint");
+            }
             return $;
         }
     }

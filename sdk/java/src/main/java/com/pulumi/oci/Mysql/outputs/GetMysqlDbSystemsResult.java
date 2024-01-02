@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystem;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsFilter;
 import java.lang.Boolean;
@@ -172,16 +173,21 @@ public final class GetMysqlDbSystemsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder configurationId(@Nullable String configurationId) {
+
             this.configurationId = configurationId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseManagements(@Nullable List<String> databaseManagements) {
+
             this.databaseManagements = databaseManagements;
             return this;
         }
@@ -190,12 +196,16 @@ public final class GetMysqlDbSystemsResult {
         }
         @CustomType.Setter
         public Builder dbSystemId(@Nullable String dbSystemId) {
+
             this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystems(List<GetMysqlDbSystemsDbSystem> dbSystems) {
-            this.dbSystems = Objects.requireNonNull(dbSystems);
+            if (dbSystems == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsResult", "dbSystems");
+            }
+            this.dbSystems = dbSystems;
             return this;
         }
         public Builder dbSystems(GetMysqlDbSystemsDbSystem... dbSystems) {
@@ -203,11 +213,13 @@ public final class GetMysqlDbSystemsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMysqlDbSystemsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -216,21 +228,27 @@ public final class GetMysqlDbSystemsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isHeatWaveClusterAttached(@Nullable Boolean isHeatWaveClusterAttached) {
+
             this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
             return this;
         }
         @CustomType.Setter
         public Builder isUpToDate(@Nullable Boolean isUpToDate) {
+
             this.isUpToDate = isUpToDate;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

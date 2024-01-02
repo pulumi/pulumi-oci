@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetCertificatePublicKeyInfo {
 
         @CustomType.Setter
         public Builder algorithm(String algorithm) {
-            this.algorithm = Objects.requireNonNull(algorithm);
+            if (algorithm == null) {
+              throw new MissingRequiredPropertyException("GetCertificatePublicKeyInfo", "algorithm");
+            }
+            this.algorithm = algorithm;
             return this;
         }
         @CustomType.Setter
         public Builder exponent(Integer exponent) {
-            this.exponent = Objects.requireNonNull(exponent);
+            if (exponent == null) {
+              throw new MissingRequiredPropertyException("GetCertificatePublicKeyInfo", "exponent");
+            }
+            this.exponent = exponent;
             return this;
         }
         @CustomType.Setter
         public Builder keySize(Integer keySize) {
-            this.keySize = Objects.requireNonNull(keySize);
+            if (keySize == null) {
+              throw new MissingRequiredPropertyException("GetCertificatePublicKeyInfo", "keySize");
+            }
+            this.keySize = keySize;
             return this;
         }
         public GetCertificatePublicKeyInfo build() {

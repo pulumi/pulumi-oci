@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Dns.outputs.GetTsigKeysFilter;
 import com.pulumi.oci.Dns.outputs.GetTsigKeysTsigKey;
 import java.lang.String;
@@ -109,11 +110,15 @@ public final class GetTsigKeysResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetTsigKeysResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetTsigKeysFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -122,22 +127,28 @@ public final class GetTsigKeysResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder tsigKeys(List<GetTsigKeysTsigKey> tsigKeys) {
-            this.tsigKeys = Objects.requireNonNull(tsigKeys);
+            if (tsigKeys == null) {
+              throw new MissingRequiredPropertyException("GetTsigKeysResult", "tsigKeys");
+            }
+            this.tsigKeys = tsigKeys;
             return this;
         }
         public Builder tsigKeys(GetTsigKeysTsigKey... tsigKeys) {

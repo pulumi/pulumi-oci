@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -48,17 +49,26 @@ public final class GetDbHomeDatabaseConnectionString {
 
         @CustomType.Setter
         public Builder allConnectionStrings(Map<String,Object> allConnectionStrings) {
-            this.allConnectionStrings = Objects.requireNonNull(allConnectionStrings);
+            if (allConnectionStrings == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeDatabaseConnectionString", "allConnectionStrings");
+            }
+            this.allConnectionStrings = allConnectionStrings;
             return this;
         }
         @CustomType.Setter
         public Builder cdbDefault(String cdbDefault) {
-            this.cdbDefault = Objects.requireNonNull(cdbDefault);
+            if (cdbDefault == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeDatabaseConnectionString", "cdbDefault");
+            }
+            this.cdbDefault = cdbDefault;
             return this;
         }
         @CustomType.Setter
         public Builder cdbIpDefault(String cdbIpDefault) {
-            this.cdbIpDefault = Objects.requireNonNull(cdbIpDefault);
+            if (cdbIpDefault == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeDatabaseConnectionString", "cdbIpDefault");
+            }
+            this.cdbIpDefault = cdbIpDefault;
             return this;
         }
         public GetDbHomeDatabaseConnectionString build() {

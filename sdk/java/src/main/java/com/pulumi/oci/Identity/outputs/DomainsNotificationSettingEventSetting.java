@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -99,12 +100,16 @@ public final class DomainsNotificationSettingEventSetting {
 
         @CustomType.Setter
         public Builder enabled(@Nullable Boolean enabled) {
+
             this.enabled = enabled;
             return this;
         }
         @CustomType.Setter
         public Builder eventId(String eventId) {
-            this.eventId = Objects.requireNonNull(eventId);
+            if (eventId == null) {
+              throw new MissingRequiredPropertyException("DomainsNotificationSettingEventSetting", "eventId");
+            }
+            this.eventId = eventId;
             return this;
         }
         public DomainsNotificationSettingEventSetting build() {

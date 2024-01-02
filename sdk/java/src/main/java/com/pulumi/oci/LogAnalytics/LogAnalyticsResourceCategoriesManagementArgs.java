@@ -5,6 +5,7 @@ package com.pulumi.oci.LogAnalytics;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -208,10 +209,18 @@ public final class LogAnalyticsResourceCategoriesManagementArgs extends com.pulu
         }
 
         public LogAnalyticsResourceCategoriesManagementArgs build() {
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
-            $.resourceCategories = Objects.requireNonNull($.resourceCategories, "expected parameter 'resourceCategories' to be non-null");
-            $.resourceId = Objects.requireNonNull($.resourceId, "expected parameter 'resourceId' to be non-null");
-            $.resourceType = Objects.requireNonNull($.resourceType, "expected parameter 'resourceType' to be non-null");
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("LogAnalyticsResourceCategoriesManagementArgs", "namespace");
+            }
+            if ($.resourceCategories == null) {
+                throw new MissingRequiredPropertyException("LogAnalyticsResourceCategoriesManagementArgs", "resourceCategories");
+            }
+            if ($.resourceId == null) {
+                throw new MissingRequiredPropertyException("LogAnalyticsResourceCategoriesManagementArgs", "resourceId");
+            }
+            if ($.resourceType == null) {
+                throw new MissingRequiredPropertyException("LogAnalyticsResourceCategoriesManagementArgs", "resourceType");
+            }
             return $;
         }
     }

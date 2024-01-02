@@ -60,6 +60,7 @@ public final class BuildRunBuildRunSourceTriggerInfo {
 
         @CustomType.Setter
         public Builder actions(@Nullable List<BuildRunBuildRunSourceTriggerInfoAction> actions) {
+
             this.actions = actions;
             return this;
         }
@@ -68,6 +69,7 @@ public final class BuildRunBuildRunSourceTriggerInfo {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }

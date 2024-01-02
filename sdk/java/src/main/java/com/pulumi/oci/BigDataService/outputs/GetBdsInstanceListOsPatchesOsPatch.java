@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetBdsInstanceListOsPatchesOsPatch {
 
         @CustomType.Setter
         public Builder bdsInstanceId(String bdsInstanceId) {
-            this.bdsInstanceId = Objects.requireNonNull(bdsInstanceId);
+            if (bdsInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceListOsPatchesOsPatch", "bdsInstanceId");
+            }
+            this.bdsInstanceId = bdsInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder osPatchVersion(String osPatchVersion) {
-            this.osPatchVersion = Objects.requireNonNull(osPatchVersion);
+            if (osPatchVersion == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceListOsPatchesOsPatch", "osPatchVersion");
+            }
+            this.osPatchVersion = osPatchVersion;
             return this;
         }
         @CustomType.Setter
         public Builder releaseDate(String releaseDate) {
-            this.releaseDate = Objects.requireNonNull(releaseDate);
+            if (releaseDate == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceListOsPatchesOsPatch", "releaseDate");
+            }
+            this.releaseDate = releaseDate;
             return this;
         }
         public GetBdsInstanceListOsPatchesOsPatch build() {

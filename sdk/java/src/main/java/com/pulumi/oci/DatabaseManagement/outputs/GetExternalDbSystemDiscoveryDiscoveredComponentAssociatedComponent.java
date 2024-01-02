@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentAssociatedComp
 
         @CustomType.Setter
         public Builder associationType(String associationType) {
-            this.associationType = Objects.requireNonNull(associationType);
+            if (associationType == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponent", "associationType");
+            }
+            this.associationType = associationType;
             return this;
         }
         @CustomType.Setter
         public Builder componentId(String componentId) {
-            this.componentId = Objects.requireNonNull(componentId);
+            if (componentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponent", "componentId");
+            }
+            this.componentId = componentId;
             return this;
         }
         @CustomType.Setter
         public Builder componentType(String componentType) {
-            this.componentType = Objects.requireNonNull(componentType);
+            if (componentType == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponent", "componentType");
+            }
+            this.componentType = componentType;
             return this;
         }
         public GetExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponent build() {

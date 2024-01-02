@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -105,32 +106,50 @@ public final class GetVaultUsageResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVaultUsageResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder keyCount(Integer keyCount) {
-            this.keyCount = Objects.requireNonNull(keyCount);
+            if (keyCount == null) {
+              throw new MissingRequiredPropertyException("GetVaultUsageResult", "keyCount");
+            }
+            this.keyCount = keyCount;
             return this;
         }
         @CustomType.Setter
         public Builder keyVersionCount(Integer keyVersionCount) {
-            this.keyVersionCount = Objects.requireNonNull(keyVersionCount);
+            if (keyVersionCount == null) {
+              throw new MissingRequiredPropertyException("GetVaultUsageResult", "keyVersionCount");
+            }
+            this.keyVersionCount = keyVersionCount;
             return this;
         }
         @CustomType.Setter
         public Builder softwareKeyCount(Integer softwareKeyCount) {
-            this.softwareKeyCount = Objects.requireNonNull(softwareKeyCount);
+            if (softwareKeyCount == null) {
+              throw new MissingRequiredPropertyException("GetVaultUsageResult", "softwareKeyCount");
+            }
+            this.softwareKeyCount = softwareKeyCount;
             return this;
         }
         @CustomType.Setter
         public Builder softwareKeyVersionCount(Integer softwareKeyVersionCount) {
-            this.softwareKeyVersionCount = Objects.requireNonNull(softwareKeyVersionCount);
+            if (softwareKeyVersionCount == null) {
+              throw new MissingRequiredPropertyException("GetVaultUsageResult", "softwareKeyVersionCount");
+            }
+            this.softwareKeyVersionCount = softwareKeyVersionCount;
             return this;
         }
         @CustomType.Setter
         public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+            if (vaultId == null) {
+              throw new MissingRequiredPropertyException("GetVaultUsageResult", "vaultId");
+            }
+            this.vaultId = vaultId;
             return this;
         }
         public GetVaultUsageResult build() {

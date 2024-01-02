@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiLanguage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetModelsModelCollectionItemEvaluationResultClassMetric {
 
         @CustomType.Setter
         public Builder f1(Double f1) {
-            this.f1 = Objects.requireNonNull(f1);
+            if (f1 == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResultClassMetric", "f1");
+            }
+            this.f1 = f1;
             return this;
         }
         @CustomType.Setter
         public Builder label(String label) {
-            this.label = Objects.requireNonNull(label);
+            if (label == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResultClassMetric", "label");
+            }
+            this.label = label;
             return this;
         }
         @CustomType.Setter
         public Builder precision(Double precision) {
-            this.precision = Objects.requireNonNull(precision);
+            if (precision == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResultClassMetric", "precision");
+            }
+            this.precision = precision;
             return this;
         }
         @CustomType.Setter
         public Builder recall(Double recall) {
-            this.recall = Objects.requireNonNull(recall);
+            if (recall == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResultClassMetric", "recall");
+            }
+            this.recall = recall;
             return this;
         }
         @CustomType.Setter
         public Builder support(Double support) {
-            this.support = Objects.requireNonNull(support);
+            if (support == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResultClassMetric", "support");
+            }
+            this.support = support;
             return this;
         }
         public GetModelsModelCollectionItemEvaluationResultClassMetric build() {

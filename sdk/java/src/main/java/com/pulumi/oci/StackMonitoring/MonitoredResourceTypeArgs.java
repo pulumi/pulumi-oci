@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceTypeMetadataArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -350,7 +351,9 @@ public final class MonitoredResourceTypeArgs extends com.pulumi.resources.Resour
         }
 
         public MonitoredResourceTypeArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("MonitoredResourceTypeArgs", "compartmentId");
+            }
             return $;
         }
     }

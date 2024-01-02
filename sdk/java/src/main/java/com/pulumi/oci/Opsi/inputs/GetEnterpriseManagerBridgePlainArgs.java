@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetEnterpriseManagerBridgePlainArgs extends com.pulumi.resour
         }
 
         public GetEnterpriseManagerBridgePlainArgs build() {
-            $.enterpriseManagerBridgeId = Objects.requireNonNull($.enterpriseManagerBridgeId, "expected parameter 'enterpriseManagerBridgeId' to be non-null");
+            if ($.enterpriseManagerBridgeId == null) {
+                throw new MissingRequiredPropertyException("GetEnterpriseManagerBridgePlainArgs", "enterpriseManagerBridgeId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails;
 import java.lang.Integer;
 import java.lang.String;
@@ -102,26 +103,37 @@ public final class JobJobInfrastructureConfigurationDetails {
 
         @CustomType.Setter
         public Builder blockStorageSizeInGbs(Integer blockStorageSizeInGbs) {
-            this.blockStorageSizeInGbs = Objects.requireNonNull(blockStorageSizeInGbs);
+            if (blockStorageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("JobJobInfrastructureConfigurationDetails", "blockStorageSizeInGbs");
+            }
+            this.blockStorageSizeInGbs = blockStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder jobInfrastructureType(String jobInfrastructureType) {
-            this.jobInfrastructureType = Objects.requireNonNull(jobInfrastructureType);
+            if (jobInfrastructureType == null) {
+              throw new MissingRequiredPropertyException("JobJobInfrastructureConfigurationDetails", "jobInfrastructureType");
+            }
+            this.jobInfrastructureType = jobInfrastructureType;
             return this;
         }
         @CustomType.Setter
         public Builder jobShapeConfigDetails(@Nullable JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails jobShapeConfigDetails) {
+
             this.jobShapeConfigDetails = jobShapeConfigDetails;
             return this;
         }
         @CustomType.Setter
         public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+            if (shapeName == null) {
+              throw new MissingRequiredPropertyException("JobJobInfrastructureConfigurationDetails", "shapeName");
+            }
+            this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
+
             this.subnetId = subnetId;
             return this;
         }

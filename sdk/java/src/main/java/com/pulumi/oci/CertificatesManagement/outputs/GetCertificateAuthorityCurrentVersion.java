@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateAuthorityCurrentVersionRevocationStatus;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateAuthorityCurrentVersionValidity;
 import java.lang.String;
@@ -171,17 +172,26 @@ public final class GetCertificateAuthorityCurrentVersion {
 
         @CustomType.Setter
         public Builder certificateAuthorityId(String certificateAuthorityId) {
-            this.certificateAuthorityId = Objects.requireNonNull(certificateAuthorityId);
+            if (certificateAuthorityId == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthorityCurrentVersion", "certificateAuthorityId");
+            }
+            this.certificateAuthorityId = certificateAuthorityId;
             return this;
         }
         @CustomType.Setter
         public Builder issuerCaVersionNumber(String issuerCaVersionNumber) {
-            this.issuerCaVersionNumber = Objects.requireNonNull(issuerCaVersionNumber);
+            if (issuerCaVersionNumber == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthorityCurrentVersion", "issuerCaVersionNumber");
+            }
+            this.issuerCaVersionNumber = issuerCaVersionNumber;
             return this;
         }
         @CustomType.Setter
         public Builder revocationStatuses(List<GetCertificateAuthorityCurrentVersionRevocationStatus> revocationStatuses) {
-            this.revocationStatuses = Objects.requireNonNull(revocationStatuses);
+            if (revocationStatuses == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthorityCurrentVersion", "revocationStatuses");
+            }
+            this.revocationStatuses = revocationStatuses;
             return this;
         }
         public Builder revocationStatuses(GetCertificateAuthorityCurrentVersionRevocationStatus... revocationStatuses) {
@@ -189,12 +199,18 @@ public final class GetCertificateAuthorityCurrentVersion {
         }
         @CustomType.Setter
         public Builder serialNumber(String serialNumber) {
-            this.serialNumber = Objects.requireNonNull(serialNumber);
+            if (serialNumber == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthorityCurrentVersion", "serialNumber");
+            }
+            this.serialNumber = serialNumber;
             return this;
         }
         @CustomType.Setter
         public Builder stages(List<String> stages) {
-            this.stages = Objects.requireNonNull(stages);
+            if (stages == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthorityCurrentVersion", "stages");
+            }
+            this.stages = stages;
             return this;
         }
         public Builder stages(String... stages) {
@@ -202,17 +218,26 @@ public final class GetCertificateAuthorityCurrentVersion {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthorityCurrentVersion", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfDeletion(String timeOfDeletion) {
-            this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
+            if (timeOfDeletion == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthorityCurrentVersion", "timeOfDeletion");
+            }
+            this.timeOfDeletion = timeOfDeletion;
             return this;
         }
         @CustomType.Setter
         public Builder validities(List<GetCertificateAuthorityCurrentVersionValidity> validities) {
-            this.validities = Objects.requireNonNull(validities);
+            if (validities == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthorityCurrentVersion", "validities");
+            }
+            this.validities = validities;
             return this;
         }
         public Builder validities(GetCertificateAuthorityCurrentVersionValidity... validities) {
@@ -220,12 +245,18 @@ public final class GetCertificateAuthorityCurrentVersion {
         }
         @CustomType.Setter
         public Builder versionName(String versionName) {
-            this.versionName = Objects.requireNonNull(versionName);
+            if (versionName == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthorityCurrentVersion", "versionName");
+            }
+            this.versionName = versionName;
             return this;
         }
         @CustomType.Setter
         public Builder versionNumber(String versionNumber) {
-            this.versionNumber = Objects.requireNonNull(versionNumber);
+            if (versionNumber == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthorityCurrentVersion", "versionNumber");
+            }
+            this.versionNumber = versionNumber;
             return this;
         }
         public GetCertificateAuthorityCurrentVersion build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ocvp.outputs.GetSddcsFilter;
 import com.pulumi.oci.Ocvp.outputs.GetSddcsSddcCollection;
 import java.lang.String;
@@ -123,21 +124,27 @@ public final class GetSddcsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeAvailabilityDomain(@Nullable String computeAvailabilityDomain) {
+
             this.computeAvailabilityDomain = computeAvailabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSddcsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -146,12 +153,18 @@ public final class GetSddcsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSddcsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder sddcCollections(List<GetSddcsSddcCollection> sddcCollections) {
-            this.sddcCollections = Objects.requireNonNull(sddcCollections);
+            if (sddcCollections == null) {
+              throw new MissingRequiredPropertyException("GetSddcsResult", "sddcCollections");
+            }
+            this.sddcCollections = sddcCollections;
             return this;
         }
         public Builder sddcCollections(GetSddcsSddcCollection... sddcCollections) {
@@ -159,6 +172,7 @@ public final class GetSddcsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

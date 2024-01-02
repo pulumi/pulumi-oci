@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetUserAssessmentArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetUserAssessmentArgs build() {
-            $.userAssessmentId = Objects.requireNonNull($.userAssessmentId, "expected parameter 'userAssessmentId' to be non-null");
+            if ($.userAssessmentId == null) {
+                throw new MissingRequiredPropertyException("GetUserAssessmentArgs", "userAssessmentId");
+            }
             return $;
         }
     }

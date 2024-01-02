@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -127,37 +128,58 @@ public final class GetManagedPreferredCredentialsPreferredCredentialCollectionIt
 
         @CustomType.Setter
         public Builder credentialName(String credentialName) {
-            this.credentialName = Objects.requireNonNull(credentialName);
+            if (credentialName == null) {
+              throw new MissingRequiredPropertyException("GetManagedPreferredCredentialsPreferredCredentialCollectionItem", "credentialName");
+            }
+            this.credentialName = credentialName;
             return this;
         }
         @CustomType.Setter
         public Builder isAccessible(Boolean isAccessible) {
-            this.isAccessible = Objects.requireNonNull(isAccessible);
+            if (isAccessible == null) {
+              throw new MissingRequiredPropertyException("GetManagedPreferredCredentialsPreferredCredentialCollectionItem", "isAccessible");
+            }
+            this.isAccessible = isAccessible;
             return this;
         }
         @CustomType.Setter
         public Builder passwordSecretId(String passwordSecretId) {
-            this.passwordSecretId = Objects.requireNonNull(passwordSecretId);
+            if (passwordSecretId == null) {
+              throw new MissingRequiredPropertyException("GetManagedPreferredCredentialsPreferredCredentialCollectionItem", "passwordSecretId");
+            }
+            this.passwordSecretId = passwordSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+            if (role == null) {
+              throw new MissingRequiredPropertyException("GetManagedPreferredCredentialsPreferredCredentialCollectionItem", "role");
+            }
+            this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetManagedPreferredCredentialsPreferredCredentialCollectionItem", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetManagedPreferredCredentialsPreferredCredentialCollectionItem", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+            if (userName == null) {
+              throw new MissingRequiredPropertyException("GetManagedPreferredCredentialsPreferredCredentialCollectionItem", "userName");
+            }
+            this.userName = userName;
             return this;
         }
         public GetManagedPreferredCredentialsPreferredCredentialCollectionItem build() {

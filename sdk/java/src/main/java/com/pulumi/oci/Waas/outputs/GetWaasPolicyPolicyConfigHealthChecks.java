@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -201,7 +202,10 @@ public final class GetWaasPolicyPolicyConfigHealthChecks {
 
         @CustomType.Setter
         public Builder expectedResponseCodeGroups(List<String> expectedResponseCodeGroups) {
-            this.expectedResponseCodeGroups = Objects.requireNonNull(expectedResponseCodeGroups);
+            if (expectedResponseCodeGroups == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyPolicyConfigHealthChecks", "expectedResponseCodeGroups");
+            }
+            this.expectedResponseCodeGroups = expectedResponseCodeGroups;
             return this;
         }
         public Builder expectedResponseCodeGroups(String... expectedResponseCodeGroups) {
@@ -209,52 +213,82 @@ public final class GetWaasPolicyPolicyConfigHealthChecks {
         }
         @CustomType.Setter
         public Builder expectedResponseText(String expectedResponseText) {
-            this.expectedResponseText = Objects.requireNonNull(expectedResponseText);
+            if (expectedResponseText == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyPolicyConfigHealthChecks", "expectedResponseText");
+            }
+            this.expectedResponseText = expectedResponseText;
             return this;
         }
         @CustomType.Setter
         public Builder headers(Map<String,Object> headers) {
-            this.headers = Objects.requireNonNull(headers);
+            if (headers == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyPolicyConfigHealthChecks", "headers");
+            }
+            this.headers = headers;
             return this;
         }
         @CustomType.Setter
         public Builder healthyThreshold(Integer healthyThreshold) {
-            this.healthyThreshold = Objects.requireNonNull(healthyThreshold);
+            if (healthyThreshold == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyPolicyConfigHealthChecks", "healthyThreshold");
+            }
+            this.healthyThreshold = healthyThreshold;
             return this;
         }
         @CustomType.Setter
         public Builder intervalInSeconds(Integer intervalInSeconds) {
-            this.intervalInSeconds = Objects.requireNonNull(intervalInSeconds);
+            if (intervalInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyPolicyConfigHealthChecks", "intervalInSeconds");
+            }
+            this.intervalInSeconds = intervalInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyPolicyConfigHealthChecks", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isResponseTextCheckEnabled(Boolean isResponseTextCheckEnabled) {
-            this.isResponseTextCheckEnabled = Objects.requireNonNull(isResponseTextCheckEnabled);
+            if (isResponseTextCheckEnabled == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyPolicyConfigHealthChecks", "isResponseTextCheckEnabled");
+            }
+            this.isResponseTextCheckEnabled = isResponseTextCheckEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder method(String method) {
-            this.method = Objects.requireNonNull(method);
+            if (method == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyPolicyConfigHealthChecks", "method");
+            }
+            this.method = method;
             return this;
         }
         @CustomType.Setter
         public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+            if (path == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyPolicyConfigHealthChecks", "path");
+            }
+            this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder timeoutInSeconds(Integer timeoutInSeconds) {
-            this.timeoutInSeconds = Objects.requireNonNull(timeoutInSeconds);
+            if (timeoutInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyPolicyConfigHealthChecks", "timeoutInSeconds");
+            }
+            this.timeoutInSeconds = timeoutInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder unhealthyThreshold(Integer unhealthyThreshold) {
-            this.unhealthyThreshold = Objects.requireNonNull(unhealthyThreshold);
+            if (unhealthyThreshold == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyPolicyConfigHealthChecks", "unhealthyThreshold");
+            }
+            this.unhealthyThreshold = unhealthyThreshold;
             return this;
         }
         public GetWaasPolicyPolicyConfigHealthChecks build() {

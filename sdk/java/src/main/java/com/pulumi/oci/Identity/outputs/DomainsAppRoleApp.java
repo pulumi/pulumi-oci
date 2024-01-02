@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -194,27 +195,34 @@ public final class DomainsAppRoleApp {
 
         @CustomType.Setter
         public Builder display(@Nullable String display) {
+
             this.display = display;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder ref(@Nullable String ref) {
+
             this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder serviceInstanceIdentifier(@Nullable String serviceInstanceIdentifier) {
+
             this.serviceInstanceIdentifier = serviceInstanceIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("DomainsAppRoleApp", "value");
+            }
+            this.value = value;
             return this;
         }
         public DomainsAppRoleApp build() {

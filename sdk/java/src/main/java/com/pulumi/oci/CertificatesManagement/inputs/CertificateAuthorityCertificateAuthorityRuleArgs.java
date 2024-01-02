@@ -5,6 +5,7 @@ package com.pulumi.oci.CertificatesManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -150,7 +151,9 @@ public final class CertificateAuthorityCertificateAuthorityRuleArgs extends com.
         }
 
         public CertificateAuthorityCertificateAuthorityRuleArgs build() {
-            $.ruleType = Objects.requireNonNull($.ruleType, "expected parameter 'ruleType' to be non-null");
+            if ($.ruleType == null) {
+                throw new MissingRequiredPropertyException("CertificateAuthorityCertificateAuthorityRuleArgs", "ruleType");
+            }
             return $;
         }
     }

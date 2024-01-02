@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetExternalNonContainerDatabaseOperationsInsightsConfig {
 
         @CustomType.Setter
         public Builder operationsInsightsConnectorId(String operationsInsightsConnectorId) {
-            this.operationsInsightsConnectorId = Objects.requireNonNull(operationsInsightsConnectorId);
+            if (operationsInsightsConnectorId == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseOperationsInsightsConfig", "operationsInsightsConnectorId");
+            }
+            this.operationsInsightsConnectorId = operationsInsightsConnectorId;
             return this;
         }
         @CustomType.Setter
         public Builder operationsInsightsStatus(String operationsInsightsStatus) {
-            this.operationsInsightsStatus = Objects.requireNonNull(operationsInsightsStatus);
+            if (operationsInsightsStatus == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseOperationsInsightsConfig", "operationsInsightsStatus");
+            }
+            this.operationsInsightsStatus = operationsInsightsStatus;
             return this;
         }
         public GetExternalNonContainerDatabaseOperationsInsightsConfig build() {

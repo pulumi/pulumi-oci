@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseMigration.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs ext
         }
 
         public MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs build() {
-            $.password = Objects.requireNonNull($.password, "expected parameter 'password' to be non-null");
-            $.username = Objects.requireNonNull($.username, "expected parameter 'username' to be non-null");
+            if ($.password == null) {
+                throw new MissingRequiredPropertyException("MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs", "password");
+            }
+            if ($.username == null) {
+                throw new MissingRequiredPropertyException("MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs", "username");
+            }
             return $;
         }
     }

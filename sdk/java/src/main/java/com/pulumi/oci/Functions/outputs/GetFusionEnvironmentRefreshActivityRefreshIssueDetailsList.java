@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList {
 
         @CustomType.Setter
         public Builder refreshIssues(String refreshIssues) {
-            this.refreshIssues = Objects.requireNonNull(refreshIssues);
+            if (refreshIssues == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList", "refreshIssues");
+            }
+            this.refreshIssues = refreshIssues;
             return this;
         }
         public GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList build() {

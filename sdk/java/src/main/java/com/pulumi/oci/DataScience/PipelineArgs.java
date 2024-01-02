@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.PipelineConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineInfrastructureConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineLogConfigurationDetailsArgs;
@@ -462,9 +463,15 @@ public final class PipelineArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public PipelineArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.projectId = Objects.requireNonNull($.projectId, "expected parameter 'projectId' to be non-null");
-            $.stepDetails = Objects.requireNonNull($.stepDetails, "expected parameter 'stepDetails' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("PipelineArgs", "compartmentId");
+            }
+            if ($.projectId == null) {
+                throw new MissingRequiredPropertyException("PipelineArgs", "projectId");
+            }
+            if ($.stepDetails == null) {
+                throw new MissingRequiredPropertyException("PipelineArgs", "stepDetails");
+            }
             return $;
         }
     }

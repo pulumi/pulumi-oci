@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiVision.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -106,26 +107,33 @@ public final class ModelValidationDataset {
 
         @CustomType.Setter
         public Builder bucket(@Nullable String bucket) {
+
             this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder datasetId(@Nullable String datasetId) {
+
             this.datasetId = datasetId;
             return this;
         }
         @CustomType.Setter
         public Builder datasetType(String datasetType) {
-            this.datasetType = Objects.requireNonNull(datasetType);
+            if (datasetType == null) {
+              throw new MissingRequiredPropertyException("ModelValidationDataset", "datasetType");
+            }
+            this.datasetType = datasetType;
             return this;
         }
         @CustomType.Setter
         public Builder namespaceName(@Nullable String namespaceName) {
+
             this.namespaceName = namespaceName;
             return this;
         }
         @CustomType.Setter
         public Builder object(@Nullable String object) {
+
             this.object = object;
             return this;
         }

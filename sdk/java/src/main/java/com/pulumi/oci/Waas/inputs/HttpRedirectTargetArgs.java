@@ -5,6 +5,7 @@ package com.pulumi.oci.Waas.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -237,10 +238,18 @@ public final class HttpRedirectTargetArgs extends com.pulumi.resources.ResourceA
         }
 
         public HttpRedirectTargetArgs build() {
-            $.host = Objects.requireNonNull($.host, "expected parameter 'host' to be non-null");
-            $.path = Objects.requireNonNull($.path, "expected parameter 'path' to be non-null");
-            $.protocol = Objects.requireNonNull($.protocol, "expected parameter 'protocol' to be non-null");
-            $.query = Objects.requireNonNull($.query, "expected parameter 'query' to be non-null");
+            if ($.host == null) {
+                throw new MissingRequiredPropertyException("HttpRedirectTargetArgs", "host");
+            }
+            if ($.path == null) {
+                throw new MissingRequiredPropertyException("HttpRedirectTargetArgs", "path");
+            }
+            if ($.protocol == null) {
+                throw new MissingRequiredPropertyException("HttpRedirectTargetArgs", "protocol");
+            }
+            if ($.query == null) {
+                throw new MissingRequiredPropertyException("HttpRedirectTargetArgs", "query");
+            }
             return $;
         }
     }

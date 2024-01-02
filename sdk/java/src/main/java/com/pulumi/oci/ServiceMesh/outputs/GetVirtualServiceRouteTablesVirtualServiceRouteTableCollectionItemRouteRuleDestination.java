@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectio
 
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder virtualDeploymentId(String virtualDeploymentId) {
-            this.virtualDeploymentId = Objects.requireNonNull(virtualDeploymentId);
+            if (virtualDeploymentId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination", "virtualDeploymentId");
+            }
+            this.virtualDeploymentId = virtualDeploymentId;
             return this;
         }
         @CustomType.Setter
         public Builder weight(Integer weight) {
-            this.weight = Objects.requireNonNull(weight);
+            if (weight == null) {
+              throw new MissingRequiredPropertyException("GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination", "weight");
+            }
+            this.weight = weight;
             return this;
         }
         public GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination build() {

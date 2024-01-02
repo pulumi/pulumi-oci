@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -283,9 +284,15 @@ public final class SecurityZoneArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public SecurityZoneArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.securityZoneRecipeId = Objects.requireNonNull($.securityZoneRecipeId, "expected parameter 'securityZoneRecipeId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("SecurityZoneArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("SecurityZoneArgs", "displayName");
+            }
+            if ($.securityZoneRecipeId == null) {
+                throw new MissingRequiredPropertyException("SecurityZoneArgs", "securityZoneRecipeId");
+            }
             return $;
         }
     }

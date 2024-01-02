@@ -5,6 +5,7 @@ package com.pulumi.oci.AiAnomalyDetection;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -286,9 +287,15 @@ public final class AiPrivateEndpointArgs extends com.pulumi.resources.ResourceAr
         }
 
         public AiPrivateEndpointArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.dnsZones = Objects.requireNonNull($.dnsZones, "expected parameter 'dnsZones' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AiPrivateEndpointArgs", "compartmentId");
+            }
+            if ($.dnsZones == null) {
+                throw new MissingRequiredPropertyException("AiPrivateEndpointArgs", "dnsZones");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("AiPrivateEndpointArgs", "subnetId");
+            }
             return $;
         }
     }

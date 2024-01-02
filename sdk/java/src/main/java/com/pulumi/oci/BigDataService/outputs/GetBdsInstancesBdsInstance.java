@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceCloudSqlDetail;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceClusterDetail;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceComputeOnlyWorkerNode;
@@ -431,12 +432,18 @@ public final class GetBdsInstancesBdsInstance {
 
         @CustomType.Setter
         public Builder bootstrapScriptUrl(String bootstrapScriptUrl) {
-            this.bootstrapScriptUrl = Objects.requireNonNull(bootstrapScriptUrl);
+            if (bootstrapScriptUrl == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "bootstrapScriptUrl");
+            }
+            this.bootstrapScriptUrl = bootstrapScriptUrl;
             return this;
         }
         @CustomType.Setter
         public Builder cloudSqlDetails(List<GetBdsInstancesBdsInstanceCloudSqlDetail> cloudSqlDetails) {
-            this.cloudSqlDetails = Objects.requireNonNull(cloudSqlDetails);
+            if (cloudSqlDetails == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "cloudSqlDetails");
+            }
+            this.cloudSqlDetails = cloudSqlDetails;
             return this;
         }
         public Builder cloudSqlDetails(GetBdsInstancesBdsInstanceCloudSqlDetail... cloudSqlDetails) {
@@ -444,12 +451,18 @@ public final class GetBdsInstancesBdsInstance {
         }
         @CustomType.Setter
         public Builder clusterAdminPassword(String clusterAdminPassword) {
-            this.clusterAdminPassword = Objects.requireNonNull(clusterAdminPassword);
+            if (clusterAdminPassword == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "clusterAdminPassword");
+            }
+            this.clusterAdminPassword = clusterAdminPassword;
             return this;
         }
         @CustomType.Setter
         public Builder clusterDetails(List<GetBdsInstancesBdsInstanceClusterDetail> clusterDetails) {
-            this.clusterDetails = Objects.requireNonNull(clusterDetails);
+            if (clusterDetails == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "clusterDetails");
+            }
+            this.clusterDetails = clusterDetails;
             return this;
         }
         public Builder clusterDetails(GetBdsInstancesBdsInstanceClusterDetail... clusterDetails) {
@@ -457,27 +470,42 @@ public final class GetBdsInstancesBdsInstance {
         }
         @CustomType.Setter
         public Builder clusterProfile(String clusterProfile) {
-            this.clusterProfile = Objects.requireNonNull(clusterProfile);
+            if (clusterProfile == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "clusterProfile");
+            }
+            this.clusterProfile = clusterProfile;
             return this;
         }
         @CustomType.Setter
         public Builder clusterPublicKey(String clusterPublicKey) {
-            this.clusterPublicKey = Objects.requireNonNull(clusterPublicKey);
+            if (clusterPublicKey == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "clusterPublicKey");
+            }
+            this.clusterPublicKey = clusterPublicKey;
             return this;
         }
         @CustomType.Setter
         public Builder clusterVersion(String clusterVersion) {
-            this.clusterVersion = Objects.requireNonNull(clusterVersion);
+            if (clusterVersion == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "clusterVersion");
+            }
+            this.clusterVersion = clusterVersion;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeOnlyWorkerNodes(List<GetBdsInstancesBdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNodes) {
-            this.computeOnlyWorkerNodes = Objects.requireNonNull(computeOnlyWorkerNodes);
+            if (computeOnlyWorkerNodes == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "computeOnlyWorkerNodes");
+            }
+            this.computeOnlyWorkerNodes = computeOnlyWorkerNodes;
             return this;
         }
         public Builder computeOnlyWorkerNodes(GetBdsInstancesBdsInstanceComputeOnlyWorkerNode... computeOnlyWorkerNodes) {
@@ -485,22 +513,34 @@ public final class GetBdsInstancesBdsInstance {
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder edgeNodes(List<GetBdsInstancesBdsInstanceEdgeNode> edgeNodes) {
-            this.edgeNodes = Objects.requireNonNull(edgeNodes);
+            if (edgeNodes == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "edgeNodes");
+            }
+            this.edgeNodes = edgeNodes;
             return this;
         }
         public Builder edgeNodes(GetBdsInstancesBdsInstanceEdgeNode... edgeNodes) {
@@ -508,42 +548,66 @@ public final class GetBdsInstancesBdsInstance {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCloudSqlConfigured(Boolean isCloudSqlConfigured) {
-            this.isCloudSqlConfigured = Objects.requireNonNull(isCloudSqlConfigured);
+            if (isCloudSqlConfigured == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "isCloudSqlConfigured");
+            }
+            this.isCloudSqlConfigured = isCloudSqlConfigured;
             return this;
         }
         @CustomType.Setter
         public Builder isForceStopJobs(Boolean isForceStopJobs) {
-            this.isForceStopJobs = Objects.requireNonNull(isForceStopJobs);
+            if (isForceStopJobs == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "isForceStopJobs");
+            }
+            this.isForceStopJobs = isForceStopJobs;
             return this;
         }
         @CustomType.Setter
         public Builder isHighAvailability(Boolean isHighAvailability) {
-            this.isHighAvailability = Objects.requireNonNull(isHighAvailability);
+            if (isHighAvailability == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "isHighAvailability");
+            }
+            this.isHighAvailability = isHighAvailability;
             return this;
         }
         @CustomType.Setter
         public Builder isKafkaConfigured(Boolean isKafkaConfigured) {
-            this.isKafkaConfigured = Objects.requireNonNull(isKafkaConfigured);
+            if (isKafkaConfigured == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "isKafkaConfigured");
+            }
+            this.isKafkaConfigured = isKafkaConfigured;
             return this;
         }
         @CustomType.Setter
         public Builder isSecure(Boolean isSecure) {
-            this.isSecure = Objects.requireNonNull(isSecure);
+            if (isSecure == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "isSecure");
+            }
+            this.isSecure = isSecure;
             return this;
         }
         @CustomType.Setter
         public Builder kafkaBrokerNodes(List<GetBdsInstancesBdsInstanceKafkaBrokerNode> kafkaBrokerNodes) {
-            this.kafkaBrokerNodes = Objects.requireNonNull(kafkaBrokerNodes);
+            if (kafkaBrokerNodes == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "kafkaBrokerNodes");
+            }
+            this.kafkaBrokerNodes = kafkaBrokerNodes;
             return this;
         }
         public Builder kafkaBrokerNodes(GetBdsInstancesBdsInstanceKafkaBrokerNode... kafkaBrokerNodes) {
@@ -551,17 +615,26 @@ public final class GetBdsInstancesBdsInstance {
         }
         @CustomType.Setter
         public Builder kerberosRealmName(String kerberosRealmName) {
-            this.kerberosRealmName = Objects.requireNonNull(kerberosRealmName);
+            if (kerberosRealmName == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "kerberosRealmName");
+            }
+            this.kerberosRealmName = kerberosRealmName;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder masterNodes(List<GetBdsInstancesBdsInstanceMasterNode> masterNodes) {
-            this.masterNodes = Objects.requireNonNull(masterNodes);
+            if (masterNodes == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "masterNodes");
+            }
+            this.masterNodes = masterNodes;
             return this;
         }
         public Builder masterNodes(GetBdsInstancesBdsInstanceMasterNode... masterNodes) {
@@ -569,7 +642,10 @@ public final class GetBdsInstancesBdsInstance {
         }
         @CustomType.Setter
         public Builder networkConfigs(List<GetBdsInstancesBdsInstanceNetworkConfig> networkConfigs) {
-            this.networkConfigs = Objects.requireNonNull(networkConfigs);
+            if (networkConfigs == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "networkConfigs");
+            }
+            this.networkConfigs = networkConfigs;
             return this;
         }
         public Builder networkConfigs(GetBdsInstancesBdsInstanceNetworkConfig... networkConfigs) {
@@ -577,7 +653,10 @@ public final class GetBdsInstancesBdsInstance {
         }
         @CustomType.Setter
         public Builder nodes(List<GetBdsInstancesBdsInstanceNode> nodes) {
-            this.nodes = Objects.requireNonNull(nodes);
+            if (nodes == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "nodes");
+            }
+            this.nodes = nodes;
             return this;
         }
         public Builder nodes(GetBdsInstancesBdsInstanceNode... nodes) {
@@ -585,37 +664,58 @@ public final class GetBdsInstancesBdsInstance {
         }
         @CustomType.Setter
         public Builder numberOfNodes(Integer numberOfNodes) {
-            this.numberOfNodes = Objects.requireNonNull(numberOfNodes);
+            if (numberOfNodes == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "numberOfNodes");
+            }
+            this.numberOfNodes = numberOfNodes;
             return this;
         }
         @CustomType.Setter
         public Builder numberOfNodesRequiringMaintenanceReboot(Integer numberOfNodesRequiringMaintenanceReboot) {
-            this.numberOfNodesRequiringMaintenanceReboot = Objects.requireNonNull(numberOfNodesRequiringMaintenanceReboot);
+            if (numberOfNodesRequiringMaintenanceReboot == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "numberOfNodesRequiringMaintenanceReboot");
+            }
+            this.numberOfNodesRequiringMaintenanceReboot = numberOfNodesRequiringMaintenanceReboot;
             return this;
         }
         @CustomType.Setter
         public Builder osPatchVersion(String osPatchVersion) {
-            this.osPatchVersion = Objects.requireNonNull(osPatchVersion);
+            if (osPatchVersion == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "osPatchVersion");
+            }
+            this.osPatchVersion = osPatchVersion;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder utilNodes(List<GetBdsInstancesBdsInstanceUtilNode> utilNodes) {
-            this.utilNodes = Objects.requireNonNull(utilNodes);
+            if (utilNodes == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "utilNodes");
+            }
+            this.utilNodes = utilNodes;
             return this;
         }
         public Builder utilNodes(GetBdsInstancesBdsInstanceUtilNode... utilNodes) {
@@ -623,7 +723,10 @@ public final class GetBdsInstancesBdsInstance {
         }
         @CustomType.Setter
         public Builder workerNodes(List<GetBdsInstancesBdsInstanceWorkerNode> workerNodes) {
-            this.workerNodes = Objects.requireNonNull(workerNodes);
+            if (workerNodes == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "workerNodes");
+            }
+            this.workerNodes = workerNodes;
             return this;
         }
         public Builder workerNodes(GetBdsInstancesBdsInstanceWorkerNode... workerNodes) {

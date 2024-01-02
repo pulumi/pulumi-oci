@@ -101,26 +101,31 @@ public final class AutoScalingConfigurationPolicyDetailsScaleDownConfig {
 
         @CustomType.Setter
         public Builder memoryStepSize(@Nullable Integer memoryStepSize) {
+
             this.memoryStepSize = memoryStepSize;
             return this;
         }
         @CustomType.Setter
         public Builder metric(@Nullable AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric metric) {
+
             this.metric = metric;
             return this;
         }
         @CustomType.Setter
         public Builder minMemoryPerNode(@Nullable Integer minMemoryPerNode) {
+
             this.minMemoryPerNode = minMemoryPerNode;
             return this;
         }
         @CustomType.Setter
         public Builder minOcpusPerNode(@Nullable Integer minOcpusPerNode) {
+
             this.minOcpusPerNode = minOcpusPerNode;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuStepSize(@Nullable Integer ocpuStepSize) {
+
             this.ocpuStepSize = ocpuStepSize;
             return this;
         }

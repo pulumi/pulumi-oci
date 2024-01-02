@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.inputs.GetMysqlVersionFilter;
 import java.lang.String;
 import java.util.List;
@@ -84,7 +85,9 @@ public final class GetMysqlVersionPlainArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetMysqlVersionPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetMysqlVersionPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

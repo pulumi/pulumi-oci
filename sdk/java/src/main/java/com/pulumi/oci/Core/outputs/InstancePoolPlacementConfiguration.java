@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.InstancePoolPlacementConfigurationPrimaryVnicSubnets;
 import com.pulumi.oci.Core.outputs.InstancePoolPlacementConfigurationSecondaryVnicSubnet;
 import java.lang.String;
@@ -119,11 +120,15 @@ public final class InstancePoolPlacementConfiguration {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("InstancePoolPlacementConfiguration", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomains(@Nullable List<String> faultDomains) {
+
             this.faultDomains = faultDomains;
             return this;
         }
@@ -132,16 +137,19 @@ public final class InstancePoolPlacementConfiguration {
         }
         @CustomType.Setter
         public Builder primarySubnetId(@Nullable String primarySubnetId) {
+
             this.primarySubnetId = primarySubnetId;
             return this;
         }
         @CustomType.Setter
         public Builder primaryVnicSubnets(@Nullable InstancePoolPlacementConfigurationPrimaryVnicSubnets primaryVnicSubnets) {
+
             this.primaryVnicSubnets = primaryVnicSubnets;
             return this;
         }
         @CustomType.Setter
         public Builder secondaryVnicSubnets(@Nullable List<InstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets) {
+
             this.secondaryVnicSubnets = secondaryVnicSubnets;
             return this;
         }

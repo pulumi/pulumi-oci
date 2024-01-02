@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.GetBackendSetsBackendsetBackend;
 import com.pulumi.oci.LoadBalancer.outputs.GetBackendSetsBackendsetHealthChecker;
 import com.pulumi.oci.LoadBalancer.outputs.GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration;
@@ -150,7 +151,10 @@ public final class GetBackendSetsBackendset {
 
         @CustomType.Setter
         public Builder backends(List<GetBackendSetsBackendsetBackend> backends) {
-            this.backends = Objects.requireNonNull(backends);
+            if (backends == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendset", "backends");
+            }
+            this.backends = backends;
             return this;
         }
         public Builder backends(GetBackendSetsBackendsetBackend... backends) {
@@ -158,7 +162,10 @@ public final class GetBackendSetsBackendset {
         }
         @CustomType.Setter
         public Builder healthCheckers(List<GetBackendSetsBackendsetHealthChecker> healthCheckers) {
-            this.healthCheckers = Objects.requireNonNull(healthCheckers);
+            if (healthCheckers == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendset", "healthCheckers");
+            }
+            this.healthCheckers = healthCheckers;
             return this;
         }
         public Builder healthCheckers(GetBackendSetsBackendsetHealthChecker... healthCheckers) {
@@ -166,12 +173,18 @@ public final class GetBackendSetsBackendset {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendset", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lbCookieSessionPersistenceConfigurations(List<GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration> lbCookieSessionPersistenceConfigurations) {
-            this.lbCookieSessionPersistenceConfigurations = Objects.requireNonNull(lbCookieSessionPersistenceConfigurations);
+            if (lbCookieSessionPersistenceConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendset", "lbCookieSessionPersistenceConfigurations");
+            }
+            this.lbCookieSessionPersistenceConfigurations = lbCookieSessionPersistenceConfigurations;
             return this;
         }
         public Builder lbCookieSessionPersistenceConfigurations(GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration... lbCookieSessionPersistenceConfigurations) {
@@ -179,22 +192,34 @@ public final class GetBackendSetsBackendset {
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendset", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendset", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder policy(String policy) {
-            this.policy = Objects.requireNonNull(policy);
+            if (policy == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendset", "policy");
+            }
+            this.policy = policy;
             return this;
         }
         @CustomType.Setter
         public Builder sessionPersistenceConfigurations(List<GetBackendSetsBackendsetSessionPersistenceConfiguration> sessionPersistenceConfigurations) {
-            this.sessionPersistenceConfigurations = Objects.requireNonNull(sessionPersistenceConfigurations);
+            if (sessionPersistenceConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendset", "sessionPersistenceConfigurations");
+            }
+            this.sessionPersistenceConfigurations = sessionPersistenceConfigurations;
             return this;
         }
         public Builder sessionPersistenceConfigurations(GetBackendSetsBackendsetSessionPersistenceConfiguration... sessionPersistenceConfigurations) {
@@ -202,7 +227,10 @@ public final class GetBackendSetsBackendset {
         }
         @CustomType.Setter
         public Builder sslConfigurations(List<GetBackendSetsBackendsetSslConfiguration> sslConfigurations) {
-            this.sslConfigurations = Objects.requireNonNull(sslConfigurations);
+            if (sslConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendset", "sslConfigurations");
+            }
+            this.sslConfigurations = sslConfigurations;
             return this;
         }
         public Builder sslConfigurations(GetBackendSetsBackendsetSslConfiguration... sslConfigurations) {
@@ -210,7 +238,10 @@ public final class GetBackendSetsBackendset {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendset", "state");
+            }
+            this.state = state;
             return this;
         }
         public GetBackendSetsBackendset build() {

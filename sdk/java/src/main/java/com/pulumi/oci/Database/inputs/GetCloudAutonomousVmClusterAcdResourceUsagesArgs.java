@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -136,7 +137,9 @@ public final class GetCloudAutonomousVmClusterAcdResourceUsagesArgs extends com.
         }
 
         public GetCloudAutonomousVmClusterAcdResourceUsagesArgs build() {
-            $.cloudAutonomousVmClusterId = Objects.requireNonNull($.cloudAutonomousVmClusterId, "expected parameter 'cloudAutonomousVmClusterId' to be non-null");
+            if ($.cloudAutonomousVmClusterId == null) {
+                throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterAcdResourceUsagesArgs", "cloudAutonomousVmClusterId");
+            }
             return $;
         }
     }

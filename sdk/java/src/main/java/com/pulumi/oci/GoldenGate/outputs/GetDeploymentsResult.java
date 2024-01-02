@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollection;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsFilter;
 import java.lang.String;
@@ -155,22 +156,30 @@ public final class GetDeploymentsResult {
 
         @CustomType.Setter
         public Builder assignableConnectionId(@Nullable String assignableConnectionId) {
+
             this.assignableConnectionId = assignableConnectionId;
             return this;
         }
         @CustomType.Setter
         public Builder assignedConnectionId(@Nullable String assignedConnectionId) {
+
             this.assignedConnectionId = assignedConnectionId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentCollections(List<GetDeploymentsDeploymentCollection> deploymentCollections) {
-            this.deploymentCollections = Objects.requireNonNull(deploymentCollections);
+            if (deploymentCollections == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsResult", "deploymentCollections");
+            }
+            this.deploymentCollections = deploymentCollections;
             return this;
         }
         public Builder deploymentCollections(GetDeploymentsDeploymentCollection... deploymentCollections) {
@@ -178,11 +187,13 @@ public final class GetDeploymentsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDeploymentsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -191,26 +202,33 @@ public final class GetDeploymentsResult {
         }
         @CustomType.Setter
         public Builder fqdn(@Nullable String fqdn) {
+
             this.fqdn = fqdn;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleSubState(@Nullable String lifecycleSubState) {
+
             this.lifecycleSubState = lifecycleSubState;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder supportedConnectionType(@Nullable String supportedConnectionType) {
+
             this.supportedConnectionType = supportedConnectionType;
             return this;
         }

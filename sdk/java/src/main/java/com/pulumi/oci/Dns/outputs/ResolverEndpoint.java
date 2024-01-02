@@ -199,61 +199,73 @@ public final class ResolverEndpoint {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder endpointType(@Nullable String endpointType) {
+
             this.endpointType = endpointType;
             return this;
         }
         @CustomType.Setter
         public Builder forwardingAddress(@Nullable String forwardingAddress) {
+
             this.forwardingAddress = forwardingAddress;
             return this;
         }
         @CustomType.Setter
         public Builder isForwarding(@Nullable Boolean isForwarding) {
+
             this.isForwarding = isForwarding;
             return this;
         }
         @CustomType.Setter
         public Builder isListening(@Nullable Boolean isListening) {
+
             this.isListening = isListening;
             return this;
         }
         @CustomType.Setter
         public Builder listeningAddress(@Nullable String listeningAddress) {
+
             this.listeningAddress = listeningAddress;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder self(@Nullable String self) {
+
             this.self = self;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
+
             this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
+
             this.timeUpdated = timeUpdated;
             return this;
         }

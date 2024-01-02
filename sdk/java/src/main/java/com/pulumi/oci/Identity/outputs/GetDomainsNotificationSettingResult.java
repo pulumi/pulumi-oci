@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsNotificationSettingEventSetting;
 import com.pulumi.oci.Identity.outputs.GetDomainsNotificationSettingFromEmailAddress;
 import com.pulumi.oci.Identity.outputs.GetDomainsNotificationSettingIdcsCreatedBy;
@@ -368,6 +369,7 @@ public final class GetDomainsNotificationSettingResult {
 
         @CustomType.Setter
         public Builder attributeSets(@Nullable List<String> attributeSets) {
+
             this.attributeSets = attributeSets;
             return this;
         }
@@ -376,32 +378,46 @@ public final class GetDomainsNotificationSettingResult {
         }
         @CustomType.Setter
         public Builder attributes(@Nullable String attributes) {
+
             this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder eventSettings(List<GetDomainsNotificationSettingEventSetting> eventSettings) {
-            this.eventSettings = Objects.requireNonNull(eventSettings);
+            if (eventSettings == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "eventSettings");
+            }
+            this.eventSettings = eventSettings;
             return this;
         }
         public Builder eventSettings(GetDomainsNotificationSettingEventSetting... eventSettings) {
@@ -409,12 +425,18 @@ public final class GetDomainsNotificationSettingResult {
         }
         @CustomType.Setter
         public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+            if (externalId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "externalId");
+            }
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
         public Builder fromEmailAddresses(List<GetDomainsNotificationSettingFromEmailAddress> fromEmailAddresses) {
-            this.fromEmailAddresses = Objects.requireNonNull(fromEmailAddresses);
+            if (fromEmailAddresses == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "fromEmailAddresses");
+            }
+            this.fromEmailAddresses = fromEmailAddresses;
             return this;
         }
         public Builder fromEmailAddresses(GetDomainsNotificationSettingFromEmailAddress... fromEmailAddresses) {
@@ -422,12 +444,18 @@ public final class GetDomainsNotificationSettingResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsNotificationSettingIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsNotificationSettingIdcsCreatedBy... idcsCreatedBies) {
@@ -435,12 +463,18 @@ public final class GetDomainsNotificationSettingResult {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsNotificationSettingIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsNotificationSettingIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -448,12 +482,18 @@ public final class GetDomainsNotificationSettingResult {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -461,7 +501,10 @@ public final class GetDomainsNotificationSettingResult {
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsNotificationSettingMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsNotificationSettingMeta... metas) {
@@ -469,27 +512,40 @@ public final class GetDomainsNotificationSettingResult {
         }
         @CustomType.Setter
         public Builder notificationEnabled(Boolean notificationEnabled) {
-            this.notificationEnabled = Objects.requireNonNull(notificationEnabled);
+            if (notificationEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "notificationEnabled");
+            }
+            this.notificationEnabled = notificationEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder notificationSettingId(String notificationSettingId) {
-            this.notificationSettingId = Objects.requireNonNull(notificationSettingId);
+            if (notificationSettingId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "notificationSettingId");
+            }
+            this.notificationSettingId = notificationSettingId;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -497,17 +553,26 @@ public final class GetDomainsNotificationSettingResult {
         }
         @CustomType.Setter
         public Builder sendNotificationToOldAndNewPrimaryEmailsWhenAdminChangesPrimaryEmail(Boolean sendNotificationToOldAndNewPrimaryEmailsWhenAdminChangesPrimaryEmail) {
-            this.sendNotificationToOldAndNewPrimaryEmailsWhenAdminChangesPrimaryEmail = Objects.requireNonNull(sendNotificationToOldAndNewPrimaryEmailsWhenAdminChangesPrimaryEmail);
+            if (sendNotificationToOldAndNewPrimaryEmailsWhenAdminChangesPrimaryEmail == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "sendNotificationToOldAndNewPrimaryEmailsWhenAdminChangesPrimaryEmail");
+            }
+            this.sendNotificationToOldAndNewPrimaryEmailsWhenAdminChangesPrimaryEmail = sendNotificationToOldAndNewPrimaryEmailsWhenAdminChangesPrimaryEmail;
             return this;
         }
         @CustomType.Setter
         public Builder sendNotificationsToSecondaryEmail(Boolean sendNotificationsToSecondaryEmail) {
-            this.sendNotificationsToSecondaryEmail = Objects.requireNonNull(sendNotificationsToSecondaryEmail);
+            if (sendNotificationsToSecondaryEmail == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "sendNotificationsToSecondaryEmail");
+            }
+            this.sendNotificationsToSecondaryEmail = sendNotificationsToSecondaryEmail;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsNotificationSettingTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsNotificationSettingTag... tags) {
@@ -515,17 +580,26 @@ public final class GetDomainsNotificationSettingResult {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder testModeEnabled(Boolean testModeEnabled) {
-            this.testModeEnabled = Objects.requireNonNull(testModeEnabled);
+            if (testModeEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "testModeEnabled");
+            }
+            this.testModeEnabled = testModeEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder testRecipients(List<String> testRecipients) {
-            this.testRecipients = Objects.requireNonNull(testRecipients);
+            if (testRecipients == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingResult", "testRecipients");
+            }
+            this.testRecipients = testRecipients;
             return this;
         }
         public Builder testRecipients(String... testRecipients) {

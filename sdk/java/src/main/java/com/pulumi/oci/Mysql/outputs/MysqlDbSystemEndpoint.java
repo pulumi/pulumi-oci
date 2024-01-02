@@ -158,16 +158,19 @@ public final class MysqlDbSystemEndpoint {
 
         @CustomType.Setter
         public Builder hostname(@Nullable String hostname) {
+
             this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddress(@Nullable String ipAddress) {
+
             this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder modes(@Nullable List<String> modes) {
+
             this.modes = modes;
             return this;
         }
@@ -176,31 +179,37 @@ public final class MysqlDbSystemEndpoint {
         }
         @CustomType.Setter
         public Builder port(@Nullable Integer port) {
+
             this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder portX(@Nullable Integer portX) {
+
             this.portX = portX;
             return this;
         }
         @CustomType.Setter
         public Builder resourceId(@Nullable String resourceId) {
+
             this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(@Nullable String resourceType) {
+
             this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder statusDetails(@Nullable String statusDetails) {
+
             this.statusDetails = statusDetails;
             return this;
         }

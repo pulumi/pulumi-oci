@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudMigrations;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.inputs.TargetAssetUserSpecArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -301,11 +302,21 @@ public final class TargetAssetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public TargetAssetArgs build() {
-            $.isExcludedFromExecution = Objects.requireNonNull($.isExcludedFromExecution, "expected parameter 'isExcludedFromExecution' to be non-null");
-            $.migrationPlanId = Objects.requireNonNull($.migrationPlanId, "expected parameter 'migrationPlanId' to be non-null");
-            $.preferredShapeType = Objects.requireNonNull($.preferredShapeType, "expected parameter 'preferredShapeType' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
-            $.userSpec = Objects.requireNonNull($.userSpec, "expected parameter 'userSpec' to be non-null");
+            if ($.isExcludedFromExecution == null) {
+                throw new MissingRequiredPropertyException("TargetAssetArgs", "isExcludedFromExecution");
+            }
+            if ($.migrationPlanId == null) {
+                throw new MissingRequiredPropertyException("TargetAssetArgs", "migrationPlanId");
+            }
+            if ($.preferredShapeType == null) {
+                throw new MissingRequiredPropertyException("TargetAssetArgs", "preferredShapeType");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("TargetAssetArgs", "type");
+            }
+            if ($.userSpec == null) {
+                throw new MissingRequiredPropertyException("TargetAssetArgs", "userSpec");
+            }
             return $;
         }
     }

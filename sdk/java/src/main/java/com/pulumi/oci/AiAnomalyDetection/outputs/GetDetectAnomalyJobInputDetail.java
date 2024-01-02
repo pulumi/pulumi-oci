@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectAnomalyJobInputDetailData;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectAnomalyJobInputDetailObjectLocation;
 import java.lang.String;
@@ -97,17 +98,26 @@ public final class GetDetectAnomalyJobInputDetail {
 
         @CustomType.Setter
         public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+            if (content == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobInputDetail", "content");
+            }
+            this.content = content;
             return this;
         }
         @CustomType.Setter
         public Builder contentType(String contentType) {
-            this.contentType = Objects.requireNonNull(contentType);
+            if (contentType == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobInputDetail", "contentType");
+            }
+            this.contentType = contentType;
             return this;
         }
         @CustomType.Setter
         public Builder datas(List<GetDetectAnomalyJobInputDetailData> datas) {
-            this.datas = Objects.requireNonNull(datas);
+            if (datas == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobInputDetail", "datas");
+            }
+            this.datas = datas;
             return this;
         }
         public Builder datas(GetDetectAnomalyJobInputDetailData... datas) {
@@ -115,17 +125,26 @@ public final class GetDetectAnomalyJobInputDetail {
         }
         @CustomType.Setter
         public Builder inputType(String inputType) {
-            this.inputType = Objects.requireNonNull(inputType);
+            if (inputType == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobInputDetail", "inputType");
+            }
+            this.inputType = inputType;
             return this;
         }
         @CustomType.Setter
         public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+            if (message == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobInputDetail", "message");
+            }
+            this.message = message;
             return this;
         }
         @CustomType.Setter
         public Builder objectLocations(List<GetDetectAnomalyJobInputDetailObjectLocation> objectLocations) {
-            this.objectLocations = Objects.requireNonNull(objectLocations);
+            if (objectLocations == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobInputDetail", "objectLocations");
+            }
+            this.objectLocations = objectLocations;
             return this;
         }
         public Builder objectLocations(GetDetectAnomalyJobInputDetailObjectLocation... objectLocations) {
@@ -133,7 +152,10 @@ public final class GetDetectAnomalyJobInputDetail {
         }
         @CustomType.Setter
         public Builder signalNames(List<String> signalNames) {
-            this.signalNames = Objects.requireNonNull(signalNames);
+            if (signalNames == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobInputDetail", "signalNames");
+            }
+            this.signalNames = signalNames;
             return this;
         }
         public Builder signalNames(String... signalNames) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmConfig.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -128,37 +129,58 @@ public final class GetConfigRule {
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetConfigRule", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filterText(String filterText) {
-            this.filterText = Objects.requireNonNull(filterText);
+            if (filterText == null) {
+              throw new MissingRequiredPropertyException("GetConfigRule", "filterText");
+            }
+            this.filterText = filterText;
             return this;
         }
         @CustomType.Setter
         public Builder isApplyToErrorSpans(Boolean isApplyToErrorSpans) {
-            this.isApplyToErrorSpans = Objects.requireNonNull(isApplyToErrorSpans);
+            if (isApplyToErrorSpans == null) {
+              throw new MissingRequiredPropertyException("GetConfigRule", "isApplyToErrorSpans");
+            }
+            this.isApplyToErrorSpans = isApplyToErrorSpans;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetConfigRule", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder priority(Integer priority) {
-            this.priority = Objects.requireNonNull(priority);
+            if (priority == null) {
+              throw new MissingRequiredPropertyException("GetConfigRule", "priority");
+            }
+            this.priority = priority;
             return this;
         }
         @CustomType.Setter
         public Builder satisfiedResponseTime(Integer satisfiedResponseTime) {
-            this.satisfiedResponseTime = Objects.requireNonNull(satisfiedResponseTime);
+            if (satisfiedResponseTime == null) {
+              throw new MissingRequiredPropertyException("GetConfigRule", "satisfiedResponseTime");
+            }
+            this.satisfiedResponseTime = satisfiedResponseTime;
             return this;
         }
         @CustomType.Setter
         public Builder toleratingResponseTime(Integer toleratingResponseTime) {
-            this.toleratingResponseTime = Objects.requireNonNull(toleratingResponseTime);
+            if (toleratingResponseTime == null) {
+              throw new MissingRequiredPropertyException("GetConfigRule", "toleratingResponseTime");
+            }
+            this.toleratingResponseTime = toleratingResponseTime;
             return this;
         }
         public GetConfigRule build() {

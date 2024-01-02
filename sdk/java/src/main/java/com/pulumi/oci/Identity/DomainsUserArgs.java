@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsUserAddressArgs;
 import com.pulumi.oci.Identity.inputs.DomainsUserEmailArgs;
 import com.pulumi.oci.Identity.inputs.DomainsUserEntitlementArgs;
@@ -3153,9 +3154,15 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DomainsUserArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
-            $.userName = Objects.requireNonNull($.userName, "expected parameter 'userName' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsUserArgs", "idcsEndpoint");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsUserArgs", "schemas");
+            }
+            if ($.userName == null) {
+                throw new MissingRequiredPropertyException("DomainsUserArgs", "userName");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValue;
 import java.lang.String;
 import java.util.List;
@@ -48,17 +49,26 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
 
         @CustomType.Setter
         public Builder operation(String operation) {
-            this.operation = Objects.requireNonNull(operation);
+            if (operation == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperation", "operation");
+            }
+            this.operation = operation;
             return this;
         }
         @CustomType.Setter
         public Builder selection(String selection) {
-            this.selection = Objects.requireNonNull(selection);
+            if (selection == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperation", "selection");
+            }
+            this.selection = selection;
             return this;
         }
         @CustomType.Setter
         public Builder values(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValue> values) {
-            this.values = Objects.requireNonNull(values);
+            if (values == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperation", "values");
+            }
+            this.values = values;
             return this;
         }
         public Builder values(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValue... values) {

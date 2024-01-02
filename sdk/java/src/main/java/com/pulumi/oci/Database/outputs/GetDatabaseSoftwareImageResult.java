@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -282,17 +283,26 @@ public final class GetDatabaseSoftwareImageResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
-            this.databaseSoftwareImageId = Objects.requireNonNull(databaseSoftwareImageId);
+            if (databaseSoftwareImageId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "databaseSoftwareImageId");
+            }
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseSoftwareImageIncludedPatches(List<String> databaseSoftwareImageIncludedPatches) {
-            this.databaseSoftwareImageIncludedPatches = Objects.requireNonNull(databaseSoftwareImageIncludedPatches);
+            if (databaseSoftwareImageIncludedPatches == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "databaseSoftwareImageIncludedPatches");
+            }
+            this.databaseSoftwareImageIncludedPatches = databaseSoftwareImageIncludedPatches;
             return this;
         }
         public Builder databaseSoftwareImageIncludedPatches(String... databaseSoftwareImageIncludedPatches) {
@@ -300,7 +310,10 @@ public final class GetDatabaseSoftwareImageResult {
         }
         @CustomType.Setter
         public Builder databaseSoftwareImageOneOffPatches(List<String> databaseSoftwareImageOneOffPatches) {
-            this.databaseSoftwareImageOneOffPatches = Objects.requireNonNull(databaseSoftwareImageOneOffPatches);
+            if (databaseSoftwareImageOneOffPatches == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "databaseSoftwareImageOneOffPatches");
+            }
+            this.databaseSoftwareImageOneOffPatches = databaseSoftwareImageOneOffPatches;
             return this;
         }
         public Builder databaseSoftwareImageOneOffPatches(String... databaseSoftwareImageOneOffPatches) {
@@ -308,77 +321,122 @@ public final class GetDatabaseSoftwareImageResult {
         }
         @CustomType.Setter
         public Builder databaseVersion(String databaseVersion) {
-            this.databaseVersion = Objects.requireNonNull(databaseVersion);
+            if (databaseVersion == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "databaseVersion");
+            }
+            this.databaseVersion = databaseVersion;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imageShapeFamily(String imageShapeFamily) {
-            this.imageShapeFamily = Objects.requireNonNull(imageShapeFamily);
+            if (imageShapeFamily == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "imageShapeFamily");
+            }
+            this.imageShapeFamily = imageShapeFamily;
             return this;
         }
         @CustomType.Setter
         public Builder imageType(String imageType) {
-            this.imageType = Objects.requireNonNull(imageType);
+            if (imageType == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "imageType");
+            }
+            this.imageType = imageType;
             return this;
         }
         @CustomType.Setter
         public Builder includedPatchesSummary(String includedPatchesSummary) {
-            this.includedPatchesSummary = Objects.requireNonNull(includedPatchesSummary);
+            if (includedPatchesSummary == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "includedPatchesSummary");
+            }
+            this.includedPatchesSummary = includedPatchesSummary;
             return this;
         }
         @CustomType.Setter
         public Builder isUpgradeSupported(Boolean isUpgradeSupported) {
-            this.isUpgradeSupported = Objects.requireNonNull(isUpgradeSupported);
+            if (isUpgradeSupported == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "isUpgradeSupported");
+            }
+            this.isUpgradeSupported = isUpgradeSupported;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder lsInventory(String lsInventory) {
-            this.lsInventory = Objects.requireNonNull(lsInventory);
+            if (lsInventory == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "lsInventory");
+            }
+            this.lsInventory = lsInventory;
             return this;
         }
         @CustomType.Setter
         public Builder patchSet(String patchSet) {
-            this.patchSet = Objects.requireNonNull(patchSet);
+            if (patchSet == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "patchSet");
+            }
+            this.patchSet = patchSet;
             return this;
         }
         @CustomType.Setter
         public Builder sourceDbHomeId(String sourceDbHomeId) {
-            this.sourceDbHomeId = Objects.requireNonNull(sourceDbHomeId);
+            if (sourceDbHomeId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "sourceDbHomeId");
+            }
+            this.sourceDbHomeId = sourceDbHomeId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetDatabaseSoftwareImageResult build() {

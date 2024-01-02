@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAvailableAuditVolumesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -263,8 +264,12 @@ public final class GetAuditProfileAvailableAuditVolumesArgs extends com.pulumi.r
         }
 
         public GetAuditProfileAvailableAuditVolumesArgs build() {
-            $.auditProfileId = Objects.requireNonNull($.auditProfileId, "expected parameter 'auditProfileId' to be non-null");
-            $.workRequestId = Objects.requireNonNull($.workRequestId, "expected parameter 'workRequestId' to be non-null");
+            if ($.auditProfileId == null) {
+                throw new MissingRequiredPropertyException("GetAuditProfileAvailableAuditVolumesArgs", "auditProfileId");
+            }
+            if ($.workRequestId == null) {
+                throw new MissingRequiredPropertyException("GetAuditProfileAvailableAuditVolumesArgs", "workRequestId");
+            }
             return $;
         }
     }

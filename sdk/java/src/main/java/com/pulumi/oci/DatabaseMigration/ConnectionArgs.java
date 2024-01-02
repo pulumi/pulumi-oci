@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseMigration;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.inputs.ConnectionAdminCredentialsArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.ConnectionConnectDescriptorArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.ConnectionPrivateEndpointArgs;
@@ -650,10 +651,18 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ConnectionArgs build() {
-            $.adminCredentials = Objects.requireNonNull($.adminCredentials, "expected parameter 'adminCredentials' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.databaseType = Objects.requireNonNull($.databaseType, "expected parameter 'databaseType' to be non-null");
-            $.vaultDetails = Objects.requireNonNull($.vaultDetails, "expected parameter 'vaultDetails' to be non-null");
+            if ($.adminCredentials == null) {
+                throw new MissingRequiredPropertyException("ConnectionArgs", "adminCredentials");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ConnectionArgs", "compartmentId");
+            }
+            if ($.databaseType == null) {
+                throw new MissingRequiredPropertyException("ConnectionArgs", "databaseType");
+            }
+            if ($.vaultDetails == null) {
+                throw new MissingRequiredPropertyException("ConnectionArgs", "vaultDetails");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetListingScreenshot {
 
         @CustomType.Setter
         public Builder contentUrl(String contentUrl) {
-            this.contentUrl = Objects.requireNonNull(contentUrl);
+            if (contentUrl == null) {
+              throw new MissingRequiredPropertyException("GetListingScreenshot", "contentUrl");
+            }
+            this.contentUrl = contentUrl;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetListingScreenshot", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder fileExtension(String fileExtension) {
-            this.fileExtension = Objects.requireNonNull(fileExtension);
+            if (fileExtension == null) {
+              throw new MissingRequiredPropertyException("GetListingScreenshot", "fileExtension");
+            }
+            this.fileExtension = fileExtension;
             return this;
         }
         @CustomType.Setter
         public Builder mimeType(String mimeType) {
-            this.mimeType = Objects.requireNonNull(mimeType);
+            if (mimeType == null) {
+              throw new MissingRequiredPropertyException("GetListingScreenshot", "mimeType");
+            }
+            this.mimeType = mimeType;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetListingScreenshot", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetListingScreenshot build() {

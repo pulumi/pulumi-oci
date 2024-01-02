@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataLabellingService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetInitialImportDatasetConfigurationImportFormat;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetInitialImportDatasetConfigurationImportMetadataPath;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetDatasetInitialImportDatasetConfiguration {
 
         @CustomType.Setter
         public Builder importFormats(List<GetDatasetInitialImportDatasetConfigurationImportFormat> importFormats) {
-            this.importFormats = Objects.requireNonNull(importFormats);
+            if (importFormats == null) {
+              throw new MissingRequiredPropertyException("GetDatasetInitialImportDatasetConfiguration", "importFormats");
+            }
+            this.importFormats = importFormats;
             return this;
         }
         public Builder importFormats(GetDatasetInitialImportDatasetConfigurationImportFormat... importFormats) {
@@ -66,7 +70,10 @@ public final class GetDatasetInitialImportDatasetConfiguration {
         }
         @CustomType.Setter
         public Builder importMetadataPaths(List<GetDatasetInitialImportDatasetConfigurationImportMetadataPath> importMetadataPaths) {
-            this.importMetadataPaths = Objects.requireNonNull(importMetadataPaths);
+            if (importMetadataPaths == null) {
+              throw new MissingRequiredPropertyException("GetDatasetInitialImportDatasetConfiguration", "importMetadataPaths");
+            }
+            this.importMetadataPaths = importMetadataPaths;
             return this;
         }
         public Builder importMetadataPaths(GetDatasetInitialImportDatasetConfigurationImportMetadataPath... importMetadataPaths) {

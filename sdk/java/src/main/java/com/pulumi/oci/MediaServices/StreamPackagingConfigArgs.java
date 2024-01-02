@@ -5,6 +5,7 @@ package com.pulumi.oci.MediaServices;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.inputs.StreamPackagingConfigEncryptionArgs;
 import java.lang.Integer;
 import java.lang.Object;
@@ -314,10 +315,18 @@ public final class StreamPackagingConfigArgs extends com.pulumi.resources.Resour
         }
 
         public StreamPackagingConfigArgs build() {
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.distributionChannelId = Objects.requireNonNull($.distributionChannelId, "expected parameter 'distributionChannelId' to be non-null");
-            $.segmentTimeInSeconds = Objects.requireNonNull($.segmentTimeInSeconds, "expected parameter 'segmentTimeInSeconds' to be non-null");
-            $.streamPackagingFormat = Objects.requireNonNull($.streamPackagingFormat, "expected parameter 'streamPackagingFormat' to be non-null");
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("StreamPackagingConfigArgs", "displayName");
+            }
+            if ($.distributionChannelId == null) {
+                throw new MissingRequiredPropertyException("StreamPackagingConfigArgs", "distributionChannelId");
+            }
+            if ($.segmentTimeInSeconds == null) {
+                throw new MissingRequiredPropertyException("StreamPackagingConfigArgs", "segmentTimeInSeconds");
+            }
+            if ($.streamPackagingFormat == null) {
+                throw new MissingRequiredPropertyException("StreamPackagingConfigArgs", "streamPackagingFormat");
+            }
             return $;
         }
     }

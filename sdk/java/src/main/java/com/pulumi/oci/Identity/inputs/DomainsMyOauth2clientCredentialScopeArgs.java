@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -175,8 +176,12 @@ public final class DomainsMyOauth2clientCredentialScopeArgs extends com.pulumi.r
         }
 
         public DomainsMyOauth2clientCredentialScopeArgs build() {
-            $.audience = Objects.requireNonNull($.audience, "expected parameter 'audience' to be non-null");
-            $.scope = Objects.requireNonNull($.scope, "expected parameter 'scope' to be non-null");
+            if ($.audience == null) {
+                throw new MissingRequiredPropertyException("DomainsMyOauth2clientCredentialScopeArgs", "audience");
+            }
+            if ($.scope == null) {
+                throw new MissingRequiredPropertyException("DomainsMyOauth2clientCredentialScopeArgs", "scope");
+            }
             return $;
         }
     }

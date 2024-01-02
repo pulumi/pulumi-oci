@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking;
 import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis;
 import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis;
@@ -181,7 +182,10 @@ public final class GetFleetAdvancedFeatureConfigurationResult {
 
         @CustomType.Setter
         public Builder advancedUsageTrackings(List<GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking> advancedUsageTrackings) {
-            this.advancedUsageTrackings = Objects.requireNonNull(advancedUsageTrackings);
+            if (advancedUsageTrackings == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationResult", "advancedUsageTrackings");
+            }
+            this.advancedUsageTrackings = advancedUsageTrackings;
             return this;
         }
         public Builder advancedUsageTrackings(GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking... advancedUsageTrackings) {
@@ -189,17 +193,26 @@ public final class GetFleetAdvancedFeatureConfigurationResult {
         }
         @CustomType.Setter
         public Builder analyticBucketName(String analyticBucketName) {
-            this.analyticBucketName = Objects.requireNonNull(analyticBucketName);
+            if (analyticBucketName == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationResult", "analyticBucketName");
+            }
+            this.analyticBucketName = analyticBucketName;
             return this;
         }
         @CustomType.Setter
         public Builder analyticNamespace(String analyticNamespace) {
-            this.analyticNamespace = Objects.requireNonNull(analyticNamespace);
+            if (analyticNamespace == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationResult", "analyticNamespace");
+            }
+            this.analyticNamespace = analyticNamespace;
             return this;
         }
         @CustomType.Setter
         public Builder cryptoEventAnalyses(List<GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis> cryptoEventAnalyses) {
-            this.cryptoEventAnalyses = Objects.requireNonNull(cryptoEventAnalyses);
+            if (cryptoEventAnalyses == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationResult", "cryptoEventAnalyses");
+            }
+            this.cryptoEventAnalyses = cryptoEventAnalyses;
             return this;
         }
         public Builder cryptoEventAnalyses(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis... cryptoEventAnalyses) {
@@ -207,17 +220,26 @@ public final class GetFleetAdvancedFeatureConfigurationResult {
         }
         @CustomType.Setter
         public Builder fleetId(String fleetId) {
-            this.fleetId = Objects.requireNonNull(fleetId);
+            if (fleetId == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationResult", "fleetId");
+            }
+            this.fleetId = fleetId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder javaMigrationAnalyses(List<GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis> javaMigrationAnalyses) {
-            this.javaMigrationAnalyses = Objects.requireNonNull(javaMigrationAnalyses);
+            if (javaMigrationAnalyses == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationResult", "javaMigrationAnalyses");
+            }
+            this.javaMigrationAnalyses = javaMigrationAnalyses;
             return this;
         }
         public Builder javaMigrationAnalyses(GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis... javaMigrationAnalyses) {
@@ -225,7 +247,10 @@ public final class GetFleetAdvancedFeatureConfigurationResult {
         }
         @CustomType.Setter
         public Builder jfrRecordings(List<GetFleetAdvancedFeatureConfigurationJfrRecording> jfrRecordings) {
-            this.jfrRecordings = Objects.requireNonNull(jfrRecordings);
+            if (jfrRecordings == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationResult", "jfrRecordings");
+            }
+            this.jfrRecordings = jfrRecordings;
             return this;
         }
         public Builder jfrRecordings(GetFleetAdvancedFeatureConfigurationJfrRecording... jfrRecordings) {
@@ -233,7 +258,10 @@ public final class GetFleetAdvancedFeatureConfigurationResult {
         }
         @CustomType.Setter
         public Builder lcms(List<GetFleetAdvancedFeatureConfigurationLcm> lcms) {
-            this.lcms = Objects.requireNonNull(lcms);
+            if (lcms == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationResult", "lcms");
+            }
+            this.lcms = lcms;
             return this;
         }
         public Builder lcms(GetFleetAdvancedFeatureConfigurationLcm... lcms) {
@@ -241,7 +269,10 @@ public final class GetFleetAdvancedFeatureConfigurationResult {
         }
         @CustomType.Setter
         public Builder performanceTuningAnalyses(List<GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis> performanceTuningAnalyses) {
-            this.performanceTuningAnalyses = Objects.requireNonNull(performanceTuningAnalyses);
+            if (performanceTuningAnalyses == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationResult", "performanceTuningAnalyses");
+            }
+            this.performanceTuningAnalyses = performanceTuningAnalyses;
             return this;
         }
         public Builder performanceTuningAnalyses(GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis... performanceTuningAnalyses) {
@@ -249,7 +280,10 @@ public final class GetFleetAdvancedFeatureConfigurationResult {
         }
         @CustomType.Setter
         public Builder timeLastModified(String timeLastModified) {
-            this.timeLastModified = Objects.requireNonNull(timeLastModified);
+            if (timeLastModified == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationResult", "timeLastModified");
+            }
+            this.timeLastModified = timeLastModified;
             return this;
         }
         public GetFleetAdvancedFeatureConfigurationResult build() {

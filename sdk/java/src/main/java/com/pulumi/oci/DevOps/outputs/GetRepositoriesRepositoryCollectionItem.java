@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig;
 import java.lang.Integer;
 import java.lang.Object;
@@ -347,117 +348,186 @@ public final class GetRepositoriesRepositoryCollectionItem {
 
         @CustomType.Setter
         public Builder branchCount(Integer branchCount) {
-            this.branchCount = Objects.requireNonNull(branchCount);
+            if (branchCount == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "branchCount");
+            }
+            this.branchCount = branchCount;
             return this;
         }
         @CustomType.Setter
         public Builder commitCount(Integer commitCount) {
-            this.commitCount = Objects.requireNonNull(commitCount);
+            if (commitCount == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "commitCount");
+            }
+            this.commitCount = commitCount;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder defaultBranch(String defaultBranch) {
-            this.defaultBranch = Objects.requireNonNull(defaultBranch);
+            if (defaultBranch == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "defaultBranch");
+            }
+            this.defaultBranch = defaultBranch;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder httpUrl(String httpUrl) {
-            this.httpUrl = Objects.requireNonNull(httpUrl);
+            if (httpUrl == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "httpUrl");
+            }
+            this.httpUrl = httpUrl;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder mirrorRepositoryConfig(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig mirrorRepositoryConfig) {
-            this.mirrorRepositoryConfig = Objects.requireNonNull(mirrorRepositoryConfig);
+            if (mirrorRepositoryConfig == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "mirrorRepositoryConfig");
+            }
+            this.mirrorRepositoryConfig = mirrorRepositoryConfig;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+            if (projectId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "projectId");
+            }
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder projectName(String projectName) {
-            this.projectName = Objects.requireNonNull(projectName);
+            if (projectName == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "projectName");
+            }
+            this.projectName = projectName;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryType(String repositoryType) {
-            this.repositoryType = Objects.requireNonNull(repositoryType);
+            if (repositoryType == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "repositoryType");
+            }
+            this.repositoryType = repositoryType;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInBytes(String sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+            if (sizeInBytes == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "sizeInBytes");
+            }
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder sshUrl(String sshUrl) {
-            this.sshUrl = Objects.requireNonNull(sshUrl);
+            if (sshUrl == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "sshUrl");
+            }
+            this.sshUrl = sshUrl;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder triggerBuildEvents(List<String> triggerBuildEvents) {
-            this.triggerBuildEvents = Objects.requireNonNull(triggerBuildEvents);
+            if (triggerBuildEvents == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "triggerBuildEvents");
+            }
+            this.triggerBuildEvents = triggerBuildEvents;
             return this;
         }
         public Builder triggerBuildEvents(String... triggerBuildEvents) {

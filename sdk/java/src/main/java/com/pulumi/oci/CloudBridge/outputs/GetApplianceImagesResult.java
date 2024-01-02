@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudBridge.outputs.GetApplianceImagesApplianceImageCollection;
 import com.pulumi.oci.CloudBridge.outputs.GetApplianceImagesFilter;
 import java.lang.String;
@@ -87,7 +88,10 @@ public final class GetApplianceImagesResult {
 
         @CustomType.Setter
         public Builder applianceImageCollections(List<GetApplianceImagesApplianceImageCollection> applianceImageCollections) {
-            this.applianceImageCollections = Objects.requireNonNull(applianceImageCollections);
+            if (applianceImageCollections == null) {
+              throw new MissingRequiredPropertyException("GetApplianceImagesResult", "applianceImageCollections");
+            }
+            this.applianceImageCollections = applianceImageCollections;
             return this;
         }
         public Builder applianceImageCollections(GetApplianceImagesApplianceImageCollection... applianceImageCollections) {
@@ -95,16 +99,21 @@ public final class GetApplianceImagesResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetApplianceImagesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetApplianceImagesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -113,7 +122,10 @@ public final class GetApplianceImagesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetApplianceImagesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetApplianceImagesResult build() {

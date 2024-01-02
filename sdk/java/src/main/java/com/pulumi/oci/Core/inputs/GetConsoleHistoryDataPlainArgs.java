@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -120,7 +121,9 @@ public final class GetConsoleHistoryDataPlainArgs extends com.pulumi.resources.I
         }
 
         public GetConsoleHistoryDataPlainArgs build() {
-            $.consoleHistoryId = Objects.requireNonNull($.consoleHistoryId, "expected parameter 'consoleHistoryId' to be non-null");
+            if ($.consoleHistoryId == null) {
+                throw new MissingRequiredPropertyException("GetConsoleHistoryDataPlainArgs", "consoleHistoryId");
+            }
             return $;
         }
     }

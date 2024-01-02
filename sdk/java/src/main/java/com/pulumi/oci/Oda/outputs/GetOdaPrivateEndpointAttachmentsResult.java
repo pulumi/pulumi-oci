@@ -4,6 +4,7 @@
 package com.pulumi.oci.Oda.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Oda.outputs.GetOdaPrivateEndpointAttachmentsFilter;
 import com.pulumi.oci.Oda.outputs.GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection;
 import java.lang.String;
@@ -109,11 +110,15 @@ public final class GetOdaPrivateEndpointAttachmentsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointAttachmentsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetOdaPrivateEndpointAttachmentsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -122,12 +127,18 @@ public final class GetOdaPrivateEndpointAttachmentsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointAttachmentsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder odaPrivateEndpointAttachmentCollections(List<GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection> odaPrivateEndpointAttachmentCollections) {
-            this.odaPrivateEndpointAttachmentCollections = Objects.requireNonNull(odaPrivateEndpointAttachmentCollections);
+            if (odaPrivateEndpointAttachmentCollections == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointAttachmentsResult", "odaPrivateEndpointAttachmentCollections");
+            }
+            this.odaPrivateEndpointAttachmentCollections = odaPrivateEndpointAttachmentCollections;
             return this;
         }
         public Builder odaPrivateEndpointAttachmentCollections(GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection... odaPrivateEndpointAttachmentCollections) {
@@ -135,11 +146,15 @@ public final class GetOdaPrivateEndpointAttachmentsResult {
         }
         @CustomType.Setter
         public Builder odaPrivateEndpointId(String odaPrivateEndpointId) {
-            this.odaPrivateEndpointId = Objects.requireNonNull(odaPrivateEndpointId);
+            if (odaPrivateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointAttachmentsResult", "odaPrivateEndpointId");
+            }
+            this.odaPrivateEndpointId = odaPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

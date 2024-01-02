@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetDomainsGrantsGrantEntitlement {
 
         @CustomType.Setter
         public Builder attributeName(String attributeName) {
-            this.attributeName = Objects.requireNonNull(attributeName);
+            if (attributeName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantsGrantEntitlement", "attributeName");
+            }
+            this.attributeName = attributeName;
             return this;
         }
         @CustomType.Setter
         public Builder attributeValue(String attributeValue) {
-            this.attributeValue = Objects.requireNonNull(attributeValue);
+            if (attributeValue == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantsGrantEntitlement", "attributeValue");
+            }
+            this.attributeValue = attributeValue;
             return this;
         }
         public GetDomainsGrantsGrantEntitlement build() {

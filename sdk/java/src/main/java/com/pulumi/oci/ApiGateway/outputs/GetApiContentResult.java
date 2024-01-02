@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -54,17 +55,26 @@ public final class GetApiContentResult {
 
         @CustomType.Setter
         public Builder apiId(String apiId) {
-            this.apiId = Objects.requireNonNull(apiId);
+            if (apiId == null) {
+              throw new MissingRequiredPropertyException("GetApiContentResult", "apiId");
+            }
+            this.apiId = apiId;
             return this;
         }
         @CustomType.Setter
         public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+            if (content == null) {
+              throw new MissingRequiredPropertyException("GetApiContentResult", "content");
+            }
+            this.content = content;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetApiContentResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetApiContentResult build() {

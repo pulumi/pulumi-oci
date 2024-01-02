@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -211,8 +212,12 @@ public final class GetDomainsIdentityPropagationTrustPlainArgs extends com.pulum
         }
 
         public GetDomainsIdentityPropagationTrustPlainArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.identityPropagationTrustId = Objects.requireNonNull($.identityPropagationTrustId, "expected parameter 'identityPropagationTrustId' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustPlainArgs", "idcsEndpoint");
+            }
+            if ($.identityPropagationTrustId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustPlainArgs", "identityPropagationTrustId");
+            }
             return $;
         }
     }

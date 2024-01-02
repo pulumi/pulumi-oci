@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.outputs.GetVantagePointItemGeo;
 import java.lang.String;
 import java.util.List;
@@ -72,12 +73,18 @@ public final class GetVantagePointItem {
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder geos(List<GetVantagePointItemGeo> geos) {
-            this.geos = Objects.requireNonNull(geos);
+            if (geos == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointItem", "geos");
+            }
+            this.geos = geos;
             return this;
         }
         public Builder geos(GetVantagePointItemGeo... geos) {
@@ -85,7 +92,10 @@ public final class GetVantagePointItem {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointItem", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetVantagePointItem build() {

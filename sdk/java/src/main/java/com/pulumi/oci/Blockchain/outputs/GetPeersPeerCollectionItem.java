@@ -4,6 +4,7 @@
 package com.pulumi.oci.Blockchain.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Blockchain.outputs.GetPeersPeerCollectionItemOcpuAllocationParam;
 import java.lang.String;
 import java.util.Objects;
@@ -141,42 +142,66 @@ public final class GetPeersPeerCollectionItem {
 
         @CustomType.Setter
         public Builder ad(String ad) {
-            this.ad = Objects.requireNonNull(ad);
+            if (ad == null) {
+              throw new MissingRequiredPropertyException("GetPeersPeerCollectionItem", "ad");
+            }
+            this.ad = ad;
             return this;
         }
         @CustomType.Setter
         public Builder alias(String alias) {
-            this.alias = Objects.requireNonNull(alias);
+            if (alias == null) {
+              throw new MissingRequiredPropertyException("GetPeersPeerCollectionItem", "alias");
+            }
+            this.alias = alias;
             return this;
         }
         @CustomType.Setter
         public Builder blockchainPlatformId(String blockchainPlatformId) {
-            this.blockchainPlatformId = Objects.requireNonNull(blockchainPlatformId);
+            if (blockchainPlatformId == null) {
+              throw new MissingRequiredPropertyException("GetPeersPeerCollectionItem", "blockchainPlatformId");
+            }
+            this.blockchainPlatformId = blockchainPlatformId;
             return this;
         }
         @CustomType.Setter
         public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+            if (host == null) {
+              throw new MissingRequiredPropertyException("GetPeersPeerCollectionItem", "host");
+            }
+            this.host = host;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuAllocationParam(GetPeersPeerCollectionItemOcpuAllocationParam ocpuAllocationParam) {
-            this.ocpuAllocationParam = Objects.requireNonNull(ocpuAllocationParam);
+            if (ocpuAllocationParam == null) {
+              throw new MissingRequiredPropertyException("GetPeersPeerCollectionItem", "ocpuAllocationParam");
+            }
+            this.ocpuAllocationParam = ocpuAllocationParam;
             return this;
         }
         @CustomType.Setter
         public Builder peerKey(String peerKey) {
-            this.peerKey = Objects.requireNonNull(peerKey);
+            if (peerKey == null) {
+              throw new MissingRequiredPropertyException("GetPeersPeerCollectionItem", "peerKey");
+            }
+            this.peerKey = peerKey;
             return this;
         }
         @CustomType.Setter
         public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+            if (role == null) {
+              throw new MissingRequiredPropertyException("GetPeersPeerCollectionItem", "role");
+            }
+            this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetPeersPeerCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         public GetPeersPeerCollectionItem build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.ApiGateway.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArgs;
 import java.lang.String;
 import java.util.List;
@@ -135,8 +136,12 @@ public final class DeploymentSpecificationRouteRequestPoliciesHeaderTransformati
         }
 
         public DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersArgs build() {
-            $.items = Objects.requireNonNull($.items, "expected parameter 'items' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.items == null) {
+                throw new MissingRequiredPropertyException("DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersArgs", "items");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersArgs", "type");
+            }
             return $;
         }
     }

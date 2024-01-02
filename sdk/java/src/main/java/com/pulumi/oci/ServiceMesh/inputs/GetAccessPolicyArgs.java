@@ -5,6 +5,7 @@ package com.pulumi.oci.ServiceMesh.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetAccessPolicyArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetAccessPolicyArgs build() {
-            $.accessPolicyId = Objects.requireNonNull($.accessPolicyId, "expected parameter 'accessPolicyId' to be non-null");
+            if ($.accessPolicyId == null) {
+                throw new MissingRequiredPropertyException("GetAccessPolicyArgs", "accessPolicyId");
+            }
             return $;
         }
     }

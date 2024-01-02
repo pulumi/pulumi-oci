@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetPbfListingVersionsFilter;
 import com.pulumi.oci.Functions.outputs.GetPbfListingVersionsPbfListingVersionsCollection;
 import java.lang.Boolean;
@@ -122,6 +123,7 @@ public final class GetPbfListingVersionsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPbfListingVersionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -130,32 +132,44 @@ public final class GetPbfListingVersionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCurrentVersion(@Nullable Boolean isCurrentVersion) {
+
             this.isCurrentVersion = isCurrentVersion;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder pbfListingId(String pbfListingId) {
-            this.pbfListingId = Objects.requireNonNull(pbfListingId);
+            if (pbfListingId == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsResult", "pbfListingId");
+            }
+            this.pbfListingId = pbfListingId;
             return this;
         }
         @CustomType.Setter
         public Builder pbfListingVersionId(@Nullable String pbfListingVersionId) {
+
             this.pbfListingVersionId = pbfListingVersionId;
             return this;
         }
         @CustomType.Setter
         public Builder pbfListingVersionsCollections(List<GetPbfListingVersionsPbfListingVersionsCollection> pbfListingVersionsCollections) {
-            this.pbfListingVersionsCollections = Objects.requireNonNull(pbfListingVersionsCollections);
+            if (pbfListingVersionsCollections == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsResult", "pbfListingVersionsCollections");
+            }
+            this.pbfListingVersionsCollections = pbfListingVersionsCollections;
             return this;
         }
         public Builder pbfListingVersionsCollections(GetPbfListingVersionsPbfListingVersionsCollection... pbfListingVersionsCollections) {
@@ -163,6 +177,7 @@ public final class GetPbfListingVersionsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

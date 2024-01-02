@@ -4,6 +4,7 @@
 package com.pulumi.oci.EmWarehouse.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.EmWarehouse.outputs.GetEmWarehousesEmWarehouseCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetEmWarehousesEmWarehouseCollection {
 
         @CustomType.Setter
         public Builder items(List<GetEmWarehousesEmWarehouseCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetEmWarehousesEmWarehouseCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetEmWarehousesEmWarehouseCollectionItem... items) {

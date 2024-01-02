@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.outputs.GetPublicationPackageDetailEula;
 import com.pulumi.oci.Marketplace.outputs.GetPublicationPackageDetailOperatingSystem;
 import java.lang.String;
@@ -69,7 +70,10 @@ public final class GetPublicationPackageDetail {
 
         @CustomType.Setter
         public Builder eulas(List<GetPublicationPackageDetailEula> eulas) {
-            this.eulas = Objects.requireNonNull(eulas);
+            if (eulas == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackageDetail", "eulas");
+            }
+            this.eulas = eulas;
             return this;
         }
         public Builder eulas(GetPublicationPackageDetailEula... eulas) {
@@ -77,12 +81,18 @@ public final class GetPublicationPackageDetail {
         }
         @CustomType.Setter
         public Builder imageId(String imageId) {
-            this.imageId = Objects.requireNonNull(imageId);
+            if (imageId == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackageDetail", "imageId");
+            }
+            this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystems(List<GetPublicationPackageDetailOperatingSystem> operatingSystems) {
-            this.operatingSystems = Objects.requireNonNull(operatingSystems);
+            if (operatingSystems == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackageDetail", "operatingSystems");
+            }
+            this.operatingSystems = operatingSystems;
             return this;
         }
         public Builder operatingSystems(GetPublicationPackageDetailOperatingSystem... operatingSystems) {
@@ -90,12 +100,18 @@ public final class GetPublicationPackageDetail {
         }
         @CustomType.Setter
         public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+            if (packageType == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackageDetail", "packageType");
+            }
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
         public Builder packageVersion(String packageVersion) {
-            this.packageVersion = Objects.requireNonNull(packageVersion);
+            if (packageVersion == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackageDetail", "packageVersion");
+            }
+            this.packageVersion = packageVersion;
             return this;
         }
         public GetPublicationPackageDetail build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -148,9 +149,15 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationValueArgs exten
         }
 
         public DetectorRecipeDetectorRuleDetailsConfigurationValueArgs build() {
-            $.listType = Objects.requireNonNull($.listType, "expected parameter 'listType' to be non-null");
-            $.managedListType = Objects.requireNonNull($.managedListType, "expected parameter 'managedListType' to be non-null");
-            $.value = Objects.requireNonNull($.value, "expected parameter 'value' to be non-null");
+            if ($.listType == null) {
+                throw new MissingRequiredPropertyException("DetectorRecipeDetectorRuleDetailsConfigurationValueArgs", "listType");
+            }
+            if ($.managedListType == null) {
+                throw new MissingRequiredPropertyException("DetectorRecipeDetectorRuleDetailsConfigurationValueArgs", "managedListType");
+            }
+            if ($.value == null) {
+                throw new MissingRequiredPropertyException("DetectorRecipeDetectorRuleDetailsConfigurationValueArgs", "value");
+            }
             return $;
         }
     }

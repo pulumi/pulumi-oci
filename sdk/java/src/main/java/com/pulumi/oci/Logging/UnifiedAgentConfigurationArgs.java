@@ -5,6 +5,7 @@ package com.pulumi.oci.Logging;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationGroupAssociationArgs;
 import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationArgs;
 import java.lang.Boolean;
@@ -340,9 +341,15 @@ public final class UnifiedAgentConfigurationArgs extends com.pulumi.resources.Re
         }
 
         public UnifiedAgentConfigurationArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.isEnabled = Objects.requireNonNull($.isEnabled, "expected parameter 'isEnabled' to be non-null");
-            $.serviceConfiguration = Objects.requireNonNull($.serviceConfiguration, "expected parameter 'serviceConfiguration' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("UnifiedAgentConfigurationArgs", "compartmentId");
+            }
+            if ($.isEnabled == null) {
+                throw new MissingRequiredPropertyException("UnifiedAgentConfigurationArgs", "isEnabled");
+            }
+            if ($.serviceConfiguration == null) {
+                throw new MissingRequiredPropertyException("UnifiedAgentConfigurationArgs", "serviceConfiguration");
+            }
             return $;
         }
     }

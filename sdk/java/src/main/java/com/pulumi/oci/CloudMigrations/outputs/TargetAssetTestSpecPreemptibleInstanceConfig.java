@@ -44,6 +44,7 @@ public final class TargetAssetTestSpecPreemptibleInstanceConfig {
 
         @CustomType.Setter
         public Builder preemptionActions(@Nullable List<TargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions) {
+
             this.preemptionActions = preemptionActions;
             return this;
         }

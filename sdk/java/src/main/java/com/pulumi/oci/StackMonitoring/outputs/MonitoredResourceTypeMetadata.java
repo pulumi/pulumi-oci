@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.MonitoredResourceTypeMetadataUniquePropertySet;
 import java.lang.Object;
 import java.lang.String;
@@ -133,6 +134,7 @@ public final class MonitoredResourceTypeMetadata {
 
         @CustomType.Setter
         public Builder agentProperties(@Nullable List<String> agentProperties) {
+
             this.agentProperties = agentProperties;
             return this;
         }
@@ -141,11 +143,15 @@ public final class MonitoredResourceTypeMetadata {
         }
         @CustomType.Setter
         public Builder format(String format) {
-            this.format = Objects.requireNonNull(format);
+            if (format == null) {
+              throw new MissingRequiredPropertyException("MonitoredResourceTypeMetadata", "format");
+            }
+            this.format = format;
             return this;
         }
         @CustomType.Setter
         public Builder requiredProperties(@Nullable List<String> requiredProperties) {
+
             this.requiredProperties = requiredProperties;
             return this;
         }
@@ -154,6 +160,7 @@ public final class MonitoredResourceTypeMetadata {
         }
         @CustomType.Setter
         public Builder uniquePropertySets(@Nullable List<MonitoredResourceTypeMetadataUniquePropertySet> uniquePropertySets) {
+
             this.uniquePropertySets = uniquePropertySets;
             return this;
         }
@@ -162,6 +169,7 @@ public final class MonitoredResourceTypeMetadata {
         }
         @CustomType.Setter
         public Builder validPropertiesForCreates(@Nullable List<String> validPropertiesForCreates) {
+
             this.validPropertiesForCreates = validPropertiesForCreates;
             return this;
         }
@@ -170,6 +178,7 @@ public final class MonitoredResourceTypeMetadata {
         }
         @CustomType.Setter
         public Builder validPropertiesForUpdates(@Nullable List<String> validPropertiesForUpdates) {
+
             this.validPropertiesForUpdates = validPropertiesForUpdates;
             return this;
         }
@@ -178,6 +187,7 @@ public final class MonitoredResourceTypeMetadata {
         }
         @CustomType.Setter
         public Builder validPropertyValues(@Nullable Map<String,Object> validPropertyValues) {
+
             this.validPropertyValues = validPropertyValues;
             return this;
         }

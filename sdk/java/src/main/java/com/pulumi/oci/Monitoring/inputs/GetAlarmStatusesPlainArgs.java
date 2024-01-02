@@ -4,6 +4,7 @@
 package com.pulumi.oci.Monitoring.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Monitoring.inputs.GetAlarmStatusesFilter;
 import java.lang.Boolean;
 import java.lang.String;
@@ -247,7 +248,9 @@ public final class GetAlarmStatusesPlainArgs extends com.pulumi.resources.Invoke
         }
 
         public GetAlarmStatusesPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetAlarmStatusesPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

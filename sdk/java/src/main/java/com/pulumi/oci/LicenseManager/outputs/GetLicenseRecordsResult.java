@@ -4,6 +4,7 @@
 package com.pulumi.oci.LicenseManager.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LicenseManager.outputs.GetLicenseRecordsFilter;
 import com.pulumi.oci.LicenseManager.outputs.GetLicenseRecordsLicenseRecordCollection;
 import java.lang.String;
@@ -80,6 +81,7 @@ public final class GetLicenseRecordsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetLicenseRecordsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -88,12 +90,18 @@ public final class GetLicenseRecordsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder licenseRecordCollections(List<GetLicenseRecordsLicenseRecordCollection> licenseRecordCollections) {
-            this.licenseRecordCollections = Objects.requireNonNull(licenseRecordCollections);
+            if (licenseRecordCollections == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordsResult", "licenseRecordCollections");
+            }
+            this.licenseRecordCollections = licenseRecordCollections;
             return this;
         }
         public Builder licenseRecordCollections(GetLicenseRecordsLicenseRecordCollection... licenseRecordCollections) {
@@ -101,7 +109,10 @@ public final class GetLicenseRecordsResult {
         }
         @CustomType.Setter
         public Builder productLicenseId(String productLicenseId) {
-            this.productLicenseId = Objects.requireNonNull(productLicenseId);
+            if (productLicenseId == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordsResult", "productLicenseId");
+            }
+            this.productLicenseId = productLicenseId;
             return this;
         }
         public GetLicenseRecordsResult build() {

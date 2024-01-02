@@ -5,6 +5,7 @@ package com.pulumi.oci.Oda;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -387,8 +388,12 @@ public final class OdaInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public OdaInstanceArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.shapeName = Objects.requireNonNull($.shapeName, "expected parameter 'shapeName' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("OdaInstanceArgs", "compartmentId");
+            }
+            if ($.shapeName == null) {
+                throw new MissingRequiredPropertyException("OdaInstanceArgs", "shapeName");
+            }
             return $;
         }
     }

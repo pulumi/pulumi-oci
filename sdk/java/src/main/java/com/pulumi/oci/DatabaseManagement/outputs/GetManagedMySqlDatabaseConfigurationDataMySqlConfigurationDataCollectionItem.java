@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
@@ -268,87 +269,138 @@ public final class GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDat
 
         @CustomType.Setter
         public Builder defaultValue(String defaultValue) {
-            this.defaultValue = Objects.requireNonNull(defaultValue);
+            if (defaultValue == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem", "defaultValue");
+            }
+            this.defaultValue = defaultValue;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder hostSet(String hostSet) {
-            this.hostSet = Objects.requireNonNull(hostSet);
+            if (hostSet == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem", "hostSet");
+            }
+            this.hostSet = hostSet;
             return this;
         }
         @CustomType.Setter
         public Builder isConfigurable(Boolean isConfigurable) {
-            this.isConfigurable = Objects.requireNonNull(isConfigurable);
+            if (isConfigurable == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem", "isConfigurable");
+            }
+            this.isConfigurable = isConfigurable;
             return this;
         }
         @CustomType.Setter
         public Builder isDynamic(Boolean isDynamic) {
-            this.isDynamic = Objects.requireNonNull(isDynamic);
+            if (isDynamic == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem", "isDynamic");
+            }
+            this.isDynamic = isDynamic;
             return this;
         }
         @CustomType.Setter
         public Builder isInit(Boolean isInit) {
-            this.isInit = Objects.requireNonNull(isInit);
+            if (isInit == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem", "isInit");
+            }
+            this.isInit = isInit;
             return this;
         }
         @CustomType.Setter
         public Builder maxValue(Double maxValue) {
-            this.maxValue = Objects.requireNonNull(maxValue);
+            if (maxValue == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem", "maxValue");
+            }
+            this.maxValue = maxValue;
             return this;
         }
         @CustomType.Setter
         public Builder minValue(Double minValue) {
-            this.minValue = Objects.requireNonNull(minValue);
+            if (minValue == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem", "minValue");
+            }
+            this.minValue = minValue;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+            if (path == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem", "path");
+            }
+            this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder possibleValues(String possibleValues) {
-            this.possibleValues = Objects.requireNonNull(possibleValues);
+            if (possibleValues == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem", "possibleValues");
+            }
+            this.possibleValues = possibleValues;
             return this;
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem", "source");
+            }
+            this.source = source;
             return this;
         }
         @CustomType.Setter
         public Builder supportedVersions(String supportedVersions) {
-            this.supportedVersions = Objects.requireNonNull(supportedVersions);
+            if (supportedVersions == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem", "supportedVersions");
+            }
+            this.supportedVersions = supportedVersions;
             return this;
         }
         @CustomType.Setter
         public Builder timeSet(String timeSet) {
-            this.timeSet = Objects.requireNonNull(timeSet);
+            if (timeSet == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem", "timeSet");
+            }
+            this.timeSet = timeSet;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder userSet(String userSet) {
-            this.userSet = Objects.requireNonNull(userSet);
+            if (userSet == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem", "userSet");
+            }
+            this.userSet = userSet;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem build() {

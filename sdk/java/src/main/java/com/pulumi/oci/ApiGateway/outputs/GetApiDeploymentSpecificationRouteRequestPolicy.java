@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRouteRequestPolicyAuthorization;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRouteRequestPolicyCor;
@@ -148,7 +149,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicy {
 
         @CustomType.Setter
         public Builder authorizations(List<GetApiDeploymentSpecificationRouteRequestPolicyAuthorization> authorizations) {
-            this.authorizations = Objects.requireNonNull(authorizations);
+            if (authorizations == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteRequestPolicy", "authorizations");
+            }
+            this.authorizations = authorizations;
             return this;
         }
         public Builder authorizations(GetApiDeploymentSpecificationRouteRequestPolicyAuthorization... authorizations) {
@@ -156,7 +160,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicy {
         }
         @CustomType.Setter
         public Builder bodyValidations(List<GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation> bodyValidations) {
-            this.bodyValidations = Objects.requireNonNull(bodyValidations);
+            if (bodyValidations == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteRequestPolicy", "bodyValidations");
+            }
+            this.bodyValidations = bodyValidations;
             return this;
         }
         public Builder bodyValidations(GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation... bodyValidations) {
@@ -164,7 +171,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicy {
         }
         @CustomType.Setter
         public Builder cors(List<GetApiDeploymentSpecificationRouteRequestPolicyCor> cors) {
-            this.cors = Objects.requireNonNull(cors);
+            if (cors == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteRequestPolicy", "cors");
+            }
+            this.cors = cors;
             return this;
         }
         public Builder cors(GetApiDeploymentSpecificationRouteRequestPolicyCor... cors) {
@@ -172,7 +182,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicy {
         }
         @CustomType.Setter
         public Builder headerTransformations(List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformation> headerTransformations) {
-            this.headerTransformations = Objects.requireNonNull(headerTransformations);
+            if (headerTransformations == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteRequestPolicy", "headerTransformations");
+            }
+            this.headerTransformations = headerTransformations;
             return this;
         }
         public Builder headerTransformations(GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformation... headerTransformations) {
@@ -180,7 +193,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicy {
         }
         @CustomType.Setter
         public Builder headerValidations(List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidation> headerValidations) {
-            this.headerValidations = Objects.requireNonNull(headerValidations);
+            if (headerValidations == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteRequestPolicy", "headerValidations");
+            }
+            this.headerValidations = headerValidations;
             return this;
         }
         public Builder headerValidations(GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidation... headerValidations) {
@@ -188,7 +204,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicy {
         }
         @CustomType.Setter
         public Builder queryParameterTransformations(List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation> queryParameterTransformations) {
-            this.queryParameterTransformations = Objects.requireNonNull(queryParameterTransformations);
+            if (queryParameterTransformations == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteRequestPolicy", "queryParameterTransformations");
+            }
+            this.queryParameterTransformations = queryParameterTransformations;
             return this;
         }
         public Builder queryParameterTransformations(GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation... queryParameterTransformations) {
@@ -196,7 +215,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicy {
         }
         @CustomType.Setter
         public Builder queryParameterValidations(List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidation> queryParameterValidations) {
-            this.queryParameterValidations = Objects.requireNonNull(queryParameterValidations);
+            if (queryParameterValidations == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteRequestPolicy", "queryParameterValidations");
+            }
+            this.queryParameterValidations = queryParameterValidations;
             return this;
         }
         public Builder queryParameterValidations(GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidation... queryParameterValidations) {
@@ -204,7 +226,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicy {
         }
         @CustomType.Setter
         public Builder responseCacheLookups(List<GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheLookup> responseCacheLookups) {
-            this.responseCacheLookups = Objects.requireNonNull(responseCacheLookups);
+            if (responseCacheLookups == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteRequestPolicy", "responseCacheLookups");
+            }
+            this.responseCacheLookups = responseCacheLookups;
             return this;
         }
         public Builder responseCacheLookups(GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheLookup... responseCacheLookups) {

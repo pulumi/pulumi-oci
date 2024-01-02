@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateVersionsCertificateVersionCollection;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateVersionsFilter;
 import java.lang.String;
@@ -95,12 +96,18 @@ public final class GetCertificateVersionsResult {
 
         @CustomType.Setter
         public Builder certificateId(String certificateId) {
-            this.certificateId = Objects.requireNonNull(certificateId);
+            if (certificateId == null) {
+              throw new MissingRequiredPropertyException("GetCertificateVersionsResult", "certificateId");
+            }
+            this.certificateId = certificateId;
             return this;
         }
         @CustomType.Setter
         public Builder certificateVersionCollections(List<GetCertificateVersionsCertificateVersionCollection> certificateVersionCollections) {
-            this.certificateVersionCollections = Objects.requireNonNull(certificateVersionCollections);
+            if (certificateVersionCollections == null) {
+              throw new MissingRequiredPropertyException("GetCertificateVersionsResult", "certificateVersionCollections");
+            }
+            this.certificateVersionCollections = certificateVersionCollections;
             return this;
         }
         public Builder certificateVersionCollections(GetCertificateVersionsCertificateVersionCollection... certificateVersionCollections) {
@@ -108,6 +115,7 @@ public final class GetCertificateVersionsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCertificateVersionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -116,11 +124,15 @@ public final class GetCertificateVersionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCertificateVersionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder versionNumber(@Nullable String versionNumber) {
+
             this.versionNumber = versionNumber;
             return this;
         }

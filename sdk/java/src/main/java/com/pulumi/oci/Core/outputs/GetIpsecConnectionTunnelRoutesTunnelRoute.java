@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -101,17 +102,26 @@ public final class GetIpsecConnectionTunnelRoutesTunnelRoute {
 
         @CustomType.Setter
         public Builder advertiser(String advertiser) {
-            this.advertiser = Objects.requireNonNull(advertiser);
+            if (advertiser == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelRoutesTunnelRoute", "advertiser");
+            }
+            this.advertiser = advertiser;
             return this;
         }
         @CustomType.Setter
         public Builder age(String age) {
-            this.age = Objects.requireNonNull(age);
+            if (age == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelRoutesTunnelRoute", "age");
+            }
+            this.age = age;
             return this;
         }
         @CustomType.Setter
         public Builder asPaths(List<Integer> asPaths) {
-            this.asPaths = Objects.requireNonNull(asPaths);
+            if (asPaths == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelRoutesTunnelRoute", "asPaths");
+            }
+            this.asPaths = asPaths;
             return this;
         }
         public Builder asPaths(Integer... asPaths) {
@@ -119,12 +129,18 @@ public final class GetIpsecConnectionTunnelRoutesTunnelRoute {
         }
         @CustomType.Setter
         public Builder isBestPath(Boolean isBestPath) {
-            this.isBestPath = Objects.requireNonNull(isBestPath);
+            if (isBestPath == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelRoutesTunnelRoute", "isBestPath");
+            }
+            this.isBestPath = isBestPath;
             return this;
         }
         @CustomType.Setter
         public Builder prefix(String prefix) {
-            this.prefix = Objects.requireNonNull(prefix);
+            if (prefix == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelRoutesTunnelRoute", "prefix");
+            }
+            this.prefix = prefix;
             return this;
         }
         public GetIpsecConnectionTunnelRoutesTunnelRoute build() {

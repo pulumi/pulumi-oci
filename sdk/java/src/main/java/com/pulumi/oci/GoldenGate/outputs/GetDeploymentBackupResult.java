@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Object;
@@ -318,107 +319,170 @@ public final class GetDeploymentBackupResult {
 
         @CustomType.Setter
         public Builder backupType(String backupType) {
-            this.backupType = Objects.requireNonNull(backupType);
+            if (backupType == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "backupType");
+            }
+            this.backupType = backupType;
             return this;
         }
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentBackupId(String deploymentBackupId) {
-            this.deploymentBackupId = Objects.requireNonNull(deploymentBackupId);
+            if (deploymentBackupId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "deploymentBackupId");
+            }
+            this.deploymentBackupId = deploymentBackupId;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentId(String deploymentId) {
-            this.deploymentId = Objects.requireNonNull(deploymentId);
+            if (deploymentId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "deploymentId");
+            }
+            this.deploymentId = deploymentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAutomatic(Boolean isAutomatic) {
-            this.isAutomatic = Objects.requireNonNull(isAutomatic);
+            if (isAutomatic == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "isAutomatic");
+            }
+            this.isAutomatic = isAutomatic;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+            if (object == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "object");
+            }
+            this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder oggVersion(String oggVersion) {
-            this.oggVersion = Objects.requireNonNull(oggVersion);
+            if (oggVersion == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "oggVersion");
+            }
+            this.oggVersion = oggVersion;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInBytes(Double sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+            if (sizeInBytes == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "sizeInBytes");
+            }
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeBackupFinished(String timeBackupFinished) {
-            this.timeBackupFinished = Objects.requireNonNull(timeBackupFinished);
+            if (timeBackupFinished == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "timeBackupFinished");
+            }
+            this.timeBackupFinished = timeBackupFinished;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfBackup(String timeOfBackup) {
-            this.timeOfBackup = Objects.requireNonNull(timeOfBackup);
+            if (timeOfBackup == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "timeOfBackup");
+            }
+            this.timeOfBackup = timeOfBackup;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDeploymentBackupResult build() {

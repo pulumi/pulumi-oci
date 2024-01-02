@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDatabasePdbConversionHistoryEntriesFilter;
 import com.pulumi.oci.Database.outputs.GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry;
 import java.lang.String;
@@ -93,11 +94,15 @@ public final class GetDatabasePdbConversionHistoryEntriesResult {
 
         @CustomType.Setter
         public Builder databaseId(String databaseId) {
-            this.databaseId = Objects.requireNonNull(databaseId);
+            if (databaseId == null) {
+              throw new MissingRequiredPropertyException("GetDatabasePdbConversionHistoryEntriesResult", "databaseId");
+            }
+            this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDatabasePdbConversionHistoryEntriesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -106,17 +111,24 @@ public final class GetDatabasePdbConversionHistoryEntriesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDatabasePdbConversionHistoryEntriesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder pdbConversionAction(@Nullable String pdbConversionAction) {
+
             this.pdbConversionAction = pdbConversionAction;
             return this;
         }
         @CustomType.Setter
         public Builder pdbConversionHistoryEntries(List<GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry> pdbConversionHistoryEntries) {
-            this.pdbConversionHistoryEntries = Objects.requireNonNull(pdbConversionHistoryEntries);
+            if (pdbConversionHistoryEntries == null) {
+              throw new MissingRequiredPropertyException("GetDatabasePdbConversionHistoryEntriesResult", "pdbConversionHistoryEntries");
+            }
+            this.pdbConversionHistoryEntries = pdbConversionHistoryEntries;
             return this;
         }
         public Builder pdbConversionHistoryEntries(GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry... pdbConversionHistoryEntries) {
@@ -124,6 +136,7 @@ public final class GetDatabasePdbConversionHistoryEntriesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.inputs.TriggerActionArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -398,9 +399,15 @@ public final class TriggerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public TriggerArgs build() {
-            $.actions = Objects.requireNonNull($.actions, "expected parameter 'actions' to be non-null");
-            $.projectId = Objects.requireNonNull($.projectId, "expected parameter 'projectId' to be non-null");
-            $.triggerSource = Objects.requireNonNull($.triggerSource, "expected parameter 'triggerSource' to be non-null");
+            if ($.actions == null) {
+                throw new MissingRequiredPropertyException("TriggerArgs", "actions");
+            }
+            if ($.projectId == null) {
+                throw new MissingRequiredPropertyException("TriggerArgs", "projectId");
+            }
+            if ($.triggerSource == null) {
+                throw new MissingRequiredPropertyException("TriggerArgs", "triggerSource");
+            }
             return $;
         }
     }

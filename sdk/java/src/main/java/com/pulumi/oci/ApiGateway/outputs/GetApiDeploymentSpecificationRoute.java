@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRouteBackend;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRouteLoggingPolicy;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRouteRequestPolicy;
@@ -117,7 +118,10 @@ public final class GetApiDeploymentSpecificationRoute {
 
         @CustomType.Setter
         public Builder backends(List<GetApiDeploymentSpecificationRouteBackend> backends) {
-            this.backends = Objects.requireNonNull(backends);
+            if (backends == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRoute", "backends");
+            }
+            this.backends = backends;
             return this;
         }
         public Builder backends(GetApiDeploymentSpecificationRouteBackend... backends) {
@@ -125,7 +129,10 @@ public final class GetApiDeploymentSpecificationRoute {
         }
         @CustomType.Setter
         public Builder loggingPolicies(List<GetApiDeploymentSpecificationRouteLoggingPolicy> loggingPolicies) {
-            this.loggingPolicies = Objects.requireNonNull(loggingPolicies);
+            if (loggingPolicies == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRoute", "loggingPolicies");
+            }
+            this.loggingPolicies = loggingPolicies;
             return this;
         }
         public Builder loggingPolicies(GetApiDeploymentSpecificationRouteLoggingPolicy... loggingPolicies) {
@@ -133,7 +140,10 @@ public final class GetApiDeploymentSpecificationRoute {
         }
         @CustomType.Setter
         public Builder methods(List<String> methods) {
-            this.methods = Objects.requireNonNull(methods);
+            if (methods == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRoute", "methods");
+            }
+            this.methods = methods;
             return this;
         }
         public Builder methods(String... methods) {
@@ -141,12 +151,18 @@ public final class GetApiDeploymentSpecificationRoute {
         }
         @CustomType.Setter
         public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+            if (path == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRoute", "path");
+            }
+            this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder requestPolicies(List<GetApiDeploymentSpecificationRouteRequestPolicy> requestPolicies) {
-            this.requestPolicies = Objects.requireNonNull(requestPolicies);
+            if (requestPolicies == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRoute", "requestPolicies");
+            }
+            this.requestPolicies = requestPolicies;
             return this;
         }
         public Builder requestPolicies(GetApiDeploymentSpecificationRouteRequestPolicy... requestPolicies) {
@@ -154,7 +170,10 @@ public final class GetApiDeploymentSpecificationRoute {
         }
         @CustomType.Setter
         public Builder responsePolicies(List<GetApiDeploymentSpecificationRouteResponsePolicy> responsePolicies) {
-            this.responsePolicies = Objects.requireNonNull(responsePolicies);
+            if (responsePolicies == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRoute", "responsePolicies");
+            }
+            this.responsePolicies = responsePolicies;
             return this;
         }
         public Builder responsePolicies(GetApiDeploymentSpecificationRouteResponsePolicy... responsePolicies) {

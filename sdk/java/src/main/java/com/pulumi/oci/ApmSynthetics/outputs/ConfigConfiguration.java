@@ -277,56 +277,67 @@ public final class ConfigConfiguration {
 
         @CustomType.Setter
         public Builder clientCertificateDetails(@Nullable ConfigConfigurationClientCertificateDetails clientCertificateDetails) {
+
             this.clientCertificateDetails = clientCertificateDetails;
             return this;
         }
         @CustomType.Setter
         public Builder configType(@Nullable String configType) {
+
             this.configType = configType;
             return this;
         }
         @CustomType.Setter
         public Builder dnsConfiguration(@Nullable ConfigConfigurationDnsConfiguration dnsConfiguration) {
+
             this.dnsConfiguration = dnsConfiguration;
             return this;
         }
         @CustomType.Setter
         public Builder isCertificateValidationEnabled(@Nullable Boolean isCertificateValidationEnabled) {
+
             this.isCertificateValidationEnabled = isCertificateValidationEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isDefaultSnapshotEnabled(@Nullable Boolean isDefaultSnapshotEnabled) {
+
             this.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isFailureRetried(@Nullable Boolean isFailureRetried) {
+
             this.isFailureRetried = isFailureRetried;
             return this;
         }
         @CustomType.Setter
         public Builder isRedirectionEnabled(@Nullable Boolean isRedirectionEnabled) {
+
             this.isRedirectionEnabled = isRedirectionEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder networkConfiguration(@Nullable ConfigConfigurationNetworkConfiguration networkConfiguration) {
+
             this.networkConfiguration = networkConfiguration;
             return this;
         }
         @CustomType.Setter
         public Builder reqAuthenticationDetails(@Nullable ConfigConfigurationReqAuthenticationDetails reqAuthenticationDetails) {
+
             this.reqAuthenticationDetails = reqAuthenticationDetails;
             return this;
         }
         @CustomType.Setter
         public Builder reqAuthenticationScheme(@Nullable String reqAuthenticationScheme) {
+
             this.reqAuthenticationScheme = reqAuthenticationScheme;
             return this;
         }
         @CustomType.Setter
         public Builder requestHeaders(@Nullable List<ConfigConfigurationRequestHeader> requestHeaders) {
+
             this.requestHeaders = requestHeaders;
             return this;
         }
@@ -335,16 +346,19 @@ public final class ConfigConfiguration {
         }
         @CustomType.Setter
         public Builder requestMethod(@Nullable String requestMethod) {
+
             this.requestMethod = requestMethod;
             return this;
         }
         @CustomType.Setter
         public Builder requestPostBody(@Nullable String requestPostBody) {
+
             this.requestPostBody = requestPostBody;
             return this;
         }
         @CustomType.Setter
         public Builder requestQueryParams(@Nullable List<ConfigConfigurationRequestQueryParam> requestQueryParams) {
+
             this.requestQueryParams = requestQueryParams;
             return this;
         }
@@ -353,6 +367,7 @@ public final class ConfigConfiguration {
         }
         @CustomType.Setter
         public Builder verifyResponseCodes(@Nullable List<String> verifyResponseCodes) {
+
             this.verifyResponseCodes = verifyResponseCodes;
             return this;
         }
@@ -361,11 +376,13 @@ public final class ConfigConfiguration {
         }
         @CustomType.Setter
         public Builder verifyResponseContent(@Nullable String verifyResponseContent) {
+
             this.verifyResponseContent = verifyResponseContent;
             return this;
         }
         @CustomType.Setter
         public Builder verifyTexts(@Nullable List<ConfigConfigurationVerifyText> verifyTexts) {
+
             this.verifyTexts = verifyTexts;
             return this;
         }

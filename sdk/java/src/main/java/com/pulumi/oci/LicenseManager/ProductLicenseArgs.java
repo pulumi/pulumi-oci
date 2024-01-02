@@ -5,6 +5,7 @@ package com.pulumi.oci.LicenseManager;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LicenseManager.inputs.ProductLicenseImageArgs;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -362,10 +363,18 @@ public final class ProductLicenseArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public ProductLicenseArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.isVendorOracle = Objects.requireNonNull($.isVendorOracle, "expected parameter 'isVendorOracle' to be non-null");
-            $.licenseUnit = Objects.requireNonNull($.licenseUnit, "expected parameter 'licenseUnit' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ProductLicenseArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ProductLicenseArgs", "displayName");
+            }
+            if ($.isVendorOracle == null) {
+                throw new MissingRequiredPropertyException("ProductLicenseArgs", "isVendorOracle");
+            }
+            if ($.licenseUnit == null) {
+                throw new MissingRequiredPropertyException("ProductLicenseArgs", "licenseUnit");
+            }
             return $;
         }
     }

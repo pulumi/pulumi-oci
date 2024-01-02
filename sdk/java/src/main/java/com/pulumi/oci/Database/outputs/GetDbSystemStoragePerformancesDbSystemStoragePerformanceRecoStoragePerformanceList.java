@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance;
 import com.pulumi.oci.Database.outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance;
 import java.lang.Integer;
@@ -73,7 +74,10 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoS
 
         @CustomType.Setter
         public Builder balancedDiskPerformances(List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance> balancedDiskPerformances) {
-            this.balancedDiskPerformances = Objects.requireNonNull(balancedDiskPerformances);
+            if (balancedDiskPerformances == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList", "balancedDiskPerformances");
+            }
+            this.balancedDiskPerformances = balancedDiskPerformances;
             return this;
         }
         public Builder balancedDiskPerformances(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance... balancedDiskPerformances) {
@@ -81,7 +85,10 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoS
         }
         @CustomType.Setter
         public Builder highDiskPerformances(List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance> highDiskPerformances) {
-            this.highDiskPerformances = Objects.requireNonNull(highDiskPerformances);
+            if (highDiskPerformances == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList", "highDiskPerformances");
+            }
+            this.highDiskPerformances = highDiskPerformances;
             return this;
         }
         public Builder highDiskPerformances(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance... highDiskPerformances) {
@@ -89,7 +96,10 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoS
         }
         @CustomType.Setter
         public Builder sizeInGbs(Integer sizeInGbs) {
-            this.sizeInGbs = Objects.requireNonNull(sizeInGbs);
+            if (sizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList", "sizeInGbs");
+            }
+            this.sizeInGbs = sizeInGbs;
             return this;
         }
         public GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList build() {

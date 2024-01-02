@@ -58,11 +58,13 @@ public final class BdsInstanceNodeAttachedBlockVolume {
 
         @CustomType.Setter
         public Builder volumeAttachmentId(@Nullable String volumeAttachmentId) {
+
             this.volumeAttachmentId = volumeAttachmentId;
             return this;
         }
         @CustomType.Setter
         public Builder volumeSizeInGbs(@Nullable String volumeSizeInGbs) {
+
             this.volumeSizeInGbs = volumeSizeInGbs;
             return this;
         }

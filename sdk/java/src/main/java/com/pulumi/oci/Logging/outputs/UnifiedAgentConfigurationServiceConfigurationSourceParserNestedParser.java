@@ -87,21 +87,25 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
 
         @CustomType.Setter
         public Builder fieldTimeKey(@Nullable String fieldTimeKey) {
+
             this.fieldTimeKey = fieldTimeKey;
             return this;
         }
         @CustomType.Setter
         public Builder isKeepTimeKey(@Nullable Boolean isKeepTimeKey) {
+
             this.isKeepTimeKey = isKeepTimeKey;
             return this;
         }
         @CustomType.Setter
         public Builder timeFormat(@Nullable String timeFormat) {
+
             this.timeFormat = timeFormat;
             return this;
         }
         @CustomType.Setter
         public Builder timeType(@Nullable String timeType) {
+
             this.timeType = timeType;
             return this;
         }

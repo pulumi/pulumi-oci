@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiLanguage.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiLanguage.inputs.GetEndpointsFilter;
 import java.lang.String;
 import java.util.List;
@@ -219,7 +220,9 @@ public final class GetEndpointsPlainArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetEndpointsPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetEndpointsPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

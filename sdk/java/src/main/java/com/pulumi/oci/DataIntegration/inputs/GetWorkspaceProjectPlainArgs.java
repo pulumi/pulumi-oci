@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetWorkspaceProjectPlainArgs extends com.pulumi.resources.Inv
         }
 
         public GetWorkspaceProjectPlainArgs build() {
-            $.projectKey = Objects.requireNonNull($.projectKey, "expected parameter 'projectKey' to be non-null");
-            $.workspaceId = Objects.requireNonNull($.workspaceId, "expected parameter 'workspaceId' to be non-null");
+            if ($.projectKey == null) {
+                throw new MissingRequiredPropertyException("GetWorkspaceProjectPlainArgs", "projectKey");
+            }
+            if ($.workspaceId == null) {
+                throw new MissingRequiredPropertyException("GetWorkspaceProjectPlainArgs", "workspaceId");
+            }
             return $;
         }
     }

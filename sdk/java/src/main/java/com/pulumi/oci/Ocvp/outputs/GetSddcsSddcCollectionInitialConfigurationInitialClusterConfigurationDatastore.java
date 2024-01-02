@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -41,7 +42,10 @@ public final class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfi
 
         @CustomType.Setter
         public Builder blockVolumeIds(List<String> blockVolumeIds) {
-            this.blockVolumeIds = Objects.requireNonNull(blockVolumeIds);
+            if (blockVolumeIds == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore", "blockVolumeIds");
+            }
+            this.blockVolumeIds = blockVolumeIds;
             return this;
         }
         public Builder blockVolumeIds(String... blockVolumeIds) {
@@ -49,7 +53,10 @@ public final class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfi
         }
         @CustomType.Setter
         public Builder datastoreType(String datastoreType) {
-            this.datastoreType = Objects.requireNonNull(datastoreType);
+            if (datastoreType == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore", "datastoreType");
+            }
+            this.datastoreType = datastoreType;
             return this;
         }
         public GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore build() {

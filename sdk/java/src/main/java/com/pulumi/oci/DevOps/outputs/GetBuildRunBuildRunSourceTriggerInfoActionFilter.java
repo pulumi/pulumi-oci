@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude;
 import java.lang.String;
@@ -79,7 +80,10 @@ public final class GetBuildRunBuildRunSourceTriggerInfoActionFilter {
 
         @CustomType.Setter
         public Builder events(List<String> events) {
-            this.events = Objects.requireNonNull(events);
+            if (events == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildRunSourceTriggerInfoActionFilter", "events");
+            }
+            this.events = events;
             return this;
         }
         public Builder events(String... events) {
@@ -87,7 +91,10 @@ public final class GetBuildRunBuildRunSourceTriggerInfoActionFilter {
         }
         @CustomType.Setter
         public Builder excludes(List<GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude> excludes) {
-            this.excludes = Objects.requireNonNull(excludes);
+            if (excludes == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildRunSourceTriggerInfoActionFilter", "excludes");
+            }
+            this.excludes = excludes;
             return this;
         }
         public Builder excludes(GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude... excludes) {
@@ -95,7 +102,10 @@ public final class GetBuildRunBuildRunSourceTriggerInfoActionFilter {
         }
         @CustomType.Setter
         public Builder includes(List<GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude> includes) {
-            this.includes = Objects.requireNonNull(includes);
+            if (includes == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildRunSourceTriggerInfoActionFilter", "includes");
+            }
+            this.includes = includes;
             return this;
         }
         public Builder includes(GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude... includes) {
@@ -103,7 +113,10 @@ public final class GetBuildRunBuildRunSourceTriggerInfoActionFilter {
         }
         @CustomType.Setter
         public Builder triggerSource(String triggerSource) {
-            this.triggerSource = Objects.requireNonNull(triggerSource);
+            if (triggerSource == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildRunSourceTriggerInfoActionFilter", "triggerSource");
+            }
+            this.triggerSource = triggerSource;
             return this;
         }
         public GetBuildRunBuildRunSourceTriggerInfoActionFilter build() {

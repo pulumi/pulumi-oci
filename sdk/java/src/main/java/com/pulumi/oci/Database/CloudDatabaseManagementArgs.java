@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.CloudDatabaseManagementCredentialdetailsArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -408,12 +409,24 @@ public final class CloudDatabaseManagementArgs extends com.pulumi.resources.Reso
         }
 
         public CloudDatabaseManagementArgs build() {
-            $.credentialdetails = Objects.requireNonNull($.credentialdetails, "expected parameter 'credentialdetails' to be non-null");
-            $.databaseId = Objects.requireNonNull($.databaseId, "expected parameter 'databaseId' to be non-null");
-            $.enableManagement = Objects.requireNonNull($.enableManagement, "expected parameter 'enableManagement' to be non-null");
-            $.managementType = Objects.requireNonNull($.managementType, "expected parameter 'managementType' to be non-null");
-            $.privateEndPointId = Objects.requireNonNull($.privateEndPointId, "expected parameter 'privateEndPointId' to be non-null");
-            $.serviceName = Objects.requireNonNull($.serviceName, "expected parameter 'serviceName' to be non-null");
+            if ($.credentialdetails == null) {
+                throw new MissingRequiredPropertyException("CloudDatabaseManagementArgs", "credentialdetails");
+            }
+            if ($.databaseId == null) {
+                throw new MissingRequiredPropertyException("CloudDatabaseManagementArgs", "databaseId");
+            }
+            if ($.enableManagement == null) {
+                throw new MissingRequiredPropertyException("CloudDatabaseManagementArgs", "enableManagement");
+            }
+            if ($.managementType == null) {
+                throw new MissingRequiredPropertyException("CloudDatabaseManagementArgs", "managementType");
+            }
+            if ($.privateEndPointId == null) {
+                throw new MissingRequiredPropertyException("CloudDatabaseManagementArgs", "privateEndPointId");
+            }
+            if ($.serviceName == null) {
+                throw new MissingRequiredPropertyException("CloudDatabaseManagementArgs", "serviceName");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentAdminUsersAdminUserCollection;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentAdminUsersFilter;
 import java.lang.String;
@@ -72,7 +73,10 @@ public final class GetFusionEnvironmentAdminUsersResult {
 
         @CustomType.Setter
         public Builder adminUserCollections(List<GetFusionEnvironmentAdminUsersAdminUserCollection> adminUserCollections) {
-            this.adminUserCollections = Objects.requireNonNull(adminUserCollections);
+            if (adminUserCollections == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentAdminUsersResult", "adminUserCollections");
+            }
+            this.adminUserCollections = adminUserCollections;
             return this;
         }
         public Builder adminUserCollections(GetFusionEnvironmentAdminUsersAdminUserCollection... adminUserCollections) {
@@ -80,6 +84,7 @@ public final class GetFusionEnvironmentAdminUsersResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetFusionEnvironmentAdminUsersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -88,12 +93,18 @@ public final class GetFusionEnvironmentAdminUsersResult {
         }
         @CustomType.Setter
         public Builder fusionEnvironmentId(String fusionEnvironmentId) {
-            this.fusionEnvironmentId = Objects.requireNonNull(fusionEnvironmentId);
+            if (fusionEnvironmentId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentAdminUsersResult", "fusionEnvironmentId");
+            }
+            this.fusionEnvironmentId = fusionEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentAdminUsersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetFusionEnvironmentAdminUsersResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -105,32 +106,50 @@ public final class GetLogAnalyticsEntitiesSummaryResult {
 
         @CustomType.Setter
         public Builder activeEntitiesCount(Integer activeEntitiesCount) {
-            this.activeEntitiesCount = Objects.requireNonNull(activeEntitiesCount);
+            if (activeEntitiesCount == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesSummaryResult", "activeEntitiesCount");
+            }
+            this.activeEntitiesCount = activeEntitiesCount;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesSummaryResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder entitiesWithHasLogsCollectedCount(Integer entitiesWithHasLogsCollectedCount) {
-            this.entitiesWithHasLogsCollectedCount = Objects.requireNonNull(entitiesWithHasLogsCollectedCount);
+            if (entitiesWithHasLogsCollectedCount == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesSummaryResult", "entitiesWithHasLogsCollectedCount");
+            }
+            this.entitiesWithHasLogsCollectedCount = entitiesWithHasLogsCollectedCount;
             return this;
         }
         @CustomType.Setter
         public Builder entitiesWithManagementAgentCount(Integer entitiesWithManagementAgentCount) {
-            this.entitiesWithManagementAgentCount = Objects.requireNonNull(entitiesWithManagementAgentCount);
+            if (entitiesWithManagementAgentCount == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesSummaryResult", "entitiesWithManagementAgentCount");
+            }
+            this.entitiesWithManagementAgentCount = entitiesWithManagementAgentCount;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesSummaryResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesSummaryResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         public GetLogAnalyticsEntitiesSummaryResult build() {

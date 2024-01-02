@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeColle
 
         @CustomType.Setter
         public Builder archivedVolume(String archivedVolume) {
-            this.archivedVolume = Objects.requireNonNull(archivedVolume);
+            if (archivedVolume == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem", "archivedVolume");
+            }
+            this.archivedVolume = archivedVolume;
             return this;
         }
         @CustomType.Setter
         public Builder auditProfileId(String auditProfileId) {
-            this.auditProfileId = Objects.requireNonNull(auditProfileId);
+            if (auditProfileId == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem", "auditProfileId");
+            }
+            this.auditProfileId = auditProfileId;
             return this;
         }
         @CustomType.Setter
         public Builder monthInConsideration(String monthInConsideration) {
-            this.monthInConsideration = Objects.requireNonNull(monthInConsideration);
+            if (monthInConsideration == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem", "monthInConsideration");
+            }
+            this.monthInConsideration = monthInConsideration;
             return this;
         }
         @CustomType.Setter
         public Builder onlineVolume(String onlineVolume) {
-            this.onlineVolume = Objects.requireNonNull(onlineVolume);
+            if (onlineVolume == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem", "onlineVolume");
+            }
+            this.onlineVolume = onlineVolume;
             return this;
         }
         public GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem build() {

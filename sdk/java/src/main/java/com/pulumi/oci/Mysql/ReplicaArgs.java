@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.inputs.ReplicaReplicaOverridesArgs;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -302,7 +303,9 @@ public final class ReplicaArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ReplicaArgs build() {
-            $.dbSystemId = Objects.requireNonNull($.dbSystemId, "expected parameter 'dbSystemId' to be non-null");
+            if ($.dbSystemId == null) {
+                throw new MissingRequiredPropertyException("ReplicaArgs", "dbSystemId");
+            }
             return $;
         }
     }

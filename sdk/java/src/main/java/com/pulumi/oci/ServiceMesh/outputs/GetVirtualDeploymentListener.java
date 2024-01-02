@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetVirtualDeploymentListener {
 
         @CustomType.Setter
         public Builder idleTimeoutInMs(String idleTimeoutInMs) {
-            this.idleTimeoutInMs = Objects.requireNonNull(idleTimeoutInMs);
+            if (idleTimeoutInMs == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentListener", "idleTimeoutInMs");
+            }
+            this.idleTimeoutInMs = idleTimeoutInMs;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentListener", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentListener", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder requestTimeoutInMs(String requestTimeoutInMs) {
-            this.requestTimeoutInMs = Objects.requireNonNull(requestTimeoutInMs);
+            if (requestTimeoutInMs == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentListener", "requestTimeoutInMs");
+            }
+            this.requestTimeoutInMs = requestTimeoutInMs;
             return this;
         }
         public GetVirtualDeploymentListener build() {

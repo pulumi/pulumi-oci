@@ -4,6 +4,7 @@
 package com.pulumi.oci.Integration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Integration.outputs.GetIntegrationInstancesFilter;
 import com.pulumi.oci.Integration.outputs.GetIntegrationInstancesIntegrationInstance;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetIntegrationInstancesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetIntegrationInstancesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +133,18 @@ public final class GetIntegrationInstancesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder integrationInstances(List<GetIntegrationInstancesIntegrationInstance> integrationInstances) {
-            this.integrationInstances = Objects.requireNonNull(integrationInstances);
+            if (integrationInstances == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesResult", "integrationInstances");
+            }
+            this.integrationInstances = integrationInstances;
             return this;
         }
         public Builder integrationInstances(GetIntegrationInstancesIntegrationInstance... integrationInstances) {
@@ -140,6 +152,7 @@ public final class GetIntegrationInstancesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetDeployStageCanaryStrategy {
 
         @CustomType.Setter
         public Builder ingressName(String ingressName) {
-            this.ingressName = Objects.requireNonNull(ingressName);
+            if (ingressName == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageCanaryStrategy", "ingressName");
+            }
+            this.ingressName = ingressName;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageCanaryStrategy", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder strategyType(String strategyType) {
-            this.strategyType = Objects.requireNonNull(strategyType);
+            if (strategyType == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageCanaryStrategy", "strategyType");
+            }
+            this.strategyType = strategyType;
             return this;
         }
         public GetDeployStageCanaryStrategy build() {

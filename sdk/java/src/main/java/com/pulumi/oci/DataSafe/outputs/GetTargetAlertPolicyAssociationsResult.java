@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetTargetAlertPolicyAssociationsFilter;
 import com.pulumi.oci.DataSafe.outputs.GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection;
 import java.lang.Boolean;
@@ -146,26 +147,33 @@ public final class GetTargetAlertPolicyAssociationsResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder alertPolicyId(@Nullable String alertPolicyId) {
+
             this.alertPolicyId = alertPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAlertPolicyAssociationsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetTargetAlertPolicyAssociationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -174,17 +182,24 @@ public final class GetTargetAlertPolicyAssociationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTargetAlertPolicyAssociationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targetAlertPolicyAssociationCollections(List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection> targetAlertPolicyAssociationCollections) {
-            this.targetAlertPolicyAssociationCollections = Objects.requireNonNull(targetAlertPolicyAssociationCollections);
+            if (targetAlertPolicyAssociationCollections == null) {
+              throw new MissingRequiredPropertyException("GetTargetAlertPolicyAssociationsResult", "targetAlertPolicyAssociationCollections");
+            }
+            this.targetAlertPolicyAssociationCollections = targetAlertPolicyAssociationCollections;
             return this;
         }
         public Builder targetAlertPolicyAssociationCollections(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection... targetAlertPolicyAssociationCollections) {
@@ -192,21 +207,25 @@ public final class GetTargetAlertPolicyAssociationsResult {
         }
         @CustomType.Setter
         public Builder targetAlertPolicyAssociationId(@Nullable String targetAlertPolicyAssociationId) {
+
             this.targetAlertPolicyAssociationId = targetAlertPolicyAssociationId;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
+
             this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
+
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
+
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }

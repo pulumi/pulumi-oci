@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.outputs.GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging;
 import com.pulumi.oci.ServiceMesh.outputs.GetVirtualDeploymentsVirtualDeploymentCollectionItemListener;
 import com.pulumi.oci.ServiceMesh.outputs.GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery;
@@ -244,7 +245,10 @@ public final class GetVirtualDeploymentsVirtualDeploymentCollectionItem {
 
         @CustomType.Setter
         public Builder accessLoggings(List<GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging> accessLoggings) {
-            this.accessLoggings = Objects.requireNonNull(accessLoggings);
+            if (accessLoggings == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentsVirtualDeploymentCollectionItem", "accessLoggings");
+            }
+            this.accessLoggings = accessLoggings;
             return this;
         }
         public Builder accessLoggings(GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging... accessLoggings) {
@@ -252,37 +256,58 @@ public final class GetVirtualDeploymentsVirtualDeploymentCollectionItem {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentsVirtualDeploymentCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentsVirtualDeploymentCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentsVirtualDeploymentCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentsVirtualDeploymentCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentsVirtualDeploymentCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentsVirtualDeploymentCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder listeners(List<GetVirtualDeploymentsVirtualDeploymentCollectionItemListener> listeners) {
-            this.listeners = Objects.requireNonNull(listeners);
+            if (listeners == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentsVirtualDeploymentCollectionItem", "listeners");
+            }
+            this.listeners = listeners;
             return this;
         }
         public Builder listeners(GetVirtualDeploymentsVirtualDeploymentCollectionItemListener... listeners) {
@@ -290,12 +315,18 @@ public final class GetVirtualDeploymentsVirtualDeploymentCollectionItem {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentsVirtualDeploymentCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder serviceDiscoveries(List<GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery> serviceDiscoveries) {
-            this.serviceDiscoveries = Objects.requireNonNull(serviceDiscoveries);
+            if (serviceDiscoveries == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentsVirtualDeploymentCollectionItem", "serviceDiscoveries");
+            }
+            this.serviceDiscoveries = serviceDiscoveries;
             return this;
         }
         public Builder serviceDiscoveries(GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery... serviceDiscoveries) {
@@ -303,27 +334,42 @@ public final class GetVirtualDeploymentsVirtualDeploymentCollectionItem {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentsVirtualDeploymentCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentsVirtualDeploymentCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentsVirtualDeploymentCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentsVirtualDeploymentCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder virtualServiceId(String virtualServiceId) {
-            this.virtualServiceId = Objects.requireNonNull(virtualServiceId);
+            if (virtualServiceId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentsVirtualDeploymentCollectionItem", "virtualServiceId");
+            }
+            this.virtualServiceId = virtualServiceId;
             return this;
         }
         public GetVirtualDeploymentsVirtualDeploymentCollectionItem build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetMysqlDbSystemMaintenance {
 
         @CustomType.Setter
         public Builder windowStartTime(String windowStartTime) {
-            this.windowStartTime = Objects.requireNonNull(windowStartTime);
+            if (windowStartTime == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemMaintenance", "windowStartTime");
+            }
+            this.windowStartTime = windowStartTime;
             return this;
         }
         public GetMysqlDbSystemMaintenance build() {

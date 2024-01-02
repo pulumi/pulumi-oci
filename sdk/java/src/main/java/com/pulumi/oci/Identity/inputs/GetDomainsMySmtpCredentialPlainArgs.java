@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -146,8 +147,12 @@ public final class GetDomainsMySmtpCredentialPlainArgs extends com.pulumi.resour
         }
 
         public GetDomainsMySmtpCredentialPlainArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.mySmtpCredentialId = Objects.requireNonNull($.mySmtpCredentialId, "expected parameter 'mySmtpCredentialId' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialPlainArgs", "idcsEndpoint");
+            }
+            if ($.mySmtpCredentialId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsMySmtpCredentialPlainArgs", "mySmtpCredentialId");
+            }
             return $;
         }
     }

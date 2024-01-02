@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetDomainsIdentitySettingsIdentitySettingMyProfile {
 
         @CustomType.Setter
         public Builder allowEndUsersToChangeTheirPassword(Boolean allowEndUsersToChangeTheirPassword) {
-            this.allowEndUsersToChangeTheirPassword = Objects.requireNonNull(allowEndUsersToChangeTheirPassword);
+            if (allowEndUsersToChangeTheirPassword == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentitySettingsIdentitySettingMyProfile", "allowEndUsersToChangeTheirPassword");
+            }
+            this.allowEndUsersToChangeTheirPassword = allowEndUsersToChangeTheirPassword;
             return this;
         }
         @CustomType.Setter
         public Builder allowEndUsersToLinkTheirSupportAccount(Boolean allowEndUsersToLinkTheirSupportAccount) {
-            this.allowEndUsersToLinkTheirSupportAccount = Objects.requireNonNull(allowEndUsersToLinkTheirSupportAccount);
+            if (allowEndUsersToLinkTheirSupportAccount == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentitySettingsIdentitySettingMyProfile", "allowEndUsersToLinkTheirSupportAccount");
+            }
+            this.allowEndUsersToLinkTheirSupportAccount = allowEndUsersToLinkTheirSupportAccount;
             return this;
         }
         @CustomType.Setter
         public Builder allowEndUsersToManageTheirCapabilities(Boolean allowEndUsersToManageTheirCapabilities) {
-            this.allowEndUsersToManageTheirCapabilities = Objects.requireNonNull(allowEndUsersToManageTheirCapabilities);
+            if (allowEndUsersToManageTheirCapabilities == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentitySettingsIdentitySettingMyProfile", "allowEndUsersToManageTheirCapabilities");
+            }
+            this.allowEndUsersToManageTheirCapabilities = allowEndUsersToManageTheirCapabilities;
             return this;
         }
         @CustomType.Setter
         public Builder allowEndUsersToUpdateTheirSecuritySettings(Boolean allowEndUsersToUpdateTheirSecuritySettings) {
-            this.allowEndUsersToUpdateTheirSecuritySettings = Objects.requireNonNull(allowEndUsersToUpdateTheirSecuritySettings);
+            if (allowEndUsersToUpdateTheirSecuritySettings == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentitySettingsIdentitySettingMyProfile", "allowEndUsersToUpdateTheirSecuritySettings");
+            }
+            this.allowEndUsersToUpdateTheirSecuritySettings = allowEndUsersToUpdateTheirSecuritySettings;
             return this;
         }
         public GetDomainsIdentitySettingsIdentitySettingMyProfile build() {

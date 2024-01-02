@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialMeta;
@@ -358,42 +359,66 @@ public final class GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential {
 
         @CustomType.Setter
         public Builder authorization(String authorization) {
-            this.authorization = Objects.requireNonNull(authorization);
+            if (authorization == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "authorization");
+            }
+            this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder expiresOn(String expiresOn) {
-            this.expiresOn = Objects.requireNonNull(expiresOn);
+            if (expiresOn == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "expiresOn");
+            }
+            this.expiresOn = expiresOn;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialIdcsCreatedBy... idcsCreatedBies) {
@@ -401,12 +426,18 @@ public final class GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -414,12 +445,18 @@ public final class GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -427,12 +464,18 @@ public final class GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential {
         }
         @CustomType.Setter
         public Builder isResetSecret(Boolean isResetSecret) {
-            this.isResetSecret = Objects.requireNonNull(isResetSecret);
+            if (isResetSecret == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "isResetSecret");
+            }
+            this.isResetSecret = isResetSecret;
             return this;
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialMeta... metas) {
@@ -440,22 +483,34 @@ public final class GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(String resourceTypeSchemaVersion) {
-            this.resourceTypeSchemaVersion = Objects.requireNonNull(resourceTypeSchemaVersion);
+            if (resourceTypeSchemaVersion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "resourceTypeSchemaVersion");
+            }
+            this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -463,7 +518,10 @@ public final class GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential {
         }
         @CustomType.Setter
         public Builder scopes(List<GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialScope> scopes) {
-            this.scopes = Objects.requireNonNull(scopes);
+            if (scopes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "scopes");
+            }
+            this.scopes = scopes;
             return this;
         }
         public Builder scopes(GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialScope... scopes) {
@@ -471,12 +529,18 @@ public final class GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential {
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialTag... tags) {
@@ -484,12 +548,18 @@ public final class GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder users(List<GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialUser> users) {
-            this.users = Objects.requireNonNull(users);
+            if (users == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential", "users");
+            }
+            this.users = users;
             return this;
         }
         public Builder users(GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialUser... users) {

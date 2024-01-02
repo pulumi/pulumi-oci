@@ -59,11 +59,13 @@ public final class ConnectorTargetDimension {
 
         @CustomType.Setter
         public Builder dimensionValue(@Nullable ConnectorTargetDimensionDimensionValue dimensionValue) {
+
             this.dimensionValue = dimensionValue;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }

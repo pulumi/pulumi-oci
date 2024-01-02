@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -113,12 +114,18 @@ public final class GetDeploymentTypeItem {
 
         @CustomType.Setter
         public Builder category(String category) {
-            this.category = Objects.requireNonNull(category);
+            if (category == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentTypeItem", "category");
+            }
+            this.category = category;
             return this;
         }
         @CustomType.Setter
         public Builder connectionTypes(List<String> connectionTypes) {
-            this.connectionTypes = Objects.requireNonNull(connectionTypes);
+            if (connectionTypes == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentTypeItem", "connectionTypes");
+            }
+            this.connectionTypes = connectionTypes;
             return this;
         }
         public Builder connectionTypes(String... connectionTypes) {
@@ -126,17 +133,26 @@ public final class GetDeploymentTypeItem {
         }
         @CustomType.Setter
         public Builder deploymentType(String deploymentType) {
-            this.deploymentType = Objects.requireNonNull(deploymentType);
+            if (deploymentType == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentTypeItem", "deploymentType");
+            }
+            this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentTypeItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder sourceTechnologies(List<String> sourceTechnologies) {
-            this.sourceTechnologies = Objects.requireNonNull(sourceTechnologies);
+            if (sourceTechnologies == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentTypeItem", "sourceTechnologies");
+            }
+            this.sourceTechnologies = sourceTechnologies;
             return this;
         }
         public Builder sourceTechnologies(String... sourceTechnologies) {
@@ -144,7 +160,10 @@ public final class GetDeploymentTypeItem {
         }
         @CustomType.Setter
         public Builder targetTechnologies(List<String> targetTechnologies) {
-            this.targetTechnologies = Objects.requireNonNull(targetTechnologies);
+            if (targetTechnologies == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentTypeItem", "targetTechnologies");
+            }
+            this.targetTechnologies = targetTechnologies;
             return this;
         }
         public Builder targetTechnologies(String... targetTechnologies) {

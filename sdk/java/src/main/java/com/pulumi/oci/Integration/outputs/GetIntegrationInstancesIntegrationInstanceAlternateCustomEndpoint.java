@@ -4,6 +4,7 @@
 package com.pulumi.oci.Integration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetIntegrationInstancesIntegrationInstanceAlternateCustomEndp
 
         @CustomType.Setter
         public Builder alias(String alias) {
-            this.alias = Objects.requireNonNull(alias);
+            if (alias == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint", "alias");
+            }
+            this.alias = alias;
             return this;
         }
         @CustomType.Setter
         public Builder certificateSecretId(String certificateSecretId) {
-            this.certificateSecretId = Objects.requireNonNull(certificateSecretId);
+            if (certificateSecretId == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint", "certificateSecretId");
+            }
+            this.certificateSecretId = certificateSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder certificateSecretVersion(Integer certificateSecretVersion) {
-            this.certificateSecretVersion = Objects.requireNonNull(certificateSecretVersion);
+            if (certificateSecretVersion == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint", "certificateSecretVersion");
+            }
+            this.certificateSecretVersion = certificateSecretVersion;
             return this;
         }
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         public GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint build() {

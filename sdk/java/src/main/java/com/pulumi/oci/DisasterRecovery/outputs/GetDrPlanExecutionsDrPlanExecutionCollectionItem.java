@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation;
@@ -329,32 +330,50 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder drProtectionGroupId(String drProtectionGroupId) {
-            this.drProtectionGroupId = Objects.requireNonNull(drProtectionGroupId);
+            if (drProtectionGroupId == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "drProtectionGroupId");
+            }
+            this.drProtectionGroupId = drProtectionGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder executionDurationInSec(Integer executionDurationInSec) {
-            this.executionDurationInSec = Objects.requireNonNull(executionDurationInSec);
+            if (executionDurationInSec == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "executionDurationInSec");
+            }
+            this.executionDurationInSec = executionDurationInSec;
             return this;
         }
         @CustomType.Setter
         public Builder executionOptions(List<GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption> executionOptions) {
-            this.executionOptions = Objects.requireNonNull(executionOptions);
+            if (executionOptions == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "executionOptions");
+            }
+            this.executionOptions = executionOptions;
             return this;
         }
         public Builder executionOptions(GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption... executionOptions) {
@@ -362,12 +381,18 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItem {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder groupExecutions(List<GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution> groupExecutions) {
-            this.groupExecutions = Objects.requireNonNull(groupExecutions);
+            if (groupExecutions == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "groupExecutions");
+            }
+            this.groupExecutions = groupExecutions;
             return this;
         }
         public Builder groupExecutions(GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution... groupExecutions) {
@@ -375,17 +400,26 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItem {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifeCycleDetails(String lifeCycleDetails) {
-            this.lifeCycleDetails = Objects.requireNonNull(lifeCycleDetails);
+            if (lifeCycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "lifeCycleDetails");
+            }
+            this.lifeCycleDetails = lifeCycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder logLocations(List<GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation> logLocations) {
-            this.logLocations = Objects.requireNonNull(logLocations);
+            if (logLocations == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "logLocations");
+            }
+            this.logLocations = logLocations;
             return this;
         }
         public Builder logLocations(GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation... logLocations) {
@@ -393,52 +427,82 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItem {
         }
         @CustomType.Setter
         public Builder peerDrProtectionGroupId(String peerDrProtectionGroupId) {
-            this.peerDrProtectionGroupId = Objects.requireNonNull(peerDrProtectionGroupId);
+            if (peerDrProtectionGroupId == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "peerDrProtectionGroupId");
+            }
+            this.peerDrProtectionGroupId = peerDrProtectionGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder peerRegion(String peerRegion) {
-            this.peerRegion = Objects.requireNonNull(peerRegion);
+            if (peerRegion == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "peerRegion");
+            }
+            this.peerRegion = peerRegion;
             return this;
         }
         @CustomType.Setter
         public Builder planExecutionType(String planExecutionType) {
-            this.planExecutionType = Objects.requireNonNull(planExecutionType);
+            if (planExecutionType == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "planExecutionType");
+            }
+            this.planExecutionType = planExecutionType;
             return this;
         }
         @CustomType.Setter
         public Builder planId(String planId) {
-            this.planId = Objects.requireNonNull(planId);
+            if (planId == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "planId");
+            }
+            this.planId = planId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+            if (timeEnded == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "timeEnded");
+            }
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDrPlanExecutionsDrPlanExecutionCollectionItem build() {

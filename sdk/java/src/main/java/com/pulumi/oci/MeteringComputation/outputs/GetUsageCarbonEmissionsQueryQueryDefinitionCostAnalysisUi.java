@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi {
 
         @CustomType.Setter
         public Builder graph(String graph) {
-            this.graph = Objects.requireNonNull(graph);
+            if (graph == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi", "graph");
+            }
+            this.graph = graph;
             return this;
         }
         @CustomType.Setter
         public Builder isCumulativeGraph(Boolean isCumulativeGraph) {
-            this.isCumulativeGraph = Objects.requireNonNull(isCumulativeGraph);
+            if (isCumulativeGraph == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi", "isCumulativeGraph");
+            }
+            this.isCumulativeGraph = isCumulativeGraph;
             return this;
         }
         public GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi build() {

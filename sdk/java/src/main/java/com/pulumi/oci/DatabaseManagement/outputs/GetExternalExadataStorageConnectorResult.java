@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageConnectorCredentialInfo;
 import java.lang.Object;
 import java.lang.String;
@@ -246,27 +247,42 @@ public final class GetExternalExadataStorageConnectorResult {
 
         @CustomType.Setter
         public Builder additionalDetails(Map<String,Object> additionalDetails) {
-            this.additionalDetails = Objects.requireNonNull(additionalDetails);
+            if (additionalDetails == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "additionalDetails");
+            }
+            this.additionalDetails = additionalDetails;
             return this;
         }
         @CustomType.Setter
         public Builder agentId(String agentId) {
-            this.agentId = Objects.requireNonNull(agentId);
+            if (agentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "agentId");
+            }
+            this.agentId = agentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionUri(String connectionUri) {
-            this.connectionUri = Objects.requireNonNull(connectionUri);
+            if (connectionUri == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "connectionUri");
+            }
+            this.connectionUri = connectionUri;
             return this;
         }
         @CustomType.Setter
         public Builder connectorName(String connectorName) {
-            this.connectorName = Objects.requireNonNull(connectorName);
+            if (connectorName == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "connectorName");
+            }
+            this.connectorName = connectorName;
             return this;
         }
         @CustomType.Setter
         public Builder credentialInfos(List<GetExternalExadataStorageConnectorCredentialInfo> credentialInfos) {
-            this.credentialInfos = Objects.requireNonNull(credentialInfos);
+            if (credentialInfos == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "credentialInfos");
+            }
+            this.credentialInfos = credentialInfos;
             return this;
         }
         public Builder credentialInfos(GetExternalExadataStorageConnectorCredentialInfo... credentialInfos) {
@@ -274,62 +290,98 @@ public final class GetExternalExadataStorageConnectorResult {
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
-            this.exadataInfrastructureId = Objects.requireNonNull(exadataInfrastructureId);
+            if (exadataInfrastructureId == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "exadataInfrastructureId");
+            }
+            this.exadataInfrastructureId = exadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
         public Builder externalExadataStorageConnectorId(String externalExadataStorageConnectorId) {
-            this.externalExadataStorageConnectorId = Objects.requireNonNull(externalExadataStorageConnectorId);
+            if (externalExadataStorageConnectorId == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "externalExadataStorageConnectorId");
+            }
+            this.externalExadataStorageConnectorId = externalExadataStorageConnectorId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder internalId(String internalId) {
-            this.internalId = Objects.requireNonNull(internalId);
+            if (internalId == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "internalId");
+            }
+            this.internalId = internalId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder storageServerId(String storageServerId) {
-            this.storageServerId = Objects.requireNonNull(storageServerId);
+            if (storageServerId == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "storageServerId");
+            }
+            this.storageServerId = storageServerId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetExternalExadataStorageConnectorResult build() {

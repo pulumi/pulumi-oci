@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opa.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opa.outputs.GetOpaInstancesFilter;
 import com.pulumi.oci.Opa.outputs.GetOpaInstancesOpaInstanceCollection;
 import java.lang.String;
@@ -109,16 +110,19 @@ public final class GetOpaInstancesResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetOpaInstancesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +131,16 @@ public final class GetOpaInstancesResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder opaInstanceCollections(List<GetOpaInstancesOpaInstanceCollection> opaInstanceCollections) {
-            this.opaInstanceCollections = Objects.requireNonNull(opaInstanceCollections);
+            if (opaInstanceCollections == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstancesResult", "opaInstanceCollections");
+            }
+            this.opaInstanceCollections = opaInstanceCollections;
             return this;
         }
         public Builder opaInstanceCollections(GetOpaInstancesOpaInstanceCollection... opaInstanceCollections) {
@@ -140,6 +148,7 @@ public final class GetOpaInstancesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

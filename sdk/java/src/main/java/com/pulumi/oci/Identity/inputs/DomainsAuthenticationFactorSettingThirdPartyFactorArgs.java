@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -118,7 +119,9 @@ public final class DomainsAuthenticationFactorSettingThirdPartyFactorArgs extend
         }
 
         public DomainsAuthenticationFactorSettingThirdPartyFactorArgs build() {
-            $.duoSecurity = Objects.requireNonNull($.duoSecurity, "expected parameter 'duoSecurity' to be non-null");
+            if ($.duoSecurity == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingThirdPartyFactorArgs", "duoSecurity");
+            }
             return $;
         }
     }

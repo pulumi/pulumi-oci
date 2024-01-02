@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -141,42 +142,66 @@ public final class GetMetricExtensionMetricList {
 
         @CustomType.Setter
         public Builder computeExpression(String computeExpression) {
-            this.computeExpression = Objects.requireNonNull(computeExpression);
+            if (computeExpression == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionMetricList", "computeExpression");
+            }
+            this.computeExpression = computeExpression;
             return this;
         }
         @CustomType.Setter
         public Builder dataType(String dataType) {
-            this.dataType = Objects.requireNonNull(dataType);
+            if (dataType == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionMetricList", "dataType");
+            }
+            this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionMetricList", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder isDimension(Boolean isDimension) {
-            this.isDimension = Objects.requireNonNull(isDimension);
+            if (isDimension == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionMetricList", "isDimension");
+            }
+            this.isDimension = isDimension;
             return this;
         }
         @CustomType.Setter
         public Builder isHidden(Boolean isHidden) {
-            this.isHidden = Objects.requireNonNull(isHidden);
+            if (isHidden == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionMetricList", "isHidden");
+            }
+            this.isHidden = isHidden;
             return this;
         }
         @CustomType.Setter
         public Builder metricCategory(String metricCategory) {
-            this.metricCategory = Objects.requireNonNull(metricCategory);
+            if (metricCategory == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionMetricList", "metricCategory");
+            }
+            this.metricCategory = metricCategory;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionMetricList", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder unit(String unit) {
-            this.unit = Objects.requireNonNull(unit);
+            if (unit == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionMetricList", "unit");
+            }
+            this.unit = unit;
             return this;
         }
         public GetMetricExtensionMetricList build() {

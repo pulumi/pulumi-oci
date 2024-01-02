@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeConfigDetailsPlacementConfigArgs;
 import java.lang.Boolean;
@@ -372,8 +373,12 @@ public final class NodePoolNodeConfigDetailsArgs extends com.pulumi.resources.Re
         }
 
         public NodePoolNodeConfigDetailsArgs build() {
-            $.placementConfigs = Objects.requireNonNull($.placementConfigs, "expected parameter 'placementConfigs' to be non-null");
-            $.size = Objects.requireNonNull($.size, "expected parameter 'size' to be non-null");
+            if ($.placementConfigs == null) {
+                throw new MissingRequiredPropertyException("NodePoolNodeConfigDetailsArgs", "placementConfigs");
+            }
+            if ($.size == null) {
+                throw new MissingRequiredPropertyException("NodePoolNodeConfigDetailsArgs", "size");
+            }
             return $;
         }
     }

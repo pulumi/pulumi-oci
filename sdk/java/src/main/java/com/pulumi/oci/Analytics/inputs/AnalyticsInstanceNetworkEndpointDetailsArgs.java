@@ -5,6 +5,7 @@ package com.pulumi.oci.Analytics.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Analytics.inputs.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs;
 import java.lang.String;
 import java.util.List;
@@ -340,7 +341,9 @@ public final class AnalyticsInstanceNetworkEndpointDetailsArgs extends com.pulum
         }
 
         public AnalyticsInstanceNetworkEndpointDetailsArgs build() {
-            $.networkEndpointType = Objects.requireNonNull($.networkEndpointType, "expected parameter 'networkEndpointType' to be non-null");
+            if ($.networkEndpointType == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstanceNetworkEndpointDetailsArgs", "networkEndpointType");
+            }
             return $;
         }
     }

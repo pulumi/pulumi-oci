@@ -74,16 +74,19 @@ public final class PluggableDatabasesRemoteCloneConnectionString {
 
         @CustomType.Setter
         public Builder allConnectionStrings(@Nullable Map<String,Object> allConnectionStrings) {
+
             this.allConnectionStrings = allConnectionStrings;
             return this;
         }
         @CustomType.Setter
         public Builder pdbDefault(@Nullable String pdbDefault) {
+
             this.pdbDefault = pdbDefault;
             return this;
         }
         @CustomType.Setter
         public Builder pdbIpDefault(@Nullable String pdbIpDefault) {
+
             this.pdbIpDefault = pdbIpDefault;
             return this;
         }

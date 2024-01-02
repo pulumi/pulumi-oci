@@ -5,6 +5,7 @@ package com.pulumi.oci.Psql;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -313,9 +314,15 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public BackupArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.dbSystemId = Objects.requireNonNull($.dbSystemId, "expected parameter 'dbSystemId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("BackupArgs", "compartmentId");
+            }
+            if ($.dbSystemId == null) {
+                throw new MissingRequiredPropertyException("BackupArgs", "dbSystemId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("BackupArgs", "displayName");
+            }
             return $;
         }
     }

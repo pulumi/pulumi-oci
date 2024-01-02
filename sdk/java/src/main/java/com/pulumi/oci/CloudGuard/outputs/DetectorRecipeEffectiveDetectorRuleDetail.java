@@ -117,11 +117,13 @@ public final class DetectorRecipeEffectiveDetectorRuleDetail {
 
         @CustomType.Setter
         public Builder condition(@Nullable String condition) {
+
             this.condition = condition;
             return this;
         }
         @CustomType.Setter
         public Builder configurations(@Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations) {
+
             this.configurations = configurations;
             return this;
         }
@@ -130,16 +132,19 @@ public final class DetectorRecipeEffectiveDetectorRuleDetail {
         }
         @CustomType.Setter
         public Builder isConfigurationAllowed(@Nullable Boolean isConfigurationAllowed) {
+
             this.isConfigurationAllowed = isConfigurationAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
+
             this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder labels(@Nullable List<String> labels) {
+
             this.labels = labels;
             return this;
         }
@@ -148,6 +153,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetail {
         }
         @CustomType.Setter
         public Builder riskLevel(@Nullable String riskLevel) {
+
             this.riskLevel = riskLevel;
             return this;
         }

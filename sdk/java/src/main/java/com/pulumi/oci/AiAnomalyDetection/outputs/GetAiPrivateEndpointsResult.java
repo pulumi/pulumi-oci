@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetAiPrivateEndpointsAiPrivateEndpointCollection;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetAiPrivateEndpointsFilter;
 import java.lang.String;
@@ -109,7 +110,10 @@ public final class GetAiPrivateEndpointsResult {
 
         @CustomType.Setter
         public Builder aiPrivateEndpointCollections(List<GetAiPrivateEndpointsAiPrivateEndpointCollection> aiPrivateEndpointCollections) {
-            this.aiPrivateEndpointCollections = Objects.requireNonNull(aiPrivateEndpointCollections);
+            if (aiPrivateEndpointCollections == null) {
+              throw new MissingRequiredPropertyException("GetAiPrivateEndpointsResult", "aiPrivateEndpointCollections");
+            }
+            this.aiPrivateEndpointCollections = aiPrivateEndpointCollections;
             return this;
         }
         public Builder aiPrivateEndpointCollections(GetAiPrivateEndpointsAiPrivateEndpointCollection... aiPrivateEndpointCollections) {
@@ -117,16 +121,21 @@ public final class GetAiPrivateEndpointsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAiPrivateEndpointsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAiPrivateEndpointsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,11 +144,13 @@ public final class GetAiPrivateEndpointsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

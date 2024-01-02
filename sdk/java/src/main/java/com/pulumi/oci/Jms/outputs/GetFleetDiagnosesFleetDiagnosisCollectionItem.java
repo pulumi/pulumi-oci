@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetFleetDiagnosesFleetDiagnosisCollectionItem {
 
         @CustomType.Setter
         public Builder resourceDiagnosis(String resourceDiagnosis) {
-            this.resourceDiagnosis = Objects.requireNonNull(resourceDiagnosis);
+            if (resourceDiagnosis == null) {
+              throw new MissingRequiredPropertyException("GetFleetDiagnosesFleetDiagnosisCollectionItem", "resourceDiagnosis");
+            }
+            this.resourceDiagnosis = resourceDiagnosis;
             return this;
         }
         @CustomType.Setter
         public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+            if (resourceId == null) {
+              throw new MissingRequiredPropertyException("GetFleetDiagnosesFleetDiagnosisCollectionItem", "resourceId");
+            }
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceState(String resourceState) {
-            this.resourceState = Objects.requireNonNull(resourceState);
+            if (resourceState == null) {
+              throw new MissingRequiredPropertyException("GetFleetDiagnosesFleetDiagnosisCollectionItem", "resourceState");
+            }
+            this.resourceState = resourceState;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetFleetDiagnosesFleetDiagnosisCollectionItem", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         public GetFleetDiagnosesFleetDiagnosisCollectionItem build() {

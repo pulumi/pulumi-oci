@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetSecurityPolicyPlainArgs extends com.pulumi.resources.Invok
         }
 
         public GetSecurityPolicyPlainArgs build() {
-            $.securityPolicyId = Objects.requireNonNull($.securityPolicyId, "expected parameter 'securityPolicyId' to be non-null");
+            if ($.securityPolicyId == null) {
+                throw new MissingRequiredPropertyException("GetSecurityPolicyPlainArgs", "securityPolicyId");
+            }
             return $;
         }
     }

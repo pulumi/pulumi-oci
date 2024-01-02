@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail {
 
         @CustomType.Setter
         public Builder keytabFile(String keytabFile) {
-            this.keytabFile = Objects.requireNonNull(keytabFile);
+            if (keytabFile == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail", "keytabFile");
+            }
+            this.keytabFile = keytabFile;
             return this;
         }
         @CustomType.Setter
         public Builder principalName(String principalName) {
-            this.principalName = Objects.requireNonNull(principalName);
+            if (principalName == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail", "principalName");
+            }
+            this.principalName = principalName;
             return this;
         }
         public GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail build() {

@@ -152,36 +152,43 @@ public final class ModelModelTrainingResult {
 
         @CustomType.Setter
         public Builder fap(@Nullable Double fap) {
+
             this.fap = fap;
             return this;
         }
         @CustomType.Setter
         public Builder isTrainingGoalAchieved(@Nullable Boolean isTrainingGoalAchieved) {
+
             this.isTrainingGoalAchieved = isTrainingGoalAchieved;
             return this;
         }
         @CustomType.Setter
         public Builder mae(@Nullable Double mae) {
+
             this.mae = mae;
             return this;
         }
         @CustomType.Setter
         public Builder maxInferenceSyncRows(@Nullable Integer maxInferenceSyncRows) {
+
             this.maxInferenceSyncRows = maxInferenceSyncRows;
             return this;
         }
         @CustomType.Setter
         public Builder multivariateFap(@Nullable Double multivariateFap) {
+
             this.multivariateFap = multivariateFap;
             return this;
         }
         @CustomType.Setter
         public Builder rmse(@Nullable Double rmse) {
+
             this.rmse = rmse;
             return this;
         }
         @CustomType.Setter
         public Builder rowReductionDetails(@Nullable List<ModelModelTrainingResultRowReductionDetail> rowReductionDetails) {
+
             this.rowReductionDetails = rowReductionDetails;
             return this;
         }
@@ -190,6 +197,7 @@ public final class ModelModelTrainingResult {
         }
         @CustomType.Setter
         public Builder signalDetails(@Nullable List<ModelModelTrainingResultSignalDetail> signalDetails) {
+
             this.signalDetails = signalDetails;
             return this;
         }
@@ -198,11 +206,13 @@ public final class ModelModelTrainingResult {
         }
         @CustomType.Setter
         public Builder warning(@Nullable String warning) {
+
             this.warning = warning;
             return this;
         }
         @CustomType.Setter
         public Builder windowSize(@Nullable Integer windowSize) {
+
             this.windowSize = windowSize;
             return this;
         }

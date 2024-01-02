@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationsFilter;
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection;
 import java.lang.Boolean;
@@ -128,16 +129,21 @@ public final class GetUnifiedAgentConfigurationsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetUnifiedAgentConfigurationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -146,32 +152,42 @@ public final class GetUnifiedAgentConfigurationsResult {
         }
         @CustomType.Setter
         public Builder groupId(@Nullable String groupId) {
+
             this.groupId = groupId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCompartmentIdInSubtree(@Nullable Boolean isCompartmentIdInSubtree) {
+
             this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder logId(@Nullable String logId) {
+
             this.logId = logId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder unifiedAgentConfigurationCollections(List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection> unifiedAgentConfigurationCollections) {
-            this.unifiedAgentConfigurationCollections = Objects.requireNonNull(unifiedAgentConfigurationCollections);
+            if (unifiedAgentConfigurationCollections == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationsResult", "unifiedAgentConfigurationCollections");
+            }
+            this.unifiedAgentConfigurationCollections = unifiedAgentConfigurationCollections;
             return this;
         }
         public Builder unifiedAgentConfigurationCollections(GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection... unifiedAgentConfigurationCollections) {

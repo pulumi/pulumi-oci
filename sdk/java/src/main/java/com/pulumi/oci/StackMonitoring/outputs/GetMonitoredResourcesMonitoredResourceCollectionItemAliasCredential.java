@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetMonitoredResourcesMonitoredResourceCollectionItemAliasCred
 
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder service(String service) {
-            this.service = Objects.requireNonNull(service);
+            if (service == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential", "service");
+            }
+            this.service = service;
             return this;
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential", "source");
+            }
+            this.source = source;
             return this;
         }
         public GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential build() {

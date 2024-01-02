@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection;
 import com.pulumi.oci.DataSafe.outputs.GetAuditProfileAvailableAuditVolumesFilter;
 import java.lang.String;
@@ -113,12 +114,18 @@ public final class GetAuditProfileAvailableAuditVolumesResult {
 
         @CustomType.Setter
         public Builder auditProfileId(String auditProfileId) {
-            this.auditProfileId = Objects.requireNonNull(auditProfileId);
+            if (auditProfileId == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileAvailableAuditVolumesResult", "auditProfileId");
+            }
+            this.auditProfileId = auditProfileId;
             return this;
         }
         @CustomType.Setter
         public Builder availableAuditVolumeCollections(List<GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection> availableAuditVolumeCollections) {
-            this.availableAuditVolumeCollections = Objects.requireNonNull(availableAuditVolumeCollections);
+            if (availableAuditVolumeCollections == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileAvailableAuditVolumesResult", "availableAuditVolumeCollections");
+            }
+            this.availableAuditVolumeCollections = availableAuditVolumeCollections;
             return this;
         }
         public Builder availableAuditVolumeCollections(GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection... availableAuditVolumeCollections) {
@@ -126,6 +133,7 @@ public final class GetAuditProfileAvailableAuditVolumesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAuditProfileAvailableAuditVolumesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -134,27 +142,36 @@ public final class GetAuditProfileAvailableAuditVolumesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileAvailableAuditVolumesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder monthInConsiderationGreaterThan(@Nullable String monthInConsiderationGreaterThan) {
+
             this.monthInConsiderationGreaterThan = monthInConsiderationGreaterThan;
             return this;
         }
         @CustomType.Setter
         public Builder monthInConsiderationLessThan(@Nullable String monthInConsiderationLessThan) {
+
             this.monthInConsiderationLessThan = monthInConsiderationLessThan;
             return this;
         }
         @CustomType.Setter
         public Builder trailLocation(@Nullable String trailLocation) {
+
             this.trailLocation = trailLocation;
             return this;
         }
         @CustomType.Setter
         public Builder workRequestId(String workRequestId) {
-            this.workRequestId = Objects.requireNonNull(workRequestId);
+            if (workRequestId == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileAvailableAuditVolumesResult", "workRequestId");
+            }
+            this.workRequestId = workRequestId;
             return this;
         }
         public GetAuditProfileAvailableAuditVolumesResult build() {

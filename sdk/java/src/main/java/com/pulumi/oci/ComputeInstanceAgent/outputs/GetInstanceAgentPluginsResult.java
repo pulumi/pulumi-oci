@@ -4,6 +4,7 @@
 package com.pulumi.oci.ComputeInstanceAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ComputeInstanceAgent.outputs.GetInstanceAgentPluginsFilter;
 import com.pulumi.oci.ComputeInstanceAgent.outputs.GetInstanceAgentPluginsInstanceAgentPlugin;
 import java.lang.String;
@@ -107,11 +108,15 @@ public final class GetInstanceAgentPluginsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAgentPluginsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetInstanceAgentPluginsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -120,12 +125,18 @@ public final class GetInstanceAgentPluginsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAgentPluginsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceAgentPlugins(List<GetInstanceAgentPluginsInstanceAgentPlugin> instanceAgentPlugins) {
-            this.instanceAgentPlugins = Objects.requireNonNull(instanceAgentPlugins);
+            if (instanceAgentPlugins == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAgentPluginsResult", "instanceAgentPlugins");
+            }
+            this.instanceAgentPlugins = instanceAgentPlugins;
             return this;
         }
         public Builder instanceAgentPlugins(GetInstanceAgentPluginsInstanceAgentPlugin... instanceAgentPlugins) {
@@ -133,16 +144,21 @@ public final class GetInstanceAgentPluginsResult {
         }
         @CustomType.Setter
         public Builder instanceagentId(String instanceagentId) {
-            this.instanceagentId = Objects.requireNonNull(instanceagentId);
+            if (instanceagentId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAgentPluginsResult", "instanceagentId");
+            }
+            this.instanceagentId = instanceagentId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }

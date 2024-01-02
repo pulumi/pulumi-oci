@@ -337,21 +337,25 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFill
 
         @CustomType.Setter
         public Builder configuration(@Nullable String configuration) {
+
             this.configuration = configuration;
             return this;
         }
         @CustomType.Setter
         public Builder formCredMethod(@Nullable String formCredMethod) {
+
             this.formCredMethod = formCredMethod;
             return this;
         }
         @CustomType.Setter
         public Builder formCredentialSharingGroupId(@Nullable String formCredentialSharingGroupId) {
+
             this.formCredentialSharingGroupId = formCredentialSharingGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder formFillUrlMatches(@Nullable List<DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatch> formFillUrlMatches) {
+
             this.formFillUrlMatches = formFillUrlMatches;
             return this;
         }
@@ -360,26 +364,31 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFill
         }
         @CustomType.Setter
         public Builder formType(@Nullable String formType) {
+
             this.formType = formType;
             return this;
         }
         @CustomType.Setter
         public Builder revealPasswordOnForm(@Nullable Boolean revealPasswordOnForm) {
+
             this.revealPasswordOnForm = revealPasswordOnForm;
             return this;
         }
         @CustomType.Setter
         public Builder syncFromTemplate(@Nullable Boolean syncFromTemplate) {
+
             this.syncFromTemplate = syncFromTemplate;
             return this;
         }
         @CustomType.Setter
         public Builder userNameFormExpression(@Nullable String userNameFormExpression) {
+
             this.userNameFormExpression = userNameFormExpression;
             return this;
         }
         @CustomType.Setter
         public Builder userNameFormTemplate(@Nullable String userNameFormTemplate) {
+
             this.userNameFormTemplate = userNameFormTemplate;
             return this;
         }

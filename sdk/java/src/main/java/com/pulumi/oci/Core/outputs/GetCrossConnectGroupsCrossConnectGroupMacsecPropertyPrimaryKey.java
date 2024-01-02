@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKe
 
         @CustomType.Setter
         public Builder connectivityAssociationKeySecretId(String connectivityAssociationKeySecretId) {
-            this.connectivityAssociationKeySecretId = Objects.requireNonNull(connectivityAssociationKeySecretId);
+            if (connectivityAssociationKeySecretId == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKey", "connectivityAssociationKeySecretId");
+            }
+            this.connectivityAssociationKeySecretId = connectivityAssociationKeySecretId;
             return this;
         }
         @CustomType.Setter
         public Builder connectivityAssociationKeySecretVersion(String connectivityAssociationKeySecretVersion) {
-            this.connectivityAssociationKeySecretVersion = Objects.requireNonNull(connectivityAssociationKeySecretVersion);
+            if (connectivityAssociationKeySecretVersion == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKey", "connectivityAssociationKeySecretVersion");
+            }
+            this.connectivityAssociationKeySecretVersion = connectivityAssociationKeySecretVersion;
             return this;
         }
         @CustomType.Setter
         public Builder connectivityAssociationNameSecretId(String connectivityAssociationNameSecretId) {
-            this.connectivityAssociationNameSecretId = Objects.requireNonNull(connectivityAssociationNameSecretId);
+            if (connectivityAssociationNameSecretId == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKey", "connectivityAssociationNameSecretId");
+            }
+            this.connectivityAssociationNameSecretId = connectivityAssociationNameSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder connectivityAssociationNameSecretVersion(String connectivityAssociationNameSecretVersion) {
-            this.connectivityAssociationNameSecretVersion = Objects.requireNonNull(connectivityAssociationNameSecretVersion);
+            if (connectivityAssociationNameSecretVersion == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKey", "connectivityAssociationNameSecretVersion");
+            }
+            this.connectivityAssociationNameSecretVersion = connectivityAssociationNameSecretVersion;
             return this;
         }
         public GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKey build() {

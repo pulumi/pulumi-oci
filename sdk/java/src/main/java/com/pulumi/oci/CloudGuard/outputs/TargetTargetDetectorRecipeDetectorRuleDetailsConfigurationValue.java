@@ -72,16 +72,19 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationVal
 
         @CustomType.Setter
         public Builder listType(@Nullable String listType) {
+
             this.listType = listType;
             return this;
         }
         @CustomType.Setter
         public Builder managedListType(@Nullable String managedListType) {
+
             this.managedListType = managedListType;
             return this;
         }
         @CustomType.Setter
         public Builder value(@Nullable String value) {
+
             this.value = value;
             return this;
         }

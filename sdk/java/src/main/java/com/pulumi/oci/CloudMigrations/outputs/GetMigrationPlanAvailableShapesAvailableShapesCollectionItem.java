@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
@@ -270,87 +271,138 @@ public final class GetMigrationPlanAvailableShapesAvailableShapesCollectionItem 
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesAvailableShapesCollectionItem", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesAvailableShapesCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesAvailableShapesCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder gpuDescription(String gpuDescription) {
-            this.gpuDescription = Objects.requireNonNull(gpuDescription);
+            if (gpuDescription == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesAvailableShapesCollectionItem", "gpuDescription");
+            }
+            this.gpuDescription = gpuDescription;
             return this;
         }
         @CustomType.Setter
         public Builder gpus(Integer gpus) {
-            this.gpus = Objects.requireNonNull(gpus);
+            if (gpus == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesAvailableShapesCollectionItem", "gpus");
+            }
+            this.gpus = gpus;
             return this;
         }
         @CustomType.Setter
         public Builder localDiskDescription(String localDiskDescription) {
-            this.localDiskDescription = Objects.requireNonNull(localDiskDescription);
+            if (localDiskDescription == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesAvailableShapesCollectionItem", "localDiskDescription");
+            }
+            this.localDiskDescription = localDiskDescription;
             return this;
         }
         @CustomType.Setter
         public Builder localDisks(Integer localDisks) {
-            this.localDisks = Objects.requireNonNull(localDisks);
+            if (localDisks == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesAvailableShapesCollectionItem", "localDisks");
+            }
+            this.localDisks = localDisks;
             return this;
         }
         @CustomType.Setter
         public Builder localDisksTotalSizeInGbs(Double localDisksTotalSizeInGbs) {
-            this.localDisksTotalSizeInGbs = Objects.requireNonNull(localDisksTotalSizeInGbs);
+            if (localDisksTotalSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesAvailableShapesCollectionItem", "localDisksTotalSizeInGbs");
+            }
+            this.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder maxVnicAttachments(Integer maxVnicAttachments) {
-            this.maxVnicAttachments = Objects.requireNonNull(maxVnicAttachments);
+            if (maxVnicAttachments == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesAvailableShapesCollectionItem", "maxVnicAttachments");
+            }
+            this.maxVnicAttachments = maxVnicAttachments;
             return this;
         }
         @CustomType.Setter
         public Builder memoryInGbs(Double memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+            if (memoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesAvailableShapesCollectionItem", "memoryInGbs");
+            }
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder minTotalBaselineOcpusRequired(Double minTotalBaselineOcpusRequired) {
-            this.minTotalBaselineOcpusRequired = Objects.requireNonNull(minTotalBaselineOcpusRequired);
+            if (minTotalBaselineOcpusRequired == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesAvailableShapesCollectionItem", "minTotalBaselineOcpusRequired");
+            }
+            this.minTotalBaselineOcpusRequired = minTotalBaselineOcpusRequired;
             return this;
         }
         @CustomType.Setter
         public Builder networkingBandwidthInGbps(Double networkingBandwidthInGbps) {
-            this.networkingBandwidthInGbps = Objects.requireNonNull(networkingBandwidthInGbps);
+            if (networkingBandwidthInGbps == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesAvailableShapesCollectionItem", "networkingBandwidthInGbps");
+            }
+            this.networkingBandwidthInGbps = networkingBandwidthInGbps;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(Double ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+            if (ocpus == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesAvailableShapesCollectionItem", "ocpus");
+            }
+            this.ocpus = ocpus;
             return this;
         }
         @CustomType.Setter
         public Builder paginationToken(String paginationToken) {
-            this.paginationToken = Objects.requireNonNull(paginationToken);
+            if (paginationToken == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesAvailableShapesCollectionItem", "paginationToken");
+            }
+            this.paginationToken = paginationToken;
             return this;
         }
         @CustomType.Setter
         public Builder processorDescription(String processorDescription) {
-            this.processorDescription = Objects.requireNonNull(processorDescription);
+            if (processorDescription == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesAvailableShapesCollectionItem", "processorDescription");
+            }
+            this.processorDescription = processorDescription;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesAvailableShapesCollectionItem", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesAvailableShapesCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         public GetMigrationPlanAvailableShapesAvailableShapesCollectionItem build() {

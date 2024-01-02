@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.outputs.GetOutboundConnectorsFilter;
 import com.pulumi.oci.FileStorage.outputs.GetOutboundConnectorsOutboundConnector;
 import java.lang.String;
@@ -123,21 +124,29 @@ public final class GetOutboundConnectorsResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorsResult", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetOutboundConnectorsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -146,12 +155,16 @@ public final class GetOutboundConnectorsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder outboundConnectors(List<GetOutboundConnectorsOutboundConnector> outboundConnectors) {
-            this.outboundConnectors = Objects.requireNonNull(outboundConnectors);
+            if (outboundConnectors == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorsResult", "outboundConnectors");
+            }
+            this.outboundConnectors = outboundConnectors;
             return this;
         }
         public Builder outboundConnectors(GetOutboundConnectorsOutboundConnector... outboundConnectors) {
@@ -159,6 +172,7 @@ public final class GetOutboundConnectorsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

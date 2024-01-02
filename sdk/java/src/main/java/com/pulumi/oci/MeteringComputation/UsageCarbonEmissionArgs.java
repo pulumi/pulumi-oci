@@ -5,6 +5,7 @@ package com.pulumi.oci.MeteringComputation;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.inputs.UsageCarbonEmissionGroupByTagArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -371,9 +372,15 @@ public final class UsageCarbonEmissionArgs extends com.pulumi.resources.Resource
         }
 
         public UsageCarbonEmissionArgs build() {
-            $.tenantId = Objects.requireNonNull($.tenantId, "expected parameter 'tenantId' to be non-null");
-            $.timeUsageEnded = Objects.requireNonNull($.timeUsageEnded, "expected parameter 'timeUsageEnded' to be non-null");
-            $.timeUsageStarted = Objects.requireNonNull($.timeUsageStarted, "expected parameter 'timeUsageStarted' to be non-null");
+            if ($.tenantId == null) {
+                throw new MissingRequiredPropertyException("UsageCarbonEmissionArgs", "tenantId");
+            }
+            if ($.timeUsageEnded == null) {
+                throw new MissingRequiredPropertyException("UsageCarbonEmissionArgs", "timeUsageEnded");
+            }
+            if ($.timeUsageStarted == null) {
+                throw new MissingRequiredPropertyException("UsageCarbonEmissionArgs", "timeUsageStarted");
+            }
             return $;
         }
     }

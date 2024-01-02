@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetBackupsBackup;
 import com.pulumi.oci.Database.outputs.GetBackupsFilter;
 import java.lang.String;
@@ -95,7 +96,10 @@ public final class GetBackupsResult {
 
         @CustomType.Setter
         public Builder backups(List<GetBackupsBackup> backups) {
-            this.backups = Objects.requireNonNull(backups);
+            if (backups == null) {
+              throw new MissingRequiredPropertyException("GetBackupsResult", "backups");
+            }
+            this.backups = backups;
             return this;
         }
         public Builder backups(GetBackupsBackup... backups) {
@@ -103,16 +107,19 @@ public final class GetBackupsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseId(@Nullable String databaseId) {
+
             this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBackupsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -121,7 +128,10 @@ public final class GetBackupsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBackupsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetBackupsResult build() {

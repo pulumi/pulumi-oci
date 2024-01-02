@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -397,10 +398,18 @@ public final class DataSafePrivateEndpointArgs extends com.pulumi.resources.Reso
         }
 
         public DataSafePrivateEndpointArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
-            $.vcnId = Objects.requireNonNull($.vcnId, "expected parameter 'vcnId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("DataSafePrivateEndpointArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("DataSafePrivateEndpointArgs", "displayName");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("DataSafePrivateEndpointArgs", "subnetId");
+            }
+            if ($.vcnId == null) {
+                throw new MissingRequiredPropertyException("DataSafePrivateEndpointArgs", "vcnId");
+            }
             return $;
         }
     }

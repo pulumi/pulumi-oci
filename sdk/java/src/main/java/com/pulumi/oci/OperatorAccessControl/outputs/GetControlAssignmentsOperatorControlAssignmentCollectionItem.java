@@ -4,6 +4,7 @@
 package com.pulumi.oci.OperatorAccessControl.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -424,142 +425,226 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
 
         @CustomType.Setter
         public Builder assignerId(String assignerId) {
-            this.assignerId = Objects.requireNonNull(assignerId);
+            if (assignerId == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "assignerId");
+            }
+            this.assignerId = assignerId;
             return this;
         }
         @CustomType.Setter
         public Builder comment(String comment) {
-            this.comment = Objects.requireNonNull(comment);
+            if (comment == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "comment");
+            }
+            this.comment = comment;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder detachmentDescription(String detachmentDescription) {
-            this.detachmentDescription = Objects.requireNonNull(detachmentDescription);
+            if (detachmentDescription == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "detachmentDescription");
+            }
+            this.detachmentDescription = detachmentDescription;
             return this;
         }
         @CustomType.Setter
         public Builder errorCode(Integer errorCode) {
-            this.errorCode = Objects.requireNonNull(errorCode);
+            if (errorCode == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "errorCode");
+            }
+            this.errorCode = errorCode;
             return this;
         }
         @CustomType.Setter
         public Builder errorMessage(String errorMessage) {
-            this.errorMessage = Objects.requireNonNull(errorMessage);
+            if (errorMessage == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "errorMessage");
+            }
+            this.errorMessage = errorMessage;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAutoApproveDuringMaintenance(Boolean isAutoApproveDuringMaintenance) {
-            this.isAutoApproveDuringMaintenance = Objects.requireNonNull(isAutoApproveDuringMaintenance);
+            if (isAutoApproveDuringMaintenance == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "isAutoApproveDuringMaintenance");
+            }
+            this.isAutoApproveDuringMaintenance = isAutoApproveDuringMaintenance;
             return this;
         }
         @CustomType.Setter
         public Builder isDefaultAssignment(Boolean isDefaultAssignment) {
-            this.isDefaultAssignment = Objects.requireNonNull(isDefaultAssignment);
+            if (isDefaultAssignment == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "isDefaultAssignment");
+            }
+            this.isDefaultAssignment = isDefaultAssignment;
             return this;
         }
         @CustomType.Setter
         public Builder isEnforcedAlways(Boolean isEnforcedAlways) {
-            this.isEnforcedAlways = Objects.requireNonNull(isEnforcedAlways);
+            if (isEnforcedAlways == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "isEnforcedAlways");
+            }
+            this.isEnforcedAlways = isEnforcedAlways;
             return this;
         }
         @CustomType.Setter
         public Builder isLogForwarded(Boolean isLogForwarded) {
-            this.isLogForwarded = Objects.requireNonNull(isLogForwarded);
+            if (isLogForwarded == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "isLogForwarded");
+            }
+            this.isLogForwarded = isLogForwarded;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder operatorControlId(String operatorControlId) {
-            this.operatorControlId = Objects.requireNonNull(operatorControlId);
+            if (operatorControlId == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "operatorControlId");
+            }
+            this.operatorControlId = operatorControlId;
             return this;
         }
         @CustomType.Setter
         public Builder remoteSyslogServerAddress(String remoteSyslogServerAddress) {
-            this.remoteSyslogServerAddress = Objects.requireNonNull(remoteSyslogServerAddress);
+            if (remoteSyslogServerAddress == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "remoteSyslogServerAddress");
+            }
+            this.remoteSyslogServerAddress = remoteSyslogServerAddress;
             return this;
         }
         @CustomType.Setter
         public Builder remoteSyslogServerCaCert(String remoteSyslogServerCaCert) {
-            this.remoteSyslogServerCaCert = Objects.requireNonNull(remoteSyslogServerCaCert);
+            if (remoteSyslogServerCaCert == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "remoteSyslogServerCaCert");
+            }
+            this.remoteSyslogServerCaCert = remoteSyslogServerCaCert;
             return this;
         }
         @CustomType.Setter
         public Builder remoteSyslogServerPort(Integer remoteSyslogServerPort) {
-            this.remoteSyslogServerPort = Objects.requireNonNull(remoteSyslogServerPort);
+            if (remoteSyslogServerPort == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "remoteSyslogServerPort");
+            }
+            this.remoteSyslogServerPort = remoteSyslogServerPort;
             return this;
         }
         @CustomType.Setter
         public Builder resourceCompartmentId(String resourceCompartmentId) {
-            this.resourceCompartmentId = Objects.requireNonNull(resourceCompartmentId);
+            if (resourceCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "resourceCompartmentId");
+            }
+            this.resourceCompartmentId = resourceCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+            if (resourceId == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "resourceId");
+            }
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceName(String resourceName) {
-            this.resourceName = Objects.requireNonNull(resourceName);
+            if (resourceName == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "resourceName");
+            }
+            this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeAssignmentFrom(String timeAssignmentFrom) {
-            this.timeAssignmentFrom = Objects.requireNonNull(timeAssignmentFrom);
+            if (timeAssignmentFrom == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "timeAssignmentFrom");
+            }
+            this.timeAssignmentFrom = timeAssignmentFrom;
             return this;
         }
         @CustomType.Setter
         public Builder timeAssignmentTo(String timeAssignmentTo) {
-            this.timeAssignmentTo = Objects.requireNonNull(timeAssignmentTo);
+            if (timeAssignmentTo == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "timeAssignmentTo");
+            }
+            this.timeAssignmentTo = timeAssignmentTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfAssignment(String timeOfAssignment) {
-            this.timeOfAssignment = Objects.requireNonNull(timeOfAssignment);
+            if (timeOfAssignment == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "timeOfAssignment");
+            }
+            this.timeOfAssignment = timeOfAssignment;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfDeletion(String timeOfDeletion) {
-            this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
+            if (timeOfDeletion == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "timeOfDeletion");
+            }
+            this.timeOfDeletion = timeOfDeletion;
             return this;
         }
         @CustomType.Setter
         public Builder unassignerId(String unassignerId) {
-            this.unassignerId = Objects.requireNonNull(unassignerId);
+            if (unassignerId == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "unassignerId");
+            }
+            this.unassignerId = unassignerId;
             return this;
         }
         public GetControlAssignmentsOperatorControlAssignmentCollectionItem build() {

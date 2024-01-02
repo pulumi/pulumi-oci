@@ -5,6 +5,7 @@ package com.pulumi.oci.Functions.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetFusionEnvironmentFamilyArgs extends com.pulumi.resources.I
         }
 
         public GetFusionEnvironmentFamilyArgs build() {
-            $.fusionEnvironmentFamilyId = Objects.requireNonNull($.fusionEnvironmentFamilyId, "expected parameter 'fusionEnvironmentFamilyId' to be non-null");
+            if ($.fusionEnvironmentFamilyId == null) {
+                throw new MissingRequiredPropertyException("GetFusionEnvironmentFamilyArgs", "fusionEnvironmentFamilyId");
+            }
             return $;
         }
     }

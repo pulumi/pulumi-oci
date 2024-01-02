@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -57,7 +58,10 @@ public final class GetIpsecConnectionTunnelEncryptionDomainConfig {
 
         @CustomType.Setter
         public Builder cpeTrafficSelectors(List<String> cpeTrafficSelectors) {
-            this.cpeTrafficSelectors = Objects.requireNonNull(cpeTrafficSelectors);
+            if (cpeTrafficSelectors == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelEncryptionDomainConfig", "cpeTrafficSelectors");
+            }
+            this.cpeTrafficSelectors = cpeTrafficSelectors;
             return this;
         }
         public Builder cpeTrafficSelectors(String... cpeTrafficSelectors) {
@@ -65,7 +69,10 @@ public final class GetIpsecConnectionTunnelEncryptionDomainConfig {
         }
         @CustomType.Setter
         public Builder oracleTrafficSelectors(List<String> oracleTrafficSelectors) {
-            this.oracleTrafficSelectors = Objects.requireNonNull(oracleTrafficSelectors);
+            if (oracleTrafficSelectors == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelEncryptionDomainConfig", "oracleTrafficSelectors");
+            }
+            this.oracleTrafficSelectors = oracleTrafficSelectors;
             return this;
         }
         public Builder oracleTrafficSelectors(String... oracleTrafficSelectors) {

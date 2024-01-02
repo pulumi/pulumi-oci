@@ -44,6 +44,7 @@ public final class PluggableDatabasesRemoteClonePluggableDatabaseManagementConfi
 
         @CustomType.Setter
         public Builder managementStatus(@Nullable String managementStatus) {
+
             this.managementStatus = managementStatus;
             return this;
         }

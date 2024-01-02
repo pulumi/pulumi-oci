@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetClusterNetworkInstancesFilter;
 import com.pulumi.oci.Core.outputs.GetClusterNetworkInstancesInstance;
 import java.lang.String;
@@ -101,21 +102,29 @@ public final class GetClusterNetworkInstancesResult {
 
         @CustomType.Setter
         public Builder clusterNetworkId(String clusterNetworkId) {
-            this.clusterNetworkId = Objects.requireNonNull(clusterNetworkId);
+            if (clusterNetworkId == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancesResult", "clusterNetworkId");
+            }
+            this.clusterNetworkId = clusterNetworkId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetClusterNetworkInstancesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -124,12 +133,18 @@ public final class GetClusterNetworkInstancesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instances(List<GetClusterNetworkInstancesInstance> instances) {
-            this.instances = Objects.requireNonNull(instances);
+            if (instances == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancesResult", "instances");
+            }
+            this.instances = instances;
             return this;
         }
         public Builder instances(GetClusterNetworkInstancesInstance... instances) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Blockchain.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Blockchain.outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn;
 import com.pulumi.oci.Blockchain.outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
 
         @CustomType.Setter
         public Builder osns(List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn> osns) {
-            this.osns = Objects.requireNonNull(osns);
+            if (osns == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail", "osns");
+            }
+            this.osns = osns;
             return this;
         }
         public Builder osns(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn... osns) {
@@ -66,7 +70,10 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
         }
         @CustomType.Setter
         public Builder peers(List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer> peers) {
-            this.peers = Objects.requireNonNull(peers);
+            if (peers == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail", "peers");
+            }
+            this.peers = peers;
             return this;
         }
         public Builder peers(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer... peers) {

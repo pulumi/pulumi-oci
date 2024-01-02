@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -513,172 +514,274 @@ public final class GetAuditEventsAuditEventCollectionItem {
 
         @CustomType.Setter
         public Builder actionTaken(String actionTaken) {
-            this.actionTaken = Objects.requireNonNull(actionTaken);
+            if (actionTaken == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "actionTaken");
+            }
+            this.actionTaken = actionTaken;
             return this;
         }
         @CustomType.Setter
         public Builder auditEventTime(String auditEventTime) {
-            this.auditEventTime = Objects.requireNonNull(auditEventTime);
+            if (auditEventTime == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "auditEventTime");
+            }
+            this.auditEventTime = auditEventTime;
             return this;
         }
         @CustomType.Setter
         public Builder auditLocation(String auditLocation) {
-            this.auditLocation = Objects.requireNonNull(auditLocation);
+            if (auditLocation == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "auditLocation");
+            }
+            this.auditLocation = auditLocation;
             return this;
         }
         @CustomType.Setter
         public Builder auditPolicies(String auditPolicies) {
-            this.auditPolicies = Objects.requireNonNull(auditPolicies);
+            if (auditPolicies == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "auditPolicies");
+            }
+            this.auditPolicies = auditPolicies;
             return this;
         }
         @CustomType.Setter
         public Builder auditTrailId(String auditTrailId) {
-            this.auditTrailId = Objects.requireNonNull(auditTrailId);
+            if (auditTrailId == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "auditTrailId");
+            }
+            this.auditTrailId = auditTrailId;
             return this;
         }
         @CustomType.Setter
         public Builder auditType(String auditType) {
-            this.auditType = Objects.requireNonNull(auditType);
+            if (auditType == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "auditType");
+            }
+            this.auditType = auditType;
             return this;
         }
         @CustomType.Setter
         public Builder clientHostname(String clientHostname) {
-            this.clientHostname = Objects.requireNonNull(clientHostname);
+            if (clientHostname == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "clientHostname");
+            }
+            this.clientHostname = clientHostname;
             return this;
         }
         @CustomType.Setter
         public Builder clientId(String clientId) {
-            this.clientId = Objects.requireNonNull(clientId);
+            if (clientId == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "clientId");
+            }
+            this.clientId = clientId;
             return this;
         }
         @CustomType.Setter
         public Builder clientIp(String clientIp) {
-            this.clientIp = Objects.requireNonNull(clientIp);
+            if (clientIp == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "clientIp");
+            }
+            this.clientIp = clientIp;
             return this;
         }
         @CustomType.Setter
         public Builder clientProgram(String clientProgram) {
-            this.clientProgram = Objects.requireNonNull(clientProgram);
+            if (clientProgram == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "clientProgram");
+            }
+            this.clientProgram = clientProgram;
             return this;
         }
         @CustomType.Setter
         public Builder commandParam(String commandParam) {
-            this.commandParam = Objects.requireNonNull(commandParam);
+            if (commandParam == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "commandParam");
+            }
+            this.commandParam = commandParam;
             return this;
         }
         @CustomType.Setter
         public Builder commandText(String commandText) {
-            this.commandText = Objects.requireNonNull(commandText);
+            if (commandText == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "commandText");
+            }
+            this.commandText = commandText;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseType(String databaseType) {
-            this.databaseType = Objects.requireNonNull(databaseType);
+            if (databaseType == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "databaseType");
+            }
+            this.databaseType = databaseType;
             return this;
         }
         @CustomType.Setter
         public Builder dbUserName(String dbUserName) {
-            this.dbUserName = Objects.requireNonNull(dbUserName);
+            if (dbUserName == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "dbUserName");
+            }
+            this.dbUserName = dbUserName;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder errorCode(String errorCode) {
-            this.errorCode = Objects.requireNonNull(errorCode);
+            if (errorCode == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "errorCode");
+            }
+            this.errorCode = errorCode;
             return this;
         }
         @CustomType.Setter
         public Builder errorMessage(String errorMessage) {
-            this.errorMessage = Objects.requireNonNull(errorMessage);
+            if (errorMessage == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "errorMessage");
+            }
+            this.errorMessage = errorMessage;
             return this;
         }
         @CustomType.Setter
         public Builder eventName(String eventName) {
-            this.eventName = Objects.requireNonNull(eventName);
+            if (eventName == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "eventName");
+            }
+            this.eventName = eventName;
             return this;
         }
         @CustomType.Setter
         public Builder extendedEventAttributes(String extendedEventAttributes) {
-            this.extendedEventAttributes = Objects.requireNonNull(extendedEventAttributes);
+            if (extendedEventAttributes == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "extendedEventAttributes");
+            }
+            this.extendedEventAttributes = extendedEventAttributes;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAlerted(Boolean isAlerted) {
-            this.isAlerted = Objects.requireNonNull(isAlerted);
+            if (isAlerted == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "isAlerted");
+            }
+            this.isAlerted = isAlerted;
             return this;
         }
         @CustomType.Setter
         public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+            if (object == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "object");
+            }
+            this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder objectOwner(String objectOwner) {
-            this.objectOwner = Objects.requireNonNull(objectOwner);
+            if (objectOwner == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "objectOwner");
+            }
+            this.objectOwner = objectOwner;
             return this;
         }
         @CustomType.Setter
         public Builder objectType(String objectType) {
-            this.objectType = Objects.requireNonNull(objectType);
+            if (objectType == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "objectType");
+            }
+            this.objectType = objectType;
             return this;
         }
         @CustomType.Setter
         public Builder operation(String operation) {
-            this.operation = Objects.requireNonNull(operation);
+            if (operation == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "operation");
+            }
+            this.operation = operation;
             return this;
         }
         @CustomType.Setter
         public Builder operationStatus(String operationStatus) {
-            this.operationStatus = Objects.requireNonNull(operationStatus);
+            if (operationStatus == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "operationStatus");
+            }
+            this.operationStatus = operationStatus;
             return this;
         }
         @CustomType.Setter
         public Builder osTerminal(String osTerminal) {
-            this.osTerminal = Objects.requireNonNull(osTerminal);
+            if (osTerminal == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "osTerminal");
+            }
+            this.osTerminal = osTerminal;
             return this;
         }
         @CustomType.Setter
         public Builder osUserName(String osUserName) {
-            this.osUserName = Objects.requireNonNull(osUserName);
+            if (osUserName == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "osUserName");
+            }
+            this.osUserName = osUserName;
             return this;
         }
         @CustomType.Setter
         public Builder targetClass(String targetClass) {
-            this.targetClass = Objects.requireNonNull(targetClass);
+            if (targetClass == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "targetClass");
+            }
+            this.targetClass = targetClass;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "targetId");
+            }
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder targetName(String targetName) {
-            this.targetName = Objects.requireNonNull(targetName);
+            if (targetName == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "targetName");
+            }
+            this.targetName = targetName;
             return this;
         }
         @CustomType.Setter
         public Builder timeCollected(String timeCollected) {
-            this.timeCollected = Objects.requireNonNull(timeCollected);
+            if (timeCollected == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "timeCollected");
+            }
+            this.timeCollected = timeCollected;
             return this;
         }
         public GetAuditEventsAuditEventCollectionItem build() {

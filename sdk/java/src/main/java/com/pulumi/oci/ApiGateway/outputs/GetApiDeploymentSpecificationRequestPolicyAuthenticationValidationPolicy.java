@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicy;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetail;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyKey;
@@ -147,7 +148,10 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationValid
 
         @CustomType.Setter
         public Builder additionalValidationPolicies(List<GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicy> additionalValidationPolicies) {
-            this.additionalValidationPolicies = Objects.requireNonNull(additionalValidationPolicies);
+            if (additionalValidationPolicies == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy", "additionalValidationPolicies");
+            }
+            this.additionalValidationPolicies = additionalValidationPolicies;
             return this;
         }
         public Builder additionalValidationPolicies(GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicy... additionalValidationPolicies) {
@@ -155,7 +159,10 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationValid
         }
         @CustomType.Setter
         public Builder clientDetails(List<GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetail> clientDetails) {
-            this.clientDetails = Objects.requireNonNull(clientDetails);
+            if (clientDetails == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy", "clientDetails");
+            }
+            this.clientDetails = clientDetails;
             return this;
         }
         public Builder clientDetails(GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetail... clientDetails) {
@@ -163,12 +170,18 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationValid
         }
         @CustomType.Setter
         public Builder isSslVerifyDisabled(Boolean isSslVerifyDisabled) {
-            this.isSslVerifyDisabled = Objects.requireNonNull(isSslVerifyDisabled);
+            if (isSslVerifyDisabled == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy", "isSslVerifyDisabled");
+            }
+            this.isSslVerifyDisabled = isSslVerifyDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder keys(List<GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyKey> keys) {
-            this.keys = Objects.requireNonNull(keys);
+            if (keys == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy", "keys");
+            }
+            this.keys = keys;
             return this;
         }
         public Builder keys(GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyKey... keys) {
@@ -176,12 +189,18 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationValid
         }
         @CustomType.Setter
         public Builder maxCacheDurationInHours(Integer maxCacheDurationInHours) {
-            this.maxCacheDurationInHours = Objects.requireNonNull(maxCacheDurationInHours);
+            if (maxCacheDurationInHours == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy", "maxCacheDurationInHours");
+            }
+            this.maxCacheDurationInHours = maxCacheDurationInHours;
             return this;
         }
         @CustomType.Setter
         public Builder sourceUriDetails(List<GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetail> sourceUriDetails) {
-            this.sourceUriDetails = Objects.requireNonNull(sourceUriDetails);
+            if (sourceUriDetails == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy", "sourceUriDetails");
+            }
+            this.sourceUriDetails = sourceUriDetails;
             return this;
         }
         public Builder sourceUriDetails(GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetail... sourceUriDetails) {
@@ -189,12 +208,18 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationValid
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder uri(String uri) {
-            this.uri = Objects.requireNonNull(uri);
+            if (uri == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy", "uri");
+            }
+            this.uri = uri;
             return this;
         }
         public GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy build() {

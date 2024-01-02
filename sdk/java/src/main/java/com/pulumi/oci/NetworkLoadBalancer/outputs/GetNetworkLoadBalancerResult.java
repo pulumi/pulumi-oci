@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetNetworkLoadBalancerIpAddress;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetNetworkLoadBalancerReservedIp;
 import java.lang.Boolean;
@@ -270,32 +271,50 @@ public final class GetNetworkLoadBalancerResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddresses(List<GetNetworkLoadBalancerIpAddress> ipAddresses) {
-            this.ipAddresses = Objects.requireNonNull(ipAddresses);
+            if (ipAddresses == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "ipAddresses");
+            }
+            this.ipAddresses = ipAddresses;
             return this;
         }
         public Builder ipAddresses(GetNetworkLoadBalancerIpAddress... ipAddresses) {
@@ -303,27 +322,42 @@ public final class GetNetworkLoadBalancerResult {
         }
         @CustomType.Setter
         public Builder isPreserveSourceDestination(Boolean isPreserveSourceDestination) {
-            this.isPreserveSourceDestination = Objects.requireNonNull(isPreserveSourceDestination);
+            if (isPreserveSourceDestination == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "isPreserveSourceDestination");
+            }
+            this.isPreserveSourceDestination = isPreserveSourceDestination;
             return this;
         }
         @CustomType.Setter
         public Builder isPrivate(Boolean isPrivate) {
-            this.isPrivate = Objects.requireNonNull(isPrivate);
+            if (isPrivate == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "isPrivate");
+            }
+            this.isPrivate = isPrivate;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
-            this.networkLoadBalancerId = Objects.requireNonNull(networkLoadBalancerId);
+            if (networkLoadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "networkLoadBalancerId");
+            }
+            this.networkLoadBalancerId = networkLoadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder networkSecurityGroupIds(List<String> networkSecurityGroupIds) {
-            this.networkSecurityGroupIds = Objects.requireNonNull(networkSecurityGroupIds);
+            if (networkSecurityGroupIds == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "networkSecurityGroupIds");
+            }
+            this.networkSecurityGroupIds = networkSecurityGroupIds;
             return this;
         }
         public Builder networkSecurityGroupIds(String... networkSecurityGroupIds) {
@@ -331,12 +365,18 @@ public final class GetNetworkLoadBalancerResult {
         }
         @CustomType.Setter
         public Builder nlbIpVersion(String nlbIpVersion) {
-            this.nlbIpVersion = Objects.requireNonNull(nlbIpVersion);
+            if (nlbIpVersion == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "nlbIpVersion");
+            }
+            this.nlbIpVersion = nlbIpVersion;
             return this;
         }
         @CustomType.Setter
         public Builder reservedIps(List<GetNetworkLoadBalancerReservedIp> reservedIps) {
-            this.reservedIps = Objects.requireNonNull(reservedIps);
+            if (reservedIps == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "reservedIps");
+            }
+            this.reservedIps = reservedIps;
             return this;
         }
         public Builder reservedIps(GetNetworkLoadBalancerReservedIp... reservedIps) {
@@ -344,27 +384,42 @@ public final class GetNetworkLoadBalancerResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetNetworkLoadBalancerResult build() {

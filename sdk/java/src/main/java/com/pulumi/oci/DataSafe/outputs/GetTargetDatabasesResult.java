@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesFilter;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesTargetDatabase;
 import java.lang.Boolean;
@@ -162,36 +163,45 @@ public final class GetTargetDatabasesResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder associatedResourceId(@Nullable String associatedResourceId) {
+
             this.associatedResourceId = associatedResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder databaseType(@Nullable String databaseType) {
+
             this.databaseType = databaseType;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetTargetDatabasesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -200,27 +210,36 @@ public final class GetTargetDatabasesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder infrastructureType(@Nullable String infrastructureType) {
+
             this.infrastructureType = infrastructureType;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targetDatabaseId(@Nullable String targetDatabaseId) {
+
             this.targetDatabaseId = targetDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder targetDatabases(List<GetTargetDatabasesTargetDatabase> targetDatabases) {
-            this.targetDatabases = Objects.requireNonNull(targetDatabases);
+            if (targetDatabases == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesResult", "targetDatabases");
+            }
+            this.targetDatabases = targetDatabases;
             return this;
         }
         public Builder targetDatabases(GetTargetDatabasesTargetDatabase... targetDatabases) {

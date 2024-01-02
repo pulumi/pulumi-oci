@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule 
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isPreferred(Boolean isPreferred) {
-            this.isPreferred = Objects.requireNonNull(isPreferred);
+            if (isPreferred == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule", "isPreferred");
+            }
+            this.isPreferred = isPreferred;
             return this;
         }
         public GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule build() {

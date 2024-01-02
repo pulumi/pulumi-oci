@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -268,86 +269,105 @@ public final class CertificateCertificateConfigSubject {
 
         @CustomType.Setter
         public Builder commonName(String commonName) {
-            this.commonName = Objects.requireNonNull(commonName);
+            if (commonName == null) {
+              throw new MissingRequiredPropertyException("CertificateCertificateConfigSubject", "commonName");
+            }
+            this.commonName = commonName;
             return this;
         }
         @CustomType.Setter
         public Builder country(@Nullable String country) {
+
             this.country = country;
             return this;
         }
         @CustomType.Setter
         public Builder distinguishedNameQualifier(@Nullable String distinguishedNameQualifier) {
+
             this.distinguishedNameQualifier = distinguishedNameQualifier;
             return this;
         }
         @CustomType.Setter
         public Builder domainComponent(@Nullable String domainComponent) {
+
             this.domainComponent = domainComponent;
             return this;
         }
         @CustomType.Setter
         public Builder generationQualifier(@Nullable String generationQualifier) {
+
             this.generationQualifier = generationQualifier;
             return this;
         }
         @CustomType.Setter
         public Builder givenName(@Nullable String givenName) {
+
             this.givenName = givenName;
             return this;
         }
         @CustomType.Setter
         public Builder initials(@Nullable String initials) {
+
             this.initials = initials;
             return this;
         }
         @CustomType.Setter
         public Builder localityName(@Nullable String localityName) {
+
             this.localityName = localityName;
             return this;
         }
         @CustomType.Setter
         public Builder organization(@Nullable String organization) {
+
             this.organization = organization;
             return this;
         }
         @CustomType.Setter
         public Builder organizationalUnit(@Nullable String organizationalUnit) {
+
             this.organizationalUnit = organizationalUnit;
             return this;
         }
         @CustomType.Setter
         public Builder pseudonym(@Nullable String pseudonym) {
+
             this.pseudonym = pseudonym;
             return this;
         }
         @CustomType.Setter
         public Builder serialNumber(@Nullable String serialNumber) {
+
             this.serialNumber = serialNumber;
             return this;
         }
         @CustomType.Setter
         public Builder stateOrProvinceName(@Nullable String stateOrProvinceName) {
+
             this.stateOrProvinceName = stateOrProvinceName;
             return this;
         }
         @CustomType.Setter
         public Builder street(@Nullable String street) {
+
             this.street = street;
             return this;
         }
         @CustomType.Setter
         public Builder surname(@Nullable String surname) {
+
             this.surname = surname;
             return this;
         }
         @CustomType.Setter
         public Builder title(@Nullable String title) {
+
             this.title = title;
             return this;
         }
         @CustomType.Setter
         public Builder userId(@Nullable String userId) {
+
             this.userId = userId;
             return this;
         }

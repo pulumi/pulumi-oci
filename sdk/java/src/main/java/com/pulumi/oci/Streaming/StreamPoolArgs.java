@@ -5,6 +5,7 @@ package com.pulumi.oci.Streaming;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Streaming.inputs.StreamPoolCustomEncryptionKeyArgs;
 import com.pulumi.oci.Streaming.inputs.StreamPoolKafkaSettingsArgs;
 import com.pulumi.oci.Streaming.inputs.StreamPoolPrivateEndpointSettingsArgs;
@@ -303,7 +304,9 @@ public final class StreamPoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public StreamPoolArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("StreamPoolArgs", "compartmentId");
+            }
             return $;
         }
     }

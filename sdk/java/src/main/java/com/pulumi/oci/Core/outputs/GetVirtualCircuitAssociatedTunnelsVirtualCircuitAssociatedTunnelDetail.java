@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTun
 
         @CustomType.Setter
         public Builder ipsecConnectionId(String ipsecConnectionId) {
-            this.ipsecConnectionId = Objects.requireNonNull(ipsecConnectionId);
+            if (ipsecConnectionId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail", "ipsecConnectionId");
+            }
+            this.ipsecConnectionId = ipsecConnectionId;
             return this;
         }
         @CustomType.Setter
         public Builder tunnelId(String tunnelId) {
-            this.tunnelId = Objects.requireNonNull(tunnelId);
+            if (tunnelId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail", "tunnelId");
+            }
+            this.tunnelId = tunnelId;
             return this;
         }
         @CustomType.Setter
         public Builder tunnelType(String tunnelType) {
-            this.tunnelType = Objects.requireNonNull(tunnelType);
+            if (tunnelType == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail", "tunnelType");
+            }
+            this.tunnelType = tunnelType;
             return this;
         }
         public GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail build() {

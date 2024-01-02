@@ -5,6 +5,7 @@ package com.pulumi.oci.Waas.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetHttpRedirectArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetHttpRedirectArgs build() {
-            $.httpRedirectId = Objects.requireNonNull($.httpRedirectId, "expected parameter 'httpRedirectId' to be non-null");
+            if ($.httpRedirectId == null) {
+                throw new MissingRequiredPropertyException("GetHttpRedirectArgs", "httpRedirectId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetRecommendationsFilter;
 import com.pulumi.oci.Optimizer.outputs.GetRecommendationsRecommendationCollection;
 import java.lang.Boolean;
@@ -162,16 +163,19 @@ public final class GetRecommendationsResult {
 
         @CustomType.Setter
         public Builder categoryId(@Nullable String categoryId) {
+
             this.categoryId = categoryId;
             return this;
         }
         @CustomType.Setter
         public Builder categoryName(@Nullable String categoryName) {
+
             this.categoryName = categoryName;
             return this;
         }
         @CustomType.Setter
         public Builder childTenancyIds(@Nullable List<String> childTenancyIds) {
+
             this.childTenancyIds = childTenancyIds;
             return this;
         }
@@ -180,16 +184,23 @@ public final class GetRecommendationsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
-            this.compartmentIdInSubtree = Objects.requireNonNull(compartmentIdInSubtree);
+            if (compartmentIdInSubtree == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationsResult", "compartmentIdInSubtree");
+            }
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRecommendationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -198,22 +209,30 @@ public final class GetRecommendationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder includeOrganization(@Nullable Boolean includeOrganization) {
+
             this.includeOrganization = includeOrganization;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder recommendationCollections(List<GetRecommendationsRecommendationCollection> recommendationCollections) {
-            this.recommendationCollections = Objects.requireNonNull(recommendationCollections);
+            if (recommendationCollections == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationsResult", "recommendationCollections");
+            }
+            this.recommendationCollections = recommendationCollections;
             return this;
         }
         public Builder recommendationCollections(GetRecommendationsRecommendationCollection... recommendationCollections) {
@@ -221,11 +240,13 @@ public final class GetRecommendationsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }

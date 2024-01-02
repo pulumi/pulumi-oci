@@ -4,6 +4,7 @@
 package com.pulumi.oci.Audit.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Audit.outputs.GetEventsAuditEventDataIdentity;
 import com.pulumi.oci.Audit.outputs.GetEventsAuditEventDataRequest;
 import com.pulumi.oci.Audit.outputs.GetEventsAuditEventDataResponse;
@@ -231,47 +232,74 @@ public final class GetEventsAuditEventData {
 
         @CustomType.Setter
         public Builder additionalDetails(Map<String,Object> additionalDetails) {
-            this.additionalDetails = Objects.requireNonNull(additionalDetails);
+            if (additionalDetails == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventData", "additionalDetails");
+            }
+            this.additionalDetails = additionalDetails;
             return this;
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventData", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventData", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentName(String compartmentName) {
-            this.compartmentName = Objects.requireNonNull(compartmentName);
+            if (compartmentName == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventData", "compartmentName");
+            }
+            this.compartmentName = compartmentName;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventData", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder eventGroupingId(String eventGroupingId) {
-            this.eventGroupingId = Objects.requireNonNull(eventGroupingId);
+            if (eventGroupingId == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventData", "eventGroupingId");
+            }
+            this.eventGroupingId = eventGroupingId;
             return this;
         }
         @CustomType.Setter
         public Builder eventName(String eventName) {
-            this.eventName = Objects.requireNonNull(eventName);
+            if (eventName == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventData", "eventName");
+            }
+            this.eventName = eventName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventData", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder identities(List<GetEventsAuditEventDataIdentity> identities) {
-            this.identities = Objects.requireNonNull(identities);
+            if (identities == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventData", "identities");
+            }
+            this.identities = identities;
             return this;
         }
         public Builder identities(GetEventsAuditEventDataIdentity... identities) {
@@ -279,7 +307,10 @@ public final class GetEventsAuditEventData {
         }
         @CustomType.Setter
         public Builder requests(List<GetEventsAuditEventDataRequest> requests) {
-            this.requests = Objects.requireNonNull(requests);
+            if (requests == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventData", "requests");
+            }
+            this.requests = requests;
             return this;
         }
         public Builder requests(GetEventsAuditEventDataRequest... requests) {
@@ -287,17 +318,26 @@ public final class GetEventsAuditEventData {
         }
         @CustomType.Setter
         public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+            if (resourceId == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventData", "resourceId");
+            }
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceName(String resourceName) {
-            this.resourceName = Objects.requireNonNull(resourceName);
+            if (resourceName == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventData", "resourceName");
+            }
+            this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
         public Builder responses(List<GetEventsAuditEventDataResponse> responses) {
-            this.responses = Objects.requireNonNull(responses);
+            if (responses == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventData", "responses");
+            }
+            this.responses = responses;
             return this;
         }
         public Builder responses(GetEventsAuditEventDataResponse... responses) {
@@ -305,7 +345,10 @@ public final class GetEventsAuditEventData {
         }
         @CustomType.Setter
         public Builder stateChanges(List<GetEventsAuditEventDataStateChange> stateChanges) {
-            this.stateChanges = Objects.requireNonNull(stateChanges);
+            if (stateChanges == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventData", "stateChanges");
+            }
+            this.stateChanges = stateChanges;
             return this;
         }
         public Builder stateChanges(GetEventsAuditEventDataStateChange... stateChanges) {

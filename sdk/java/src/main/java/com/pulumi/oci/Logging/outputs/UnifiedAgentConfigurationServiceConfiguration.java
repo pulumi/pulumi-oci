@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.outputs.UnifiedAgentConfigurationServiceConfigurationDestination;
 import com.pulumi.oci.Logging.outputs.UnifiedAgentConfigurationServiceConfigurationSource;
 import java.lang.String;
@@ -73,17 +74,26 @@ public final class UnifiedAgentConfigurationServiceConfiguration {
 
         @CustomType.Setter
         public Builder configurationType(String configurationType) {
-            this.configurationType = Objects.requireNonNull(configurationType);
+            if (configurationType == null) {
+              throw new MissingRequiredPropertyException("UnifiedAgentConfigurationServiceConfiguration", "configurationType");
+            }
+            this.configurationType = configurationType;
             return this;
         }
         @CustomType.Setter
         public Builder destination(UnifiedAgentConfigurationServiceConfigurationDestination destination) {
-            this.destination = Objects.requireNonNull(destination);
+            if (destination == null) {
+              throw new MissingRequiredPropertyException("UnifiedAgentConfigurationServiceConfiguration", "destination");
+            }
+            this.destination = destination;
             return this;
         }
         @CustomType.Setter
         public Builder sources(List<UnifiedAgentConfigurationServiceConfigurationSource> sources) {
-            this.sources = Objects.requireNonNull(sources);
+            if (sources == null) {
+              throw new MissingRequiredPropertyException("UnifiedAgentConfigurationServiceConfiguration", "sources");
+            }
+            this.sources = sources;
             return this;
         }
         public Builder sources(UnifiedAgentConfigurationServiceConfigurationSource... sources) {

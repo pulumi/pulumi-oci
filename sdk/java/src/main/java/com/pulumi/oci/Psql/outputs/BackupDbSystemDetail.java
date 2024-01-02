@@ -58,11 +58,13 @@ public final class BackupDbSystemDetail {
 
         @CustomType.Setter
         public Builder dbVersion(@Nullable String dbVersion) {
+
             this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder systemType(@Nullable String systemType) {
+
             this.systemType = systemType;
             return this;
         }

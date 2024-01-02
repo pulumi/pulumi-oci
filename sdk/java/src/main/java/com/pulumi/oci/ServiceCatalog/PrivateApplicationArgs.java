@@ -5,6 +5,7 @@ package com.pulumi.oci.ServiceCatalog;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceCatalog.inputs.PrivateApplicationPackageDetailsArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -350,10 +351,18 @@ public final class PrivateApplicationArgs extends com.pulumi.resources.ResourceA
         }
 
         public PrivateApplicationArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.packageDetails = Objects.requireNonNull($.packageDetails, "expected parameter 'packageDetails' to be non-null");
-            $.shortDescription = Objects.requireNonNull($.shortDescription, "expected parameter 'shortDescription' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("PrivateApplicationArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("PrivateApplicationArgs", "displayName");
+            }
+            if ($.packageDetails == null) {
+                throw new MissingRequiredPropertyException("PrivateApplicationArgs", "packageDetails");
+            }
+            if ($.shortDescription == null) {
+                throw new MissingRequiredPropertyException("PrivateApplicationArgs", "shortDescription");
+            }
             return $;
         }
     }

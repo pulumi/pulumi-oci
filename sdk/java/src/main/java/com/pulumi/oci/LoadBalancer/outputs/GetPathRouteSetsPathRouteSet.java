@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.GetPathRouteSetsPathRouteSetPathRoute;
 import java.lang.String;
 import java.util.List;
@@ -78,17 +79,26 @@ public final class GetPathRouteSetsPathRouteSet {
 
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetPathRouteSetsPathRouteSet", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetPathRouteSetsPathRouteSet", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder pathRoutes(List<GetPathRouteSetsPathRouteSetPathRoute> pathRoutes) {
-            this.pathRoutes = Objects.requireNonNull(pathRoutes);
+            if (pathRoutes == null) {
+              throw new MissingRequiredPropertyException("GetPathRouteSetsPathRouteSet", "pathRoutes");
+            }
+            this.pathRoutes = pathRoutes;
             return this;
         }
         public Builder pathRoutes(GetPathRouteSetsPathRouteSetPathRoute... pathRoutes) {
@@ -96,7 +106,10 @@ public final class GetPathRouteSetsPathRouteSet {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetPathRouteSetsPathRouteSet", "state");
+            }
+            this.state = state;
             return this;
         }
         public GetPathRouteSetsPathRouteSet build() {

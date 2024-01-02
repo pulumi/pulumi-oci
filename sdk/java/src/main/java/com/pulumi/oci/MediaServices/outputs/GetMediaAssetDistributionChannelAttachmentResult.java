@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -132,42 +133,66 @@ public final class GetMediaAssetDistributionChannelAttachmentResult {
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetDistributionChannelAttachmentResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder distributionChannelId(String distributionChannelId) {
-            this.distributionChannelId = Objects.requireNonNull(distributionChannelId);
+            if (distributionChannelId == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetDistributionChannelAttachmentResult", "distributionChannelId");
+            }
+            this.distributionChannelId = distributionChannelId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetDistributionChannelAttachmentResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder mediaAssetId(String mediaAssetId) {
-            this.mediaAssetId = Objects.requireNonNull(mediaAssetId);
+            if (mediaAssetId == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetDistributionChannelAttachmentResult", "mediaAssetId");
+            }
+            this.mediaAssetId = mediaAssetId;
             return this;
         }
         @CustomType.Setter
         public Builder mediaWorkflowJobId(String mediaWorkflowJobId) {
-            this.mediaWorkflowJobId = Objects.requireNonNull(mediaWorkflowJobId);
+            if (mediaWorkflowJobId == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetDistributionChannelAttachmentResult", "mediaWorkflowJobId");
+            }
+            this.mediaWorkflowJobId = mediaWorkflowJobId;
             return this;
         }
         @CustomType.Setter
         public Builder metadataRef(String metadataRef) {
-            this.metadataRef = Objects.requireNonNull(metadataRef);
+            if (metadataRef == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetDistributionChannelAttachmentResult", "metadataRef");
+            }
+            this.metadataRef = metadataRef;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetDistributionChannelAttachmentResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetDistributionChannelAttachmentResult", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetMediaAssetDistributionChannelAttachmentResult build() {

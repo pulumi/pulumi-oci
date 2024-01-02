@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobDiscoveryDetail;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -241,22 +242,34 @@ public final class GetDiscoveryJobResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder discoveryClient(String discoveryClient) {
-            this.discoveryClient = Objects.requireNonNull(discoveryClient);
+            if (discoveryClient == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobResult", "discoveryClient");
+            }
+            this.discoveryClient = discoveryClient;
             return this;
         }
         @CustomType.Setter
         public Builder discoveryDetails(List<GetDiscoveryJobDiscoveryDetail> discoveryDetails) {
-            this.discoveryDetails = Objects.requireNonNull(discoveryDetails);
+            if (discoveryDetails == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobResult", "discoveryDetails");
+            }
+            this.discoveryDetails = discoveryDetails;
             return this;
         }
         public Builder discoveryDetails(GetDiscoveryJobDiscoveryDetail... discoveryDetails) {
@@ -264,62 +277,98 @@ public final class GetDiscoveryJobResult {
         }
         @CustomType.Setter
         public Builder discoveryJobId(String discoveryJobId) {
-            this.discoveryJobId = Objects.requireNonNull(discoveryJobId);
+            if (discoveryJobId == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobResult", "discoveryJobId");
+            }
+            this.discoveryJobId = discoveryJobId;
             return this;
         }
         @CustomType.Setter
         public Builder discoveryType(String discoveryType) {
-            this.discoveryType = Objects.requireNonNull(discoveryType);
+            if (discoveryType == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobResult", "discoveryType");
+            }
+            this.discoveryType = discoveryType;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder shouldPropagateTagsToDiscoveredResources(Boolean shouldPropagateTagsToDiscoveredResources) {
-            this.shouldPropagateTagsToDiscoveredResources = Objects.requireNonNull(shouldPropagateTagsToDiscoveredResources);
+            if (shouldPropagateTagsToDiscoveredResources == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobResult", "shouldPropagateTagsToDiscoveredResources");
+            }
+            this.shouldPropagateTagsToDiscoveredResources = shouldPropagateTagsToDiscoveredResources;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder statusMessage(String statusMessage) {
-            this.statusMessage = Objects.requireNonNull(statusMessage);
+            if (statusMessage == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobResult", "statusMessage");
+            }
+            this.statusMessage = statusMessage;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder tenantId(String tenantId) {
-            this.tenantId = Objects.requireNonNull(tenantId);
+            if (tenantId == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobResult", "tenantId");
+            }
+            this.tenantId = tenantId;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+            if (userId == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobResult", "userId");
+            }
+            this.userId = userId;
             return this;
         }
         public GetDiscoveryJobResult build() {

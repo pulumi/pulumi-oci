@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetResourceActionsResourceActionCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetResourceActionsResourceActionCollection {
 
         @CustomType.Setter
         public Builder items(List<GetResourceActionsResourceActionCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetResourceActionsResourceActionCollectionItem... items) {

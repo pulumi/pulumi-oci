@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -207,8 +208,12 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGr
         }
 
         public DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaNameArgs build() {
-            $.dbInstanceId = Objects.requireNonNull($.dbInstanceId, "expected parameter 'dbInstanceId' to be non-null");
-            $.schemaName = Objects.requireNonNull($.schemaName, "expected parameter 'schemaName' to be non-null");
+            if ($.dbInstanceId == null) {
+                throw new MissingRequiredPropertyException("DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaNameArgs", "dbInstanceId");
+            }
+            if ($.schemaName == null) {
+                throw new MissingRequiredPropertyException("DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaNameArgs", "schemaName");
+            }
             return $;
         }
     }

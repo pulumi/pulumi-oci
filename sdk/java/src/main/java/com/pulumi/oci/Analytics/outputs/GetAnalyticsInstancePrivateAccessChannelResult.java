@@ -4,6 +4,7 @@
 package com.pulumi.oci.Analytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Analytics.outputs.GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone;
 import com.pulumi.oci.Analytics.outputs.GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost;
 import java.lang.String;
@@ -175,17 +176,26 @@ public final class GetAnalyticsInstancePrivateAccessChannelResult {
 
         @CustomType.Setter
         public Builder analyticsInstanceId(String analyticsInstanceId) {
-            this.analyticsInstanceId = Objects.requireNonNull(analyticsInstanceId);
+            if (analyticsInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancePrivateAccessChannelResult", "analyticsInstanceId");
+            }
+            this.analyticsInstanceId = analyticsInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancePrivateAccessChannelResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder egressSourceIpAddresses(List<String> egressSourceIpAddresses) {
-            this.egressSourceIpAddresses = Objects.requireNonNull(egressSourceIpAddresses);
+            if (egressSourceIpAddresses == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancePrivateAccessChannelResult", "egressSourceIpAddresses");
+            }
+            this.egressSourceIpAddresses = egressSourceIpAddresses;
             return this;
         }
         public Builder egressSourceIpAddresses(String... egressSourceIpAddresses) {
@@ -193,22 +203,34 @@ public final class GetAnalyticsInstancePrivateAccessChannelResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancePrivateAccessChannelResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+            if (ipAddress == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancePrivateAccessChannelResult", "ipAddress");
+            }
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancePrivateAccessChannelResult", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder networkSecurityGroupIds(List<String> networkSecurityGroupIds) {
-            this.networkSecurityGroupIds = Objects.requireNonNull(networkSecurityGroupIds);
+            if (networkSecurityGroupIds == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancePrivateAccessChannelResult", "networkSecurityGroupIds");
+            }
+            this.networkSecurityGroupIds = networkSecurityGroupIds;
             return this;
         }
         public Builder networkSecurityGroupIds(String... networkSecurityGroupIds) {
@@ -216,12 +238,18 @@ public final class GetAnalyticsInstancePrivateAccessChannelResult {
         }
         @CustomType.Setter
         public Builder privateAccessChannelKey(String privateAccessChannelKey) {
-            this.privateAccessChannelKey = Objects.requireNonNull(privateAccessChannelKey);
+            if (privateAccessChannelKey == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancePrivateAccessChannelResult", "privateAccessChannelKey");
+            }
+            this.privateAccessChannelKey = privateAccessChannelKey;
             return this;
         }
         @CustomType.Setter
         public Builder privateSourceDnsZones(List<GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone> privateSourceDnsZones) {
-            this.privateSourceDnsZones = Objects.requireNonNull(privateSourceDnsZones);
+            if (privateSourceDnsZones == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancePrivateAccessChannelResult", "privateSourceDnsZones");
+            }
+            this.privateSourceDnsZones = privateSourceDnsZones;
             return this;
         }
         public Builder privateSourceDnsZones(GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone... privateSourceDnsZones) {
@@ -229,7 +257,10 @@ public final class GetAnalyticsInstancePrivateAccessChannelResult {
         }
         @CustomType.Setter
         public Builder privateSourceScanHosts(List<GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost> privateSourceScanHosts) {
-            this.privateSourceScanHosts = Objects.requireNonNull(privateSourceScanHosts);
+            if (privateSourceScanHosts == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancePrivateAccessChannelResult", "privateSourceScanHosts");
+            }
+            this.privateSourceScanHosts = privateSourceScanHosts;
             return this;
         }
         public Builder privateSourceScanHosts(GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost... privateSourceScanHosts) {
@@ -237,12 +268,18 @@ public final class GetAnalyticsInstancePrivateAccessChannelResult {
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancePrivateAccessChannelResult", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+            if (vcnId == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancePrivateAccessChannelResult", "vcnId");
+            }
+            this.vcnId = vcnId;
             return this;
         }
         public GetAnalyticsInstancePrivateAccessChannelResult build() {

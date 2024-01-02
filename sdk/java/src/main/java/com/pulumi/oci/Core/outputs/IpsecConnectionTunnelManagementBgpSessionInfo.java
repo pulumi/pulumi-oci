@@ -232,46 +232,55 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
 
         @CustomType.Setter
         public Builder bgpIpv6State(@Nullable String bgpIpv6State) {
+
             this.bgpIpv6State = bgpIpv6State;
             return this;
         }
         @CustomType.Setter
         public Builder bgpIpv6state(@Nullable String bgpIpv6state) {
+
             this.bgpIpv6state = bgpIpv6state;
             return this;
         }
         @CustomType.Setter
         public Builder bgpState(@Nullable String bgpState) {
+
             this.bgpState = bgpState;
             return this;
         }
         @CustomType.Setter
         public Builder customerBgpAsn(@Nullable String customerBgpAsn) {
+
             this.customerBgpAsn = customerBgpAsn;
             return this;
         }
         @CustomType.Setter
         public Builder customerInterfaceIp(@Nullable String customerInterfaceIp) {
+
             this.customerInterfaceIp = customerInterfaceIp;
             return this;
         }
         @CustomType.Setter
         public Builder customerInterfaceIpv6(@Nullable String customerInterfaceIpv6) {
+
             this.customerInterfaceIpv6 = customerInterfaceIpv6;
             return this;
         }
         @CustomType.Setter
         public Builder oracleBgpAsn(@Nullable String oracleBgpAsn) {
+
             this.oracleBgpAsn = oracleBgpAsn;
             return this;
         }
         @CustomType.Setter
         public Builder oracleInterfaceIp(@Nullable String oracleInterfaceIp) {
+
             this.oracleInterfaceIp = oracleInterfaceIp;
             return this;
         }
         @CustomType.Setter
         public Builder oracleInterfaceIpv6(@Nullable String oracleInterfaceIpv6) {
+
             this.oracleInterfaceIpv6 = oracleInterfaceIpv6;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.FileStorage;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.inputs.MountTargetKerberosArgs;
 import com.pulumi.oci.FileStorage.inputs.MountTargetLdapIdmapArgs;
 import java.lang.Object;
@@ -550,9 +551,15 @@ public final class MountTargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public MountTargetArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.availabilityDomain == null) {
+                throw new MissingRequiredPropertyException("MountTargetArgs", "availabilityDomain");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("MountTargetArgs", "compartmentId");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("MountTargetArgs", "subnetId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceScheduledTaskAction;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceScheduledTaskSchedule;
 import java.lang.Object;
@@ -277,7 +278,10 @@ public final class GetNamespaceScheduledTaskResult {
 
         @CustomType.Setter
         public Builder actions(List<GetNamespaceScheduledTaskAction> actions) {
-            this.actions = Objects.requireNonNull(actions);
+            if (actions == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskResult", "actions");
+            }
+            this.actions = actions;
             return this;
         }
         public Builder actions(GetNamespaceScheduledTaskAction... actions) {
@@ -285,57 +289,90 @@ public final class GetNamespaceScheduledTaskResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+            if (kind == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskResult", "kind");
+            }
+            this.kind = kind;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder numOccurrences(String numOccurrences) {
-            this.numOccurrences = Objects.requireNonNull(numOccurrences);
+            if (numOccurrences == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskResult", "numOccurrences");
+            }
+            this.numOccurrences = numOccurrences;
             return this;
         }
         @CustomType.Setter
         public Builder savedSearchId(String savedSearchId) {
-            this.savedSearchId = Objects.requireNonNull(savedSearchId);
+            if (savedSearchId == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskResult", "savedSearchId");
+            }
+            this.savedSearchId = savedSearchId;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledTaskId(String scheduledTaskId) {
-            this.scheduledTaskId = Objects.requireNonNull(scheduledTaskId);
+            if (scheduledTaskId == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskResult", "scheduledTaskId");
+            }
+            this.scheduledTaskId = scheduledTaskId;
             return this;
         }
         @CustomType.Setter
         public Builder schedules(List<GetNamespaceScheduledTaskSchedule> schedules) {
-            this.schedules = Objects.requireNonNull(schedules);
+            if (schedules == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskResult", "schedules");
+            }
+            this.schedules = schedules;
             return this;
         }
         public Builder schedules(GetNamespaceScheduledTaskSchedule... schedules) {
@@ -343,32 +380,50 @@ public final class GetNamespaceScheduledTaskResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder taskStatus(String taskStatus) {
-            this.taskStatus = Objects.requireNonNull(taskStatus);
+            if (taskStatus == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskResult", "taskStatus");
+            }
+            this.taskStatus = taskStatus;
             return this;
         }
         @CustomType.Setter
         public Builder taskType(String taskType) {
-            this.taskType = Objects.requireNonNull(taskType);
+            if (taskType == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskResult", "taskType");
+            }
+            this.taskType = taskType;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder workRequestId(String workRequestId) {
-            this.workRequestId = Objects.requireNonNull(workRequestId);
+            if (workRequestId == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskResult", "workRequestId");
+            }
+            this.workRequestId = workRequestId;
             return this;
         }
         public GetNamespaceScheduledTaskResult build() {

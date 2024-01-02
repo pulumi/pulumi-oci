@@ -5,6 +5,7 @@ package com.pulumi.oci.DataLabellingService.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataLabellingService.inputs.DatasetInitialImportDatasetConfigurationImportFormatArgs;
 import com.pulumi.oci.DataLabellingService.inputs.DatasetInitialImportDatasetConfigurationImportMetadataPathArgs;
 import java.util.Objects;
@@ -112,8 +113,12 @@ public final class DatasetInitialImportDatasetConfigurationArgs extends com.pulu
         }
 
         public DatasetInitialImportDatasetConfigurationArgs build() {
-            $.importFormat = Objects.requireNonNull($.importFormat, "expected parameter 'importFormat' to be non-null");
-            $.importMetadataPath = Objects.requireNonNull($.importMetadataPath, "expected parameter 'importMetadataPath' to be non-null");
+            if ($.importFormat == null) {
+                throw new MissingRequiredPropertyException("DatasetInitialImportDatasetConfigurationArgs", "importFormat");
+            }
+            if ($.importMetadataPath == null) {
+                throw new MissingRequiredPropertyException("DatasetInitialImportDatasetConfigurationArgs", "importMetadataPath");
+            }
             return $;
         }
     }

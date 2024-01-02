@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.inputs.RepositoryMirrorRepositoryConfigArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -350,8 +351,12 @@ public final class RepositoryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public RepositoryArgs build() {
-            $.projectId = Objects.requireNonNull($.projectId, "expected parameter 'projectId' to be non-null");
-            $.repositoryType = Objects.requireNonNull($.repositoryType, "expected parameter 'repositoryType' to be non-null");
+            if ($.projectId == null) {
+                throw new MissingRequiredPropertyException("RepositoryArgs", "projectId");
+            }
+            if ($.repositoryType == null) {
+                throw new MissingRequiredPropertyException("RepositoryArgs", "repositoryType");
+            }
             return $;
         }
     }

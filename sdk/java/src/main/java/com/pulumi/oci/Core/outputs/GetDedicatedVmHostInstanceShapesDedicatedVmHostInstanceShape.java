@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape 
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder instanceShapeName(String instanceShapeName) {
-            this.instanceShapeName = Objects.requireNonNull(instanceShapeName);
+            if (instanceShapeName == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape", "instanceShapeName");
+            }
+            this.instanceShapeName = instanceShapeName;
             return this;
         }
         public GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape build() {

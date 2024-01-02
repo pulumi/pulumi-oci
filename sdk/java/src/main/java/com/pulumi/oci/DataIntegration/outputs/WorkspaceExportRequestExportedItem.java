@@ -142,41 +142,49 @@ public final class WorkspaceExportRequestExportedItem {
 
         @CustomType.Setter
         public Builder aggregatorKey(@Nullable String aggregatorKey) {
+
             this.aggregatorKey = aggregatorKey;
             return this;
         }
         @CustomType.Setter
         public Builder identifier(@Nullable String identifier) {
+
             this.identifier = identifier;
             return this;
         }
         @CustomType.Setter
         public Builder key(@Nullable String key) {
+
             this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder namePath(@Nullable String namePath) {
+
             this.namePath = namePath;
             return this;
         }
         @CustomType.Setter
         public Builder objectType(@Nullable String objectType) {
+
             this.objectType = objectType;
             return this;
         }
         @CustomType.Setter
         public Builder objectVersion(@Nullable String objectVersion) {
+
             this.objectVersion = objectVersion;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdatedInMillis(@Nullable String timeUpdatedInMillis) {
+
             this.timeUpdatedInMillis = timeUpdatedInMillis;
             return this;
         }

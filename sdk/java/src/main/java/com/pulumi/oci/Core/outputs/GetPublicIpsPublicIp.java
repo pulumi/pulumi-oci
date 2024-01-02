@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -240,77 +241,122 @@ public final class GetPublicIpsPublicIp {
 
         @CustomType.Setter
         public Builder assignedEntityId(String assignedEntityId) {
-            this.assignedEntityId = Objects.requireNonNull(assignedEntityId);
+            if (assignedEntityId == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpsPublicIp", "assignedEntityId");
+            }
+            this.assignedEntityId = assignedEntityId;
             return this;
         }
         @CustomType.Setter
         public Builder assignedEntityType(String assignedEntityType) {
-            this.assignedEntityType = Objects.requireNonNull(assignedEntityType);
+            if (assignedEntityType == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpsPublicIp", "assignedEntityType");
+            }
+            this.assignedEntityType = assignedEntityType;
             return this;
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpsPublicIp", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpsPublicIp", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpsPublicIp", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpsPublicIp", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpsPublicIp", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpsPublicIp", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+            if (ipAddress == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpsPublicIp", "ipAddress");
+            }
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder lifetime(String lifetime) {
-            this.lifetime = Objects.requireNonNull(lifetime);
+            if (lifetime == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpsPublicIp", "lifetime");
+            }
+            this.lifetime = lifetime;
             return this;
         }
         @CustomType.Setter
         public Builder privateIpId(String privateIpId) {
-            this.privateIpId = Objects.requireNonNull(privateIpId);
+            if (privateIpId == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpsPublicIp", "privateIpId");
+            }
+            this.privateIpId = privateIpId;
             return this;
         }
         @CustomType.Setter
         public Builder publicIpPoolId(String publicIpPoolId) {
-            this.publicIpPoolId = Objects.requireNonNull(publicIpPoolId);
+            if (publicIpPoolId == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpsPublicIp", "publicIpPoolId");
+            }
+            this.publicIpPoolId = publicIpPoolId;
             return this;
         }
         @CustomType.Setter
         public Builder scope(String scope) {
-            this.scope = Objects.requireNonNull(scope);
+            if (scope == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpsPublicIp", "scope");
+            }
+            this.scope = scope;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpsPublicIp", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpsPublicIp", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetPublicIpsPublicIp build() {

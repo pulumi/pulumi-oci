@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetVtapsFilter;
 import java.lang.Boolean;
 import java.lang.String;
@@ -280,7 +281,9 @@ public final class GetVtapsPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetVtapsPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetVtapsPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

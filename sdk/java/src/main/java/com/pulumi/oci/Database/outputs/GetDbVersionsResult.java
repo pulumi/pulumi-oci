@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbVersionsDbVersion;
 import com.pulumi.oci.Database.outputs.GetDbVersionsFilter;
 import java.lang.Boolean;
@@ -112,22 +113,30 @@ public final class GetDbVersionsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDbVersionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(@Nullable String dbSystemId) {
+
             this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemShape(@Nullable String dbSystemShape) {
+
             this.dbSystemShape = dbSystemShape;
             return this;
         }
         @CustomType.Setter
         public Builder dbVersions(List<GetDbVersionsDbVersion> dbVersions) {
-            this.dbVersions = Objects.requireNonNull(dbVersions);
+            if (dbVersions == null) {
+              throw new MissingRequiredPropertyException("GetDbVersionsResult", "dbVersions");
+            }
+            this.dbVersions = dbVersions;
             return this;
         }
         public Builder dbVersions(GetDbVersionsDbVersion... dbVersions) {
@@ -135,6 +144,7 @@ public final class GetDbVersionsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDbVersionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -143,21 +153,27 @@ public final class GetDbVersionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbVersionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isDatabaseSoftwareImageSupported(@Nullable Boolean isDatabaseSoftwareImageSupported) {
+
             this.isDatabaseSoftwareImageSupported = isDatabaseSoftwareImageSupported;
             return this;
         }
         @CustomType.Setter
         public Builder isUpgradeSupported(@Nullable Boolean isUpgradeSupported) {
+
             this.isUpgradeSupported = isUpgradeSupported;
             return this;
         }
         @CustomType.Setter
         public Builder storageManagement(@Nullable String storageManagement) {
+
             this.storageManagement = storageManagement;
             return this;
         }

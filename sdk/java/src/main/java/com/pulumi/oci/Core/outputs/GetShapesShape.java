@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetShapesShapeMaxVnicAttachmentOption;
 import com.pulumi.oci.Core.outputs.GetShapesShapeMemoryOption;
 import com.pulumi.oci.Core.outputs.GetShapesShapeNetworkingBandwidthOption;
@@ -444,7 +445,10 @@ public final class GetShapesShape {
 
         @CustomType.Setter
         public Builder baselineOcpuUtilizations(List<String> baselineOcpuUtilizations) {
-            this.baselineOcpuUtilizations = Objects.requireNonNull(baselineOcpuUtilizations);
+            if (baselineOcpuUtilizations == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "baselineOcpuUtilizations");
+            }
+            this.baselineOcpuUtilizations = baselineOcpuUtilizations;
             return this;
         }
         public Builder baselineOcpuUtilizations(String... baselineOcpuUtilizations) {
@@ -452,57 +456,90 @@ public final class GetShapesShape {
         }
         @CustomType.Setter
         public Builder billingType(String billingType) {
-            this.billingType = Objects.requireNonNull(billingType);
+            if (billingType == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "billingType");
+            }
+            this.billingType = billingType;
             return this;
         }
         @CustomType.Setter
         public Builder gpuDescription(String gpuDescription) {
-            this.gpuDescription = Objects.requireNonNull(gpuDescription);
+            if (gpuDescription == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "gpuDescription");
+            }
+            this.gpuDescription = gpuDescription;
             return this;
         }
         @CustomType.Setter
         public Builder gpus(Integer gpus) {
-            this.gpus = Objects.requireNonNull(gpus);
+            if (gpus == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "gpus");
+            }
+            this.gpus = gpus;
             return this;
         }
         @CustomType.Setter
         public Builder isBilledForStoppedInstance(Boolean isBilledForStoppedInstance) {
-            this.isBilledForStoppedInstance = Objects.requireNonNull(isBilledForStoppedInstance);
+            if (isBilledForStoppedInstance == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "isBilledForStoppedInstance");
+            }
+            this.isBilledForStoppedInstance = isBilledForStoppedInstance;
             return this;
         }
         @CustomType.Setter
         public Builder isFlexible(Boolean isFlexible) {
-            this.isFlexible = Objects.requireNonNull(isFlexible);
+            if (isFlexible == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "isFlexible");
+            }
+            this.isFlexible = isFlexible;
             return this;
         }
         @CustomType.Setter
         public Builder isLiveMigrationSupported(Boolean isLiveMigrationSupported) {
-            this.isLiveMigrationSupported = Objects.requireNonNull(isLiveMigrationSupported);
+            if (isLiveMigrationSupported == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "isLiveMigrationSupported");
+            }
+            this.isLiveMigrationSupported = isLiveMigrationSupported;
             return this;
         }
         @CustomType.Setter
         public Builder isSubcore(Boolean isSubcore) {
-            this.isSubcore = Objects.requireNonNull(isSubcore);
+            if (isSubcore == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "isSubcore");
+            }
+            this.isSubcore = isSubcore;
             return this;
         }
         @CustomType.Setter
         public Builder localDiskDescription(String localDiskDescription) {
-            this.localDiskDescription = Objects.requireNonNull(localDiskDescription);
+            if (localDiskDescription == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "localDiskDescription");
+            }
+            this.localDiskDescription = localDiskDescription;
             return this;
         }
         @CustomType.Setter
         public Builder localDisks(Integer localDisks) {
-            this.localDisks = Objects.requireNonNull(localDisks);
+            if (localDisks == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "localDisks");
+            }
+            this.localDisks = localDisks;
             return this;
         }
         @CustomType.Setter
         public Builder localDisksTotalSizeInGbs(Double localDisksTotalSizeInGbs) {
-            this.localDisksTotalSizeInGbs = Objects.requireNonNull(localDisksTotalSizeInGbs);
+            if (localDisksTotalSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "localDisksTotalSizeInGbs");
+            }
+            this.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder maxVnicAttachmentOptions(List<GetShapesShapeMaxVnicAttachmentOption> maxVnicAttachmentOptions) {
-            this.maxVnicAttachmentOptions = Objects.requireNonNull(maxVnicAttachmentOptions);
+            if (maxVnicAttachmentOptions == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "maxVnicAttachmentOptions");
+            }
+            this.maxVnicAttachmentOptions = maxVnicAttachmentOptions;
             return this;
         }
         public Builder maxVnicAttachmentOptions(GetShapesShapeMaxVnicAttachmentOption... maxVnicAttachmentOptions) {
@@ -510,17 +547,26 @@ public final class GetShapesShape {
         }
         @CustomType.Setter
         public Builder maxVnicAttachments(Integer maxVnicAttachments) {
-            this.maxVnicAttachments = Objects.requireNonNull(maxVnicAttachments);
+            if (maxVnicAttachments == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "maxVnicAttachments");
+            }
+            this.maxVnicAttachments = maxVnicAttachments;
             return this;
         }
         @CustomType.Setter
         public Builder memoryInGbs(Double memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+            if (memoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "memoryInGbs");
+            }
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder memoryOptions(List<GetShapesShapeMemoryOption> memoryOptions) {
-            this.memoryOptions = Objects.requireNonNull(memoryOptions);
+            if (memoryOptions == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "memoryOptions");
+            }
+            this.memoryOptions = memoryOptions;
             return this;
         }
         public Builder memoryOptions(GetShapesShapeMemoryOption... memoryOptions) {
@@ -528,27 +574,42 @@ public final class GetShapesShape {
         }
         @CustomType.Setter
         public Builder minTotalBaselineOcpusRequired(Double minTotalBaselineOcpusRequired) {
-            this.minTotalBaselineOcpusRequired = Objects.requireNonNull(minTotalBaselineOcpusRequired);
+            if (minTotalBaselineOcpusRequired == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "minTotalBaselineOcpusRequired");
+            }
+            this.minTotalBaselineOcpusRequired = minTotalBaselineOcpusRequired;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder networkPorts(Integer networkPorts) {
-            this.networkPorts = Objects.requireNonNull(networkPorts);
+            if (networkPorts == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "networkPorts");
+            }
+            this.networkPorts = networkPorts;
             return this;
         }
         @CustomType.Setter
         public Builder networkingBandwidthInGbps(Double networkingBandwidthInGbps) {
-            this.networkingBandwidthInGbps = Objects.requireNonNull(networkingBandwidthInGbps);
+            if (networkingBandwidthInGbps == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "networkingBandwidthInGbps");
+            }
+            this.networkingBandwidthInGbps = networkingBandwidthInGbps;
             return this;
         }
         @CustomType.Setter
         public Builder networkingBandwidthOptions(List<GetShapesShapeNetworkingBandwidthOption> networkingBandwidthOptions) {
-            this.networkingBandwidthOptions = Objects.requireNonNull(networkingBandwidthOptions);
+            if (networkingBandwidthOptions == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "networkingBandwidthOptions");
+            }
+            this.networkingBandwidthOptions = networkingBandwidthOptions;
             return this;
         }
         public Builder networkingBandwidthOptions(GetShapesShapeNetworkingBandwidthOption... networkingBandwidthOptions) {
@@ -556,7 +617,10 @@ public final class GetShapesShape {
         }
         @CustomType.Setter
         public Builder ocpuOptions(List<GetShapesShapeOcpuOption> ocpuOptions) {
-            this.ocpuOptions = Objects.requireNonNull(ocpuOptions);
+            if (ocpuOptions == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "ocpuOptions");
+            }
+            this.ocpuOptions = ocpuOptions;
             return this;
         }
         public Builder ocpuOptions(GetShapesShapeOcpuOption... ocpuOptions) {
@@ -564,12 +628,18 @@ public final class GetShapesShape {
         }
         @CustomType.Setter
         public Builder ocpus(Double ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+            if (ocpus == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "ocpus");
+            }
+            this.ocpus = ocpus;
             return this;
         }
         @CustomType.Setter
         public Builder platformConfigOptions(List<GetShapesShapePlatformConfigOption> platformConfigOptions) {
-            this.platformConfigOptions = Objects.requireNonNull(platformConfigOptions);
+            if (platformConfigOptions == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "platformConfigOptions");
+            }
+            this.platformConfigOptions = platformConfigOptions;
             return this;
         }
         public Builder platformConfigOptions(GetShapesShapePlatformConfigOption... platformConfigOptions) {
@@ -577,12 +647,18 @@ public final class GetShapesShape {
         }
         @CustomType.Setter
         public Builder processorDescription(String processorDescription) {
-            this.processorDescription = Objects.requireNonNull(processorDescription);
+            if (processorDescription == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "processorDescription");
+            }
+            this.processorDescription = processorDescription;
             return this;
         }
         @CustomType.Setter
         public Builder quotaNames(List<String> quotaNames) {
-            this.quotaNames = Objects.requireNonNull(quotaNames);
+            if (quotaNames == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "quotaNames");
+            }
+            this.quotaNames = quotaNames;
             return this;
         }
         public Builder quotaNames(String... quotaNames) {
@@ -590,17 +666,26 @@ public final class GetShapesShape {
         }
         @CustomType.Setter
         public Builder rdmaBandwidthInGbps(Integer rdmaBandwidthInGbps) {
-            this.rdmaBandwidthInGbps = Objects.requireNonNull(rdmaBandwidthInGbps);
+            if (rdmaBandwidthInGbps == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "rdmaBandwidthInGbps");
+            }
+            this.rdmaBandwidthInGbps = rdmaBandwidthInGbps;
             return this;
         }
         @CustomType.Setter
         public Builder rdmaPorts(Integer rdmaPorts) {
-            this.rdmaPorts = Objects.requireNonNull(rdmaPorts);
+            if (rdmaPorts == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "rdmaPorts");
+            }
+            this.rdmaPorts = rdmaPorts;
             return this;
         }
         @CustomType.Setter
         public Builder recommendedAlternatives(List<GetShapesShapeRecommendedAlternative> recommendedAlternatives) {
-            this.recommendedAlternatives = Objects.requireNonNull(recommendedAlternatives);
+            if (recommendedAlternatives == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "recommendedAlternatives");
+            }
+            this.recommendedAlternatives = recommendedAlternatives;
             return this;
         }
         public Builder recommendedAlternatives(GetShapesShapeRecommendedAlternative... recommendedAlternatives) {
@@ -608,7 +693,10 @@ public final class GetShapesShape {
         }
         @CustomType.Setter
         public Builder resizeCompatibleShapes(List<String> resizeCompatibleShapes) {
-            this.resizeCompatibleShapes = Objects.requireNonNull(resizeCompatibleShapes);
+            if (resizeCompatibleShapes == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "resizeCompatibleShapes");
+            }
+            this.resizeCompatibleShapes = resizeCompatibleShapes;
             return this;
         }
         public Builder resizeCompatibleShapes(String... resizeCompatibleShapes) {

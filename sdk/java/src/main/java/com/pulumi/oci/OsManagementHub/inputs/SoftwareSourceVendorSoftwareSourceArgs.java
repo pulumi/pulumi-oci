@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagementHub.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -123,8 +124,12 @@ public final class SoftwareSourceVendorSoftwareSourceArgs extends com.pulumi.res
         }
 
         public SoftwareSourceVendorSoftwareSourceArgs build() {
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.id = Objects.requireNonNull($.id, "expected parameter 'id' to be non-null");
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("SoftwareSourceVendorSoftwareSourceArgs", "displayName");
+            }
+            if ($.id == null) {
+                throw new MissingRequiredPropertyException("SoftwareSourceVendorSoftwareSourceArgs", "id");
+            }
             return $;
         }
     }

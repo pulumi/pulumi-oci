@@ -5,6 +5,7 @@ package com.pulumi.oci.Oda;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Oda.inputs.OdaPrivateEndpointScanProxyScanListenerInfoArgs;
 import java.lang.String;
 import java.util.List;
@@ -209,10 +210,18 @@ public final class OdaPrivateEndpointScanProxyArgs extends com.pulumi.resources.
         }
 
         public OdaPrivateEndpointScanProxyArgs build() {
-            $.odaPrivateEndpointId = Objects.requireNonNull($.odaPrivateEndpointId, "expected parameter 'odaPrivateEndpointId' to be non-null");
-            $.protocol = Objects.requireNonNull($.protocol, "expected parameter 'protocol' to be non-null");
-            $.scanListenerInfos = Objects.requireNonNull($.scanListenerInfos, "expected parameter 'scanListenerInfos' to be non-null");
-            $.scanListenerType = Objects.requireNonNull($.scanListenerType, "expected parameter 'scanListenerType' to be non-null");
+            if ($.odaPrivateEndpointId == null) {
+                throw new MissingRequiredPropertyException("OdaPrivateEndpointScanProxyArgs", "odaPrivateEndpointId");
+            }
+            if ($.protocol == null) {
+                throw new MissingRequiredPropertyException("OdaPrivateEndpointScanProxyArgs", "protocol");
+            }
+            if ($.scanListenerInfos == null) {
+                throw new MissingRequiredPropertyException("OdaPrivateEndpointScanProxyArgs", "scanListenerInfos");
+            }
+            if ($.scanListenerType == null) {
+                throw new MissingRequiredPropertyException("OdaPrivateEndpointScanProxyArgs", "scanListenerType");
+            }
             return $;
         }
     }

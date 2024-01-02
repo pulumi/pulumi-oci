@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -86,12 +87,18 @@ public final class GetShapesShape {
 
         @CustomType.Setter
         public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+            if (cpuCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "cpuCoreCount");
+            }
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
         public Builder isSupportedFors(List<String> isSupportedFors) {
-            this.isSupportedFors = Objects.requireNonNull(isSupportedFors);
+            if (isSupportedFors == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "isSupportedFors");
+            }
+            this.isSupportedFors = isSupportedFors;
             return this;
         }
         public Builder isSupportedFors(String... isSupportedFors) {
@@ -99,12 +106,18 @@ public final class GetShapesShape {
         }
         @CustomType.Setter
         public Builder memorySizeInGbs(Integer memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+            if (memorySizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "memorySizeInGbs");
+            }
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetShapesShape build() {

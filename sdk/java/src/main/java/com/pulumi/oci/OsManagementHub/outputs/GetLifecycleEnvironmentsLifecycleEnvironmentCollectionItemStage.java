@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId;
 import com.pulumi.oci.OsManagementHub.outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId;
 import java.lang.Integer;
@@ -258,42 +259,66 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemSta
 
         @CustomType.Setter
         public Builder archType(String archType) {
-            this.archType = Objects.requireNonNull(archType);
+            if (archType == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "archType");
+            }
+            this.archType = archType;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleEnvironmentId(String lifecycleEnvironmentId) {
-            this.lifecycleEnvironmentId = Objects.requireNonNull(lifecycleEnvironmentId);
+            if (lifecycleEnvironmentId == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "lifecycleEnvironmentId");
+            }
+            this.lifecycleEnvironmentId = lifecycleEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceIds(List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId> managedInstanceIds) {
-            this.managedInstanceIds = Objects.requireNonNull(managedInstanceIds);
+            if (managedInstanceIds == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "managedInstanceIds");
+            }
+            this.managedInstanceIds = managedInstanceIds;
             return this;
         }
         public Builder managedInstanceIds(GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId... managedInstanceIds) {
@@ -301,17 +326,26 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemSta
         }
         @CustomType.Setter
         public Builder osFamily(String osFamily) {
-            this.osFamily = Objects.requireNonNull(osFamily);
+            if (osFamily == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "osFamily");
+            }
+            this.osFamily = osFamily;
             return this;
         }
         @CustomType.Setter
         public Builder rank(Integer rank) {
-            this.rank = Objects.requireNonNull(rank);
+            if (rank == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "rank");
+            }
+            this.rank = rank;
             return this;
         }
         @CustomType.Setter
         public Builder softwareSourceIds(List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId> softwareSourceIds) {
-            this.softwareSourceIds = Objects.requireNonNull(softwareSourceIds);
+            if (softwareSourceIds == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "softwareSourceIds");
+            }
+            this.softwareSourceIds = softwareSourceIds;
             return this;
         }
         public Builder softwareSourceIds(GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId... softwareSourceIds) {
@@ -319,27 +353,42 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemSta
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeModified(String timeModified) {
-            this.timeModified = Objects.requireNonNull(timeModified);
+            if (timeModified == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "timeModified");
+            }
+            this.timeModified = timeModified;
             return this;
         }
         @CustomType.Setter
         public Builder vendorName(String vendorName) {
-            this.vendorName = Objects.requireNonNull(vendorName);
+            if (vendorName == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "vendorName");
+            }
+            this.vendorName = vendorName;
             return this;
         }
         public GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage build() {

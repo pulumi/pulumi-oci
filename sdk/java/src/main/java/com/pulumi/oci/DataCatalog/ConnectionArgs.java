@@ -5,6 +5,7 @@ package com.pulumi.oci.DataCatalog;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -330,11 +331,21 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ConnectionArgs build() {
-            $.catalogId = Objects.requireNonNull($.catalogId, "expected parameter 'catalogId' to be non-null");
-            $.dataAssetKey = Objects.requireNonNull($.dataAssetKey, "expected parameter 'dataAssetKey' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.properties = Objects.requireNonNull($.properties, "expected parameter 'properties' to be non-null");
-            $.typeKey = Objects.requireNonNull($.typeKey, "expected parameter 'typeKey' to be non-null");
+            if ($.catalogId == null) {
+                throw new MissingRequiredPropertyException("ConnectionArgs", "catalogId");
+            }
+            if ($.dataAssetKey == null) {
+                throw new MissingRequiredPropertyException("ConnectionArgs", "dataAssetKey");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ConnectionArgs", "displayName");
+            }
+            if ($.properties == null) {
+                throw new MissingRequiredPropertyException("ConnectionArgs", "properties");
+            }
+            if ($.typeKey == null) {
+                throw new MissingRequiredPropertyException("ConnectionArgs", "typeKey");
+            }
             return $;
         }
     }

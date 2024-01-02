@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDumpTransferDetailSource;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDumpTransferDetailTarget;
 import java.lang.String;
@@ -65,12 +66,18 @@ public final class GetMigrationDumpTransferDetail {
 
         @CustomType.Setter
         public Builder sharedStorageMountTargetId(String sharedStorageMountTargetId) {
-            this.sharedStorageMountTargetId = Objects.requireNonNull(sharedStorageMountTargetId);
+            if (sharedStorageMountTargetId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDumpTransferDetail", "sharedStorageMountTargetId");
+            }
+            this.sharedStorageMountTargetId = sharedStorageMountTargetId;
             return this;
         }
         @CustomType.Setter
         public Builder sources(List<GetMigrationDumpTransferDetailSource> sources) {
-            this.sources = Objects.requireNonNull(sources);
+            if (sources == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDumpTransferDetail", "sources");
+            }
+            this.sources = sources;
             return this;
         }
         public Builder sources(GetMigrationDumpTransferDetailSource... sources) {
@@ -78,7 +85,10 @@ public final class GetMigrationDumpTransferDetail {
         }
         @CustomType.Setter
         public Builder targets(List<GetMigrationDumpTransferDetailTarget> targets) {
-            this.targets = Objects.requireNonNull(targets);
+            if (targets == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDumpTransferDetail", "targets");
+            }
+            this.targets = targets;
             return this;
         }
         public Builder targets(GetMigrationDumpTransferDetailTarget... targets) {

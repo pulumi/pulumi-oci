@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -258,87 +259,138 @@ public final class GetExternalClusterInstanceResult {
 
         @CustomType.Setter
         public Builder adrHomeDirectory(String adrHomeDirectory) {
-            this.adrHomeDirectory = Objects.requireNonNull(adrHomeDirectory);
+            if (adrHomeDirectory == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstanceResult", "adrHomeDirectory");
+            }
+            this.adrHomeDirectory = adrHomeDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstanceResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder componentName(String componentName) {
-            this.componentName = Objects.requireNonNull(componentName);
+            if (componentName == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstanceResult", "componentName");
+            }
+            this.componentName = componentName;
             return this;
         }
         @CustomType.Setter
         public Builder crsBaseDirectory(String crsBaseDirectory) {
-            this.crsBaseDirectory = Objects.requireNonNull(crsBaseDirectory);
+            if (crsBaseDirectory == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstanceResult", "crsBaseDirectory");
+            }
+            this.crsBaseDirectory = crsBaseDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstanceResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalClusterId(String externalClusterId) {
-            this.externalClusterId = Objects.requireNonNull(externalClusterId);
+            if (externalClusterId == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstanceResult", "externalClusterId");
+            }
+            this.externalClusterId = externalClusterId;
             return this;
         }
         @CustomType.Setter
         public Builder externalClusterInstanceId(String externalClusterInstanceId) {
-            this.externalClusterInstanceId = Objects.requireNonNull(externalClusterInstanceId);
+            if (externalClusterInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstanceResult", "externalClusterInstanceId");
+            }
+            this.externalClusterInstanceId = externalClusterInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder externalConnectorId(String externalConnectorId) {
-            this.externalConnectorId = Objects.requireNonNull(externalConnectorId);
+            if (externalConnectorId == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstanceResult", "externalConnectorId");
+            }
+            this.externalConnectorId = externalConnectorId;
             return this;
         }
         @CustomType.Setter
         public Builder externalDbNodeId(String externalDbNodeId) {
-            this.externalDbNodeId = Objects.requireNonNull(externalDbNodeId);
+            if (externalDbNodeId == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstanceResult", "externalDbNodeId");
+            }
+            this.externalDbNodeId = externalDbNodeId;
             return this;
         }
         @CustomType.Setter
         public Builder externalDbSystemId(String externalDbSystemId) {
-            this.externalDbSystemId = Objects.requireNonNull(externalDbSystemId);
+            if (externalDbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstanceResult", "externalDbSystemId");
+            }
+            this.externalDbSystemId = externalDbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+            if (hostName == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstanceResult", "hostName");
+            }
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstanceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstanceResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder nodeRole(String nodeRole) {
-            this.nodeRole = Objects.requireNonNull(nodeRole);
+            if (nodeRole == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstanceResult", "nodeRole");
+            }
+            this.nodeRole = nodeRole;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstanceResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstanceResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstanceResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetExternalClusterInstanceResult build() {

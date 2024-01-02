@@ -156,46 +156,55 @@ public final class BuildRunBuildOutputDeliveredArtifactItem {
 
         @CustomType.Setter
         public Builder artifactRepositoryId(@Nullable String artifactRepositoryId) {
+
             this.artifactRepositoryId = artifactRepositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder artifactType(@Nullable String artifactType) {
+
             this.artifactType = artifactType;
             return this;
         }
         @CustomType.Setter
         public Builder deliveredArtifactHash(@Nullable String deliveredArtifactHash) {
+
             this.deliveredArtifactHash = deliveredArtifactHash;
             return this;
         }
         @CustomType.Setter
         public Builder deliveredArtifactId(@Nullable String deliveredArtifactId) {
+
             this.deliveredArtifactId = deliveredArtifactId;
             return this;
         }
         @CustomType.Setter
         public Builder deployArtifactId(@Nullable String deployArtifactId) {
+
             this.deployArtifactId = deployArtifactId;
             return this;
         }
         @CustomType.Setter
         public Builder imageUri(@Nullable String imageUri) {
+
             this.imageUri = imageUri;
             return this;
         }
         @CustomType.Setter
         public Builder outputArtifactName(@Nullable String outputArtifactName) {
+
             this.outputArtifactName = outputArtifactName;
             return this;
         }
         @CustomType.Setter
         public Builder path(@Nullable String path) {
+
             this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder version(@Nullable String version) {
+
             this.version = version;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -102,6 +103,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesResponseCacheLooku
 
         @CustomType.Setter
         public Builder cacheKeyAdditions(@Nullable List<String> cacheKeyAdditions) {
+
             this.cacheKeyAdditions = cacheKeyAdditions;
             return this;
         }
@@ -110,17 +112,22 @@ public final class DeploymentSpecificationRouteRequestPoliciesResponseCacheLooku
         }
         @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
+
             this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isPrivateCachingEnabled(@Nullable Boolean isPrivateCachingEnabled) {
+
             this.isPrivateCachingEnabled = isPrivateCachingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup", "type");
+            }
+            this.type = type;
             return this;
         }
         public DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup build() {

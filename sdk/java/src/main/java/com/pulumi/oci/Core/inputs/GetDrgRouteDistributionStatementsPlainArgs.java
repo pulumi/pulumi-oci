@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionStatementsFilter;
 import java.lang.String;
 import java.util.List;
@@ -84,7 +85,9 @@ public final class GetDrgRouteDistributionStatementsPlainArgs extends com.pulumi
         }
 
         public GetDrgRouteDistributionStatementsPlainArgs build() {
-            $.drgRouteDistributionId = Objects.requireNonNull($.drgRouteDistributionId, "expected parameter 'drgRouteDistributionId' to be non-null");
+            if ($.drgRouteDistributionId == null) {
+                throw new MissingRequiredPropertyException("GetDrgRouteDistributionStatementsPlainArgs", "drgRouteDistributionId");
+            }
             return $;
         }
     }

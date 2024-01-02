@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -124,42 +125,66 @@ public final class GetRepositoryMirrorRecordResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryMirrorRecordResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder mirrorRecordType(String mirrorRecordType) {
-            this.mirrorRecordType = Objects.requireNonNull(mirrorRecordType);
+            if (mirrorRecordType == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryMirrorRecordResult", "mirrorRecordType");
+            }
+            this.mirrorRecordType = mirrorRecordType;
             return this;
         }
         @CustomType.Setter
         public Builder mirrorStatus(String mirrorStatus) {
-            this.mirrorStatus = Objects.requireNonNull(mirrorStatus);
+            if (mirrorStatus == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryMirrorRecordResult", "mirrorStatus");
+            }
+            this.mirrorStatus = mirrorStatus;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+            if (repositoryId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryMirrorRecordResult", "repositoryId");
+            }
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+            if (timeEnded == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryMirrorRecordResult", "timeEnded");
+            }
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnqueued(String timeEnqueued) {
-            this.timeEnqueued = Objects.requireNonNull(timeEnqueued);
+            if (timeEnqueued == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryMirrorRecordResult", "timeEnqueued");
+            }
+            this.timeEnqueued = timeEnqueued;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryMirrorRecordResult", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
         public Builder workRequestId(String workRequestId) {
-            this.workRequestId = Objects.requireNonNull(workRequestId);
+            if (workRequestId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryMirrorRecordResult", "workRequestId");
+            }
+            this.workRequestId = workRequestId;
             return this;
         }
         public GetRepositoryMirrorRecordResult build() {

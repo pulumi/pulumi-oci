@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetPodShapesPodShapeMemoryOption;
 import com.pulumi.oci.ContainerEngine.outputs.GetPodShapesPodShapeNetworkBandwidthOption;
 import com.pulumi.oci.ContainerEngine.outputs.GetPodShapesPodShapeOcpuOption;
@@ -102,7 +103,10 @@ public final class GetPodShapesPodShape {
 
         @CustomType.Setter
         public Builder memoryOptions(List<GetPodShapesPodShapeMemoryOption> memoryOptions) {
-            this.memoryOptions = Objects.requireNonNull(memoryOptions);
+            if (memoryOptions == null) {
+              throw new MissingRequiredPropertyException("GetPodShapesPodShape", "memoryOptions");
+            }
+            this.memoryOptions = memoryOptions;
             return this;
         }
         public Builder memoryOptions(GetPodShapesPodShapeMemoryOption... memoryOptions) {
@@ -110,12 +114,18 @@ public final class GetPodShapesPodShape {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetPodShapesPodShape", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder networkBandwidthOptions(List<GetPodShapesPodShapeNetworkBandwidthOption> networkBandwidthOptions) {
-            this.networkBandwidthOptions = Objects.requireNonNull(networkBandwidthOptions);
+            if (networkBandwidthOptions == null) {
+              throw new MissingRequiredPropertyException("GetPodShapesPodShape", "networkBandwidthOptions");
+            }
+            this.networkBandwidthOptions = networkBandwidthOptions;
             return this;
         }
         public Builder networkBandwidthOptions(GetPodShapesPodShapeNetworkBandwidthOption... networkBandwidthOptions) {
@@ -123,7 +133,10 @@ public final class GetPodShapesPodShape {
         }
         @CustomType.Setter
         public Builder ocpuOptions(List<GetPodShapesPodShapeOcpuOption> ocpuOptions) {
-            this.ocpuOptions = Objects.requireNonNull(ocpuOptions);
+            if (ocpuOptions == null) {
+              throw new MissingRequiredPropertyException("GetPodShapesPodShape", "ocpuOptions");
+            }
+            this.ocpuOptions = ocpuOptions;
             return this;
         }
         public Builder ocpuOptions(GetPodShapesPodShapeOcpuOption... ocpuOptions) {
@@ -131,7 +144,10 @@ public final class GetPodShapesPodShape {
         }
         @CustomType.Setter
         public Builder processorDescription(String processorDescription) {
-            this.processorDescription = Objects.requireNonNull(processorDescription);
+            if (processorDescription == null) {
+              throw new MissingRequiredPropertyException("GetPodShapesPodShape", "processorDescription");
+            }
+            this.processorDescription = processorDescription;
             return this;
         }
         public GetPodShapesPodShape build() {

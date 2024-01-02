@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetJobRunsFilter;
 import com.pulumi.oci.DataScience.outputs.GetJobRunsJobRun;
 import java.lang.String;
@@ -137,21 +138,27 @@ public final class GetJobRunsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(@Nullable String createdBy) {
+
             this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetJobRunsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -160,17 +167,22 @@ public final class GetJobRunsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder jobId(@Nullable String jobId) {
+
             this.jobId = jobId;
             return this;
         }
         @CustomType.Setter
         public Builder jobRuns(List<GetJobRunsJobRun> jobRuns) {
-            this.jobRuns = Objects.requireNonNull(jobRuns);
+            if (jobRuns == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsResult", "jobRuns");
+            }
+            this.jobRuns = jobRuns;
             return this;
         }
         public Builder jobRuns(GetJobRunsJobRun... jobRuns) {
@@ -178,6 +190,7 @@ public final class GetJobRunsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

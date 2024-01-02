@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.outputs.GetSnapshotsFilter;
 import com.pulumi.oci.FileStorage.outputs.GetSnapshotsSnapshot;
 import java.lang.String;
@@ -115,21 +116,25 @@ public final class GetSnapshotsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder fileSystemId(@Nullable String fileSystemId) {
+
             this.fileSystemId = fileSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder filesystemSnapshotPolicyId(@Nullable String filesystemSnapshotPolicyId) {
+
             this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSnapshotsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -138,12 +143,16 @@ public final class GetSnapshotsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder snapshots(List<GetSnapshotsSnapshot> snapshots) {
-            this.snapshots = Objects.requireNonNull(snapshots);
+            if (snapshots == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotsResult", "snapshots");
+            }
+            this.snapshots = snapshots;
             return this;
         }
         public Builder snapshots(GetSnapshotsSnapshot... snapshots) {
@@ -151,6 +160,7 @@ public final class GetSnapshotsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

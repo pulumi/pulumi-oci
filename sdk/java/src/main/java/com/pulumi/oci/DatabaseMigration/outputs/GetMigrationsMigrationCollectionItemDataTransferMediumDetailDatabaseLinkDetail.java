@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucket;
 import java.lang.String;
 import java.util.List;
@@ -58,12 +59,18 @@ public final class GetMigrationsMigrationCollectionItemDataTransferMediumDetailD
 
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder walletBuckets(List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucket> walletBuckets) {
-            this.walletBuckets = Objects.requireNonNull(walletBuckets);
+            if (walletBuckets == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail", "walletBuckets");
+            }
+            this.walletBuckets = walletBuckets;
             return this;
         }
         public Builder walletBuckets(GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucket... walletBuckets) {

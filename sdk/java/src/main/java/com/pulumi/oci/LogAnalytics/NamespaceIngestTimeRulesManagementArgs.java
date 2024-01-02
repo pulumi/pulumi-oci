@@ -5,6 +5,7 @@ package com.pulumi.oci.LogAnalytics;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -161,9 +162,15 @@ public final class NamespaceIngestTimeRulesManagementArgs extends com.pulumi.res
         }
 
         public NamespaceIngestTimeRulesManagementArgs build() {
-            $.enableIngestTimeRule = Objects.requireNonNull($.enableIngestTimeRule, "expected parameter 'enableIngestTimeRule' to be non-null");
-            $.ingestTimeRuleId = Objects.requireNonNull($.ingestTimeRuleId, "expected parameter 'ingestTimeRuleId' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
+            if ($.enableIngestTimeRule == null) {
+                throw new MissingRequiredPropertyException("NamespaceIngestTimeRulesManagementArgs", "enableIngestTimeRule");
+            }
+            if ($.ingestTimeRuleId == null) {
+                throw new MissingRequiredPropertyException("NamespaceIngestTimeRulesManagementArgs", "ingestTimeRuleId");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("NamespaceIngestTimeRulesManagementArgs", "namespace");
+            }
             return $;
         }
     }

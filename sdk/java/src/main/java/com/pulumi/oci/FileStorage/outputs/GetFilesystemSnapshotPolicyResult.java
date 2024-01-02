@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.outputs.GetFilesystemSnapshotPolicySchedule;
 import java.lang.Object;
 import java.lang.String;
@@ -178,47 +179,74 @@ public final class GetFilesystemSnapshotPolicyResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicyResult", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicyResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicyResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicyResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filesystemSnapshotPolicyId(String filesystemSnapshotPolicyId) {
-            this.filesystemSnapshotPolicyId = Objects.requireNonNull(filesystemSnapshotPolicyId);
+            if (filesystemSnapshotPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicyResult", "filesystemSnapshotPolicyId");
+            }
+            this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicyResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicyResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder policyPrefix(String policyPrefix) {
-            this.policyPrefix = Objects.requireNonNull(policyPrefix);
+            if (policyPrefix == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicyResult", "policyPrefix");
+            }
+            this.policyPrefix = policyPrefix;
             return this;
         }
         @CustomType.Setter
         public Builder schedules(List<GetFilesystemSnapshotPolicySchedule> schedules) {
-            this.schedules = Objects.requireNonNull(schedules);
+            if (schedules == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicyResult", "schedules");
+            }
+            this.schedules = schedules;
             return this;
         }
         public Builder schedules(GetFilesystemSnapshotPolicySchedule... schedules) {
@@ -226,12 +254,18 @@ public final class GetFilesystemSnapshotPolicyResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicyResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicyResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetFilesystemSnapshotPolicyResult build() {

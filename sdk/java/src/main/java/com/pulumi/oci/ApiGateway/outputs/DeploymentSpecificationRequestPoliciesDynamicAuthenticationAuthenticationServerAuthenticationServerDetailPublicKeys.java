@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKey;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -110,11 +111,13 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
 
         @CustomType.Setter
         public Builder isSslVerifyDisabled(@Nullable Boolean isSslVerifyDisabled) {
+
             this.isSslVerifyDisabled = isSslVerifyDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder keys(@Nullable List<DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKey> keys) {
+
             this.keys = keys;
             return this;
         }
@@ -123,16 +126,21 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
         @CustomType.Setter
         public Builder maxCacheDurationInHours(@Nullable Integer maxCacheDurationInHours) {
+
             this.maxCacheDurationInHours = maxCacheDurationInHours;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeys", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder uri(@Nullable String uri) {
+
             this.uri = uri;
             return this;
         }

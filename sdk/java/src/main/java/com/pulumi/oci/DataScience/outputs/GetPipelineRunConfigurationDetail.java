@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -86,22 +87,34 @@ public final class GetPipelineRunConfigurationDetail {
 
         @CustomType.Setter
         public Builder commandLineArguments(String commandLineArguments) {
-            this.commandLineArguments = Objects.requireNonNull(commandLineArguments);
+            if (commandLineArguments == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunConfigurationDetail", "commandLineArguments");
+            }
+            this.commandLineArguments = commandLineArguments;
             return this;
         }
         @CustomType.Setter
         public Builder environmentVariables(Map<String,Object> environmentVariables) {
-            this.environmentVariables = Objects.requireNonNull(environmentVariables);
+            if (environmentVariables == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunConfigurationDetail", "environmentVariables");
+            }
+            this.environmentVariables = environmentVariables;
             return this;
         }
         @CustomType.Setter
         public Builder maximumRuntimeInMinutes(String maximumRuntimeInMinutes) {
-            this.maximumRuntimeInMinutes = Objects.requireNonNull(maximumRuntimeInMinutes);
+            if (maximumRuntimeInMinutes == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunConfigurationDetail", "maximumRuntimeInMinutes");
+            }
+            this.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunConfigurationDetail", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetPipelineRunConfigurationDetail build() {

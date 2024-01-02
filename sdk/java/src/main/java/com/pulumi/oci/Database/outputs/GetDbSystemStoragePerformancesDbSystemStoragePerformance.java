@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList;
 import com.pulumi.oci.Database.outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformance {
 
         @CustomType.Setter
         public Builder dataStoragePerformanceLists(List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList> dataStoragePerformanceLists) {
-            this.dataStoragePerformanceLists = Objects.requireNonNull(dataStoragePerformanceLists);
+            if (dataStoragePerformanceLists == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemStoragePerformancesDbSystemStoragePerformance", "dataStoragePerformanceLists");
+            }
+            this.dataStoragePerformanceLists = dataStoragePerformanceLists;
             return this;
         }
         public Builder dataStoragePerformanceLists(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList... dataStoragePerformanceLists) {
@@ -81,7 +85,10 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformance {
         }
         @CustomType.Setter
         public Builder recoStoragePerformanceLists(List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList> recoStoragePerformanceLists) {
-            this.recoStoragePerformanceLists = Objects.requireNonNull(recoStoragePerformanceLists);
+            if (recoStoragePerformanceLists == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemStoragePerformancesDbSystemStoragePerformance", "recoStoragePerformanceLists");
+            }
+            this.recoStoragePerformanceLists = recoStoragePerformanceLists;
             return this;
         }
         public Builder recoStoragePerformanceLists(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList... recoStoragePerformanceLists) {
@@ -89,7 +96,10 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformance {
         }
         @CustomType.Setter
         public Builder shapeType(String shapeType) {
-            this.shapeType = Objects.requireNonNull(shapeType);
+            if (shapeType == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemStoragePerformancesDbSystemStoragePerformance", "shapeType");
+            }
+            this.shapeType = shapeType;
             return this;
         }
         public GetDbSystemStoragePerformancesDbSystemStoragePerformance build() {

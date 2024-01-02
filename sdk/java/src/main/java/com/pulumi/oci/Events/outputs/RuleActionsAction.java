@@ -4,6 +4,7 @@
 package com.pulumi.oci.Events.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -169,46 +170,59 @@ public final class RuleActionsAction {
 
         @CustomType.Setter
         public Builder actionType(String actionType) {
-            this.actionType = Objects.requireNonNull(actionType);
+            if (actionType == null) {
+              throw new MissingRequiredPropertyException("RuleActionsAction", "actionType");
+            }
+            this.actionType = actionType;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder functionId(@Nullable String functionId) {
+
             this.functionId = functionId;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("RuleActionsAction", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleMessage(@Nullable String lifecycleMessage) {
+
             this.lifecycleMessage = lifecycleMessage;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder streamId(@Nullable String streamId) {
+
             this.streamId = streamId;
             return this;
         }
         @CustomType.Setter
         public Builder topicId(@Nullable String topicId) {
+
             this.topicId = topicId;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstanceDevicesDevice;
 import com.pulumi.oci.Core.outputs.GetInstanceDevicesFilter;
 import java.lang.Boolean;
@@ -102,7 +103,10 @@ public final class GetInstanceDevicesResult {
 
         @CustomType.Setter
         public Builder devices(List<GetInstanceDevicesDevice> devices) {
-            this.devices = Objects.requireNonNull(devices);
+            if (devices == null) {
+              throw new MissingRequiredPropertyException("GetInstanceDevicesResult", "devices");
+            }
+            this.devices = devices;
             return this;
         }
         public Builder devices(GetInstanceDevicesDevice... devices) {
@@ -110,6 +114,7 @@ public final class GetInstanceDevicesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetInstanceDevicesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -118,21 +123,29 @@ public final class GetInstanceDevicesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInstanceDevicesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceId(String instanceId) {
-            this.instanceId = Objects.requireNonNull(instanceId);
+            if (instanceId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceDevicesResult", "instanceId");
+            }
+            this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
         public Builder isAvailable(@Nullable Boolean isAvailable) {
+
             this.isAvailable = isAvailable;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }

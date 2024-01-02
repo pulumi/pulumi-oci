@@ -5,6 +5,7 @@ package com.pulumi.oci.ComputeCloud;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -386,9 +387,15 @@ public final class AtCustomerCccInfrastructureArgs extends com.pulumi.resources.
         }
 
         public AtCustomerCccInfrastructureArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AtCustomerCccInfrastructureArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("AtCustomerCccInfrastructureArgs", "displayName");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("AtCustomerCccInfrastructureArgs", "subnetId");
+            }
             return $;
         }
     }

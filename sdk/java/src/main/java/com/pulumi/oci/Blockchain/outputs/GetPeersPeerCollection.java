@@ -4,6 +4,7 @@
 package com.pulumi.oci.Blockchain.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Blockchain.outputs.GetPeersPeerCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetPeersPeerCollection {
 
         @CustomType.Setter
         public Builder items(List<GetPeersPeerCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetPeersPeerCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetPeersPeerCollectionItem... items) {

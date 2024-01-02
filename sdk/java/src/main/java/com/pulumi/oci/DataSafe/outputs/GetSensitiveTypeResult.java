@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -317,107 +318,170 @@ public final class GetSensitiveTypeResult {
 
         @CustomType.Setter
         public Builder commentPattern(String commentPattern) {
-            this.commentPattern = Objects.requireNonNull(commentPattern);
+            if (commentPattern == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "commentPattern");
+            }
+            this.commentPattern = commentPattern;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dataPattern(String dataPattern) {
-            this.dataPattern = Objects.requireNonNull(dataPattern);
+            if (dataPattern == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "dataPattern");
+            }
+            this.dataPattern = dataPattern;
             return this;
         }
         @CustomType.Setter
         public Builder defaultMaskingFormatId(String defaultMaskingFormatId) {
-            this.defaultMaskingFormatId = Objects.requireNonNull(defaultMaskingFormatId);
+            if (defaultMaskingFormatId == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "defaultMaskingFormatId");
+            }
+            this.defaultMaskingFormatId = defaultMaskingFormatId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder entityType(String entityType) {
-            this.entityType = Objects.requireNonNull(entityType);
+            if (entityType == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "entityType");
+            }
+            this.entityType = entityType;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCommon(Boolean isCommon) {
-            this.isCommon = Objects.requireNonNull(isCommon);
+            if (isCommon == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "isCommon");
+            }
+            this.isCommon = isCommon;
             return this;
         }
         @CustomType.Setter
         public Builder namePattern(String namePattern) {
-            this.namePattern = Objects.requireNonNull(namePattern);
+            if (namePattern == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "namePattern");
+            }
+            this.namePattern = namePattern;
             return this;
         }
         @CustomType.Setter
         public Builder parentCategoryId(String parentCategoryId) {
-            this.parentCategoryId = Objects.requireNonNull(parentCategoryId);
+            if (parentCategoryId == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "parentCategoryId");
+            }
+            this.parentCategoryId = parentCategoryId;
             return this;
         }
         @CustomType.Setter
         public Builder searchType(String searchType) {
-            this.searchType = Objects.requireNonNull(searchType);
+            if (searchType == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "searchType");
+            }
+            this.searchType = searchType;
             return this;
         }
         @CustomType.Setter
         public Builder sensitiveTypeId(String sensitiveTypeId) {
-            this.sensitiveTypeId = Objects.requireNonNull(sensitiveTypeId);
+            if (sensitiveTypeId == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "sensitiveTypeId");
+            }
+            this.sensitiveTypeId = sensitiveTypeId;
             return this;
         }
         @CustomType.Setter
         public Builder shortName(String shortName) {
-            this.shortName = Objects.requireNonNull(shortName);
+            if (shortName == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "shortName");
+            }
+            this.shortName = shortName;
             return this;
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "source");
+            }
+            this.source = source;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypeResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetSensitiveTypeResult build() {

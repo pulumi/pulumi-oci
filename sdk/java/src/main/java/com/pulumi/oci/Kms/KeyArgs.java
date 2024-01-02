@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Kms.inputs.KeyExternalKeyReferenceArgs;
 import com.pulumi.oci.Kms.inputs.KeyKeyShapeArgs;
 import com.pulumi.oci.Kms.inputs.KeyRestoreFromFileArgs;
@@ -539,10 +540,18 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public KeyArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.keyShape = Objects.requireNonNull($.keyShape, "expected parameter 'keyShape' to be non-null");
-            $.managementEndpoint = Objects.requireNonNull($.managementEndpoint, "expected parameter 'managementEndpoint' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("KeyArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("KeyArgs", "displayName");
+            }
+            if ($.keyShape == null) {
+                throw new MissingRequiredPropertyException("KeyArgs", "keyShape");
+            }
+            if ($.managementEndpoint == null) {
+                throw new MissingRequiredPropertyException("KeyArgs", "managementEndpoint");
+            }
             return $;
         }
     }

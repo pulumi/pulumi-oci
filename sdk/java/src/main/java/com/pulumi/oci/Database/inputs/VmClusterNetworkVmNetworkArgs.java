@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.VmClusterNetworkVmNetworkNodeArgs;
 import java.lang.String;
 import java.util.List;
@@ -285,8 +286,12 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
         }
 
         public VmClusterNetworkVmNetworkArgs build() {
-            $.networkType = Objects.requireNonNull($.networkType, "expected parameter 'networkType' to be non-null");
-            $.nodes = Objects.requireNonNull($.nodes, "expected parameter 'nodes' to be non-null");
+            if ($.networkType == null) {
+                throw new MissingRequiredPropertyException("VmClusterNetworkVmNetworkArgs", "networkType");
+            }
+            if ($.nodes == null) {
+                throw new MissingRequiredPropertyException("VmClusterNetworkVmNetworkArgs", "nodes");
+            }
             return $;
         }
     }

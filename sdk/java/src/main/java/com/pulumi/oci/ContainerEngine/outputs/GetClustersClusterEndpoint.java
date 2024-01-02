@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetClustersClusterEndpoint {
 
         @CustomType.Setter
         public Builder kubernetes(String kubernetes) {
-            this.kubernetes = Objects.requireNonNull(kubernetes);
+            if (kubernetes == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterEndpoint", "kubernetes");
+            }
+            this.kubernetes = kubernetes;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpoint(String privateEndpoint) {
-            this.privateEndpoint = Objects.requireNonNull(privateEndpoint);
+            if (privateEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterEndpoint", "privateEndpoint");
+            }
+            this.privateEndpoint = privateEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder publicEndpoint(String publicEndpoint) {
-            this.publicEndpoint = Objects.requireNonNull(publicEndpoint);
+            if (publicEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterEndpoint", "publicEndpoint");
+            }
+            this.publicEndpoint = publicEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder vcnHostnameEndpoint(String vcnHostnameEndpoint) {
-            this.vcnHostnameEndpoint = Objects.requireNonNull(vcnHostnameEndpoint);
+            if (vcnHostnameEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterEndpoint", "vcnHostnameEndpoint");
+            }
+            this.vcnHostnameEndpoint = vcnHostnameEndpoint;
             return this;
         }
         public GetClustersClusterEndpoint build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerInstances.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetContainerInstanceShapeConfig {
 
         @CustomType.Setter
         public Builder memoryInGbs(Double memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+            if (memoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceShapeConfig", "memoryInGbs");
+            }
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder networkingBandwidthInGbps(Double networkingBandwidthInGbps) {
-            this.networkingBandwidthInGbps = Objects.requireNonNull(networkingBandwidthInGbps);
+            if (networkingBandwidthInGbps == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceShapeConfig", "networkingBandwidthInGbps");
+            }
+            this.networkingBandwidthInGbps = networkingBandwidthInGbps;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(Double ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+            if (ocpus == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceShapeConfig", "ocpus");
+            }
+            this.ocpus = ocpus;
             return this;
         }
         @CustomType.Setter
         public Builder processorDescription(String processorDescription) {
-            this.processorDescription = Objects.requireNonNull(processorDescription);
+            if (processorDescription == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceShapeConfig", "processorDescription");
+            }
+            this.processorDescription = processorDescription;
             return this;
         }
         public GetContainerInstanceShapeConfig build() {

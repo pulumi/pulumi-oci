@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -182,57 +183,90 @@ public final class GetSubscriptionsSubscriptionCollectionItemPaymentOption {
 
         @CustomType.Setter
         public Builder creditCardType(String creditCardType) {
-            this.creditCardType = Objects.requireNonNull(creditCardType);
+            if (creditCardType == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItemPaymentOption", "creditCardType");
+            }
+            this.creditCardType = creditCardType;
             return this;
         }
         @CustomType.Setter
         public Builder emailAddress(String emailAddress) {
-            this.emailAddress = Objects.requireNonNull(emailAddress);
+            if (emailAddress == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItemPaymentOption", "emailAddress");
+            }
+            this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
         public Builder extBillingAgreementId(String extBillingAgreementId) {
-            this.extBillingAgreementId = Objects.requireNonNull(extBillingAgreementId);
+            if (extBillingAgreementId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItemPaymentOption", "extBillingAgreementId");
+            }
+            this.extBillingAgreementId = extBillingAgreementId;
             return this;
         }
         @CustomType.Setter
         public Builder firstName(String firstName) {
-            this.firstName = Objects.requireNonNull(firstName);
+            if (firstName == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItemPaymentOption", "firstName");
+            }
+            this.firstName = firstName;
             return this;
         }
         @CustomType.Setter
         public Builder lastDigits(String lastDigits) {
-            this.lastDigits = Objects.requireNonNull(lastDigits);
+            if (lastDigits == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItemPaymentOption", "lastDigits");
+            }
+            this.lastDigits = lastDigits;
             return this;
         }
         @CustomType.Setter
         public Builder lastName(String lastName) {
-            this.lastName = Objects.requireNonNull(lastName);
+            if (lastName == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItemPaymentOption", "lastName");
+            }
+            this.lastName = lastName;
             return this;
         }
         @CustomType.Setter
         public Builder nameOnCard(String nameOnCard) {
-            this.nameOnCard = Objects.requireNonNull(nameOnCard);
+            if (nameOnCard == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItemPaymentOption", "nameOnCard");
+            }
+            this.nameOnCard = nameOnCard;
             return this;
         }
         @CustomType.Setter
         public Builder paymentMethod(String paymentMethod) {
-            this.paymentMethod = Objects.requireNonNull(paymentMethod);
+            if (paymentMethod == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItemPaymentOption", "paymentMethod");
+            }
+            this.paymentMethod = paymentMethod;
             return this;
         }
         @CustomType.Setter
         public Builder timeExpiration(String timeExpiration) {
-            this.timeExpiration = Objects.requireNonNull(timeExpiration);
+            if (timeExpiration == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItemPaymentOption", "timeExpiration");
+            }
+            this.timeExpiration = timeExpiration;
             return this;
         }
         @CustomType.Setter
         public Builder walletInstrumentId(String walletInstrumentId) {
-            this.walletInstrumentId = Objects.requireNonNull(walletInstrumentId);
+            if (walletInstrumentId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItemPaymentOption", "walletInstrumentId");
+            }
+            this.walletInstrumentId = walletInstrumentId;
             return this;
         }
         @CustomType.Setter
         public Builder walletTransactionId(String walletTransactionId) {
-            this.walletTransactionId = Objects.requireNonNull(walletTransactionId);
+            if (walletTransactionId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItemPaymentOption", "walletTransactionId");
+            }
+            this.walletTransactionId = walletTransactionId;
             return this;
         }
         public GetSubscriptionsSubscriptionCollectionItemPaymentOption build() {

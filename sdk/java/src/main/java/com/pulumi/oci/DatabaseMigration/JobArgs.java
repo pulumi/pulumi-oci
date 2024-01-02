@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseMigration;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -201,7 +202,9 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public JobArgs build() {
-            $.jobId = Objects.requireNonNull($.jobId, "expected parameter 'jobId' to be non-null");
+            if ($.jobId == null) {
+                throw new MissingRequiredPropertyException("JobArgs", "jobId");
+            }
             return $;
         }
     }

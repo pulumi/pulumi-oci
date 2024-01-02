@@ -5,6 +5,7 @@ package com.pulumi.oci.Blockchain;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Blockchain.inputs.BlockchainPlatformReplicasArgs;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -649,11 +650,21 @@ public final class BlockchainPlatformArgs extends com.pulumi.resources.ResourceA
         }
 
         public BlockchainPlatformArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.computeShape = Objects.requireNonNull($.computeShape, "expected parameter 'computeShape' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.idcsAccessToken = Objects.requireNonNull($.idcsAccessToken, "expected parameter 'idcsAccessToken' to be non-null");
-            $.platformRole = Objects.requireNonNull($.platformRole, "expected parameter 'platformRole' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("BlockchainPlatformArgs", "compartmentId");
+            }
+            if ($.computeShape == null) {
+                throw new MissingRequiredPropertyException("BlockchainPlatformArgs", "computeShape");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("BlockchainPlatformArgs", "displayName");
+            }
+            if ($.idcsAccessToken == null) {
+                throw new MissingRequiredPropertyException("BlockchainPlatformArgs", "idcsAccessToken");
+            }
+            if ($.platformRole == null) {
+                throw new MissingRequiredPropertyException("BlockchainPlatformArgs", "platformRole");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDatabaseSoftwareImagesDatabaseSoftwareImage;
 import com.pulumi.oci.Database.outputs.GetDatabaseSoftwareImagesFilter;
 import java.lang.Boolean;
@@ -152,12 +153,18 @@ public final class GetDatabaseSoftwareImagesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImagesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseSoftwareImages(List<GetDatabaseSoftwareImagesDatabaseSoftwareImage> databaseSoftwareImages) {
-            this.databaseSoftwareImages = Objects.requireNonNull(databaseSoftwareImages);
+            if (databaseSoftwareImages == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImagesResult", "databaseSoftwareImages");
+            }
+            this.databaseSoftwareImages = databaseSoftwareImages;
             return this;
         }
         public Builder databaseSoftwareImages(GetDatabaseSoftwareImagesDatabaseSoftwareImage... databaseSoftwareImages) {
@@ -165,11 +172,13 @@ public final class GetDatabaseSoftwareImagesResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDatabaseSoftwareImagesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -178,26 +187,33 @@ public final class GetDatabaseSoftwareImagesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImagesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imageShapeFamily(@Nullable String imageShapeFamily) {
+
             this.imageShapeFamily = imageShapeFamily;
             return this;
         }
         @CustomType.Setter
         public Builder imageType(@Nullable String imageType) {
+
             this.imageType = imageType;
             return this;
         }
         @CustomType.Setter
         public Builder isUpgradeSupported(@Nullable Boolean isUpgradeSupported) {
+
             this.isUpgradeSupported = isUpgradeSupported;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

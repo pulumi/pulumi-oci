@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupB
 
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag build() {

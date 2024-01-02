@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetTrailFilesFilter;
 import com.pulumi.oci.GoldenGate.outputs.GetTrailFilesTrailFileCollection;
 import java.lang.String;
@@ -101,16 +102,21 @@ public final class GetTrailFilesResult {
 
         @CustomType.Setter
         public Builder deploymentId(String deploymentId) {
-            this.deploymentId = Objects.requireNonNull(deploymentId);
+            if (deploymentId == null) {
+              throw new MissingRequiredPropertyException("GetTrailFilesResult", "deploymentId");
+            }
+            this.deploymentId = deploymentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetTrailFilesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -119,12 +125,18 @@ public final class GetTrailFilesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTrailFilesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder trailFileCollections(List<GetTrailFilesTrailFileCollection> trailFileCollections) {
-            this.trailFileCollections = Objects.requireNonNull(trailFileCollections);
+            if (trailFileCollections == null) {
+              throw new MissingRequiredPropertyException("GetTrailFilesResult", "trailFileCollections");
+            }
+            this.trailFileCollections = trailFileCollections;
             return this;
         }
         public Builder trailFileCollections(GetTrailFilesTrailFileCollection... trailFileCollections) {
@@ -132,7 +144,10 @@ public final class GetTrailFilesResult {
         }
         @CustomType.Setter
         public Builder trailFileId(String trailFileId) {
-            this.trailFileId = Objects.requireNonNull(trailFileId);
+            if (trailFileId == null) {
+              throw new MissingRequiredPropertyException("GetTrailFilesResult", "trailFileId");
+            }
+            this.trailFileId = trailFileId;
             return this;
         }
         public GetTrailFilesResult build() {

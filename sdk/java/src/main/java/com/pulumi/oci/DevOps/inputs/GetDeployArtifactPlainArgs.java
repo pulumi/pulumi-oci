@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetDeployArtifactPlainArgs extends com.pulumi.resources.Invok
         }
 
         public GetDeployArtifactPlainArgs build() {
-            $.deployArtifactId = Objects.requireNonNull($.deployArtifactId, "expected parameter 'deployArtifactId' to be non-null");
+            if ($.deployArtifactId == null) {
+                throw new MissingRequiredPropertyException("GetDeployArtifactPlainArgs", "deployArtifactId");
+            }
             return $;
         }
     }

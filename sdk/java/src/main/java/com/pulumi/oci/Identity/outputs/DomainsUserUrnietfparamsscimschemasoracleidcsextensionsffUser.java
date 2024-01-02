@@ -62,6 +62,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser
 
         @CustomType.Setter
         public Builder sffAuthKeys(@Nullable String sffAuthKeys) {
+
             this.sffAuthKeys = sffAuthKeys;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseTools.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionsFilter;
 import java.lang.String;
@@ -143,12 +144,18 @@ public final class GetDatabaseToolsConnectionsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseToolsConnectionCollections(List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection> databaseToolsConnectionCollections) {
-            this.databaseToolsConnectionCollections = Objects.requireNonNull(databaseToolsConnectionCollections);
+            if (databaseToolsConnectionCollections == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsResult", "databaseToolsConnectionCollections");
+            }
+            this.databaseToolsConnectionCollections = databaseToolsConnectionCollections;
             return this;
         }
         public Builder databaseToolsConnectionCollections(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection... databaseToolsConnectionCollections) {
@@ -156,11 +163,13 @@ public final class GetDatabaseToolsConnectionsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDatabaseToolsConnectionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -169,16 +178,21 @@ public final class GetDatabaseToolsConnectionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder relatedResourceIdentifier(@Nullable String relatedResourceIdentifier) {
+
             this.relatedResourceIdentifier = relatedResourceIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder runtimeSupports(@Nullable List<String> runtimeSupports) {
+
             this.runtimeSupports = runtimeSupports;
             return this;
         }
@@ -187,11 +201,13 @@ public final class GetDatabaseToolsConnectionsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder types(@Nullable List<String> types) {
+
             this.types = types;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationMirrorsFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationMirrorsMirrorsCollection;
 import java.lang.String;
@@ -99,16 +100,19 @@ public final class GetManagementStationMirrorsResult {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder displayNameContains(@Nullable String displayNameContains) {
+
             this.displayNameContains = displayNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagementStationMirrorsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -117,16 +121,23 @@ public final class GetManagementStationMirrorsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationMirrorsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managementStationId(String managementStationId) {
-            this.managementStationId = Objects.requireNonNull(managementStationId);
+            if (managementStationId == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationMirrorsResult", "managementStationId");
+            }
+            this.managementStationId = managementStationId;
             return this;
         }
         @CustomType.Setter
         public Builder mirrorStates(@Nullable List<String> mirrorStates) {
+
             this.mirrorStates = mirrorStates;
             return this;
         }
@@ -135,7 +146,10 @@ public final class GetManagementStationMirrorsResult {
         }
         @CustomType.Setter
         public Builder mirrorsCollections(List<GetManagementStationMirrorsMirrorsCollection> mirrorsCollections) {
-            this.mirrorsCollections = Objects.requireNonNull(mirrorsCollections);
+            if (mirrorsCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationMirrorsResult", "mirrorsCollections");
+            }
+            this.mirrorsCollections = mirrorsCollections;
             return this;
         }
         public Builder mirrorsCollections(GetManagementStationMirrorsMirrorsCollection... mirrorsCollections) {

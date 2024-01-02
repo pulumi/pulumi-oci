@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -72,17 +73,26 @@ public final class GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData {
 
         @CustomType.Setter
         public Builder answerCondition(String answerCondition) {
-            this.answerCondition = Objects.requireNonNull(answerCondition);
+            if (answerCondition == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData", "answerCondition");
+            }
+            this.answerCondition = answerCondition;
             return this;
         }
         @CustomType.Setter
         public Builder shouldKeep(Boolean shouldKeep) {
-            this.shouldKeep = Objects.requireNonNull(shouldKeep);
+            if (shouldKeep == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData", "shouldKeep");
+            }
+            this.shouldKeep = shouldKeep;
             return this;
         }
         @CustomType.Setter
         public Builder value(Integer value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData build() {

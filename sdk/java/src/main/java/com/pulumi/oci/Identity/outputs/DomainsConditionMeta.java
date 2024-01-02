@@ -200,26 +200,31 @@ public final class DomainsConditionMeta {
 
         @CustomType.Setter
         public Builder created(@Nullable String created) {
+
             this.created = created;
             return this;
         }
         @CustomType.Setter
         public Builder lastModified(@Nullable String lastModified) {
+
             this.lastModified = lastModified;
             return this;
         }
         @CustomType.Setter
         public Builder location(@Nullable String location) {
+
             this.location = location;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(@Nullable String resourceType) {
+
             this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder version(@Nullable String version) {
+
             this.version = version;
             return this;
         }

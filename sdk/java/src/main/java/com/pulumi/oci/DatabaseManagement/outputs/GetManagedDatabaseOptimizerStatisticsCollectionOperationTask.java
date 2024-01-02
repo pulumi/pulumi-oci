@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationTask 
 
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationTask", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder target(String target) {
-            this.target = Objects.requireNonNull(target);
+            if (target == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationTask", "target");
+            }
+            this.target = target;
             return this;
         }
         @CustomType.Setter
         public Builder targetType(String targetType) {
-            this.targetType = Objects.requireNonNull(targetType);
+            if (targetType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationTask", "targetType");
+            }
+            this.targetType = targetType;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+            if (timeEnd == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationTask", "timeEnd");
+            }
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+            if (timeStart == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationTask", "timeStart");
+            }
+            this.timeStart = timeStart;
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsCollectionOperationTask build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GatewayResponseCacheDetailsServer;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -160,41 +161,49 @@ public final class GatewayResponseCacheDetails {
 
         @CustomType.Setter
         public Builder authenticationSecretId(@Nullable String authenticationSecretId) {
+
             this.authenticationSecretId = authenticationSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder authenticationSecretVersionNumber(@Nullable String authenticationSecretVersionNumber) {
+
             this.authenticationSecretVersionNumber = authenticationSecretVersionNumber;
             return this;
         }
         @CustomType.Setter
         public Builder connectTimeoutInMs(@Nullable Integer connectTimeoutInMs) {
+
             this.connectTimeoutInMs = connectTimeoutInMs;
             return this;
         }
         @CustomType.Setter
         public Builder isSslEnabled(@Nullable Boolean isSslEnabled) {
+
             this.isSslEnabled = isSslEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isSslVerifyDisabled(@Nullable Boolean isSslVerifyDisabled) {
+
             this.isSslVerifyDisabled = isSslVerifyDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder readTimeoutInMs(@Nullable Integer readTimeoutInMs) {
+
             this.readTimeoutInMs = readTimeoutInMs;
             return this;
         }
         @CustomType.Setter
         public Builder sendTimeoutInMs(@Nullable Integer sendTimeoutInMs) {
+
             this.sendTimeoutInMs = sendTimeoutInMs;
             return this;
         }
         @CustomType.Setter
         public Builder servers(@Nullable List<GatewayResponseCacheDetailsServer> servers) {
+
             this.servers = servers;
             return this;
         }
@@ -203,7 +212,10 @@ public final class GatewayResponseCacheDetails {
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GatewayResponseCacheDetails", "type");
+            }
+            this.type = type;
             return this;
         }
         public GatewayResponseCacheDetails build() {

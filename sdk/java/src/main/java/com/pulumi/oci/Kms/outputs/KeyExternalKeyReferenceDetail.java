@@ -58,11 +58,13 @@ public final class KeyExternalKeyReferenceDetail {
 
         @CustomType.Setter
         public Builder externalKeyId(@Nullable String externalKeyId) {
+
             this.externalKeyId = externalKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder externalKeyVersionId(@Nullable String externalKeyVersionId) {
+
             this.externalKeyVersionId = externalKeyVersionId;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -227,9 +228,15 @@ public final class GetJobExecutionsStatusPlainArgs extends com.pulumi.resources.
         }
 
         public GetJobExecutionsStatusPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.endTime = Objects.requireNonNull($.endTime, "expected parameter 'endTime' to be non-null");
-            $.startTime = Objects.requireNonNull($.startTime, "expected parameter 'startTime' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetJobExecutionsStatusPlainArgs", "compartmentId");
+            }
+            if ($.endTime == null) {
+                throw new MissingRequiredPropertyException("GetJobExecutionsStatusPlainArgs", "endTime");
+            }
+            if ($.startTime == null) {
+                throw new MissingRequiredPropertyException("GetJobExecutionsStatusPlainArgs", "startTime");
+            }
             return $;
         }
     }

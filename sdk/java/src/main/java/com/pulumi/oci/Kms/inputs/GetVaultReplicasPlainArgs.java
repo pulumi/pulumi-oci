@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Kms.inputs.GetVaultReplicasFilter;
 import java.lang.String;
 import java.util.List;
@@ -84,7 +85,9 @@ public final class GetVaultReplicasPlainArgs extends com.pulumi.resources.Invoke
         }
 
         public GetVaultReplicasPlainArgs build() {
-            $.vaultId = Objects.requireNonNull($.vaultId, "expected parameter 'vaultId' to be non-null");
+            if ($.vaultId == null) {
+                throw new MissingRequiredPropertyException("GetVaultReplicasPlainArgs", "vaultId");
+            }
             return $;
         }
     }

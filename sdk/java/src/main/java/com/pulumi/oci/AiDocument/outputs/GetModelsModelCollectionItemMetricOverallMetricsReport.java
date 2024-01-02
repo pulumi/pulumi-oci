@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiDocument.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiDocument.outputs.GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntry;
 import java.lang.Double;
 import java.lang.Integer;
@@ -73,7 +74,10 @@ public final class GetModelsModelCollectionItemMetricOverallMetricsReport {
 
         @CustomType.Setter
         public Builder confidenceEntries(List<GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntry> confidenceEntries) {
-            this.confidenceEntries = Objects.requireNonNull(confidenceEntries);
+            if (confidenceEntries == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemMetricOverallMetricsReport", "confidenceEntries");
+            }
+            this.confidenceEntries = confidenceEntries;
             return this;
         }
         public Builder confidenceEntries(GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntry... confidenceEntries) {
@@ -81,12 +85,18 @@ public final class GetModelsModelCollectionItemMetricOverallMetricsReport {
         }
         @CustomType.Setter
         public Builder documentCount(Integer documentCount) {
-            this.documentCount = Objects.requireNonNull(documentCount);
+            if (documentCount == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemMetricOverallMetricsReport", "documentCount");
+            }
+            this.documentCount = documentCount;
             return this;
         }
         @CustomType.Setter
         public Builder meanAveragePrecision(Double meanAveragePrecision) {
-            this.meanAveragePrecision = Objects.requireNonNull(meanAveragePrecision);
+            if (meanAveragePrecision == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemMetricOverallMetricsReport", "meanAveragePrecision");
+            }
+            this.meanAveragePrecision = meanAveragePrecision;
             return this;
         }
         public GetModelsModelCollectionItemMetricOverallMetricsReport build() {

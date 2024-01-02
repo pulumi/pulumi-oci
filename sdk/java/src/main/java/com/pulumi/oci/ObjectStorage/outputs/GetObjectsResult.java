@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ObjectStorage.outputs.GetObjectsFilter;
 import com.pulumi.oci.ObjectStorage.outputs.GetObjectsObject;
 import java.lang.String;
@@ -115,21 +116,27 @@ public final class GetObjectsResult {
 
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetObjectsResult", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder delimiter(@Nullable String delimiter) {
+
             this.delimiter = delimiter;
             return this;
         }
         @CustomType.Setter
         public Builder end(@Nullable String end) {
+
             this.end = end;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetObjectsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -138,17 +145,26 @@ public final class GetObjectsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetObjectsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetObjectsResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder objects(List<GetObjectsObject> objects) {
-            this.objects = Objects.requireNonNull(objects);
+            if (objects == null) {
+              throw new MissingRequiredPropertyException("GetObjectsResult", "objects");
+            }
+            this.objects = objects;
             return this;
         }
         public Builder objects(GetObjectsObject... objects) {
@@ -156,12 +172,16 @@ public final class GetObjectsResult {
         }
         @CustomType.Setter
         public Builder prefix(@Nullable String prefix) {
+
             this.prefix = prefix;
             return this;
         }
         @CustomType.Setter
         public Builder prefixes(List<String> prefixes) {
-            this.prefixes = Objects.requireNonNull(prefixes);
+            if (prefixes == null) {
+              throw new MissingRequiredPropertyException("GetObjectsResult", "prefixes");
+            }
+            this.prefixes = prefixes;
             return this;
         }
         public Builder prefixes(String... prefixes) {
@@ -169,11 +189,13 @@ public final class GetObjectsResult {
         }
         @CustomType.Setter
         public Builder start(@Nullable String start) {
+
             this.start = start;
             return this;
         }
         @CustomType.Setter
         public Builder startAfter(@Nullable String startAfter) {
+
             this.startAfter = startAfter;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.outputs.GetAcceptedAgreementsAcceptedAgreement;
 import com.pulumi.oci.Marketplace.outputs.GetAcceptedAgreementsFilter;
 import java.lang.String;
@@ -129,12 +130,16 @@ public final class GetAcceptedAgreementsResult {
 
         @CustomType.Setter
         public Builder acceptedAgreementId(@Nullable String acceptedAgreementId) {
+
             this.acceptedAgreementId = acceptedAgreementId;
             return this;
         }
         @CustomType.Setter
         public Builder acceptedAgreements(List<GetAcceptedAgreementsAcceptedAgreement> acceptedAgreements) {
-            this.acceptedAgreements = Objects.requireNonNull(acceptedAgreements);
+            if (acceptedAgreements == null) {
+              throw new MissingRequiredPropertyException("GetAcceptedAgreementsResult", "acceptedAgreements");
+            }
+            this.acceptedAgreements = acceptedAgreements;
             return this;
         }
         public Builder acceptedAgreements(GetAcceptedAgreementsAcceptedAgreement... acceptedAgreements) {
@@ -142,16 +147,21 @@ public final class GetAcceptedAgreementsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAcceptedAgreementsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAcceptedAgreementsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -160,16 +170,21 @@ public final class GetAcceptedAgreementsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAcceptedAgreementsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder listingId(@Nullable String listingId) {
+
             this.listingId = listingId;
             return this;
         }
         @CustomType.Setter
         public Builder packageVersion(@Nullable String packageVersion) {
+
             this.packageVersion = packageVersion;
             return this;
         }

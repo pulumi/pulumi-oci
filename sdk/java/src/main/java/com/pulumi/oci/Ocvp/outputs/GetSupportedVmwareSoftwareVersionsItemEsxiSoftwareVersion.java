@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -71,12 +72,18 @@ public final class GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder supportedHostShapeNames(List<String> supportedHostShapeNames) {
-            this.supportedHostShapeNames = Objects.requireNonNull(supportedHostShapeNames);
+            if (supportedHostShapeNames == null) {
+              throw new MissingRequiredPropertyException("GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion", "supportedHostShapeNames");
+            }
+            this.supportedHostShapeNames = supportedHostShapeNames;
             return this;
         }
         public Builder supportedHostShapeNames(String... supportedHostShapeNames) {
@@ -84,7 +91,10 @@ public final class GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion {
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion build() {

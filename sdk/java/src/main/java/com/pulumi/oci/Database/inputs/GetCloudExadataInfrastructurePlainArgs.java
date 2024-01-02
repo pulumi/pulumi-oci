@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetCloudExadataInfrastructurePlainArgs extends com.pulumi.res
         }
 
         public GetCloudExadataInfrastructurePlainArgs build() {
-            $.cloudExadataInfrastructureId = Objects.requireNonNull($.cloudExadataInfrastructureId, "expected parameter 'cloudExadataInfrastructureId' to be non-null");
+            if ($.cloudExadataInfrastructureId == null) {
+                throw new MissingRequiredPropertyException("GetCloudExadataInfrastructurePlainArgs", "cloudExadataInfrastructureId");
+            }
             return $;
         }
     }

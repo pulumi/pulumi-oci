@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.TargetTargetDetectorRecipeDetectorRule;
 import com.pulumi.oci.CloudGuard.outputs.TargetTargetDetectorRecipeEffectiveDetectorRule;
 import java.lang.String;
@@ -209,26 +210,33 @@ public final class TargetTargetDetectorRecipe {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder detector(@Nullable String detector) {
+
             this.detector = detector;
             return this;
         }
         @CustomType.Setter
         public Builder detectorRecipeId(String detectorRecipeId) {
-            this.detectorRecipeId = Objects.requireNonNull(detectorRecipeId);
+            if (detectorRecipeId == null) {
+              throw new MissingRequiredPropertyException("TargetTargetDetectorRecipe", "detectorRecipeId");
+            }
+            this.detectorRecipeId = detectorRecipeId;
             return this;
         }
         @CustomType.Setter
         public Builder detectorRules(@Nullable List<TargetTargetDetectorRecipeDetectorRule> detectorRules) {
+
             this.detectorRules = detectorRules;
             return this;
         }
@@ -237,11 +245,13 @@ public final class TargetTargetDetectorRecipe {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder effectiveDetectorRules(@Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules) {
+
             this.effectiveDetectorRules = effectiveDetectorRules;
             return this;
         }
@@ -250,26 +260,31 @@ public final class TargetTargetDetectorRecipe {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder owner(@Nullable String owner) {
+
             this.owner = owner;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
+
             this.timeUpdated = timeUpdated;
             return this;
         }

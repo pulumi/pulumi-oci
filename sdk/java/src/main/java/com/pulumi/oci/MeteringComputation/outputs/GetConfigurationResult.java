@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.GetConfigurationItem;
 import java.lang.String;
 import java.util.List;
@@ -64,12 +65,18 @@ public final class GetConfigurationResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetConfigurationResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetConfigurationItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetConfigurationResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetConfigurationItem... items) {
@@ -77,7 +84,10 @@ public final class GetConfigurationResult {
         }
         @CustomType.Setter
         public Builder tenantId(String tenantId) {
-            this.tenantId = Objects.requireNonNull(tenantId);
+            if (tenantId == null) {
+              throw new MissingRequiredPropertyException("GetConfigurationResult", "tenantId");
+            }
+            this.tenantId = tenantId;
             return this;
         }
         public GetConfigurationResult build() {

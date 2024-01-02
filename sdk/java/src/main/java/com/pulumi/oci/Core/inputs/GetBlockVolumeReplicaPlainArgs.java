@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetBlockVolumeReplicaPlainArgs extends com.pulumi.resources.I
         }
 
         public GetBlockVolumeReplicaPlainArgs build() {
-            $.blockVolumeReplicaId = Objects.requireNonNull($.blockVolumeReplicaId, "expected parameter 'blockVolumeReplicaId' to be non-null");
+            if ($.blockVolumeReplicaId == null) {
+                throw new MissingRequiredPropertyException("GetBlockVolumeReplicaPlainArgs", "blockVolumeReplicaId");
+            }
             return $;
         }
     }

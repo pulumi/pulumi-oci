@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyDecryptionRuleCondition;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyDecryptionRulePosition;
 import java.lang.String;
@@ -151,12 +152,18 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionRuleResult", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder conditions(List<GetNetworkFirewallPolicyDecryptionRuleCondition> conditions) {
-            this.conditions = Objects.requireNonNull(conditions);
+            if (conditions == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionRuleResult", "conditions");
+            }
+            this.conditions = conditions;
             return this;
         }
         public Builder conditions(GetNetworkFirewallPolicyDecryptionRuleCondition... conditions) {
@@ -164,32 +171,50 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
         }
         @CustomType.Setter
         public Builder decryptionProfile(String decryptionProfile) {
-            this.decryptionProfile = Objects.requireNonNull(decryptionProfile);
+            if (decryptionProfile == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionRuleResult", "decryptionProfile");
+            }
+            this.decryptionProfile = decryptionProfile;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionRuleResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionRuleResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder networkFirewallPolicyId(String networkFirewallPolicyId) {
-            this.networkFirewallPolicyId = Objects.requireNonNull(networkFirewallPolicyId);
+            if (networkFirewallPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionRuleResult", "networkFirewallPolicyId");
+            }
+            this.networkFirewallPolicyId = networkFirewallPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+            if (parentResourceId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionRuleResult", "parentResourceId");
+            }
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder positions(List<GetNetworkFirewallPolicyDecryptionRulePosition> positions) {
-            this.positions = Objects.requireNonNull(positions);
+            if (positions == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionRuleResult", "positions");
+            }
+            this.positions = positions;
             return this;
         }
         public Builder positions(GetNetworkFirewallPolicyDecryptionRulePosition... positions) {
@@ -197,12 +222,18 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
         }
         @CustomType.Setter
         public Builder priorityOrder(String priorityOrder) {
-            this.priorityOrder = Objects.requireNonNull(priorityOrder);
+            if (priorityOrder == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionRuleResult", "priorityOrder");
+            }
+            this.priorityOrder = priorityOrder;
             return this;
         }
         @CustomType.Setter
         public Builder secret(String secret) {
-            this.secret = Objects.requireNonNull(secret);
+            if (secret == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionRuleResult", "secret");
+            }
+            this.secret = secret;
             return this;
         }
         public GetNetworkFirewallPolicyDecryptionRuleResult build() {

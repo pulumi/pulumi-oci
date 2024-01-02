@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.CrossConnectMacsecPropertiesPrimaryKey;
 import java.lang.Boolean;
 import java.lang.String;
@@ -88,22 +89,28 @@ public final class CrossConnectMacsecProperties {
 
         @CustomType.Setter
         public Builder encryptionCipher(@Nullable String encryptionCipher) {
+
             this.encryptionCipher = encryptionCipher;
             return this;
         }
         @CustomType.Setter
         public Builder isUnprotectedTrafficAllowed(@Nullable Boolean isUnprotectedTrafficAllowed) {
+
             this.isUnprotectedTrafficAllowed = isUnprotectedTrafficAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder primaryKey(@Nullable CrossConnectMacsecPropertiesPrimaryKey primaryKey) {
+
             this.primaryKey = primaryKey;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("CrossConnectMacsecProperties", "state");
+            }
+            this.state = state;
             return this;
         }
         public CrossConnectMacsecProperties build() {

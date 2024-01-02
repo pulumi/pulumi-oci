@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsObjectCollectionRuleOverride;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -409,97 +410,154 @@ public final class GetLogAnalyticsObjectCollectionRuleResult {
 
         @CustomType.Setter
         public Builder charEncoding(String charEncoding) {
-            this.charEncoding = Objects.requireNonNull(charEncoding);
+            if (charEncoding == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "charEncoding");
+            }
+            this.charEncoding = charEncoding;
             return this;
         }
         @CustomType.Setter
         public Builder collectionType(String collectionType) {
-            this.collectionType = Objects.requireNonNull(collectionType);
+            if (collectionType == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "collectionType");
+            }
+            this.collectionType = collectionType;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder entityId(String entityId) {
-            this.entityId = Objects.requireNonNull(entityId);
+            if (entityId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "entityId");
+            }
+            this.entityId = entityId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder logAnalyticsObjectCollectionRuleId(String logAnalyticsObjectCollectionRuleId) {
-            this.logAnalyticsObjectCollectionRuleId = Objects.requireNonNull(logAnalyticsObjectCollectionRuleId);
+            if (logAnalyticsObjectCollectionRuleId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "logAnalyticsObjectCollectionRuleId");
+            }
+            this.logAnalyticsObjectCollectionRuleId = logAnalyticsObjectCollectionRuleId;
             return this;
         }
         @CustomType.Setter
         public Builder logGroupId(String logGroupId) {
-            this.logGroupId = Objects.requireNonNull(logGroupId);
+            if (logGroupId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "logGroupId");
+            }
+            this.logGroupId = logGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder logSet(String logSet) {
-            this.logSet = Objects.requireNonNull(logSet);
+            if (logSet == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "logSet");
+            }
+            this.logSet = logSet;
             return this;
         }
         @CustomType.Setter
         public Builder logSetExtRegex(String logSetExtRegex) {
-            this.logSetExtRegex = Objects.requireNonNull(logSetExtRegex);
+            if (logSetExtRegex == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "logSetExtRegex");
+            }
+            this.logSetExtRegex = logSetExtRegex;
             return this;
         }
         @CustomType.Setter
         public Builder logSetKey(String logSetKey) {
-            this.logSetKey = Objects.requireNonNull(logSetKey);
+            if (logSetKey == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "logSetKey");
+            }
+            this.logSetKey = logSetKey;
             return this;
         }
         @CustomType.Setter
         public Builder logSourceName(String logSourceName) {
-            this.logSourceName = Objects.requireNonNull(logSourceName);
+            if (logSourceName == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "logSourceName");
+            }
+            this.logSourceName = logSourceName;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder objectNameFilters(List<String> objectNameFilters) {
-            this.objectNameFilters = Objects.requireNonNull(objectNameFilters);
+            if (objectNameFilters == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "objectNameFilters");
+            }
+            this.objectNameFilters = objectNameFilters;
             return this;
         }
         public Builder objectNameFilters(String... objectNameFilters) {
@@ -507,17 +565,26 @@ public final class GetLogAnalyticsObjectCollectionRuleResult {
         }
         @CustomType.Setter
         public Builder osBucketName(String osBucketName) {
-            this.osBucketName = Objects.requireNonNull(osBucketName);
+            if (osBucketName == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "osBucketName");
+            }
+            this.osBucketName = osBucketName;
             return this;
         }
         @CustomType.Setter
         public Builder osNamespace(String osNamespace) {
-            this.osNamespace = Objects.requireNonNull(osNamespace);
+            if (osNamespace == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "osNamespace");
+            }
+            this.osNamespace = osNamespace;
             return this;
         }
         @CustomType.Setter
         public Builder overrides(List<GetLogAnalyticsObjectCollectionRuleOverride> overrides) {
-            this.overrides = Objects.requireNonNull(overrides);
+            if (overrides == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "overrides");
+            }
+            this.overrides = overrides;
             return this;
         }
         public Builder overrides(GetLogAnalyticsObjectCollectionRuleOverride... overrides) {
@@ -525,32 +592,50 @@ public final class GetLogAnalyticsObjectCollectionRuleResult {
         }
         @CustomType.Setter
         public Builder pollSince(String pollSince) {
-            this.pollSince = Objects.requireNonNull(pollSince);
+            if (pollSince == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "pollSince");
+            }
+            this.pollSince = pollSince;
             return this;
         }
         @CustomType.Setter
         public Builder pollTill(String pollTill) {
-            this.pollTill = Objects.requireNonNull(pollTill);
+            if (pollTill == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "pollTill");
+            }
+            this.pollTill = pollTill;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder timezone(String timezone) {
-            this.timezone = Objects.requireNonNull(timezone);
+            if (timezone == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleResult", "timezone");
+            }
+            this.timezone = timezone;
             return this;
         }
         public GetLogAnalyticsObjectCollectionRuleResult build() {

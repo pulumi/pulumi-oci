@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -155,47 +156,74 @@ public final class GetAwrHubAwrSourcesSummaryItem {
 
         @CustomType.Setter
         public Builder awrHubId(String awrHubId) {
-            this.awrHubId = Objects.requireNonNull(awrHubId);
+            if (awrHubId == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSourcesSummaryItem", "awrHubId");
+            }
+            this.awrHubId = awrHubId;
             return this;
         }
         @CustomType.Setter
         public Builder awrSourceDatabaseId(String awrSourceDatabaseId) {
-            this.awrSourceDatabaseId = Objects.requireNonNull(awrSourceDatabaseId);
+            if (awrSourceDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSourcesSummaryItem", "awrSourceDatabaseId");
+            }
+            this.awrSourceDatabaseId = awrSourceDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder hoursSinceLastImport(Double hoursSinceLastImport) {
-            this.hoursSinceLastImport = Objects.requireNonNull(hoursSinceLastImport);
+            if (hoursSinceLastImport == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSourcesSummaryItem", "hoursSinceLastImport");
+            }
+            this.hoursSinceLastImport = hoursSinceLastImport;
             return this;
         }
         @CustomType.Setter
         public Builder maxSnapshotIdentifier(Double maxSnapshotIdentifier) {
-            this.maxSnapshotIdentifier = Objects.requireNonNull(maxSnapshotIdentifier);
+            if (maxSnapshotIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSourcesSummaryItem", "maxSnapshotIdentifier");
+            }
+            this.maxSnapshotIdentifier = maxSnapshotIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder minSnapshotIdentifier(Double minSnapshotIdentifier) {
-            this.minSnapshotIdentifier = Objects.requireNonNull(minSnapshotIdentifier);
+            if (minSnapshotIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSourcesSummaryItem", "minSnapshotIdentifier");
+            }
+            this.minSnapshotIdentifier = minSnapshotIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSourcesSummaryItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder snapshotsUploaded(Double snapshotsUploaded) {
-            this.snapshotsUploaded = Objects.requireNonNull(snapshotsUploaded);
+            if (snapshotsUploaded == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSourcesSummaryItem", "snapshotsUploaded");
+            }
+            this.snapshotsUploaded = snapshotsUploaded;
             return this;
         }
         @CustomType.Setter
         public Builder timeFirstSnapshotGenerated(String timeFirstSnapshotGenerated) {
-            this.timeFirstSnapshotGenerated = Objects.requireNonNull(timeFirstSnapshotGenerated);
+            if (timeFirstSnapshotGenerated == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSourcesSummaryItem", "timeFirstSnapshotGenerated");
+            }
+            this.timeFirstSnapshotGenerated = timeFirstSnapshotGenerated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastSnapshotGenerated(String timeLastSnapshotGenerated) {
-            this.timeLastSnapshotGenerated = Objects.requireNonNull(timeLastSnapshotGenerated);
+            if (timeLastSnapshotGenerated == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSourcesSummaryItem", "timeLastSnapshotGenerated");
+            }
+            this.timeLastSnapshotGenerated = timeLastSnapshotGenerated;
             return this;
         }
         public GetAwrHubAwrSourcesSummaryItem build() {

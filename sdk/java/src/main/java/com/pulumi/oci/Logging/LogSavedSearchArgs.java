@@ -5,6 +5,7 @@ package com.pulumi.oci.Logging;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -275,8 +276,12 @@ public final class LogSavedSearchArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public LogSavedSearchArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.query = Objects.requireNonNull($.query, "expected parameter 'query' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("LogSavedSearchArgs", "compartmentId");
+            }
+            if ($.query == null) {
+                throw new MissingRequiredPropertyException("LogSavedSearchArgs", "query");
+            }
             return $;
         }
     }

@@ -115,31 +115,37 @@ public final class TableSchemaColumn {
 
         @CustomType.Setter
         public Builder defaultValue(@Nullable String defaultValue) {
+
             this.defaultValue = defaultValue;
             return this;
         }
         @CustomType.Setter
         public Builder isAsUuid(@Nullable Boolean isAsUuid) {
+
             this.isAsUuid = isAsUuid;
             return this;
         }
         @CustomType.Setter
         public Builder isGenerated(@Nullable Boolean isGenerated) {
+
             this.isGenerated = isGenerated;
             return this;
         }
         @CustomType.Setter
         public Builder isNullable(@Nullable Boolean isNullable) {
+
             this.isNullable = isNullable;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }

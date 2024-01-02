@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.AuthenticationPolicyNetworkPolicyArgs;
 import com.pulumi.oci.Identity.inputs.AuthenticationPolicyPasswordPolicyArgs;
 import java.lang.String;
@@ -152,7 +153,9 @@ public final class AuthenticationPolicyArgs extends com.pulumi.resources.Resourc
         }
 
         public AuthenticationPolicyArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AuthenticationPolicyArgs", "compartmentId");
+            }
             return $;
         }
     }

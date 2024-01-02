@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -141,42 +142,66 @@ public final class GetTargetDatabasesColumnsColumn {
 
         @CustomType.Setter
         public Builder characterLength(Integer characterLength) {
-            this.characterLength = Objects.requireNonNull(characterLength);
+            if (characterLength == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesColumnsColumn", "characterLength");
+            }
+            this.characterLength = characterLength;
             return this;
         }
         @CustomType.Setter
         public Builder columnName(String columnName) {
-            this.columnName = Objects.requireNonNull(columnName);
+            if (columnName == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesColumnsColumn", "columnName");
+            }
+            this.columnName = columnName;
             return this;
         }
         @CustomType.Setter
         public Builder dataType(String dataType) {
-            this.dataType = Objects.requireNonNull(dataType);
+            if (dataType == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesColumnsColumn", "dataType");
+            }
+            this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
         public Builder length(String length) {
-            this.length = Objects.requireNonNull(length);
+            if (length == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesColumnsColumn", "length");
+            }
+            this.length = length;
             return this;
         }
         @CustomType.Setter
         public Builder precision(Integer precision) {
-            this.precision = Objects.requireNonNull(precision);
+            if (precision == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesColumnsColumn", "precision");
+            }
+            this.precision = precision;
             return this;
         }
         @CustomType.Setter
         public Builder scale(Integer scale) {
-            this.scale = Objects.requireNonNull(scale);
+            if (scale == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesColumnsColumn", "scale");
+            }
+            this.scale = scale;
             return this;
         }
         @CustomType.Setter
         public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+            if (schemaName == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesColumnsColumn", "schemaName");
+            }
+            this.schemaName = schemaName;
             return this;
         }
         @CustomType.Setter
         public Builder tableName(String tableName) {
-            this.tableName = Objects.requireNonNull(tableName);
+            if (tableName == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesColumnsColumn", "tableName");
+            }
+            this.tableName = tableName;
             return this;
         }
         public GetTargetDatabasesColumnsColumn build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting;
 import java.lang.Boolean;
@@ -146,32 +147,50 @@ public final class GetWebAppFirewallPolicyRequestProtectionRule {
 
         @CustomType.Setter
         public Builder actionName(String actionName) {
-            this.actionName = Objects.requireNonNull(actionName);
+            if (actionName == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyRequestProtectionRule", "actionName");
+            }
+            this.actionName = actionName;
             return this;
         }
         @CustomType.Setter
         public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+            if (condition == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyRequestProtectionRule", "condition");
+            }
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
         public Builder conditionLanguage(String conditionLanguage) {
-            this.conditionLanguage = Objects.requireNonNull(conditionLanguage);
+            if (conditionLanguage == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyRequestProtectionRule", "conditionLanguage");
+            }
+            this.conditionLanguage = conditionLanguage;
             return this;
         }
         @CustomType.Setter
         public Builder isBodyInspectionEnabled(Boolean isBodyInspectionEnabled) {
-            this.isBodyInspectionEnabled = Objects.requireNonNull(isBodyInspectionEnabled);
+            if (isBodyInspectionEnabled == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyRequestProtectionRule", "isBodyInspectionEnabled");
+            }
+            this.isBodyInspectionEnabled = isBodyInspectionEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyRequestProtectionRule", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder protectionCapabilities(List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability> protectionCapabilities) {
-            this.protectionCapabilities = Objects.requireNonNull(protectionCapabilities);
+            if (protectionCapabilities == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyRequestProtectionRule", "protectionCapabilities");
+            }
+            this.protectionCapabilities = protectionCapabilities;
             return this;
         }
         public Builder protectionCapabilities(GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability... protectionCapabilities) {
@@ -179,7 +198,10 @@ public final class GetWebAppFirewallPolicyRequestProtectionRule {
         }
         @CustomType.Setter
         public Builder protectionCapabilitySettings(List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting> protectionCapabilitySettings) {
-            this.protectionCapabilitySettings = Objects.requireNonNull(protectionCapabilitySettings);
+            if (protectionCapabilitySettings == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyRequestProtectionRule", "protectionCapabilitySettings");
+            }
+            this.protectionCapabilitySettings = protectionCapabilitySettings;
             return this;
         }
         public Builder protectionCapabilitySettings(GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting... protectionCapabilitySettings) {
@@ -187,7 +209,10 @@ public final class GetWebAppFirewallPolicyRequestProtectionRule {
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyRequestProtectionRule", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetWebAppFirewallPolicyRequestProtectionRule build() {

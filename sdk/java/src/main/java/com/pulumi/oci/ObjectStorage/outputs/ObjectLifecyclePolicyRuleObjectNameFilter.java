@@ -92,6 +92,7 @@ public final class ObjectLifecyclePolicyRuleObjectNameFilter {
 
         @CustomType.Setter
         public Builder exclusionPatterns(@Nullable List<String> exclusionPatterns) {
+
             this.exclusionPatterns = exclusionPatterns;
             return this;
         }
@@ -100,6 +101,7 @@ public final class ObjectLifecyclePolicyRuleObjectNameFilter {
         }
         @CustomType.Setter
         public Builder inclusionPatterns(@Nullable List<String> inclusionPatterns) {
+
             this.inclusionPatterns = inclusionPatterns;
             return this;
         }
@@ -108,6 +110,7 @@ public final class ObjectLifecyclePolicyRuleObjectNameFilter {
         }
         @CustomType.Setter
         public Builder inclusionPrefixes(@Nullable List<String> inclusionPrefixes) {
+
             this.inclusionPrefixes = inclusionPrefixes;
             return this;
         }

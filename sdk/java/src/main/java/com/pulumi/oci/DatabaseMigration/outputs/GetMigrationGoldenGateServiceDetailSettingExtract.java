@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetMigrationGoldenGateServiceDetailSettingExtract {
 
         @CustomType.Setter
         public Builder longTransDuration(Integer longTransDuration) {
-            this.longTransDuration = Objects.requireNonNull(longTransDuration);
+            if (longTransDuration == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateServiceDetailSettingExtract", "longTransDuration");
+            }
+            this.longTransDuration = longTransDuration;
             return this;
         }
         @CustomType.Setter
         public Builder performanceProfile(String performanceProfile) {
-            this.performanceProfile = Objects.requireNonNull(performanceProfile);
+            if (performanceProfile == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateServiceDetailSettingExtract", "performanceProfile");
+            }
+            this.performanceProfile = performanceProfile;
             return this;
         }
         public GetMigrationGoldenGateServiceDetailSettingExtract build() {

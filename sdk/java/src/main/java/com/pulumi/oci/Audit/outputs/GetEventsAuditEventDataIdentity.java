@@ -4,6 +4,7 @@
 package com.pulumi.oci.Audit.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -168,52 +169,82 @@ public final class GetEventsAuditEventDataIdentity {
 
         @CustomType.Setter
         public Builder authType(String authType) {
-            this.authType = Objects.requireNonNull(authType);
+            if (authType == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataIdentity", "authType");
+            }
+            this.authType = authType;
             return this;
         }
         @CustomType.Setter
         public Builder callerId(String callerId) {
-            this.callerId = Objects.requireNonNull(callerId);
+            if (callerId == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataIdentity", "callerId");
+            }
+            this.callerId = callerId;
             return this;
         }
         @CustomType.Setter
         public Builder callerName(String callerName) {
-            this.callerName = Objects.requireNonNull(callerName);
+            if (callerName == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataIdentity", "callerName");
+            }
+            this.callerName = callerName;
             return this;
         }
         @CustomType.Setter
         public Builder consoleSessionId(String consoleSessionId) {
-            this.consoleSessionId = Objects.requireNonNull(consoleSessionId);
+            if (consoleSessionId == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataIdentity", "consoleSessionId");
+            }
+            this.consoleSessionId = consoleSessionId;
             return this;
         }
         @CustomType.Setter
         public Builder credentials(String credentials) {
-            this.credentials = Objects.requireNonNull(credentials);
+            if (credentials == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataIdentity", "credentials");
+            }
+            this.credentials = credentials;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+            if (ipAddress == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataIdentity", "ipAddress");
+            }
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder principalId(String principalId) {
-            this.principalId = Objects.requireNonNull(principalId);
+            if (principalId == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataIdentity", "principalId");
+            }
+            this.principalId = principalId;
             return this;
         }
         @CustomType.Setter
         public Builder principalName(String principalName) {
-            this.principalName = Objects.requireNonNull(principalName);
+            if (principalName == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataIdentity", "principalName");
+            }
+            this.principalName = principalName;
             return this;
         }
         @CustomType.Setter
         public Builder tenantId(String tenantId) {
-            this.tenantId = Objects.requireNonNull(tenantId);
+            if (tenantId == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataIdentity", "tenantId");
+            }
+            this.tenantId = tenantId;
             return this;
         }
         @CustomType.Setter
         public Builder userAgent(String userAgent) {
-            this.userAgent = Objects.requireNonNull(userAgent);
+            if (userAgent == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataIdentity", "userAgent");
+            }
+            this.userAgent = userAgent;
             return this;
         }
         public GetEventsAuditEventDataIdentity build() {

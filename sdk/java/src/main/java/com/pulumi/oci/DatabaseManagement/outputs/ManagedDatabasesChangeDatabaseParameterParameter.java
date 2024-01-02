@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -72,17 +73,24 @@ public final class ManagedDatabasesChangeDatabaseParameterParameter {
 
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("ManagedDatabasesChangeDatabaseParameterParameter", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder updateComment(@Nullable String updateComment) {
+
             this.updateComment = updateComment;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("ManagedDatabasesChangeDatabaseParameterParameter", "value");
+            }
+            this.value = value;
             return this;
         }
         public ManagedDatabasesChangeDatabaseParameterParameter build() {

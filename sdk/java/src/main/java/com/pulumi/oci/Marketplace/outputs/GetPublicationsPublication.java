@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.outputs.GetPublicationsPublicationIcon;
 import com.pulumi.oci.Marketplace.outputs.GetPublicationsPublicationPackageDetail;
 import com.pulumi.oci.Marketplace.outputs.GetPublicationsPublicationSupportContact;
@@ -244,22 +245,34 @@ public final class GetPublicationsPublication {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublication", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublication", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublication", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder icons(List<GetPublicationsPublicationIcon> icons) {
-            this.icons = Objects.requireNonNull(icons);
+            if (icons == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublication", "icons");
+            }
+            this.icons = icons;
             return this;
         }
         public Builder icons(GetPublicationsPublicationIcon... icons) {
@@ -267,32 +280,50 @@ public final class GetPublicationsPublication {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublication", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAgreementAcknowledged(Boolean isAgreementAcknowledged) {
-            this.isAgreementAcknowledged = Objects.requireNonNull(isAgreementAcknowledged);
+            if (isAgreementAcknowledged == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublication", "isAgreementAcknowledged");
+            }
+            this.isAgreementAcknowledged = isAgreementAcknowledged;
             return this;
         }
         @CustomType.Setter
         public Builder listingType(String listingType) {
-            this.listingType = Objects.requireNonNull(listingType);
+            if (listingType == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublication", "listingType");
+            }
+            this.listingType = listingType;
             return this;
         }
         @CustomType.Setter
         public Builder longDescription(String longDescription) {
-            this.longDescription = Objects.requireNonNull(longDescription);
+            if (longDescription == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublication", "longDescription");
+            }
+            this.longDescription = longDescription;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublication", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder packageDetails(List<GetPublicationsPublicationPackageDetail> packageDetails) {
-            this.packageDetails = Objects.requireNonNull(packageDetails);
+            if (packageDetails == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublication", "packageDetails");
+            }
+            this.packageDetails = packageDetails;
             return this;
         }
         public Builder packageDetails(GetPublicationsPublicationPackageDetail... packageDetails) {
@@ -300,22 +331,34 @@ public final class GetPublicationsPublication {
         }
         @CustomType.Setter
         public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+            if (packageType == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublication", "packageType");
+            }
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
         public Builder shortDescription(String shortDescription) {
-            this.shortDescription = Objects.requireNonNull(shortDescription);
+            if (shortDescription == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublication", "shortDescription");
+            }
+            this.shortDescription = shortDescription;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublication", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder supportContacts(List<GetPublicationsPublicationSupportContact> supportContacts) {
-            this.supportContacts = Objects.requireNonNull(supportContacts);
+            if (supportContacts == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublication", "supportContacts");
+            }
+            this.supportContacts = supportContacts;
             return this;
         }
         public Builder supportContacts(GetPublicationsPublicationSupportContact... supportContacts) {
@@ -323,7 +366,10 @@ public final class GetPublicationsPublication {
         }
         @CustomType.Setter
         public Builder supportedOperatingSystems(List<GetPublicationsPublicationSupportedOperatingSystem> supportedOperatingSystems) {
-            this.supportedOperatingSystems = Objects.requireNonNull(supportedOperatingSystems);
+            if (supportedOperatingSystems == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublication", "supportedOperatingSystems");
+            }
+            this.supportedOperatingSystems = supportedOperatingSystems;
             return this;
         }
         public Builder supportedOperatingSystems(GetPublicationsPublicationSupportedOperatingSystem... supportedOperatingSystems) {
@@ -331,7 +377,10 @@ public final class GetPublicationsPublication {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublication", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetPublicationsPublication build() {

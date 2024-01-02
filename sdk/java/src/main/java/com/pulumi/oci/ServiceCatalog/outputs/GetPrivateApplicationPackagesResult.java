@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceCatalog.outputs.GetPrivateApplicationPackagesFilter;
 import com.pulumi.oci.ServiceCatalog.outputs.GetPrivateApplicationPackagesPrivateApplicationPackageCollection;
 import java.lang.String;
@@ -115,11 +116,13 @@ public final class GetPrivateApplicationPackagesResult {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPrivateApplicationPackagesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -128,11 +131,15 @@ public final class GetPrivateApplicationPackagesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationPackagesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder packageTypes(@Nullable List<String> packageTypes) {
+
             this.packageTypes = packageTypes;
             return this;
         }
@@ -141,12 +148,18 @@ public final class GetPrivateApplicationPackagesResult {
         }
         @CustomType.Setter
         public Builder privateApplicationId(String privateApplicationId) {
-            this.privateApplicationId = Objects.requireNonNull(privateApplicationId);
+            if (privateApplicationId == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationPackagesResult", "privateApplicationId");
+            }
+            this.privateApplicationId = privateApplicationId;
             return this;
         }
         @CustomType.Setter
         public Builder privateApplicationPackageCollections(List<GetPrivateApplicationPackagesPrivateApplicationPackageCollection> privateApplicationPackageCollections) {
-            this.privateApplicationPackageCollections = Objects.requireNonNull(privateApplicationPackageCollections);
+            if (privateApplicationPackageCollections == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationPackagesResult", "privateApplicationPackageCollections");
+            }
+            this.privateApplicationPackageCollections = privateApplicationPackageCollections;
             return this;
         }
         public Builder privateApplicationPackageCollections(GetPrivateApplicationPackagesPrivateApplicationPackageCollection... privateApplicationPackageCollections) {
@@ -154,6 +167,7 @@ public final class GetPrivateApplicationPackagesResult {
         }
         @CustomType.Setter
         public Builder privateApplicationPackageId(@Nullable String privateApplicationPackageId) {
+
             this.privateApplicationPackageId = privateApplicationPackageId;
             return this;
         }

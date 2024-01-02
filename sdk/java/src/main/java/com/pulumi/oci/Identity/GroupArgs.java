@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -238,7 +239,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public GroupArgs build() {
-            $.description = Objects.requireNonNull($.description, "expected parameter 'description' to be non-null");
+            if ($.description == null) {
+                throw new MissingRequiredPropertyException("GroupArgs", "description");
+            }
             return $;
         }
     }

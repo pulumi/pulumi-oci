@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationGoldenGateDetailsHubRestAdminCredentials;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationGoldenGateDetailsHubSourceDbAdminCredentials;
@@ -146,42 +147,54 @@ public final class MigrationGoldenGateDetailsHub {
 
         @CustomType.Setter
         public Builder computeId(@Nullable String computeId) {
+
             this.computeId = computeId;
             return this;
         }
         @CustomType.Setter
         public Builder restAdminCredentials(MigrationGoldenGateDetailsHubRestAdminCredentials restAdminCredentials) {
-            this.restAdminCredentials = Objects.requireNonNull(restAdminCredentials);
+            if (restAdminCredentials == null) {
+              throw new MissingRequiredPropertyException("MigrationGoldenGateDetailsHub", "restAdminCredentials");
+            }
+            this.restAdminCredentials = restAdminCredentials;
             return this;
         }
         @CustomType.Setter
         public Builder sourceContainerDbAdminCredentials(@Nullable MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials sourceContainerDbAdminCredentials) {
+
             this.sourceContainerDbAdminCredentials = sourceContainerDbAdminCredentials;
             return this;
         }
         @CustomType.Setter
         public Builder sourceDbAdminCredentials(@Nullable MigrationGoldenGateDetailsHubSourceDbAdminCredentials sourceDbAdminCredentials) {
+
             this.sourceDbAdminCredentials = sourceDbAdminCredentials;
             return this;
         }
         @CustomType.Setter
         public Builder sourceMicroservicesDeploymentName(@Nullable String sourceMicroservicesDeploymentName) {
+
             this.sourceMicroservicesDeploymentName = sourceMicroservicesDeploymentName;
             return this;
         }
         @CustomType.Setter
         public Builder targetDbAdminCredentials(@Nullable MigrationGoldenGateDetailsHubTargetDbAdminCredentials targetDbAdminCredentials) {
+
             this.targetDbAdminCredentials = targetDbAdminCredentials;
             return this;
         }
         @CustomType.Setter
         public Builder targetMicroservicesDeploymentName(@Nullable String targetMicroservicesDeploymentName) {
+
             this.targetMicroservicesDeploymentName = targetMicroservicesDeploymentName;
             return this;
         }
         @CustomType.Setter
         public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+            if (url == null) {
+              throw new MissingRequiredPropertyException("MigrationGoldenGateDetailsHub", "url");
+            }
+            this.url = url;
             return this;
         }
         public MigrationGoldenGateDetailsHub build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.DataLabellingService.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -262,8 +263,12 @@ public final class DatasetDatasetFormatDetailsTextFileTypeMetadataArgs extends c
         }
 
         public DatasetDatasetFormatDetailsTextFileTypeMetadataArgs build() {
-            $.columnIndex = Objects.requireNonNull($.columnIndex, "expected parameter 'columnIndex' to be non-null");
-            $.formatType = Objects.requireNonNull($.formatType, "expected parameter 'formatType' to be non-null");
+            if ($.columnIndex == null) {
+                throw new MissingRequiredPropertyException("DatasetDatasetFormatDetailsTextFileTypeMetadataArgs", "columnIndex");
+            }
+            if ($.formatType == null) {
+                throw new MissingRequiredPropertyException("DatasetDatasetFormatDetailsTextFileTypeMetadataArgs", "formatType");
+            }
             return $;
         }
     }

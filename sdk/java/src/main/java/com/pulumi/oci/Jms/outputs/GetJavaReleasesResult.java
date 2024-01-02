@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetJavaReleasesFilter;
 import com.pulumi.oci.Jms.outputs.GetJavaReleasesJavaReleaseCollection;
 import java.lang.String;
@@ -129,11 +130,13 @@ public final class GetJavaReleasesResult {
 
         @CustomType.Setter
         public Builder familyVersion(@Nullable String familyVersion) {
+
             this.familyVersion = familyVersion;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetJavaReleasesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -142,12 +145,18 @@ public final class GetJavaReleasesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleasesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder javaReleaseCollections(List<GetJavaReleasesJavaReleaseCollection> javaReleaseCollections) {
-            this.javaReleaseCollections = Objects.requireNonNull(javaReleaseCollections);
+            if (javaReleaseCollections == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleasesResult", "javaReleaseCollections");
+            }
+            this.javaReleaseCollections = javaReleaseCollections;
             return this;
         }
         public Builder javaReleaseCollections(GetJavaReleasesJavaReleaseCollection... javaReleaseCollections) {
@@ -155,21 +164,25 @@ public final class GetJavaReleasesResult {
         }
         @CustomType.Setter
         public Builder jreSecurityStatus(@Nullable String jreSecurityStatus) {
+
             this.jreSecurityStatus = jreSecurityStatus;
             return this;
         }
         @CustomType.Setter
         public Builder licenseType(@Nullable String licenseType) {
+
             this.licenseType = licenseType;
             return this;
         }
         @CustomType.Setter
         public Builder releaseType(@Nullable String releaseType) {
+
             this.releaseType = releaseType;
             return this;
         }
         @CustomType.Setter
         public Builder releaseVersion(@Nullable String releaseVersion) {
+
             this.releaseVersion = releaseVersion;
             return this;
         }

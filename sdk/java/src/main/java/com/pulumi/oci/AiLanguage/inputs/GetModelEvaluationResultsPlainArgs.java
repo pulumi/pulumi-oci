@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiLanguage.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiLanguage.inputs.GetModelEvaluationResultsFilter;
 import java.lang.String;
 import java.util.List;
@@ -84,7 +85,9 @@ public final class GetModelEvaluationResultsPlainArgs extends com.pulumi.resourc
         }
 
         public GetModelEvaluationResultsPlainArgs build() {
-            $.modelId = Objects.requireNonNull($.modelId, "expected parameter 'modelId' to be non-null");
+            if ($.modelId == null) {
+                throw new MissingRequiredPropertyException("GetModelEvaluationResultsPlainArgs", "modelId");
+            }
             return $;
         }
     }

@@ -44,6 +44,7 @@ public final class PluggableDatabasePluggableDatabaseManagementConfig {
 
         @CustomType.Setter
         public Builder managementStatus(@Nullable String managementStatus) {
+
             this.managementStatus = managementStatus;
             return this;
         }

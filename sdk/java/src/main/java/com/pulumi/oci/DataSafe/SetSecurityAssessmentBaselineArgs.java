@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -136,7 +137,9 @@ public final class SetSecurityAssessmentBaselineArgs extends com.pulumi.resource
         }
 
         public SetSecurityAssessmentBaselineArgs build() {
-            $.securityAssessmentId = Objects.requireNonNull($.securityAssessmentId, "expected parameter 'securityAssessmentId' to be non-null");
+            if ($.securityAssessmentId == null) {
+                throw new MissingRequiredPropertyException("SetSecurityAssessmentBaselineArgs", "securityAssessmentId");
+            }
             return $;
         }
     }

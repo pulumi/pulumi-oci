@@ -5,6 +5,7 @@ package com.pulumi.oci.Waas.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.inputs.PolicyWafConfigCachingRuleCriteriaArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -323,9 +324,15 @@ public final class PolicyWafConfigCachingRuleArgs extends com.pulumi.resources.R
         }
 
         public PolicyWafConfigCachingRuleArgs build() {
-            $.action = Objects.requireNonNull($.action, "expected parameter 'action' to be non-null");
-            $.criterias = Objects.requireNonNull($.criterias, "expected parameter 'criterias' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
+            if ($.action == null) {
+                throw new MissingRequiredPropertyException("PolicyWafConfigCachingRuleArgs", "action");
+            }
+            if ($.criterias == null) {
+                throw new MissingRequiredPropertyException("PolicyWafConfigCachingRuleArgs", "criterias");
+            }
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("PolicyWafConfigCachingRuleArgs", "name");
+            }
             return $;
         }
     }

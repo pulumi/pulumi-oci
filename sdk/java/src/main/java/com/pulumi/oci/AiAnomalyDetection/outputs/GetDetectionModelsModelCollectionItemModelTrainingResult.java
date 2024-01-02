@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail;
 import java.lang.Boolean;
@@ -150,37 +151,58 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResult {
 
         @CustomType.Setter
         public Builder fap(Double fap) {
-            this.fap = Objects.requireNonNull(fap);
+            if (fap == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResult", "fap");
+            }
+            this.fap = fap;
             return this;
         }
         @CustomType.Setter
         public Builder isTrainingGoalAchieved(Boolean isTrainingGoalAchieved) {
-            this.isTrainingGoalAchieved = Objects.requireNonNull(isTrainingGoalAchieved);
+            if (isTrainingGoalAchieved == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResult", "isTrainingGoalAchieved");
+            }
+            this.isTrainingGoalAchieved = isTrainingGoalAchieved;
             return this;
         }
         @CustomType.Setter
         public Builder mae(Double mae) {
-            this.mae = Objects.requireNonNull(mae);
+            if (mae == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResult", "mae");
+            }
+            this.mae = mae;
             return this;
         }
         @CustomType.Setter
         public Builder maxInferenceSyncRows(Integer maxInferenceSyncRows) {
-            this.maxInferenceSyncRows = Objects.requireNonNull(maxInferenceSyncRows);
+            if (maxInferenceSyncRows == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResult", "maxInferenceSyncRows");
+            }
+            this.maxInferenceSyncRows = maxInferenceSyncRows;
             return this;
         }
         @CustomType.Setter
         public Builder multivariateFap(Double multivariateFap) {
-            this.multivariateFap = Objects.requireNonNull(multivariateFap);
+            if (multivariateFap == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResult", "multivariateFap");
+            }
+            this.multivariateFap = multivariateFap;
             return this;
         }
         @CustomType.Setter
         public Builder rmse(Double rmse) {
-            this.rmse = Objects.requireNonNull(rmse);
+            if (rmse == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResult", "rmse");
+            }
+            this.rmse = rmse;
             return this;
         }
         @CustomType.Setter
         public Builder rowReductionDetails(List<GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail> rowReductionDetails) {
-            this.rowReductionDetails = Objects.requireNonNull(rowReductionDetails);
+            if (rowReductionDetails == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResult", "rowReductionDetails");
+            }
+            this.rowReductionDetails = rowReductionDetails;
             return this;
         }
         public Builder rowReductionDetails(GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail... rowReductionDetails) {
@@ -188,7 +210,10 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResult {
         }
         @CustomType.Setter
         public Builder signalDetails(List<GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail> signalDetails) {
-            this.signalDetails = Objects.requireNonNull(signalDetails);
+            if (signalDetails == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResult", "signalDetails");
+            }
+            this.signalDetails = signalDetails;
             return this;
         }
         public Builder signalDetails(GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail... signalDetails) {
@@ -196,12 +221,18 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResult {
         }
         @CustomType.Setter
         public Builder warning(String warning) {
-            this.warning = Objects.requireNonNull(warning);
+            if (warning == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResult", "warning");
+            }
+            this.warning = warning;
             return this;
         }
         @CustomType.Setter
         public Builder windowSize(Integer windowSize) {
-            this.windowSize = Objects.requireNonNull(windowSize);
+            if (windowSize == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResult", "windowSize");
+            }
+            this.windowSize = windowSize;
             return this;
         }
         public GetDetectionModelsModelCollectionItemModelTrainingResult build() {

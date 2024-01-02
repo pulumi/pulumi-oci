@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSum
 
         @CustomType.Setter
         public Builder isDisabled(Boolean isDisabled) {
-            this.isDisabled = Objects.requireNonNull(isDisabled);
+            if (isDisabled == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummary", "isDisabled");
+            }
+            this.isDisabled = isDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder poolSize(Integer poolSize) {
-            this.poolSize = Objects.requireNonNull(poolSize);
+            if (poolSize == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummary", "poolSize");
+            }
+            this.poolSize = poolSize;
             return this;
         }
         public GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummary build() {

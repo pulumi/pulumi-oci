@@ -5,6 +5,7 @@ package com.pulumi.oci.Functions;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -271,7 +272,9 @@ public final class InvokeFunctionArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public InvokeFunctionArgs build() {
-            $.functionId = Objects.requireNonNull($.functionId, "expected parameter 'functionId' to be non-null");
+            if ($.functionId == null) {
+                throw new MissingRequiredPropertyException("InvokeFunctionArgs", "functionId");
+            }
             return $;
         }
     }

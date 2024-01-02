@@ -5,6 +5,7 @@ package com.pulumi.oci.FusionApps;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -123,8 +124,12 @@ public final class FusionEnvironmentRefreshActivityArgs extends com.pulumi.resou
         }
 
         public FusionEnvironmentRefreshActivityArgs build() {
-            $.fusionEnvironmentId = Objects.requireNonNull($.fusionEnvironmentId, "expected parameter 'fusionEnvironmentId' to be non-null");
-            $.sourceFusionEnvironmentId = Objects.requireNonNull($.sourceFusionEnvironmentId, "expected parameter 'sourceFusionEnvironmentId' to be non-null");
+            if ($.fusionEnvironmentId == null) {
+                throw new MissingRequiredPropertyException("FusionEnvironmentRefreshActivityArgs", "fusionEnvironmentId");
+            }
+            if ($.sourceFusionEnvironmentId == null) {
+                throw new MissingRequiredPropertyException("FusionEnvironmentRefreshActivityArgs", "sourceFusionEnvironmentId");
+            }
             return $;
         }
     }

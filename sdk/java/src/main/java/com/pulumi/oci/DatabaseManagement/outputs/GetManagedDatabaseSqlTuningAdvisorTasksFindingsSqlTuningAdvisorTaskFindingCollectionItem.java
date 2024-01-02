@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -269,87 +270,138 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvis
 
         @CustomType.Setter
         public Builder dbTimeBenefit(Double dbTimeBenefit) {
-            this.dbTimeBenefit = Objects.requireNonNull(dbTimeBenefit);
+            if (dbTimeBenefit == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem", "dbTimeBenefit");
+            }
+            this.dbTimeBenefit = dbTimeBenefit;
             return this;
         }
         @CustomType.Setter
         public Builder isAlternativePlanFindingPresent(Boolean isAlternativePlanFindingPresent) {
-            this.isAlternativePlanFindingPresent = Objects.requireNonNull(isAlternativePlanFindingPresent);
+            if (isAlternativePlanFindingPresent == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem", "isAlternativePlanFindingPresent");
+            }
+            this.isAlternativePlanFindingPresent = isAlternativePlanFindingPresent;
             return this;
         }
         @CustomType.Setter
         public Builder isErrorFindingPresent(Boolean isErrorFindingPresent) {
-            this.isErrorFindingPresent = Objects.requireNonNull(isErrorFindingPresent);
+            if (isErrorFindingPresent == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem", "isErrorFindingPresent");
+            }
+            this.isErrorFindingPresent = isErrorFindingPresent;
             return this;
         }
         @CustomType.Setter
         public Builder isIndexFindingPresent(Boolean isIndexFindingPresent) {
-            this.isIndexFindingPresent = Objects.requireNonNull(isIndexFindingPresent);
+            if (isIndexFindingPresent == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem", "isIndexFindingPresent");
+            }
+            this.isIndexFindingPresent = isIndexFindingPresent;
             return this;
         }
         @CustomType.Setter
         public Builder isMiscellaneousFindingPresent(Boolean isMiscellaneousFindingPresent) {
-            this.isMiscellaneousFindingPresent = Objects.requireNonNull(isMiscellaneousFindingPresent);
+            if (isMiscellaneousFindingPresent == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem", "isMiscellaneousFindingPresent");
+            }
+            this.isMiscellaneousFindingPresent = isMiscellaneousFindingPresent;
             return this;
         }
         @CustomType.Setter
         public Builder isRestructureSqlFindingPresent(Boolean isRestructureSqlFindingPresent) {
-            this.isRestructureSqlFindingPresent = Objects.requireNonNull(isRestructureSqlFindingPresent);
+            if (isRestructureSqlFindingPresent == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem", "isRestructureSqlFindingPresent");
+            }
+            this.isRestructureSqlFindingPresent = isRestructureSqlFindingPresent;
             return this;
         }
         @CustomType.Setter
         public Builder isSqlProfileFindingImplemented(Boolean isSqlProfileFindingImplemented) {
-            this.isSqlProfileFindingImplemented = Objects.requireNonNull(isSqlProfileFindingImplemented);
+            if (isSqlProfileFindingImplemented == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem", "isSqlProfileFindingImplemented");
+            }
+            this.isSqlProfileFindingImplemented = isSqlProfileFindingImplemented;
             return this;
         }
         @CustomType.Setter
         public Builder isSqlProfileFindingPresent(Boolean isSqlProfileFindingPresent) {
-            this.isSqlProfileFindingPresent = Objects.requireNonNull(isSqlProfileFindingPresent);
+            if (isSqlProfileFindingPresent == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem", "isSqlProfileFindingPresent");
+            }
+            this.isSqlProfileFindingPresent = isSqlProfileFindingPresent;
             return this;
         }
         @CustomType.Setter
         public Builder isStatsFindingPresent(Boolean isStatsFindingPresent) {
-            this.isStatsFindingPresent = Objects.requireNonNull(isStatsFindingPresent);
+            if (isStatsFindingPresent == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem", "isStatsFindingPresent");
+            }
+            this.isStatsFindingPresent = isStatsFindingPresent;
             return this;
         }
         @CustomType.Setter
         public Builder isTimeoutFindingPresent(Boolean isTimeoutFindingPresent) {
-            this.isTimeoutFindingPresent = Objects.requireNonNull(isTimeoutFindingPresent);
+            if (isTimeoutFindingPresent == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem", "isTimeoutFindingPresent");
+            }
+            this.isTimeoutFindingPresent = isTimeoutFindingPresent;
             return this;
         }
         @CustomType.Setter
         public Builder parsingSchema(String parsingSchema) {
-            this.parsingSchema = Objects.requireNonNull(parsingSchema);
+            if (parsingSchema == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem", "parsingSchema");
+            }
+            this.parsingSchema = parsingSchema;
             return this;
         }
         @CustomType.Setter
         public Builder perExecutionPercentage(Integer perExecutionPercentage) {
-            this.perExecutionPercentage = Objects.requireNonNull(perExecutionPercentage);
+            if (perExecutionPercentage == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem", "perExecutionPercentage");
+            }
+            this.perExecutionPercentage = perExecutionPercentage;
             return this;
         }
         @CustomType.Setter
         public Builder sqlKey(String sqlKey) {
-            this.sqlKey = Objects.requireNonNull(sqlKey);
+            if (sqlKey == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem", "sqlKey");
+            }
+            this.sqlKey = sqlKey;
             return this;
         }
         @CustomType.Setter
         public Builder sqlText(String sqlText) {
-            this.sqlText = Objects.requireNonNull(sqlText);
+            if (sqlText == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem", "sqlText");
+            }
+            this.sqlText = sqlText;
             return this;
         }
         @CustomType.Setter
         public Builder sqlTuningAdvisorTaskId(String sqlTuningAdvisorTaskId) {
-            this.sqlTuningAdvisorTaskId = Objects.requireNonNull(sqlTuningAdvisorTaskId);
+            if (sqlTuningAdvisorTaskId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem", "sqlTuningAdvisorTaskId");
+            }
+            this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
             return this;
         }
         @CustomType.Setter
         public Builder sqlTuningAdvisorTaskObjectExecutionId(String sqlTuningAdvisorTaskObjectExecutionId) {
-            this.sqlTuningAdvisorTaskObjectExecutionId = Objects.requireNonNull(sqlTuningAdvisorTaskObjectExecutionId);
+            if (sqlTuningAdvisorTaskObjectExecutionId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem", "sqlTuningAdvisorTaskObjectExecutionId");
+            }
+            this.sqlTuningAdvisorTaskObjectExecutionId = sqlTuningAdvisorTaskObjectExecutionId;
             return this;
         }
         @CustomType.Setter
         public Builder sqlTuningAdvisorTaskObjectId(String sqlTuningAdvisorTaskObjectId) {
-            this.sqlTuningAdvisorTaskObjectId = Objects.requireNonNull(sqlTuningAdvisorTaskObjectId);
+            if (sqlTuningAdvisorTaskObjectId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem", "sqlTuningAdvisorTaskObjectId");
+            }
+            this.sqlTuningAdvisorTaskObjectId = sqlTuningAdvisorTaskObjectId;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem build() {

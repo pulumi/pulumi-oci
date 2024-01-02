@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetDrgsDrgDefaultDrgRouteTable {
 
         @CustomType.Setter
         public Builder ipsecTunnel(String ipsecTunnel) {
-            this.ipsecTunnel = Objects.requireNonNull(ipsecTunnel);
+            if (ipsecTunnel == null) {
+              throw new MissingRequiredPropertyException("GetDrgsDrgDefaultDrgRouteTable", "ipsecTunnel");
+            }
+            this.ipsecTunnel = ipsecTunnel;
             return this;
         }
         @CustomType.Setter
         public Builder remotePeeringConnection(String remotePeeringConnection) {
-            this.remotePeeringConnection = Objects.requireNonNull(remotePeeringConnection);
+            if (remotePeeringConnection == null) {
+              throw new MissingRequiredPropertyException("GetDrgsDrgDefaultDrgRouteTable", "remotePeeringConnection");
+            }
+            this.remotePeeringConnection = remotePeeringConnection;
             return this;
         }
         @CustomType.Setter
         public Builder vcn(String vcn) {
-            this.vcn = Objects.requireNonNull(vcn);
+            if (vcn == null) {
+              throw new MissingRequiredPropertyException("GetDrgsDrgDefaultDrgRouteTable", "vcn");
+            }
+            this.vcn = vcn;
             return this;
         }
         @CustomType.Setter
         public Builder virtualCircuit(String virtualCircuit) {
-            this.virtualCircuit = Objects.requireNonNull(virtualCircuit);
+            if (virtualCircuit == null) {
+              throw new MissingRequiredPropertyException("GetDrgsDrgDefaultDrgRouteTable", "virtualCircuit");
+            }
+            this.virtualCircuit = virtualCircuit;
             return this;
         }
         public GetDrgsDrgDefaultDrgRouteTable build() {

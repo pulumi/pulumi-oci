@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetNetworkFirewallPolicySecurityRulePosition {
 
         @CustomType.Setter
         public Builder afterRule(String afterRule) {
-            this.afterRule = Objects.requireNonNull(afterRule);
+            if (afterRule == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicySecurityRulePosition", "afterRule");
+            }
+            this.afterRule = afterRule;
             return this;
         }
         @CustomType.Setter
         public Builder beforeRule(String beforeRule) {
-            this.beforeRule = Objects.requireNonNull(beforeRule);
+            if (beforeRule == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicySecurityRulePosition", "beforeRule");
+            }
+            this.beforeRule = beforeRule;
             return this;
         }
         public GetNetworkFirewallPolicySecurityRulePosition build() {

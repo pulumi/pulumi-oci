@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ObjectStorage.outputs.GetPreauthrequestsFilter;
 import com.pulumi.oci.ObjectStorage.outputs.GetPreauthrequestsPreauthenticatedRequest;
 import java.lang.String;
@@ -101,11 +102,15 @@ public final class GetPreauthrequestsResult {
 
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetPreauthrequestsResult", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPreauthrequestsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -114,22 +119,32 @@ public final class GetPreauthrequestsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPreauthrequestsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetPreauthrequestsResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder objectNamePrefix(@Nullable String objectNamePrefix) {
+
             this.objectNamePrefix = objectNamePrefix;
             return this;
         }
         @CustomType.Setter
         public Builder preauthenticatedRequests(List<GetPreauthrequestsPreauthenticatedRequest> preauthenticatedRequests) {
-            this.preauthenticatedRequests = Objects.requireNonNull(preauthenticatedRequests);
+            if (preauthenticatedRequests == null) {
+              throw new MissingRequiredPropertyException("GetPreauthrequestsResult", "preauthenticatedRequests");
+            }
+            this.preauthenticatedRequests = preauthenticatedRequests;
             return this;
         }
         public Builder preauthenticatedRequests(GetPreauthrequestsPreauthenticatedRequest... preauthenticatedRequests) {

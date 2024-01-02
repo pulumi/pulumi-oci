@@ -58,11 +58,13 @@ public final class ConfigConfigurationReqAuthenticationDetailsAuthHeader {
 
         @CustomType.Setter
         public Builder headerName(@Nullable String headerName) {
+
             this.headerName = headerName;
             return this;
         }
         @CustomType.Setter
         public Builder headerValue(@Nullable String headerValue) {
+
             this.headerValue = headerValue;
             return this;
         }

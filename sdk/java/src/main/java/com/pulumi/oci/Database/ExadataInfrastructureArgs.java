@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.ExadataInfrastructureContactArgs;
 import com.pulumi.oci.Database.inputs.ExadataInfrastructureMaintenanceWindowArgs;
 import com.pulumi.oci.Database.inputs.ExadataInfrastructureNetworkBondingModeDetailsArgs;
@@ -1031,18 +1032,42 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
         }
 
         public ExadataInfrastructureArgs build() {
-            $.adminNetworkCidr = Objects.requireNonNull($.adminNetworkCidr, "expected parameter 'adminNetworkCidr' to be non-null");
-            $.cloudControlPlaneServer1 = Objects.requireNonNull($.cloudControlPlaneServer1, "expected parameter 'cloudControlPlaneServer1' to be non-null");
-            $.cloudControlPlaneServer2 = Objects.requireNonNull($.cloudControlPlaneServer2, "expected parameter 'cloudControlPlaneServer2' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.dnsServers = Objects.requireNonNull($.dnsServers, "expected parameter 'dnsServers' to be non-null");
-            $.gateway = Objects.requireNonNull($.gateway, "expected parameter 'gateway' to be non-null");
-            $.infiniBandNetworkCidr = Objects.requireNonNull($.infiniBandNetworkCidr, "expected parameter 'infiniBandNetworkCidr' to be non-null");
-            $.netmask = Objects.requireNonNull($.netmask, "expected parameter 'netmask' to be non-null");
-            $.ntpServers = Objects.requireNonNull($.ntpServers, "expected parameter 'ntpServers' to be non-null");
-            $.shape = Objects.requireNonNull($.shape, "expected parameter 'shape' to be non-null");
-            $.timeZone = Objects.requireNonNull($.timeZone, "expected parameter 'timeZone' to be non-null");
+            if ($.adminNetworkCidr == null) {
+                throw new MissingRequiredPropertyException("ExadataInfrastructureArgs", "adminNetworkCidr");
+            }
+            if ($.cloudControlPlaneServer1 == null) {
+                throw new MissingRequiredPropertyException("ExadataInfrastructureArgs", "cloudControlPlaneServer1");
+            }
+            if ($.cloudControlPlaneServer2 == null) {
+                throw new MissingRequiredPropertyException("ExadataInfrastructureArgs", "cloudControlPlaneServer2");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ExadataInfrastructureArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ExadataInfrastructureArgs", "displayName");
+            }
+            if ($.dnsServers == null) {
+                throw new MissingRequiredPropertyException("ExadataInfrastructureArgs", "dnsServers");
+            }
+            if ($.gateway == null) {
+                throw new MissingRequiredPropertyException("ExadataInfrastructureArgs", "gateway");
+            }
+            if ($.infiniBandNetworkCidr == null) {
+                throw new MissingRequiredPropertyException("ExadataInfrastructureArgs", "infiniBandNetworkCidr");
+            }
+            if ($.netmask == null) {
+                throw new MissingRequiredPropertyException("ExadataInfrastructureArgs", "netmask");
+            }
+            if ($.ntpServers == null) {
+                throw new MissingRequiredPropertyException("ExadataInfrastructureArgs", "ntpServers");
+            }
+            if ($.shape == null) {
+                throw new MissingRequiredPropertyException("ExadataInfrastructureArgs", "shape");
+            }
+            if ($.timeZone == null) {
+                throw new MissingRequiredPropertyException("ExadataInfrastructureArgs", "timeZone");
+            }
             return $;
         }
     }

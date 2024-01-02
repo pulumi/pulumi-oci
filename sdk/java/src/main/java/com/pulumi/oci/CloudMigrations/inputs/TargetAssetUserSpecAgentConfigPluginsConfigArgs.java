@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudMigrations.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -119,8 +120,12 @@ public final class TargetAssetUserSpecAgentConfigPluginsConfigArgs extends com.p
         }
 
         public TargetAssetUserSpecAgentConfigPluginsConfigArgs build() {
-            $.desiredState = Objects.requireNonNull($.desiredState, "expected parameter 'desiredState' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
+            if ($.desiredState == null) {
+                throw new MissingRequiredPropertyException("TargetAssetUserSpecAgentConfigPluginsConfigArgs", "desiredState");
+            }
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("TargetAssetUserSpecAgentConfigPluginsConfigArgs", "name");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.LogAnalytics;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.inputs.NamespaceIngestTimeRuleActionArgs;
 import com.pulumi.oci.LogAnalytics.inputs.NamespaceIngestTimeRuleConditionsArgs;
 import java.lang.Object;
@@ -362,11 +363,21 @@ public final class NamespaceIngestTimeRuleArgs extends com.pulumi.resources.Reso
         }
 
         public NamespaceIngestTimeRuleArgs build() {
-            $.actions = Objects.requireNonNull($.actions, "expected parameter 'actions' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.conditions = Objects.requireNonNull($.conditions, "expected parameter 'conditions' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
+            if ($.actions == null) {
+                throw new MissingRequiredPropertyException("NamespaceIngestTimeRuleArgs", "actions");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("NamespaceIngestTimeRuleArgs", "compartmentId");
+            }
+            if ($.conditions == null) {
+                throw new MissingRequiredPropertyException("NamespaceIngestTimeRuleArgs", "conditions");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("NamespaceIngestTimeRuleArgs", "displayName");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("NamespaceIngestTimeRuleArgs", "namespace");
+            }
             return $;
         }
     }

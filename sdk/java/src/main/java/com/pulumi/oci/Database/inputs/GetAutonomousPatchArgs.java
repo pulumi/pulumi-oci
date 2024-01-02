@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetAutonomousPatchArgs extends com.pulumi.resources.InvokeArg
         }
 
         public GetAutonomousPatchArgs build() {
-            $.autonomousPatchId = Objects.requireNonNull($.autonomousPatchId, "expected parameter 'autonomousPatchId' to be non-null");
+            if ($.autonomousPatchId == null) {
+                throw new MissingRequiredPropertyException("GetAutonomousPatchArgs", "autonomousPatchId");
+            }
             return $;
         }
     }

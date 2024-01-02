@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactS
 
         @CustomType.Setter
         public Builder currentPublicKey(String currentPublicKey) {
-            this.currentPublicKey = Objects.requireNonNull(currentPublicKey);
+            if (currentPublicKey == null) {
+              throw new MissingRequiredPropertyException("GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource", "currentPublicKey");
+            }
+            this.currentPublicKey = currentPublicKey;
             return this;
         }
         @CustomType.Setter
         public Builder previousPublicKey(String previousPublicKey) {
-            this.previousPublicKey = Objects.requireNonNull(previousPublicKey);
+            if (previousPublicKey == null) {
+              throw new MissingRequiredPropertyException("GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource", "previousPublicKey");
+            }
+            this.previousPublicKey = previousPublicKey;
             return this;
         }
         @CustomType.Setter
         public Builder vaultSecretId(String vaultSecretId) {
-            this.vaultSecretId = Objects.requireNonNull(vaultSecretId);
+            if (vaultSecretId == null) {
+              throw new MissingRequiredPropertyException("GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource", "vaultSecretId");
+            }
+            this.vaultSecretId = vaultSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder verificationKeySourceType(String verificationKeySourceType) {
-            this.verificationKeySourceType = Objects.requireNonNull(verificationKeySourceType);
+            if (verificationKeySourceType == null) {
+              throw new MissingRequiredPropertyException("GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource", "verificationKeySourceType");
+            }
+            this.verificationKeySourceType = verificationKeySourceType;
             return this;
         }
         public GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetModelsFilter;
 import com.pulumi.oci.DataScience.outputs.GetModelsModel;
 import java.lang.String;
@@ -149,21 +150,27 @@ public final class GetModelsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetModelsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(@Nullable String createdBy) {
+
             this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetModelsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -172,17 +179,24 @@ public final class GetModelsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder modelVersionSetName(String modelVersionSetName) {
-            this.modelVersionSetName = Objects.requireNonNull(modelVersionSetName);
+            if (modelVersionSetName == null) {
+              throw new MissingRequiredPropertyException("GetModelsResult", "modelVersionSetName");
+            }
+            this.modelVersionSetName = modelVersionSetName;
             return this;
         }
         @CustomType.Setter
         public Builder models(List<GetModelsModel> models) {
-            this.models = Objects.requireNonNull(models);
+            if (models == null) {
+              throw new MissingRequiredPropertyException("GetModelsResult", "models");
+            }
+            this.models = models;
             return this;
         }
         public Builder models(GetModelsModel... models) {
@@ -190,17 +204,22 @@ public final class GetModelsResult {
         }
         @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
+
             this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder versionLabel(String versionLabel) {
-            this.versionLabel = Objects.requireNonNull(versionLabel);
+            if (versionLabel == null) {
+              throw new MissingRequiredPropertyException("GetModelsResult", "versionLabel");
+            }
+            this.versionLabel = versionLabel;
             return this;
         }
         public GetModelsResult build() {

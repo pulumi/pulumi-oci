@@ -959,11 +959,13 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         @CustomType.Setter
         public Builder accountRecoveryRequired(@Nullable Boolean accountRecoveryRequired) {
+
             this.accountRecoveryRequired = accountRecoveryRequired;
             return this;
         }
         @CustomType.Setter
         public Builder accounts(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount> accounts) {
+
             this.accounts = accounts;
             return this;
         }
@@ -972,6 +974,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
         @CustomType.Setter
         public Builder appRoles(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole> appRoles) {
+
             this.appRoles = appRoles;
             return this;
         }
@@ -980,6 +983,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
         @CustomType.Setter
         public Builder applicableAuthenticationTargetApps(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp> applicableAuthenticationTargetApps) {
+
             this.applicableAuthenticationTargetApps = applicableAuthenticationTargetApps;
             return this;
         }
@@ -988,26 +992,31 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
         @CustomType.Setter
         public Builder bypassNotification(@Nullable Boolean bypassNotification) {
+
             this.bypassNotification = bypassNotification;
             return this;
         }
         @CustomType.Setter
         public Builder creationMechanism(@Nullable String creationMechanism) {
+
             this.creationMechanism = creationMechanism;
             return this;
         }
         @CustomType.Setter
         public Builder delegatedAuthenticationTargetApp(@Nullable DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp delegatedAuthenticationTargetApp) {
+
             this.delegatedAuthenticationTargetApp = delegatedAuthenticationTargetApp;
             return this;
         }
         @CustomType.Setter
         public Builder doNotShowGettingStarted(@Nullable Boolean doNotShowGettingStarted) {
+
             this.doNotShowGettingStarted = doNotShowGettingStarted;
             return this;
         }
         @CustomType.Setter
         public Builder grants(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant> grants) {
+
             this.grants = grants;
             return this;
         }
@@ -1016,11 +1025,13 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
         @CustomType.Setter
         public Builder groupMembershipLastModified(@Nullable String groupMembershipLastModified) {
+
             this.groupMembershipLastModified = groupMembershipLastModified;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAppRolesLimitedToGroups(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup> idcsAppRolesLimitedToGroups) {
+
             this.idcsAppRolesLimitedToGroups = idcsAppRolesLimitedToGroups;
             return this;
         }
@@ -1029,51 +1040,61 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
         @CustomType.Setter
         public Builder isAccountRecoveryEnrolled(@Nullable Boolean isAccountRecoveryEnrolled) {
+
             this.isAccountRecoveryEnrolled = isAccountRecoveryEnrolled;
             return this;
         }
         @CustomType.Setter
         public Builder isAuthenticationDelegated(@Nullable Boolean isAuthenticationDelegated) {
+
             this.isAuthenticationDelegated = isAuthenticationDelegated;
             return this;
         }
         @CustomType.Setter
         public Builder isFederatedUser(@Nullable Boolean isFederatedUser) {
+
             this.isFederatedUser = isFederatedUser;
             return this;
         }
         @CustomType.Setter
         public Builder isGroupMembershipNormalized(@Nullable Boolean isGroupMembershipNormalized) {
+
             this.isGroupMembershipNormalized = isGroupMembershipNormalized;
             return this;
         }
         @CustomType.Setter
         public Builder isGroupMembershipSyncedToUsersGroups(@Nullable Boolean isGroupMembershipSyncedToUsersGroups) {
+
             this.isGroupMembershipSyncedToUsersGroups = isGroupMembershipSyncedToUsersGroups;
             return this;
         }
         @CustomType.Setter
         public Builder notificationEmailTemplateId(@Nullable String notificationEmailTemplateId) {
+
             this.notificationEmailTemplateId = notificationEmailTemplateId;
             return this;
         }
         @CustomType.Setter
         public Builder preferredUiLandingPage(@Nullable String preferredUiLandingPage) {
+
             this.preferredUiLandingPage = preferredUiLandingPage;
             return this;
         }
         @CustomType.Setter
         public Builder serviceUser(@Nullable Boolean serviceUser) {
+
             this.serviceUser = serviceUser;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder supportAccounts(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount> supportAccounts) {
+
             this.supportAccounts = supportAccounts;
             return this;
         }
@@ -1082,21 +1103,25 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
         @CustomType.Setter
         public Builder syncedFromApp(@Nullable DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp syncedFromApp) {
+
             this.syncedFromApp = syncedFromApp;
             return this;
         }
         @CustomType.Setter
         public Builder userFlowControlledByExternalClient(@Nullable Boolean userFlowControlledByExternalClient) {
+
             this.userFlowControlledByExternalClient = userFlowControlledByExternalClient;
             return this;
         }
         @CustomType.Setter
         public Builder userProvider(@Nullable String userProvider) {
+
             this.userProvider = userProvider;
             return this;
         }
         @CustomType.Setter
         public Builder userTokens(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken> userTokens) {
+
             this.userTokens = userTokens;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Sch.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -101,27 +102,34 @@ public final class ConnectorTask {
 
         @CustomType.Setter
         public Builder batchSizeInKbs(@Nullable Integer batchSizeInKbs) {
+
             this.batchSizeInKbs = batchSizeInKbs;
             return this;
         }
         @CustomType.Setter
         public Builder batchTimeInSec(@Nullable Integer batchTimeInSec) {
+
             this.batchTimeInSec = batchTimeInSec;
             return this;
         }
         @CustomType.Setter
         public Builder condition(@Nullable String condition) {
+
             this.condition = condition;
             return this;
         }
         @CustomType.Setter
         public Builder functionId(@Nullable String functionId) {
+
             this.functionId = functionId;
             return this;
         }
         @CustomType.Setter
         public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+            if (kind == null) {
+              throw new MissingRequiredPropertyException("ConnectorTask", "kind");
+            }
+            this.kind = kind;
             return this;
         }
         public ConnectorTask build() {

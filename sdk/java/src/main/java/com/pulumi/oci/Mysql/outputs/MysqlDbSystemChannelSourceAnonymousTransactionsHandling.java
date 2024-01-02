@@ -86,21 +86,25 @@ public final class MysqlDbSystemChannelSourceAnonymousTransactionsHandling {
 
         @CustomType.Setter
         public Builder lastConfiguredLogFilename(@Nullable String lastConfiguredLogFilename) {
+
             this.lastConfiguredLogFilename = lastConfiguredLogFilename;
             return this;
         }
         @CustomType.Setter
         public Builder lastConfiguredLogOffset(@Nullable String lastConfiguredLogOffset) {
+
             this.lastConfiguredLogOffset = lastConfiguredLogOffset;
             return this;
         }
         @CustomType.Setter
         public Builder policy(@Nullable String policy) {
+
             this.policy = policy;
             return this;
         }
         @CustomType.Setter
         public Builder uuid(@Nullable String uuid) {
+
             this.uuid = uuid;
             return this;
         }

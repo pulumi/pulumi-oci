@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationDependentObjectMetadata;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationMetadata;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationParentRef;
@@ -408,27 +409,42 @@ public final class GetWorkspaceApplicationResult {
 
         @CustomType.Setter
         public Builder applicationKey(String applicationKey) {
-            this.applicationKey = Objects.requireNonNull(applicationKey);
+            if (applicationKey == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "applicationKey");
+            }
+            this.applicationKey = applicationKey;
             return this;
         }
         @CustomType.Setter
         public Builder applicationVersion(Integer applicationVersion) {
-            this.applicationVersion = Objects.requireNonNull(applicationVersion);
+            if (applicationVersion == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "applicationVersion");
+            }
+            this.applicationVersion = applicationVersion;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder dependentObjectMetadatas(List<GetWorkspaceApplicationDependentObjectMetadata> dependentObjectMetadatas) {
-            this.dependentObjectMetadatas = Objects.requireNonNull(dependentObjectMetadatas);
+            if (dependentObjectMetadatas == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "dependentObjectMetadatas");
+            }
+            this.dependentObjectMetadatas = dependentObjectMetadatas;
             return this;
         }
         public Builder dependentObjectMetadatas(GetWorkspaceApplicationDependentObjectMetadata... dependentObjectMetadatas) {
@@ -436,42 +452,66 @@ public final class GetWorkspaceApplicationResult {
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder identifier(String identifier) {
-            this.identifier = Objects.requireNonNull(identifier);
+            if (identifier == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "identifier");
+            }
+            this.identifier = identifier;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder keyMap(Map<String,Object> keyMap) {
-            this.keyMap = Objects.requireNonNull(keyMap);
+            if (keyMap == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "keyMap");
+            }
+            this.keyMap = keyMap;
             return this;
         }
         @CustomType.Setter
         public Builder metadatas(List<GetWorkspaceApplicationMetadata> metadatas) {
-            this.metadatas = Objects.requireNonNull(metadatas);
+            if (metadatas == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "metadatas");
+            }
+            this.metadatas = metadatas;
             return this;
         }
         public Builder metadatas(GetWorkspaceApplicationMetadata... metadatas) {
@@ -479,32 +519,50 @@ public final class GetWorkspaceApplicationResult {
         }
         @CustomType.Setter
         public Builder modelType(String modelType) {
-            this.modelType = Objects.requireNonNull(modelType);
+            if (modelType == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "modelType");
+            }
+            this.modelType = modelType;
             return this;
         }
         @CustomType.Setter
         public Builder modelVersion(String modelVersion) {
-            this.modelVersion = Objects.requireNonNull(modelVersion);
+            if (modelVersion == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "modelVersion");
+            }
+            this.modelVersion = modelVersion;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder objectStatus(Integer objectStatus) {
-            this.objectStatus = Objects.requireNonNull(objectStatus);
+            if (objectStatus == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "objectStatus");
+            }
+            this.objectStatus = objectStatus;
             return this;
         }
         @CustomType.Setter
         public Builder objectVersion(Integer objectVersion) {
-            this.objectVersion = Objects.requireNonNull(objectVersion);
+            if (objectVersion == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "objectVersion");
+            }
+            this.objectVersion = objectVersion;
             return this;
         }
         @CustomType.Setter
         public Builder parentReves(List<GetWorkspaceApplicationParentRef> parentReves) {
-            this.parentReves = Objects.requireNonNull(parentReves);
+            if (parentReves == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "parentReves");
+            }
+            this.parentReves = parentReves;
             return this;
         }
         public Builder parentReves(GetWorkspaceApplicationParentRef... parentReves) {
@@ -512,7 +570,10 @@ public final class GetWorkspaceApplicationResult {
         }
         @CustomType.Setter
         public Builder publishedObjectMetadatas(List<GetWorkspaceApplicationPublishedObjectMetadata> publishedObjectMetadatas) {
-            this.publishedObjectMetadatas = Objects.requireNonNull(publishedObjectMetadatas);
+            if (publishedObjectMetadatas == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "publishedObjectMetadatas");
+            }
+            this.publishedObjectMetadatas = publishedObjectMetadatas;
             return this;
         }
         public Builder publishedObjectMetadatas(GetWorkspaceApplicationPublishedObjectMetadata... publishedObjectMetadatas) {
@@ -520,7 +581,10 @@ public final class GetWorkspaceApplicationResult {
         }
         @CustomType.Setter
         public Builder registryMetadatas(List<GetWorkspaceApplicationRegistryMetadata> registryMetadatas) {
-            this.registryMetadatas = Objects.requireNonNull(registryMetadatas);
+            if (registryMetadatas == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "registryMetadatas");
+            }
+            this.registryMetadatas = registryMetadatas;
             return this;
         }
         public Builder registryMetadatas(GetWorkspaceApplicationRegistryMetadata... registryMetadatas) {
@@ -528,7 +592,10 @@ public final class GetWorkspaceApplicationResult {
         }
         @CustomType.Setter
         public Builder sourceApplicationInfos(List<GetWorkspaceApplicationSourceApplicationInfo> sourceApplicationInfos) {
-            this.sourceApplicationInfos = Objects.requireNonNull(sourceApplicationInfos);
+            if (sourceApplicationInfos == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "sourceApplicationInfos");
+            }
+            this.sourceApplicationInfos = sourceApplicationInfos;
             return this;
         }
         public Builder sourceApplicationInfos(GetWorkspaceApplicationSourceApplicationInfo... sourceApplicationInfos) {
@@ -536,27 +603,42 @@ public final class GetWorkspaceApplicationResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timePatched(String timePatched) {
-            this.timePatched = Objects.requireNonNull(timePatched);
+            if (timePatched == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "timePatched");
+            }
+            this.timePatched = timePatched;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder workspaceId(String workspaceId) {
-            this.workspaceId = Objects.requireNonNull(workspaceId);
+            if (workspaceId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "workspaceId");
+            }
+            this.workspaceId = workspaceId;
             return this;
         }
         public GetWorkspaceApplicationResult build() {

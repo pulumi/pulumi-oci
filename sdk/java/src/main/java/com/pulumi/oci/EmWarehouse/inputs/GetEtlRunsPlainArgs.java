@@ -4,6 +4,7 @@
 package com.pulumi.oci.EmWarehouse.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.EmWarehouse.inputs.GetEtlRunsFilter;
 import java.lang.String;
 import java.util.List;
@@ -138,7 +139,9 @@ public final class GetEtlRunsPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetEtlRunsPlainArgs build() {
-            $.emWarehouseId = Objects.requireNonNull($.emWarehouseId, "expected parameter 'emWarehouseId' to be non-null");
+            if ($.emWarehouseId == null) {
+                throw new MissingRequiredPropertyException("GetEtlRunsPlainArgs", "emWarehouseId");
+            }
             return $;
         }
     }

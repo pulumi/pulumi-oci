@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetModelCustomMetadataList;
 import com.pulumi.oci.DataScience.outputs.GetModelDefinedMetadataList;
 import java.lang.Boolean;
@@ -272,37 +273,58 @@ public final class GetModelResult {
 
         @CustomType.Setter
         public Builder artifactContentDisposition(String artifactContentDisposition) {
-            this.artifactContentDisposition = Objects.requireNonNull(artifactContentDisposition);
+            if (artifactContentDisposition == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "artifactContentDisposition");
+            }
+            this.artifactContentDisposition = artifactContentDisposition;
             return this;
         }
         @CustomType.Setter
         public Builder artifactContentLength(String artifactContentLength) {
-            this.artifactContentLength = Objects.requireNonNull(artifactContentLength);
+            if (artifactContentLength == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "artifactContentLength");
+            }
+            this.artifactContentLength = artifactContentLength;
             return this;
         }
         @CustomType.Setter
         public Builder artifactContentMd5(String artifactContentMd5) {
-            this.artifactContentMd5 = Objects.requireNonNull(artifactContentMd5);
+            if (artifactContentMd5 == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "artifactContentMd5");
+            }
+            this.artifactContentMd5 = artifactContentMd5;
             return this;
         }
         @CustomType.Setter
         public Builder artifactLastModified(String artifactLastModified) {
-            this.artifactLastModified = Objects.requireNonNull(artifactLastModified);
+            if (artifactLastModified == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "artifactLastModified");
+            }
+            this.artifactLastModified = artifactLastModified;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder customMetadataLists(List<GetModelCustomMetadataList> customMetadataLists) {
-            this.customMetadataLists = Objects.requireNonNull(customMetadataLists);
+            if (customMetadataLists == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "customMetadataLists");
+            }
+            this.customMetadataLists = customMetadataLists;
             return this;
         }
         public Builder customMetadataLists(GetModelCustomMetadataList... customMetadataLists) {
@@ -310,7 +332,10 @@ public final class GetModelResult {
         }
         @CustomType.Setter
         public Builder definedMetadataLists(List<GetModelDefinedMetadataList> definedMetadataLists) {
-            this.definedMetadataLists = Objects.requireNonNull(definedMetadataLists);
+            if (definedMetadataLists == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "definedMetadataLists");
+            }
+            this.definedMetadataLists = definedMetadataLists;
             return this;
         }
         public Builder definedMetadataLists(GetModelDefinedMetadataList... definedMetadataLists) {
@@ -318,67 +343,106 @@ public final class GetModelResult {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder emptyModel(Boolean emptyModel) {
-            this.emptyModel = Objects.requireNonNull(emptyModel);
+            if (emptyModel == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "emptyModel");
+            }
+            this.emptyModel = emptyModel;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inputSchema(String inputSchema) {
-            this.inputSchema = Objects.requireNonNull(inputSchema);
+            if (inputSchema == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "inputSchema");
+            }
+            this.inputSchema = inputSchema;
             return this;
         }
         @CustomType.Setter
         public Builder modelArtifact(String modelArtifact) {
-            this.modelArtifact = Objects.requireNonNull(modelArtifact);
+            if (modelArtifact == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "modelArtifact");
+            }
+            this.modelArtifact = modelArtifact;
             return this;
         }
         @CustomType.Setter
         public Builder modelId(String modelId) {
-            this.modelId = Objects.requireNonNull(modelId);
+            if (modelId == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "modelId");
+            }
+            this.modelId = modelId;
             return this;
         }
         @CustomType.Setter
         public Builder outputSchema(String outputSchema) {
-            this.outputSchema = Objects.requireNonNull(outputSchema);
+            if (outputSchema == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "outputSchema");
+            }
+            this.outputSchema = outputSchema;
             return this;
         }
         @CustomType.Setter
         public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+            if (projectId == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "projectId");
+            }
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetModelResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataCatalog.outputs.GetCatalogsCatalogLock;
 import java.lang.Integer;
 import java.lang.Object;
@@ -243,7 +244,10 @@ public final class GetCatalogsCatalog {
 
         @CustomType.Setter
         public Builder attachedCatalogPrivateEndpoints(List<String> attachedCatalogPrivateEndpoints) {
-            this.attachedCatalogPrivateEndpoints = Objects.requireNonNull(attachedCatalogPrivateEndpoints);
+            if (attachedCatalogPrivateEndpoints == null) {
+              throw new MissingRequiredPropertyException("GetCatalogsCatalog", "attachedCatalogPrivateEndpoints");
+            }
+            this.attachedCatalogPrivateEndpoints = attachedCatalogPrivateEndpoints;
             return this;
         }
         public Builder attachedCatalogPrivateEndpoints(String... attachedCatalogPrivateEndpoints) {
@@ -251,37 +255,58 @@ public final class GetCatalogsCatalog {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCatalogsCatalog", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetCatalogsCatalog", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetCatalogsCatalog", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetCatalogsCatalog", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCatalogsCatalog", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetCatalogsCatalog", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder locks(List<GetCatalogsCatalogLock> locks) {
-            this.locks = Objects.requireNonNull(locks);
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetCatalogsCatalog", "locks");
+            }
+            this.locks = locks;
             return this;
         }
         public Builder locks(GetCatalogsCatalogLock... locks) {
@@ -289,37 +314,58 @@ public final class GetCatalogsCatalog {
         }
         @CustomType.Setter
         public Builder numberOfObjects(Integer numberOfObjects) {
-            this.numberOfObjects = Objects.requireNonNull(numberOfObjects);
+            if (numberOfObjects == null) {
+              throw new MissingRequiredPropertyException("GetCatalogsCatalog", "numberOfObjects");
+            }
+            this.numberOfObjects = numberOfObjects;
             return this;
         }
         @CustomType.Setter
         public Builder serviceApiUrl(String serviceApiUrl) {
-            this.serviceApiUrl = Objects.requireNonNull(serviceApiUrl);
+            if (serviceApiUrl == null) {
+              throw new MissingRequiredPropertyException("GetCatalogsCatalog", "serviceApiUrl");
+            }
+            this.serviceApiUrl = serviceApiUrl;
             return this;
         }
         @CustomType.Setter
         public Builder serviceConsoleUrl(String serviceConsoleUrl) {
-            this.serviceConsoleUrl = Objects.requireNonNull(serviceConsoleUrl);
+            if (serviceConsoleUrl == null) {
+              throw new MissingRequiredPropertyException("GetCatalogsCatalog", "serviceConsoleUrl");
+            }
+            this.serviceConsoleUrl = serviceConsoleUrl;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetCatalogsCatalog", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetCatalogsCatalog", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetCatalogsCatalog", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetCatalogsCatalog", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetCatalogsCatalog build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -101,26 +102,37 @@ public final class ExadataInfrastructureContact {
 
         @CustomType.Setter
         public Builder email(String email) {
-            this.email = Objects.requireNonNull(email);
+            if (email == null) {
+              throw new MissingRequiredPropertyException("ExadataInfrastructureContact", "email");
+            }
+            this.email = email;
             return this;
         }
         @CustomType.Setter
         public Builder isContactMosValidated(@Nullable Boolean isContactMosValidated) {
+
             this.isContactMosValidated = isContactMosValidated;
             return this;
         }
         @CustomType.Setter
         public Builder isPrimary(Boolean isPrimary) {
-            this.isPrimary = Objects.requireNonNull(isPrimary);
+            if (isPrimary == null) {
+              throw new MissingRequiredPropertyException("ExadataInfrastructureContact", "isPrimary");
+            }
+            this.isPrimary = isPrimary;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("ExadataInfrastructureContact", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder phoneNumber(@Nullable String phoneNumber) {
+
             this.phoneNumber = phoneNumber;
             return this;
         }

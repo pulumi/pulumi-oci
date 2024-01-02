@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsubBillingSchedule.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsubBillingSchedule.outputs.GetBillingScheduleBillingSchedule;
 import com.pulumi.oci.OsubBillingSchedule.outputs.GetBillingScheduleFilter;
 import java.lang.String;
@@ -91,7 +92,10 @@ public final class GetBillingScheduleResult {
 
         @CustomType.Setter
         public Builder billingSchedules(List<GetBillingScheduleBillingSchedule> billingSchedules) {
-            this.billingSchedules = Objects.requireNonNull(billingSchedules);
+            if (billingSchedules == null) {
+              throw new MissingRequiredPropertyException("GetBillingScheduleResult", "billingSchedules");
+            }
+            this.billingSchedules = billingSchedules;
             return this;
         }
         public Builder billingSchedules(GetBillingScheduleBillingSchedule... billingSchedules) {
@@ -99,11 +103,15 @@ public final class GetBillingScheduleResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBillingScheduleResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBillingScheduleFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -112,21 +120,29 @@ public final class GetBillingScheduleResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBillingScheduleResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder subscribedServiceId(@Nullable String subscribedServiceId) {
+
             this.subscribedServiceId = subscribedServiceId;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetBillingScheduleResult", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
         public Builder xOneOriginRegion(@Nullable String xOneOriginRegion) {
+
             this.xOneOriginRegion = xOneOriginRegion;
             return this;
         }

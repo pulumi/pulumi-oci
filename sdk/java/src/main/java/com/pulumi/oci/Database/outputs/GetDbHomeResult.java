@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbHomeDatabase;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -279,17 +280,26 @@ public final class GetDbHomeResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
-            this.databaseSoftwareImageId = Objects.requireNonNull(databaseSoftwareImageId);
+            if (databaseSoftwareImageId == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "databaseSoftwareImageId");
+            }
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
             return this;
         }
         @CustomType.Setter
         public Builder databases(List<GetDbHomeDatabase> databases) {
-            this.databases = Objects.requireNonNull(databases);
+            if (databases == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "databases");
+            }
+            this.databases = databases;
             return this;
         }
         public Builder databases(GetDbHomeDatabase... databases) {
@@ -297,92 +307,146 @@ public final class GetDbHomeResult {
         }
         @CustomType.Setter
         public Builder dbHomeId(String dbHomeId) {
-            this.dbHomeId = Objects.requireNonNull(dbHomeId);
+            if (dbHomeId == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "dbHomeId");
+            }
+            this.dbHomeId = dbHomeId;
             return this;
         }
         @CustomType.Setter
         public Builder dbHomeLocation(String dbHomeLocation) {
-            this.dbHomeLocation = Objects.requireNonNull(dbHomeLocation);
+            if (dbHomeLocation == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "dbHomeLocation");
+            }
+            this.dbHomeLocation = dbHomeLocation;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+            if (dbVersion == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "dbVersion");
+            }
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder enableDatabaseDelete(Boolean enableDatabaseDelete) {
-            this.enableDatabaseDelete = Objects.requireNonNull(enableDatabaseDelete);
+            if (enableDatabaseDelete == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "enableDatabaseDelete");
+            }
+            this.enableDatabaseDelete = enableDatabaseDelete;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isDesupportedVersion(Boolean isDesupportedVersion) {
-            this.isDesupportedVersion = Objects.requireNonNull(isDesupportedVersion);
+            if (isDesupportedVersion == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "isDesupportedVersion");
+            }
+            this.isDesupportedVersion = isDesupportedVersion;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
-            this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
+            if (kmsKeyVersionId == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "kmsKeyVersionId");
+            }
+            this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
         @CustomType.Setter
         public Builder lastPatchHistoryEntryId(String lastPatchHistoryEntryId) {
-            this.lastPatchHistoryEntryId = Objects.requireNonNull(lastPatchHistoryEntryId);
+            if (lastPatchHistoryEntryId == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "lastPatchHistoryEntryId");
+            }
+            this.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "source");
+            }
+            this.source = source;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
-            this.vmClusterId = Objects.requireNonNull(vmClusterId);
+            if (vmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "vmClusterId");
+            }
+            this.vmClusterId = vmClusterId;
             return this;
         }
         public GetDbHomeResult build() {

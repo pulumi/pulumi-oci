@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetVmClusterNetworkPlainArgs extends com.pulumi.resources.Inv
         }
 
         public GetVmClusterNetworkPlainArgs build() {
-            $.exadataInfrastructureId = Objects.requireNonNull($.exadataInfrastructureId, "expected parameter 'exadataInfrastructureId' to be non-null");
-            $.vmClusterNetworkId = Objects.requireNonNull($.vmClusterNetworkId, "expected parameter 'vmClusterNetworkId' to be non-null");
+            if ($.exadataInfrastructureId == null) {
+                throw new MissingRequiredPropertyException("GetVmClusterNetworkPlainArgs", "exadataInfrastructureId");
+            }
+            if ($.vmClusterNetworkId == null) {
+                throw new MissingRequiredPropertyException("GetVmClusterNetworkPlainArgs", "vmClusterNetworkId");
+            }
             return $;
         }
     }

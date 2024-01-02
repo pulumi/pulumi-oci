@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetOpsiConfigurationConfigurationItemConfigItemMetadataValueI
 
         @CustomType.Setter
         public Builder allowedValueType(String allowedValueType) {
-            this.allowedValueType = Objects.requireNonNull(allowedValueType);
+            if (allowedValueType == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail", "allowedValueType");
+            }
+            this.allowedValueType = allowedValueType;
             return this;
         }
         @CustomType.Setter
         public Builder maxValue(String maxValue) {
-            this.maxValue = Objects.requireNonNull(maxValue);
+            if (maxValue == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail", "maxValue");
+            }
+            this.maxValue = maxValue;
             return this;
         }
         @CustomType.Setter
         public Builder minValue(String minValue) {
-            this.minValue = Objects.requireNonNull(minValue);
+            if (minValue == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail", "minValue");
+            }
+            this.minValue = minValue;
             return this;
         }
         @CustomType.Setter
         public Builder possibleValues(List<String> possibleValues) {
-            this.possibleValues = Objects.requireNonNull(possibleValues);
+            if (possibleValues == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail", "possibleValues");
+            }
+            this.possibleValues = possibleValues;
             return this;
         }
         public Builder possibleValues(String... possibleValues) {

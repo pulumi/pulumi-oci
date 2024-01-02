@@ -5,6 +5,7 @@ package com.pulumi.oci.LoadBalancer;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.inputs.LoadBalancerRoutingPolicyRuleArgs;
 import java.lang.String;
 import java.util.List;
@@ -211,9 +212,15 @@ public final class LoadBalancerRoutingPolicyArgs extends com.pulumi.resources.Re
         }
 
         public LoadBalancerRoutingPolicyArgs build() {
-            $.conditionLanguageVersion = Objects.requireNonNull($.conditionLanguageVersion, "expected parameter 'conditionLanguageVersion' to be non-null");
-            $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
-            $.rules = Objects.requireNonNull($.rules, "expected parameter 'rules' to be non-null");
+            if ($.conditionLanguageVersion == null) {
+                throw new MissingRequiredPropertyException("LoadBalancerRoutingPolicyArgs", "conditionLanguageVersion");
+            }
+            if ($.loadBalancerId == null) {
+                throw new MissingRequiredPropertyException("LoadBalancerRoutingPolicyArgs", "loadBalancerId");
+            }
+            if ($.rules == null) {
+                throw new MissingRequiredPropertyException("LoadBalancerRoutingPolicyArgs", "rules");
+            }
             return $;
         }
     }

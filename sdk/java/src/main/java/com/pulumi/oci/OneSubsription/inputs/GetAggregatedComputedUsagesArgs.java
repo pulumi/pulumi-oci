@@ -5,6 +5,7 @@ package com.pulumi.oci.OneSubsription.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OneSubsription.inputs.GetAggregatedComputedUsagesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -284,10 +285,18 @@ public final class GetAggregatedComputedUsagesArgs extends com.pulumi.resources.
         }
 
         public GetAggregatedComputedUsagesArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.subscriptionId = Objects.requireNonNull($.subscriptionId, "expected parameter 'subscriptionId' to be non-null");
-            $.timeFrom = Objects.requireNonNull($.timeFrom, "expected parameter 'timeFrom' to be non-null");
-            $.timeTo = Objects.requireNonNull($.timeTo, "expected parameter 'timeTo' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesArgs", "compartmentId");
+            }
+            if ($.subscriptionId == null) {
+                throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesArgs", "subscriptionId");
+            }
+            if ($.timeFrom == null) {
+                throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesArgs", "timeFrom");
+            }
+            if ($.timeTo == null) {
+                throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesArgs", "timeTo");
+            }
             return $;
         }
     }

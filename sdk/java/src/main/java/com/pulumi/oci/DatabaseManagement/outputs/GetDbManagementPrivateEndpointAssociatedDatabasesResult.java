@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection;
 import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointAssociatedDatabasesFilter;
 import java.lang.String;
@@ -86,7 +87,10 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesResult {
 
         @CustomType.Setter
         public Builder associatedDatabaseCollections(List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection> associatedDatabaseCollections) {
-            this.associatedDatabaseCollections = Objects.requireNonNull(associatedDatabaseCollections);
+            if (associatedDatabaseCollections == null) {
+              throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointAssociatedDatabasesResult", "associatedDatabaseCollections");
+            }
+            this.associatedDatabaseCollections = associatedDatabaseCollections;
             return this;
         }
         public Builder associatedDatabaseCollections(GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection... associatedDatabaseCollections) {
@@ -94,16 +98,23 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointAssociatedDatabasesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dbManagementPrivateEndpointId(String dbManagementPrivateEndpointId) {
-            this.dbManagementPrivateEndpointId = Objects.requireNonNull(dbManagementPrivateEndpointId);
+            if (dbManagementPrivateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointAssociatedDatabasesResult", "dbManagementPrivateEndpointId");
+            }
+            this.dbManagementPrivateEndpointId = dbManagementPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDbManagementPrivateEndpointAssociatedDatabasesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -112,7 +123,10 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointAssociatedDatabasesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetDbManagementPrivateEndpointAssociatedDatabasesResult build() {

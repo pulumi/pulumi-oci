@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorConfigurationClientCertificateDetailClientCertificate;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorConfigurationClientCertificateDetailPrivateKey;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetMonitorConfigurationClientCertificateDetail {
 
         @CustomType.Setter
         public Builder clientCertificates(List<GetMonitorConfigurationClientCertificateDetailClientCertificate> clientCertificates) {
-            this.clientCertificates = Objects.requireNonNull(clientCertificates);
+            if (clientCertificates == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfigurationClientCertificateDetail", "clientCertificates");
+            }
+            this.clientCertificates = clientCertificates;
             return this;
         }
         public Builder clientCertificates(GetMonitorConfigurationClientCertificateDetailClientCertificate... clientCertificates) {
@@ -66,7 +70,10 @@ public final class GetMonitorConfigurationClientCertificateDetail {
         }
         @CustomType.Setter
         public Builder privateKeys(List<GetMonitorConfigurationClientCertificateDetailPrivateKey> privateKeys) {
-            this.privateKeys = Objects.requireNonNull(privateKeys);
+            if (privateKeys == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfigurationClientCertificateDetail", "privateKeys");
+            }
+            this.privateKeys = privateKeys;
             return this;
         }
         public Builder privateKeys(GetMonitorConfigurationClientCertificateDetailPrivateKey... privateKeys) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallsFilter;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallsNetworkFirewallCollection;
 import java.lang.String;
@@ -137,21 +138,27 @@ public final class GetNetworkFirewallsResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNetworkFirewallsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -160,12 +167,16 @@ public final class GetNetworkFirewallsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder networkFirewallCollections(List<GetNetworkFirewallsNetworkFirewallCollection> networkFirewallCollections) {
-            this.networkFirewallCollections = Objects.requireNonNull(networkFirewallCollections);
+            if (networkFirewallCollections == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallsResult", "networkFirewallCollections");
+            }
+            this.networkFirewallCollections = networkFirewallCollections;
             return this;
         }
         public Builder networkFirewallCollections(GetNetworkFirewallsNetworkFirewallCollection... networkFirewallCollections) {
@@ -173,11 +184,13 @@ public final class GetNetworkFirewallsResult {
         }
         @CustomType.Setter
         public Builder networkFirewallPolicyId(@Nullable String networkFirewallPolicyId) {
+
             this.networkFirewallPolicyId = networkFirewallPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

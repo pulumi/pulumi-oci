@@ -5,6 +5,7 @@ package com.pulumi.oci.ApiGateway;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.inputs.UsagePlanEntitlementArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -250,8 +251,12 @@ public final class UsagePlanArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public UsagePlanArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.entitlements = Objects.requireNonNull($.entitlements, "expected parameter 'entitlements' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("UsagePlanArgs", "compartmentId");
+            }
+            if ($.entitlements == null) {
+                throw new MissingRequiredPropertyException("UsagePlanArgs", "entitlements");
+            }
             return $;
         }
     }

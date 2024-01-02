@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -73,16 +74,21 @@ public final class BuildPipelineStageBuildRunnerShapeConfig {
 
         @CustomType.Setter
         public Builder buildRunnerType(String buildRunnerType) {
-            this.buildRunnerType = Objects.requireNonNull(buildRunnerType);
+            if (buildRunnerType == null) {
+              throw new MissingRequiredPropertyException("BuildPipelineStageBuildRunnerShapeConfig", "buildRunnerType");
+            }
+            this.buildRunnerType = buildRunnerType;
             return this;
         }
         @CustomType.Setter
         public Builder memoryInGbs(@Nullable Integer memoryInGbs) {
+
             this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(@Nullable Integer ocpus) {
+
             this.ocpus = ocpus;
             return this;
         }

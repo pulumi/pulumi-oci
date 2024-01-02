@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentsSecurityAssessmentStatistic;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -397,37 +398,58 @@ public final class GetSecurityAssessmentsSecurityAssessment {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ignoredAssessmentIds(List<String> ignoredAssessmentIds) {
-            this.ignoredAssessmentIds = Objects.requireNonNull(ignoredAssessmentIds);
+            if (ignoredAssessmentIds == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "ignoredAssessmentIds");
+            }
+            this.ignoredAssessmentIds = ignoredAssessmentIds;
             return this;
         }
         public Builder ignoredAssessmentIds(String... ignoredAssessmentIds) {
@@ -435,7 +457,10 @@ public final class GetSecurityAssessmentsSecurityAssessment {
         }
         @CustomType.Setter
         public Builder ignoredTargets(List<String> ignoredTargets) {
-            this.ignoredTargets = Objects.requireNonNull(ignoredTargets);
+            if (ignoredTargets == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "ignoredTargets");
+            }
+            this.ignoredTargets = ignoredTargets;
             return this;
         }
         public Builder ignoredTargets(String... ignoredTargets) {
@@ -443,47 +468,74 @@ public final class GetSecurityAssessmentsSecurityAssessment {
         }
         @CustomType.Setter
         public Builder isBaseline(Boolean isBaseline) {
-            this.isBaseline = Objects.requireNonNull(isBaseline);
+            if (isBaseline == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "isBaseline");
+            }
+            this.isBaseline = isBaseline;
             return this;
         }
         @CustomType.Setter
         public Builder isDeviatedFromBaseline(Boolean isDeviatedFromBaseline) {
-            this.isDeviatedFromBaseline = Objects.requireNonNull(isDeviatedFromBaseline);
+            if (isDeviatedFromBaseline == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "isDeviatedFromBaseline");
+            }
+            this.isDeviatedFromBaseline = isDeviatedFromBaseline;
             return this;
         }
         @CustomType.Setter
         public Builder lastComparedBaselineId(String lastComparedBaselineId) {
-            this.lastComparedBaselineId = Objects.requireNonNull(lastComparedBaselineId);
+            if (lastComparedBaselineId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "lastComparedBaselineId");
+            }
+            this.lastComparedBaselineId = lastComparedBaselineId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder link(String link) {
-            this.link = Objects.requireNonNull(link);
+            if (link == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "link");
+            }
+            this.link = link;
             return this;
         }
         @CustomType.Setter
         public Builder schedule(String schedule) {
-            this.schedule = Objects.requireNonNull(schedule);
+            if (schedule == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "schedule");
+            }
+            this.schedule = schedule;
             return this;
         }
         @CustomType.Setter
         public Builder scheduleSecurityAssessmentId(String scheduleSecurityAssessmentId) {
-            this.scheduleSecurityAssessmentId = Objects.requireNonNull(scheduleSecurityAssessmentId);
+            if (scheduleSecurityAssessmentId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "scheduleSecurityAssessmentId");
+            }
+            this.scheduleSecurityAssessmentId = scheduleSecurityAssessmentId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder statistics(List<GetSecurityAssessmentsSecurityAssessmentStatistic> statistics) {
-            this.statistics = Objects.requireNonNull(statistics);
+            if (statistics == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "statistics");
+            }
+            this.statistics = statistics;
             return this;
         }
         public Builder statistics(GetSecurityAssessmentsSecurityAssessmentStatistic... statistics) {
@@ -491,17 +543,26 @@ public final class GetSecurityAssessmentsSecurityAssessment {
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "targetId");
+            }
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder targetIds(List<String> targetIds) {
-            this.targetIds = Objects.requireNonNull(targetIds);
+            if (targetIds == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "targetIds");
+            }
+            this.targetIds = targetIds;
             return this;
         }
         public Builder targetIds(String... targetIds) {
@@ -509,32 +570,50 @@ public final class GetSecurityAssessmentsSecurityAssessment {
         }
         @CustomType.Setter
         public Builder targetVersion(String targetVersion) {
-            this.targetVersion = Objects.requireNonNull(targetVersion);
+            if (targetVersion == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "targetVersion");
+            }
+            this.targetVersion = targetVersion;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastAssessed(String timeLastAssessed) {
-            this.timeLastAssessed = Objects.requireNonNull(timeLastAssessed);
+            if (timeLastAssessed == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "timeLastAssessed");
+            }
+            this.timeLastAssessed = timeLastAssessed;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder triggeredBy(String triggeredBy) {
-            this.triggeredBy = Objects.requireNonNull(triggeredBy);
+            if (triggeredBy == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "triggeredBy");
+            }
+            this.triggeredBy = triggeredBy;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetSecurityAssessmentsSecurityAssessment build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.PolicyWafConfigDeviceFingerprintChallengeChallengeSettings;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -145,41 +146,51 @@ public final class PolicyWafConfigDeviceFingerprintChallenge {
 
         @CustomType.Setter
         public Builder action(@Nullable String action) {
+
             this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder actionExpirationInSeconds(@Nullable Integer actionExpirationInSeconds) {
+
             this.actionExpirationInSeconds = actionExpirationInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder challengeSettings(@Nullable PolicyWafConfigDeviceFingerprintChallengeChallengeSettings challengeSettings) {
+
             this.challengeSettings = challengeSettings;
             return this;
         }
         @CustomType.Setter
         public Builder failureThreshold(@Nullable Integer failureThreshold) {
+
             this.failureThreshold = failureThreshold;
             return this;
         }
         @CustomType.Setter
         public Builder failureThresholdExpirationInSeconds(@Nullable Integer failureThresholdExpirationInSeconds) {
+
             this.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("PolicyWafConfigDeviceFingerprintChallenge", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder maxAddressCount(@Nullable Integer maxAddressCount) {
+
             this.maxAddressCount = maxAddressCount;
             return this;
         }
         @CustomType.Setter
         public Builder maxAddressCountExpirationInSeconds(@Nullable Integer maxAddressCountExpirationInSeconds) {
+
             this.maxAddressCountExpirationInSeconds = maxAddressCountExpirationInSeconds;
             return this;
         }

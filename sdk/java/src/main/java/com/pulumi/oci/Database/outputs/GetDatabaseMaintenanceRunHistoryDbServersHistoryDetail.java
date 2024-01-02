@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail;
 import java.lang.String;
 import java.util.List;
@@ -72,7 +73,10 @@ public final class GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail {
 
         @CustomType.Setter
         public Builder dbServerPatchingDetails(List<GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail> dbServerPatchingDetails) {
-            this.dbServerPatchingDetails = Objects.requireNonNull(dbServerPatchingDetails);
+            if (dbServerPatchingDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail", "dbServerPatchingDetails");
+            }
+            this.dbServerPatchingDetails = dbServerPatchingDetails;
             return this;
         }
         public Builder dbServerPatchingDetails(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail... dbServerPatchingDetails) {
@@ -80,12 +84,18 @@ public final class GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail {
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail build() {

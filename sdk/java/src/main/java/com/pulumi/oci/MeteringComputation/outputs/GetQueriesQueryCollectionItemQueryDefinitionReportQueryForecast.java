@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetQueriesQueryCollectionItemQueryDefinitionReportQueryForeca
 
         @CustomType.Setter
         public Builder forecastType(String forecastType) {
-            this.forecastType = Objects.requireNonNull(forecastType);
+            if (forecastType == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast", "forecastType");
+            }
+            this.forecastType = forecastType;
             return this;
         }
         @CustomType.Setter
         public Builder timeForecastEnded(String timeForecastEnded) {
-            this.timeForecastEnded = Objects.requireNonNull(timeForecastEnded);
+            if (timeForecastEnded == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast", "timeForecastEnded");
+            }
+            this.timeForecastEnded = timeForecastEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeForecastStarted(String timeForecastStarted) {
-            this.timeForecastStarted = Objects.requireNonNull(timeForecastStarted);
+            if (timeForecastStarted == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast", "timeForecastStarted");
+            }
+            this.timeForecastStarted = timeForecastStarted;
             return this;
         }
         public GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast build() {

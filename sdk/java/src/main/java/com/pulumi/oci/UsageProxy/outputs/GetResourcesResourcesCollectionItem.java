@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.UsageProxy.outputs.GetResourcesResourcesCollectionItemSkus;
 import java.lang.Boolean;
 import java.lang.String;
@@ -185,7 +186,10 @@ public final class GetResourcesResourcesCollectionItem {
 
         @CustomType.Setter
         public Builder childResources(List<String> childResources) {
-            this.childResources = Objects.requireNonNull(childResources);
+            if (childResources == null) {
+              throw new MissingRequiredPropertyException("GetResourcesResourcesCollectionItem", "childResources");
+            }
+            this.childResources = childResources;
             return this;
         }
         public Builder childResources(String... childResources) {
@@ -193,47 +197,74 @@ public final class GetResourcesResourcesCollectionItem {
         }
         @CustomType.Setter
         public Builder dailyUnitDisplayName(String dailyUnitDisplayName) {
-            this.dailyUnitDisplayName = Objects.requireNonNull(dailyUnitDisplayName);
+            if (dailyUnitDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetResourcesResourcesCollectionItem", "dailyUnitDisplayName");
+            }
+            this.dailyUnitDisplayName = dailyUnitDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetResourcesResourcesCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder hourlyUnitDisplayName(String hourlyUnitDisplayName) {
-            this.hourlyUnitDisplayName = Objects.requireNonNull(hourlyUnitDisplayName);
+            if (hourlyUnitDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetResourcesResourcesCollectionItem", "hourlyUnitDisplayName");
+            }
+            this.hourlyUnitDisplayName = hourlyUnitDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder instanceType(String instanceType) {
-            this.instanceType = Objects.requireNonNull(instanceType);
+            if (instanceType == null) {
+              throw new MissingRequiredPropertyException("GetResourcesResourcesCollectionItem", "instanceType");
+            }
+            this.instanceType = instanceType;
             return this;
         }
         @CustomType.Setter
         public Builder isPurchased(Boolean isPurchased) {
-            this.isPurchased = Objects.requireNonNull(isPurchased);
+            if (isPurchased == null) {
+              throw new MissingRequiredPropertyException("GetResourcesResourcesCollectionItem", "isPurchased");
+            }
+            this.isPurchased = isPurchased;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetResourcesResourcesCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder rawUnitDisplayName(String rawUnitDisplayName) {
-            this.rawUnitDisplayName = Objects.requireNonNull(rawUnitDisplayName);
+            if (rawUnitDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetResourcesResourcesCollectionItem", "rawUnitDisplayName");
+            }
+            this.rawUnitDisplayName = rawUnitDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder servicename(String servicename) {
-            this.servicename = Objects.requireNonNull(servicename);
+            if (servicename == null) {
+              throw new MissingRequiredPropertyException("GetResourcesResourcesCollectionItem", "servicename");
+            }
+            this.servicename = servicename;
             return this;
         }
         @CustomType.Setter
         public Builder skuses(List<GetResourcesResourcesCollectionItemSkus> skuses) {
-            this.skuses = Objects.requireNonNull(skuses);
+            if (skuses == null) {
+              throw new MissingRequiredPropertyException("GetResourcesResourcesCollectionItem", "skuses");
+            }
+            this.skuses = skuses;
             return this;
         }
         public Builder skuses(GetResourcesResourcesCollectionItemSkus... skuses) {
@@ -241,7 +272,10 @@ public final class GetResourcesResourcesCollectionItem {
         }
         @CustomType.Setter
         public Builder usageDataType(String usageDataType) {
-            this.usageDataType = Objects.requireNonNull(usageDataType);
+            if (usageDataType == null) {
+              throw new MissingRequiredPropertyException("GetResourcesResourcesCollectionItem", "usageDataType");
+            }
+            this.usageDataType = usageDataType;
             return this;
         }
         public GetResourcesResourcesCollectionItem build() {

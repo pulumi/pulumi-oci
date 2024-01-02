@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetNetworkSecurityGroupsFilter;
 import com.pulumi.oci.Core.outputs.GetNetworkSecurityGroupsNetworkSecurityGroup;
 import java.lang.String;
@@ -129,16 +130,19 @@ public final class GetNetworkSecurityGroupsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNetworkSecurityGroupsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -147,12 +151,18 @@ public final class GetNetworkSecurityGroupsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder networkSecurityGroups(List<GetNetworkSecurityGroupsNetworkSecurityGroup> networkSecurityGroups) {
-            this.networkSecurityGroups = Objects.requireNonNull(networkSecurityGroups);
+            if (networkSecurityGroups == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupsResult", "networkSecurityGroups");
+            }
+            this.networkSecurityGroups = networkSecurityGroups;
             return this;
         }
         public Builder networkSecurityGroups(GetNetworkSecurityGroupsNetworkSecurityGroup... networkSecurityGroups) {
@@ -160,16 +170,19 @@ public final class GetNetworkSecurityGroupsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
+
             this.vcnId = vcnId;
             return this;
         }
         @CustomType.Setter
         public Builder vlanId(@Nullable String vlanId) {
+
             this.vlanId = vlanId;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Dns;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Dns.inputs.SteeringPolicyAnswerArgs;
 import com.pulumi.oci.Dns.inputs.SteeringPolicyRuleArgs;
 import java.lang.Integer;
@@ -460,9 +461,15 @@ public final class SteeringPolicyArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public SteeringPolicyArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.template = Objects.requireNonNull($.template, "expected parameter 'template' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("SteeringPolicyArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("SteeringPolicyArgs", "displayName");
+            }
+            if ($.template == null) {
+                throw new MissingRequiredPropertyException("SteeringPolicyArgs", "template");
+            }
             return $;
         }
     }

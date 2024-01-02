@@ -4,6 +4,7 @@
 package com.pulumi.oci.Autoscaling.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class AutoScalingConfigurationPolicyResourceAction {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("AutoScalingConfigurationPolicyResourceAction", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder actionType(String actionType) {
-            this.actionType = Objects.requireNonNull(actionType);
+            if (actionType == null) {
+              throw new MissingRequiredPropertyException("AutoScalingConfigurationPolicyResourceAction", "actionType");
+            }
+            this.actionType = actionType;
             return this;
         }
         public AutoScalingConfigurationPolicyResourceAction build() {

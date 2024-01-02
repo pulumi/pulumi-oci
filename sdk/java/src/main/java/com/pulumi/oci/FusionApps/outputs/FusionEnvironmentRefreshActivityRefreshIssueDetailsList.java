@@ -44,6 +44,7 @@ public final class FusionEnvironmentRefreshActivityRefreshIssueDetailsList {
 
         @CustomType.Setter
         public Builder refreshIssues(@Nullable String refreshIssues) {
+
             this.refreshIssues = refreshIssues;
             return this;
         }

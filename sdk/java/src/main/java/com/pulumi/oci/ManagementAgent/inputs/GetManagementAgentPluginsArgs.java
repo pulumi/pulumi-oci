@@ -5,6 +5,7 @@ package com.pulumi.oci.ManagementAgent.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -257,7 +258,9 @@ public final class GetManagementAgentPluginsArgs extends com.pulumi.resources.In
         }
 
         public GetManagementAgentPluginsArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetManagementAgentPluginsArgs", "compartmentId");
+            }
             return $;
         }
     }

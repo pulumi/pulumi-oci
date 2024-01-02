@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructuresExadataInfrastructure;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructuresFilter;
 import java.lang.String;
@@ -109,17 +110,24 @@ public final class GetExadataInfrastructuresResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder exadataInfrastructures(List<GetExadataInfrastructuresExadataInfrastructure> exadataInfrastructures) {
-            this.exadataInfrastructures = Objects.requireNonNull(exadataInfrastructures);
+            if (exadataInfrastructures == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresResult", "exadataInfrastructures");
+            }
+            this.exadataInfrastructures = exadataInfrastructures;
             return this;
         }
         public Builder exadataInfrastructures(GetExadataInfrastructuresExadataInfrastructure... exadataInfrastructures) {
@@ -127,6 +135,7 @@ public final class GetExadataInfrastructuresResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetExadataInfrastructuresFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,11 +144,15 @@ public final class GetExadataInfrastructuresResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

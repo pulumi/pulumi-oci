@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollection;
 import com.pulumi.oci.Psql.outputs.GetDbSystemsFilter;
 import java.lang.String;
@@ -109,12 +110,16 @@ public final class GetDbSystemsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemCollections(List<GetDbSystemsDbSystemCollection> dbSystemCollections) {
-            this.dbSystemCollections = Objects.requireNonNull(dbSystemCollections);
+            if (dbSystemCollections == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsResult", "dbSystemCollections");
+            }
+            this.dbSystemCollections = dbSystemCollections;
             return this;
         }
         public Builder dbSystemCollections(GetDbSystemsDbSystemCollection... dbSystemCollections) {
@@ -122,11 +127,13 @@ public final class GetDbSystemsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDbSystemsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,11 +142,13 @@ public final class GetDbSystemsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

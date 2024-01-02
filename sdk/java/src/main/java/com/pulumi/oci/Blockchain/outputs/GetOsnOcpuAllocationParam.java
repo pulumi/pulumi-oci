@@ -4,6 +4,7 @@
 package com.pulumi.oci.Blockchain.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetOsnOcpuAllocationParam {
 
         @CustomType.Setter
         public Builder ocpuAllocationNumber(Double ocpuAllocationNumber) {
-            this.ocpuAllocationNumber = Objects.requireNonNull(ocpuAllocationNumber);
+            if (ocpuAllocationNumber == null) {
+              throw new MissingRequiredPropertyException("GetOsnOcpuAllocationParam", "ocpuAllocationNumber");
+            }
+            this.ocpuAllocationNumber = ocpuAllocationNumber;
             return this;
         }
         public GetOsnOcpuAllocationParam build() {

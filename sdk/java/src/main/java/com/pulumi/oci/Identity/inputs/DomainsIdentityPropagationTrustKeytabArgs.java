@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -194,7 +195,9 @@ public final class DomainsIdentityPropagationTrustKeytabArgs extends com.pulumi.
         }
 
         public DomainsIdentityPropagationTrustKeytabArgs build() {
-            $.secretOcid = Objects.requireNonNull($.secretOcid, "expected parameter 'secretOcid' to be non-null");
+            if ($.secretOcid == null) {
+                throw new MissingRequiredPropertyException("DomainsIdentityPropagationTrustKeytabArgs", "secretOcid");
+            }
             return $;
         }
     }

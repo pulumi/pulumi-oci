@@ -186,16 +186,19 @@ public final class AuditPolicyManagementAuditSpecification {
 
         @CustomType.Setter
         public Builder auditPolicyCategory(@Nullable String auditPolicyCategory) {
+
             this.auditPolicyCategory = auditPolicyCategory;
             return this;
         }
         @CustomType.Setter
         public Builder auditPolicyName(@Nullable String auditPolicyName) {
+
             this.auditPolicyName = auditPolicyName;
             return this;
         }
         @CustomType.Setter
         public Builder databasePolicyNames(@Nullable List<String> databasePolicyNames) {
+
             this.databasePolicyNames = databasePolicyNames;
             return this;
         }
@@ -204,41 +207,49 @@ public final class AuditPolicyManagementAuditSpecification {
         }
         @CustomType.Setter
         public Builder enableStatus(@Nullable String enableStatus) {
+
             this.enableStatus = enableStatus;
             return this;
         }
         @CustomType.Setter
         public Builder enabledEntities(@Nullable String enabledEntities) {
+
             this.enabledEntities = enabledEntities;
             return this;
         }
         @CustomType.Setter
         public Builder isCreated(@Nullable Boolean isCreated) {
+
             this.isCreated = isCreated;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabledForAllUsers(@Nullable Boolean isEnabledForAllUsers) {
+
             this.isEnabledForAllUsers = isEnabledForAllUsers;
             return this;
         }
         @CustomType.Setter
         public Builder isSeededInDataSafe(@Nullable Boolean isSeededInDataSafe) {
+
             this.isSeededInDataSafe = isSeededInDataSafe;
             return this;
         }
         @CustomType.Setter
         public Builder isSeededInTarget(@Nullable Boolean isSeededInTarget) {
+
             this.isSeededInTarget = isSeededInTarget;
             return this;
         }
         @CustomType.Setter
         public Builder isViewOnly(@Nullable Boolean isViewOnly) {
+
             this.isViewOnly = isViewOnly;
             return this;
         }
         @CustomType.Setter
         public Builder partiallyEnabledMsg(@Nullable String partiallyEnabledMsg) {
+
             this.partiallyEnabledMsg = partiallyEnabledMsg;
             return this;
         }

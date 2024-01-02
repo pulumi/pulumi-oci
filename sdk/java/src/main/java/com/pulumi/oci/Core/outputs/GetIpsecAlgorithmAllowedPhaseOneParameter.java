@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -71,7 +72,10 @@ public final class GetIpsecAlgorithmAllowedPhaseOneParameter {
 
         @CustomType.Setter
         public Builder authenticationAlgorithms(List<String> authenticationAlgorithms) {
-            this.authenticationAlgorithms = Objects.requireNonNull(authenticationAlgorithms);
+            if (authenticationAlgorithms == null) {
+              throw new MissingRequiredPropertyException("GetIpsecAlgorithmAllowedPhaseOneParameter", "authenticationAlgorithms");
+            }
+            this.authenticationAlgorithms = authenticationAlgorithms;
             return this;
         }
         public Builder authenticationAlgorithms(String... authenticationAlgorithms) {
@@ -79,7 +83,10 @@ public final class GetIpsecAlgorithmAllowedPhaseOneParameter {
         }
         @CustomType.Setter
         public Builder dhGroups(List<String> dhGroups) {
-            this.dhGroups = Objects.requireNonNull(dhGroups);
+            if (dhGroups == null) {
+              throw new MissingRequiredPropertyException("GetIpsecAlgorithmAllowedPhaseOneParameter", "dhGroups");
+            }
+            this.dhGroups = dhGroups;
             return this;
         }
         public Builder dhGroups(String... dhGroups) {
@@ -87,7 +94,10 @@ public final class GetIpsecAlgorithmAllowedPhaseOneParameter {
         }
         @CustomType.Setter
         public Builder encryptionAlgorithms(List<String> encryptionAlgorithms) {
-            this.encryptionAlgorithms = Objects.requireNonNull(encryptionAlgorithms);
+            if (encryptionAlgorithms == null) {
+              throw new MissingRequiredPropertyException("GetIpsecAlgorithmAllowedPhaseOneParameter", "encryptionAlgorithms");
+            }
+            this.encryptionAlgorithms = encryptionAlgorithms;
             return this;
         }
         public Builder encryptionAlgorithms(String... encryptionAlgorithms) {

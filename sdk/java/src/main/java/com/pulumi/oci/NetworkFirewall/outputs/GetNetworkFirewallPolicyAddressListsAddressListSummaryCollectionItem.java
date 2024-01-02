@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -114,7 +115,10 @@ public final class GetNetworkFirewallPolicyAddressListsAddressListSummaryCollect
 
         @CustomType.Setter
         public Builder addresses(List<String> addresses) {
-            this.addresses = Objects.requireNonNull(addresses);
+            if (addresses == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItem", "addresses");
+            }
+            this.addresses = addresses;
             return this;
         }
         public Builder addresses(String... addresses) {
@@ -122,27 +126,42 @@ public final class GetNetworkFirewallPolicyAddressListsAddressListSummaryCollect
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder networkFirewallPolicyId(String networkFirewallPolicyId) {
-            this.networkFirewallPolicyId = Objects.requireNonNull(networkFirewallPolicyId);
+            if (networkFirewallPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItem", "networkFirewallPolicyId");
+            }
+            this.networkFirewallPolicyId = networkFirewallPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+            if (parentResourceId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItem", "parentResourceId");
+            }
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder totalAddresses(Integer totalAddresses) {
-            this.totalAddresses = Objects.requireNonNull(totalAddresses);
+            if (totalAddresses == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItem", "totalAddresses");
+            }
+            this.totalAddresses = totalAddresses;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItem", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItem build() {

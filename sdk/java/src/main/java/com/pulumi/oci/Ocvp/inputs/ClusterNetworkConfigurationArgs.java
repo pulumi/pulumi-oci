@@ -5,6 +5,7 @@ package com.pulumi.oci.Ocvp.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -574,11 +575,21 @@ public final class ClusterNetworkConfigurationArgs extends com.pulumi.resources.
         }
 
         public ClusterNetworkConfigurationArgs build() {
-            $.nsxEdgeVtepVlanId = Objects.requireNonNull($.nsxEdgeVtepVlanId, "expected parameter 'nsxEdgeVtepVlanId' to be non-null");
-            $.nsxVtepVlanId = Objects.requireNonNull($.nsxVtepVlanId, "expected parameter 'nsxVtepVlanId' to be non-null");
-            $.provisioningSubnetId = Objects.requireNonNull($.provisioningSubnetId, "expected parameter 'provisioningSubnetId' to be non-null");
-            $.vmotionVlanId = Objects.requireNonNull($.vmotionVlanId, "expected parameter 'vmotionVlanId' to be non-null");
-            $.vsanVlanId = Objects.requireNonNull($.vsanVlanId, "expected parameter 'vsanVlanId' to be non-null");
+            if ($.nsxEdgeVtepVlanId == null) {
+                throw new MissingRequiredPropertyException("ClusterNetworkConfigurationArgs", "nsxEdgeVtepVlanId");
+            }
+            if ($.nsxVtepVlanId == null) {
+                throw new MissingRequiredPropertyException("ClusterNetworkConfigurationArgs", "nsxVtepVlanId");
+            }
+            if ($.provisioningSubnetId == null) {
+                throw new MissingRequiredPropertyException("ClusterNetworkConfigurationArgs", "provisioningSubnetId");
+            }
+            if ($.vmotionVlanId == null) {
+                throw new MissingRequiredPropertyException("ClusterNetworkConfigurationArgs", "vmotionVlanId");
+            }
+            if ($.vsanVlanId == null) {
+                throw new MissingRequiredPropertyException("ClusterNetworkConfigurationArgs", "vsanVlanId");
+            }
             return $;
         }
     }

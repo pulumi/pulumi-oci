@@ -106,26 +106,31 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeC
 
         @CustomType.Setter
         public Builder baselineOcpuUtilization(@Nullable String baselineOcpuUtilization) {
+
             this.baselineOcpuUtilization = baselineOcpuUtilization;
             return this;
         }
         @CustomType.Setter
         public Builder memoryInGbs(@Nullable Double memoryInGbs) {
+
             this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder nvmes(@Nullable Integer nvmes) {
+
             this.nvmes = nvmes;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(@Nullable Double ocpus) {
+
             this.ocpus = ocpus;
             return this;
         }
         @CustomType.Setter
         public Builder vcpus(@Nullable Integer vcpus) {
+
             this.vcpus = vcpus;
             return this;
         }

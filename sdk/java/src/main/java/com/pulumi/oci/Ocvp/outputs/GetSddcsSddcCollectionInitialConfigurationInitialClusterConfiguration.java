@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ocvp.outputs.GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore;
 import com.pulumi.oci.Ocvp.outputs.GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration;
 import java.lang.Boolean;
@@ -174,22 +175,34 @@ public final class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfi
 
         @CustomType.Setter
         public Builder actualEsxiHostsCount(Integer actualEsxiHostsCount) {
-            this.actualEsxiHostsCount = Objects.requireNonNull(actualEsxiHostsCount);
+            if (actualEsxiHostsCount == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration", "actualEsxiHostsCount");
+            }
+            this.actualEsxiHostsCount = actualEsxiHostsCount;
             return this;
         }
         @CustomType.Setter
         public Builder capacityReservationId(String capacityReservationId) {
-            this.capacityReservationId = Objects.requireNonNull(capacityReservationId);
+            if (capacityReservationId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration", "capacityReservationId");
+            }
+            this.capacityReservationId = capacityReservationId;
             return this;
         }
         @CustomType.Setter
         public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
-            this.computeAvailabilityDomain = Objects.requireNonNull(computeAvailabilityDomain);
+            if (computeAvailabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration", "computeAvailabilityDomain");
+            }
+            this.computeAvailabilityDomain = computeAvailabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder datastores(List<GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore> datastores) {
-            this.datastores = Objects.requireNonNull(datastores);
+            if (datastores == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration", "datastores");
+            }
+            this.datastores = datastores;
             return this;
         }
         public Builder datastores(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore... datastores) {
@@ -197,42 +210,66 @@ public final class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfi
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder esxiHostsCount(Integer esxiHostsCount) {
-            this.esxiHostsCount = Objects.requireNonNull(esxiHostsCount);
+            if (esxiHostsCount == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration", "esxiHostsCount");
+            }
+            this.esxiHostsCount = esxiHostsCount;
             return this;
         }
         @CustomType.Setter
         public Builder initialCommitment(String initialCommitment) {
-            this.initialCommitment = Objects.requireNonNull(initialCommitment);
+            if (initialCommitment == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration", "initialCommitment");
+            }
+            this.initialCommitment = initialCommitment;
             return this;
         }
         @CustomType.Setter
         public Builder initialHostOcpuCount(Double initialHostOcpuCount) {
-            this.initialHostOcpuCount = Objects.requireNonNull(initialHostOcpuCount);
+            if (initialHostOcpuCount == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration", "initialHostOcpuCount");
+            }
+            this.initialHostOcpuCount = initialHostOcpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder initialHostShapeName(String initialHostShapeName) {
-            this.initialHostShapeName = Objects.requireNonNull(initialHostShapeName);
+            if (initialHostShapeName == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration", "initialHostShapeName");
+            }
+            this.initialHostShapeName = initialHostShapeName;
             return this;
         }
         @CustomType.Setter
         public Builder instanceDisplayNamePrefix(String instanceDisplayNamePrefix) {
-            this.instanceDisplayNamePrefix = Objects.requireNonNull(instanceDisplayNamePrefix);
+            if (instanceDisplayNamePrefix == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration", "instanceDisplayNamePrefix");
+            }
+            this.instanceDisplayNamePrefix = instanceDisplayNamePrefix;
             return this;
         }
         @CustomType.Setter
         public Builder isShieldedInstanceEnabled(Boolean isShieldedInstanceEnabled) {
-            this.isShieldedInstanceEnabled = Objects.requireNonNull(isShieldedInstanceEnabled);
+            if (isShieldedInstanceEnabled == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration", "isShieldedInstanceEnabled");
+            }
+            this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder networkConfigurations(List<GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration> networkConfigurations) {
-            this.networkConfigurations = Objects.requireNonNull(networkConfigurations);
+            if (networkConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration", "networkConfigurations");
+            }
+            this.networkConfigurations = networkConfigurations;
             return this;
         }
         public Builder networkConfigurations(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration... networkConfigurations) {
@@ -240,12 +277,18 @@ public final class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfi
         }
         @CustomType.Setter
         public Builder vsphereType(String vsphereType) {
-            this.vsphereType = Objects.requireNonNull(vsphereType);
+            if (vsphereType == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration", "vsphereType");
+            }
+            this.vsphereType = vsphereType;
             return this;
         }
         @CustomType.Setter
         public Builder workloadNetworkCidr(String workloadNetworkCidr) {
-            this.workloadNetworkCidr = Objects.requireNonNull(workloadNetworkCidr);
+            if (workloadNetworkCidr == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration", "workloadNetworkCidr");
+            }
+            this.workloadNetworkCidr = workloadNetworkCidr;
             return this;
         }
         public GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration build() {

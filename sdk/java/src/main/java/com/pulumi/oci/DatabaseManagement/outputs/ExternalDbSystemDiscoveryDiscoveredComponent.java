@@ -684,11 +684,13 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
 
         @CustomType.Setter
         public Builder adrHomeDirectory(@Nullable String adrHomeDirectory) {
+
             this.adrHomeDirectory = adrHomeDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder asmInstances(@Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentAsmInstance> asmInstances) {
+
             this.asmInstances = asmInstances;
             return this;
         }
@@ -697,6 +699,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
         }
         @CustomType.Setter
         public Builder associatedComponents(@Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponent> associatedComponents) {
+
             this.associatedComponents = associatedComponents;
             return this;
         }
@@ -705,11 +708,13 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
         }
         @CustomType.Setter
         public Builder clusterId(@Nullable String clusterId) {
+
             this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
         public Builder clusterInstances(@Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentClusterInstance> clusterInstances) {
+
             this.clusterInstances = clusterInstances;
             return this;
         }
@@ -718,26 +723,31 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder componentId(@Nullable String componentId) {
+
             this.componentId = componentId;
             return this;
         }
         @CustomType.Setter
         public Builder componentName(@Nullable String componentName) {
+
             this.componentName = componentName;
             return this;
         }
         @CustomType.Setter
         public Builder componentType(@Nullable String componentType) {
+
             this.componentType = componentType;
             return this;
         }
         @CustomType.Setter
         public Builder connectors(@Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentConnector> connectors) {
+
             this.connectors = connectors;
             return this;
         }
@@ -746,66 +756,79 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
         }
         @CustomType.Setter
         public Builder containerDatabaseId(@Nullable String containerDatabaseId) {
+
             this.containerDatabaseId = containerDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder cpuCoreCount(@Nullable Double cpuCoreCount) {
+
             this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
         public Builder crsBaseDirectory(@Nullable String crsBaseDirectory) {
+
             this.crsBaseDirectory = crsBaseDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder dbEdition(@Nullable String dbEdition) {
+
             this.dbEdition = dbEdition;
             return this;
         }
         @CustomType.Setter
         public Builder dbId(@Nullable String dbId) {
+
             this.dbId = dbId;
             return this;
         }
         @CustomType.Setter
         public Builder dbNodeName(@Nullable String dbNodeName) {
+
             this.dbNodeName = dbNodeName;
             return this;
         }
         @CustomType.Setter
         public Builder dbPacks(@Nullable String dbPacks) {
+
             this.dbPacks = dbPacks;
             return this;
         }
         @CustomType.Setter
         public Builder dbRole(@Nullable String dbRole) {
+
             this.dbRole = dbRole;
             return this;
         }
         @CustomType.Setter
         public Builder dbType(@Nullable String dbType) {
+
             this.dbType = dbType;
             return this;
         }
         @CustomType.Setter
         public Builder dbUniqueName(@Nullable String dbUniqueName) {
+
             this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
         public Builder dbVersion(@Nullable String dbVersion) {
+
             this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder endpoints(@Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentEndpoint> endpoints) {
+
             this.endpoints = endpoints;
             return this;
         }
@@ -814,71 +837,85 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
         }
         @CustomType.Setter
         public Builder gridHome(@Nullable String gridHome) {
+
             this.gridHome = gridHome;
             return this;
         }
         @CustomType.Setter
         public Builder guid(@Nullable String guid) {
+
             this.guid = guid;
             return this;
         }
         @CustomType.Setter
         public Builder homeDirectory(@Nullable String homeDirectory) {
+
             this.homeDirectory = homeDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder hostName(@Nullable String hostName) {
+
             this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder instanceName(@Nullable String instanceName) {
+
             this.instanceName = instanceName;
             return this;
         }
         @CustomType.Setter
         public Builder isCluster(@Nullable Boolean isCluster) {
+
             this.isCluster = isCluster;
             return this;
         }
         @CustomType.Setter
         public Builder isFlexCluster(@Nullable Boolean isFlexCluster) {
+
             this.isFlexCluster = isFlexCluster;
             return this;
         }
         @CustomType.Setter
         public Builder isFlexEnabled(@Nullable Boolean isFlexEnabled) {
+
             this.isFlexEnabled = isFlexEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isSelectedForMonitoring(@Nullable Boolean isSelectedForMonitoring) {
+
             this.isSelectedForMonitoring = isSelectedForMonitoring;
             return this;
         }
         @CustomType.Setter
         public Builder listenerAlias(@Nullable String listenerAlias) {
+
             this.listenerAlias = listenerAlias;
             return this;
         }
         @CustomType.Setter
         public Builder listenerType(@Nullable String listenerType) {
+
             this.listenerType = listenerType;
             return this;
         }
         @CustomType.Setter
         public Builder logDirectory(@Nullable String logDirectory) {
+
             this.logDirectory = logDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder memorySizeInGbs(@Nullable Double memorySizeInGbs) {
+
             this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder networkConfigurations(@Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfiguration> networkConfigurations) {
+
             this.networkConfigurations = networkConfigurations;
             return this;
         }
@@ -887,21 +924,25 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
         }
         @CustomType.Setter
         public Builder nodeRole(@Nullable String nodeRole) {
+
             this.nodeRole = nodeRole;
             return this;
         }
         @CustomType.Setter
         public Builder ocrFileLocation(@Nullable String ocrFileLocation) {
+
             this.ocrFileLocation = ocrFileLocation;
             return this;
         }
         @CustomType.Setter
         public Builder oracleHome(@Nullable String oracleHome) {
+
             this.oracleHome = oracleHome;
             return this;
         }
         @CustomType.Setter
         public Builder pluggableDatabases(@Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase> pluggableDatabases) {
+
             this.pluggableDatabases = pluggableDatabases;
             return this;
         }
@@ -910,11 +951,13 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
         }
         @CustomType.Setter
         public Builder resourceId(@Nullable String resourceId) {
+
             this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder scanConfigurations(@Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentScanConfiguration> scanConfigurations) {
+
             this.scanConfigurations = scanConfigurations;
             return this;
         }
@@ -923,21 +966,25 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder traceDirectory(@Nullable String traceDirectory) {
+
             this.traceDirectory = traceDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder version(@Nullable String version) {
+
             this.version = version;
             return this;
         }
         @CustomType.Setter
         public Builder vipConfigurations(@Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentVipConfiguration> vipConfigurations) {
+
             this.vipConfigurations = vipConfigurations;
             return this;
         }

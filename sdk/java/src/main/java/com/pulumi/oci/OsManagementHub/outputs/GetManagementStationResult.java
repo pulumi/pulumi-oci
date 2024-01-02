@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationMirror;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationMirrorSyncStatus;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationProxy;
@@ -307,57 +308,90 @@ public final class GetManagementStationResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceId(String managedInstanceId) {
-            this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
+            if (managedInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "managedInstanceId");
+            }
+            this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder managementStationId(String managementStationId) {
-            this.managementStationId = Objects.requireNonNull(managementStationId);
+            if (managementStationId == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "managementStationId");
+            }
+            this.managementStationId = managementStationId;
             return this;
         }
         @CustomType.Setter
         public Builder mirrorCapacity(Integer mirrorCapacity) {
-            this.mirrorCapacity = Objects.requireNonNull(mirrorCapacity);
+            if (mirrorCapacity == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "mirrorCapacity");
+            }
+            this.mirrorCapacity = mirrorCapacity;
             return this;
         }
         @CustomType.Setter
         public Builder mirrorSyncStatuses(List<GetManagementStationMirrorSyncStatus> mirrorSyncStatuses) {
-            this.mirrorSyncStatuses = Objects.requireNonNull(mirrorSyncStatuses);
+            if (mirrorSyncStatuses == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "mirrorSyncStatuses");
+            }
+            this.mirrorSyncStatuses = mirrorSyncStatuses;
             return this;
         }
         public Builder mirrorSyncStatuses(GetManagementStationMirrorSyncStatus... mirrorSyncStatuses) {
@@ -365,7 +399,10 @@ public final class GetManagementStationResult {
         }
         @CustomType.Setter
         public Builder mirrors(List<GetManagementStationMirror> mirrors) {
-            this.mirrors = Objects.requireNonNull(mirrors);
+            if (mirrors == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "mirrors");
+            }
+            this.mirrors = mirrors;
             return this;
         }
         public Builder mirrors(GetManagementStationMirror... mirrors) {
@@ -373,22 +410,34 @@ public final class GetManagementStationResult {
         }
         @CustomType.Setter
         public Builder overallPercentage(Integer overallPercentage) {
-            this.overallPercentage = Objects.requireNonNull(overallPercentage);
+            if (overallPercentage == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "overallPercentage");
+            }
+            this.overallPercentage = overallPercentage;
             return this;
         }
         @CustomType.Setter
         public Builder overallState(String overallState) {
-            this.overallState = Objects.requireNonNull(overallState);
+            if (overallState == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "overallState");
+            }
+            this.overallState = overallState;
             return this;
         }
         @CustomType.Setter
         public Builder profileId(String profileId) {
-            this.profileId = Objects.requireNonNull(profileId);
+            if (profileId == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "profileId");
+            }
+            this.profileId = profileId;
             return this;
         }
         @CustomType.Setter
         public Builder proxies(List<GetManagementStationProxy> proxies) {
-            this.proxies = Objects.requireNonNull(proxies);
+            if (proxies == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "proxies");
+            }
+            this.proxies = proxies;
             return this;
         }
         public Builder proxies(GetManagementStationProxy... proxies) {
@@ -396,22 +445,34 @@ public final class GetManagementStationResult {
         }
         @CustomType.Setter
         public Builder scheduledJobId(String scheduledJobId) {
-            this.scheduledJobId = Objects.requireNonNull(scheduledJobId);
+            if (scheduledJobId == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "scheduledJobId");
+            }
+            this.scheduledJobId = scheduledJobId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder totalMirrors(Integer totalMirrors) {
-            this.totalMirrors = Objects.requireNonNull(totalMirrors);
+            if (totalMirrors == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "totalMirrors");
+            }
+            this.totalMirrors = totalMirrors;
             return this;
         }
         public GetManagementStationResult build() {

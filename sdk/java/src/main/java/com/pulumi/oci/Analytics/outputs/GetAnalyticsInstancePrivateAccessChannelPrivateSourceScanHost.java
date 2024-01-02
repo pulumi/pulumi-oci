@@ -4,6 +4,7 @@
 package com.pulumi.oci.Analytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder scanHostname(String scanHostname) {
-            this.scanHostname = Objects.requireNonNull(scanHostname);
+            if (scanHostname == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost", "scanHostname");
+            }
+            this.scanHostname = scanHostname;
             return this;
         }
         @CustomType.Setter
         public Builder scanPort(Integer scanPort) {
-            this.scanPort = Objects.requireNonNull(scanPort);
+            if (scanPort == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost", "scanPort");
+            }
+            this.scanPort = scanPort;
             return this;
         }
         public GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost build() {

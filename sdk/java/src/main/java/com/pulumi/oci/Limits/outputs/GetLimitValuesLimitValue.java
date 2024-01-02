@@ -4,6 +4,7 @@
 package com.pulumi.oci.Limits.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetLimitValuesLimitValue {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetLimitValuesLimitValue", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetLimitValuesLimitValue", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder scopeType(String scopeType) {
-            this.scopeType = Objects.requireNonNull(scopeType);
+            if (scopeType == null) {
+              throw new MissingRequiredPropertyException("GetLimitValuesLimitValue", "scopeType");
+            }
+            this.scopeType = scopeType;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetLimitValuesLimitValue", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetLimitValuesLimitValue build() {

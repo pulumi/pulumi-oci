@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetFleetsFilter;
 import com.pulumi.oci.Jms.outputs.GetFleetsFleetCollection;
 import java.lang.String;
@@ -115,21 +116,25 @@ public final class GetFleetsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder displayNameContains(@Nullable String displayNameContains) {
+
             this.displayNameContains = displayNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetFleetsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -138,7 +143,10 @@ public final class GetFleetsResult {
         }
         @CustomType.Setter
         public Builder fleetCollections(List<GetFleetsFleetCollection> fleetCollections) {
-            this.fleetCollections = Objects.requireNonNull(fleetCollections);
+            if (fleetCollections == null) {
+              throw new MissingRequiredPropertyException("GetFleetsResult", "fleetCollections");
+            }
+            this.fleetCollections = fleetCollections;
             return this;
         }
         public Builder fleetCollections(GetFleetsFleetCollection... fleetCollections) {
@@ -146,11 +154,13 @@ public final class GetFleetsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

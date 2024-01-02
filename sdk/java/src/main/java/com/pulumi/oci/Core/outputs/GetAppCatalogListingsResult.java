@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetAppCatalogListingsAppCatalogListing;
 import com.pulumi.oci.Core.outputs.GetAppCatalogListingsFilter;
 import java.lang.String;
@@ -101,7 +102,10 @@ public final class GetAppCatalogListingsResult {
 
         @CustomType.Setter
         public Builder appCatalogListings(List<GetAppCatalogListingsAppCatalogListing> appCatalogListings) {
-            this.appCatalogListings = Objects.requireNonNull(appCatalogListings);
+            if (appCatalogListings == null) {
+              throw new MissingRequiredPropertyException("GetAppCatalogListingsResult", "appCatalogListings");
+            }
+            this.appCatalogListings = appCatalogListings;
             return this;
         }
         public Builder appCatalogListings(GetAppCatalogListingsAppCatalogListing... appCatalogListings) {
@@ -109,11 +113,13 @@ public final class GetAppCatalogListingsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAppCatalogListingsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -122,16 +128,21 @@ public final class GetAppCatalogListingsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAppCatalogListingsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder publisherName(@Nullable String publisherName) {
+
             this.publisherName = publisherName;
             return this;
         }
         @CustomType.Setter
         public Builder publisherType(@Nullable String publisherType) {
+
             this.publisherType = publisherType;
             return this;
         }

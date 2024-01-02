@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry;
 import com.pulumi.oci.Database.outputs.GetDbSystemsUpgradeHistoryEntriesFilter;
 import java.lang.String;
@@ -93,12 +94,18 @@ public final class GetDbSystemsUpgradeHistoryEntriesResult {
 
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsUpgradeHistoryEntriesResult", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemUpgradeHistoryEntries(List<GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry> dbSystemUpgradeHistoryEntries) {
-            this.dbSystemUpgradeHistoryEntries = Objects.requireNonNull(dbSystemUpgradeHistoryEntries);
+            if (dbSystemUpgradeHistoryEntries == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsUpgradeHistoryEntriesResult", "dbSystemUpgradeHistoryEntries");
+            }
+            this.dbSystemUpgradeHistoryEntries = dbSystemUpgradeHistoryEntries;
             return this;
         }
         public Builder dbSystemUpgradeHistoryEntries(GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry... dbSystemUpgradeHistoryEntries) {
@@ -106,6 +113,7 @@ public final class GetDbSystemsUpgradeHistoryEntriesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDbSystemsUpgradeHistoryEntriesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -114,16 +122,21 @@ public final class GetDbSystemsUpgradeHistoryEntriesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsUpgradeHistoryEntriesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder upgradeAction(@Nullable String upgradeAction) {
+
             this.upgradeAction = upgradeAction;
             return this;
         }

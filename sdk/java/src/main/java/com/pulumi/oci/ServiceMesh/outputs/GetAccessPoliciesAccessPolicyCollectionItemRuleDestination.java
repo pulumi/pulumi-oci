@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -128,7 +129,10 @@ public final class GetAccessPoliciesAccessPolicyCollectionItemRuleDestination {
 
         @CustomType.Setter
         public Builder hostnames(List<String> hostnames) {
-            this.hostnames = Objects.requireNonNull(hostnames);
+            if (hostnames == null) {
+              throw new MissingRequiredPropertyException("GetAccessPoliciesAccessPolicyCollectionItemRuleDestination", "hostnames");
+            }
+            this.hostnames = hostnames;
             return this;
         }
         public Builder hostnames(String... hostnames) {
@@ -136,12 +140,18 @@ public final class GetAccessPoliciesAccessPolicyCollectionItemRuleDestination {
         }
         @CustomType.Setter
         public Builder ingressGatewayId(String ingressGatewayId) {
-            this.ingressGatewayId = Objects.requireNonNull(ingressGatewayId);
+            if (ingressGatewayId == null) {
+              throw new MissingRequiredPropertyException("GetAccessPoliciesAccessPolicyCollectionItemRuleDestination", "ingressGatewayId");
+            }
+            this.ingressGatewayId = ingressGatewayId;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddresses(List<String> ipAddresses) {
-            this.ipAddresses = Objects.requireNonNull(ipAddresses);
+            if (ipAddresses == null) {
+              throw new MissingRequiredPropertyException("GetAccessPoliciesAccessPolicyCollectionItemRuleDestination", "ipAddresses");
+            }
+            this.ipAddresses = ipAddresses;
             return this;
         }
         public Builder ipAddresses(String... ipAddresses) {
@@ -149,7 +159,10 @@ public final class GetAccessPoliciesAccessPolicyCollectionItemRuleDestination {
         }
         @CustomType.Setter
         public Builder ports(List<Integer> ports) {
-            this.ports = Objects.requireNonNull(ports);
+            if (ports == null) {
+              throw new MissingRequiredPropertyException("GetAccessPoliciesAccessPolicyCollectionItemRuleDestination", "ports");
+            }
+            this.ports = ports;
             return this;
         }
         public Builder ports(Integer... ports) {
@@ -157,17 +170,26 @@ public final class GetAccessPoliciesAccessPolicyCollectionItemRuleDestination {
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetAccessPoliciesAccessPolicyCollectionItemRuleDestination", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetAccessPoliciesAccessPolicyCollectionItemRuleDestination", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder virtualServiceId(String virtualServiceId) {
-            this.virtualServiceId = Objects.requireNonNull(virtualServiceId);
+            if (virtualServiceId == null) {
+              throw new MissingRequiredPropertyException("GetAccessPoliciesAccessPolicyCollectionItemRuleDestination", "virtualServiceId");
+            }
+            this.virtualServiceId = virtualServiceId;
             return this;
         }
         public GetAccessPoliciesAccessPolicyCollectionItemRuleDestination build() {

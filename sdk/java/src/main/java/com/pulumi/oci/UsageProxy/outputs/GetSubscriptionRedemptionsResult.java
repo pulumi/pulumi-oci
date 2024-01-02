@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRedemptionsFilter;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRedemptionsRedemptionCollection;
 import java.lang.String;
@@ -91,6 +92,7 @@ public final class GetSubscriptionRedemptionsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSubscriptionRedemptionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -99,12 +101,18 @@ public final class GetSubscriptionRedemptionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedemptionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder redemptionCollections(List<GetSubscriptionRedemptionsRedemptionCollection> redemptionCollections) {
-            this.redemptionCollections = Objects.requireNonNull(redemptionCollections);
+            if (redemptionCollections == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedemptionsResult", "redemptionCollections");
+            }
+            this.redemptionCollections = redemptionCollections;
             return this;
         }
         public Builder redemptionCollections(GetSubscriptionRedemptionsRedemptionCollection... redemptionCollections) {
@@ -112,21 +120,29 @@ public final class GetSubscriptionRedemptionsResult {
         }
         @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedemptionsResult", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
-            this.tenancyId = Objects.requireNonNull(tenancyId);
+            if (tenancyId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedemptionsResult", "tenancyId");
+            }
+            this.tenancyId = tenancyId;
             return this;
         }
         @CustomType.Setter
         public Builder timeRedeemedGreaterThanOrEqualTo(@Nullable String timeRedeemedGreaterThanOrEqualTo) {
+
             this.timeRedeemedGreaterThanOrEqualTo = timeRedeemedGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeRedeemedLessThan(@Nullable String timeRedeemedLessThan) {
+
             this.timeRedeemedLessThan = timeRedeemedLessThan;
             return this;
         }

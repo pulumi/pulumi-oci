@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -239,77 +240,122 @@ public final class GetSnapshotResult {
 
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder expirationTime(String expirationTime) {
-            this.expirationTime = Objects.requireNonNull(expirationTime);
+            if (expirationTime == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotResult", "expirationTime");
+            }
+            this.expirationTime = expirationTime;
             return this;
         }
         @CustomType.Setter
         public Builder fileSystemId(String fileSystemId) {
-            this.fileSystemId = Objects.requireNonNull(fileSystemId);
+            if (fileSystemId == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotResult", "fileSystemId");
+            }
+            this.fileSystemId = fileSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder filesystemSnapshotPolicyId(String filesystemSnapshotPolicyId) {
-            this.filesystemSnapshotPolicyId = Objects.requireNonNull(filesystemSnapshotPolicyId);
+            if (filesystemSnapshotPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotResult", "filesystemSnapshotPolicyId");
+            }
+            this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCloneSource(Boolean isCloneSource) {
-            this.isCloneSource = Objects.requireNonNull(isCloneSource);
+            if (isCloneSource == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotResult", "isCloneSource");
+            }
+            this.isCloneSource = isCloneSource;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder provenanceId(String provenanceId) {
-            this.provenanceId = Objects.requireNonNull(provenanceId);
+            if (provenanceId == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotResult", "provenanceId");
+            }
+            this.provenanceId = provenanceId;
             return this;
         }
         @CustomType.Setter
         public Builder snapshotId(String snapshotId) {
-            this.snapshotId = Objects.requireNonNull(snapshotId);
+            if (snapshotId == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotResult", "snapshotId");
+            }
+            this.snapshotId = snapshotId;
             return this;
         }
         @CustomType.Setter
         public Builder snapshotTime(String snapshotTime) {
-            this.snapshotTime = Objects.requireNonNull(snapshotTime);
+            if (snapshotTime == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotResult", "snapshotTime");
+            }
+            this.snapshotTime = snapshotTime;
             return this;
         }
         @CustomType.Setter
         public Builder snapshotType(String snapshotType) {
-            this.snapshotType = Objects.requireNonNull(snapshotType);
+            if (snapshotType == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotResult", "snapshotType");
+            }
+            this.snapshotType = snapshotType;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetSnapshotResult build() {

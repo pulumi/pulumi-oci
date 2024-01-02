@@ -92,21 +92,25 @@ public final class FusionEnvironmentAdminUserItem {
 
         @CustomType.Setter
         public Builder emailAddress(@Nullable String emailAddress) {
+
             this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
         public Builder firstName(@Nullable String firstName) {
+
             this.firstName = firstName;
             return this;
         }
         @CustomType.Setter
         public Builder lastName(@Nullable String lastName) {
+
             this.lastName = lastName;
             return this;
         }
         @CustomType.Setter
         public Builder username(@Nullable String username) {
+
             this.username = username;
             return this;
         }

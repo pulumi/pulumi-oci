@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -127,37 +128,58 @@ public final class GetMonitoredResourceDatabaseConnectionDetail {
 
         @CustomType.Setter
         public Builder connectorId(String connectorId) {
-            this.connectorId = Objects.requireNonNull(connectorId);
+            if (connectorId == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceDatabaseConnectionDetail", "connectorId");
+            }
+            this.connectorId = connectorId;
             return this;
         }
         @CustomType.Setter
         public Builder dbId(String dbId) {
-            this.dbId = Objects.requireNonNull(dbId);
+            if (dbId == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceDatabaseConnectionDetail", "dbId");
+            }
+            this.dbId = dbId;
             return this;
         }
         @CustomType.Setter
         public Builder dbUniqueName(String dbUniqueName) {
-            this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
+            if (dbUniqueName == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceDatabaseConnectionDetail", "dbUniqueName");
+            }
+            this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceDatabaseConnectionDetail", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceDatabaseConnectionDetail", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+            if (serviceName == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceDatabaseConnectionDetail", "serviceName");
+            }
+            this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
         public Builder sslSecretId(String sslSecretId) {
-            this.sslSecretId = Objects.requireNonNull(sslSecretId);
+            if (sslSecretId == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceDatabaseConnectionDetail", "sslSecretId");
+            }
+            this.sslSecretId = sslSecretId;
             return this;
         }
         public GetMonitoredResourceDatabaseConnectionDetail build() {

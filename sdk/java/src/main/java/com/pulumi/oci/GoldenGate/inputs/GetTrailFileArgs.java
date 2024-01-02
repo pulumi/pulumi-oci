@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -150,8 +151,12 @@ public final class GetTrailFileArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetTrailFileArgs build() {
-            $.deploymentId = Objects.requireNonNull($.deploymentId, "expected parameter 'deploymentId' to be non-null");
-            $.trailFileId = Objects.requireNonNull($.trailFileId, "expected parameter 'trailFileId' to be non-null");
+            if ($.deploymentId == null) {
+                throw new MissingRequiredPropertyException("GetTrailFileArgs", "deploymentId");
+            }
+            if ($.trailFileId == null) {
+                throw new MissingRequiredPropertyException("GetTrailFileArgs", "trailFileId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -114,32 +115,50 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemSummary {
 
         @CustomType.Setter
         public Builder countOf(String countOf) {
-            this.countOf = Objects.requireNonNull(countOf);
+            if (countOf == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionsReportDefinitionCollectionItemSummary", "countOf");
+            }
+            this.countOf = countOf;
             return this;
         }
         @CustomType.Setter
         public Builder displayOrder(Integer displayOrder) {
-            this.displayOrder = Objects.requireNonNull(displayOrder);
+            if (displayOrder == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionsReportDefinitionCollectionItemSummary", "displayOrder");
+            }
+            this.displayOrder = displayOrder;
             return this;
         }
         @CustomType.Setter
         public Builder groupByFieldName(String groupByFieldName) {
-            this.groupByFieldName = Objects.requireNonNull(groupByFieldName);
+            if (groupByFieldName == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionsReportDefinitionCollectionItemSummary", "groupByFieldName");
+            }
+            this.groupByFieldName = groupByFieldName;
             return this;
         }
         @CustomType.Setter
         public Builder isHidden(Boolean isHidden) {
-            this.isHidden = Objects.requireNonNull(isHidden);
+            if (isHidden == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionsReportDefinitionCollectionItemSummary", "isHidden");
+            }
+            this.isHidden = isHidden;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionsReportDefinitionCollectionItemSummary", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder scimFilter(String scimFilter) {
-            this.scimFilter = Objects.requireNonNull(scimFilter);
+            if (scimFilter == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionsReportDefinitionCollectionItemSummary", "scimFilter");
+            }
+            this.scimFilter = scimFilter;
             return this;
         }
         public GetReportDefinitionsReportDefinitionCollectionItemSummary build() {

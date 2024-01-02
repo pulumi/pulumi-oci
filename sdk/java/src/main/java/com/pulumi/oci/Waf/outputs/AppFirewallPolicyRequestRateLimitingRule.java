@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.AppFirewallPolicyRequestRateLimitingRuleConfiguration;
 import java.lang.String;
 import java.util.List;
@@ -118,22 +119,30 @@ public final class AppFirewallPolicyRequestRateLimitingRule {
 
         @CustomType.Setter
         public Builder actionName(String actionName) {
-            this.actionName = Objects.requireNonNull(actionName);
+            if (actionName == null) {
+              throw new MissingRequiredPropertyException("AppFirewallPolicyRequestRateLimitingRule", "actionName");
+            }
+            this.actionName = actionName;
             return this;
         }
         @CustomType.Setter
         public Builder condition(@Nullable String condition) {
+
             this.condition = condition;
             return this;
         }
         @CustomType.Setter
         public Builder conditionLanguage(@Nullable String conditionLanguage) {
+
             this.conditionLanguage = conditionLanguage;
             return this;
         }
         @CustomType.Setter
         public Builder configurations(List<AppFirewallPolicyRequestRateLimitingRuleConfiguration> configurations) {
-            this.configurations = Objects.requireNonNull(configurations);
+            if (configurations == null) {
+              throw new MissingRequiredPropertyException("AppFirewallPolicyRequestRateLimitingRule", "configurations");
+            }
+            this.configurations = configurations;
             return this;
         }
         public Builder configurations(AppFirewallPolicyRequestRateLimitingRuleConfiguration... configurations) {
@@ -141,12 +150,18 @@ public final class AppFirewallPolicyRequestRateLimitingRule {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("AppFirewallPolicyRequestRateLimitingRule", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("AppFirewallPolicyRequestRateLimitingRule", "type");
+            }
+            this.type = type;
             return this;
         }
         public AppFirewallPolicyRequestRateLimitingRule build() {

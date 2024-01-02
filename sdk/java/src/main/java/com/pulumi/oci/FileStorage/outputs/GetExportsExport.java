@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.outputs.GetExportsExportExportOption;
 import java.lang.Boolean;
 import java.lang.String;
@@ -143,7 +144,10 @@ public final class GetExportsExport {
 
         @CustomType.Setter
         public Builder exportOptions(List<GetExportsExportExportOption> exportOptions) {
-            this.exportOptions = Objects.requireNonNull(exportOptions);
+            if (exportOptions == null) {
+              throw new MissingRequiredPropertyException("GetExportsExport", "exportOptions");
+            }
+            this.exportOptions = exportOptions;
             return this;
         }
         public Builder exportOptions(GetExportsExportExportOption... exportOptions) {
@@ -151,37 +155,58 @@ public final class GetExportsExport {
         }
         @CustomType.Setter
         public Builder exportSetId(String exportSetId) {
-            this.exportSetId = Objects.requireNonNull(exportSetId);
+            if (exportSetId == null) {
+              throw new MissingRequiredPropertyException("GetExportsExport", "exportSetId");
+            }
+            this.exportSetId = exportSetId;
             return this;
         }
         @CustomType.Setter
         public Builder fileSystemId(String fileSystemId) {
-            this.fileSystemId = Objects.requireNonNull(fileSystemId);
+            if (fileSystemId == null) {
+              throw new MissingRequiredPropertyException("GetExportsExport", "fileSystemId");
+            }
+            this.fileSystemId = fileSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExportsExport", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isIdmapGroupsForSysAuth(Boolean isIdmapGroupsForSysAuth) {
-            this.isIdmapGroupsForSysAuth = Objects.requireNonNull(isIdmapGroupsForSysAuth);
+            if (isIdmapGroupsForSysAuth == null) {
+              throw new MissingRequiredPropertyException("GetExportsExport", "isIdmapGroupsForSysAuth");
+            }
+            this.isIdmapGroupsForSysAuth = isIdmapGroupsForSysAuth;
             return this;
         }
         @CustomType.Setter
         public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+            if (path == null) {
+              throw new MissingRequiredPropertyException("GetExportsExport", "path");
+            }
+            this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetExportsExport", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetExportsExport", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetExportsExport build() {

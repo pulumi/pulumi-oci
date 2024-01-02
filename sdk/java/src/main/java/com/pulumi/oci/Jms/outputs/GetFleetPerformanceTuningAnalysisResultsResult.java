@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetFleetPerformanceTuningAnalysisResultsFilter;
 import com.pulumi.oci.Jms.outputs.GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection;
 import java.lang.String;
@@ -121,11 +122,13 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
 
         @CustomType.Setter
         public Builder applicationId(@Nullable String applicationId) {
+
             this.applicationId = applicationId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetFleetPerformanceTuningAnalysisResultsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -134,22 +137,32 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
         }
         @CustomType.Setter
         public Builder fleetId(String fleetId) {
-            this.fleetId = Objects.requireNonNull(fleetId);
+            if (fleetId == null) {
+              throw new MissingRequiredPropertyException("GetFleetPerformanceTuningAnalysisResultsResult", "fleetId");
+            }
+            this.fleetId = fleetId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFleetPerformanceTuningAnalysisResultsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceId(@Nullable String managedInstanceId) {
+
             this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder performanceTuningAnalysisResultCollections(List<GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection> performanceTuningAnalysisResultCollections) {
-            this.performanceTuningAnalysisResultCollections = Objects.requireNonNull(performanceTuningAnalysisResultCollections);
+            if (performanceTuningAnalysisResultCollections == null) {
+              throw new MissingRequiredPropertyException("GetFleetPerformanceTuningAnalysisResultsResult", "performanceTuningAnalysisResultCollections");
+            }
+            this.performanceTuningAnalysisResultCollections = performanceTuningAnalysisResultCollections;
             return this;
         }
         public Builder performanceTuningAnalysisResultCollections(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection... performanceTuningAnalysisResultCollections) {
@@ -157,11 +170,13 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
         }
         @CustomType.Setter
         public Builder timeEnd(@Nullable String timeEnd) {
+
             this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(@Nullable String timeStart) {
+
             this.timeStart = timeStart;
             return this;
         }

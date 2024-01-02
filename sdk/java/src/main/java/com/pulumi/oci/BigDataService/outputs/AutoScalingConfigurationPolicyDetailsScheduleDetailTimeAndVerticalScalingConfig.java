@@ -87,21 +87,25 @@ public final class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVer
 
         @CustomType.Setter
         public Builder targetMemoryPerNode(@Nullable Integer targetMemoryPerNode) {
+
             this.targetMemoryPerNode = targetMemoryPerNode;
             return this;
         }
         @CustomType.Setter
         public Builder targetOcpusPerNode(@Nullable Integer targetOcpusPerNode) {
+
             this.targetOcpusPerNode = targetOcpusPerNode;
             return this;
         }
         @CustomType.Setter
         public Builder targetShape(@Nullable String targetShape) {
+
             this.targetShape = targetShape;
             return this;
         }
         @CustomType.Setter
         public Builder timeRecurrence(@Nullable String timeRecurrence) {
+
             this.timeRecurrence = timeRecurrence;
             return this;
         }

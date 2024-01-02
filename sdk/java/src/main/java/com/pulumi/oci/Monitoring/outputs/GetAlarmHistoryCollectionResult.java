@@ -4,6 +4,7 @@
 package com.pulumi.oci.Monitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Monitoring.outputs.GetAlarmHistoryCollectionEntry;
 import java.lang.Boolean;
 import java.lang.String;
@@ -107,17 +108,24 @@ public final class GetAlarmHistoryCollectionResult {
 
         @CustomType.Setter
         public Builder alarmHistorytype(@Nullable String alarmHistorytype) {
+
             this.alarmHistorytype = alarmHistorytype;
             return this;
         }
         @CustomType.Setter
         public Builder alarmId(String alarmId) {
-            this.alarmId = Objects.requireNonNull(alarmId);
+            if (alarmId == null) {
+              throw new MissingRequiredPropertyException("GetAlarmHistoryCollectionResult", "alarmId");
+            }
+            this.alarmId = alarmId;
             return this;
         }
         @CustomType.Setter
         public Builder entries(List<GetAlarmHistoryCollectionEntry> entries) {
-            this.entries = Objects.requireNonNull(entries);
+            if (entries == null) {
+              throw new MissingRequiredPropertyException("GetAlarmHistoryCollectionResult", "entries");
+            }
+            this.entries = entries;
             return this;
         }
         public Builder entries(GetAlarmHistoryCollectionEntry... entries) {
@@ -125,21 +133,29 @@ public final class GetAlarmHistoryCollectionResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAlarmHistoryCollectionResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAlarmHistoryCollectionResult", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder timestampGreaterThanOrEqualTo(@Nullable String timestampGreaterThanOrEqualTo) {
+
             this.timestampGreaterThanOrEqualTo = timestampGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timestampLessThan(@Nullable String timestampLessThan) {
+
             this.timestampLessThan = timestampLessThan;
             return this;
         }

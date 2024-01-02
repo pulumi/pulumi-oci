@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OneSubsription.inputs.GetInvoicesFilter;
 import java.lang.String;
 import java.util.List;
@@ -202,8 +203,12 @@ public final class GetInvoicesPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         public GetInvoicesPlainArgs build() {
-            $.arCustomerTransactionId = Objects.requireNonNull($.arCustomerTransactionId, "expected parameter 'arCustomerTransactionId' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.arCustomerTransactionId == null) {
+                throw new MissingRequiredPropertyException("GetInvoicesPlainArgs", "arCustomerTransactionId");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetInvoicesPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape;
 import com.pulumi.oci.Core.outputs.GetCrossConnectPortSpeedShapeFilter;
 import java.lang.String;
@@ -72,12 +73,18 @@ public final class GetCrossConnectPortSpeedShapeResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectPortSpeedShapeResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder crossConnectPortSpeedShapes(List<GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape> crossConnectPortSpeedShapes) {
-            this.crossConnectPortSpeedShapes = Objects.requireNonNull(crossConnectPortSpeedShapes);
+            if (crossConnectPortSpeedShapes == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectPortSpeedShapeResult", "crossConnectPortSpeedShapes");
+            }
+            this.crossConnectPortSpeedShapes = crossConnectPortSpeedShapes;
             return this;
         }
         public Builder crossConnectPortSpeedShapes(GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape... crossConnectPortSpeedShapes) {
@@ -85,6 +92,7 @@ public final class GetCrossConnectPortSpeedShapeResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCrossConnectPortSpeedShapeFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -93,7 +101,10 @@ public final class GetCrossConnectPortSpeedShapeResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectPortSpeedShapeResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetCrossConnectPortSpeedShapeResult build() {

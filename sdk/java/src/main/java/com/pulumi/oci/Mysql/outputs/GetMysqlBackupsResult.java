@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackup;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsFilter;
 import java.lang.String;
@@ -143,12 +144,16 @@ public final class GetMysqlBackupsResult {
 
         @CustomType.Setter
         public Builder backupId(@Nullable String backupId) {
+
             this.backupId = backupId;
             return this;
         }
         @CustomType.Setter
         public Builder backups(List<GetMysqlBackupsBackup> backups) {
-            this.backups = Objects.requireNonNull(backups);
+            if (backups == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsResult", "backups");
+            }
+            this.backups = backups;
             return this;
         }
         public Builder backups(GetMysqlBackupsBackup... backups) {
@@ -156,26 +161,33 @@ public final class GetMysqlBackupsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder creationType(@Nullable String creationType) {
+
             this.creationType = creationType;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(@Nullable String dbSystemId) {
+
             this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMysqlBackupsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -184,11 +196,15 @@ public final class GetMysqlBackupsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

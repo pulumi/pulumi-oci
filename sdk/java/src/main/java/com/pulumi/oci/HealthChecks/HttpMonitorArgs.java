@@ -5,6 +5,7 @@ package com.pulumi.oci.HealthChecks;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -605,11 +606,21 @@ public final class HttpMonitorArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public HttpMonitorArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.intervalInSeconds = Objects.requireNonNull($.intervalInSeconds, "expected parameter 'intervalInSeconds' to be non-null");
-            $.protocol = Objects.requireNonNull($.protocol, "expected parameter 'protocol' to be non-null");
-            $.targets = Objects.requireNonNull($.targets, "expected parameter 'targets' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("HttpMonitorArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("HttpMonitorArgs", "displayName");
+            }
+            if ($.intervalInSeconds == null) {
+                throw new MissingRequiredPropertyException("HttpMonitorArgs", "intervalInSeconds");
+            }
+            if ($.protocol == null) {
+                throw new MissingRequiredPropertyException("HttpMonitorArgs", "protocol");
+            }
+            if ($.targets == null) {
+                throw new MissingRequiredPropertyException("HttpMonitorArgs", "targets");
+            }
             return $;
         }
     }

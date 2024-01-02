@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet;
 import java.lang.Object;
 import java.lang.String;
@@ -132,7 +133,10 @@ public final class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem
 
         @CustomType.Setter
         public Builder agentProperties(List<String> agentProperties) {
-            this.agentProperties = Objects.requireNonNull(agentProperties);
+            if (agentProperties == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata", "agentProperties");
+            }
+            this.agentProperties = agentProperties;
             return this;
         }
         public Builder agentProperties(String... agentProperties) {
@@ -140,12 +144,18 @@ public final class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem
         }
         @CustomType.Setter
         public Builder format(String format) {
-            this.format = Objects.requireNonNull(format);
+            if (format == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata", "format");
+            }
+            this.format = format;
             return this;
         }
         @CustomType.Setter
         public Builder requiredProperties(List<String> requiredProperties) {
-            this.requiredProperties = Objects.requireNonNull(requiredProperties);
+            if (requiredProperties == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata", "requiredProperties");
+            }
+            this.requiredProperties = requiredProperties;
             return this;
         }
         public Builder requiredProperties(String... requiredProperties) {
@@ -153,7 +163,10 @@ public final class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem
         }
         @CustomType.Setter
         public Builder uniquePropertySets(List<GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet> uniquePropertySets) {
-            this.uniquePropertySets = Objects.requireNonNull(uniquePropertySets);
+            if (uniquePropertySets == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata", "uniquePropertySets");
+            }
+            this.uniquePropertySets = uniquePropertySets;
             return this;
         }
         public Builder uniquePropertySets(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet... uniquePropertySets) {
@@ -161,7 +174,10 @@ public final class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem
         }
         @CustomType.Setter
         public Builder validPropertiesForCreates(List<String> validPropertiesForCreates) {
-            this.validPropertiesForCreates = Objects.requireNonNull(validPropertiesForCreates);
+            if (validPropertiesForCreates == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata", "validPropertiesForCreates");
+            }
+            this.validPropertiesForCreates = validPropertiesForCreates;
             return this;
         }
         public Builder validPropertiesForCreates(String... validPropertiesForCreates) {
@@ -169,7 +185,10 @@ public final class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem
         }
         @CustomType.Setter
         public Builder validPropertiesForUpdates(List<String> validPropertiesForUpdates) {
-            this.validPropertiesForUpdates = Objects.requireNonNull(validPropertiesForUpdates);
+            if (validPropertiesForUpdates == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata", "validPropertiesForUpdates");
+            }
+            this.validPropertiesForUpdates = validPropertiesForUpdates;
             return this;
         }
         public Builder validPropertiesForUpdates(String... validPropertiesForUpdates) {
@@ -177,7 +196,10 @@ public final class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem
         }
         @CustomType.Setter
         public Builder validPropertyValues(Map<String,Object> validPropertyValues) {
-            this.validPropertyValues = Objects.requireNonNull(validPropertyValues);
+            if (validPropertyValues == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata", "validPropertyValues");
+            }
+            this.validPropertyValues = validPropertyValues;
             return this;
         }
         public GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata build() {

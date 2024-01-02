@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -115,12 +116,18 @@ public final class GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpPa
 
         @CustomType.Setter
         public Builder estimate(String estimate) {
-            this.estimate = Objects.requireNonNull(estimate);
+            if (estimate == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter", "estimate");
+            }
+            this.estimate = estimate;
             return this;
         }
         @CustomType.Setter
         public Builder excludeParameters(List<String> excludeParameters) {
-            this.excludeParameters = Objects.requireNonNull(excludeParameters);
+            if (excludeParameters == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter", "excludeParameters");
+            }
+            this.excludeParameters = excludeParameters;
             return this;
         }
         public Builder excludeParameters(String... excludeParameters) {
@@ -128,22 +135,34 @@ public final class GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpPa
         }
         @CustomType.Setter
         public Builder exportParallelismDegree(Integer exportParallelismDegree) {
-            this.exportParallelismDegree = Objects.requireNonNull(exportParallelismDegree);
+            if (exportParallelismDegree == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter", "exportParallelismDegree");
+            }
+            this.exportParallelismDegree = exportParallelismDegree;
             return this;
         }
         @CustomType.Setter
         public Builder importParallelismDegree(Integer importParallelismDegree) {
-            this.importParallelismDegree = Objects.requireNonNull(importParallelismDegree);
+            if (importParallelismDegree == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter", "importParallelismDegree");
+            }
+            this.importParallelismDegree = importParallelismDegree;
             return this;
         }
         @CustomType.Setter
         public Builder isCluster(Boolean isCluster) {
-            this.isCluster = Objects.requireNonNull(isCluster);
+            if (isCluster == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter", "isCluster");
+            }
+            this.isCluster = isCluster;
             return this;
         }
         @CustomType.Setter
         public Builder tableExistsAction(String tableExistsAction) {
-            this.tableExistsAction = Objects.requireNonNull(tableExistsAction);
+            if (tableExistsAction == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter", "tableExistsAction");
+            }
+            this.tableExistsAction = tableExistsAction;
             return this;
         }
         public GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter build() {

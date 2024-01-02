@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerPatchesAutonomousPatch;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerPatchesFilter;
 import java.lang.String;
@@ -93,17 +94,24 @@ public final class GetAutonomousContainerPatchesResult {
 
         @CustomType.Setter
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
-            this.autonomousContainerDatabaseId = Objects.requireNonNull(autonomousContainerDatabaseId);
+            if (autonomousContainerDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerPatchesResult", "autonomousContainerDatabaseId");
+            }
+            this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder autonomousPatchType(@Nullable String autonomousPatchType) {
+
             this.autonomousPatchType = autonomousPatchType;
             return this;
         }
         @CustomType.Setter
         public Builder autonomousPatches(List<GetAutonomousContainerPatchesAutonomousPatch> autonomousPatches) {
-            this.autonomousPatches = Objects.requireNonNull(autonomousPatches);
+            if (autonomousPatches == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerPatchesResult", "autonomousPatches");
+            }
+            this.autonomousPatches = autonomousPatches;
             return this;
         }
         public Builder autonomousPatches(GetAutonomousContainerPatchesAutonomousPatch... autonomousPatches) {
@@ -111,11 +119,15 @@ public final class GetAutonomousContainerPatchesResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerPatchesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousContainerPatchesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -124,7 +136,10 @@ public final class GetAutonomousContainerPatchesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerPatchesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetAutonomousContainerPatchesResult build() {

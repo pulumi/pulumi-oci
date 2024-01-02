@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetClusterNetworkInstancesInstanceLoadBalancerBackend {
 
         @CustomType.Setter
         public Builder backendHealthStatus(String backendHealthStatus) {
-            this.backendHealthStatus = Objects.requireNonNull(backendHealthStatus);
+            if (backendHealthStatus == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancesInstanceLoadBalancerBackend", "backendHealthStatus");
+            }
+            this.backendHealthStatus = backendHealthStatus;
             return this;
         }
         @CustomType.Setter
         public Builder backendName(String backendName) {
-            this.backendName = Objects.requireNonNull(backendName);
+            if (backendName == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancesInstanceLoadBalancerBackend", "backendName");
+            }
+            this.backendName = backendName;
             return this;
         }
         @CustomType.Setter
         public Builder backendSetName(String backendSetName) {
-            this.backendSetName = Objects.requireNonNull(backendSetName);
+            if (backendSetName == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancesInstanceLoadBalancerBackend", "backendSetName");
+            }
+            this.backendSetName = backendSetName;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancesInstanceLoadBalancerBackend", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancesInstanceLoadBalancerBackend", "state");
+            }
+            this.state = state;
             return this;
         }
         public GetClusterNetworkInstancesInstanceLoadBalancerBackend build() {

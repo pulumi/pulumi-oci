@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetImageShapeMemoryConstraint {
 
         @CustomType.Setter
         public Builder maxInGbs(Integer maxInGbs) {
-            this.maxInGbs = Objects.requireNonNull(maxInGbs);
+            if (maxInGbs == null) {
+              throw new MissingRequiredPropertyException("GetImageShapeMemoryConstraint", "maxInGbs");
+            }
+            this.maxInGbs = maxInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder minInGbs(Integer minInGbs) {
-            this.minInGbs = Objects.requireNonNull(minInGbs);
+            if (minInGbs == null) {
+              throw new MissingRequiredPropertyException("GetImageShapeMemoryConstraint", "minInGbs");
+            }
+            this.minInGbs = minInGbs;
             return this;
         }
         public GetImageShapeMemoryConstraint build() {

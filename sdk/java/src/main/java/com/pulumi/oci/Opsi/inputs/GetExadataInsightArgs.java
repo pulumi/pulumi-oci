@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetExadataInsightArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetExadataInsightArgs build() {
-            $.exadataInsightId = Objects.requireNonNull($.exadataInsightId, "expected parameter 'exadataInsightId' to be non-null");
+            if ($.exadataInsightId == null) {
+                throw new MissingRequiredPropertyException("GetExadataInsightArgs", "exadataInsightId");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Budget;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -602,9 +603,15 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public BudgetArgs build() {
-            $.amount = Objects.requireNonNull($.amount, "expected parameter 'amount' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.resetPeriod = Objects.requireNonNull($.resetPeriod, "expected parameter 'resetPeriod' to be non-null");
+            if ($.amount == null) {
+                throw new MissingRequiredPropertyException("BudgetArgs", "amount");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("BudgetArgs", "compartmentId");
+            }
+            if ($.resetPeriod == null) {
+                throw new MissingRequiredPropertyException("BudgetArgs", "resetPeriod");
+            }
             return $;
         }
     }

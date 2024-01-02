@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationMirrorsMirrorsCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetManagementStationMirrorsMirrorsCollection {
 
         @CustomType.Setter
         public Builder items(List<GetManagementStationMirrorsMirrorsCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationMirrorsMirrorsCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetManagementStationMirrorsMirrorsCollectionItem... items) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -92,42 +93,66 @@ public final class GetImageImageSourceDetail {
 
         @CustomType.Setter
         public Builder bucketName(String bucketName) {
-            this.bucketName = Objects.requireNonNull(bucketName);
+            if (bucketName == null) {
+              throw new MissingRequiredPropertyException("GetImageImageSourceDetail", "bucketName");
+            }
+            this.bucketName = bucketName;
             return this;
         }
         @CustomType.Setter
         public Builder namespaceName(String namespaceName) {
-            this.namespaceName = Objects.requireNonNull(namespaceName);
+            if (namespaceName == null) {
+              throw new MissingRequiredPropertyException("GetImageImageSourceDetail", "namespaceName");
+            }
+            this.namespaceName = namespaceName;
             return this;
         }
         @CustomType.Setter
         public Builder objectName(String objectName) {
-            this.objectName = Objects.requireNonNull(objectName);
+            if (objectName == null) {
+              throw new MissingRequiredPropertyException("GetImageImageSourceDetail", "objectName");
+            }
+            this.objectName = objectName;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystem(String operatingSystem) {
-            this.operatingSystem = Objects.requireNonNull(operatingSystem);
+            if (operatingSystem == null) {
+              throw new MissingRequiredPropertyException("GetImageImageSourceDetail", "operatingSystem");
+            }
+            this.operatingSystem = operatingSystem;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystemVersion(String operatingSystemVersion) {
-            this.operatingSystemVersion = Objects.requireNonNull(operatingSystemVersion);
+            if (operatingSystemVersion == null) {
+              throw new MissingRequiredPropertyException("GetImageImageSourceDetail", "operatingSystemVersion");
+            }
+            this.operatingSystemVersion = operatingSystemVersion;
             return this;
         }
         @CustomType.Setter
         public Builder sourceImageType(String sourceImageType) {
-            this.sourceImageType = Objects.requireNonNull(sourceImageType);
+            if (sourceImageType == null) {
+              throw new MissingRequiredPropertyException("GetImageImageSourceDetail", "sourceImageType");
+            }
+            this.sourceImageType = sourceImageType;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetImageImageSourceDetail", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
         public Builder sourceUri(String sourceUri) {
-            this.sourceUri = Objects.requireNonNull(sourceUri);
+            if (sourceUri == null) {
+              throw new MissingRequiredPropertyException("GetImageImageSourceDetail", "sourceUri");
+            }
+            this.sourceUri = sourceUri;
             return this;
         }
         public GetImageImageSourceDetail build() {

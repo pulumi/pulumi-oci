@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.GetLoadBalancersLoadBalancerIpAddressDetailReservedIp;
 import java.lang.Boolean;
 import java.lang.String;
@@ -73,17 +74,26 @@ public final class GetLoadBalancersLoadBalancerIpAddressDetail {
 
         @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+            if (ipAddress == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancerIpAddressDetail", "ipAddress");
+            }
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder isPublic(Boolean isPublic) {
-            this.isPublic = Objects.requireNonNull(isPublic);
+            if (isPublic == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancerIpAddressDetail", "isPublic");
+            }
+            this.isPublic = isPublic;
             return this;
         }
         @CustomType.Setter
         public Builder reservedIps(List<GetLoadBalancersLoadBalancerIpAddressDetailReservedIp> reservedIps) {
-            this.reservedIps = Objects.requireNonNull(reservedIps);
+            if (reservedIps == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancerIpAddressDetail", "reservedIps");
+            }
+            this.reservedIps = reservedIps;
             return this;
         }
         public Builder reservedIps(GetLoadBalancersLoadBalancerIpAddressDetailReservedIp... reservedIps) {

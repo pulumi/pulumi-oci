@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentFamiliesFilter;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection;
 import java.lang.String;
@@ -115,16 +116,21 @@ public final class GetFusionEnvironmentFamiliesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamiliesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetFusionEnvironmentFamiliesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -133,7 +139,10 @@ public final class GetFusionEnvironmentFamiliesResult {
         }
         @CustomType.Setter
         public Builder fusionEnvironmentFamilyCollections(List<GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection> fusionEnvironmentFamilyCollections) {
-            this.fusionEnvironmentFamilyCollections = Objects.requireNonNull(fusionEnvironmentFamilyCollections);
+            if (fusionEnvironmentFamilyCollections == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamiliesResult", "fusionEnvironmentFamilyCollections");
+            }
+            this.fusionEnvironmentFamilyCollections = fusionEnvironmentFamilyCollections;
             return this;
         }
         public Builder fusionEnvironmentFamilyCollections(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection... fusionEnvironmentFamilyCollections) {
@@ -141,16 +150,21 @@ public final class GetFusionEnvironmentFamiliesResult {
         }
         @CustomType.Setter
         public Builder fusionEnvironmentFamilyId(@Nullable String fusionEnvironmentFamilyId) {
+
             this.fusionEnvironmentFamilyId = fusionEnvironmentFamilyId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamiliesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

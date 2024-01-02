@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseScheduledOperationDayOfWeekArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -151,7 +152,9 @@ public final class AutonomousDatabaseScheduledOperationArgs extends com.pulumi.r
         }
 
         public AutonomousDatabaseScheduledOperationArgs build() {
-            $.dayOfWeek = Objects.requireNonNull($.dayOfWeek, "expected parameter 'dayOfWeek' to be non-null");
+            if ($.dayOfWeek == null) {
+                throw new MissingRequiredPropertyException("AutonomousDatabaseScheduledOperationArgs", "dayOfWeek");
+            }
             return $;
         }
     }

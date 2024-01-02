@@ -86,21 +86,25 @@ public final class DrgDefaultDrgRouteTable {
 
         @CustomType.Setter
         public Builder ipsecTunnel(@Nullable String ipsecTunnel) {
+
             this.ipsecTunnel = ipsecTunnel;
             return this;
         }
         @CustomType.Setter
         public Builder remotePeeringConnection(@Nullable String remotePeeringConnection) {
+
             this.remotePeeringConnection = remotePeeringConnection;
             return this;
         }
         @CustomType.Setter
         public Builder vcn(@Nullable String vcn) {
+
             this.vcn = vcn;
             return this;
         }
         @CustomType.Setter
         public Builder virtualCircuit(@Nullable String virtualCircuit) {
+
             this.virtualCircuit = virtualCircuit;
             return this;
         }

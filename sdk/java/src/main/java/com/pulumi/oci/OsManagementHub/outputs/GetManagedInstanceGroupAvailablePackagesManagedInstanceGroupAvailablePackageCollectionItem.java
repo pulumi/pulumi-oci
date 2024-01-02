@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource;
 import java.lang.Boolean;
 import java.lang.String;
@@ -129,27 +130,42 @@ public final class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupA
 
         @CustomType.Setter
         public Builder architecture(String architecture) {
-            this.architecture = Objects.requireNonNull(architecture);
+            if (architecture == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem", "architecture");
+            }
+            this.architecture = architecture;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder isLatest(Boolean isLatest) {
-            this.isLatest = Objects.requireNonNull(isLatest);
+            if (isLatest == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem", "isLatest");
+            }
+            this.isLatest = isLatest;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder softwareSources(List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource> softwareSources) {
-            this.softwareSources = Objects.requireNonNull(softwareSources);
+            if (softwareSources == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem", "softwareSources");
+            }
+            this.softwareSources = softwareSources;
             return this;
         }
         public Builder softwareSources(GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource... softwareSources) {
@@ -157,12 +173,18 @@ public final class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupA
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem build() {

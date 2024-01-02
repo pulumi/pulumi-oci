@@ -4,6 +4,7 @@
 package com.pulumi.oci.LicenseManager.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -120,8 +121,12 @@ public final class GetProductLicenseConsumersPlainArgs extends com.pulumi.resour
         }
 
         public GetProductLicenseConsumersPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.productLicenseId = Objects.requireNonNull($.productLicenseId, "expected parameter 'productLicenseId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetProductLicenseConsumersPlainArgs", "compartmentId");
+            }
+            if ($.productLicenseId == null) {
+                throw new MissingRequiredPropertyException("GetProductLicenseConsumersPlainArgs", "productLicenseId");
+            }
             return $;
         }
     }

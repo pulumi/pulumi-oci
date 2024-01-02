@@ -4,6 +4,7 @@
 package com.pulumi.oci.Redis.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetRedisClusterNodeCollectionItem {
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetRedisClusterNodeCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpointFqdn(String privateEndpointFqdn) {
-            this.privateEndpointFqdn = Objects.requireNonNull(privateEndpointFqdn);
+            if (privateEndpointFqdn == null) {
+              throw new MissingRequiredPropertyException("GetRedisClusterNodeCollectionItem", "privateEndpointFqdn");
+            }
+            this.privateEndpointFqdn = privateEndpointFqdn;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpointIpAddress(String privateEndpointIpAddress) {
-            this.privateEndpointIpAddress = Objects.requireNonNull(privateEndpointIpAddress);
+            if (privateEndpointIpAddress == null) {
+              throw new MissingRequiredPropertyException("GetRedisClusterNodeCollectionItem", "privateEndpointIpAddress");
+            }
+            this.privateEndpointIpAddress = privateEndpointIpAddress;
             return this;
         }
         public GetRedisClusterNodeCollectionItem build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ObjectStorage.inputs.GetPreauthrequestsFilter;
 import java.lang.String;
 import java.util.List;
@@ -138,8 +139,12 @@ public final class GetPreauthrequestsPlainArgs extends com.pulumi.resources.Invo
         }
 
         public GetPreauthrequestsPlainArgs build() {
-            $.bucket = Objects.requireNonNull($.bucket, "expected parameter 'bucket' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
+            if ($.bucket == null) {
+                throw new MissingRequiredPropertyException("GetPreauthrequestsPlainArgs", "bucket");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("GetPreauthrequestsPlainArgs", "namespace");
+            }
             return $;
         }
     }

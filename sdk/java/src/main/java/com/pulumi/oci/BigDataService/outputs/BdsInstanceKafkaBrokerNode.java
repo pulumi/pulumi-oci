@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceKafkaBrokerNodeShapeConfig;
 import java.lang.Integer;
 import java.lang.String;
@@ -94,27 +95,38 @@ public final class BdsInstanceKafkaBrokerNode {
 
         @CustomType.Setter
         public Builder blockVolumeSizeInGbs(@Nullable String blockVolumeSizeInGbs) {
+
             this.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder numberOfKafkaNodes(Integer numberOfKafkaNodes) {
-            this.numberOfKafkaNodes = Objects.requireNonNull(numberOfKafkaNodes);
+            if (numberOfKafkaNodes == null) {
+              throw new MissingRequiredPropertyException("BdsInstanceKafkaBrokerNode", "numberOfKafkaNodes");
+            }
+            this.numberOfKafkaNodes = numberOfKafkaNodes;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("BdsInstanceKafkaBrokerNode", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder shapeConfig(@Nullable BdsInstanceKafkaBrokerNodeShapeConfig shapeConfig) {
+
             this.shapeConfig = shapeConfig;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("BdsInstanceKafkaBrokerNode", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         public BdsInstanceKafkaBrokerNode build() {

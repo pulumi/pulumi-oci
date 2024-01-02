@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetDbSystemsDbSystemDbSystemOption {
 
         @CustomType.Setter
         public Builder storageManagement(String storageManagement) {
-            this.storageManagement = Objects.requireNonNull(storageManagement);
+            if (storageManagement == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbSystemOption", "storageManagement");
+            }
+            this.storageManagement = storageManagement;
             return this;
         }
         public GetDbSystemsDbSystemDbSystemOption build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails;
 import java.lang.String;
 import java.util.Objects;
@@ -59,11 +60,15 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
 
         @CustomType.Setter
         public Builder instanceShapeName(String instanceShapeName) {
-            this.instanceShapeName = Objects.requireNonNull(instanceShapeName);
+            if (instanceShapeName == null) {
+              throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration", "instanceShapeName");
+            }
+            this.instanceShapeName = instanceShapeName;
             return this;
         }
         @CustomType.Setter
         public Builder modelDeploymentInstanceShapeConfigDetails(@Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails) {
+
             this.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
             return this;
         }

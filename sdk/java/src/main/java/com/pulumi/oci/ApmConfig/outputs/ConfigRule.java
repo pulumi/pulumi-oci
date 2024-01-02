@@ -136,36 +136,43 @@ public final class ConfigRule {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filterText(@Nullable String filterText) {
+
             this.filterText = filterText;
             return this;
         }
         @CustomType.Setter
         public Builder isApplyToErrorSpans(@Nullable Boolean isApplyToErrorSpans) {
+
             this.isApplyToErrorSpans = isApplyToErrorSpans;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
+
             this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder priority(@Nullable Integer priority) {
+
             this.priority = priority;
             return this;
         }
         @CustomType.Setter
         public Builder satisfiedResponseTime(@Nullable Integer satisfiedResponseTime) {
+
             this.satisfiedResponseTime = satisfiedResponseTime;
             return this;
         }
         @CustomType.Setter
         public Builder toleratingResponseTime(@Nullable Integer toleratingResponseTime) {
+
             this.toleratingResponseTime = toleratingResponseTime;
             return this;
         }

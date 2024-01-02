@@ -178,36 +178,43 @@ public final class BackendSetLbCookieSessionPersistenceConfiguration {
 
         @CustomType.Setter
         public Builder cookieName(@Nullable String cookieName) {
+
             this.cookieName = cookieName;
             return this;
         }
         @CustomType.Setter
         public Builder disableFallback(@Nullable Boolean disableFallback) {
+
             this.disableFallback = disableFallback;
             return this;
         }
         @CustomType.Setter
         public Builder domain(@Nullable String domain) {
+
             this.domain = domain;
             return this;
         }
         @CustomType.Setter
         public Builder isHttpOnly(@Nullable Boolean isHttpOnly) {
+
             this.isHttpOnly = isHttpOnly;
             return this;
         }
         @CustomType.Setter
         public Builder isSecure(@Nullable Boolean isSecure) {
+
             this.isSecure = isSecure;
             return this;
         }
         @CustomType.Setter
         public Builder maxAgeInSeconds(@Nullable Integer maxAgeInSeconds) {
+
             this.maxAgeInSeconds = maxAgeInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder path(@Nullable String path) {
+
             this.path = path;
             return this;
         }

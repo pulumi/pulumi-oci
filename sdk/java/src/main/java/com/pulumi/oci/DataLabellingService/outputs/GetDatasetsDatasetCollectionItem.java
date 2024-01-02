@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataLabellingService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetsDatasetCollectionItemDatasetFormatDetail;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetsDatasetCollectionItemDatasetSourceDetail;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration;
@@ -302,22 +303,34 @@ public final class GetDatasetsDatasetCollectionItem {
 
         @CustomType.Setter
         public Builder additionalProperties(Map<String,Object> additionalProperties) {
-            this.additionalProperties = Objects.requireNonNull(additionalProperties);
+            if (additionalProperties == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "additionalProperties");
+            }
+            this.additionalProperties = additionalProperties;
             return this;
         }
         @CustomType.Setter
         public Builder annotationFormat(String annotationFormat) {
-            this.annotationFormat = Objects.requireNonNull(annotationFormat);
+            if (annotationFormat == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "annotationFormat");
+            }
+            this.annotationFormat = annotationFormat;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder datasetFormatDetails(List<GetDatasetsDatasetCollectionItemDatasetFormatDetail> datasetFormatDetails) {
-            this.datasetFormatDetails = Objects.requireNonNull(datasetFormatDetails);
+            if (datasetFormatDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "datasetFormatDetails");
+            }
+            this.datasetFormatDetails = datasetFormatDetails;
             return this;
         }
         public Builder datasetFormatDetails(GetDatasetsDatasetCollectionItemDatasetFormatDetail... datasetFormatDetails) {
@@ -325,7 +338,10 @@ public final class GetDatasetsDatasetCollectionItem {
         }
         @CustomType.Setter
         public Builder datasetSourceDetails(List<GetDatasetsDatasetCollectionItemDatasetSourceDetail> datasetSourceDetails) {
-            this.datasetSourceDetails = Objects.requireNonNull(datasetSourceDetails);
+            if (datasetSourceDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "datasetSourceDetails");
+            }
+            this.datasetSourceDetails = datasetSourceDetails;
             return this;
         }
         public Builder datasetSourceDetails(GetDatasetsDatasetCollectionItemDatasetSourceDetail... datasetSourceDetails) {
@@ -333,32 +349,50 @@ public final class GetDatasetsDatasetCollectionItem {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder initialImportDatasetConfigurations(List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration> initialImportDatasetConfigurations) {
-            this.initialImportDatasetConfigurations = Objects.requireNonNull(initialImportDatasetConfigurations);
+            if (initialImportDatasetConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "initialImportDatasetConfigurations");
+            }
+            this.initialImportDatasetConfigurations = initialImportDatasetConfigurations;
             return this;
         }
         public Builder initialImportDatasetConfigurations(GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration... initialImportDatasetConfigurations) {
@@ -366,7 +400,10 @@ public final class GetDatasetsDatasetCollectionItem {
         }
         @CustomType.Setter
         public Builder initialRecordGenerationConfigurations(List<GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations) {
-            this.initialRecordGenerationConfigurations = Objects.requireNonNull(initialRecordGenerationConfigurations);
+            if (initialRecordGenerationConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "initialRecordGenerationConfigurations");
+            }
+            this.initialRecordGenerationConfigurations = initialRecordGenerationConfigurations;
             return this;
         }
         public Builder initialRecordGenerationConfigurations(GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration... initialRecordGenerationConfigurations) {
@@ -374,7 +411,10 @@ public final class GetDatasetsDatasetCollectionItem {
         }
         @CustomType.Setter
         public Builder labelSets(List<GetDatasetsDatasetCollectionItemLabelSet> labelSets) {
-            this.labelSets = Objects.requireNonNull(labelSets);
+            if (labelSets == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "labelSets");
+            }
+            this.labelSets = labelSets;
             return this;
         }
         public Builder labelSets(GetDatasetsDatasetCollectionItemLabelSet... labelSets) {
@@ -382,32 +422,50 @@ public final class GetDatasetsDatasetCollectionItem {
         }
         @CustomType.Setter
         public Builder labelingInstructions(String labelingInstructions) {
-            this.labelingInstructions = Objects.requireNonNull(labelingInstructions);
+            if (labelingInstructions == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "labelingInstructions");
+            }
+            this.labelingInstructions = labelingInstructions;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleSubstate(String lifecycleSubstate) {
-            this.lifecycleSubstate = Objects.requireNonNull(lifecycleSubstate);
+            if (lifecycleSubstate == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "lifecycleSubstate");
+            }
+            this.lifecycleSubstate = lifecycleSubstate;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDatasetsDatasetCollectionItem build() {

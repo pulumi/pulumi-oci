@@ -4,6 +4,7 @@
 package com.pulumi.oci.ResourceManager.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ResourceManager.outputs.GetPrivateEndpointsFilter;
 import com.pulumi.oci.ResourceManager.outputs.GetPrivateEndpointsPrivateEndpointCollection;
 import java.lang.String;
@@ -115,16 +116,19 @@ public final class GetPrivateEndpointsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPrivateEndpointsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -133,12 +137,18 @@ public final class GetPrivateEndpointsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPrivateEndpointsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpointCollections(List<GetPrivateEndpointsPrivateEndpointCollection> privateEndpointCollections) {
-            this.privateEndpointCollections = Objects.requireNonNull(privateEndpointCollections);
+            if (privateEndpointCollections == null) {
+              throw new MissingRequiredPropertyException("GetPrivateEndpointsResult", "privateEndpointCollections");
+            }
+            this.privateEndpointCollections = privateEndpointCollections;
             return this;
         }
         public Builder privateEndpointCollections(GetPrivateEndpointsPrivateEndpointCollection... privateEndpointCollections) {
@@ -146,11 +156,13 @@ public final class GetPrivateEndpointsResult {
         }
         @CustomType.Setter
         public Builder privateEndpointId(@Nullable String privateEndpointId) {
+
             this.privateEndpointId = privateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
+
             this.vcnId = vcnId;
             return this;
         }

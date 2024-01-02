@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetIpsecConnectionTunnelsFilter;
 import com.pulumi.oci.Core.outputs.GetIpsecConnectionTunnelsIpSecConnectionTunnel;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetIpsecConnectionTunnelsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetIpsecConnectionTunnelsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,12 +82,18 @@ public final class GetIpsecConnectionTunnelsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipSecConnectionTunnels(List<GetIpsecConnectionTunnelsIpSecConnectionTunnel> ipSecConnectionTunnels) {
-            this.ipSecConnectionTunnels = Objects.requireNonNull(ipSecConnectionTunnels);
+            if (ipSecConnectionTunnels == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelsResult", "ipSecConnectionTunnels");
+            }
+            this.ipSecConnectionTunnels = ipSecConnectionTunnels;
             return this;
         }
         public Builder ipSecConnectionTunnels(GetIpsecConnectionTunnelsIpSecConnectionTunnel... ipSecConnectionTunnels) {
@@ -93,7 +101,10 @@ public final class GetIpsecConnectionTunnelsResult {
         }
         @CustomType.Setter
         public Builder ipsecId(String ipsecId) {
-            this.ipsecId = Objects.requireNonNull(ipsecId);
+            if (ipsecId == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelsResult", "ipsecId");
+            }
+            this.ipsecId = ipsecId;
             return this;
         }
         public GetIpsecConnectionTunnelsResult build() {

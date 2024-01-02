@@ -4,6 +4,7 @@
 package com.pulumi.oci.Artifacts.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Artifacts.outputs.GetContainerRepositoriesContainerRepositoryCollectionItem;
 import java.lang.Integer;
 import java.lang.String;
@@ -91,12 +92,18 @@ public final class GetContainerRepositoriesContainerRepositoryCollection {
 
         @CustomType.Setter
         public Builder imageCount(Integer imageCount) {
-            this.imageCount = Objects.requireNonNull(imageCount);
+            if (imageCount == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollection", "imageCount");
+            }
+            this.imageCount = imageCount;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetContainerRepositoriesContainerRepositoryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetContainerRepositoriesContainerRepositoryCollectionItem... items) {
@@ -104,22 +111,34 @@ public final class GetContainerRepositoriesContainerRepositoryCollection {
         }
         @CustomType.Setter
         public Builder layerCount(Integer layerCount) {
-            this.layerCount = Objects.requireNonNull(layerCount);
+            if (layerCount == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollection", "layerCount");
+            }
+            this.layerCount = layerCount;
             return this;
         }
         @CustomType.Setter
         public Builder layersSizeInBytes(String layersSizeInBytes) {
-            this.layersSizeInBytes = Objects.requireNonNull(layersSizeInBytes);
+            if (layersSizeInBytes == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollection", "layersSizeInBytes");
+            }
+            this.layersSizeInBytes = layersSizeInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder remainingItemsCount(Integer remainingItemsCount) {
-            this.remainingItemsCount = Objects.requireNonNull(remainingItemsCount);
+            if (remainingItemsCount == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollection", "remainingItemsCount");
+            }
+            this.remainingItemsCount = remainingItemsCount;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryCount(Integer repositoryCount) {
-            this.repositoryCount = Objects.requireNonNull(repositoryCount);
+            if (repositoryCount == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollection", "repositoryCount");
+            }
+            this.repositoryCount = repositoryCount;
             return this;
         }
         public GetContainerRepositoriesContainerRepositoryCollection build() {

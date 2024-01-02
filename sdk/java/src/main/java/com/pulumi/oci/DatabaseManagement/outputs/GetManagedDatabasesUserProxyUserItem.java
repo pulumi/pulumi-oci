@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetManagedDatabasesUserProxyUserItem {
 
         @CustomType.Setter
         public Builder authentication(String authentication) {
-            this.authentication = Objects.requireNonNull(authentication);
+            if (authentication == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesUserProxyUserItem", "authentication");
+            }
+            this.authentication = authentication;
             return this;
         }
         @CustomType.Setter
         public Builder flags(String flags) {
-            this.flags = Objects.requireNonNull(flags);
+            if (flags == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesUserProxyUserItem", "flags");
+            }
+            this.flags = flags;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesUserProxyUserItem", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetManagedDatabasesUserProxyUserItem build() {

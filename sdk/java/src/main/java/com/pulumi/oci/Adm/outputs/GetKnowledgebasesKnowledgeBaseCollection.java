@@ -4,6 +4,7 @@
 package com.pulumi.oci.Adm.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Adm.outputs.GetKnowledgebasesKnowledgeBaseCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetKnowledgebasesKnowledgeBaseCollection {
 
         @CustomType.Setter
         public Builder items(List<GetKnowledgebasesKnowledgeBaseCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetKnowledgebasesKnowledgeBaseCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetKnowledgebasesKnowledgeBaseCollectionItem... items) {

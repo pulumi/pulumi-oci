@@ -114,31 +114,37 @@ public final class DatabaseUpgradeDbBackupConfigBackupDestinationDetail {
 
         @CustomType.Setter
         public Builder dbrsPolicyId(@Nullable String dbrsPolicyId) {
+
             this.dbrsPolicyId = dbrsPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder internetProxy(@Nullable String internetProxy) {
+
             this.internetProxy = internetProxy;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder vpcPassword(@Nullable String vpcPassword) {
+
             this.vpcPassword = vpcPassword;
             return this;
         }
         @CustomType.Setter
         public Builder vpcUser(@Nullable String vpcUser) {
+
             this.vpcUser = vpcUser;
             return this;
         }

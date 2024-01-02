@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -114,7 +115,10 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFind
 
         @CustomType.Setter
         public Builder indexColumns(List<String> indexColumns) {
-            this.indexColumns = Objects.requireNonNull(indexColumns);
+            if (indexColumns == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding", "indexColumns");
+            }
+            this.indexColumns = indexColumns;
             return this;
         }
         public Builder indexColumns(String... indexColumns) {
@@ -122,27 +126,42 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFind
         }
         @CustomType.Setter
         public Builder indexHashValue(String indexHashValue) {
-            this.indexHashValue = Objects.requireNonNull(indexHashValue);
+            if (indexHashValue == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding", "indexHashValue");
+            }
+            this.indexHashValue = indexHashValue;
             return this;
         }
         @CustomType.Setter
         public Builder indexName(String indexName) {
-            this.indexName = Objects.requireNonNull(indexName);
+            if (indexName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding", "indexName");
+            }
+            this.indexName = indexName;
             return this;
         }
         @CustomType.Setter
         public Builder referenceCount(Integer referenceCount) {
-            this.referenceCount = Objects.requireNonNull(referenceCount);
+            if (referenceCount == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding", "referenceCount");
+            }
+            this.referenceCount = referenceCount;
             return this;
         }
         @CustomType.Setter
         public Builder schema(String schema) {
-            this.schema = Objects.requireNonNull(schema);
+            if (schema == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding", "schema");
+            }
+            this.schema = schema;
             return this;
         }
         @CustomType.Setter
         public Builder tableName(String tableName) {
-            this.tableName = Objects.requireNonNull(tableName);
+            if (tableName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding", "tableName");
+            }
+            this.tableName = tableName;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding build() {

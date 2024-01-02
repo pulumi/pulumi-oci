@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetVaultReplicasVaultReplica {
 
         @CustomType.Setter
         public Builder cryptoEndpoint(String cryptoEndpoint) {
-            this.cryptoEndpoint = Objects.requireNonNull(cryptoEndpoint);
+            if (cryptoEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetVaultReplicasVaultReplica", "cryptoEndpoint");
+            }
+            this.cryptoEndpoint = cryptoEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder managementEndpoint(String managementEndpoint) {
-            this.managementEndpoint = Objects.requireNonNull(managementEndpoint);
+            if (managementEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetVaultReplicasVaultReplica", "managementEndpoint");
+            }
+            this.managementEndpoint = managementEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+            if (region == null) {
+              throw new MissingRequiredPropertyException("GetVaultReplicasVaultReplica", "region");
+            }
+            this.region = region;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetVaultReplicasVaultReplica", "status");
+            }
+            this.status = status;
             return this;
         }
         public GetVaultReplicasVaultReplica build() {

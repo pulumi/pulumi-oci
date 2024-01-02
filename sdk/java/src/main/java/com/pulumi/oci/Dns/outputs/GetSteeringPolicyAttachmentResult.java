@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -175,27 +176,42 @@ public final class GetSteeringPolicyAttachmentResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPolicyAttachmentResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPolicyAttachmentResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder domainName(String domainName) {
-            this.domainName = Objects.requireNonNull(domainName);
+            if (domainName == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPolicyAttachmentResult", "domainName");
+            }
+            this.domainName = domainName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPolicyAttachmentResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder rtypes(List<String> rtypes) {
-            this.rtypes = Objects.requireNonNull(rtypes);
+            if (rtypes == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPolicyAttachmentResult", "rtypes");
+            }
+            this.rtypes = rtypes;
             return this;
         }
         public Builder rtypes(String... rtypes) {
@@ -203,32 +219,50 @@ public final class GetSteeringPolicyAttachmentResult {
         }
         @CustomType.Setter
         public Builder self(String self) {
-            this.self = Objects.requireNonNull(self);
+            if (self == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPolicyAttachmentResult", "self");
+            }
+            this.self = self;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPolicyAttachmentResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder steeringPolicyAttachmentId(String steeringPolicyAttachmentId) {
-            this.steeringPolicyAttachmentId = Objects.requireNonNull(steeringPolicyAttachmentId);
+            if (steeringPolicyAttachmentId == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPolicyAttachmentResult", "steeringPolicyAttachmentId");
+            }
+            this.steeringPolicyAttachmentId = steeringPolicyAttachmentId;
             return this;
         }
         @CustomType.Setter
         public Builder steeringPolicyId(String steeringPolicyId) {
-            this.steeringPolicyId = Objects.requireNonNull(steeringPolicyId);
+            if (steeringPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPolicyAttachmentResult", "steeringPolicyId");
+            }
+            this.steeringPolicyId = steeringPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPolicyAttachmentResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder zoneId(String zoneId) {
-            this.zoneId = Objects.requireNonNull(zoneId);
+            if (zoneId == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPolicyAttachmentResult", "zoneId");
+            }
+            this.zoneId = zoneId;
             return this;
         }
         public GetSteeringPolicyAttachmentResult build() {

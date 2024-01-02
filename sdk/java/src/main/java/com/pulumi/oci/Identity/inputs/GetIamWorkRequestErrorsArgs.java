@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.GetIamWorkRequestErrorsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -99,7 +100,9 @@ public final class GetIamWorkRequestErrorsArgs extends com.pulumi.resources.Invo
         }
 
         public GetIamWorkRequestErrorsArgs build() {
-            $.iamWorkRequestId = Objects.requireNonNull($.iamWorkRequestId, "expected parameter 'iamWorkRequestId' to be non-null");
+            if ($.iamWorkRequestId == null) {
+                throw new MissingRequiredPropertyException("GetIamWorkRequestErrorsArgs", "iamWorkRequestId");
+            }
             return $;
         }
     }

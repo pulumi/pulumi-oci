@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThr
 
         @CustomType.Setter
         public Builder durationInMinutes(Integer durationInMinutes) {
-            this.durationInMinutes = Objects.requireNonNull(durationInMinutes);
+            if (durationInMinutes == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold", "durationInMinutes");
+            }
+            this.durationInMinutes = durationInMinutes;
             return this;
         }
         @CustomType.Setter
         public Builder operator(String operator) {
-            this.operator = Objects.requireNonNull(operator);
+            if (operator == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold", "operator");
+            }
+            this.operator = operator;
             return this;
         }
         @CustomType.Setter
         public Builder value(Integer value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold build() {

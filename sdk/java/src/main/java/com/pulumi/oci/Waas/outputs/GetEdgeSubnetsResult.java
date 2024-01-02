@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.GetEdgeSubnetsEdgeSubnet;
 import com.pulumi.oci.Waas.outputs.GetEdgeSubnetsFilter;
 import java.lang.String;
@@ -66,7 +67,10 @@ public final class GetEdgeSubnetsResult {
 
         @CustomType.Setter
         public Builder edgeSubnets(List<GetEdgeSubnetsEdgeSubnet> edgeSubnets) {
-            this.edgeSubnets = Objects.requireNonNull(edgeSubnets);
+            if (edgeSubnets == null) {
+              throw new MissingRequiredPropertyException("GetEdgeSubnetsResult", "edgeSubnets");
+            }
+            this.edgeSubnets = edgeSubnets;
             return this;
         }
         public Builder edgeSubnets(GetEdgeSubnetsEdgeSubnet... edgeSubnets) {
@@ -74,6 +78,7 @@ public final class GetEdgeSubnetsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetEdgeSubnetsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -82,7 +87,10 @@ public final class GetEdgeSubnetsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetEdgeSubnetsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetEdgeSubnetsResult build() {

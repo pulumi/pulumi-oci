@@ -73,16 +73,19 @@ public final class VolumeAttachmentMultipathDevice {
 
         @CustomType.Setter
         public Builder ipv4(@Nullable String ipv4) {
+
             this.ipv4 = ipv4;
             return this;
         }
         @CustomType.Setter
         public Builder iqn(@Nullable String iqn) {
+
             this.iqn = iqn;
             return this;
         }
         @CustomType.Setter
         public Builder port(@Nullable Integer port) {
+
             this.port = port;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetExadataInsightMemberVmClusterDetail;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -401,117 +402,186 @@ public final class GetExadataInsightResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerBridgeId(String enterpriseManagerBridgeId) {
-            this.enterpriseManagerBridgeId = Objects.requireNonNull(enterpriseManagerBridgeId);
+            if (enterpriseManagerBridgeId == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "enterpriseManagerBridgeId");
+            }
+            this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerEntityDisplayName(String enterpriseManagerEntityDisplayName) {
-            this.enterpriseManagerEntityDisplayName = Objects.requireNonNull(enterpriseManagerEntityDisplayName);
+            if (enterpriseManagerEntityDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "enterpriseManagerEntityDisplayName");
+            }
+            this.enterpriseManagerEntityDisplayName = enterpriseManagerEntityDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerEntityIdentifier(String enterpriseManagerEntityIdentifier) {
-            this.enterpriseManagerEntityIdentifier = Objects.requireNonNull(enterpriseManagerEntityIdentifier);
+            if (enterpriseManagerEntityIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "enterpriseManagerEntityIdentifier");
+            }
+            this.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerEntityName(String enterpriseManagerEntityName) {
-            this.enterpriseManagerEntityName = Objects.requireNonNull(enterpriseManagerEntityName);
+            if (enterpriseManagerEntityName == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "enterpriseManagerEntityName");
+            }
+            this.enterpriseManagerEntityName = enterpriseManagerEntityName;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerEntityType(String enterpriseManagerEntityType) {
-            this.enterpriseManagerEntityType = Objects.requireNonNull(enterpriseManagerEntityType);
+            if (enterpriseManagerEntityType == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "enterpriseManagerEntityType");
+            }
+            this.enterpriseManagerEntityType = enterpriseManagerEntityType;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerIdentifier(String enterpriseManagerIdentifier) {
-            this.enterpriseManagerIdentifier = Objects.requireNonNull(enterpriseManagerIdentifier);
+            if (enterpriseManagerIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "enterpriseManagerIdentifier");
+            }
+            this.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder entitySource(String entitySource) {
-            this.entitySource = Objects.requireNonNull(entitySource);
+            if (entitySource == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "entitySource");
+            }
+            this.entitySource = entitySource;
             return this;
         }
         @CustomType.Setter
         public Builder exadataDisplayName(String exadataDisplayName) {
-            this.exadataDisplayName = Objects.requireNonNull(exadataDisplayName);
+            if (exadataDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "exadataDisplayName");
+            }
+            this.exadataDisplayName = exadataDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder exadataInfraId(String exadataInfraId) {
-            this.exadataInfraId = Objects.requireNonNull(exadataInfraId);
+            if (exadataInfraId == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "exadataInfraId");
+            }
+            this.exadataInfraId = exadataInfraId;
             return this;
         }
         @CustomType.Setter
         public Builder exadataInfraResourceType(String exadataInfraResourceType) {
-            this.exadataInfraResourceType = Objects.requireNonNull(exadataInfraResourceType);
+            if (exadataInfraResourceType == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "exadataInfraResourceType");
+            }
+            this.exadataInfraResourceType = exadataInfraResourceType;
             return this;
         }
         @CustomType.Setter
         public Builder exadataInsightId(String exadataInsightId) {
-            this.exadataInsightId = Objects.requireNonNull(exadataInsightId);
+            if (exadataInsightId == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "exadataInsightId");
+            }
+            this.exadataInsightId = exadataInsightId;
             return this;
         }
         @CustomType.Setter
         public Builder exadataName(String exadataName) {
-            this.exadataName = Objects.requireNonNull(exadataName);
+            if (exadataName == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "exadataName");
+            }
+            this.exadataName = exadataName;
             return this;
         }
         @CustomType.Setter
         public Builder exadataRackType(String exadataRackType) {
-            this.exadataRackType = Objects.requireNonNull(exadataRackType);
+            if (exadataRackType == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "exadataRackType");
+            }
+            this.exadataRackType = exadataRackType;
             return this;
         }
         @CustomType.Setter
         public Builder exadataShape(String exadataShape) {
-            this.exadataShape = Objects.requireNonNull(exadataShape);
+            if (exadataShape == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "exadataShape");
+            }
+            this.exadataShape = exadataShape;
             return this;
         }
         @CustomType.Setter
         public Builder exadataType(String exadataType) {
-            this.exadataType = Objects.requireNonNull(exadataType);
+            if (exadataType == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "exadataType");
+            }
+            this.exadataType = exadataType;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAutoSyncEnabled(Boolean isAutoSyncEnabled) {
-            this.isAutoSyncEnabled = Objects.requireNonNull(isAutoSyncEnabled);
+            if (isAutoSyncEnabled == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "isAutoSyncEnabled");
+            }
+            this.isAutoSyncEnabled = isAutoSyncEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isVirtualizedExadata(Boolean isVirtualizedExadata) {
-            this.isVirtualizedExadata = Objects.requireNonNull(isVirtualizedExadata);
+            if (isVirtualizedExadata == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "isVirtualizedExadata");
+            }
+            this.isVirtualizedExadata = isVirtualizedExadata;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder memberVmClusterDetails(List<GetExadataInsightMemberVmClusterDetail> memberVmClusterDetails) {
-            this.memberVmClusterDetails = Objects.requireNonNull(memberVmClusterDetails);
+            if (memberVmClusterDetails == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "memberVmClusterDetails");
+            }
+            this.memberVmClusterDetails = memberVmClusterDetails;
             return this;
         }
         public Builder memberVmClusterDetails(GetExadataInsightMemberVmClusterDetail... memberVmClusterDetails) {
@@ -519,27 +589,42 @@ public final class GetExadataInsightResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetExadataInsightResult build() {

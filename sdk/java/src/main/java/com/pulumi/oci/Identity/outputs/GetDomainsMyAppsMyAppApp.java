@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -211,67 +212,106 @@ public final class GetDomainsMyAppsMyAppApp {
 
         @CustomType.Setter
         public Builder active(Boolean active) {
-            this.active = Objects.requireNonNull(active);
+            if (active == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyAppApp", "active");
+            }
+            this.active = active;
             return this;
         }
         @CustomType.Setter
         public Builder appIcon(String appIcon) {
-            this.appIcon = Objects.requireNonNull(appIcon);
+            if (appIcon == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyAppApp", "appIcon");
+            }
+            this.appIcon = appIcon;
             return this;
         }
         @CustomType.Setter
         public Builder appThumbnail(String appThumbnail) {
-            this.appThumbnail = Objects.requireNonNull(appThumbnail);
+            if (appThumbnail == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyAppApp", "appThumbnail");
+            }
+            this.appThumbnail = appThumbnail;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyAppApp", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+            if (display == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyAppApp", "display");
+            }
+            this.display = display;
             return this;
         }
         @CustomType.Setter
         public Builder isAliasApp(Boolean isAliasApp) {
-            this.isAliasApp = Objects.requireNonNull(isAliasApp);
+            if (isAliasApp == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyAppApp", "isAliasApp");
+            }
+            this.isAliasApp = isAliasApp;
             return this;
         }
         @CustomType.Setter
         public Builder isLoginTarget(Boolean isLoginTarget) {
-            this.isLoginTarget = Objects.requireNonNull(isLoginTarget);
+            if (isLoginTarget == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyAppApp", "isLoginTarget");
+            }
+            this.isLoginTarget = isLoginTarget;
             return this;
         }
         @CustomType.Setter
         public Builder isOpcService(Boolean isOpcService) {
-            this.isOpcService = Objects.requireNonNull(isOpcService);
+            if (isOpcService == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyAppApp", "isOpcService");
+            }
+            this.isOpcService = isOpcService;
             return this;
         }
         @CustomType.Setter
         public Builder loginMechanism(String loginMechanism) {
-            this.loginMechanism = Objects.requireNonNull(loginMechanism);
+            if (loginMechanism == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyAppApp", "loginMechanism");
+            }
+            this.loginMechanism = loginMechanism;
             return this;
         }
         @CustomType.Setter
         public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+            if (ref == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyAppApp", "ref");
+            }
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder serviceTypeUrn(String serviceTypeUrn) {
-            this.serviceTypeUrn = Objects.requireNonNull(serviceTypeUrn);
+            if (serviceTypeUrn == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyAppApp", "serviceTypeUrn");
+            }
+            this.serviceTypeUrn = serviceTypeUrn;
             return this;
         }
         @CustomType.Setter
         public Builder showInMyApps(Boolean showInMyApps) {
-            this.showInMyApps = Objects.requireNonNull(showInMyApps);
+            if (showInMyApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyAppApp", "showInMyApps");
+            }
+            this.showInMyApps = showInMyApps;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyAppApp", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDomainsMyAppsMyAppApp build() {

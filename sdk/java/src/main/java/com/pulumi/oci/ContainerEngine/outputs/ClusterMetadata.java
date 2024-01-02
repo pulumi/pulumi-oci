@@ -170,51 +170,61 @@ public final class ClusterMetadata {
 
         @CustomType.Setter
         public Builder createdByUserId(@Nullable String createdByUserId) {
+
             this.createdByUserId = createdByUserId;
             return this;
         }
         @CustomType.Setter
         public Builder createdByWorkRequestId(@Nullable String createdByWorkRequestId) {
+
             this.createdByWorkRequestId = createdByWorkRequestId;
             return this;
         }
         @CustomType.Setter
         public Builder deletedByUserId(@Nullable String deletedByUserId) {
+
             this.deletedByUserId = deletedByUserId;
             return this;
         }
         @CustomType.Setter
         public Builder deletedByWorkRequestId(@Nullable String deletedByWorkRequestId) {
+
             this.deletedByWorkRequestId = deletedByWorkRequestId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeCredentialExpiration(@Nullable String timeCredentialExpiration) {
+
             this.timeCredentialExpiration = timeCredentialExpiration;
             return this;
         }
         @CustomType.Setter
         public Builder timeDeleted(@Nullable String timeDeleted) {
+
             this.timeDeleted = timeDeleted;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
+
             this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder updatedByUserId(@Nullable String updatedByUserId) {
+
             this.updatedByUserId = updatedByUserId;
             return this;
         }
         @CustomType.Setter
         public Builder updatedByWorkRequestId(@Nullable String updatedByWorkRequestId) {
+
             this.updatedByWorkRequestId = updatedByWorkRequestId;
             return this;
         }

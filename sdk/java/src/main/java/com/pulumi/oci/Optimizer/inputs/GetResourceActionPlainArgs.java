@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -93,7 +94,9 @@ public final class GetResourceActionPlainArgs extends com.pulumi.resources.Invok
         }
 
         public GetResourceActionPlainArgs build() {
-            $.resourceActionId = Objects.requireNonNull($.resourceActionId, "expected parameter 'resourceActionId' to be non-null");
+            if ($.resourceActionId == null) {
+                throw new MissingRequiredPropertyException("GetResourceActionPlainArgs", "resourceActionId");
+            }
             return $;
         }
     }

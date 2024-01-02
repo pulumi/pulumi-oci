@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -136,7 +137,10 @@ public final class GetNetworkLoadBalancerHealthResult {
 
         @CustomType.Setter
         public Builder criticalStateBackendSetNames(List<String> criticalStateBackendSetNames) {
-            this.criticalStateBackendSetNames = Objects.requireNonNull(criticalStateBackendSetNames);
+            if (criticalStateBackendSetNames == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerHealthResult", "criticalStateBackendSetNames");
+            }
+            this.criticalStateBackendSetNames = criticalStateBackendSetNames;
             return this;
         }
         public Builder criticalStateBackendSetNames(String... criticalStateBackendSetNames) {
@@ -144,27 +148,42 @@ public final class GetNetworkLoadBalancerHealthResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerHealthResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
-            this.networkLoadBalancerId = Objects.requireNonNull(networkLoadBalancerId);
+            if (networkLoadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerHealthResult", "networkLoadBalancerId");
+            }
+            this.networkLoadBalancerId = networkLoadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerHealthResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder totalBackendSetCount(Integer totalBackendSetCount) {
-            this.totalBackendSetCount = Objects.requireNonNull(totalBackendSetCount);
+            if (totalBackendSetCount == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerHealthResult", "totalBackendSetCount");
+            }
+            this.totalBackendSetCount = totalBackendSetCount;
             return this;
         }
         @CustomType.Setter
         public Builder unknownStateBackendSetNames(List<String> unknownStateBackendSetNames) {
-            this.unknownStateBackendSetNames = Objects.requireNonNull(unknownStateBackendSetNames);
+            if (unknownStateBackendSetNames == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerHealthResult", "unknownStateBackendSetNames");
+            }
+            this.unknownStateBackendSetNames = unknownStateBackendSetNames;
             return this;
         }
         public Builder unknownStateBackendSetNames(String... unknownStateBackendSetNames) {
@@ -172,7 +191,10 @@ public final class GetNetworkLoadBalancerHealthResult {
         }
         @CustomType.Setter
         public Builder warningStateBackendSetNames(List<String> warningStateBackendSetNames) {
-            this.warningStateBackendSetNames = Objects.requireNonNull(warningStateBackendSetNames);
+            if (warningStateBackendSetNames == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerHealthResult", "warningStateBackendSetNames");
+            }
+            this.warningStateBackendSetNames = warningStateBackendSetNames;
             return this;
         }
         public Builder warningStateBackendSetNames(String... warningStateBackendSetNames) {

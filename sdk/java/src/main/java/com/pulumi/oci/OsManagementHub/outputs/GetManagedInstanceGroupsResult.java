@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupsFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupsManagedInstanceGroupCollection;
 import java.lang.String;
@@ -155,21 +156,25 @@ public final class GetManagedInstanceGroupsResult {
 
         @CustomType.Setter
         public Builder archType(@Nullable String archType) {
+
             this.archType = archType;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayNameContains(@Nullable String displayNameContains) {
+
             this.displayNameContains = displayNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder displayNames(@Nullable List<String> displayNames) {
+
             this.displayNames = displayNames;
             return this;
         }
@@ -178,6 +183,7 @@ public final class GetManagedInstanceGroupsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedInstanceGroupsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -186,12 +192,18 @@ public final class GetManagedInstanceGroupsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceGroupCollections(List<GetManagedInstanceGroupsManagedInstanceGroupCollection> managedInstanceGroupCollections) {
-            this.managedInstanceGroupCollections = Objects.requireNonNull(managedInstanceGroupCollections);
+            if (managedInstanceGroupCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupsResult", "managedInstanceGroupCollections");
+            }
+            this.managedInstanceGroupCollections = managedInstanceGroupCollections;
             return this;
         }
         public Builder managedInstanceGroupCollections(GetManagedInstanceGroupsManagedInstanceGroupCollection... managedInstanceGroupCollections) {
@@ -199,21 +211,25 @@ public final class GetManagedInstanceGroupsResult {
         }
         @CustomType.Setter
         public Builder managedInstanceGroupId(@Nullable String managedInstanceGroupId) {
+
             this.managedInstanceGroupId = managedInstanceGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder osFamily(@Nullable String osFamily) {
+
             this.osFamily = osFamily;
             return this;
         }
         @CustomType.Setter
         public Builder softwareSourceId(@Nullable String softwareSourceId) {
+
             this.softwareSourceId = softwareSourceId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

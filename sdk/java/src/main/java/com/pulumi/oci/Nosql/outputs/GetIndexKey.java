@@ -4,6 +4,7 @@
 package com.pulumi.oci.Nosql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetIndexKey {
 
         @CustomType.Setter
         public Builder columnName(String columnName) {
-            this.columnName = Objects.requireNonNull(columnName);
+            if (columnName == null) {
+              throw new MissingRequiredPropertyException("GetIndexKey", "columnName");
+            }
+            this.columnName = columnName;
             return this;
         }
         @CustomType.Setter
         public Builder jsonFieldType(String jsonFieldType) {
-            this.jsonFieldType = Objects.requireNonNull(jsonFieldType);
+            if (jsonFieldType == null) {
+              throw new MissingRequiredPropertyException("GetIndexKey", "jsonFieldType");
+            }
+            this.jsonFieldType = jsonFieldType;
             return this;
         }
         @CustomType.Setter
         public Builder jsonPath(String jsonPath) {
-            this.jsonPath = Objects.requireNonNull(jsonPath);
+            if (jsonPath == null) {
+              throw new MissingRequiredPropertyException("GetIndexKey", "jsonPath");
+            }
+            this.jsonPath = jsonPath;
             return this;
         }
         public GetIndexKey build() {

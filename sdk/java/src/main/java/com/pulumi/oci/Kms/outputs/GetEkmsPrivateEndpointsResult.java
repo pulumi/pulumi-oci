@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Kms.outputs.GetEkmsPrivateEndpointsEkmsPrivateEndpoint;
 import com.pulumi.oci.Kms.outputs.GetEkmsPrivateEndpointsFilter;
 import java.lang.String;
@@ -80,12 +81,18 @@ public final class GetEkmsPrivateEndpointsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetEkmsPrivateEndpointsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder ekmsPrivateEndpoints(List<GetEkmsPrivateEndpointsEkmsPrivateEndpoint> ekmsPrivateEndpoints) {
-            this.ekmsPrivateEndpoints = Objects.requireNonNull(ekmsPrivateEndpoints);
+            if (ekmsPrivateEndpoints == null) {
+              throw new MissingRequiredPropertyException("GetEkmsPrivateEndpointsResult", "ekmsPrivateEndpoints");
+            }
+            this.ekmsPrivateEndpoints = ekmsPrivateEndpoints;
             return this;
         }
         public Builder ekmsPrivateEndpoints(GetEkmsPrivateEndpointsEkmsPrivateEndpoint... ekmsPrivateEndpoints) {
@@ -93,6 +100,7 @@ public final class GetEkmsPrivateEndpointsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetEkmsPrivateEndpointsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -101,7 +109,10 @@ public final class GetEkmsPrivateEndpointsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetEkmsPrivateEndpointsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetEkmsPrivateEndpointsResult build() {

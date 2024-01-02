@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityTopologyComputeNetworkBlocksComputeNetworkBlockCollection;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityTopologyComputeNetworkBlocksFilter;
 import java.lang.String;
@@ -107,27 +108,36 @@ public final class GetComputeCapacityTopologyComputeNetworkBlocksResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeCapacityTopologyId(String computeCapacityTopologyId) {
-            this.computeCapacityTopologyId = Objects.requireNonNull(computeCapacityTopologyId);
+            if (computeCapacityTopologyId == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeNetworkBlocksResult", "computeCapacityTopologyId");
+            }
+            this.computeCapacityTopologyId = computeCapacityTopologyId;
             return this;
         }
         @CustomType.Setter
         public Builder computeHpcIslandId(@Nullable String computeHpcIslandId) {
+
             this.computeHpcIslandId = computeHpcIslandId;
             return this;
         }
         @CustomType.Setter
         public Builder computeNetworkBlockCollections(List<GetComputeCapacityTopologyComputeNetworkBlocksComputeNetworkBlockCollection> computeNetworkBlockCollections) {
-            this.computeNetworkBlockCollections = Objects.requireNonNull(computeNetworkBlockCollections);
+            if (computeNetworkBlockCollections == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeNetworkBlocksResult", "computeNetworkBlockCollections");
+            }
+            this.computeNetworkBlockCollections = computeNetworkBlockCollections;
             return this;
         }
         public Builder computeNetworkBlockCollections(GetComputeCapacityTopologyComputeNetworkBlocksComputeNetworkBlockCollection... computeNetworkBlockCollections) {
@@ -135,6 +145,7 @@ public final class GetComputeCapacityTopologyComputeNetworkBlocksResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetComputeCapacityTopologyComputeNetworkBlocksFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -143,7 +154,10 @@ public final class GetComputeCapacityTopologyComputeNetworkBlocksResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeNetworkBlocksResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetComputeCapacityTopologyComputeNetworkBlocksResult build() {

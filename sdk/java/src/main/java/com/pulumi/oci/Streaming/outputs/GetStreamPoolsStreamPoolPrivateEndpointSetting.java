@@ -4,6 +4,7 @@
 package com.pulumi.oci.Streaming.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -71,7 +72,10 @@ public final class GetStreamPoolsStreamPoolPrivateEndpointSetting {
 
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolsStreamPoolPrivateEndpointSetting", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
@@ -79,12 +83,18 @@ public final class GetStreamPoolsStreamPoolPrivateEndpointSetting {
         }
         @CustomType.Setter
         public Builder privateEndpointIp(String privateEndpointIp) {
-            this.privateEndpointIp = Objects.requireNonNull(privateEndpointIp);
+            if (privateEndpointIp == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolsStreamPoolPrivateEndpointSetting", "privateEndpointIp");
+            }
+            this.privateEndpointIp = privateEndpointIp;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolsStreamPoolPrivateEndpointSetting", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         public GetStreamPoolsStreamPoolPrivateEndpointSetting build() {

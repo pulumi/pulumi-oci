@@ -5,6 +5,7 @@ package com.pulumi.oci.NetworkFirewall.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -273,11 +274,21 @@ public final class NetworkFirewallPolicySecurityRuleConditionArgs extends com.pu
         }
 
         public NetworkFirewallPolicySecurityRuleConditionArgs build() {
-            $.applications = Objects.requireNonNull($.applications, "expected parameter 'applications' to be non-null");
-            $.destinationAddresses = Objects.requireNonNull($.destinationAddresses, "expected parameter 'destinationAddresses' to be non-null");
-            $.services = Objects.requireNonNull($.services, "expected parameter 'services' to be non-null");
-            $.sourceAddresses = Objects.requireNonNull($.sourceAddresses, "expected parameter 'sourceAddresses' to be non-null");
-            $.urls = Objects.requireNonNull($.urls, "expected parameter 'urls' to be non-null");
+            if ($.applications == null) {
+                throw new MissingRequiredPropertyException("NetworkFirewallPolicySecurityRuleConditionArgs", "applications");
+            }
+            if ($.destinationAddresses == null) {
+                throw new MissingRequiredPropertyException("NetworkFirewallPolicySecurityRuleConditionArgs", "destinationAddresses");
+            }
+            if ($.services == null) {
+                throw new MissingRequiredPropertyException("NetworkFirewallPolicySecurityRuleConditionArgs", "services");
+            }
+            if ($.sourceAddresses == null) {
+                throw new MissingRequiredPropertyException("NetworkFirewallPolicySecurityRuleConditionArgs", "sourceAddresses");
+            }
+            if ($.urls == null) {
+                throw new MissingRequiredPropertyException("NetworkFirewallPolicySecurityRuleConditionArgs", "urls");
+            }
             return $;
         }
     }

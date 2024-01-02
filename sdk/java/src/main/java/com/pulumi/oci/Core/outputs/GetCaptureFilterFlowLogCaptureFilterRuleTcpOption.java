@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetCaptureFilterFlowLogCaptureFilterRuleTcpOptionDestinationPortRange;
 import com.pulumi.oci.Core.outputs.GetCaptureFilterFlowLogCaptureFilterRuleTcpOptionSourcePortRange;
 import java.util.List;
@@ -42,7 +43,10 @@ public final class GetCaptureFilterFlowLogCaptureFilterRuleTcpOption {
 
         @CustomType.Setter
         public Builder destinationPortRanges(List<GetCaptureFilterFlowLogCaptureFilterRuleTcpOptionDestinationPortRange> destinationPortRanges) {
-            this.destinationPortRanges = Objects.requireNonNull(destinationPortRanges);
+            if (destinationPortRanges == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFilterFlowLogCaptureFilterRuleTcpOption", "destinationPortRanges");
+            }
+            this.destinationPortRanges = destinationPortRanges;
             return this;
         }
         public Builder destinationPortRanges(GetCaptureFilterFlowLogCaptureFilterRuleTcpOptionDestinationPortRange... destinationPortRanges) {
@@ -50,7 +54,10 @@ public final class GetCaptureFilterFlowLogCaptureFilterRuleTcpOption {
         }
         @CustomType.Setter
         public Builder sourcePortRanges(List<GetCaptureFilterFlowLogCaptureFilterRuleTcpOptionSourcePortRange> sourcePortRanges) {
-            this.sourcePortRanges = Objects.requireNonNull(sourcePortRanges);
+            if (sourcePortRanges == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFilterFlowLogCaptureFilterRuleTcpOption", "sourcePortRanges");
+            }
+            this.sourcePortRanges = sourcePortRanges;
             return this;
         }
         public Builder sourcePortRanges(GetCaptureFilterFlowLogCaptureFilterRuleTcpOptionSourcePortRange... sourcePortRanges) {

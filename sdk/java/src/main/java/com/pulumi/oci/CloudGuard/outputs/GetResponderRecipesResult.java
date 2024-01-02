@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetResponderRecipesFilter;
 import com.pulumi.oci.CloudGuard.outputs.GetResponderRecipesResponderRecipeCollection;
 import java.lang.Boolean;
@@ -128,26 +129,33 @@ public final class GetResponderRecipesResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetResponderRecipesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -156,17 +164,24 @@ public final class GetResponderRecipesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder resourceMetadataOnly(@Nullable Boolean resourceMetadataOnly) {
+
             this.resourceMetadataOnly = resourceMetadataOnly;
             return this;
         }
         @CustomType.Setter
         public Builder responderRecipeCollections(List<GetResponderRecipesResponderRecipeCollection> responderRecipeCollections) {
-            this.responderRecipeCollections = Objects.requireNonNull(responderRecipeCollections);
+            if (responderRecipeCollections == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipesResult", "responderRecipeCollections");
+            }
+            this.responderRecipeCollections = responderRecipeCollections;
             return this;
         }
         public Builder responderRecipeCollections(GetResponderRecipesResponderRecipeCollection... responderRecipeCollections) {
@@ -174,6 +189,7 @@ public final class GetResponderRecipesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

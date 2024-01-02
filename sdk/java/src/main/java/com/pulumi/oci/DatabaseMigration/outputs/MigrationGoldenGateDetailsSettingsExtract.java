@@ -59,11 +59,13 @@ public final class MigrationGoldenGateDetailsSettingsExtract {
 
         @CustomType.Setter
         public Builder longTransDuration(@Nullable Integer longTransDuration) {
+
             this.longTransDuration = longTransDuration;
             return this;
         }
         @CustomType.Setter
         public Builder performanceProfile(@Nullable String performanceProfile) {
+
             this.performanceProfile = performanceProfile;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem {
 
         @CustomType.Setter
         public Builder diskGroup(String diskGroup) {
-            this.diskGroup = Objects.requireNonNull(diskGroup);
+            if (diskGroup == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem", "diskGroup");
+            }
+            this.diskGroup = diskGroup;
             return this;
         }
         public GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem build() {

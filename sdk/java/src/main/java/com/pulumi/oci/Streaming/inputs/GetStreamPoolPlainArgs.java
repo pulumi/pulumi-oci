@@ -4,6 +4,7 @@
 package com.pulumi.oci.Streaming.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetStreamPoolPlainArgs extends com.pulumi.resources.InvokeArg
         }
 
         public GetStreamPoolPlainArgs build() {
-            $.streamPoolId = Objects.requireNonNull($.streamPoolId, "expected parameter 'streamPoolId' to be non-null");
+            if ($.streamPoolId == null) {
+                throw new MissingRequiredPropertyException("GetStreamPoolPlainArgs", "streamPoolId");
+            }
             return $;
         }
     }

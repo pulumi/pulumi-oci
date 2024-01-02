@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.outputs.GetFileSystemsFileSystem;
 import com.pulumi.oci.FileStorage.outputs.GetFileSystemsFilter;
 import java.lang.String;
@@ -165,22 +166,32 @@ public final class GetFileSystemsResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsResult", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder fileSystems(List<GetFileSystemsFileSystem> fileSystems) {
-            this.fileSystems = Objects.requireNonNull(fileSystems);
+            if (fileSystems == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsResult", "fileSystems");
+            }
+            this.fileSystems = fileSystems;
             return this;
         }
         public Builder fileSystems(GetFileSystemsFileSystem... fileSystems) {
@@ -188,11 +199,13 @@ public final class GetFileSystemsResult {
         }
         @CustomType.Setter
         public Builder filesystemSnapshotPolicyId(@Nullable String filesystemSnapshotPolicyId) {
+
             this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetFileSystemsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -201,21 +214,25 @@ public final class GetFileSystemsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder parentFileSystemId(@Nullable String parentFileSystemId) {
+
             this.parentFileSystemId = parentFileSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceSnapshotId(@Nullable String sourceSnapshotId) {
+
             this.sourceSnapshotId = sourceSnapshotId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

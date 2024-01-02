@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Kms.outputs.GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary;
 import java.lang.String;
 import java.util.List;
@@ -86,12 +87,18 @@ public final class GetVaultsVaultExternalKeyManagerMetadataSummary {
 
         @CustomType.Setter
         public Builder externalVaultEndpointUrl(String externalVaultEndpointUrl) {
-            this.externalVaultEndpointUrl = Objects.requireNonNull(externalVaultEndpointUrl);
+            if (externalVaultEndpointUrl == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVaultExternalKeyManagerMetadataSummary", "externalVaultEndpointUrl");
+            }
+            this.externalVaultEndpointUrl = externalVaultEndpointUrl;
             return this;
         }
         @CustomType.Setter
         public Builder oauthMetadataSummaries(List<GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary> oauthMetadataSummaries) {
-            this.oauthMetadataSummaries = Objects.requireNonNull(oauthMetadataSummaries);
+            if (oauthMetadataSummaries == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVaultExternalKeyManagerMetadataSummary", "oauthMetadataSummaries");
+            }
+            this.oauthMetadataSummaries = oauthMetadataSummaries;
             return this;
         }
         public Builder oauthMetadataSummaries(GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary... oauthMetadataSummaries) {
@@ -99,12 +106,18 @@ public final class GetVaultsVaultExternalKeyManagerMetadataSummary {
         }
         @CustomType.Setter
         public Builder privateEndpointId(String privateEndpointId) {
-            this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
+            if (privateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVaultExternalKeyManagerMetadataSummary", "privateEndpointId");
+            }
+            this.privateEndpointId = privateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder vendor(String vendor) {
-            this.vendor = Objects.requireNonNull(vendor);
+            if (vendor == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVaultExternalKeyManagerMetadataSummary", "vendor");
+            }
+            this.vendor = vendor;
             return this;
         }
         public GetVaultsVaultExternalKeyManagerMetadataSummary build() {

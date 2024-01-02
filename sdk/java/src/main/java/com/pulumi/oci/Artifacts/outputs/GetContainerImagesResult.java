@@ -4,6 +4,7 @@
 package com.pulumi.oci.Artifacts.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Artifacts.outputs.GetContainerImagesContainerImageCollection;
 import com.pulumi.oci.Artifacts.outputs.GetContainerImagesFilter;
 import java.lang.Boolean;
@@ -170,17 +171,24 @@ public final class GetContainerImagesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetContainerImagesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder containerImageCollections(List<GetContainerImagesContainerImageCollection> containerImageCollections) {
-            this.containerImageCollections = Objects.requireNonNull(containerImageCollections);
+            if (containerImageCollections == null) {
+              throw new MissingRequiredPropertyException("GetContainerImagesResult", "containerImageCollections");
+            }
+            this.containerImageCollections = containerImageCollections;
             return this;
         }
         public Builder containerImageCollections(GetContainerImagesContainerImageCollection... containerImageCollections) {
@@ -188,11 +196,13 @@ public final class GetContainerImagesResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetContainerImagesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -201,36 +211,45 @@ public final class GetContainerImagesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetContainerImagesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imageId(@Nullable String imageId) {
+
             this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder isVersioned(@Nullable Boolean isVersioned) {
+
             this.isVersioned = isVersioned;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryId(@Nullable String repositoryId) {
+
             this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryName(@Nullable String repositoryName) {
+
             this.repositoryName = repositoryName;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder version(@Nullable String version) {
+
             this.version = version;
             return this;
         }

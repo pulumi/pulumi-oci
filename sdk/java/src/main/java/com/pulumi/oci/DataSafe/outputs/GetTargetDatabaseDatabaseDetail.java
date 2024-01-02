@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -156,32 +157,50 @@ public final class GetTargetDatabaseDatabaseDetail {
 
         @CustomType.Setter
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
-            this.autonomousDatabaseId = Objects.requireNonNull(autonomousDatabaseId);
+            if (autonomousDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseDatabaseDetail", "autonomousDatabaseId");
+            }
+            this.autonomousDatabaseId = autonomousDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseType(String databaseType) {
-            this.databaseType = Objects.requireNonNull(databaseType);
+            if (databaseType == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseDatabaseDetail", "databaseType");
+            }
+            this.databaseType = databaseType;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseDatabaseDetail", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder infrastructureType(String infrastructureType) {
-            this.infrastructureType = Objects.requireNonNull(infrastructureType);
+            if (infrastructureType == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseDatabaseDetail", "infrastructureType");
+            }
+            this.infrastructureType = infrastructureType;
             return this;
         }
         @CustomType.Setter
         public Builder instanceId(String instanceId) {
-            this.instanceId = Objects.requireNonNull(instanceId);
+            if (instanceId == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseDatabaseDetail", "instanceId");
+            }
+            this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddresses(List<String> ipAddresses) {
-            this.ipAddresses = Objects.requireNonNull(ipAddresses);
+            if (ipAddresses == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseDatabaseDetail", "ipAddresses");
+            }
+            this.ipAddresses = ipAddresses;
             return this;
         }
         public Builder ipAddresses(String... ipAddresses) {
@@ -189,17 +208,26 @@ public final class GetTargetDatabaseDatabaseDetail {
         }
         @CustomType.Setter
         public Builder listenerPort(Integer listenerPort) {
-            this.listenerPort = Objects.requireNonNull(listenerPort);
+            if (listenerPort == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseDatabaseDetail", "listenerPort");
+            }
+            this.listenerPort = listenerPort;
             return this;
         }
         @CustomType.Setter
         public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+            if (serviceName == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseDatabaseDetail", "serviceName");
+            }
+            this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
-            this.vmClusterId = Objects.requireNonNull(vmClusterId);
+            if (vmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseDatabaseDetail", "vmClusterId");
+            }
+            this.vmClusterId = vmClusterId;
             return this;
         }
         public GetTargetDatabaseDatabaseDetail build() {

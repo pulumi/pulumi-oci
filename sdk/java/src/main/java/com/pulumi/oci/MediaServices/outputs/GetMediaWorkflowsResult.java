@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowsFilter;
 import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowsMediaWorkflowCollection;
 import java.lang.String;
@@ -109,16 +110,19 @@ public final class GetMediaWorkflowsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMediaWorkflowsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +131,16 @@ public final class GetMediaWorkflowsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder mediaWorkflowCollections(List<GetMediaWorkflowsMediaWorkflowCollection> mediaWorkflowCollections) {
-            this.mediaWorkflowCollections = Objects.requireNonNull(mediaWorkflowCollections);
+            if (mediaWorkflowCollections == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowsResult", "mediaWorkflowCollections");
+            }
+            this.mediaWorkflowCollections = mediaWorkflowCollections;
             return this;
         }
         public Builder mediaWorkflowCollections(GetMediaWorkflowsMediaWorkflowCollection... mediaWorkflowCollections) {
@@ -140,6 +148,7 @@ public final class GetMediaWorkflowsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

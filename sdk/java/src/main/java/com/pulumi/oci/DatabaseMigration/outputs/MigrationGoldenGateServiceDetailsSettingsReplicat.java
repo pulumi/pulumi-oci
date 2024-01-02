@@ -72,16 +72,19 @@ public final class MigrationGoldenGateServiceDetailsSettingsReplicat {
 
         @CustomType.Setter
         public Builder mapParallelism(@Nullable Integer mapParallelism) {
+
             this.mapParallelism = mapParallelism;
             return this;
         }
         @CustomType.Setter
         public Builder maxApplyParallelism(@Nullable Integer maxApplyParallelism) {
+
             this.maxApplyParallelism = maxApplyParallelism;
             return this;
         }
         @CustomType.Setter
         public Builder minApplyParallelism(@Nullable Integer minApplyParallelism) {
+
             this.minApplyParallelism = minApplyParallelism;
             return this;
         }

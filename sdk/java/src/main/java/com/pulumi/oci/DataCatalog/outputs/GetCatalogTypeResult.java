@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -227,21 +228,31 @@ public final class GetCatalogTypeResult {
 
         @CustomType.Setter
         public Builder catalogId(String catalogId) {
-            this.catalogId = Objects.requireNonNull(catalogId);
+            if (catalogId == null) {
+              throw new MissingRequiredPropertyException("GetCatalogTypeResult", "catalogId");
+            }
+            this.catalogId = catalogId;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetCatalogTypeResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder externalTypeName(String externalTypeName) {
-            this.externalTypeName = Objects.requireNonNull(externalTypeName);
+            if (externalTypeName == null) {
+              throw new MissingRequiredPropertyException("GetCatalogTypeResult", "externalTypeName");
+            }
+            this.externalTypeName = externalTypeName;
             return this;
         }
         @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
+
             this.fields = fields;
             return this;
         }
@@ -250,57 +261,90 @@ public final class GetCatalogTypeResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCatalogTypeResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isApproved(Boolean isApproved) {
-            this.isApproved = Objects.requireNonNull(isApproved);
+            if (isApproved == null) {
+              throw new MissingRequiredPropertyException("GetCatalogTypeResult", "isApproved");
+            }
+            this.isApproved = isApproved;
             return this;
         }
         @CustomType.Setter
         public Builder isInternal(Boolean isInternal) {
-            this.isInternal = Objects.requireNonNull(isInternal);
+            if (isInternal == null) {
+              throw new MissingRequiredPropertyException("GetCatalogTypeResult", "isInternal");
+            }
+            this.isInternal = isInternal;
             return this;
         }
         @CustomType.Setter
         public Builder isTag(Boolean isTag) {
-            this.isTag = Objects.requireNonNull(isTag);
+            if (isTag == null) {
+              throw new MissingRequiredPropertyException("GetCatalogTypeResult", "isTag");
+            }
+            this.isTag = isTag;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetCatalogTypeResult", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetCatalogTypeResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder properties(Map<String,Object> properties) {
-            this.properties = Objects.requireNonNull(properties);
+            if (properties == null) {
+              throw new MissingRequiredPropertyException("GetCatalogTypeResult", "properties");
+            }
+            this.properties = properties;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetCatalogTypeResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder typeCategory(String typeCategory) {
-            this.typeCategory = Objects.requireNonNull(typeCategory);
+            if (typeCategory == null) {
+              throw new MissingRequiredPropertyException("GetCatalogTypeResult", "typeCategory");
+            }
+            this.typeCategory = typeCategory;
             return this;
         }
         @CustomType.Setter
         public Builder typeKey(String typeKey) {
-            this.typeKey = Objects.requireNonNull(typeKey);
+            if (typeKey == null) {
+              throw new MissingRequiredPropertyException("GetCatalogTypeResult", "typeKey");
+            }
+            this.typeKey = typeKey;
             return this;
         }
         @CustomType.Setter
         public Builder uri(String uri) {
-            this.uri = Objects.requireNonNull(uri);
+            if (uri == null) {
+              throw new MissingRequiredPropertyException("GetCatalogTypeResult", "uri");
+            }
+            this.uri = uri;
             return this;
         }
         public GetCatalogTypeResult build() {

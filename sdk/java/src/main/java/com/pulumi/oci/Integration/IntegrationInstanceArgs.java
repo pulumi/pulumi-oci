@@ -5,6 +5,7 @@ package com.pulumi.oci.Integration;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Integration.inputs.IntegrationInstanceAlternateCustomEndpointArgs;
 import com.pulumi.oci.Integration.inputs.IntegrationInstanceCustomEndpointArgs;
 import com.pulumi.oci.Integration.inputs.IntegrationInstanceNetworkEndpointDetailsArgs;
@@ -735,11 +736,21 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
         }
 
         public IntegrationInstanceArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.integrationInstanceType = Objects.requireNonNull($.integrationInstanceType, "expected parameter 'integrationInstanceType' to be non-null");
-            $.isByol = Objects.requireNonNull($.isByol, "expected parameter 'isByol' to be non-null");
-            $.messagePacks = Objects.requireNonNull($.messagePacks, "expected parameter 'messagePacks' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("IntegrationInstanceArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("IntegrationInstanceArgs", "displayName");
+            }
+            if ($.integrationInstanceType == null) {
+                throw new MissingRequiredPropertyException("IntegrationInstanceArgs", "integrationInstanceType");
+            }
+            if ($.isByol == null) {
+                throw new MissingRequiredPropertyException("IntegrationInstanceArgs", "isByol");
+            }
+            if ($.messagePacks == null) {
+                throw new MissingRequiredPropertyException("IntegrationInstanceArgs", "messagePacks");
+            }
             return $;
         }
     }

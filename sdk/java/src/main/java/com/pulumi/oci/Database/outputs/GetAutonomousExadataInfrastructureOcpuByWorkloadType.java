@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetAutonomousExadataInfrastructureOcpuByWorkloadType {
 
         @CustomType.Setter
         public Builder adw(Double adw) {
-            this.adw = Objects.requireNonNull(adw);
+            if (adw == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructureOcpuByWorkloadType", "adw");
+            }
+            this.adw = adw;
             return this;
         }
         @CustomType.Setter
         public Builder atp(Double atp) {
-            this.atp = Objects.requireNonNull(atp);
+            if (atp == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructureOcpuByWorkloadType", "atp");
+            }
+            this.atp = atp;
             return this;
         }
         public GetAutonomousExadataInfrastructureOcpuByWorkloadType build() {

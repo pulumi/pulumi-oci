@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudBridge.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -113,7 +114,9 @@ public final class GetApplianceImageArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetApplianceImageArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetApplianceImageArgs", "compartmentId");
+            }
             return $;
         }
     }

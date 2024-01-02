@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.outputs.GetListingsListingBanner;
 import com.pulumi.oci.Marketplace.outputs.GetListingsListingDocumentationLink;
 import com.pulumi.oci.Marketplace.outputs.GetListingsListingIcon;
@@ -252,7 +253,10 @@ public final class GetListingsListing {
 
         @CustomType.Setter
         public Builder banners(List<GetListingsListingBanner> banners) {
-            this.banners = Objects.requireNonNull(banners);
+            if (banners == null) {
+              throw new MissingRequiredPropertyException("GetListingsListing", "banners");
+            }
+            this.banners = banners;
             return this;
         }
         public Builder banners(GetListingsListingBanner... banners) {
@@ -260,7 +264,10 @@ public final class GetListingsListing {
         }
         @CustomType.Setter
         public Builder categories(List<String> categories) {
-            this.categories = Objects.requireNonNull(categories);
+            if (categories == null) {
+              throw new MissingRequiredPropertyException("GetListingsListing", "categories");
+            }
+            this.categories = categories;
             return this;
         }
         public Builder categories(String... categories) {
@@ -268,7 +275,10 @@ public final class GetListingsListing {
         }
         @CustomType.Setter
         public Builder compatibleArchitectures(List<String> compatibleArchitectures) {
-            this.compatibleArchitectures = Objects.requireNonNull(compatibleArchitectures);
+            if (compatibleArchitectures == null) {
+              throw new MissingRequiredPropertyException("GetListingsListing", "compatibleArchitectures");
+            }
+            this.compatibleArchitectures = compatibleArchitectures;
             return this;
         }
         public Builder compatibleArchitectures(String... compatibleArchitectures) {
@@ -276,12 +286,18 @@ public final class GetListingsListing {
         }
         @CustomType.Setter
         public Builder defaultPackageVersion(String defaultPackageVersion) {
-            this.defaultPackageVersion = Objects.requireNonNull(defaultPackageVersion);
+            if (defaultPackageVersion == null) {
+              throw new MissingRequiredPropertyException("GetListingsListing", "defaultPackageVersion");
+            }
+            this.defaultPackageVersion = defaultPackageVersion;
             return this;
         }
         @CustomType.Setter
         public Builder documentationLinks(List<GetListingsListingDocumentationLink> documentationLinks) {
-            this.documentationLinks = Objects.requireNonNull(documentationLinks);
+            if (documentationLinks == null) {
+              throw new MissingRequiredPropertyException("GetListingsListing", "documentationLinks");
+            }
+            this.documentationLinks = documentationLinks;
             return this;
         }
         public Builder documentationLinks(GetListingsListingDocumentationLink... documentationLinks) {
@@ -289,7 +305,10 @@ public final class GetListingsListing {
         }
         @CustomType.Setter
         public Builder icons(List<GetListingsListingIcon> icons) {
-            this.icons = Objects.requireNonNull(icons);
+            if (icons == null) {
+              throw new MissingRequiredPropertyException("GetListingsListing", "icons");
+            }
+            this.icons = icons;
             return this;
         }
         public Builder icons(GetListingsListingIcon... icons) {
@@ -297,32 +316,50 @@ public final class GetListingsListing {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetListingsListing", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isFeatured(Boolean isFeatured) {
-            this.isFeatured = Objects.requireNonNull(isFeatured);
+            if (isFeatured == null) {
+              throw new MissingRequiredPropertyException("GetListingsListing", "isFeatured");
+            }
+            this.isFeatured = isFeatured;
             return this;
         }
         @CustomType.Setter
         public Builder listingType(String listingType) {
-            this.listingType = Objects.requireNonNull(listingType);
+            if (listingType == null) {
+              throw new MissingRequiredPropertyException("GetListingsListing", "listingType");
+            }
+            this.listingType = listingType;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetListingsListing", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+            if (packageType == null) {
+              throw new MissingRequiredPropertyException("GetListingsListing", "packageType");
+            }
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
         public Builder pricingTypes(List<String> pricingTypes) {
-            this.pricingTypes = Objects.requireNonNull(pricingTypes);
+            if (pricingTypes == null) {
+              throw new MissingRequiredPropertyException("GetListingsListing", "pricingTypes");
+            }
+            this.pricingTypes = pricingTypes;
             return this;
         }
         public Builder pricingTypes(String... pricingTypes) {
@@ -330,7 +367,10 @@ public final class GetListingsListing {
         }
         @CustomType.Setter
         public Builder publishers(List<GetListingsListingPublisher> publishers) {
-            this.publishers = Objects.requireNonNull(publishers);
+            if (publishers == null) {
+              throw new MissingRequiredPropertyException("GetListingsListing", "publishers");
+            }
+            this.publishers = publishers;
             return this;
         }
         public Builder publishers(GetListingsListingPublisher... publishers) {
@@ -338,7 +378,10 @@ public final class GetListingsListing {
         }
         @CustomType.Setter
         public Builder regions(List<GetListingsListingRegion> regions) {
-            this.regions = Objects.requireNonNull(regions);
+            if (regions == null) {
+              throw new MissingRequiredPropertyException("GetListingsListing", "regions");
+            }
+            this.regions = regions;
             return this;
         }
         public Builder regions(GetListingsListingRegion... regions) {
@@ -346,12 +389,18 @@ public final class GetListingsListing {
         }
         @CustomType.Setter
         public Builder shortDescription(String shortDescription) {
-            this.shortDescription = Objects.requireNonNull(shortDescription);
+            if (shortDescription == null) {
+              throw new MissingRequiredPropertyException("GetListingsListing", "shortDescription");
+            }
+            this.shortDescription = shortDescription;
             return this;
         }
         @CustomType.Setter
         public Builder supportedOperatingSystems(List<GetListingsListingSupportedOperatingSystem> supportedOperatingSystems) {
-            this.supportedOperatingSystems = Objects.requireNonNull(supportedOperatingSystems);
+            if (supportedOperatingSystems == null) {
+              throw new MissingRequiredPropertyException("GetListingsListing", "supportedOperatingSystems");
+            }
+            this.supportedOperatingSystems = supportedOperatingSystems;
             return this;
         }
         public Builder supportedOperatingSystems(GetListingsListingSupportedOperatingSystem... supportedOperatingSystems) {

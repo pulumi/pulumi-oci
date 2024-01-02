@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagementHub;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.inputs.ManagementStationMirrorArgs;
 import com.pulumi.oci.OsManagementHub.inputs.ManagementStationProxyArgs;
 import java.lang.Object;
@@ -339,11 +340,21 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
         }
 
         public ManagementStationArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.hostname = Objects.requireNonNull($.hostname, "expected parameter 'hostname' to be non-null");
-            $.mirror = Objects.requireNonNull($.mirror, "expected parameter 'mirror' to be non-null");
-            $.proxy = Objects.requireNonNull($.proxy, "expected parameter 'proxy' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ManagementStationArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ManagementStationArgs", "displayName");
+            }
+            if ($.hostname == null) {
+                throw new MissingRequiredPropertyException("ManagementStationArgs", "hostname");
+            }
+            if ($.mirror == null) {
+                throw new MissingRequiredPropertyException("ManagementStationArgs", "mirror");
+            }
+            if ($.proxy == null) {
+                throw new MissingRequiredPropertyException("ManagementStationArgs", "proxy");
+            }
             return $;
         }
     }

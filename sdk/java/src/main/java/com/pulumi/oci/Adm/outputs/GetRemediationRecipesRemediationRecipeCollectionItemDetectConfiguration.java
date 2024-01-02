@@ -4,6 +4,7 @@
 package com.pulumi.oci.Adm.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.List;
@@ -86,7 +87,10 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItemDetectCon
 
         @CustomType.Setter
         public Builder exclusions(List<String> exclusions) {
-            this.exclusions = Objects.requireNonNull(exclusions);
+            if (exclusions == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration", "exclusions");
+            }
+            this.exclusions = exclusions;
             return this;
         }
         public Builder exclusions(String... exclusions) {
@@ -94,17 +98,26 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItemDetectCon
         }
         @CustomType.Setter
         public Builder maxPermissibleCvssV2score(Double maxPermissibleCvssV2score) {
-            this.maxPermissibleCvssV2score = Objects.requireNonNull(maxPermissibleCvssV2score);
+            if (maxPermissibleCvssV2score == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration", "maxPermissibleCvssV2score");
+            }
+            this.maxPermissibleCvssV2score = maxPermissibleCvssV2score;
             return this;
         }
         @CustomType.Setter
         public Builder maxPermissibleCvssV3score(Double maxPermissibleCvssV3score) {
-            this.maxPermissibleCvssV3score = Objects.requireNonNull(maxPermissibleCvssV3score);
+            if (maxPermissibleCvssV3score == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration", "maxPermissibleCvssV3score");
+            }
+            this.maxPermissibleCvssV3score = maxPermissibleCvssV3score;
             return this;
         }
         @CustomType.Setter
         public Builder upgradePolicy(String upgradePolicy) {
-            this.upgradePolicy = Objects.requireNonNull(upgradePolicy);
+            if (upgradePolicy == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration", "upgradePolicy");
+            }
+            this.upgradePolicy = upgradePolicy;
             return this;
         }
         public GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration build() {

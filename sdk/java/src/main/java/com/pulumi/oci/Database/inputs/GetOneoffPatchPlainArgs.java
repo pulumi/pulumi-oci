@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetOneoffPatchPlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetOneoffPatchPlainArgs build() {
-            $.oneoffPatchId = Objects.requireNonNull($.oneoffPatchId, "expected parameter 'oneoffPatchId' to be non-null");
+            if ($.oneoffPatchId == null) {
+                throw new MissingRequiredPropertyException("GetOneoffPatchPlainArgs", "oneoffPatchId");
+            }
             return $;
         }
     }

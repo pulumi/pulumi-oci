@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -161,9 +162,15 @@ public final class PipelineStepArtifactArgs extends com.pulumi.resources.Resourc
         }
 
         public PipelineStepArtifactArgs build() {
-            $.artifactContentLength = Objects.requireNonNull($.artifactContentLength, "expected parameter 'artifactContentLength' to be non-null");
-            $.pipelineStepArtifact = Objects.requireNonNull($.pipelineStepArtifact, "expected parameter 'pipelineStepArtifact' to be non-null");
-            $.stepName = Objects.requireNonNull($.stepName, "expected parameter 'stepName' to be non-null");
+            if ($.artifactContentLength == null) {
+                throw new MissingRequiredPropertyException("PipelineStepArtifactArgs", "artifactContentLength");
+            }
+            if ($.pipelineStepArtifact == null) {
+                throw new MissingRequiredPropertyException("PipelineStepArtifactArgs", "pipelineStepArtifact");
+            }
+            if ($.stepName == null) {
+                throw new MissingRequiredPropertyException("PipelineStepArtifactArgs", "stepName");
+            }
             return $;
         }
     }

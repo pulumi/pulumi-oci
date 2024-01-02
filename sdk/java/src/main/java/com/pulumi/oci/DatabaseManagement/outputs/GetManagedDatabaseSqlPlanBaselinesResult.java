@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlPlanBaselinesFilter;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection;
 import java.lang.Boolean;
@@ -167,6 +168,7 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseSqlPlanBaselinesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -175,62 +177,80 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselinesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAccepted(@Nullable Boolean isAccepted) {
+
             this.isAccepted = isAccepted;
             return this;
         }
         @CustomType.Setter
         public Builder isAdaptive(@Nullable Boolean isAdaptive) {
+
             this.isAdaptive = isAdaptive;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
+
             this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isFixed(@Nullable Boolean isFixed) {
+
             this.isFixed = isFixed;
             return this;
         }
         @CustomType.Setter
         public Builder isReproduced(@Nullable Boolean isReproduced) {
+
             this.isReproduced = isReproduced;
             return this;
         }
         @CustomType.Setter
         public Builder limit(@Nullable Integer limit) {
+
             this.limit = limit;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselinesResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder origin(@Nullable String origin) {
+
             this.origin = origin;
             return this;
         }
         @CustomType.Setter
         public Builder planName(@Nullable String planName) {
+
             this.planName = planName;
             return this;
         }
         @CustomType.Setter
         public Builder sqlHandle(@Nullable String sqlHandle) {
+
             this.sqlHandle = sqlHandle;
             return this;
         }
         @CustomType.Setter
         public Builder sqlPlanBaselineCollections(List<GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection> sqlPlanBaselineCollections) {
-            this.sqlPlanBaselineCollections = Objects.requireNonNull(sqlPlanBaselineCollections);
+            if (sqlPlanBaselineCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselinesResult", "sqlPlanBaselineCollections");
+            }
+            this.sqlPlanBaselineCollections = sqlPlanBaselineCollections;
             return this;
         }
         public Builder sqlPlanBaselineCollections(GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection... sqlPlanBaselineCollections) {
@@ -238,6 +258,7 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
         }
         @CustomType.Setter
         public Builder sqlText(@Nullable String sqlText) {
+
             this.sqlText = sqlText;
             return this;
         }

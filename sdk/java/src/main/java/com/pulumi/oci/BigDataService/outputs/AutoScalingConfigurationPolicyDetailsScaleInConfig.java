@@ -73,16 +73,19 @@ public final class AutoScalingConfigurationPolicyDetailsScaleInConfig {
 
         @CustomType.Setter
         public Builder metric(@Nullable AutoScalingConfigurationPolicyDetailsScaleInConfigMetric metric) {
+
             this.metric = metric;
             return this;
         }
         @CustomType.Setter
         public Builder minNodeCount(@Nullable Integer minNodeCount) {
+
             this.minNodeCount = minNodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder stepSize(@Nullable Integer stepSize) {
+
             this.stepSize = stepSize;
             return this;
         }

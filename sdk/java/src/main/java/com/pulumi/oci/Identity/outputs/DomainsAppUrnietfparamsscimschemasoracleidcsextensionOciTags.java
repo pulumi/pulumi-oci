@@ -133,6 +133,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags 
 
         @CustomType.Setter
         public Builder definedTags(@Nullable List<DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag> definedTags) {
+
             this.definedTags = definedTags;
             return this;
         }
@@ -141,6 +142,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags 
         }
         @CustomType.Setter
         public Builder freeformTags(@Nullable List<DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag> freeformTags) {
+
             this.freeformTags = freeformTags;
             return this;
         }
@@ -149,6 +151,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags 
         }
         @CustomType.Setter
         public Builder tagSlug(@Nullable String tagSlug) {
+
             this.tagSlug = tagSlug;
             return this;
         }

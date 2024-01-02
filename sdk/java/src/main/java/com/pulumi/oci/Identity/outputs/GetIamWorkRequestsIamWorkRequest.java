@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetIamWorkRequestsIamWorkRequestResource;
 import java.lang.Double;
 import java.lang.String;
@@ -157,27 +158,42 @@ public final class GetIamWorkRequestsIamWorkRequest {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestsIamWorkRequest", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestsIamWorkRequest", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder operationType(String operationType) {
-            this.operationType = Objects.requireNonNull(operationType);
+            if (operationType == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestsIamWorkRequest", "operationType");
+            }
+            this.operationType = operationType;
             return this;
         }
         @CustomType.Setter
         public Builder percentComplete(Double percentComplete) {
-            this.percentComplete = Objects.requireNonNull(percentComplete);
+            if (percentComplete == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestsIamWorkRequest", "percentComplete");
+            }
+            this.percentComplete = percentComplete;
             return this;
         }
         @CustomType.Setter
         public Builder resources(List<GetIamWorkRequestsIamWorkRequestResource> resources) {
-            this.resources = Objects.requireNonNull(resources);
+            if (resources == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestsIamWorkRequest", "resources");
+            }
+            this.resources = resources;
             return this;
         }
         public Builder resources(GetIamWorkRequestsIamWorkRequestResource... resources) {
@@ -185,22 +201,34 @@ public final class GetIamWorkRequestsIamWorkRequest {
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestsIamWorkRequest", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder timeAccepted(String timeAccepted) {
-            this.timeAccepted = Objects.requireNonNull(timeAccepted);
+            if (timeAccepted == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestsIamWorkRequest", "timeAccepted");
+            }
+            this.timeAccepted = timeAccepted;
             return this;
         }
         @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+            if (timeFinished == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestsIamWorkRequest", "timeFinished");
+            }
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestsIamWorkRequest", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetIamWorkRequestsIamWorkRequest build() {

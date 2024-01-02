@@ -4,6 +4,7 @@
 package com.pulumi.oci.Bastion.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetSessionPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetSessionPlainArgs build() {
-            $.sessionId = Objects.requireNonNull($.sessionId, "expected parameter 'sessionId' to be non-null");
+            if ($.sessionId == null) {
+                throw new MissingRequiredPropertyException("GetSessionPlainArgs", "sessionId");
+            }
             return $;
         }
     }

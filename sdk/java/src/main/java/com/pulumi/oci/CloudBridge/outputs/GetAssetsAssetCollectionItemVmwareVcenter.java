@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetAssetsAssetCollectionItemVmwareVcenter {
 
         @CustomType.Setter
         public Builder dataCenter(String dataCenter) {
-            this.dataCenter = Objects.requireNonNull(dataCenter);
+            if (dataCenter == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemVmwareVcenter", "dataCenter");
+            }
+            this.dataCenter = dataCenter;
             return this;
         }
         @CustomType.Setter
         public Builder vcenterKey(String vcenterKey) {
-            this.vcenterKey = Objects.requireNonNull(vcenterKey);
+            if (vcenterKey == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemVmwareVcenter", "vcenterKey");
+            }
+            this.vcenterKey = vcenterKey;
             return this;
         }
         @CustomType.Setter
         public Builder vcenterVersion(String vcenterVersion) {
-            this.vcenterVersion = Objects.requireNonNull(vcenterVersion);
+            if (vcenterVersion == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemVmwareVcenter", "vcenterVersion");
+            }
+            this.vcenterVersion = vcenterVersion;
             return this;
         }
         public GetAssetsAssetCollectionItemVmwareVcenter build() {

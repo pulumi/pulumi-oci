@@ -102,11 +102,13 @@ public final class DomainsIdentitySettingPosixGid {
 
         @CustomType.Setter
         public Builder manualAssignmentEndsAt(@Nullable Integer manualAssignmentEndsAt) {
+
             this.manualAssignmentEndsAt = manualAssignmentEndsAt;
             return this;
         }
         @CustomType.Setter
         public Builder manualAssignmentStartsFrom(@Nullable Integer manualAssignmentStartsFrom) {
+
             this.manualAssignmentStartsFrom = manualAssignmentStartsFrom;
             return this;
         }

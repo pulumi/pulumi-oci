@@ -5,6 +5,7 @@ package com.pulumi.oci.Marketplace.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.inputs.PublicationPackageDetailsEulaArgs;
 import com.pulumi.oci.Marketplace.inputs.PublicationPackageDetailsOperatingSystemArgs;
 import java.lang.String;
@@ -237,10 +238,18 @@ public final class PublicationPackageDetailsArgs extends com.pulumi.resources.Re
         }
 
         public PublicationPackageDetailsArgs build() {
-            $.eulas = Objects.requireNonNull($.eulas, "expected parameter 'eulas' to be non-null");
-            $.operatingSystem = Objects.requireNonNull($.operatingSystem, "expected parameter 'operatingSystem' to be non-null");
-            $.packageType = Objects.requireNonNull($.packageType, "expected parameter 'packageType' to be non-null");
-            $.packageVersion = Objects.requireNonNull($.packageVersion, "expected parameter 'packageVersion' to be non-null");
+            if ($.eulas == null) {
+                throw new MissingRequiredPropertyException("PublicationPackageDetailsArgs", "eulas");
+            }
+            if ($.operatingSystem == null) {
+                throw new MissingRequiredPropertyException("PublicationPackageDetailsArgs", "operatingSystem");
+            }
+            if ($.packageType == null) {
+                throw new MissingRequiredPropertyException("PublicationPackageDetailsArgs", "packageType");
+            }
+            if ($.packageVersion == null) {
+                throw new MissingRequiredPropertyException("PublicationPackageDetailsArgs", "packageVersion");
+            }
             return $;
         }
     }

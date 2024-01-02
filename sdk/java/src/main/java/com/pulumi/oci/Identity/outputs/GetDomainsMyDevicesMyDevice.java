@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyDevicesMyDeviceAdditionalAttribute;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyDevicesMyDeviceAuthenticationFactor;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyDevicesMyDeviceIdcsCreatedBy;
@@ -663,7 +664,10 @@ public final class GetDomainsMyDevicesMyDevice {
 
         @CustomType.Setter
         public Builder additionalAttributes(List<GetDomainsMyDevicesMyDeviceAdditionalAttribute> additionalAttributes) {
-            this.additionalAttributes = Objects.requireNonNull(additionalAttributes);
+            if (additionalAttributes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "additionalAttributes");
+            }
+            this.additionalAttributes = additionalAttributes;
             return this;
         }
         public Builder additionalAttributes(GetDomainsMyDevicesMyDeviceAdditionalAttribute... additionalAttributes) {
@@ -671,12 +675,18 @@ public final class GetDomainsMyDevicesMyDevice {
         }
         @CustomType.Setter
         public Builder appVersion(String appVersion) {
-            this.appVersion = Objects.requireNonNull(appVersion);
+            if (appVersion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "appVersion");
+            }
+            this.appVersion = appVersion;
             return this;
         }
         @CustomType.Setter
         public Builder attributeSets(List<String> attributeSets) {
-            this.attributeSets = Objects.requireNonNull(attributeSets);
+            if (attributeSets == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "attributeSets");
+            }
+            this.attributeSets = attributeSets;
             return this;
         }
         public Builder attributeSets(String... attributeSets) {
@@ -684,12 +694,18 @@ public final class GetDomainsMyDevicesMyDevice {
         }
         @CustomType.Setter
         public Builder attributes(String attributes) {
-            this.attributes = Objects.requireNonNull(attributes);
+            if (attributes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "attributes");
+            }
+            this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authenticationFactors(List<GetDomainsMyDevicesMyDeviceAuthenticationFactor> authenticationFactors) {
-            this.authenticationFactors = Objects.requireNonNull(authenticationFactors);
+            if (authenticationFactors == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "authenticationFactors");
+            }
+            this.authenticationFactors = authenticationFactors;
             return this;
         }
         public Builder authenticationFactors(GetDomainsMyDevicesMyDeviceAuthenticationFactor... authenticationFactors) {
@@ -697,72 +713,114 @@ public final class GetDomainsMyDevicesMyDevice {
         }
         @CustomType.Setter
         public Builder authenticationMethod(String authenticationMethod) {
-            this.authenticationMethod = Objects.requireNonNull(authenticationMethod);
+            if (authenticationMethod == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "authenticationMethod");
+            }
+            this.authenticationMethod = authenticationMethod;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(String authorization) {
-            this.authorization = Objects.requireNonNull(authorization);
+            if (authorization == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "authorization");
+            }
+            this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder basePublicKey(String basePublicKey) {
-            this.basePublicKey = Objects.requireNonNull(basePublicKey);
+            if (basePublicKey == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "basePublicKey");
+            }
+            this.basePublicKey = basePublicKey;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder countryCode(String countryCode) {
-            this.countryCode = Objects.requireNonNull(countryCode);
+            if (countryCode == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "countryCode");
+            }
+            this.countryCode = countryCode;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder deviceType(String deviceType) {
-            this.deviceType = Objects.requireNonNull(deviceType);
+            if (deviceType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "deviceType");
+            }
+            this.deviceType = deviceType;
             return this;
         }
         @CustomType.Setter
         public Builder deviceUuid(String deviceUuid) {
-            this.deviceUuid = Objects.requireNonNull(deviceUuid);
+            if (deviceUuid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "deviceUuid");
+            }
+            this.deviceUuid = deviceUuid;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder expiresOn(Integer expiresOn) {
-            this.expiresOn = Objects.requireNonNull(expiresOn);
+            if (expiresOn == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "expiresOn");
+            }
+            this.expiresOn = expiresOn;
             return this;
         }
         @CustomType.Setter
         public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+            if (externalId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "externalId");
+            }
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsMyDevicesMyDeviceIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsMyDevicesMyDeviceIdcsCreatedBy... idcsCreatedBies) {
@@ -770,12 +828,18 @@ public final class GetDomainsMyDevicesMyDevice {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsMyDevicesMyDeviceIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsMyDevicesMyDeviceIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -783,12 +847,18 @@ public final class GetDomainsMyDevicesMyDevice {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -796,27 +866,42 @@ public final class GetDomainsMyDevicesMyDevice {
         }
         @CustomType.Setter
         public Builder isAccRecEnabled(Boolean isAccRecEnabled) {
-            this.isAccRecEnabled = Objects.requireNonNull(isAccRecEnabled);
+            if (isAccRecEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "isAccRecEnabled");
+            }
+            this.isAccRecEnabled = isAccRecEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isCompliant(Boolean isCompliant) {
-            this.isCompliant = Objects.requireNonNull(isCompliant);
+            if (isCompliant == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "isCompliant");
+            }
+            this.isCompliant = isCompliant;
             return this;
         }
         @CustomType.Setter
         public Builder lastSyncTime(String lastSyncTime) {
-            this.lastSyncTime = Objects.requireNonNull(lastSyncTime);
+            if (lastSyncTime == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "lastSyncTime");
+            }
+            this.lastSyncTime = lastSyncTime;
             return this;
         }
         @CustomType.Setter
         public Builder lastValidatedTime(String lastValidatedTime) {
-            this.lastValidatedTime = Objects.requireNonNull(lastValidatedTime);
+            if (lastValidatedTime == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "lastValidatedTime");
+            }
+            this.lastValidatedTime = lastValidatedTime;
             return this;
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsMyDevicesMyDeviceMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsMyDevicesMyDeviceMeta... metas) {
@@ -824,12 +909,18 @@ public final class GetDomainsMyDevicesMyDevice {
         }
         @CustomType.Setter
         public Builder myDeviceId(String myDeviceId) {
-            this.myDeviceId = Objects.requireNonNull(myDeviceId);
+            if (myDeviceId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "myDeviceId");
+            }
+            this.myDeviceId = myDeviceId;
             return this;
         }
         @CustomType.Setter
         public Builder nonCompliances(List<GetDomainsMyDevicesMyDeviceNonCompliance> nonCompliances) {
-            this.nonCompliances = Objects.requireNonNull(nonCompliances);
+            if (nonCompliances == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "nonCompliances");
+            }
+            this.nonCompliances = nonCompliances;
             return this;
         }
         public Builder nonCompliances(GetDomainsMyDevicesMyDeviceNonCompliance... nonCompliances) {
@@ -837,27 +928,42 @@ public final class GetDomainsMyDevicesMyDevice {
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder packageId(String packageId) {
-            this.packageId = Objects.requireNonNull(packageId);
+            if (packageId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "packageId");
+            }
+            this.packageId = packageId;
             return this;
         }
         @CustomType.Setter
         public Builder phoneNumber(String phoneNumber) {
-            this.phoneNumber = Objects.requireNonNull(phoneNumber);
+            if (phoneNumber == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "phoneNumber");
+            }
+            this.phoneNumber = phoneNumber;
             return this;
         }
         @CustomType.Setter
         public Builder platform(String platform) {
-            this.platform = Objects.requireNonNull(platform);
+            if (platform == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "platform");
+            }
+            this.platform = platform;
             return this;
         }
         @CustomType.Setter
         public Builder pushNotificationTargets(List<GetDomainsMyDevicesMyDevicePushNotificationTarget> pushNotificationTargets) {
-            this.pushNotificationTargets = Objects.requireNonNull(pushNotificationTargets);
+            if (pushNotificationTargets == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "pushNotificationTargets");
+            }
+            this.pushNotificationTargets = pushNotificationTargets;
             return this;
         }
         public Builder pushNotificationTargets(GetDomainsMyDevicesMyDevicePushNotificationTarget... pushNotificationTargets) {
@@ -865,17 +971,26 @@ public final class GetDomainsMyDevicesMyDevice {
         }
         @CustomType.Setter
         public Builder reason(String reason) {
-            this.reason = Objects.requireNonNull(reason);
+            if (reason == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "reason");
+            }
+            this.reason = reason;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(String resourceTypeSchemaVersion) {
-            this.resourceTypeSchemaVersion = Objects.requireNonNull(resourceTypeSchemaVersion);
+            if (resourceTypeSchemaVersion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "resourceTypeSchemaVersion");
+            }
+            this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -883,22 +998,34 @@ public final class GetDomainsMyDevicesMyDevice {
         }
         @CustomType.Setter
         public Builder seed(String seed) {
-            this.seed = Objects.requireNonNull(seed);
+            if (seed == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "seed");
+            }
+            this.seed = seed;
             return this;
         }
         @CustomType.Setter
         public Builder seedDekId(String seedDekId) {
-            this.seedDekId = Objects.requireNonNull(seedDekId);
+            if (seedDekId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "seedDekId");
+            }
+            this.seedDekId = seedDekId;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsMyDevicesMyDeviceTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsMyDevicesMyDeviceTag... tags) {
@@ -906,12 +1033,18 @@ public final class GetDomainsMyDevicesMyDevice {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder thirdPartyFactors(List<GetDomainsMyDevicesMyDeviceThirdPartyFactor> thirdPartyFactors) {
-            this.thirdPartyFactors = Objects.requireNonNull(thirdPartyFactors);
+            if (thirdPartyFactors == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "thirdPartyFactors");
+            }
+            this.thirdPartyFactors = thirdPartyFactors;
             return this;
         }
         public Builder thirdPartyFactors(GetDomainsMyDevicesMyDeviceThirdPartyFactor... thirdPartyFactors) {
@@ -919,7 +1052,10 @@ public final class GetDomainsMyDevicesMyDevice {
         }
         @CustomType.Setter
         public Builder users(List<GetDomainsMyDevicesMyDeviceUser> users) {
-            this.users = Objects.requireNonNull(users);
+            if (users == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyDevicesMyDevice", "users");
+            }
+            this.users = users;
             return this;
         }
         public Builder users(GetDomainsMyDevicesMyDeviceUser... users) {

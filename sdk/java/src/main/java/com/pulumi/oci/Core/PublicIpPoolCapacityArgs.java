@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -160,9 +161,15 @@ public final class PublicIpPoolCapacityArgs extends com.pulumi.resources.Resourc
         }
 
         public PublicIpPoolCapacityArgs build() {
-            $.byoipId = Objects.requireNonNull($.byoipId, "expected parameter 'byoipId' to be non-null");
-            $.cidrBlock = Objects.requireNonNull($.cidrBlock, "expected parameter 'cidrBlock' to be non-null");
-            $.publicIpPoolId = Objects.requireNonNull($.publicIpPoolId, "expected parameter 'publicIpPoolId' to be non-null");
+            if ($.byoipId == null) {
+                throw new MissingRequiredPropertyException("PublicIpPoolCapacityArgs", "byoipId");
+            }
+            if ($.cidrBlock == null) {
+                throw new MissingRequiredPropertyException("PublicIpPoolCapacityArgs", "cidrBlock");
+            }
+            if ($.publicIpPoolId == null) {
+                throw new MissingRequiredPropertyException("PublicIpPoolCapacityArgs", "publicIpPoolId");
+            }
             return $;
         }
     }

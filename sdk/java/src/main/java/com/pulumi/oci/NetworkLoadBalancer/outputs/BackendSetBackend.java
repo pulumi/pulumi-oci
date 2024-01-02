@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -152,41 +153,51 @@ public final class BackendSetBackend {
 
         @CustomType.Setter
         public Builder ipAddress(@Nullable String ipAddress) {
+
             this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder isBackup(@Nullable Boolean isBackup) {
+
             this.isBackup = isBackup;
             return this;
         }
         @CustomType.Setter
         public Builder isDrain(@Nullable Boolean isDrain) {
+
             this.isDrain = isDrain;
             return this;
         }
         @CustomType.Setter
         public Builder isOffline(@Nullable Boolean isOffline) {
+
             this.isOffline = isOffline;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("BackendSetBackend", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
+
             this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder weight(@Nullable Integer weight) {
+
             this.weight = weight;
             return this;
         }

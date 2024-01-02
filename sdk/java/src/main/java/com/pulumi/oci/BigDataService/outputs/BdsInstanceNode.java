@@ -275,6 +275,7 @@ public final class BdsInstanceNode {
 
         @CustomType.Setter
         public Builder attachedBlockVolumes(@Nullable List<BdsInstanceNodeAttachedBlockVolume> attachedBlockVolumes) {
+
             this.attachedBlockVolumes = attachedBlockVolumes;
             return this;
         }
@@ -283,81 +284,97 @@ public final class BdsInstanceNode {
         }
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomain(@Nullable String faultDomain) {
+
             this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder hostname(@Nullable String hostname) {
+
             this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder imageId(@Nullable String imageId) {
+
             this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder instanceId(@Nullable String instanceId) {
+
             this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddress(@Nullable String ipAddress) {
+
             this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder memoryInGbs(@Nullable Integer memoryInGbs) {
+
             this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder nodeType(@Nullable String nodeType) {
+
             this.nodeType = nodeType;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(@Nullable Integer ocpus) {
+
             this.ocpus = ocpus;
             return this;
         }
         @CustomType.Setter
         public Builder shape(@Nullable String shape) {
+
             this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder sshFingerprint(@Nullable String sshFingerprint) {
+
             this.sshFingerprint = sshFingerprint;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
+
             this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeMaintenanceRebootDue(@Nullable String timeMaintenanceRebootDue) {
+
             this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
             return this;
         }

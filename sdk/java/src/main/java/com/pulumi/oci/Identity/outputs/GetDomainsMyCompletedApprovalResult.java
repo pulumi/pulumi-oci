@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyCompletedApprovalIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyCompletedApprovalIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyCompletedApprovalMeta;
@@ -382,37 +383,56 @@ public final class GetDomainsMyCompletedApprovalResult {
 
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder expires(String expires) {
-            this.expires = Objects.requireNonNull(expires);
+            if (expires == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "expires");
+            }
+            this.expires = expires;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsMyCompletedApprovalIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsMyCompletedApprovalIdcsCreatedBy... idcsCreatedBies) {
@@ -420,12 +440,18 @@ public final class GetDomainsMyCompletedApprovalResult {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsMyCompletedApprovalIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsMyCompletedApprovalIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -433,12 +459,18 @@ public final class GetDomainsMyCompletedApprovalResult {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -446,12 +478,18 @@ public final class GetDomainsMyCompletedApprovalResult {
         }
         @CustomType.Setter
         public Builder justification(String justification) {
-            this.justification = Objects.requireNonNull(justification);
+            if (justification == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "justification");
+            }
+            this.justification = justification;
             return this;
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsMyCompletedApprovalMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsMyCompletedApprovalMeta... metas) {
@@ -459,57 +497,88 @@ public final class GetDomainsMyCompletedApprovalResult {
         }
         @CustomType.Setter
         public Builder myCompletedApprovalId(String myCompletedApprovalId) {
-            this.myCompletedApprovalId = Objects.requireNonNull(myCompletedApprovalId);
+            if (myCompletedApprovalId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "myCompletedApprovalId");
+            }
+            this.myCompletedApprovalId = myCompletedApprovalId;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder requestCreatedTime(String requestCreatedTime) {
-            this.requestCreatedTime = Objects.requireNonNull(requestCreatedTime);
+            if (requestCreatedTime == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "requestCreatedTime");
+            }
+            this.requestCreatedTime = requestCreatedTime;
             return this;
         }
         @CustomType.Setter
         public Builder requestDetails(String requestDetails) {
-            this.requestDetails = Objects.requireNonNull(requestDetails);
+            if (requestDetails == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "requestDetails");
+            }
+            this.requestDetails = requestDetails;
             return this;
         }
         @CustomType.Setter
         public Builder requestId(String requestId) {
-            this.requestId = Objects.requireNonNull(requestId);
+            if (requestId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "requestId");
+            }
+            this.requestId = requestId;
             return this;
         }
         @CustomType.Setter
         public Builder requestOcid(String requestOcid) {
-            this.requestOcid = Objects.requireNonNull(requestOcid);
+            if (requestOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "requestOcid");
+            }
+            this.requestOcid = requestOcid;
             return this;
         }
         @CustomType.Setter
         public Builder resourceDisplayName(String resourceDisplayName) {
-            this.resourceDisplayName = Objects.requireNonNull(resourceDisplayName);
+            if (resourceDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "resourceDisplayName");
+            }
+            this.resourceDisplayName = resourceDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder responseTime(String responseTime) {
-            this.responseTime = Objects.requireNonNull(responseTime);
+            if (responseTime == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "responseTime");
+            }
+            this.responseTime = responseTime;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -517,12 +586,18 @@ public final class GetDomainsMyCompletedApprovalResult {
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsMyCompletedApprovalTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsMyCompletedApprovalTag... tags) {
@@ -530,7 +605,10 @@ public final class GetDomainsMyCompletedApprovalResult {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalResult", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         public GetDomainsMyCompletedApprovalResult build() {

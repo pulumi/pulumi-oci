@@ -118,6 +118,7 @@ public final class ModelEvaluationResult {
 
         @CustomType.Setter
         public Builder classMetrics(@Nullable List<ModelEvaluationResultClassMetric> classMetrics) {
+
             this.classMetrics = classMetrics;
             return this;
         }
@@ -126,11 +127,13 @@ public final class ModelEvaluationResult {
         }
         @CustomType.Setter
         public Builder confusionMatrix(@Nullable String confusionMatrix) {
+
             this.confusionMatrix = confusionMatrix;
             return this;
         }
         @CustomType.Setter
         public Builder entityMetrics(@Nullable List<ModelEvaluationResultEntityMetric> entityMetrics) {
+
             this.entityMetrics = entityMetrics;
             return this;
         }
@@ -139,6 +142,7 @@ public final class ModelEvaluationResult {
         }
         @CustomType.Setter
         public Builder labels(@Nullable List<String> labels) {
+
             this.labels = labels;
             return this;
         }
@@ -147,6 +151,7 @@ public final class ModelEvaluationResult {
         }
         @CustomType.Setter
         public Builder metrics(@Nullable List<ModelEvaluationResultMetric> metrics) {
+
             this.metrics = metrics;
             return this;
         }
@@ -155,6 +160,7 @@ public final class ModelEvaluationResult {
         }
         @CustomType.Setter
         public Builder modelType(@Nullable String modelType) {
+
             this.modelType = modelType;
             return this;
         }

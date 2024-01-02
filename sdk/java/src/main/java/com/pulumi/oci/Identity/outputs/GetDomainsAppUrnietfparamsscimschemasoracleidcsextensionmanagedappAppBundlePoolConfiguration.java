@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
 
         @CustomType.Setter
         public Builder maxIdle(Integer maxIdle) {
-            this.maxIdle = Objects.requireNonNull(maxIdle);
+            if (maxIdle == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration", "maxIdle");
+            }
+            this.maxIdle = maxIdle;
             return this;
         }
         @CustomType.Setter
         public Builder maxObjects(Integer maxObjects) {
-            this.maxObjects = Objects.requireNonNull(maxObjects);
+            if (maxObjects == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration", "maxObjects");
+            }
+            this.maxObjects = maxObjects;
             return this;
         }
         @CustomType.Setter
         public Builder maxWait(Integer maxWait) {
-            this.maxWait = Objects.requireNonNull(maxWait);
+            if (maxWait == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration", "maxWait");
+            }
+            this.maxWait = maxWait;
             return this;
         }
         @CustomType.Setter
         public Builder minEvictableIdleTimeMillis(Integer minEvictableIdleTimeMillis) {
-            this.minEvictableIdleTimeMillis = Objects.requireNonNull(minEvictableIdleTimeMillis);
+            if (minEvictableIdleTimeMillis == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration", "minEvictableIdleTimeMillis");
+            }
+            this.minEvictableIdleTimeMillis = minEvictableIdleTimeMillis;
             return this;
         }
         @CustomType.Setter
         public Builder minIdle(Integer minIdle) {
-            this.minIdle = Objects.requireNonNull(minIdle);
+            if (minIdle == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration", "minIdle");
+            }
+            this.minIdle = minIdle;
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration build() {

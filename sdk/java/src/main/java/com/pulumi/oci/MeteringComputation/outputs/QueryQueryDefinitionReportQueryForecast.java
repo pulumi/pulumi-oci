@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -72,16 +73,21 @@ public final class QueryQueryDefinitionReportQueryForecast {
 
         @CustomType.Setter
         public Builder forecastType(@Nullable String forecastType) {
+
             this.forecastType = forecastType;
             return this;
         }
         @CustomType.Setter
         public Builder timeForecastEnded(String timeForecastEnded) {
-            this.timeForecastEnded = Objects.requireNonNull(timeForecastEnded);
+            if (timeForecastEnded == null) {
+              throw new MissingRequiredPropertyException("QueryQueryDefinitionReportQueryForecast", "timeForecastEnded");
+            }
+            this.timeForecastEnded = timeForecastEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeForecastStarted(@Nullable String timeForecastStarted) {
+
             this.timeForecastStarted = timeForecastStarted;
             return this;
         }

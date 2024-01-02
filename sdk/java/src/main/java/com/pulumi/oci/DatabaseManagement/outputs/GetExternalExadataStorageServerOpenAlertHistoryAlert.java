@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetExternalExadataStorageServerOpenAlertHistoryAlert {
 
         @CustomType.Setter
         public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+            if (message == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerOpenAlertHistoryAlert", "message");
+            }
+            this.message = message;
             return this;
         }
         @CustomType.Setter
         public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+            if (severity == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerOpenAlertHistoryAlert", "severity");
+            }
+            this.severity = severity;
             return this;
         }
         @CustomType.Setter
         public Builder timeStartAt(String timeStartAt) {
-            this.timeStartAt = Objects.requireNonNull(timeStartAt);
+            if (timeStartAt == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerOpenAlertHistoryAlert", "timeStartAt");
+            }
+            this.timeStartAt = timeStartAt;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerOpenAlertHistoryAlert", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetExternalExadataStorageServerOpenAlertHistoryAlert build() {

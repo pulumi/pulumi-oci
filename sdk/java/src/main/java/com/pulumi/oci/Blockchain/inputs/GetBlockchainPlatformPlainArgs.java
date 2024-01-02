@@ -4,6 +4,7 @@
 package com.pulumi.oci.Blockchain.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetBlockchainPlatformPlainArgs extends com.pulumi.resources.I
         }
 
         public GetBlockchainPlatformPlainArgs build() {
-            $.blockchainPlatformId = Objects.requireNonNull($.blockchainPlatformId, "expected parameter 'blockchainPlatformId' to be non-null");
+            if ($.blockchainPlatformId == null) {
+                throw new MissingRequiredPropertyException("GetBlockchainPlatformPlainArgs", "blockchainPlatformId");
+            }
             return $;
         }
     }

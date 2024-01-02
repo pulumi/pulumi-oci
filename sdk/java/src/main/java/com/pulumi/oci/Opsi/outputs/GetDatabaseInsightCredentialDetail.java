@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -112,32 +113,50 @@ public final class GetDatabaseInsightCredentialDetail {
 
         @CustomType.Setter
         public Builder credentialSourceName(String credentialSourceName) {
-            this.credentialSourceName = Objects.requireNonNull(credentialSourceName);
+            if (credentialSourceName == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightCredentialDetail", "credentialSourceName");
+            }
+            this.credentialSourceName = credentialSourceName;
             return this;
         }
         @CustomType.Setter
         public Builder credentialType(String credentialType) {
-            this.credentialType = Objects.requireNonNull(credentialType);
+            if (credentialType == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightCredentialDetail", "credentialType");
+            }
+            this.credentialType = credentialType;
             return this;
         }
         @CustomType.Setter
         public Builder passwordSecretId(String passwordSecretId) {
-            this.passwordSecretId = Objects.requireNonNull(passwordSecretId);
+            if (passwordSecretId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightCredentialDetail", "passwordSecretId");
+            }
+            this.passwordSecretId = passwordSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+            if (role == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightCredentialDetail", "role");
+            }
+            this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+            if (userName == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightCredentialDetail", "userName");
+            }
+            this.userName = userName;
             return this;
         }
         @CustomType.Setter
         public Builder walletSecretId(String walletSecretId) {
-            this.walletSecretId = Objects.requireNonNull(walletSecretId);
+            if (walletSecretId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightCredentialDetail", "walletSecretId");
+            }
+            this.walletSecretId = walletSecretId;
             return this;
         }
         public GetDatabaseInsightCredentialDetail build() {

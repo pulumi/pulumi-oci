@@ -79,16 +79,19 @@ public final class ScriptParameterScriptParameter {
 
         @CustomType.Setter
         public Builder isSecret(@Nullable Boolean isSecret) {
+
             this.isSecret = isSecret;
             return this;
         }
         @CustomType.Setter
         public Builder paramName(@Nullable String paramName) {
+
             this.paramName = paramName;
             return this;
         }
         @CustomType.Setter
         public Builder paramValue(@Nullable String paramValue) {
+
             this.paramValue = paramValue;
             return this;
         }

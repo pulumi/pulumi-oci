@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetEkmsPrivateEndpointArgs extends com.pulumi.resources.Invok
         }
 
         public GetEkmsPrivateEndpointArgs build() {
-            $.ekmsPrivateEndpointId = Objects.requireNonNull($.ekmsPrivateEndpointId, "expected parameter 'ekmsPrivateEndpointId' to be non-null");
+            if ($.ekmsPrivateEndpointId == null) {
+                throw new MissingRequiredPropertyException("GetEkmsPrivateEndpointArgs", "ekmsPrivateEndpointId");
+            }
             return $;
         }
     }

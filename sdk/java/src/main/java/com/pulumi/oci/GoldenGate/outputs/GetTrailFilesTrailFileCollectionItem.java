@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
@@ -157,7 +158,10 @@ public final class GetTrailFilesTrailFileCollectionItem {
 
         @CustomType.Setter
         public Builder consumers(List<String> consumers) {
-            this.consumers = Objects.requireNonNull(consumers);
+            if (consumers == null) {
+              throw new MissingRequiredPropertyException("GetTrailFilesTrailFileCollectionItem", "consumers");
+            }
+            this.consumers = consumers;
             return this;
         }
         public Builder consumers(String... consumers) {
@@ -165,42 +169,66 @@ public final class GetTrailFilesTrailFileCollectionItem {
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetTrailFilesTrailFileCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder maxSequenceNumber(String maxSequenceNumber) {
-            this.maxSequenceNumber = Objects.requireNonNull(maxSequenceNumber);
+            if (maxSequenceNumber == null) {
+              throw new MissingRequiredPropertyException("GetTrailFilesTrailFileCollectionItem", "maxSequenceNumber");
+            }
+            this.maxSequenceNumber = maxSequenceNumber;
             return this;
         }
         @CustomType.Setter
         public Builder minSequenceNumber(String minSequenceNumber) {
-            this.minSequenceNumber = Objects.requireNonNull(minSequenceNumber);
+            if (minSequenceNumber == null) {
+              throw new MissingRequiredPropertyException("GetTrailFilesTrailFileCollectionItem", "minSequenceNumber");
+            }
+            this.minSequenceNumber = minSequenceNumber;
             return this;
         }
         @CustomType.Setter
         public Builder numberOfSequences(Integer numberOfSequences) {
-            this.numberOfSequences = Objects.requireNonNull(numberOfSequences);
+            if (numberOfSequences == null) {
+              throw new MissingRequiredPropertyException("GetTrailFilesTrailFileCollectionItem", "numberOfSequences");
+            }
+            this.numberOfSequences = numberOfSequences;
             return this;
         }
         @CustomType.Setter
         public Builder producer(String producer) {
-            this.producer = Objects.requireNonNull(producer);
+            if (producer == null) {
+              throw new MissingRequiredPropertyException("GetTrailFilesTrailFileCollectionItem", "producer");
+            }
+            this.producer = producer;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInBytes(Double sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+            if (sizeInBytes == null) {
+              throw new MissingRequiredPropertyException("GetTrailFilesTrailFileCollectionItem", "sizeInBytes");
+            }
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastUpdated(String timeLastUpdated) {
-            this.timeLastUpdated = Objects.requireNonNull(timeLastUpdated);
+            if (timeLastUpdated == null) {
+              throw new MissingRequiredPropertyException("GetTrailFilesTrailFileCollectionItem", "timeLastUpdated");
+            }
+            this.timeLastUpdated = timeLastUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder trailFileId(String trailFileId) {
-            this.trailFileId = Objects.requireNonNull(trailFileId);
+            if (trailFileId == null) {
+              throw new MissingRequiredPropertyException("GetTrailFilesTrailFileCollectionItem", "trailFileId");
+            }
+            this.trailFileId = trailFileId;
             return this;
         }
         public GetTrailFilesTrailFileCollectionItem build() {

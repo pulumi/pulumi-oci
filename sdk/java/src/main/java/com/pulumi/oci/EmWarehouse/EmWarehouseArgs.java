@@ -5,6 +5,7 @@ package com.pulumi.oci.EmWarehouse;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -275,9 +276,15 @@ public final class EmWarehouseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public EmWarehouseArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.emBridgeId = Objects.requireNonNull($.emBridgeId, "expected parameter 'emBridgeId' to be non-null");
-            $.operationsInsightsWarehouseId = Objects.requireNonNull($.operationsInsightsWarehouseId, "expected parameter 'operationsInsightsWarehouseId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("EmWarehouseArgs", "compartmentId");
+            }
+            if ($.emBridgeId == null) {
+                throw new MissingRequiredPropertyException("EmWarehouseArgs", "emBridgeId");
+            }
+            if ($.operationsInsightsWarehouseId == null) {
+                throw new MissingRequiredPropertyException("EmWarehouseArgs", "operationsInsightsWarehouseId");
+            }
             return $;
         }
     }

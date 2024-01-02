@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -201,8 +202,12 @@ public final class InstanceConsoleConnectionArgs extends com.pulumi.resources.Re
         }
 
         public InstanceConsoleConnectionArgs build() {
-            $.instanceId = Objects.requireNonNull($.instanceId, "expected parameter 'instanceId' to be non-null");
-            $.publicKey = Objects.requireNonNull($.publicKey, "expected parameter 'publicKey' to be non-null");
+            if ($.instanceId == null) {
+                throw new MissingRequiredPropertyException("InstanceConsoleConnectionArgs", "instanceId");
+            }
+            if ($.publicKey == null) {
+                throw new MissingRequiredPropertyException("InstanceConsoleConnectionArgs", "publicKey");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelSensitiveSchemasFilter;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection;
 import java.lang.String;
@@ -86,6 +87,7 @@ public final class GetSensitiveDataModelSensitiveSchemasResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSensitiveDataModelSensitiveSchemasFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -94,11 +96,15 @@ public final class GetSensitiveDataModelSensitiveSchemasResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelSensitiveSchemasResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder schemaNames(@Nullable List<String> schemaNames) {
+
             this.schemaNames = schemaNames;
             return this;
         }
@@ -107,12 +113,18 @@ public final class GetSensitiveDataModelSensitiveSchemasResult {
         }
         @CustomType.Setter
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
-            this.sensitiveDataModelId = Objects.requireNonNull(sensitiveDataModelId);
+            if (sensitiveDataModelId == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelSensitiveSchemasResult", "sensitiveDataModelId");
+            }
+            this.sensitiveDataModelId = sensitiveDataModelId;
             return this;
         }
         @CustomType.Setter
         public Builder sensitiveSchemaCollections(List<GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection> sensitiveSchemaCollections) {
-            this.sensitiveSchemaCollections = Objects.requireNonNull(sensitiveSchemaCollections);
+            if (sensitiveSchemaCollections == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelSensitiveSchemasResult", "sensitiveSchemaCollections");
+            }
+            this.sensitiveSchemaCollections = sensitiveSchemaCollections;
             return this;
         }
         public Builder sensitiveSchemaCollections(GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection... sensitiveSchemaCollections) {

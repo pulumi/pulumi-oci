@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetFleetCryptoAnalysisResultPlainArgs extends com.pulumi.reso
         }
 
         public GetFleetCryptoAnalysisResultPlainArgs build() {
-            $.cryptoAnalysisResultId = Objects.requireNonNull($.cryptoAnalysisResultId, "expected parameter 'cryptoAnalysisResultId' to be non-null");
-            $.fleetId = Objects.requireNonNull($.fleetId, "expected parameter 'fleetId' to be non-null");
+            if ($.cryptoAnalysisResultId == null) {
+                throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultPlainArgs", "cryptoAnalysisResultId");
+            }
+            if ($.fleetId == null) {
+                throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultPlainArgs", "fleetId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRu
 
         @CustomType.Setter
         public Builder buildRunnerType(String buildRunnerType) {
-            this.buildRunnerType = Objects.requireNonNull(buildRunnerType);
+            if (buildRunnerType == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig", "buildRunnerType");
+            }
+            this.buildRunnerType = buildRunnerType;
             return this;
         }
         @CustomType.Setter
         public Builder memoryInGbs(Integer memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+            if (memoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig", "memoryInGbs");
+            }
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(Integer ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+            if (ocpus == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig", "ocpus");
+            }
+            this.ocpus = ocpus;
             return this;
         }
         public GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig build() {

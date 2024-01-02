@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount;
@@ -73,7 +74,10 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
 
         @CustomType.Setter
         public Builder findingBenefits(List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit> findingBenefits) {
-            this.findingBenefits = Objects.requireNonNull(findingBenefits);
+            if (findingBenefits == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic", "findingBenefits");
+            }
+            this.findingBenefits = findingBenefits;
             return this;
         }
         public Builder findingBenefits(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit... findingBenefits) {
@@ -81,7 +85,10 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
         }
         @CustomType.Setter
         public Builder findingCounts(List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount> findingCounts) {
-            this.findingCounts = Objects.requireNonNull(findingCounts);
+            if (findingCounts == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic", "findingCounts");
+            }
+            this.findingCounts = findingCounts;
             return this;
         }
         public Builder findingCounts(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount... findingCounts) {
@@ -89,7 +96,10 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
         }
         @CustomType.Setter
         public Builder statementCounts(List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount> statementCounts) {
-            this.statementCounts = Objects.requireNonNull(statementCounts);
+            if (statementCounts == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic", "statementCounts");
+            }
+            this.statementCounts = statementCounts;
             return this;
         }
         public Builder statementCounts(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount... statementCounts) {

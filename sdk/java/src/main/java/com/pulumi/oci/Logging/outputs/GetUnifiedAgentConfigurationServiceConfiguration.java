@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationDestination;
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationSource;
 import java.lang.String;
@@ -73,12 +74,18 @@ public final class GetUnifiedAgentConfigurationServiceConfiguration {
 
         @CustomType.Setter
         public Builder configurationType(String configurationType) {
-            this.configurationType = Objects.requireNonNull(configurationType);
+            if (configurationType == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfiguration", "configurationType");
+            }
+            this.configurationType = configurationType;
             return this;
         }
         @CustomType.Setter
         public Builder destinations(List<GetUnifiedAgentConfigurationServiceConfigurationDestination> destinations) {
-            this.destinations = Objects.requireNonNull(destinations);
+            if (destinations == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfiguration", "destinations");
+            }
+            this.destinations = destinations;
             return this;
         }
         public Builder destinations(GetUnifiedAgentConfigurationServiceConfigurationDestination... destinations) {
@@ -86,7 +93,10 @@ public final class GetUnifiedAgentConfigurationServiceConfiguration {
         }
         @CustomType.Setter
         public Builder sources(List<GetUnifiedAgentConfigurationServiceConfigurationSource> sources) {
-            this.sources = Objects.requireNonNull(sources);
+            if (sources == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfiguration", "sources");
+            }
+            this.sources = sources;
             return this;
         }
         public Builder sources(GetUnifiedAgentConfigurationServiceConfigurationSource... sources) {

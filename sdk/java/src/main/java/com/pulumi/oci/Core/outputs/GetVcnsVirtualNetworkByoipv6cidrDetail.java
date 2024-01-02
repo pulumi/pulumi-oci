@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -40,12 +41,18 @@ public final class GetVcnsVirtualNetworkByoipv6cidrDetail {
 
         @CustomType.Setter
         public Builder byoipv6rangeId(String byoipv6rangeId) {
-            this.byoipv6rangeId = Objects.requireNonNull(byoipv6rangeId);
+            if (byoipv6rangeId == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetworkByoipv6cidrDetail", "byoipv6rangeId");
+            }
+            this.byoipv6rangeId = byoipv6rangeId;
             return this;
         }
         @CustomType.Setter
         public Builder ipv6cidrBlock(String ipv6cidrBlock) {
-            this.ipv6cidrBlock = Objects.requireNonNull(ipv6cidrBlock);
+            if (ipv6cidrBlock == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetworkByoipv6cidrDetail", "ipv6cidrBlock");
+            }
+            this.ipv6cidrBlock = ipv6cidrBlock;
             return this;
         }
         public GetVcnsVirtualNetworkByoipv6cidrDetail build() {

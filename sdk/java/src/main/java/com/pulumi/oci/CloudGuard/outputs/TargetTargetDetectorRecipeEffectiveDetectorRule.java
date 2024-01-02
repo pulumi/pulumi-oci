@@ -251,16 +251,19 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
 
         @CustomType.Setter
         public Builder dataSourceId(@Nullable String dataSourceId) {
+
             this.dataSourceId = dataSourceId;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder details(@Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetail> details) {
+
             this.details = details;
             return this;
         }
@@ -269,21 +272,25 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
         }
         @CustomType.Setter
         public Builder detector(@Nullable String detector) {
+
             this.detector = detector;
             return this;
         }
         @CustomType.Setter
         public Builder detectorRuleId(@Nullable String detectorRuleId) {
+
             this.detectorRuleId = detectorRuleId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder entitiesMappings(@Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping> entitiesMappings) {
+
             this.entitiesMappings = entitiesMappings;
             return this;
         }
@@ -292,11 +299,13 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
         }
         @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder managedListTypes(@Nullable List<String> managedListTypes) {
+
             this.managedListTypes = managedListTypes;
             return this;
         }
@@ -305,31 +314,37 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
         }
         @CustomType.Setter
         public Builder recommendation(@Nullable String recommendation) {
+
             this.recommendation = recommendation;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(@Nullable String resourceType) {
+
             this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder serviceType(@Nullable String serviceType) {
+
             this.serviceType = serviceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
+
             this.timeUpdated = timeUpdated;
             return this;
         }

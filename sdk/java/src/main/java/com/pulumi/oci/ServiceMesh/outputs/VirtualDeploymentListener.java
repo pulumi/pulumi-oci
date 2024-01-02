@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -87,21 +88,29 @@ public final class VirtualDeploymentListener {
 
         @CustomType.Setter
         public Builder idleTimeoutInMs(@Nullable String idleTimeoutInMs) {
+
             this.idleTimeoutInMs = idleTimeoutInMs;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("VirtualDeploymentListener", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("VirtualDeploymentListener", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder requestTimeoutInMs(@Nullable String requestTimeoutInMs) {
+
             this.requestTimeoutInMs = requestTimeoutInMs;
             return this;
         }

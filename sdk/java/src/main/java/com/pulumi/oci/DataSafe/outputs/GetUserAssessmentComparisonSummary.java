@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentComparisonSummaryBaseline;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentComparisonSummaryCurrent;
 import java.lang.String;
@@ -49,7 +50,10 @@ public final class GetUserAssessmentComparisonSummary {
 
         @CustomType.Setter
         public Builder baselines(List<GetUserAssessmentComparisonSummaryBaseline> baselines) {
-            this.baselines = Objects.requireNonNull(baselines);
+            if (baselines == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentComparisonSummary", "baselines");
+            }
+            this.baselines = baselines;
             return this;
         }
         public Builder baselines(GetUserAssessmentComparisonSummaryBaseline... baselines) {
@@ -57,7 +61,10 @@ public final class GetUserAssessmentComparisonSummary {
         }
         @CustomType.Setter
         public Builder currents(List<GetUserAssessmentComparisonSummaryCurrent> currents) {
-            this.currents = Objects.requireNonNull(currents);
+            if (currents == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentComparisonSummary", "currents");
+            }
+            this.currents = currents;
             return this;
         }
         public Builder currents(GetUserAssessmentComparisonSummaryCurrent... currents) {
@@ -65,7 +72,10 @@ public final class GetUserAssessmentComparisonSummary {
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentComparisonSummary", "status");
+            }
+            this.status = status;
             return this;
         }
         public GetUserAssessmentComparisonSummary build() {

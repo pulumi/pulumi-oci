@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.GetApiKeysFilter;
 import java.lang.String;
 import java.util.List;
@@ -84,7 +85,9 @@ public final class GetApiKeysPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetApiKeysPlainArgs build() {
-            $.userId = Objects.requireNonNull($.userId, "expected parameter 'userId' to be non-null");
+            if ($.userId == null) {
+                throw new MissingRequiredPropertyException("GetApiKeysPlainArgs", "userId");
+            }
             return $;
         }
     }

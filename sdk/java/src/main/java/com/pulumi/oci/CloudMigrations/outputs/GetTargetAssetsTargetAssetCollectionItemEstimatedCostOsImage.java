@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImage 
 
         @CustomType.Setter
         public Builder totalPerHour(Double totalPerHour) {
-            this.totalPerHour = Objects.requireNonNull(totalPerHour);
+            if (totalPerHour == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImage", "totalPerHour");
+            }
+            this.totalPerHour = totalPerHour;
             return this;
         }
         @CustomType.Setter
         public Builder totalPerHourBySubscription(Double totalPerHourBySubscription) {
-            this.totalPerHourBySubscription = Objects.requireNonNull(totalPerHourBySubscription);
+            if (totalPerHourBySubscription == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImage", "totalPerHourBySubscription");
+            }
+            this.totalPerHourBySubscription = totalPerHourBySubscription;
             return this;
         }
         public GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImage build() {

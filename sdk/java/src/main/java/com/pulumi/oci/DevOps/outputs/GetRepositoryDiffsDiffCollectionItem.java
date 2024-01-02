@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryDiffsDiffCollectionItemChange;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -151,12 +152,18 @@ public final class GetRepositoryDiffsDiffCollectionItem {
 
         @CustomType.Setter
         public Builder areConflictsInFile(Boolean areConflictsInFile) {
-            this.areConflictsInFile = Objects.requireNonNull(areConflictsInFile);
+            if (areConflictsInFile == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffsDiffCollectionItem", "areConflictsInFile");
+            }
+            this.areConflictsInFile = areConflictsInFile;
             return this;
         }
         @CustomType.Setter
         public Builder changes(List<GetRepositoryDiffsDiffCollectionItemChange> changes) {
-            this.changes = Objects.requireNonNull(changes);
+            if (changes == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffsDiffCollectionItem", "changes");
+            }
+            this.changes = changes;
             return this;
         }
         public Builder changes(GetRepositoryDiffsDiffCollectionItemChange... changes) {
@@ -164,37 +171,58 @@ public final class GetRepositoryDiffsDiffCollectionItem {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffsDiffCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder isBinary(Boolean isBinary) {
-            this.isBinary = Objects.requireNonNull(isBinary);
+            if (isBinary == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffsDiffCollectionItem", "isBinary");
+            }
+            this.isBinary = isBinary;
             return this;
         }
         @CustomType.Setter
         public Builder isLarge(Boolean isLarge) {
-            this.isLarge = Objects.requireNonNull(isLarge);
+            if (isLarge == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffsDiffCollectionItem", "isLarge");
+            }
+            this.isLarge = isLarge;
             return this;
         }
         @CustomType.Setter
         public Builder newId(String newId) {
-            this.newId = Objects.requireNonNull(newId);
+            if (newId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffsDiffCollectionItem", "newId");
+            }
+            this.newId = newId;
             return this;
         }
         @CustomType.Setter
         public Builder newPath(String newPath) {
-            this.newPath = Objects.requireNonNull(newPath);
+            if (newPath == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffsDiffCollectionItem", "newPath");
+            }
+            this.newPath = newPath;
             return this;
         }
         @CustomType.Setter
         public Builder oldId(String oldId) {
-            this.oldId = Objects.requireNonNull(oldId);
+            if (oldId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffsDiffCollectionItem", "oldId");
+            }
+            this.oldId = oldId;
             return this;
         }
         @CustomType.Setter
         public Builder oldPath(String oldPath) {
-            this.oldPath = Objects.requireNonNull(oldPath);
+            if (oldPath == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffsDiffCollectionItem", "oldPath");
+            }
+            this.oldPath = oldPath;
             return this;
         }
         public GetRepositoryDiffsDiffCollectionItem build() {

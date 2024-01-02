@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataCatalog.outputs.GetDataAssetsDataAssetCollection;
 import com.pulumi.oci.DataCatalog.outputs.GetDataAssetsFilter;
 import java.lang.String;
@@ -163,17 +164,24 @@ public final class GetDataAssetsResult {
 
         @CustomType.Setter
         public Builder catalogId(String catalogId) {
-            this.catalogId = Objects.requireNonNull(catalogId);
+            if (catalogId == null) {
+              throw new MissingRequiredPropertyException("GetDataAssetsResult", "catalogId");
+            }
+            this.catalogId = catalogId;
             return this;
         }
         @CustomType.Setter
         public Builder createdById(@Nullable String createdById) {
+
             this.createdById = createdById;
             return this;
         }
         @CustomType.Setter
         public Builder dataAssetCollections(List<GetDataAssetsDataAssetCollection> dataAssetCollections) {
-            this.dataAssetCollections = Objects.requireNonNull(dataAssetCollections);
+            if (dataAssetCollections == null) {
+              throw new MissingRequiredPropertyException("GetDataAssetsResult", "dataAssetCollections");
+            }
+            this.dataAssetCollections = dataAssetCollections;
             return this;
         }
         public Builder dataAssetCollections(GetDataAssetsDataAssetCollection... dataAssetCollections) {
@@ -181,21 +189,25 @@ public final class GetDataAssetsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder displayNameContains(@Nullable String displayNameContains) {
+
             this.displayNameContains = displayNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder externalKey(@Nullable String externalKey) {
+
             this.externalKey = externalKey;
             return this;
         }
         @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
+
             this.fields = fields;
             return this;
         }
@@ -204,6 +216,7 @@ public final class GetDataAssetsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDataAssetsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -212,16 +225,21 @@ public final class GetDataAssetsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDataAssetsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder typeKey(@Nullable String typeKey) {
+
             this.typeKey = typeKey;
             return this;
         }

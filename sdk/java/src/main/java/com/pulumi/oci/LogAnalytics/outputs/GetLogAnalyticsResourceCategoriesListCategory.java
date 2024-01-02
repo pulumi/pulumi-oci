@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetLogAnalyticsResourceCategoriesListCategory {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsResourceCategoriesListCategory", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsResourceCategoriesListCategory", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder isSystem(Boolean isSystem) {
-            this.isSystem = Objects.requireNonNull(isSystem);
+            if (isSystem == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsResourceCategoriesListCategory", "isSystem");
+            }
+            this.isSystem = isSystem;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsResourceCategoriesListCategory", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsResourceCategoriesListCategory", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetLogAnalyticsResourceCategoriesListCategory build() {

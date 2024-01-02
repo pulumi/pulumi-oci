@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespacePropertiesMetadataFilter;
 import java.lang.String;
 import java.util.List;
@@ -192,7 +193,9 @@ public final class GetNamespacePropertiesMetadataPlainArgs extends com.pulumi.re
         }
 
         public GetNamespacePropertiesMetadataPlainArgs build() {
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("GetNamespacePropertiesMetadataPlainArgs", "namespace");
+            }
             return $;
         }
     }

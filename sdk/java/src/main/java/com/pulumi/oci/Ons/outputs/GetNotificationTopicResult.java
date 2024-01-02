@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ons.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -190,62 +191,98 @@ public final class GetNotificationTopicResult {
 
         @CustomType.Setter
         public Builder apiEndpoint(String apiEndpoint) {
-            this.apiEndpoint = Objects.requireNonNull(apiEndpoint);
+            if (apiEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetNotificationTopicResult", "apiEndpoint");
+            }
+            this.apiEndpoint = apiEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNotificationTopicResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetNotificationTopicResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetNotificationTopicResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder etag(String etag) {
-            this.etag = Objects.requireNonNull(etag);
+            if (etag == null) {
+              throw new MissingRequiredPropertyException("GetNotificationTopicResult", "etag");
+            }
+            this.etag = etag;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetNotificationTopicResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNotificationTopicResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetNotificationTopicResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder shortTopicId(String shortTopicId) {
-            this.shortTopicId = Objects.requireNonNull(shortTopicId);
+            if (shortTopicId == null) {
+              throw new MissingRequiredPropertyException("GetNotificationTopicResult", "shortTopicId");
+            }
+            this.shortTopicId = shortTopicId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetNotificationTopicResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetNotificationTopicResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder topicId(String topicId) {
-            this.topicId = Objects.requireNonNull(topicId);
+            if (topicId == null) {
+              throw new MissingRequiredPropertyException("GetNotificationTopicResult", "topicId");
+            }
+            this.topicId = topicId;
             return this;
         }
         public GetNotificationTopicResult build() {

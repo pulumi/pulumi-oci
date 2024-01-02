@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.outputs.GetReplicationTargetsFilter;
 import com.pulumi.oci.FileStorage.outputs.GetReplicationTargetsReplicationTarget;
 import java.lang.String;
@@ -123,21 +124,29 @@ public final class GetReplicationTargetsResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetReplicationTargetsResult", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetReplicationTargetsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetReplicationTargetsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -146,12 +155,16 @@ public final class GetReplicationTargetsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder replicationTargets(List<GetReplicationTargetsReplicationTarget> replicationTargets) {
-            this.replicationTargets = Objects.requireNonNull(replicationTargets);
+            if (replicationTargets == null) {
+              throw new MissingRequiredPropertyException("GetReplicationTargetsResult", "replicationTargets");
+            }
+            this.replicationTargets = replicationTargets;
             return this;
         }
         public Builder replicationTargets(GetReplicationTargetsReplicationTarget... replicationTargets) {
@@ -159,6 +172,7 @@ public final class GetReplicationTargetsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

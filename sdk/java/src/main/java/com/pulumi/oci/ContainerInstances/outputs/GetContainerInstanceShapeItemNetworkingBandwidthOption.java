@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerInstances.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetContainerInstanceShapeItemNetworkingBandwidthOption {
 
         @CustomType.Setter
         public Builder defaultPerOcpuInGbps(Double defaultPerOcpuInGbps) {
-            this.defaultPerOcpuInGbps = Objects.requireNonNull(defaultPerOcpuInGbps);
+            if (defaultPerOcpuInGbps == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceShapeItemNetworkingBandwidthOption", "defaultPerOcpuInGbps");
+            }
+            this.defaultPerOcpuInGbps = defaultPerOcpuInGbps;
             return this;
         }
         @CustomType.Setter
         public Builder maxInGbps(Double maxInGbps) {
-            this.maxInGbps = Objects.requireNonNull(maxInGbps);
+            if (maxInGbps == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceShapeItemNetworkingBandwidthOption", "maxInGbps");
+            }
+            this.maxInGbps = maxInGbps;
             return this;
         }
         @CustomType.Setter
         public Builder minInGbps(Double minInGbps) {
-            this.minInGbps = Objects.requireNonNull(minInGbps);
+            if (minInGbps == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceShapeItemNetworkingBandwidthOption", "minInGbps");
+            }
+            this.minInGbps = minInGbps;
             return this;
         }
         public GetContainerInstanceShapeItemNetworkingBandwidthOption build() {

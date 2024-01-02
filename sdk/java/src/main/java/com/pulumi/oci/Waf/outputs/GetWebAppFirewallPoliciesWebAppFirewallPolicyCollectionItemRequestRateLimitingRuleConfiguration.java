@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
 
         @CustomType.Setter
         public Builder actionDurationInSeconds(Integer actionDurationInSeconds) {
-            this.actionDurationInSeconds = Objects.requireNonNull(actionDurationInSeconds);
+            if (actionDurationInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration", "actionDurationInSeconds");
+            }
+            this.actionDurationInSeconds = actionDurationInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder periodInSeconds(Integer periodInSeconds) {
-            this.periodInSeconds = Objects.requireNonNull(periodInSeconds);
+            if (periodInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration", "periodInSeconds");
+            }
+            this.periodInSeconds = periodInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder requestsLimit(Integer requestsLimit) {
-            this.requestsLimit = Objects.requireNonNull(requestsLimit);
+            if (requestsLimit == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration", "requestsLimit");
+            }
+            this.requestsLimit = requestsLimit;
             return this;
         }
         public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration build() {

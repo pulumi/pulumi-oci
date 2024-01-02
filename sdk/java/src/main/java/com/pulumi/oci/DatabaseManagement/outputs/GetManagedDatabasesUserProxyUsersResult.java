@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabasesUserProxyUsersFilter;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabasesUserProxyUsersProxyUserCollection;
 import java.lang.String;
@@ -93,6 +94,7 @@ public final class GetManagedDatabasesUserProxyUsersResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabasesUserProxyUsersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -101,22 +103,32 @@ public final class GetManagedDatabasesUserProxyUsersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesUserProxyUsersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesUserProxyUsersResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder proxyUserCollections(List<GetManagedDatabasesUserProxyUsersProxyUserCollection> proxyUserCollections) {
-            this.proxyUserCollections = Objects.requireNonNull(proxyUserCollections);
+            if (proxyUserCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesUserProxyUsersResult", "proxyUserCollections");
+            }
+            this.proxyUserCollections = proxyUserCollections;
             return this;
         }
         public Builder proxyUserCollections(GetManagedDatabasesUserProxyUsersProxyUserCollection... proxyUserCollections) {
@@ -124,7 +136,10 @@ public final class GetManagedDatabasesUserProxyUsersResult {
         }
         @CustomType.Setter
         public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+            if (userName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesUserProxyUsersResult", "userName");
+            }
+            this.userName = userName;
             return this;
         }
         public GetManagedDatabasesUserProxyUsersResult build() {

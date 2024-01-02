@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceFoldersFilter;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceFoldersFolderSummaryCollection;
 import java.lang.String;
@@ -127,11 +128,13 @@ public final class GetWorkspaceFoldersResult {
 
         @CustomType.Setter
         public Builder aggregatorKey(@Nullable String aggregatorKey) {
+
             this.aggregatorKey = aggregatorKey;
             return this;
         }
         @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
+
             this.fields = fields;
             return this;
         }
@@ -140,6 +143,7 @@ public final class GetWorkspaceFoldersResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetWorkspaceFoldersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -148,7 +152,10 @@ public final class GetWorkspaceFoldersResult {
         }
         @CustomType.Setter
         public Builder folderSummaryCollections(List<GetWorkspaceFoldersFolderSummaryCollection> folderSummaryCollections) {
-            this.folderSummaryCollections = Objects.requireNonNull(folderSummaryCollections);
+            if (folderSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFoldersResult", "folderSummaryCollections");
+            }
+            this.folderSummaryCollections = folderSummaryCollections;
             return this;
         }
         public Builder folderSummaryCollections(GetWorkspaceFoldersFolderSummaryCollection... folderSummaryCollections) {
@@ -156,11 +163,15 @@ public final class GetWorkspaceFoldersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFoldersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder identifiers(@Nullable List<String> identifiers) {
+
             this.identifiers = identifiers;
             return this;
         }
@@ -169,17 +180,22 @@ public final class GetWorkspaceFoldersResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder nameContains(@Nullable String nameContains) {
+
             this.nameContains = nameContains;
             return this;
         }
         @CustomType.Setter
         public Builder workspaceId(String workspaceId) {
-            this.workspaceId = Objects.requireNonNull(workspaceId);
+            if (workspaceId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFoldersResult", "workspaceId");
+            }
+            this.workspaceId = workspaceId;
             return this;
         }
         public GetWorkspaceFoldersResult build() {

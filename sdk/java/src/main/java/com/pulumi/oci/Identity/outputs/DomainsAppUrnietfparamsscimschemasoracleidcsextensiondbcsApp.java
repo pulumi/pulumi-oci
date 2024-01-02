@@ -105,11 +105,13 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp 
 
         @CustomType.Setter
         public Builder domainApp(@Nullable DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp domainApp) {
+
             this.domainApp = domainApp;
             return this;
         }
         @CustomType.Setter
         public Builder domainName(@Nullable String domainName) {
+
             this.domainName = domainName;
             return this;
         }

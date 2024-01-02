@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstanceMeasuredBootReportMeasurementActual;
 import com.pulumi.oci.Core.outputs.GetInstanceMeasuredBootReportMeasurementPolicy;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetInstanceMeasuredBootReportMeasurement {
 
         @CustomType.Setter
         public Builder actuals(List<GetInstanceMeasuredBootReportMeasurementActual> actuals) {
-            this.actuals = Objects.requireNonNull(actuals);
+            if (actuals == null) {
+              throw new MissingRequiredPropertyException("GetInstanceMeasuredBootReportMeasurement", "actuals");
+            }
+            this.actuals = actuals;
             return this;
         }
         public Builder actuals(GetInstanceMeasuredBootReportMeasurementActual... actuals) {
@@ -66,7 +70,10 @@ public final class GetInstanceMeasuredBootReportMeasurement {
         }
         @CustomType.Setter
         public Builder policies(List<GetInstanceMeasuredBootReportMeasurementPolicy> policies) {
-            this.policies = Objects.requireNonNull(policies);
+            if (policies == null) {
+              throw new MissingRequiredPropertyException("GetInstanceMeasuredBootReportMeasurement", "policies");
+            }
+            this.policies = policies;
             return this;
         }
         public Builder policies(GetInstanceMeasuredBootReportMeasurementPolicy... policies) {

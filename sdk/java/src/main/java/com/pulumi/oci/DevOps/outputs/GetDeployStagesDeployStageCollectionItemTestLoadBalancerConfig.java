@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfi
 
         @CustomType.Setter
         public Builder backendPort(Integer backendPort) {
-            this.backendPort = Objects.requireNonNull(backendPort);
+            if (backendPort == null) {
+              throw new MissingRequiredPropertyException("GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfig", "backendPort");
+            }
+            this.backendPort = backendPort;
             return this;
         }
         @CustomType.Setter
         public Builder listenerName(String listenerName) {
-            this.listenerName = Objects.requireNonNull(listenerName);
+            if (listenerName == null) {
+              throw new MissingRequiredPropertyException("GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfig", "listenerName");
+            }
+            this.listenerName = listenerName;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfig", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfig", "state");
+            }
+            this.state = state;
             return this;
         }
         public GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfig build() {

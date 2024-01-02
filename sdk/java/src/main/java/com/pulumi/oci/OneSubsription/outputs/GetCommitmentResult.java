@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -146,47 +147,74 @@ public final class GetCommitmentResult {
 
         @CustomType.Setter
         public Builder availableAmount(String availableAmount) {
-            this.availableAmount = Objects.requireNonNull(availableAmount);
+            if (availableAmount == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentResult", "availableAmount");
+            }
+            this.availableAmount = availableAmount;
             return this;
         }
         @CustomType.Setter
         public Builder commitmentId(String commitmentId) {
-            this.commitmentId = Objects.requireNonNull(commitmentId);
+            if (commitmentId == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentResult", "commitmentId");
+            }
+            this.commitmentId = commitmentId;
             return this;
         }
         @CustomType.Setter
         public Builder fundedAllocationValue(String fundedAllocationValue) {
-            this.fundedAllocationValue = Objects.requireNonNull(fundedAllocationValue);
+            if (fundedAllocationValue == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentResult", "fundedAllocationValue");
+            }
+            this.fundedAllocationValue = fundedAllocationValue;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder quantity(String quantity) {
-            this.quantity = Objects.requireNonNull(quantity);
+            if (quantity == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentResult", "quantity");
+            }
+            this.quantity = quantity;
             return this;
         }
         @CustomType.Setter
         public Builder subscribedServiceId(String subscribedServiceId) {
-            this.subscribedServiceId = Objects.requireNonNull(subscribedServiceId);
+            if (subscribedServiceId == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentResult", "subscribedServiceId");
+            }
+            this.subscribedServiceId = subscribedServiceId;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+            if (timeEnd == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentResult", "timeEnd");
+            }
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+            if (timeStart == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentResult", "timeStart");
+            }
+            this.timeStart = timeStart;
             return this;
         }
         @CustomType.Setter
         public Builder usedAmount(String usedAmount) {
-            this.usedAmount = Objects.requireNonNull(usedAmount);
+            if (usedAmount == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentResult", "usedAmount");
+            }
+            this.usedAmount = usedAmount;
             return this;
         }
         public GetCommitmentResult build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Waa;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waa.inputs.AppAccelerationPolicyResponseCachingPolicyArgs;
 import com.pulumi.oci.Waa.inputs.AppAccelerationPolicyResponseCompressionPolicyArgs;
 import java.lang.Object;
@@ -330,7 +331,9 @@ public final class AppAccelerationPolicyArgs extends com.pulumi.resources.Resour
         }
 
         public AppAccelerationPolicyArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AppAccelerationPolicyArgs", "compartmentId");
+            }
             return $;
         }
     }

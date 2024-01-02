@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.outputs.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser;
 import com.pulumi.oci.Logging.outputs.UnifiedAgentConfigurationServiceConfigurationSourceParserPattern;
 import java.lang.Boolean;
@@ -427,26 +428,31 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
 
         @CustomType.Setter
         public Builder delimiter(@Nullable String delimiter) {
+
             this.delimiter = delimiter;
             return this;
         }
         @CustomType.Setter
         public Builder expression(@Nullable String expression) {
+
             this.expression = expression;
             return this;
         }
         @CustomType.Setter
         public Builder fieldTimeKey(@Nullable String fieldTimeKey) {
+
             this.fieldTimeKey = fieldTimeKey;
             return this;
         }
         @CustomType.Setter
         public Builder formatFirstline(@Nullable String formatFirstline) {
+
             this.formatFirstline = formatFirstline;
             return this;
         }
         @CustomType.Setter
         public Builder formats(@Nullable List<String> formats) {
+
             this.formats = formats;
             return this;
         }
@@ -455,46 +461,55 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
         }
         @CustomType.Setter
         public Builder grokFailureKey(@Nullable String grokFailureKey) {
+
             this.grokFailureKey = grokFailureKey;
             return this;
         }
         @CustomType.Setter
         public Builder grokNameKey(@Nullable String grokNameKey) {
+
             this.grokNameKey = grokNameKey;
             return this;
         }
         @CustomType.Setter
         public Builder isEstimateCurrentEvent(@Nullable Boolean isEstimateCurrentEvent) {
+
             this.isEstimateCurrentEvent = isEstimateCurrentEvent;
             return this;
         }
         @CustomType.Setter
         public Builder isKeepTimeKey(@Nullable Boolean isKeepTimeKey) {
+
             this.isKeepTimeKey = isKeepTimeKey;
             return this;
         }
         @CustomType.Setter
         public Builder isMergeCriFields(@Nullable Boolean isMergeCriFields) {
+
             this.isMergeCriFields = isMergeCriFields;
             return this;
         }
         @CustomType.Setter
         public Builder isNullEmptyString(@Nullable Boolean isNullEmptyString) {
+
             this.isNullEmptyString = isNullEmptyString;
             return this;
         }
         @CustomType.Setter
         public Builder isSupportColonlessIdent(@Nullable Boolean isSupportColonlessIdent) {
+
             this.isSupportColonlessIdent = isSupportColonlessIdent;
             return this;
         }
         @CustomType.Setter
         public Builder isWithPriority(@Nullable Boolean isWithPriority) {
+
             this.isWithPriority = isWithPriority;
             return this;
         }
         @CustomType.Setter
         public Builder keys(@Nullable List<String> keys) {
+
             this.keys = keys;
             return this;
         }
@@ -503,36 +518,45 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
         }
         @CustomType.Setter
         public Builder messageFormat(@Nullable String messageFormat) {
+
             this.messageFormat = messageFormat;
             return this;
         }
         @CustomType.Setter
         public Builder messageKey(@Nullable String messageKey) {
+
             this.messageKey = messageKey;
             return this;
         }
         @CustomType.Setter
         public Builder multiLineStartRegexp(@Nullable String multiLineStartRegexp) {
+
             this.multiLineStartRegexp = multiLineStartRegexp;
             return this;
         }
         @CustomType.Setter
         public Builder nestedParser(@Nullable UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser nestedParser) {
+
             this.nestedParser = nestedParser;
             return this;
         }
         @CustomType.Setter
         public Builder nullValuePattern(@Nullable String nullValuePattern) {
+
             this.nullValuePattern = nullValuePattern;
             return this;
         }
         @CustomType.Setter
         public Builder parserType(String parserType) {
-            this.parserType = Objects.requireNonNull(parserType);
+            if (parserType == null) {
+              throw new MissingRequiredPropertyException("UnifiedAgentConfigurationServiceConfigurationSourceParser", "parserType");
+            }
+            this.parserType = parserType;
             return this;
         }
         @CustomType.Setter
         public Builder patterns(@Nullable List<UnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns) {
+
             this.patterns = patterns;
             return this;
         }
@@ -541,31 +565,37 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
         }
         @CustomType.Setter
         public Builder rfc5424timeFormat(@Nullable String rfc5424timeFormat) {
+
             this.rfc5424timeFormat = rfc5424timeFormat;
             return this;
         }
         @CustomType.Setter
         public Builder syslogParserType(@Nullable String syslogParserType) {
+
             this.syslogParserType = syslogParserType;
             return this;
         }
         @CustomType.Setter
         public Builder timeFormat(@Nullable String timeFormat) {
+
             this.timeFormat = timeFormat;
             return this;
         }
         @CustomType.Setter
         public Builder timeType(@Nullable String timeType) {
+
             this.timeType = timeType;
             return this;
         }
         @CustomType.Setter
         public Builder timeoutInMilliseconds(@Nullable Integer timeoutInMilliseconds) {
+
             this.timeoutInMilliseconds = timeoutInMilliseconds;
             return this;
         }
         @CustomType.Setter
         public Builder types(@Nullable Map<String,Object> types) {
+
             this.types = types;
             return this;
         }

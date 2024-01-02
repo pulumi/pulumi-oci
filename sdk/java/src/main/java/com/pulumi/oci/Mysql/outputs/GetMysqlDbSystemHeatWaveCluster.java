@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -114,32 +115,50 @@ public final class GetMysqlDbSystemHeatWaveCluster {
 
         @CustomType.Setter
         public Builder clusterSize(Integer clusterSize) {
-            this.clusterSize = Objects.requireNonNull(clusterSize);
+            if (clusterSize == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemHeatWaveCluster", "clusterSize");
+            }
+            this.clusterSize = clusterSize;
             return this;
         }
         @CustomType.Setter
         public Builder isLakehouseEnabled(Boolean isLakehouseEnabled) {
-            this.isLakehouseEnabled = Objects.requireNonNull(isLakehouseEnabled);
+            if (isLakehouseEnabled == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemHeatWaveCluster", "isLakehouseEnabled");
+            }
+            this.isLakehouseEnabled = isLakehouseEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+            if (shapeName == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemHeatWaveCluster", "shapeName");
+            }
+            this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemHeatWaveCluster", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemHeatWaveCluster", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemHeatWaveCluster", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetMysqlDbSystemHeatWaveCluster build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -141,42 +142,66 @@ public final class GetAutonomousDbVersionsAutonomousDbVersion {
 
         @CustomType.Setter
         public Builder dbWorkload(String dbWorkload) {
-            this.dbWorkload = Objects.requireNonNull(dbWorkload);
+            if (dbWorkload == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDbVersionsAutonomousDbVersion", "dbWorkload");
+            }
+            this.dbWorkload = dbWorkload;
             return this;
         }
         @CustomType.Setter
         public Builder details(String details) {
-            this.details = Objects.requireNonNull(details);
+            if (details == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDbVersionsAutonomousDbVersion", "details");
+            }
+            this.details = details;
             return this;
         }
         @CustomType.Setter
         public Builder isDedicated(Boolean isDedicated) {
-            this.isDedicated = Objects.requireNonNull(isDedicated);
+            if (isDedicated == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDbVersionsAutonomousDbVersion", "isDedicated");
+            }
+            this.isDedicated = isDedicated;
             return this;
         }
         @CustomType.Setter
         public Builder isDefaultForFree(Boolean isDefaultForFree) {
-            this.isDefaultForFree = Objects.requireNonNull(isDefaultForFree);
+            if (isDefaultForFree == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDbVersionsAutonomousDbVersion", "isDefaultForFree");
+            }
+            this.isDefaultForFree = isDefaultForFree;
             return this;
         }
         @CustomType.Setter
         public Builder isDefaultForPaid(Boolean isDefaultForPaid) {
-            this.isDefaultForPaid = Objects.requireNonNull(isDefaultForPaid);
+            if (isDefaultForPaid == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDbVersionsAutonomousDbVersion", "isDefaultForPaid");
+            }
+            this.isDefaultForPaid = isDefaultForPaid;
             return this;
         }
         @CustomType.Setter
         public Builder isFreeTierEnabled(Boolean isFreeTierEnabled) {
-            this.isFreeTierEnabled = Objects.requireNonNull(isFreeTierEnabled);
+            if (isFreeTierEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDbVersionsAutonomousDbVersion", "isFreeTierEnabled");
+            }
+            this.isFreeTierEnabled = isFreeTierEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isPaidEnabled(Boolean isPaidEnabled) {
-            this.isPaidEnabled = Objects.requireNonNull(isPaidEnabled);
+            if (isPaidEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDbVersionsAutonomousDbVersion", "isPaidEnabled");
+            }
+            this.isPaidEnabled = isPaidEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDbVersionsAutonomousDbVersion", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetAutonomousDbVersionsAutonomousDbVersion build() {

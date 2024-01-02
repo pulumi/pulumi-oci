@@ -42,11 +42,13 @@ public final class VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairD
 
         @CustomType.Setter
         public Builder ipv6Address(@Nullable String ipv6Address) {
+
             this.ipv6Address = ipv6Address;
             return this;
         }
         @CustomType.Setter
         public Builder ipv6SubnetCidr(@Nullable String ipv6SubnetCidr) {
+
             this.ipv6SubnetCidr = ipv6SubnetCidr;
             return this;
         }

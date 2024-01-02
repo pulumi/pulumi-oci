@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Kms.outputs.GetVaultsVaultExternalKeyManagerMetadataOauthMetadata;
 import java.lang.String;
 import java.util.List;
@@ -64,12 +65,18 @@ public final class GetVaultsVaultExternalKeyManagerMetadata {
 
         @CustomType.Setter
         public Builder externalVaultEndpointUrl(String externalVaultEndpointUrl) {
-            this.externalVaultEndpointUrl = Objects.requireNonNull(externalVaultEndpointUrl);
+            if (externalVaultEndpointUrl == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVaultExternalKeyManagerMetadata", "externalVaultEndpointUrl");
+            }
+            this.externalVaultEndpointUrl = externalVaultEndpointUrl;
             return this;
         }
         @CustomType.Setter
         public Builder oauthMetadatas(List<GetVaultsVaultExternalKeyManagerMetadataOauthMetadata> oauthMetadatas) {
-            this.oauthMetadatas = Objects.requireNonNull(oauthMetadatas);
+            if (oauthMetadatas == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVaultExternalKeyManagerMetadata", "oauthMetadatas");
+            }
+            this.oauthMetadatas = oauthMetadatas;
             return this;
         }
         public Builder oauthMetadatas(GetVaultsVaultExternalKeyManagerMetadataOauthMetadata... oauthMetadatas) {
@@ -77,7 +84,10 @@ public final class GetVaultsVaultExternalKeyManagerMetadata {
         }
         @CustomType.Setter
         public Builder privateEndpointId(String privateEndpointId) {
-            this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
+            if (privateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetVaultsVaultExternalKeyManagerMetadata", "privateEndpointId");
+            }
+            this.privateEndpointId = privateEndpointId;
             return this;
         }
         public GetVaultsVaultExternalKeyManagerMetadata build() {

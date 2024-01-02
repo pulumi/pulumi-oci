@@ -5,6 +5,7 @@ package com.pulumi.oci.LogAnalytics.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class GetLogAnalyticsObjectCollectionRuleArgs extends com.pulumi.re
         }
 
         public GetLogAnalyticsObjectCollectionRuleArgs build() {
-            $.logAnalyticsObjectCollectionRuleId = Objects.requireNonNull($.logAnalyticsObjectCollectionRuleId, "expected parameter 'logAnalyticsObjectCollectionRuleId' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
+            if ($.logAnalyticsObjectCollectionRuleId == null) {
+                throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleArgs", "logAnalyticsObjectCollectionRuleId");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleArgs", "namespace");
+            }
             return $;
         }
     }

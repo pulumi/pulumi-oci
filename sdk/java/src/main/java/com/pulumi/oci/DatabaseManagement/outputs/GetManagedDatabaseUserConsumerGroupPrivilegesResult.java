@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserConsumerGroupPrivilegesFilter;
 import java.lang.String;
@@ -93,7 +94,10 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesResult {
 
         @CustomType.Setter
         public Builder consumerGroupPrivilegeCollections(List<GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection> consumerGroupPrivilegeCollections) {
-            this.consumerGroupPrivilegeCollections = Objects.requireNonNull(consumerGroupPrivilegeCollections);
+            if (consumerGroupPrivilegeCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserConsumerGroupPrivilegesResult", "consumerGroupPrivilegeCollections");
+            }
+            this.consumerGroupPrivilegeCollections = consumerGroupPrivilegeCollections;
             return this;
         }
         public Builder consumerGroupPrivilegeCollections(GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection... consumerGroupPrivilegeCollections) {
@@ -101,6 +105,7 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseUserConsumerGroupPrivilegesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -109,22 +114,32 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserConsumerGroupPrivilegesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserConsumerGroupPrivilegesResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+            if (userName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserConsumerGroupPrivilegesResult", "userName");
+            }
+            this.userName = userName;
             return this;
         }
         public GetManagedDatabaseUserConsumerGroupPrivilegesResult build() {

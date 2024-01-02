@@ -62,16 +62,19 @@ public final class UserAssessmentIgnoredTarget {
 
         @CustomType.Setter
         public Builder lifecycleState(@Nullable String lifecycleState) {
+
             this.lifecycleState = lifecycleState;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
+
             this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder userAssessmentId(@Nullable String userAssessmentId) {
+
             this.userAssessmentId = userAssessmentId;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunBuildRunArgumentItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetBuildRunBuildRunArgument {
 
         @CustomType.Setter
         public Builder items(List<GetBuildRunBuildRunArgumentItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildRunArgument", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetBuildRunBuildRunArgumentItem... items) {

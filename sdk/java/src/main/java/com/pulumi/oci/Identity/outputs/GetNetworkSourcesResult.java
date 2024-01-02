@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetNetworkSourcesFilter;
 import com.pulumi.oci.Identity.outputs.GetNetworkSourcesNetworkSource;
 import java.lang.String;
@@ -109,11 +110,15 @@ public final class GetNetworkSourcesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSourcesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNetworkSourcesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -122,17 +127,24 @@ public final class GetNetworkSourcesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSourcesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder networkSources(List<GetNetworkSourcesNetworkSource> networkSources) {
-            this.networkSources = Objects.requireNonNull(networkSources);
+            if (networkSources == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSourcesResult", "networkSources");
+            }
+            this.networkSources = networkSources;
             return this;
         }
         public Builder networkSources(GetNetworkSourcesNetworkSource... networkSources) {
@@ -140,6 +152,7 @@ public final class GetNetworkSourcesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

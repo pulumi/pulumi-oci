@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetReportDefinitionColumnFilter;
 import com.pulumi.oci.DataSafe.outputs.GetReportDefinitionColumnInfo;
 import com.pulumi.oci.DataSafe.outputs.GetReportDefinitionColumnSorting;
@@ -421,12 +422,18 @@ public final class GetReportDefinitionResult {
 
         @CustomType.Setter
         public Builder category(String category) {
-            this.category = Objects.requireNonNull(category);
+            if (category == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "category");
+            }
+            this.category = category;
             return this;
         }
         @CustomType.Setter
         public Builder columnFilters(List<GetReportDefinitionColumnFilter> columnFilters) {
-            this.columnFilters = Objects.requireNonNull(columnFilters);
+            if (columnFilters == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "columnFilters");
+            }
+            this.columnFilters = columnFilters;
             return this;
         }
         public Builder columnFilters(GetReportDefinitionColumnFilter... columnFilters) {
@@ -434,7 +441,10 @@ public final class GetReportDefinitionResult {
         }
         @CustomType.Setter
         public Builder columnInfos(List<GetReportDefinitionColumnInfo> columnInfos) {
-            this.columnInfos = Objects.requireNonNull(columnInfos);
+            if (columnInfos == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "columnInfos");
+            }
+            this.columnInfos = columnInfos;
             return this;
         }
         public Builder columnInfos(GetReportDefinitionColumnInfo... columnInfos) {
@@ -442,7 +452,10 @@ public final class GetReportDefinitionResult {
         }
         @CustomType.Setter
         public Builder columnSortings(List<GetReportDefinitionColumnSorting> columnSortings) {
-            this.columnSortings = Objects.requireNonNull(columnSortings);
+            if (columnSortings == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "columnSortings");
+            }
+            this.columnSortings = columnSortings;
             return this;
         }
         public Builder columnSortings(GetReportDefinitionColumnSorting... columnSortings) {
@@ -450,12 +463,18 @@ public final class GetReportDefinitionResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder complianceStandards(List<String> complianceStandards) {
-            this.complianceStandards = Objects.requireNonNull(complianceStandards);
+            if (complianceStandards == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "complianceStandards");
+            }
+            this.complianceStandards = complianceStandards;
             return this;
         }
         public Builder complianceStandards(String... complianceStandards) {
@@ -463,97 +482,154 @@ public final class GetReportDefinitionResult {
         }
         @CustomType.Setter
         public Builder dataSource(String dataSource) {
-            this.dataSource = Objects.requireNonNull(dataSource);
+            if (dataSource == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "dataSource");
+            }
+            this.dataSource = dataSource;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder displayOrder(Integer displayOrder) {
-            this.displayOrder = Objects.requireNonNull(displayOrder);
+            if (displayOrder == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "displayOrder");
+            }
+            this.displayOrder = displayOrder;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isSeeded(Boolean isSeeded) {
-            this.isSeeded = Objects.requireNonNull(isSeeded);
+            if (isSeeded == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "isSeeded");
+            }
+            this.isSeeded = isSeeded;
             return this;
         }
         @CustomType.Setter
         public Builder parentId(String parentId) {
-            this.parentId = Objects.requireNonNull(parentId);
+            if (parentId == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "parentId");
+            }
+            this.parentId = parentId;
             return this;
         }
         @CustomType.Setter
         public Builder recordTimeSpan(String recordTimeSpan) {
-            this.recordTimeSpan = Objects.requireNonNull(recordTimeSpan);
+            if (recordTimeSpan == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "recordTimeSpan");
+            }
+            this.recordTimeSpan = recordTimeSpan;
             return this;
         }
         @CustomType.Setter
         public Builder reportDefinitionId(String reportDefinitionId) {
-            this.reportDefinitionId = Objects.requireNonNull(reportDefinitionId);
+            if (reportDefinitionId == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "reportDefinitionId");
+            }
+            this.reportDefinitionId = reportDefinitionId;
             return this;
         }
         @CustomType.Setter
         public Builder schedule(String schedule) {
-            this.schedule = Objects.requireNonNull(schedule);
+            if (schedule == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "schedule");
+            }
+            this.schedule = schedule;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledReportCompartmentId(String scheduledReportCompartmentId) {
-            this.scheduledReportCompartmentId = Objects.requireNonNull(scheduledReportCompartmentId);
+            if (scheduledReportCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "scheduledReportCompartmentId");
+            }
+            this.scheduledReportCompartmentId = scheduledReportCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledReportMimeType(String scheduledReportMimeType) {
-            this.scheduledReportMimeType = Objects.requireNonNull(scheduledReportMimeType);
+            if (scheduledReportMimeType == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "scheduledReportMimeType");
+            }
+            this.scheduledReportMimeType = scheduledReportMimeType;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledReportName(String scheduledReportName) {
-            this.scheduledReportName = Objects.requireNonNull(scheduledReportName);
+            if (scheduledReportName == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "scheduledReportName");
+            }
+            this.scheduledReportName = scheduledReportName;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledReportRowLimit(Integer scheduledReportRowLimit) {
-            this.scheduledReportRowLimit = Objects.requireNonNull(scheduledReportRowLimit);
+            if (scheduledReportRowLimit == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "scheduledReportRowLimit");
+            }
+            this.scheduledReportRowLimit = scheduledReportRowLimit;
             return this;
         }
         @CustomType.Setter
         public Builder scimFilter(String scimFilter) {
-            this.scimFilter = Objects.requireNonNull(scimFilter);
+            if (scimFilter == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "scimFilter");
+            }
+            this.scimFilter = scimFilter;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder summaries(List<GetReportDefinitionSummary> summaries) {
-            this.summaries = Objects.requireNonNull(summaries);
+            if (summaries == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "summaries");
+            }
+            this.summaries = summaries;
             return this;
         }
         public Builder summaries(GetReportDefinitionSummary... summaries) {
@@ -561,17 +637,26 @@ public final class GetReportDefinitionResult {
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetReportDefinitionResult build() {

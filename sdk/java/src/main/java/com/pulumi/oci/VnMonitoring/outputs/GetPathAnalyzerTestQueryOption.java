@@ -4,6 +4,7 @@
 package com.pulumi.oci.VnMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetPathAnalyzerTestQueryOption {
 
         @CustomType.Setter
         public Builder isBiDirectionalAnalysis(Boolean isBiDirectionalAnalysis) {
-            this.isBiDirectionalAnalysis = Objects.requireNonNull(isBiDirectionalAnalysis);
+            if (isBiDirectionalAnalysis == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestQueryOption", "isBiDirectionalAnalysis");
+            }
+            this.isBiDirectionalAnalysis = isBiDirectionalAnalysis;
             return this;
         }
         public GetPathAnalyzerTestQueryOption build() {

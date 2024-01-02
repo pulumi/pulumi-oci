@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -75,32 +76,46 @@ public final class GetManagedInstanceEventReportResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceEventReportResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder counts(Integer counts) {
-            this.counts = Objects.requireNonNull(counts);
+            if (counts == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceEventReportResult", "counts");
+            }
+            this.counts = counts;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceEventReportResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder latestTimestampGreaterThanOrEqualTo(@Nullable String latestTimestampGreaterThanOrEqualTo) {
+
             this.latestTimestampGreaterThanOrEqualTo = latestTimestampGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder latestTimestampLessThan(@Nullable String latestTimestampLessThan) {
+
             this.latestTimestampLessThan = latestTimestampLessThan;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceId(String managedInstanceId) {
-            this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
+            if (managedInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceEventReportResult", "managedInstanceId");
+            }
+            this.managedInstanceId = managedInstanceId;
             return this;
         }
         public GetManagedInstanceEventReportResult build() {

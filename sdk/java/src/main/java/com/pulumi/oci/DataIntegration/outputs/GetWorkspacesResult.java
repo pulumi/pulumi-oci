@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspacesFilter;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspacesWorkspace;
 import java.lang.String;
@@ -101,11 +102,15 @@ public final class GetWorkspacesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspacesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetWorkspacesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -114,22 +119,30 @@ public final class GetWorkspacesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetWorkspacesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder workspaces(List<GetWorkspacesWorkspace> workspaces) {
-            this.workspaces = Objects.requireNonNull(workspaces);
+            if (workspaces == null) {
+              throw new MissingRequiredPropertyException("GetWorkspacesResult", "workspaces");
+            }
+            this.workspaces = workspaces;
             return this;
         }
         public Builder workspaces(GetWorkspacesWorkspace... workspaces) {

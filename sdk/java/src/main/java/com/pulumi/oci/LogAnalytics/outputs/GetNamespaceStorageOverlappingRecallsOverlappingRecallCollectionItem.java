@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -140,42 +141,66 @@ public final class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollect
 
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder logSets(String logSets) {
-            this.logSets = Objects.requireNonNull(logSets);
+            if (logSets == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem", "logSets");
+            }
+            this.logSets = logSets;
             return this;
         }
         @CustomType.Setter
         public Builder purpose(String purpose) {
-            this.purpose = Objects.requireNonNull(purpose);
+            if (purpose == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem", "purpose");
+            }
+            this.purpose = purpose;
             return this;
         }
         @CustomType.Setter
         public Builder queryString(String queryString) {
-            this.queryString = Objects.requireNonNull(queryString);
+            if (queryString == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem", "queryString");
+            }
+            this.queryString = queryString;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder timeDataEnded(String timeDataEnded) {
-            this.timeDataEnded = Objects.requireNonNull(timeDataEnded);
+            if (timeDataEnded == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem", "timeDataEnded");
+            }
+            this.timeDataEnded = timeDataEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeDataStarted(String timeDataStarted) {
-            this.timeDataStarted = Objects.requireNonNull(timeDataStarted);
+            if (timeDataStarted == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem", "timeDataStarted");
+            }
+            this.timeDataStarted = timeDataStarted;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem build() {

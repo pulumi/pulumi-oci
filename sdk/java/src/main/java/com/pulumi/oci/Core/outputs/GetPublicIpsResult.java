@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetPublicIpsFilter;
 import com.pulumi.oci.Core.outputs.GetPublicIpsPublicIp;
 import java.lang.String;
@@ -137,16 +138,21 @@ public final class GetPublicIpsResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPublicIpsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -155,22 +161,30 @@ public final class GetPublicIpsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifetime(@Nullable String lifetime) {
+
             this.lifetime = lifetime;
             return this;
         }
         @CustomType.Setter
         public Builder publicIpPoolId(@Nullable String publicIpPoolId) {
+
             this.publicIpPoolId = publicIpPoolId;
             return this;
         }
         @CustomType.Setter
         public Builder publicIps(List<GetPublicIpsPublicIp> publicIps) {
-            this.publicIps = Objects.requireNonNull(publicIps);
+            if (publicIps == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpsResult", "publicIps");
+            }
+            this.publicIps = publicIps;
             return this;
         }
         public Builder publicIps(GetPublicIpsPublicIp... publicIps) {
@@ -178,7 +192,10 @@ public final class GetPublicIpsResult {
         }
         @CustomType.Setter
         public Builder scope(String scope) {
-            this.scope = Objects.requireNonNull(scope);
+            if (scope == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpsResult", "scope");
+            }
+            this.scope = scope;
             return this;
         }
         public GetPublicIpsResult build() {

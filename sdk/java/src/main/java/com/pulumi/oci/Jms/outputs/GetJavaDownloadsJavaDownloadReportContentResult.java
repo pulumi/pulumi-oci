@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -48,12 +49,18 @@ public final class GetJavaDownloadsJavaDownloadReportContentResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadReportContentResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder javaDownloadReportId(String javaDownloadReportId) {
-            this.javaDownloadReportId = Objects.requireNonNull(javaDownloadReportId);
+            if (javaDownloadReportId == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadReportContentResult", "javaDownloadReportId");
+            }
+            this.javaDownloadReportId = javaDownloadReportId;
             return this;
         }
         public GetJavaDownloadsJavaDownloadReportContentResult build() {

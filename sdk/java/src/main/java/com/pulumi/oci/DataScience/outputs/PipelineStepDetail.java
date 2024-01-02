@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.PipelineStepDetailStepConfigurationDetails;
 import com.pulumi.oci.DataScience.outputs.PipelineStepDetailStepInfrastructureConfigurationDetails;
 import java.lang.Boolean;
@@ -152,6 +153,7 @@ public final class PipelineStepDetail {
 
         @CustomType.Setter
         public Builder dependsOns(@Nullable List<String> dependsOns) {
+
             this.dependsOns = dependsOns;
             return this;
         }
@@ -160,37 +162,48 @@ public final class PipelineStepDetail {
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder isArtifactUploaded(@Nullable Boolean isArtifactUploaded) {
+
             this.isArtifactUploaded = isArtifactUploaded;
             return this;
         }
         @CustomType.Setter
         public Builder jobId(@Nullable String jobId) {
+
             this.jobId = jobId;
             return this;
         }
         @CustomType.Setter
         public Builder stepConfigurationDetails(@Nullable PipelineStepDetailStepConfigurationDetails stepConfigurationDetails) {
+
             this.stepConfigurationDetails = stepConfigurationDetails;
             return this;
         }
         @CustomType.Setter
         public Builder stepInfrastructureConfigurationDetails(@Nullable PipelineStepDetailStepInfrastructureConfigurationDetails stepInfrastructureConfigurationDetails) {
+
             this.stepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
             return this;
         }
         @CustomType.Setter
         public Builder stepName(String stepName) {
-            this.stepName = Objects.requireNonNull(stepName);
+            if (stepName == null) {
+              throw new MissingRequiredPropertyException("PipelineStepDetail", "stepName");
+            }
+            this.stepName = stepName;
             return this;
         }
         @CustomType.Setter
         public Builder stepType(String stepType) {
-            this.stepType = Objects.requireNonNull(stepType);
+            if (stepType == null) {
+              throw new MissingRequiredPropertyException("PipelineStepDetail", "stepType");
+            }
+            this.stepType = stepType;
             return this;
         }
         public PipelineStepDetail build() {

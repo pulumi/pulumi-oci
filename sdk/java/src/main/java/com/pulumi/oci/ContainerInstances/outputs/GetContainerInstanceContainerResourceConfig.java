@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerInstances.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.util.Objects;
 
@@ -40,12 +41,18 @@ public final class GetContainerInstanceContainerResourceConfig {
 
         @CustomType.Setter
         public Builder memoryLimitInGbs(Double memoryLimitInGbs) {
-            this.memoryLimitInGbs = Objects.requireNonNull(memoryLimitInGbs);
+            if (memoryLimitInGbs == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceContainerResourceConfig", "memoryLimitInGbs");
+            }
+            this.memoryLimitInGbs = memoryLimitInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder vcpusLimit(Double vcpusLimit) {
-            this.vcpusLimit = Objects.requireNonNull(vcpusLimit);
+            if (vcpusLimit == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceContainerResourceConfig", "vcpusLimit");
+            }
+            this.vcpusLimit = vcpusLimit;
             return this;
         }
         public GetContainerInstanceContainerResourceConfig build() {

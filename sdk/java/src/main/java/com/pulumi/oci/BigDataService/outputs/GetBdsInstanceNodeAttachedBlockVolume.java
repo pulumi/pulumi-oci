@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetBdsInstanceNodeAttachedBlockVolume {
 
         @CustomType.Setter
         public Builder volumeAttachmentId(String volumeAttachmentId) {
-            this.volumeAttachmentId = Objects.requireNonNull(volumeAttachmentId);
+            if (volumeAttachmentId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNodeAttachedBlockVolume", "volumeAttachmentId");
+            }
+            this.volumeAttachmentId = volumeAttachmentId;
             return this;
         }
         @CustomType.Setter
         public Builder volumeSizeInGbs(String volumeSizeInGbs) {
-            this.volumeSizeInGbs = Objects.requireNonNull(volumeSizeInGbs);
+            if (volumeSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNodeAttachedBlockVolume", "volumeSizeInGbs");
+            }
+            this.volumeSizeInGbs = volumeSizeInGbs;
             return this;
         }
         public GetBdsInstanceNodeAttachedBlockVolume build() {

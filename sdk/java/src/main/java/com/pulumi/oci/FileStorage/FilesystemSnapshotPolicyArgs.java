@@ -5,6 +5,7 @@ package com.pulumi.oci.FileStorage;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.inputs.FilesystemSnapshotPolicyScheduleArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -371,8 +372,12 @@ public final class FilesystemSnapshotPolicyArgs extends com.pulumi.resources.Res
         }
 
         public FilesystemSnapshotPolicyArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.availabilityDomain == null) {
+                throw new MissingRequiredPropertyException("FilesystemSnapshotPolicyArgs", "availabilityDomain");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("FilesystemSnapshotPolicyArgs", "compartmentId");
+            }
             return $;
         }
     }

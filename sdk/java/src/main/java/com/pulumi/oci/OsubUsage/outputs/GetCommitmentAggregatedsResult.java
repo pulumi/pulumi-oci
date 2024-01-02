@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsubUsage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsubUsage.outputs.GetCommitmentAggregatedsComputedUsageAggregated;
 import com.pulumi.oci.OsubUsage.outputs.GetCommitmentAggregatedsFilter;
 import java.lang.String;
@@ -125,12 +126,18 @@ public final class GetCommitmentAggregatedsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentAggregatedsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computedUsageAggregateds(List<GetCommitmentAggregatedsComputedUsageAggregated> computedUsageAggregateds) {
-            this.computedUsageAggregateds = Objects.requireNonNull(computedUsageAggregateds);
+            if (computedUsageAggregateds == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentAggregatedsResult", "computedUsageAggregateds");
+            }
+            this.computedUsageAggregateds = computedUsageAggregateds;
             return this;
         }
         public Builder computedUsageAggregateds(GetCommitmentAggregatedsComputedUsageAggregated... computedUsageAggregateds) {
@@ -138,6 +145,7 @@ public final class GetCommitmentAggregatedsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCommitmentAggregatedsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -146,36 +154,51 @@ public final class GetCommitmentAggregatedsResult {
         }
         @CustomType.Setter
         public Builder grouping(@Nullable String grouping) {
+
             this.grouping = grouping;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentAggregatedsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder parentProduct(@Nullable String parentProduct) {
+
             this.parentProduct = parentProduct;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentAggregatedsResult", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
         public Builder timeFrom(String timeFrom) {
-            this.timeFrom = Objects.requireNonNull(timeFrom);
+            if (timeFrom == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentAggregatedsResult", "timeFrom");
+            }
+            this.timeFrom = timeFrom;
             return this;
         }
         @CustomType.Setter
         public Builder timeTo(String timeTo) {
-            this.timeTo = Objects.requireNonNull(timeTo);
+            if (timeTo == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentAggregatedsResult", "timeTo");
+            }
+            this.timeTo = timeTo;
             return this;
         }
         @CustomType.Setter
         public Builder xOneOriginRegion(@Nullable String xOneOriginRegion) {
+
             this.xOneOriginRegion = xOneOriginRegion;
             return this;
         }

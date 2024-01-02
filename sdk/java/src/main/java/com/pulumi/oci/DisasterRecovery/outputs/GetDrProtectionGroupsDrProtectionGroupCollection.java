@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollection {
 
         @CustomType.Setter
         public Builder items(List<GetDrProtectionGroupsDrProtectionGroupCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetDrProtectionGroupsDrProtectionGroupCollectionItem... items) {

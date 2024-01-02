@@ -74,11 +74,13 @@ public final class BuildRunBuildRunSourceTriggerInfoAction {
 
         @CustomType.Setter
         public Builder buildPipelineId(@Nullable String buildPipelineId) {
+
             this.buildPipelineId = buildPipelineId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -87,6 +89,7 @@ public final class BuildRunBuildRunSourceTriggerInfoAction {
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }

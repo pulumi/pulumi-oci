@@ -4,6 +4,7 @@
 package com.pulumi.oci.VnMonitoring.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetPathAnalyzerTestPlainArgs extends com.pulumi.resources.Inv
         }
 
         public GetPathAnalyzerTestPlainArgs build() {
-            $.pathAnalyzerTestId = Objects.requireNonNull($.pathAnalyzerTestId, "expected parameter 'pathAnalyzerTestId' to be non-null");
+            if ($.pathAnalyzerTestId == null) {
+                throw new MissingRequiredPropertyException("GetPathAnalyzerTestPlainArgs", "pathAnalyzerTestId");
+            }
             return $;
         }
     }

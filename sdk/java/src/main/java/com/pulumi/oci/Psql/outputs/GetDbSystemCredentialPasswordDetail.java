@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -52,22 +53,34 @@ public final class GetDbSystemCredentialPasswordDetail {
 
         @CustomType.Setter
         public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+            if (password == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemCredentialPasswordDetail", "password");
+            }
+            this.password = password;
             return this;
         }
         @CustomType.Setter
         public Builder passwordType(String passwordType) {
-            this.passwordType = Objects.requireNonNull(passwordType);
+            if (passwordType == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemCredentialPasswordDetail", "passwordType");
+            }
+            this.passwordType = passwordType;
             return this;
         }
         @CustomType.Setter
         public Builder secretId(String secretId) {
-            this.secretId = Objects.requireNonNull(secretId);
+            if (secretId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemCredentialPasswordDetail", "secretId");
+            }
+            this.secretId = secretId;
             return this;
         }
         @CustomType.Setter
         public Builder secretVersion(String secretVersion) {
-            this.secretVersion = Objects.requireNonNull(secretVersion);
+            if (secretVersion == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemCredentialPasswordDetail", "secretVersion");
+            }
+            this.secretVersion = secretVersion;
             return this;
         }
         public GetDbSystemCredentialPasswordDetail build() {

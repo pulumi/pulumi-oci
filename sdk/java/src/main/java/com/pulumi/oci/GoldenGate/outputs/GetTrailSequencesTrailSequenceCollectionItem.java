@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetTrailSequencesTrailSequenceCollectionItem {
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetTrailSequencesTrailSequenceCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder sequenceId(String sequenceId) {
-            this.sequenceId = Objects.requireNonNull(sequenceId);
+            if (sequenceId == null) {
+              throw new MissingRequiredPropertyException("GetTrailSequencesTrailSequenceCollectionItem", "sequenceId");
+            }
+            this.sequenceId = sequenceId;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInBytes(Double sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+            if (sizeInBytes == null) {
+              throw new MissingRequiredPropertyException("GetTrailSequencesTrailSequenceCollectionItem", "sizeInBytes");
+            }
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastUpdated(String timeLastUpdated) {
-            this.timeLastUpdated = Objects.requireNonNull(timeLastUpdated);
+            if (timeLastUpdated == null) {
+              throw new MissingRequiredPropertyException("GetTrailSequencesTrailSequenceCollectionItem", "timeLastUpdated");
+            }
+            this.timeLastUpdated = timeLastUpdated;
             return this;
         }
         public GetTrailSequencesTrailSequenceCollectionItem build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceRulesRuleSummaryCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetNamespaceRulesRuleSummaryCollection {
 
         @CustomType.Setter
         public Builder items(List<GetNamespaceRulesRuleSummaryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceRulesRuleSummaryCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetNamespaceRulesRuleSummaryCollectionItem... items) {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -272,8 +273,12 @@ public final class GetDomainsConditionArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetDomainsConditionArgs build() {
-            $.conditionId = Objects.requireNonNull($.conditionId, "expected parameter 'conditionId' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
+            if ($.conditionId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsConditionArgs", "conditionId");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsConditionArgs", "idcsEndpoint");
+            }
             return $;
         }
     }

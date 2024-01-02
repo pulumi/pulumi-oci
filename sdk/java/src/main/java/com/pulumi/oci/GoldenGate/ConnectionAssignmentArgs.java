@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -123,8 +124,12 @@ public final class ConnectionAssignmentArgs extends com.pulumi.resources.Resourc
         }
 
         public ConnectionAssignmentArgs build() {
-            $.connectionId = Objects.requireNonNull($.connectionId, "expected parameter 'connectionId' to be non-null");
-            $.deploymentId = Objects.requireNonNull($.deploymentId, "expected parameter 'deploymentId' to be non-null");
+            if ($.connectionId == null) {
+                throw new MissingRequiredPropertyException("ConnectionAssignmentArgs", "connectionId");
+            }
+            if ($.deploymentId == null) {
+                throw new MissingRequiredPropertyException("ConnectionAssignmentArgs", "deploymentId");
+            }
             return $;
         }
     }

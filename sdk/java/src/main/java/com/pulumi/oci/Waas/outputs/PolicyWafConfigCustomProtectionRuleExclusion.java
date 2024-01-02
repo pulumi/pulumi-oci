@@ -59,6 +59,7 @@ public final class PolicyWafConfigCustomProtectionRuleExclusion {
 
         @CustomType.Setter
         public Builder exclusions(@Nullable List<String> exclusions) {
+
             this.exclusions = exclusions;
             return this;
         }
@@ -67,6 +68,7 @@ public final class PolicyWafConfigCustomProtectionRuleExclusion {
         }
         @CustomType.Setter
         public Builder target(@Nullable String target) {
+
             this.target = target;
             return this;
         }

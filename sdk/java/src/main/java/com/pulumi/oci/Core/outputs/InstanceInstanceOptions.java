@@ -44,6 +44,7 @@ public final class InstanceInstanceOptions {
 
         @CustomType.Setter
         public Builder areLegacyImdsEndpointsDisabled(@Nullable Boolean areLegacyImdsEndpointsDisabled) {
+
             this.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
             return this;
         }

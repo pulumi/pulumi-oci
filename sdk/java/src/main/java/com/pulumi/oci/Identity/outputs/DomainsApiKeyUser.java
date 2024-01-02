@@ -206,26 +206,31 @@ public final class DomainsApiKeyUser {
 
         @CustomType.Setter
         public Builder display(@Nullable String display) {
+
             this.display = display;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(@Nullable String ocid) {
+
             this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder ref(@Nullable String ref) {
+
             this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder value(@Nullable String value) {
+
             this.value = value;
             return this;
         }

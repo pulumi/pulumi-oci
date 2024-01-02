@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsFilter;
 import com.pulumi.oci.Jms.outputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollection;
 import java.lang.String;
@@ -107,11 +108,15 @@ public final class GetJavaDownloadsJavaLicenseAcceptanceRecordsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseAcceptanceRecordsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetJavaDownloadsJavaLicenseAcceptanceRecordsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -120,12 +125,16 @@ public final class GetJavaDownloadsJavaLicenseAcceptanceRecordsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder javaLicenseAcceptanceRecordCollections(List<GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollection> javaLicenseAcceptanceRecordCollections) {
-            this.javaLicenseAcceptanceRecordCollections = Objects.requireNonNull(javaLicenseAcceptanceRecordCollections);
+            if (javaLicenseAcceptanceRecordCollections == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseAcceptanceRecordsResult", "javaLicenseAcceptanceRecordCollections");
+            }
+            this.javaLicenseAcceptanceRecordCollections = javaLicenseAcceptanceRecordCollections;
             return this;
         }
         public Builder javaLicenseAcceptanceRecordCollections(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollection... javaLicenseAcceptanceRecordCollections) {
@@ -133,16 +142,19 @@ public final class GetJavaDownloadsJavaLicenseAcceptanceRecordsResult {
         }
         @CustomType.Setter
         public Builder licenseType(@Nullable String licenseType) {
+
             this.licenseType = licenseType;
             return this;
         }
         @CustomType.Setter
         public Builder searchByUser(@Nullable String searchByUser) {
+
             this.searchByUser = searchByUser;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }

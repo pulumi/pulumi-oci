@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetSubscriptionsSubscriptionCollectionItemTaxInfo {
 
         @CustomType.Setter
         public Builder noTaxReasonCode(String noTaxReasonCode) {
-            this.noTaxReasonCode = Objects.requireNonNull(noTaxReasonCode);
+            if (noTaxReasonCode == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItemTaxInfo", "noTaxReasonCode");
+            }
+            this.noTaxReasonCode = noTaxReasonCode;
             return this;
         }
         @CustomType.Setter
         public Builder noTaxReasonCodeDetails(String noTaxReasonCodeDetails) {
-            this.noTaxReasonCodeDetails = Objects.requireNonNull(noTaxReasonCodeDetails);
+            if (noTaxReasonCodeDetails == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItemTaxInfo", "noTaxReasonCodeDetails");
+            }
+            this.noTaxReasonCodeDetails = noTaxReasonCodeDetails;
             return this;
         }
         @CustomType.Setter
         public Builder taxCnpj(String taxCnpj) {
-            this.taxCnpj = Objects.requireNonNull(taxCnpj);
+            if (taxCnpj == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItemTaxInfo", "taxCnpj");
+            }
+            this.taxCnpj = taxCnpj;
             return this;
         }
         @CustomType.Setter
         public Builder taxPayerId(String taxPayerId) {
-            this.taxPayerId = Objects.requireNonNull(taxPayerId);
+            if (taxPayerId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItemTaxInfo", "taxPayerId");
+            }
+            this.taxPayerId = taxPayerId;
             return this;
         }
         @CustomType.Setter
         public Builder taxRegNumber(String taxRegNumber) {
-            this.taxRegNumber = Objects.requireNonNull(taxRegNumber);
+            if (taxRegNumber == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItemTaxInfo", "taxRegNumber");
+            }
+            this.taxRegNumber = taxRegNumber;
             return this;
         }
         public GetSubscriptionsSubscriptionCollectionItemTaxInfo build() {

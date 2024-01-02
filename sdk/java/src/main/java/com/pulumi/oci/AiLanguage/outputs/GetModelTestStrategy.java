@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiLanguage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiLanguage.outputs.GetModelTestStrategyTestingDataset;
 import com.pulumi.oci.AiLanguage.outputs.GetModelTestStrategyValidationDataset;
 import java.lang.String;
@@ -73,12 +74,18 @@ public final class GetModelTestStrategy {
 
         @CustomType.Setter
         public Builder strategyType(String strategyType) {
-            this.strategyType = Objects.requireNonNull(strategyType);
+            if (strategyType == null) {
+              throw new MissingRequiredPropertyException("GetModelTestStrategy", "strategyType");
+            }
+            this.strategyType = strategyType;
             return this;
         }
         @CustomType.Setter
         public Builder testingDatasets(List<GetModelTestStrategyTestingDataset> testingDatasets) {
-            this.testingDatasets = Objects.requireNonNull(testingDatasets);
+            if (testingDatasets == null) {
+              throw new MissingRequiredPropertyException("GetModelTestStrategy", "testingDatasets");
+            }
+            this.testingDatasets = testingDatasets;
             return this;
         }
         public Builder testingDatasets(GetModelTestStrategyTestingDataset... testingDatasets) {
@@ -86,7 +93,10 @@ public final class GetModelTestStrategy {
         }
         @CustomType.Setter
         public Builder validationDatasets(List<GetModelTestStrategyValidationDataset> validationDatasets) {
-            this.validationDatasets = Objects.requireNonNull(validationDatasets);
+            if (validationDatasets == null) {
+              throw new MissingRequiredPropertyException("GetModelTestStrategy", "validationDatasets");
+            }
+            this.validationDatasets = validationDatasets;
             return this;
         }
         public Builder validationDatasets(GetModelTestStrategyValidationDataset... validationDatasets) {

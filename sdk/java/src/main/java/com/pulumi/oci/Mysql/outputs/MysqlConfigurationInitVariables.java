@@ -56,6 +56,7 @@ public final class MysqlConfigurationInitVariables {
 
         @CustomType.Setter
         public Builder lowerCaseTableNames(@Nullable String lowerCaseTableNames) {
+
             this.lowerCaseTableNames = lowerCaseTableNames;
             return this;
         }

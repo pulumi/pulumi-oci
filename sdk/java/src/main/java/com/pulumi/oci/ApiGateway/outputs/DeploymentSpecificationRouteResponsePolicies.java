@@ -59,11 +59,13 @@ public final class DeploymentSpecificationRouteResponsePolicies {
 
         @CustomType.Setter
         public Builder headerTransformations(@Nullable DeploymentSpecificationRouteResponsePoliciesHeaderTransformations headerTransformations) {
+
             this.headerTransformations = headerTransformations;
             return this;
         }
         @CustomType.Setter
         public Builder responseCacheStore(@Nullable DeploymentSpecificationRouteResponsePoliciesResponseCacheStore responseCacheStore) {
+
             this.responseCacheStore = responseCacheStore;
             return this;
         }

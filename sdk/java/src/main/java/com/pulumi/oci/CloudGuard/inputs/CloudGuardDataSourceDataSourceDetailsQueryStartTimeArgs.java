@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -113,7 +114,9 @@ public final class CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs exten
         }
 
         public CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs build() {
-            $.startPolicyType = Objects.requireNonNull($.startPolicyType, "expected parameter 'startPolicyType' to be non-null");
+            if ($.startPolicyType == null) {
+                throw new MissingRequiredPropertyException("CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs", "startPolicyType");
+            }
             return $;
         }
     }

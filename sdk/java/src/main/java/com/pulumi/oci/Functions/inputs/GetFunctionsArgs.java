@@ -5,6 +5,7 @@ package com.pulumi.oci.Functions.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.inputs.GetFunctionsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -210,7 +211,9 @@ public final class GetFunctionsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetFunctionsArgs build() {
-            $.applicationId = Objects.requireNonNull($.applicationId, "expected parameter 'applicationId' to be non-null");
+            if ($.applicationId == null) {
+                throw new MissingRequiredPropertyException("GetFunctionsArgs", "applicationId");
+            }
             return $;
         }
     }

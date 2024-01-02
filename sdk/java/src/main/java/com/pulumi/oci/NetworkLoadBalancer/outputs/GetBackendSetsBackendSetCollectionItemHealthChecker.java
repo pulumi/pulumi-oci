@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -169,52 +170,82 @@ public final class GetBackendSetsBackendSetCollectionItemHealthChecker {
 
         @CustomType.Setter
         public Builder intervalInMillis(Integer intervalInMillis) {
-            this.intervalInMillis = Objects.requireNonNull(intervalInMillis);
+            if (intervalInMillis == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollectionItemHealthChecker", "intervalInMillis");
+            }
+            this.intervalInMillis = intervalInMillis;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollectionItemHealthChecker", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollectionItemHealthChecker", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder requestData(String requestData) {
-            this.requestData = Objects.requireNonNull(requestData);
+            if (requestData == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollectionItemHealthChecker", "requestData");
+            }
+            this.requestData = requestData;
             return this;
         }
         @CustomType.Setter
         public Builder responseBodyRegex(String responseBodyRegex) {
-            this.responseBodyRegex = Objects.requireNonNull(responseBodyRegex);
+            if (responseBodyRegex == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollectionItemHealthChecker", "responseBodyRegex");
+            }
+            this.responseBodyRegex = responseBodyRegex;
             return this;
         }
         @CustomType.Setter
         public Builder responseData(String responseData) {
-            this.responseData = Objects.requireNonNull(responseData);
+            if (responseData == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollectionItemHealthChecker", "responseData");
+            }
+            this.responseData = responseData;
             return this;
         }
         @CustomType.Setter
         public Builder retries(Integer retries) {
-            this.retries = Objects.requireNonNull(retries);
+            if (retries == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollectionItemHealthChecker", "retries");
+            }
+            this.retries = retries;
             return this;
         }
         @CustomType.Setter
         public Builder returnCode(Integer returnCode) {
-            this.returnCode = Objects.requireNonNull(returnCode);
+            if (returnCode == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollectionItemHealthChecker", "returnCode");
+            }
+            this.returnCode = returnCode;
             return this;
         }
         @CustomType.Setter
         public Builder timeoutInMillis(Integer timeoutInMillis) {
-            this.timeoutInMillis = Objects.requireNonNull(timeoutInMillis);
+            if (timeoutInMillis == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollectionItemHealthChecker", "timeoutInMillis");
+            }
+            this.timeoutInMillis = timeoutInMillis;
             return this;
         }
         @CustomType.Setter
         public Builder urlPath(String urlPath) {
-            this.urlPath = Objects.requireNonNull(urlPath);
+            if (urlPath == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollectionItemHealthChecker", "urlPath");
+            }
+            this.urlPath = urlPath;
             return this;
         }
         public GetBackendSetsBackendSetCollectionItemHealthChecker build() {

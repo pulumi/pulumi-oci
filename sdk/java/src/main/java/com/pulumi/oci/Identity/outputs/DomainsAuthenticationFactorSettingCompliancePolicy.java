@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -126,17 +127,26 @@ public final class DomainsAuthenticationFactorSettingCompliancePolicy {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingCompliancePolicy", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingCompliancePolicy", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingCompliancePolicy", "value");
+            }
+            this.value = value;
             return this;
         }
         public DomainsAuthenticationFactorSettingCompliancePolicy build() {

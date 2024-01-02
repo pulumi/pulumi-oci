@@ -5,6 +5,7 @@ package com.pulumi.oci.NetworkFirewall;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicySecurityRuleConditionArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicySecurityRulePositionArgs;
 import java.lang.String;
@@ -315,9 +316,15 @@ public final class NetworkFirewallPolicySecurityRuleArgs extends com.pulumi.reso
         }
 
         public NetworkFirewallPolicySecurityRuleArgs build() {
-            $.action = Objects.requireNonNull($.action, "expected parameter 'action' to be non-null");
-            $.condition = Objects.requireNonNull($.condition, "expected parameter 'condition' to be non-null");
-            $.networkFirewallPolicyId = Objects.requireNonNull($.networkFirewallPolicyId, "expected parameter 'networkFirewallPolicyId' to be non-null");
+            if ($.action == null) {
+                throw new MissingRequiredPropertyException("NetworkFirewallPolicySecurityRuleArgs", "action");
+            }
+            if ($.condition == null) {
+                throw new MissingRequiredPropertyException("NetworkFirewallPolicySecurityRuleArgs", "condition");
+            }
+            if ($.networkFirewallPolicyId == null) {
+                throw new MissingRequiredPropertyException("NetworkFirewallPolicySecurityRuleArgs", "networkFirewallPolicyId");
+            }
             return $;
         }
     }

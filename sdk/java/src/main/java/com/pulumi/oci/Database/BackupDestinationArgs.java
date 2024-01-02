@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.BackupDestinationMountTypeDetailsArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -417,9 +418,15 @@ public final class BackupDestinationArgs extends com.pulumi.resources.ResourceAr
         }
 
         public BackupDestinationArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("BackupDestinationArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("BackupDestinationArgs", "displayName");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("BackupDestinationArgs", "type");
+            }
             return $;
         }
     }

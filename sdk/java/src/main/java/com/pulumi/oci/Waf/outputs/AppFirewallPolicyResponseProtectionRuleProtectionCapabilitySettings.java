@@ -116,6 +116,7 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySe
 
         @CustomType.Setter
         public Builder allowedHttpMethods(@Nullable List<String> allowedHttpMethods) {
+
             this.allowedHttpMethods = allowedHttpMethods;
             return this;
         }
@@ -124,26 +125,31 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySe
         }
         @CustomType.Setter
         public Builder maxHttpRequestHeaderLength(@Nullable Integer maxHttpRequestHeaderLength) {
+
             this.maxHttpRequestHeaderLength = maxHttpRequestHeaderLength;
             return this;
         }
         @CustomType.Setter
         public Builder maxHttpRequestHeaders(@Nullable Integer maxHttpRequestHeaders) {
+
             this.maxHttpRequestHeaders = maxHttpRequestHeaders;
             return this;
         }
         @CustomType.Setter
         public Builder maxNumberOfArguments(@Nullable Integer maxNumberOfArguments) {
+
             this.maxNumberOfArguments = maxNumberOfArguments;
             return this;
         }
         @CustomType.Setter
         public Builder maxSingleArgumentLength(@Nullable Integer maxSingleArgumentLength) {
+
             this.maxSingleArgumentLength = maxSingleArgumentLength;
             return this;
         }
         @CustomType.Setter
         public Builder maxTotalArgumentLength(@Nullable Integer maxTotalArgumentLength) {
+
             this.maxTotalArgumentLength = maxTotalArgumentLength;
             return this;
         }

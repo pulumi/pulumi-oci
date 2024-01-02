@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentVersionsDeploymentVersionCollection;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentVersionsFilter;
 import java.lang.String;
@@ -93,22 +94,30 @@ public final class GetDeploymentVersionsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentVersionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentId(@Nullable String deploymentId) {
+
             this.deploymentId = deploymentId;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentType(@Nullable String deploymentType) {
+
             this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentVersionCollections(List<GetDeploymentVersionsDeploymentVersionCollection> deploymentVersionCollections) {
-            this.deploymentVersionCollections = Objects.requireNonNull(deploymentVersionCollections);
+            if (deploymentVersionCollections == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentVersionsResult", "deploymentVersionCollections");
+            }
+            this.deploymentVersionCollections = deploymentVersionCollections;
             return this;
         }
         public Builder deploymentVersionCollections(GetDeploymentVersionsDeploymentVersionCollection... deploymentVersionCollections) {
@@ -116,6 +125,7 @@ public final class GetDeploymentVersionsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDeploymentVersionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -124,7 +134,10 @@ public final class GetDeploymentVersionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentVersionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetDeploymentVersionsResult build() {

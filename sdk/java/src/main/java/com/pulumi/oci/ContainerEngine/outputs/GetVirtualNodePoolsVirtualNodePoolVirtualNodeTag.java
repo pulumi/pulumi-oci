@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -58,12 +59,18 @@ public final class GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag {
 
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         public GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag build() {

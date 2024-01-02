@@ -58,11 +58,13 @@ public final class TargetAssetEstimatedCostOsImage {
 
         @CustomType.Setter
         public Builder totalPerHour(@Nullable Double totalPerHour) {
+
             this.totalPerHour = totalPerHour;
             return this;
         }
         @CustomType.Setter
         public Builder totalPerHourBySubscription(@Nullable Double totalPerHourBySubscription) {
+
             this.totalPerHourBySubscription = totalPerHourBySubscription;
             return this;
         }

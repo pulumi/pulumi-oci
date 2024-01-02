@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -375,127 +376,202 @@ public final class GetDbNodesDbNode {
 
         @CustomType.Setter
         public Builder additionalDetails(String additionalDetails) {
-            this.additionalDetails = Objects.requireNonNull(additionalDetails);
+            if (additionalDetails == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "additionalDetails");
+            }
+            this.additionalDetails = additionalDetails;
             return this;
         }
         @CustomType.Setter
         public Builder backupIpId(String backupIpId) {
-            this.backupIpId = Objects.requireNonNull(backupIpId);
+            if (backupIpId == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "backupIpId");
+            }
+            this.backupIpId = backupIpId;
             return this;
         }
         @CustomType.Setter
         public Builder backupVnic2id(String backupVnic2id) {
-            this.backupVnic2id = Objects.requireNonNull(backupVnic2id);
+            if (backupVnic2id == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "backupVnic2id");
+            }
+            this.backupVnic2id = backupVnic2id;
             return this;
         }
         @CustomType.Setter
         public Builder backupVnicId(String backupVnicId) {
-            this.backupVnicId = Objects.requireNonNull(backupVnicId);
+            if (backupVnicId == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "backupVnicId");
+            }
+            this.backupVnicId = backupVnicId;
             return this;
         }
         @CustomType.Setter
         public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+            if (cpuCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "cpuCoreCount");
+            }
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
         public Builder dbNodeId(String dbNodeId) {
-            this.dbNodeId = Objects.requireNonNull(dbNodeId);
+            if (dbNodeId == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "dbNodeId");
+            }
+            this.dbNodeId = dbNodeId;
             return this;
         }
         @CustomType.Setter
         public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
-            this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
+            if (dbNodeStorageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "dbNodeStorageSizeInGbs");
+            }
+            this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder dbServerId(String dbServerId) {
-            this.dbServerId = Objects.requireNonNull(dbServerId);
+            if (dbServerId == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "dbServerId");
+            }
+            this.dbServerId = dbServerId;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+            if (faultDomain == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "faultDomain");
+            }
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostIpId(String hostIpId) {
-            this.hostIpId = Objects.requireNonNull(hostIpId);
+            if (hostIpId == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "hostIpId");
+            }
+            this.hostIpId = hostIpId;
             return this;
         }
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder maintenanceType(String maintenanceType) {
-            this.maintenanceType = Objects.requireNonNull(maintenanceType);
+            if (maintenanceType == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "maintenanceType");
+            }
+            this.maintenanceType = maintenanceType;
             return this;
         }
         @CustomType.Setter
         public Builder memorySizeInGbs(Integer memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+            if (memorySizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "memorySizeInGbs");
+            }
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder softwareStorageSizeInGb(Integer softwareStorageSizeInGb) {
-            this.softwareStorageSizeInGb = Objects.requireNonNull(softwareStorageSizeInGb);
+            if (softwareStorageSizeInGb == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "softwareStorageSizeInGb");
+            }
+            this.softwareStorageSizeInGb = softwareStorageSizeInGb;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeMaintenanceWindowEnd(String timeMaintenanceWindowEnd) {
-            this.timeMaintenanceWindowEnd = Objects.requireNonNull(timeMaintenanceWindowEnd);
+            if (timeMaintenanceWindowEnd == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "timeMaintenanceWindowEnd");
+            }
+            this.timeMaintenanceWindowEnd = timeMaintenanceWindowEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeMaintenanceWindowStart(String timeMaintenanceWindowStart) {
-            this.timeMaintenanceWindowStart = Objects.requireNonNull(timeMaintenanceWindowStart);
+            if (timeMaintenanceWindowStart == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "timeMaintenanceWindowStart");
+            }
+            this.timeMaintenanceWindowStart = timeMaintenanceWindowStart;
             return this;
         }
         @CustomType.Setter
         public Builder vnic2id(String vnic2id) {
-            this.vnic2id = Objects.requireNonNull(vnic2id);
+            if (vnic2id == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "vnic2id");
+            }
+            this.vnic2id = vnic2id;
             return this;
         }
         @CustomType.Setter
         public Builder vnicId(String vnicId) {
-            this.vnicId = Objects.requireNonNull(vnicId);
+            if (vnicId == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "vnicId");
+            }
+            this.vnicId = vnicId;
             return this;
         }
         public GetDbNodesDbNode build() {

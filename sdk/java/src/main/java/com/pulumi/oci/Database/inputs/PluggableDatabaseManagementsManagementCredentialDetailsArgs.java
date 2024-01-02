@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class PluggableDatabaseManagementsManagementCredentialDetailsArgs e
         }
 
         public PluggableDatabaseManagementsManagementCredentialDetailsArgs build() {
-            $.passwordSecretId = Objects.requireNonNull($.passwordSecretId, "expected parameter 'passwordSecretId' to be non-null");
-            $.userName = Objects.requireNonNull($.userName, "expected parameter 'userName' to be non-null");
+            if ($.passwordSecretId == null) {
+                throw new MissingRequiredPropertyException("PluggableDatabaseManagementsManagementCredentialDetailsArgs", "passwordSecretId");
+            }
+            if ($.userName == null) {
+                throw new MissingRequiredPropertyException("PluggableDatabaseManagementsManagementCredentialDetailsArgs", "userName");
+            }
             return $;
         }
     }

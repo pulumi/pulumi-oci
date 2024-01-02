@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetConnectionLastConnectionValidationResult;
 import com.pulumi.oci.DevOps.outputs.GetConnectionTlsVerifyConfig;
 import java.lang.Object;
@@ -291,62 +292,98 @@ public final class GetConnectionResult {
 
         @CustomType.Setter
         public Builder accessToken(String accessToken) {
-            this.accessToken = Objects.requireNonNull(accessToken);
+            if (accessToken == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "accessToken");
+            }
+            this.accessToken = accessToken;
             return this;
         }
         @CustomType.Setter
         public Builder appPassword(String appPassword) {
-            this.appPassword = Objects.requireNonNull(appPassword);
+            if (appPassword == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "appPassword");
+            }
+            this.appPassword = appPassword;
             return this;
         }
         @CustomType.Setter
         public Builder baseUrl(String baseUrl) {
-            this.baseUrl = Objects.requireNonNull(baseUrl);
+            if (baseUrl == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "baseUrl");
+            }
+            this.baseUrl = baseUrl;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionId(String connectionId) {
-            this.connectionId = Objects.requireNonNull(connectionId);
+            if (connectionId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "connectionId");
+            }
+            this.connectionId = connectionId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionType(String connectionType) {
-            this.connectionType = Objects.requireNonNull(connectionType);
+            if (connectionType == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "connectionType");
+            }
+            this.connectionType = connectionType;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lastConnectionValidationResults(List<GetConnectionLastConnectionValidationResult> lastConnectionValidationResults) {
-            this.lastConnectionValidationResults = Objects.requireNonNull(lastConnectionValidationResults);
+            if (lastConnectionValidationResults == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "lastConnectionValidationResults");
+            }
+            this.lastConnectionValidationResults = lastConnectionValidationResults;
             return this;
         }
         public Builder lastConnectionValidationResults(GetConnectionLastConnectionValidationResult... lastConnectionValidationResults) {
@@ -354,32 +391,50 @@ public final class GetConnectionResult {
         }
         @CustomType.Setter
         public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+            if (projectId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "projectId");
+            }
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder tlsVerifyConfigs(List<GetConnectionTlsVerifyConfig> tlsVerifyConfigs) {
-            this.tlsVerifyConfigs = Objects.requireNonNull(tlsVerifyConfigs);
+            if (tlsVerifyConfigs == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "tlsVerifyConfigs");
+            }
+            this.tlsVerifyConfigs = tlsVerifyConfigs;
             return this;
         }
         public Builder tlsVerifyConfigs(GetConnectionTlsVerifyConfig... tlsVerifyConfigs) {
@@ -387,7 +442,10 @@ public final class GetConnectionResult {
         }
         @CustomType.Setter
         public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+            if (username == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "username");
+            }
+            this.username = username;
             return this;
         }
         public GetConnectionResult build() {

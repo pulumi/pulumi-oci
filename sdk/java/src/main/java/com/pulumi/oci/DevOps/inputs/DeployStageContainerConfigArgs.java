@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.inputs.DeployStageContainerConfigNetworkChannelArgs;
 import com.pulumi.oci.DevOps.inputs.DeployStageContainerConfigShapeConfigArgs;
 import java.lang.String;
@@ -263,10 +264,18 @@ public final class DeployStageContainerConfigArgs extends com.pulumi.resources.R
         }
 
         public DeployStageContainerConfigArgs build() {
-            $.containerConfigType = Objects.requireNonNull($.containerConfigType, "expected parameter 'containerConfigType' to be non-null");
-            $.networkChannel = Objects.requireNonNull($.networkChannel, "expected parameter 'networkChannel' to be non-null");
-            $.shapeConfig = Objects.requireNonNull($.shapeConfig, "expected parameter 'shapeConfig' to be non-null");
-            $.shapeName = Objects.requireNonNull($.shapeName, "expected parameter 'shapeName' to be non-null");
+            if ($.containerConfigType == null) {
+                throw new MissingRequiredPropertyException("DeployStageContainerConfigArgs", "containerConfigType");
+            }
+            if ($.networkChannel == null) {
+                throw new MissingRequiredPropertyException("DeployStageContainerConfigArgs", "networkChannel");
+            }
+            if ($.shapeConfig == null) {
+                throw new MissingRequiredPropertyException("DeployStageContainerConfigArgs", "shapeConfig");
+            }
+            if ($.shapeName == null) {
+                throw new MissingRequiredPropertyException("DeployStageContainerConfigArgs", "shapeName");
+            }
             return $;
         }
     }

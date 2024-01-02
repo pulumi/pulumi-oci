@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -141,42 +142,66 @@ public final class GetDomainsUserAddress {
 
         @CustomType.Setter
         public Builder country(String country) {
-            this.country = Objects.requireNonNull(country);
+            if (country == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAddress", "country");
+            }
+            this.country = country;
             return this;
         }
         @CustomType.Setter
         public Builder formatted(String formatted) {
-            this.formatted = Objects.requireNonNull(formatted);
+            if (formatted == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAddress", "formatted");
+            }
+            this.formatted = formatted;
             return this;
         }
         @CustomType.Setter
         public Builder locality(String locality) {
-            this.locality = Objects.requireNonNull(locality);
+            if (locality == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAddress", "locality");
+            }
+            this.locality = locality;
             return this;
         }
         @CustomType.Setter
         public Builder postalCode(String postalCode) {
-            this.postalCode = Objects.requireNonNull(postalCode);
+            if (postalCode == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAddress", "postalCode");
+            }
+            this.postalCode = postalCode;
             return this;
         }
         @CustomType.Setter
         public Builder primary(Boolean primary) {
-            this.primary = Objects.requireNonNull(primary);
+            if (primary == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAddress", "primary");
+            }
+            this.primary = primary;
             return this;
         }
         @CustomType.Setter
         public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+            if (region == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAddress", "region");
+            }
+            this.region = region;
             return this;
         }
         @CustomType.Setter
         public Builder streetAddress(String streetAddress) {
-            this.streetAddress = Objects.requireNonNull(streetAddress);
+            if (streetAddress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAddress", "streetAddress");
+            }
+            this.streetAddress = streetAddress;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAddress", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetDomainsUserAddress build() {

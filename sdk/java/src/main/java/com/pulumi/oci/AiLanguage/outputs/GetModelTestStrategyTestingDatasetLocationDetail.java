@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiLanguage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetModelTestStrategyTestingDatasetLocationDetail {
 
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetModelTestStrategyTestingDatasetLocationDetail", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder locationType(String locationType) {
-            this.locationType = Objects.requireNonNull(locationType);
+            if (locationType == null) {
+              throw new MissingRequiredPropertyException("GetModelTestStrategyTestingDatasetLocationDetail", "locationType");
+            }
+            this.locationType = locationType;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetModelTestStrategyTestingDatasetLocationDetail", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder objectNames(List<String> objectNames) {
-            this.objectNames = Objects.requireNonNull(objectNames);
+            if (objectNames == null) {
+              throw new MissingRequiredPropertyException("GetModelTestStrategyTestingDatasetLocationDetail", "objectNames");
+            }
+            this.objectNames = objectNames;
             return this;
         }
         public Builder objectNames(String... objectNames) {

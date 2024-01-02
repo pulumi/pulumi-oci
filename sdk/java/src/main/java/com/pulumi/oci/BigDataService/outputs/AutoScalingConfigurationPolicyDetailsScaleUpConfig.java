@@ -101,26 +101,31 @@ public final class AutoScalingConfigurationPolicyDetailsScaleUpConfig {
 
         @CustomType.Setter
         public Builder maxMemoryPerNode(@Nullable Integer maxMemoryPerNode) {
+
             this.maxMemoryPerNode = maxMemoryPerNode;
             return this;
         }
         @CustomType.Setter
         public Builder maxOcpusPerNode(@Nullable Integer maxOcpusPerNode) {
+
             this.maxOcpusPerNode = maxOcpusPerNode;
             return this;
         }
         @CustomType.Setter
         public Builder memoryStepSize(@Nullable Integer memoryStepSize) {
+
             this.memoryStepSize = memoryStepSize;
             return this;
         }
         @CustomType.Setter
         public Builder metric(@Nullable AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric metric) {
+
             this.metric = metric;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuStepSize(@Nullable Integer ocpuStepSize) {
+
             this.ocpuStepSize = ocpuStepSize;
             return this;
         }

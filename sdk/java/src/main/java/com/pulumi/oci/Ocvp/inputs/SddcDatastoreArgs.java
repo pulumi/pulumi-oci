@@ -5,6 +5,7 @@ package com.pulumi.oci.Ocvp.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.List;
@@ -162,8 +163,12 @@ public final class SddcDatastoreArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public SddcDatastoreArgs build() {
-            $.blockVolumeIds = Objects.requireNonNull($.blockVolumeIds, "expected parameter 'blockVolumeIds' to be non-null");
-            $.datastoreType = Objects.requireNonNull($.datastoreType, "expected parameter 'datastoreType' to be non-null");
+            if ($.blockVolumeIds == null) {
+                throw new MissingRequiredPropertyException("SddcDatastoreArgs", "blockVolumeIds");
+            }
+            if ($.datastoreType == null) {
+                throw new MissingRequiredPropertyException("SddcDatastoreArgs", "datastoreType");
+            }
             return $;
         }
     }

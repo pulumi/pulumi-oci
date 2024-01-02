@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.inputs.MysqlConfigurationInitVariablesArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlConfigurationVariablesArgs;
 import java.lang.Object;
@@ -376,8 +377,12 @@ public final class MysqlConfigurationArgs extends com.pulumi.resources.ResourceA
         }
 
         public MysqlConfigurationArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.shapeName = Objects.requireNonNull($.shapeName, "expected parameter 'shapeName' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("MysqlConfigurationArgs", "compartmentId");
+            }
+            if ($.shapeName == null) {
+                throw new MissingRequiredPropertyException("MysqlConfigurationArgs", "shapeName");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.OsubUsage.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsubUsage.inputs.GetComputedUsagesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -321,10 +322,18 @@ public final class GetComputedUsagesArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetComputedUsagesArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.subscriptionId = Objects.requireNonNull($.subscriptionId, "expected parameter 'subscriptionId' to be non-null");
-            $.timeFrom = Objects.requireNonNull($.timeFrom, "expected parameter 'timeFrom' to be non-null");
-            $.timeTo = Objects.requireNonNull($.timeTo, "expected parameter 'timeTo' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetComputedUsagesArgs", "compartmentId");
+            }
+            if ($.subscriptionId == null) {
+                throw new MissingRequiredPropertyException("GetComputedUsagesArgs", "subscriptionId");
+            }
+            if ($.timeFrom == null) {
+                throw new MissingRequiredPropertyException("GetComputedUsagesArgs", "timeFrom");
+            }
+            if ($.timeTo == null) {
+                throw new MissingRequiredPropertyException("GetComputedUsagesArgs", "timeTo");
+            }
             return $;
         }
     }

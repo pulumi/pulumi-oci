@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseBackupConfigArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs;
@@ -1145,8 +1146,12 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         public AutonomousContainerDatabaseArgs build() {
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.patchModel = Objects.requireNonNull($.patchModel, "expected parameter 'patchModel' to be non-null");
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("AutonomousContainerDatabaseArgs", "displayName");
+            }
+            if ($.patchModel == null) {
+                throw new MissingRequiredPropertyException("AutonomousContainerDatabaseArgs", "patchModel");
+            }
             return $;
         }
     }

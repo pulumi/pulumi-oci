@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.inputs.DatabaseSecurityConfigSqlFirewallConfigArgs;
 import java.lang.Integer;
 import java.lang.Object;
@@ -351,7 +352,9 @@ public final class DatabaseSecurityConfigArgs extends com.pulumi.resources.Resou
         }
 
         public DatabaseSecurityConfigArgs build() {
-            $.databaseSecurityConfigId = Objects.requireNonNull($.databaseSecurityConfigId, "expected parameter 'databaseSecurityConfigId' to be non-null");
+            if ($.databaseSecurityConfigId == null) {
+                throw new MissingRequiredPropertyException("DatabaseSecurityConfigArgs", "databaseSecurityConfigId");
+            }
             return $;
         }
     }

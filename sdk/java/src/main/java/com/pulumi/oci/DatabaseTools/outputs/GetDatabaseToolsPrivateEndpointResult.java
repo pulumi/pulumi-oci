@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseTools.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsPrivateEndpointLock;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration;
 import java.lang.Object;
@@ -333,7 +334,10 @@ public final class GetDatabaseToolsPrivateEndpointResult {
 
         @CustomType.Setter
         public Builder additionalFqdns(List<String> additionalFqdns) {
-            this.additionalFqdns = Objects.requireNonNull(additionalFqdns);
+            if (additionalFqdns == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "additionalFqdns");
+            }
+            this.additionalFqdns = additionalFqdns;
             return this;
         }
         public Builder additionalFqdns(String... additionalFqdns) {
@@ -341,57 +345,90 @@ public final class GetDatabaseToolsPrivateEndpointResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseToolsPrivateEndpointId(String databaseToolsPrivateEndpointId) {
-            this.databaseToolsPrivateEndpointId = Objects.requireNonNull(databaseToolsPrivateEndpointId);
+            if (databaseToolsPrivateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "databaseToolsPrivateEndpointId");
+            }
+            this.databaseToolsPrivateEndpointId = databaseToolsPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder endpointFqdn(String endpointFqdn) {
-            this.endpointFqdn = Objects.requireNonNull(endpointFqdn);
+            if (endpointFqdn == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "endpointFqdn");
+            }
+            this.endpointFqdn = endpointFqdn;
             return this;
         }
         @CustomType.Setter
         public Builder endpointServiceId(String endpointServiceId) {
-            this.endpointServiceId = Objects.requireNonNull(endpointServiceId);
+            if (endpointServiceId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "endpointServiceId");
+            }
+            this.endpointServiceId = endpointServiceId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder locks(List<GetDatabaseToolsPrivateEndpointLock> locks) {
-            this.locks = Objects.requireNonNull(locks);
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "locks");
+            }
+            this.locks = locks;
             return this;
         }
         public Builder locks(GetDatabaseToolsPrivateEndpointLock... locks) {
@@ -399,7 +436,10 @@ public final class GetDatabaseToolsPrivateEndpointResult {
         }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
@@ -407,17 +447,26 @@ public final class GetDatabaseToolsPrivateEndpointResult {
         }
         @CustomType.Setter
         public Builder privateEndpointIp(String privateEndpointIp) {
-            this.privateEndpointIp = Objects.requireNonNull(privateEndpointIp);
+            if (privateEndpointIp == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "privateEndpointIp");
+            }
+            this.privateEndpointIp = privateEndpointIp;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpointVnicId(String privateEndpointVnicId) {
-            this.privateEndpointVnicId = Objects.requireNonNull(privateEndpointVnicId);
+            if (privateEndpointVnicId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "privateEndpointVnicId");
+            }
+            this.privateEndpointVnicId = privateEndpointVnicId;
             return this;
         }
         @CustomType.Setter
         public Builder reverseConnectionConfigurations(List<GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration> reverseConnectionConfigurations) {
-            this.reverseConnectionConfigurations = Objects.requireNonNull(reverseConnectionConfigurations);
+            if (reverseConnectionConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "reverseConnectionConfigurations");
+            }
+            this.reverseConnectionConfigurations = reverseConnectionConfigurations;
             return this;
         }
         public Builder reverseConnectionConfigurations(GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration... reverseConnectionConfigurations) {
@@ -425,32 +474,50 @@ public final class GetDatabaseToolsPrivateEndpointResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+            if (vcnId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointResult", "vcnId");
+            }
+            this.vcnId = vcnId;
             return this;
         }
         public GetDatabaseToolsPrivateEndpointResult build() {

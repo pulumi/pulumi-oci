@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformance;
 import com.pulumi.oci.Database.outputs.GetDbSystemStoragePerformancesFilter;
 import java.lang.String;
@@ -87,7 +88,10 @@ public final class GetDbSystemStoragePerformancesResult {
 
         @CustomType.Setter
         public Builder dbSystemStoragePerformances(List<GetDbSystemStoragePerformancesDbSystemStoragePerformance> dbSystemStoragePerformances) {
-            this.dbSystemStoragePerformances = Objects.requireNonNull(dbSystemStoragePerformances);
+            if (dbSystemStoragePerformances == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemStoragePerformancesResult", "dbSystemStoragePerformances");
+            }
+            this.dbSystemStoragePerformances = dbSystemStoragePerformances;
             return this;
         }
         public Builder dbSystemStoragePerformances(GetDbSystemStoragePerformancesDbSystemStoragePerformance... dbSystemStoragePerformances) {
@@ -95,6 +99,7 @@ public final class GetDbSystemStoragePerformancesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDbSystemStoragePerformancesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -103,17 +108,24 @@ public final class GetDbSystemStoragePerformancesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemStoragePerformancesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder shapeType(@Nullable String shapeType) {
+
             this.shapeType = shapeType;
             return this;
         }
         @CustomType.Setter
         public Builder storageManagement(String storageManagement) {
-            this.storageManagement = Objects.requireNonNull(storageManagement);
+            if (storageManagement == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemStoragePerformancesResult", "storageManagement");
+            }
+            this.storageManagement = storageManagement;
             return this;
         }
         public GetDbSystemStoragePerformancesResult build() {

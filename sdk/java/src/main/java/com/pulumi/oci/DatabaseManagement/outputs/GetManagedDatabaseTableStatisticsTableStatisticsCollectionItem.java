@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
@@ -72,17 +73,26 @@ public final class GetManagedDatabaseTableStatisticsTableStatisticsCollectionIte
 
         @CustomType.Setter
         public Builder count(Integer count) {
-            this.count = Objects.requireNonNull(count);
+            if (count == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem", "count");
+            }
+            this.count = count;
             return this;
         }
         @CustomType.Setter
         public Builder percentage(Double percentage) {
-            this.percentage = Objects.requireNonNull(percentage);
+            if (percentage == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem", "percentage");
+            }
+            this.percentage = percentage;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem build() {

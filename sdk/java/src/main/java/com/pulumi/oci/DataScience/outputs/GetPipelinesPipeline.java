@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetPipelinesPipelineConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelinesPipelineInfrastructureConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelinesPipelineLogConfigurationDetail;
@@ -287,12 +288,18 @@ public final class GetPipelinesPipeline {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder configurationDetails(List<GetPipelinesPipelineConfigurationDetail> configurationDetails) {
-            this.configurationDetails = Objects.requireNonNull(configurationDetails);
+            if (configurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "configurationDetails");
+            }
+            this.configurationDetails = configurationDetails;
             return this;
         }
         public Builder configurationDetails(GetPipelinesPipelineConfigurationDetail... configurationDetails) {
@@ -300,42 +307,66 @@ public final class GetPipelinesPipeline {
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder deleteRelatedPipelineRuns(Boolean deleteRelatedPipelineRuns) {
-            this.deleteRelatedPipelineRuns = Objects.requireNonNull(deleteRelatedPipelineRuns);
+            if (deleteRelatedPipelineRuns == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "deleteRelatedPipelineRuns");
+            }
+            this.deleteRelatedPipelineRuns = deleteRelatedPipelineRuns;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder infrastructureConfigurationDetails(List<GetPipelinesPipelineInfrastructureConfigurationDetail> infrastructureConfigurationDetails) {
-            this.infrastructureConfigurationDetails = Objects.requireNonNull(infrastructureConfigurationDetails);
+            if (infrastructureConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "infrastructureConfigurationDetails");
+            }
+            this.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
             return this;
         }
         public Builder infrastructureConfigurationDetails(GetPipelinesPipelineInfrastructureConfigurationDetail... infrastructureConfigurationDetails) {
@@ -343,12 +374,18 @@ public final class GetPipelinesPipeline {
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder logConfigurationDetails(List<GetPipelinesPipelineLogConfigurationDetail> logConfigurationDetails) {
-            this.logConfigurationDetails = Objects.requireNonNull(logConfigurationDetails);
+            if (logConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "logConfigurationDetails");
+            }
+            this.logConfigurationDetails = logConfigurationDetails;
             return this;
         }
         public Builder logConfigurationDetails(GetPipelinesPipelineLogConfigurationDetail... logConfigurationDetails) {
@@ -356,17 +393,26 @@ public final class GetPipelinesPipeline {
         }
         @CustomType.Setter
         public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+            if (projectId == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "projectId");
+            }
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder stepArtifacts(List<GetPipelinesPipelineStepArtifact> stepArtifacts) {
-            this.stepArtifacts = Objects.requireNonNull(stepArtifacts);
+            if (stepArtifacts == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "stepArtifacts");
+            }
+            this.stepArtifacts = stepArtifacts;
             return this;
         }
         public Builder stepArtifacts(GetPipelinesPipelineStepArtifact... stepArtifacts) {
@@ -374,7 +420,10 @@ public final class GetPipelinesPipeline {
         }
         @CustomType.Setter
         public Builder stepDetails(List<GetPipelinesPipelineStepDetail> stepDetails) {
-            this.stepDetails = Objects.requireNonNull(stepDetails);
+            if (stepDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "stepDetails");
+            }
+            this.stepDetails = stepDetails;
             return this;
         }
         public Builder stepDetails(GetPipelinesPipelineStepDetail... stepDetails) {
@@ -382,17 +431,26 @@ public final class GetPipelinesPipeline {
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetPipelinesPipeline build() {

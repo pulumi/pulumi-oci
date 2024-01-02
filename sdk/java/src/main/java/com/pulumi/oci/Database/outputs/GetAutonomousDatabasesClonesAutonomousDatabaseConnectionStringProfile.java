@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -155,47 +156,74 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStrin
 
         @CustomType.Setter
         public Builder consumerGroup(String consumerGroup) {
-            this.consumerGroup = Objects.requireNonNull(consumerGroup);
+            if (consumerGroup == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile", "consumerGroup");
+            }
+            this.consumerGroup = consumerGroup;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder hostFormat(String hostFormat) {
-            this.hostFormat = Objects.requireNonNull(hostFormat);
+            if (hostFormat == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile", "hostFormat");
+            }
+            this.hostFormat = hostFormat;
             return this;
         }
         @CustomType.Setter
         public Builder isRegional(Boolean isRegional) {
-            this.isRegional = Objects.requireNonNull(isRegional);
+            if (isRegional == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile", "isRegional");
+            }
+            this.isRegional = isRegional;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder sessionMode(String sessionMode) {
-            this.sessionMode = Objects.requireNonNull(sessionMode);
+            if (sessionMode == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile", "sessionMode");
+            }
+            this.sessionMode = sessionMode;
             return this;
         }
         @CustomType.Setter
         public Builder syntaxFormat(String syntaxFormat) {
-            this.syntaxFormat = Objects.requireNonNull(syntaxFormat);
+            if (syntaxFormat == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile", "syntaxFormat");
+            }
+            this.syntaxFormat = syntaxFormat;
             return this;
         }
         @CustomType.Setter
         public Builder tlsAuthentication(String tlsAuthentication) {
-            this.tlsAuthentication = Objects.requireNonNull(tlsAuthentication);
+            if (tlsAuthentication == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile", "tlsAuthentication");
+            }
+            this.tlsAuthentication = tlsAuthentication;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile build() {

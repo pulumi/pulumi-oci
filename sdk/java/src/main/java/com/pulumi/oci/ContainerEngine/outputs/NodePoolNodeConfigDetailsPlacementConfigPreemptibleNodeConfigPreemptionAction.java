@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -59,12 +60,16 @@ public final class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig
 
         @CustomType.Setter
         public Builder isPreserveBootVolume(@Nullable Boolean isPreserveBootVolume) {
+
             this.isPreserveBootVolume = isPreserveBootVolume;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction", "type");
+            }
+            this.type = type;
             return this;
         }
         public NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction build() {

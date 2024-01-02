@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobDiscoveryDetailCredential;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobDiscoveryDetailProperty;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobDiscoveryDetailTag;
@@ -130,12 +131,18 @@ public final class GetDiscoveryJobDiscoveryDetail {
 
         @CustomType.Setter
         public Builder agentId(String agentId) {
-            this.agentId = Objects.requireNonNull(agentId);
+            if (agentId == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobDiscoveryDetail", "agentId");
+            }
+            this.agentId = agentId;
             return this;
         }
         @CustomType.Setter
         public Builder credentials(List<GetDiscoveryJobDiscoveryDetailCredential> credentials) {
-            this.credentials = Objects.requireNonNull(credentials);
+            if (credentials == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobDiscoveryDetail", "credentials");
+            }
+            this.credentials = credentials;
             return this;
         }
         public Builder credentials(GetDiscoveryJobDiscoveryDetailCredential... credentials) {
@@ -143,12 +150,18 @@ public final class GetDiscoveryJobDiscoveryDetail {
         }
         @CustomType.Setter
         public Builder license(String license) {
-            this.license = Objects.requireNonNull(license);
+            if (license == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobDiscoveryDetail", "license");
+            }
+            this.license = license;
             return this;
         }
         @CustomType.Setter
         public Builder properties(List<GetDiscoveryJobDiscoveryDetailProperty> properties) {
-            this.properties = Objects.requireNonNull(properties);
+            if (properties == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobDiscoveryDetail", "properties");
+            }
+            this.properties = properties;
             return this;
         }
         public Builder properties(GetDiscoveryJobDiscoveryDetailProperty... properties) {
@@ -156,17 +169,26 @@ public final class GetDiscoveryJobDiscoveryDetail {
         }
         @CustomType.Setter
         public Builder resourceName(String resourceName) {
-            this.resourceName = Objects.requireNonNull(resourceName);
+            if (resourceName == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobDiscoveryDetail", "resourceName");
+            }
+            this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobDiscoveryDetail", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<GetDiscoveryJobDiscoveryDetailTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobDiscoveryDetail", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDiscoveryJobDiscoveryDetailTag... tags) {

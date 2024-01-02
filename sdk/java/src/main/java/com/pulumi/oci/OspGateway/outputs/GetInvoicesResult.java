@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OspGateway.outputs.GetInvoicesFilter;
 import com.pulumi.oci.OspGateway.outputs.GetInvoicesInvoiceCollection;
 import java.lang.String;
@@ -135,11 +136,15 @@ public final class GetInvoicesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetInvoicesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -148,12 +153,18 @@ public final class GetInvoicesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder invoiceCollections(List<GetInvoicesInvoiceCollection> invoiceCollections) {
-            this.invoiceCollections = Objects.requireNonNull(invoiceCollections);
+            if (invoiceCollections == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesResult", "invoiceCollections");
+            }
+            this.invoiceCollections = invoiceCollections;
             return this;
         }
         public Builder invoiceCollections(GetInvoicesInvoiceCollection... invoiceCollections) {
@@ -161,21 +172,27 @@ public final class GetInvoicesResult {
         }
         @CustomType.Setter
         public Builder invoiceId(@Nullable String invoiceId) {
+
             this.invoiceId = invoiceId;
             return this;
         }
         @CustomType.Setter
         public Builder ospHomeRegion(String ospHomeRegion) {
-            this.ospHomeRegion = Objects.requireNonNull(ospHomeRegion);
+            if (ospHomeRegion == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesResult", "ospHomeRegion");
+            }
+            this.ospHomeRegion = ospHomeRegion;
             return this;
         }
         @CustomType.Setter
         public Builder searchText(@Nullable String searchText) {
+
             this.searchText = searchText;
             return this;
         }
         @CustomType.Setter
         public Builder statuses(@Nullable List<String> statuses) {
+
             this.statuses = statuses;
             return this;
         }
@@ -184,26 +201,31 @@ public final class GetInvoicesResult {
         }
         @CustomType.Setter
         public Builder timeInvoiceEnd(@Nullable String timeInvoiceEnd) {
+
             this.timeInvoiceEnd = timeInvoiceEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeInvoiceStart(@Nullable String timeInvoiceStart) {
+
             this.timeInvoiceStart = timeInvoiceStart;
             return this;
         }
         @CustomType.Setter
         public Builder timePaymentEnd(@Nullable String timePaymentEnd) {
+
             this.timePaymentEnd = timePaymentEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timePaymentStart(@Nullable String timePaymentStart) {
+
             this.timePaymentStart = timePaymentStart;
             return this;
         }
         @CustomType.Setter
         public Builder types(@Nullable List<String> types) {
+
             this.types = types;
             return this;
         }

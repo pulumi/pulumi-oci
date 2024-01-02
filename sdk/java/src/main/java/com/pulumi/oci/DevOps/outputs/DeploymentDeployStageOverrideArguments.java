@@ -44,6 +44,7 @@ public final class DeploymentDeployStageOverrideArguments {
 
         @CustomType.Setter
         public Builder items(@Nullable List<DeploymentDeployStageOverrideArgumentsItem> items) {
+
             this.items = items;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiDocument.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetModelsModelCollectionItemTrainingDataset {
 
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemTrainingDataset", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder datasetId(String datasetId) {
-            this.datasetId = Objects.requireNonNull(datasetId);
+            if (datasetId == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemTrainingDataset", "datasetId");
+            }
+            this.datasetId = datasetId;
             return this;
         }
         @CustomType.Setter
         public Builder datasetType(String datasetType) {
-            this.datasetType = Objects.requireNonNull(datasetType);
+            if (datasetType == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemTrainingDataset", "datasetType");
+            }
+            this.datasetType = datasetType;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemTrainingDataset", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+            if (object == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemTrainingDataset", "object");
+            }
+            this.object = object;
             return this;
         }
         public GetModelsModelCollectionItemTrainingDataset build() {

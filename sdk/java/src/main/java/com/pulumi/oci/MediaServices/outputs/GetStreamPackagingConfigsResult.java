@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.outputs.GetStreamPackagingConfigsFilter;
 import com.pulumi.oci.MediaServices.outputs.GetStreamPackagingConfigsStreamPackagingConfigCollection;
 import java.lang.String;
@@ -115,16 +116,21 @@ public final class GetStreamPackagingConfigsResult {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder distributionChannelId(String distributionChannelId) {
-            this.distributionChannelId = Objects.requireNonNull(distributionChannelId);
+            if (distributionChannelId == null) {
+              throw new MissingRequiredPropertyException("GetStreamPackagingConfigsResult", "distributionChannelId");
+            }
+            this.distributionChannelId = distributionChannelId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetStreamPackagingConfigsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -133,17 +139,24 @@ public final class GetStreamPackagingConfigsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetStreamPackagingConfigsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder streamPackagingConfigCollections(List<GetStreamPackagingConfigsStreamPackagingConfigCollection> streamPackagingConfigCollections) {
-            this.streamPackagingConfigCollections = Objects.requireNonNull(streamPackagingConfigCollections);
+            if (streamPackagingConfigCollections == null) {
+              throw new MissingRequiredPropertyException("GetStreamPackagingConfigsResult", "streamPackagingConfigCollections");
+            }
+            this.streamPackagingConfigCollections = streamPackagingConfigCollections;
             return this;
         }
         public Builder streamPackagingConfigCollections(GetStreamPackagingConfigsStreamPackagingConfigCollection... streamPackagingConfigCollections) {
@@ -151,6 +164,7 @@ public final class GetStreamPackagingConfigsResult {
         }
         @CustomType.Setter
         public Builder streamPackagingConfigId(@Nullable String streamPackagingConfigId) {
+
             this.streamPackagingConfigId = streamPackagingConfigId;
             return this;
         }

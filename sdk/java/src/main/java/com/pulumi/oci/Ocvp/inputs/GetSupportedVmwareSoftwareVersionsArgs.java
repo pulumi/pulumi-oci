@@ -5,6 +5,7 @@ package com.pulumi.oci.Ocvp.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ocvp.inputs.GetSupportedVmwareSoftwareVersionsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -173,7 +174,9 @@ public final class GetSupportedVmwareSoftwareVersionsArgs extends com.pulumi.res
         }
 
         public GetSupportedVmwareSoftwareVersionsArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetSupportedVmwareSoftwareVersionsArgs", "compartmentId");
+            }
             return $;
         }
     }

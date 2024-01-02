@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.DeployStageContainerConfigNetworkChannel;
 import com.pulumi.oci.DevOps.outputs.DeployStageContainerConfigShapeConfig;
 import java.lang.String;
@@ -116,32 +117,46 @@ public final class DeployStageContainerConfig {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder containerConfigType(String containerConfigType) {
-            this.containerConfigType = Objects.requireNonNull(containerConfigType);
+            if (containerConfigType == null) {
+              throw new MissingRequiredPropertyException("DeployStageContainerConfig", "containerConfigType");
+            }
+            this.containerConfigType = containerConfigType;
             return this;
         }
         @CustomType.Setter
         public Builder networkChannel(DeployStageContainerConfigNetworkChannel networkChannel) {
-            this.networkChannel = Objects.requireNonNull(networkChannel);
+            if (networkChannel == null) {
+              throw new MissingRequiredPropertyException("DeployStageContainerConfig", "networkChannel");
+            }
+            this.networkChannel = networkChannel;
             return this;
         }
         @CustomType.Setter
         public Builder shapeConfig(DeployStageContainerConfigShapeConfig shapeConfig) {
-            this.shapeConfig = Objects.requireNonNull(shapeConfig);
+            if (shapeConfig == null) {
+              throw new MissingRequiredPropertyException("DeployStageContainerConfig", "shapeConfig");
+            }
+            this.shapeConfig = shapeConfig;
             return this;
         }
         @CustomType.Setter
         public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+            if (shapeName == null) {
+              throw new MissingRequiredPropertyException("DeployStageContainerConfig", "shapeName");
+            }
+            this.shapeName = shapeName;
             return this;
         }
         public DeployStageContainerConfig build() {

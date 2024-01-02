@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail;
 import java.lang.String;
 import java.util.List;
@@ -66,22 +67,34 @@ public final class GetPluggableDatabasePdbCreationTypeDetail {
 
         @CustomType.Setter
         public Builder creationType(String creationType) {
-            this.creationType = Objects.requireNonNull(creationType);
+            if (creationType == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabasePdbCreationTypeDetail", "creationType");
+            }
+            this.creationType = creationType;
             return this;
         }
         @CustomType.Setter
         public Builder dblinkUserPassword(String dblinkUserPassword) {
-            this.dblinkUserPassword = Objects.requireNonNull(dblinkUserPassword);
+            if (dblinkUserPassword == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabasePdbCreationTypeDetail", "dblinkUserPassword");
+            }
+            this.dblinkUserPassword = dblinkUserPassword;
             return this;
         }
         @CustomType.Setter
         public Builder dblinkUsername(String dblinkUsername) {
-            this.dblinkUsername = Objects.requireNonNull(dblinkUsername);
+            if (dblinkUsername == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabasePdbCreationTypeDetail", "dblinkUsername");
+            }
+            this.dblinkUsername = dblinkUsername;
             return this;
         }
         @CustomType.Setter
         public Builder refreshableCloneDetails(List<GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail> refreshableCloneDetails) {
-            this.refreshableCloneDetails = Objects.requireNonNull(refreshableCloneDetails);
+            if (refreshableCloneDetails == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabasePdbCreationTypeDetail", "refreshableCloneDetails");
+            }
+            this.refreshableCloneDetails = refreshableCloneDetails;
             return this;
         }
         public Builder refreshableCloneDetails(GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail... refreshableCloneDetails) {
@@ -89,12 +102,18 @@ public final class GetPluggableDatabasePdbCreationTypeDetail {
         }
         @CustomType.Setter
         public Builder sourceContainerDatabaseAdminPassword(String sourceContainerDatabaseAdminPassword) {
-            this.sourceContainerDatabaseAdminPassword = Objects.requireNonNull(sourceContainerDatabaseAdminPassword);
+            if (sourceContainerDatabaseAdminPassword == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabasePdbCreationTypeDetail", "sourceContainerDatabaseAdminPassword");
+            }
+            this.sourceContainerDatabaseAdminPassword = sourceContainerDatabaseAdminPassword;
             return this;
         }
         @CustomType.Setter
         public Builder sourcePluggableDatabaseId(String sourcePluggableDatabaseId) {
-            this.sourcePluggableDatabaseId = Objects.requireNonNull(sourcePluggableDatabaseId);
+            if (sourcePluggableDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabasePdbCreationTypeDetail", "sourcePluggableDatabaseId");
+            }
+            this.sourcePluggableDatabaseId = sourcePluggableDatabaseId;
             return this;
         }
         public GetPluggableDatabasePdbCreationTypeDetail build() {

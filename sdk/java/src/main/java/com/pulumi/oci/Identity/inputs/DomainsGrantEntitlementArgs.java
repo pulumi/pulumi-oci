@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -195,8 +196,12 @@ public final class DomainsGrantEntitlementArgs extends com.pulumi.resources.Reso
         }
 
         public DomainsGrantEntitlementArgs build() {
-            $.attributeName = Objects.requireNonNull($.attributeName, "expected parameter 'attributeName' to be non-null");
-            $.attributeValue = Objects.requireNonNull($.attributeValue, "expected parameter 'attributeValue' to be non-null");
+            if ($.attributeName == null) {
+                throw new MissingRequiredPropertyException("DomainsGrantEntitlementArgs", "attributeName");
+            }
+            if ($.attributeValue == null) {
+                throw new MissingRequiredPropertyException("DomainsGrantEntitlementArgs", "attributeValue");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OspGateway.outputs.GetAddressRuleAddressField;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetAddressRuleAddress {
 
         @CustomType.Setter
         public Builder fields(List<GetAddressRuleAddressField> fields) {
-            this.fields = Objects.requireNonNull(fields);
+            if (fields == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleAddress", "fields");
+            }
+            this.fields = fields;
             return this;
         }
         public Builder fields(GetAddressRuleAddressField... fields) {
@@ -66,7 +70,10 @@ public final class GetAddressRuleAddress {
         }
         @CustomType.Setter
         public Builder thirdPartyValidation(String thirdPartyValidation) {
-            this.thirdPartyValidation = Objects.requireNonNull(thirdPartyValidation);
+            if (thirdPartyValidation == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleAddress", "thirdPartyValidation");
+            }
+            this.thirdPartyValidation = thirdPartyValidation;
             return this;
         }
         public GetAddressRuleAddress build() {

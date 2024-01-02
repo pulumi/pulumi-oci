@@ -5,6 +5,7 @@ package com.pulumi.oci.Sch;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Sch.inputs.ConnectorSourceArgs;
 import com.pulumi.oci.Sch.inputs.ConnectorTargetArgs;
 import com.pulumi.oci.Sch.inputs.ConnectorTaskArgs;
@@ -400,10 +401,18 @@ public final class ConnectorArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ConnectorArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.source = Objects.requireNonNull($.source, "expected parameter 'source' to be non-null");
-            $.target = Objects.requireNonNull($.target, "expected parameter 'target' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ConnectorArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ConnectorArgs", "displayName");
+            }
+            if ($.source == null) {
+                throw new MissingRequiredPropertyException("ConnectorArgs", "source");
+            }
+            if ($.target == null) {
+                throw new MissingRequiredPropertyException("ConnectorArgs", "target");
+            }
             return $;
         }
     }

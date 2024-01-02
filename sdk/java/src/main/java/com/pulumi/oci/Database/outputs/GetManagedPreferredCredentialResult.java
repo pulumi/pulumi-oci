@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -147,47 +148,74 @@ public final class GetManagedPreferredCredentialResult {
 
         @CustomType.Setter
         public Builder credentialName(String credentialName) {
-            this.credentialName = Objects.requireNonNull(credentialName);
+            if (credentialName == null) {
+              throw new MissingRequiredPropertyException("GetManagedPreferredCredentialResult", "credentialName");
+            }
+            this.credentialName = credentialName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedPreferredCredentialResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAccessible(Boolean isAccessible) {
-            this.isAccessible = Objects.requireNonNull(isAccessible);
+            if (isAccessible == null) {
+              throw new MissingRequiredPropertyException("GetManagedPreferredCredentialResult", "isAccessible");
+            }
+            this.isAccessible = isAccessible;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedPreferredCredentialResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder passwordSecretId(String passwordSecretId) {
-            this.passwordSecretId = Objects.requireNonNull(passwordSecretId);
+            if (passwordSecretId == null) {
+              throw new MissingRequiredPropertyException("GetManagedPreferredCredentialResult", "passwordSecretId");
+            }
+            this.passwordSecretId = passwordSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+            if (role == null) {
+              throw new MissingRequiredPropertyException("GetManagedPreferredCredentialResult", "role");
+            }
+            this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetManagedPreferredCredentialResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetManagedPreferredCredentialResult", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+            if (userName == null) {
+              throw new MissingRequiredPropertyException("GetManagedPreferredCredentialResult", "userName");
+            }
+            this.userName = userName;
             return this;
         }
         public GetManagedPreferredCredentialResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupAvailableSoftwareSourcesFilter;
 import java.lang.String;
@@ -107,7 +108,10 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesResult {
 
         @CustomType.Setter
         public Builder availableSoftwareSourceCollections(List<GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection> availableSoftwareSourceCollections) {
-            this.availableSoftwareSourceCollections = Objects.requireNonNull(availableSoftwareSourceCollections);
+            if (availableSoftwareSourceCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupAvailableSoftwareSourcesResult", "availableSoftwareSourceCollections");
+            }
+            this.availableSoftwareSourceCollections = availableSoftwareSourceCollections;
             return this;
         }
         public Builder availableSoftwareSourceCollections(GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection... availableSoftwareSourceCollections) {
@@ -115,16 +119,19 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesResult {
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayNameContains(@Nullable String displayNameContains) {
+
             this.displayNameContains = displayNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder displayNames(@Nullable List<String> displayNames) {
+
             this.displayNames = displayNames;
             return this;
         }
@@ -133,6 +140,7 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedInstanceGroupAvailableSoftwareSourcesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -141,12 +149,18 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupAvailableSoftwareSourcesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceGroupId(String managedInstanceGroupId) {
-            this.managedInstanceGroupId = Objects.requireNonNull(managedInstanceGroupId);
+            if (managedInstanceGroupId == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupAvailableSoftwareSourcesResult", "managedInstanceGroupId");
+            }
+            this.managedInstanceGroupId = managedInstanceGroupId;
             return this;
         }
         public GetManagedInstanceGroupAvailableSoftwareSourcesResult build() {

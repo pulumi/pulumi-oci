@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.util.Objects;
@@ -435,11 +436,21 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictionsArgs ex
         }
 
         public DomainsAuthenticationFactorSettingEndpointRestrictionsArgs build() {
-            $.maxEndpointTrustDurationInDays = Objects.requireNonNull($.maxEndpointTrustDurationInDays, "expected parameter 'maxEndpointTrustDurationInDays' to be non-null");
-            $.maxEnrolledDevices = Objects.requireNonNull($.maxEnrolledDevices, "expected parameter 'maxEnrolledDevices' to be non-null");
-            $.maxIncorrectAttempts = Objects.requireNonNull($.maxIncorrectAttempts, "expected parameter 'maxIncorrectAttempts' to be non-null");
-            $.maxTrustedEndpoints = Objects.requireNonNull($.maxTrustedEndpoints, "expected parameter 'maxTrustedEndpoints' to be non-null");
-            $.trustedEndpointsEnabled = Objects.requireNonNull($.trustedEndpointsEnabled, "expected parameter 'trustedEndpointsEnabled' to be non-null");
+            if ($.maxEndpointTrustDurationInDays == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingEndpointRestrictionsArgs", "maxEndpointTrustDurationInDays");
+            }
+            if ($.maxEnrolledDevices == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingEndpointRestrictionsArgs", "maxEnrolledDevices");
+            }
+            if ($.maxIncorrectAttempts == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingEndpointRestrictionsArgs", "maxIncorrectAttempts");
+            }
+            if ($.maxTrustedEndpoints == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingEndpointRestrictionsArgs", "maxTrustedEndpoints");
+            }
+            if ($.trustedEndpointsEnabled == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingEndpointRestrictionsArgs", "trustedEndpointsEnabled");
+            }
             return $;
         }
     }

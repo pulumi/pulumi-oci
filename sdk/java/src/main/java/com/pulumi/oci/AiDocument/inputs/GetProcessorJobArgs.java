@@ -5,6 +5,7 @@ package com.pulumi.oci.AiDocument.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetProcessorJobArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetProcessorJobArgs build() {
-            $.processorJobId = Objects.requireNonNull($.processorJobId, "expected parameter 'processorJobId' to be non-null");
+            if ($.processorJobId == null) {
+                throw new MissingRequiredPropertyException("GetProcessorJobArgs", "processorJobId");
+            }
             return $;
         }
     }

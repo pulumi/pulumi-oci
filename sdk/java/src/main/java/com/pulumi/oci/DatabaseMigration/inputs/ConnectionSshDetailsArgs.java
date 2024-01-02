@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseMigration.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -187,9 +188,15 @@ public final class ConnectionSshDetailsArgs extends com.pulumi.resources.Resourc
         }
 
         public ConnectionSshDetailsArgs build() {
-            $.host = Objects.requireNonNull($.host, "expected parameter 'host' to be non-null");
-            $.sshkey = Objects.requireNonNull($.sshkey, "expected parameter 'sshkey' to be non-null");
-            $.user = Objects.requireNonNull($.user, "expected parameter 'user' to be non-null");
+            if ($.host == null) {
+                throw new MissingRequiredPropertyException("ConnectionSshDetailsArgs", "host");
+            }
+            if ($.sshkey == null) {
+                throw new MissingRequiredPropertyException("ConnectionSshDetailsArgs", "sshkey");
+            }
+            if ($.user == null) {
+                throw new MissingRequiredPropertyException("ConnectionSshDetailsArgs", "user");
+            }
             return $;
         }
     }

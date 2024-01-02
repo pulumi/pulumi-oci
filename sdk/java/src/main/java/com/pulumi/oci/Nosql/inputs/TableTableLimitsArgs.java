@@ -5,6 +5,7 @@ package com.pulumi.oci.Nosql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -200,9 +201,15 @@ public final class TableTableLimitsArgs extends com.pulumi.resources.ResourceArg
         }
 
         public TableTableLimitsArgs build() {
-            $.maxReadUnits = Objects.requireNonNull($.maxReadUnits, "expected parameter 'maxReadUnits' to be non-null");
-            $.maxStorageInGbs = Objects.requireNonNull($.maxStorageInGbs, "expected parameter 'maxStorageInGbs' to be non-null");
-            $.maxWriteUnits = Objects.requireNonNull($.maxWriteUnits, "expected parameter 'maxWriteUnits' to be non-null");
+            if ($.maxReadUnits == null) {
+                throw new MissingRequiredPropertyException("TableTableLimitsArgs", "maxReadUnits");
+            }
+            if ($.maxStorageInGbs == null) {
+                throw new MissingRequiredPropertyException("TableTableLimitsArgs", "maxStorageInGbs");
+            }
+            if ($.maxWriteUnits == null) {
+                throw new MissingRequiredPropertyException("TableTableLimitsArgs", "maxWriteUnits");
+            }
             return $;
         }
     }

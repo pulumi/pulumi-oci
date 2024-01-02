@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -92,7 +93,9 @@ public final class GetClusterOptionPlainArgs extends com.pulumi.resources.Invoke
         }
 
         public GetClusterOptionPlainArgs build() {
-            $.clusterOptionId = Objects.requireNonNull($.clusterOptionId, "expected parameter 'clusterOptionId' to be non-null");
+            if ($.clusterOptionId == null) {
+                throw new MissingRequiredPropertyException("GetClusterOptionPlainArgs", "clusterOptionId");
+            }
             return $;
         }
     }

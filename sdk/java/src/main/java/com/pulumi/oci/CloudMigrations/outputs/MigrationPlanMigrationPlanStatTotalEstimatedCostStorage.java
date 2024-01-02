@@ -74,16 +74,19 @@ public final class MigrationPlanMigrationPlanStatTotalEstimatedCostStorage {
 
         @CustomType.Setter
         public Builder totalGbPerMonth(@Nullable Double totalGbPerMonth) {
+
             this.totalGbPerMonth = totalGbPerMonth;
             return this;
         }
         @CustomType.Setter
         public Builder totalGbPerMonthBySubscription(@Nullable Double totalGbPerMonthBySubscription) {
+
             this.totalGbPerMonthBySubscription = totalGbPerMonthBySubscription;
             return this;
         }
         @CustomType.Setter
         public Builder volumes(@Nullable List<MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume> volumes) {
+
             this.volumes = volumes;
             return this;
         }

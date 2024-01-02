@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -123,8 +124,12 @@ public final class BuildPipelineStageWaitCriteriaArgs extends com.pulumi.resourc
         }
 
         public BuildPipelineStageWaitCriteriaArgs build() {
-            $.waitDuration = Objects.requireNonNull($.waitDuration, "expected parameter 'waitDuration' to be non-null");
-            $.waitType = Objects.requireNonNull($.waitType, "expected parameter 'waitType' to be non-null");
+            if ($.waitDuration == null) {
+                throw new MissingRequiredPropertyException("BuildPipelineStageWaitCriteriaArgs", "waitDuration");
+            }
+            if ($.waitType == null) {
+                throw new MissingRequiredPropertyException("BuildPipelineStageWaitCriteriaArgs", "waitType");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -202,7 +203,9 @@ public final class PluggableDatabaseManagementsManagementConnectionStringArgs ex
         }
 
         public PluggableDatabaseManagementsManagementConnectionStringArgs build() {
-            $.enablePluggabledatabasemanagement = Objects.requireNonNull($.enablePluggabledatabasemanagement, "expected parameter 'enablePluggabledatabasemanagement' to be non-null");
+            if ($.enablePluggabledatabasemanagement == null) {
+                throw new MissingRequiredPropertyException("PluggableDatabaseManagementsManagementConnectionStringArgs", "enablePluggabledatabasemanagement");
+            }
             return $;
         }
     }

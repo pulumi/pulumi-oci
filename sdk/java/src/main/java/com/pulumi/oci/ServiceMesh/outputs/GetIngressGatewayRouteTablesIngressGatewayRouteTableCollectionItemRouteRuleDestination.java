@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectio
 
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder virtualServiceId(String virtualServiceId) {
-            this.virtualServiceId = Objects.requireNonNull(virtualServiceId);
+            if (virtualServiceId == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination", "virtualServiceId");
+            }
+            this.virtualServiceId = virtualServiceId;
             return this;
         }
         @CustomType.Setter
         public Builder weight(Integer weight) {
-            this.weight = Objects.requireNonNull(weight);
+            if (weight == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination", "weight");
+            }
+            this.weight = weight;
             return this;
         }
         public GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination build() {

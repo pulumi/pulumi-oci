@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -198,12 +199,24 @@ public final class GetResultPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetResultPlainArgs build() {
-            $.apmDomainId = Objects.requireNonNull($.apmDomainId, "expected parameter 'apmDomainId' to be non-null");
-            $.executionTime = Objects.requireNonNull($.executionTime, "expected parameter 'executionTime' to be non-null");
-            $.monitorId = Objects.requireNonNull($.monitorId, "expected parameter 'monitorId' to be non-null");
-            $.resultContentType = Objects.requireNonNull($.resultContentType, "expected parameter 'resultContentType' to be non-null");
-            $.resultType = Objects.requireNonNull($.resultType, "expected parameter 'resultType' to be non-null");
-            $.vantagePoint = Objects.requireNonNull($.vantagePoint, "expected parameter 'vantagePoint' to be non-null");
+            if ($.apmDomainId == null) {
+                throw new MissingRequiredPropertyException("GetResultPlainArgs", "apmDomainId");
+            }
+            if ($.executionTime == null) {
+                throw new MissingRequiredPropertyException("GetResultPlainArgs", "executionTime");
+            }
+            if ($.monitorId == null) {
+                throw new MissingRequiredPropertyException("GetResultPlainArgs", "monitorId");
+            }
+            if ($.resultContentType == null) {
+                throw new MissingRequiredPropertyException("GetResultPlainArgs", "resultContentType");
+            }
+            if ($.resultType == null) {
+                throw new MissingRequiredPropertyException("GetResultPlainArgs", "resultType");
+            }
+            if ($.vantagePoint == null) {
+                throw new MissingRequiredPropertyException("GetResultPlainArgs", "vantagePoint");
+            }
             return $;
         }
     }

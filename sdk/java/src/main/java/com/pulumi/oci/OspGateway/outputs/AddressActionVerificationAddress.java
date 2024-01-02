@@ -400,131 +400,157 @@ public final class AddressActionVerificationAddress {
 
         @CustomType.Setter
         public Builder addressKey(@Nullable String addressKey) {
+
             this.addressKey = addressKey;
             return this;
         }
         @CustomType.Setter
         public Builder city(@Nullable String city) {
+
             this.city = city;
             return this;
         }
         @CustomType.Setter
         public Builder companyName(@Nullable String companyName) {
+
             this.companyName = companyName;
             return this;
         }
         @CustomType.Setter
         public Builder contributorClass(@Nullable String contributorClass) {
+
             this.contributorClass = contributorClass;
             return this;
         }
         @CustomType.Setter
         public Builder country(@Nullable String country) {
+
             this.country = country;
             return this;
         }
         @CustomType.Setter
         public Builder county(@Nullable String county) {
+
             this.county = county;
             return this;
         }
         @CustomType.Setter
         public Builder departmentName(@Nullable String departmentName) {
+
             this.departmentName = departmentName;
             return this;
         }
         @CustomType.Setter
         public Builder emailAddress(@Nullable String emailAddress) {
+
             this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
         public Builder firstName(@Nullable String firstName) {
+
             this.firstName = firstName;
             return this;
         }
         @CustomType.Setter
         public Builder internalNumber(@Nullable String internalNumber) {
+
             this.internalNumber = internalNumber;
             return this;
         }
         @CustomType.Setter
         public Builder jobTitle(@Nullable String jobTitle) {
+
             this.jobTitle = jobTitle;
             return this;
         }
         @CustomType.Setter
         public Builder lastName(@Nullable String lastName) {
+
             this.lastName = lastName;
             return this;
         }
         @CustomType.Setter
         public Builder line1(@Nullable String line1) {
+
             this.line1 = line1;
             return this;
         }
         @CustomType.Setter
         public Builder line2(@Nullable String line2) {
+
             this.line2 = line2;
             return this;
         }
         @CustomType.Setter
         public Builder line3(@Nullable String line3) {
+
             this.line3 = line3;
             return this;
         }
         @CustomType.Setter
         public Builder line4(@Nullable String line4) {
+
             this.line4 = line4;
             return this;
         }
         @CustomType.Setter
         public Builder middleName(@Nullable String middleName) {
+
             this.middleName = middleName;
             return this;
         }
         @CustomType.Setter
         public Builder municipalInscription(@Nullable String municipalInscription) {
+
             this.municipalInscription = municipalInscription;
             return this;
         }
         @CustomType.Setter
         public Builder phoneCountryCode(@Nullable String phoneCountryCode) {
+
             this.phoneCountryCode = phoneCountryCode;
             return this;
         }
         @CustomType.Setter
         public Builder phoneNumber(@Nullable String phoneNumber) {
+
             this.phoneNumber = phoneNumber;
             return this;
         }
         @CustomType.Setter
         public Builder postalCode(@Nullable String postalCode) {
+
             this.postalCode = postalCode;
             return this;
         }
         @CustomType.Setter
         public Builder province(@Nullable String province) {
+
             this.province = province;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder stateInscription(@Nullable String stateInscription) {
+
             this.stateInscription = stateInscription;
             return this;
         }
         @CustomType.Setter
         public Builder streetName(@Nullable String streetName) {
+
             this.streetName = streetName;
             return this;
         }
         @CustomType.Setter
         public Builder streetNumber(@Nullable String streetNumber) {
+
             this.streetNumber = streetNumber;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesSchemasFilter;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesSchemasSchema;
 import java.lang.Boolean;
@@ -108,6 +109,7 @@ public final class GetTargetDatabasesSchemasResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetTargetDatabasesSchemasFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -116,21 +118,27 @@ public final class GetTargetDatabasesSchemasResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesSchemasResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isOracleMaintained(@Nullable Boolean isOracleMaintained) {
+
             this.isOracleMaintained = isOracleMaintained;
             return this;
         }
         @CustomType.Setter
         public Builder schemaNameContains(@Nullable String schemaNameContains) {
+
             this.schemaNameContains = schemaNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder schemaNames(@Nullable List<String> schemaNames) {
+
             this.schemaNames = schemaNames;
             return this;
         }
@@ -139,7 +147,10 @@ public final class GetTargetDatabasesSchemasResult {
         }
         @CustomType.Setter
         public Builder schemas(List<GetTargetDatabasesSchemasSchema> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesSchemasResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(GetTargetDatabasesSchemasSchema... schemas) {
@@ -147,7 +158,10 @@ public final class GetTargetDatabasesSchemasResult {
         }
         @CustomType.Setter
         public Builder targetDatabaseId(String targetDatabaseId) {
-            this.targetDatabaseId = Objects.requireNonNull(targetDatabaseId);
+            if (targetDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesSchemasResult", "targetDatabaseId");
+            }
+            this.targetDatabaseId = targetDatabaseId;
             return this;
         }
         public GetTargetDatabasesSchemasResult build() {

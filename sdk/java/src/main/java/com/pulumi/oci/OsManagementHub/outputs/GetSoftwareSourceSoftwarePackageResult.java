@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceSoftwarePackageDependency;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceSoftwarePackageFile;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceSoftwarePackageSoftwareSource;
@@ -255,22 +256,34 @@ public final class GetSoftwareSourceSoftwarePackageResult {
 
         @CustomType.Setter
         public Builder architecture(String architecture) {
-            this.architecture = Objects.requireNonNull(architecture);
+            if (architecture == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackageResult", "architecture");
+            }
+            this.architecture = architecture;
             return this;
         }
         @CustomType.Setter
         public Builder checksum(String checksum) {
-            this.checksum = Objects.requireNonNull(checksum);
+            if (checksum == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackageResult", "checksum");
+            }
+            this.checksum = checksum;
             return this;
         }
         @CustomType.Setter
         public Builder checksumType(String checksumType) {
-            this.checksumType = Objects.requireNonNull(checksumType);
+            if (checksumType == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackageResult", "checksumType");
+            }
+            this.checksumType = checksumType;
             return this;
         }
         @CustomType.Setter
         public Builder dependencies(List<GetSoftwareSourceSoftwarePackageDependency> dependencies) {
-            this.dependencies = Objects.requireNonNull(dependencies);
+            if (dependencies == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackageResult", "dependencies");
+            }
+            this.dependencies = dependencies;
             return this;
         }
         public Builder dependencies(GetSoftwareSourceSoftwarePackageDependency... dependencies) {
@@ -278,17 +291,26 @@ public final class GetSoftwareSourceSoftwarePackageResult {
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackageResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackageResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder files(List<GetSoftwareSourceSoftwarePackageFile> files) {
-            this.files = Objects.requireNonNull(files);
+            if (files == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackageResult", "files");
+            }
+            this.files = files;
             return this;
         }
         public Builder files(GetSoftwareSourceSoftwarePackageFile... files) {
@@ -296,42 +318,66 @@ public final class GetSoftwareSourceSoftwarePackageResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackageResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isLatest(Boolean isLatest) {
-            this.isLatest = Objects.requireNonNull(isLatest);
+            if (isLatest == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackageResult", "isLatest");
+            }
+            this.isLatest = isLatest;
             return this;
         }
         @CustomType.Setter
         public Builder lastModifiedDate(String lastModifiedDate) {
-            this.lastModifiedDate = Objects.requireNonNull(lastModifiedDate);
+            if (lastModifiedDate == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackageResult", "lastModifiedDate");
+            }
+            this.lastModifiedDate = lastModifiedDate;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackageResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInBytes(String sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+            if (sizeInBytes == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackageResult", "sizeInBytes");
+            }
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder softwarePackageName(String softwarePackageName) {
-            this.softwarePackageName = Objects.requireNonNull(softwarePackageName);
+            if (softwarePackageName == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackageResult", "softwarePackageName");
+            }
+            this.softwarePackageName = softwarePackageName;
             return this;
         }
         @CustomType.Setter
         public Builder softwareSourceId(String softwareSourceId) {
-            this.softwareSourceId = Objects.requireNonNull(softwareSourceId);
+            if (softwareSourceId == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackageResult", "softwareSourceId");
+            }
+            this.softwareSourceId = softwareSourceId;
             return this;
         }
         @CustomType.Setter
         public Builder softwareSources(List<GetSoftwareSourceSoftwarePackageSoftwareSource> softwareSources) {
-            this.softwareSources = Objects.requireNonNull(softwareSources);
+            if (softwareSources == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackageResult", "softwareSources");
+            }
+            this.softwareSources = softwareSources;
             return this;
         }
         public Builder softwareSources(GetSoftwareSourceSoftwarePackageSoftwareSource... softwareSources) {
@@ -339,12 +385,18 @@ public final class GetSoftwareSourceSoftwarePackageResult {
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackageResult", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackageResult", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetSoftwareSourceSoftwarePackageResult build() {

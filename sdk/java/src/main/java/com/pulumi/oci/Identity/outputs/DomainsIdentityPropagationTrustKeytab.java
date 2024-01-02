@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -99,11 +100,15 @@ public final class DomainsIdentityPropagationTrustKeytab {
 
         @CustomType.Setter
         public Builder secretOcid(String secretOcid) {
-            this.secretOcid = Objects.requireNonNull(secretOcid);
+            if (secretOcid == null) {
+              throw new MissingRequiredPropertyException("DomainsIdentityPropagationTrustKeytab", "secretOcid");
+            }
+            this.secretOcid = secretOcid;
             return this;
         }
         @CustomType.Setter
         public Builder secretVersion(@Nullable Integer secretVersion) {
+
             this.secretVersion = secretVersion;
             return this;
         }

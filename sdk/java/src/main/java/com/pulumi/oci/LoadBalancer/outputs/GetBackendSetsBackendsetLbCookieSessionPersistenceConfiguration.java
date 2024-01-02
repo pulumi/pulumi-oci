@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -128,37 +129,58 @@ public final class GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurati
 
         @CustomType.Setter
         public Builder cookieName(String cookieName) {
-            this.cookieName = Objects.requireNonNull(cookieName);
+            if (cookieName == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration", "cookieName");
+            }
+            this.cookieName = cookieName;
             return this;
         }
         @CustomType.Setter
         public Builder disableFallback(Boolean disableFallback) {
-            this.disableFallback = Objects.requireNonNull(disableFallback);
+            if (disableFallback == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration", "disableFallback");
+            }
+            this.disableFallback = disableFallback;
             return this;
         }
         @CustomType.Setter
         public Builder domain(String domain) {
-            this.domain = Objects.requireNonNull(domain);
+            if (domain == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration", "domain");
+            }
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
         public Builder isHttpOnly(Boolean isHttpOnly) {
-            this.isHttpOnly = Objects.requireNonNull(isHttpOnly);
+            if (isHttpOnly == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration", "isHttpOnly");
+            }
+            this.isHttpOnly = isHttpOnly;
             return this;
         }
         @CustomType.Setter
         public Builder isSecure(Boolean isSecure) {
-            this.isSecure = Objects.requireNonNull(isSecure);
+            if (isSecure == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration", "isSecure");
+            }
+            this.isSecure = isSecure;
             return this;
         }
         @CustomType.Setter
         public Builder maxAgeInSeconds(Integer maxAgeInSeconds) {
-            this.maxAgeInSeconds = Objects.requireNonNull(maxAgeInSeconds);
+            if (maxAgeInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration", "maxAgeInSeconds");
+            }
+            this.maxAgeInSeconds = maxAgeInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+            if (path == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration", "path");
+            }
+            this.path = path;
             return this;
         }
         public GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration build() {

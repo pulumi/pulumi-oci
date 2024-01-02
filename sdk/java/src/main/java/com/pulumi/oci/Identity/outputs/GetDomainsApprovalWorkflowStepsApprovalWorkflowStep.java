@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsApprovalWorkflowStepsApprovalWorkflowStepApprover;
 import com.pulumi.oci.Identity.outputs.GetDomainsApprovalWorkflowStepsApprovalWorkflowStepIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsApprovalWorkflowStepsApprovalWorkflowStepIdcsLastModifiedBy;
@@ -358,7 +359,10 @@ public final class GetDomainsApprovalWorkflowStepsApprovalWorkflowStep {
 
         @CustomType.Setter
         public Builder approvers(List<GetDomainsApprovalWorkflowStepsApprovalWorkflowStepApprover> approvers) {
-            this.approvers = Objects.requireNonNull(approvers);
+            if (approvers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "approvers");
+            }
+            this.approvers = approvers;
             return this;
         }
         public Builder approvers(GetDomainsApprovalWorkflowStepsApprovalWorkflowStepApprover... approvers) {
@@ -366,7 +370,10 @@ public final class GetDomainsApprovalWorkflowStepsApprovalWorkflowStep {
         }
         @CustomType.Setter
         public Builder approversExpressions(List<String> approversExpressions) {
-            this.approversExpressions = Objects.requireNonNull(approversExpressions);
+            if (approversExpressions == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "approversExpressions");
+            }
+            this.approversExpressions = approversExpressions;
             return this;
         }
         public Builder approversExpressions(String... approversExpressions) {
@@ -374,7 +381,10 @@ public final class GetDomainsApprovalWorkflowStepsApprovalWorkflowStep {
         }
         @CustomType.Setter
         public Builder attributeSets(List<String> attributeSets) {
-            this.attributeSets = Objects.requireNonNull(attributeSets);
+            if (attributeSets == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "attributeSets");
+            }
+            this.attributeSets = attributeSets;
             return this;
         }
         public Builder attributeSets(String... attributeSets) {
@@ -382,37 +392,58 @@ public final class GetDomainsApprovalWorkflowStepsApprovalWorkflowStep {
         }
         @CustomType.Setter
         public Builder attributes(String attributes) {
-            this.attributes = Objects.requireNonNull(attributes);
+            if (attributes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "attributes");
+            }
+            this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(String authorization) {
-            this.authorization = Objects.requireNonNull(authorization);
+            if (authorization == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "authorization");
+            }
+            this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsApprovalWorkflowStepsApprovalWorkflowStepIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsApprovalWorkflowStepsApprovalWorkflowStepIdcsCreatedBy... idcsCreatedBies) {
@@ -420,12 +451,18 @@ public final class GetDomainsApprovalWorkflowStepsApprovalWorkflowStep {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsApprovalWorkflowStepsApprovalWorkflowStepIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsApprovalWorkflowStepsApprovalWorkflowStepIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -433,12 +470,18 @@ public final class GetDomainsApprovalWorkflowStepsApprovalWorkflowStep {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -446,7 +489,10 @@ public final class GetDomainsApprovalWorkflowStepsApprovalWorkflowStep {
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsApprovalWorkflowStepsApprovalWorkflowStepMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsApprovalWorkflowStepsApprovalWorkflowStepMeta... metas) {
@@ -454,27 +500,42 @@ public final class GetDomainsApprovalWorkflowStepsApprovalWorkflowStep {
         }
         @CustomType.Setter
         public Builder minimumApprovals(Integer minimumApprovals) {
-            this.minimumApprovals = Objects.requireNonNull(minimumApprovals);
+            if (minimumApprovals == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "minimumApprovals");
+            }
+            this.minimumApprovals = minimumApprovals;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder order(Integer order) {
-            this.order = Objects.requireNonNull(order);
+            if (order == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "order");
+            }
+            this.order = order;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(String resourceTypeSchemaVersion) {
-            this.resourceTypeSchemaVersion = Objects.requireNonNull(resourceTypeSchemaVersion);
+            if (resourceTypeSchemaVersion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "resourceTypeSchemaVersion");
+            }
+            this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -482,7 +543,10 @@ public final class GetDomainsApprovalWorkflowStepsApprovalWorkflowStep {
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsApprovalWorkflowStepsApprovalWorkflowStepTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsApprovalWorkflowStepsApprovalWorkflowStepTag... tags) {
@@ -490,12 +554,18 @@ public final class GetDomainsApprovalWorkflowStepsApprovalWorkflowStep {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowStepsApprovalWorkflowStep", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetDomainsApprovalWorkflowStepsApprovalWorkflowStep build() {

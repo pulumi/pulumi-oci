@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.GetMigrationPlansFilter;
 import com.pulumi.oci.CloudMigrations.outputs.GetMigrationPlansMigrationPlanCollection;
 import java.lang.String;
@@ -129,16 +130,19 @@ public final class GetMigrationPlansResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMigrationPlansFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -147,17 +151,24 @@ public final class GetMigrationPlansResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder migrationId(@Nullable String migrationId) {
+
             this.migrationId = migrationId;
             return this;
         }
         @CustomType.Setter
         public Builder migrationPlanCollections(List<GetMigrationPlansMigrationPlanCollection> migrationPlanCollections) {
-            this.migrationPlanCollections = Objects.requireNonNull(migrationPlanCollections);
+            if (migrationPlanCollections == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansResult", "migrationPlanCollections");
+            }
+            this.migrationPlanCollections = migrationPlanCollections;
             return this;
         }
         public Builder migrationPlanCollections(GetMigrationPlansMigrationPlanCollection... migrationPlanCollections) {
@@ -165,11 +176,13 @@ public final class GetMigrationPlansResult {
         }
         @CustomType.Setter
         public Builder migrationPlanId(@Nullable String migrationPlanId) {
+
             this.migrationPlanId = migrationPlanId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

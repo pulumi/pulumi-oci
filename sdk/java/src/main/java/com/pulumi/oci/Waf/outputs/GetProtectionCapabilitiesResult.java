@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.GetProtectionCapabilitiesFilter;
 import com.pulumi.oci.Waf.outputs.GetProtectionCapabilitiesProtectionCapabilityCollection;
 import java.lang.Boolean;
@@ -140,16 +141,21 @@ public final class GetProtectionCapabilitiesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetProtectionCapabilitiesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetProtectionCapabilitiesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -158,6 +164,7 @@ public final class GetProtectionCapabilitiesResult {
         }
         @CustomType.Setter
         public Builder groupTags(@Nullable List<String> groupTags) {
+
             this.groupTags = groupTags;
             return this;
         }
@@ -166,11 +173,15 @@ public final class GetProtectionCapabilitiesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetProtectionCapabilitiesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isLatestVersions(@Nullable List<Boolean> isLatestVersions) {
+
             this.isLatestVersions = isLatestVersions;
             return this;
         }
@@ -179,12 +190,16 @@ public final class GetProtectionCapabilitiesResult {
         }
         @CustomType.Setter
         public Builder key(@Nullable String key) {
+
             this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder protectionCapabilityCollections(List<GetProtectionCapabilitiesProtectionCapabilityCollection> protectionCapabilityCollections) {
-            this.protectionCapabilityCollections = Objects.requireNonNull(protectionCapabilityCollections);
+            if (protectionCapabilityCollections == null) {
+              throw new MissingRequiredPropertyException("GetProtectionCapabilitiesResult", "protectionCapabilityCollections");
+            }
+            this.protectionCapabilityCollections = protectionCapabilityCollections;
             return this;
         }
         public Builder protectionCapabilityCollections(GetProtectionCapabilitiesProtectionCapabilityCollection... protectionCapabilityCollections) {
@@ -192,6 +207,7 @@ public final class GetProtectionCapabilitiesResult {
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }

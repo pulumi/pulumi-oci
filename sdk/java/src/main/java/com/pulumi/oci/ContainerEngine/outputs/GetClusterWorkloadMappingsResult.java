@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterWorkloadMappingsFilter;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterWorkloadMappingsWorkloadMapping;
 import java.lang.String;
@@ -80,11 +81,15 @@ public final class GetClusterWorkloadMappingsResult {
 
         @CustomType.Setter
         public Builder clusterId(String clusterId) {
-            this.clusterId = Objects.requireNonNull(clusterId);
+            if (clusterId == null) {
+              throw new MissingRequiredPropertyException("GetClusterWorkloadMappingsResult", "clusterId");
+            }
+            this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetClusterWorkloadMappingsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -93,12 +98,18 @@ public final class GetClusterWorkloadMappingsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetClusterWorkloadMappingsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder workloadMappings(List<GetClusterWorkloadMappingsWorkloadMapping> workloadMappings) {
-            this.workloadMappings = Objects.requireNonNull(workloadMappings);
+            if (workloadMappings == null) {
+              throw new MissingRequiredPropertyException("GetClusterWorkloadMappingsResult", "workloadMappings");
+            }
+            this.workloadMappings = workloadMappings;
             return this;
         }
         public Builder workloadMappings(GetClusterWorkloadMappingsWorkloadMapping... workloadMappings) {

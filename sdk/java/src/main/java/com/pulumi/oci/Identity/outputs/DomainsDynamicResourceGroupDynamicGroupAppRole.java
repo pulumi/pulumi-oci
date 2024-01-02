@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -273,37 +274,46 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRole {
 
         @CustomType.Setter
         public Builder adminRole(@Nullable Boolean adminRole) {
+
             this.adminRole = adminRole;
             return this;
         }
         @CustomType.Setter
         public Builder appId(@Nullable String appId) {
+
             this.appId = appId;
             return this;
         }
         @CustomType.Setter
         public Builder appName(@Nullable String appName) {
+
             this.appName = appName;
             return this;
         }
         @CustomType.Setter
         public Builder display(@Nullable String display) {
+
             this.display = display;
             return this;
         }
         @CustomType.Setter
         public Builder legacyGroupName(@Nullable String legacyGroupName) {
+
             this.legacyGroupName = legacyGroupName;
             return this;
         }
         @CustomType.Setter
         public Builder ref(@Nullable String ref) {
+
             this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("DomainsDynamicResourceGroupDynamicGroupAppRole", "value");
+            }
+            this.value = value;
             return this;
         }
         public DomainsDynamicResourceGroupDynamicGroupAppRole build() {

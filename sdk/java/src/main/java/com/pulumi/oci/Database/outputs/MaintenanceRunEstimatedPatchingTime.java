@@ -86,21 +86,25 @@ public final class MaintenanceRunEstimatedPatchingTime {
 
         @CustomType.Setter
         public Builder estimatedDbServerPatchingTime(@Nullable Integer estimatedDbServerPatchingTime) {
+
             this.estimatedDbServerPatchingTime = estimatedDbServerPatchingTime;
             return this;
         }
         @CustomType.Setter
         public Builder estimatedNetworkSwitchesPatchingTime(@Nullable Integer estimatedNetworkSwitchesPatchingTime) {
+
             this.estimatedNetworkSwitchesPatchingTime = estimatedNetworkSwitchesPatchingTime;
             return this;
         }
         @CustomType.Setter
         public Builder estimatedStorageServerPatchingTime(@Nullable Integer estimatedStorageServerPatchingTime) {
+
             this.estimatedStorageServerPatchingTime = estimatedStorageServerPatchingTime;
             return this;
         }
         @CustomType.Setter
         public Builder totalEstimatedPatchingTime(@Nullable Integer totalEstimatedPatchingTime) {
+
             this.totalEstimatedPatchingTime = totalEstimatedPatchingTime;
             return this;
         }

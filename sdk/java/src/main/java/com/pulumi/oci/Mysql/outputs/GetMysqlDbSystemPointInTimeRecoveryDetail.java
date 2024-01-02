@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetMysqlDbSystemPointInTimeRecoveryDetail {
 
         @CustomType.Setter
         public Builder timeEarliestRecoveryPoint(String timeEarliestRecoveryPoint) {
-            this.timeEarliestRecoveryPoint = Objects.requireNonNull(timeEarliestRecoveryPoint);
+            if (timeEarliestRecoveryPoint == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemPointInTimeRecoveryDetail", "timeEarliestRecoveryPoint");
+            }
+            this.timeEarliestRecoveryPoint = timeEarliestRecoveryPoint;
             return this;
         }
         @CustomType.Setter
         public Builder timeLatestRecoveryPoint(String timeLatestRecoveryPoint) {
-            this.timeLatestRecoveryPoint = Objects.requireNonNull(timeLatestRecoveryPoint);
+            if (timeLatestRecoveryPoint == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemPointInTimeRecoveryDetail", "timeLatestRecoveryPoint");
+            }
+            this.timeLatestRecoveryPoint = timeLatestRecoveryPoint;
             return this;
         }
         public GetMysqlDbSystemPointInTimeRecoveryDetail build() {

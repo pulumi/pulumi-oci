@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemDiscoveryPatchOperationValue;
 import java.lang.String;
 import java.util.Objects;
@@ -79,16 +80,23 @@ public final class ExternalDbSystemDiscoveryPatchOperation {
 
         @CustomType.Setter
         public Builder operation(String operation) {
-            this.operation = Objects.requireNonNull(operation);
+            if (operation == null) {
+              throw new MissingRequiredPropertyException("ExternalDbSystemDiscoveryPatchOperation", "operation");
+            }
+            this.operation = operation;
             return this;
         }
         @CustomType.Setter
         public Builder selection(String selection) {
-            this.selection = Objects.requireNonNull(selection);
+            if (selection == null) {
+              throw new MissingRequiredPropertyException("ExternalDbSystemDiscoveryPatchOperation", "selection");
+            }
+            this.selection = selection;
             return this;
         }
         @CustomType.Setter
         public Builder value(@Nullable ExternalDbSystemDiscoveryPatchOperationValue value) {
+
             this.value = value;
             return this;
         }

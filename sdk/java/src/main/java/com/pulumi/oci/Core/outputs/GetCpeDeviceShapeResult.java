@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetCpeDeviceShapeCpeDeviceInfo;
 import com.pulumi.oci.Core.outputs.GetCpeDeviceShapeParameter;
 import java.lang.String;
@@ -107,7 +108,10 @@ public final class GetCpeDeviceShapeResult {
 
         @CustomType.Setter
         public Builder cpeDeviceInfos(List<GetCpeDeviceShapeCpeDeviceInfo> cpeDeviceInfos) {
-            this.cpeDeviceInfos = Objects.requireNonNull(cpeDeviceInfos);
+            if (cpeDeviceInfos == null) {
+              throw new MissingRequiredPropertyException("GetCpeDeviceShapeResult", "cpeDeviceInfos");
+            }
+            this.cpeDeviceInfos = cpeDeviceInfos;
             return this;
         }
         public Builder cpeDeviceInfos(GetCpeDeviceShapeCpeDeviceInfo... cpeDeviceInfos) {
@@ -115,17 +119,26 @@ public final class GetCpeDeviceShapeResult {
         }
         @CustomType.Setter
         public Builder cpeDeviceShapeId(String cpeDeviceShapeId) {
-            this.cpeDeviceShapeId = Objects.requireNonNull(cpeDeviceShapeId);
+            if (cpeDeviceShapeId == null) {
+              throw new MissingRequiredPropertyException("GetCpeDeviceShapeResult", "cpeDeviceShapeId");
+            }
+            this.cpeDeviceShapeId = cpeDeviceShapeId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCpeDeviceShapeResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder parameters(List<GetCpeDeviceShapeParameter> parameters) {
-            this.parameters = Objects.requireNonNull(parameters);
+            if (parameters == null) {
+              throw new MissingRequiredPropertyException("GetCpeDeviceShapeResult", "parameters");
+            }
+            this.parameters = parameters;
             return this;
         }
         public Builder parameters(GetCpeDeviceShapeParameter... parameters) {
@@ -133,7 +146,10 @@ public final class GetCpeDeviceShapeResult {
         }
         @CustomType.Setter
         public Builder template(String template) {
-            this.template = Objects.requireNonNull(template);
+            if (template == null) {
+              throw new MissingRequiredPropertyException("GetCpeDeviceShapeResult", "template");
+            }
+            this.template = template;
             return this;
         }
         public GetCpeDeviceShapeResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetDbVersionsDbVersion {
 
         @CustomType.Setter
         public Builder isLatestForMajorVersion(Boolean isLatestForMajorVersion) {
-            this.isLatestForMajorVersion = Objects.requireNonNull(isLatestForMajorVersion);
+            if (isLatestForMajorVersion == null) {
+              throw new MissingRequiredPropertyException("GetDbVersionsDbVersion", "isLatestForMajorVersion");
+            }
+            this.isLatestForMajorVersion = isLatestForMajorVersion;
             return this;
         }
         @CustomType.Setter
         public Builder isPreviewDbVersion(Boolean isPreviewDbVersion) {
-            this.isPreviewDbVersion = Objects.requireNonNull(isPreviewDbVersion);
+            if (isPreviewDbVersion == null) {
+              throw new MissingRequiredPropertyException("GetDbVersionsDbVersion", "isPreviewDbVersion");
+            }
+            this.isPreviewDbVersion = isPreviewDbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder isUpgradeSupported(Boolean isUpgradeSupported) {
-            this.isUpgradeSupported = Objects.requireNonNull(isUpgradeSupported);
+            if (isUpgradeSupported == null) {
+              throw new MissingRequiredPropertyException("GetDbVersionsDbVersion", "isUpgradeSupported");
+            }
+            this.isUpgradeSupported = isUpgradeSupported;
             return this;
         }
         @CustomType.Setter
         public Builder supportsPdb(Boolean supportsPdb) {
-            this.supportsPdb = Objects.requireNonNull(supportsPdb);
+            if (supportsPdb == null) {
+              throw new MissingRequiredPropertyException("GetDbVersionsDbVersion", "supportsPdb");
+            }
+            this.supportsPdb = supportsPdb;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetDbVersionsDbVersion", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetDbVersionsDbVersion build() {

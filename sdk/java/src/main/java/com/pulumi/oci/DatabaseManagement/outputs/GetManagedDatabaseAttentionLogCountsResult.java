@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAttentionLogCountsFilter;
 import java.lang.Boolean;
@@ -124,7 +125,10 @@ public final class GetManagedDatabaseAttentionLogCountsResult {
 
         @CustomType.Setter
         public Builder attentionLogCountsCollections(List<GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection> attentionLogCountsCollections) {
-            this.attentionLogCountsCollections = Objects.requireNonNull(attentionLogCountsCollections);
+            if (attentionLogCountsCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAttentionLogCountsResult", "attentionLogCountsCollections");
+            }
+            this.attentionLogCountsCollections = attentionLogCountsCollections;
             return this;
         }
         public Builder attentionLogCountsCollections(GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection... attentionLogCountsCollections) {
@@ -132,6 +136,7 @@ public final class GetManagedDatabaseAttentionLogCountsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseAttentionLogCountsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -140,46 +145,59 @@ public final class GetManagedDatabaseAttentionLogCountsResult {
         }
         @CustomType.Setter
         public Builder groupBy(@Nullable String groupBy) {
+
             this.groupBy = groupBy;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAttentionLogCountsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isRegularExpression(@Nullable Boolean isRegularExpression) {
+
             this.isRegularExpression = isRegularExpression;
             return this;
         }
         @CustomType.Setter
         public Builder logSearchText(@Nullable String logSearchText) {
+
             this.logSearchText = logSearchText;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAttentionLogCountsResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder timeGreaterThanOrEqualTo(@Nullable String timeGreaterThanOrEqualTo) {
+
             this.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeLessThanOrEqualTo(@Nullable String timeLessThanOrEqualTo) {
+
             this.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder typeFilter(@Nullable String typeFilter) {
+
             this.typeFilter = typeFilter;
             return this;
         }
         @CustomType.Setter
         public Builder urgencyFilter(@Nullable String urgencyFilter) {
+
             this.urgencyFilter = urgencyFilter;
             return this;
         }

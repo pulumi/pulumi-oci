@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -255,82 +256,130 @@ public final class GetBaselineableMetricsBaselineableMetricSummaryCollectionItem
 
         @CustomType.Setter
         public Builder column(String column) {
-            this.column = Objects.requireNonNull(column);
+            if (column == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsBaselineableMetricSummaryCollectionItem", "column");
+            }
+            this.column = column;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsBaselineableMetricSummaryCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsBaselineableMetricSummaryCollectionItem", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsBaselineableMetricSummaryCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsBaselineableMetricSummaryCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsBaselineableMetricSummaryCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isOutOfBox(Boolean isOutOfBox) {
-            this.isOutOfBox = Objects.requireNonNull(isOutOfBox);
+            if (isOutOfBox == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsBaselineableMetricSummaryCollectionItem", "isOutOfBox");
+            }
+            this.isOutOfBox = isOutOfBox;
             return this;
         }
         @CustomType.Setter
         public Builder lastUpdatedBy(String lastUpdatedBy) {
-            this.lastUpdatedBy = Objects.requireNonNull(lastUpdatedBy);
+            if (lastUpdatedBy == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsBaselineableMetricSummaryCollectionItem", "lastUpdatedBy");
+            }
+            this.lastUpdatedBy = lastUpdatedBy;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsBaselineableMetricSummaryCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsBaselineableMetricSummaryCollectionItem", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder resourceGroup(String resourceGroup) {
-            this.resourceGroup = Objects.requireNonNull(resourceGroup);
+            if (resourceGroup == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsBaselineableMetricSummaryCollectionItem", "resourceGroup");
+            }
+            this.resourceGroup = resourceGroup;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsBaselineableMetricSummaryCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsBaselineableMetricSummaryCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
-            this.tenancyId = Objects.requireNonNull(tenancyId);
+            if (tenancyId == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsBaselineableMetricSummaryCollectionItem", "tenancyId");
+            }
+            this.tenancyId = tenancyId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsBaselineableMetricSummaryCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastUpdated(String timeLastUpdated) {
-            this.timeLastUpdated = Objects.requireNonNull(timeLastUpdated);
+            if (timeLastUpdated == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsBaselineableMetricSummaryCollectionItem", "timeLastUpdated");
+            }
+            this.timeLastUpdated = timeLastUpdated;
             return this;
         }
         public GetBaselineableMetricsBaselineableMetricSummaryCollectionItem build() {

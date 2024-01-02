@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceModuleStreamProfilesFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollection;
 import java.lang.String;
@@ -115,6 +116,7 @@ public final class GetSoftwareSourceModuleStreamProfilesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSoftwareSourceModuleStreamProfilesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -123,17 +125,24 @@ public final class GetSoftwareSourceModuleStreamProfilesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamProfilesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder moduleName(@Nullable String moduleName) {
+
             this.moduleName = moduleName;
             return this;
         }
         @CustomType.Setter
         public Builder moduleStreamProfileCollections(List<GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollection> moduleStreamProfileCollections) {
-            this.moduleStreamProfileCollections = Objects.requireNonNull(moduleStreamProfileCollections);
+            if (moduleStreamProfileCollections == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamProfilesResult", "moduleStreamProfileCollections");
+            }
+            this.moduleStreamProfileCollections = moduleStreamProfileCollections;
             return this;
         }
         public Builder moduleStreamProfileCollections(GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollection... moduleStreamProfileCollections) {
@@ -141,16 +150,21 @@ public final class GetSoftwareSourceModuleStreamProfilesResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder softwareSourceId(String softwareSourceId) {
-            this.softwareSourceId = Objects.requireNonNull(softwareSourceId);
+            if (softwareSourceId == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamProfilesResult", "softwareSourceId");
+            }
+            this.softwareSourceId = softwareSourceId;
             return this;
         }
         @CustomType.Setter
         public Builder streamName(@Nullable String streamName) {
+
             this.streamName = streamName;
             return this;
         }

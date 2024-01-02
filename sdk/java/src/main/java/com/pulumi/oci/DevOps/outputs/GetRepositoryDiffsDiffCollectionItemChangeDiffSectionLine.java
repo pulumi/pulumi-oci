@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine {
 
         @CustomType.Setter
         public Builder baseLine(Integer baseLine) {
-            this.baseLine = Objects.requireNonNull(baseLine);
+            if (baseLine == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine", "baseLine");
+            }
+            this.baseLine = baseLine;
             return this;
         }
         @CustomType.Setter
         public Builder conflictMarker(String conflictMarker) {
-            this.conflictMarker = Objects.requireNonNull(conflictMarker);
+            if (conflictMarker == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine", "conflictMarker");
+            }
+            this.conflictMarker = conflictMarker;
             return this;
         }
         @CustomType.Setter
         public Builder lineContent(String lineContent) {
-            this.lineContent = Objects.requireNonNull(lineContent);
+            if (lineContent == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine", "lineContent");
+            }
+            this.lineContent = lineContent;
             return this;
         }
         @CustomType.Setter
         public Builder targetLine(Integer targetLine) {
-            this.targetLine = Objects.requireNonNull(targetLine);
+            if (targetLine == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine", "targetLine");
+            }
+            this.targetLine = targetLine;
             return this;
         }
         public GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine build() {

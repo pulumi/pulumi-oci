@@ -5,6 +5,7 @@ package com.pulumi.oci.Streaming;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -313,7 +314,9 @@ public final class StreamArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public StreamArgs build() {
-            $.partitions = Objects.requireNonNull($.partitions, "expected parameter 'partitions' to be non-null");
+            if ($.partitions == null) {
+                throw new MissingRequiredPropertyException("StreamArgs", "partitions");
+            }
             return $;
         }
     }

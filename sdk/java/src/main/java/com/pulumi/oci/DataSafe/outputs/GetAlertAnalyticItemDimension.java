@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -44,7 +45,10 @@ public final class GetAlertAnalyticItemDimension {
 
         @CustomType.Setter
         public Builder groupBy(Map<String,Object> groupBy) {
-            this.groupBy = Objects.requireNonNull(groupBy);
+            if (groupBy == null) {
+              throw new MissingRequiredPropertyException("GetAlertAnalyticItemDimension", "groupBy");
+            }
+            this.groupBy = groupBy;
             return this;
         }
         public GetAlertAnalyticItemDimension build() {

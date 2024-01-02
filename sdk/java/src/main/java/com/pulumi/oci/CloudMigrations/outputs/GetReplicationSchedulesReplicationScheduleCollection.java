@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.GetReplicationSchedulesReplicationScheduleCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetReplicationSchedulesReplicationScheduleCollection {
 
         @CustomType.Setter
         public Builder items(List<GetReplicationSchedulesReplicationScheduleCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetReplicationSchedulesReplicationScheduleCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetReplicationSchedulesReplicationScheduleCollectionItem... items) {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Dns;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Dns.inputs.ResolverAttachedViewArgs;
 import com.pulumi.oci.Dns.inputs.ResolverRuleArgs;
 import java.lang.Object;
@@ -388,7 +389,9 @@ public final class ResolverArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ResolverArgs build() {
-            $.resolverId = Objects.requireNonNull($.resolverId, "expected parameter 'resolverId' to be non-null");
+            if ($.resolverId == null) {
+                throw new MissingRequiredPropertyException("ResolverArgs", "resolverId");
+            }
             return $;
         }
     }

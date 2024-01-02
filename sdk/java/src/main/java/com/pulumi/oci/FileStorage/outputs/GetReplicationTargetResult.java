@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -260,87 +261,138 @@ public final class GetReplicationTargetResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetReplicationTargetResult", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetReplicationTargetResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetReplicationTargetResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder deltaProgress(String deltaProgress) {
-            this.deltaProgress = Objects.requireNonNull(deltaProgress);
+            if (deltaProgress == null) {
+              throw new MissingRequiredPropertyException("GetReplicationTargetResult", "deltaProgress");
+            }
+            this.deltaProgress = deltaProgress;
             return this;
         }
         @CustomType.Setter
         public Builder deltaStatus(String deltaStatus) {
-            this.deltaStatus = Objects.requireNonNull(deltaStatus);
+            if (deltaStatus == null) {
+              throw new MissingRequiredPropertyException("GetReplicationTargetResult", "deltaStatus");
+            }
+            this.deltaStatus = deltaStatus;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetReplicationTargetResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetReplicationTargetResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetReplicationTargetResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lastSnapshotId(String lastSnapshotId) {
-            this.lastSnapshotId = Objects.requireNonNull(lastSnapshotId);
+            if (lastSnapshotId == null) {
+              throw new MissingRequiredPropertyException("GetReplicationTargetResult", "lastSnapshotId");
+            }
+            this.lastSnapshotId = lastSnapshotId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetReplicationTargetResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder recoveryPointTime(String recoveryPointTime) {
-            this.recoveryPointTime = Objects.requireNonNull(recoveryPointTime);
+            if (recoveryPointTime == null) {
+              throw new MissingRequiredPropertyException("GetReplicationTargetResult", "recoveryPointTime");
+            }
+            this.recoveryPointTime = recoveryPointTime;
             return this;
         }
         @CustomType.Setter
         public Builder replicationId(String replicationId) {
-            this.replicationId = Objects.requireNonNull(replicationId);
+            if (replicationId == null) {
+              throw new MissingRequiredPropertyException("GetReplicationTargetResult", "replicationId");
+            }
+            this.replicationId = replicationId;
             return this;
         }
         @CustomType.Setter
         public Builder replicationTargetId(String replicationTargetId) {
-            this.replicationTargetId = Objects.requireNonNull(replicationTargetId);
+            if (replicationTargetId == null) {
+              throw new MissingRequiredPropertyException("GetReplicationTargetResult", "replicationTargetId");
+            }
+            this.replicationTargetId = replicationTargetId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceId(String sourceId) {
-            this.sourceId = Objects.requireNonNull(sourceId);
+            if (sourceId == null) {
+              throw new MissingRequiredPropertyException("GetReplicationTargetResult", "sourceId");
+            }
+            this.sourceId = sourceId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetReplicationTargetResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetReplicationTargetResult", "targetId");
+            }
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetReplicationTargetResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetReplicationTargetResult build() {

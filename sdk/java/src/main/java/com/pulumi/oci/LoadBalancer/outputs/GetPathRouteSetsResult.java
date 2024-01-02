@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.GetPathRouteSetsFilter;
 import com.pulumi.oci.LoadBalancer.outputs.GetPathRouteSetsPathRouteSet;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetPathRouteSetsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPathRouteSetsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,17 +82,26 @@ public final class GetPathRouteSetsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPathRouteSetsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetPathRouteSetsResult", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder pathRouteSets(List<GetPathRouteSetsPathRouteSet> pathRouteSets) {
-            this.pathRouteSets = Objects.requireNonNull(pathRouteSets);
+            if (pathRouteSets == null) {
+              throw new MissingRequiredPropertyException("GetPathRouteSetsResult", "pathRouteSets");
+            }
+            this.pathRouteSets = pathRouteSets;
             return this;
         }
         public Builder pathRouteSets(GetPathRouteSetsPathRouteSet... pathRouteSets) {

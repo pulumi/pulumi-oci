@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Dns.outputs.SteeringPolicyRuleCase;
 import com.pulumi.oci.Dns.outputs.SteeringPolicyRuleDefaultAnswerData;
 import java.lang.Integer;
@@ -104,6 +105,7 @@ public final class SteeringPolicyRule {
 
         @CustomType.Setter
         public Builder cases(@Nullable List<SteeringPolicyRuleCase> cases) {
+
             this.cases = cases;
             return this;
         }
@@ -112,6 +114,7 @@ public final class SteeringPolicyRule {
         }
         @CustomType.Setter
         public Builder defaultAnswerDatas(@Nullable List<SteeringPolicyRuleDefaultAnswerData> defaultAnswerDatas) {
+
             this.defaultAnswerDatas = defaultAnswerDatas;
             return this;
         }
@@ -120,17 +123,22 @@ public final class SteeringPolicyRule {
         }
         @CustomType.Setter
         public Builder defaultCount(@Nullable Integer defaultCount) {
+
             this.defaultCount = defaultCount;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder ruleType(String ruleType) {
-            this.ruleType = Objects.requireNonNull(ruleType);
+            if (ruleType == null) {
+              throw new MissingRequiredPropertyException("SteeringPolicyRule", "ruleType");
+            }
+            this.ruleType = ruleType;
             return this;
         }
         public SteeringPolicyRule build() {

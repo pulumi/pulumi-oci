@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.outputs.GetPublishersFilter;
 import com.pulumi.oci.Marketplace.outputs.GetPublishersPublisher;
 import java.lang.String;
@@ -79,11 +80,13 @@ public final class GetPublishersResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPublishersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -92,17 +95,24 @@ public final class GetPublishersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPublishersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder publisherId(@Nullable String publisherId) {
+
             this.publisherId = publisherId;
             return this;
         }
         @CustomType.Setter
         public Builder publishers(List<GetPublishersPublisher> publishers) {
-            this.publishers = Objects.requireNonNull(publishers);
+            if (publishers == null) {
+              throw new MissingRequiredPropertyException("GetPublishersResult", "publishers");
+            }
+            this.publishers = publishers;
             return this;
         }
         public Builder publishers(GetPublishersPublisher... publishers) {

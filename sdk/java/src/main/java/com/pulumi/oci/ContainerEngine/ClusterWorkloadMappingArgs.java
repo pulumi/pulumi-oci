@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -238,9 +239,15 @@ public final class ClusterWorkloadMappingArgs extends com.pulumi.resources.Resou
         }
 
         public ClusterWorkloadMappingArgs build() {
-            $.clusterId = Objects.requireNonNull($.clusterId, "expected parameter 'clusterId' to be non-null");
-            $.mappedCompartmentId = Objects.requireNonNull($.mappedCompartmentId, "expected parameter 'mappedCompartmentId' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
+            if ($.clusterId == null) {
+                throw new MissingRequiredPropertyException("ClusterWorkloadMappingArgs", "clusterId");
+            }
+            if ($.mappedCompartmentId == null) {
+                throw new MissingRequiredPropertyException("ClusterWorkloadMappingArgs", "mappedCompartmentId");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("ClusterWorkloadMappingArgs", "namespace");
+            }
             return $;
         }
     }

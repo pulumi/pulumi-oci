@@ -92,21 +92,25 @@ public final class HeatWaveClusterClusterNode {
 
         @CustomType.Setter
         public Builder nodeId(@Nullable String nodeId) {
+
             this.nodeId = nodeId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
+
             this.timeUpdated = timeUpdated;
             return this;
         }

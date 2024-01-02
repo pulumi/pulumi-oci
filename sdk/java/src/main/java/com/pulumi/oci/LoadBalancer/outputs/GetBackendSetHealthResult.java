@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -134,12 +135,18 @@ public final class GetBackendSetHealthResult {
 
         @CustomType.Setter
         public Builder backendSetName(String backendSetName) {
-            this.backendSetName = Objects.requireNonNull(backendSetName);
+            if (backendSetName == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetHealthResult", "backendSetName");
+            }
+            this.backendSetName = backendSetName;
             return this;
         }
         @CustomType.Setter
         public Builder criticalStateBackendNames(List<String> criticalStateBackendNames) {
-            this.criticalStateBackendNames = Objects.requireNonNull(criticalStateBackendNames);
+            if (criticalStateBackendNames == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetHealthResult", "criticalStateBackendNames");
+            }
+            this.criticalStateBackendNames = criticalStateBackendNames;
             return this;
         }
         public Builder criticalStateBackendNames(String... criticalStateBackendNames) {
@@ -147,27 +154,42 @@ public final class GetBackendSetHealthResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetHealthResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetHealthResult", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetHealthResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder totalBackendCount(Integer totalBackendCount) {
-            this.totalBackendCount = Objects.requireNonNull(totalBackendCount);
+            if (totalBackendCount == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetHealthResult", "totalBackendCount");
+            }
+            this.totalBackendCount = totalBackendCount;
             return this;
         }
         @CustomType.Setter
         public Builder unknownStateBackendNames(List<String> unknownStateBackendNames) {
-            this.unknownStateBackendNames = Objects.requireNonNull(unknownStateBackendNames);
+            if (unknownStateBackendNames == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetHealthResult", "unknownStateBackendNames");
+            }
+            this.unknownStateBackendNames = unknownStateBackendNames;
             return this;
         }
         public Builder unknownStateBackendNames(String... unknownStateBackendNames) {
@@ -175,7 +197,10 @@ public final class GetBackendSetHealthResult {
         }
         @CustomType.Setter
         public Builder warningStateBackendNames(List<String> warningStateBackendNames) {
-            this.warningStateBackendNames = Objects.requireNonNull(warningStateBackendNames);
+            if (warningStateBackendNames == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetHealthResult", "warningStateBackendNames");
+            }
+            this.warningStateBackendNames = warningStateBackendNames;
             return this;
         }
         public Builder warningStateBackendNames(String... warningStateBackendNames) {

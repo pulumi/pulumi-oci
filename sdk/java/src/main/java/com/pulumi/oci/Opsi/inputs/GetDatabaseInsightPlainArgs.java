@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetDatabaseInsightPlainArgs extends com.pulumi.resources.Invo
         }
 
         public GetDatabaseInsightPlainArgs build() {
-            $.databaseInsightId = Objects.requireNonNull($.databaseInsightId, "expected parameter 'databaseInsightId' to be non-null");
+            if ($.databaseInsightId == null) {
+                throw new MissingRequiredPropertyException("GetDatabaseInsightPlainArgs", "databaseInsightId");
+            }
             return $;
         }
     }

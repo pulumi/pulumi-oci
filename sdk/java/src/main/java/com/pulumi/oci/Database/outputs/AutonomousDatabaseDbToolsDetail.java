@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -89,22 +90,28 @@ public final class AutonomousDatabaseDbToolsDetail {
 
         @CustomType.Setter
         public Builder computeCount(@Nullable Double computeCount) {
+
             this.computeCount = computeCount;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
+
             this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder maxIdleTimeInMinutes(@Nullable Integer maxIdleTimeInMinutes) {
+
             this.maxIdleTimeInMinutes = maxIdleTimeInMinutes;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("AutonomousDatabaseDbToolsDetail", "name");
+            }
+            this.name = name;
             return this;
         }
         public AutonomousDatabaseDbToolsDetail build() {

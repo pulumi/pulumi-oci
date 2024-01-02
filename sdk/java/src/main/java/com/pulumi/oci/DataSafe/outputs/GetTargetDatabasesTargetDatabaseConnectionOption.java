@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,17 +75,26 @@ public final class GetTargetDatabasesTargetDatabaseConnectionOption {
 
         @CustomType.Setter
         public Builder connectionType(String connectionType) {
-            this.connectionType = Objects.requireNonNull(connectionType);
+            if (connectionType == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabaseConnectionOption", "connectionType");
+            }
+            this.connectionType = connectionType;
             return this;
         }
         @CustomType.Setter
         public Builder datasafePrivateEndpointId(String datasafePrivateEndpointId) {
-            this.datasafePrivateEndpointId = Objects.requireNonNull(datasafePrivateEndpointId);
+            if (datasafePrivateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabaseConnectionOption", "datasafePrivateEndpointId");
+            }
+            this.datasafePrivateEndpointId = datasafePrivateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder onPremConnectorId(String onPremConnectorId) {
-            this.onPremConnectorId = Objects.requireNonNull(onPremConnectorId);
+            if (onPremConnectorId == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabaseConnectionOption", "onPremConnectorId");
+            }
+            this.onPremConnectorId = onPremConnectorId;
             return this;
         }
         public GetTargetDatabasesTargetDatabaseConnectionOption build() {

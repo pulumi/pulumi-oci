@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OneSubsription.outputs.GetRatecardsFilter;
 import com.pulumi.oci.OneSubsription.outputs.GetRatecardsRateCard;
 import java.lang.String;
@@ -105,11 +106,15 @@ public final class GetRatecardsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetRatecardsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRatecardsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -118,17 +123,24 @@ public final class GetRatecardsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRatecardsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder partNumber(@Nullable String partNumber) {
+
             this.partNumber = partNumber;
             return this;
         }
         @CustomType.Setter
         public Builder rateCards(List<GetRatecardsRateCard> rateCards) {
-            this.rateCards = Objects.requireNonNull(rateCards);
+            if (rateCards == null) {
+              throw new MissingRequiredPropertyException("GetRatecardsResult", "rateCards");
+            }
+            this.rateCards = rateCards;
             return this;
         }
         public Builder rateCards(GetRatecardsRateCard... rateCards) {
@@ -136,16 +148,21 @@ public final class GetRatecardsResult {
         }
         @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetRatecardsResult", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
         public Builder timeFrom(@Nullable String timeFrom) {
+
             this.timeFrom = timeFrom;
             return this;
         }
         @CustomType.Setter
         public Builder timeTo(@Nullable String timeTo) {
+
             this.timeTo = timeTo;
             return this;
         }

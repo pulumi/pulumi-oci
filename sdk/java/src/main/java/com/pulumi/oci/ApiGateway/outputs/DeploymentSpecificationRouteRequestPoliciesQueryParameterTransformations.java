@@ -74,16 +74,19 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
 
         @CustomType.Setter
         public Builder filterQueryParameters(@Nullable DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParameters filterQueryParameters) {
+
             this.filterQueryParameters = filterQueryParameters;
             return this;
         }
         @CustomType.Setter
         public Builder renameQueryParameters(@Nullable DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParameters renameQueryParameters) {
+
             this.renameQueryParameters = renameQueryParameters;
             return this;
         }
         @CustomType.Setter
         public Builder setQueryParameters(@Nullable DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParameters setQueryParameters) {
+
             this.setQueryParameters = setQueryParameters;
             return this;
         }

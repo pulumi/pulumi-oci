@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceCatalog.outputs.GetServiceCatalogAssociationsFilter;
 import com.pulumi.oci.ServiceCatalog.outputs.GetServiceCatalogAssociationsServiceCatalogAssociationCollection;
 import java.lang.String;
@@ -115,16 +116,19 @@ public final class GetServiceCatalogAssociationsResult {
 
         @CustomType.Setter
         public Builder entityId(@Nullable String entityId) {
+
             this.entityId = entityId;
             return this;
         }
         @CustomType.Setter
         public Builder entityType(@Nullable String entityType) {
+
             this.entityType = entityType;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetServiceCatalogAssociationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -133,12 +137,18 @@ public final class GetServiceCatalogAssociationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetServiceCatalogAssociationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder serviceCatalogAssociationCollections(List<GetServiceCatalogAssociationsServiceCatalogAssociationCollection> serviceCatalogAssociationCollections) {
-            this.serviceCatalogAssociationCollections = Objects.requireNonNull(serviceCatalogAssociationCollections);
+            if (serviceCatalogAssociationCollections == null) {
+              throw new MissingRequiredPropertyException("GetServiceCatalogAssociationsResult", "serviceCatalogAssociationCollections");
+            }
+            this.serviceCatalogAssociationCollections = serviceCatalogAssociationCollections;
             return this;
         }
         public Builder serviceCatalogAssociationCollections(GetServiceCatalogAssociationsServiceCatalogAssociationCollection... serviceCatalogAssociationCollections) {
@@ -146,11 +156,13 @@ public final class GetServiceCatalogAssociationsResult {
         }
         @CustomType.Setter
         public Builder serviceCatalogAssociationId(@Nullable String serviceCatalogAssociationId) {
+
             this.serviceCatalogAssociationId = serviceCatalogAssociationId;
             return this;
         }
         @CustomType.Setter
         public Builder serviceCatalogId(@Nullable String serviceCatalogId) {
+
             this.serviceCatalogId = serviceCatalogId;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.inputs.ProjectNotificationConfigArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -264,8 +265,12 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ProjectArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.notificationConfig = Objects.requireNonNull($.notificationConfig, "expected parameter 'notificationConfig' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ProjectArgs", "compartmentId");
+            }
+            if ($.notificationConfig == null) {
+                throw new MissingRequiredPropertyException("ProjectArgs", "notificationConfig");
+            }
             return $;
         }
     }

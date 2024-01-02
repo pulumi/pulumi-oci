@@ -5,6 +5,7 @@ package com.pulumi.oci.MeteringComputation.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.inputs.UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs;
 import com.pulumi.oci.MeteringComputation.inputs.UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs;
 import java.lang.Integer;
@@ -200,10 +201,18 @@ public final class UsageCarbonEmissionsQueryQueryDefinitionArgs extends com.pulu
         }
 
         public UsageCarbonEmissionsQueryQueryDefinitionArgs build() {
-            $.costAnalysisUi = Objects.requireNonNull($.costAnalysisUi, "expected parameter 'costAnalysisUi' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.reportQuery = Objects.requireNonNull($.reportQuery, "expected parameter 'reportQuery' to be non-null");
-            $.version = Objects.requireNonNull($.version, "expected parameter 'version' to be non-null");
+            if ($.costAnalysisUi == null) {
+                throw new MissingRequiredPropertyException("UsageCarbonEmissionsQueryQueryDefinitionArgs", "costAnalysisUi");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("UsageCarbonEmissionsQueryQueryDefinitionArgs", "displayName");
+            }
+            if ($.reportQuery == null) {
+                throw new MissingRequiredPropertyException("UsageCarbonEmissionsQueryQueryDefinitionArgs", "reportQuery");
+            }
+            if ($.version == null) {
+                throw new MissingRequiredPropertyException("UsageCarbonEmissionsQueryQueryDefinitionArgs", "version");
+            }
             return $;
         }
     }

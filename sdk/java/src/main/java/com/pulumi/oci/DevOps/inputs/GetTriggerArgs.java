@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetTriggerArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetTriggerArgs build() {
-            $.triggerId = Objects.requireNonNull($.triggerId, "expected parameter 'triggerId' to be non-null");
+            if ($.triggerId == null) {
+                throw new MissingRequiredPropertyException("GetTriggerArgs", "triggerId");
+            }
             return $;
         }
     }

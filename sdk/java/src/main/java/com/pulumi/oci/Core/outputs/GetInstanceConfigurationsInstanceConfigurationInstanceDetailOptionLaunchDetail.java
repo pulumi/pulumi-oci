@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail;
@@ -369,7 +370,10 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
 
         @CustomType.Setter
         public Builder agentConfigs(List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig> agentConfigs) {
-            this.agentConfigs = Objects.requireNonNull(agentConfigs);
+            if (agentConfigs == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "agentConfigs");
+            }
+            this.agentConfigs = agentConfigs;
             return this;
         }
         public Builder agentConfigs(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig... agentConfigs) {
@@ -377,7 +381,10 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
         }
         @CustomType.Setter
         public Builder availabilityConfigs(List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig> availabilityConfigs) {
-            this.availabilityConfigs = Objects.requireNonNull(availabilityConfigs);
+            if (availabilityConfigs == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "availabilityConfigs");
+            }
+            this.availabilityConfigs = availabilityConfigs;
             return this;
         }
         public Builder availabilityConfigs(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig... availabilityConfigs) {
@@ -385,22 +392,34 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder capacityReservationId(String capacityReservationId) {
-            this.capacityReservationId = Objects.requireNonNull(capacityReservationId);
+            if (capacityReservationId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "capacityReservationId");
+            }
+            this.capacityReservationId = capacityReservationId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createVnicDetails(List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail> createVnicDetails) {
-            this.createVnicDetails = Objects.requireNonNull(createVnicDetails);
+            if (createVnicDetails == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "createVnicDetails");
+            }
+            this.createVnicDetails = createVnicDetails;
             return this;
         }
         public Builder createVnicDetails(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail... createVnicDetails) {
@@ -408,37 +427,58 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
         }
         @CustomType.Setter
         public Builder dedicatedVmHostId(String dedicatedVmHostId) {
-            this.dedicatedVmHostId = Objects.requireNonNull(dedicatedVmHostId);
+            if (dedicatedVmHostId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "dedicatedVmHostId");
+            }
+            this.dedicatedVmHostId = dedicatedVmHostId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder extendedMetadata(Map<String,Object> extendedMetadata) {
-            this.extendedMetadata = Objects.requireNonNull(extendedMetadata);
+            if (extendedMetadata == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "extendedMetadata");
+            }
+            this.extendedMetadata = extendedMetadata;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+            if (faultDomain == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "faultDomain");
+            }
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder instanceOptions(List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption> instanceOptions) {
-            this.instanceOptions = Objects.requireNonNull(instanceOptions);
+            if (instanceOptions == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "instanceOptions");
+            }
+            this.instanceOptions = instanceOptions;
             return this;
         }
         public Builder instanceOptions(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption... instanceOptions) {
@@ -446,22 +486,34 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
         }
         @CustomType.Setter
         public Builder ipxeScript(String ipxeScript) {
-            this.ipxeScript = Objects.requireNonNull(ipxeScript);
+            if (ipxeScript == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "ipxeScript");
+            }
+            this.ipxeScript = ipxeScript;
             return this;
         }
         @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
-            this.isPvEncryptionInTransitEnabled = Objects.requireNonNull(isPvEncryptionInTransitEnabled);
+            if (isPvEncryptionInTransitEnabled == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "isPvEncryptionInTransitEnabled");
+            }
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder launchMode(String launchMode) {
-            this.launchMode = Objects.requireNonNull(launchMode);
+            if (launchMode == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "launchMode");
+            }
+            this.launchMode = launchMode;
             return this;
         }
         @CustomType.Setter
         public Builder launchOptions(List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption> launchOptions) {
-            this.launchOptions = Objects.requireNonNull(launchOptions);
+            if (launchOptions == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "launchOptions");
+            }
+            this.launchOptions = launchOptions;
             return this;
         }
         public Builder launchOptions(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption... launchOptions) {
@@ -469,12 +521,18 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
         }
         @CustomType.Setter
         public Builder metadata(Map<String,Object> metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+            if (metadata == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "metadata");
+            }
+            this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
         public Builder platformConfigs(List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig> platformConfigs) {
-            this.platformConfigs = Objects.requireNonNull(platformConfigs);
+            if (platformConfigs == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "platformConfigs");
+            }
+            this.platformConfigs = platformConfigs;
             return this;
         }
         public Builder platformConfigs(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig... platformConfigs) {
@@ -482,7 +540,10 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
         }
         @CustomType.Setter
         public Builder preemptibleInstanceConfigs(List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig> preemptibleInstanceConfigs) {
-            this.preemptibleInstanceConfigs = Objects.requireNonNull(preemptibleInstanceConfigs);
+            if (preemptibleInstanceConfigs == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "preemptibleInstanceConfigs");
+            }
+            this.preemptibleInstanceConfigs = preemptibleInstanceConfigs;
             return this;
         }
         public Builder preemptibleInstanceConfigs(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig... preemptibleInstanceConfigs) {
@@ -490,17 +551,26 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
         }
         @CustomType.Setter
         public Builder preferredMaintenanceAction(String preferredMaintenanceAction) {
-            this.preferredMaintenanceAction = Objects.requireNonNull(preferredMaintenanceAction);
+            if (preferredMaintenanceAction == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "preferredMaintenanceAction");
+            }
+            this.preferredMaintenanceAction = preferredMaintenanceAction;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder shapeConfigs(List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig> shapeConfigs) {
-            this.shapeConfigs = Objects.requireNonNull(shapeConfigs);
+            if (shapeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "shapeConfigs");
+            }
+            this.shapeConfigs = shapeConfigs;
             return this;
         }
         public Builder shapeConfigs(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig... shapeConfigs) {
@@ -508,7 +578,10 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
         }
         @CustomType.Setter
         public Builder sourceDetails(List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetail> sourceDetails) {
-            this.sourceDetails = Objects.requireNonNull(sourceDetails);
+            if (sourceDetails == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "sourceDetails");
+            }
+            this.sourceDetails = sourceDetails;
             return this;
         }
         public Builder sourceDetails(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetail... sourceDetails) {

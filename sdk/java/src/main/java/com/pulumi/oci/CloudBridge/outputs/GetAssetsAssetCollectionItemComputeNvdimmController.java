@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetAssetsAssetCollectionItemComputeNvdimmController {
 
         @CustomType.Setter
         public Builder busNumber(Integer busNumber) {
-            this.busNumber = Objects.requireNonNull(busNumber);
+            if (busNumber == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeNvdimmController", "busNumber");
+            }
+            this.busNumber = busNumber;
             return this;
         }
         @CustomType.Setter
         public Builder label(String label) {
-            this.label = Objects.requireNonNull(label);
+            if (label == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeNvdimmController", "label");
+            }
+            this.label = label;
             return this;
         }
         public GetAssetsAssetCollectionItemComputeNvdimmController build() {

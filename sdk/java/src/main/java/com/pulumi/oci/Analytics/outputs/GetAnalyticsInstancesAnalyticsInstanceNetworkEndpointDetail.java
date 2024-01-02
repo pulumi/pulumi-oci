@@ -4,6 +4,7 @@
 package com.pulumi.oci.Analytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Analytics.outputs.GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn;
 import java.lang.String;
 import java.util.List;
@@ -128,12 +129,18 @@ public final class GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail {
 
         @CustomType.Setter
         public Builder networkEndpointType(String networkEndpointType) {
-            this.networkEndpointType = Objects.requireNonNull(networkEndpointType);
+            if (networkEndpointType == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail", "networkEndpointType");
+            }
+            this.networkEndpointType = networkEndpointType;
             return this;
         }
         @CustomType.Setter
         public Builder networkSecurityGroupIds(List<String> networkSecurityGroupIds) {
-            this.networkSecurityGroupIds = Objects.requireNonNull(networkSecurityGroupIds);
+            if (networkSecurityGroupIds == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail", "networkSecurityGroupIds");
+            }
+            this.networkSecurityGroupIds = networkSecurityGroupIds;
             return this;
         }
         public Builder networkSecurityGroupIds(String... networkSecurityGroupIds) {
@@ -141,17 +148,26 @@ public final class GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail {
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+            if (vcnId == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail", "vcnId");
+            }
+            this.vcnId = vcnId;
             return this;
         }
         @CustomType.Setter
         public Builder whitelistedIps(List<String> whitelistedIps) {
-            this.whitelistedIps = Objects.requireNonNull(whitelistedIps);
+            if (whitelistedIps == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail", "whitelistedIps");
+            }
+            this.whitelistedIps = whitelistedIps;
             return this;
         }
         public Builder whitelistedIps(String... whitelistedIps) {
@@ -159,7 +175,10 @@ public final class GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail {
         }
         @CustomType.Setter
         public Builder whitelistedServices(List<String> whitelistedServices) {
-            this.whitelistedServices = Objects.requireNonNull(whitelistedServices);
+            if (whitelistedServices == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail", "whitelistedServices");
+            }
+            this.whitelistedServices = whitelistedServices;
             return this;
         }
         public Builder whitelistedServices(String... whitelistedServices) {
@@ -167,7 +186,10 @@ public final class GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail {
         }
         @CustomType.Setter
         public Builder whitelistedVcns(List<GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn> whitelistedVcns) {
-            this.whitelistedVcns = Objects.requireNonNull(whitelistedVcns);
+            if (whitelistedVcns == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail", "whitelistedVcns");
+            }
+            this.whitelistedVcns = whitelistedVcns;
             return this;
         }
         public Builder whitelistedVcns(GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn... whitelistedVcns) {

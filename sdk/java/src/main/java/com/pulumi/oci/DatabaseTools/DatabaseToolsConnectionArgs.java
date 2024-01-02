@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseTools;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionKeyStoreArgs;
 import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionLockArgs;
 import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionProxyClientArgs;
@@ -659,11 +660,21 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
         }
 
         public DatabaseToolsConnectionArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
-            $.userName = Objects.requireNonNull($.userName, "expected parameter 'userName' to be non-null");
-            $.userPassword = Objects.requireNonNull($.userPassword, "expected parameter 'userPassword' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("DatabaseToolsConnectionArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("DatabaseToolsConnectionArgs", "displayName");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("DatabaseToolsConnectionArgs", "type");
+            }
+            if ($.userName == null) {
+                throw new MissingRequiredPropertyException("DatabaseToolsConnectionArgs", "userName");
+            }
+            if ($.userPassword == null) {
+                throw new MissingRequiredPropertyException("DatabaseToolsConnectionArgs", "userPassword");
+            }
             return $;
         }
     }

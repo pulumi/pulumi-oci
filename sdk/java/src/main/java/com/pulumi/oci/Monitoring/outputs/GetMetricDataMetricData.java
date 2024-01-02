@@ -4,6 +4,7 @@
 package com.pulumi.oci.Monitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Monitoring.outputs.GetMetricDataMetricDataAggregatedDatapoint;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -213,7 +214,10 @@ public final class GetMetricDataMetricData {
 
         @CustomType.Setter
         public Builder aggregatedDatapoints(List<GetMetricDataMetricDataAggregatedDatapoint> aggregatedDatapoints) {
-            this.aggregatedDatapoints = Objects.requireNonNull(aggregatedDatapoints);
+            if (aggregatedDatapoints == null) {
+              throw new MissingRequiredPropertyException("GetMetricDataMetricData", "aggregatedDatapoints");
+            }
+            this.aggregatedDatapoints = aggregatedDatapoints;
             return this;
         }
         public Builder aggregatedDatapoints(GetMetricDataMetricDataAggregatedDatapoint... aggregatedDatapoints) {
@@ -221,57 +225,90 @@ public final class GetMetricDataMetricData {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMetricDataMetricData", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
-            this.compartmentIdInSubtree = Objects.requireNonNull(compartmentIdInSubtree);
+            if (compartmentIdInSubtree == null) {
+              throw new MissingRequiredPropertyException("GetMetricDataMetricData", "compartmentIdInSubtree");
+            }
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder dimensions(Map<String,Object> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+            if (dimensions == null) {
+              throw new MissingRequiredPropertyException("GetMetricDataMetricData", "dimensions");
+            }
+            this.dimensions = dimensions;
             return this;
         }
         @CustomType.Setter
         public Builder endTime(String endTime) {
-            this.endTime = Objects.requireNonNull(endTime);
+            if (endTime == null) {
+              throw new MissingRequiredPropertyException("GetMetricDataMetricData", "endTime");
+            }
+            this.endTime = endTime;
             return this;
         }
         @CustomType.Setter
         public Builder metadata(Map<String,Object> metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+            if (metadata == null) {
+              throw new MissingRequiredPropertyException("GetMetricDataMetricData", "metadata");
+            }
+            this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetMetricDataMetricData", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetMetricDataMetricData", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder query(String query) {
-            this.query = Objects.requireNonNull(query);
+            if (query == null) {
+              throw new MissingRequiredPropertyException("GetMetricDataMetricData", "query");
+            }
+            this.query = query;
             return this;
         }
         @CustomType.Setter
         public Builder resolution(String resolution) {
-            this.resolution = Objects.requireNonNull(resolution);
+            if (resolution == null) {
+              throw new MissingRequiredPropertyException("GetMetricDataMetricData", "resolution");
+            }
+            this.resolution = resolution;
             return this;
         }
         @CustomType.Setter
         public Builder resourceGroup(String resourceGroup) {
-            this.resourceGroup = Objects.requireNonNull(resourceGroup);
+            if (resourceGroup == null) {
+              throw new MissingRequiredPropertyException("GetMetricDataMetricData", "resourceGroup");
+            }
+            this.resourceGroup = resourceGroup;
             return this;
         }
         @CustomType.Setter
         public Builder startTime(String startTime) {
-            this.startTime = Objects.requireNonNull(startTime);
+            if (startTime == null) {
+              throw new MissingRequiredPropertyException("GetMetricDataMetricData", "startTime");
+            }
+            this.startTime = startTime;
             return this;
         }
         public GetMetricDataMetricData build() {

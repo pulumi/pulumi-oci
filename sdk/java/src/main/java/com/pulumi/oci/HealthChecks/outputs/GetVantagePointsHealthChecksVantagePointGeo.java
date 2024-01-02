@@ -4,6 +4,7 @@
 package com.pulumi.oci.HealthChecks.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -127,37 +128,58 @@ public final class GetVantagePointsHealthChecksVantagePointGeo {
 
         @CustomType.Setter
         public Builder adminDivCode(String adminDivCode) {
-            this.adminDivCode = Objects.requireNonNull(adminDivCode);
+            if (adminDivCode == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsHealthChecksVantagePointGeo", "adminDivCode");
+            }
+            this.adminDivCode = adminDivCode;
             return this;
         }
         @CustomType.Setter
         public Builder cityName(String cityName) {
-            this.cityName = Objects.requireNonNull(cityName);
+            if (cityName == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsHealthChecksVantagePointGeo", "cityName");
+            }
+            this.cityName = cityName;
             return this;
         }
         @CustomType.Setter
         public Builder countryCode(String countryCode) {
-            this.countryCode = Objects.requireNonNull(countryCode);
+            if (countryCode == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsHealthChecksVantagePointGeo", "countryCode");
+            }
+            this.countryCode = countryCode;
             return this;
         }
         @CustomType.Setter
         public Builder countryName(String countryName) {
-            this.countryName = Objects.requireNonNull(countryName);
+            if (countryName == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsHealthChecksVantagePointGeo", "countryName");
+            }
+            this.countryName = countryName;
             return this;
         }
         @CustomType.Setter
         public Builder geoKey(String geoKey) {
-            this.geoKey = Objects.requireNonNull(geoKey);
+            if (geoKey == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsHealthChecksVantagePointGeo", "geoKey");
+            }
+            this.geoKey = geoKey;
             return this;
         }
         @CustomType.Setter
         public Builder latitude(Double latitude) {
-            this.latitude = Objects.requireNonNull(latitude);
+            if (latitude == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsHealthChecksVantagePointGeo", "latitude");
+            }
+            this.latitude = latitude;
             return this;
         }
         @CustomType.Setter
         public Builder longitude(Double longitude) {
-            this.longitude = Objects.requireNonNull(longitude);
+            if (longitude == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsHealthChecksVantagePointGeo", "longitude");
+            }
+            this.longitude = longitude;
             return this;
         }
         public GetVantagePointsHealthChecksVantagePointGeo build() {

@@ -89,6 +89,7 @@ public final class BuildRunBuildOutput {
 
         @CustomType.Setter
         public Builder artifactOverrideParameters(@Nullable List<BuildRunBuildOutputArtifactOverrideParameter> artifactOverrideParameters) {
+
             this.artifactOverrideParameters = artifactOverrideParameters;
             return this;
         }
@@ -97,6 +98,7 @@ public final class BuildRunBuildOutput {
         }
         @CustomType.Setter
         public Builder deliveredArtifacts(@Nullable List<BuildRunBuildOutputDeliveredArtifact> deliveredArtifacts) {
+
             this.deliveredArtifacts = deliveredArtifacts;
             return this;
         }
@@ -105,6 +107,7 @@ public final class BuildRunBuildOutput {
         }
         @CustomType.Setter
         public Builder exportedVariables(@Nullable List<BuildRunBuildOutputExportedVariable> exportedVariables) {
+
             this.exportedVariables = exportedVariables;
             return this;
         }
@@ -113,6 +116,7 @@ public final class BuildRunBuildOutput {
         }
         @CustomType.Setter
         public Builder vulnerabilityAuditSummaryCollections(@Nullable List<BuildRunBuildOutputVulnerabilityAuditSummaryCollection> vulnerabilityAuditSummaryCollections) {
+
             this.vulnerabilityAuditSummaryCollections = vulnerabilityAuditSummaryCollections;
             return this;
         }

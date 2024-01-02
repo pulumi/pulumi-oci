@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.GetNetworkAddressListsNetworkAddressListCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetNetworkAddressListsNetworkAddressListCollection {
 
         @CustomType.Setter
         public Builder items(List<GetNetworkAddressListsNetworkAddressListCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetNetworkAddressListsNetworkAddressListCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetNetworkAddressListsNetworkAddressListCollectionItem... items) {

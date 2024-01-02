@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -141,7 +142,10 @@ public final class GetVmClusterPatchesPatch {
 
         @CustomType.Setter
         public Builder availableActions(List<String> availableActions) {
-            this.availableActions = Objects.requireNonNull(availableActions);
+            if (availableActions == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchesPatch", "availableActions");
+            }
+            this.availableActions = availableActions;
             return this;
         }
         public Builder availableActions(String... availableActions) {
@@ -149,37 +153,58 @@ public final class GetVmClusterPatchesPatch {
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchesPatch", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchesPatch", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lastAction(String lastAction) {
-            this.lastAction = Objects.requireNonNull(lastAction);
+            if (lastAction == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchesPatch", "lastAction");
+            }
+            this.lastAction = lastAction;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchesPatch", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchesPatch", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeReleased(String timeReleased) {
-            this.timeReleased = Objects.requireNonNull(timeReleased);
+            if (timeReleased == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchesPatch", "timeReleased");
+            }
+            this.timeReleased = timeReleased;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchesPatch", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetVmClusterPatchesPatch build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsBlockVolumeArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionArgs;
@@ -267,7 +268,9 @@ public final class InstanceConfigurationInstanceDetailsArgs extends com.pulumi.r
         }
 
         public InstanceConfigurationInstanceDetailsArgs build() {
-            $.instanceType = Objects.requireNonNull($.instanceType, "expected parameter 'instanceType' to be non-null");
+            if ($.instanceType == null) {
+                throw new MissingRequiredPropertyException("InstanceConfigurationInstanceDetailsArgs", "instanceType");
+            }
             return $;
         }
     }

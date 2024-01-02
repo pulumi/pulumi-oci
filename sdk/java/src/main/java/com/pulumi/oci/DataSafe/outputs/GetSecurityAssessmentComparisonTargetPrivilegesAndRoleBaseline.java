@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference;
 import java.lang.String;
 import java.util.List;
@@ -128,7 +129,10 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselin
 
         @CustomType.Setter
         public Builder details(List<String> details) {
-            this.details = Objects.requireNonNull(details);
+            if (details == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline", "details");
+            }
+            this.details = details;
             return this;
         }
         public Builder details(String... details) {
@@ -136,12 +140,18 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselin
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder references(List<GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference> references) {
-            this.references = Objects.requireNonNull(references);
+            if (references == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline", "references");
+            }
+            this.references = references;
             return this;
         }
         public Builder references(GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference... references) {
@@ -149,22 +159,34 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselin
         }
         @CustomType.Setter
         public Builder remarks(String remarks) {
-            this.remarks = Objects.requireNonNull(remarks);
+            if (remarks == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline", "remarks");
+            }
+            this.remarks = remarks;
             return this;
         }
         @CustomType.Setter
         public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+            if (severity == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline", "severity");
+            }
+            this.severity = severity;
             return this;
         }
         @CustomType.Setter
         public Builder summary(String summary) {
-            this.summary = Objects.requireNonNull(summary);
+            if (summary == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline", "summary");
+            }
+            this.summary = summary;
             return this;
         }
         @CustomType.Setter
         public Builder title(String title) {
-            this.title = Objects.requireNonNull(title);
+            if (title == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline", "title");
+            }
+            this.title = title;
             return this;
         }
         public GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline build() {

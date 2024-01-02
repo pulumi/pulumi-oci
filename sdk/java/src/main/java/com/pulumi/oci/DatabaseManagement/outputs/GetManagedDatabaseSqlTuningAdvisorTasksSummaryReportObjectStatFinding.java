@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -113,32 +114,50 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectSta
 
         @CustomType.Setter
         public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+            if (object == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding", "object");
+            }
+            this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder objectHashValue(String objectHashValue) {
-            this.objectHashValue = Objects.requireNonNull(objectHashValue);
+            if (objectHashValue == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding", "objectHashValue");
+            }
+            this.objectHashValue = objectHashValue;
             return this;
         }
         @CustomType.Setter
         public Builder objectType(String objectType) {
-            this.objectType = Objects.requireNonNull(objectType);
+            if (objectType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding", "objectType");
+            }
+            this.objectType = objectType;
             return this;
         }
         @CustomType.Setter
         public Builder problemType(String problemType) {
-            this.problemType = Objects.requireNonNull(problemType);
+            if (problemType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding", "problemType");
+            }
+            this.problemType = problemType;
             return this;
         }
         @CustomType.Setter
         public Builder referenceCount(Integer referenceCount) {
-            this.referenceCount = Objects.requireNonNull(referenceCount);
+            if (referenceCount == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding", "referenceCount");
+            }
+            this.referenceCount = referenceCount;
             return this;
         }
         @CustomType.Setter
         public Builder schema(String schema) {
-            this.schema = Objects.requireNonNull(schema);
+            if (schema == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding", "schema");
+            }
+            this.schema = schema;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding build() {

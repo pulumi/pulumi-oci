@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetMetricExtensionsFilter;
 import com.pulumi.oci.StackMonitoring.outputs.GetMetricExtensionsMetricExtensionCollection;
 import java.lang.String;
@@ -143,16 +144,21 @@ public final class GetMetricExtensionsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder enabledOnResourceId(@Nullable String enabledOnResourceId) {
+
             this.enabledOnResourceId = enabledOnResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMetricExtensionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -161,12 +167,18 @@ public final class GetMetricExtensionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder metricExtensionCollections(List<GetMetricExtensionsMetricExtensionCollection> metricExtensionCollections) {
-            this.metricExtensionCollections = Objects.requireNonNull(metricExtensionCollections);
+            if (metricExtensionCollections == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsResult", "metricExtensionCollections");
+            }
+            this.metricExtensionCollections = metricExtensionCollections;
             return this;
         }
         public Builder metricExtensionCollections(GetMetricExtensionsMetricExtensionCollection... metricExtensionCollections) {
@@ -174,21 +186,25 @@ public final class GetMetricExtensionsResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(@Nullable String resourceType) {
+
             this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }

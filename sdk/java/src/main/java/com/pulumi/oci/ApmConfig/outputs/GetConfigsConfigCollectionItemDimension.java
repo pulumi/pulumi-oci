@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmConfig.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetConfigsConfigCollectionItemDimension {
 
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItemDimension", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder valueSource(String valueSource) {
-            this.valueSource = Objects.requireNonNull(valueSource);
+            if (valueSource == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItemDimension", "valueSource");
+            }
+            this.valueSource = valueSource;
             return this;
         }
         public GetConfigsConfigCollectionItemDimension build() {

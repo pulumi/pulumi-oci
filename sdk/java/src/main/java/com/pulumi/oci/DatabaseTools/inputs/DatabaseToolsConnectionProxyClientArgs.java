@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseTools.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionProxyClientUserPasswordArgs;
 import java.lang.String;
 import java.util.List;
@@ -199,7 +200,9 @@ public final class DatabaseToolsConnectionProxyClientArgs extends com.pulumi.res
         }
 
         public DatabaseToolsConnectionProxyClientArgs build() {
-            $.proxyAuthenticationType = Objects.requireNonNull($.proxyAuthenticationType, "expected parameter 'proxyAuthenticationType' to be non-null");
+            if ($.proxyAuthenticationType == null) {
+                throw new MissingRequiredPropertyException("DatabaseToolsConnectionProxyClientArgs", "proxyAuthenticationType");
+            }
             return $;
         }
     }

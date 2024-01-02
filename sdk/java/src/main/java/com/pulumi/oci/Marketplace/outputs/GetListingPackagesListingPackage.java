@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.outputs.GetListingPackagesListingPackageOperatingSystem;
 import com.pulumi.oci.Marketplace.outputs.GetListingPackagesListingPackagePricing;
 import com.pulumi.oci.Marketplace.outputs.GetListingPackagesListingPackageRegion;
@@ -144,12 +145,18 @@ public final class GetListingPackagesListingPackage {
 
         @CustomType.Setter
         public Builder listingId(String listingId) {
-            this.listingId = Objects.requireNonNull(listingId);
+            if (listingId == null) {
+              throw new MissingRequiredPropertyException("GetListingPackagesListingPackage", "listingId");
+            }
+            this.listingId = listingId;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystems(List<GetListingPackagesListingPackageOperatingSystem> operatingSystems) {
-            this.operatingSystems = Objects.requireNonNull(operatingSystems);
+            if (operatingSystems == null) {
+              throw new MissingRequiredPropertyException("GetListingPackagesListingPackage", "operatingSystems");
+            }
+            this.operatingSystems = operatingSystems;
             return this;
         }
         public Builder operatingSystems(GetListingPackagesListingPackageOperatingSystem... operatingSystems) {
@@ -157,17 +164,26 @@ public final class GetListingPackagesListingPackage {
         }
         @CustomType.Setter
         public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+            if (packageType == null) {
+              throw new MissingRequiredPropertyException("GetListingPackagesListingPackage", "packageType");
+            }
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
         public Builder packageVersion(String packageVersion) {
-            this.packageVersion = Objects.requireNonNull(packageVersion);
+            if (packageVersion == null) {
+              throw new MissingRequiredPropertyException("GetListingPackagesListingPackage", "packageVersion");
+            }
+            this.packageVersion = packageVersion;
             return this;
         }
         @CustomType.Setter
         public Builder pricings(List<GetListingPackagesListingPackagePricing> pricings) {
-            this.pricings = Objects.requireNonNull(pricings);
+            if (pricings == null) {
+              throw new MissingRequiredPropertyException("GetListingPackagesListingPackage", "pricings");
+            }
+            this.pricings = pricings;
             return this;
         }
         public Builder pricings(GetListingPackagesListingPackagePricing... pricings) {
@@ -175,7 +191,10 @@ public final class GetListingPackagesListingPackage {
         }
         @CustomType.Setter
         public Builder regions(List<GetListingPackagesListingPackageRegion> regions) {
-            this.regions = Objects.requireNonNull(regions);
+            if (regions == null) {
+              throw new MissingRequiredPropertyException("GetListingPackagesListingPackage", "regions");
+            }
+            this.regions = regions;
             return this;
         }
         public Builder regions(GetListingPackagesListingPackageRegion... regions) {
@@ -183,12 +202,18 @@ public final class GetListingPackagesListingPackage {
         }
         @CustomType.Setter
         public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+            if (resourceId == null) {
+              throw new MissingRequiredPropertyException("GetListingPackagesListingPackage", "resourceId");
+            }
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetListingPackagesListingPackage", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetListingPackagesListingPackage build() {

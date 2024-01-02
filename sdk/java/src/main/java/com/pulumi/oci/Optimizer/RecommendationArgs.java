@@ -5,6 +5,7 @@ package com.pulumi.oci.Optimizer;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -170,8 +171,12 @@ public final class RecommendationArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public RecommendationArgs build() {
-            $.recommendationId = Objects.requireNonNull($.recommendationId, "expected parameter 'recommendationId' to be non-null");
-            $.status = Objects.requireNonNull($.status, "expected parameter 'status' to be non-null");
+            if ($.recommendationId == null) {
+                throw new MissingRequiredPropertyException("RecommendationArgs", "recommendationId");
+            }
+            if ($.status == null) {
+                throw new MissingRequiredPropertyException("RecommendationArgs", "status");
+            }
             return $;
         }
     }

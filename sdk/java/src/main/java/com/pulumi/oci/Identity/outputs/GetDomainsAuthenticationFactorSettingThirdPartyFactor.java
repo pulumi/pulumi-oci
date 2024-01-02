@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetDomainsAuthenticationFactorSettingThirdPartyFactor {
 
         @CustomType.Setter
         public Builder duoSecurity(Boolean duoSecurity) {
-            this.duoSecurity = Objects.requireNonNull(duoSecurity);
+            if (duoSecurity == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingThirdPartyFactor", "duoSecurity");
+            }
+            this.duoSecurity = duoSecurity;
             return this;
         }
         public GetDomainsAuthenticationFactorSettingThirdPartyFactor build() {

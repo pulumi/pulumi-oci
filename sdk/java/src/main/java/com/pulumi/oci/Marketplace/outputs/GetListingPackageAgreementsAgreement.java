@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetListingPackageAgreementsAgreement {
 
         @CustomType.Setter
         public Builder author(String author) {
-            this.author = Objects.requireNonNull(author);
+            if (author == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageAgreementsAgreement", "author");
+            }
+            this.author = author;
             return this;
         }
         @CustomType.Setter
         public Builder contentUrl(String contentUrl) {
-            this.contentUrl = Objects.requireNonNull(contentUrl);
+            if (contentUrl == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageAgreementsAgreement", "contentUrl");
+            }
+            this.contentUrl = contentUrl;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageAgreementsAgreement", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder prompt(String prompt) {
-            this.prompt = Objects.requireNonNull(prompt);
+            if (prompt == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageAgreementsAgreement", "prompt");
+            }
+            this.prompt = prompt;
             return this;
         }
         public GetListingPackageAgreementsAgreement build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.AnnouncementsService.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetAnnouncementSubscriptionPlainArgs extends com.pulumi.resou
         }
 
         public GetAnnouncementSubscriptionPlainArgs build() {
-            $.announcementSubscriptionId = Objects.requireNonNull($.announcementSubscriptionId, "expected parameter 'announcementSubscriptionId' to be non-null");
+            if ($.announcementSubscriptionId == null) {
+                throw new MissingRequiredPropertyException("GetAnnouncementSubscriptionPlainArgs", "announcementSubscriptionId");
+            }
             return $;
         }
     }

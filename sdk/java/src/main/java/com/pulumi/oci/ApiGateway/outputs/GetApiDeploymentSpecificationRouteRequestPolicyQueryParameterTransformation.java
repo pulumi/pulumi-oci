@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameter;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameter;
@@ -73,7 +74,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameter
 
         @CustomType.Setter
         public Builder filterQueryParameters(List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter> filterQueryParameters) {
-            this.filterQueryParameters = Objects.requireNonNull(filterQueryParameters);
+            if (filterQueryParameters == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation", "filterQueryParameters");
+            }
+            this.filterQueryParameters = filterQueryParameters;
             return this;
         }
         public Builder filterQueryParameters(GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter... filterQueryParameters) {
@@ -81,7 +85,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameter
         }
         @CustomType.Setter
         public Builder renameQueryParameters(List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameter> renameQueryParameters) {
-            this.renameQueryParameters = Objects.requireNonNull(renameQueryParameters);
+            if (renameQueryParameters == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation", "renameQueryParameters");
+            }
+            this.renameQueryParameters = renameQueryParameters;
             return this;
         }
         public Builder renameQueryParameters(GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameter... renameQueryParameters) {
@@ -89,7 +96,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameter
         }
         @CustomType.Setter
         public Builder setQueryParameters(List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameter> setQueryParameters) {
-            this.setQueryParameters = Objects.requireNonNull(setQueryParameters);
+            if (setQueryParameters == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation", "setQueryParameters");
+            }
+            this.setQueryParameters = setQueryParameters;
             return this;
         }
         public Builder setQueryParameters(GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameter... setQueryParameters) {

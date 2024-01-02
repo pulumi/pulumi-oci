@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked;
 import java.lang.Integer;
@@ -158,17 +159,26 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
 
         @CustomType.Setter
         public Builder lastFailedLoginDate(String lastFailedLoginDate) {
-            this.lastFailedLoginDate = Objects.requireNonNull(lastFailedLoginDate);
+            if (lastFailedLoginDate == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser", "lastFailedLoginDate");
+            }
+            this.lastFailedLoginDate = lastFailedLoginDate;
             return this;
         }
         @CustomType.Setter
         public Builder lastSuccessfulLoginDate(String lastSuccessfulLoginDate) {
-            this.lastSuccessfulLoginDate = Objects.requireNonNull(lastSuccessfulLoginDate);
+            if (lastSuccessfulLoginDate == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser", "lastSuccessfulLoginDate");
+            }
+            this.lastSuccessfulLoginDate = lastSuccessfulLoginDate;
             return this;
         }
         @CustomType.Setter
         public Builder lockeds(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked> lockeds) {
-            this.lockeds = Objects.requireNonNull(lockeds);
+            if (lockeds == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser", "lockeds");
+            }
+            this.lockeds = lockeds;
             return this;
         }
         public Builder lockeds(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked... lockeds) {
@@ -176,32 +186,50 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
         }
         @CustomType.Setter
         public Builder loginAttempts(Integer loginAttempts) {
-            this.loginAttempts = Objects.requireNonNull(loginAttempts);
+            if (loginAttempts == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser", "loginAttempts");
+            }
+            this.loginAttempts = loginAttempts;
             return this;
         }
         @CustomType.Setter
         public Builder maxConcurrentSessions(Integer maxConcurrentSessions) {
-            this.maxConcurrentSessions = Objects.requireNonNull(maxConcurrentSessions);
+            if (maxConcurrentSessions == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser", "maxConcurrentSessions");
+            }
+            this.maxConcurrentSessions = maxConcurrentSessions;
             return this;
         }
         @CustomType.Setter
         public Builder previousSuccessfulLoginDate(String previousSuccessfulLoginDate) {
-            this.previousSuccessfulLoginDate = Objects.requireNonNull(previousSuccessfulLoginDate);
+            if (previousSuccessfulLoginDate == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser", "previousSuccessfulLoginDate");
+            }
+            this.previousSuccessfulLoginDate = previousSuccessfulLoginDate;
             return this;
         }
         @CustomType.Setter
         public Builder recoveryAttempts(Integer recoveryAttempts) {
-            this.recoveryAttempts = Objects.requireNonNull(recoveryAttempts);
+            if (recoveryAttempts == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser", "recoveryAttempts");
+            }
+            this.recoveryAttempts = recoveryAttempts;
             return this;
         }
         @CustomType.Setter
         public Builder recoveryEnrollAttempts(Integer recoveryEnrollAttempts) {
-            this.recoveryEnrollAttempts = Objects.requireNonNull(recoveryEnrollAttempts);
+            if (recoveryEnrollAttempts == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser", "recoveryEnrollAttempts");
+            }
+            this.recoveryEnrollAttempts = recoveryEnrollAttempts;
             return this;
         }
         @CustomType.Setter
         public Builder recoveryLockeds(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked> recoveryLockeds) {
-            this.recoveryLockeds = Objects.requireNonNull(recoveryLockeds);
+            if (recoveryLockeds == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser", "recoveryLockeds");
+            }
+            this.recoveryLockeds = recoveryLockeds;
             return this;
         }
         public Builder recoveryLockeds(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked... recoveryLockeds) {

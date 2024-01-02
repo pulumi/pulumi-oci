@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.ContainerInstanceContainerHealthCheckHeader;
 import java.lang.Integer;
 import java.lang.String;
@@ -213,6 +214,7 @@ public final class ContainerInstanceContainerHealthCheck {
 
         @CustomType.Setter
         public Builder commands(@Nullable List<String> commands) {
+
             this.commands = commands;
             return this;
         }
@@ -221,16 +223,19 @@ public final class ContainerInstanceContainerHealthCheck {
         }
         @CustomType.Setter
         public Builder failureAction(@Nullable String failureAction) {
+
             this.failureAction = failureAction;
             return this;
         }
         @CustomType.Setter
         public Builder failureThreshold(@Nullable Integer failureThreshold) {
+
             this.failureThreshold = failureThreshold;
             return this;
         }
         @CustomType.Setter
         public Builder headers(@Nullable List<ContainerInstanceContainerHealthCheckHeader> headers) {
+
             this.headers = headers;
             return this;
         }
@@ -239,51 +244,63 @@ public final class ContainerInstanceContainerHealthCheck {
         }
         @CustomType.Setter
         public Builder healthCheckType(String healthCheckType) {
-            this.healthCheckType = Objects.requireNonNull(healthCheckType);
+            if (healthCheckType == null) {
+              throw new MissingRequiredPropertyException("ContainerInstanceContainerHealthCheck", "healthCheckType");
+            }
+            this.healthCheckType = healthCheckType;
             return this;
         }
         @CustomType.Setter
         public Builder initialDelayInSeconds(@Nullable Integer initialDelayInSeconds) {
+
             this.initialDelayInSeconds = initialDelayInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder intervalInSeconds(@Nullable Integer intervalInSeconds) {
+
             this.intervalInSeconds = intervalInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder path(@Nullable String path) {
+
             this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder port(@Nullable Integer port) {
+
             this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder statusDetails(@Nullable String statusDetails) {
+
             this.statusDetails = statusDetails;
             return this;
         }
         @CustomType.Setter
         public Builder successThreshold(@Nullable Integer successThreshold) {
+
             this.successThreshold = successThreshold;
             return this;
         }
         @CustomType.Setter
         public Builder timeoutInSeconds(@Nullable Integer timeoutInSeconds) {
+
             this.timeoutInSeconds = timeoutInSeconds;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.HealthChecks.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.HealthChecks.outputs.GetHttpMonitorsFilter;
 import com.pulumi.oci.HealthChecks.outputs.GetHttpMonitorsHttpMonitor;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetHttpMonitorsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetHttpMonitorsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetHttpMonitorsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +133,16 @@ public final class GetHttpMonitorsResult {
         }
         @CustomType.Setter
         public Builder homeRegion(@Nullable String homeRegion) {
+
             this.homeRegion = homeRegion;
             return this;
         }
         @CustomType.Setter
         public Builder httpMonitors(List<GetHttpMonitorsHttpMonitor> httpMonitors) {
-            this.httpMonitors = Objects.requireNonNull(httpMonitors);
+            if (httpMonitors == null) {
+              throw new MissingRequiredPropertyException("GetHttpMonitorsResult", "httpMonitors");
+            }
+            this.httpMonitors = httpMonitors;
             return this;
         }
         public Builder httpMonitors(GetHttpMonitorsHttpMonitor... httpMonitors) {
@@ -140,7 +150,10 @@ public final class GetHttpMonitorsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetHttpMonitorsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetHttpMonitorsResult build() {

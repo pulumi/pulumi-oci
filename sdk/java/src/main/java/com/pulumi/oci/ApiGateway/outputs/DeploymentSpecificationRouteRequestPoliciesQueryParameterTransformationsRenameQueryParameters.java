@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
 
         @CustomType.Setter
         public Builder items(List<DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParameters", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem... items) {

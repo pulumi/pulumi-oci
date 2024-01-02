@@ -263,6 +263,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
 
         @CustomType.Setter
         public Builder apiKeys(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey> apiKeys) {
+
             this.apiKeys = apiKeys;
             return this;
         }
@@ -271,6 +272,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
         @CustomType.Setter
         public Builder authTokens(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken> authTokens) {
+
             this.authTokens = authTokens;
             return this;
         }
@@ -279,6 +281,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
         @CustomType.Setter
         public Builder customerSecretKeys(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey> customerSecretKeys) {
+
             this.customerSecretKeys = customerSecretKeys;
             return this;
         }
@@ -287,6 +290,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
         @CustomType.Setter
         public Builder dbCredentials(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential> dbCredentials) {
+
             this.dbCredentials = dbCredentials;
             return this;
         }
@@ -295,6 +299,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
         @CustomType.Setter
         public Builder oAuth2clientCredentials(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential> oAuth2clientCredentials) {
+
             this.oAuth2clientCredentials = oAuth2clientCredentials;
             return this;
         }
@@ -303,6 +308,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
         @CustomType.Setter
         public Builder smtpCredentials(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential> smtpCredentials) {
+
             this.smtpCredentials = smtpCredentials;
             return this;
         }

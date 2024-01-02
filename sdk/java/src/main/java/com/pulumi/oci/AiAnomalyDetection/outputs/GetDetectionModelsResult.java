@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectionModelsFilter;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectionModelsModelCollection;
 import java.lang.String;
@@ -123,16 +124,21 @@ public final class GetDetectionModelsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDetectionModelsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -141,12 +147,18 @@ public final class GetDetectionModelsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder modelCollections(List<GetDetectionModelsModelCollection> modelCollections) {
-            this.modelCollections = Objects.requireNonNull(modelCollections);
+            if (modelCollections == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsResult", "modelCollections");
+            }
+            this.modelCollections = modelCollections;
             return this;
         }
         public Builder modelCollections(GetDetectionModelsModelCollection... modelCollections) {
@@ -154,11 +166,13 @@ public final class GetDetectionModelsResult {
         }
         @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
+
             this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

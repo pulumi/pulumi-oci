@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserAttributesSettingsUserAttributesSettingAttributeSetting;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserAttributesSettingsUserAttributesSettingIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserAttributesSettingsUserAttributesSettingIdcsLastModifiedBy;
@@ -307,7 +308,10 @@ public final class GetDomainsUserAttributesSettingsUserAttributesSetting {
 
         @CustomType.Setter
         public Builder attributeSets(List<String> attributeSets) {
-            this.attributeSets = Objects.requireNonNull(attributeSets);
+            if (attributeSets == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSetting", "attributeSets");
+            }
+            this.attributeSets = attributeSets;
             return this;
         }
         public Builder attributeSets(String... attributeSets) {
@@ -315,7 +319,10 @@ public final class GetDomainsUserAttributesSettingsUserAttributesSetting {
         }
         @CustomType.Setter
         public Builder attributeSettings(List<GetDomainsUserAttributesSettingsUserAttributesSettingAttributeSetting> attributeSettings) {
-            this.attributeSettings = Objects.requireNonNull(attributeSettings);
+            if (attributeSettings == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSetting", "attributeSettings");
+            }
+            this.attributeSettings = attributeSettings;
             return this;
         }
         public Builder attributeSettings(GetDomainsUserAttributesSettingsUserAttributesSettingAttributeSetting... attributeSettings) {
@@ -323,37 +330,58 @@ public final class GetDomainsUserAttributesSettingsUserAttributesSetting {
         }
         @CustomType.Setter
         public Builder attributes(String attributes) {
-            this.attributes = Objects.requireNonNull(attributes);
+            if (attributes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSetting", "attributes");
+            }
+            this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(String authorization) {
-            this.authorization = Objects.requireNonNull(authorization);
+            if (authorization == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSetting", "authorization");
+            }
+            this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSetting", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSetting", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSetting", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSetting", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsUserAttributesSettingsUserAttributesSettingIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSetting", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsUserAttributesSettingsUserAttributesSettingIdcsCreatedBy... idcsCreatedBies) {
@@ -361,12 +389,18 @@ public final class GetDomainsUserAttributesSettingsUserAttributesSetting {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSetting", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsUserAttributesSettingsUserAttributesSettingIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSetting", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsUserAttributesSettingsUserAttributesSettingIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -374,12 +408,18 @@ public final class GetDomainsUserAttributesSettingsUserAttributesSetting {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSetting", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSetting", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -387,7 +427,10 @@ public final class GetDomainsUserAttributesSettingsUserAttributesSetting {
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsUserAttributesSettingsUserAttributesSettingMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSetting", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsUserAttributesSettingsUserAttributesSettingMeta... metas) {
@@ -395,17 +438,26 @@ public final class GetDomainsUserAttributesSettingsUserAttributesSetting {
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSetting", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(String resourceTypeSchemaVersion) {
-            this.resourceTypeSchemaVersion = Objects.requireNonNull(resourceTypeSchemaVersion);
+            if (resourceTypeSchemaVersion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSetting", "resourceTypeSchemaVersion");
+            }
+            this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSetting", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -413,7 +465,10 @@ public final class GetDomainsUserAttributesSettingsUserAttributesSetting {
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsUserAttributesSettingsUserAttributesSettingTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSetting", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsUserAttributesSettingsUserAttributesSettingTag... tags) {
@@ -421,12 +476,18 @@ public final class GetDomainsUserAttributesSettingsUserAttributesSetting {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSetting", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder userAttributesSettingId(String userAttributesSettingId) {
-            this.userAttributesSettingId = Objects.requireNonNull(userAttributesSettingId);
+            if (userAttributesSettingId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSetting", "userAttributesSettingId");
+            }
+            this.userAttributesSettingId = userAttributesSettingId;
             return this;
         }
         public GetDomainsUserAttributesSettingsUserAttributesSetting build() {

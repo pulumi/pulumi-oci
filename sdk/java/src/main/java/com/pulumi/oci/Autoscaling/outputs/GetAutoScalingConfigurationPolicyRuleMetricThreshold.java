@@ -4,6 +4,7 @@
 package com.pulumi.oci.Autoscaling.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -49,12 +50,18 @@ public final class GetAutoScalingConfigurationPolicyRuleMetricThreshold {
 
         @CustomType.Setter
         public Builder operator(String operator) {
-            this.operator = Objects.requireNonNull(operator);
+            if (operator == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyRuleMetricThreshold", "operator");
+            }
+            this.operator = operator;
             return this;
         }
         @CustomType.Setter
         public Builder value(Integer value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyRuleMetricThreshold", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetAutoScalingConfigurationPolicyRuleMetricThreshold build() {

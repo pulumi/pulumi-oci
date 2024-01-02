@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.GetRegionSubscriptionsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -99,7 +100,9 @@ public final class GetRegionSubscriptionsArgs extends com.pulumi.resources.Invok
         }
 
         public GetRegionSubscriptionsArgs build() {
-            $.tenancyId = Objects.requireNonNull($.tenancyId, "expected parameter 'tenancyId' to be non-null");
+            if ($.tenancyId == null) {
+                throw new MissingRequiredPropertyException("GetRegionSubscriptionsArgs", "tenancyId");
+            }
             return $;
         }
     }

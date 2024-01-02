@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.inputs.DeploymentDeployArtifactOverrideArgumentsArgs;
 import com.pulumi.oci.DevOps.inputs.DeploymentDeployStageOverrideArgumentsArgs;
 import com.pulumi.oci.DevOps.inputs.DeploymentDeploymentArgumentsArgs;
@@ -468,8 +469,12 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DeploymentArgs build() {
-            $.deployPipelineId = Objects.requireNonNull($.deployPipelineId, "expected parameter 'deployPipelineId' to be non-null");
-            $.deploymentType = Objects.requireNonNull($.deploymentType, "expected parameter 'deploymentType' to be non-null");
+            if ($.deployPipelineId == null) {
+                throw new MissingRequiredPropertyException("DeploymentArgs", "deployPipelineId");
+            }
+            if ($.deploymentType == null) {
+                throw new MissingRequiredPropertyException("DeploymentArgs", "deploymentType");
+            }
             return $;
         }
     }

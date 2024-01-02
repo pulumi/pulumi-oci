@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiAnomalyDetection.outputs.DetectAnomalyJobInputDetailsData;
 import com.pulumi.oci.AiAnomalyDetection.outputs.DetectAnomalyJobInputDetailsObjectLocation;
 import java.lang.String;
@@ -115,16 +116,19 @@ public final class DetectAnomalyJobInputDetails {
 
         @CustomType.Setter
         public Builder content(@Nullable String content) {
+
             this.content = content;
             return this;
         }
         @CustomType.Setter
         public Builder contentType(@Nullable String contentType) {
+
             this.contentType = contentType;
             return this;
         }
         @CustomType.Setter
         public Builder datas(@Nullable List<DetectAnomalyJobInputDetailsData> datas) {
+
             this.datas = datas;
             return this;
         }
@@ -133,16 +137,21 @@ public final class DetectAnomalyJobInputDetails {
         }
         @CustomType.Setter
         public Builder inputType(String inputType) {
-            this.inputType = Objects.requireNonNull(inputType);
+            if (inputType == null) {
+              throw new MissingRequiredPropertyException("DetectAnomalyJobInputDetails", "inputType");
+            }
+            this.inputType = inputType;
             return this;
         }
         @CustomType.Setter
         public Builder message(@Nullable String message) {
+
             this.message = message;
             return this;
         }
         @CustomType.Setter
         public Builder objectLocations(@Nullable List<DetectAnomalyJobInputDetailsObjectLocation> objectLocations) {
+
             this.objectLocations = objectLocations;
             return this;
         }
@@ -151,6 +160,7 @@ public final class DetectAnomalyJobInputDetails {
         }
         @CustomType.Setter
         public Builder signalNames(@Nullable List<String> signalNames) {
+
             this.signalNames = signalNames;
             return this;
         }

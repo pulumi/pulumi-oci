@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollection;
 import com.pulumi.oci.DataSafe.outputs.GetDiscoveryJobsResultsFilter;
 import java.lang.Boolean;
@@ -166,6 +167,7 @@ public final class GetDiscoveryJobsResultsResult {
 
         @CustomType.Setter
         public Builder columnNames(@Nullable List<String> columnNames) {
+
             this.columnNames = columnNames;
             return this;
         }
@@ -174,12 +176,18 @@ public final class GetDiscoveryJobsResultsResult {
         }
         @CustomType.Setter
         public Builder discoveryJobId(String discoveryJobId) {
-            this.discoveryJobId = Objects.requireNonNull(discoveryJobId);
+            if (discoveryJobId == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsResult", "discoveryJobId");
+            }
+            this.discoveryJobId = discoveryJobId;
             return this;
         }
         @CustomType.Setter
         public Builder discoveryJobResultCollections(List<GetDiscoveryJobsResultsDiscoveryJobResultCollection> discoveryJobResultCollections) {
-            this.discoveryJobResultCollections = Objects.requireNonNull(discoveryJobResultCollections);
+            if (discoveryJobResultCollections == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsResult", "discoveryJobResultCollections");
+            }
+            this.discoveryJobResultCollections = discoveryJobResultCollections;
             return this;
         }
         public Builder discoveryJobResultCollections(GetDiscoveryJobsResultsDiscoveryJobResultCollection... discoveryJobResultCollections) {
@@ -187,11 +195,13 @@ public final class GetDiscoveryJobsResultsResult {
         }
         @CustomType.Setter
         public Builder discoveryType(@Nullable String discoveryType) {
+
             this.discoveryType = discoveryType;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDiscoveryJobsResultsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -200,16 +210,21 @@ public final class GetDiscoveryJobsResultsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isResultApplied(@Nullable Boolean isResultApplied) {
+
             this.isResultApplied = isResultApplied;
             return this;
         }
         @CustomType.Setter
         public Builder objects(@Nullable List<String> objects) {
+
             this.objects = objects;
             return this;
         }
@@ -218,11 +233,13 @@ public final class GetDiscoveryJobsResultsResult {
         }
         @CustomType.Setter
         public Builder plannedAction(@Nullable String plannedAction) {
+
             this.plannedAction = plannedAction;
             return this;
         }
         @CustomType.Setter
         public Builder schemaNames(@Nullable List<String> schemaNames) {
+
             this.schemaNames = schemaNames;
             return this;
         }

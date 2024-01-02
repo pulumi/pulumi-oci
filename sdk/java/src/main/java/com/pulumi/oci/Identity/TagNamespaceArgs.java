@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -276,8 +277,12 @@ public final class TagNamespaceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public TagNamespaceArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.description = Objects.requireNonNull($.description, "expected parameter 'description' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("TagNamespaceArgs", "compartmentId");
+            }
+            if ($.description == null) {
+                throw new MissingRequiredPropertyException("TagNamespaceArgs", "description");
+            }
             return $;
         }
     }

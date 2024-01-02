@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetTsigKeyPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetTsigKeyPlainArgs build() {
-            $.tsigKeyId = Objects.requireNonNull($.tsigKeyId, "expected parameter 'tsigKeyId' to be non-null");
+            if ($.tsigKeyId == null) {
+                throw new MissingRequiredPropertyException("GetTsigKeyPlainArgs", "tsigKeyId");
+            }
             return $;
         }
     }

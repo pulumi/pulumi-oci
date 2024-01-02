@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetRepoFileLineLine {
 
         @CustomType.Setter
         public Builder lineContent(String lineContent) {
-            this.lineContent = Objects.requireNonNull(lineContent);
+            if (lineContent == null) {
+              throw new MissingRequiredPropertyException("GetRepoFileLineLine", "lineContent");
+            }
+            this.lineContent = lineContent;
             return this;
         }
         @CustomType.Setter
         public Builder lineNumber(Integer lineNumber) {
-            this.lineNumber = Objects.requireNonNull(lineNumber);
+            if (lineNumber == null) {
+              throw new MissingRequiredPropertyException("GetRepoFileLineLine", "lineNumber");
+            }
+            this.lineNumber = lineNumber;
             return this;
         }
         public GetRepoFileLineLine build() {

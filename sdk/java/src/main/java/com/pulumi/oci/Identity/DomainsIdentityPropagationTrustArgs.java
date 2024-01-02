@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsIdentityPropagationTrustImpersonationServiceUserArgs;
 import com.pulumi.oci.Identity.inputs.DomainsIdentityPropagationTrustKeytabArgs;
 import com.pulumi.oci.Identity.inputs.DomainsIdentityPropagationTrustTagArgs;
@@ -1948,10 +1949,18 @@ public final class DomainsIdentityPropagationTrustArgs extends com.pulumi.resour
         }
 
         public DomainsIdentityPropagationTrustArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.issuer = Objects.requireNonNull($.issuer, "expected parameter 'issuer' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsIdentityPropagationTrustArgs", "idcsEndpoint");
+            }
+            if ($.issuer == null) {
+                throw new MissingRequiredPropertyException("DomainsIdentityPropagationTrustArgs", "issuer");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsIdentityPropagationTrustArgs", "schemas");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("DomainsIdentityPropagationTrustArgs", "type");
+            }
             return $;
         }
     }

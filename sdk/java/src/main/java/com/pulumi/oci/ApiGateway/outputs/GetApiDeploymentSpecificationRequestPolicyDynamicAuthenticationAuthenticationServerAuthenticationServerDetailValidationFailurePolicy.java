@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetail;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformation;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetail;
@@ -230,7 +231,10 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
 
         @CustomType.Setter
         public Builder clientDetails(List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetail> clientDetails) {
-            this.clientDetails = Objects.requireNonNull(clientDetails);
+            if (clientDetails == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy", "clientDetails");
+            }
+            this.clientDetails = clientDetails;
             return this;
         }
         public Builder clientDetails(GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetail... clientDetails) {
@@ -238,27 +242,42 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
         }
         @CustomType.Setter
         public Builder fallbackRedirectPath(String fallbackRedirectPath) {
-            this.fallbackRedirectPath = Objects.requireNonNull(fallbackRedirectPath);
+            if (fallbackRedirectPath == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy", "fallbackRedirectPath");
+            }
+            this.fallbackRedirectPath = fallbackRedirectPath;
             return this;
         }
         @CustomType.Setter
         public Builder logoutPath(String logoutPath) {
-            this.logoutPath = Objects.requireNonNull(logoutPath);
+            if (logoutPath == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy", "logoutPath");
+            }
+            this.logoutPath = logoutPath;
             return this;
         }
         @CustomType.Setter
         public Builder maxExpiryDurationInHours(Integer maxExpiryDurationInHours) {
-            this.maxExpiryDurationInHours = Objects.requireNonNull(maxExpiryDurationInHours);
+            if (maxExpiryDurationInHours == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy", "maxExpiryDurationInHours");
+            }
+            this.maxExpiryDurationInHours = maxExpiryDurationInHours;
             return this;
         }
         @CustomType.Setter
         public Builder responseCode(String responseCode) {
-            this.responseCode = Objects.requireNonNull(responseCode);
+            if (responseCode == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy", "responseCode");
+            }
+            this.responseCode = responseCode;
             return this;
         }
         @CustomType.Setter
         public Builder responseHeaderTransformations(List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformation> responseHeaderTransformations) {
-            this.responseHeaderTransformations = Objects.requireNonNull(responseHeaderTransformations);
+            if (responseHeaderTransformations == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy", "responseHeaderTransformations");
+            }
+            this.responseHeaderTransformations = responseHeaderTransformations;
             return this;
         }
         public Builder responseHeaderTransformations(GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformation... responseHeaderTransformations) {
@@ -266,17 +285,26 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
         }
         @CustomType.Setter
         public Builder responseMessage(String responseMessage) {
-            this.responseMessage = Objects.requireNonNull(responseMessage);
+            if (responseMessage == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy", "responseMessage");
+            }
+            this.responseMessage = responseMessage;
             return this;
         }
         @CustomType.Setter
         public Builder responseType(String responseType) {
-            this.responseType = Objects.requireNonNull(responseType);
+            if (responseType == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy", "responseType");
+            }
+            this.responseType = responseType;
             return this;
         }
         @CustomType.Setter
         public Builder scopes(List<String> scopes) {
-            this.scopes = Objects.requireNonNull(scopes);
+            if (scopes == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy", "scopes");
+            }
+            this.scopes = scopes;
             return this;
         }
         public Builder scopes(String... scopes) {
@@ -284,7 +312,10 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
         }
         @CustomType.Setter
         public Builder sourceUriDetails(List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetail> sourceUriDetails) {
-            this.sourceUriDetails = Objects.requireNonNull(sourceUriDetails);
+            if (sourceUriDetails == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy", "sourceUriDetails");
+            }
+            this.sourceUriDetails = sourceUriDetails;
             return this;
         }
         public Builder sourceUriDetails(GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetail... sourceUriDetails) {
@@ -292,22 +323,34 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder useCookiesForIntermediateSteps(Boolean useCookiesForIntermediateSteps) {
-            this.useCookiesForIntermediateSteps = Objects.requireNonNull(useCookiesForIntermediateSteps);
+            if (useCookiesForIntermediateSteps == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy", "useCookiesForIntermediateSteps");
+            }
+            this.useCookiesForIntermediateSteps = useCookiesForIntermediateSteps;
             return this;
         }
         @CustomType.Setter
         public Builder useCookiesForSession(Boolean useCookiesForSession) {
-            this.useCookiesForSession = Objects.requireNonNull(useCookiesForSession);
+            if (useCookiesForSession == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy", "useCookiesForSession");
+            }
+            this.useCookiesForSession = useCookiesForSession;
             return this;
         }
         @CustomType.Setter
         public Builder usePkce(Boolean usePkce) {
-            this.usePkce = Objects.requireNonNull(usePkce);
+            if (usePkce == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy", "usePkce");
+            }
+            this.usePkce = usePkce;
             return this;
         }
         public GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy build() {

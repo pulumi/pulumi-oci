@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -310,12 +311,24 @@ public final class VerifyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public VerifyArgs build() {
-            $.cryptoEndpoint = Objects.requireNonNull($.cryptoEndpoint, "expected parameter 'cryptoEndpoint' to be non-null");
-            $.keyId = Objects.requireNonNull($.keyId, "expected parameter 'keyId' to be non-null");
-            $.keyVersionId = Objects.requireNonNull($.keyVersionId, "expected parameter 'keyVersionId' to be non-null");
-            $.message = Objects.requireNonNull($.message, "expected parameter 'message' to be non-null");
-            $.signature = Objects.requireNonNull($.signature, "expected parameter 'signature' to be non-null");
-            $.signingAlgorithm = Objects.requireNonNull($.signingAlgorithm, "expected parameter 'signingAlgorithm' to be non-null");
+            if ($.cryptoEndpoint == null) {
+                throw new MissingRequiredPropertyException("VerifyArgs", "cryptoEndpoint");
+            }
+            if ($.keyId == null) {
+                throw new MissingRequiredPropertyException("VerifyArgs", "keyId");
+            }
+            if ($.keyVersionId == null) {
+                throw new MissingRequiredPropertyException("VerifyArgs", "keyVersionId");
+            }
+            if ($.message == null) {
+                throw new MissingRequiredPropertyException("VerifyArgs", "message");
+            }
+            if ($.signature == null) {
+                throw new MissingRequiredPropertyException("VerifyArgs", "signature");
+            }
+            if ($.signingAlgorithm == null) {
+                throw new MissingRequiredPropertyException("VerifyArgs", "signingAlgorithm");
+            }
             return $;
         }
     }

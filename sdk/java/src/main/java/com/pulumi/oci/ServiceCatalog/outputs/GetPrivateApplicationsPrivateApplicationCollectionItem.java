@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceCatalog.outputs.GetPrivateApplicationsPrivateApplicationCollectionItemLogo;
 import com.pulumi.oci.ServiceCatalog.outputs.GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail;
 import java.lang.Object;
@@ -213,37 +214,58 @@ public final class GetPrivateApplicationsPrivateApplicationCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationsPrivateApplicationCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationsPrivateApplicationCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationsPrivateApplicationCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationsPrivateApplicationCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationsPrivateApplicationCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder logoFileBase64encoded(String logoFileBase64encoded) {
-            this.logoFileBase64encoded = Objects.requireNonNull(logoFileBase64encoded);
+            if (logoFileBase64encoded == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationsPrivateApplicationCollectionItem", "logoFileBase64encoded");
+            }
+            this.logoFileBase64encoded = logoFileBase64encoded;
             return this;
         }
         @CustomType.Setter
         public Builder logos(List<GetPrivateApplicationsPrivateApplicationCollectionItemLogo> logos) {
-            this.logos = Objects.requireNonNull(logos);
+            if (logos == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationsPrivateApplicationCollectionItem", "logos");
+            }
+            this.logos = logos;
             return this;
         }
         public Builder logos(GetPrivateApplicationsPrivateApplicationCollectionItemLogo... logos) {
@@ -251,12 +273,18 @@ public final class GetPrivateApplicationsPrivateApplicationCollectionItem {
         }
         @CustomType.Setter
         public Builder longDescription(String longDescription) {
-            this.longDescription = Objects.requireNonNull(longDescription);
+            if (longDescription == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationsPrivateApplicationCollectionItem", "longDescription");
+            }
+            this.longDescription = longDescription;
             return this;
         }
         @CustomType.Setter
         public Builder packageDetails(List<GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail> packageDetails) {
-            this.packageDetails = Objects.requireNonNull(packageDetails);
+            if (packageDetails == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationsPrivateApplicationCollectionItem", "packageDetails");
+            }
+            this.packageDetails = packageDetails;
             return this;
         }
         public Builder packageDetails(GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail... packageDetails) {
@@ -264,27 +292,42 @@ public final class GetPrivateApplicationsPrivateApplicationCollectionItem {
         }
         @CustomType.Setter
         public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+            if (packageType == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationsPrivateApplicationCollectionItem", "packageType");
+            }
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
         public Builder shortDescription(String shortDescription) {
-            this.shortDescription = Objects.requireNonNull(shortDescription);
+            if (shortDescription == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationsPrivateApplicationCollectionItem", "shortDescription");
+            }
+            this.shortDescription = shortDescription;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationsPrivateApplicationCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationsPrivateApplicationCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationsPrivateApplicationCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetPrivateApplicationsPrivateApplicationCollectionItem build() {

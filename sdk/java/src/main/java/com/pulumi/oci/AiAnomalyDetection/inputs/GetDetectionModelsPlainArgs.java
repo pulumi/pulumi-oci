@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionModelsFilter;
 import java.lang.String;
 import java.util.List;
@@ -165,7 +166,9 @@ public final class GetDetectionModelsPlainArgs extends com.pulumi.resources.Invo
         }
 
         public GetDetectionModelsPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetDetectionModelsPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

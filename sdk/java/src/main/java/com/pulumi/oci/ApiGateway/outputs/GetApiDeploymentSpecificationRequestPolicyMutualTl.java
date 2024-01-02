@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetApiDeploymentSpecificationRequestPolicyMutualTl {
 
         @CustomType.Setter
         public Builder allowedSans(List<String> allowedSans) {
-            this.allowedSans = Objects.requireNonNull(allowedSans);
+            if (allowedSans == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyMutualTl", "allowedSans");
+            }
+            this.allowedSans = allowedSans;
             return this;
         }
         public Builder allowedSans(String... allowedSans) {
@@ -66,7 +70,10 @@ public final class GetApiDeploymentSpecificationRequestPolicyMutualTl {
         }
         @CustomType.Setter
         public Builder isVerifiedCertificateRequired(Boolean isVerifiedCertificateRequired) {
-            this.isVerifiedCertificateRequired = Objects.requireNonNull(isVerifiedCertificateRequired);
+            if (isVerifiedCertificateRequired == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyMutualTl", "isVerifiedCertificateRequired");
+            }
+            this.isVerifiedCertificateRequired = isVerifiedCertificateRequired;
             return this;
         }
         public GetApiDeploymentSpecificationRequestPolicyMutualTl build() {

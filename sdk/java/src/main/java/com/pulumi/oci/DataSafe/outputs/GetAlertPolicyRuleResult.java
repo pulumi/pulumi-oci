@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetAlertPolicyRuleItem;
 import java.lang.String;
 import java.util.List;
@@ -64,17 +65,26 @@ public final class GetAlertPolicyRuleResult {
 
         @CustomType.Setter
         public Builder alertPolicyId(String alertPolicyId) {
-            this.alertPolicyId = Objects.requireNonNull(alertPolicyId);
+            if (alertPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetAlertPolicyRuleResult", "alertPolicyId");
+            }
+            this.alertPolicyId = alertPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAlertPolicyRuleResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetAlertPolicyRuleItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetAlertPolicyRuleResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetAlertPolicyRuleItem... items) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.ConfigurationDbConfigurationOverridesItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class ConfigurationDbConfigurationOverrides {
 
         @CustomType.Setter
         public Builder items(List<ConfigurationDbConfigurationOverridesItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("ConfigurationDbConfigurationOverrides", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(ConfigurationDbConfigurationOverridesItem... items) {

@@ -44,6 +44,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
 
         @CustomType.Setter
         public Builder items(@Nullable List<DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItem> items) {
+
             this.items = items;
             return this;
         }

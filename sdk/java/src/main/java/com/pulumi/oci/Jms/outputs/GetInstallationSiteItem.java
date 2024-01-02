@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetInstallationSiteItemBlocklist;
 import com.pulumi.oci.Jms.outputs.GetInstallationSiteItemJre;
 import com.pulumi.oci.Jms.outputs.GetInstallationSiteItemOperatingSystem;
@@ -173,12 +174,18 @@ public final class GetInstallationSiteItem {
 
         @CustomType.Setter
         public Builder approximateApplicationCount(Integer approximateApplicationCount) {
-            this.approximateApplicationCount = Objects.requireNonNull(approximateApplicationCount);
+            if (approximateApplicationCount == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSiteItem", "approximateApplicationCount");
+            }
+            this.approximateApplicationCount = approximateApplicationCount;
             return this;
         }
         @CustomType.Setter
         public Builder blocklists(List<GetInstallationSiteItemBlocklist> blocklists) {
-            this.blocklists = Objects.requireNonNull(blocklists);
+            if (blocklists == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSiteItem", "blocklists");
+            }
+            this.blocklists = blocklists;
             return this;
         }
         public Builder blocklists(GetInstallationSiteItemBlocklist... blocklists) {
@@ -186,12 +193,18 @@ public final class GetInstallationSiteItem {
         }
         @CustomType.Setter
         public Builder installationKey(String installationKey) {
-            this.installationKey = Objects.requireNonNull(installationKey);
+            if (installationKey == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSiteItem", "installationKey");
+            }
+            this.installationKey = installationKey;
             return this;
         }
         @CustomType.Setter
         public Builder jres(List<GetInstallationSiteItemJre> jres) {
-            this.jres = Objects.requireNonNull(jres);
+            if (jres == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSiteItem", "jres");
+            }
+            this.jres = jres;
             return this;
         }
         public Builder jres(GetInstallationSiteItemJre... jres) {
@@ -199,12 +212,18 @@ public final class GetInstallationSiteItem {
         }
         @CustomType.Setter
         public Builder managedInstanceId(String managedInstanceId) {
-            this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
+            if (managedInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSiteItem", "managedInstanceId");
+            }
+            this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystems(List<GetInstallationSiteItemOperatingSystem> operatingSystems) {
-            this.operatingSystems = Objects.requireNonNull(operatingSystems);
+            if (operatingSystems == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSiteItem", "operatingSystems");
+            }
+            this.operatingSystems = operatingSystems;
             return this;
         }
         public Builder operatingSystems(GetInstallationSiteItemOperatingSystem... operatingSystems) {
@@ -212,22 +231,34 @@ public final class GetInstallationSiteItem {
         }
         @CustomType.Setter
         public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+            if (path == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSiteItem", "path");
+            }
+            this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder securityStatus(String securityStatus) {
-            this.securityStatus = Objects.requireNonNull(securityStatus);
+            if (securityStatus == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSiteItem", "securityStatus");
+            }
+            this.securityStatus = securityStatus;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSiteItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastSeen(String timeLastSeen) {
-            this.timeLastSeen = Objects.requireNonNull(timeLastSeen);
+            if (timeLastSeen == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSiteItem", "timeLastSeen");
+            }
+            this.timeLastSeen = timeLastSeen;
             return this;
         }
         public GetInstallationSiteItem build() {

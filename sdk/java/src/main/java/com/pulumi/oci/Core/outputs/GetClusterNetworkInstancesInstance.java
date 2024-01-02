@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetClusterNetworkInstancesInstanceLoadBalancerBackend;
 import java.lang.String;
 import java.util.List;
@@ -184,37 +185,58 @@ public final class GetClusterNetworkInstancesInstance {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancesInstance", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancesInstance", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancesInstance", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+            if (faultDomain == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancesInstance", "faultDomain");
+            }
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancesInstance", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceConfigurationId(String instanceConfigurationId) {
-            this.instanceConfigurationId = Objects.requireNonNull(instanceConfigurationId);
+            if (instanceConfigurationId == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancesInstance", "instanceConfigurationId");
+            }
+            this.instanceConfigurationId = instanceConfigurationId;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerBackends(List<GetClusterNetworkInstancesInstanceLoadBalancerBackend> loadBalancerBackends) {
-            this.loadBalancerBackends = Objects.requireNonNull(loadBalancerBackends);
+            if (loadBalancerBackends == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancesInstance", "loadBalancerBackends");
+            }
+            this.loadBalancerBackends = loadBalancerBackends;
             return this;
         }
         public Builder loadBalancerBackends(GetClusterNetworkInstancesInstanceLoadBalancerBackend... loadBalancerBackends) {
@@ -222,22 +244,34 @@ public final class GetClusterNetworkInstancesInstance {
         }
         @CustomType.Setter
         public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+            if (region == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancesInstance", "region");
+            }
+            this.region = region;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancesInstance", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancesInstance", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancesInstance", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetClusterNetworkInstancesInstance build() {

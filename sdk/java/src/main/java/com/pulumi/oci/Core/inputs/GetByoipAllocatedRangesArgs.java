@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetByoipAllocatedRangesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -99,7 +100,9 @@ public final class GetByoipAllocatedRangesArgs extends com.pulumi.resources.Invo
         }
 
         public GetByoipAllocatedRangesArgs build() {
-            $.byoipRangeId = Objects.requireNonNull($.byoipRangeId, "expected parameter 'byoipRangeId' to be non-null");
+            if ($.byoipRangeId == null) {
+                throw new MissingRequiredPropertyException("GetByoipAllocatedRangesArgs", "byoipRangeId");
+            }
             return $;
         }
     }

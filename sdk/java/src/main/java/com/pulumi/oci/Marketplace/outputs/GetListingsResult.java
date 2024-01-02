@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.outputs.GetListingsFilter;
 import com.pulumi.oci.Marketplace.outputs.GetListingsListing;
 import java.lang.Boolean;
@@ -158,6 +159,7 @@ public final class GetListingsResult {
 
         @CustomType.Setter
         public Builder categories(@Nullable List<String> categories) {
+
             this.categories = categories;
             return this;
         }
@@ -166,11 +168,13 @@ public final class GetListingsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetListingsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -179,26 +183,33 @@ public final class GetListingsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetListingsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imageId(@Nullable String imageId) {
+
             this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder isFeatured(@Nullable Boolean isFeatured) {
+
             this.isFeatured = isFeatured;
             return this;
         }
         @CustomType.Setter
         public Builder listingId(@Nullable String listingId) {
+
             this.listingId = listingId;
             return this;
         }
         @CustomType.Setter
         public Builder listingTypes(@Nullable List<String> listingTypes) {
+
             this.listingTypes = listingTypes;
             return this;
         }
@@ -207,7 +218,10 @@ public final class GetListingsResult {
         }
         @CustomType.Setter
         public Builder listings(List<GetListingsListing> listings) {
-            this.listings = Objects.requireNonNull(listings);
+            if (listings == null) {
+              throw new MissingRequiredPropertyException("GetListingsResult", "listings");
+            }
+            this.listings = listings;
             return this;
         }
         public Builder listings(GetListingsListing... listings) {
@@ -215,6 +229,7 @@ public final class GetListingsResult {
         }
         @CustomType.Setter
         public Builder names(@Nullable List<String> names) {
+
             this.names = names;
             return this;
         }
@@ -223,6 +238,7 @@ public final class GetListingsResult {
         }
         @CustomType.Setter
         public Builder operatingSystems(@Nullable List<String> operatingSystems) {
+
             this.operatingSystems = operatingSystems;
             return this;
         }
@@ -231,11 +247,13 @@ public final class GetListingsResult {
         }
         @CustomType.Setter
         public Builder packageType(@Nullable String packageType) {
+
             this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
         public Builder pricings(@Nullable List<String> pricings) {
+
             this.pricings = pricings;
             return this;
         }
@@ -244,6 +262,7 @@ public final class GetListingsResult {
         }
         @CustomType.Setter
         public Builder publisherId(@Nullable String publisherId) {
+
             this.publisherId = publisherId;
             return this;
         }

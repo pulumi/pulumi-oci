@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -393,52 +394,82 @@ public final class DomainsAuthenticationFactorSettingTotpSettings {
 
         @CustomType.Setter
         public Builder emailOtpValidityDurationInMins(Integer emailOtpValidityDurationInMins) {
-            this.emailOtpValidityDurationInMins = Objects.requireNonNull(emailOtpValidityDurationInMins);
+            if (emailOtpValidityDurationInMins == null) {
+              throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingTotpSettings", "emailOtpValidityDurationInMins");
+            }
+            this.emailOtpValidityDurationInMins = emailOtpValidityDurationInMins;
             return this;
         }
         @CustomType.Setter
         public Builder emailPasscodeLength(Integer emailPasscodeLength) {
-            this.emailPasscodeLength = Objects.requireNonNull(emailPasscodeLength);
+            if (emailPasscodeLength == null) {
+              throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingTotpSettings", "emailPasscodeLength");
+            }
+            this.emailPasscodeLength = emailPasscodeLength;
             return this;
         }
         @CustomType.Setter
         public Builder hashingAlgorithm(String hashingAlgorithm) {
-            this.hashingAlgorithm = Objects.requireNonNull(hashingAlgorithm);
+            if (hashingAlgorithm == null) {
+              throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingTotpSettings", "hashingAlgorithm");
+            }
+            this.hashingAlgorithm = hashingAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder jwtValidityDurationInSecs(Integer jwtValidityDurationInSecs) {
-            this.jwtValidityDurationInSecs = Objects.requireNonNull(jwtValidityDurationInSecs);
+            if (jwtValidityDurationInSecs == null) {
+              throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingTotpSettings", "jwtValidityDurationInSecs");
+            }
+            this.jwtValidityDurationInSecs = jwtValidityDurationInSecs;
             return this;
         }
         @CustomType.Setter
         public Builder keyRefreshIntervalInDays(Integer keyRefreshIntervalInDays) {
-            this.keyRefreshIntervalInDays = Objects.requireNonNull(keyRefreshIntervalInDays);
+            if (keyRefreshIntervalInDays == null) {
+              throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingTotpSettings", "keyRefreshIntervalInDays");
+            }
+            this.keyRefreshIntervalInDays = keyRefreshIntervalInDays;
             return this;
         }
         @CustomType.Setter
         public Builder passcodeLength(Integer passcodeLength) {
-            this.passcodeLength = Objects.requireNonNull(passcodeLength);
+            if (passcodeLength == null) {
+              throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingTotpSettings", "passcodeLength");
+            }
+            this.passcodeLength = passcodeLength;
             return this;
         }
         @CustomType.Setter
         public Builder smsOtpValidityDurationInMins(Integer smsOtpValidityDurationInMins) {
-            this.smsOtpValidityDurationInMins = Objects.requireNonNull(smsOtpValidityDurationInMins);
+            if (smsOtpValidityDurationInMins == null) {
+              throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingTotpSettings", "smsOtpValidityDurationInMins");
+            }
+            this.smsOtpValidityDurationInMins = smsOtpValidityDurationInMins;
             return this;
         }
         @CustomType.Setter
         public Builder smsPasscodeLength(Integer smsPasscodeLength) {
-            this.smsPasscodeLength = Objects.requireNonNull(smsPasscodeLength);
+            if (smsPasscodeLength == null) {
+              throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingTotpSettings", "smsPasscodeLength");
+            }
+            this.smsPasscodeLength = smsPasscodeLength;
             return this;
         }
         @CustomType.Setter
         public Builder timeStepInSecs(Integer timeStepInSecs) {
-            this.timeStepInSecs = Objects.requireNonNull(timeStepInSecs);
+            if (timeStepInSecs == null) {
+              throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingTotpSettings", "timeStepInSecs");
+            }
+            this.timeStepInSecs = timeStepInSecs;
             return this;
         }
         @CustomType.Setter
         public Builder timeStepTolerance(Integer timeStepTolerance) {
-            this.timeStepTolerance = Objects.requireNonNull(timeStepTolerance);
+            if (timeStepTolerance == null) {
+              throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingTotpSettings", "timeStepTolerance");
+            }
+            this.timeStepTolerance = timeStepTolerance;
             return this;
         }
         public DomainsAuthenticationFactorSettingTotpSettings build() {

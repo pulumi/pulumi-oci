@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetFunctionsFunctionSourceDetail {
 
         @CustomType.Setter
         public Builder pbfListingId(String pbfListingId) {
-            this.pbfListingId = Objects.requireNonNull(pbfListingId);
+            if (pbfListingId == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunctionSourceDetail", "pbfListingId");
+            }
+            this.pbfListingId = pbfListingId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunctionSourceDetail", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         public GetFunctionsFunctionSourceDetail build() {

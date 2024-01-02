@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -171,37 +172,58 @@ public final class GetCustomProtectionRulesCustomProtectionRule {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCustomProtectionRulesCustomProtectionRule", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetCustomProtectionRulesCustomProtectionRule", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetCustomProtectionRulesCustomProtectionRule", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetCustomProtectionRulesCustomProtectionRule", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetCustomProtectionRulesCustomProtectionRule", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCustomProtectionRulesCustomProtectionRule", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder modSecurityRuleIds(List<String> modSecurityRuleIds) {
-            this.modSecurityRuleIds = Objects.requireNonNull(modSecurityRuleIds);
+            if (modSecurityRuleIds == null) {
+              throw new MissingRequiredPropertyException("GetCustomProtectionRulesCustomProtectionRule", "modSecurityRuleIds");
+            }
+            this.modSecurityRuleIds = modSecurityRuleIds;
             return this;
         }
         public Builder modSecurityRuleIds(String... modSecurityRuleIds) {
@@ -209,17 +231,26 @@ public final class GetCustomProtectionRulesCustomProtectionRule {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetCustomProtectionRulesCustomProtectionRule", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder template(String template) {
-            this.template = Objects.requireNonNull(template);
+            if (template == null) {
+              throw new MissingRequiredPropertyException("GetCustomProtectionRulesCustomProtectionRule", "template");
+            }
+            this.template = template;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetCustomProtectionRulesCustomProtectionRule", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetCustomProtectionRulesCustomProtectionRule build() {

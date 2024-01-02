@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -41,12 +42,18 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
 
         @CustomType.Setter
         public Builder targetNodeCount(Integer targetNodeCount) {
-            this.targetNodeCount = Objects.requireNonNull(targetNodeCount);
+            if (targetNodeCount == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig", "targetNodeCount");
+            }
+            this.targetNodeCount = targetNodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder timeRecurrence(String timeRecurrence) {
-            this.timeRecurrence = Objects.requireNonNull(timeRecurrence);
+            if (timeRecurrence == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig", "timeRecurrence");
+            }
+            this.timeRecurrence = timeRecurrence;
             return this;
         }
         public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentCategoryLogDetail;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentModelDeploymentConfigurationDetail;
 import java.lang.Object;
@@ -235,7 +236,10 @@ public final class GetModelDeploymentResult {
 
         @CustomType.Setter
         public Builder categoryLogDetails(List<GetModelDeploymentCategoryLogDetail> categoryLogDetails) {
-            this.categoryLogDetails = Objects.requireNonNull(categoryLogDetails);
+            if (categoryLogDetails == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentResult", "categoryLogDetails");
+            }
+            this.categoryLogDetails = categoryLogDetails;
             return this;
         }
         public Builder categoryLogDetails(GetModelDeploymentCategoryLogDetail... categoryLogDetails) {
@@ -243,47 +247,74 @@ public final class GetModelDeploymentResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentResult", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder modelDeploymentConfigurationDetails(List<GetModelDeploymentModelDeploymentConfigurationDetail> modelDeploymentConfigurationDetails) {
-            this.modelDeploymentConfigurationDetails = Objects.requireNonNull(modelDeploymentConfigurationDetails);
+            if (modelDeploymentConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentResult", "modelDeploymentConfigurationDetails");
+            }
+            this.modelDeploymentConfigurationDetails = modelDeploymentConfigurationDetails;
             return this;
         }
         public Builder modelDeploymentConfigurationDetails(GetModelDeploymentModelDeploymentConfigurationDetail... modelDeploymentConfigurationDetails) {
@@ -291,27 +322,42 @@ public final class GetModelDeploymentResult {
         }
         @CustomType.Setter
         public Builder modelDeploymentId(String modelDeploymentId) {
-            this.modelDeploymentId = Objects.requireNonNull(modelDeploymentId);
+            if (modelDeploymentId == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentResult", "modelDeploymentId");
+            }
+            this.modelDeploymentId = modelDeploymentId;
             return this;
         }
         @CustomType.Setter
         public Builder modelDeploymentUrl(String modelDeploymentUrl) {
-            this.modelDeploymentUrl = Objects.requireNonNull(modelDeploymentUrl);
+            if (modelDeploymentUrl == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentResult", "modelDeploymentUrl");
+            }
+            this.modelDeploymentUrl = modelDeploymentUrl;
             return this;
         }
         @CustomType.Setter
         public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+            if (projectId == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentResult", "projectId");
+            }
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetModelDeploymentResult build() {

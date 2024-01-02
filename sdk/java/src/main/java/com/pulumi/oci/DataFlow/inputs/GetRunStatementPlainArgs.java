@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetRunStatementPlainArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetRunStatementPlainArgs build() {
-            $.runId = Objects.requireNonNull($.runId, "expected parameter 'runId' to be non-null");
-            $.statementId = Objects.requireNonNull($.statementId, "expected parameter 'statementId' to be non-null");
+            if ($.runId == null) {
+                throw new MissingRequiredPropertyException("GetRunStatementPlainArgs", "runId");
+            }
+            if ($.statementId == null) {
+                throw new MissingRequiredPropertyException("GetRunStatementPlainArgs", "statementId");
+            }
             return $;
         }
     }

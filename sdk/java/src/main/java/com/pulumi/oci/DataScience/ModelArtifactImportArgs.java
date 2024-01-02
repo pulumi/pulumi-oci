@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -139,12 +140,24 @@ public final class ModelArtifactImportArgs extends com.pulumi.resources.Resource
         }
 
         public ModelArtifactImportArgs build() {
-            $.artifactSourceType = Objects.requireNonNull($.artifactSourceType, "expected parameter 'artifactSourceType' to be non-null");
-            $.destinationBucket = Objects.requireNonNull($.destinationBucket, "expected parameter 'destinationBucket' to be non-null");
-            $.destinationObjectName = Objects.requireNonNull($.destinationObjectName, "expected parameter 'destinationObjectName' to be non-null");
-            $.destinationRegion = Objects.requireNonNull($.destinationRegion, "expected parameter 'destinationRegion' to be non-null");
-            $.modelId = Objects.requireNonNull($.modelId, "expected parameter 'modelId' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
+            if ($.artifactSourceType == null) {
+                throw new MissingRequiredPropertyException("ModelArtifactImportArgs", "artifactSourceType");
+            }
+            if ($.destinationBucket == null) {
+                throw new MissingRequiredPropertyException("ModelArtifactImportArgs", "destinationBucket");
+            }
+            if ($.destinationObjectName == null) {
+                throw new MissingRequiredPropertyException("ModelArtifactImportArgs", "destinationObjectName");
+            }
+            if ($.destinationRegion == null) {
+                throw new MissingRequiredPropertyException("ModelArtifactImportArgs", "destinationRegion");
+            }
+            if ($.modelId == null) {
+                throw new MissingRequiredPropertyException("ModelArtifactImportArgs", "modelId");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("ModelArtifactImportArgs", "namespace");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Integration.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetIntegrationInstanceArgs extends com.pulumi.resources.Invok
         }
 
         public GetIntegrationInstanceArgs build() {
-            $.integrationInstanceId = Objects.requireNonNull($.integrationInstanceId, "expected parameter 'integrationInstanceId' to be non-null");
+            if ($.integrationInstanceId == null) {
+                throw new MissingRequiredPropertyException("GetIntegrationInstanceArgs", "integrationInstanceId");
+            }
             return $;
         }
     }

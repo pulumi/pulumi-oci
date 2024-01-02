@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterDataCollectionOption;
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterIormConfigCach;
 import java.lang.Boolean;
@@ -686,12 +687,18 @@ public final class GetCloudVmClustersCloudVmCluster {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder backupNetworkNsgIds(List<String> backupNetworkNsgIds) {
-            this.backupNetworkNsgIds = Objects.requireNonNull(backupNetworkNsgIds);
+            if (backupNetworkNsgIds == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "backupNetworkNsgIds");
+            }
+            this.backupNetworkNsgIds = backupNetworkNsgIds;
             return this;
         }
         public Builder backupNetworkNsgIds(String... backupNetworkNsgIds) {
@@ -699,37 +706,58 @@ public final class GetCloudVmClustersCloudVmCluster {
         }
         @CustomType.Setter
         public Builder backupSubnetId(String backupSubnetId) {
-            this.backupSubnetId = Objects.requireNonNull(backupSubnetId);
+            if (backupSubnetId == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "backupSubnetId");
+            }
+            this.backupSubnetId = backupSubnetId;
             return this;
         }
         @CustomType.Setter
         public Builder cloudExadataInfrastructureId(String cloudExadataInfrastructureId) {
-            this.cloudExadataInfrastructureId = Objects.requireNonNull(cloudExadataInfrastructureId);
+            if (cloudExadataInfrastructureId == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "cloudExadataInfrastructureId");
+            }
+            this.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
         public Builder clusterName(String clusterName) {
-            this.clusterName = Objects.requireNonNull(clusterName);
+            if (clusterName == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "clusterName");
+            }
+            this.clusterName = clusterName;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+            if (cpuCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "cpuCoreCount");
+            }
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
         public Builder createAsync(Boolean createAsync) {
-            this.createAsync = Objects.requireNonNull(createAsync);
+            if (createAsync == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "createAsync");
+            }
+            this.createAsync = createAsync;
             return this;
         }
         @CustomType.Setter
         public Builder dataCollectionOptions(List<GetCloudVmClustersCloudVmClusterDataCollectionOption> dataCollectionOptions) {
-            this.dataCollectionOptions = Objects.requireNonNull(dataCollectionOptions);
+            if (dataCollectionOptions == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "dataCollectionOptions");
+            }
+            this.dataCollectionOptions = dataCollectionOptions;
             return this;
         }
         public Builder dataCollectionOptions(GetCloudVmClustersCloudVmClusterDataCollectionOption... dataCollectionOptions) {
@@ -737,22 +765,34 @@ public final class GetCloudVmClustersCloudVmCluster {
         }
         @CustomType.Setter
         public Builder dataStoragePercentage(Integer dataStoragePercentage) {
-            this.dataStoragePercentage = Objects.requireNonNull(dataStoragePercentage);
+            if (dataStoragePercentage == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "dataStoragePercentage");
+            }
+            this.dataStoragePercentage = dataStoragePercentage;
             return this;
         }
         @CustomType.Setter
         public Builder dataStorageSizeInTbs(Double dataStorageSizeInTbs) {
-            this.dataStorageSizeInTbs = Objects.requireNonNull(dataStorageSizeInTbs);
+            if (dataStorageSizeInTbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "dataStorageSizeInTbs");
+            }
+            this.dataStorageSizeInTbs = dataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
-            this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
+            if (dbNodeStorageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "dbNodeStorageSizeInGbs");
+            }
+            this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder dbServers(List<String> dbServers) {
-            this.dbServers = Objects.requireNonNull(dbServers);
+            if (dbServers == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "dbServers");
+            }
+            this.dbServers = dbServers;
             return this;
         }
         public Builder dbServers(String... dbServers) {
@@ -760,47 +800,74 @@ public final class GetCloudVmClustersCloudVmCluster {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder diskRedundancy(String diskRedundancy) {
-            this.diskRedundancy = Objects.requireNonNull(diskRedundancy);
+            if (diskRedundancy == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "diskRedundancy");
+            }
+            this.diskRedundancy = diskRedundancy;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder domain(String domain) {
-            this.domain = Objects.requireNonNull(domain);
+            if (domain == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "domain");
+            }
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder giVersion(String giVersion) {
-            this.giVersion = Objects.requireNonNull(giVersion);
+            if (giVersion == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "giVersion");
+            }
+            this.giVersion = giVersion;
             return this;
         }
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder iormConfigCaches(List<GetCloudVmClustersCloudVmClusterIormConfigCach> iormConfigCaches) {
-            this.iormConfigCaches = Objects.requireNonNull(iormConfigCaches);
+            if (iormConfigCaches == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "iormConfigCaches");
+            }
+            this.iormConfigCaches = iormConfigCaches;
             return this;
         }
         public Builder iormConfigCaches(GetCloudVmClustersCloudVmClusterIormConfigCach... iormConfigCaches) {
@@ -808,47 +875,74 @@ public final class GetCloudVmClustersCloudVmCluster {
         }
         @CustomType.Setter
         public Builder isLocalBackupEnabled(Boolean isLocalBackupEnabled) {
-            this.isLocalBackupEnabled = Objects.requireNonNull(isLocalBackupEnabled);
+            if (isLocalBackupEnabled == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "isLocalBackupEnabled");
+            }
+            this.isLocalBackupEnabled = isLocalBackupEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isSparseDiskgroupEnabled(Boolean isSparseDiskgroupEnabled) {
-            this.isSparseDiskgroupEnabled = Objects.requireNonNull(isSparseDiskgroupEnabled);
+            if (isSparseDiskgroupEnabled == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "isSparseDiskgroupEnabled");
+            }
+            this.isSparseDiskgroupEnabled = isSparseDiskgroupEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder lastUpdateHistoryEntryId(String lastUpdateHistoryEntryId) {
-            this.lastUpdateHistoryEntryId = Objects.requireNonNull(lastUpdateHistoryEntryId);
+            if (lastUpdateHistoryEntryId == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "lastUpdateHistoryEntryId");
+            }
+            this.lastUpdateHistoryEntryId = lastUpdateHistoryEntryId;
             return this;
         }
         @CustomType.Setter
         public Builder licenseModel(String licenseModel) {
-            this.licenseModel = Objects.requireNonNull(licenseModel);
+            if (licenseModel == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "licenseModel");
+            }
+            this.licenseModel = licenseModel;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder listenerPort(String listenerPort) {
-            this.listenerPort = Objects.requireNonNull(listenerPort);
+            if (listenerPort == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "listenerPort");
+            }
+            this.listenerPort = listenerPort;
             return this;
         }
         @CustomType.Setter
         public Builder memorySizeInGbs(Integer memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+            if (memorySizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "memorySizeInGbs");
+            }
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder nodeCount(Integer nodeCount) {
-            this.nodeCount = Objects.requireNonNull(nodeCount);
+            if (nodeCount == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "nodeCount");
+            }
+            this.nodeCount = nodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
@@ -856,27 +950,42 @@ public final class GetCloudVmClustersCloudVmCluster {
         }
         @CustomType.Setter
         public Builder ocpuCount(Double ocpuCount) {
-            this.ocpuCount = Objects.requireNonNull(ocpuCount);
+            if (ocpuCount == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "ocpuCount");
+            }
+            this.ocpuCount = ocpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder privateZoneId(String privateZoneId) {
-            this.privateZoneId = Objects.requireNonNull(privateZoneId);
+            if (privateZoneId == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "privateZoneId");
+            }
+            this.privateZoneId = privateZoneId;
             return this;
         }
         @CustomType.Setter
         public Builder scanDnsName(String scanDnsName) {
-            this.scanDnsName = Objects.requireNonNull(scanDnsName);
+            if (scanDnsName == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "scanDnsName");
+            }
+            this.scanDnsName = scanDnsName;
             return this;
         }
         @CustomType.Setter
         public Builder scanDnsRecordId(String scanDnsRecordId) {
-            this.scanDnsRecordId = Objects.requireNonNull(scanDnsRecordId);
+            if (scanDnsRecordId == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "scanDnsRecordId");
+            }
+            this.scanDnsRecordId = scanDnsRecordId;
             return this;
         }
         @CustomType.Setter
         public Builder scanIpIds(List<String> scanIpIds) {
-            this.scanIpIds = Objects.requireNonNull(scanIpIds);
+            if (scanIpIds == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "scanIpIds");
+            }
+            this.scanIpIds = scanIpIds;
             return this;
         }
         public Builder scanIpIds(String... scanIpIds) {
@@ -884,22 +993,34 @@ public final class GetCloudVmClustersCloudVmCluster {
         }
         @CustomType.Setter
         public Builder scanListenerPortTcp(Integer scanListenerPortTcp) {
-            this.scanListenerPortTcp = Objects.requireNonNull(scanListenerPortTcp);
+            if (scanListenerPortTcp == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "scanListenerPortTcp");
+            }
+            this.scanListenerPortTcp = scanListenerPortTcp;
             return this;
         }
         @CustomType.Setter
         public Builder scanListenerPortTcpSsl(Integer scanListenerPortTcpSsl) {
-            this.scanListenerPortTcpSsl = Objects.requireNonNull(scanListenerPortTcpSsl);
+            if (scanListenerPortTcpSsl == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "scanListenerPortTcpSsl");
+            }
+            this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder sshPublicKeys(List<String> sshPublicKeys) {
-            this.sshPublicKeys = Objects.requireNonNull(sshPublicKeys);
+            if (sshPublicKeys == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "sshPublicKeys");
+            }
+            this.sshPublicKeys = sshPublicKeys;
             return this;
         }
         public Builder sshPublicKeys(String... sshPublicKeys) {
@@ -907,37 +1028,58 @@ public final class GetCloudVmClustersCloudVmCluster {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder storageSizeInGbs(Integer storageSizeInGbs) {
-            this.storageSizeInGbs = Objects.requireNonNull(storageSizeInGbs);
+            if (storageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "storageSizeInGbs");
+            }
+            this.storageSizeInGbs = storageSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder systemVersion(String systemVersion) {
-            this.systemVersion = Objects.requireNonNull(systemVersion);
+            if (systemVersion == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "systemVersion");
+            }
+            this.systemVersion = systemVersion;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeZone(String timeZone) {
-            this.timeZone = Objects.requireNonNull(timeZone);
+            if (timeZone == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "timeZone");
+            }
+            this.timeZone = timeZone;
             return this;
         }
         @CustomType.Setter
         public Builder vipIds(List<String> vipIds) {
-            this.vipIds = Objects.requireNonNull(vipIds);
+            if (vipIds == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "vipIds");
+            }
+            this.vipIds = vipIds;
             return this;
         }
         public Builder vipIds(String... vipIds) {
@@ -945,7 +1087,10 @@ public final class GetCloudVmClustersCloudVmCluster {
         }
         @CustomType.Setter
         public Builder zoneId(String zoneId) {
-            this.zoneId = Objects.requireNonNull(zoneId);
+            if (zoneId == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "zoneId");
+            }
+            this.zoneId = zoneId;
             return this;
         }
         public GetCloudVmClustersCloudVmCluster build() {

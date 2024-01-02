@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointAssociatedDatabaseItem;
 import java.lang.String;
 import java.util.List;
@@ -78,22 +79,34 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabaseResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointAssociatedDatabaseResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dbManagementPrivateEndpointId(String dbManagementPrivateEndpointId) {
-            this.dbManagementPrivateEndpointId = Objects.requireNonNull(dbManagementPrivateEndpointId);
+            if (dbManagementPrivateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointAssociatedDatabaseResult", "dbManagementPrivateEndpointId");
+            }
+            this.dbManagementPrivateEndpointId = dbManagementPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointAssociatedDatabaseResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetDbManagementPrivateEndpointAssociatedDatabaseItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointAssociatedDatabaseResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetDbManagementPrivateEndpointAssociatedDatabaseItem... items) {

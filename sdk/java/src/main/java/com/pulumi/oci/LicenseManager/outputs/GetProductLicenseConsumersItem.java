@@ -4,6 +4,7 @@
 package com.pulumi.oci.LicenseManager.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LicenseManager.outputs.GetProductLicenseConsumersItemMissingProduct;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -200,27 +201,42 @@ public final class GetProductLicenseConsumersItem {
 
         @CustomType.Setter
         public Builder areAllOptionsAvailable(Boolean areAllOptionsAvailable) {
-            this.areAllOptionsAvailable = Objects.requireNonNull(areAllOptionsAvailable);
+            if (areAllOptionsAvailable == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseConsumersItem", "areAllOptionsAvailable");
+            }
+            this.areAllOptionsAvailable = areAllOptionsAvailable;
             return this;
         }
         @CustomType.Setter
         public Builder isBaseLicenseAvailable(Boolean isBaseLicenseAvailable) {
-            this.isBaseLicenseAvailable = Objects.requireNonNull(isBaseLicenseAvailable);
+            if (isBaseLicenseAvailable == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseConsumersItem", "isBaseLicenseAvailable");
+            }
+            this.isBaseLicenseAvailable = isBaseLicenseAvailable;
             return this;
         }
         @CustomType.Setter
         public Builder licenseUnitType(String licenseUnitType) {
-            this.licenseUnitType = Objects.requireNonNull(licenseUnitType);
+            if (licenseUnitType == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseConsumersItem", "licenseUnitType");
+            }
+            this.licenseUnitType = licenseUnitType;
             return this;
         }
         @CustomType.Setter
         public Builder licenseUnitsConsumed(Double licenseUnitsConsumed) {
-            this.licenseUnitsConsumed = Objects.requireNonNull(licenseUnitsConsumed);
+            if (licenseUnitsConsumed == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseConsumersItem", "licenseUnitsConsumed");
+            }
+            this.licenseUnitsConsumed = licenseUnitsConsumed;
             return this;
         }
         @CustomType.Setter
         public Builder missingProducts(List<GetProductLicenseConsumersItemMissingProduct> missingProducts) {
-            this.missingProducts = Objects.requireNonNull(missingProducts);
+            if (missingProducts == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseConsumersItem", "missingProducts");
+            }
+            this.missingProducts = missingProducts;
             return this;
         }
         public Builder missingProducts(GetProductLicenseConsumersItemMissingProduct... missingProducts) {
@@ -228,37 +244,58 @@ public final class GetProductLicenseConsumersItem {
         }
         @CustomType.Setter
         public Builder productName(String productName) {
-            this.productName = Objects.requireNonNull(productName);
+            if (productName == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseConsumersItem", "productName");
+            }
+            this.productName = productName;
             return this;
         }
         @CustomType.Setter
         public Builder resourceCompartmentId(String resourceCompartmentId) {
-            this.resourceCompartmentId = Objects.requireNonNull(resourceCompartmentId);
+            if (resourceCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseConsumersItem", "resourceCompartmentId");
+            }
+            this.resourceCompartmentId = resourceCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceCompartmentName(String resourceCompartmentName) {
-            this.resourceCompartmentName = Objects.requireNonNull(resourceCompartmentName);
+            if (resourceCompartmentName == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseConsumersItem", "resourceCompartmentName");
+            }
+            this.resourceCompartmentName = resourceCompartmentName;
             return this;
         }
         @CustomType.Setter
         public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+            if (resourceId == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseConsumersItem", "resourceId");
+            }
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceName(String resourceName) {
-            this.resourceName = Objects.requireNonNull(resourceName);
+            if (resourceName == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseConsumersItem", "resourceName");
+            }
+            this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
         public Builder resourceUnitCount(Double resourceUnitCount) {
-            this.resourceUnitCount = Objects.requireNonNull(resourceUnitCount);
+            if (resourceUnitCount == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseConsumersItem", "resourceUnitCount");
+            }
+            this.resourceUnitCount = resourceUnitCount;
             return this;
         }
         @CustomType.Setter
         public Builder resourceUnitType(String resourceUnitType) {
-            this.resourceUnitType = Objects.requireNonNull(resourceUnitType);
+            if (resourceUnitType == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseConsumersItem", "resourceUnitType");
+            }
+            this.resourceUnitType = resourceUnitType;
             return this;
         }
         public GetProductLicenseConsumersItem build() {

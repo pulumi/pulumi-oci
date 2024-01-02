@@ -5,6 +5,7 @@ package com.pulumi.oci.VisualBuilder;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.VisualBuilder.inputs.VbInstanceAlternateCustomEndpointArgs;
 import com.pulumi.oci.VisualBuilder.inputs.VbInstanceCustomEndpointArgs;
 import java.lang.Boolean;
@@ -438,9 +439,15 @@ public final class VbInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public VbInstanceArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.nodeCount = Objects.requireNonNull($.nodeCount, "expected parameter 'nodeCount' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("VbInstanceArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("VbInstanceArgs", "displayName");
+            }
+            if ($.nodeCount == null) {
+                throw new MissingRequiredPropertyException("VbInstanceArgs", "nodeCount");
+            }
             return $;
         }
     }

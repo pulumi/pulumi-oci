@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiDocument.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiDocument.outputs.GetProcessorJobInputLocation;
 import com.pulumi.oci.AiDocument.outputs.GetProcessorJobOutputLocation;
 import com.pulumi.oci.AiDocument.outputs.GetProcessorJobProcessorConfig;
@@ -207,22 +208,34 @@ public final class GetProcessorJobResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inputLocations(List<GetProcessorJobInputLocation> inputLocations) {
-            this.inputLocations = Objects.requireNonNull(inputLocations);
+            if (inputLocations == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobResult", "inputLocations");
+            }
+            this.inputLocations = inputLocations;
             return this;
         }
         public Builder inputLocations(GetProcessorJobInputLocation... inputLocations) {
@@ -230,12 +243,18 @@ public final class GetProcessorJobResult {
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder outputLocations(List<GetProcessorJobOutputLocation> outputLocations) {
-            this.outputLocations = Objects.requireNonNull(outputLocations);
+            if (outputLocations == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobResult", "outputLocations");
+            }
+            this.outputLocations = outputLocations;
             return this;
         }
         public Builder outputLocations(GetProcessorJobOutputLocation... outputLocations) {
@@ -243,12 +262,18 @@ public final class GetProcessorJobResult {
         }
         @CustomType.Setter
         public Builder percentComplete(Double percentComplete) {
-            this.percentComplete = Objects.requireNonNull(percentComplete);
+            if (percentComplete == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobResult", "percentComplete");
+            }
+            this.percentComplete = percentComplete;
             return this;
         }
         @CustomType.Setter
         public Builder processorConfigs(List<GetProcessorJobProcessorConfig> processorConfigs) {
-            this.processorConfigs = Objects.requireNonNull(processorConfigs);
+            if (processorConfigs == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobResult", "processorConfigs");
+            }
+            this.processorConfigs = processorConfigs;
             return this;
         }
         public Builder processorConfigs(GetProcessorJobProcessorConfig... processorConfigs) {
@@ -256,27 +281,42 @@ public final class GetProcessorJobResult {
         }
         @CustomType.Setter
         public Builder processorJobId(String processorJobId) {
-            this.processorJobId = Objects.requireNonNull(processorJobId);
+            if (processorJobId == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobResult", "processorJobId");
+            }
+            this.processorJobId = processorJobId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeAccepted(String timeAccepted) {
-            this.timeAccepted = Objects.requireNonNull(timeAccepted);
+            if (timeAccepted == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobResult", "timeAccepted");
+            }
+            this.timeAccepted = timeAccepted;
             return this;
         }
         @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+            if (timeFinished == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobResult", "timeFinished");
+            }
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobResult", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetProcessorJobResult build() {

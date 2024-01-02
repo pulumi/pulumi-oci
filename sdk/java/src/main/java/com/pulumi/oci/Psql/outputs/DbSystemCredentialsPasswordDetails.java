@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -86,21 +87,27 @@ public final class DbSystemCredentialsPasswordDetails {
 
         @CustomType.Setter
         public Builder password(@Nullable String password) {
+
             this.password = password;
             return this;
         }
         @CustomType.Setter
         public Builder passwordType(String passwordType) {
-            this.passwordType = Objects.requireNonNull(passwordType);
+            if (passwordType == null) {
+              throw new MissingRequiredPropertyException("DbSystemCredentialsPasswordDetails", "passwordType");
+            }
+            this.passwordType = passwordType;
             return this;
         }
         @CustomType.Setter
         public Builder secretId(@Nullable String secretId) {
+
             this.secretId = secretId;
             return this;
         }
         @CustomType.Setter
         public Builder secretVersion(@Nullable String secretVersion) {
+
             this.secretVersion = secretVersion;
             return this;
         }

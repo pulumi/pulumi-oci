@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryCommitsFilter;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryCommitsRepositoryCommitCollection;
 import java.lang.String;
@@ -131,26 +132,31 @@ public final class GetRepositoryCommitsResult {
 
         @CustomType.Setter
         public Builder authorName(@Nullable String authorName) {
+
             this.authorName = authorName;
             return this;
         }
         @CustomType.Setter
         public Builder commitMessage(@Nullable String commitMessage) {
+
             this.commitMessage = commitMessage;
             return this;
         }
         @CustomType.Setter
         public Builder excludeRefName(@Nullable String excludeRefName) {
+
             this.excludeRefName = excludeRefName;
             return this;
         }
         @CustomType.Setter
         public Builder filePath(@Nullable String filePath) {
+
             this.filePath = filePath;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRepositoryCommitsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -159,17 +165,24 @@ public final class GetRepositoryCommitsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryCommitsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder refName(@Nullable String refName) {
+
             this.refName = refName;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryCommitCollections(List<GetRepositoryCommitsRepositoryCommitCollection> repositoryCommitCollections) {
-            this.repositoryCommitCollections = Objects.requireNonNull(repositoryCommitCollections);
+            if (repositoryCommitCollections == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryCommitsResult", "repositoryCommitCollections");
+            }
+            this.repositoryCommitCollections = repositoryCommitCollections;
             return this;
         }
         public Builder repositoryCommitCollections(GetRepositoryCommitsRepositoryCommitCollection... repositoryCommitCollections) {
@@ -177,16 +190,21 @@ public final class GetRepositoryCommitsResult {
         }
         @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+            if (repositoryId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryCommitsResult", "repositoryId");
+            }
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder timestampGreaterThanOrEqualTo(@Nullable String timestampGreaterThanOrEqualTo) {
+
             this.timestampGreaterThanOrEqualTo = timestampGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timestampLessThanOrEqualTo(@Nullable String timestampLessThanOrEqualTo) {
+
             this.timestampLessThanOrEqualTo = timestampLessThanOrEqualTo;
             return this;
         }

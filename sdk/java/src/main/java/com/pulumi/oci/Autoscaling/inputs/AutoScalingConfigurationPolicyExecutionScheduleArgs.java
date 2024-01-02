@@ -5,6 +5,7 @@ package com.pulumi.oci.Autoscaling.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -180,9 +181,15 @@ public final class AutoScalingConfigurationPolicyExecutionScheduleArgs extends c
         }
 
         public AutoScalingConfigurationPolicyExecutionScheduleArgs build() {
-            $.expression = Objects.requireNonNull($.expression, "expected parameter 'expression' to be non-null");
-            $.timezone = Objects.requireNonNull($.timezone, "expected parameter 'timezone' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.expression == null) {
+                throw new MissingRequiredPropertyException("AutoScalingConfigurationPolicyExecutionScheduleArgs", "expression");
+            }
+            if ($.timezone == null) {
+                throw new MissingRequiredPropertyException("AutoScalingConfigurationPolicyExecutionScheduleArgs", "timezone");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("AutoScalingConfigurationPolicyExecutionScheduleArgs", "type");
+            }
             return $;
         }
     }

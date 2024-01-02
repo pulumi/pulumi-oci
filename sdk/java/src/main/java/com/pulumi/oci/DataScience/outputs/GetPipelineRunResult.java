@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunConfigurationOverrideDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunLogConfigurationOverrideDetail;
@@ -344,12 +345,18 @@ public final class GetPipelineRunResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder configurationDetails(List<GetPipelineRunConfigurationDetail> configurationDetails) {
-            this.configurationDetails = Objects.requireNonNull(configurationDetails);
+            if (configurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "configurationDetails");
+            }
+            this.configurationDetails = configurationDetails;
             return this;
         }
         public Builder configurationDetails(GetPipelineRunConfigurationDetail... configurationDetails) {
@@ -357,7 +364,10 @@ public final class GetPipelineRunResult {
         }
         @CustomType.Setter
         public Builder configurationOverrideDetails(List<GetPipelineRunConfigurationOverrideDetail> configurationOverrideDetails) {
-            this.configurationOverrideDetails = Objects.requireNonNull(configurationOverrideDetails);
+            if (configurationOverrideDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "configurationOverrideDetails");
+            }
+            this.configurationOverrideDetails = configurationOverrideDetails;
             return this;
         }
         public Builder configurationOverrideDetails(GetPipelineRunConfigurationOverrideDetail... configurationOverrideDetails) {
@@ -365,42 +375,66 @@ public final class GetPipelineRunResult {
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder deleteRelatedJobRuns(Boolean deleteRelatedJobRuns) {
-            this.deleteRelatedJobRuns = Objects.requireNonNull(deleteRelatedJobRuns);
+            if (deleteRelatedJobRuns == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "deleteRelatedJobRuns");
+            }
+            this.deleteRelatedJobRuns = deleteRelatedJobRuns;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder logConfigurationOverrideDetails(List<GetPipelineRunLogConfigurationOverrideDetail> logConfigurationOverrideDetails) {
-            this.logConfigurationOverrideDetails = Objects.requireNonNull(logConfigurationOverrideDetails);
+            if (logConfigurationOverrideDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "logConfigurationOverrideDetails");
+            }
+            this.logConfigurationOverrideDetails = logConfigurationOverrideDetails;
             return this;
         }
         public Builder logConfigurationOverrideDetails(GetPipelineRunLogConfigurationOverrideDetail... logConfigurationOverrideDetails) {
@@ -408,7 +442,10 @@ public final class GetPipelineRunResult {
         }
         @CustomType.Setter
         public Builder logDetails(List<GetPipelineRunLogDetail> logDetails) {
-            this.logDetails = Objects.requireNonNull(logDetails);
+            if (logDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "logDetails");
+            }
+            this.logDetails = logDetails;
             return this;
         }
         public Builder logDetails(GetPipelineRunLogDetail... logDetails) {
@@ -416,27 +453,42 @@ public final class GetPipelineRunResult {
         }
         @CustomType.Setter
         public Builder pipelineId(String pipelineId) {
-            this.pipelineId = Objects.requireNonNull(pipelineId);
+            if (pipelineId == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "pipelineId");
+            }
+            this.pipelineId = pipelineId;
             return this;
         }
         @CustomType.Setter
         public Builder pipelineRunId(String pipelineRunId) {
-            this.pipelineRunId = Objects.requireNonNull(pipelineRunId);
+            if (pipelineRunId == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "pipelineRunId");
+            }
+            this.pipelineRunId = pipelineRunId;
             return this;
         }
         @CustomType.Setter
         public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+            if (projectId == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "projectId");
+            }
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder stepOverrideDetails(List<GetPipelineRunStepOverrideDetail> stepOverrideDetails) {
-            this.stepOverrideDetails = Objects.requireNonNull(stepOverrideDetails);
+            if (stepOverrideDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "stepOverrideDetails");
+            }
+            this.stepOverrideDetails = stepOverrideDetails;
             return this;
         }
         public Builder stepOverrideDetails(GetPipelineRunStepOverrideDetail... stepOverrideDetails) {
@@ -444,7 +496,10 @@ public final class GetPipelineRunResult {
         }
         @CustomType.Setter
         public Builder stepRuns(List<GetPipelineRunStepRun> stepRuns) {
-            this.stepRuns = Objects.requireNonNull(stepRuns);
+            if (stepRuns == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "stepRuns");
+            }
+            this.stepRuns = stepRuns;
             return this;
         }
         public Builder stepRuns(GetPipelineRunStepRun... stepRuns) {
@@ -452,27 +507,42 @@ public final class GetPipelineRunResult {
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeAccepted(String timeAccepted) {
-            this.timeAccepted = Objects.requireNonNull(timeAccepted);
+            if (timeAccepted == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "timeAccepted");
+            }
+            this.timeAccepted = timeAccepted;
             return this;
         }
         @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+            if (timeFinished == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "timeFinished");
+            }
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetPipelineRunResult build() {

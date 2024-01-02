@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetAutonomousDatabaseInstanceWalletManagementArgs extends com
         }
 
         public GetAutonomousDatabaseInstanceWalletManagementArgs build() {
-            $.autonomousDatabaseId = Objects.requireNonNull($.autonomousDatabaseId, "expected parameter 'autonomousDatabaseId' to be non-null");
+            if ($.autonomousDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetAutonomousDatabaseInstanceWalletManagementArgs", "autonomousDatabaseId");
+            }
             return $;
         }
     }

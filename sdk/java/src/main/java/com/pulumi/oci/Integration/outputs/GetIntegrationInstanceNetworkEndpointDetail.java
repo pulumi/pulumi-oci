@@ -4,6 +4,7 @@
 package com.pulumi.oci.Integration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Integration.outputs.GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn;
 import java.lang.Boolean;
 import java.lang.String;
@@ -87,7 +88,10 @@ public final class GetIntegrationInstanceNetworkEndpointDetail {
 
         @CustomType.Setter
         public Builder allowlistedHttpIps(List<String> allowlistedHttpIps) {
-            this.allowlistedHttpIps = Objects.requireNonNull(allowlistedHttpIps);
+            if (allowlistedHttpIps == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceNetworkEndpointDetail", "allowlistedHttpIps");
+            }
+            this.allowlistedHttpIps = allowlistedHttpIps;
             return this;
         }
         public Builder allowlistedHttpIps(String... allowlistedHttpIps) {
@@ -95,7 +99,10 @@ public final class GetIntegrationInstanceNetworkEndpointDetail {
         }
         @CustomType.Setter
         public Builder allowlistedHttpVcns(List<GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn> allowlistedHttpVcns) {
-            this.allowlistedHttpVcns = Objects.requireNonNull(allowlistedHttpVcns);
+            if (allowlistedHttpVcns == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceNetworkEndpointDetail", "allowlistedHttpVcns");
+            }
+            this.allowlistedHttpVcns = allowlistedHttpVcns;
             return this;
         }
         public Builder allowlistedHttpVcns(GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn... allowlistedHttpVcns) {
@@ -103,12 +110,18 @@ public final class GetIntegrationInstanceNetworkEndpointDetail {
         }
         @CustomType.Setter
         public Builder isIntegrationVcnAllowlisted(Boolean isIntegrationVcnAllowlisted) {
-            this.isIntegrationVcnAllowlisted = Objects.requireNonNull(isIntegrationVcnAllowlisted);
+            if (isIntegrationVcnAllowlisted == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceNetworkEndpointDetail", "isIntegrationVcnAllowlisted");
+            }
+            this.isIntegrationVcnAllowlisted = isIntegrationVcnAllowlisted;
             return this;
         }
         @CustomType.Setter
         public Builder networkEndpointType(String networkEndpointType) {
-            this.networkEndpointType = Objects.requireNonNull(networkEndpointType);
+            if (networkEndpointType == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceNetworkEndpointDetail", "networkEndpointType");
+            }
+            this.networkEndpointType = networkEndpointType;
             return this;
         }
         public GetIntegrationInstanceNetworkEndpointDetail build() {

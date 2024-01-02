@@ -5,6 +5,7 @@ package com.pulumi.oci.NetworkFirewall.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationGroupsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -136,7 +137,9 @@ public final class GetNetworkFirewallPolicyApplicationGroupsArgs extends com.pul
         }
 
         public GetNetworkFirewallPolicyApplicationGroupsArgs build() {
-            $.networkFirewallPolicyId = Objects.requireNonNull($.networkFirewallPolicyId, "expected parameter 'networkFirewallPolicyId' to be non-null");
+            if ($.networkFirewallPolicyId == null) {
+                throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyApplicationGroupsArgs", "networkFirewallPolicyId");
+            }
             return $;
         }
     }

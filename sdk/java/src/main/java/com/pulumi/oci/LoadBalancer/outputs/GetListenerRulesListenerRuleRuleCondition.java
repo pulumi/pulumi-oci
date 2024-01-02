@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -78,17 +79,26 @@ public final class GetListenerRulesListenerRuleRuleCondition {
 
         @CustomType.Setter
         public Builder attributeName(String attributeName) {
-            this.attributeName = Objects.requireNonNull(attributeName);
+            if (attributeName == null) {
+              throw new MissingRequiredPropertyException("GetListenerRulesListenerRuleRuleCondition", "attributeName");
+            }
+            this.attributeName = attributeName;
             return this;
         }
         @CustomType.Setter
         public Builder attributeValue(String attributeValue) {
-            this.attributeValue = Objects.requireNonNull(attributeValue);
+            if (attributeValue == null) {
+              throw new MissingRequiredPropertyException("GetListenerRulesListenerRuleRuleCondition", "attributeValue");
+            }
+            this.attributeValue = attributeValue;
             return this;
         }
         @CustomType.Setter
         public Builder operator(String operator) {
-            this.operator = Objects.requireNonNull(operator);
+            if (operator == null) {
+              throw new MissingRequiredPropertyException("GetListenerRulesListenerRuleRuleCondition", "operator");
+            }
+            this.operator = operator;
             return this;
         }
         public GetListenerRulesListenerRuleRuleCondition build() {

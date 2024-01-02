@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage;
 import java.lang.Double;
 import java.lang.String;
@@ -143,7 +144,10 @@ public final class GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsage 
 
         @CustomType.Setter
         public Builder autonomousContainerDatabaseUsages(List<GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage> autonomousContainerDatabaseUsages) {
-            this.autonomousContainerDatabaseUsages = Objects.requireNonNull(autonomousContainerDatabaseUsages);
+            if (autonomousContainerDatabaseUsages == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsage", "autonomousContainerDatabaseUsages");
+            }
+            this.autonomousContainerDatabaseUsages = autonomousContainerDatabaseUsages;
             return this;
         }
         public Builder autonomousContainerDatabaseUsages(GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage... autonomousContainerDatabaseUsages) {
@@ -151,37 +155,58 @@ public final class GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsage 
         }
         @CustomType.Setter
         public Builder availableCpus(Double availableCpus) {
-            this.availableCpus = Objects.requireNonNull(availableCpus);
+            if (availableCpus == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsage", "availableCpus");
+            }
+            this.availableCpus = availableCpus;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsage", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsage", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder provisionedCpus(Double provisionedCpus) {
-            this.provisionedCpus = Objects.requireNonNull(provisionedCpus);
+            if (provisionedCpus == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsage", "provisionedCpus");
+            }
+            this.provisionedCpus = provisionedCpus;
             return this;
         }
         @CustomType.Setter
         public Builder reclaimableCpus(Double reclaimableCpus) {
-            this.reclaimableCpus = Objects.requireNonNull(reclaimableCpus);
+            if (reclaimableCpus == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsage", "reclaimableCpus");
+            }
+            this.reclaimableCpus = reclaimableCpus;
             return this;
         }
         @CustomType.Setter
         public Builder reservedCpus(Double reservedCpus) {
-            this.reservedCpus = Objects.requireNonNull(reservedCpus);
+            if (reservedCpus == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsage", "reservedCpus");
+            }
+            this.reservedCpus = reservedCpus;
             return this;
         }
         @CustomType.Setter
         public Builder usedCpus(Double usedCpus) {
-            this.usedCpus = Objects.requireNonNull(usedCpus);
+            if (usedCpus == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsage", "usedCpus");
+            }
+            this.usedCpus = usedCpus;
             return this;
         }
         public GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsage build() {

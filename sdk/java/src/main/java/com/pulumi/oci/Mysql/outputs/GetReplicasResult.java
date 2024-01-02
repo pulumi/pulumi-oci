@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetReplicasFilter;
 import com.pulumi.oci.Mysql.outputs.GetReplicasReplica;
 import java.lang.Boolean;
@@ -150,26 +151,33 @@ public final class GetReplicasResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetReplicasResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder configurationId(@Nullable String configurationId) {
+
             this.configurationId = configurationId;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(@Nullable String dbSystemId) {
+
             this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetReplicasFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -178,22 +186,30 @@ public final class GetReplicasResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetReplicasResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isUpToDate(@Nullable Boolean isUpToDate) {
+
             this.isUpToDate = isUpToDate;
             return this;
         }
         @CustomType.Setter
         public Builder replicaId(@Nullable String replicaId) {
+
             this.replicaId = replicaId;
             return this;
         }
         @CustomType.Setter
         public Builder replicas(List<GetReplicasReplica> replicas) {
-            this.replicas = Objects.requireNonNull(replicas);
+            if (replicas == null) {
+              throw new MissingRequiredPropertyException("GetReplicasResult", "replicas");
+            }
+            this.replicas = replicas;
             return this;
         }
         public Builder replicas(GetReplicasReplica... replicas) {
@@ -201,6 +217,7 @@ public final class GetReplicasResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

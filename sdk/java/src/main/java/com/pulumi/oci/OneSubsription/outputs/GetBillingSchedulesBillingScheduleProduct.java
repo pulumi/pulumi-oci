@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetBillingSchedulesBillingScheduleProduct {
 
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetBillingSchedulesBillingScheduleProduct", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder partNumber(String partNumber) {
-            this.partNumber = Objects.requireNonNull(partNumber);
+            if (partNumber == null) {
+              throw new MissingRequiredPropertyException("GetBillingSchedulesBillingScheduleProduct", "partNumber");
+            }
+            this.partNumber = partNumber;
             return this;
         }
         public GetBillingSchedulesBillingScheduleProduct build() {

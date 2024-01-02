@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstancesFilter;
 import java.lang.String;
 import java.util.List;
@@ -138,7 +139,9 @@ public final class GetComputeCapacityReservationInstancesPlainArgs extends com.p
         }
 
         public GetComputeCapacityReservationInstancesPlainArgs build() {
-            $.capacityReservationId = Objects.requireNonNull($.capacityReservationId, "expected parameter 'capacityReservationId' to be non-null");
+            if ($.capacityReservationId == null) {
+                throw new MissingRequiredPropertyException("GetComputeCapacityReservationInstancesPlainArgs", "capacityReservationId");
+            }
             return $;
         }
     }

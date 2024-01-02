@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolume;
 import java.lang.Double;
 import java.util.List;
@@ -72,17 +73,26 @@ public final class GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage 
 
         @CustomType.Setter
         public Builder totalGbPerMonth(Double totalGbPerMonth) {
-            this.totalGbPerMonth = Objects.requireNonNull(totalGbPerMonth);
+            if (totalGbPerMonth == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage", "totalGbPerMonth");
+            }
+            this.totalGbPerMonth = totalGbPerMonth;
             return this;
         }
         @CustomType.Setter
         public Builder totalGbPerMonthBySubscription(Double totalGbPerMonthBySubscription) {
-            this.totalGbPerMonthBySubscription = Objects.requireNonNull(totalGbPerMonthBySubscription);
+            if (totalGbPerMonthBySubscription == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage", "totalGbPerMonthBySubscription");
+            }
+            this.totalGbPerMonthBySubscription = totalGbPerMonthBySubscription;
             return this;
         }
         @CustomType.Setter
         public Builder volumes(List<GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolume> volumes) {
-            this.volumes = Objects.requireNonNull(volumes);
+            if (volumes == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage", "volumes");
+            }
+            this.volumes = volumes;
             return this;
         }
         public Builder volumes(GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolume... volumes) {

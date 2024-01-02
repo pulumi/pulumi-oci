@@ -4,6 +4,7 @@
 package com.pulumi.oci.Artifacts.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Artifacts.outputs.GetContainerSignaturesContainerImageSignatureCollectionItem;
 import java.lang.Integer;
 import java.util.List;
@@ -42,7 +43,10 @@ public final class GetContainerSignaturesContainerImageSignatureCollection {
 
         @CustomType.Setter
         public Builder items(List<GetContainerSignaturesContainerImageSignatureCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetContainerSignaturesContainerImageSignatureCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetContainerSignaturesContainerImageSignatureCollectionItem... items) {
@@ -50,7 +54,10 @@ public final class GetContainerSignaturesContainerImageSignatureCollection {
         }
         @CustomType.Setter
         public Builder remainingItemsCount(Integer remainingItemsCount) {
-            this.remainingItemsCount = Objects.requireNonNull(remainingItemsCount);
+            if (remainingItemsCount == null) {
+              throw new MissingRequiredPropertyException("GetContainerSignaturesContainerImageSignatureCollection", "remainingItemsCount");
+            }
+            this.remainingItemsCount = remainingItemsCount;
             return this;
         }
         public GetContainerSignaturesContainerImageSignatureCollection build() {

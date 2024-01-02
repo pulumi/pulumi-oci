@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksFilter;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection;
 import java.lang.String;
@@ -105,6 +106,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -113,22 +115,32 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder sqlTuningAdvisorTaskCollections(List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection> sqlTuningAdvisorTaskCollections) {
-            this.sqlTuningAdvisorTaskCollections = Objects.requireNonNull(sqlTuningAdvisorTaskCollections);
+            if (sqlTuningAdvisorTaskCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksResult", "sqlTuningAdvisorTaskCollections");
+            }
+            this.sqlTuningAdvisorTaskCollections = sqlTuningAdvisorTaskCollections;
             return this;
         }
         public Builder sqlTuningAdvisorTaskCollections(GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection... sqlTuningAdvisorTaskCollections) {
@@ -136,16 +148,19 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder timeGreaterThanOrEqualTo(@Nullable String timeGreaterThanOrEqualTo) {
+
             this.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeLessThanOrEqualTo(@Nullable String timeLessThanOrEqualTo) {
+
             this.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
             return this;
         }

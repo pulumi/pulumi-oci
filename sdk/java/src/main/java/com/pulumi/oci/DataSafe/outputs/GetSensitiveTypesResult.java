@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveTypesFilter;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveTypesSensitiveTypeCollection;
 import java.lang.Boolean;
@@ -202,36 +203,45 @@ public final class GetSensitiveTypesResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder defaultMaskingFormatId(@Nullable String defaultMaskingFormatId) {
+
             this.defaultMaskingFormatId = defaultMaskingFormatId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder entityType(@Nullable String entityType) {
+
             this.entityType = entityType;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSensitiveTypesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -240,22 +250,30 @@ public final class GetSensitiveTypesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCommon(@Nullable Boolean isCommon) {
+
             this.isCommon = isCommon;
             return this;
         }
         @CustomType.Setter
         public Builder parentCategoryId(@Nullable String parentCategoryId) {
+
             this.parentCategoryId = parentCategoryId;
             return this;
         }
         @CustomType.Setter
         public Builder sensitiveTypeCollections(List<GetSensitiveTypesSensitiveTypeCollection> sensitiveTypeCollections) {
-            this.sensitiveTypeCollections = Objects.requireNonNull(sensitiveTypeCollections);
+            if (sensitiveTypeCollections == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveTypesResult", "sensitiveTypeCollections");
+            }
+            this.sensitiveTypeCollections = sensitiveTypeCollections;
             return this;
         }
         public Builder sensitiveTypeCollections(GetSensitiveTypesSensitiveTypeCollection... sensitiveTypeCollections) {
@@ -263,26 +281,31 @@ public final class GetSensitiveTypesResult {
         }
         @CustomType.Setter
         public Builder sensitiveTypeId(@Nullable String sensitiveTypeId) {
+
             this.sensitiveTypeId = sensitiveTypeId;
             return this;
         }
         @CustomType.Setter
         public Builder sensitiveTypeSource(@Nullable String sensitiveTypeSource) {
+
             this.sensitiveTypeSource = sensitiveTypeSource;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
+
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
+
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }

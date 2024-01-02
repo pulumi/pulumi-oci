@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ObjectStorage.outputs.GetBucketRetentionRuleDuration;
 import java.lang.String;
 import java.util.List;
@@ -106,12 +107,18 @@ public final class GetBucketRetentionRule {
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetBucketRetentionRule", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder durations(List<GetBucketRetentionRuleDuration> durations) {
-            this.durations = Objects.requireNonNull(durations);
+            if (durations == null) {
+              throw new MissingRequiredPropertyException("GetBucketRetentionRule", "durations");
+            }
+            this.durations = durations;
             return this;
         }
         public Builder durations(GetBucketRetentionRuleDuration... durations) {
@@ -119,22 +126,34 @@ public final class GetBucketRetentionRule {
         }
         @CustomType.Setter
         public Builder retentionRuleId(String retentionRuleId) {
-            this.retentionRuleId = Objects.requireNonNull(retentionRuleId);
+            if (retentionRuleId == null) {
+              throw new MissingRequiredPropertyException("GetBucketRetentionRule", "retentionRuleId");
+            }
+            this.retentionRuleId = retentionRuleId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetBucketRetentionRule", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeModified(String timeModified) {
-            this.timeModified = Objects.requireNonNull(timeModified);
+            if (timeModified == null) {
+              throw new MissingRequiredPropertyException("GetBucketRetentionRule", "timeModified");
+            }
+            this.timeModified = timeModified;
             return this;
         }
         @CustomType.Setter
         public Builder timeRuleLocked(String timeRuleLocked) {
-            this.timeRuleLocked = Objects.requireNonNull(timeRuleLocked);
+            if (timeRuleLocked == null) {
+              throw new MissingRequiredPropertyException("GetBucketRetentionRule", "timeRuleLocked");
+            }
+            this.timeRuleLocked = timeRuleLocked;
             return this;
         }
         public GetBucketRetentionRule build() {

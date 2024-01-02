@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -163,8 +164,12 @@ public final class ExternalDbSystemDatabaseManagementsManagementArgs extends com
         }
 
         public ExternalDbSystemDatabaseManagementsManagementArgs build() {
-            $.enableDatabaseManagement = Objects.requireNonNull($.enableDatabaseManagement, "expected parameter 'enableDatabaseManagement' to be non-null");
-            $.externalDbSystemId = Objects.requireNonNull($.externalDbSystemId, "expected parameter 'externalDbSystemId' to be non-null");
+            if ($.enableDatabaseManagement == null) {
+                throw new MissingRequiredPropertyException("ExternalDbSystemDatabaseManagementsManagementArgs", "enableDatabaseManagement");
+            }
+            if ($.externalDbSystemId == null) {
+                throw new MissingRequiredPropertyException("ExternalDbSystemDatabaseManagementsManagementArgs", "externalDbSystemId");
+            }
             return $;
         }
     }

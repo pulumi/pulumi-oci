@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetJavaDownloadsJavaLicenseAcceptanceRecordPlainArgs extends 
         }
 
         public GetJavaDownloadsJavaLicenseAcceptanceRecordPlainArgs build() {
-            $.javaLicenseAcceptanceRecordId = Objects.requireNonNull($.javaLicenseAcceptanceRecordId, "expected parameter 'javaLicenseAcceptanceRecordId' to be non-null");
+            if ($.javaLicenseAcceptanceRecordId == null) {
+                throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseAcceptanceRecordPlainArgs", "javaLicenseAcceptanceRecordId");
+            }
             return $;
         }
     }

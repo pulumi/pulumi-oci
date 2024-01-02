@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationFilterHeader;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationRenameHeader;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationSetHeader;
@@ -73,7 +74,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteResponseP
 
         @CustomType.Setter
         public Builder filterHeaders(List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationFilterHeader> filterHeaders) {
-            this.filterHeaders = Objects.requireNonNull(filterHeaders);
+            if (filterHeaders == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformation", "filterHeaders");
+            }
+            this.filterHeaders = filterHeaders;
             return this;
         }
         public Builder filterHeaders(GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationFilterHeader... filterHeaders) {
@@ -81,7 +85,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteResponseP
         }
         @CustomType.Setter
         public Builder renameHeaders(List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationRenameHeader> renameHeaders) {
-            this.renameHeaders = Objects.requireNonNull(renameHeaders);
+            if (renameHeaders == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformation", "renameHeaders");
+            }
+            this.renameHeaders = renameHeaders;
             return this;
         }
         public Builder renameHeaders(GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationRenameHeader... renameHeaders) {
@@ -89,7 +96,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteResponseP
         }
         @CustomType.Setter
         public Builder setHeaders(List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationSetHeader> setHeaders) {
-            this.setHeaders = Objects.requireNonNull(setHeaders);
+            if (setHeaders == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformation", "setHeaders");
+            }
+            this.setHeaders = setHeaders;
             return this;
         }
         public Builder setHeaders(GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationSetHeader... setHeaders) {

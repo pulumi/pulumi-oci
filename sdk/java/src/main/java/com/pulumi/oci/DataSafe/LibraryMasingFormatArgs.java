@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.inputs.LibraryMasingFormatFormatEntryArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -337,8 +338,12 @@ public final class LibraryMasingFormatArgs extends com.pulumi.resources.Resource
         }
 
         public LibraryMasingFormatArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.formatEntries = Objects.requireNonNull($.formatEntries, "expected parameter 'formatEntries' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("LibraryMasingFormatArgs", "compartmentId");
+            }
+            if ($.formatEntries == null) {
+                throw new MissingRequiredPropertyException("LibraryMasingFormatArgs", "formatEntries");
+            }
             return $;
         }
     }

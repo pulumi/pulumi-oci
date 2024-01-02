@@ -5,6 +5,7 @@ package com.pulumi.oci.ComputeCloud;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ComputeCloud.inputs.AtCustomerCccUpgradeScheduleEventArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -287,9 +288,15 @@ public final class AtCustomerCccUpgradeScheduleArgs extends com.pulumi.resources
         }
 
         public AtCustomerCccUpgradeScheduleArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.events = Objects.requireNonNull($.events, "expected parameter 'events' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AtCustomerCccUpgradeScheduleArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("AtCustomerCccUpgradeScheduleArgs", "displayName");
+            }
+            if ($.events == null) {
+                throw new MissingRequiredPropertyException("AtCustomerCccUpgradeScheduleArgs", "events");
+            }
             return $;
         }
     }

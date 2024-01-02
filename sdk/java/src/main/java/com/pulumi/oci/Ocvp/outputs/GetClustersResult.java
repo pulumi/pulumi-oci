@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ocvp.outputs.GetClustersClusterCollection;
 import com.pulumi.oci.Ocvp.outputs.GetClustersFilter;
 import java.lang.String;
@@ -123,7 +124,10 @@ public final class GetClustersResult {
 
         @CustomType.Setter
         public Builder clusterCollections(List<GetClustersClusterCollection> clusterCollections) {
-            this.clusterCollections = Objects.requireNonNull(clusterCollections);
+            if (clusterCollections == null) {
+              throw new MissingRequiredPropertyException("GetClustersResult", "clusterCollections");
+            }
+            this.clusterCollections = clusterCollections;
             return this;
         }
         public Builder clusterCollections(GetClustersClusterCollection... clusterCollections) {
@@ -131,16 +135,19 @@ public final class GetClustersResult {
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetClustersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -149,16 +156,21 @@ public final class GetClustersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetClustersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder sddcId(@Nullable String sddcId) {
+
             this.sddcId = sddcId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

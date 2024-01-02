@@ -5,6 +5,7 @@ package com.pulumi.oci.Artifacts;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -164,7 +165,9 @@ public final class GenericArtifactArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public GenericArtifactArgs build() {
-            $.artifactId = Objects.requireNonNull($.artifactId, "expected parameter 'artifactId' to be non-null");
+            if ($.artifactId == null) {
+                throw new MissingRequiredPropertyException("GenericArtifactArgs", "artifactId");
+            }
             return $;
         }
     }

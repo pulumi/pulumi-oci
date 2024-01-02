@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.inputs.GetListUserGrantsFilterArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -396,8 +397,12 @@ public final class GetListUserGrantsArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetListUserGrantsArgs build() {
-            $.userAssessmentId = Objects.requireNonNull($.userAssessmentId, "expected parameter 'userAssessmentId' to be non-null");
-            $.userKey = Objects.requireNonNull($.userKey, "expected parameter 'userKey' to be non-null");
+            if ($.userAssessmentId == null) {
+                throw new MissingRequiredPropertyException("GetListUserGrantsArgs", "userAssessmentId");
+            }
+            if ($.userKey == null) {
+                throw new MissingRequiredPropertyException("GetListUserGrantsArgs", "userKey");
+            }
             return $;
         }
     }

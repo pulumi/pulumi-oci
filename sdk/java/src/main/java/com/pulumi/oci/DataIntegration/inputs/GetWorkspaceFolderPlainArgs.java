@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetWorkspaceFolderPlainArgs extends com.pulumi.resources.Invo
         }
 
         public GetWorkspaceFolderPlainArgs build() {
-            $.folderKey = Objects.requireNonNull($.folderKey, "expected parameter 'folderKey' to be non-null");
-            $.workspaceId = Objects.requireNonNull($.workspaceId, "expected parameter 'workspaceId' to be non-null");
+            if ($.folderKey == null) {
+                throw new MissingRequiredPropertyException("GetWorkspaceFolderPlainArgs", "folderKey");
+            }
+            if ($.workspaceId == null) {
+                throw new MissingRequiredPropertyException("GetWorkspaceFolderPlainArgs", "workspaceId");
+            }
             return $;
         }
     }

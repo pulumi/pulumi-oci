@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceAdditionalAliasCredentialArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -149,9 +150,15 @@ public final class MonitoredResourceAdditionalAliasArgs extends com.pulumi.resou
         }
 
         public MonitoredResourceAdditionalAliasArgs build() {
-            $.credential = Objects.requireNonNull($.credential, "expected parameter 'credential' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
-            $.source = Objects.requireNonNull($.source, "expected parameter 'source' to be non-null");
+            if ($.credential == null) {
+                throw new MissingRequiredPropertyException("MonitoredResourceAdditionalAliasArgs", "credential");
+            }
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("MonitoredResourceAdditionalAliasArgs", "name");
+            }
+            if ($.source == null) {
+                throw new MissingRequiredPropertyException("MonitoredResourceAdditionalAliasArgs", "source");
+            }
             return $;
         }
     }

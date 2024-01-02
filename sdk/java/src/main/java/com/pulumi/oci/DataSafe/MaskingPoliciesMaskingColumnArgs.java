@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.inputs.MaskingPoliciesMaskingColumnMaskingFormatArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -397,10 +398,18 @@ public final class MaskingPoliciesMaskingColumnArgs extends com.pulumi.resources
         }
 
         public MaskingPoliciesMaskingColumnArgs build() {
-            $.columnName = Objects.requireNonNull($.columnName, "expected parameter 'columnName' to be non-null");
-            $.maskingPolicyId = Objects.requireNonNull($.maskingPolicyId, "expected parameter 'maskingPolicyId' to be non-null");
-            $.object = Objects.requireNonNull($.object, "expected parameter 'object' to be non-null");
-            $.schemaName = Objects.requireNonNull($.schemaName, "expected parameter 'schemaName' to be non-null");
+            if ($.columnName == null) {
+                throw new MissingRequiredPropertyException("MaskingPoliciesMaskingColumnArgs", "columnName");
+            }
+            if ($.maskingPolicyId == null) {
+                throw new MissingRequiredPropertyException("MaskingPoliciesMaskingColumnArgs", "maskingPolicyId");
+            }
+            if ($.object == null) {
+                throw new MissingRequiredPropertyException("MaskingPoliciesMaskingColumnArgs", "object");
+            }
+            if ($.schemaName == null) {
+                throw new MissingRequiredPropertyException("MaskingPoliciesMaskingColumnArgs", "schemaName");
+            }
             return $;
         }
     }

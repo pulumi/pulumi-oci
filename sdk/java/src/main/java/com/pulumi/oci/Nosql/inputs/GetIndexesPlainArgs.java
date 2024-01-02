@@ -4,6 +4,7 @@
 package com.pulumi.oci.Nosql.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Nosql.inputs.GetIndexesFilter;
 import java.lang.String;
 import java.util.List;
@@ -165,7 +166,9 @@ public final class GetIndexesPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetIndexesPlainArgs build() {
-            $.tableNameOrId = Objects.requireNonNull($.tableNameOrId, "expected parameter 'tableNameOrId' to be non-null");
+            if ($.tableNameOrId == null) {
+                throw new MissingRequiredPropertyException("GetIndexesPlainArgs", "tableNameOrId");
+            }
             return $;
         }
     }

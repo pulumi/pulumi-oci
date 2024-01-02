@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetClustersClusterOptionAddOn {
 
         @CustomType.Setter
         public Builder isKubernetesDashboardEnabled(Boolean isKubernetesDashboardEnabled) {
-            this.isKubernetesDashboardEnabled = Objects.requireNonNull(isKubernetesDashboardEnabled);
+            if (isKubernetesDashboardEnabled == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterOptionAddOn", "isKubernetesDashboardEnabled");
+            }
+            this.isKubernetesDashboardEnabled = isKubernetesDashboardEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isTillerEnabled(Boolean isTillerEnabled) {
-            this.isTillerEnabled = Objects.requireNonNull(isTillerEnabled);
+            if (isTillerEnabled == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterOptionAddOn", "isTillerEnabled");
+            }
+            this.isTillerEnabled = isTillerEnabled;
             return this;
         }
         public GetClustersClusterOptionAddOn build() {

@@ -129,36 +129,43 @@ public final class ProtectedDatabaseMetric {
 
         @CustomType.Setter
         public Builder backupSpaceEstimateInGbs(@Nullable Double backupSpaceEstimateInGbs) {
+
             this.backupSpaceEstimateInGbs = backupSpaceEstimateInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder backupSpaceUsedInGbs(@Nullable Double backupSpaceUsedInGbs) {
+
             this.backupSpaceUsedInGbs = backupSpaceUsedInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder currentRetentionPeriodInSeconds(@Nullable Double currentRetentionPeriodInSeconds) {
+
             this.currentRetentionPeriodInSeconds = currentRetentionPeriodInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder dbSizeInGbs(@Nullable Double dbSizeInGbs) {
+
             this.dbSizeInGbs = dbSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder isRedoLogsEnabled(@Nullable Boolean isRedoLogsEnabled) {
+
             this.isRedoLogsEnabled = isRedoLogsEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder retentionPeriodInDays(@Nullable Double retentionPeriodInDays) {
+
             this.retentionPeriodInDays = retentionPeriodInDays;
             return this;
         }
         @CustomType.Setter
         public Builder unprotectedWindowInSeconds(@Nullable Double unprotectedWindowInSeconds) {
+
             this.unprotectedWindowInSeconds = unprotectedWindowInSeconds;
             return this;
         }

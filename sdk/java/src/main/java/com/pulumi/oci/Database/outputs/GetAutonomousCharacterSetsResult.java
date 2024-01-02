@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet;
 import com.pulumi.oci.Database.outputs.GetAutonomousCharacterSetsFilter;
 import java.lang.Boolean;
@@ -86,7 +87,10 @@ public final class GetAutonomousCharacterSetsResult {
 
         @CustomType.Setter
         public Builder autonomousDatabaseCharacterSets(List<GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet> autonomousDatabaseCharacterSets) {
-            this.autonomousDatabaseCharacterSets = Objects.requireNonNull(autonomousDatabaseCharacterSets);
+            if (autonomousDatabaseCharacterSets == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousCharacterSetsResult", "autonomousDatabaseCharacterSets");
+            }
+            this.autonomousDatabaseCharacterSets = autonomousDatabaseCharacterSets;
             return this;
         }
         public Builder autonomousDatabaseCharacterSets(GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet... autonomousDatabaseCharacterSets) {
@@ -94,11 +98,13 @@ public final class GetAutonomousCharacterSetsResult {
         }
         @CustomType.Setter
         public Builder characterSetType(@Nullable String characterSetType) {
+
             this.characterSetType = characterSetType;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousCharacterSetsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -107,16 +113,21 @@ public final class GetAutonomousCharacterSetsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousCharacterSetsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isDedicated(@Nullable Boolean isDedicated) {
+
             this.isDedicated = isDedicated;
             return this;
         }
         @CustomType.Setter
         public Builder isShared(@Nullable Boolean isShared) {
+
             this.isShared = isShared;
             return this;
         }

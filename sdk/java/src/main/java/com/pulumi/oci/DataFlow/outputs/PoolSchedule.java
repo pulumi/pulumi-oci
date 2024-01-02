@@ -73,16 +73,19 @@ public final class PoolSchedule {
 
         @CustomType.Setter
         public Builder dayOfWeek(@Nullable String dayOfWeek) {
+
             this.dayOfWeek = dayOfWeek;
             return this;
         }
         @CustomType.Setter
         public Builder startTime(@Nullable Integer startTime) {
+
             this.startTime = startTime;
             return this;
         }
         @CustomType.Setter
         public Builder stopTime(@Nullable Integer stopTime) {
+
             this.stopTime = stopTime;
             return this;
         }

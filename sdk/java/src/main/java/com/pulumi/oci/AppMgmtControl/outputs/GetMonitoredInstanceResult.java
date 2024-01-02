@@ -4,6 +4,7 @@
 package com.pulumi.oci.AppMgmtControl.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -174,57 +175,90 @@ public final class GetMonitoredInstanceResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredInstanceResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredInstanceResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredInstanceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceId(String instanceId) {
-            this.instanceId = Objects.requireNonNull(instanceId);
+            if (instanceId == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredInstanceResult", "instanceId");
+            }
+            this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredInstanceResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder managementAgentId(String managementAgentId) {
-            this.managementAgentId = Objects.requireNonNull(managementAgentId);
+            if (managementAgentId == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredInstanceResult", "managementAgentId");
+            }
+            this.managementAgentId = managementAgentId;
             return this;
         }
         @CustomType.Setter
         public Builder monitoredInstanceId(String monitoredInstanceId) {
-            this.monitoredInstanceId = Objects.requireNonNull(monitoredInstanceId);
+            if (monitoredInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredInstanceResult", "monitoredInstanceId");
+            }
+            this.monitoredInstanceId = monitoredInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder monitoringState(String monitoringState) {
-            this.monitoringState = Objects.requireNonNull(monitoringState);
+            if (monitoringState == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredInstanceResult", "monitoringState");
+            }
+            this.monitoringState = monitoringState;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredInstanceResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredInstanceResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredInstanceResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetMonitoredInstanceResult build() {

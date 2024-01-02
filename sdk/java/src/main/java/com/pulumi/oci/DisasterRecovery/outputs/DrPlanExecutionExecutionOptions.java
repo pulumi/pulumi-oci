@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -73,17 +74,22 @@ public final class DrPlanExecutionExecutionOptions {
 
         @CustomType.Setter
         public Builder arePrechecksEnabled(@Nullable Boolean arePrechecksEnabled) {
+
             this.arePrechecksEnabled = arePrechecksEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder areWarningsIgnored(@Nullable Boolean areWarningsIgnored) {
+
             this.areWarningsIgnored = areWarningsIgnored;
             return this;
         }
         @CustomType.Setter
         public Builder planExecutionType(String planExecutionType) {
-            this.planExecutionType = Objects.requireNonNull(planExecutionType);
+            if (planExecutionType == null) {
+              throw new MissingRequiredPropertyException("DrPlanExecutionExecutionOptions", "planExecutionType");
+            }
+            this.planExecutionType = planExecutionType;
             return this;
         }
         public DrPlanExecutionExecutionOptions build() {

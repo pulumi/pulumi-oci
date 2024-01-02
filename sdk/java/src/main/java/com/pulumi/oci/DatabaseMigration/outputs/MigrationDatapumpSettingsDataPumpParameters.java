@@ -117,11 +117,13 @@ public final class MigrationDatapumpSettingsDataPumpParameters {
 
         @CustomType.Setter
         public Builder estimate(@Nullable String estimate) {
+
             this.estimate = estimate;
             return this;
         }
         @CustomType.Setter
         public Builder excludeParameters(@Nullable List<String> excludeParameters) {
+
             this.excludeParameters = excludeParameters;
             return this;
         }
@@ -130,21 +132,25 @@ public final class MigrationDatapumpSettingsDataPumpParameters {
         }
         @CustomType.Setter
         public Builder exportParallelismDegree(@Nullable Integer exportParallelismDegree) {
+
             this.exportParallelismDegree = exportParallelismDegree;
             return this;
         }
         @CustomType.Setter
         public Builder importParallelismDegree(@Nullable Integer importParallelismDegree) {
+
             this.importParallelismDegree = importParallelismDegree;
             return this;
         }
         @CustomType.Setter
         public Builder isCluster(@Nullable Boolean isCluster) {
+
             this.isCluster = isCluster;
             return this;
         }
         @CustomType.Setter
         public Builder tableExistsAction(@Nullable String tableExistsAction) {
+
             this.tableExistsAction = tableExistsAction;
             return this;
         }

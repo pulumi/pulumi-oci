@@ -4,6 +4,7 @@
 package com.pulumi.oci.Oda.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointScanProxiesFilter;
 import java.lang.String;
 import java.util.List;
@@ -111,7 +112,9 @@ public final class GetOdaPrivateEndpointScanProxiesPlainArgs extends com.pulumi.
         }
 
         public GetOdaPrivateEndpointScanProxiesPlainArgs build() {
-            $.odaPrivateEndpointId = Objects.requireNonNull($.odaPrivateEndpointId, "expected parameter 'odaPrivateEndpointId' to be non-null");
+            if ($.odaPrivateEndpointId == null) {
+                throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxiesPlainArgs", "odaPrivateEndpointId");
+            }
             return $;
         }
     }

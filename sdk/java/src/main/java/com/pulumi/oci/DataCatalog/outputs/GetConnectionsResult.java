@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataCatalog.outputs.GetConnectionsConnectionCollection;
 import com.pulumi.oci.DataCatalog.outputs.GetConnectionsFilter;
 import java.lang.Boolean;
@@ -226,12 +227,18 @@ public final class GetConnectionsResult {
 
         @CustomType.Setter
         public Builder catalogId(String catalogId) {
-            this.catalogId = Objects.requireNonNull(catalogId);
+            if (catalogId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsResult", "catalogId");
+            }
+            this.catalogId = catalogId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionCollections(List<GetConnectionsConnectionCollection> connectionCollections) {
-            this.connectionCollections = Objects.requireNonNull(connectionCollections);
+            if (connectionCollections == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsResult", "connectionCollections");
+            }
+            this.connectionCollections = connectionCollections;
             return this;
         }
         public Builder connectionCollections(GetConnectionsConnectionCollection... connectionCollections) {
@@ -239,31 +246,39 @@ public final class GetConnectionsResult {
         }
         @CustomType.Setter
         public Builder createdById(@Nullable String createdById) {
+
             this.createdById = createdById;
             return this;
         }
         @CustomType.Setter
         public Builder dataAssetKey(String dataAssetKey) {
-            this.dataAssetKey = Objects.requireNonNull(dataAssetKey);
+            if (dataAssetKey == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsResult", "dataAssetKey");
+            }
+            this.dataAssetKey = dataAssetKey;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder displayNameContains(@Nullable String displayNameContains) {
+
             this.displayNameContains = displayNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder externalKey(@Nullable String externalKey) {
+
             this.externalKey = externalKey;
             return this;
         }
         @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
+
             this.fields = fields;
             return this;
         }
@@ -272,6 +287,7 @@ public final class GetConnectionsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetConnectionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -280,36 +296,45 @@ public final class GetConnectionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isDefault(@Nullable Boolean isDefault) {
+
             this.isDefault = isDefault;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeStatusUpdated(@Nullable String timeStatusUpdated) {
+
             this.timeStatusUpdated = timeStatusUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
+
             this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder updatedById(@Nullable String updatedById) {
+
             this.updatedById = updatedById;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.MeteringComputation.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.inputs.CustomTableSavedCustomTableGroupByTagArgs;
 import java.lang.Double;
 import java.lang.String;
@@ -294,7 +295,9 @@ public final class CustomTableSavedCustomTableArgs extends com.pulumi.resources.
         }
 
         public CustomTableSavedCustomTableArgs build() {
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("CustomTableSavedCustomTableArgs", "displayName");
+            }
             return $;
         }
     }

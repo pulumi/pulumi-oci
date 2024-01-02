@@ -5,6 +5,7 @@ package com.pulumi.oci.Oce;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -693,12 +694,24 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public InstanceArgs build() {
-            $.adminEmail = Objects.requireNonNull($.adminEmail, "expected parameter 'adminEmail' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.idcsAccessToken = Objects.requireNonNull($.idcsAccessToken, "expected parameter 'idcsAccessToken' to be non-null");
-            $.objectStorageNamespace = Objects.requireNonNull($.objectStorageNamespace, "expected parameter 'objectStorageNamespace' to be non-null");
-            $.tenancyId = Objects.requireNonNull($.tenancyId, "expected parameter 'tenancyId' to be non-null");
-            $.tenancyName = Objects.requireNonNull($.tenancyName, "expected parameter 'tenancyName' to be non-null");
+            if ($.adminEmail == null) {
+                throw new MissingRequiredPropertyException("InstanceArgs", "adminEmail");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("InstanceArgs", "compartmentId");
+            }
+            if ($.idcsAccessToken == null) {
+                throw new MissingRequiredPropertyException("InstanceArgs", "idcsAccessToken");
+            }
+            if ($.objectStorageNamespace == null) {
+                throw new MissingRequiredPropertyException("InstanceArgs", "objectStorageNamespace");
+            }
+            if ($.tenancyId == null) {
+                throw new MissingRequiredPropertyException("InstanceArgs", "tenancyId");
+            }
+            if ($.tenancyName == null) {
+                throw new MissingRequiredPropertyException("InstanceArgs", "tenancyName");
+            }
             return $;
         }
     }

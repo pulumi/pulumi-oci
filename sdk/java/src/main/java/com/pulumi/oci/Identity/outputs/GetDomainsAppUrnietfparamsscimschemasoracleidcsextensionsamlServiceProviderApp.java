@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttribute;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute;
@@ -411,32 +412,50 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlS
 
         @CustomType.Setter
         public Builder assertionConsumerUrl(String assertionConsumerUrl) {
-            this.assertionConsumerUrl = Objects.requireNonNull(assertionConsumerUrl);
+            if (assertionConsumerUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "assertionConsumerUrl");
+            }
+            this.assertionConsumerUrl = assertionConsumerUrl;
             return this;
         }
         @CustomType.Setter
         public Builder encryptAssertion(Boolean encryptAssertion) {
-            this.encryptAssertion = Objects.requireNonNull(encryptAssertion);
+            if (encryptAssertion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "encryptAssertion");
+            }
+            this.encryptAssertion = encryptAssertion;
             return this;
         }
         @CustomType.Setter
         public Builder encryptionAlgorithm(String encryptionAlgorithm) {
-            this.encryptionAlgorithm = Objects.requireNonNull(encryptionAlgorithm);
+            if (encryptionAlgorithm == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "encryptionAlgorithm");
+            }
+            this.encryptionAlgorithm = encryptionAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder encryptionCertificate(String encryptionCertificate) {
-            this.encryptionCertificate = Objects.requireNonNull(encryptionCertificate);
+            if (encryptionCertificate == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "encryptionCertificate");
+            }
+            this.encryptionCertificate = encryptionCertificate;
             return this;
         }
         @CustomType.Setter
         public Builder federationProtocol(String federationProtocol) {
-            this.federationProtocol = Objects.requireNonNull(federationProtocol);
+            if (federationProtocol == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "federationProtocol");
+            }
+            this.federationProtocol = federationProtocol;
             return this;
         }
         @CustomType.Setter
         public Builder groupAssertionAttributes(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute> groupAssertionAttributes) {
-            this.groupAssertionAttributes = Objects.requireNonNull(groupAssertionAttributes);
+            if (groupAssertionAttributes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "groupAssertionAttributes");
+            }
+            this.groupAssertionAttributes = groupAssertionAttributes;
             return this;
         }
         public Builder groupAssertionAttributes(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute... groupAssertionAttributes) {
@@ -444,67 +463,106 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlS
         }
         @CustomType.Setter
         public Builder hokAcsUrl(String hokAcsUrl) {
-            this.hokAcsUrl = Objects.requireNonNull(hokAcsUrl);
+            if (hokAcsUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "hokAcsUrl");
+            }
+            this.hokAcsUrl = hokAcsUrl;
             return this;
         }
         @CustomType.Setter
         public Builder hokRequired(Boolean hokRequired) {
-            this.hokRequired = Objects.requireNonNull(hokRequired);
+            if (hokRequired == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "hokRequired");
+            }
+            this.hokRequired = hokRequired;
             return this;
         }
         @CustomType.Setter
         public Builder includeSigningCertInSignature(Boolean includeSigningCertInSignature) {
-            this.includeSigningCertInSignature = Objects.requireNonNull(includeSigningCertInSignature);
+            if (includeSigningCertInSignature == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "includeSigningCertInSignature");
+            }
+            this.includeSigningCertInSignature = includeSigningCertInSignature;
             return this;
         }
         @CustomType.Setter
         public Builder keyEncryptionAlgorithm(String keyEncryptionAlgorithm) {
-            this.keyEncryptionAlgorithm = Objects.requireNonNull(keyEncryptionAlgorithm);
+            if (keyEncryptionAlgorithm == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "keyEncryptionAlgorithm");
+            }
+            this.keyEncryptionAlgorithm = keyEncryptionAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder lastNotificationSentTime(String lastNotificationSentTime) {
-            this.lastNotificationSentTime = Objects.requireNonNull(lastNotificationSentTime);
+            if (lastNotificationSentTime == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "lastNotificationSentTime");
+            }
+            this.lastNotificationSentTime = lastNotificationSentTime;
             return this;
         }
         @CustomType.Setter
         public Builder logoutBinding(String logoutBinding) {
-            this.logoutBinding = Objects.requireNonNull(logoutBinding);
+            if (logoutBinding == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "logoutBinding");
+            }
+            this.logoutBinding = logoutBinding;
             return this;
         }
         @CustomType.Setter
         public Builder logoutEnabled(Boolean logoutEnabled) {
-            this.logoutEnabled = Objects.requireNonNull(logoutEnabled);
+            if (logoutEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "logoutEnabled");
+            }
+            this.logoutEnabled = logoutEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder logoutRequestUrl(String logoutRequestUrl) {
-            this.logoutRequestUrl = Objects.requireNonNull(logoutRequestUrl);
+            if (logoutRequestUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "logoutRequestUrl");
+            }
+            this.logoutRequestUrl = logoutRequestUrl;
             return this;
         }
         @CustomType.Setter
         public Builder logoutResponseUrl(String logoutResponseUrl) {
-            this.logoutResponseUrl = Objects.requireNonNull(logoutResponseUrl);
+            if (logoutResponseUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "logoutResponseUrl");
+            }
+            this.logoutResponseUrl = logoutResponseUrl;
             return this;
         }
         @CustomType.Setter
         public Builder metadata(String metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+            if (metadata == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "metadata");
+            }
+            this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
         public Builder nameIdFormat(String nameIdFormat) {
-            this.nameIdFormat = Objects.requireNonNull(nameIdFormat);
+            if (nameIdFormat == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "nameIdFormat");
+            }
+            this.nameIdFormat = nameIdFormat;
             return this;
         }
         @CustomType.Setter
         public Builder nameIdUserstoreAttribute(String nameIdUserstoreAttribute) {
-            this.nameIdUserstoreAttribute = Objects.requireNonNull(nameIdUserstoreAttribute);
+            if (nameIdUserstoreAttribute == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "nameIdUserstoreAttribute");
+            }
+            this.nameIdUserstoreAttribute = nameIdUserstoreAttribute;
             return this;
         }
         @CustomType.Setter
         public Builder outboundAssertionAttributes(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttribute> outboundAssertionAttributes) {
-            this.outboundAssertionAttributes = Objects.requireNonNull(outboundAssertionAttributes);
+            if (outboundAssertionAttributes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "outboundAssertionAttributes");
+            }
+            this.outboundAssertionAttributes = outboundAssertionAttributes;
             return this;
         }
         public Builder outboundAssertionAttributes(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttribute... outboundAssertionAttributes) {
@@ -512,42 +570,66 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlS
         }
         @CustomType.Setter
         public Builder partnerProviderId(String partnerProviderId) {
-            this.partnerProviderId = Objects.requireNonNull(partnerProviderId);
+            if (partnerProviderId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "partnerProviderId");
+            }
+            this.partnerProviderId = partnerProviderId;
             return this;
         }
         @CustomType.Setter
         public Builder partnerProviderPattern(String partnerProviderPattern) {
-            this.partnerProviderPattern = Objects.requireNonNull(partnerProviderPattern);
+            if (partnerProviderPattern == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "partnerProviderPattern");
+            }
+            this.partnerProviderPattern = partnerProviderPattern;
             return this;
         }
         @CustomType.Setter
         public Builder signResponseOrAssertion(String signResponseOrAssertion) {
-            this.signResponseOrAssertion = Objects.requireNonNull(signResponseOrAssertion);
+            if (signResponseOrAssertion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "signResponseOrAssertion");
+            }
+            this.signResponseOrAssertion = signResponseOrAssertion;
             return this;
         }
         @CustomType.Setter
         public Builder signatureHashAlgorithm(String signatureHashAlgorithm) {
-            this.signatureHashAlgorithm = Objects.requireNonNull(signatureHashAlgorithm);
+            if (signatureHashAlgorithm == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "signatureHashAlgorithm");
+            }
+            this.signatureHashAlgorithm = signatureHashAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder signingCertificate(String signingCertificate) {
-            this.signingCertificate = Objects.requireNonNull(signingCertificate);
+            if (signingCertificate == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "signingCertificate");
+            }
+            this.signingCertificate = signingCertificate;
             return this;
         }
         @CustomType.Setter
         public Builder succinctId(String succinctId) {
-            this.succinctId = Objects.requireNonNull(succinctId);
+            if (succinctId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "succinctId");
+            }
+            this.succinctId = succinctId;
             return this;
         }
         @CustomType.Setter
         public Builder tenantProviderId(String tenantProviderId) {
-            this.tenantProviderId = Objects.requireNonNull(tenantProviderId);
+            if (tenantProviderId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "tenantProviderId");
+            }
+            this.tenantProviderId = tenantProviderId;
             return this;
         }
         @CustomType.Setter
         public Builder userAssertionAttributes(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute> userAssertionAttributes) {
-            this.userAssertionAttributes = Objects.requireNonNull(userAssertionAttributes);
+            if (userAssertionAttributes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", "userAssertionAttributes");
+            }
+            this.userAssertionAttributes = userAssertionAttributes;
             return this;
         }
         public Builder userAssertionAttributes(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute... userAssertionAttributes) {

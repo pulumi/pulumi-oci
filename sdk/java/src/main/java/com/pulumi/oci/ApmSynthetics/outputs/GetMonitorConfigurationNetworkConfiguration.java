@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetMonitorConfigurationNetworkConfiguration {
 
         @CustomType.Setter
         public Builder numberOfHops(Integer numberOfHops) {
-            this.numberOfHops = Objects.requireNonNull(numberOfHops);
+            if (numberOfHops == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfigurationNetworkConfiguration", "numberOfHops");
+            }
+            this.numberOfHops = numberOfHops;
             return this;
         }
         @CustomType.Setter
         public Builder probeMode(String probeMode) {
-            this.probeMode = Objects.requireNonNull(probeMode);
+            if (probeMode == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfigurationNetworkConfiguration", "probeMode");
+            }
+            this.probeMode = probeMode;
             return this;
         }
         @CustomType.Setter
         public Builder probePerHop(Integer probePerHop) {
-            this.probePerHop = Objects.requireNonNull(probePerHop);
+            if (probePerHop == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfigurationNetworkConfiguration", "probePerHop");
+            }
+            this.probePerHop = probePerHop;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfigurationNetworkConfiguration", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder transmissionRate(Integer transmissionRate) {
-            this.transmissionRate = Objects.requireNonNull(transmissionRate);
+            if (transmissionRate == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfigurationNetworkConfiguration", "transmissionRate");
+            }
+            this.transmissionRate = transmissionRate;
             return this;
         }
         public GetMonitorConfigurationNetworkConfiguration build() {

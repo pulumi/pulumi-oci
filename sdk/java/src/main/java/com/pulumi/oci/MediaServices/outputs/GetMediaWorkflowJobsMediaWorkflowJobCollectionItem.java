@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput;
 import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState;
 import java.lang.Object;
@@ -297,37 +298,58 @@ public final class GetMediaWorkflowJobsMediaWorkflowJobCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder mediaWorkflowConfigurationIds(List<String> mediaWorkflowConfigurationIds) {
-            this.mediaWorkflowConfigurationIds = Objects.requireNonNull(mediaWorkflowConfigurationIds);
+            if (mediaWorkflowConfigurationIds == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "mediaWorkflowConfigurationIds");
+            }
+            this.mediaWorkflowConfigurationIds = mediaWorkflowConfigurationIds;
             return this;
         }
         public Builder mediaWorkflowConfigurationIds(String... mediaWorkflowConfigurationIds) {
@@ -335,17 +357,26 @@ public final class GetMediaWorkflowJobsMediaWorkflowJobCollectionItem {
         }
         @CustomType.Setter
         public Builder mediaWorkflowId(String mediaWorkflowId) {
-            this.mediaWorkflowId = Objects.requireNonNull(mediaWorkflowId);
+            if (mediaWorkflowId == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "mediaWorkflowId");
+            }
+            this.mediaWorkflowId = mediaWorkflowId;
             return this;
         }
         @CustomType.Setter
         public Builder mediaWorkflowName(String mediaWorkflowName) {
-            this.mediaWorkflowName = Objects.requireNonNull(mediaWorkflowName);
+            if (mediaWorkflowName == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "mediaWorkflowName");
+            }
+            this.mediaWorkflowName = mediaWorkflowName;
             return this;
         }
         @CustomType.Setter
         public Builder outputs(List<GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput> outputs) {
-            this.outputs = Objects.requireNonNull(outputs);
+            if (outputs == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "outputs");
+            }
+            this.outputs = outputs;
             return this;
         }
         public Builder outputs(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput... outputs) {
@@ -353,27 +384,42 @@ public final class GetMediaWorkflowJobsMediaWorkflowJobCollectionItem {
         }
         @CustomType.Setter
         public Builder parameters(String parameters) {
-            this.parameters = Objects.requireNonNull(parameters);
+            if (parameters == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "parameters");
+            }
+            this.parameters = parameters;
             return this;
         }
         @CustomType.Setter
         public Builder runnable(String runnable) {
-            this.runnable = Objects.requireNonNull(runnable);
+            if (runnable == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "runnable");
+            }
+            this.runnable = runnable;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder taskLifecycleStates(List<GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState> taskLifecycleStates) {
-            this.taskLifecycleStates = Objects.requireNonNull(taskLifecycleStates);
+            if (taskLifecycleStates == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "taskLifecycleStates");
+            }
+            this.taskLifecycleStates = taskLifecycleStates;
             return this;
         }
         public Builder taskLifecycleStates(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState... taskLifecycleStates) {
@@ -381,27 +427,42 @@ public final class GetMediaWorkflowJobsMediaWorkflowJobCollectionItem {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+            if (timeEnded == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "timeEnded");
+            }
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder workflowIdentifierType(String workflowIdentifierType) {
-            this.workflowIdentifierType = Objects.requireNonNull(workflowIdentifierType);
+            if (workflowIdentifierType == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "workflowIdentifierType");
+            }
+            this.workflowIdentifierType = workflowIdentifierType;
             return this;
         }
         public GetMediaWorkflowJobsMediaWorkflowJobCollectionItem build() {

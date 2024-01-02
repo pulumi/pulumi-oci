@@ -73,16 +73,19 @@ public final class MysqlDbSystemDeletionPolicy {
 
         @CustomType.Setter
         public Builder automaticBackupRetention(@Nullable String automaticBackupRetention) {
+
             this.automaticBackupRetention = automaticBackupRetention;
             return this;
         }
         @CustomType.Setter
         public Builder finalBackup(@Nullable String finalBackup) {
+
             this.finalBackup = finalBackup;
             return this;
         }
         @CustomType.Setter
         public Builder isDeleteProtected(@Nullable Boolean isDeleteProtected) {
+
             this.isDeleteProtected = isDeleteProtected;
             return this;
         }

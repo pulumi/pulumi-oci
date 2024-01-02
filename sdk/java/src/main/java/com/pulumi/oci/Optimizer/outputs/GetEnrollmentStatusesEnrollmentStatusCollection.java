@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetEnrollmentStatusesEnrollmentStatusCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetEnrollmentStatusesEnrollmentStatusCollection {
 
         @CustomType.Setter
         public Builder items(List<GetEnrollmentStatusesEnrollmentStatusCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetEnrollmentStatusesEnrollmentStatusCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetEnrollmentStatusesEnrollmentStatusCollectionItem... items) {

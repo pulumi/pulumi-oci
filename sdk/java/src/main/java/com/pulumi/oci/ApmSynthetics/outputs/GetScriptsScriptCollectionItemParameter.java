@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.outputs.GetScriptsScriptCollectionItemParameterScriptParameter;
 import java.lang.Boolean;
 import java.lang.String;
@@ -101,27 +102,42 @@ public final class GetScriptsScriptCollectionItemParameter {
 
         @CustomType.Setter
         public Builder isOverwritten(Boolean isOverwritten) {
-            this.isOverwritten = Objects.requireNonNull(isOverwritten);
+            if (isOverwritten == null) {
+              throw new MissingRequiredPropertyException("GetScriptsScriptCollectionItemParameter", "isOverwritten");
+            }
+            this.isOverwritten = isOverwritten;
             return this;
         }
         @CustomType.Setter
         public Builder isSecret(Boolean isSecret) {
-            this.isSecret = Objects.requireNonNull(isSecret);
+            if (isSecret == null) {
+              throw new MissingRequiredPropertyException("GetScriptsScriptCollectionItemParameter", "isSecret");
+            }
+            this.isSecret = isSecret;
             return this;
         }
         @CustomType.Setter
         public Builder paramName(String paramName) {
-            this.paramName = Objects.requireNonNull(paramName);
+            if (paramName == null) {
+              throw new MissingRequiredPropertyException("GetScriptsScriptCollectionItemParameter", "paramName");
+            }
+            this.paramName = paramName;
             return this;
         }
         @CustomType.Setter
         public Builder paramValue(String paramValue) {
-            this.paramValue = Objects.requireNonNull(paramValue);
+            if (paramValue == null) {
+              throw new MissingRequiredPropertyException("GetScriptsScriptCollectionItemParameter", "paramValue");
+            }
+            this.paramValue = paramValue;
             return this;
         }
         @CustomType.Setter
         public Builder scriptParameters(List<GetScriptsScriptCollectionItemParameterScriptParameter> scriptParameters) {
-            this.scriptParameters = Objects.requireNonNull(scriptParameters);
+            if (scriptParameters == null) {
+              throw new MissingRequiredPropertyException("GetScriptsScriptCollectionItemParameter", "scriptParameters");
+            }
+            this.scriptParameters = scriptParameters;
             return this;
         }
         public Builder scriptParameters(GetScriptsScriptCollectionItemParameterScriptParameter... scriptParameters) {

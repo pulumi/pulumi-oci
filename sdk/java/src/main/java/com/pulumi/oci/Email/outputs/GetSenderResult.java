@@ -4,6 +4,7 @@
 package com.pulumi.oci.Email.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -163,52 +164,82 @@ public final class GetSenderResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSenderResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetSenderResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder emailAddress(String emailAddress) {
-            this.emailAddress = Objects.requireNonNull(emailAddress);
+            if (emailAddress == null) {
+              throw new MissingRequiredPropertyException("GetSenderResult", "emailAddress");
+            }
+            this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
         public Builder emailDomainId(String emailDomainId) {
-            this.emailDomainId = Objects.requireNonNull(emailDomainId);
+            if (emailDomainId == null) {
+              throw new MissingRequiredPropertyException("GetSenderResult", "emailDomainId");
+            }
+            this.emailDomainId = emailDomainId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetSenderResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSenderResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isSpf(Boolean isSpf) {
-            this.isSpf = Objects.requireNonNull(isSpf);
+            if (isSpf == null) {
+              throw new MissingRequiredPropertyException("GetSenderResult", "isSpf");
+            }
+            this.isSpf = isSpf;
             return this;
         }
         @CustomType.Setter
         public Builder senderId(String senderId) {
-            this.senderId = Objects.requireNonNull(senderId);
+            if (senderId == null) {
+              throw new MissingRequiredPropertyException("GetSenderResult", "senderId");
+            }
+            this.senderId = senderId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetSenderResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSenderResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetSenderResult build() {

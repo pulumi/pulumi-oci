@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetBackendSetsBackendSetCollection;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetBackendSetsFilter;
 import java.lang.String;
@@ -72,7 +73,10 @@ public final class GetBackendSetsResult {
 
         @CustomType.Setter
         public Builder backendSetCollections(List<GetBackendSetsBackendSetCollection> backendSetCollections) {
-            this.backendSetCollections = Objects.requireNonNull(backendSetCollections);
+            if (backendSetCollections == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsResult", "backendSetCollections");
+            }
+            this.backendSetCollections = backendSetCollections;
             return this;
         }
         public Builder backendSetCollections(GetBackendSetsBackendSetCollection... backendSetCollections) {
@@ -80,6 +84,7 @@ public final class GetBackendSetsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBackendSetsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -88,12 +93,18 @@ public final class GetBackendSetsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
-            this.networkLoadBalancerId = Objects.requireNonNull(networkLoadBalancerId);
+            if (networkLoadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsResult", "networkLoadBalancerId");
+            }
+            this.networkLoadBalancerId = networkLoadBalancerId;
             return this;
         }
         public GetBackendSetsResult build() {

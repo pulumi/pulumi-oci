@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -71,8 +72,12 @@ public final class MaskDataArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public MaskDataArgs build() {
-            $.maskingPolicyId = Objects.requireNonNull($.maskingPolicyId, "expected parameter 'maskingPolicyId' to be non-null");
-            $.targetId = Objects.requireNonNull($.targetId, "expected parameter 'targetId' to be non-null");
+            if ($.maskingPolicyId == null) {
+                throw new MissingRequiredPropertyException("MaskDataArgs", "maskingPolicyId");
+            }
+            if ($.targetId == null) {
+                throw new MissingRequiredPropertyException("MaskDataArgs", "targetId");
+            }
             return $;
         }
     }

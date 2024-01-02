@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Kms.inputs.VaultExternalKeyManagerMetadataOauthMetadataArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -149,9 +150,15 @@ public final class VaultExternalKeyManagerMetadataArgs extends com.pulumi.resour
         }
 
         public VaultExternalKeyManagerMetadataArgs build() {
-            $.externalVaultEndpointUrl = Objects.requireNonNull($.externalVaultEndpointUrl, "expected parameter 'externalVaultEndpointUrl' to be non-null");
-            $.oauthMetadata = Objects.requireNonNull($.oauthMetadata, "expected parameter 'oauthMetadata' to be non-null");
-            $.privateEndpointId = Objects.requireNonNull($.privateEndpointId, "expected parameter 'privateEndpointId' to be non-null");
+            if ($.externalVaultEndpointUrl == null) {
+                throw new MissingRequiredPropertyException("VaultExternalKeyManagerMetadataArgs", "externalVaultEndpointUrl");
+            }
+            if ($.oauthMetadata == null) {
+                throw new MissingRequiredPropertyException("VaultExternalKeyManagerMetadataArgs", "oauthMetadata");
+            }
+            if ($.privateEndpointId == null) {
+                throw new MissingRequiredPropertyException("VaultExternalKeyManagerMetadataArgs", "privateEndpointId");
+            }
             return $;
         }
     }

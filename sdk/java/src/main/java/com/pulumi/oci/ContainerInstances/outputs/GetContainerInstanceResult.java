@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerInstances.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceContainer;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceDnsConfig;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceImagePullSecret;
@@ -366,32 +367,50 @@ public final class GetContainerInstanceResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder containerCount(Integer containerCount) {
-            this.containerCount = Objects.requireNonNull(containerCount);
+            if (containerCount == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "containerCount");
+            }
+            this.containerCount = containerCount;
             return this;
         }
         @CustomType.Setter
         public Builder containerInstanceId(String containerInstanceId) {
-            this.containerInstanceId = Objects.requireNonNull(containerInstanceId);
+            if (containerInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "containerInstanceId");
+            }
+            this.containerInstanceId = containerInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder containerRestartPolicy(String containerRestartPolicy) {
-            this.containerRestartPolicy = Objects.requireNonNull(containerRestartPolicy);
+            if (containerRestartPolicy == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "containerRestartPolicy");
+            }
+            this.containerRestartPolicy = containerRestartPolicy;
             return this;
         }
         @CustomType.Setter
         public Builder containers(List<GetContainerInstanceContainer> containers) {
-            this.containers = Objects.requireNonNull(containers);
+            if (containers == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "containers");
+            }
+            this.containers = containers;
             return this;
         }
         public Builder containers(GetContainerInstanceContainer... containers) {
@@ -399,17 +418,26 @@ public final class GetContainerInstanceResult {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder dnsConfigs(List<GetContainerInstanceDnsConfig> dnsConfigs) {
-            this.dnsConfigs = Objects.requireNonNull(dnsConfigs);
+            if (dnsConfigs == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "dnsConfigs");
+            }
+            this.dnsConfigs = dnsConfigs;
             return this;
         }
         public Builder dnsConfigs(GetContainerInstanceDnsConfig... dnsConfigs) {
@@ -417,27 +445,42 @@ public final class GetContainerInstanceResult {
         }
         @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+            if (faultDomain == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "faultDomain");
+            }
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder gracefulShutdownTimeoutInSeconds(String gracefulShutdownTimeoutInSeconds) {
-            this.gracefulShutdownTimeoutInSeconds = Objects.requireNonNull(gracefulShutdownTimeoutInSeconds);
+            if (gracefulShutdownTimeoutInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "gracefulShutdownTimeoutInSeconds");
+            }
+            this.gracefulShutdownTimeoutInSeconds = gracefulShutdownTimeoutInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imagePullSecrets(List<GetContainerInstanceImagePullSecret> imagePullSecrets) {
-            this.imagePullSecrets = Objects.requireNonNull(imagePullSecrets);
+            if (imagePullSecrets == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "imagePullSecrets");
+            }
+            this.imagePullSecrets = imagePullSecrets;
             return this;
         }
         public Builder imagePullSecrets(GetContainerInstanceImagePullSecret... imagePullSecrets) {
@@ -445,17 +488,26 @@ public final class GetContainerInstanceResult {
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder shapeConfigs(List<GetContainerInstanceShapeConfig> shapeConfigs) {
-            this.shapeConfigs = Objects.requireNonNull(shapeConfigs);
+            if (shapeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "shapeConfigs");
+            }
+            this.shapeConfigs = shapeConfigs;
             return this;
         }
         public Builder shapeConfigs(GetContainerInstanceShapeConfig... shapeConfigs) {
@@ -463,27 +515,42 @@ public final class GetContainerInstanceResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder vnics(List<GetContainerInstanceVnic> vnics) {
-            this.vnics = Objects.requireNonNull(vnics);
+            if (vnics == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "vnics");
+            }
+            this.vnics = vnics;
             return this;
         }
         public Builder vnics(GetContainerInstanceVnic... vnics) {
@@ -491,12 +558,18 @@ public final class GetContainerInstanceResult {
         }
         @CustomType.Setter
         public Builder volumeCount(Integer volumeCount) {
-            this.volumeCount = Objects.requireNonNull(volumeCount);
+            if (volumeCount == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "volumeCount");
+            }
+            this.volumeCount = volumeCount;
             return this;
         }
         @CustomType.Setter
         public Builder volumes(List<GetContainerInstanceVolume> volumes) {
-            this.volumes = Objects.requireNonNull(volumes);
+            if (volumes == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "volumes");
+            }
+            this.volumes = volumes;
             return this;
         }
         public Builder volumes(GetContainerInstanceVolume... volumes) {

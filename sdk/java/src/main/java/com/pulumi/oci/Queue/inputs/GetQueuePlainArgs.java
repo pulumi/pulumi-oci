@@ -4,6 +4,7 @@
 package com.pulumi.oci.Queue.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetQueuePlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetQueuePlainArgs build() {
-            $.queueId = Objects.requireNonNull($.queueId, "expected parameter 'queueId' to be non-null");
+            if ($.queueId == null) {
+                throw new MissingRequiredPropertyException("GetQueuePlainArgs", "queueId");
+            }
             return $;
         }
     }

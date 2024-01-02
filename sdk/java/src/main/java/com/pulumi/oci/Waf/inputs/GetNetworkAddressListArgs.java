@@ -5,6 +5,7 @@ package com.pulumi.oci.Waf.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetNetworkAddressListArgs extends com.pulumi.resources.Invoke
         }
 
         public GetNetworkAddressListArgs build() {
-            $.networkAddressListId = Objects.requireNonNull($.networkAddressListId, "expected parameter 'networkAddressListId' to be non-null");
+            if ($.networkAddressListId == null) {
+                throw new MissingRequiredPropertyException("GetNetworkAddressListArgs", "networkAddressListId");
+            }
             return $;
         }
     }

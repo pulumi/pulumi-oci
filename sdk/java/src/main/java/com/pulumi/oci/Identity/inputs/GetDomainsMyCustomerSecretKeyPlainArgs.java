@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -146,8 +147,12 @@ public final class GetDomainsMyCustomerSecretKeyPlainArgs extends com.pulumi.res
         }
 
         public GetDomainsMyCustomerSecretKeyPlainArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.myCustomerSecretKeyId = Objects.requireNonNull($.myCustomerSecretKeyId, "expected parameter 'myCustomerSecretKeyId' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsMyCustomerSecretKeyPlainArgs", "idcsEndpoint");
+            }
+            if ($.myCustomerSecretKeyId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsMyCustomerSecretKeyPlainArgs", "myCustomerSecretKeyId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCor;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthentication;
@@ -118,7 +119,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicy 
 
         @CustomType.Setter
         public Builder authentications(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication> authentications) {
-            this.authentications = Objects.requireNonNull(authentications);
+            if (authentications == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicy", "authentications");
+            }
+            this.authentications = authentications;
             return this;
         }
         public Builder authentications(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication... authentications) {
@@ -126,7 +130,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicy 
         }
         @CustomType.Setter
         public Builder cors(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCor> cors) {
-            this.cors = Objects.requireNonNull(cors);
+            if (cors == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicy", "cors");
+            }
+            this.cors = cors;
             return this;
         }
         public Builder cors(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCor... cors) {
@@ -134,7 +141,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicy 
         }
         @CustomType.Setter
         public Builder dynamicAuthentications(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthentication> dynamicAuthentications) {
-            this.dynamicAuthentications = Objects.requireNonNull(dynamicAuthentications);
+            if (dynamicAuthentications == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicy", "dynamicAuthentications");
+            }
+            this.dynamicAuthentications = dynamicAuthentications;
             return this;
         }
         public Builder dynamicAuthentications(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthentication... dynamicAuthentications) {
@@ -142,7 +152,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicy 
         }
         @CustomType.Setter
         public Builder mutualTls(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTl> mutualTls) {
-            this.mutualTls = Objects.requireNonNull(mutualTls);
+            if (mutualTls == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicy", "mutualTls");
+            }
+            this.mutualTls = mutualTls;
             return this;
         }
         public Builder mutualTls(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTl... mutualTls) {
@@ -150,7 +163,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicy 
         }
         @CustomType.Setter
         public Builder rateLimitings(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting> rateLimitings) {
-            this.rateLimitings = Objects.requireNonNull(rateLimitings);
+            if (rateLimitings == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicy", "rateLimitings");
+            }
+            this.rateLimitings = rateLimitings;
             return this;
         }
         public Builder rateLimitings(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting... rateLimitings) {
@@ -158,7 +174,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicy 
         }
         @CustomType.Setter
         public Builder usagePlans(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan> usagePlans) {
-            this.usagePlans = Objects.requireNonNull(usagePlans);
+            if (usagePlans == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicy", "usagePlans");
+            }
+            this.usagePlans = usagePlans;
             return this;
         }
         public Builder usagePlans(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan... usagePlans) {

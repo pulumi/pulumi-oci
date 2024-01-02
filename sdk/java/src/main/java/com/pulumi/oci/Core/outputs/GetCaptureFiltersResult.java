@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetCaptureFiltersCaptureFilter;
 import com.pulumi.oci.Core.outputs.GetCaptureFiltersFilter;
 import java.lang.String;
@@ -123,7 +124,10 @@ public final class GetCaptureFiltersResult {
 
         @CustomType.Setter
         public Builder captureFilters(List<GetCaptureFiltersCaptureFilter> captureFilters) {
-            this.captureFilters = Objects.requireNonNull(captureFilters);
+            if (captureFilters == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersResult", "captureFilters");
+            }
+            this.captureFilters = captureFilters;
             return this;
         }
         public Builder captureFilters(GetCaptureFiltersCaptureFilter... captureFilters) {
@@ -131,21 +135,27 @@ public final class GetCaptureFiltersResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filterType(@Nullable String filterType) {
+
             this.filterType = filterType;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCaptureFiltersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -154,11 +164,15 @@ public final class GetCaptureFiltersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

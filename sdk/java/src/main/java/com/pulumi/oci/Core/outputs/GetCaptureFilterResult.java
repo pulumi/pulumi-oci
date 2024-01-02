@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetCaptureFilterFlowLogCaptureFilterRule;
 import com.pulumi.oci.Core.outputs.GetCaptureFilterVtapCaptureFilterRule;
 import java.lang.Object;
@@ -179,32 +180,50 @@ public final class GetCaptureFilterResult {
 
         @CustomType.Setter
         public Builder captureFilterId(String captureFilterId) {
-            this.captureFilterId = Objects.requireNonNull(captureFilterId);
+            if (captureFilterId == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFilterResult", "captureFilterId");
+            }
+            this.captureFilterId = captureFilterId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFilterResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFilterResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFilterResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filterType(String filterType) {
-            this.filterType = Objects.requireNonNull(filterType);
+            if (filterType == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFilterResult", "filterType");
+            }
+            this.filterType = filterType;
             return this;
         }
         @CustomType.Setter
         public Builder flowLogCaptureFilterRules(List<GetCaptureFilterFlowLogCaptureFilterRule> flowLogCaptureFilterRules) {
-            this.flowLogCaptureFilterRules = Objects.requireNonNull(flowLogCaptureFilterRules);
+            if (flowLogCaptureFilterRules == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFilterResult", "flowLogCaptureFilterRules");
+            }
+            this.flowLogCaptureFilterRules = flowLogCaptureFilterRules;
             return this;
         }
         public Builder flowLogCaptureFilterRules(GetCaptureFilterFlowLogCaptureFilterRule... flowLogCaptureFilterRules) {
@@ -212,27 +231,42 @@ public final class GetCaptureFilterResult {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFilterResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFilterResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFilterResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFilterResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder vtapCaptureFilterRules(List<GetCaptureFilterVtapCaptureFilterRule> vtapCaptureFilterRules) {
-            this.vtapCaptureFilterRules = Objects.requireNonNull(vtapCaptureFilterRules);
+            if (vtapCaptureFilterRules == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFilterResult", "vtapCaptureFilterRules");
+            }
+            this.vtapCaptureFilterRules = vtapCaptureFilterRules;
             return this;
         }
         public Builder vtapCaptureFilterRules(GetCaptureFilterVtapCaptureFilterRule... vtapCaptureFilterRules) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -48,12 +49,18 @@ public final class GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUs
 
         @CustomType.Setter
         public Builder limit(Integer limit) {
-            this.limit = Objects.requireNonNull(limit);
+            if (limit == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage", "limit");
+            }
+            this.limit = limit;
             return this;
         }
         @CustomType.Setter
         public Builder usage(Integer usage) {
-            this.usage = Objects.requireNonNull(usage);
+            if (usage == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage", "usage");
+            }
+            this.usage = usage;
             return this;
         }
         public GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage build() {

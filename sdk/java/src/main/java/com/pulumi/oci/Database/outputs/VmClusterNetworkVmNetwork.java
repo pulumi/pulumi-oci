@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.VmClusterNetworkVmNetworkNode;
 import java.lang.String;
 import java.util.List;
@@ -122,27 +123,36 @@ public final class VmClusterNetworkVmNetwork {
 
         @CustomType.Setter
         public Builder domainName(@Nullable String domainName) {
+
             this.domainName = domainName;
             return this;
         }
         @CustomType.Setter
         public Builder gateway(@Nullable String gateway) {
+
             this.gateway = gateway;
             return this;
         }
         @CustomType.Setter
         public Builder netmask(@Nullable String netmask) {
+
             this.netmask = netmask;
             return this;
         }
         @CustomType.Setter
         public Builder networkType(String networkType) {
-            this.networkType = Objects.requireNonNull(networkType);
+            if (networkType == null) {
+              throw new MissingRequiredPropertyException("VmClusterNetworkVmNetwork", "networkType");
+            }
+            this.networkType = networkType;
             return this;
         }
         @CustomType.Setter
         public Builder nodes(List<VmClusterNetworkVmNetworkNode> nodes) {
-            this.nodes = Objects.requireNonNull(nodes);
+            if (nodes == null) {
+              throw new MissingRequiredPropertyException("VmClusterNetworkVmNetwork", "nodes");
+            }
+            this.nodes = nodes;
             return this;
         }
         public Builder nodes(VmClusterNetworkVmNetworkNode... nodes) {
@@ -150,6 +160,7 @@ public final class VmClusterNetworkVmNetwork {
         }
         @CustomType.Setter
         public Builder vlanId(@Nullable String vlanId) {
+
             this.vlanId = vlanId;
             return this;
         }

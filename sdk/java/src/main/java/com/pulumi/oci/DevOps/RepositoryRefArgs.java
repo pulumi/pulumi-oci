@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -236,9 +237,15 @@ public final class RepositoryRefArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public RepositoryRefArgs build() {
-            $.refName = Objects.requireNonNull($.refName, "expected parameter 'refName' to be non-null");
-            $.refType = Objects.requireNonNull($.refType, "expected parameter 'refType' to be non-null");
-            $.repositoryId = Objects.requireNonNull($.repositoryId, "expected parameter 'repositoryId' to be non-null");
+            if ($.refName == null) {
+                throw new MissingRequiredPropertyException("RepositoryRefArgs", "refName");
+            }
+            if ($.refType == null) {
+                throw new MissingRequiredPropertyException("RepositoryRefArgs", "refType");
+            }
+            if ($.repositoryId == null) {
+                throw new MissingRequiredPropertyException("RepositoryRefArgs", "repositoryId");
+            }
             return $;
         }
     }

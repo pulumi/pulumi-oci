@@ -5,6 +5,7 @@ package com.pulumi.oci.DataIntegration.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -267,7 +268,9 @@ public final class GetWorkspaceApplicationsArgs extends com.pulumi.resources.Inv
         }
 
         public GetWorkspaceApplicationsArgs build() {
-            $.workspaceId = Objects.requireNonNull($.workspaceId, "expected parameter 'workspaceId' to be non-null");
+            if ($.workspaceId == null) {
+                throw new MissingRequiredPropertyException("GetWorkspaceApplicationsArgs", "workspaceId");
+            }
             return $;
         }
     }

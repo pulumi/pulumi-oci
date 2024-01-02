@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricsEvaluateDataPoint;
 import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricsEvaluateItem;
 import java.lang.String;
@@ -93,12 +94,18 @@ public final class GetBaselineableMetricsEvaluateResult {
 
         @CustomType.Setter
         public Builder baselineableMetricId(String baselineableMetricId) {
-            this.baselineableMetricId = Objects.requireNonNull(baselineableMetricId);
+            if (baselineableMetricId == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateResult", "baselineableMetricId");
+            }
+            this.baselineableMetricId = baselineableMetricId;
             return this;
         }
         @CustomType.Setter
         public Builder dataPoints(List<GetBaselineableMetricsEvaluateDataPoint> dataPoints) {
-            this.dataPoints = Objects.requireNonNull(dataPoints);
+            if (dataPoints == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateResult", "dataPoints");
+            }
+            this.dataPoints = dataPoints;
             return this;
         }
         public Builder dataPoints(GetBaselineableMetricsEvaluateDataPoint... dataPoints) {
@@ -106,12 +113,18 @@ public final class GetBaselineableMetricsEvaluateResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetBaselineableMetricsEvaluateItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetBaselineableMetricsEvaluateItem... items) {
@@ -119,7 +132,10 @@ public final class GetBaselineableMetricsEvaluateResult {
         }
         @CustomType.Setter
         public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+            if (resourceId == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateResult", "resourceId");
+            }
+            this.resourceId = resourceId;
             return this;
         }
         public GetBaselineableMetricsEvaluateResult build() {

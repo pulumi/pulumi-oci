@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -142,42 +143,54 @@ public final class NotebookSessionNotebookSessionStorageMountConfigurationDetail
 
         @CustomType.Setter
         public Builder bucket(@Nullable String bucket) {
+
             this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder destinationDirectoryName(String destinationDirectoryName) {
-            this.destinationDirectoryName = Objects.requireNonNull(destinationDirectoryName);
+            if (destinationDirectoryName == null) {
+              throw new MissingRequiredPropertyException("NotebookSessionNotebookSessionStorageMountConfigurationDetailsList", "destinationDirectoryName");
+            }
+            this.destinationDirectoryName = destinationDirectoryName;
             return this;
         }
         @CustomType.Setter
         public Builder destinationPath(@Nullable String destinationPath) {
+
             this.destinationPath = destinationPath;
             return this;
         }
         @CustomType.Setter
         public Builder exportId(@Nullable String exportId) {
+
             this.exportId = exportId;
             return this;
         }
         @CustomType.Setter
         public Builder mountTargetId(@Nullable String mountTargetId) {
+
             this.mountTargetId = mountTargetId;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(@Nullable String namespace) {
+
             this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder prefix(@Nullable String prefix) {
+
             this.prefix = prefix;
             return this;
         }
         @CustomType.Setter
         public Builder storageType(String storageType) {
-            this.storageType = Objects.requireNonNull(storageType);
+            if (storageType == null) {
+              throw new MissingRequiredPropertyException("NotebookSessionNotebookSessionStorageMountConfigurationDetailsList", "storageType");
+            }
+            this.storageType = storageType;
             return this;
         }
         public NotebookSessionNotebookSessionStorageMountConfigurationDetailsList build() {

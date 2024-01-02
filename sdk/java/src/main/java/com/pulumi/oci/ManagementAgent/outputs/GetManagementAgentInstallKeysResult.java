@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentInstallKeysFilter;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentInstallKeysManagementAgentInstallKey;
 import java.lang.Boolean;
@@ -122,26 +123,33 @@ public final class GetManagementAgentInstallKeysResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentInstallKeysResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagementAgentInstallKeysFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -150,12 +158,18 @@ public final class GetManagementAgentInstallKeysResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentInstallKeysResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managementAgentInstallKeys(List<GetManagementAgentInstallKeysManagementAgentInstallKey> managementAgentInstallKeys) {
-            this.managementAgentInstallKeys = Objects.requireNonNull(managementAgentInstallKeys);
+            if (managementAgentInstallKeys == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentInstallKeysResult", "managementAgentInstallKeys");
+            }
+            this.managementAgentInstallKeys = managementAgentInstallKeys;
             return this;
         }
         public Builder managementAgentInstallKeys(GetManagementAgentInstallKeysManagementAgentInstallKey... managementAgentInstallKeys) {
@@ -163,6 +177,7 @@ public final class GetManagementAgentInstallKeysResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

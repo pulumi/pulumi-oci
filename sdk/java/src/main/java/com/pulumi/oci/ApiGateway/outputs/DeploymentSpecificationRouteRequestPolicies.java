@@ -149,41 +149,49 @@ public final class DeploymentSpecificationRouteRequestPolicies {
 
         @CustomType.Setter
         public Builder authorization(@Nullable DeploymentSpecificationRouteRequestPoliciesAuthorization authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder bodyValidation(@Nullable DeploymentSpecificationRouteRequestPoliciesBodyValidation bodyValidation) {
+
             this.bodyValidation = bodyValidation;
             return this;
         }
         @CustomType.Setter
         public Builder cors(@Nullable DeploymentSpecificationRouteRequestPoliciesCors cors) {
+
             this.cors = cors;
             return this;
         }
         @CustomType.Setter
         public Builder headerTransformations(@Nullable DeploymentSpecificationRouteRequestPoliciesHeaderTransformations headerTransformations) {
+
             this.headerTransformations = headerTransformations;
             return this;
         }
         @CustomType.Setter
         public Builder headerValidations(@Nullable DeploymentSpecificationRouteRequestPoliciesHeaderValidations headerValidations) {
+
             this.headerValidations = headerValidations;
             return this;
         }
         @CustomType.Setter
         public Builder queryParameterTransformations(@Nullable DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformations queryParameterTransformations) {
+
             this.queryParameterTransformations = queryParameterTransformations;
             return this;
         }
         @CustomType.Setter
         public Builder queryParameterValidations(@Nullable DeploymentSpecificationRouteRequestPoliciesQueryParameterValidations queryParameterValidations) {
+
             this.queryParameterValidations = queryParameterValidations;
             return this;
         }
         @CustomType.Setter
         public Builder responseCacheLookup(@Nullable DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup responseCacheLookup) {
+
             this.responseCacheLookup = responseCacheLookup;
             return this;
         }

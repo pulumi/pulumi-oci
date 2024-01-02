@@ -5,6 +5,7 @@ package com.pulumi.oci.Jms;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.inputs.FleetInventoryLogArgs;
 import com.pulumi.oci.Jms.inputs.FleetOperationLogArgs;
 import java.lang.Boolean;
@@ -340,9 +341,15 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public FleetArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.inventoryLog = Objects.requireNonNull($.inventoryLog, "expected parameter 'inventoryLog' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("FleetArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("FleetArgs", "displayName");
+            }
+            if ($.inventoryLog == null) {
+                throw new MissingRequiredPropertyException("FleetArgs", "inventoryLog");
+            }
             return $;
         }
     }

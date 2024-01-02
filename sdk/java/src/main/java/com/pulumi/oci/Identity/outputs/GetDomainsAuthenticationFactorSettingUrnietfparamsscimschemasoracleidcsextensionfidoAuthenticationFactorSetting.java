@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -157,42 +158,66 @@ public final class GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemas
 
         @CustomType.Setter
         public Builder attestation(String attestation) {
-            this.attestation = Objects.requireNonNull(attestation);
+            if (attestation == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting", "attestation");
+            }
+            this.attestation = attestation;
             return this;
         }
         @CustomType.Setter
         public Builder authenticatorSelectionAttachment(String authenticatorSelectionAttachment) {
-            this.authenticatorSelectionAttachment = Objects.requireNonNull(authenticatorSelectionAttachment);
+            if (authenticatorSelectionAttachment == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting", "authenticatorSelectionAttachment");
+            }
+            this.authenticatorSelectionAttachment = authenticatorSelectionAttachment;
             return this;
         }
         @CustomType.Setter
         public Builder authenticatorSelectionRequireResidentKey(Boolean authenticatorSelectionRequireResidentKey) {
-            this.authenticatorSelectionRequireResidentKey = Objects.requireNonNull(authenticatorSelectionRequireResidentKey);
+            if (authenticatorSelectionRequireResidentKey == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting", "authenticatorSelectionRequireResidentKey");
+            }
+            this.authenticatorSelectionRequireResidentKey = authenticatorSelectionRequireResidentKey;
             return this;
         }
         @CustomType.Setter
         public Builder authenticatorSelectionResidentKey(String authenticatorSelectionResidentKey) {
-            this.authenticatorSelectionResidentKey = Objects.requireNonNull(authenticatorSelectionResidentKey);
+            if (authenticatorSelectionResidentKey == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting", "authenticatorSelectionResidentKey");
+            }
+            this.authenticatorSelectionResidentKey = authenticatorSelectionResidentKey;
             return this;
         }
         @CustomType.Setter
         public Builder authenticatorSelectionUserVerification(String authenticatorSelectionUserVerification) {
-            this.authenticatorSelectionUserVerification = Objects.requireNonNull(authenticatorSelectionUserVerification);
+            if (authenticatorSelectionUserVerification == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting", "authenticatorSelectionUserVerification");
+            }
+            this.authenticatorSelectionUserVerification = authenticatorSelectionUserVerification;
             return this;
         }
         @CustomType.Setter
         public Builder domainValidationLevel(Integer domainValidationLevel) {
-            this.domainValidationLevel = Objects.requireNonNull(domainValidationLevel);
+            if (domainValidationLevel == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting", "domainValidationLevel");
+            }
+            this.domainValidationLevel = domainValidationLevel;
             return this;
         }
         @CustomType.Setter
         public Builder excludeCredentials(Boolean excludeCredentials) {
-            this.excludeCredentials = Objects.requireNonNull(excludeCredentials);
+            if (excludeCredentials == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting", "excludeCredentials");
+            }
+            this.excludeCredentials = excludeCredentials;
             return this;
         }
         @CustomType.Setter
         public Builder publicKeyTypes(List<String> publicKeyTypes) {
-            this.publicKeyTypes = Objects.requireNonNull(publicKeyTypes);
+            if (publicKeyTypes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting", "publicKeyTypes");
+            }
+            this.publicKeyTypes = publicKeyTypes;
             return this;
         }
         public Builder publicKeyTypes(String... publicKeyTypes) {
@@ -200,7 +225,10 @@ public final class GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemas
         }
         @CustomType.Setter
         public Builder timeout(Integer timeout) {
-            this.timeout = Objects.requireNonNull(timeout);
+            if (timeout == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting", "timeout");
+            }
+            this.timeout = timeout;
             return this;
         }
         public GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting build() {

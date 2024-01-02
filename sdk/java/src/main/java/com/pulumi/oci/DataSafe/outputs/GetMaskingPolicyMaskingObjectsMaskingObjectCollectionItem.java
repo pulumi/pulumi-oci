@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem {
 
         @CustomType.Setter
         public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+            if (object == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem", "object");
+            }
+            this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder objectType(String objectType) {
-            this.objectType = Objects.requireNonNull(objectType);
+            if (objectType == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem", "objectType");
+            }
+            this.objectType = objectType;
             return this;
         }
         @CustomType.Setter
         public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+            if (schemaName == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem", "schemaName");
+            }
+            this.schemaName = schemaName;
             return this;
         }
         public GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem build() {

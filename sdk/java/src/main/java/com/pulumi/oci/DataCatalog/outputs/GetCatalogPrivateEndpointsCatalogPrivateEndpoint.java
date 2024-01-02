@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataCatalog.outputs.GetCatalogPrivateEndpointsCatalogPrivateEndpointLock;
 import java.lang.Object;
 import java.lang.String;
@@ -228,7 +229,10 @@ public final class GetCatalogPrivateEndpointsCatalogPrivateEndpoint {
 
         @CustomType.Setter
         public Builder attachedCatalogs(List<String> attachedCatalogs) {
-            this.attachedCatalogs = Objects.requireNonNull(attachedCatalogs);
+            if (attachedCatalogs == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsCatalogPrivateEndpoint", "attachedCatalogs");
+            }
+            this.attachedCatalogs = attachedCatalogs;
             return this;
         }
         public Builder attachedCatalogs(String... attachedCatalogs) {
@@ -236,22 +240,34 @@ public final class GetCatalogPrivateEndpointsCatalogPrivateEndpoint {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsCatalogPrivateEndpoint", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsCatalogPrivateEndpoint", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsCatalogPrivateEndpoint", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder dnsZones(List<String> dnsZones) {
-            this.dnsZones = Objects.requireNonNull(dnsZones);
+            if (dnsZones == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsCatalogPrivateEndpoint", "dnsZones");
+            }
+            this.dnsZones = dnsZones;
             return this;
         }
         public Builder dnsZones(String... dnsZones) {
@@ -259,22 +275,34 @@ public final class GetCatalogPrivateEndpointsCatalogPrivateEndpoint {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsCatalogPrivateEndpoint", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsCatalogPrivateEndpoint", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsCatalogPrivateEndpoint", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder locks(List<GetCatalogPrivateEndpointsCatalogPrivateEndpointLock> locks) {
-            this.locks = Objects.requireNonNull(locks);
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsCatalogPrivateEndpoint", "locks");
+            }
+            this.locks = locks;
             return this;
         }
         public Builder locks(GetCatalogPrivateEndpointsCatalogPrivateEndpointLock... locks) {
@@ -282,27 +310,42 @@ public final class GetCatalogPrivateEndpointsCatalogPrivateEndpoint {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsCatalogPrivateEndpoint", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsCatalogPrivateEndpoint", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsCatalogPrivateEndpoint", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsCatalogPrivateEndpoint", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsCatalogPrivateEndpoint", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetCatalogPrivateEndpointsCatalogPrivateEndpoint build() {

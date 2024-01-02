@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetManagementAgentPluginCountItemDimension {
 
         @CustomType.Setter
         public Builder pluginDisplayName(String pluginDisplayName) {
-            this.pluginDisplayName = Objects.requireNonNull(pluginDisplayName);
+            if (pluginDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentPluginCountItemDimension", "pluginDisplayName");
+            }
+            this.pluginDisplayName = pluginDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder pluginName(String pluginName) {
-            this.pluginName = Objects.requireNonNull(pluginName);
+            if (pluginName == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentPluginCountItemDimension", "pluginName");
+            }
+            this.pluginName = pluginName;
             return this;
         }
         public GetManagementAgentPluginCountItemDimension build() {

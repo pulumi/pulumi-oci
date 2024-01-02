@@ -5,6 +5,7 @@ package com.pulumi.oci.Psql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -187,7 +188,9 @@ public final class DbSystemCredentialsPasswordDetailsArgs extends com.pulumi.res
         }
 
         public DbSystemCredentialsPasswordDetailsArgs build() {
-            $.passwordType = Objects.requireNonNull($.passwordType, "expected parameter 'passwordType' to be non-null");
+            if ($.passwordType == null) {
+                throw new MissingRequiredPropertyException("DbSystemCredentialsPasswordDetailsArgs", "passwordType");
+            }
             return $;
         }
     }

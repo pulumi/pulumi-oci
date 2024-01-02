@@ -5,6 +5,7 @@ package com.pulumi.oci.MediaServices;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -397,8 +398,12 @@ public final class MediaWorkflowJobArgs extends com.pulumi.resources.ResourceArg
         }
 
         public MediaWorkflowJobArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.workflowIdentifierType = Objects.requireNonNull($.workflowIdentifierType, "expected parameter 'workflowIdentifierType' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("MediaWorkflowJobArgs", "compartmentId");
+            }
+            if ($.workflowIdentifierType == null) {
+                throw new MissingRequiredPropertyException("MediaWorkflowJobArgs", "workflowIdentifierType");
+            }
             return $;
         }
     }

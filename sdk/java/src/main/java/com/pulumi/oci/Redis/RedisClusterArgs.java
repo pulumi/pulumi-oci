@@ -5,6 +5,7 @@ package com.pulumi.oci.Redis;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
@@ -351,12 +352,24 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public RedisClusterArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.nodeCount = Objects.requireNonNull($.nodeCount, "expected parameter 'nodeCount' to be non-null");
-            $.nodeMemoryInGbs = Objects.requireNonNull($.nodeMemoryInGbs, "expected parameter 'nodeMemoryInGbs' to be non-null");
-            $.softwareVersion = Objects.requireNonNull($.softwareVersion, "expected parameter 'softwareVersion' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("RedisClusterArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("RedisClusterArgs", "displayName");
+            }
+            if ($.nodeCount == null) {
+                throw new MissingRequiredPropertyException("RedisClusterArgs", "nodeCount");
+            }
+            if ($.nodeMemoryInGbs == null) {
+                throw new MissingRequiredPropertyException("RedisClusterArgs", "nodeMemoryInGbs");
+            }
+            if ($.softwareVersion == null) {
+                throw new MissingRequiredPropertyException("RedisClusterArgs", "softwareVersion");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("RedisClusterArgs", "subnetId");
+            }
             return $;
         }
     }

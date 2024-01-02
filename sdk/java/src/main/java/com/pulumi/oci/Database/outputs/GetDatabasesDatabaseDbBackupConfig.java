@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -144,32 +145,50 @@ public final class GetDatabasesDatabaseDbBackupConfig {
 
         @CustomType.Setter
         public Builder autoBackupEnabled(Boolean autoBackupEnabled) {
-            this.autoBackupEnabled = Objects.requireNonNull(autoBackupEnabled);
+            if (autoBackupEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDbBackupConfig", "autoBackupEnabled");
+            }
+            this.autoBackupEnabled = autoBackupEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder autoBackupWindow(String autoBackupWindow) {
-            this.autoBackupWindow = Objects.requireNonNull(autoBackupWindow);
+            if (autoBackupWindow == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDbBackupConfig", "autoBackupWindow");
+            }
+            this.autoBackupWindow = autoBackupWindow;
             return this;
         }
         @CustomType.Setter
         public Builder autoFullBackupDay(String autoFullBackupDay) {
-            this.autoFullBackupDay = Objects.requireNonNull(autoFullBackupDay);
+            if (autoFullBackupDay == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDbBackupConfig", "autoFullBackupDay");
+            }
+            this.autoFullBackupDay = autoFullBackupDay;
             return this;
         }
         @CustomType.Setter
         public Builder autoFullBackupWindow(String autoFullBackupWindow) {
-            this.autoFullBackupWindow = Objects.requireNonNull(autoFullBackupWindow);
+            if (autoFullBackupWindow == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDbBackupConfig", "autoFullBackupWindow");
+            }
+            this.autoFullBackupWindow = autoFullBackupWindow;
             return this;
         }
         @CustomType.Setter
         public Builder backupDeletionPolicy(String backupDeletionPolicy) {
-            this.backupDeletionPolicy = Objects.requireNonNull(backupDeletionPolicy);
+            if (backupDeletionPolicy == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDbBackupConfig", "backupDeletionPolicy");
+            }
+            this.backupDeletionPolicy = backupDeletionPolicy;
             return this;
         }
         @CustomType.Setter
         public Builder backupDestinationDetails(List<GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails) {
-            this.backupDestinationDetails = Objects.requireNonNull(backupDestinationDetails);
+            if (backupDestinationDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDbBackupConfig", "backupDestinationDetails");
+            }
+            this.backupDestinationDetails = backupDestinationDetails;
             return this;
         }
         public Builder backupDestinationDetails(GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail... backupDestinationDetails) {
@@ -177,12 +196,18 @@ public final class GetDatabasesDatabaseDbBackupConfig {
         }
         @CustomType.Setter
         public Builder recoveryWindowInDays(Integer recoveryWindowInDays) {
-            this.recoveryWindowInDays = Objects.requireNonNull(recoveryWindowInDays);
+            if (recoveryWindowInDays == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDbBackupConfig", "recoveryWindowInDays");
+            }
+            this.recoveryWindowInDays = recoveryWindowInDays;
             return this;
         }
         @CustomType.Setter
         public Builder runImmediateFullBackup(Boolean runImmediateFullBackup) {
-            this.runImmediateFullBackup = Objects.requireNonNull(runImmediateFullBackup);
+            if (runImmediateFullBackup == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDbBackupConfig", "runImmediateFullBackup");
+            }
+            this.runImmediateFullBackup = runImmediateFullBackup;
             return this;
         }
         public GetDatabasesDatabaseDbBackupConfig build() {

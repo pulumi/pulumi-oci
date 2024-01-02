@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ObjectStorage.outputs.BucketRetentionRuleDuration;
 import java.lang.String;
 import java.util.Objects;
@@ -115,31 +116,39 @@ public final class BucketRetentionRule {
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("BucketRetentionRule", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder duration(@Nullable BucketRetentionRuleDuration duration) {
+
             this.duration = duration;
             return this;
         }
         @CustomType.Setter
         public Builder retentionRuleId(@Nullable String retentionRuleId) {
+
             this.retentionRuleId = retentionRuleId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeModified(@Nullable String timeModified) {
+
             this.timeModified = timeModified;
             return this;
         }
         @CustomType.Setter
         public Builder timeRuleLocked(@Nullable String timeRuleLocked) {
+
             this.timeRuleLocked = timeRuleLocked;
             return this;
         }

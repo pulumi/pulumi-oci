@@ -5,6 +5,7 @@ package com.pulumi.oci.CertificatesManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -113,7 +114,9 @@ public final class CertificateAuthorityCertificateAuthorityConfigValidityArgs ex
         }
 
         public CertificateAuthorityCertificateAuthorityConfigValidityArgs build() {
-            $.timeOfValidityNotAfter = Objects.requireNonNull($.timeOfValidityNotAfter, "expected parameter 'timeOfValidityNotAfter' to be non-null");
+            if ($.timeOfValidityNotAfter == null) {
+                throw new MissingRequiredPropertyException("CertificateAuthorityCertificateAuthorityConfigValidityArgs", "timeOfValidityNotAfter");
+            }
             return $;
         }
     }

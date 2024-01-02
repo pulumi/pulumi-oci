@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsubUsage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsubUsage.outputs.GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct;
 import java.lang.String;
 import java.util.List;
@@ -142,27 +143,42 @@ public final class GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComp
 
         @CustomType.Setter
         public Builder cost(String cost) {
-            this.cost = Objects.requireNonNull(cost);
+            if (cost == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage", "cost");
+            }
+            this.cost = cost;
             return this;
         }
         @CustomType.Setter
         public Builder costUnrounded(String costUnrounded) {
-            this.costUnrounded = Objects.requireNonNull(costUnrounded);
+            if (costUnrounded == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage", "costUnrounded");
+            }
+            this.costUnrounded = costUnrounded;
             return this;
         }
         @CustomType.Setter
         public Builder dataCenter(String dataCenter) {
-            this.dataCenter = Objects.requireNonNull(dataCenter);
+            if (dataCenter == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage", "dataCenter");
+            }
+            this.dataCenter = dataCenter;
             return this;
         }
         @CustomType.Setter
         public Builder netUnitPrice(String netUnitPrice) {
-            this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
+            if (netUnitPrice == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage", "netUnitPrice");
+            }
+            this.netUnitPrice = netUnitPrice;
             return this;
         }
         @CustomType.Setter
         public Builder products(List<GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct> products) {
-            this.products = Objects.requireNonNull(products);
+            if (products == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage", "products");
+            }
+            this.products = products;
             return this;
         }
         public Builder products(GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct... products) {
@@ -170,17 +186,26 @@ public final class GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComp
         }
         @CustomType.Setter
         public Builder quantity(String quantity) {
-            this.quantity = Objects.requireNonNull(quantity);
+            if (quantity == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage", "quantity");
+            }
+            this.quantity = quantity;
             return this;
         }
         @CustomType.Setter
         public Builder timeMeteredOn(String timeMeteredOn) {
-            this.timeMeteredOn = Objects.requireNonNull(timeMeteredOn);
+            if (timeMeteredOn == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage", "timeMeteredOn");
+            }
+            this.timeMeteredOn = timeMeteredOn;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage build() {

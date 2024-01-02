@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.inputs.DeployPipelineDeployPipelineParametersItemArgs;
 import java.util.List;
 import java.util.Objects;
@@ -85,7 +86,9 @@ public final class DeployPipelineDeployPipelineParametersArgs extends com.pulumi
         }
 
         public DeployPipelineDeployPipelineParametersArgs build() {
-            $.items = Objects.requireNonNull($.items, "expected parameter 'items' to be non-null");
+            if ($.items == null) {
+                throw new MissingRequiredPropertyException("DeployPipelineDeployPipelineParametersArgs", "items");
+            }
             return $;
         }
     }

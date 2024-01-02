@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -119,7 +120,9 @@ public final class GetRepositoryArchiveContentPlainArgs extends com.pulumi.resou
         }
 
         public GetRepositoryArchiveContentPlainArgs build() {
-            $.repositoryId = Objects.requireNonNull($.repositoryId, "expected parameter 'repositoryId' to be non-null");
+            if ($.repositoryId == null) {
+                throw new MissingRequiredPropertyException("GetRepositoryArchiveContentPlainArgs", "repositoryId");
+            }
             return $;
         }
     }

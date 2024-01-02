@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionsFilter;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionsNotebookSession;
 import java.lang.String;
@@ -137,21 +138,27 @@ public final class GetNotebookSessionsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(@Nullable String createdBy) {
+
             this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNotebookSessionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -160,12 +167,16 @@ public final class GetNotebookSessionsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder notebookSessions(List<GetNotebookSessionsNotebookSession> notebookSessions) {
-            this.notebookSessions = Objects.requireNonNull(notebookSessions);
+            if (notebookSessions == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionsResult", "notebookSessions");
+            }
+            this.notebookSessions = notebookSessions;
             return this;
         }
         public Builder notebookSessions(GetNotebookSessionsNotebookSession... notebookSessions) {
@@ -173,11 +184,13 @@ public final class GetNotebookSessionsResult {
         }
         @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
+
             this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

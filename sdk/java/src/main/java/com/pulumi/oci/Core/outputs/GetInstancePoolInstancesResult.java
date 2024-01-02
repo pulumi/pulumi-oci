@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstancePoolInstancesFilter;
 import com.pulumi.oci.Core.outputs.GetInstancePoolInstancesInstance;
 import java.lang.String;
@@ -101,16 +102,21 @@ public final class GetInstancePoolInstancesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolInstancesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetInstancePoolInstancesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -119,17 +125,26 @@ public final class GetInstancePoolInstancesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolInstancesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instancePoolId(String instancePoolId) {
-            this.instancePoolId = Objects.requireNonNull(instancePoolId);
+            if (instancePoolId == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolInstancesResult", "instancePoolId");
+            }
+            this.instancePoolId = instancePoolId;
             return this;
         }
         @CustomType.Setter
         public Builder instances(List<GetInstancePoolInstancesInstance> instances) {
-            this.instances = Objects.requireNonNull(instances);
+            if (instances == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolInstancesResult", "instances");
+            }
+            this.instances = instances;
             return this;
         }
         public Builder instances(GetInstancePoolInstancesInstance... instances) {

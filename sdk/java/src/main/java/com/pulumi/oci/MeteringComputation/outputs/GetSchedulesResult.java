@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.GetSchedulesFilter;
 import com.pulumi.oci.MeteringComputation.outputs.GetSchedulesScheduleCollection;
 import java.lang.String;
@@ -103,11 +104,15 @@ public final class GetSchedulesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSchedulesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -116,17 +121,24 @@ public final class GetSchedulesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder scheduleCollections(List<GetSchedulesScheduleCollection> scheduleCollections) {
-            this.scheduleCollections = Objects.requireNonNull(scheduleCollections);
+            if (scheduleCollections == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesResult", "scheduleCollections");
+            }
+            this.scheduleCollections = scheduleCollections;
             return this;
         }
         public Builder scheduleCollections(GetSchedulesScheduleCollection... scheduleCollections) {

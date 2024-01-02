@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetIpsecConnectionTunnelDpdConfig {
 
         @CustomType.Setter
         public Builder dpdMode(String dpdMode) {
-            this.dpdMode = Objects.requireNonNull(dpdMode);
+            if (dpdMode == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelDpdConfig", "dpdMode");
+            }
+            this.dpdMode = dpdMode;
             return this;
         }
         @CustomType.Setter
         public Builder dpdTimeoutInSec(Integer dpdTimeoutInSec) {
-            this.dpdTimeoutInSec = Objects.requireNonNull(dpdTimeoutInSec);
+            if (dpdTimeoutInSec == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelDpdConfig", "dpdTimeoutInSec");
+            }
+            this.dpdTimeoutInSec = dpdTimeoutInSec;
             return this;
         }
         public GetIpsecConnectionTunnelDpdConfig build() {

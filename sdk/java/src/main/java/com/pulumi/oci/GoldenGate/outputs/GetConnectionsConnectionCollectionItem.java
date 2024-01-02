@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionsConnectionCollectionItemAdditionalAttribute;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionsConnectionCollectionItemBootstrapServer;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionsConnectionCollectionItemIngressIp;
@@ -954,22 +955,34 @@ public final class GetConnectionsConnectionCollectionItem {
 
         @CustomType.Setter
         public Builder accessKeyId(String accessKeyId) {
-            this.accessKeyId = Objects.requireNonNull(accessKeyId);
+            if (accessKeyId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "accessKeyId");
+            }
+            this.accessKeyId = accessKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder accountKey(String accountKey) {
-            this.accountKey = Objects.requireNonNull(accountKey);
+            if (accountKey == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "accountKey");
+            }
+            this.accountKey = accountKey;
             return this;
         }
         @CustomType.Setter
         public Builder accountName(String accountName) {
-            this.accountName = Objects.requireNonNull(accountName);
+            if (accountName == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "accountName");
+            }
+            this.accountName = accountName;
             return this;
         }
         @CustomType.Setter
         public Builder additionalAttributes(List<GetConnectionsConnectionCollectionItemAdditionalAttribute> additionalAttributes) {
-            this.additionalAttributes = Objects.requireNonNull(additionalAttributes);
+            if (additionalAttributes == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "additionalAttributes");
+            }
+            this.additionalAttributes = additionalAttributes;
             return this;
         }
         public Builder additionalAttributes(GetConnectionsConnectionCollectionItemAdditionalAttribute... additionalAttributes) {
@@ -977,17 +990,26 @@ public final class GetConnectionsConnectionCollectionItem {
         }
         @CustomType.Setter
         public Builder authenticationType(String authenticationType) {
-            this.authenticationType = Objects.requireNonNull(authenticationType);
+            if (authenticationType == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "authenticationType");
+            }
+            this.authenticationType = authenticationType;
             return this;
         }
         @CustomType.Setter
         public Builder azureTenantId(String azureTenantId) {
-            this.azureTenantId = Objects.requireNonNull(azureTenantId);
+            if (azureTenantId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "azureTenantId");
+            }
+            this.azureTenantId = azureTenantId;
             return this;
         }
         @CustomType.Setter
         public Builder bootstrapServers(List<GetConnectionsConnectionCollectionItemBootstrapServer> bootstrapServers) {
-            this.bootstrapServers = Objects.requireNonNull(bootstrapServers);
+            if (bootstrapServers == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "bootstrapServers");
+            }
+            this.bootstrapServers = bootstrapServers;
             return this;
         }
         public Builder bootstrapServers(GetConnectionsConnectionCollectionItemBootstrapServer... bootstrapServers) {
@@ -995,112 +1017,178 @@ public final class GetConnectionsConnectionCollectionItem {
         }
         @CustomType.Setter
         public Builder clientId(String clientId) {
-            this.clientId = Objects.requireNonNull(clientId);
+            if (clientId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "clientId");
+            }
+            this.clientId = clientId;
             return this;
         }
         @CustomType.Setter
         public Builder clientSecret(String clientSecret) {
-            this.clientSecret = Objects.requireNonNull(clientSecret);
+            if (clientSecret == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "clientSecret");
+            }
+            this.clientSecret = clientSecret;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionFactory(String connectionFactory) {
-            this.connectionFactory = Objects.requireNonNull(connectionFactory);
+            if (connectionFactory == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "connectionFactory");
+            }
+            this.connectionFactory = connectionFactory;
             return this;
         }
         @CustomType.Setter
         public Builder connectionString(String connectionString) {
-            this.connectionString = Objects.requireNonNull(connectionString);
+            if (connectionString == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "connectionString");
+            }
+            this.connectionString = connectionString;
             return this;
         }
         @CustomType.Setter
         public Builder connectionType(String connectionType) {
-            this.connectionType = Objects.requireNonNull(connectionType);
+            if (connectionType == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "connectionType");
+            }
+            this.connectionType = connectionType;
             return this;
         }
         @CustomType.Setter
         public Builder connectionUrl(String connectionUrl) {
-            this.connectionUrl = Objects.requireNonNull(connectionUrl);
+            if (connectionUrl == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "connectionUrl");
+            }
+            this.connectionUrl = connectionUrl;
             return this;
         }
         @CustomType.Setter
         public Builder consumerProperties(String consumerProperties) {
-            this.consumerProperties = Objects.requireNonNull(consumerProperties);
+            if (consumerProperties == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "consumerProperties");
+            }
+            this.consumerProperties = consumerProperties;
             return this;
         }
         @CustomType.Setter
         public Builder coreSiteXml(String coreSiteXml) {
-            this.coreSiteXml = Objects.requireNonNull(coreSiteXml);
+            if (coreSiteXml == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "coreSiteXml");
+            }
+            this.coreSiteXml = coreSiteXml;
             return this;
         }
         @CustomType.Setter
         public Builder databaseId(String databaseId) {
-            this.databaseId = Objects.requireNonNull(databaseId);
+            if (databaseId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "databaseId");
+            }
+            this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseName(String databaseName) {
-            this.databaseName = Objects.requireNonNull(databaseName);
+            if (databaseName == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "databaseName");
+            }
+            this.databaseName = databaseName;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentId(String deploymentId) {
-            this.deploymentId = Objects.requireNonNull(deploymentId);
+            if (deploymentId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "deploymentId");
+            }
+            this.deploymentId = deploymentId;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder endpoint(String endpoint) {
-            this.endpoint = Objects.requireNonNull(endpoint);
+            if (endpoint == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "endpoint");
+            }
+            this.endpoint = endpoint;
             return this;
         }
         @CustomType.Setter
         public Builder fingerprint(String fingerprint) {
-            this.fingerprint = Objects.requireNonNull(fingerprint);
+            if (fingerprint == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "fingerprint");
+            }
+            this.fingerprint = fingerprint;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+            if (host == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "host");
+            }
+            this.host = host;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ingressIps(List<GetConnectionsConnectionCollectionItemIngressIp> ingressIps) {
-            this.ingressIps = Objects.requireNonNull(ingressIps);
+            if (ingressIps == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "ingressIps");
+            }
+            this.ingressIps = ingressIps;
             return this;
         }
         public Builder ingressIps(GetConnectionsConnectionCollectionItemIngressIp... ingressIps) {
@@ -1108,52 +1196,82 @@ public final class GetConnectionsConnectionCollectionItem {
         }
         @CustomType.Setter
         public Builder jndiConnectionFactory(String jndiConnectionFactory) {
-            this.jndiConnectionFactory = Objects.requireNonNull(jndiConnectionFactory);
+            if (jndiConnectionFactory == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "jndiConnectionFactory");
+            }
+            this.jndiConnectionFactory = jndiConnectionFactory;
             return this;
         }
         @CustomType.Setter
         public Builder jndiInitialContextFactory(String jndiInitialContextFactory) {
-            this.jndiInitialContextFactory = Objects.requireNonNull(jndiInitialContextFactory);
+            if (jndiInitialContextFactory == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "jndiInitialContextFactory");
+            }
+            this.jndiInitialContextFactory = jndiInitialContextFactory;
             return this;
         }
         @CustomType.Setter
         public Builder jndiProviderUrl(String jndiProviderUrl) {
-            this.jndiProviderUrl = Objects.requireNonNull(jndiProviderUrl);
+            if (jndiProviderUrl == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "jndiProviderUrl");
+            }
+            this.jndiProviderUrl = jndiProviderUrl;
             return this;
         }
         @CustomType.Setter
         public Builder jndiSecurityCredentials(String jndiSecurityCredentials) {
-            this.jndiSecurityCredentials = Objects.requireNonNull(jndiSecurityCredentials);
+            if (jndiSecurityCredentials == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "jndiSecurityCredentials");
+            }
+            this.jndiSecurityCredentials = jndiSecurityCredentials;
             return this;
         }
         @CustomType.Setter
         public Builder jndiSecurityPrincipal(String jndiSecurityPrincipal) {
-            this.jndiSecurityPrincipal = Objects.requireNonNull(jndiSecurityPrincipal);
+            if (jndiSecurityPrincipal == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "jndiSecurityPrincipal");
+            }
+            this.jndiSecurityPrincipal = jndiSecurityPrincipal;
             return this;
         }
         @CustomType.Setter
         public Builder keyId(String keyId) {
-            this.keyId = Objects.requireNonNull(keyId);
+            if (keyId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "keyId");
+            }
+            this.keyId = keyId;
             return this;
         }
         @CustomType.Setter
         public Builder keyStore(String keyStore) {
-            this.keyStore = Objects.requireNonNull(keyStore);
+            if (keyStore == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "keyStore");
+            }
+            this.keyStore = keyStore;
             return this;
         }
         @CustomType.Setter
         public Builder keyStorePassword(String keyStorePassword) {
-            this.keyStorePassword = Objects.requireNonNull(keyStorePassword);
+            if (keyStorePassword == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "keyStorePassword");
+            }
+            this.keyStorePassword = keyStorePassword;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
@@ -1161,192 +1279,306 @@ public final class GetConnectionsConnectionCollectionItem {
         }
         @CustomType.Setter
         public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+            if (password == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "password");
+            }
+            this.password = password;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder privateIp(String privateIp) {
-            this.privateIp = Objects.requireNonNull(privateIp);
+            if (privateIp == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "privateIp");
+            }
+            this.privateIp = privateIp;
             return this;
         }
         @CustomType.Setter
         public Builder privateKeyFile(String privateKeyFile) {
-            this.privateKeyFile = Objects.requireNonNull(privateKeyFile);
+            if (privateKeyFile == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "privateKeyFile");
+            }
+            this.privateKeyFile = privateKeyFile;
             return this;
         }
         @CustomType.Setter
         public Builder privateKeyPassphrase(String privateKeyPassphrase) {
-            this.privateKeyPassphrase = Objects.requireNonNull(privateKeyPassphrase);
+            if (privateKeyPassphrase == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "privateKeyPassphrase");
+            }
+            this.privateKeyPassphrase = privateKeyPassphrase;
             return this;
         }
         @CustomType.Setter
         public Builder producerProperties(String producerProperties) {
-            this.producerProperties = Objects.requireNonNull(producerProperties);
+            if (producerProperties == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "producerProperties");
+            }
+            this.producerProperties = producerProperties;
             return this;
         }
         @CustomType.Setter
         public Builder publicKeyFingerprint(String publicKeyFingerprint) {
-            this.publicKeyFingerprint = Objects.requireNonNull(publicKeyFingerprint);
+            if (publicKeyFingerprint == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "publicKeyFingerprint");
+            }
+            this.publicKeyFingerprint = publicKeyFingerprint;
             return this;
         }
         @CustomType.Setter
         public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+            if (region == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "region");
+            }
+            this.region = region;
             return this;
         }
         @CustomType.Setter
         public Builder routingMethod(String routingMethod) {
-            this.routingMethod = Objects.requireNonNull(routingMethod);
+            if (routingMethod == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "routingMethod");
+            }
+            this.routingMethod = routingMethod;
             return this;
         }
         @CustomType.Setter
         public Builder sasToken(String sasToken) {
-            this.sasToken = Objects.requireNonNull(sasToken);
+            if (sasToken == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "sasToken");
+            }
+            this.sasToken = sasToken;
             return this;
         }
         @CustomType.Setter
         public Builder secretAccessKey(String secretAccessKey) {
-            this.secretAccessKey = Objects.requireNonNull(secretAccessKey);
+            if (secretAccessKey == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "secretAccessKey");
+            }
+            this.secretAccessKey = secretAccessKey;
             return this;
         }
         @CustomType.Setter
         public Builder securityProtocol(String securityProtocol) {
-            this.securityProtocol = Objects.requireNonNull(securityProtocol);
+            if (securityProtocol == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "securityProtocol");
+            }
+            this.securityProtocol = securityProtocol;
             return this;
         }
         @CustomType.Setter
         public Builder servers(String servers) {
-            this.servers = Objects.requireNonNull(servers);
+            if (servers == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "servers");
+            }
+            this.servers = servers;
             return this;
         }
         @CustomType.Setter
         public Builder serviceAccountKeyFile(String serviceAccountKeyFile) {
-            this.serviceAccountKeyFile = Objects.requireNonNull(serviceAccountKeyFile);
+            if (serviceAccountKeyFile == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "serviceAccountKeyFile");
+            }
+            this.serviceAccountKeyFile = serviceAccountKeyFile;
             return this;
         }
         @CustomType.Setter
         public Builder sessionMode(String sessionMode) {
-            this.sessionMode = Objects.requireNonNull(sessionMode);
+            if (sessionMode == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "sessionMode");
+            }
+            this.sessionMode = sessionMode;
             return this;
         }
         @CustomType.Setter
         public Builder shouldUseJndi(Boolean shouldUseJndi) {
-            this.shouldUseJndi = Objects.requireNonNull(shouldUseJndi);
+            if (shouldUseJndi == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "shouldUseJndi");
+            }
+            this.shouldUseJndi = shouldUseJndi;
             return this;
         }
         @CustomType.Setter
         public Builder shouldValidateServerCertificate(Boolean shouldValidateServerCertificate) {
-            this.shouldValidateServerCertificate = Objects.requireNonNull(shouldValidateServerCertificate);
+            if (shouldValidateServerCertificate == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "shouldValidateServerCertificate");
+            }
+            this.shouldValidateServerCertificate = shouldValidateServerCertificate;
             return this;
         }
         @CustomType.Setter
         public Builder sslCa(String sslCa) {
-            this.sslCa = Objects.requireNonNull(sslCa);
+            if (sslCa == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "sslCa");
+            }
+            this.sslCa = sslCa;
             return this;
         }
         @CustomType.Setter
         public Builder sslCert(String sslCert) {
-            this.sslCert = Objects.requireNonNull(sslCert);
+            if (sslCert == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "sslCert");
+            }
+            this.sslCert = sslCert;
             return this;
         }
         @CustomType.Setter
         public Builder sslCrl(String sslCrl) {
-            this.sslCrl = Objects.requireNonNull(sslCrl);
+            if (sslCrl == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "sslCrl");
+            }
+            this.sslCrl = sslCrl;
             return this;
         }
         @CustomType.Setter
         public Builder sslKey(String sslKey) {
-            this.sslKey = Objects.requireNonNull(sslKey);
+            if (sslKey == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "sslKey");
+            }
+            this.sslKey = sslKey;
             return this;
         }
         @CustomType.Setter
         public Builder sslKeyPassword(String sslKeyPassword) {
-            this.sslKeyPassword = Objects.requireNonNull(sslKeyPassword);
+            if (sslKeyPassword == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "sslKeyPassword");
+            }
+            this.sslKeyPassword = sslKeyPassword;
             return this;
         }
         @CustomType.Setter
         public Builder sslMode(String sslMode) {
-            this.sslMode = Objects.requireNonNull(sslMode);
+            if (sslMode == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "sslMode");
+            }
+            this.sslMode = sslMode;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder streamPoolId(String streamPoolId) {
-            this.streamPoolId = Objects.requireNonNull(streamPoolId);
+            if (streamPoolId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "streamPoolId");
+            }
+            this.streamPoolId = streamPoolId;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder technologyType(String technologyType) {
-            this.technologyType = Objects.requireNonNull(technologyType);
+            if (technologyType == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "technologyType");
+            }
+            this.technologyType = technologyType;
             return this;
         }
         @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
-            this.tenancyId = Objects.requireNonNull(tenancyId);
+            if (tenancyId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "tenancyId");
+            }
+            this.tenancyId = tenancyId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder trustStore(String trustStore) {
-            this.trustStore = Objects.requireNonNull(trustStore);
+            if (trustStore == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "trustStore");
+            }
+            this.trustStore = trustStore;
             return this;
         }
         @CustomType.Setter
         public Builder trustStorePassword(String trustStorePassword) {
-            this.trustStorePassword = Objects.requireNonNull(trustStorePassword);
+            if (trustStorePassword == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "trustStorePassword");
+            }
+            this.trustStorePassword = trustStorePassword;
             return this;
         }
         @CustomType.Setter
         public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+            if (url == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "url");
+            }
+            this.url = url;
             return this;
         }
         @CustomType.Setter
         public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+            if (userId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "userId");
+            }
+            this.userId = userId;
             return this;
         }
         @CustomType.Setter
         public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+            if (username == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "username");
+            }
+            this.username = username;
             return this;
         }
         @CustomType.Setter
         public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+            if (vaultId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "vaultId");
+            }
+            this.vaultId = vaultId;
             return this;
         }
         @CustomType.Setter
         public Builder wallet(String wallet) {
-            this.wallet = Objects.requireNonNull(wallet);
+            if (wallet == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "wallet");
+            }
+            this.wallet = wallet;
             return this;
         }
         public GetConnectionsConnectionCollectionItem build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -127,37 +128,58 @@ public final class GetDomainsMyRequestsMyRequestApprovalDetail {
 
         @CustomType.Setter
         public Builder approvalType(String approvalType) {
-            this.approvalType = Objects.requireNonNull(approvalType);
+            if (approvalType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequestApprovalDetail", "approvalType");
+            }
+            this.approvalType = approvalType;
             return this;
         }
         @CustomType.Setter
         public Builder approverDisplayName(String approverDisplayName) {
-            this.approverDisplayName = Objects.requireNonNull(approverDisplayName);
+            if (approverDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequestApprovalDetail", "approverDisplayName");
+            }
+            this.approverDisplayName = approverDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder approverId(String approverId) {
-            this.approverId = Objects.requireNonNull(approverId);
+            if (approverId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequestApprovalDetail", "approverId");
+            }
+            this.approverId = approverId;
             return this;
         }
         @CustomType.Setter
         public Builder justification(String justification) {
-            this.justification = Objects.requireNonNull(justification);
+            if (justification == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequestApprovalDetail", "justification");
+            }
+            this.justification = justification;
             return this;
         }
         @CustomType.Setter
         public Builder order(Integer order) {
-            this.order = Objects.requireNonNull(order);
+            if (order == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequestApprovalDetail", "order");
+            }
+            this.order = order;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequestApprovalDetail", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequestApprovalDetail", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDomainsMyRequestsMyRequestApprovalDetail build() {

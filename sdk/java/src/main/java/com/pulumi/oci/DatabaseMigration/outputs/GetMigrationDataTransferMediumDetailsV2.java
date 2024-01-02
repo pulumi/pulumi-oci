@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket;
 import java.lang.String;
 import java.util.List;
@@ -82,17 +83,26 @@ public final class GetMigrationDataTransferMediumDetailsV2 {
 
         @CustomType.Setter
         public Builder accessKeyId(String accessKeyId) {
-            this.accessKeyId = Objects.requireNonNull(accessKeyId);
+            if (accessKeyId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDataTransferMediumDetailsV2", "accessKeyId");
+            }
+            this.accessKeyId = accessKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDataTransferMediumDetailsV2", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageBuckets(List<GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket> objectStorageBuckets) {
-            this.objectStorageBuckets = Objects.requireNonNull(objectStorageBuckets);
+            if (objectStorageBuckets == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDataTransferMediumDetailsV2", "objectStorageBuckets");
+            }
+            this.objectStorageBuckets = objectStorageBuckets;
             return this;
         }
         public Builder objectStorageBuckets(GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket... objectStorageBuckets) {
@@ -100,17 +110,26 @@ public final class GetMigrationDataTransferMediumDetailsV2 {
         }
         @CustomType.Setter
         public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+            if (region == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDataTransferMediumDetailsV2", "region");
+            }
+            this.region = region;
             return this;
         }
         @CustomType.Setter
         public Builder secretAccessKey(String secretAccessKey) {
-            this.secretAccessKey = Objects.requireNonNull(secretAccessKey);
+            if (secretAccessKey == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDataTransferMediumDetailsV2", "secretAccessKey");
+            }
+            this.secretAccessKey = secretAccessKey;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDataTransferMediumDetailsV2", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetMigrationDataTransferMediumDetailsV2 build() {

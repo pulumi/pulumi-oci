@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.GetScheduleQueryPropertyDateRange;
 import com.pulumi.oci.MeteringComputation.outputs.GetScheduleQueryPropertyGroupByTag;
 import java.lang.Boolean;
@@ -145,12 +146,18 @@ public final class GetScheduleQueryProperty {
 
         @CustomType.Setter
         public Builder compartmentDepth(Double compartmentDepth) {
-            this.compartmentDepth = Objects.requireNonNull(compartmentDepth);
+            if (compartmentDepth == null) {
+              throw new MissingRequiredPropertyException("GetScheduleQueryProperty", "compartmentDepth");
+            }
+            this.compartmentDepth = compartmentDepth;
             return this;
         }
         @CustomType.Setter
         public Builder dateRanges(List<GetScheduleQueryPropertyDateRange> dateRanges) {
-            this.dateRanges = Objects.requireNonNull(dateRanges);
+            if (dateRanges == null) {
+              throw new MissingRequiredPropertyException("GetScheduleQueryProperty", "dateRanges");
+            }
+            this.dateRanges = dateRanges;
             return this;
         }
         public Builder dateRanges(GetScheduleQueryPropertyDateRange... dateRanges) {
@@ -158,17 +165,26 @@ public final class GetScheduleQueryProperty {
         }
         @CustomType.Setter
         public Builder filter(String filter) {
-            this.filter = Objects.requireNonNull(filter);
+            if (filter == null) {
+              throw new MissingRequiredPropertyException("GetScheduleQueryProperty", "filter");
+            }
+            this.filter = filter;
             return this;
         }
         @CustomType.Setter
         public Builder granularity(String granularity) {
-            this.granularity = Objects.requireNonNull(granularity);
+            if (granularity == null) {
+              throw new MissingRequiredPropertyException("GetScheduleQueryProperty", "granularity");
+            }
+            this.granularity = granularity;
             return this;
         }
         @CustomType.Setter
         public Builder groupBies(List<String> groupBies) {
-            this.groupBies = Objects.requireNonNull(groupBies);
+            if (groupBies == null) {
+              throw new MissingRequiredPropertyException("GetScheduleQueryProperty", "groupBies");
+            }
+            this.groupBies = groupBies;
             return this;
         }
         public Builder groupBies(String... groupBies) {
@@ -176,7 +192,10 @@ public final class GetScheduleQueryProperty {
         }
         @CustomType.Setter
         public Builder groupByTags(List<GetScheduleQueryPropertyGroupByTag> groupByTags) {
-            this.groupByTags = Objects.requireNonNull(groupByTags);
+            if (groupByTags == null) {
+              throw new MissingRequiredPropertyException("GetScheduleQueryProperty", "groupByTags");
+            }
+            this.groupByTags = groupByTags;
             return this;
         }
         public Builder groupByTags(GetScheduleQueryPropertyGroupByTag... groupByTags) {
@@ -184,12 +203,18 @@ public final class GetScheduleQueryProperty {
         }
         @CustomType.Setter
         public Builder isAggregateByTime(Boolean isAggregateByTime) {
-            this.isAggregateByTime = Objects.requireNonNull(isAggregateByTime);
+            if (isAggregateByTime == null) {
+              throw new MissingRequiredPropertyException("GetScheduleQueryProperty", "isAggregateByTime");
+            }
+            this.isAggregateByTime = isAggregateByTime;
             return this;
         }
         @CustomType.Setter
         public Builder queryType(String queryType) {
-            this.queryType = Objects.requireNonNull(queryType);
+            if (queryType == null) {
+              throw new MissingRequiredPropertyException("GetScheduleQueryProperty", "queryType");
+            }
+            this.queryType = queryType;
             return this;
         }
         public GetScheduleQueryProperty build() {

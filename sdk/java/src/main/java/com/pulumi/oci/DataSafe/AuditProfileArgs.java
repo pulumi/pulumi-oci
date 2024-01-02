@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -351,7 +352,9 @@ public final class AuditProfileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public AuditProfileArgs build() {
-            $.auditProfileId = Objects.requireNonNull($.auditProfileId, "expected parameter 'auditProfileId' to be non-null");
+            if ($.auditProfileId == null) {
+                throw new MissingRequiredPropertyException("AuditProfileArgs", "auditProfileId");
+            }
             return $;
         }
     }

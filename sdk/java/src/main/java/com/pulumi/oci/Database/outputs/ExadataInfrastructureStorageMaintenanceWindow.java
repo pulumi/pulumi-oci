@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek;
 import com.pulumi.oci.Database.outputs.ExadataInfrastructureStorageMaintenanceWindowMonth;
 import java.lang.Integer;
@@ -70,6 +71,7 @@ public final class ExadataInfrastructureStorageMaintenanceWindow {
 
         @CustomType.Setter
         public Builder daysOfWeeks(@Nullable List<ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek> daysOfWeeks) {
+
             this.daysOfWeeks = daysOfWeeks;
             return this;
         }
@@ -78,6 +80,7 @@ public final class ExadataInfrastructureStorageMaintenanceWindow {
         }
         @CustomType.Setter
         public Builder hoursOfDays(@Nullable List<Integer> hoursOfDays) {
+
             this.hoursOfDays = hoursOfDays;
             return this;
         }
@@ -86,11 +89,13 @@ public final class ExadataInfrastructureStorageMaintenanceWindow {
         }
         @CustomType.Setter
         public Builder leadTimeInWeeks(@Nullable Integer leadTimeInWeeks) {
+
             this.leadTimeInWeeks = leadTimeInWeeks;
             return this;
         }
         @CustomType.Setter
         public Builder months(@Nullable List<ExadataInfrastructureStorageMaintenanceWindowMonth> months) {
+
             this.months = months;
             return this;
         }
@@ -99,11 +104,15 @@ public final class ExadataInfrastructureStorageMaintenanceWindow {
         }
         @CustomType.Setter
         public Builder preference(String preference) {
-            this.preference = Objects.requireNonNull(preference);
+            if (preference == null) {
+              throw new MissingRequiredPropertyException("ExadataInfrastructureStorageMaintenanceWindow", "preference");
+            }
+            this.preference = preference;
             return this;
         }
         @CustomType.Setter
         public Builder weeksOfMonths(@Nullable List<Integer> weeksOfMonths) {
+
             this.weeksOfMonths = weeksOfMonths;
             return this;
         }

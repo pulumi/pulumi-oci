@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetDomainsMyTrustedUserAgentsMyTrustedUserAgentTrustedFactor 
 
         @CustomType.Setter
         public Builder category(String category) {
-            this.category = Objects.requireNonNull(category);
+            if (category == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgentTrustedFactor", "category");
+            }
+            this.category = category;
             return this;
         }
         @CustomType.Setter
         public Builder creationTime(String creationTime) {
-            this.creationTime = Objects.requireNonNull(creationTime);
+            if (creationTime == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgentTrustedFactor", "creationTime");
+            }
+            this.creationTime = creationTime;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyTrustedUserAgentsMyTrustedUserAgentTrustedFactor", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetDomainsMyTrustedUserAgentsMyTrustedUserAgentTrustedFactor build() {

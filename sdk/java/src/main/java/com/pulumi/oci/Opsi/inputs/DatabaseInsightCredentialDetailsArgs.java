@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -261,7 +262,9 @@ public final class DatabaseInsightCredentialDetailsArgs extends com.pulumi.resou
         }
 
         public DatabaseInsightCredentialDetailsArgs build() {
-            $.credentialType = Objects.requireNonNull($.credentialType, "expected parameter 'credentialType' to be non-null");
+            if ($.credentialType == null) {
+                throw new MissingRequiredPropertyException("DatabaseInsightCredentialDetailsArgs", "credentialType");
+            }
             return $;
         }
     }

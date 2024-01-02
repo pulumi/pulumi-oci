@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetLifecycleStagePlainArgs extends com.pulumi.resources.Invok
         }
 
         public GetLifecycleStagePlainArgs build() {
-            $.lifecycleStageId = Objects.requireNonNull($.lifecycleStageId, "expected parameter 'lifecycleStageId' to be non-null");
+            if ($.lifecycleStageId == null) {
+                throw new MissingRequiredPropertyException("GetLifecycleStagePlainArgs", "lifecycleStageId");
+            }
             return $;
         }
     }

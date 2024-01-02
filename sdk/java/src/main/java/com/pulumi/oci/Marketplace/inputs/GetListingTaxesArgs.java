@@ -5,6 +5,7 @@ package com.pulumi.oci.Marketplace.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.inputs.GetListingTaxesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -136,7 +137,9 @@ public final class GetListingTaxesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetListingTaxesArgs build() {
-            $.listingId = Objects.requireNonNull($.listingId, "expected parameter 'listingId' to be non-null");
+            if ($.listingId == null) {
+                throw new MissingRequiredPropertyException("GetListingTaxesArgs", "listingId");
+            }
             return $;
         }
     }

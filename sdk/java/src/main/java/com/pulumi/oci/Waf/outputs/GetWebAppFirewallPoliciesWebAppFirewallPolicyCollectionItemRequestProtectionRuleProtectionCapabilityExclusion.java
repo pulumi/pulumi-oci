@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -57,7 +58,10 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
 
         @CustomType.Setter
         public Builder args(List<String> args) {
-            this.args = Objects.requireNonNull(args);
+            if (args == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion", "args");
+            }
+            this.args = args;
             return this;
         }
         public Builder args(String... args) {
@@ -65,7 +69,10 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
         }
         @CustomType.Setter
         public Builder requestCookies(List<String> requestCookies) {
-            this.requestCookies = Objects.requireNonNull(requestCookies);
+            if (requestCookies == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion", "requestCookies");
+            }
+            this.requestCookies = requestCookies;
             return this;
         }
         public Builder requestCookies(String... requestCookies) {

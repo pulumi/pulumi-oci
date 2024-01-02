@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -182,57 +183,90 @@ public final class GetSubscriptionPaymentOption {
 
         @CustomType.Setter
         public Builder creditCardType(String creditCardType) {
-            this.creditCardType = Objects.requireNonNull(creditCardType);
+            if (creditCardType == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionPaymentOption", "creditCardType");
+            }
+            this.creditCardType = creditCardType;
             return this;
         }
         @CustomType.Setter
         public Builder emailAddress(String emailAddress) {
-            this.emailAddress = Objects.requireNonNull(emailAddress);
+            if (emailAddress == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionPaymentOption", "emailAddress");
+            }
+            this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
         public Builder extBillingAgreementId(String extBillingAgreementId) {
-            this.extBillingAgreementId = Objects.requireNonNull(extBillingAgreementId);
+            if (extBillingAgreementId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionPaymentOption", "extBillingAgreementId");
+            }
+            this.extBillingAgreementId = extBillingAgreementId;
             return this;
         }
         @CustomType.Setter
         public Builder firstName(String firstName) {
-            this.firstName = Objects.requireNonNull(firstName);
+            if (firstName == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionPaymentOption", "firstName");
+            }
+            this.firstName = firstName;
             return this;
         }
         @CustomType.Setter
         public Builder lastDigits(String lastDigits) {
-            this.lastDigits = Objects.requireNonNull(lastDigits);
+            if (lastDigits == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionPaymentOption", "lastDigits");
+            }
+            this.lastDigits = lastDigits;
             return this;
         }
         @CustomType.Setter
         public Builder lastName(String lastName) {
-            this.lastName = Objects.requireNonNull(lastName);
+            if (lastName == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionPaymentOption", "lastName");
+            }
+            this.lastName = lastName;
             return this;
         }
         @CustomType.Setter
         public Builder nameOnCard(String nameOnCard) {
-            this.nameOnCard = Objects.requireNonNull(nameOnCard);
+            if (nameOnCard == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionPaymentOption", "nameOnCard");
+            }
+            this.nameOnCard = nameOnCard;
             return this;
         }
         @CustomType.Setter
         public Builder paymentMethod(String paymentMethod) {
-            this.paymentMethod = Objects.requireNonNull(paymentMethod);
+            if (paymentMethod == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionPaymentOption", "paymentMethod");
+            }
+            this.paymentMethod = paymentMethod;
             return this;
         }
         @CustomType.Setter
         public Builder timeExpiration(String timeExpiration) {
-            this.timeExpiration = Objects.requireNonNull(timeExpiration);
+            if (timeExpiration == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionPaymentOption", "timeExpiration");
+            }
+            this.timeExpiration = timeExpiration;
             return this;
         }
         @CustomType.Setter
         public Builder walletInstrumentId(String walletInstrumentId) {
-            this.walletInstrumentId = Objects.requireNonNull(walletInstrumentId);
+            if (walletInstrumentId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionPaymentOption", "walletInstrumentId");
+            }
+            this.walletInstrumentId = walletInstrumentId;
             return this;
         }
         @CustomType.Setter
         public Builder walletTransactionId(String walletTransactionId) {
-            this.walletTransactionId = Objects.requireNonNull(walletTransactionId);
+            if (walletTransactionId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionPaymentOption", "walletTransactionId");
+            }
+            this.walletTransactionId = walletTransactionId;
             return this;
         }
         public GetSubscriptionPaymentOption build() {

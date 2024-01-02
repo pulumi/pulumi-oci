@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSumm
 
         @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+            if (timeFinished == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummary", "timeFinished");
+            }
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummary", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummary build() {

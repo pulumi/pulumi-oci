@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetDedicatedVmHostsDedicatedVmHost;
 import com.pulumi.oci.Core.outputs.GetDedicatedVmHostsFilter;
 import java.lang.Double;
@@ -142,17 +143,24 @@ public final class GetDedicatedVmHostsResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dedicatedVmHosts(List<GetDedicatedVmHostsDedicatedVmHost> dedicatedVmHosts) {
-            this.dedicatedVmHosts = Objects.requireNonNull(dedicatedVmHosts);
+            if (dedicatedVmHosts == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostsResult", "dedicatedVmHosts");
+            }
+            this.dedicatedVmHosts = dedicatedVmHosts;
             return this;
         }
         public Builder dedicatedVmHosts(GetDedicatedVmHostsDedicatedVmHost... dedicatedVmHosts) {
@@ -160,11 +168,13 @@ public final class GetDedicatedVmHostsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDedicatedVmHostsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -173,26 +183,33 @@ public final class GetDedicatedVmHostsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceShapeName(@Nullable String instanceShapeName) {
+
             this.instanceShapeName = instanceShapeName;
             return this;
         }
         @CustomType.Setter
         public Builder remainingMemoryInGbsGreaterThanOrEqualTo(@Nullable Double remainingMemoryInGbsGreaterThanOrEqualTo) {
+
             this.remainingMemoryInGbsGreaterThanOrEqualTo = remainingMemoryInGbsGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder remainingOcpusGreaterThanOrEqualTo(@Nullable Double remainingOcpusGreaterThanOrEqualTo) {
+
             this.remainingOcpusGreaterThanOrEqualTo = remainingOcpusGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

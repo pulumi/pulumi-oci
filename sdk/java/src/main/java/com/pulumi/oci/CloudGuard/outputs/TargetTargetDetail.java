@@ -88,21 +88,25 @@ public final class TargetTargetDetail {
 
         @CustomType.Setter
         public Builder securityZoneDisplayName(@Nullable String securityZoneDisplayName) {
+
             this.securityZoneDisplayName = securityZoneDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder securityZoneId(@Nullable String securityZoneId) {
+
             this.securityZoneId = securityZoneId;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourceType(@Nullable String targetResourceType) {
+
             this.targetResourceType = targetResourceType;
             return this;
         }
         @CustomType.Setter
         public Builder targetSecurityZoneRecipes(@Nullable List<TargetTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes) {
+
             this.targetSecurityZoneRecipes = targetSecurityZoneRecipes;
             return this;
         }

@@ -135,31 +135,37 @@ public final class MysqlDbSystemBackupPolicy {
 
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+
             this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+
             this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
+
             this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder pitrPolicy(@Nullable MysqlDbSystemBackupPolicyPitrPolicy pitrPolicy) {
+
             this.pitrPolicy = pitrPolicy;
             return this;
         }
         @CustomType.Setter
         public Builder retentionInDays(@Nullable Integer retentionInDays) {
+
             this.retentionInDays = retentionInDays;
             return this;
         }
         @CustomType.Setter
         public Builder windowStartTime(@Nullable String windowStartTime) {
+
             this.windowStartTime = windowStartTime;
             return this;
         }

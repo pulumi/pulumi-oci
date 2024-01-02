@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.outputs.GetScriptsFilter;
 import com.pulumi.oci.ApmSynthetics.outputs.GetScriptsScriptCollection;
 import java.lang.String;
@@ -101,21 +102,27 @@ public final class GetScriptsResult {
 
         @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
-            this.apmDomainId = Objects.requireNonNull(apmDomainId);
+            if (apmDomainId == null) {
+              throw new MissingRequiredPropertyException("GetScriptsResult", "apmDomainId");
+            }
+            this.apmDomainId = apmDomainId;
             return this;
         }
         @CustomType.Setter
         public Builder contentType(@Nullable String contentType) {
+
             this.contentType = contentType;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetScriptsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -124,12 +131,18 @@ public final class GetScriptsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetScriptsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder scriptCollections(List<GetScriptsScriptCollection> scriptCollections) {
-            this.scriptCollections = Objects.requireNonNull(scriptCollections);
+            if (scriptCollections == null) {
+              throw new MissingRequiredPropertyException("GetScriptsResult", "scriptCollections");
+            }
+            this.scriptCollections = scriptCollections;
             return this;
         }
         public Builder scriptCollections(GetScriptsScriptCollection... scriptCollections) {

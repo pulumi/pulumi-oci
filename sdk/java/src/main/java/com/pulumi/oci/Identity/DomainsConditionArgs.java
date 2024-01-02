@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsConditionTagArgs;
 import java.lang.String;
 import java.util.List;
@@ -1042,11 +1043,21 @@ public final class DomainsConditionArgs extends com.pulumi.resources.ResourceArg
         }
 
         public DomainsConditionArgs build() {
-            $.attributeName = Objects.requireNonNull($.attributeName, "expected parameter 'attributeName' to be non-null");
-            $.attributeValue = Objects.requireNonNull($.attributeValue, "expected parameter 'attributeValue' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.operator = Objects.requireNonNull($.operator, "expected parameter 'operator' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.attributeName == null) {
+                throw new MissingRequiredPropertyException("DomainsConditionArgs", "attributeName");
+            }
+            if ($.attributeValue == null) {
+                throw new MissingRequiredPropertyException("DomainsConditionArgs", "attributeValue");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsConditionArgs", "idcsEndpoint");
+            }
+            if ($.operator == null) {
+                throw new MissingRequiredPropertyException("DomainsConditionArgs", "operator");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsConditionArgs", "schemas");
+            }
             return $;
         }
     }

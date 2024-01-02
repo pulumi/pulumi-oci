@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetPluggableDatabaseRefreshableCloneConfig {
 
         @CustomType.Setter
         public Builder isRefreshableClone(Boolean isRefreshableClone) {
-            this.isRefreshableClone = Objects.requireNonNull(isRefreshableClone);
+            if (isRefreshableClone == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseRefreshableCloneConfig", "isRefreshableClone");
+            }
+            this.isRefreshableClone = isRefreshableClone;
             return this;
         }
         public GetPluggableDatabaseRefreshableCloneConfig build() {

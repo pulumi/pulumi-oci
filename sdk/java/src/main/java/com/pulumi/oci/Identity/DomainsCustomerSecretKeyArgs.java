@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsCustomerSecretKeyTagArgs;
 import com.pulumi.oci.Identity.inputs.DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs;
 import com.pulumi.oci.Identity.inputs.DomainsCustomerSecretKeyUserArgs;
@@ -923,8 +924,12 @@ public final class DomainsCustomerSecretKeyArgs extends com.pulumi.resources.Res
         }
 
         public DomainsCustomerSecretKeyArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsCustomerSecretKeyArgs", "idcsEndpoint");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsCustomerSecretKeyArgs", "schemas");
+            }
             return $;
         }
     }

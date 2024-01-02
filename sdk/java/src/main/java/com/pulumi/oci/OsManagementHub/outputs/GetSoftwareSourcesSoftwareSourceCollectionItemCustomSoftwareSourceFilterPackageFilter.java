@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareS
 
         @CustomType.Setter
         public Builder filterType(String filterType) {
-            this.filterType = Objects.requireNonNull(filterType);
+            if (filterType == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter", "filterType");
+            }
+            this.filterType = filterType;
             return this;
         }
         @CustomType.Setter
         public Builder packageName(String packageName) {
-            this.packageName = Objects.requireNonNull(packageName);
+            if (packageName == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter", "packageName");
+            }
+            this.packageName = packageName;
             return this;
         }
         @CustomType.Setter
         public Builder packageNamePattern(String packageNamePattern) {
-            this.packageNamePattern = Objects.requireNonNull(packageNamePattern);
+            if (packageNamePattern == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter", "packageNamePattern");
+            }
+            this.packageNamePattern = packageNamePattern;
             return this;
         }
         @CustomType.Setter
         public Builder packageVersion(String packageVersion) {
-            this.packageVersion = Objects.requireNonNull(packageVersion);
+            if (packageVersion == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter", "packageVersion");
+            }
+            this.packageVersion = packageVersion;
             return this;
         }
         public GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter build() {

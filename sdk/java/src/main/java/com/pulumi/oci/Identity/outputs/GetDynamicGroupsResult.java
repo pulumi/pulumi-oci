@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDynamicGroupsDynamicGroup;
 import com.pulumi.oci.Identity.outputs.GetDynamicGroupsFilter;
 import java.lang.String;
@@ -109,12 +110,18 @@ public final class GetDynamicGroupsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDynamicGroupsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dynamicGroups(List<GetDynamicGroupsDynamicGroup> dynamicGroups) {
-            this.dynamicGroups = Objects.requireNonNull(dynamicGroups);
+            if (dynamicGroups == null) {
+              throw new MissingRequiredPropertyException("GetDynamicGroupsResult", "dynamicGroups");
+            }
+            this.dynamicGroups = dynamicGroups;
             return this;
         }
         public Builder dynamicGroups(GetDynamicGroupsDynamicGroup... dynamicGroups) {
@@ -122,6 +129,7 @@ public final class GetDynamicGroupsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDynamicGroupsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -130,16 +138,21 @@ public final class GetDynamicGroupsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDynamicGroupsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

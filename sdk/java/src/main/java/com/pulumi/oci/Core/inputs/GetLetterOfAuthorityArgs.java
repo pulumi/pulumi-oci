@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetLetterOfAuthorityArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetLetterOfAuthorityArgs build() {
-            $.crossConnectId = Objects.requireNonNull($.crossConnectId, "expected parameter 'crossConnectId' to be non-null");
+            if ($.crossConnectId == null) {
+                throw new MissingRequiredPropertyException("GetLetterOfAuthorityArgs", "crossConnectId");
+            }
             return $;
         }
     }

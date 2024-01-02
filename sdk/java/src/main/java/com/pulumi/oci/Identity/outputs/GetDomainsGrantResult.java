@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsGrantApp;
 import com.pulumi.oci.Identity.outputs.GetDomainsGrantAppEntitlementCollection;
 import com.pulumi.oci.Identity.outputs.GetDomainsGrantEntitlement;
@@ -391,7 +392,10 @@ public final class GetDomainsGrantResult {
 
         @CustomType.Setter
         public Builder appEntitlementCollections(List<GetDomainsGrantAppEntitlementCollection> appEntitlementCollections) {
-            this.appEntitlementCollections = Objects.requireNonNull(appEntitlementCollections);
+            if (appEntitlementCollections == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "appEntitlementCollections");
+            }
+            this.appEntitlementCollections = appEntitlementCollections;
             return this;
         }
         public Builder appEntitlementCollections(GetDomainsGrantAppEntitlementCollection... appEntitlementCollections) {
@@ -399,7 +403,10 @@ public final class GetDomainsGrantResult {
         }
         @CustomType.Setter
         public Builder apps(List<GetDomainsGrantApp> apps) {
-            this.apps = Objects.requireNonNull(apps);
+            if (apps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "apps");
+            }
+            this.apps = apps;
             return this;
         }
         public Builder apps(GetDomainsGrantApp... apps) {
@@ -407,6 +414,7 @@ public final class GetDomainsGrantResult {
         }
         @CustomType.Setter
         public Builder attributeSets(@Nullable List<String> attributeSets) {
+
             this.attributeSets = attributeSets;
             return this;
         }
@@ -415,37 +423,54 @@ public final class GetDomainsGrantResult {
         }
         @CustomType.Setter
         public Builder attributes(@Nullable String attributes) {
+
             this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder compositeKey(String compositeKey) {
-            this.compositeKey = Objects.requireNonNull(compositeKey);
+            if (compositeKey == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "compositeKey");
+            }
+            this.compositeKey = compositeKey;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder entitlements(List<GetDomainsGrantEntitlement> entitlements) {
-            this.entitlements = Objects.requireNonNull(entitlements);
+            if (entitlements == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "entitlements");
+            }
+            this.entitlements = entitlements;
             return this;
         }
         public Builder entitlements(GetDomainsGrantEntitlement... entitlements) {
@@ -453,22 +478,34 @@ public final class GetDomainsGrantResult {
         }
         @CustomType.Setter
         public Builder grantId(String grantId) {
-            this.grantId = Objects.requireNonNull(grantId);
+            if (grantId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "grantId");
+            }
+            this.grantId = grantId;
             return this;
         }
         @CustomType.Setter
         public Builder grantMechanism(String grantMechanism) {
-            this.grantMechanism = Objects.requireNonNull(grantMechanism);
+            if (grantMechanism == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "grantMechanism");
+            }
+            this.grantMechanism = grantMechanism;
             return this;
         }
         @CustomType.Setter
         public Builder grantedAttributeValuesJson(String grantedAttributeValuesJson) {
-            this.grantedAttributeValuesJson = Objects.requireNonNull(grantedAttributeValuesJson);
+            if (grantedAttributeValuesJson == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "grantedAttributeValuesJson");
+            }
+            this.grantedAttributeValuesJson = grantedAttributeValuesJson;
             return this;
         }
         @CustomType.Setter
         public Builder grantees(List<GetDomainsGrantGrantee> grantees) {
-            this.grantees = Objects.requireNonNull(grantees);
+            if (grantees == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "grantees");
+            }
+            this.grantees = grantees;
             return this;
         }
         public Builder grantees(GetDomainsGrantGrantee... grantees) {
@@ -476,7 +513,10 @@ public final class GetDomainsGrantResult {
         }
         @CustomType.Setter
         public Builder grantors(List<GetDomainsGrantGrantor> grantors) {
-            this.grantors = Objects.requireNonNull(grantors);
+            if (grantors == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "grantors");
+            }
+            this.grantors = grantors;
             return this;
         }
         public Builder grantors(GetDomainsGrantGrantor... grantors) {
@@ -484,12 +524,18 @@ public final class GetDomainsGrantResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsGrantIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsGrantIdcsCreatedBy... idcsCreatedBies) {
@@ -497,12 +543,18 @@ public final class GetDomainsGrantResult {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsGrantIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsGrantIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -510,12 +562,18 @@ public final class GetDomainsGrantResult {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -523,12 +581,18 @@ public final class GetDomainsGrantResult {
         }
         @CustomType.Setter
         public Builder isFulfilled(Boolean isFulfilled) {
-            this.isFulfilled = Objects.requireNonNull(isFulfilled);
+            if (isFulfilled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "isFulfilled");
+            }
+            this.isFulfilled = isFulfilled;
             return this;
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsGrantMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsGrantMeta... metas) {
@@ -536,17 +600,24 @@ public final class GetDomainsGrantResult {
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -554,7 +625,10 @@ public final class GetDomainsGrantResult {
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsGrantTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsGrantTag... tags) {
@@ -562,7 +636,10 @@ public final class GetDomainsGrantResult {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGrantResult", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         public GetDomainsGrantResult build() {

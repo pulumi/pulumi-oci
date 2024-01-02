@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedBy;
 import com.pulumi.oci.Jms.outputs.GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy;
 import java.lang.Object;
@@ -207,12 +208,18 @@ public final class GetJavaDownloadsJavaLicenseAcceptanceRecordResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseAcceptanceRecordResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdBies(List<GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedBy> createdBies) {
-            this.createdBies = Objects.requireNonNull(createdBies);
+            if (createdBies == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseAcceptanceRecordResult", "createdBies");
+            }
+            this.createdBies = createdBies;
             return this;
         }
         public Builder createdBies(GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedBy... createdBies) {
@@ -220,27 +227,42 @@ public final class GetJavaDownloadsJavaLicenseAcceptanceRecordResult {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseAcceptanceRecordResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseAcceptanceRecordResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseAcceptanceRecordResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder javaLicenseAcceptanceRecordId(String javaLicenseAcceptanceRecordId) {
-            this.javaLicenseAcceptanceRecordId = Objects.requireNonNull(javaLicenseAcceptanceRecordId);
+            if (javaLicenseAcceptanceRecordId == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseAcceptanceRecordResult", "javaLicenseAcceptanceRecordId");
+            }
+            this.javaLicenseAcceptanceRecordId = javaLicenseAcceptanceRecordId;
             return this;
         }
         @CustomType.Setter
         public Builder lastUpdatedBies(List<GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy> lastUpdatedBies) {
-            this.lastUpdatedBies = Objects.requireNonNull(lastUpdatedBies);
+            if (lastUpdatedBies == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseAcceptanceRecordResult", "lastUpdatedBies");
+            }
+            this.lastUpdatedBies = lastUpdatedBies;
             return this;
         }
         public Builder lastUpdatedBies(GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy... lastUpdatedBies) {
@@ -248,32 +270,50 @@ public final class GetJavaDownloadsJavaLicenseAcceptanceRecordResult {
         }
         @CustomType.Setter
         public Builder licenseAcceptanceStatus(String licenseAcceptanceStatus) {
-            this.licenseAcceptanceStatus = Objects.requireNonNull(licenseAcceptanceStatus);
+            if (licenseAcceptanceStatus == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseAcceptanceRecordResult", "licenseAcceptanceStatus");
+            }
+            this.licenseAcceptanceStatus = licenseAcceptanceStatus;
             return this;
         }
         @CustomType.Setter
         public Builder licenseType(String licenseType) {
-            this.licenseType = Objects.requireNonNull(licenseType);
+            if (licenseType == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseAcceptanceRecordResult", "licenseType");
+            }
+            this.licenseType = licenseType;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseAcceptanceRecordResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseAcceptanceRecordResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeAccepted(String timeAccepted) {
-            this.timeAccepted = Objects.requireNonNull(timeAccepted);
+            if (timeAccepted == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseAcceptanceRecordResult", "timeAccepted");
+            }
+            this.timeAccepted = timeAccepted;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastUpdated(String timeLastUpdated) {
-            this.timeLastUpdated = Objects.requireNonNull(timeLastUpdated);
+            if (timeLastUpdated == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseAcceptanceRecordResult", "timeLastUpdated");
+            }
+            this.timeLastUpdated = timeLastUpdated;
             return this;
         }
         public GetJavaDownloadsJavaLicenseAcceptanceRecordResult build() {

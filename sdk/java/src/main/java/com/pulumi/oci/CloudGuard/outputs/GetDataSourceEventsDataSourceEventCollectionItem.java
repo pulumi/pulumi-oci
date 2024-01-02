@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetDataSourceEventsDataSourceEventCollectionItemEventInfo;
 import java.lang.String;
 import java.util.List;
@@ -128,22 +129,34 @@ public final class GetDataSourceEventsDataSourceEventCollectionItem {
 
         @CustomType.Setter
         public Builder comments(String comments) {
-            this.comments = Objects.requireNonNull(comments);
+            if (comments == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceEventsDataSourceEventCollectionItem", "comments");
+            }
+            this.comments = comments;
             return this;
         }
         @CustomType.Setter
         public Builder dataSourceId(String dataSourceId) {
-            this.dataSourceId = Objects.requireNonNull(dataSourceId);
+            if (dataSourceId == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceEventsDataSourceEventCollectionItem", "dataSourceId");
+            }
+            this.dataSourceId = dataSourceId;
             return this;
         }
         @CustomType.Setter
         public Builder eventDate(String eventDate) {
-            this.eventDate = Objects.requireNonNull(eventDate);
+            if (eventDate == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceEventsDataSourceEventCollectionItem", "eventDate");
+            }
+            this.eventDate = eventDate;
             return this;
         }
         @CustomType.Setter
         public Builder eventInfos(List<GetDataSourceEventsDataSourceEventCollectionItemEventInfo> eventInfos) {
-            this.eventInfos = Objects.requireNonNull(eventInfos);
+            if (eventInfos == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceEventsDataSourceEventCollectionItem", "eventInfos");
+            }
+            this.eventInfos = eventInfos;
             return this;
         }
         public Builder eventInfos(GetDataSourceEventsDataSourceEventCollectionItemEventInfo... eventInfos) {
@@ -151,17 +164,26 @@ public final class GetDataSourceEventsDataSourceEventCollectionItem {
         }
         @CustomType.Setter
         public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+            if (region == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceEventsDataSourceEventCollectionItem", "region");
+            }
+            this.region = region;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceEventsDataSourceEventCollectionItem", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceEventsDataSourceEventCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetDataSourceEventsDataSourceEventCollectionItem build() {

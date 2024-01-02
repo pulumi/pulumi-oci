@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetConnectionAssignmentPlainArgs extends com.pulumi.resources
         }
 
         public GetConnectionAssignmentPlainArgs build() {
-            $.connectionAssignmentId = Objects.requireNonNull($.connectionAssignmentId, "expected parameter 'connectionAssignmentId' to be non-null");
+            if ($.connectionAssignmentId == null) {
+                throw new MissingRequiredPropertyException("GetConnectionAssignmentPlainArgs", "connectionAssignmentId");
+            }
             return $;
         }
     }

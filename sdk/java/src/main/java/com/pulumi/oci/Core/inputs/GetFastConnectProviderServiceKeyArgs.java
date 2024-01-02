@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class GetFastConnectProviderServiceKeyArgs extends com.pulumi.resou
         }
 
         public GetFastConnectProviderServiceKeyArgs build() {
-            $.providerServiceId = Objects.requireNonNull($.providerServiceId, "expected parameter 'providerServiceId' to be non-null");
-            $.providerServiceKeyName = Objects.requireNonNull($.providerServiceKeyName, "expected parameter 'providerServiceKeyName' to be non-null");
+            if ($.providerServiceId == null) {
+                throw new MissingRequiredPropertyException("GetFastConnectProviderServiceKeyArgs", "providerServiceId");
+            }
+            if ($.providerServiceKeyName == null) {
+                throw new MissingRequiredPropertyException("GetFastConnectProviderServiceKeyArgs", "providerServiceKeyName");
+            }
             return $;
         }
     }

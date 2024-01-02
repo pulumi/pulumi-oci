@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -212,7 +213,9 @@ public final class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs e
         }
 
         public ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs build() {
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs", "subnetId");
+            }
             return $;
         }
     }

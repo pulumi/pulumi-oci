@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.GetRuleSetsFilter;
 import com.pulumi.oci.LoadBalancer.outputs.GetRuleSetsRuleSet;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetRuleSetsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRuleSetsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,17 +82,26 @@ public final class GetRuleSetsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRuleSetsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetRuleSetsResult", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder ruleSets(List<GetRuleSetsRuleSet> ruleSets) {
-            this.ruleSets = Objects.requireNonNull(ruleSets);
+            if (ruleSets == null) {
+              throw new MissingRequiredPropertyException("GetRuleSetsResult", "ruleSets");
+            }
+            this.ruleSets = ruleSets;
             return this;
         }
         public Builder ruleSets(GetRuleSetsRuleSet... ruleSets) {

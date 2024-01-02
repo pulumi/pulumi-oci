@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.GetWaasPoliciesFilter;
 import com.pulumi.oci.Waas.outputs.GetWaasPoliciesWaasPolicy;
 import java.lang.String;
@@ -111,11 +112,15 @@ public final class GetWaasPoliciesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayNames(@Nullable List<String> displayNames) {
+
             this.displayNames = displayNames;
             return this;
         }
@@ -124,6 +129,7 @@ public final class GetWaasPoliciesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetWaasPoliciesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -132,11 +138,15 @@ public final class GetWaasPoliciesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ids(@Nullable List<String> ids) {
+
             this.ids = ids;
             return this;
         }
@@ -145,6 +155,7 @@ public final class GetWaasPoliciesResult {
         }
         @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
+
             this.states = states;
             return this;
         }
@@ -153,17 +164,22 @@ public final class GetWaasPoliciesResult {
         }
         @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
+
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
+
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }
         @CustomType.Setter
         public Builder waasPolicies(List<GetWaasPoliciesWaasPolicy> waasPolicies) {
-            this.waasPolicies = Objects.requireNonNull(waasPolicies);
+            if (waasPolicies == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesResult", "waasPolicies");
+            }
+            this.waasPolicies = waasPolicies;
             return this;
         }
         public Builder waasPolicies(GetWaasPoliciesWaasPolicy... waasPolicies) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentImagesFilter;
 import java.lang.String;
 import java.util.List;
@@ -165,7 +166,9 @@ public final class GetManagementAgentImagesPlainArgs extends com.pulumi.resource
         }
 
         public GetManagementAgentImagesPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetManagementAgentImagesPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

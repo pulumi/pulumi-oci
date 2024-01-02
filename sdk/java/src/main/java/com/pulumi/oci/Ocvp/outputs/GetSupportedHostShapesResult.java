@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ocvp.outputs.GetSupportedHostShapesFilter;
 import com.pulumi.oci.Ocvp.outputs.GetSupportedHostShapesItem;
 import java.lang.Boolean;
@@ -126,11 +127,15 @@ public final class GetSupportedHostShapesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSupportedHostShapesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSupportedHostShapesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -139,22 +144,30 @@ public final class GetSupportedHostShapesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSupportedHostShapesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder initialHostShapeName(@Nullable String initialHostShapeName) {
+
             this.initialHostShapeName = initialHostShapeName;
             return this;
         }
         @CustomType.Setter
         public Builder isSingleHostSddcSupported(@Nullable Boolean isSingleHostSddcSupported) {
+
             this.isSingleHostSddcSupported = isSingleHostSddcSupported;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetSupportedHostShapesItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetSupportedHostShapesResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetSupportedHostShapesItem... items) {
@@ -162,11 +175,13 @@ public final class GetSupportedHostShapesResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder sddcType(@Nullable String sddcType) {
+
             this.sddcType = sddcType;
             return this;
         }

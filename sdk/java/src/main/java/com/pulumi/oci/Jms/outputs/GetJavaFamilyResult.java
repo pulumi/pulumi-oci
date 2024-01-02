@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetJavaFamilyLatestReleaseArtifact;
 import java.lang.Boolean;
 import java.lang.String;
@@ -157,37 +158,58 @@ public final class GetJavaFamilyResult {
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder docUrl(String docUrl) {
-            this.docUrl = Objects.requireNonNull(docUrl);
+            if (docUrl == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyResult", "docUrl");
+            }
+            this.docUrl = docUrl;
             return this;
         }
         @CustomType.Setter
         public Builder endOfSupportLifeDate(String endOfSupportLifeDate) {
-            this.endOfSupportLifeDate = Objects.requireNonNull(endOfSupportLifeDate);
+            if (endOfSupportLifeDate == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyResult", "endOfSupportLifeDate");
+            }
+            this.endOfSupportLifeDate = endOfSupportLifeDate;
             return this;
         }
         @CustomType.Setter
         public Builder familyVersion(String familyVersion) {
-            this.familyVersion = Objects.requireNonNull(familyVersion);
+            if (familyVersion == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyResult", "familyVersion");
+            }
+            this.familyVersion = familyVersion;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isSupportedVersion(Boolean isSupportedVersion) {
-            this.isSupportedVersion = Objects.requireNonNull(isSupportedVersion);
+            if (isSupportedVersion == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyResult", "isSupportedVersion");
+            }
+            this.isSupportedVersion = isSupportedVersion;
             return this;
         }
         @CustomType.Setter
         public Builder latestReleaseArtifacts(List<GetJavaFamilyLatestReleaseArtifact> latestReleaseArtifacts) {
-            this.latestReleaseArtifacts = Objects.requireNonNull(latestReleaseArtifacts);
+            if (latestReleaseArtifacts == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyResult", "latestReleaseArtifacts");
+            }
+            this.latestReleaseArtifacts = latestReleaseArtifacts;
             return this;
         }
         public Builder latestReleaseArtifacts(GetJavaFamilyLatestReleaseArtifact... latestReleaseArtifacts) {
@@ -195,12 +217,18 @@ public final class GetJavaFamilyResult {
         }
         @CustomType.Setter
         public Builder latestReleaseVersion(String latestReleaseVersion) {
-            this.latestReleaseVersion = Objects.requireNonNull(latestReleaseVersion);
+            if (latestReleaseVersion == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyResult", "latestReleaseVersion");
+            }
+            this.latestReleaseVersion = latestReleaseVersion;
             return this;
         }
         @CustomType.Setter
         public Builder supportType(String supportType) {
-            this.supportType = Objects.requireNonNull(supportType);
+            if (supportType == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyResult", "supportType");
+            }
+            this.supportType = supportType;
             return this;
         }
         public GetJavaFamilyResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClusterMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClusterMaintenanceWindowDetail;
 import java.lang.Boolean;
@@ -824,92 +825,146 @@ public final class GetCloudAutonomousVmClusterResult {
 
         @CustomType.Setter
         public Builder autonomousDataStoragePercentage(Double autonomousDataStoragePercentage) {
-            this.autonomousDataStoragePercentage = Objects.requireNonNull(autonomousDataStoragePercentage);
+            if (autonomousDataStoragePercentage == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "autonomousDataStoragePercentage");
+            }
+            this.autonomousDataStoragePercentage = autonomousDataStoragePercentage;
             return this;
         }
         @CustomType.Setter
         public Builder autonomousDataStorageSizeInTbs(Double autonomousDataStorageSizeInTbs) {
-            this.autonomousDataStorageSizeInTbs = Objects.requireNonNull(autonomousDataStorageSizeInTbs);
+            if (autonomousDataStorageSizeInTbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "autonomousDataStorageSizeInTbs");
+            }
+            this.autonomousDataStorageSizeInTbs = autonomousDataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder availableAutonomousDataStorageSizeInTbs(Double availableAutonomousDataStorageSizeInTbs) {
-            this.availableAutonomousDataStorageSizeInTbs = Objects.requireNonNull(availableAutonomousDataStorageSizeInTbs);
+            if (availableAutonomousDataStorageSizeInTbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "availableAutonomousDataStorageSizeInTbs");
+            }
+            this.availableAutonomousDataStorageSizeInTbs = availableAutonomousDataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder availableContainerDatabases(Integer availableContainerDatabases) {
-            this.availableContainerDatabases = Objects.requireNonNull(availableContainerDatabases);
+            if (availableContainerDatabases == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "availableContainerDatabases");
+            }
+            this.availableContainerDatabases = availableContainerDatabases;
             return this;
         }
         @CustomType.Setter
         public Builder availableCpus(Double availableCpus) {
-            this.availableCpus = Objects.requireNonNull(availableCpus);
+            if (availableCpus == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "availableCpus");
+            }
+            this.availableCpus = availableCpus;
             return this;
         }
         @CustomType.Setter
         public Builder cloudAutonomousVmClusterId(String cloudAutonomousVmClusterId) {
-            this.cloudAutonomousVmClusterId = Objects.requireNonNull(cloudAutonomousVmClusterId);
+            if (cloudAutonomousVmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "cloudAutonomousVmClusterId");
+            }
+            this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             return this;
         }
         @CustomType.Setter
         public Builder cloudExadataInfrastructureId(String cloudExadataInfrastructureId) {
-            this.cloudExadataInfrastructureId = Objects.requireNonNull(cloudExadataInfrastructureId);
+            if (cloudExadataInfrastructureId == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "cloudExadataInfrastructureId");
+            }
+            this.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
         public Builder clusterTimeZone(String clusterTimeZone) {
-            this.clusterTimeZone = Objects.requireNonNull(clusterTimeZone);
+            if (clusterTimeZone == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "clusterTimeZone");
+            }
+            this.clusterTimeZone = clusterTimeZone;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeModel(String computeModel) {
-            this.computeModel = Objects.requireNonNull(computeModel);
+            if (computeModel == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "computeModel");
+            }
+            this.computeModel = computeModel;
             return this;
         }
         @CustomType.Setter
         public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+            if (cpuCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "cpuCoreCount");
+            }
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
         public Builder cpuCoreCountPerNode(Integer cpuCoreCountPerNode) {
-            this.cpuCoreCountPerNode = Objects.requireNonNull(cpuCoreCountPerNode);
+            if (cpuCoreCountPerNode == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "cpuCoreCountPerNode");
+            }
+            this.cpuCoreCountPerNode = cpuCoreCountPerNode;
             return this;
         }
         @CustomType.Setter
         public Builder cpuPercentage(Double cpuPercentage) {
-            this.cpuPercentage = Objects.requireNonNull(cpuPercentage);
+            if (cpuPercentage == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "cpuPercentage");
+            }
+            this.cpuPercentage = cpuPercentage;
             return this;
         }
         @CustomType.Setter
         public Builder dataStorageSizeInGb(Double dataStorageSizeInGb) {
-            this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
+            if (dataStorageSizeInGb == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "dataStorageSizeInGb");
+            }
+            this.dataStorageSizeInGb = dataStorageSizeInGb;
             return this;
         }
         @CustomType.Setter
         public Builder dataStorageSizeInTbs(Double dataStorageSizeInTbs) {
-            this.dataStorageSizeInTbs = Objects.requireNonNull(dataStorageSizeInTbs);
+            if (dataStorageSizeInTbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "dataStorageSizeInTbs");
+            }
+            this.dataStorageSizeInTbs = dataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
-            this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
+            if (dbNodeStorageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "dbNodeStorageSizeInGbs");
+            }
+            this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder dbServers(List<String> dbServers) {
-            this.dbServers = Objects.requireNonNull(dbServers);
+            if (dbServers == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "dbServers");
+            }
+            this.dbServers = dbServers;
             return this;
         }
         public Builder dbServers(String... dbServers) {
@@ -917,72 +972,114 @@ public final class GetCloudAutonomousVmClusterResult {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder domain(String domain) {
-            this.domain = Objects.requireNonNull(domain);
+            if (domain == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "domain");
+            }
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
         public Builder exadataStorageInTbsLowestScaledValue(Double exadataStorageInTbsLowestScaledValue) {
-            this.exadataStorageInTbsLowestScaledValue = Objects.requireNonNull(exadataStorageInTbsLowestScaledValue);
+            if (exadataStorageInTbsLowestScaledValue == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "exadataStorageInTbsLowestScaledValue");
+            }
+            this.exadataStorageInTbsLowestScaledValue = exadataStorageInTbsLowestScaledValue;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isMtlsEnabledVmCluster(Boolean isMtlsEnabledVmCluster) {
-            this.isMtlsEnabledVmCluster = Objects.requireNonNull(isMtlsEnabledVmCluster);
+            if (isMtlsEnabledVmCluster == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "isMtlsEnabledVmCluster");
+            }
+            this.isMtlsEnabledVmCluster = isMtlsEnabledVmCluster;
             return this;
         }
         @CustomType.Setter
         public Builder lastMaintenanceRunId(String lastMaintenanceRunId) {
-            this.lastMaintenanceRunId = Objects.requireNonNull(lastMaintenanceRunId);
+            if (lastMaintenanceRunId == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "lastMaintenanceRunId");
+            }
+            this.lastMaintenanceRunId = lastMaintenanceRunId;
             return this;
         }
         @CustomType.Setter
         public Builder lastUpdateHistoryEntryId(String lastUpdateHistoryEntryId) {
-            this.lastUpdateHistoryEntryId = Objects.requireNonNull(lastUpdateHistoryEntryId);
+            if (lastUpdateHistoryEntryId == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "lastUpdateHistoryEntryId");
+            }
+            this.lastUpdateHistoryEntryId = lastUpdateHistoryEntryId;
             return this;
         }
         @CustomType.Setter
         public Builder licenseModel(String licenseModel) {
-            this.licenseModel = Objects.requireNonNull(licenseModel);
+            if (licenseModel == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "licenseModel");
+            }
+            this.licenseModel = licenseModel;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder maintenanceWindowDetails(List<GetCloudAutonomousVmClusterMaintenanceWindowDetail> maintenanceWindowDetails) {
-            this.maintenanceWindowDetails = Objects.requireNonNull(maintenanceWindowDetails);
+            if (maintenanceWindowDetails == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "maintenanceWindowDetails");
+            }
+            this.maintenanceWindowDetails = maintenanceWindowDetails;
             return this;
         }
         public Builder maintenanceWindowDetails(GetCloudAutonomousVmClusterMaintenanceWindowDetail... maintenanceWindowDetails) {
@@ -990,7 +1087,10 @@ public final class GetCloudAutonomousVmClusterResult {
         }
         @CustomType.Setter
         public Builder maintenanceWindows(List<GetCloudAutonomousVmClusterMaintenanceWindow> maintenanceWindows) {
-            this.maintenanceWindows = Objects.requireNonNull(maintenanceWindows);
+            if (maintenanceWindows == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "maintenanceWindows");
+            }
+            this.maintenanceWindows = maintenanceWindows;
             return this;
         }
         public Builder maintenanceWindows(GetCloudAutonomousVmClusterMaintenanceWindow... maintenanceWindows) {
@@ -998,37 +1098,58 @@ public final class GetCloudAutonomousVmClusterResult {
         }
         @CustomType.Setter
         public Builder maxAcdsLowestScaledValue(Integer maxAcdsLowestScaledValue) {
-            this.maxAcdsLowestScaledValue = Objects.requireNonNull(maxAcdsLowestScaledValue);
+            if (maxAcdsLowestScaledValue == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "maxAcdsLowestScaledValue");
+            }
+            this.maxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
             return this;
         }
         @CustomType.Setter
         public Builder memoryPerOracleComputeUnitInGbs(Integer memoryPerOracleComputeUnitInGbs) {
-            this.memoryPerOracleComputeUnitInGbs = Objects.requireNonNull(memoryPerOracleComputeUnitInGbs);
+            if (memoryPerOracleComputeUnitInGbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "memoryPerOracleComputeUnitInGbs");
+            }
+            this.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder memorySizeInGbs(Integer memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+            if (memorySizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "memorySizeInGbs");
+            }
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
-            this.nextMaintenanceRunId = Objects.requireNonNull(nextMaintenanceRunId);
+            if (nextMaintenanceRunId == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "nextMaintenanceRunId");
+            }
+            this.nextMaintenanceRunId = nextMaintenanceRunId;
             return this;
         }
         @CustomType.Setter
         public Builder nodeCount(Integer nodeCount) {
-            this.nodeCount = Objects.requireNonNull(nodeCount);
+            if (nodeCount == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "nodeCount");
+            }
+            this.nodeCount = nodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder nonProvisionableAutonomousContainerDatabases(Integer nonProvisionableAutonomousContainerDatabases) {
-            this.nonProvisionableAutonomousContainerDatabases = Objects.requireNonNull(nonProvisionableAutonomousContainerDatabases);
+            if (nonProvisionableAutonomousContainerDatabases == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "nonProvisionableAutonomousContainerDatabases");
+            }
+            this.nonProvisionableAutonomousContainerDatabases = nonProvisionableAutonomousContainerDatabases;
             return this;
         }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
@@ -1036,87 +1157,138 @@ public final class GetCloudAutonomousVmClusterResult {
         }
         @CustomType.Setter
         public Builder ocpuCount(Double ocpuCount) {
-            this.ocpuCount = Objects.requireNonNull(ocpuCount);
+            if (ocpuCount == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "ocpuCount");
+            }
+            this.ocpuCount = ocpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder ocpusLowestScaledValue(Integer ocpusLowestScaledValue) {
-            this.ocpusLowestScaledValue = Objects.requireNonNull(ocpusLowestScaledValue);
+            if (ocpusLowestScaledValue == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "ocpusLowestScaledValue");
+            }
+            this.ocpusLowestScaledValue = ocpusLowestScaledValue;
             return this;
         }
         @CustomType.Setter
         public Builder provisionableAutonomousContainerDatabases(Integer provisionableAutonomousContainerDatabases) {
-            this.provisionableAutonomousContainerDatabases = Objects.requireNonNull(provisionableAutonomousContainerDatabases);
+            if (provisionableAutonomousContainerDatabases == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "provisionableAutonomousContainerDatabases");
+            }
+            this.provisionableAutonomousContainerDatabases = provisionableAutonomousContainerDatabases;
             return this;
         }
         @CustomType.Setter
         public Builder provisionedAutonomousContainerDatabases(Integer provisionedAutonomousContainerDatabases) {
-            this.provisionedAutonomousContainerDatabases = Objects.requireNonNull(provisionedAutonomousContainerDatabases);
+            if (provisionedAutonomousContainerDatabases == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "provisionedAutonomousContainerDatabases");
+            }
+            this.provisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
             return this;
         }
         @CustomType.Setter
         public Builder provisionedCpus(Double provisionedCpus) {
-            this.provisionedCpus = Objects.requireNonNull(provisionedCpus);
+            if (provisionedCpus == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "provisionedCpus");
+            }
+            this.provisionedCpus = provisionedCpus;
             return this;
         }
         @CustomType.Setter
         public Builder reclaimableCpus(Double reclaimableCpus) {
-            this.reclaimableCpus = Objects.requireNonNull(reclaimableCpus);
+            if (reclaimableCpus == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "reclaimableCpus");
+            }
+            this.reclaimableCpus = reclaimableCpus;
             return this;
         }
         @CustomType.Setter
         public Builder reservedCpus(Double reservedCpus) {
-            this.reservedCpus = Objects.requireNonNull(reservedCpus);
+            if (reservedCpus == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "reservedCpus");
+            }
+            this.reservedCpus = reservedCpus;
             return this;
         }
         @CustomType.Setter
         public Builder scanListenerPortNonTls(Integer scanListenerPortNonTls) {
-            this.scanListenerPortNonTls = Objects.requireNonNull(scanListenerPortNonTls);
+            if (scanListenerPortNonTls == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "scanListenerPortNonTls");
+            }
+            this.scanListenerPortNonTls = scanListenerPortNonTls;
             return this;
         }
         @CustomType.Setter
         public Builder scanListenerPortTls(Integer scanListenerPortTls) {
-            this.scanListenerPortTls = Objects.requireNonNull(scanListenerPortTls);
+            if (scanListenerPortTls == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "scanListenerPortTls");
+            }
+            this.scanListenerPortTls = scanListenerPortTls;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder totalAutonomousDataStorageInTbs(Double totalAutonomousDataStorageInTbs) {
-            this.totalAutonomousDataStorageInTbs = Objects.requireNonNull(totalAutonomousDataStorageInTbs);
+            if (totalAutonomousDataStorageInTbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "totalAutonomousDataStorageInTbs");
+            }
+            this.totalAutonomousDataStorageInTbs = totalAutonomousDataStorageInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder totalContainerDatabases(Integer totalContainerDatabases) {
-            this.totalContainerDatabases = Objects.requireNonNull(totalContainerDatabases);
+            if (totalContainerDatabases == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "totalContainerDatabases");
+            }
+            this.totalContainerDatabases = totalContainerDatabases;
             return this;
         }
         @CustomType.Setter
         public Builder totalCpus(Double totalCpus) {
-            this.totalCpus = Objects.requireNonNull(totalCpus);
+            if (totalCpus == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "totalCpus");
+            }
+            this.totalCpus = totalCpus;
             return this;
         }
         public GetCloudAutonomousVmClusterResult build() {

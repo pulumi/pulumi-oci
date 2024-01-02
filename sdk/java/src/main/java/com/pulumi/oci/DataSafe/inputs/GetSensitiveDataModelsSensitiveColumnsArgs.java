@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnsFilterArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -798,7 +799,9 @@ public final class GetSensitiveDataModelsSensitiveColumnsArgs extends com.pulumi
         }
 
         public GetSensitiveDataModelsSensitiveColumnsArgs build() {
-            $.sensitiveDataModelId = Objects.requireNonNull($.sensitiveDataModelId, "expected parameter 'sensitiveDataModelId' to be non-null");
+            if ($.sensitiveDataModelId == null) {
+                throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsArgs", "sensitiveDataModelId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -114,31 +115,39 @@ public final class BuildPipelineStageBuildSourceCollectionItem {
 
         @CustomType.Setter
         public Builder branch(@Nullable String branch) {
+
             this.branch = branch;
             return this;
         }
         @CustomType.Setter
         public Builder connectionId(@Nullable String connectionId) {
+
             this.connectionId = connectionId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionType(String connectionType) {
-            this.connectionType = Objects.requireNonNull(connectionType);
+            if (connectionType == null) {
+              throw new MissingRequiredPropertyException("BuildPipelineStageBuildSourceCollectionItem", "connectionType");
+            }
+            this.connectionType = connectionType;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryId(@Nullable String repositoryId) {
+
             this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryUrl(@Nullable String repositoryUrl) {
+
             this.repositoryUrl = repositoryUrl;
             return this;
         }

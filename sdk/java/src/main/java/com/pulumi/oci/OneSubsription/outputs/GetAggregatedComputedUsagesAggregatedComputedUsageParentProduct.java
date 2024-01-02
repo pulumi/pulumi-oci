@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -126,37 +127,58 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsageParentProdu
 
         @CustomType.Setter
         public Builder billingCategory(String billingCategory) {
-            this.billingCategory = Objects.requireNonNull(billingCategory);
+            if (billingCategory == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct", "billingCategory");
+            }
+            this.billingCategory = billingCategory;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder partNumber(String partNumber) {
-            this.partNumber = Objects.requireNonNull(partNumber);
+            if (partNumber == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct", "partNumber");
+            }
+            this.partNumber = partNumber;
             return this;
         }
         @CustomType.Setter
         public Builder productCategory(String productCategory) {
-            this.productCategory = Objects.requireNonNull(productCategory);
+            if (productCategory == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct", "productCategory");
+            }
+            this.productCategory = productCategory;
             return this;
         }
         @CustomType.Setter
         public Builder provisioningGroup(String provisioningGroup) {
-            this.provisioningGroup = Objects.requireNonNull(provisioningGroup);
+            if (provisioningGroup == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct", "provisioningGroup");
+            }
+            this.provisioningGroup = provisioningGroup;
             return this;
         }
         @CustomType.Setter
         public Builder ucmRateCardPartType(String ucmRateCardPartType) {
-            this.ucmRateCardPartType = Objects.requireNonNull(ucmRateCardPartType);
+            if (ucmRateCardPartType == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct", "ucmRateCardPartType");
+            }
+            this.ucmRateCardPartType = ucmRateCardPartType;
             return this;
         }
         @CustomType.Setter
         public Builder unitOfMeasure(String unitOfMeasure) {
-            this.unitOfMeasure = Objects.requireNonNull(unitOfMeasure);
+            if (unitOfMeasure == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct", "unitOfMeasure");
+            }
+            this.unitOfMeasure = unitOfMeasure;
             return this;
         }
         public GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct build() {

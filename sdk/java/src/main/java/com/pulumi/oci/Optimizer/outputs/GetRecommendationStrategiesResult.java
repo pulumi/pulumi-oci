@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetRecommendationStrategiesFilter;
 import com.pulumi.oci.Optimizer.outputs.GetRecommendationStrategiesRecommendationStrategyCollection;
 import java.lang.Boolean;
@@ -100,16 +101,23 @@ public final class GetRecommendationStrategiesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationStrategiesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
-            this.compartmentIdInSubtree = Objects.requireNonNull(compartmentIdInSubtree);
+            if (compartmentIdInSubtree == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationStrategiesResult", "compartmentIdInSubtree");
+            }
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRecommendationStrategiesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -118,22 +126,30 @@ public final class GetRecommendationStrategiesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationStrategiesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder recommendationName(@Nullable String recommendationName) {
+
             this.recommendationName = recommendationName;
             return this;
         }
         @CustomType.Setter
         public Builder recommendationStrategyCollections(List<GetRecommendationStrategiesRecommendationStrategyCollection> recommendationStrategyCollections) {
-            this.recommendationStrategyCollections = Objects.requireNonNull(recommendationStrategyCollections);
+            if (recommendationStrategyCollections == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationStrategiesResult", "recommendationStrategyCollections");
+            }
+            this.recommendationStrategyCollections = recommendationStrategyCollections;
             return this;
         }
         public Builder recommendationStrategyCollections(GetRecommendationStrategiesRecommendationStrategyCollection... recommendationStrategyCollections) {

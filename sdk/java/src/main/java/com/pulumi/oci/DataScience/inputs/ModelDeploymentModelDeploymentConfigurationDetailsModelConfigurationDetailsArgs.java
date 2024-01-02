@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs;
 import java.lang.Integer;
@@ -190,8 +191,12 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
         }
 
         public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs build() {
-            $.instanceConfiguration = Objects.requireNonNull($.instanceConfiguration, "expected parameter 'instanceConfiguration' to be non-null");
-            $.modelId = Objects.requireNonNull($.modelId, "expected parameter 'modelId' to be non-null");
+            if ($.instanceConfiguration == null) {
+                throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs", "instanceConfiguration");
+            }
+            if ($.modelId == null) {
+                throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs", "modelId");
+            }
             return $;
         }
     }

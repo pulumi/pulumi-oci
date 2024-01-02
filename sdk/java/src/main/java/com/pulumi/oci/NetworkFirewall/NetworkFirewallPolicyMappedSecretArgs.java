@@ -5,6 +5,7 @@ package com.pulumi.oci.NetworkFirewall;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -274,11 +275,21 @@ public final class NetworkFirewallPolicyMappedSecretArgs extends com.pulumi.reso
         }
 
         public NetworkFirewallPolicyMappedSecretArgs build() {
-            $.networkFirewallPolicyId = Objects.requireNonNull($.networkFirewallPolicyId, "expected parameter 'networkFirewallPolicyId' to be non-null");
-            $.source = Objects.requireNonNull($.source, "expected parameter 'source' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
-            $.vaultSecretId = Objects.requireNonNull($.vaultSecretId, "expected parameter 'vaultSecretId' to be non-null");
-            $.versionNumber = Objects.requireNonNull($.versionNumber, "expected parameter 'versionNumber' to be non-null");
+            if ($.networkFirewallPolicyId == null) {
+                throw new MissingRequiredPropertyException("NetworkFirewallPolicyMappedSecretArgs", "networkFirewallPolicyId");
+            }
+            if ($.source == null) {
+                throw new MissingRequiredPropertyException("NetworkFirewallPolicyMappedSecretArgs", "source");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("NetworkFirewallPolicyMappedSecretArgs", "type");
+            }
+            if ($.vaultSecretId == null) {
+                throw new MissingRequiredPropertyException("NetworkFirewallPolicyMappedSecretArgs", "vaultSecretId");
+            }
+            if ($.versionNumber == null) {
+                throw new MissingRequiredPropertyException("NetworkFirewallPolicyMappedSecretArgs", "versionNumber");
+            }
             return $;
         }
     }

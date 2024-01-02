@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseRefreshableClonesFilter;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollection;
 import java.lang.String;
@@ -72,11 +73,15 @@ public final class GetAutonomousDatabaseRefreshableClonesResult {
 
         @CustomType.Setter
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
-            this.autonomousDatabaseId = Objects.requireNonNull(autonomousDatabaseId);
+            if (autonomousDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseRefreshableClonesResult", "autonomousDatabaseId");
+            }
+            this.autonomousDatabaseId = autonomousDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousDatabaseRefreshableClonesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -85,12 +90,18 @@ public final class GetAutonomousDatabaseRefreshableClonesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseRefreshableClonesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder refreshableCloneCollections(List<GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollection> refreshableCloneCollections) {
-            this.refreshableCloneCollections = Objects.requireNonNull(refreshableCloneCollections);
+            if (refreshableCloneCollections == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseRefreshableClonesResult", "refreshableCloneCollections");
+            }
+            this.refreshableCloneCollections = refreshableCloneCollections;
             return this;
         }
         public Builder refreshableCloneCollections(GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollection... refreshableCloneCollections) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemM
 
         @CustomType.Setter
         public Builder disabled(Integer disabled) {
-            this.disabled = Objects.requireNonNull(disabled);
+            if (disabled == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap", "disabled");
+            }
+            this.disabled = disabled;
             return this;
         }
         @CustomType.Setter
         public Builder enabled(Integer enabled) {
-            this.enabled = Objects.requireNonNull(enabled);
+            if (enabled == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap", "enabled");
+            }
+            this.enabled = enabled;
             return this;
         }
         @CustomType.Setter
         public Builder invalid(Integer invalid) {
-            this.invalid = Objects.requireNonNull(invalid);
+            if (invalid == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap", "invalid");
+            }
+            this.invalid = invalid;
             return this;
         }
         @CustomType.Setter
         public Builder total(Integer total) {
-            this.total = Objects.requireNonNull(total);
+            if (total == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap", "total");
+            }
+            this.total = total;
             return this;
         }
         public GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap build() {

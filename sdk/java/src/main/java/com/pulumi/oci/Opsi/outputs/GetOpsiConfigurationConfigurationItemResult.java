@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetOpsiConfigurationConfigurationItemConfigItem;
 import java.lang.String;
 import java.util.List;
@@ -106,11 +107,13 @@ public final class GetOpsiConfigurationConfigurationItemResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder configItemFields(@Nullable List<String> configItemFields) {
+
             this.configItemFields = configItemFields;
             return this;
         }
@@ -119,7 +122,10 @@ public final class GetOpsiConfigurationConfigurationItemResult {
         }
         @CustomType.Setter
         public Builder configItems(List<GetOpsiConfigurationConfigurationItemConfigItem> configItems) {
-            this.configItems = Objects.requireNonNull(configItems);
+            if (configItems == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemResult", "configItems");
+            }
+            this.configItems = configItems;
             return this;
         }
         public Builder configItems(GetOpsiConfigurationConfigurationItemConfigItem... configItems) {
@@ -127,6 +133,7 @@ public final class GetOpsiConfigurationConfigurationItemResult {
         }
         @CustomType.Setter
         public Builder configItemsApplicableContexts(@Nullable List<String> configItemsApplicableContexts) {
+
             this.configItemsApplicableContexts = configItemsApplicableContexts;
             return this;
         }
@@ -135,17 +142,24 @@ public final class GetOpsiConfigurationConfigurationItemResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder opsiConfigType(String opsiConfigType) {
-            this.opsiConfigType = Objects.requireNonNull(opsiConfigType);
+            if (opsiConfigType == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemResult", "opsiConfigType");
+            }
+            this.opsiConfigType = opsiConfigType;
             return this;
         }
         public GetOpsiConfigurationConfigurationItemResult build() {

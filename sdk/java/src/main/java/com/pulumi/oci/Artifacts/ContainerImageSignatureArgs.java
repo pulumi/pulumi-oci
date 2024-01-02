@@ -5,6 +5,7 @@ package com.pulumi.oci.Artifacts;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -386,13 +387,27 @@ public final class ContainerImageSignatureArgs extends com.pulumi.resources.Reso
         }
 
         public ContainerImageSignatureArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.imageId = Objects.requireNonNull($.imageId, "expected parameter 'imageId' to be non-null");
-            $.kmsKeyId = Objects.requireNonNull($.kmsKeyId, "expected parameter 'kmsKeyId' to be non-null");
-            $.kmsKeyVersionId = Objects.requireNonNull($.kmsKeyVersionId, "expected parameter 'kmsKeyVersionId' to be non-null");
-            $.message = Objects.requireNonNull($.message, "expected parameter 'message' to be non-null");
-            $.signature = Objects.requireNonNull($.signature, "expected parameter 'signature' to be non-null");
-            $.signingAlgorithm = Objects.requireNonNull($.signingAlgorithm, "expected parameter 'signingAlgorithm' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ContainerImageSignatureArgs", "compartmentId");
+            }
+            if ($.imageId == null) {
+                throw new MissingRequiredPropertyException("ContainerImageSignatureArgs", "imageId");
+            }
+            if ($.kmsKeyId == null) {
+                throw new MissingRequiredPropertyException("ContainerImageSignatureArgs", "kmsKeyId");
+            }
+            if ($.kmsKeyVersionId == null) {
+                throw new MissingRequiredPropertyException("ContainerImageSignatureArgs", "kmsKeyVersionId");
+            }
+            if ($.message == null) {
+                throw new MissingRequiredPropertyException("ContainerImageSignatureArgs", "message");
+            }
+            if ($.signature == null) {
+                throw new MissingRequiredPropertyException("ContainerImageSignatureArgs", "signature");
+            }
+            if ($.signingAlgorithm == null) {
+                throw new MissingRequiredPropertyException("ContainerImageSignatureArgs", "signingAlgorithm");
+            }
             return $;
         }
     }

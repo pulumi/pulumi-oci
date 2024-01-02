@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.QueryQueryDefinitionCostAnalysisUi;
 import com.pulumi.oci.MeteringComputation.outputs.QueryQueryDefinitionReportQuery;
 import java.lang.Double;
@@ -93,22 +94,34 @@ public final class QueryQueryDefinition {
 
         @CustomType.Setter
         public Builder costAnalysisUi(QueryQueryDefinitionCostAnalysisUi costAnalysisUi) {
-            this.costAnalysisUi = Objects.requireNonNull(costAnalysisUi);
+            if (costAnalysisUi == null) {
+              throw new MissingRequiredPropertyException("QueryQueryDefinition", "costAnalysisUi");
+            }
+            this.costAnalysisUi = costAnalysisUi;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("QueryQueryDefinition", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder reportQuery(QueryQueryDefinitionReportQuery reportQuery) {
-            this.reportQuery = Objects.requireNonNull(reportQuery);
+            if (reportQuery == null) {
+              throw new MissingRequiredPropertyException("QueryQueryDefinition", "reportQuery");
+            }
+            this.reportQuery = reportQuery;
             return this;
         }
         @CustomType.Setter
         public Builder version(Double version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("QueryQueryDefinition", "version");
+            }
+            this.version = version;
             return this;
         }
         public QueryQueryDefinition build() {

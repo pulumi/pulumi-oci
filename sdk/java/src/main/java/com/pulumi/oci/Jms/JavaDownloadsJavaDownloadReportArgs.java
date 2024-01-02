@@ -5,6 +5,7 @@ package com.pulumi.oci.Jms;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -199,8 +200,12 @@ public final class JavaDownloadsJavaDownloadReportArgs extends com.pulumi.resour
         }
 
         public JavaDownloadsJavaDownloadReportArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.format = Objects.requireNonNull($.format, "expected parameter 'format' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("JavaDownloadsJavaDownloadReportArgs", "compartmentId");
+            }
+            if ($.format == null) {
+                throw new MissingRequiredPropertyException("JavaDownloadsJavaDownloadReportArgs", "format");
+            }
             return $;
         }
     }

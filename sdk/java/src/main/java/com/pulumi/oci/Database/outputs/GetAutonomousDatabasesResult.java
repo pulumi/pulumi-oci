@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabase;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesFilter;
 import java.lang.Boolean;
@@ -236,12 +237,16 @@ public final class GetAutonomousDatabasesResult {
 
         @CustomType.Setter
         public Builder autonomousContainerDatabaseId(@Nullable String autonomousContainerDatabaseId) {
+
             this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder autonomousDatabases(List<GetAutonomousDatabasesAutonomousDatabase> autonomousDatabases) {
-            this.autonomousDatabases = Objects.requireNonNull(autonomousDatabases);
+            if (autonomousDatabases == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesResult", "autonomousDatabases");
+            }
+            this.autonomousDatabases = autonomousDatabases;
             return this;
         }
         public Builder autonomousDatabases(GetAutonomousDatabasesAutonomousDatabase... autonomousDatabases) {
@@ -249,26 +254,33 @@ public final class GetAutonomousDatabasesResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dbVersion(@Nullable String dbVersion) {
+
             this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder dbWorkload(@Nullable String dbWorkload) {
+
             this.dbWorkload = dbWorkload;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousDatabasesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -277,41 +289,51 @@ public final class GetAutonomousDatabasesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder infrastructureType(@Nullable String infrastructureType) {
+
             this.infrastructureType = infrastructureType;
             return this;
         }
         @CustomType.Setter
         public Builder isDataGuardEnabled(@Nullable Boolean isDataGuardEnabled) {
+
             this.isDataGuardEnabled = isDataGuardEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isFreeTier(@Nullable Boolean isFreeTier) {
+
             this.isFreeTier = isFreeTier;
             return this;
         }
         @CustomType.Setter
         public Builder isRefreshableClone(@Nullable Boolean isRefreshableClone) {
+
             this.isRefreshableClone = isRefreshableClone;
             return this;
         }
         @CustomType.Setter
         public Builder isResourcePoolLeader(@Nullable Boolean isResourcePoolLeader) {
+
             this.isResourcePoolLeader = isResourcePoolLeader;
             return this;
         }
         @CustomType.Setter
         public Builder resourcePoolLeaderId(@Nullable String resourcePoolLeaderId) {
+
             this.resourcePoolLeaderId = resourcePoolLeaderId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

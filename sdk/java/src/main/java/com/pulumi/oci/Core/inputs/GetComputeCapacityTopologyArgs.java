@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetComputeCapacityTopologyArgs extends com.pulumi.resources.I
         }
 
         public GetComputeCapacityTopologyArgs build() {
-            $.computeCapacityTopologyId = Objects.requireNonNull($.computeCapacityTopologyId, "expected parameter 'computeCapacityTopologyId' to be non-null");
+            if ($.computeCapacityTopologyId == null) {
+                throw new MissingRequiredPropertyException("GetComputeCapacityTopologyArgs", "computeCapacityTopologyId");
+            }
             return $;
         }
     }

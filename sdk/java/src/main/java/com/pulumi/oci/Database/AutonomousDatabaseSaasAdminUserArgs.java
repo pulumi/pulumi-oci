@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -291,7 +292,9 @@ public final class AutonomousDatabaseSaasAdminUserArgs extends com.pulumi.resour
         }
 
         public AutonomousDatabaseSaasAdminUserArgs build() {
-            $.autonomousDatabaseId = Objects.requireNonNull($.autonomousDatabaseId, "expected parameter 'autonomousDatabaseId' to be non-null");
+            if ($.autonomousDatabaseId == null) {
+                throw new MissingRequiredPropertyException("AutonomousDatabaseSaasAdminUserArgs", "autonomousDatabaseId");
+            }
             return $;
         }
     }

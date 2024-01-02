@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -59,12 +60,16 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleI
 
         @CustomType.Setter
         public Builder preserveBootVolume(@Nullable Boolean preserveBootVolume) {
+
             this.preserveBootVolume = preserveBootVolume;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction", "type");
+            }
+            this.type = type;
             return this;
         }
         public InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -278,92 +279,146 @@ public final class GetExternalExadataStorageServerIormPlanDbPlanItem {
 
         @CustomType.Setter
         public Builder allocation(Integer allocation) {
-            this.allocation = Objects.requireNonNull(allocation);
+            if (allocation == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanDbPlanItem", "allocation");
+            }
+            this.allocation = allocation;
             return this;
         }
         @CustomType.Setter
         public Builder asmCluster(String asmCluster) {
-            this.asmCluster = Objects.requireNonNull(asmCluster);
+            if (asmCluster == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanDbPlanItem", "asmCluster");
+            }
+            this.asmCluster = asmCluster;
             return this;
         }
         @CustomType.Setter
         public Builder flashCacheLimit(String flashCacheLimit) {
-            this.flashCacheLimit = Objects.requireNonNull(flashCacheLimit);
+            if (flashCacheLimit == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanDbPlanItem", "flashCacheLimit");
+            }
+            this.flashCacheLimit = flashCacheLimit;
             return this;
         }
         @CustomType.Setter
         public Builder flashCacheMin(String flashCacheMin) {
-            this.flashCacheMin = Objects.requireNonNull(flashCacheMin);
+            if (flashCacheMin == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanDbPlanItem", "flashCacheMin");
+            }
+            this.flashCacheMin = flashCacheMin;
             return this;
         }
         @CustomType.Setter
         public Builder flashCacheSize(String flashCacheSize) {
-            this.flashCacheSize = Objects.requireNonNull(flashCacheSize);
+            if (flashCacheSize == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanDbPlanItem", "flashCacheSize");
+            }
+            this.flashCacheSize = flashCacheSize;
             return this;
         }
         @CustomType.Setter
         public Builder isFlashCacheOn(Boolean isFlashCacheOn) {
-            this.isFlashCacheOn = Objects.requireNonNull(isFlashCacheOn);
+            if (isFlashCacheOn == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanDbPlanItem", "isFlashCacheOn");
+            }
+            this.isFlashCacheOn = isFlashCacheOn;
             return this;
         }
         @CustomType.Setter
         public Builder isFlashLogOn(Boolean isFlashLogOn) {
-            this.isFlashLogOn = Objects.requireNonNull(isFlashLogOn);
+            if (isFlashLogOn == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanDbPlanItem", "isFlashLogOn");
+            }
+            this.isFlashLogOn = isFlashLogOn;
             return this;
         }
         @CustomType.Setter
         public Builder isPmemCacheOn(Boolean isPmemCacheOn) {
-            this.isPmemCacheOn = Objects.requireNonNull(isPmemCacheOn);
+            if (isPmemCacheOn == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanDbPlanItem", "isPmemCacheOn");
+            }
+            this.isPmemCacheOn = isPmemCacheOn;
             return this;
         }
         @CustomType.Setter
         public Builder isPmemLogOn(Boolean isPmemLogOn) {
-            this.isPmemLogOn = Objects.requireNonNull(isPmemLogOn);
+            if (isPmemLogOn == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanDbPlanItem", "isPmemLogOn");
+            }
+            this.isPmemLogOn = isPmemLogOn;
             return this;
         }
         @CustomType.Setter
         public Builder level(Integer level) {
-            this.level = Objects.requireNonNull(level);
+            if (level == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanDbPlanItem", "level");
+            }
+            this.level = level;
             return this;
         }
         @CustomType.Setter
         public Builder limit(Integer limit) {
-            this.limit = Objects.requireNonNull(limit);
+            if (limit == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanDbPlanItem", "limit");
+            }
+            this.limit = limit;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanDbPlanItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder pmemCacheLimit(String pmemCacheLimit) {
-            this.pmemCacheLimit = Objects.requireNonNull(pmemCacheLimit);
+            if (pmemCacheLimit == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanDbPlanItem", "pmemCacheLimit");
+            }
+            this.pmemCacheLimit = pmemCacheLimit;
             return this;
         }
         @CustomType.Setter
         public Builder pmemCacheMin(String pmemCacheMin) {
-            this.pmemCacheMin = Objects.requireNonNull(pmemCacheMin);
+            if (pmemCacheMin == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanDbPlanItem", "pmemCacheMin");
+            }
+            this.pmemCacheMin = pmemCacheMin;
             return this;
         }
         @CustomType.Setter
         public Builder pmemCacheSize(String pmemCacheSize) {
-            this.pmemCacheSize = Objects.requireNonNull(pmemCacheSize);
+            if (pmemCacheSize == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanDbPlanItem", "pmemCacheSize");
+            }
+            this.pmemCacheSize = pmemCacheSize;
             return this;
         }
         @CustomType.Setter
         public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+            if (role == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanDbPlanItem", "role");
+            }
+            this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder share(Integer share) {
-            this.share = Objects.requireNonNull(share);
+            if (share == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanDbPlanItem", "share");
+            }
+            this.share = share;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerIormPlanDbPlanItem", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetExternalExadataStorageServerIormPlanDbPlanItem build() {

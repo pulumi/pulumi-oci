@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetDatabaseInsightConnectionCredentialDetail;
 import com.pulumi.oci.Opsi.outputs.GetDatabaseInsightConnectionDetail;
 import com.pulumi.oci.Opsi.outputs.GetDatabaseInsightCredentialDetail;
@@ -515,12 +516,18 @@ public final class GetDatabaseInsightResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionCredentialDetails(List<GetDatabaseInsightConnectionCredentialDetail> connectionCredentialDetails) {
-            this.connectionCredentialDetails = Objects.requireNonNull(connectionCredentialDetails);
+            if (connectionCredentialDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "connectionCredentialDetails");
+            }
+            this.connectionCredentialDetails = connectionCredentialDetails;
             return this;
         }
         public Builder connectionCredentialDetails(GetDatabaseInsightConnectionCredentialDetail... connectionCredentialDetails) {
@@ -528,7 +535,10 @@ public final class GetDatabaseInsightResult {
         }
         @CustomType.Setter
         public Builder connectionDetails(List<GetDatabaseInsightConnectionDetail> connectionDetails) {
-            this.connectionDetails = Objects.requireNonNull(connectionDetails);
+            if (connectionDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "connectionDetails");
+            }
+            this.connectionDetails = connectionDetails;
             return this;
         }
         public Builder connectionDetails(GetDatabaseInsightConnectionDetail... connectionDetails) {
@@ -536,7 +546,10 @@ public final class GetDatabaseInsightResult {
         }
         @CustomType.Setter
         public Builder credentialDetails(List<GetDatabaseInsightCredentialDetail> credentialDetails) {
-            this.credentialDetails = Objects.requireNonNull(credentialDetails);
+            if (credentialDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "credentialDetails");
+            }
+            this.credentialDetails = credentialDetails;
             return this;
         }
         public Builder credentialDetails(GetDatabaseInsightCredentialDetail... credentialDetails) {
@@ -544,162 +557,258 @@ public final class GetDatabaseInsightResult {
         }
         @CustomType.Setter
         public Builder databaseConnectionStatusDetails(String databaseConnectionStatusDetails) {
-            this.databaseConnectionStatusDetails = Objects.requireNonNull(databaseConnectionStatusDetails);
+            if (databaseConnectionStatusDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "databaseConnectionStatusDetails");
+            }
+            this.databaseConnectionStatusDetails = databaseConnectionStatusDetails;
             return this;
         }
         @CustomType.Setter
         public Builder databaseDisplayName(String databaseDisplayName) {
-            this.databaseDisplayName = Objects.requireNonNull(databaseDisplayName);
+            if (databaseDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "databaseDisplayName");
+            }
+            this.databaseDisplayName = databaseDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder databaseId(String databaseId) {
-            this.databaseId = Objects.requireNonNull(databaseId);
+            if (databaseId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "databaseId");
+            }
+            this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseInsightId(String databaseInsightId) {
-            this.databaseInsightId = Objects.requireNonNull(databaseInsightId);
+            if (databaseInsightId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "databaseInsightId");
+            }
+            this.databaseInsightId = databaseInsightId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseName(String databaseName) {
-            this.databaseName = Objects.requireNonNull(databaseName);
+            if (databaseName == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "databaseName");
+            }
+            this.databaseName = databaseName;
             return this;
         }
         @CustomType.Setter
         public Builder databaseResourceType(String databaseResourceType) {
-            this.databaseResourceType = Objects.requireNonNull(databaseResourceType);
+            if (databaseResourceType == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "databaseResourceType");
+            }
+            this.databaseResourceType = databaseResourceType;
             return this;
         }
         @CustomType.Setter
         public Builder databaseType(String databaseType) {
-            this.databaseType = Objects.requireNonNull(databaseType);
+            if (databaseType == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "databaseType");
+            }
+            this.databaseType = databaseType;
             return this;
         }
         @CustomType.Setter
         public Builder databaseVersion(String databaseVersion) {
-            this.databaseVersion = Objects.requireNonNull(databaseVersion);
+            if (databaseVersion == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "databaseVersion");
+            }
+            this.databaseVersion = databaseVersion;
             return this;
         }
         @CustomType.Setter
         public Builder dbmPrivateEndpointId(String dbmPrivateEndpointId) {
-            this.dbmPrivateEndpointId = Objects.requireNonNull(dbmPrivateEndpointId);
+            if (dbmPrivateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "dbmPrivateEndpointId");
+            }
+            this.dbmPrivateEndpointId = dbmPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentType(String deploymentType) {
-            this.deploymentType = Objects.requireNonNull(deploymentType);
+            if (deploymentType == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "deploymentType");
+            }
+            this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerBridgeId(String enterpriseManagerBridgeId) {
-            this.enterpriseManagerBridgeId = Objects.requireNonNull(enterpriseManagerBridgeId);
+            if (enterpriseManagerBridgeId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "enterpriseManagerBridgeId");
+            }
+            this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerEntityDisplayName(String enterpriseManagerEntityDisplayName) {
-            this.enterpriseManagerEntityDisplayName = Objects.requireNonNull(enterpriseManagerEntityDisplayName);
+            if (enterpriseManagerEntityDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "enterpriseManagerEntityDisplayName");
+            }
+            this.enterpriseManagerEntityDisplayName = enterpriseManagerEntityDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerEntityIdentifier(String enterpriseManagerEntityIdentifier) {
-            this.enterpriseManagerEntityIdentifier = Objects.requireNonNull(enterpriseManagerEntityIdentifier);
+            if (enterpriseManagerEntityIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "enterpriseManagerEntityIdentifier");
+            }
+            this.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerEntityName(String enterpriseManagerEntityName) {
-            this.enterpriseManagerEntityName = Objects.requireNonNull(enterpriseManagerEntityName);
+            if (enterpriseManagerEntityName == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "enterpriseManagerEntityName");
+            }
+            this.enterpriseManagerEntityName = enterpriseManagerEntityName;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerEntityType(String enterpriseManagerEntityType) {
-            this.enterpriseManagerEntityType = Objects.requireNonNull(enterpriseManagerEntityType);
+            if (enterpriseManagerEntityType == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "enterpriseManagerEntityType");
+            }
+            this.enterpriseManagerEntityType = enterpriseManagerEntityType;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerIdentifier(String enterpriseManagerIdentifier) {
-            this.enterpriseManagerIdentifier = Objects.requireNonNull(enterpriseManagerIdentifier);
+            if (enterpriseManagerIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "enterpriseManagerIdentifier");
+            }
+            this.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder entitySource(String entitySource) {
-            this.entitySource = Objects.requireNonNull(entitySource);
+            if (entitySource == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "entitySource");
+            }
+            this.entitySource = entitySource;
             return this;
         }
         @CustomType.Setter
         public Builder exadataInsightId(String exadataInsightId) {
-            this.exadataInsightId = Objects.requireNonNull(exadataInsightId);
+            if (exadataInsightId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "exadataInsightId");
+            }
+            this.exadataInsightId = exadataInsightId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder opsiPrivateEndpointId(String opsiPrivateEndpointId) {
-            this.opsiPrivateEndpointId = Objects.requireNonNull(opsiPrivateEndpointId);
+            if (opsiPrivateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "opsiPrivateEndpointId");
+            }
+            this.opsiPrivateEndpointId = opsiPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder parentId(String parentId) {
-            this.parentId = Objects.requireNonNull(parentId);
+            if (parentId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "parentId");
+            }
+            this.parentId = parentId;
             return this;
         }
         @CustomType.Setter
         public Builder processorCount(Integer processorCount) {
-            this.processorCount = Objects.requireNonNull(processorCount);
+            if (processorCount == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "processorCount");
+            }
+            this.processorCount = processorCount;
             return this;
         }
         @CustomType.Setter
         public Builder rootId(String rootId) {
-            this.rootId = Objects.requireNonNull(rootId);
+            if (rootId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "rootId");
+            }
+            this.rootId = rootId;
             return this;
         }
         @CustomType.Setter
         public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+            if (serviceName == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "serviceName");
+            }
+            this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDatabaseInsightResult build() {

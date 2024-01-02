@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetIpv6Args extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetIpv6Args build() {
-            $.ipv6id = Objects.requireNonNull($.ipv6id, "expected parameter 'ipv6id' to be non-null");
+            if ($.ipv6id == null) {
+                throw new MissingRequiredPropertyException("GetIpv6Args", "ipv6id");
+            }
             return $;
         }
     }

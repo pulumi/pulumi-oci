@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail;
 import com.pulumi.oci.Opsi.outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail;
 import java.lang.Object;
@@ -151,12 +152,18 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionDetails(List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail> connectionDetails) {
-            this.connectionDetails = Objects.requireNonNull(connectionDetails);
+            if (connectionDetails == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail", "connectionDetails");
+            }
+            this.connectionDetails = connectionDetails;
             return this;
         }
         public Builder connectionDetails(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail... connectionDetails) {
@@ -164,7 +171,10 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
         }
         @CustomType.Setter
         public Builder credentialDetails(List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail> credentialDetails) {
-            this.credentialDetails = Objects.requireNonNull(credentialDetails);
+            if (credentialDetails == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail", "credentialDetails");
+            }
+            this.credentialDetails = credentialDetails;
             return this;
         }
         public Builder credentialDetails(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail... credentialDetails) {
@@ -172,52 +182,82 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
         }
         @CustomType.Setter
         public Builder databaseId(String databaseId) {
-            this.databaseId = Objects.requireNonNull(databaseId);
+            if (databaseId == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail", "databaseId");
+            }
+            this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseResourceType(String databaseResourceType) {
-            this.databaseResourceType = Objects.requireNonNull(databaseResourceType);
+            if (databaseResourceType == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail", "databaseResourceType");
+            }
+            this.databaseResourceType = databaseResourceType;
             return this;
         }
         @CustomType.Setter
         public Builder dbmPrivateEndpointId(String dbmPrivateEndpointId) {
-            this.dbmPrivateEndpointId = Objects.requireNonNull(dbmPrivateEndpointId);
+            if (dbmPrivateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail", "dbmPrivateEndpointId");
+            }
+            this.dbmPrivateEndpointId = dbmPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentType(String deploymentType) {
-            this.deploymentType = Objects.requireNonNull(deploymentType);
+            if (deploymentType == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail", "deploymentType");
+            }
+            this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
         public Builder entitySource(String entitySource) {
-            this.entitySource = Objects.requireNonNull(entitySource);
+            if (entitySource == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail", "entitySource");
+            }
+            this.entitySource = entitySource;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder opsiPrivateEndpointId(String opsiPrivateEndpointId) {
-            this.opsiPrivateEndpointId = Objects.requireNonNull(opsiPrivateEndpointId);
+            if (opsiPrivateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail", "opsiPrivateEndpointId");
+            }
+            this.opsiPrivateEndpointId = opsiPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+            if (serviceName == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail", "serviceName");
+            }
+            this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         public GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail build() {

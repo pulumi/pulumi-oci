@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetListingPackagePricingInternationalMarketPrice {
 
         @CustomType.Setter
         public Builder currencyCode(String currencyCode) {
-            this.currencyCode = Objects.requireNonNull(currencyCode);
+            if (currencyCode == null) {
+              throw new MissingRequiredPropertyException("GetListingPackagePricingInternationalMarketPrice", "currencyCode");
+            }
+            this.currencyCode = currencyCode;
             return this;
         }
         @CustomType.Setter
         public Builder currencySymbol(String currencySymbol) {
-            this.currencySymbol = Objects.requireNonNull(currencySymbol);
+            if (currencySymbol == null) {
+              throw new MissingRequiredPropertyException("GetListingPackagePricingInternationalMarketPrice", "currencySymbol");
+            }
+            this.currencySymbol = currencySymbol;
             return this;
         }
         @CustomType.Setter
         public Builder rate(Double rate) {
-            this.rate = Objects.requireNonNull(rate);
+            if (rate == null) {
+              throw new MissingRequiredPropertyException("GetListingPackagePricingInternationalMarketPrice", "rate");
+            }
+            this.rate = rate;
             return this;
         }
         public GetListingPackagePricingInternationalMarketPrice build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetAlertPolicyRulesAlertPolicyRuleCollection;
 import com.pulumi.oci.DataSafe.outputs.GetAlertPolicyRulesFilter;
 import java.lang.String;
@@ -72,12 +73,18 @@ public final class GetAlertPolicyRulesResult {
 
         @CustomType.Setter
         public Builder alertPolicyId(String alertPolicyId) {
-            this.alertPolicyId = Objects.requireNonNull(alertPolicyId);
+            if (alertPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetAlertPolicyRulesResult", "alertPolicyId");
+            }
+            this.alertPolicyId = alertPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder alertPolicyRuleCollections(List<GetAlertPolicyRulesAlertPolicyRuleCollection> alertPolicyRuleCollections) {
-            this.alertPolicyRuleCollections = Objects.requireNonNull(alertPolicyRuleCollections);
+            if (alertPolicyRuleCollections == null) {
+              throw new MissingRequiredPropertyException("GetAlertPolicyRulesResult", "alertPolicyRuleCollections");
+            }
+            this.alertPolicyRuleCollections = alertPolicyRuleCollections;
             return this;
         }
         public Builder alertPolicyRuleCollections(GetAlertPolicyRulesAlertPolicyRuleCollection... alertPolicyRuleCollections) {
@@ -85,6 +92,7 @@ public final class GetAlertPolicyRulesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAlertPolicyRulesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -93,7 +101,10 @@ public final class GetAlertPolicyRulesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAlertPolicyRulesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetAlertPolicyRulesResult build() {

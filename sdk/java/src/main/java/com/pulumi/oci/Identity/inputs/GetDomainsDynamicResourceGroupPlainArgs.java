@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -211,8 +212,12 @@ public final class GetDomainsDynamicResourceGroupPlainArgs extends com.pulumi.re
         }
 
         public GetDomainsDynamicResourceGroupPlainArgs build() {
-            $.dynamicResourceGroupId = Objects.requireNonNull($.dynamicResourceGroupId, "expected parameter 'dynamicResourceGroupId' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
+            if ($.dynamicResourceGroupId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsDynamicResourceGroupPlainArgs", "dynamicResourceGroupId");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsDynamicResourceGroupPlainArgs", "idcsEndpoint");
+            }
             return $;
         }
     }

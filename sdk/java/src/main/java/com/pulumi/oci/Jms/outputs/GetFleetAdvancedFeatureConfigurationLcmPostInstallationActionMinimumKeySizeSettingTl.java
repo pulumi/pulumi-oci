@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
 
         @CustomType.Setter
         public Builder keySize(Integer keySize) {
-            this.keySize = Objects.requireNonNull(keySize);
+            if (keySize == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl", "keySize");
+            }
+            this.keySize = keySize;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl build() {

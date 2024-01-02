@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPoliciesFilter;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetWebAppFirewallPoliciesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetWebAppFirewallPoliciesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,11 +133,13 @@ public final class GetWebAppFirewallPoliciesResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
+
             this.states = states;
             return this;
         }
@@ -140,7 +148,10 @@ public final class GetWebAppFirewallPoliciesResult {
         }
         @CustomType.Setter
         public Builder webAppFirewallPolicyCollections(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection> webAppFirewallPolicyCollections) {
-            this.webAppFirewallPolicyCollections = Objects.requireNonNull(webAppFirewallPolicyCollections);
+            if (webAppFirewallPolicyCollections == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesResult", "webAppFirewallPolicyCollections");
+            }
+            this.webAppFirewallPolicyCollections = webAppFirewallPolicyCollections;
             return this;
         }
         public Builder webAppFirewallPolicyCollections(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection... webAppFirewallPolicyCollections) {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsSecurityQuestionSettingTagArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -942,13 +943,27 @@ public final class DomainsSecurityQuestionSettingArgs extends com.pulumi.resourc
         }
 
         public DomainsSecurityQuestionSettingArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.maxFieldLength = Objects.requireNonNull($.maxFieldLength, "expected parameter 'maxFieldLength' to be non-null");
-            $.minAnswerLength = Objects.requireNonNull($.minAnswerLength, "expected parameter 'minAnswerLength' to be non-null");
-            $.numQuestionsToAns = Objects.requireNonNull($.numQuestionsToAns, "expected parameter 'numQuestionsToAns' to be non-null");
-            $.numQuestionsToSetup = Objects.requireNonNull($.numQuestionsToSetup, "expected parameter 'numQuestionsToSetup' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
-            $.securityQuestionSettingId = Objects.requireNonNull($.securityQuestionSettingId, "expected parameter 'securityQuestionSettingId' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsSecurityQuestionSettingArgs", "idcsEndpoint");
+            }
+            if ($.maxFieldLength == null) {
+                throw new MissingRequiredPropertyException("DomainsSecurityQuestionSettingArgs", "maxFieldLength");
+            }
+            if ($.minAnswerLength == null) {
+                throw new MissingRequiredPropertyException("DomainsSecurityQuestionSettingArgs", "minAnswerLength");
+            }
+            if ($.numQuestionsToAns == null) {
+                throw new MissingRequiredPropertyException("DomainsSecurityQuestionSettingArgs", "numQuestionsToAns");
+            }
+            if ($.numQuestionsToSetup == null) {
+                throw new MissingRequiredPropertyException("DomainsSecurityQuestionSettingArgs", "numQuestionsToSetup");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsSecurityQuestionSettingArgs", "schemas");
+            }
+            if ($.securityQuestionSettingId == null) {
+                throw new MissingRequiredPropertyException("DomainsSecurityQuestionSettingArgs", "securityQuestionSettingId");
+            }
             return $;
         }
     }

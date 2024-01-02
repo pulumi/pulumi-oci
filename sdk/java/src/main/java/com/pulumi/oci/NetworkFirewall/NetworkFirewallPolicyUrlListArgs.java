@@ -5,6 +5,7 @@ package com.pulumi.oci.NetworkFirewall;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyUrlListUrlArgs;
 import java.lang.String;
 import java.util.List;
@@ -162,8 +163,12 @@ public final class NetworkFirewallPolicyUrlListArgs extends com.pulumi.resources
         }
 
         public NetworkFirewallPolicyUrlListArgs build() {
-            $.networkFirewallPolicyId = Objects.requireNonNull($.networkFirewallPolicyId, "expected parameter 'networkFirewallPolicyId' to be non-null");
-            $.urls = Objects.requireNonNull($.urls, "expected parameter 'urls' to be non-null");
+            if ($.networkFirewallPolicyId == null) {
+                throw new MissingRequiredPropertyException("NetworkFirewallPolicyUrlListArgs", "networkFirewallPolicyId");
+            }
+            if ($.urls == null) {
+                throw new MissingRequiredPropertyException("NetworkFirewallPolicyUrlListArgs", "urls");
+            }
             return $;
         }
     }

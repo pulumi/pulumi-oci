@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetSecurityZonesFilter;
 import com.pulumi.oci.CloudGuard.outputs.GetSecurityZonesSecurityZoneCollection;
 import java.lang.Boolean;
@@ -122,16 +123,21 @@ public final class GetSecurityZonesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityZonesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSecurityZonesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -140,22 +146,28 @@ public final class GetSecurityZonesResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isRequiredSecurityZonesInSubtree(@Nullable Boolean isRequiredSecurityZonesInSubtree) {
+
             this.isRequiredSecurityZonesInSubtree = isRequiredSecurityZonesInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder securityRecipeId(@Nullable String securityRecipeId) {
+
             this.securityRecipeId = securityRecipeId;
             return this;
         }
         @CustomType.Setter
         public Builder securityZoneCollections(List<GetSecurityZonesSecurityZoneCollection> securityZoneCollections) {
-            this.securityZoneCollections = Objects.requireNonNull(securityZoneCollections);
+            if (securityZoneCollections == null) {
+              throw new MissingRequiredPropertyException("GetSecurityZonesResult", "securityZoneCollections");
+            }
+            this.securityZoneCollections = securityZoneCollections;
             return this;
         }
         public Builder securityZoneCollections(GetSecurityZonesSecurityZoneCollection... securityZoneCollections) {
@@ -163,6 +175,7 @@ public final class GetSecurityZonesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

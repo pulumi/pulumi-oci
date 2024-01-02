@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetImportableAgentEntitiesItem {
 
         @CustomType.Setter
         public Builder entitySource(String entitySource) {
-            this.entitySource = Objects.requireNonNull(entitySource);
+            if (entitySource == null) {
+              throw new MissingRequiredPropertyException("GetImportableAgentEntitiesItem", "entitySource");
+            }
+            this.entitySource = entitySource;
             return this;
         }
         @CustomType.Setter
         public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+            if (hostName == null) {
+              throw new MissingRequiredPropertyException("GetImportableAgentEntitiesItem", "hostName");
+            }
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder managementAgentDisplayName(String managementAgentDisplayName) {
-            this.managementAgentDisplayName = Objects.requireNonNull(managementAgentDisplayName);
+            if (managementAgentDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetImportableAgentEntitiesItem", "managementAgentDisplayName");
+            }
+            this.managementAgentDisplayName = managementAgentDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder managementAgentId(String managementAgentId) {
-            this.managementAgentId = Objects.requireNonNull(managementAgentId);
+            if (managementAgentId == null) {
+              throw new MissingRequiredPropertyException("GetImportableAgentEntitiesItem", "managementAgentId");
+            }
+            this.managementAgentId = managementAgentId;
             return this;
         }
         @CustomType.Setter
         public Builder platformType(String platformType) {
-            this.platformType = Objects.requireNonNull(platformType);
+            if (platformType == null) {
+              throw new MissingRequiredPropertyException("GetImportableAgentEntitiesItem", "platformType");
+            }
+            this.platformType = platformType;
             return this;
         }
         public GetImportableAgentEntitiesItem build() {

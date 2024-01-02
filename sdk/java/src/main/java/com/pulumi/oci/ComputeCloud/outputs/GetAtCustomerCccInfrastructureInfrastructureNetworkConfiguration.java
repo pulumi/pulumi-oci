@@ -4,6 +4,7 @@
 package com.pulumi.oci.ComputeCloud.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ComputeCloud.outputs.GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic;
 import com.pulumi.oci.ComputeCloud.outputs.GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic;
 import com.pulumi.oci.ComputeCloud.outputs.GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode;
@@ -243,7 +244,10 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
 
         @CustomType.Setter
         public Builder dnsIps(List<String> dnsIps) {
-            this.dnsIps = Objects.requireNonNull(dnsIps);
+            if (dnsIps == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration", "dnsIps");
+            }
+            this.dnsIps = dnsIps;
             return this;
         }
         public Builder dnsIps(String... dnsIps) {
@@ -251,7 +255,10 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
         }
         @CustomType.Setter
         public Builder infrastructureRoutingDynamics(List<GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic> infrastructureRoutingDynamics) {
-            this.infrastructureRoutingDynamics = Objects.requireNonNull(infrastructureRoutingDynamics);
+            if (infrastructureRoutingDynamics == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration", "infrastructureRoutingDynamics");
+            }
+            this.infrastructureRoutingDynamics = infrastructureRoutingDynamics;
             return this;
         }
         public Builder infrastructureRoutingDynamics(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic... infrastructureRoutingDynamics) {
@@ -259,7 +266,10 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
         }
         @CustomType.Setter
         public Builder infrastructureRoutingStatics(List<GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic> infrastructureRoutingStatics) {
-            this.infrastructureRoutingStatics = Objects.requireNonNull(infrastructureRoutingStatics);
+            if (infrastructureRoutingStatics == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration", "infrastructureRoutingStatics");
+            }
+            this.infrastructureRoutingStatics = infrastructureRoutingStatics;
             return this;
         }
         public Builder infrastructureRoutingStatics(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic... infrastructureRoutingStatics) {
@@ -267,7 +277,10 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
         }
         @CustomType.Setter
         public Builder managementNodes(List<GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode> managementNodes) {
-            this.managementNodes = Objects.requireNonNull(managementNodes);
+            if (managementNodes == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration", "managementNodes");
+            }
+            this.managementNodes = managementNodes;
             return this;
         }
         public Builder managementNodes(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode... managementNodes) {
@@ -275,17 +288,26 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
         }
         @CustomType.Setter
         public Builder mgmtVipHostname(String mgmtVipHostname) {
-            this.mgmtVipHostname = Objects.requireNonNull(mgmtVipHostname);
+            if (mgmtVipHostname == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration", "mgmtVipHostname");
+            }
+            this.mgmtVipHostname = mgmtVipHostname;
             return this;
         }
         @CustomType.Setter
         public Builder mgmtVipIp(String mgmtVipIp) {
-            this.mgmtVipIp = Objects.requireNonNull(mgmtVipIp);
+            if (mgmtVipIp == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration", "mgmtVipIp");
+            }
+            this.mgmtVipIp = mgmtVipIp;
             return this;
         }
         @CustomType.Setter
         public Builder spineIps(List<String> spineIps) {
-            this.spineIps = Objects.requireNonNull(spineIps);
+            if (spineIps == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration", "spineIps");
+            }
+            this.spineIps = spineIps;
             return this;
         }
         public Builder spineIps(String... spineIps) {
@@ -293,42 +315,66 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
         }
         @CustomType.Setter
         public Builder spineVip(String spineVip) {
-            this.spineVip = Objects.requireNonNull(spineVip);
+            if (spineVip == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration", "spineVip");
+            }
+            this.spineVip = spineVip;
             return this;
         }
         @CustomType.Setter
         public Builder uplinkDomain(String uplinkDomain) {
-            this.uplinkDomain = Objects.requireNonNull(uplinkDomain);
+            if (uplinkDomain == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration", "uplinkDomain");
+            }
+            this.uplinkDomain = uplinkDomain;
             return this;
         }
         @CustomType.Setter
         public Builder uplinkGatewayIp(String uplinkGatewayIp) {
-            this.uplinkGatewayIp = Objects.requireNonNull(uplinkGatewayIp);
+            if (uplinkGatewayIp == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration", "uplinkGatewayIp");
+            }
+            this.uplinkGatewayIp = uplinkGatewayIp;
             return this;
         }
         @CustomType.Setter
         public Builder uplinkNetmask(String uplinkNetmask) {
-            this.uplinkNetmask = Objects.requireNonNull(uplinkNetmask);
+            if (uplinkNetmask == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration", "uplinkNetmask");
+            }
+            this.uplinkNetmask = uplinkNetmask;
             return this;
         }
         @CustomType.Setter
         public Builder uplinkPortCount(Integer uplinkPortCount) {
-            this.uplinkPortCount = Objects.requireNonNull(uplinkPortCount);
+            if (uplinkPortCount == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration", "uplinkPortCount");
+            }
+            this.uplinkPortCount = uplinkPortCount;
             return this;
         }
         @CustomType.Setter
         public Builder uplinkPortForwardErrorCorrection(String uplinkPortForwardErrorCorrection) {
-            this.uplinkPortForwardErrorCorrection = Objects.requireNonNull(uplinkPortForwardErrorCorrection);
+            if (uplinkPortForwardErrorCorrection == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration", "uplinkPortForwardErrorCorrection");
+            }
+            this.uplinkPortForwardErrorCorrection = uplinkPortForwardErrorCorrection;
             return this;
         }
         @CustomType.Setter
         public Builder uplinkPortSpeedInGbps(Integer uplinkPortSpeedInGbps) {
-            this.uplinkPortSpeedInGbps = Objects.requireNonNull(uplinkPortSpeedInGbps);
+            if (uplinkPortSpeedInGbps == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration", "uplinkPortSpeedInGbps");
+            }
+            this.uplinkPortSpeedInGbps = uplinkPortSpeedInGbps;
             return this;
         }
         @CustomType.Setter
         public Builder uplinkVlanMtu(Integer uplinkVlanMtu) {
-            this.uplinkVlanMtu = Objects.requireNonNull(uplinkVlanMtu);
+            if (uplinkVlanMtu == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration", "uplinkVlanMtu");
+            }
+            this.uplinkVlanMtu = uplinkVlanMtu;
             return this;
         }
         public GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration build() {

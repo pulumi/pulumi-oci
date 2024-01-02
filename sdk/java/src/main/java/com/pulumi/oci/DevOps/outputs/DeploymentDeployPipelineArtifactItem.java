@@ -74,11 +74,13 @@ public final class DeploymentDeployPipelineArtifactItem {
 
         @CustomType.Setter
         public Builder deployArtifactId(@Nullable String deployArtifactId) {
+
             this.deployArtifactId = deployArtifactId;
             return this;
         }
         @CustomType.Setter
         public Builder deployPipelineStages(@Nullable List<DeploymentDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages) {
+
             this.deployPipelineStages = deployPipelineStages;
             return this;
         }
@@ -87,6 +89,7 @@ public final class DeploymentDeployPipelineArtifactItem {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }

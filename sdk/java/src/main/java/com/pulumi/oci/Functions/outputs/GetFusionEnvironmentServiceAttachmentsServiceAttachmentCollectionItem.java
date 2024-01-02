@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -213,67 +214,106 @@ public final class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollec
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder fusionEnvironmentId(String fusionEnvironmentId) {
-            this.fusionEnvironmentId = Objects.requireNonNull(fusionEnvironmentId);
+            if (fusionEnvironmentId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem", "fusionEnvironmentId");
+            }
+            this.fusionEnvironmentId = fusionEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isSkuBased(Boolean isSkuBased) {
-            this.isSkuBased = Objects.requireNonNull(isSkuBased);
+            if (isSkuBased == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem", "isSkuBased");
+            }
+            this.isSkuBased = isSkuBased;
             return this;
         }
         @CustomType.Setter
         public Builder serviceInstanceId(String serviceInstanceId) {
-            this.serviceInstanceId = Objects.requireNonNull(serviceInstanceId);
+            if (serviceInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem", "serviceInstanceId");
+            }
+            this.serviceInstanceId = serviceInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder serviceInstanceType(String serviceInstanceType) {
-            this.serviceInstanceType = Objects.requireNonNull(serviceInstanceType);
+            if (serviceInstanceType == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem", "serviceInstanceType");
+            }
+            this.serviceInstanceType = serviceInstanceType;
             return this;
         }
         @CustomType.Setter
         public Builder serviceUrl(String serviceUrl) {
-            this.serviceUrl = Objects.requireNonNull(serviceUrl);
+            if (serviceUrl == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem", "serviceUrl");
+            }
+            this.serviceUrl = serviceUrl;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem build() {

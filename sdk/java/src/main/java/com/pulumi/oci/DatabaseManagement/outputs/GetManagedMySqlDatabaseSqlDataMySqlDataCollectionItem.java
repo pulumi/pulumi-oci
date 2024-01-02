@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -477,162 +478,258 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
 
         @CustomType.Setter
         public Builder avgTimerWait(Double avgTimerWait) {
-            this.avgTimerWait = Objects.requireNonNull(avgTimerWait);
+            if (avgTimerWait == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "avgTimerWait");
+            }
+            this.avgTimerWait = avgTimerWait;
             return this;
         }
         @CustomType.Setter
         public Builder countStar(Double countStar) {
-            this.countStar = Objects.requireNonNull(countStar);
+            if (countStar == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "countStar");
+            }
+            this.countStar = countStar;
             return this;
         }
         @CustomType.Setter
         public Builder digest(String digest) {
-            this.digest = Objects.requireNonNull(digest);
+            if (digest == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "digest");
+            }
+            this.digest = digest;
             return this;
         }
         @CustomType.Setter
         public Builder digestText(String digestText) {
-            this.digestText = Objects.requireNonNull(digestText);
+            if (digestText == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "digestText");
+            }
+            this.digestText = digestText;
             return this;
         }
         @CustomType.Setter
         public Builder firstSeen(String firstSeen) {
-            this.firstSeen = Objects.requireNonNull(firstSeen);
+            if (firstSeen == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "firstSeen");
+            }
+            this.firstSeen = firstSeen;
             return this;
         }
         @CustomType.Setter
         public Builder lastSeen(String lastSeen) {
-            this.lastSeen = Objects.requireNonNull(lastSeen);
+            if (lastSeen == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "lastSeen");
+            }
+            this.lastSeen = lastSeen;
             return this;
         }
         @CustomType.Setter
         public Builder maxTimerWait(Double maxTimerWait) {
-            this.maxTimerWait = Objects.requireNonNull(maxTimerWait);
+            if (maxTimerWait == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "maxTimerWait");
+            }
+            this.maxTimerWait = maxTimerWait;
             return this;
         }
         @CustomType.Setter
         public Builder minTimerWait(Double minTimerWait) {
-            this.minTimerWait = Objects.requireNonNull(minTimerWait);
+            if (minTimerWait == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "minTimerWait");
+            }
+            this.minTimerWait = minTimerWait;
             return this;
         }
         @CustomType.Setter
         public Builder quantile95(Double quantile95) {
-            this.quantile95 = Objects.requireNonNull(quantile95);
+            if (quantile95 == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "quantile95");
+            }
+            this.quantile95 = quantile95;
             return this;
         }
         @CustomType.Setter
         public Builder quantile99(Double quantile99) {
-            this.quantile99 = Objects.requireNonNull(quantile99);
+            if (quantile99 == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "quantile99");
+            }
+            this.quantile99 = quantile99;
             return this;
         }
         @CustomType.Setter
         public Builder quantile999(Double quantile999) {
-            this.quantile999 = Objects.requireNonNull(quantile999);
+            if (quantile999 == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "quantile999");
+            }
+            this.quantile999 = quantile999;
             return this;
         }
         @CustomType.Setter
         public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+            if (schemaName == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "schemaName");
+            }
+            this.schemaName = schemaName;
             return this;
         }
         @CustomType.Setter
         public Builder sumCreatedTempDiskTables(Double sumCreatedTempDiskTables) {
-            this.sumCreatedTempDiskTables = Objects.requireNonNull(sumCreatedTempDiskTables);
+            if (sumCreatedTempDiskTables == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumCreatedTempDiskTables");
+            }
+            this.sumCreatedTempDiskTables = sumCreatedTempDiskTables;
             return this;
         }
         @CustomType.Setter
         public Builder sumCreatedTempTables(Double sumCreatedTempTables) {
-            this.sumCreatedTempTables = Objects.requireNonNull(sumCreatedTempTables);
+            if (sumCreatedTempTables == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumCreatedTempTables");
+            }
+            this.sumCreatedTempTables = sumCreatedTempTables;
             return this;
         }
         @CustomType.Setter
         public Builder sumErrors(Double sumErrors) {
-            this.sumErrors = Objects.requireNonNull(sumErrors);
+            if (sumErrors == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumErrors");
+            }
+            this.sumErrors = sumErrors;
             return this;
         }
         @CustomType.Setter
         public Builder sumLockTime(Double sumLockTime) {
-            this.sumLockTime = Objects.requireNonNull(sumLockTime);
+            if (sumLockTime == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumLockTime");
+            }
+            this.sumLockTime = sumLockTime;
             return this;
         }
         @CustomType.Setter
         public Builder sumNoGoodIndexUsed(Double sumNoGoodIndexUsed) {
-            this.sumNoGoodIndexUsed = Objects.requireNonNull(sumNoGoodIndexUsed);
+            if (sumNoGoodIndexUsed == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumNoGoodIndexUsed");
+            }
+            this.sumNoGoodIndexUsed = sumNoGoodIndexUsed;
             return this;
         }
         @CustomType.Setter
         public Builder sumNoIndexUsed(Double sumNoIndexUsed) {
-            this.sumNoIndexUsed = Objects.requireNonNull(sumNoIndexUsed);
+            if (sumNoIndexUsed == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumNoIndexUsed");
+            }
+            this.sumNoIndexUsed = sumNoIndexUsed;
             return this;
         }
         @CustomType.Setter
         public Builder sumRowsAffected(Double sumRowsAffected) {
-            this.sumRowsAffected = Objects.requireNonNull(sumRowsAffected);
+            if (sumRowsAffected == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumRowsAffected");
+            }
+            this.sumRowsAffected = sumRowsAffected;
             return this;
         }
         @CustomType.Setter
         public Builder sumRowsExamined(Double sumRowsExamined) {
-            this.sumRowsExamined = Objects.requireNonNull(sumRowsExamined);
+            if (sumRowsExamined == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumRowsExamined");
+            }
+            this.sumRowsExamined = sumRowsExamined;
             return this;
         }
         @CustomType.Setter
         public Builder sumRowsSent(Double sumRowsSent) {
-            this.sumRowsSent = Objects.requireNonNull(sumRowsSent);
+            if (sumRowsSent == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumRowsSent");
+            }
+            this.sumRowsSent = sumRowsSent;
             return this;
         }
         @CustomType.Setter
         public Builder sumSelectFullJoin(Double sumSelectFullJoin) {
-            this.sumSelectFullJoin = Objects.requireNonNull(sumSelectFullJoin);
+            if (sumSelectFullJoin == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumSelectFullJoin");
+            }
+            this.sumSelectFullJoin = sumSelectFullJoin;
             return this;
         }
         @CustomType.Setter
         public Builder sumSelectFullRangeJoin(Double sumSelectFullRangeJoin) {
-            this.sumSelectFullRangeJoin = Objects.requireNonNull(sumSelectFullRangeJoin);
+            if (sumSelectFullRangeJoin == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumSelectFullRangeJoin");
+            }
+            this.sumSelectFullRangeJoin = sumSelectFullRangeJoin;
             return this;
         }
         @CustomType.Setter
         public Builder sumSelectRange(Double sumSelectRange) {
-            this.sumSelectRange = Objects.requireNonNull(sumSelectRange);
+            if (sumSelectRange == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumSelectRange");
+            }
+            this.sumSelectRange = sumSelectRange;
             return this;
         }
         @CustomType.Setter
         public Builder sumSelectRangeCheck(Double sumSelectRangeCheck) {
-            this.sumSelectRangeCheck = Objects.requireNonNull(sumSelectRangeCheck);
+            if (sumSelectRangeCheck == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumSelectRangeCheck");
+            }
+            this.sumSelectRangeCheck = sumSelectRangeCheck;
             return this;
         }
         @CustomType.Setter
         public Builder sumSelectScan(Double sumSelectScan) {
-            this.sumSelectScan = Objects.requireNonNull(sumSelectScan);
+            if (sumSelectScan == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumSelectScan");
+            }
+            this.sumSelectScan = sumSelectScan;
             return this;
         }
         @CustomType.Setter
         public Builder sumSortMergePasses(Double sumSortMergePasses) {
-            this.sumSortMergePasses = Objects.requireNonNull(sumSortMergePasses);
+            if (sumSortMergePasses == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumSortMergePasses");
+            }
+            this.sumSortMergePasses = sumSortMergePasses;
             return this;
         }
         @CustomType.Setter
         public Builder sumSortRange(Double sumSortRange) {
-            this.sumSortRange = Objects.requireNonNull(sumSortRange);
+            if (sumSortRange == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumSortRange");
+            }
+            this.sumSortRange = sumSortRange;
             return this;
         }
         @CustomType.Setter
         public Builder sumSortRows(Double sumSortRows) {
-            this.sumSortRows = Objects.requireNonNull(sumSortRows);
+            if (sumSortRows == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumSortRows");
+            }
+            this.sumSortRows = sumSortRows;
             return this;
         }
         @CustomType.Setter
         public Builder sumSortScan(Double sumSortScan) {
-            this.sumSortScan = Objects.requireNonNull(sumSortScan);
+            if (sumSortScan == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumSortScan");
+            }
+            this.sumSortScan = sumSortScan;
             return this;
         }
         @CustomType.Setter
         public Builder sumTimerWait(Double sumTimerWait) {
-            this.sumTimerWait = Objects.requireNonNull(sumTimerWait);
+            if (sumTimerWait == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumTimerWait");
+            }
+            this.sumTimerWait = sumTimerWait;
             return this;
         }
         @CustomType.Setter
         public Builder sumWarnings(Double sumWarnings) {
-            this.sumWarnings = Objects.requireNonNull(sumWarnings);
+            if (sumWarnings == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumWarnings");
+            }
+            this.sumWarnings = sumWarnings;
             return this;
         }
         public GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem build() {

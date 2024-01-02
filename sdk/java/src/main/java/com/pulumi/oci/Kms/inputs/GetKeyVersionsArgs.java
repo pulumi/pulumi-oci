@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Kms.inputs.GetKeyVersionsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -136,8 +137,12 @@ public final class GetKeyVersionsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetKeyVersionsArgs build() {
-            $.keyId = Objects.requireNonNull($.keyId, "expected parameter 'keyId' to be non-null");
-            $.managementEndpoint = Objects.requireNonNull($.managementEndpoint, "expected parameter 'managementEndpoint' to be non-null");
+            if ($.keyId == null) {
+                throw new MissingRequiredPropertyException("GetKeyVersionsArgs", "keyId");
+            }
+            if ($.managementEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetKeyVersionsArgs", "managementEndpoint");
+            }
             return $;
         }
     }

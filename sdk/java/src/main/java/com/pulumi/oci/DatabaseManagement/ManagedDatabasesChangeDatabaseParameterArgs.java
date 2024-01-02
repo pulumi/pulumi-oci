@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabasesChangeDatabaseParameterCredentialsArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabasesChangeDatabaseParameterParameterArgs;
 import java.lang.String;
@@ -218,10 +219,18 @@ public final class ManagedDatabasesChangeDatabaseParameterArgs extends com.pulum
         }
 
         public ManagedDatabasesChangeDatabaseParameterArgs build() {
-            $.credentials = Objects.requireNonNull($.credentials, "expected parameter 'credentials' to be non-null");
-            $.managedDatabaseId = Objects.requireNonNull($.managedDatabaseId, "expected parameter 'managedDatabaseId' to be non-null");
-            $.parameters = Objects.requireNonNull($.parameters, "expected parameter 'parameters' to be non-null");
-            $.scope = Objects.requireNonNull($.scope, "expected parameter 'scope' to be non-null");
+            if ($.credentials == null) {
+                throw new MissingRequiredPropertyException("ManagedDatabasesChangeDatabaseParameterArgs", "credentials");
+            }
+            if ($.managedDatabaseId == null) {
+                throw new MissingRequiredPropertyException("ManagedDatabasesChangeDatabaseParameterArgs", "managedDatabaseId");
+            }
+            if ($.parameters == null) {
+                throw new MissingRequiredPropertyException("ManagedDatabasesChangeDatabaseParameterArgs", "parameters");
+            }
+            if ($.scope == null) {
+                throw new MissingRequiredPropertyException("ManagedDatabasesChangeDatabaseParameterArgs", "scope");
+            }
             return $;
         }
     }

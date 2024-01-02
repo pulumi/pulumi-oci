@@ -5,6 +5,7 @@ package com.pulumi.oci.CertificatesManagement;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CertificatesManagement.inputs.CertificateCertificateConfigArgs;
 import com.pulumi.oci.CertificatesManagement.inputs.CertificateCertificateRuleArgs;
 import java.lang.Object;
@@ -325,8 +326,12 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public CertificateArgs build() {
-            $.certificateConfig = Objects.requireNonNull($.certificateConfig, "expected parameter 'certificateConfig' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.certificateConfig == null) {
+                throw new MissingRequiredPropertyException("CertificateArgs", "certificateConfig");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("CertificateArgs", "compartmentId");
+            }
             return $;
         }
     }

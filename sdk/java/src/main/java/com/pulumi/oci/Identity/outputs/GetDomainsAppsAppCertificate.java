@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetDomainsAppsAppCertificate {
 
         @CustomType.Setter
         public Builder certAlias(String certAlias) {
-            this.certAlias = Objects.requireNonNull(certAlias);
+            if (certAlias == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppCertificate", "certAlias");
+            }
+            this.certAlias = certAlias;
             return this;
         }
         @CustomType.Setter
         public Builder kid(String kid) {
-            this.kid = Objects.requireNonNull(kid);
+            if (kid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppCertificate", "kid");
+            }
+            this.kid = kid;
             return this;
         }
         @CustomType.Setter
         public Builder sha1thumbprint(String sha1thumbprint) {
-            this.sha1thumbprint = Objects.requireNonNull(sha1thumbprint);
+            if (sha1thumbprint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppCertificate", "sha1thumbprint");
+            }
+            this.sha1thumbprint = sha1thumbprint;
             return this;
         }
         @CustomType.Setter
         public Builder x509base64certificate(String x509base64certificate) {
-            this.x509base64certificate = Objects.requireNonNull(x509base64certificate);
+            if (x509base64certificate == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppCertificate", "x509base64certificate");
+            }
+            this.x509base64certificate = x509base64certificate;
             return this;
         }
         @CustomType.Setter
         public Builder x5t(String x5t) {
-            this.x5t = Objects.requireNonNull(x5t);
+            if (x5t == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppCertificate", "x5t");
+            }
+            this.x5t = x5t;
             return this;
         }
         public GetDomainsAppsAppCertificate build() {

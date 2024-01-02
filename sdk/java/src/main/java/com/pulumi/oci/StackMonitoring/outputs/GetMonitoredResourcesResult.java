@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourcesFilter;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourcesMonitoredResourceCollection;
 import java.lang.String;
@@ -101,11 +102,15 @@ public final class GetMonitoredResourcesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourcesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMonitoredResourcesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -114,12 +119,18 @@ public final class GetMonitoredResourcesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourcesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder monitoredResourceCollections(List<GetMonitoredResourcesMonitoredResourceCollection> monitoredResourceCollections) {
-            this.monitoredResourceCollections = Objects.requireNonNull(monitoredResourceCollections);
+            if (monitoredResourceCollections == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourcesResult", "monitoredResourceCollections");
+            }
+            this.monitoredResourceCollections = monitoredResourceCollections;
             return this;
         }
         public Builder monitoredResourceCollections(GetMonitoredResourcesMonitoredResourceCollection... monitoredResourceCollections) {
@@ -127,11 +138,13 @@ public final class GetMonitoredResourcesResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder workRequestId(@Nullable String workRequestId) {
+
             this.workRequestId = workRequestId;
             return this;
         }

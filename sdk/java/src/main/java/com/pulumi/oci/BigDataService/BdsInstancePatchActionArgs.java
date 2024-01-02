@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -160,9 +161,15 @@ public final class BdsInstancePatchActionArgs extends com.pulumi.resources.Resou
         }
 
         public BdsInstancePatchActionArgs build() {
-            $.bdsInstanceId = Objects.requireNonNull($.bdsInstanceId, "expected parameter 'bdsInstanceId' to be non-null");
-            $.clusterAdminPassword = Objects.requireNonNull($.clusterAdminPassword, "expected parameter 'clusterAdminPassword' to be non-null");
-            $.version = Objects.requireNonNull($.version, "expected parameter 'version' to be non-null");
+            if ($.bdsInstanceId == null) {
+                throw new MissingRequiredPropertyException("BdsInstancePatchActionArgs", "bdsInstanceId");
+            }
+            if ($.clusterAdminPassword == null) {
+                throw new MissingRequiredPropertyException("BdsInstancePatchActionArgs", "clusterAdminPassword");
+            }
+            if ($.version == null) {
+                throw new MissingRequiredPropertyException("BdsInstancePatchActionArgs", "version");
+            }
             return $;
         }
     }

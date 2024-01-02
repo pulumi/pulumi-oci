@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo;
 import java.lang.String;
 import java.util.List;
@@ -86,12 +87,18 @@ public final class GetExternalDbSystemDiscoveryPatchOperationValueConnector {
 
         @CustomType.Setter
         public Builder agentId(String agentId) {
-            this.agentId = Objects.requireNonNull(agentId);
+            if (agentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryPatchOperationValueConnector", "agentId");
+            }
+            this.agentId = agentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionInfos(List<GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo> connectionInfos) {
-            this.connectionInfos = Objects.requireNonNull(connectionInfos);
+            if (connectionInfos == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryPatchOperationValueConnector", "connectionInfos");
+            }
+            this.connectionInfos = connectionInfos;
             return this;
         }
         public Builder connectionInfos(GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo... connectionInfos) {
@@ -99,12 +106,18 @@ public final class GetExternalDbSystemDiscoveryPatchOperationValueConnector {
         }
         @CustomType.Setter
         public Builder connectorType(String connectorType) {
-            this.connectorType = Objects.requireNonNull(connectorType);
+            if (connectorType == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryPatchOperationValueConnector", "connectorType");
+            }
+            this.connectorType = connectorType;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryPatchOperationValueConnector", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         public GetExternalDbSystemDiscoveryPatchOperationValueConnector build() {

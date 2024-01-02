@@ -73,16 +73,19 @@ public final class CertificateExtension {
 
         @CustomType.Setter
         public Builder isCritical(@Nullable Boolean isCritical) {
+
             this.isCritical = isCritical;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder value(@Nullable String value) {
+
             this.value = value;
             return this;
         }

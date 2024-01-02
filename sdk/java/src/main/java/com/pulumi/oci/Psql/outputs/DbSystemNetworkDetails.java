@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -73,6 +74,7 @@ public final class DbSystemNetworkDetails {
 
         @CustomType.Setter
         public Builder nsgIds(@Nullable List<String> nsgIds) {
+
             this.nsgIds = nsgIds;
             return this;
         }
@@ -81,12 +83,16 @@ public final class DbSystemNetworkDetails {
         }
         @CustomType.Setter
         public Builder primaryDbEndpointPrivateIp(@Nullable String primaryDbEndpointPrivateIp) {
+
             this.primaryDbEndpointPrivateIp = primaryDbEndpointPrivateIp;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("DbSystemNetworkDetails", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         public DbSystemNetworkDetails build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -113,32 +114,50 @@ public final class GetImagesImageLaunchOption {
 
         @CustomType.Setter
         public Builder bootVolumeType(String bootVolumeType) {
-            this.bootVolumeType = Objects.requireNonNull(bootVolumeType);
+            if (bootVolumeType == null) {
+              throw new MissingRequiredPropertyException("GetImagesImageLaunchOption", "bootVolumeType");
+            }
+            this.bootVolumeType = bootVolumeType;
             return this;
         }
         @CustomType.Setter
         public Builder firmware(String firmware) {
-            this.firmware = Objects.requireNonNull(firmware);
+            if (firmware == null) {
+              throw new MissingRequiredPropertyException("GetImagesImageLaunchOption", "firmware");
+            }
+            this.firmware = firmware;
             return this;
         }
         @CustomType.Setter
         public Builder isConsistentVolumeNamingEnabled(Boolean isConsistentVolumeNamingEnabled) {
-            this.isConsistentVolumeNamingEnabled = Objects.requireNonNull(isConsistentVolumeNamingEnabled);
+            if (isConsistentVolumeNamingEnabled == null) {
+              throw new MissingRequiredPropertyException("GetImagesImageLaunchOption", "isConsistentVolumeNamingEnabled");
+            }
+            this.isConsistentVolumeNamingEnabled = isConsistentVolumeNamingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
-            this.isPvEncryptionInTransitEnabled = Objects.requireNonNull(isPvEncryptionInTransitEnabled);
+            if (isPvEncryptionInTransitEnabled == null) {
+              throw new MissingRequiredPropertyException("GetImagesImageLaunchOption", "isPvEncryptionInTransitEnabled");
+            }
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder networkType(String networkType) {
-            this.networkType = Objects.requireNonNull(networkType);
+            if (networkType == null) {
+              throw new MissingRequiredPropertyException("GetImagesImageLaunchOption", "networkType");
+            }
+            this.networkType = networkType;
             return this;
         }
         @CustomType.Setter
         public Builder remoteDataVolumeType(String remoteDataVolumeType) {
-            this.remoteDataVolumeType = Objects.requireNonNull(remoteDataVolumeType);
+            if (remoteDataVolumeType == null) {
+              throw new MissingRequiredPropertyException("GetImagesImageLaunchOption", "remoteDataVolumeType");
+            }
+            this.remoteDataVolumeType = remoteDataVolumeType;
             return this;
         }
         public GetImagesImageLaunchOption build() {

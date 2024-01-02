@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestination;
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOp
 
         @CustomType.Setter
         public Builder destinations(List<GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestination> destinations) {
-            this.destinations = Objects.requireNonNull(destinations);
+            if (destinations == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfiguration", "destinations");
+            }
+            this.destinations = destinations;
             return this;
         }
         public Builder destinations(GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestination... destinations) {
@@ -66,7 +70,10 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOp
         }
         @CustomType.Setter
         public Builder sources(List<GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource> sources) {
-            this.sources = Objects.requireNonNull(sources);
+            if (sources == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfiguration", "sources");
+            }
+            this.sources = sources;
             return this;
         }
         public Builder sources(GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource... sources) {

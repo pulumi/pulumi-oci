@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs;
 import com.pulumi.oci.Core.inputs.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs;
 import java.lang.String;
@@ -311,8 +312,12 @@ public final class ComputeCapacityReservationInstanceReservationConfigArgs exten
         }
 
         public ComputeCapacityReservationInstanceReservationConfigArgs build() {
-            $.instanceShape = Objects.requireNonNull($.instanceShape, "expected parameter 'instanceShape' to be non-null");
-            $.reservedCount = Objects.requireNonNull($.reservedCount, "expected parameter 'reservedCount' to be non-null");
+            if ($.instanceShape == null) {
+                throw new MissingRequiredPropertyException("ComputeCapacityReservationInstanceReservationConfigArgs", "instanceShape");
+            }
+            if ($.reservedCount == null) {
+                throw new MissingRequiredPropertyException("ComputeCapacityReservationInstanceReservationConfigArgs", "reservedCount");
+            }
             return $;
         }
     }

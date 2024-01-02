@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsDynamicResourceGroupTagArgs;
 import com.pulumi.oci.Identity.inputs.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs;
 import java.lang.String;
@@ -784,10 +785,18 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
         }
 
         public DomainsDynamicResourceGroupArgs build() {
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.matchingRule = Objects.requireNonNull($.matchingRule, "expected parameter 'matchingRule' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("DomainsDynamicResourceGroupArgs", "displayName");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsDynamicResourceGroupArgs", "idcsEndpoint");
+            }
+            if ($.matchingRule == null) {
+                throw new MissingRequiredPropertyException("DomainsDynamicResourceGroupArgs", "matchingRule");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsDynamicResourceGroupArgs", "schemas");
+            }
             return $;
         }
     }

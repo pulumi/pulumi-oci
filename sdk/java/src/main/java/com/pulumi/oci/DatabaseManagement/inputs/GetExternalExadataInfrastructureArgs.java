@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetExternalExadataInfrastructureArgs extends com.pulumi.resou
         }
 
         public GetExternalExadataInfrastructureArgs build() {
-            $.externalExadataInfrastructureId = Objects.requireNonNull($.externalExadataInfrastructureId, "expected parameter 'externalExadataInfrastructureId' to be non-null");
+            if ($.externalExadataInfrastructureId == null) {
+                throw new MissingRequiredPropertyException("GetExternalExadataInfrastructureArgs", "externalExadataInfrastructureId");
+            }
             return $;
         }
     }

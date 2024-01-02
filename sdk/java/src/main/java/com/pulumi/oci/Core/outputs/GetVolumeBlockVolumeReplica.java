@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetVolumeBlockVolumeReplica {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBlockVolumeReplica", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder blockVolumeReplicaId(String blockVolumeReplicaId) {
-            this.blockVolumeReplicaId = Objects.requireNonNull(blockVolumeReplicaId);
+            if (blockVolumeReplicaId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBlockVolumeReplica", "blockVolumeReplicaId");
+            }
+            this.blockVolumeReplicaId = blockVolumeReplicaId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBlockVolumeReplica", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         public GetVolumeBlockVolumeReplica build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseMigration.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -187,9 +188,15 @@ public final class ConnectionPrivateEndpointArgs extends com.pulumi.resources.Re
         }
 
         public ConnectionPrivateEndpointArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
-            $.vcnId = Objects.requireNonNull($.vcnId, "expected parameter 'vcnId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ConnectionPrivateEndpointArgs", "compartmentId");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("ConnectionPrivateEndpointArgs", "subnetId");
+            }
+            if ($.vcnId == null) {
+                throw new MissingRequiredPropertyException("ConnectionPrivateEndpointArgs", "vcnId");
+            }
             return $;
         }
     }

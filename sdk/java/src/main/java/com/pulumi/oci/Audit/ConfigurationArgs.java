@@ -5,6 +5,7 @@ package com.pulumi.oci.Audit;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -124,8 +125,12 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ConfigurationArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.retentionPeriodDays = Objects.requireNonNull($.retentionPeriodDays, "expected parameter 'retentionPeriodDays' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ConfigurationArgs", "compartmentId");
+            }
+            if ($.retentionPeriodDays == null) {
+                throw new MissingRequiredPropertyException("ConfigurationArgs", "retentionPeriodDays");
+            }
             return $;
         }
     }

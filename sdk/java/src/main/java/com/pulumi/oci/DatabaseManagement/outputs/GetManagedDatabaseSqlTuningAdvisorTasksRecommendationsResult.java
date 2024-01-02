@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilter;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollection;
 import java.lang.String;
@@ -98,11 +99,15 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult 
 
         @CustomType.Setter
         public Builder executionId(String executionId) {
-            this.executionId = Objects.requireNonNull(executionId);
+            if (executionId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult", "executionId");
+            }
+            this.executionId = executionId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -111,27 +116,42 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult 
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder sqlObjectId(String sqlObjectId) {
-            this.sqlObjectId = Objects.requireNonNull(sqlObjectId);
+            if (sqlObjectId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult", "sqlObjectId");
+            }
+            this.sqlObjectId = sqlObjectId;
             return this;
         }
         @CustomType.Setter
         public Builder sqlTuningAdvisorTaskId(String sqlTuningAdvisorTaskId) {
-            this.sqlTuningAdvisorTaskId = Objects.requireNonNull(sqlTuningAdvisorTaskId);
+            if (sqlTuningAdvisorTaskId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult", "sqlTuningAdvisorTaskId");
+            }
+            this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
             return this;
         }
         @CustomType.Setter
         public Builder sqlTuningAdvisorTaskRecommendationCollections(List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollection> sqlTuningAdvisorTaskRecommendationCollections) {
-            this.sqlTuningAdvisorTaskRecommendationCollections = Objects.requireNonNull(sqlTuningAdvisorTaskRecommendationCollections);
+            if (sqlTuningAdvisorTaskRecommendationCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult", "sqlTuningAdvisorTaskRecommendationCollections");
+            }
+            this.sqlTuningAdvisorTaskRecommendationCollections = sqlTuningAdvisorTaskRecommendationCollections;
             return this;
         }
         public Builder sqlTuningAdvisorTaskRecommendationCollections(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollection... sqlTuningAdvisorTaskRecommendationCollections) {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -160,9 +161,15 @@ public final class IdpGroupMappingArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public IdpGroupMappingArgs build() {
-            $.groupId = Objects.requireNonNull($.groupId, "expected parameter 'groupId' to be non-null");
-            $.identityProviderId = Objects.requireNonNull($.identityProviderId, "expected parameter 'identityProviderId' to be non-null");
-            $.idpGroupName = Objects.requireNonNull($.idpGroupName, "expected parameter 'idpGroupName' to be non-null");
+            if ($.groupId == null) {
+                throw new MissingRequiredPropertyException("IdpGroupMappingArgs", "groupId");
+            }
+            if ($.identityProviderId == null) {
+                throw new MissingRequiredPropertyException("IdpGroupMappingArgs", "identityProviderId");
+            }
+            if ($.idpGroupName == null) {
+                throw new MissingRequiredPropertyException("IdpGroupMappingArgs", "idpGroupName");
+            }
             return $;
         }
     }

@@ -265,31 +265,37 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20user 
 
         @CustomType.Setter
         public Builder costCenter(@Nullable String costCenter) {
+
             this.costCenter = costCenter;
             return this;
         }
         @CustomType.Setter
         public Builder department(@Nullable String department) {
+
             this.department = department;
             return this;
         }
         @CustomType.Setter
         public Builder division(@Nullable String division) {
+
             this.division = division;
             return this;
         }
         @CustomType.Setter
         public Builder employeeNumber(@Nullable String employeeNumber) {
+
             this.employeeNumber = employeeNumber;
             return this;
         }
         @CustomType.Setter
         public Builder manager(@Nullable DomainsUserUrnietfparamsscimschemasextensionenterprise20userManager manager) {
+
             this.manager = manager;
             return this;
         }
         @CustomType.Setter
         public Builder organization(@Nullable String organization) {
+
             this.organization = organization;
             return this;
         }

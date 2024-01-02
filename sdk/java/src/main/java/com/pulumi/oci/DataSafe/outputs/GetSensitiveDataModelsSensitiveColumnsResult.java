@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelsSensitiveColumnsFilter;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection;
 import java.lang.Boolean;
@@ -242,11 +243,13 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
 
         @CustomType.Setter
         public Builder columnGroup(@Nullable String columnGroup) {
+
             this.columnGroup = columnGroup;
             return this;
         }
         @CustomType.Setter
         public Builder columnNames(@Nullable List<String> columnNames) {
+
             this.columnNames = columnNames;
             return this;
         }
@@ -255,6 +258,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         }
         @CustomType.Setter
         public Builder dataTypes(@Nullable List<String> dataTypes) {
+
             this.dataTypes = dataTypes;
             return this;
         }
@@ -263,6 +267,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSensitiveDataModelsSensitiveColumnsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -271,16 +276,21 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCaseInSensitive(@Nullable Boolean isCaseInSensitive) {
+
             this.isCaseInSensitive = isCaseInSensitive;
             return this;
         }
         @CustomType.Setter
         public Builder objectTypes(@Nullable List<String> objectTypes) {
+
             this.objectTypes = objectTypes;
             return this;
         }
@@ -289,6 +299,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         }
         @CustomType.Setter
         public Builder objects(@Nullable List<String> objects) {
+
             this.objects = objects;
             return this;
         }
@@ -297,6 +308,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         }
         @CustomType.Setter
         public Builder parentColumnKeys(@Nullable List<String> parentColumnKeys) {
+
             this.parentColumnKeys = parentColumnKeys;
             return this;
         }
@@ -305,6 +317,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         }
         @CustomType.Setter
         public Builder relationTypes(@Nullable List<String> relationTypes) {
+
             this.relationTypes = relationTypes;
             return this;
         }
@@ -313,6 +326,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         }
         @CustomType.Setter
         public Builder schemaNames(@Nullable List<String> schemaNames) {
+
             this.schemaNames = schemaNames;
             return this;
         }
@@ -321,7 +335,10 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         }
         @CustomType.Setter
         public Builder sensitiveColumnCollections(List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection> sensitiveColumnCollections) {
-            this.sensitiveColumnCollections = Objects.requireNonNull(sensitiveColumnCollections);
+            if (sensitiveColumnCollections == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsResult", "sensitiveColumnCollections");
+            }
+            this.sensitiveColumnCollections = sensitiveColumnCollections;
             return this;
         }
         public Builder sensitiveColumnCollections(GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection... sensitiveColumnCollections) {
@@ -329,16 +346,21 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         }
         @CustomType.Setter
         public Builder sensitiveColumnLifecycleState(@Nullable String sensitiveColumnLifecycleState) {
+
             this.sensitiveColumnLifecycleState = sensitiveColumnLifecycleState;
             return this;
         }
         @CustomType.Setter
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
-            this.sensitiveDataModelId = Objects.requireNonNull(sensitiveDataModelId);
+            if (sensitiveDataModelId == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsResult", "sensitiveDataModelId");
+            }
+            this.sensitiveDataModelId = sensitiveDataModelId;
             return this;
         }
         @CustomType.Setter
         public Builder sensitiveTypeIds(@Nullable List<String> sensitiveTypeIds) {
+
             this.sensitiveTypeIds = sensitiveTypeIds;
             return this;
         }
@@ -347,6 +369,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         }
         @CustomType.Setter
         public Builder statuses(@Nullable List<String> statuses) {
+
             this.statuses = statuses;
             return this;
         }
@@ -355,21 +378,25 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         }
         @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
+
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
+
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdatedGreaterThanOrEqualTo(@Nullable String timeUpdatedGreaterThanOrEqualTo) {
+
             this.timeUpdatedGreaterThanOrEqualTo = timeUpdatedGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdatedLessThan(@Nullable String timeUpdatedLessThan) {
+
             this.timeUpdatedLessThan = timeUpdatedLessThan;
             return this;
         }

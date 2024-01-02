@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.inputs.DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -373,7 +374,9 @@ public final class DeployArtifactDeployArtifactSourceArgs extends com.pulumi.res
         }
 
         public DeployArtifactDeployArtifactSourceArgs build() {
-            $.deployArtifactSourceType = Objects.requireNonNull($.deployArtifactSourceType, "expected parameter 'deployArtifactSourceType' to be non-null");
+            if ($.deployArtifactSourceType == null) {
+                throw new MissingRequiredPropertyException("DeployArtifactDeployArtifactSourceArgs", "deployArtifactSourceType");
+            }
             return $;
         }
     }

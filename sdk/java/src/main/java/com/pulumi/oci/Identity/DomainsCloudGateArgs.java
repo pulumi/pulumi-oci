@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsCloudGateTagArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -925,9 +926,15 @@ public final class DomainsCloudGateArgs extends com.pulumi.resources.ResourceArg
         }
 
         public DomainsCloudGateArgs build() {
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateArgs", "displayName");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateArgs", "idcsEndpoint");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateArgs", "schemas");
+            }
             return $;
         }
     }

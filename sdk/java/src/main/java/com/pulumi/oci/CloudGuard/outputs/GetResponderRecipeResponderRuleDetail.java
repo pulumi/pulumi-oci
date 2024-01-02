@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetResponderRecipeResponderRuleDetailConfiguration;
 import java.lang.Boolean;
 import java.lang.String;
@@ -87,12 +88,18 @@ public final class GetResponderRecipeResponderRuleDetail {
 
         @CustomType.Setter
         public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+            if (condition == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipeResponderRuleDetail", "condition");
+            }
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
         public Builder configurations(List<GetResponderRecipeResponderRuleDetailConfiguration> configurations) {
-            this.configurations = Objects.requireNonNull(configurations);
+            if (configurations == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipeResponderRuleDetail", "configurations");
+            }
+            this.configurations = configurations;
             return this;
         }
         public Builder configurations(GetResponderRecipeResponderRuleDetailConfiguration... configurations) {
@@ -100,12 +107,18 @@ public final class GetResponderRecipeResponderRuleDetail {
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipeResponderRuleDetail", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder mode(String mode) {
-            this.mode = Objects.requireNonNull(mode);
+            if (mode == null) {
+              throw new MissingRequiredPropertyException("GetResponderRecipeResponderRuleDetail", "mode");
+            }
+            this.mode = mode;
             return this;
         }
         public GetResponderRecipeResponderRuleDetail build() {

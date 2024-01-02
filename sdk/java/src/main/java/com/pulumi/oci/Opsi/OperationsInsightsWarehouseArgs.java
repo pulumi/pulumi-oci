@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
@@ -276,9 +277,15 @@ public final class OperationsInsightsWarehouseArgs extends com.pulumi.resources.
         }
 
         public OperationsInsightsWarehouseArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.cpuAllocated = Objects.requireNonNull($.cpuAllocated, "expected parameter 'cpuAllocated' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("OperationsInsightsWarehouseArgs", "compartmentId");
+            }
+            if ($.cpuAllocated == null) {
+                throw new MissingRequiredPropertyException("OperationsInsightsWarehouseArgs", "cpuAllocated");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("OperationsInsightsWarehouseArgs", "displayName");
+            }
             return $;
         }
     }

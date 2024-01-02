@@ -4,6 +4,7 @@
 package com.pulumi.oci.Oda.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Oda.outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo;
 import java.lang.String;
 import java.util.List;
@@ -128,22 +129,34 @@ public final class GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCo
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder odaPrivateEndpointId(String odaPrivateEndpointId) {
-            this.odaPrivateEndpointId = Objects.requireNonNull(odaPrivateEndpointId);
+            if (odaPrivateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem", "odaPrivateEndpointId");
+            }
+            this.odaPrivateEndpointId = odaPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder scanListenerInfos(List<GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo> scanListenerInfos) {
-            this.scanListenerInfos = Objects.requireNonNull(scanListenerInfos);
+            if (scanListenerInfos == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem", "scanListenerInfos");
+            }
+            this.scanListenerInfos = scanListenerInfos;
             return this;
         }
         public Builder scanListenerInfos(GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo... scanListenerInfos) {
@@ -151,17 +164,26 @@ public final class GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCo
         }
         @CustomType.Setter
         public Builder scanListenerType(String scanListenerType) {
-            this.scanListenerType = Objects.requireNonNull(scanListenerType);
+            if (scanListenerType == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem", "scanListenerType");
+            }
+            this.scanListenerType = scanListenerType;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem build() {

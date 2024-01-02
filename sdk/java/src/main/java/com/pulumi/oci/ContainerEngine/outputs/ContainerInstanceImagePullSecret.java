@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -100,26 +101,35 @@ public final class ContainerInstanceImagePullSecret {
 
         @CustomType.Setter
         public Builder password(@Nullable String password) {
+
             this.password = password;
             return this;
         }
         @CustomType.Setter
         public Builder registryEndpoint(String registryEndpoint) {
-            this.registryEndpoint = Objects.requireNonNull(registryEndpoint);
+            if (registryEndpoint == null) {
+              throw new MissingRequiredPropertyException("ContainerInstanceImagePullSecret", "registryEndpoint");
+            }
+            this.registryEndpoint = registryEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder secretId(@Nullable String secretId) {
+
             this.secretId = secretId;
             return this;
         }
         @CustomType.Setter
         public Builder secretType(String secretType) {
-            this.secretType = Objects.requireNonNull(secretType);
+            if (secretType == null) {
+              throw new MissingRequiredPropertyException("ContainerInstanceImagePullSecret", "secretType");
+            }
+            this.secretType = secretType;
             return this;
         }
         @CustomType.Setter
         public Builder username(@Nullable String username) {
+
             this.username = username;
             return this;
         }

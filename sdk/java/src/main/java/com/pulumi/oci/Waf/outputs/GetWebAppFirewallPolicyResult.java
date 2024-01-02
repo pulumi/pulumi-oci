@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPolicyAction;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPolicyRequestAccessControl;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPolicyRequestProtection;
@@ -267,7 +268,10 @@ public final class GetWebAppFirewallPolicyResult {
 
         @CustomType.Setter
         public Builder actions(List<GetWebAppFirewallPolicyAction> actions) {
-            this.actions = Objects.requireNonNull(actions);
+            if (actions == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyResult", "actions");
+            }
+            this.actions = actions;
             return this;
         }
         public Builder actions(GetWebAppFirewallPolicyAction... actions) {
@@ -275,37 +279,58 @@ public final class GetWebAppFirewallPolicyResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder requestAccessControls(List<GetWebAppFirewallPolicyRequestAccessControl> requestAccessControls) {
-            this.requestAccessControls = Objects.requireNonNull(requestAccessControls);
+            if (requestAccessControls == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyResult", "requestAccessControls");
+            }
+            this.requestAccessControls = requestAccessControls;
             return this;
         }
         public Builder requestAccessControls(GetWebAppFirewallPolicyRequestAccessControl... requestAccessControls) {
@@ -313,7 +338,10 @@ public final class GetWebAppFirewallPolicyResult {
         }
         @CustomType.Setter
         public Builder requestProtections(List<GetWebAppFirewallPolicyRequestProtection> requestProtections) {
-            this.requestProtections = Objects.requireNonNull(requestProtections);
+            if (requestProtections == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyResult", "requestProtections");
+            }
+            this.requestProtections = requestProtections;
             return this;
         }
         public Builder requestProtections(GetWebAppFirewallPolicyRequestProtection... requestProtections) {
@@ -321,7 +349,10 @@ public final class GetWebAppFirewallPolicyResult {
         }
         @CustomType.Setter
         public Builder requestRateLimitings(List<GetWebAppFirewallPolicyRequestRateLimiting> requestRateLimitings) {
-            this.requestRateLimitings = Objects.requireNonNull(requestRateLimitings);
+            if (requestRateLimitings == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyResult", "requestRateLimitings");
+            }
+            this.requestRateLimitings = requestRateLimitings;
             return this;
         }
         public Builder requestRateLimitings(GetWebAppFirewallPolicyRequestRateLimiting... requestRateLimitings) {
@@ -329,7 +360,10 @@ public final class GetWebAppFirewallPolicyResult {
         }
         @CustomType.Setter
         public Builder responseAccessControls(List<GetWebAppFirewallPolicyResponseAccessControl> responseAccessControls) {
-            this.responseAccessControls = Objects.requireNonNull(responseAccessControls);
+            if (responseAccessControls == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyResult", "responseAccessControls");
+            }
+            this.responseAccessControls = responseAccessControls;
             return this;
         }
         public Builder responseAccessControls(GetWebAppFirewallPolicyResponseAccessControl... responseAccessControls) {
@@ -337,7 +371,10 @@ public final class GetWebAppFirewallPolicyResult {
         }
         @CustomType.Setter
         public Builder responseProtections(List<GetWebAppFirewallPolicyResponseProtection> responseProtections) {
-            this.responseProtections = Objects.requireNonNull(responseProtections);
+            if (responseProtections == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyResult", "responseProtections");
+            }
+            this.responseProtections = responseProtections;
             return this;
         }
         public Builder responseProtections(GetWebAppFirewallPolicyResponseProtection... responseProtections) {
@@ -345,27 +382,42 @@ public final class GetWebAppFirewallPolicyResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder webAppFirewallPolicyId(String webAppFirewallPolicyId) {
-            this.webAppFirewallPolicyId = Objects.requireNonNull(webAppFirewallPolicyId);
+            if (webAppFirewallPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyResult", "webAppFirewallPolicyId");
+            }
+            this.webAppFirewallPolicyId = webAppFirewallPolicyId;
             return this;
         }
         public GetWebAppFirewallPolicyResult build() {

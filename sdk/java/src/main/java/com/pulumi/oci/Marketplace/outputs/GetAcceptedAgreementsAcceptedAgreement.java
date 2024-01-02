@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -162,52 +163,82 @@ public final class GetAcceptedAgreementsAcceptedAgreement {
 
         @CustomType.Setter
         public Builder agreementId(String agreementId) {
-            this.agreementId = Objects.requireNonNull(agreementId);
+            if (agreementId == null) {
+              throw new MissingRequiredPropertyException("GetAcceptedAgreementsAcceptedAgreement", "agreementId");
+            }
+            this.agreementId = agreementId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAcceptedAgreementsAcceptedAgreement", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAcceptedAgreementsAcceptedAgreement", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAcceptedAgreementsAcceptedAgreement", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAcceptedAgreementsAcceptedAgreement", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAcceptedAgreementsAcceptedAgreement", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder listingId(String listingId) {
-            this.listingId = Objects.requireNonNull(listingId);
+            if (listingId == null) {
+              throw new MissingRequiredPropertyException("GetAcceptedAgreementsAcceptedAgreement", "listingId");
+            }
+            this.listingId = listingId;
             return this;
         }
         @CustomType.Setter
         public Builder packageVersion(String packageVersion) {
-            this.packageVersion = Objects.requireNonNull(packageVersion);
+            if (packageVersion == null) {
+              throw new MissingRequiredPropertyException("GetAcceptedAgreementsAcceptedAgreement", "packageVersion");
+            }
+            this.packageVersion = packageVersion;
             return this;
         }
         @CustomType.Setter
         public Builder signature(String signature) {
-            this.signature = Objects.requireNonNull(signature);
+            if (signature == null) {
+              throw new MissingRequiredPropertyException("GetAcceptedAgreementsAcceptedAgreement", "signature");
+            }
+            this.signature = signature;
             return this;
         }
         @CustomType.Setter
         public Builder timeAccepted(String timeAccepted) {
-            this.timeAccepted = Objects.requireNonNull(timeAccepted);
+            if (timeAccepted == null) {
+              throw new MissingRequiredPropertyException("GetAcceptedAgreementsAcceptedAgreement", "timeAccepted");
+            }
+            this.timeAccepted = timeAccepted;
             return this;
         }
         public GetAcceptedAgreementsAcceptedAgreement build() {

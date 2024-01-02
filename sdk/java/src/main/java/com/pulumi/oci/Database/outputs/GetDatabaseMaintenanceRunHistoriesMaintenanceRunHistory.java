@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail;
 import com.pulumi.oci.Database.outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory {
 
         @CustomType.Setter
         public Builder dbServersHistoryDetails(List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail> dbServersHistoryDetails) {
-            this.dbServersHistoryDetails = Objects.requireNonNull(dbServersHistoryDetails);
+            if (dbServersHistoryDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory", "dbServersHistoryDetails");
+            }
+            this.dbServersHistoryDetails = dbServersHistoryDetails;
             return this;
         }
         public Builder dbServersHistoryDetails(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail... dbServersHistoryDetails) {
@@ -81,12 +85,18 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder maintenanceRunDetails(List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail> maintenanceRunDetails) {
-            this.maintenanceRunDetails = Objects.requireNonNull(maintenanceRunDetails);
+            if (maintenanceRunDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory", "maintenanceRunDetails");
+            }
+            this.maintenanceRunDetails = maintenanceRunDetails;
             return this;
         }
         public Builder maintenanceRunDetails(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail... maintenanceRunDetails) {

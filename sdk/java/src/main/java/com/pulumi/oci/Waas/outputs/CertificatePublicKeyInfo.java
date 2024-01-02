@@ -73,16 +73,19 @@ public final class CertificatePublicKeyInfo {
 
         @CustomType.Setter
         public Builder algorithm(@Nullable String algorithm) {
+
             this.algorithm = algorithm;
             return this;
         }
         @CustomType.Setter
         public Builder exponent(@Nullable Integer exponent) {
+
             this.exponent = exponent;
             return this;
         }
         @CustomType.Setter
         public Builder keySize(@Nullable Integer keySize) {
+
             this.keySize = keySize;
             return this;
         }

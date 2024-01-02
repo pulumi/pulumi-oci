@@ -4,6 +4,7 @@
 package com.pulumi.oci.ComputeInstanceAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ComputeInstanceAgent.outputs.GetInstanceAvailablePluginAvailablePlugin;
 import com.pulumi.oci.ComputeInstanceAgent.outputs.GetInstanceAvailablePluginFilter;
 import java.lang.String;
@@ -99,7 +100,10 @@ public final class GetInstanceAvailablePluginResult {
 
         @CustomType.Setter
         public Builder availablePlugins(List<GetInstanceAvailablePluginAvailablePlugin> availablePlugins) {
-            this.availablePlugins = Objects.requireNonNull(availablePlugins);
+            if (availablePlugins == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAvailablePluginResult", "availablePlugins");
+            }
+            this.availablePlugins = availablePlugins;
             return this;
         }
         public Builder availablePlugins(GetInstanceAvailablePluginAvailablePlugin... availablePlugins) {
@@ -107,11 +111,15 @@ public final class GetInstanceAvailablePluginResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAvailablePluginResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetInstanceAvailablePluginFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -120,22 +128,32 @@ public final class GetInstanceAvailablePluginResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAvailablePluginResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder osName(String osName) {
-            this.osName = Objects.requireNonNull(osName);
+            if (osName == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAvailablePluginResult", "osName");
+            }
+            this.osName = osName;
             return this;
         }
         @CustomType.Setter
         public Builder osVersion(String osVersion) {
-            this.osVersion = Objects.requireNonNull(osVersion);
+            if (osVersion == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAvailablePluginResult", "osVersion");
+            }
+            this.osVersion = osVersion;
             return this;
         }
         public GetInstanceAvailablePluginResult build() {

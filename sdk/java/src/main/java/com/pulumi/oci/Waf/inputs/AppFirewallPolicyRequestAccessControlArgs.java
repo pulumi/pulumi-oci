@@ -5,6 +5,7 @@ package com.pulumi.oci.Waf.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.inputs.AppFirewallPolicyRequestAccessControlRuleArgs;
 import java.lang.String;
 import java.util.List;
@@ -133,7 +134,9 @@ public final class AppFirewallPolicyRequestAccessControlArgs extends com.pulumi.
         }
 
         public AppFirewallPolicyRequestAccessControlArgs build() {
-            $.defaultActionName = Objects.requireNonNull($.defaultActionName, "expected parameter 'defaultActionName' to be non-null");
+            if ($.defaultActionName == null) {
+                throw new MissingRequiredPropertyException("AppFirewallPolicyRequestAccessControlArgs", "defaultActionName");
+            }
             return $;
         }
     }

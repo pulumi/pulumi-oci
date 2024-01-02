@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseTools.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient;
@@ -344,42 +345,66 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
 
         @CustomType.Setter
         public Builder advancedProperties(Map<String,Object> advancedProperties) {
-            this.advancedProperties = Objects.requireNonNull(advancedProperties);
+            if (advancedProperties == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "advancedProperties");
+            }
+            this.advancedProperties = advancedProperties;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionString(String connectionString) {
-            this.connectionString = Objects.requireNonNull(connectionString);
+            if (connectionString == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "connectionString");
+            }
+            this.connectionString = connectionString;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder keyStores(List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore> keyStores) {
-            this.keyStores = Objects.requireNonNull(keyStores);
+            if (keyStores == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "keyStores");
+            }
+            this.keyStores = keyStores;
             return this;
         }
         public Builder keyStores(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore... keyStores) {
@@ -387,12 +412,18 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder locks(List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock> locks) {
-            this.locks = Objects.requireNonNull(locks);
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "locks");
+            }
+            this.locks = locks;
             return this;
         }
         public Builder locks(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock... locks) {
@@ -400,12 +431,18 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         }
         @CustomType.Setter
         public Builder privateEndpointId(String privateEndpointId) {
-            this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
+            if (privateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "privateEndpointId");
+            }
+            this.privateEndpointId = privateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder proxyClients(List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient> proxyClients) {
-            this.proxyClients = Objects.requireNonNull(proxyClients);
+            if (proxyClients == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "proxyClients");
+            }
+            this.proxyClients = proxyClients;
             return this;
         }
         public Builder proxyClients(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient... proxyClients) {
@@ -413,7 +450,10 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         }
         @CustomType.Setter
         public Builder relatedResources(List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource> relatedResources) {
-            this.relatedResources = Objects.requireNonNull(relatedResources);
+            if (relatedResources == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "relatedResources");
+            }
+            this.relatedResources = relatedResources;
             return this;
         }
         public Builder relatedResources(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource... relatedResources) {
@@ -421,47 +461,74 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         }
         @CustomType.Setter
         public Builder runtimeSupport(String runtimeSupport) {
-            this.runtimeSupport = Objects.requireNonNull(runtimeSupport);
+            if (runtimeSupport == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "runtimeSupport");
+            }
+            this.runtimeSupport = runtimeSupport;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+            if (url == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "url");
+            }
+            this.url = url;
             return this;
         }
         @CustomType.Setter
         public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+            if (userName == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "userName");
+            }
+            this.userName = userName;
             return this;
         }
         @CustomType.Setter
         public Builder userPasswords(List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPassword> userPasswords) {
-            this.userPasswords = Objects.requireNonNull(userPasswords);
+            if (userPasswords == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "userPasswords");
+            }
+            this.userPasswords = userPasswords;
             return this;
         }
         public Builder userPasswords(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPassword... userPasswords) {

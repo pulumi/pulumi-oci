@@ -4,6 +4,7 @@
 package com.pulumi.oci.OperatorAccessControl.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OperatorAccessControl.outputs.GetActionProperty;
 import java.lang.String;
 import java.util.List;
@@ -134,37 +135,58 @@ public final class GetActionResult {
 
         @CustomType.Setter
         public Builder component(String component) {
-            this.component = Objects.requireNonNull(component);
+            if (component == null) {
+              throw new MissingRequiredPropertyException("GetActionResult", "component");
+            }
+            this.component = component;
             return this;
         }
         @CustomType.Setter
         public Builder customerDisplayName(String customerDisplayName) {
-            this.customerDisplayName = Objects.requireNonNull(customerDisplayName);
+            if (customerDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetActionResult", "customerDisplayName");
+            }
+            this.customerDisplayName = customerDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetActionResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetActionResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetActionResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder operatorActionId(String operatorActionId) {
-            this.operatorActionId = Objects.requireNonNull(operatorActionId);
+            if (operatorActionId == null) {
+              throw new MissingRequiredPropertyException("GetActionResult", "operatorActionId");
+            }
+            this.operatorActionId = operatorActionId;
             return this;
         }
         @CustomType.Setter
         public Builder properties(List<GetActionProperty> properties) {
-            this.properties = Objects.requireNonNull(properties);
+            if (properties == null) {
+              throw new MissingRequiredPropertyException("GetActionResult", "properties");
+            }
+            this.properties = properties;
             return this;
         }
         public Builder properties(GetActionProperty... properties) {
@@ -172,7 +194,10 @@ public final class GetActionResult {
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetActionResult", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         public GetActionResult build() {

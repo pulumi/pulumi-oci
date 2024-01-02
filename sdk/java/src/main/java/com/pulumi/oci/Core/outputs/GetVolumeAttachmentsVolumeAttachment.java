@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetVolumeAttachmentsVolumeAttachmentMultipathDevice;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -360,97 +361,154 @@ public final class GetVolumeAttachmentsVolumeAttachment {
 
         @CustomType.Setter
         public Builder attachmentType(String attachmentType) {
-            this.attachmentType = Objects.requireNonNull(attachmentType);
+            if (attachmentType == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "attachmentType");
+            }
+            this.attachmentType = attachmentType;
             return this;
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder chapSecret(String chapSecret) {
-            this.chapSecret = Objects.requireNonNull(chapSecret);
+            if (chapSecret == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "chapSecret");
+            }
+            this.chapSecret = chapSecret;
             return this;
         }
         @CustomType.Setter
         public Builder chapUsername(String chapUsername) {
-            this.chapUsername = Objects.requireNonNull(chapUsername);
+            if (chapUsername == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "chapUsername");
+            }
+            this.chapUsername = chapUsername;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder device(String device) {
-            this.device = Objects.requireNonNull(device);
+            if (device == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "device");
+            }
+            this.device = device;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder encryptionInTransitType(String encryptionInTransitType) {
-            this.encryptionInTransitType = Objects.requireNonNull(encryptionInTransitType);
+            if (encryptionInTransitType == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "encryptionInTransitType");
+            }
+            this.encryptionInTransitType = encryptionInTransitType;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceId(String instanceId) {
-            this.instanceId = Objects.requireNonNull(instanceId);
+            if (instanceId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "instanceId");
+            }
+            this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
         public Builder ipv4(String ipv4) {
-            this.ipv4 = Objects.requireNonNull(ipv4);
+            if (ipv4 == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "ipv4");
+            }
+            this.ipv4 = ipv4;
             return this;
         }
         @CustomType.Setter
         public Builder iqn(String iqn) {
-            this.iqn = Objects.requireNonNull(iqn);
+            if (iqn == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "iqn");
+            }
+            this.iqn = iqn;
             return this;
         }
         @CustomType.Setter
         public Builder isAgentAutoIscsiLoginEnabled(Boolean isAgentAutoIscsiLoginEnabled) {
-            this.isAgentAutoIscsiLoginEnabled = Objects.requireNonNull(isAgentAutoIscsiLoginEnabled);
+            if (isAgentAutoIscsiLoginEnabled == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "isAgentAutoIscsiLoginEnabled");
+            }
+            this.isAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isMultipath(Boolean isMultipath) {
-            this.isMultipath = Objects.requireNonNull(isMultipath);
+            if (isMultipath == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "isMultipath");
+            }
+            this.isMultipath = isMultipath;
             return this;
         }
         @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
-            this.isPvEncryptionInTransitEnabled = Objects.requireNonNull(isPvEncryptionInTransitEnabled);
+            if (isPvEncryptionInTransitEnabled == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "isPvEncryptionInTransitEnabled");
+            }
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isReadOnly(Boolean isReadOnly) {
-            this.isReadOnly = Objects.requireNonNull(isReadOnly);
+            if (isReadOnly == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "isReadOnly");
+            }
+            this.isReadOnly = isReadOnly;
             return this;
         }
         @CustomType.Setter
         public Builder isShareable(Boolean isShareable) {
-            this.isShareable = Objects.requireNonNull(isShareable);
+            if (isShareable == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "isShareable");
+            }
+            this.isShareable = isShareable;
             return this;
         }
         @CustomType.Setter
         public Builder iscsiLoginState(String iscsiLoginState) {
-            this.iscsiLoginState = Objects.requireNonNull(iscsiLoginState);
+            if (iscsiLoginState == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "iscsiLoginState");
+            }
+            this.iscsiLoginState = iscsiLoginState;
             return this;
         }
         @CustomType.Setter
         public Builder multipathDevices(List<GetVolumeAttachmentsVolumeAttachmentMultipathDevice> multipathDevices) {
-            this.multipathDevices = Objects.requireNonNull(multipathDevices);
+            if (multipathDevices == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "multipathDevices");
+            }
+            this.multipathDevices = multipathDevices;
             return this;
         }
         public Builder multipathDevices(GetVolumeAttachmentsVolumeAttachmentMultipathDevice... multipathDevices) {
@@ -458,27 +516,42 @@ public final class GetVolumeAttachmentsVolumeAttachment {
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder useChap(Boolean useChap) {
-            this.useChap = Objects.requireNonNull(useChap);
+            if (useChap == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "useChap");
+            }
+            this.useChap = useChap;
             return this;
         }
         @CustomType.Setter
         public Builder volumeId(String volumeId) {
-            this.volumeId = Objects.requireNonNull(volumeId);
+            if (volumeId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "volumeId");
+            }
+            this.volumeId = volumeId;
             return this;
         }
         public GetVolumeAttachmentsVolumeAttachment build() {

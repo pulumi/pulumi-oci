@@ -130,21 +130,25 @@ public final class BlockchainPlatformComponentDetailPeer {
 
         @CustomType.Setter
         public Builder ad(@Nullable String ad) {
+
             this.ad = ad;
             return this;
         }
         @CustomType.Setter
         public Builder alias(@Nullable String alias) {
+
             this.alias = alias;
             return this;
         }
         @CustomType.Setter
         public Builder host(@Nullable String host) {
+
             this.host = host;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuAllocationParams(@Nullable List<BlockchainPlatformComponentDetailPeerOcpuAllocationParam> ocpuAllocationParams) {
+
             this.ocpuAllocationParams = ocpuAllocationParams;
             return this;
         }
@@ -153,16 +157,19 @@ public final class BlockchainPlatformComponentDetailPeer {
         }
         @CustomType.Setter
         public Builder peerKey(@Nullable String peerKey) {
+
             this.peerKey = peerKey;
             return this;
         }
         @CustomType.Setter
         public Builder role(@Nullable String role) {
+
             this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

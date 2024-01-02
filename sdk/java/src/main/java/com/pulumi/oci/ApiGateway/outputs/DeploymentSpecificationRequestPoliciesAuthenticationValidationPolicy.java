@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicy;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetails;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKey;
@@ -155,21 +156,25 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
 
         @CustomType.Setter
         public Builder additionalValidationPolicy(@Nullable DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicy additionalValidationPolicy) {
+
             this.additionalValidationPolicy = additionalValidationPolicy;
             return this;
         }
         @CustomType.Setter
         public Builder clientDetails(@Nullable DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetails clientDetails) {
+
             this.clientDetails = clientDetails;
             return this;
         }
         @CustomType.Setter
         public Builder isSslVerifyDisabled(@Nullable Boolean isSslVerifyDisabled) {
+
             this.isSslVerifyDisabled = isSslVerifyDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder keys(@Nullable List<DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKey> keys) {
+
             this.keys = keys;
             return this;
         }
@@ -178,21 +183,27 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
         }
         @CustomType.Setter
         public Builder maxCacheDurationInHours(@Nullable Integer maxCacheDurationInHours) {
+
             this.maxCacheDurationInHours = maxCacheDurationInHours;
             return this;
         }
         @CustomType.Setter
         public Builder sourceUriDetails(@Nullable DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetails sourceUriDetails) {
+
             this.sourceUriDetails = sourceUriDetails;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicy", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder uri(@Nullable String uri) {
+
             this.uri = uri;
             return this;
         }

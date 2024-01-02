@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsFilter;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePool;
 import java.lang.String;
@@ -123,16 +124,21 @@ public final class GetNodePoolsResult {
 
         @CustomType.Setter
         public Builder clusterId(@Nullable String clusterId) {
+
             this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNodePoolsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -141,17 +147,24 @@ public final class GetNodePoolsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder nodePools(List<GetNodePoolsNodePool> nodePools) {
-            this.nodePools = Objects.requireNonNull(nodePools);
+            if (nodePools == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsResult", "nodePools");
+            }
+            this.nodePools = nodePools;
             return this;
         }
         public Builder nodePools(GetNodePoolsNodePool... nodePools) {
@@ -159,6 +172,7 @@ public final class GetNodePoolsResult {
         }
         @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
+
             this.states = states;
             return this;
         }

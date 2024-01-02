@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -174,7 +175,9 @@ public final class GetDiscoveryAnalyticPlainArgs extends com.pulumi.resources.In
         }
 
         public GetDiscoveryAnalyticPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetDiscoveryAnalyticPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Sch.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -225,7 +226,9 @@ public final class ConnectorTaskArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ConnectorTaskArgs build() {
-            $.kind = Objects.requireNonNull($.kind, "expected parameter 'kind' to be non-null");
+            if ($.kind == null) {
+                throw new MissingRequiredPropertyException("ConnectorTaskArgs", "kind");
+            }
             return $;
         }
     }

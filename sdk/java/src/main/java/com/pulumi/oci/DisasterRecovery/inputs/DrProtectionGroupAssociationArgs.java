@@ -5,6 +5,7 @@ package com.pulumi.oci.DisasterRecovery.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -150,7 +151,9 @@ public final class DrProtectionGroupAssociationArgs extends com.pulumi.resources
         }
 
         public DrProtectionGroupAssociationArgs build() {
-            $.role = Objects.requireNonNull($.role, "expected parameter 'role' to be non-null");
+            if ($.role == null) {
+                throw new MissingRequiredPropertyException("DrProtectionGroupAssociationArgs", "role");
+            }
             return $;
         }
     }

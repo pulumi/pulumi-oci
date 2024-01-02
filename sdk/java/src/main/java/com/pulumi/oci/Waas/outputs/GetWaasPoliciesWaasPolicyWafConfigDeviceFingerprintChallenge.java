@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -144,17 +145,26 @@ public final class GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge 
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder actionExpirationInSeconds(Integer actionExpirationInSeconds) {
-            this.actionExpirationInSeconds = Objects.requireNonNull(actionExpirationInSeconds);
+            if (actionExpirationInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge", "actionExpirationInSeconds");
+            }
+            this.actionExpirationInSeconds = actionExpirationInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder challengeSettings(List<GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting> challengeSettings) {
-            this.challengeSettings = Objects.requireNonNull(challengeSettings);
+            if (challengeSettings == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge", "challengeSettings");
+            }
+            this.challengeSettings = challengeSettings;
             return this;
         }
         public Builder challengeSettings(GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting... challengeSettings) {
@@ -162,27 +172,42 @@ public final class GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge 
         }
         @CustomType.Setter
         public Builder failureThreshold(Integer failureThreshold) {
-            this.failureThreshold = Objects.requireNonNull(failureThreshold);
+            if (failureThreshold == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge", "failureThreshold");
+            }
+            this.failureThreshold = failureThreshold;
             return this;
         }
         @CustomType.Setter
         public Builder failureThresholdExpirationInSeconds(Integer failureThresholdExpirationInSeconds) {
-            this.failureThresholdExpirationInSeconds = Objects.requireNonNull(failureThresholdExpirationInSeconds);
+            if (failureThresholdExpirationInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge", "failureThresholdExpirationInSeconds");
+            }
+            this.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder maxAddressCount(Integer maxAddressCount) {
-            this.maxAddressCount = Objects.requireNonNull(maxAddressCount);
+            if (maxAddressCount == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge", "maxAddressCount");
+            }
+            this.maxAddressCount = maxAddressCount;
             return this;
         }
         @CustomType.Setter
         public Builder maxAddressCountExpirationInSeconds(Integer maxAddressCountExpirationInSeconds) {
-            this.maxAddressCountExpirationInSeconds = Objects.requireNonNull(maxAddressCountExpirationInSeconds);
+            if (maxAddressCountExpirationInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge", "maxAddressCountExpirationInSeconds");
+            }
+            this.maxAddressCountExpirationInSeconds = maxAddressCountExpirationInSeconds;
             return this;
         }
         public GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge build() {

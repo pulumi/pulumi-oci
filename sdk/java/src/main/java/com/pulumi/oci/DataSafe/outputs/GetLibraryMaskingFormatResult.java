@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetLibraryMaskingFormatFormatEntry;
 import java.lang.Object;
 import java.lang.String;
@@ -214,27 +215,42 @@ public final class GetLibraryMaskingFormatResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder formatEntries(List<GetLibraryMaskingFormatFormatEntry> formatEntries) {
-            this.formatEntries = Objects.requireNonNull(formatEntries);
+            if (formatEntries == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatResult", "formatEntries");
+            }
+            this.formatEntries = formatEntries;
             return this;
         }
         public Builder formatEntries(GetLibraryMaskingFormatFormatEntry... formatEntries) {
@@ -242,22 +258,34 @@ public final class GetLibraryMaskingFormatResult {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder libraryMaskingFormatId(String libraryMaskingFormatId) {
-            this.libraryMaskingFormatId = Objects.requireNonNull(libraryMaskingFormatId);
+            if (libraryMaskingFormatId == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatResult", "libraryMaskingFormatId");
+            }
+            this.libraryMaskingFormatId = libraryMaskingFormatId;
             return this;
         }
         @CustomType.Setter
         public Builder sensitiveTypeIds(List<String> sensitiveTypeIds) {
-            this.sensitiveTypeIds = Objects.requireNonNull(sensitiveTypeIds);
+            if (sensitiveTypeIds == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatResult", "sensitiveTypeIds");
+            }
+            this.sensitiveTypeIds = sensitiveTypeIds;
             return this;
         }
         public Builder sensitiveTypeIds(String... sensitiveTypeIds) {
@@ -265,22 +293,34 @@ public final class GetLibraryMaskingFormatResult {
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatResult", "source");
+            }
+            this.source = source;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetLibraryMaskingFormatResult build() {

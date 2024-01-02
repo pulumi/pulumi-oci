@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -240,77 +241,122 @@ public final class GetDataAssetsDataAssetCollectionItem {
 
         @CustomType.Setter
         public Builder catalogId(String catalogId) {
-            this.catalogId = Objects.requireNonNull(catalogId);
+            if (catalogId == null) {
+              throw new MissingRequiredPropertyException("GetDataAssetsDataAssetCollectionItem", "catalogId");
+            }
+            this.catalogId = catalogId;
             return this;
         }
         @CustomType.Setter
         public Builder createdById(String createdById) {
-            this.createdById = Objects.requireNonNull(createdById);
+            if (createdById == null) {
+              throw new MissingRequiredPropertyException("GetDataAssetsDataAssetCollectionItem", "createdById");
+            }
+            this.createdById = createdById;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDataAssetsDataAssetCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDataAssetsDataAssetCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalKey(String externalKey) {
-            this.externalKey = Objects.requireNonNull(externalKey);
+            if (externalKey == null) {
+              throw new MissingRequiredPropertyException("GetDataAssetsDataAssetCollectionItem", "externalKey");
+            }
+            this.externalKey = externalKey;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetDataAssetsDataAssetCollectionItem", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDataAssetsDataAssetCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder properties(Map<String,Object> properties) {
-            this.properties = Objects.requireNonNull(properties);
+            if (properties == null) {
+              throw new MissingRequiredPropertyException("GetDataAssetsDataAssetCollectionItem", "properties");
+            }
+            this.properties = properties;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDataAssetsDataAssetCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDataAssetsDataAssetCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeHarvested(String timeHarvested) {
-            this.timeHarvested = Objects.requireNonNull(timeHarvested);
+            if (timeHarvested == null) {
+              throw new MissingRequiredPropertyException("GetDataAssetsDataAssetCollectionItem", "timeHarvested");
+            }
+            this.timeHarvested = timeHarvested;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDataAssetsDataAssetCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder typeKey(String typeKey) {
-            this.typeKey = Objects.requireNonNull(typeKey);
+            if (typeKey == null) {
+              throw new MissingRequiredPropertyException("GetDataAssetsDataAssetCollectionItem", "typeKey");
+            }
+            this.typeKey = typeKey;
             return this;
         }
         @CustomType.Setter
         public Builder updatedById(String updatedById) {
-            this.updatedById = Objects.requireNonNull(updatedById);
+            if (updatedById == null) {
+              throw new MissingRequiredPropertyException("GetDataAssetsDataAssetCollectionItem", "updatedById");
+            }
+            this.updatedById = updatedById;
             return this;
         }
         @CustomType.Setter
         public Builder uri(String uri) {
-            this.uri = Objects.requireNonNull(uri);
+            if (uri == null) {
+              throw new MissingRequiredPropertyException("GetDataAssetsDataAssetCollectionItem", "uri");
+            }
+            this.uri = uri;
             return this;
         }
         public GetDataAssetsDataAssetCollectionItem build() {

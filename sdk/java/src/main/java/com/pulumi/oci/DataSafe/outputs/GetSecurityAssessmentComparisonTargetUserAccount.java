@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentComparisonTargetUserAccountBaseline;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentComparisonTargetUserAccountCurrent;
 import java.lang.String;
@@ -115,7 +116,10 @@ public final class GetSecurityAssessmentComparisonTargetUserAccount {
 
         @CustomType.Setter
         public Builder addedItems(List<String> addedItems) {
-            this.addedItems = Objects.requireNonNull(addedItems);
+            if (addedItems == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetUserAccount", "addedItems");
+            }
+            this.addedItems = addedItems;
             return this;
         }
         public Builder addedItems(String... addedItems) {
@@ -123,7 +127,10 @@ public final class GetSecurityAssessmentComparisonTargetUserAccount {
         }
         @CustomType.Setter
         public Builder baselines(List<GetSecurityAssessmentComparisonTargetUserAccountBaseline> baselines) {
-            this.baselines = Objects.requireNonNull(baselines);
+            if (baselines == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetUserAccount", "baselines");
+            }
+            this.baselines = baselines;
             return this;
         }
         public Builder baselines(GetSecurityAssessmentComparisonTargetUserAccountBaseline... baselines) {
@@ -131,7 +138,10 @@ public final class GetSecurityAssessmentComparisonTargetUserAccount {
         }
         @CustomType.Setter
         public Builder currents(List<GetSecurityAssessmentComparisonTargetUserAccountCurrent> currents) {
-            this.currents = Objects.requireNonNull(currents);
+            if (currents == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetUserAccount", "currents");
+            }
+            this.currents = currents;
             return this;
         }
         public Builder currents(GetSecurityAssessmentComparisonTargetUserAccountCurrent... currents) {
@@ -139,7 +149,10 @@ public final class GetSecurityAssessmentComparisonTargetUserAccount {
         }
         @CustomType.Setter
         public Builder modifiedItems(List<String> modifiedItems) {
-            this.modifiedItems = Objects.requireNonNull(modifiedItems);
+            if (modifiedItems == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetUserAccount", "modifiedItems");
+            }
+            this.modifiedItems = modifiedItems;
             return this;
         }
         public Builder modifiedItems(String... modifiedItems) {
@@ -147,7 +160,10 @@ public final class GetSecurityAssessmentComparisonTargetUserAccount {
         }
         @CustomType.Setter
         public Builder removedItems(List<String> removedItems) {
-            this.removedItems = Objects.requireNonNull(removedItems);
+            if (removedItems == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetUserAccount", "removedItems");
+            }
+            this.removedItems = removedItems;
             return this;
         }
         public Builder removedItems(String... removedItems) {
@@ -155,7 +171,10 @@ public final class GetSecurityAssessmentComparisonTargetUserAccount {
         }
         @CustomType.Setter
         public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+            if (severity == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetUserAccount", "severity");
+            }
+            this.severity = severity;
             return this;
         }
         public GetSecurityAssessmentComparisonTargetUserAccount build() {

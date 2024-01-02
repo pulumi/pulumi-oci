@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -475,9 +476,15 @@ public final class VlanArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public VlanArgs build() {
-            $.cidrBlock = Objects.requireNonNull($.cidrBlock, "expected parameter 'cidrBlock' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.vcnId = Objects.requireNonNull($.vcnId, "expected parameter 'vcnId' to be non-null");
+            if ($.cidrBlock == null) {
+                throw new MissingRequiredPropertyException("VlanArgs", "cidrBlock");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("VlanArgs", "compartmentId");
+            }
+            if ($.vcnId == null) {
+                throw new MissingRequiredPropertyException("VlanArgs", "vcnId");
+            }
             return $;
         }
     }

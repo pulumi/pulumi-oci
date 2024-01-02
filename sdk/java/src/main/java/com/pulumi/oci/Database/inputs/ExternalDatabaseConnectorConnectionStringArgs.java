@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -186,10 +187,18 @@ public final class ExternalDatabaseConnectorConnectionStringArgs extends com.pul
         }
 
         public ExternalDatabaseConnectorConnectionStringArgs build() {
-            $.hostname = Objects.requireNonNull($.hostname, "expected parameter 'hostname' to be non-null");
-            $.port = Objects.requireNonNull($.port, "expected parameter 'port' to be non-null");
-            $.protocol = Objects.requireNonNull($.protocol, "expected parameter 'protocol' to be non-null");
-            $.service = Objects.requireNonNull($.service, "expected parameter 'service' to be non-null");
+            if ($.hostname == null) {
+                throw new MissingRequiredPropertyException("ExternalDatabaseConnectorConnectionStringArgs", "hostname");
+            }
+            if ($.port == null) {
+                throw new MissingRequiredPropertyException("ExternalDatabaseConnectorConnectionStringArgs", "port");
+            }
+            if ($.protocol == null) {
+                throw new MissingRequiredPropertyException("ExternalDatabaseConnectorConnectionStringArgs", "protocol");
+            }
+            if ($.service == null) {
+                throw new MissingRequiredPropertyException("ExternalDatabaseConnectorConnectionStringArgs", "service");
+            }
             return $;
         }
     }

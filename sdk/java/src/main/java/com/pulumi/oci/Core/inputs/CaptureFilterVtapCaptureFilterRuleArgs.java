@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs;
 import com.pulumi.oci.Core.inputs.CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs;
 import com.pulumi.oci.Core.inputs.CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs;
@@ -366,7 +367,9 @@ public final class CaptureFilterVtapCaptureFilterRuleArgs extends com.pulumi.res
         }
 
         public CaptureFilterVtapCaptureFilterRuleArgs build() {
-            $.trafficDirection = Objects.requireNonNull($.trafficDirection, "expected parameter 'trafficDirection' to be non-null");
+            if ($.trafficDirection == null) {
+                throw new MissingRequiredPropertyException("CaptureFilterVtapCaptureFilterRuleArgs", "trafficDirection");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetAuthTokensFilter;
 import com.pulumi.oci.Identity.outputs.GetAuthTokensToken;
 import java.lang.String;
@@ -80,6 +81,7 @@ public final class GetAuthTokensResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAuthTokensFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -88,12 +90,18 @@ public final class GetAuthTokensResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAuthTokensResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder tokens(List<GetAuthTokensToken> tokens) {
-            this.tokens = Objects.requireNonNull(tokens);
+            if (tokens == null) {
+              throw new MissingRequiredPropertyException("GetAuthTokensResult", "tokens");
+            }
+            this.tokens = tokens;
             return this;
         }
         public Builder tokens(GetAuthTokensToken... tokens) {
@@ -101,7 +109,10 @@ public final class GetAuthTokensResult {
         }
         @CustomType.Setter
         public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+            if (userId == null) {
+              throw new MissingRequiredPropertyException("GetAuthTokensResult", "userId");
+            }
+            this.userId = userId;
             return this;
         }
         public GetAuthTokensResult build() {

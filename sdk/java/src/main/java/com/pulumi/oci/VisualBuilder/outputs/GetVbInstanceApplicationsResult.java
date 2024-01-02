@@ -4,6 +4,7 @@
 package com.pulumi.oci.VisualBuilder.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.VisualBuilder.outputs.GetVbInstanceApplicationsApplicationSummaryCollection;
 import java.lang.String;
 import java.util.List;
@@ -72,7 +73,10 @@ public final class GetVbInstanceApplicationsResult {
 
         @CustomType.Setter
         public Builder applicationSummaryCollections(List<GetVbInstanceApplicationsApplicationSummaryCollection> applicationSummaryCollections) {
-            this.applicationSummaryCollections = Objects.requireNonNull(applicationSummaryCollections);
+            if (applicationSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceApplicationsResult", "applicationSummaryCollections");
+            }
+            this.applicationSummaryCollections = applicationSummaryCollections;
             return this;
         }
         public Builder applicationSummaryCollections(GetVbInstanceApplicationsApplicationSummaryCollection... applicationSummaryCollections) {
@@ -80,17 +84,24 @@ public final class GetVbInstanceApplicationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceApplicationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsOpenId(@Nullable String idcsOpenId) {
+
             this.idcsOpenId = idcsOpenId;
             return this;
         }
         @CustomType.Setter
         public Builder vbInstanceId(String vbInstanceId) {
-            this.vbInstanceId = Objects.requireNonNull(vbInstanceId);
+            if (vbInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceApplicationsResult", "vbInstanceId");
+            }
+            this.vbInstanceId = vbInstanceId;
             return this;
         }
         public GetVbInstanceApplicationsResult build() {

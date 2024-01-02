@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstancesFilter;
 import java.lang.String;
 import java.util.List;
@@ -138,8 +139,12 @@ public final class GetDedicatedVmHostInstancesPlainArgs extends com.pulumi.resou
         }
 
         public GetDedicatedVmHostInstancesPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.dedicatedVmHostId = Objects.requireNonNull($.dedicatedVmHostId, "expected parameter 'dedicatedVmHostId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetDedicatedVmHostInstancesPlainArgs", "compartmentId");
+            }
+            if ($.dedicatedVmHostId == null) {
+                throw new MissingRequiredPropertyException("GetDedicatedVmHostInstancesPlainArgs", "dedicatedVmHostId");
+            }
             return $;
         }
     }

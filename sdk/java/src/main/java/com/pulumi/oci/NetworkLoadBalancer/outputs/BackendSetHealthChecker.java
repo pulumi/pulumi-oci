@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -171,51 +172,63 @@ public final class BackendSetHealthChecker {
 
         @CustomType.Setter
         public Builder intervalInMillis(@Nullable Integer intervalInMillis) {
+
             this.intervalInMillis = intervalInMillis;
             return this;
         }
         @CustomType.Setter
         public Builder port(@Nullable Integer port) {
+
             this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("BackendSetHealthChecker", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder requestData(@Nullable String requestData) {
+
             this.requestData = requestData;
             return this;
         }
         @CustomType.Setter
         public Builder responseBodyRegex(@Nullable String responseBodyRegex) {
+
             this.responseBodyRegex = responseBodyRegex;
             return this;
         }
         @CustomType.Setter
         public Builder responseData(@Nullable String responseData) {
+
             this.responseData = responseData;
             return this;
         }
         @CustomType.Setter
         public Builder retries(@Nullable Integer retries) {
+
             this.retries = retries;
             return this;
         }
         @CustomType.Setter
         public Builder returnCode(@Nullable Integer returnCode) {
+
             this.returnCode = returnCode;
             return this;
         }
         @CustomType.Setter
         public Builder timeoutInMillis(@Nullable Integer timeoutInMillis) {
+
             this.timeoutInMillis = timeoutInMillis;
             return this;
         }
         @CustomType.Setter
         public Builder urlPath(@Nullable String urlPath) {
+
             this.urlPath = urlPath;
             return this;
         }

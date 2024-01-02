@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -311,10 +312,18 @@ public final class PluggableDatabasesRemoteCloneArgs extends com.pulumi.resource
         }
 
         public PluggableDatabasesRemoteCloneArgs build() {
-            $.clonedPdbName = Objects.requireNonNull($.clonedPdbName, "expected parameter 'clonedPdbName' to be non-null");
-            $.pluggableDatabaseId = Objects.requireNonNull($.pluggableDatabaseId, "expected parameter 'pluggableDatabaseId' to be non-null");
-            $.sourceContainerDbAdminPassword = Objects.requireNonNull($.sourceContainerDbAdminPassword, "expected parameter 'sourceContainerDbAdminPassword' to be non-null");
-            $.targetContainerDatabaseId = Objects.requireNonNull($.targetContainerDatabaseId, "expected parameter 'targetContainerDatabaseId' to be non-null");
+            if ($.clonedPdbName == null) {
+                throw new MissingRequiredPropertyException("PluggableDatabasesRemoteCloneArgs", "clonedPdbName");
+            }
+            if ($.pluggableDatabaseId == null) {
+                throw new MissingRequiredPropertyException("PluggableDatabasesRemoteCloneArgs", "pluggableDatabaseId");
+            }
+            if ($.sourceContainerDbAdminPassword == null) {
+                throw new MissingRequiredPropertyException("PluggableDatabasesRemoteCloneArgs", "sourceContainerDbAdminPassword");
+            }
+            if ($.targetContainerDatabaseId == null) {
+                throw new MissingRequiredPropertyException("PluggableDatabasesRemoteCloneArgs", "targetContainerDatabaseId");
+            }
             return $;
         }
     }

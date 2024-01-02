@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CertificatesManagement.outputs.CertificateAuthorityCertificateAuthorityConfigSubject;
 import com.pulumi.oci.CertificatesManagement.outputs.CertificateAuthorityCertificateAuthorityConfigValidity;
 import java.lang.String;
@@ -116,31 +117,41 @@ public final class CertificateAuthorityCertificateAuthorityConfig {
 
         @CustomType.Setter
         public Builder configType(String configType) {
-            this.configType = Objects.requireNonNull(configType);
+            if (configType == null) {
+              throw new MissingRequiredPropertyException("CertificateAuthorityCertificateAuthorityConfig", "configType");
+            }
+            this.configType = configType;
             return this;
         }
         @CustomType.Setter
         public Builder issuerCertificateAuthorityId(@Nullable String issuerCertificateAuthorityId) {
+
             this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             return this;
         }
         @CustomType.Setter
         public Builder signingAlgorithm(@Nullable String signingAlgorithm) {
+
             this.signingAlgorithm = signingAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder subject(CertificateAuthorityCertificateAuthorityConfigSubject subject) {
-            this.subject = Objects.requireNonNull(subject);
+            if (subject == null) {
+              throw new MissingRequiredPropertyException("CertificateAuthorityCertificateAuthorityConfig", "subject");
+            }
+            this.subject = subject;
             return this;
         }
         @CustomType.Setter
         public Builder validity(@Nullable CertificateAuthorityCertificateAuthorityConfigValidity validity) {
+
             this.validity = validity;
             return this;
         }
         @CustomType.Setter
         public Builder versionName(@Nullable String versionName) {
+
             this.versionName = versionName;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -692,9 +693,15 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertyArgs build() {
-            $.icfType = Objects.requireNonNull($.icfType, "expected parameter 'icfType' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
-            $.required = Objects.requireNonNull($.required, "expected parameter 'required' to be non-null");
+            if ($.icfType == null) {
+                throw new MissingRequiredPropertyException("DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertyArgs", "icfType");
+            }
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertyArgs", "name");
+            }
+            if ($.required == null) {
+                throw new MissingRequiredPropertyException("DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertyArgs", "required");
+            }
             return $;
         }
     }

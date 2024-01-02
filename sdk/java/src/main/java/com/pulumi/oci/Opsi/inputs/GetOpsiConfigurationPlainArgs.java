@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -212,11 +213,21 @@ public final class GetOpsiConfigurationPlainArgs extends com.pulumi.resources.In
         }
 
         public GetOpsiConfigurationPlainArgs build() {
-            $.configItemCustomStatuses = Objects.requireNonNull($.configItemCustomStatuses, "expected parameter 'configItemCustomStatuses' to be non-null");
-            $.configItemFields = Objects.requireNonNull($.configItemFields, "expected parameter 'configItemFields' to be non-null");
-            $.configItemsApplicableContexts = Objects.requireNonNull($.configItemsApplicableContexts, "expected parameter 'configItemsApplicableContexts' to be non-null");
-            $.opsiConfigFields = Objects.requireNonNull($.opsiConfigFields, "expected parameter 'opsiConfigFields' to be non-null");
-            $.opsiConfigurationId = Objects.requireNonNull($.opsiConfigurationId, "expected parameter 'opsiConfigurationId' to be non-null");
+            if ($.configItemCustomStatuses == null) {
+                throw new MissingRequiredPropertyException("GetOpsiConfigurationPlainArgs", "configItemCustomStatuses");
+            }
+            if ($.configItemFields == null) {
+                throw new MissingRequiredPropertyException("GetOpsiConfigurationPlainArgs", "configItemFields");
+            }
+            if ($.configItemsApplicableContexts == null) {
+                throw new MissingRequiredPropertyException("GetOpsiConfigurationPlainArgs", "configItemsApplicableContexts");
+            }
+            if ($.opsiConfigFields == null) {
+                throw new MissingRequiredPropertyException("GetOpsiConfigurationPlainArgs", "opsiConfigFields");
+            }
+            if ($.opsiConfigurationId == null) {
+                throw new MissingRequiredPropertyException("GetOpsiConfigurationPlainArgs", "opsiConfigurationId");
+            }
             return $;
         }
     }

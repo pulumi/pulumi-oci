@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -216,67 +217,106 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail 
 
         @CustomType.Setter
         public Builder customAuthenticationAlgorithm(String customAuthenticationAlgorithm) {
-            this.customAuthenticationAlgorithm = Objects.requireNonNull(customAuthenticationAlgorithm);
+            if (customAuthenticationAlgorithm == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail", "customAuthenticationAlgorithm");
+            }
+            this.customAuthenticationAlgorithm = customAuthenticationAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder customEncryptionAlgorithm(String customEncryptionAlgorithm) {
-            this.customEncryptionAlgorithm = Objects.requireNonNull(customEncryptionAlgorithm);
+            if (customEncryptionAlgorithm == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail", "customEncryptionAlgorithm");
+            }
+            this.customEncryptionAlgorithm = customEncryptionAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder dhGroup(String dhGroup) {
-            this.dhGroup = Objects.requireNonNull(dhGroup);
+            if (dhGroup == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail", "dhGroup");
+            }
+            this.dhGroup = dhGroup;
             return this;
         }
         @CustomType.Setter
         public Builder isCustomPhaseTwoConfig(Boolean isCustomPhaseTwoConfig) {
-            this.isCustomPhaseTwoConfig = Objects.requireNonNull(isCustomPhaseTwoConfig);
+            if (isCustomPhaseTwoConfig == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail", "isCustomPhaseTwoConfig");
+            }
+            this.isCustomPhaseTwoConfig = isCustomPhaseTwoConfig;
             return this;
         }
         @CustomType.Setter
         public Builder isEspEstablished(Boolean isEspEstablished) {
-            this.isEspEstablished = Objects.requireNonNull(isEspEstablished);
+            if (isEspEstablished == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail", "isEspEstablished");
+            }
+            this.isEspEstablished = isEspEstablished;
             return this;
         }
         @CustomType.Setter
         public Builder isPfsEnabled(Boolean isPfsEnabled) {
-            this.isPfsEnabled = Objects.requireNonNull(isPfsEnabled);
+            if (isPfsEnabled == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail", "isPfsEnabled");
+            }
+            this.isPfsEnabled = isPfsEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder lifetime(Integer lifetime) {
-            this.lifetime = Objects.requireNonNull(lifetime);
+            if (lifetime == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail", "lifetime");
+            }
+            this.lifetime = lifetime;
             return this;
         }
         @CustomType.Setter
         public Builder negotiatedAuthenticationAlgorithm(String negotiatedAuthenticationAlgorithm) {
-            this.negotiatedAuthenticationAlgorithm = Objects.requireNonNull(negotiatedAuthenticationAlgorithm);
+            if (negotiatedAuthenticationAlgorithm == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail", "negotiatedAuthenticationAlgorithm");
+            }
+            this.negotiatedAuthenticationAlgorithm = negotiatedAuthenticationAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder negotiatedDhGroup(String negotiatedDhGroup) {
-            this.negotiatedDhGroup = Objects.requireNonNull(negotiatedDhGroup);
+            if (negotiatedDhGroup == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail", "negotiatedDhGroup");
+            }
+            this.negotiatedDhGroup = negotiatedDhGroup;
             return this;
         }
         @CustomType.Setter
         public Builder negotiatedEncryptionAlgorithm(String negotiatedEncryptionAlgorithm) {
-            this.negotiatedEncryptionAlgorithm = Objects.requireNonNull(negotiatedEncryptionAlgorithm);
+            if (negotiatedEncryptionAlgorithm == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail", "negotiatedEncryptionAlgorithm");
+            }
+            this.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder remainingLifetime(String remainingLifetime) {
-            this.remainingLifetime = Objects.requireNonNull(remainingLifetime);
+            if (remainingLifetime == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail", "remainingLifetime");
+            }
+            this.remainingLifetime = remainingLifetime;
             return this;
         }
         @CustomType.Setter
         public Builder remainingLifetimeInt(Integer remainingLifetimeInt) {
-            this.remainingLifetimeInt = Objects.requireNonNull(remainingLifetimeInt);
+            if (remainingLifetimeInt == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail", "remainingLifetimeInt");
+            }
+            this.remainingLifetimeInt = remainingLifetimeInt;
             return this;
         }
         @CustomType.Setter
         public Builder remainingLifetimeLastRetrieved(String remainingLifetimeLastRetrieved) {
-            this.remainingLifetimeLastRetrieved = Objects.requireNonNull(remainingLifetimeLastRetrieved);
+            if (remainingLifetimeLastRetrieved == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail", "remainingLifetimeLastRetrieved");
+            }
+            this.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
             return this;
         }
         public GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail build() {

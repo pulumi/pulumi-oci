@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -257,52 +258,82 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
 
         @CustomType.Setter
         public Builder additionalDetails(Map<String,Object> additionalDetails) {
-            this.additionalDetails = Objects.requireNonNull(additionalDetails);
+            if (additionalDetails == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "additionalDetails");
+            }
+            this.additionalDetails = additionalDetails;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseStatus(String databaseStatus) {
-            this.databaseStatus = Objects.requireNonNull(databaseStatus);
+            if (databaseStatus == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "databaseStatus");
+            }
+            this.databaseStatus = databaseStatus;
             return this;
         }
         @CustomType.Setter
         public Builder databaseSubType(String databaseSubType) {
-            this.databaseSubType = Objects.requireNonNull(databaseSubType);
+            if (databaseSubType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "databaseSubType");
+            }
+            this.databaseSubType = databaseSubType;
             return this;
         }
         @CustomType.Setter
         public Builder databaseType(String databaseType) {
-            this.databaseType = Objects.requireNonNull(databaseType);
+            if (databaseType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "databaseType");
+            }
+            this.databaseType = databaseType;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentType(String deploymentType) {
-            this.deploymentType = Objects.requireNonNull(deploymentType);
+            if (deploymentType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "deploymentType");
+            }
+            this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCluster(Boolean isCluster) {
-            this.isCluster = Objects.requireNonNull(isCluster);
+            if (isCluster == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "isCluster");
+            }
+            this.isCluster = isCluster;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseGroups(List<GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup> managedDatabaseGroups) {
-            this.managedDatabaseGroups = Objects.requireNonNull(managedDatabaseGroups);
+            if (managedDatabaseGroups == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "managedDatabaseGroups");
+            }
+            this.managedDatabaseGroups = managedDatabaseGroups;
             return this;
         }
         public Builder managedDatabaseGroups(GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup... managedDatabaseGroups) {
@@ -310,32 +341,50 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
         }
         @CustomType.Setter
         public Builder managementOption(String managementOption) {
-            this.managementOption = Objects.requireNonNull(managementOption);
+            if (managementOption == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "managementOption");
+            }
+            this.managementOption = managementOption;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder parentContainerId(String parentContainerId) {
-            this.parentContainerId = Objects.requireNonNull(parentContainerId);
+            if (parentContainerId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "parentContainerId");
+            }
+            this.parentContainerId = parentContainerId;
             return this;
         }
         @CustomType.Setter
         public Builder storageSystemId(String storageSystemId) {
-            this.storageSystemId = Objects.requireNonNull(storageSystemId);
+            if (storageSystemId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "storageSystemId");
+            }
+            this.storageSystemId = storageSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder workloadType(String workloadType) {
-            this.workloadType = Objects.requireNonNull(workloadType);
+            if (workloadType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollectionItem", "workloadType");
+            }
+            this.workloadType = workloadType;
             return this;
         }
         public GetManagedDatabasesManagedDatabaseCollectionItem build() {

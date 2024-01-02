@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetCompartmentsCompartment;
 import com.pulumi.oci.Identity.outputs.GetCompartmentsFilter;
 import java.lang.Boolean;
@@ -122,22 +123,30 @@ public final class GetCompartmentsResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCompartmentsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder compartments(List<GetCompartmentsCompartment> compartments) {
-            this.compartments = Objects.requireNonNull(compartments);
+            if (compartments == null) {
+              throw new MissingRequiredPropertyException("GetCompartmentsResult", "compartments");
+            }
+            this.compartments = compartments;
             return this;
         }
         public Builder compartments(GetCompartmentsCompartment... compartments) {
@@ -145,6 +154,7 @@ public final class GetCompartmentsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCompartmentsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -153,16 +163,21 @@ public final class GetCompartmentsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCompartmentsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

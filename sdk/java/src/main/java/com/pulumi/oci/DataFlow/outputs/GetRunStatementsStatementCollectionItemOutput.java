@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.outputs.GetRunStatementsStatementCollectionItemOutputData;
 import java.lang.String;
 import java.util.List;
@@ -100,7 +101,10 @@ public final class GetRunStatementsStatementCollectionItemOutput {
 
         @CustomType.Setter
         public Builder datas(List<GetRunStatementsStatementCollectionItemOutputData> datas) {
-            this.datas = Objects.requireNonNull(datas);
+            if (datas == null) {
+              throw new MissingRequiredPropertyException("GetRunStatementsStatementCollectionItemOutput", "datas");
+            }
+            this.datas = datas;
             return this;
         }
         public Builder datas(GetRunStatementsStatementCollectionItemOutputData... datas) {
@@ -108,22 +112,34 @@ public final class GetRunStatementsStatementCollectionItemOutput {
         }
         @CustomType.Setter
         public Builder errorName(String errorName) {
-            this.errorName = Objects.requireNonNull(errorName);
+            if (errorName == null) {
+              throw new MissingRequiredPropertyException("GetRunStatementsStatementCollectionItemOutput", "errorName");
+            }
+            this.errorName = errorName;
             return this;
         }
         @CustomType.Setter
         public Builder errorValue(String errorValue) {
-            this.errorValue = Objects.requireNonNull(errorValue);
+            if (errorValue == null) {
+              throw new MissingRequiredPropertyException("GetRunStatementsStatementCollectionItemOutput", "errorValue");
+            }
+            this.errorValue = errorValue;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetRunStatementsStatementCollectionItemOutput", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder tracebacks(List<String> tracebacks) {
-            this.tracebacks = Objects.requireNonNull(tracebacks);
+            if (tracebacks == null) {
+              throw new MissingRequiredPropertyException("GetRunStatementsStatementCollectionItemOutput", "tracebacks");
+            }
+            this.tracebacks = tracebacks;
             return this;
         }
         public Builder tracebacks(String... tracebacks) {

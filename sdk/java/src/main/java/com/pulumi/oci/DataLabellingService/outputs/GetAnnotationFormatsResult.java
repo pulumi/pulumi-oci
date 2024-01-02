@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataLabellingService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataLabellingService.outputs.GetAnnotationFormatsAnnotationFormatCollection;
 import com.pulumi.oci.DataLabellingService.outputs.GetAnnotationFormatsFilter;
 import java.lang.String;
@@ -72,7 +73,10 @@ public final class GetAnnotationFormatsResult {
 
         @CustomType.Setter
         public Builder annotationFormatCollections(List<GetAnnotationFormatsAnnotationFormatCollection> annotationFormatCollections) {
-            this.annotationFormatCollections = Objects.requireNonNull(annotationFormatCollections);
+            if (annotationFormatCollections == null) {
+              throw new MissingRequiredPropertyException("GetAnnotationFormatsResult", "annotationFormatCollections");
+            }
+            this.annotationFormatCollections = annotationFormatCollections;
             return this;
         }
         public Builder annotationFormatCollections(GetAnnotationFormatsAnnotationFormatCollection... annotationFormatCollections) {
@@ -80,11 +84,15 @@ public final class GetAnnotationFormatsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAnnotationFormatsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAnnotationFormatsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -93,7 +101,10 @@ public final class GetAnnotationFormatsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAnnotationFormatsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetAnnotationFormatsResult build() {

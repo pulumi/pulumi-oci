@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -72,12 +73,18 @@ public final class GetClustersClusterEndpointConfig {
 
         @CustomType.Setter
         public Builder isPublicIpEnabled(Boolean isPublicIpEnabled) {
-            this.isPublicIpEnabled = Objects.requireNonNull(isPublicIpEnabled);
+            if (isPublicIpEnabled == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterEndpointConfig", "isPublicIpEnabled");
+            }
+            this.isPublicIpEnabled = isPublicIpEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterEndpointConfig", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
@@ -85,7 +92,10 @@ public final class GetClustersClusterEndpointConfig {
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterEndpointConfig", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         public GetClustersClusterEndpointConfig build() {

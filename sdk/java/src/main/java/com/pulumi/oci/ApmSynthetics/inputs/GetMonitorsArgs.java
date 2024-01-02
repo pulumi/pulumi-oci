@@ -5,6 +5,7 @@ package com.pulumi.oci.ApmSynthetics.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorsFilterArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -359,7 +360,9 @@ public final class GetMonitorsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetMonitorsArgs build() {
-            $.apmDomainId = Objects.requireNonNull($.apmDomainId, "expected parameter 'apmDomainId' to be non-null");
+            if ($.apmDomainId == null) {
+                throw new MissingRequiredPropertyException("GetMonitorsArgs", "apmDomainId");
+            }
             return $;
         }
     }

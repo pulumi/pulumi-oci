@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -126,7 +127,9 @@ public final class BackupCancelManagementArgs extends com.pulumi.resources.Resou
         }
 
         public BackupCancelManagementArgs build() {
-            $.backupId = Objects.requireNonNull($.backupId, "expected parameter 'backupId' to be non-null");
+            if ($.backupId == null) {
+                throw new MissingRequiredPropertyException("BackupCancelManagementArgs", "backupId");
+            }
             return $;
         }
     }

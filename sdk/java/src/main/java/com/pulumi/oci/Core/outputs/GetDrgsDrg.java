@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetDrgsDrgDefaultDrgRouteTable;
 import java.lang.Object;
 import java.lang.String;
@@ -164,12 +165,18 @@ public final class GetDrgsDrg {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDrgsDrg", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder defaultDrgRouteTables(List<GetDrgsDrgDefaultDrgRouteTable> defaultDrgRouteTables) {
-            this.defaultDrgRouteTables = Objects.requireNonNull(defaultDrgRouteTables);
+            if (defaultDrgRouteTables == null) {
+              throw new MissingRequiredPropertyException("GetDrgsDrg", "defaultDrgRouteTables");
+            }
+            this.defaultDrgRouteTables = defaultDrgRouteTables;
             return this;
         }
         public Builder defaultDrgRouteTables(GetDrgsDrgDefaultDrgRouteTable... defaultDrgRouteTables) {
@@ -177,42 +184,66 @@ public final class GetDrgsDrg {
         }
         @CustomType.Setter
         public Builder defaultExportDrgRouteDistributionId(String defaultExportDrgRouteDistributionId) {
-            this.defaultExportDrgRouteDistributionId = Objects.requireNonNull(defaultExportDrgRouteDistributionId);
+            if (defaultExportDrgRouteDistributionId == null) {
+              throw new MissingRequiredPropertyException("GetDrgsDrg", "defaultExportDrgRouteDistributionId");
+            }
+            this.defaultExportDrgRouteDistributionId = defaultExportDrgRouteDistributionId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDrgsDrg", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDrgsDrg", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDrgsDrg", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDrgsDrg", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder redundancyStatus(String redundancyStatus) {
-            this.redundancyStatus = Objects.requireNonNull(redundancyStatus);
+            if (redundancyStatus == null) {
+              throw new MissingRequiredPropertyException("GetDrgsDrg", "redundancyStatus");
+            }
+            this.redundancyStatus = redundancyStatus;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDrgsDrg", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDrgsDrg", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetDrgsDrg build() {

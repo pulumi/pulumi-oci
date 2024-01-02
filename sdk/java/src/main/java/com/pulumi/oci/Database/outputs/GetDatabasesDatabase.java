@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseConnectionString;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDatabase;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDatabaseManagementConfig;
@@ -501,17 +502,26 @@ public final class GetDatabasesDatabase {
 
         @CustomType.Setter
         public Builder characterSet(String characterSet) {
-            this.characterSet = Objects.requireNonNull(characterSet);
+            if (characterSet == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "characterSet");
+            }
+            this.characterSet = characterSet;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionStrings(List<GetDatabasesDatabaseConnectionString> connectionStrings) {
-            this.connectionStrings = Objects.requireNonNull(connectionStrings);
+            if (connectionStrings == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "connectionStrings");
+            }
+            this.connectionStrings = connectionStrings;
             return this;
         }
         public Builder connectionStrings(GetDatabasesDatabaseConnectionString... connectionStrings) {
@@ -519,7 +529,10 @@ public final class GetDatabasesDatabase {
         }
         @CustomType.Setter
         public Builder databaseManagementConfigs(List<GetDatabasesDatabaseDatabaseManagementConfig> databaseManagementConfigs) {
-            this.databaseManagementConfigs = Objects.requireNonNull(databaseManagementConfigs);
+            if (databaseManagementConfigs == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "databaseManagementConfigs");
+            }
+            this.databaseManagementConfigs = databaseManagementConfigs;
             return this;
         }
         public Builder databaseManagementConfigs(GetDatabasesDatabaseDatabaseManagementConfig... databaseManagementConfigs) {
@@ -527,12 +540,18 @@ public final class GetDatabasesDatabase {
         }
         @CustomType.Setter
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
-            this.databaseSoftwareImageId = Objects.requireNonNull(databaseSoftwareImageId);
+            if (databaseSoftwareImageId == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "databaseSoftwareImageId");
+            }
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
             return this;
         }
         @CustomType.Setter
         public Builder databases(List<GetDatabasesDatabaseDatabase> databases) {
-            this.databases = Objects.requireNonNull(databases);
+            if (databases == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "databases");
+            }
+            this.databases = databases;
             return this;
         }
         public Builder databases(GetDatabasesDatabaseDatabase... databases) {
@@ -540,7 +559,10 @@ public final class GetDatabasesDatabase {
         }
         @CustomType.Setter
         public Builder dbBackupConfigs(List<GetDatabasesDatabaseDbBackupConfig> dbBackupConfigs) {
-            this.dbBackupConfigs = Objects.requireNonNull(dbBackupConfigs);
+            if (dbBackupConfigs == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "dbBackupConfigs");
+            }
+            this.dbBackupConfigs = dbBackupConfigs;
             return this;
         }
         public Builder dbBackupConfigs(GetDatabasesDatabaseDbBackupConfig... dbBackupConfigs) {
@@ -548,147 +570,234 @@ public final class GetDatabasesDatabase {
         }
         @CustomType.Setter
         public Builder dbHomeId(String dbHomeId) {
-            this.dbHomeId = Objects.requireNonNull(dbHomeId);
+            if (dbHomeId == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "dbHomeId");
+            }
+            this.dbHomeId = dbHomeId;
             return this;
         }
         @CustomType.Setter
         public Builder dbName(String dbName) {
-            this.dbName = Objects.requireNonNull(dbName);
+            if (dbName == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "dbName");
+            }
+            this.dbName = dbName;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder dbUniqueName(String dbUniqueName) {
-            this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
+            if (dbUniqueName == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "dbUniqueName");
+            }
+            this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
         public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+            if (dbVersion == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "dbVersion");
+            }
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder dbWorkload(String dbWorkload) {
-            this.dbWorkload = Objects.requireNonNull(dbWorkload);
+            if (dbWorkload == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "dbWorkload");
+            }
+            this.dbWorkload = dbWorkload;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCdb(Boolean isCdb) {
-            this.isCdb = Objects.requireNonNull(isCdb);
+            if (isCdb == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "isCdb");
+            }
+            this.isCdb = isCdb;
             return this;
         }
         @CustomType.Setter
         public Builder keyStoreId(String keyStoreId) {
-            this.keyStoreId = Objects.requireNonNull(keyStoreId);
+            if (keyStoreId == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "keyStoreId");
+            }
+            this.keyStoreId = keyStoreId;
             return this;
         }
         @CustomType.Setter
         public Builder keyStoreWalletName(String keyStoreWalletName) {
-            this.keyStoreWalletName = Objects.requireNonNull(keyStoreWalletName);
+            if (keyStoreWalletName == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "keyStoreWalletName");
+            }
+            this.keyStoreWalletName = keyStoreWalletName;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyMigration(Boolean kmsKeyMigration) {
-            this.kmsKeyMigration = Objects.requireNonNull(kmsKeyMigration);
+            if (kmsKeyMigration == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "kmsKeyMigration");
+            }
+            this.kmsKeyMigration = kmsKeyMigration;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyRotation(Integer kmsKeyRotation) {
-            this.kmsKeyRotation = Objects.requireNonNull(kmsKeyRotation);
+            if (kmsKeyRotation == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "kmsKeyRotation");
+            }
+            this.kmsKeyRotation = kmsKeyRotation;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
-            this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
+            if (kmsKeyVersionId == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "kmsKeyVersionId");
+            }
+            this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
         @CustomType.Setter
         public Builder lastBackupDurationInSeconds(Integer lastBackupDurationInSeconds) {
-            this.lastBackupDurationInSeconds = Objects.requireNonNull(lastBackupDurationInSeconds);
+            if (lastBackupDurationInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "lastBackupDurationInSeconds");
+            }
+            this.lastBackupDurationInSeconds = lastBackupDurationInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder lastBackupTimestamp(String lastBackupTimestamp) {
-            this.lastBackupTimestamp = Objects.requireNonNull(lastBackupTimestamp);
+            if (lastBackupTimestamp == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "lastBackupTimestamp");
+            }
+            this.lastBackupTimestamp = lastBackupTimestamp;
             return this;
         }
         @CustomType.Setter
         public Builder lastFailedBackupTimestamp(String lastFailedBackupTimestamp) {
-            this.lastFailedBackupTimestamp = Objects.requireNonNull(lastFailedBackupTimestamp);
+            if (lastFailedBackupTimestamp == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "lastFailedBackupTimestamp");
+            }
+            this.lastFailedBackupTimestamp = lastFailedBackupTimestamp;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder ncharacterSet(String ncharacterSet) {
-            this.ncharacterSet = Objects.requireNonNull(ncharacterSet);
+            if (ncharacterSet == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "ncharacterSet");
+            }
+            this.ncharacterSet = ncharacterSet;
             return this;
         }
         @CustomType.Setter
         public Builder pdbName(String pdbName) {
-            this.pdbName = Objects.requireNonNull(pdbName);
+            if (pdbName == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "pdbName");
+            }
+            this.pdbName = pdbName;
             return this;
         }
         @CustomType.Setter
         public Builder sidPrefix(String sidPrefix) {
-            this.sidPrefix = Objects.requireNonNull(sidPrefix);
+            if (sidPrefix == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "sidPrefix");
+            }
+            this.sidPrefix = sidPrefix;
             return this;
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "source");
+            }
+            this.source = source;
             return this;
         }
         @CustomType.Setter
         public Builder sourceDatabasePointInTimeRecoveryTimestamp(String sourceDatabasePointInTimeRecoveryTimestamp) {
-            this.sourceDatabasePointInTimeRecoveryTimestamp = Objects.requireNonNull(sourceDatabasePointInTimeRecoveryTimestamp);
+            if (sourceDatabasePointInTimeRecoveryTimestamp == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "sourceDatabasePointInTimeRecoveryTimestamp");
+            }
+            this.sourceDatabasePointInTimeRecoveryTimestamp = sourceDatabasePointInTimeRecoveryTimestamp;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+            if (vaultId == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "vaultId");
+            }
+            this.vaultId = vaultId;
             return this;
         }
         @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
-            this.vmClusterId = Objects.requireNonNull(vmClusterId);
+            if (vmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "vmClusterId");
+            }
+            this.vmClusterId = vmClusterId;
             return this;
         }
         public GetDatabasesDatabase build() {

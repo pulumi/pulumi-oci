@@ -86,21 +86,25 @@ public final class NamespaceScheduledTaskActionMetricExtraction {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder metricName(@Nullable String metricName) {
+
             this.metricName = metricName;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(@Nullable String namespace) {
+
             this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder resourceGroup(@Nullable String resourceGroup) {
+
             this.resourceGroup = resourceGroup;
             return this;
         }

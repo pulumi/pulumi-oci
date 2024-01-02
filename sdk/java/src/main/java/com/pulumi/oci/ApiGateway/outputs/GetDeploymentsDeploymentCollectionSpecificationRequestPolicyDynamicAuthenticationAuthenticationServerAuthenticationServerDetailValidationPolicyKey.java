@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -155,27 +156,42 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyD
 
         @CustomType.Setter
         public Builder alg(String alg) {
-            this.alg = Objects.requireNonNull(alg);
+            if (alg == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKey", "alg");
+            }
+            this.alg = alg;
             return this;
         }
         @CustomType.Setter
         public Builder e(String e) {
-            this.e = Objects.requireNonNull(e);
+            if (e == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKey", "e");
+            }
+            this.e = e;
             return this;
         }
         @CustomType.Setter
         public Builder format(String format) {
-            this.format = Objects.requireNonNull(format);
+            if (format == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKey", "format");
+            }
+            this.format = format;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKey", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder keyOps(List<String> keyOps) {
-            this.keyOps = Objects.requireNonNull(keyOps);
+            if (keyOps == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKey", "keyOps");
+            }
+            this.keyOps = keyOps;
             return this;
         }
         public Builder keyOps(String... keyOps) {
@@ -183,22 +199,34 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyD
         }
         @CustomType.Setter
         public Builder kid(String kid) {
-            this.kid = Objects.requireNonNull(kid);
+            if (kid == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKey", "kid");
+            }
+            this.kid = kid;
             return this;
         }
         @CustomType.Setter
         public Builder kty(String kty) {
-            this.kty = Objects.requireNonNull(kty);
+            if (kty == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKey", "kty");
+            }
+            this.kty = kty;
             return this;
         }
         @CustomType.Setter
         public Builder n(String n) {
-            this.n = Objects.requireNonNull(n);
+            if (n == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKey", "n");
+            }
+            this.n = n;
             return this;
         }
         @CustomType.Setter
         public Builder use(String use) {
-            this.use = Objects.requireNonNull(use);
+            if (use == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKey", "use");
+            }
+            this.use = use;
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKey build() {

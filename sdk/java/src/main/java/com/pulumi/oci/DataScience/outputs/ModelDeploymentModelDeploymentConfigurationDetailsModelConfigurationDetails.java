@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy;
 import java.lang.Integer;
@@ -89,21 +90,29 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
 
         @CustomType.Setter
         public Builder bandwidthMbps(@Nullable Integer bandwidthMbps) {
+
             this.bandwidthMbps = bandwidthMbps;
             return this;
         }
         @CustomType.Setter
         public Builder instanceConfiguration(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration instanceConfiguration) {
-            this.instanceConfiguration = Objects.requireNonNull(instanceConfiguration);
+            if (instanceConfiguration == null) {
+              throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails", "instanceConfiguration");
+            }
+            this.instanceConfiguration = instanceConfiguration;
             return this;
         }
         @CustomType.Setter
         public Builder modelId(String modelId) {
-            this.modelId = Objects.requireNonNull(modelId);
+            if (modelId == null) {
+              throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails", "modelId");
+            }
+            this.modelId = modelId;
             return this;
         }
         @CustomType.Setter
         public Builder scalingPolicy(@Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy scalingPolicy) {
+
             this.scalingPolicy = scalingPolicy;
             return this;
         }

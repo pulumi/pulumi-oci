@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetBackendSetsBackendSetCollectionItemBackend;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetBackendSetsBackendSetCollectionItemHealthChecker;
 import java.lang.Boolean;
@@ -136,7 +137,10 @@ public final class GetBackendSetsBackendSetCollectionItem {
 
         @CustomType.Setter
         public Builder backends(List<GetBackendSetsBackendSetCollectionItemBackend> backends) {
-            this.backends = Objects.requireNonNull(backends);
+            if (backends == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollectionItem", "backends");
+            }
+            this.backends = backends;
             return this;
         }
         public Builder backends(GetBackendSetsBackendSetCollectionItemBackend... backends) {
@@ -144,7 +148,10 @@ public final class GetBackendSetsBackendSetCollectionItem {
         }
         @CustomType.Setter
         public Builder healthCheckers(List<GetBackendSetsBackendSetCollectionItemHealthChecker> healthCheckers) {
-            this.healthCheckers = Objects.requireNonNull(healthCheckers);
+            if (healthCheckers == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollectionItem", "healthCheckers");
+            }
+            this.healthCheckers = healthCheckers;
             return this;
         }
         public Builder healthCheckers(GetBackendSetsBackendSetCollectionItemHealthChecker... healthCheckers) {
@@ -152,32 +159,50 @@ public final class GetBackendSetsBackendSetCollectionItem {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipVersion(String ipVersion) {
-            this.ipVersion = Objects.requireNonNull(ipVersion);
+            if (ipVersion == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollectionItem", "ipVersion");
+            }
+            this.ipVersion = ipVersion;
             return this;
         }
         @CustomType.Setter
         public Builder isPreserveSource(Boolean isPreserveSource) {
-            this.isPreserveSource = Objects.requireNonNull(isPreserveSource);
+            if (isPreserveSource == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollectionItem", "isPreserveSource");
+            }
+            this.isPreserveSource = isPreserveSource;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
-            this.networkLoadBalancerId = Objects.requireNonNull(networkLoadBalancerId);
+            if (networkLoadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollectionItem", "networkLoadBalancerId");
+            }
+            this.networkLoadBalancerId = networkLoadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder policy(String policy) {
-            this.policy = Objects.requireNonNull(policy);
+            if (policy == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollectionItem", "policy");
+            }
+            this.policy = policy;
             return this;
         }
         public GetBackendSetsBackendSetCollectionItem build() {

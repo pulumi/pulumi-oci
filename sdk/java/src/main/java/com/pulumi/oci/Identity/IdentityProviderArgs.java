@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -423,12 +424,24 @@ public final class IdentityProviderArgs extends com.pulumi.resources.ResourceArg
         }
 
         public IdentityProviderArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.description = Objects.requireNonNull($.description, "expected parameter 'description' to be non-null");
-            $.metadata = Objects.requireNonNull($.metadata, "expected parameter 'metadata' to be non-null");
-            $.metadataUrl = Objects.requireNonNull($.metadataUrl, "expected parameter 'metadataUrl' to be non-null");
-            $.productType = Objects.requireNonNull($.productType, "expected parameter 'productType' to be non-null");
-            $.protocol = Objects.requireNonNull($.protocol, "expected parameter 'protocol' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("IdentityProviderArgs", "compartmentId");
+            }
+            if ($.description == null) {
+                throw new MissingRequiredPropertyException("IdentityProviderArgs", "description");
+            }
+            if ($.metadata == null) {
+                throw new MissingRequiredPropertyException("IdentityProviderArgs", "metadata");
+            }
+            if ($.metadataUrl == null) {
+                throw new MissingRequiredPropertyException("IdentityProviderArgs", "metadataUrl");
+            }
+            if ($.productType == null) {
+                throw new MissingRequiredPropertyException("IdentityProviderArgs", "productType");
+            }
+            if ($.protocol == null) {
+                throw new MissingRequiredPropertyException("IdentityProviderArgs", "protocol");
+            }
             return $;
         }
     }

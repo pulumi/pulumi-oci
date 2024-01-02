@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -100,27 +101,42 @@ public final class GetExternalListenersExternalListenerCollectionItemEndpoint {
 
         @CustomType.Setter
         public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+            if (host == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItemEndpoint", "host");
+            }
+            this.host = host;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItemEndpoint", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItemEndpoint", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItemEndpoint", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder services(List<String> services) {
-            this.services = Objects.requireNonNull(services);
+            if (services == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItemEndpoint", "services");
+            }
+            this.services = services;
             return this;
         }
         public Builder services(String... services) {

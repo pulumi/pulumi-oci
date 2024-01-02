@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmCluster;
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersFilter;
 import java.lang.String;
@@ -123,12 +124,16 @@ public final class GetCloudVmClustersResult {
 
         @CustomType.Setter
         public Builder cloudExadataInfrastructureId(@Nullable String cloudExadataInfrastructureId) {
+
             this.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
         public Builder cloudVmClusters(List<GetCloudVmClustersCloudVmCluster> cloudVmClusters) {
-            this.cloudVmClusters = Objects.requireNonNull(cloudVmClusters);
+            if (cloudVmClusters == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersResult", "cloudVmClusters");
+            }
+            this.cloudVmClusters = cloudVmClusters;
             return this;
         }
         public Builder cloudVmClusters(GetCloudVmClustersCloudVmCluster... cloudVmClusters) {
@@ -136,16 +141,21 @@ public final class GetCloudVmClustersResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCloudVmClustersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -154,11 +164,15 @@ public final class GetCloudVmClustersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

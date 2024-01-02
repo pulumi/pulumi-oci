@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -142,41 +143,51 @@ public final class ImageImageSourceDetails {
 
         @CustomType.Setter
         public Builder bucketName(@Nullable String bucketName) {
+
             this.bucketName = bucketName;
             return this;
         }
         @CustomType.Setter
         public Builder namespaceName(@Nullable String namespaceName) {
+
             this.namespaceName = namespaceName;
             return this;
         }
         @CustomType.Setter
         public Builder objectName(@Nullable String objectName) {
+
             this.objectName = objectName;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystem(@Nullable String operatingSystem) {
+
             this.operatingSystem = operatingSystem;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystemVersion(@Nullable String operatingSystemVersion) {
+
             this.operatingSystemVersion = operatingSystemVersion;
             return this;
         }
         @CustomType.Setter
         public Builder sourceImageType(@Nullable String sourceImageType) {
+
             this.sourceImageType = sourceImageType;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("ImageImageSourceDetails", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
         public Builder sourceUri(@Nullable String sourceUri) {
+
             this.sourceUri = sourceUri;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -182,47 +183,68 @@ public final class GetRecordsRecord {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder domain(String domain) {
-            this.domain = Objects.requireNonNull(domain);
+            if (domain == null) {
+              throw new MissingRequiredPropertyException("GetRecordsRecord", "domain");
+            }
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
         public Builder isProtected(Boolean isProtected) {
-            this.isProtected = Objects.requireNonNull(isProtected);
+            if (isProtected == null) {
+              throw new MissingRequiredPropertyException("GetRecordsRecord", "isProtected");
+            }
+            this.isProtected = isProtected;
             return this;
         }
         @CustomType.Setter
         public Builder rdata(@Nullable String rdata) {
+
             this.rdata = rdata;
             return this;
         }
         @CustomType.Setter
         public Builder recordHash(String recordHash) {
-            this.recordHash = Objects.requireNonNull(recordHash);
+            if (recordHash == null) {
+              throw new MissingRequiredPropertyException("GetRecordsRecord", "recordHash");
+            }
+            this.recordHash = recordHash;
             return this;
         }
         @CustomType.Setter
         public Builder rrsetVersion(String rrsetVersion) {
-            this.rrsetVersion = Objects.requireNonNull(rrsetVersion);
+            if (rrsetVersion == null) {
+              throw new MissingRequiredPropertyException("GetRecordsRecord", "rrsetVersion");
+            }
+            this.rrsetVersion = rrsetVersion;
             return this;
         }
         @CustomType.Setter
         public Builder rtype(String rtype) {
-            this.rtype = Objects.requireNonNull(rtype);
+            if (rtype == null) {
+              throw new MissingRequiredPropertyException("GetRecordsRecord", "rtype");
+            }
+            this.rtype = rtype;
             return this;
         }
         @CustomType.Setter
         public Builder ttl(@Nullable Integer ttl) {
+
             this.ttl = ttl;
             return this;
         }
         @CustomType.Setter
         public Builder zoneNameOrId(String zoneNameOrId) {
-            this.zoneNameOrId = Objects.requireNonNull(zoneNameOrId);
+            if (zoneNameOrId == null) {
+              throw new MissingRequiredPropertyException("GetRecordsRecord", "zoneNameOrId");
+            }
+            this.zoneNameOrId = zoneNameOrId;
             return this;
         }
         public GetRecordsRecord build() {

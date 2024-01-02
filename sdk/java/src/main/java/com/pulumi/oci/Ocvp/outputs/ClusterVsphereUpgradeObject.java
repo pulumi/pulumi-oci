@@ -58,11 +58,13 @@ public final class ClusterVsphereUpgradeObject {
 
         @CustomType.Setter
         public Builder downloadLink(@Nullable String downloadLink) {
+
             this.downloadLink = downloadLink;
             return this;
         }
         @CustomType.Setter
         public Builder linkDescription(@Nullable String linkDescription) {
+
             this.linkDescription = linkDescription;
             return this;
         }

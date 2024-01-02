@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -198,62 +199,98 @@ public final class GetOnpremConnectorsOnPremConnector {
 
         @CustomType.Setter
         public Builder availableVersion(String availableVersion) {
-            this.availableVersion = Objects.requireNonNull(availableVersion);
+            if (availableVersion == null) {
+              throw new MissingRequiredPropertyException("GetOnpremConnectorsOnPremConnector", "availableVersion");
+            }
+            this.availableVersion = availableVersion;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOnpremConnectorsOnPremConnector", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdVersion(String createdVersion) {
-            this.createdVersion = Objects.requireNonNull(createdVersion);
+            if (createdVersion == null) {
+              throw new MissingRequiredPropertyException("GetOnpremConnectorsOnPremConnector", "createdVersion");
+            }
+            this.createdVersion = createdVersion;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetOnpremConnectorsOnPremConnector", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetOnpremConnectorsOnPremConnector", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetOnpremConnectorsOnPremConnector", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetOnpremConnectorsOnPremConnector", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOnpremConnectorsOnPremConnector", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetOnpremConnectorsOnPremConnector", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetOnpremConnectorsOnPremConnector", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetOnpremConnectorsOnPremConnector", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetOnpremConnectorsOnPremConnector", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetOnpremConnectorsOnPremConnector build() {

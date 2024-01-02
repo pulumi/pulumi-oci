@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetImageAgentFeature;
 import com.pulumi.oci.Core.outputs.GetImageImageSourceDetail;
 import com.pulumi.oci.Core.outputs.GetImageLaunchOption;
@@ -291,7 +292,10 @@ public final class GetImageResult {
 
         @CustomType.Setter
         public Builder agentFeatures(List<GetImageAgentFeature> agentFeatures) {
-            this.agentFeatures = Objects.requireNonNull(agentFeatures);
+            if (agentFeatures == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "agentFeatures");
+            }
+            this.agentFeatures = agentFeatures;
             return this;
         }
         public Builder agentFeatures(GetImageAgentFeature... agentFeatures) {
@@ -299,52 +303,82 @@ public final class GetImageResult {
         }
         @CustomType.Setter
         public Builder baseImageId(String baseImageId) {
-            this.baseImageId = Objects.requireNonNull(baseImageId);
+            if (baseImageId == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "baseImageId");
+            }
+            this.baseImageId = baseImageId;
             return this;
         }
         @CustomType.Setter
         public Builder billableSizeInGbs(String billableSizeInGbs) {
-            this.billableSizeInGbs = Objects.requireNonNull(billableSizeInGbs);
+            if (billableSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "billableSizeInGbs");
+            }
+            this.billableSizeInGbs = billableSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createImageAllowed(Boolean createImageAllowed) {
-            this.createImageAllowed = Objects.requireNonNull(createImageAllowed);
+            if (createImageAllowed == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "createImageAllowed");
+            }
+            this.createImageAllowed = createImageAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imageId(String imageId) {
-            this.imageId = Objects.requireNonNull(imageId);
+            if (imageId == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "imageId");
+            }
+            this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder imageSourceDetails(List<GetImageImageSourceDetail> imageSourceDetails) {
-            this.imageSourceDetails = Objects.requireNonNull(imageSourceDetails);
+            if (imageSourceDetails == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "imageSourceDetails");
+            }
+            this.imageSourceDetails = imageSourceDetails;
             return this;
         }
         public Builder imageSourceDetails(GetImageImageSourceDetail... imageSourceDetails) {
@@ -352,17 +386,26 @@ public final class GetImageResult {
         }
         @CustomType.Setter
         public Builder instanceId(String instanceId) {
-            this.instanceId = Objects.requireNonNull(instanceId);
+            if (instanceId == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "instanceId");
+            }
+            this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
         public Builder launchMode(String launchMode) {
-            this.launchMode = Objects.requireNonNull(launchMode);
+            if (launchMode == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "launchMode");
+            }
+            this.launchMode = launchMode;
             return this;
         }
         @CustomType.Setter
         public Builder launchOptions(List<GetImageLaunchOption> launchOptions) {
-            this.launchOptions = Objects.requireNonNull(launchOptions);
+            if (launchOptions == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "launchOptions");
+            }
+            this.launchOptions = launchOptions;
             return this;
         }
         public Builder launchOptions(GetImageLaunchOption... launchOptions) {
@@ -370,32 +413,50 @@ public final class GetImageResult {
         }
         @CustomType.Setter
         public Builder listingType(String listingType) {
-            this.listingType = Objects.requireNonNull(listingType);
+            if (listingType == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "listingType");
+            }
+            this.listingType = listingType;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystem(String operatingSystem) {
-            this.operatingSystem = Objects.requireNonNull(operatingSystem);
+            if (operatingSystem == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "operatingSystem");
+            }
+            this.operatingSystem = operatingSystem;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystemVersion(String operatingSystemVersion) {
-            this.operatingSystemVersion = Objects.requireNonNull(operatingSystemVersion);
+            if (operatingSystemVersion == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "operatingSystemVersion");
+            }
+            this.operatingSystemVersion = operatingSystemVersion;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInMbs(String sizeInMbs) {
-            this.sizeInMbs = Objects.requireNonNull(sizeInMbs);
+            if (sizeInMbs == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "sizeInMbs");
+            }
+            this.sizeInMbs = sizeInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetImageResult build() {

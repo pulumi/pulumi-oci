@@ -5,6 +5,7 @@ package com.pulumi.oci.Waf.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 import java.util.Optional;
@@ -150,8 +151,12 @@ public final class AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs ext
         }
 
         public AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs build() {
-            $.periodInSeconds = Objects.requireNonNull($.periodInSeconds, "expected parameter 'periodInSeconds' to be non-null");
-            $.requestsLimit = Objects.requireNonNull($.requestsLimit, "expected parameter 'requestsLimit' to be non-null");
+            if ($.periodInSeconds == null) {
+                throw new MissingRequiredPropertyException("AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs", "periodInSeconds");
+            }
+            if ($.requestsLimit == null) {
+                throw new MissingRequiredPropertyException("AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs", "requestsLimit");
+            }
             return $;
         }
     }

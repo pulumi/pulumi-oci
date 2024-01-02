@@ -58,11 +58,13 @@ public final class WorkspaceProjectMetadataCountStatisticObjectTypeCountList {
 
         @CustomType.Setter
         public Builder objectCount(@Nullable String objectCount) {
+
             this.objectCount = objectCount;
             return this;
         }
         @CustomType.Setter
         public Builder objectType(@Nullable String objectType) {
+
             this.objectType = objectType;
             return this;
         }

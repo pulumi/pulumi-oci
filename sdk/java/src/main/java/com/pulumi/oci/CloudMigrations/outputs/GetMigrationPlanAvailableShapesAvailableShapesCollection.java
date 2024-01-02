@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.GetMigrationPlanAvailableShapesAvailableShapesCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetMigrationPlanAvailableShapesAvailableShapesCollection {
 
         @CustomType.Setter
         public Builder items(List<GetMigrationPlanAvailableShapesAvailableShapesCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesAvailableShapesCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetMigrationPlanAvailableShapesAvailableShapesCollectionItem... items) {

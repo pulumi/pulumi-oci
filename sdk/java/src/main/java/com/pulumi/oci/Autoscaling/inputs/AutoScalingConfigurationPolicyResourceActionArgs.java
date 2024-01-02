@@ -5,6 +5,7 @@ package com.pulumi.oci.Autoscaling.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class AutoScalingConfigurationPolicyResourceActionArgs extends com.
         }
 
         public AutoScalingConfigurationPolicyResourceActionArgs build() {
-            $.action = Objects.requireNonNull($.action, "expected parameter 'action' to be non-null");
-            $.actionType = Objects.requireNonNull($.actionType, "expected parameter 'actionType' to be non-null");
+            if ($.action == null) {
+                throw new MissingRequiredPropertyException("AutoScalingConfigurationPolicyResourceActionArgs", "action");
+            }
+            if ($.actionType == null) {
+                throw new MissingRequiredPropertyException("AutoScalingConfigurationPolicyResourceActionArgs", "actionType");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Audit.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -100,27 +101,42 @@ public final class GetEventsAuditEventDataRequest {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataRequest", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder headers(Map<String,Object> headers) {
-            this.headers = Objects.requireNonNull(headers);
+            if (headers == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataRequest", "headers");
+            }
+            this.headers = headers;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataRequest", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder parameters(Map<String,Object> parameters) {
-            this.parameters = Objects.requireNonNull(parameters);
+            if (parameters == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataRequest", "parameters");
+            }
+            this.parameters = parameters;
             return this;
         }
         @CustomType.Setter
         public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+            if (path == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataRequest", "path");
+            }
+            this.path = path;
             return this;
         }
         public GetEventsAuditEventDataRequest build() {

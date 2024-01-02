@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.inputs.ConnectionTlsVerifyConfigArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -461,8 +462,12 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ConnectionArgs build() {
-            $.connectionType = Objects.requireNonNull($.connectionType, "expected parameter 'connectionType' to be non-null");
-            $.projectId = Objects.requireNonNull($.projectId, "expected parameter 'projectId' to be non-null");
+            if ($.connectionType == null) {
+                throw new MissingRequiredPropertyException("ConnectionArgs", "connectionType");
+            }
+            if ($.projectId == null) {
+                throw new MissingRequiredPropertyException("ConnectionArgs", "projectId");
+            }
             return $;
         }
     }

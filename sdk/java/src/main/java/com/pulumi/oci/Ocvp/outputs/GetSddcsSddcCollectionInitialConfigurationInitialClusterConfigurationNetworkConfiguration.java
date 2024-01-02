@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -94,57 +95,90 @@ public final class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfi
 
         @CustomType.Setter
         public Builder hcxVlanId(String hcxVlanId) {
-            this.hcxVlanId = Objects.requireNonNull(hcxVlanId);
+            if (hcxVlanId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration", "hcxVlanId");
+            }
+            this.hcxVlanId = hcxVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder nsxEdgeUplink1vlanId(String nsxEdgeUplink1vlanId) {
-            this.nsxEdgeUplink1vlanId = Objects.requireNonNull(nsxEdgeUplink1vlanId);
+            if (nsxEdgeUplink1vlanId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration", "nsxEdgeUplink1vlanId");
+            }
+            this.nsxEdgeUplink1vlanId = nsxEdgeUplink1vlanId;
             return this;
         }
         @CustomType.Setter
         public Builder nsxEdgeUplink2vlanId(String nsxEdgeUplink2vlanId) {
-            this.nsxEdgeUplink2vlanId = Objects.requireNonNull(nsxEdgeUplink2vlanId);
+            if (nsxEdgeUplink2vlanId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration", "nsxEdgeUplink2vlanId");
+            }
+            this.nsxEdgeUplink2vlanId = nsxEdgeUplink2vlanId;
             return this;
         }
         @CustomType.Setter
         public Builder nsxEdgeVtepVlanId(String nsxEdgeVtepVlanId) {
-            this.nsxEdgeVtepVlanId = Objects.requireNonNull(nsxEdgeVtepVlanId);
+            if (nsxEdgeVtepVlanId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration", "nsxEdgeVtepVlanId");
+            }
+            this.nsxEdgeVtepVlanId = nsxEdgeVtepVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder nsxVtepVlanId(String nsxVtepVlanId) {
-            this.nsxVtepVlanId = Objects.requireNonNull(nsxVtepVlanId);
+            if (nsxVtepVlanId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration", "nsxVtepVlanId");
+            }
+            this.nsxVtepVlanId = nsxVtepVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder provisioningSubnetId(String provisioningSubnetId) {
-            this.provisioningSubnetId = Objects.requireNonNull(provisioningSubnetId);
+            if (provisioningSubnetId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration", "provisioningSubnetId");
+            }
+            this.provisioningSubnetId = provisioningSubnetId;
             return this;
         }
         @CustomType.Setter
         public Builder provisioningVlanId(String provisioningVlanId) {
-            this.provisioningVlanId = Objects.requireNonNull(provisioningVlanId);
+            if (provisioningVlanId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration", "provisioningVlanId");
+            }
+            this.provisioningVlanId = provisioningVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder replicationVlanId(String replicationVlanId) {
-            this.replicationVlanId = Objects.requireNonNull(replicationVlanId);
+            if (replicationVlanId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration", "replicationVlanId");
+            }
+            this.replicationVlanId = replicationVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder vmotionVlanId(String vmotionVlanId) {
-            this.vmotionVlanId = Objects.requireNonNull(vmotionVlanId);
+            if (vmotionVlanId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration", "vmotionVlanId");
+            }
+            this.vmotionVlanId = vmotionVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder vsanVlanId(String vsanVlanId) {
-            this.vsanVlanId = Objects.requireNonNull(vsanVlanId);
+            if (vsanVlanId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration", "vsanVlanId");
+            }
+            this.vsanVlanId = vsanVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder vsphereVlanId(String vsphereVlanId) {
-            this.vsphereVlanId = Objects.requireNonNull(vsphereVlanId);
+            if (vsphereVlanId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration", "vsphereVlanId");
+            }
+            this.vsphereVlanId = vsphereVlanId;
             return this;
         }
         public GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration build() {

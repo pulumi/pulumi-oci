@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader;
 import java.lang.String;
 import java.util.List;
@@ -50,7 +51,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
 
         @CustomType.Setter
         public Builder headers(List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader> headers) {
-            this.headers = Objects.requireNonNull(headers);
+            if (headers == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidation", "headers");
+            }
+            this.headers = headers;
             return this;
         }
         public Builder headers(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader... headers) {
@@ -58,7 +62,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
         }
         @CustomType.Setter
         public Builder validationMode(String validationMode) {
-            this.validationMode = Objects.requireNonNull(validationMode);
+            if (validationMode == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidation", "validationMode");
+            }
+            this.validationMode = validationMode;
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidation build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.outputs.GetVirtualServiceRouteTableRouteRuleDestination;
 import java.lang.Boolean;
 import java.lang.String;
@@ -115,7 +116,10 @@ public final class GetVirtualServiceRouteTableRouteRule {
 
         @CustomType.Setter
         public Builder destinations(List<GetVirtualServiceRouteTableRouteRuleDestination> destinations) {
-            this.destinations = Objects.requireNonNull(destinations);
+            if (destinations == null) {
+              throw new MissingRequiredPropertyException("GetVirtualServiceRouteTableRouteRule", "destinations");
+            }
+            this.destinations = destinations;
             return this;
         }
         public Builder destinations(GetVirtualServiceRouteTableRouteRuleDestination... destinations) {
@@ -123,27 +127,42 @@ public final class GetVirtualServiceRouteTableRouteRule {
         }
         @CustomType.Setter
         public Builder isGrpc(Boolean isGrpc) {
-            this.isGrpc = Objects.requireNonNull(isGrpc);
+            if (isGrpc == null) {
+              throw new MissingRequiredPropertyException("GetVirtualServiceRouteTableRouteRule", "isGrpc");
+            }
+            this.isGrpc = isGrpc;
             return this;
         }
         @CustomType.Setter
         public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+            if (path == null) {
+              throw new MissingRequiredPropertyException("GetVirtualServiceRouteTableRouteRule", "path");
+            }
+            this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder pathType(String pathType) {
-            this.pathType = Objects.requireNonNull(pathType);
+            if (pathType == null) {
+              throw new MissingRequiredPropertyException("GetVirtualServiceRouteTableRouteRule", "pathType");
+            }
+            this.pathType = pathType;
             return this;
         }
         @CustomType.Setter
         public Builder requestTimeoutInMs(String requestTimeoutInMs) {
-            this.requestTimeoutInMs = Objects.requireNonNull(requestTimeoutInMs);
+            if (requestTimeoutInMs == null) {
+              throw new MissingRequiredPropertyException("GetVirtualServiceRouteTableRouteRule", "requestTimeoutInMs");
+            }
+            this.requestTimeoutInMs = requestTimeoutInMs;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetVirtualServiceRouteTableRouteRule", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetVirtualServiceRouteTableRouteRule build() {

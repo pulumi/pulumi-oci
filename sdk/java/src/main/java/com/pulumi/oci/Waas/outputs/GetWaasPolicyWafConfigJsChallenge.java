@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.GetWaasPolicyWafConfigJsChallengeChallengeSettings;
 import com.pulumi.oci.Waas.outputs.GetWaasPolicyWafConfigJsChallengeCriteria;
 import com.pulumi.oci.Waas.outputs.GetWaasPolicyWafConfigJsChallengeSetHttpHeader;
@@ -160,27 +161,42 @@ public final class GetWaasPolicyWafConfigJsChallenge {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigJsChallenge", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder actionExpirationInSeconds(Integer actionExpirationInSeconds) {
-            this.actionExpirationInSeconds = Objects.requireNonNull(actionExpirationInSeconds);
+            if (actionExpirationInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigJsChallenge", "actionExpirationInSeconds");
+            }
+            this.actionExpirationInSeconds = actionExpirationInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder areRedirectsChallenged(Boolean areRedirectsChallenged) {
-            this.areRedirectsChallenged = Objects.requireNonNull(areRedirectsChallenged);
+            if (areRedirectsChallenged == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigJsChallenge", "areRedirectsChallenged");
+            }
+            this.areRedirectsChallenged = areRedirectsChallenged;
             return this;
         }
         @CustomType.Setter
         public Builder challengeSettings(GetWaasPolicyWafConfigJsChallengeChallengeSettings challengeSettings) {
-            this.challengeSettings = Objects.requireNonNull(challengeSettings);
+            if (challengeSettings == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigJsChallenge", "challengeSettings");
+            }
+            this.challengeSettings = challengeSettings;
             return this;
         }
         @CustomType.Setter
         public Builder criterias(List<GetWaasPolicyWafConfigJsChallengeCriteria> criterias) {
-            this.criterias = Objects.requireNonNull(criterias);
+            if (criterias == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigJsChallenge", "criterias");
+            }
+            this.criterias = criterias;
             return this;
         }
         public Builder criterias(GetWaasPolicyWafConfigJsChallengeCriteria... criterias) {
@@ -188,22 +204,34 @@ public final class GetWaasPolicyWafConfigJsChallenge {
         }
         @CustomType.Setter
         public Builder failureThreshold(Integer failureThreshold) {
-            this.failureThreshold = Objects.requireNonNull(failureThreshold);
+            if (failureThreshold == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigJsChallenge", "failureThreshold");
+            }
+            this.failureThreshold = failureThreshold;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigJsChallenge", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isNatEnabled(Boolean isNatEnabled) {
-            this.isNatEnabled = Objects.requireNonNull(isNatEnabled);
+            if (isNatEnabled == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigJsChallenge", "isNatEnabled");
+            }
+            this.isNatEnabled = isNatEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder setHttpHeader(GetWaasPolicyWafConfigJsChallengeSetHttpHeader setHttpHeader) {
-            this.setHttpHeader = Objects.requireNonNull(setHttpHeader);
+            if (setHttpHeader == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigJsChallenge", "setHttpHeader");
+            }
+            this.setHttpHeader = setHttpHeader;
             return this;
         }
         public GetWaasPolicyWafConfigJsChallenge build() {

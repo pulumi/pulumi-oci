@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -118,12 +119,18 @@ public final class GetMonitoredResourceTaskTaskDetail {
 
         @CustomType.Setter
         public Builder availabilityProxyMetricCollectionInterval(Integer availabilityProxyMetricCollectionInterval) {
-            this.availabilityProxyMetricCollectionInterval = Objects.requireNonNull(availabilityProxyMetricCollectionInterval);
+            if (availabilityProxyMetricCollectionInterval == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTaskTaskDetail", "availabilityProxyMetricCollectionInterval");
+            }
+            this.availabilityProxyMetricCollectionInterval = availabilityProxyMetricCollectionInterval;
             return this;
         }
         @CustomType.Setter
         public Builder availabilityProxyMetrics(List<String> availabilityProxyMetrics) {
-            this.availabilityProxyMetrics = Objects.requireNonNull(availabilityProxyMetrics);
+            if (availabilityProxyMetrics == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTaskTaskDetail", "availabilityProxyMetrics");
+            }
+            this.availabilityProxyMetrics = availabilityProxyMetrics;
             return this;
         }
         public Builder availabilityProxyMetrics(String... availabilityProxyMetrics) {
@@ -131,22 +138,34 @@ public final class GetMonitoredResourceTaskTaskDetail {
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTaskTaskDetail", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder resourceGroup(String resourceGroup) {
-            this.resourceGroup = Objects.requireNonNull(resourceGroup);
+            if (resourceGroup == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTaskTaskDetail", "resourceGroup");
+            }
+            this.resourceGroup = resourceGroup;
             return this;
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTaskTaskDetail", "source");
+            }
+            this.source = source;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTaskTaskDetail", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetMonitoredResourceTaskTaskDetail build() {

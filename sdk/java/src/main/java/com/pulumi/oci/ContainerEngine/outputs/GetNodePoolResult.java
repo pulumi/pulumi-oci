@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolInitialNodeLabel;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolNode;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolNodeConfigDetail;
@@ -406,32 +407,50 @@ public final class GetNodePoolResult {
 
         @CustomType.Setter
         public Builder clusterId(String clusterId) {
-            this.clusterId = Objects.requireNonNull(clusterId);
+            if (clusterId == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "clusterId");
+            }
+            this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder initialNodeLabels(List<GetNodePoolInitialNodeLabel> initialNodeLabels) {
-            this.initialNodeLabels = Objects.requireNonNull(initialNodeLabels);
+            if (initialNodeLabels == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "initialNodeLabels");
+            }
+            this.initialNodeLabels = initialNodeLabels;
             return this;
         }
         public Builder initialNodeLabels(GetNodePoolInitialNodeLabel... initialNodeLabels) {
@@ -439,22 +458,34 @@ public final class GetNodePoolResult {
         }
         @CustomType.Setter
         public Builder kubernetesVersion(String kubernetesVersion) {
-            this.kubernetesVersion = Objects.requireNonNull(kubernetesVersion);
+            if (kubernetesVersion == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "kubernetesVersion");
+            }
+            this.kubernetesVersion = kubernetesVersion;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder nodeConfigDetails(List<GetNodePoolNodeConfigDetail> nodeConfigDetails) {
-            this.nodeConfigDetails = Objects.requireNonNull(nodeConfigDetails);
+            if (nodeConfigDetails == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "nodeConfigDetails");
+            }
+            this.nodeConfigDetails = nodeConfigDetails;
             return this;
         }
         public Builder nodeConfigDetails(GetNodePoolNodeConfigDetail... nodeConfigDetails) {
@@ -462,7 +493,10 @@ public final class GetNodePoolResult {
         }
         @CustomType.Setter
         public Builder nodeEvictionNodePoolSettings(List<GetNodePoolNodeEvictionNodePoolSetting> nodeEvictionNodePoolSettings) {
-            this.nodeEvictionNodePoolSettings = Objects.requireNonNull(nodeEvictionNodePoolSettings);
+            if (nodeEvictionNodePoolSettings == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "nodeEvictionNodePoolSettings");
+            }
+            this.nodeEvictionNodePoolSettings = nodeEvictionNodePoolSettings;
             return this;
         }
         public Builder nodeEvictionNodePoolSettings(GetNodePoolNodeEvictionNodePoolSetting... nodeEvictionNodePoolSettings) {
@@ -470,22 +504,34 @@ public final class GetNodePoolResult {
         }
         @CustomType.Setter
         public Builder nodeImageId(String nodeImageId) {
-            this.nodeImageId = Objects.requireNonNull(nodeImageId);
+            if (nodeImageId == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "nodeImageId");
+            }
+            this.nodeImageId = nodeImageId;
             return this;
         }
         @CustomType.Setter
         public Builder nodeImageName(String nodeImageName) {
-            this.nodeImageName = Objects.requireNonNull(nodeImageName);
+            if (nodeImageName == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "nodeImageName");
+            }
+            this.nodeImageName = nodeImageName;
             return this;
         }
         @CustomType.Setter
         public Builder nodeMetadata(Map<String,Object> nodeMetadata) {
-            this.nodeMetadata = Objects.requireNonNull(nodeMetadata);
+            if (nodeMetadata == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "nodeMetadata");
+            }
+            this.nodeMetadata = nodeMetadata;
             return this;
         }
         @CustomType.Setter
         public Builder nodePoolCyclingDetails(List<GetNodePoolNodePoolCyclingDetail> nodePoolCyclingDetails) {
-            this.nodePoolCyclingDetails = Objects.requireNonNull(nodePoolCyclingDetails);
+            if (nodePoolCyclingDetails == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "nodePoolCyclingDetails");
+            }
+            this.nodePoolCyclingDetails = nodePoolCyclingDetails;
             return this;
         }
         public Builder nodePoolCyclingDetails(GetNodePoolNodePoolCyclingDetail... nodePoolCyclingDetails) {
@@ -493,17 +539,26 @@ public final class GetNodePoolResult {
         }
         @CustomType.Setter
         public Builder nodePoolId(String nodePoolId) {
-            this.nodePoolId = Objects.requireNonNull(nodePoolId);
+            if (nodePoolId == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "nodePoolId");
+            }
+            this.nodePoolId = nodePoolId;
             return this;
         }
         @CustomType.Setter
         public Builder nodeShape(String nodeShape) {
-            this.nodeShape = Objects.requireNonNull(nodeShape);
+            if (nodeShape == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "nodeShape");
+            }
+            this.nodeShape = nodeShape;
             return this;
         }
         @CustomType.Setter
         public Builder nodeShapeConfigs(List<GetNodePoolNodeShapeConfig> nodeShapeConfigs) {
-            this.nodeShapeConfigs = Objects.requireNonNull(nodeShapeConfigs);
+            if (nodeShapeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "nodeShapeConfigs");
+            }
+            this.nodeShapeConfigs = nodeShapeConfigs;
             return this;
         }
         public Builder nodeShapeConfigs(GetNodePoolNodeShapeConfig... nodeShapeConfigs) {
@@ -511,7 +566,10 @@ public final class GetNodePoolResult {
         }
         @CustomType.Setter
         public Builder nodeSourceDetails(List<GetNodePoolNodeSourceDetail> nodeSourceDetails) {
-            this.nodeSourceDetails = Objects.requireNonNull(nodeSourceDetails);
+            if (nodeSourceDetails == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "nodeSourceDetails");
+            }
+            this.nodeSourceDetails = nodeSourceDetails;
             return this;
         }
         public Builder nodeSourceDetails(GetNodePoolNodeSourceDetail... nodeSourceDetails) {
@@ -519,7 +577,10 @@ public final class GetNodePoolResult {
         }
         @CustomType.Setter
         public Builder nodeSources(List<GetNodePoolNodeSource> nodeSources) {
-            this.nodeSources = Objects.requireNonNull(nodeSources);
+            if (nodeSources == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "nodeSources");
+            }
+            this.nodeSources = nodeSources;
             return this;
         }
         public Builder nodeSources(GetNodePoolNodeSource... nodeSources) {
@@ -527,7 +588,10 @@ public final class GetNodePoolResult {
         }
         @CustomType.Setter
         public Builder nodes(List<GetNodePoolNode> nodes) {
-            this.nodes = Objects.requireNonNull(nodes);
+            if (nodes == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "nodes");
+            }
+            this.nodes = nodes;
             return this;
         }
         public Builder nodes(GetNodePoolNode... nodes) {
@@ -535,22 +599,34 @@ public final class GetNodePoolResult {
         }
         @CustomType.Setter
         public Builder quantityPerSubnet(Integer quantityPerSubnet) {
-            this.quantityPerSubnet = Objects.requireNonNull(quantityPerSubnet);
+            if (quantityPerSubnet == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "quantityPerSubnet");
+            }
+            this.quantityPerSubnet = quantityPerSubnet;
             return this;
         }
         @CustomType.Setter
         public Builder sshPublicKey(String sshPublicKey) {
-            this.sshPublicKey = Objects.requireNonNull(sshPublicKey);
+            if (sshPublicKey == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "sshPublicKey");
+            }
+            this.sshPublicKey = sshPublicKey;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetIds(List<String> subnetIds) {
-            this.subnetIds = Objects.requireNonNull(subnetIds);
+            if (subnetIds == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "subnetIds");
+            }
+            this.subnetIds = subnetIds;
             return this;
         }
         public Builder subnetIds(String... subnetIds) {

@@ -266,66 +266,79 @@ public final class PolicyPolicyConfig {
 
         @CustomType.Setter
         public Builder certificateId(@Nullable String certificateId) {
+
             this.certificateId = certificateId;
             return this;
         }
         @CustomType.Setter
         public Builder cipherGroup(@Nullable String cipherGroup) {
+
             this.cipherGroup = cipherGroup;
             return this;
         }
         @CustomType.Setter
         public Builder clientAddressHeader(@Nullable String clientAddressHeader) {
+
             this.clientAddressHeader = clientAddressHeader;
             return this;
         }
         @CustomType.Setter
         public Builder healthChecks(@Nullable PolicyPolicyConfigHealthChecks healthChecks) {
+
             this.healthChecks = healthChecks;
             return this;
         }
         @CustomType.Setter
         public Builder isBehindCdn(@Nullable Boolean isBehindCdn) {
+
             this.isBehindCdn = isBehindCdn;
             return this;
         }
         @CustomType.Setter
         public Builder isCacheControlRespected(@Nullable Boolean isCacheControlRespected) {
+
             this.isCacheControlRespected = isCacheControlRespected;
             return this;
         }
         @CustomType.Setter
         public Builder isHttpsEnabled(@Nullable Boolean isHttpsEnabled) {
+
             this.isHttpsEnabled = isHttpsEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isHttpsForced(@Nullable Boolean isHttpsForced) {
+
             this.isHttpsForced = isHttpsForced;
             return this;
         }
         @CustomType.Setter
         public Builder isOriginCompressionEnabled(@Nullable Boolean isOriginCompressionEnabled) {
+
             this.isOriginCompressionEnabled = isOriginCompressionEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isResponseBufferingEnabled(@Nullable Boolean isResponseBufferingEnabled) {
+
             this.isResponseBufferingEnabled = isResponseBufferingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isSniEnabled(@Nullable Boolean isSniEnabled) {
+
             this.isSniEnabled = isSniEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancingMethod(@Nullable PolicyPolicyConfigLoadBalancingMethod loadBalancingMethod) {
+
             this.loadBalancingMethod = loadBalancingMethod;
             return this;
         }
         @CustomType.Setter
         public Builder tlsProtocols(@Nullable List<String> tlsProtocols) {
+
             this.tlsProtocols = tlsProtocols;
             return this;
         }
@@ -334,6 +347,7 @@ public final class PolicyPolicyConfig {
         }
         @CustomType.Setter
         public Builder websocketPathPrefixes(@Nullable List<String> websocketPathPrefixes) {
+
             this.websocketPathPrefixes = websocketPathPrefixes;
             return this;
         }

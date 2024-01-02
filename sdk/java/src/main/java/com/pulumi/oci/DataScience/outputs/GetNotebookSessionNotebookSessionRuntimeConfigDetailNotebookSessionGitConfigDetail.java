@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookS
 
         @CustomType.Setter
         public Builder notebookSessionGitRepoConfigCollections(List<GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection> notebookSessionGitRepoConfigCollections) {
-            this.notebookSessionGitRepoConfigCollections = Objects.requireNonNull(notebookSessionGitRepoConfigCollections);
+            if (notebookSessionGitRepoConfigCollections == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail", "notebookSessionGitRepoConfigCollections");
+            }
+            this.notebookSessionGitRepoConfigCollections = notebookSessionGitRepoConfigCollections;
             return this;
         }
         public Builder notebookSessionGitRepoConfigCollections(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection... notebookSessionGitRepoConfigCollections) {

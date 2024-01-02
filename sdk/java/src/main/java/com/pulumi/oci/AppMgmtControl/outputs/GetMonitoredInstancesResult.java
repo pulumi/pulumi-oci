@@ -4,6 +4,7 @@
 package com.pulumi.oci.AppMgmtControl.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AppMgmtControl.outputs.GetMonitoredInstancesFilter;
 import com.pulumi.oci.AppMgmtControl.outputs.GetMonitoredInstancesMonitoredInstanceCollection;
 import java.lang.String;
@@ -95,16 +96,21 @@ public final class GetMonitoredInstancesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredInstancesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMonitoredInstancesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -113,12 +119,18 @@ public final class GetMonitoredInstancesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredInstancesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder monitoredInstanceCollections(List<GetMonitoredInstancesMonitoredInstanceCollection> monitoredInstanceCollections) {
-            this.monitoredInstanceCollections = Objects.requireNonNull(monitoredInstanceCollections);
+            if (monitoredInstanceCollections == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredInstancesResult", "monitoredInstanceCollections");
+            }
+            this.monitoredInstanceCollections = monitoredInstanceCollections;
             return this;
         }
         public Builder monitoredInstanceCollections(GetMonitoredInstancesMonitoredInstanceCollection... monitoredInstanceCollections) {

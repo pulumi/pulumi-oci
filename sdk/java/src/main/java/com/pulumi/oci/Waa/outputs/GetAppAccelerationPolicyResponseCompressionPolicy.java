@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waa.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waa.outputs.GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetAppAccelerationPolicyResponseCompressionPolicy {
 
         @CustomType.Setter
         public Builder gzipCompressions(List<GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression> gzipCompressions) {
-            this.gzipCompressions = Objects.requireNonNull(gzipCompressions);
+            if (gzipCompressions == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPolicyResponseCompressionPolicy", "gzipCompressions");
+            }
+            this.gzipCompressions = gzipCompressions;
             return this;
         }
         public Builder gzipCompressions(GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression... gzipCompressions) {

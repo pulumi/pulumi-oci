@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetSourceDiscoveryCredential;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetSourceReplicationCredential;
 import java.lang.Boolean;
@@ -320,37 +321,58 @@ public final class GetAssetSourceResult {
 
         @CustomType.Setter
         public Builder areHistoricalMetricsCollected(Boolean areHistoricalMetricsCollected) {
-            this.areHistoricalMetricsCollected = Objects.requireNonNull(areHistoricalMetricsCollected);
+            if (areHistoricalMetricsCollected == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "areHistoricalMetricsCollected");
+            }
+            this.areHistoricalMetricsCollected = areHistoricalMetricsCollected;
             return this;
         }
         @CustomType.Setter
         public Builder areRealtimeMetricsCollected(Boolean areRealtimeMetricsCollected) {
-            this.areRealtimeMetricsCollected = Objects.requireNonNull(areRealtimeMetricsCollected);
+            if (areRealtimeMetricsCollected == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "areRealtimeMetricsCollected");
+            }
+            this.areRealtimeMetricsCollected = areRealtimeMetricsCollected;
             return this;
         }
         @CustomType.Setter
         public Builder assetSourceId(String assetSourceId) {
-            this.assetSourceId = Objects.requireNonNull(assetSourceId);
+            if (assetSourceId == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "assetSourceId");
+            }
+            this.assetSourceId = assetSourceId;
             return this;
         }
         @CustomType.Setter
         public Builder assetsCompartmentId(String assetsCompartmentId) {
-            this.assetsCompartmentId = Objects.requireNonNull(assetsCompartmentId);
+            if (assetsCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "assetsCompartmentId");
+            }
+            this.assetsCompartmentId = assetsCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder discoveryCredentials(List<GetAssetSourceDiscoveryCredential> discoveryCredentials) {
-            this.discoveryCredentials = Objects.requireNonNull(discoveryCredentials);
+            if (discoveryCredentials == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "discoveryCredentials");
+            }
+            this.discoveryCredentials = discoveryCredentials;
             return this;
         }
         public Builder discoveryCredentials(GetAssetSourceDiscoveryCredential... discoveryCredentials) {
@@ -358,42 +380,66 @@ public final class GetAssetSourceResult {
         }
         @CustomType.Setter
         public Builder discoveryScheduleId(String discoveryScheduleId) {
-            this.discoveryScheduleId = Objects.requireNonNull(discoveryScheduleId);
+            if (discoveryScheduleId == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "discoveryScheduleId");
+            }
+            this.discoveryScheduleId = discoveryScheduleId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder environmentId(String environmentId) {
-            this.environmentId = Objects.requireNonNull(environmentId);
+            if (environmentId == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "environmentId");
+            }
+            this.environmentId = environmentId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inventoryId(String inventoryId) {
-            this.inventoryId = Objects.requireNonNull(inventoryId);
+            if (inventoryId == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "inventoryId");
+            }
+            this.inventoryId = inventoryId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder replicationCredentials(List<GetAssetSourceReplicationCredential> replicationCredentials) {
-            this.replicationCredentials = Objects.requireNonNull(replicationCredentials);
+            if (replicationCredentials == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "replicationCredentials");
+            }
+            this.replicationCredentials = replicationCredentials;
             return this;
         }
         public Builder replicationCredentials(GetAssetSourceReplicationCredential... replicationCredentials) {
@@ -401,32 +447,50 @@ public final class GetAssetSourceResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder vcenterEndpoint(String vcenterEndpoint) {
-            this.vcenterEndpoint = Objects.requireNonNull(vcenterEndpoint);
+            if (vcenterEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "vcenterEndpoint");
+            }
+            this.vcenterEndpoint = vcenterEndpoint;
             return this;
         }
         public GetAssetSourceResult build() {

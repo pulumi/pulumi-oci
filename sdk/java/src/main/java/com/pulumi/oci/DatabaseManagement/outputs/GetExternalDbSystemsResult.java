@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemsExternalDbSystemCollection;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemsFilter;
 import java.lang.String;
@@ -95,17 +96,24 @@ public final class GetExternalDbSystemsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalDbSystemCollections(List<GetExternalDbSystemsExternalDbSystemCollection> externalDbSystemCollections) {
-            this.externalDbSystemCollections = Objects.requireNonNull(externalDbSystemCollections);
+            if (externalDbSystemCollections == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemsResult", "externalDbSystemCollections");
+            }
+            this.externalDbSystemCollections = externalDbSystemCollections;
             return this;
         }
         public Builder externalDbSystemCollections(GetExternalDbSystemsExternalDbSystemCollection... externalDbSystemCollections) {
@@ -113,6 +121,7 @@ public final class GetExternalDbSystemsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetExternalDbSystemsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -121,7 +130,10 @@ public final class GetExternalDbSystemsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetExternalDbSystemsResult build() {

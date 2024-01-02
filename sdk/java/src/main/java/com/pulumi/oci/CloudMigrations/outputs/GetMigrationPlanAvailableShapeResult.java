@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.GetMigrationPlanAvailableShapeItem;
 import java.lang.String;
 import java.util.List;
@@ -98,27 +99,36 @@ public final class GetMigrationPlanAvailableShapeResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dvhHostId(@Nullable String dvhHostId) {
+
             this.dvhHostId = dvhHostId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapeResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetMigrationPlanAvailableShapeItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapeResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetMigrationPlanAvailableShapeItem... items) {
@@ -126,11 +136,15 @@ public final class GetMigrationPlanAvailableShapeResult {
         }
         @CustomType.Setter
         public Builder migrationPlanId(String migrationPlanId) {
-            this.migrationPlanId = Objects.requireNonNull(migrationPlanId);
+            if (migrationPlanId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapeResult", "migrationPlanId");
+            }
+            this.migrationPlanId = migrationPlanId;
             return this;
         }
         @CustomType.Setter
         public Builder reservedCapacityId(@Nullable String reservedCapacityId) {
+
             this.reservedCapacityId = reservedCapacityId;
             return this;
         }

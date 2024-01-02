@@ -5,6 +5,7 @@ package com.pulumi.oci.FileStorage.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -373,8 +374,12 @@ public final class FilesystemSnapshotPolicyScheduleArgs extends com.pulumi.resou
         }
 
         public FilesystemSnapshotPolicyScheduleArgs build() {
-            $.period = Objects.requireNonNull($.period, "expected parameter 'period' to be non-null");
-            $.timeZone = Objects.requireNonNull($.timeZone, "expected parameter 'timeZone' to be non-null");
+            if ($.period == null) {
+                throw new MissingRequiredPropertyException("FilesystemSnapshotPolicyScheduleArgs", "period");
+            }
+            if ($.timeZone == null) {
+                throw new MissingRequiredPropertyException("FilesystemSnapshotPolicyScheduleArgs", "timeZone");
+            }
             return $;
         }
     }

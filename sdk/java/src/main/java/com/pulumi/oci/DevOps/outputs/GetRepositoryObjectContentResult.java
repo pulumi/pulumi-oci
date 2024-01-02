@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -62,22 +63,32 @@ public final class GetRepositoryObjectContentResult {
 
         @CustomType.Setter
         public Builder filePath(@Nullable String filePath) {
+
             this.filePath = filePath;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryObjectContentResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+            if (repositoryId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryObjectContentResult", "repositoryId");
+            }
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder sha(String sha) {
-            this.sha = Objects.requireNonNull(sha);
+            if (sha == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryObjectContentResult", "sha");
+            }
+            this.sha = sha;
             return this;
         }
         public GetRepositoryObjectContentResult build() {

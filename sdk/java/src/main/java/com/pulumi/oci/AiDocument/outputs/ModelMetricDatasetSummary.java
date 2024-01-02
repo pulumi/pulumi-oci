@@ -72,16 +72,19 @@ public final class ModelMetricDatasetSummary {
 
         @CustomType.Setter
         public Builder testSampleCount(@Nullable Integer testSampleCount) {
+
             this.testSampleCount = testSampleCount;
             return this;
         }
         @CustomType.Setter
         public Builder trainingSampleCount(@Nullable Integer trainingSampleCount) {
+
             this.trainingSampleCount = trainingSampleCount;
             return this;
         }
         @CustomType.Setter
         public Builder validationSampleCount(@Nullable Integer validationSampleCount) {
+
             this.validationSampleCount = validationSampleCount;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetNodePoolsNodePoolNodePoolCyclingDetail {
 
         @CustomType.Setter
         public Builder isNodeCyclingEnabled(Boolean isNodeCyclingEnabled) {
-            this.isNodeCyclingEnabled = Objects.requireNonNull(isNodeCyclingEnabled);
+            if (isNodeCyclingEnabled == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePoolNodePoolCyclingDetail", "isNodeCyclingEnabled");
+            }
+            this.isNodeCyclingEnabled = isNodeCyclingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder maximumSurge(String maximumSurge) {
-            this.maximumSurge = Objects.requireNonNull(maximumSurge);
+            if (maximumSurge == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePoolNodePoolCyclingDetail", "maximumSurge");
+            }
+            this.maximumSurge = maximumSurge;
             return this;
         }
         @CustomType.Setter
         public Builder maximumUnavailable(String maximumUnavailable) {
-            this.maximumUnavailable = Objects.requireNonNull(maximumUnavailable);
+            if (maximumUnavailable == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePoolNodePoolCyclingDetail", "maximumUnavailable");
+            }
+            this.maximumUnavailable = maximumUnavailable;
             return this;
         }
         public GetNodePoolsNodePoolNodePoolCyclingDetail build() {

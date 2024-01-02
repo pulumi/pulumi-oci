@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceTypeMetadataUniquePropertySetArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -356,7 +357,9 @@ public final class MonitoredResourceTypeMetadataArgs extends com.pulumi.resource
         }
 
         public MonitoredResourceTypeMetadataArgs build() {
-            $.format = Objects.requireNonNull($.format, "expected parameter 'format' to be non-null");
+            if ($.format == null) {
+                throw new MissingRequiredPropertyException("MonitoredResourceTypeMetadataArgs", "format");
+            }
             return $;
         }
     }

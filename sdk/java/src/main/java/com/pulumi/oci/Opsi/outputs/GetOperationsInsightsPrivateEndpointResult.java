@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -262,47 +263,74 @@ public final class GetOperationsInsightsPrivateEndpointResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isUsedForRacDbs(Boolean isUsedForRacDbs) {
-            this.isUsedForRacDbs = Objects.requireNonNull(isUsedForRacDbs);
+            if (isUsedForRacDbs == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointResult", "isUsedForRacDbs");
+            }
+            this.isUsedForRacDbs = isUsedForRacDbs;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointResult", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
@@ -310,42 +338,66 @@ public final class GetOperationsInsightsPrivateEndpointResult {
         }
         @CustomType.Setter
         public Builder operationsInsightsPrivateEndpointId(String operationsInsightsPrivateEndpointId) {
-            this.operationsInsightsPrivateEndpointId = Objects.requireNonNull(operationsInsightsPrivateEndpointId);
+            if (operationsInsightsPrivateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointResult", "operationsInsightsPrivateEndpointId");
+            }
+            this.operationsInsightsPrivateEndpointId = operationsInsightsPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpointStatusDetails(String privateEndpointStatusDetails) {
-            this.privateEndpointStatusDetails = Objects.requireNonNull(privateEndpointStatusDetails);
+            if (privateEndpointStatusDetails == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointResult", "privateEndpointStatusDetails");
+            }
+            this.privateEndpointStatusDetails = privateEndpointStatusDetails;
             return this;
         }
         @CustomType.Setter
         public Builder privateIp(String privateIp) {
-            this.privateIp = Objects.requireNonNull(privateIp);
+            if (privateIp == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointResult", "privateIp");
+            }
+            this.privateIp = privateIp;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointResult", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+            if (vcnId == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointResult", "vcnId");
+            }
+            this.vcnId = vcnId;
             return this;
         }
         public GetOperationsInsightsPrivateEndpointResult build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.CertificatesManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CertificatesManagement.inputs.CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigArgs;
 import java.lang.String;
 import java.util.List;
@@ -125,7 +126,9 @@ public final class CertificateAuthorityCertificateRevocationListDetailsArgs exte
         }
 
         public CertificateAuthorityCertificateRevocationListDetailsArgs build() {
-            $.objectStorageConfig = Objects.requireNonNull($.objectStorageConfig, "expected parameter 'objectStorageConfig' to be non-null");
+            if ($.objectStorageConfig == null) {
+                throw new MissingRequiredPropertyException("CertificateAuthorityCertificateRevocationListDetailsArgs", "objectStorageConfig");
+            }
             return $;
         }
     }

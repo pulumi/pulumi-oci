@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -62,17 +63,26 @@ public final class GetDbSystemPrimaryDbInstanceResult {
 
         @CustomType.Setter
         public Builder dbInstanceId(String dbInstanceId) {
-            this.dbInstanceId = Objects.requireNonNull(dbInstanceId);
+            if (dbInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemPrimaryDbInstanceResult", "dbInstanceId");
+            }
+            this.dbInstanceId = dbInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemPrimaryDbInstanceResult", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemPrimaryDbInstanceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetDbSystemPrimaryDbInstanceResult build() {

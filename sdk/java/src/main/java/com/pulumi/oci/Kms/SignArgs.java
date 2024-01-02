@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -273,10 +274,18 @@ public final class SignArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public SignArgs build() {
-            $.cryptoEndpoint = Objects.requireNonNull($.cryptoEndpoint, "expected parameter 'cryptoEndpoint' to be non-null");
-            $.keyId = Objects.requireNonNull($.keyId, "expected parameter 'keyId' to be non-null");
-            $.message = Objects.requireNonNull($.message, "expected parameter 'message' to be non-null");
-            $.signingAlgorithm = Objects.requireNonNull($.signingAlgorithm, "expected parameter 'signingAlgorithm' to be non-null");
+            if ($.cryptoEndpoint == null) {
+                throw new MissingRequiredPropertyException("SignArgs", "cryptoEndpoint");
+            }
+            if ($.keyId == null) {
+                throw new MissingRequiredPropertyException("SignArgs", "keyId");
+            }
+            if ($.message == null) {
+                throw new MissingRequiredPropertyException("SignArgs", "message");
+            }
+            if ($.signingAlgorithm == null) {
+                throw new MissingRequiredPropertyException("SignArgs", "signingAlgorithm");
+            }
             return $;
         }
     }

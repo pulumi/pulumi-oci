@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetClustersClusterOptionKubernetesNetworkConfig {
 
         @CustomType.Setter
         public Builder podsCidr(String podsCidr) {
-            this.podsCidr = Objects.requireNonNull(podsCidr);
+            if (podsCidr == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterOptionKubernetesNetworkConfig", "podsCidr");
+            }
+            this.podsCidr = podsCidr;
             return this;
         }
         @CustomType.Setter
         public Builder servicesCidr(String servicesCidr) {
-            this.servicesCidr = Objects.requireNonNull(servicesCidr);
+            if (servicesCidr == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterOptionKubernetesNetworkConfig", "servicesCidr");
+            }
+            this.servicesCidr = servicesCidr;
             return this;
         }
         public GetClustersClusterOptionKubernetesNetworkConfig build() {

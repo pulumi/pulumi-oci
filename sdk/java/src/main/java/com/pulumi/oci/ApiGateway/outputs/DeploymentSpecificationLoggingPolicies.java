@@ -59,11 +59,13 @@ public final class DeploymentSpecificationLoggingPolicies {
 
         @CustomType.Setter
         public Builder accessLog(@Nullable DeploymentSpecificationLoggingPoliciesAccessLog accessLog) {
+
             this.accessLog = accessLog;
             return this;
         }
         @CustomType.Setter
         public Builder executionLog(@Nullable DeploymentSpecificationLoggingPoliciesExecutionLog executionLog) {
+
             this.executionLog = executionLog;
             return this;
         }

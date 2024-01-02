@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -114,31 +115,39 @@ public final class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnecti
 
         @CustomType.Setter
         public Builder credentialName(@Nullable String credentialName) {
+
             this.credentialName = credentialName;
             return this;
         }
         @CustomType.Setter
         public Builder credentialType(String credentialType) {
-            this.credentialType = Objects.requireNonNull(credentialType);
+            if (credentialType == null) {
+              throw new MissingRequiredPropertyException("ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentials", "credentialType");
+            }
+            this.credentialType = credentialType;
             return this;
         }
         @CustomType.Setter
         public Builder passwordSecretId(@Nullable String passwordSecretId) {
+
             this.passwordSecretId = passwordSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder role(@Nullable String role) {
+
             this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder sslSecretId(@Nullable String sslSecretId) {
+
             this.sslSecretId = sslSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder userName(@Nullable String userName) {
+
             this.userName = userName;
             return this;
         }

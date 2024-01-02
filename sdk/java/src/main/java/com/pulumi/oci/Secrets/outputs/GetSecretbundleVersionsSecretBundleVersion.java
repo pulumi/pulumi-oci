@@ -4,6 +4,7 @@
 package com.pulumi.oci.Secrets.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -127,12 +128,18 @@ public final class GetSecretbundleVersionsSecretBundleVersion {
 
         @CustomType.Setter
         public Builder secretId(String secretId) {
-            this.secretId = Objects.requireNonNull(secretId);
+            if (secretId == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleVersionsSecretBundleVersion", "secretId");
+            }
+            this.secretId = secretId;
             return this;
         }
         @CustomType.Setter
         public Builder stages(List<String> stages) {
-            this.stages = Objects.requireNonNull(stages);
+            if (stages == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleVersionsSecretBundleVersion", "stages");
+            }
+            this.stages = stages;
             return this;
         }
         public Builder stages(String... stages) {
@@ -140,27 +147,42 @@ public final class GetSecretbundleVersionsSecretBundleVersion {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleVersionsSecretBundleVersion", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfDeletion(String timeOfDeletion) {
-            this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
+            if (timeOfDeletion == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleVersionsSecretBundleVersion", "timeOfDeletion");
+            }
+            this.timeOfDeletion = timeOfDeletion;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfExpiry(String timeOfExpiry) {
-            this.timeOfExpiry = Objects.requireNonNull(timeOfExpiry);
+            if (timeOfExpiry == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleVersionsSecretBundleVersion", "timeOfExpiry");
+            }
+            this.timeOfExpiry = timeOfExpiry;
             return this;
         }
         @CustomType.Setter
         public Builder versionName(String versionName) {
-            this.versionName = Objects.requireNonNull(versionName);
+            if (versionName == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleVersionsSecretBundleVersion", "versionName");
+            }
+            this.versionName = versionName;
             return this;
         }
         @CustomType.Setter
         public Builder versionNumber(String versionNumber) {
-            this.versionNumber = Objects.requireNonNull(versionNumber);
+            if (versionNumber == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleVersionsSecretBundleVersion", "versionNumber");
+            }
+            this.versionNumber = versionNumber;
             return this;
         }
         public GetSecretbundleVersionsSecretBundleVersion build() {

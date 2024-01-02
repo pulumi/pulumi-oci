@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudMigrations.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -281,7 +282,9 @@ public final class TargetAssetUserSpecSourceDetailsArgs extends com.pulumi.resou
         }
 
         public TargetAssetUserSpecSourceDetailsArgs build() {
-            $.sourceType = Objects.requireNonNull($.sourceType, "expected parameter 'sourceType' to be non-null");
+            if ($.sourceType == null) {
+                throw new MissingRequiredPropertyException("TargetAssetUserSpecSourceDetailsArgs", "sourceType");
+            }
             return $;
         }
     }

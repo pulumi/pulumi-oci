@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waa.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waa.outputs.GetAppAccelerationPoliciesFilter;
 import com.pulumi.oci.Waa.outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetAppAccelerationPoliciesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPoliciesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAppAccelerationPoliciesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,11 +133,13 @@ public final class GetAppAccelerationPoliciesResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
+
             this.states = states;
             return this;
         }
@@ -140,7 +148,10 @@ public final class GetAppAccelerationPoliciesResult {
         }
         @CustomType.Setter
         public Builder webAppAccelerationPolicyCollections(List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection> webAppAccelerationPolicyCollections) {
-            this.webAppAccelerationPolicyCollections = Objects.requireNonNull(webAppAccelerationPolicyCollections);
+            if (webAppAccelerationPolicyCollections == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPoliciesResult", "webAppAccelerationPolicyCollections");
+            }
+            this.webAppAccelerationPolicyCollections = webAppAccelerationPolicyCollections;
             return this;
         }
         public Builder webAppAccelerationPolicyCollections(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection... webAppAccelerationPolicyCollections) {

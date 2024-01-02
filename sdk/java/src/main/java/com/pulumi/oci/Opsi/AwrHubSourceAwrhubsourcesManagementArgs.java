@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -124,8 +125,12 @@ public final class AwrHubSourceAwrhubsourcesManagementArgs extends com.pulumi.re
         }
 
         public AwrHubSourceAwrhubsourcesManagementArgs build() {
-            $.awrHubSourceId = Objects.requireNonNull($.awrHubSourceId, "expected parameter 'awrHubSourceId' to be non-null");
-            $.enableAwrhubsource = Objects.requireNonNull($.enableAwrhubsource, "expected parameter 'enableAwrhubsource' to be non-null");
+            if ($.awrHubSourceId == null) {
+                throw new MissingRequiredPropertyException("AwrHubSourceAwrhubsourcesManagementArgs", "awrHubSourceId");
+            }
+            if ($.enableAwrhubsource == null) {
+                throw new MissingRequiredPropertyException("AwrHubSourceAwrhubsourcesManagementArgs", "enableAwrhubsource");
+            }
             return $;
         }
     }

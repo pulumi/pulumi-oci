@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -126,37 +127,58 @@ public final class GetApiKeysApiKey {
 
         @CustomType.Setter
         public Builder fingerprint(String fingerprint) {
-            this.fingerprint = Objects.requireNonNull(fingerprint);
+            if (fingerprint == null) {
+              throw new MissingRequiredPropertyException("GetApiKeysApiKey", "fingerprint");
+            }
+            this.fingerprint = fingerprint;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetApiKeysApiKey", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inactiveStatus(String inactiveStatus) {
-            this.inactiveStatus = Objects.requireNonNull(inactiveStatus);
+            if (inactiveStatus == null) {
+              throw new MissingRequiredPropertyException("GetApiKeysApiKey", "inactiveStatus");
+            }
+            this.inactiveStatus = inactiveStatus;
             return this;
         }
         @CustomType.Setter
         public Builder keyValue(String keyValue) {
-            this.keyValue = Objects.requireNonNull(keyValue);
+            if (keyValue == null) {
+              throw new MissingRequiredPropertyException("GetApiKeysApiKey", "keyValue");
+            }
+            this.keyValue = keyValue;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetApiKeysApiKey", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetApiKeysApiKey", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+            if (userId == null) {
+              throw new MissingRequiredPropertyException("GetApiKeysApiKey", "userId");
+            }
+            this.userId = userId;
             return this;
         }
         public GetApiKeysApiKey build() {

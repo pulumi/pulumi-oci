@@ -4,6 +4,7 @@
 package com.pulumi.oci.OperatorAccessControl.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OperatorAccessControl.outputs.GetActionsOperatorActionCollectionItemProperty;
 import java.lang.String;
 import java.util.List;
@@ -158,37 +159,56 @@ public final class GetActionsOperatorActionCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder component(String component) {
-            this.component = Objects.requireNonNull(component);
+            if (component == null) {
+              throw new MissingRequiredPropertyException("GetActionsOperatorActionCollectionItem", "component");
+            }
+            this.component = component;
             return this;
         }
         @CustomType.Setter
         public Builder customerDisplayName(String customerDisplayName) {
-            this.customerDisplayName = Objects.requireNonNull(customerDisplayName);
+            if (customerDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetActionsOperatorActionCollectionItem", "customerDisplayName");
+            }
+            this.customerDisplayName = customerDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetActionsOperatorActionCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetActionsOperatorActionCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetActionsOperatorActionCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder properties(List<GetActionsOperatorActionCollectionItemProperty> properties) {
-            this.properties = Objects.requireNonNull(properties);
+            if (properties == null) {
+              throw new MissingRequiredPropertyException("GetActionsOperatorActionCollectionItem", "properties");
+            }
+            this.properties = properties;
             return this;
         }
         public Builder properties(GetActionsOperatorActionCollectionItemProperty... properties) {
@@ -196,11 +216,15 @@ public final class GetActionsOperatorActionCollectionItem {
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetActionsOperatorActionCollectionItem", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

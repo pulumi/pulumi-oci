@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetAuditTrailsAuditTrailCollection;
 import com.pulumi.oci.DataSafe.outputs.GetAuditTrailsFilter;
 import java.lang.Boolean;
@@ -156,12 +157,16 @@ public final class GetAuditTrailsResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder auditTrailCollections(List<GetAuditTrailsAuditTrailCollection> auditTrailCollections) {
-            this.auditTrailCollections = Objects.requireNonNull(auditTrailCollections);
+            if (auditTrailCollections == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsResult", "auditTrailCollections");
+            }
+            this.auditTrailCollections = auditTrailCollections;
             return this;
         }
         public Builder auditTrailCollections(GetAuditTrailsAuditTrailCollection... auditTrailCollections) {
@@ -169,26 +174,33 @@ public final class GetAuditTrailsResult {
         }
         @CustomType.Setter
         public Builder auditTrailId(@Nullable String auditTrailId) {
+
             this.auditTrailId = auditTrailId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAuditTrailsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -197,21 +209,27 @@ public final class GetAuditTrailsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
+
             this.targetId = targetId;
             return this;
         }

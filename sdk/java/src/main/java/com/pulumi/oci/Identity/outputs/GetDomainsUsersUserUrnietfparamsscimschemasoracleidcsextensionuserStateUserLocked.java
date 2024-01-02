@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -86,22 +87,34 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
 
         @CustomType.Setter
         public Builder expired(Boolean expired) {
-            this.expired = Objects.requireNonNull(expired);
+            if (expired == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked", "expired");
+            }
+            this.expired = expired;
             return this;
         }
         @CustomType.Setter
         public Builder lockDate(String lockDate) {
-            this.lockDate = Objects.requireNonNull(lockDate);
+            if (lockDate == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked", "lockDate");
+            }
+            this.lockDate = lockDate;
             return this;
         }
         @CustomType.Setter
         public Builder on(Boolean on) {
-            this.on = Objects.requireNonNull(on);
+            if (on == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked", "on");
+            }
+            this.on = on;
             return this;
         }
         @CustomType.Setter
         public Builder reason(Integer reason) {
-            this.reason = Objects.requireNonNull(reason);
+            if (reason == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked", "reason");
+            }
+            this.reason = reason;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked build() {

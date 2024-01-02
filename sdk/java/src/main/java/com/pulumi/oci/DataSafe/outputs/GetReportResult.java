@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -204,67 +205,106 @@ public final class GetReportResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetReportResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetReportResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetReportResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetReportResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetReportResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetReportResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder mimeType(String mimeType) {
-            this.mimeType = Objects.requireNonNull(mimeType);
+            if (mimeType == null) {
+              throw new MissingRequiredPropertyException("GetReportResult", "mimeType");
+            }
+            this.mimeType = mimeType;
             return this;
         }
         @CustomType.Setter
         public Builder reportDefinitionId(String reportDefinitionId) {
-            this.reportDefinitionId = Objects.requireNonNull(reportDefinitionId);
+            if (reportDefinitionId == null) {
+              throw new MissingRequiredPropertyException("GetReportResult", "reportDefinitionId");
+            }
+            this.reportDefinitionId = reportDefinitionId;
             return this;
         }
         @CustomType.Setter
         public Builder reportId(String reportId) {
-            this.reportId = Objects.requireNonNull(reportId);
+            if (reportId == null) {
+              throw new MissingRequiredPropertyException("GetReportResult", "reportId");
+            }
+            this.reportId = reportId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetReportResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetReportResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeGenerated(String timeGenerated) {
-            this.timeGenerated = Objects.requireNonNull(timeGenerated);
+            if (timeGenerated == null) {
+              throw new MissingRequiredPropertyException("GetReportResult", "timeGenerated");
+            }
+            this.timeGenerated = timeGenerated;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetReportResult", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetReportResult build() {

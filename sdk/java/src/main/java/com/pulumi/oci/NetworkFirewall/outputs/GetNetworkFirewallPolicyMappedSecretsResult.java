@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollection;
 import java.lang.String;
 import java.util.List;
@@ -72,17 +73,24 @@ public final class GetNetworkFirewallPolicyMappedSecretsResult {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyMappedSecretsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder mappedSecretSummaryCollections(List<GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollection> mappedSecretSummaryCollections) {
-            this.mappedSecretSummaryCollections = Objects.requireNonNull(mappedSecretSummaryCollections);
+            if (mappedSecretSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyMappedSecretsResult", "mappedSecretSummaryCollections");
+            }
+            this.mappedSecretSummaryCollections = mappedSecretSummaryCollections;
             return this;
         }
         public Builder mappedSecretSummaryCollections(GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollection... mappedSecretSummaryCollections) {
@@ -90,7 +98,10 @@ public final class GetNetworkFirewallPolicyMappedSecretsResult {
         }
         @CustomType.Setter
         public Builder networkFirewallPolicyId(String networkFirewallPolicyId) {
-            this.networkFirewallPolicyId = Objects.requireNonNull(networkFirewallPolicyId);
+            if (networkFirewallPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyMappedSecretsResult", "networkFirewallPolicyId");
+            }
+            this.networkFirewallPolicyId = networkFirewallPolicyId;
             return this;
         }
         public GetNetworkFirewallPolicyMappedSecretsResult build() {

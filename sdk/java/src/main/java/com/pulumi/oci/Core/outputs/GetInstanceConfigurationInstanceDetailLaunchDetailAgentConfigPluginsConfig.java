@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfig
 
         @CustomType.Setter
         public Builder desiredState(String desiredState) {
-            this.desiredState = Objects.requireNonNull(desiredState);
+            if (desiredState == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig", "desiredState");
+            }
+            this.desiredState = desiredState;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig build() {

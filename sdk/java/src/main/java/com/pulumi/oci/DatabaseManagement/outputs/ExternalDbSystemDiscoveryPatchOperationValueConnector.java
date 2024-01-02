@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo;
 import java.lang.String;
 import java.util.Objects;
@@ -87,22 +88,30 @@ public final class ExternalDbSystemDiscoveryPatchOperationValueConnector {
 
         @CustomType.Setter
         public Builder agentId(@Nullable String agentId) {
+
             this.agentId = agentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionInfo(@Nullable ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo connectionInfo) {
+
             this.connectionInfo = connectionInfo;
             return this;
         }
         @CustomType.Setter
         public Builder connectorType(String connectorType) {
-            this.connectorType = Objects.requireNonNull(connectorType);
+            if (connectorType == null) {
+              throw new MissingRequiredPropertyException("ExternalDbSystemDiscoveryPatchOperationValueConnector", "connectorType");
+            }
+            this.connectorType = connectorType;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("ExternalDbSystemDiscoveryPatchOperationValueConnector", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         public ExternalDbSystemDiscoveryPatchOperationValueConnector build() {

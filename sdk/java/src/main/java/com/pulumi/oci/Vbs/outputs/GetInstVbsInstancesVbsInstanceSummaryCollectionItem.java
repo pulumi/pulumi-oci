@@ -4,6 +4,7 @@
 package com.pulumi.oci.Vbs.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -233,77 +234,122 @@ public final class GetInstVbsInstancesVbsInstanceSummaryCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInstVbsInstancesVbsInstanceSummaryCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetInstVbsInstancesVbsInstanceSummaryCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetInstVbsInstancesVbsInstanceSummaryCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetInstVbsInstancesVbsInstanceSummaryCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInstVbsInstancesVbsInstanceSummaryCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAccessToken(String idcsAccessToken) {
-            this.idcsAccessToken = Objects.requireNonNull(idcsAccessToken);
+            if (idcsAccessToken == null) {
+              throw new MissingRequiredPropertyException("GetInstVbsInstancesVbsInstanceSummaryCollectionItem", "idcsAccessToken");
+            }
+            this.idcsAccessToken = idcsAccessToken;
             return this;
         }
         @CustomType.Setter
         public Builder isResourceUsageAgreementGranted(Boolean isResourceUsageAgreementGranted) {
-            this.isResourceUsageAgreementGranted = Objects.requireNonNull(isResourceUsageAgreementGranted);
+            if (isResourceUsageAgreementGranted == null) {
+              throw new MissingRequiredPropertyException("GetInstVbsInstancesVbsInstanceSummaryCollectionItem", "isResourceUsageAgreementGranted");
+            }
+            this.isResourceUsageAgreementGranted = isResourceUsageAgreementGranted;
             return this;
         }
         @CustomType.Setter
         public Builder lifecyleDetails(String lifecyleDetails) {
-            this.lifecyleDetails = Objects.requireNonNull(lifecyleDetails);
+            if (lifecyleDetails == null) {
+              throw new MissingRequiredPropertyException("GetInstVbsInstancesVbsInstanceSummaryCollectionItem", "lifecyleDetails");
+            }
+            this.lifecyleDetails = lifecyleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetInstVbsInstancesVbsInstanceSummaryCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder resourceCompartmentId(String resourceCompartmentId) {
-            this.resourceCompartmentId = Objects.requireNonNull(resourceCompartmentId);
+            if (resourceCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInstVbsInstancesVbsInstanceSummaryCollectionItem", "resourceCompartmentId");
+            }
+            this.resourceCompartmentId = resourceCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetInstVbsInstancesVbsInstanceSummaryCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetInstVbsInstancesVbsInstanceSummaryCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetInstVbsInstancesVbsInstanceSummaryCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetInstVbsInstancesVbsInstanceSummaryCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder vbsAccessUrl(String vbsAccessUrl) {
-            this.vbsAccessUrl = Objects.requireNonNull(vbsAccessUrl);
+            if (vbsAccessUrl == null) {
+              throw new MissingRequiredPropertyException("GetInstVbsInstancesVbsInstanceSummaryCollectionItem", "vbsAccessUrl");
+            }
+            this.vbsAccessUrl = vbsAccessUrl;
             return this;
         }
         public GetInstVbsInstancesVbsInstanceSummaryCollectionItem build() {

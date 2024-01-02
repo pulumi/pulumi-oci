@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetSecurityListsFilter;
 import com.pulumi.oci.Core.outputs.GetSecurityListsSecurityList;
 import java.lang.String;
@@ -123,16 +124,21 @@ public final class GetSecurityListsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityListsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSecurityListsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -141,12 +147,18 @@ public final class GetSecurityListsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSecurityListsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder securityLists(List<GetSecurityListsSecurityList> securityLists) {
-            this.securityLists = Objects.requireNonNull(securityLists);
+            if (securityLists == null) {
+              throw new MissingRequiredPropertyException("GetSecurityListsResult", "securityLists");
+            }
+            this.securityLists = securityLists;
             return this;
         }
         public Builder securityLists(GetSecurityListsSecurityList... securityLists) {
@@ -154,11 +166,13 @@ public final class GetSecurityListsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
+
             this.vcnId = vcnId;
             return this;
         }

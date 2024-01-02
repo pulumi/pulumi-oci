@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetDrgRouteDistributionStatementsDrgRouteDistributionStatemen
 
         @CustomType.Setter
         public Builder attachmentType(String attachmentType) {
-            this.attachmentType = Objects.requireNonNull(attachmentType);
+            if (attachmentType == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria", "attachmentType");
+            }
+            this.attachmentType = attachmentType;
             return this;
         }
         @CustomType.Setter
         public Builder drgAttachmentId(String drgAttachmentId) {
-            this.drgAttachmentId = Objects.requireNonNull(drgAttachmentId);
+            if (drgAttachmentId == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria", "drgAttachmentId");
+            }
+            this.drgAttachmentId = drgAttachmentId;
             return this;
         }
         @CustomType.Setter
         public Builder matchType(String matchType) {
-            this.matchType = Objects.requireNonNull(matchType);
+            if (matchType == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria", "matchType");
+            }
+            this.matchType = matchType;
             return this;
         }
         public GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria build() {

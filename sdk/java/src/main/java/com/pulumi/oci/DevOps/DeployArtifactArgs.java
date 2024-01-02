@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.inputs.DeployArtifactDeployArtifactSourceArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -350,10 +351,18 @@ public final class DeployArtifactArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public DeployArtifactArgs build() {
-            $.argumentSubstitutionMode = Objects.requireNonNull($.argumentSubstitutionMode, "expected parameter 'argumentSubstitutionMode' to be non-null");
-            $.deployArtifactSource = Objects.requireNonNull($.deployArtifactSource, "expected parameter 'deployArtifactSource' to be non-null");
-            $.deployArtifactType = Objects.requireNonNull($.deployArtifactType, "expected parameter 'deployArtifactType' to be non-null");
-            $.projectId = Objects.requireNonNull($.projectId, "expected parameter 'projectId' to be non-null");
+            if ($.argumentSubstitutionMode == null) {
+                throw new MissingRequiredPropertyException("DeployArtifactArgs", "argumentSubstitutionMode");
+            }
+            if ($.deployArtifactSource == null) {
+                throw new MissingRequiredPropertyException("DeployArtifactArgs", "deployArtifactSource");
+            }
+            if ($.deployArtifactType == null) {
+                throw new MissingRequiredPropertyException("DeployArtifactArgs", "deployArtifactType");
+            }
+            if ($.projectId == null) {
+                throw new MissingRequiredPropertyException("DeployArtifactArgs", "projectId");
+            }
             return $;
         }
     }

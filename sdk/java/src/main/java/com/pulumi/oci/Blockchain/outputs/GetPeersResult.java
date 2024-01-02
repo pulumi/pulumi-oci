@@ -4,6 +4,7 @@
 package com.pulumi.oci.Blockchain.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Blockchain.outputs.GetPeersFilter;
 import com.pulumi.oci.Blockchain.outputs.GetPeersPeerCollection;
 import java.lang.String;
@@ -79,16 +80,21 @@ public final class GetPeersResult {
 
         @CustomType.Setter
         public Builder blockchainPlatformId(String blockchainPlatformId) {
-            this.blockchainPlatformId = Objects.requireNonNull(blockchainPlatformId);
+            if (blockchainPlatformId == null) {
+              throw new MissingRequiredPropertyException("GetPeersResult", "blockchainPlatformId");
+            }
+            this.blockchainPlatformId = blockchainPlatformId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPeersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -97,12 +103,18 @@ public final class GetPeersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPeersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder peerCollections(List<GetPeersPeerCollection> peerCollections) {
-            this.peerCollections = Objects.requireNonNull(peerCollections);
+            if (peerCollections == null) {
+              throw new MissingRequiredPropertyException("GetPeersResult", "peerCollections");
+            }
+            this.peerCollections = peerCollections;
             return this;
         }
         public Builder peerCollections(GetPeersPeerCollection... peerCollections) {

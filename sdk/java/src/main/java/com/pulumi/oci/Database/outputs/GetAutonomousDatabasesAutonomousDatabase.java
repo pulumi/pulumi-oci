@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseApexDetail;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseBackupConfig;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseConnectionString;
@@ -1665,22 +1666,34 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
 
         @CustomType.Setter
         public Builder actualUsedDataStorageSizeInTbs(Double actualUsedDataStorageSizeInTbs) {
-            this.actualUsedDataStorageSizeInTbs = Objects.requireNonNull(actualUsedDataStorageSizeInTbs);
+            if (actualUsedDataStorageSizeInTbs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "actualUsedDataStorageSizeInTbs");
+            }
+            this.actualUsedDataStorageSizeInTbs = actualUsedDataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder adminPassword(String adminPassword) {
-            this.adminPassword = Objects.requireNonNull(adminPassword);
+            if (adminPassword == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "adminPassword");
+            }
+            this.adminPassword = adminPassword;
             return this;
         }
         @CustomType.Setter
         public Builder allocatedStorageSizeInTbs(Double allocatedStorageSizeInTbs) {
-            this.allocatedStorageSizeInTbs = Objects.requireNonNull(allocatedStorageSizeInTbs);
+            if (allocatedStorageSizeInTbs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "allocatedStorageSizeInTbs");
+            }
+            this.allocatedStorageSizeInTbs = allocatedStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder apexDetails(List<GetAutonomousDatabasesAutonomousDatabaseApexDetail> apexDetails) {
-            this.apexDetails = Objects.requireNonNull(apexDetails);
+            if (apexDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "apexDetails");
+            }
+            this.apexDetails = apexDetails;
             return this;
         }
         public Builder apexDetails(GetAutonomousDatabasesAutonomousDatabaseApexDetail... apexDetails) {
@@ -1688,32 +1701,50 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         @CustomType.Setter
         public Builder arePrimaryWhitelistedIpsUsed(Boolean arePrimaryWhitelistedIpsUsed) {
-            this.arePrimaryWhitelistedIpsUsed = Objects.requireNonNull(arePrimaryWhitelistedIpsUsed);
+            if (arePrimaryWhitelistedIpsUsed == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "arePrimaryWhitelistedIpsUsed");
+            }
+            this.arePrimaryWhitelistedIpsUsed = arePrimaryWhitelistedIpsUsed;
             return this;
         }
         @CustomType.Setter
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
-            this.autonomousContainerDatabaseId = Objects.requireNonNull(autonomousContainerDatabaseId);
+            if (autonomousContainerDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "autonomousContainerDatabaseId");
+            }
+            this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder autonomousDatabaseBackupId(String autonomousDatabaseBackupId) {
-            this.autonomousDatabaseBackupId = Objects.requireNonNull(autonomousDatabaseBackupId);
+            if (autonomousDatabaseBackupId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "autonomousDatabaseBackupId");
+            }
+            this.autonomousDatabaseBackupId = autonomousDatabaseBackupId;
             return this;
         }
         @CustomType.Setter
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
-            this.autonomousDatabaseId = Objects.requireNonNull(autonomousDatabaseId);
+            if (autonomousDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "autonomousDatabaseId");
+            }
+            this.autonomousDatabaseId = autonomousDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder autonomousMaintenanceScheduleType(String autonomousMaintenanceScheduleType) {
-            this.autonomousMaintenanceScheduleType = Objects.requireNonNull(autonomousMaintenanceScheduleType);
+            if (autonomousMaintenanceScheduleType == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "autonomousMaintenanceScheduleType");
+            }
+            this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
             return this;
         }
         @CustomType.Setter
         public Builder availableUpgradeVersions(List<String> availableUpgradeVersions) {
-            this.availableUpgradeVersions = Objects.requireNonNull(availableUpgradeVersions);
+            if (availableUpgradeVersions == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "availableUpgradeVersions");
+            }
+            this.availableUpgradeVersions = availableUpgradeVersions;
             return this;
         }
         public Builder availableUpgradeVersions(String... availableUpgradeVersions) {
@@ -1721,7 +1752,10 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         @CustomType.Setter
         public Builder backupConfigs(List<GetAutonomousDatabasesAutonomousDatabaseBackupConfig> backupConfigs) {
-            this.backupConfigs = Objects.requireNonNull(backupConfigs);
+            if (backupConfigs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "backupConfigs");
+            }
+            this.backupConfigs = backupConfigs;
             return this;
         }
         public Builder backupConfigs(GetAutonomousDatabasesAutonomousDatabaseBackupConfig... backupConfigs) {
@@ -1729,37 +1763,58 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         @CustomType.Setter
         public Builder backupRetentionPeriodInDays(Integer backupRetentionPeriodInDays) {
-            this.backupRetentionPeriodInDays = Objects.requireNonNull(backupRetentionPeriodInDays);
+            if (backupRetentionPeriodInDays == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "backupRetentionPeriodInDays");
+            }
+            this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
             return this;
         }
         @CustomType.Setter
         public Builder characterSet(String characterSet) {
-            this.characterSet = Objects.requireNonNull(characterSet);
+            if (characterSet == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "characterSet");
+            }
+            this.characterSet = characterSet;
             return this;
         }
         @CustomType.Setter
         public Builder cloneType(String cloneType) {
-            this.cloneType = Objects.requireNonNull(cloneType);
+            if (cloneType == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "cloneType");
+            }
+            this.cloneType = cloneType;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeCount(Double computeCount) {
-            this.computeCount = Objects.requireNonNull(computeCount);
+            if (computeCount == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "computeCount");
+            }
+            this.computeCount = computeCount;
             return this;
         }
         @CustomType.Setter
         public Builder computeModel(String computeModel) {
-            this.computeModel = Objects.requireNonNull(computeModel);
+            if (computeModel == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "computeModel");
+            }
+            this.computeModel = computeModel;
             return this;
         }
         @CustomType.Setter
         public Builder connectionStrings(List<GetAutonomousDatabasesAutonomousDatabaseConnectionString> connectionStrings) {
-            this.connectionStrings = Objects.requireNonNull(connectionStrings);
+            if (connectionStrings == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "connectionStrings");
+            }
+            this.connectionStrings = connectionStrings;
             return this;
         }
         public Builder connectionStrings(GetAutonomousDatabasesAutonomousDatabaseConnectionString... connectionStrings) {
@@ -1767,7 +1822,10 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         @CustomType.Setter
         public Builder connectionUrls(List<GetAutonomousDatabasesAutonomousDatabaseConnectionUrl> connectionUrls) {
-            this.connectionUrls = Objects.requireNonNull(connectionUrls);
+            if (connectionUrls == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "connectionUrls");
+            }
+            this.connectionUrls = connectionUrls;
             return this;
         }
         public Builder connectionUrls(GetAutonomousDatabasesAutonomousDatabaseConnectionUrl... connectionUrls) {
@@ -1775,12 +1833,18 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         @CustomType.Setter
         public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+            if (cpuCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "cpuCoreCount");
+            }
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
         public Builder customerContacts(List<GetAutonomousDatabasesAutonomousDatabaseCustomerContact> customerContacts) {
-            this.customerContacts = Objects.requireNonNull(customerContacts);
+            if (customerContacts == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "customerContacts");
+            }
+            this.customerContacts = customerContacts;
             return this;
         }
         public Builder customerContacts(GetAutonomousDatabasesAutonomousDatabaseCustomerContact... customerContacts) {
@@ -1788,42 +1852,66 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         @CustomType.Setter
         public Builder dataSafeStatus(String dataSafeStatus) {
-            this.dataSafeStatus = Objects.requireNonNull(dataSafeStatus);
+            if (dataSafeStatus == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "dataSafeStatus");
+            }
+            this.dataSafeStatus = dataSafeStatus;
             return this;
         }
         @CustomType.Setter
         public Builder dataStorageSizeInGb(Integer dataStorageSizeInGb) {
-            this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
+            if (dataStorageSizeInGb == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "dataStorageSizeInGb");
+            }
+            this.dataStorageSizeInGb = dataStorageSizeInGb;
             return this;
         }
         @CustomType.Setter
         public Builder dataStorageSizeInTbs(Integer dataStorageSizeInTbs) {
-            this.dataStorageSizeInTbs = Objects.requireNonNull(dataStorageSizeInTbs);
+            if (dataStorageSizeInTbs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "dataStorageSizeInTbs");
+            }
+            this.dataStorageSizeInTbs = dataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder databaseEdition(String databaseEdition) {
-            this.databaseEdition = Objects.requireNonNull(databaseEdition);
+            if (databaseEdition == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "databaseEdition");
+            }
+            this.databaseEdition = databaseEdition;
             return this;
         }
         @CustomType.Setter
         public Builder databaseManagementStatus(String databaseManagementStatus) {
-            this.databaseManagementStatus = Objects.requireNonNull(databaseManagementStatus);
+            if (databaseManagementStatus == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "databaseManagementStatus");
+            }
+            this.databaseManagementStatus = databaseManagementStatus;
             return this;
         }
         @CustomType.Setter
         public Builder dataguardRegionType(String dataguardRegionType) {
-            this.dataguardRegionType = Objects.requireNonNull(dataguardRegionType);
+            if (dataguardRegionType == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "dataguardRegionType");
+            }
+            this.dataguardRegionType = dataguardRegionType;
             return this;
         }
         @CustomType.Setter
         public Builder dbName(String dbName) {
-            this.dbName = Objects.requireNonNull(dbName);
+            if (dbName == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "dbName");
+            }
+            this.dbName = dbName;
             return this;
         }
         @CustomType.Setter
         public Builder dbToolsDetails(List<GetAutonomousDatabasesAutonomousDatabaseDbToolsDetail> dbToolsDetails) {
-            this.dbToolsDetails = Objects.requireNonNull(dbToolsDetails);
+            if (dbToolsDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "dbToolsDetails");
+            }
+            this.dbToolsDetails = dbToolsDetails;
             return this;
         }
         public Builder dbToolsDetails(GetAutonomousDatabasesAutonomousDatabaseDbToolsDetail... dbToolsDetails) {
@@ -1831,132 +1919,210 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         @CustomType.Setter
         public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+            if (dbVersion == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "dbVersion");
+            }
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder dbWorkload(String dbWorkload) {
-            this.dbWorkload = Objects.requireNonNull(dbWorkload);
+            if (dbWorkload == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "dbWorkload");
+            }
+            this.dbWorkload = dbWorkload;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder disasterRecoveryRegionType(String disasterRecoveryRegionType) {
-            this.disasterRecoveryRegionType = Objects.requireNonNull(disasterRecoveryRegionType);
+            if (disasterRecoveryRegionType == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "disasterRecoveryRegionType");
+            }
+            this.disasterRecoveryRegionType = disasterRecoveryRegionType;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder failedDataRecoveryInSeconds(Integer failedDataRecoveryInSeconds) {
-            this.failedDataRecoveryInSeconds = Objects.requireNonNull(failedDataRecoveryInSeconds);
+            if (failedDataRecoveryInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "failedDataRecoveryInSeconds");
+            }
+            this.failedDataRecoveryInSeconds = failedDataRecoveryInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inMemoryAreaInGbs(Integer inMemoryAreaInGbs) {
-            this.inMemoryAreaInGbs = Objects.requireNonNull(inMemoryAreaInGbs);
+            if (inMemoryAreaInGbs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "inMemoryAreaInGbs");
+            }
+            this.inMemoryAreaInGbs = inMemoryAreaInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder inMemoryPercentage(Integer inMemoryPercentage) {
-            this.inMemoryPercentage = Objects.requireNonNull(inMemoryPercentage);
+            if (inMemoryPercentage == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "inMemoryPercentage");
+            }
+            this.inMemoryPercentage = inMemoryPercentage;
             return this;
         }
         @CustomType.Setter
         public Builder infrastructureType(String infrastructureType) {
-            this.infrastructureType = Objects.requireNonNull(infrastructureType);
+            if (infrastructureType == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "infrastructureType");
+            }
+            this.infrastructureType = infrastructureType;
             return this;
         }
         @CustomType.Setter
         public Builder isAccessControlEnabled(Boolean isAccessControlEnabled) {
-            this.isAccessControlEnabled = Objects.requireNonNull(isAccessControlEnabled);
+            if (isAccessControlEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isAccessControlEnabled");
+            }
+            this.isAccessControlEnabled = isAccessControlEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
-            this.isAutoScalingEnabled = Objects.requireNonNull(isAutoScalingEnabled);
+            if (isAutoScalingEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isAutoScalingEnabled");
+            }
+            this.isAutoScalingEnabled = isAutoScalingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isAutoScalingForStorageEnabled(Boolean isAutoScalingForStorageEnabled) {
-            this.isAutoScalingForStorageEnabled = Objects.requireNonNull(isAutoScalingForStorageEnabled);
+            if (isAutoScalingForStorageEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isAutoScalingForStorageEnabled");
+            }
+            this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isDataGuardEnabled(Boolean isDataGuardEnabled) {
-            this.isDataGuardEnabled = Objects.requireNonNull(isDataGuardEnabled);
+            if (isDataGuardEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isDataGuardEnabled");
+            }
+            this.isDataGuardEnabled = isDataGuardEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isDedicated(Boolean isDedicated) {
-            this.isDedicated = Objects.requireNonNull(isDedicated);
+            if (isDedicated == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isDedicated");
+            }
+            this.isDedicated = isDedicated;
             return this;
         }
         @CustomType.Setter
         public Builder isFreeTier(Boolean isFreeTier) {
-            this.isFreeTier = Objects.requireNonNull(isFreeTier);
+            if (isFreeTier == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isFreeTier");
+            }
+            this.isFreeTier = isFreeTier;
             return this;
         }
         @CustomType.Setter
         public Builder isLocalDataGuardEnabled(Boolean isLocalDataGuardEnabled) {
-            this.isLocalDataGuardEnabled = Objects.requireNonNull(isLocalDataGuardEnabled);
+            if (isLocalDataGuardEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isLocalDataGuardEnabled");
+            }
+            this.isLocalDataGuardEnabled = isLocalDataGuardEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isMtlsConnectionRequired(Boolean isMtlsConnectionRequired) {
-            this.isMtlsConnectionRequired = Objects.requireNonNull(isMtlsConnectionRequired);
+            if (isMtlsConnectionRequired == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isMtlsConnectionRequired");
+            }
+            this.isMtlsConnectionRequired = isMtlsConnectionRequired;
             return this;
         }
         @CustomType.Setter
         public Builder isPreview(Boolean isPreview) {
-            this.isPreview = Objects.requireNonNull(isPreview);
+            if (isPreview == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isPreview");
+            }
+            this.isPreview = isPreview;
             return this;
         }
         @CustomType.Setter
         public Builder isPreviewVersionWithServiceTermsAccepted(Boolean isPreviewVersionWithServiceTermsAccepted) {
-            this.isPreviewVersionWithServiceTermsAccepted = Objects.requireNonNull(isPreviewVersionWithServiceTermsAccepted);
+            if (isPreviewVersionWithServiceTermsAccepted == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isPreviewVersionWithServiceTermsAccepted");
+            }
+            this.isPreviewVersionWithServiceTermsAccepted = isPreviewVersionWithServiceTermsAccepted;
             return this;
         }
         @CustomType.Setter
         public Builder isReconnectCloneEnabled(Boolean isReconnectCloneEnabled) {
-            this.isReconnectCloneEnabled = Objects.requireNonNull(isReconnectCloneEnabled);
+            if (isReconnectCloneEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isReconnectCloneEnabled");
+            }
+            this.isReconnectCloneEnabled = isReconnectCloneEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isRefreshableClone(Boolean isRefreshableClone) {
-            this.isRefreshableClone = Objects.requireNonNull(isRefreshableClone);
+            if (isRefreshableClone == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isRefreshableClone");
+            }
+            this.isRefreshableClone = isRefreshableClone;
             return this;
         }
         @CustomType.Setter
         public Builder isRemoteDataGuardEnabled(Boolean isRemoteDataGuardEnabled) {
-            this.isRemoteDataGuardEnabled = Objects.requireNonNull(isRemoteDataGuardEnabled);
+            if (isRemoteDataGuardEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isRemoteDataGuardEnabled");
+            }
+            this.isRemoteDataGuardEnabled = isRemoteDataGuardEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isShrinkOnly(Boolean isShrinkOnly) {
-            this.isShrinkOnly = Objects.requireNonNull(isShrinkOnly);
+            if (isShrinkOnly == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isShrinkOnly");
+            }
+            this.isShrinkOnly = isShrinkOnly;
             return this;
         }
         @CustomType.Setter
         public Builder keyHistoryEntries(List<GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntry> keyHistoryEntries) {
-            this.keyHistoryEntries = Objects.requireNonNull(keyHistoryEntries);
+            if (keyHistoryEntries == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "keyHistoryEntries");
+            }
+            this.keyHistoryEntries = keyHistoryEntries;
             return this;
         }
         public Builder keyHistoryEntries(GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntry... keyHistoryEntries) {
@@ -1964,52 +2130,82 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         @CustomType.Setter
         public Builder keyStoreId(String keyStoreId) {
-            this.keyStoreId = Objects.requireNonNull(keyStoreId);
+            if (keyStoreId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "keyStoreId");
+            }
+            this.keyStoreId = keyStoreId;
             return this;
         }
         @CustomType.Setter
         public Builder keyStoreWalletName(String keyStoreWalletName) {
-            this.keyStoreWalletName = Objects.requireNonNull(keyStoreWalletName);
+            if (keyStoreWalletName == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "keyStoreWalletName");
+            }
+            this.keyStoreWalletName = keyStoreWalletName;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyLifecycleDetails(String kmsKeyLifecycleDetails) {
-            this.kmsKeyLifecycleDetails = Objects.requireNonNull(kmsKeyLifecycleDetails);
+            if (kmsKeyLifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "kmsKeyLifecycleDetails");
+            }
+            this.kmsKeyLifecycleDetails = kmsKeyLifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
-            this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
+            if (kmsKeyVersionId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "kmsKeyVersionId");
+            }
+            this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
         @CustomType.Setter
         public Builder licenseModel(String licenseModel) {
-            this.licenseModel = Objects.requireNonNull(licenseModel);
+            if (licenseModel == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "licenseModel");
+            }
+            this.licenseModel = licenseModel;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder localAdgAutoFailoverMaxDataLossLimit(Integer localAdgAutoFailoverMaxDataLossLimit) {
-            this.localAdgAutoFailoverMaxDataLossLimit = Objects.requireNonNull(localAdgAutoFailoverMaxDataLossLimit);
+            if (localAdgAutoFailoverMaxDataLossLimit == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "localAdgAutoFailoverMaxDataLossLimit");
+            }
+            this.localAdgAutoFailoverMaxDataLossLimit = localAdgAutoFailoverMaxDataLossLimit;
             return this;
         }
         @CustomType.Setter
         public Builder localDisasterRecoveryType(String localDisasterRecoveryType) {
-            this.localDisasterRecoveryType = Objects.requireNonNull(localDisasterRecoveryType);
+            if (localDisasterRecoveryType == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "localDisasterRecoveryType");
+            }
+            this.localDisasterRecoveryType = localDisasterRecoveryType;
             return this;
         }
         @CustomType.Setter
         public Builder localStandbyDbs(List<GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb> localStandbyDbs) {
-            this.localStandbyDbs = Objects.requireNonNull(localStandbyDbs);
+            if (localStandbyDbs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "localStandbyDbs");
+            }
+            this.localStandbyDbs = localStandbyDbs;
             return this;
         }
         public Builder localStandbyDbs(GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb... localStandbyDbs) {
@@ -2017,7 +2213,10 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         @CustomType.Setter
         public Builder longTermBackupSchedules(List<GetAutonomousDatabasesAutonomousDatabaseLongTermBackupSchedule> longTermBackupSchedules) {
-            this.longTermBackupSchedules = Objects.requireNonNull(longTermBackupSchedules);
+            if (longTermBackupSchedules == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "longTermBackupSchedules");
+            }
+            this.longTermBackupSchedules = longTermBackupSchedules;
             return this;
         }
         public Builder longTermBackupSchedules(GetAutonomousDatabasesAutonomousDatabaseLongTermBackupSchedule... longTermBackupSchedules) {
@@ -2025,27 +2224,42 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         @CustomType.Setter
         public Builder maxCpuCoreCount(Integer maxCpuCoreCount) {
-            this.maxCpuCoreCount = Objects.requireNonNull(maxCpuCoreCount);
+            if (maxCpuCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "maxCpuCoreCount");
+            }
+            this.maxCpuCoreCount = maxCpuCoreCount;
             return this;
         }
         @CustomType.Setter
         public Builder memoryPerOracleComputeUnitInGbs(Integer memoryPerOracleComputeUnitInGbs) {
-            this.memoryPerOracleComputeUnitInGbs = Objects.requireNonNull(memoryPerOracleComputeUnitInGbs);
+            if (memoryPerOracleComputeUnitInGbs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "memoryPerOracleComputeUnitInGbs");
+            }
+            this.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder ncharacterSet(String ncharacterSet) {
-            this.ncharacterSet = Objects.requireNonNull(ncharacterSet);
+            if (ncharacterSet == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "ncharacterSet");
+            }
+            this.ncharacterSet = ncharacterSet;
             return this;
         }
         @CustomType.Setter
         public Builder nextLongTermBackupTimeStamp(String nextLongTermBackupTimeStamp) {
-            this.nextLongTermBackupTimeStamp = Objects.requireNonNull(nextLongTermBackupTimeStamp);
+            if (nextLongTermBackupTimeStamp == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "nextLongTermBackupTimeStamp");
+            }
+            this.nextLongTermBackupTimeStamp = nextLongTermBackupTimeStamp;
             return this;
         }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
@@ -2053,22 +2267,34 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         @CustomType.Setter
         public Builder ocpuCount(Double ocpuCount) {
-            this.ocpuCount = Objects.requireNonNull(ocpuCount);
+            if (ocpuCount == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "ocpuCount");
+            }
+            this.ocpuCount = ocpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder openMode(String openMode) {
-            this.openMode = Objects.requireNonNull(openMode);
+            if (openMode == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "openMode");
+            }
+            this.openMode = openMode;
             return this;
         }
         @CustomType.Setter
         public Builder operationsInsightsStatus(String operationsInsightsStatus) {
-            this.operationsInsightsStatus = Objects.requireNonNull(operationsInsightsStatus);
+            if (operationsInsightsStatus == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "operationsInsightsStatus");
+            }
+            this.operationsInsightsStatus = operationsInsightsStatus;
             return this;
         }
         @CustomType.Setter
         public Builder peerDbIds(List<String> peerDbIds) {
-            this.peerDbIds = Objects.requireNonNull(peerDbIds);
+            if (peerDbIds == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "peerDbIds");
+            }
+            this.peerDbIds = peerDbIds;
             return this;
         }
         public Builder peerDbIds(String... peerDbIds) {
@@ -2076,27 +2302,42 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         @CustomType.Setter
         public Builder permissionLevel(String permissionLevel) {
-            this.permissionLevel = Objects.requireNonNull(permissionLevel);
+            if (permissionLevel == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "permissionLevel");
+            }
+            this.permissionLevel = permissionLevel;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpoint(String privateEndpoint) {
-            this.privateEndpoint = Objects.requireNonNull(privateEndpoint);
+            if (privateEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "privateEndpoint");
+            }
+            this.privateEndpoint = privateEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpointIp(String privateEndpointIp) {
-            this.privateEndpointIp = Objects.requireNonNull(privateEndpointIp);
+            if (privateEndpointIp == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "privateEndpointIp");
+            }
+            this.privateEndpointIp = privateEndpointIp;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpointLabel(String privateEndpointLabel) {
-            this.privateEndpointLabel = Objects.requireNonNull(privateEndpointLabel);
+            if (privateEndpointLabel == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "privateEndpointLabel");
+            }
+            this.privateEndpointLabel = privateEndpointLabel;
             return this;
         }
         @CustomType.Setter
         public Builder provisionableCpuses(List<Double> provisionableCpuses) {
-            this.provisionableCpuses = Objects.requireNonNull(provisionableCpuses);
+            if (provisionableCpuses == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "provisionableCpuses");
+            }
+            this.provisionableCpuses = provisionableCpuses;
             return this;
         }
         public Builder provisionableCpuses(Double... provisionableCpuses) {
@@ -2104,17 +2345,26 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         @CustomType.Setter
         public Builder refreshableMode(String refreshableMode) {
-            this.refreshableMode = Objects.requireNonNull(refreshableMode);
+            if (refreshableMode == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "refreshableMode");
+            }
+            this.refreshableMode = refreshableMode;
             return this;
         }
         @CustomType.Setter
         public Builder refreshableStatus(String refreshableStatus) {
-            this.refreshableStatus = Objects.requireNonNull(refreshableStatus);
+            if (refreshableStatus == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "refreshableStatus");
+            }
+            this.refreshableStatus = refreshableStatus;
             return this;
         }
         @CustomType.Setter
         public Builder remoteDisasterRecoveryConfigurations(List<GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfiguration> remoteDisasterRecoveryConfigurations) {
-            this.remoteDisasterRecoveryConfigurations = Objects.requireNonNull(remoteDisasterRecoveryConfigurations);
+            if (remoteDisasterRecoveryConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "remoteDisasterRecoveryConfigurations");
+            }
+            this.remoteDisasterRecoveryConfigurations = remoteDisasterRecoveryConfigurations;
             return this;
         }
         public Builder remoteDisasterRecoveryConfigurations(GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfiguration... remoteDisasterRecoveryConfigurations) {
@@ -2122,17 +2372,26 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         @CustomType.Setter
         public Builder remoteDisasterRecoveryType(String remoteDisasterRecoveryType) {
-            this.remoteDisasterRecoveryType = Objects.requireNonNull(remoteDisasterRecoveryType);
+            if (remoteDisasterRecoveryType == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "remoteDisasterRecoveryType");
+            }
+            this.remoteDisasterRecoveryType = remoteDisasterRecoveryType;
             return this;
         }
         @CustomType.Setter
         public Builder resourcePoolLeaderId(String resourcePoolLeaderId) {
-            this.resourcePoolLeaderId = Objects.requireNonNull(resourcePoolLeaderId);
+            if (resourcePoolLeaderId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "resourcePoolLeaderId");
+            }
+            this.resourcePoolLeaderId = resourcePoolLeaderId;
             return this;
         }
         @CustomType.Setter
         public Builder resourcePoolSummaries(List<GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary> resourcePoolSummaries) {
-            this.resourcePoolSummaries = Objects.requireNonNull(resourcePoolSummaries);
+            if (resourcePoolSummaries == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "resourcePoolSummaries");
+            }
+            this.resourcePoolSummaries = resourcePoolSummaries;
             return this;
         }
         public Builder resourcePoolSummaries(GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary... resourcePoolSummaries) {
@@ -2140,17 +2399,26 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         @CustomType.Setter
         public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+            if (role == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "role");
+            }
+            this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder rotateKeyTrigger(Boolean rotateKeyTrigger) {
-            this.rotateKeyTrigger = Objects.requireNonNull(rotateKeyTrigger);
+            if (rotateKeyTrigger == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "rotateKeyTrigger");
+            }
+            this.rotateKeyTrigger = rotateKeyTrigger;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledOperations(List<GetAutonomousDatabasesAutonomousDatabaseScheduledOperation> scheduledOperations) {
-            this.scheduledOperations = Objects.requireNonNull(scheduledOperations);
+            if (scheduledOperations == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "scheduledOperations");
+            }
+            this.scheduledOperations = scheduledOperations;
             return this;
         }
         public Builder scheduledOperations(GetAutonomousDatabasesAutonomousDatabaseScheduledOperation... scheduledOperations) {
@@ -2158,32 +2426,50 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         @CustomType.Setter
         public Builder secretId(String secretId) {
-            this.secretId = Objects.requireNonNull(secretId);
+            if (secretId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "secretId");
+            }
+            this.secretId = secretId;
             return this;
         }
         @CustomType.Setter
         public Builder secretVersionNumber(Integer secretVersionNumber) {
-            this.secretVersionNumber = Objects.requireNonNull(secretVersionNumber);
+            if (secretVersionNumber == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "secretVersionNumber");
+            }
+            this.secretVersionNumber = secretVersionNumber;
             return this;
         }
         @CustomType.Setter
         public Builder serviceConsoleUrl(String serviceConsoleUrl) {
-            this.serviceConsoleUrl = Objects.requireNonNull(serviceConsoleUrl);
+            if (serviceConsoleUrl == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "serviceConsoleUrl");
+            }
+            this.serviceConsoleUrl = serviceConsoleUrl;
             return this;
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "source");
+            }
+            this.source = source;
             return this;
         }
         @CustomType.Setter
         public Builder sourceId(String sourceId) {
-            this.sourceId = Objects.requireNonNull(sourceId);
+            if (sourceId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "sourceId");
+            }
+            this.sourceId = sourceId;
             return this;
         }
         @CustomType.Setter
         public Builder standbyDbs(List<GetAutonomousDatabasesAutonomousDatabaseStandbyDb> standbyDbs) {
-            this.standbyDbs = Objects.requireNonNull(standbyDbs);
+            if (standbyDbs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "standbyDbs");
+            }
+            this.standbyDbs = standbyDbs;
             return this;
         }
         public Builder standbyDbs(GetAutonomousDatabasesAutonomousDatabaseStandbyDb... standbyDbs) {
@@ -2191,7 +2477,10 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         @CustomType.Setter
         public Builder standbyWhitelistedIps(List<String> standbyWhitelistedIps) {
-            this.standbyWhitelistedIps = Objects.requireNonNull(standbyWhitelistedIps);
+            if (standbyWhitelistedIps == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "standbyWhitelistedIps");
+            }
+            this.standbyWhitelistedIps = standbyWhitelistedIps;
             return this;
         }
         public Builder standbyWhitelistedIps(String... standbyWhitelistedIps) {
@@ -2199,17 +2488,26 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder supportedRegionsToCloneTos(List<String> supportedRegionsToCloneTos) {
-            this.supportedRegionsToCloneTos = Objects.requireNonNull(supportedRegionsToCloneTos);
+            if (supportedRegionsToCloneTos == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "supportedRegionsToCloneTos");
+            }
+            this.supportedRegionsToCloneTos = supportedRegionsToCloneTos;
             return this;
         }
         public Builder supportedRegionsToCloneTos(String... supportedRegionsToCloneTos) {
@@ -2217,127 +2515,202 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         @CustomType.Setter
         public Builder switchoverTo(String switchoverTo) {
-            this.switchoverTo = Objects.requireNonNull(switchoverTo);
+            if (switchoverTo == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "switchoverTo");
+            }
+            this.switchoverTo = switchoverTo;
             return this;
         }
         @CustomType.Setter
         public Builder switchoverToRemotePeerId(String switchoverToRemotePeerId) {
-            this.switchoverToRemotePeerId = Objects.requireNonNull(switchoverToRemotePeerId);
+            if (switchoverToRemotePeerId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "switchoverToRemotePeerId");
+            }
+            this.switchoverToRemotePeerId = switchoverToRemotePeerId;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeDataGuardRoleChanged(String timeDataGuardRoleChanged) {
-            this.timeDataGuardRoleChanged = Objects.requireNonNull(timeDataGuardRoleChanged);
+            if (timeDataGuardRoleChanged == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeDataGuardRoleChanged");
+            }
+            this.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
             return this;
         }
         @CustomType.Setter
         public Builder timeDeletionOfFreeAutonomousDatabase(String timeDeletionOfFreeAutonomousDatabase) {
-            this.timeDeletionOfFreeAutonomousDatabase = Objects.requireNonNull(timeDeletionOfFreeAutonomousDatabase);
+            if (timeDeletionOfFreeAutonomousDatabase == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeDeletionOfFreeAutonomousDatabase");
+            }
+            this.timeDeletionOfFreeAutonomousDatabase = timeDeletionOfFreeAutonomousDatabase;
             return this;
         }
         @CustomType.Setter
         public Builder timeDisasterRecoveryRoleChanged(String timeDisasterRecoveryRoleChanged) {
-            this.timeDisasterRecoveryRoleChanged = Objects.requireNonNull(timeDisasterRecoveryRoleChanged);
+            if (timeDisasterRecoveryRoleChanged == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeDisasterRecoveryRoleChanged");
+            }
+            this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
             return this;
         }
         @CustomType.Setter
         public Builder timeLocalDataGuardEnabled(String timeLocalDataGuardEnabled) {
-            this.timeLocalDataGuardEnabled = Objects.requireNonNull(timeLocalDataGuardEnabled);
+            if (timeLocalDataGuardEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeLocalDataGuardEnabled");
+            }
+            this.timeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder timeMaintenanceBegin(String timeMaintenanceBegin) {
-            this.timeMaintenanceBegin = Objects.requireNonNull(timeMaintenanceBegin);
+            if (timeMaintenanceBegin == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeMaintenanceBegin");
+            }
+            this.timeMaintenanceBegin = timeMaintenanceBegin;
             return this;
         }
         @CustomType.Setter
         public Builder timeMaintenanceEnd(String timeMaintenanceEnd) {
-            this.timeMaintenanceEnd = Objects.requireNonNull(timeMaintenanceEnd);
+            if (timeMaintenanceEnd == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeMaintenanceEnd");
+            }
+            this.timeMaintenanceEnd = timeMaintenanceEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfJoiningResourcePool(String timeOfJoiningResourcePool) {
-            this.timeOfJoiningResourcePool = Objects.requireNonNull(timeOfJoiningResourcePool);
+            if (timeOfJoiningResourcePool == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeOfJoiningResourcePool");
+            }
+            this.timeOfJoiningResourcePool = timeOfJoiningResourcePool;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfLastFailover(String timeOfLastFailover) {
-            this.timeOfLastFailover = Objects.requireNonNull(timeOfLastFailover);
+            if (timeOfLastFailover == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeOfLastFailover");
+            }
+            this.timeOfLastFailover = timeOfLastFailover;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfLastRefresh(String timeOfLastRefresh) {
-            this.timeOfLastRefresh = Objects.requireNonNull(timeOfLastRefresh);
+            if (timeOfLastRefresh == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeOfLastRefresh");
+            }
+            this.timeOfLastRefresh = timeOfLastRefresh;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfLastRefreshPoint(String timeOfLastRefreshPoint) {
-            this.timeOfLastRefreshPoint = Objects.requireNonNull(timeOfLastRefreshPoint);
+            if (timeOfLastRefreshPoint == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeOfLastRefreshPoint");
+            }
+            this.timeOfLastRefreshPoint = timeOfLastRefreshPoint;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfLastSwitchover(String timeOfLastSwitchover) {
-            this.timeOfLastSwitchover = Objects.requireNonNull(timeOfLastSwitchover);
+            if (timeOfLastSwitchover == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeOfLastSwitchover");
+            }
+            this.timeOfLastSwitchover = timeOfLastSwitchover;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfNextRefresh(String timeOfNextRefresh) {
-            this.timeOfNextRefresh = Objects.requireNonNull(timeOfNextRefresh);
+            if (timeOfNextRefresh == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeOfNextRefresh");
+            }
+            this.timeOfNextRefresh = timeOfNextRefresh;
             return this;
         }
         @CustomType.Setter
         public Builder timeReclamationOfFreeAutonomousDatabase(String timeReclamationOfFreeAutonomousDatabase) {
-            this.timeReclamationOfFreeAutonomousDatabase = Objects.requireNonNull(timeReclamationOfFreeAutonomousDatabase);
+            if (timeReclamationOfFreeAutonomousDatabase == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeReclamationOfFreeAutonomousDatabase");
+            }
+            this.timeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
             return this;
         }
         @CustomType.Setter
         public Builder timeUntilReconnectCloneEnabled(String timeUntilReconnectCloneEnabled) {
-            this.timeUntilReconnectCloneEnabled = Objects.requireNonNull(timeUntilReconnectCloneEnabled);
+            if (timeUntilReconnectCloneEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeUntilReconnectCloneEnabled");
+            }
+            this.timeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder timestamp(String timestamp) {
-            this.timestamp = Objects.requireNonNull(timestamp);
+            if (timestamp == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timestamp");
+            }
+            this.timestamp = timestamp;
             return this;
         }
         @CustomType.Setter
         public Builder totalBackupStorageSizeInGbs(Double totalBackupStorageSizeInGbs) {
-            this.totalBackupStorageSizeInGbs = Objects.requireNonNull(totalBackupStorageSizeInGbs);
+            if (totalBackupStorageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "totalBackupStorageSizeInGbs");
+            }
+            this.totalBackupStorageSizeInGbs = totalBackupStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder useLatestAvailableBackupTimeStamp(Boolean useLatestAvailableBackupTimeStamp) {
-            this.useLatestAvailableBackupTimeStamp = Objects.requireNonNull(useLatestAvailableBackupTimeStamp);
+            if (useLatestAvailableBackupTimeStamp == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "useLatestAvailableBackupTimeStamp");
+            }
+            this.useLatestAvailableBackupTimeStamp = useLatestAvailableBackupTimeStamp;
             return this;
         }
         @CustomType.Setter
         public Builder usedDataStorageSizeInGbs(Integer usedDataStorageSizeInGbs) {
-            this.usedDataStorageSizeInGbs = Objects.requireNonNull(usedDataStorageSizeInGbs);
+            if (usedDataStorageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "usedDataStorageSizeInGbs");
+            }
+            this.usedDataStorageSizeInGbs = usedDataStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder usedDataStorageSizeInTbs(Integer usedDataStorageSizeInTbs) {
-            this.usedDataStorageSizeInTbs = Objects.requireNonNull(usedDataStorageSizeInTbs);
+            if (usedDataStorageSizeInTbs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "usedDataStorageSizeInTbs");
+            }
+            this.usedDataStorageSizeInTbs = usedDataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+            if (vaultId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "vaultId");
+            }
+            this.vaultId = vaultId;
             return this;
         }
         @CustomType.Setter
         public Builder whitelistedIps(List<String> whitelistedIps) {
-            this.whitelistedIps = Objects.requireNonNull(whitelistedIps);
+            if (whitelistedIps == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "whitelistedIps");
+            }
+            this.whitelistedIps = whitelistedIps;
             return this;
         }
         public Builder whitelistedIps(String... whitelistedIps) {

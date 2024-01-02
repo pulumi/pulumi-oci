@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetFlexComponentsFilter;
 import com.pulumi.oci.Database.outputs.GetFlexComponentsFlexComponentCollection;
 import java.lang.String;
@@ -87,11 +88,15 @@ public final class GetFlexComponentsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetFlexComponentsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetFlexComponentsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -100,7 +105,10 @@ public final class GetFlexComponentsResult {
         }
         @CustomType.Setter
         public Builder flexComponentCollections(List<GetFlexComponentsFlexComponentCollection> flexComponentCollections) {
-            this.flexComponentCollections = Objects.requireNonNull(flexComponentCollections);
+            if (flexComponentCollections == null) {
+              throw new MissingRequiredPropertyException("GetFlexComponentsResult", "flexComponentCollections");
+            }
+            this.flexComponentCollections = flexComponentCollections;
             return this;
         }
         public Builder flexComponentCollections(GetFlexComponentsFlexComponentCollection... flexComponentCollections) {
@@ -108,11 +116,15 @@ public final class GetFlexComponentsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFlexComponentsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }

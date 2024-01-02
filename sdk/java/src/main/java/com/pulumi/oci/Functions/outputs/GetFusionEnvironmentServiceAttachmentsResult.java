@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentServiceAttachmentsFilter;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection;
 import java.lang.String;
@@ -115,11 +116,13 @@ public final class GetFusionEnvironmentServiceAttachmentsResult {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetFusionEnvironmentServiceAttachmentsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -128,17 +131,26 @@ public final class GetFusionEnvironmentServiceAttachmentsResult {
         }
         @CustomType.Setter
         public Builder fusionEnvironmentId(String fusionEnvironmentId) {
-            this.fusionEnvironmentId = Objects.requireNonNull(fusionEnvironmentId);
+            if (fusionEnvironmentId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentServiceAttachmentsResult", "fusionEnvironmentId");
+            }
+            this.fusionEnvironmentId = fusionEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentServiceAttachmentsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder serviceAttachmentCollections(List<GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection> serviceAttachmentCollections) {
-            this.serviceAttachmentCollections = Objects.requireNonNull(serviceAttachmentCollections);
+            if (serviceAttachmentCollections == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentServiceAttachmentsResult", "serviceAttachmentCollections");
+            }
+            this.serviceAttachmentCollections = serviceAttachmentCollections;
             return this;
         }
         public Builder serviceAttachmentCollections(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection... serviceAttachmentCollections) {
@@ -146,11 +158,13 @@ public final class GetFusionEnvironmentServiceAttachmentsResult {
         }
         @CustomType.Setter
         public Builder serviceInstanceType(@Nullable String serviceInstanceType) {
+
             this.serviceInstanceType = serviceInstanceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemConnectorConnectionInfoConnectionCredential;
 import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemConnectorConnectionInfoConnectionString;
 import java.lang.String;
@@ -74,11 +75,15 @@ public final class ExternalDbSystemConnectorConnectionInfo {
 
         @CustomType.Setter
         public Builder componentType(String componentType) {
-            this.componentType = Objects.requireNonNull(componentType);
+            if (componentType == null) {
+              throw new MissingRequiredPropertyException("ExternalDbSystemConnectorConnectionInfo", "componentType");
+            }
+            this.componentType = componentType;
             return this;
         }
         @CustomType.Setter
         public Builder connectionCredentials(@Nullable List<ExternalDbSystemConnectorConnectionInfoConnectionCredential> connectionCredentials) {
+
             this.connectionCredentials = connectionCredentials;
             return this;
         }
@@ -87,6 +92,7 @@ public final class ExternalDbSystemConnectorConnectionInfo {
         }
         @CustomType.Setter
         public Builder connectionStrings(@Nullable List<ExternalDbSystemConnectorConnectionInfoConnectionString> connectionStrings) {
+
             this.connectionStrings = connectionStrings;
             return this;
         }

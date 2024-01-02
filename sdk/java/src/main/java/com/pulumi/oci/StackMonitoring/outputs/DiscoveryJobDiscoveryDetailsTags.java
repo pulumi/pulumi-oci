@@ -45,6 +45,7 @@ public final class DiscoveryJobDiscoveryDetailsTags {
 
         @CustomType.Setter
         public Builder propertiesMap(@Nullable Map<String,Object> propertiesMap) {
+
             this.propertiesMap = propertiesMap;
             return this;
         }

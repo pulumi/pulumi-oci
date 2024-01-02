@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -154,11 +155,13 @@ public final class DrgAttachmentNetworkDetails {
 
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ids(@Nullable List<String> ids) {
+
             this.ids = ids;
             return this;
         }
@@ -167,31 +170,39 @@ public final class DrgAttachmentNetworkDetails {
         }
         @CustomType.Setter
         public Builder ipsecConnectionId(@Nullable String ipsecConnectionId) {
+
             this.ipsecConnectionId = ipsecConnectionId;
             return this;
         }
         @CustomType.Setter
         public Builder routeTableId(@Nullable String routeTableId) {
+
             this.routeTableId = routeTableId;
             return this;
         }
         @CustomType.Setter
         public Builder transportAttachmentId(@Nullable String transportAttachmentId) {
+
             this.transportAttachmentId = transportAttachmentId;
             return this;
         }
         @CustomType.Setter
         public Builder transportOnlyMode(@Nullable Boolean transportOnlyMode) {
+
             this.transportOnlyMode = transportOnlyMode;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("DrgAttachmentNetworkDetails", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder vcnRouteType(@Nullable String vcnRouteType) {
+
             this.vcnRouteType = vcnRouteType;
             return this;
         }

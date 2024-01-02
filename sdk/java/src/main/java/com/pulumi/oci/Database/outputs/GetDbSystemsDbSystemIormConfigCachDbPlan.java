@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -47,17 +48,26 @@ public final class GetDbSystemsDbSystemIormConfigCachDbPlan {
 
         @CustomType.Setter
         public Builder dbName(String dbName) {
-            this.dbName = Objects.requireNonNull(dbName);
+            if (dbName == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemIormConfigCachDbPlan", "dbName");
+            }
+            this.dbName = dbName;
             return this;
         }
         @CustomType.Setter
         public Builder flashCacheLimit(String flashCacheLimit) {
-            this.flashCacheLimit = Objects.requireNonNull(flashCacheLimit);
+            if (flashCacheLimit == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemIormConfigCachDbPlan", "flashCacheLimit");
+            }
+            this.flashCacheLimit = flashCacheLimit;
             return this;
         }
         @CustomType.Setter
         public Builder share(Integer share) {
-            this.share = Objects.requireNonNull(share);
+            if (share == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemIormConfigCachDbPlan", "share");
+            }
+            this.share = share;
             return this;
         }
         public GetDbSystemsDbSystemIormConfigCachDbPlan build() {

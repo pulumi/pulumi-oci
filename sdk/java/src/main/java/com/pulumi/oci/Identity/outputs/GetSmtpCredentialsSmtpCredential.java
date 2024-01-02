@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -146,47 +147,74 @@ public final class GetSmtpCredentialsSmtpCredential {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetSmtpCredentialsSmtpCredential", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSmtpCredentialsSmtpCredential", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inactiveState(String inactiveState) {
-            this.inactiveState = Objects.requireNonNull(inactiveState);
+            if (inactiveState == null) {
+              throw new MissingRequiredPropertyException("GetSmtpCredentialsSmtpCredential", "inactiveState");
+            }
+            this.inactiveState = inactiveState;
             return this;
         }
         @CustomType.Setter
         public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+            if (password == null) {
+              throw new MissingRequiredPropertyException("GetSmtpCredentialsSmtpCredential", "password");
+            }
+            this.password = password;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetSmtpCredentialsSmtpCredential", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSmtpCredentialsSmtpCredential", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeExpires(String timeExpires) {
-            this.timeExpires = Objects.requireNonNull(timeExpires);
+            if (timeExpires == null) {
+              throw new MissingRequiredPropertyException("GetSmtpCredentialsSmtpCredential", "timeExpires");
+            }
+            this.timeExpires = timeExpires;
             return this;
         }
         @CustomType.Setter
         public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+            if (userId == null) {
+              throw new MissingRequiredPropertyException("GetSmtpCredentialsSmtpCredential", "userId");
+            }
+            this.userId = userId;
             return this;
         }
         @CustomType.Setter
         public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+            if (username == null) {
+              throw new MissingRequiredPropertyException("GetSmtpCredentialsSmtpCredential", "username");
+            }
+            this.username = username;
             return this;
         }
         public GetSmtpCredentialsSmtpCredential build() {

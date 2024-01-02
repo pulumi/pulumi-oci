@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -160,9 +161,15 @@ public final class VmClusterNetworkDrScanArgs extends com.pulumi.resources.Resou
         }
 
         public VmClusterNetworkDrScanArgs build() {
-            $.hostname = Objects.requireNonNull($.hostname, "expected parameter 'hostname' to be non-null");
-            $.ips = Objects.requireNonNull($.ips, "expected parameter 'ips' to be non-null");
-            $.scanListenerPortTcp = Objects.requireNonNull($.scanListenerPortTcp, "expected parameter 'scanListenerPortTcp' to be non-null");
+            if ($.hostname == null) {
+                throw new MissingRequiredPropertyException("VmClusterNetworkDrScanArgs", "hostname");
+            }
+            if ($.ips == null) {
+                throw new MissingRequiredPropertyException("VmClusterNetworkDrScanArgs", "ips");
+            }
+            if ($.scanListenerPortTcp == null) {
+                throw new MissingRequiredPropertyException("VmClusterNetworkDrScanArgs", "scanListenerPortTcp");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.outputs.GetRunLogsFilter;
 import com.pulumi.oci.DataFlow.outputs.GetRunLogsRunLog;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetRunLogsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRunLogsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,17 +82,26 @@ public final class GetRunLogsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRunLogsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder runId(String runId) {
-            this.runId = Objects.requireNonNull(runId);
+            if (runId == null) {
+              throw new MissingRequiredPropertyException("GetRunLogsResult", "runId");
+            }
+            this.runId = runId;
             return this;
         }
         @CustomType.Setter
         public Builder runLogs(List<GetRunLogsRunLog> runLogs) {
-            this.runLogs = Objects.requireNonNull(runLogs);
+            if (runLogs == null) {
+              throw new MissingRequiredPropertyException("GetRunLogsResult", "runLogs");
+            }
+            this.runLogs = runLogs;
             return this;
         }
         public Builder runLogs(GetRunLogsRunLog... runLogs) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,22 +91,34 @@ public final class GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongro
 
         @CustomType.Setter
         public Builder appId(String appId) {
-            this.appId = Objects.requireNonNull(appId);
+            if (appId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant", "appId");
+            }
+            this.appId = appId;
             return this;
         }
         @CustomType.Setter
         public Builder grantMechanism(String grantMechanism) {
-            this.grantMechanism = Objects.requireNonNull(grantMechanism);
+            if (grantMechanism == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant", "grantMechanism");
+            }
+            this.grantMechanism = grantMechanism;
             return this;
         }
         @CustomType.Setter
         public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+            if (ref == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant", "ref");
+            }
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetListenersFilter;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetListenersListenerCollection;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetListenersResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetListenersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,12 +82,18 @@ public final class GetListenersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetListenersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder listenerCollections(List<GetListenersListenerCollection> listenerCollections) {
-            this.listenerCollections = Objects.requireNonNull(listenerCollections);
+            if (listenerCollections == null) {
+              throw new MissingRequiredPropertyException("GetListenersResult", "listenerCollections");
+            }
+            this.listenerCollections = listenerCollections;
             return this;
         }
         public Builder listenerCollections(GetListenersListenerCollection... listenerCollections) {
@@ -93,7 +101,10 @@ public final class GetListenersResult {
         }
         @CustomType.Setter
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
-            this.networkLoadBalancerId = Objects.requireNonNull(networkLoadBalancerId);
+            if (networkLoadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetListenersResult", "networkLoadBalancerId");
+            }
+            this.networkLoadBalancerId = networkLoadBalancerId;
             return this;
         }
         public GetListenersResult build() {

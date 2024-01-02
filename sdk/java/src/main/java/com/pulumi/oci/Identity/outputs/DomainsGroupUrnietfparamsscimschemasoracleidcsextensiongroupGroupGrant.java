@@ -178,21 +178,25 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
 
         @CustomType.Setter
         public Builder appId(@Nullable String appId) {
+
             this.appId = appId;
             return this;
         }
         @CustomType.Setter
         public Builder grantMechanism(@Nullable String grantMechanism) {
+
             this.grantMechanism = grantMechanism;
             return this;
         }
         @CustomType.Setter
         public Builder ref(@Nullable String ref) {
+
             this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder value(@Nullable String value) {
+
             this.value = value;
             return this;
         }

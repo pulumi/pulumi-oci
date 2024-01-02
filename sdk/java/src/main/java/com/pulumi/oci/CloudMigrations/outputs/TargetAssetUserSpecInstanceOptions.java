@@ -44,6 +44,7 @@ public final class TargetAssetUserSpecInstanceOptions {
 
         @CustomType.Setter
         public Builder areLegacyImdsEndpointsDisabled(@Nullable Boolean areLegacyImdsEndpointsDisabled) {
+
             this.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
             return this;
         }

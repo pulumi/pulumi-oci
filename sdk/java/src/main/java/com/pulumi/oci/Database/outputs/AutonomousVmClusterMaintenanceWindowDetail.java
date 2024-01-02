@@ -157,11 +157,13 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
 
         @CustomType.Setter
         public Builder customActionTimeoutInMins(@Nullable Integer customActionTimeoutInMins) {
+
             this.customActionTimeoutInMins = customActionTimeoutInMins;
             return this;
         }
         @CustomType.Setter
         public Builder daysOfWeeks(@Nullable List<AutonomousVmClusterMaintenanceWindowDetailDaysOfWeek> daysOfWeeks) {
+
             this.daysOfWeeks = daysOfWeeks;
             return this;
         }
@@ -170,6 +172,7 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
         }
         @CustomType.Setter
         public Builder hoursOfDays(@Nullable List<Integer> hoursOfDays) {
+
             this.hoursOfDays = hoursOfDays;
             return this;
         }
@@ -178,21 +181,25 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
         }
         @CustomType.Setter
         public Builder isCustomActionTimeoutEnabled(@Nullable Boolean isCustomActionTimeoutEnabled) {
+
             this.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isMonthlyPatchingEnabled(@Nullable Boolean isMonthlyPatchingEnabled) {
+
             this.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder leadTimeInWeeks(@Nullable Integer leadTimeInWeeks) {
+
             this.leadTimeInWeeks = leadTimeInWeeks;
             return this;
         }
         @CustomType.Setter
         public Builder months(@Nullable List<AutonomousVmClusterMaintenanceWindowDetailMonth> months) {
+
             this.months = months;
             return this;
         }
@@ -201,16 +208,19 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
         }
         @CustomType.Setter
         public Builder patchingMode(@Nullable String patchingMode) {
+
             this.patchingMode = patchingMode;
             return this;
         }
         @CustomType.Setter
         public Builder preference(@Nullable String preference) {
+
             this.preference = preference;
             return this;
         }
         @CustomType.Setter
         public Builder weeksOfMonths(@Nullable List<Integer> weeksOfMonths) {
+
             this.weeksOfMonths = weeksOfMonths;
             return this;
         }

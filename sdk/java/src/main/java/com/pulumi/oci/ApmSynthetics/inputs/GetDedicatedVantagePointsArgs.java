@@ -5,6 +5,7 @@ package com.pulumi.oci.ApmSynthetics.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -210,7 +211,9 @@ public final class GetDedicatedVantagePointsArgs extends com.pulumi.resources.In
         }
 
         public GetDedicatedVantagePointsArgs build() {
-            $.apmDomainId = Objects.requireNonNull($.apmDomainId, "expected parameter 'apmDomainId' to be non-null");
+            if ($.apmDomainId == null) {
+                throw new MissingRequiredPropertyException("GetDedicatedVantagePointsArgs", "apmDomainId");
+            }
             return $;
         }
     }

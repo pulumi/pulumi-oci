@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetClusterNetworksClusterNetworkPlacementConfigurationPrimaryVnicSubnet;
 import com.pulumi.oci.Core.outputs.GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet;
 import java.lang.String;
@@ -93,22 +94,34 @@ public final class GetClusterNetworksClusterNetworkPlacementConfiguration {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkPlacementConfiguration", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder placementConstraint(String placementConstraint) {
-            this.placementConstraint = Objects.requireNonNull(placementConstraint);
+            if (placementConstraint == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkPlacementConfiguration", "placementConstraint");
+            }
+            this.placementConstraint = placementConstraint;
             return this;
         }
         @CustomType.Setter
         public Builder primarySubnetId(String primarySubnetId) {
-            this.primarySubnetId = Objects.requireNonNull(primarySubnetId);
+            if (primarySubnetId == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkPlacementConfiguration", "primarySubnetId");
+            }
+            this.primarySubnetId = primarySubnetId;
             return this;
         }
         @CustomType.Setter
         public Builder primaryVnicSubnets(List<GetClusterNetworksClusterNetworkPlacementConfigurationPrimaryVnicSubnet> primaryVnicSubnets) {
-            this.primaryVnicSubnets = Objects.requireNonNull(primaryVnicSubnets);
+            if (primaryVnicSubnets == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkPlacementConfiguration", "primaryVnicSubnets");
+            }
+            this.primaryVnicSubnets = primaryVnicSubnets;
             return this;
         }
         public Builder primaryVnicSubnets(GetClusterNetworksClusterNetworkPlacementConfigurationPrimaryVnicSubnet... primaryVnicSubnets) {
@@ -116,7 +129,10 @@ public final class GetClusterNetworksClusterNetworkPlacementConfiguration {
         }
         @CustomType.Setter
         public Builder secondaryVnicSubnets(List<GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets) {
-            this.secondaryVnicSubnets = Objects.requireNonNull(secondaryVnicSubnets);
+            if (secondaryVnicSubnets == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkPlacementConfiguration", "secondaryVnicSubnets");
+            }
+            this.secondaryVnicSubnets = secondaryVnicSubnets;
             return this;
         }
         public Builder secondaryVnicSubnets(GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet... secondaryVnicSubnets) {

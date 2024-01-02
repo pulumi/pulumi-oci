@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -105,32 +106,50 @@ public final class GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityC
 
         @CustomType.Setter
         public Builder fusionEnvironmentId(String fusionEnvironmentId) {
-            this.fusionEnvironmentId = Objects.requireNonNull(fusionEnvironmentId);
+            if (fusionEnvironmentId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem", "fusionEnvironmentId");
+            }
+            this.fusionEnvironmentId = fusionEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isResumeDataMasking(Boolean isResumeDataMasking) {
-            this.isResumeDataMasking = Objects.requireNonNull(isResumeDataMasking);
+            if (isResumeDataMasking == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem", "isResumeDataMasking");
+            }
+            this.isResumeDataMasking = isResumeDataMasking;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeMaskingFinish(String timeMaskingFinish) {
-            this.timeMaskingFinish = Objects.requireNonNull(timeMaskingFinish);
+            if (timeMaskingFinish == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem", "timeMaskingFinish");
+            }
+            this.timeMaskingFinish = timeMaskingFinish;
             return this;
         }
         @CustomType.Setter
         public Builder timeMaskingStart(String timeMaskingStart) {
-            this.timeMaskingStart = Objects.requireNonNull(timeMaskingStart);
+            if (timeMaskingStart == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem", "timeMaskingStart");
+            }
+            this.timeMaskingStart = timeMaskingStart;
             return this;
         }
         public GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem build() {

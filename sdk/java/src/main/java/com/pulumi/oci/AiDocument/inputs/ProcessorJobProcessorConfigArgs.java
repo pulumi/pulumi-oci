@@ -5,6 +5,7 @@ package com.pulumi.oci.AiDocument.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiDocument.inputs.ProcessorJobProcessorConfigFeatureArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -249,8 +250,12 @@ public final class ProcessorJobProcessorConfigArgs extends com.pulumi.resources.
         }
 
         public ProcessorJobProcessorConfigArgs build() {
-            $.features = Objects.requireNonNull($.features, "expected parameter 'features' to be non-null");
-            $.processorType = Objects.requireNonNull($.processorType, "expected parameter 'processorType' to be non-null");
+            if ($.features == null) {
+                throw new MissingRequiredPropertyException("ProcessorJobProcessorConfigArgs", "features");
+            }
+            if ($.processorType == null) {
+                throw new MissingRequiredPropertyException("ProcessorJobProcessorConfigArgs", "processorType");
+            }
             return $;
         }
     }

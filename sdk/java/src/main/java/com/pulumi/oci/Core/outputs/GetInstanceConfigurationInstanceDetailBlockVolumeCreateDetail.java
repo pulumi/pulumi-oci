@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplica;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail;
@@ -209,7 +210,10 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail
 
         @CustomType.Setter
         public Builder autotunePolicies(List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy> autotunePolicies) {
-            this.autotunePolicies = Objects.requireNonNull(autotunePolicies);
+            if (autotunePolicies == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail", "autotunePolicies");
+            }
+            this.autotunePolicies = autotunePolicies;
             return this;
         }
         public Builder autotunePolicies(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy... autotunePolicies) {
@@ -217,17 +221,26 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder backupPolicyId(String backupPolicyId) {
-            this.backupPolicyId = Objects.requireNonNull(backupPolicyId);
+            if (backupPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail", "backupPolicyId");
+            }
+            this.backupPolicyId = backupPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder blockVolumeReplicas(List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplica> blockVolumeReplicas) {
-            this.blockVolumeReplicas = Objects.requireNonNull(blockVolumeReplicas);
+            if (blockVolumeReplicas == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail", "blockVolumeReplicas");
+            }
+            this.blockVolumeReplicas = blockVolumeReplicas;
             return this;
         }
         public Builder blockVolumeReplicas(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplica... blockVolumeReplicas) {
@@ -235,42 +248,66 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder isAutoTuneEnabled(Boolean isAutoTuneEnabled) {
-            this.isAutoTuneEnabled = Objects.requireNonNull(isAutoTuneEnabled);
+            if (isAutoTuneEnabled == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail", "isAutoTuneEnabled");
+            }
+            this.isAutoTuneEnabled = isAutoTuneEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInGbs(String sizeInGbs) {
-            this.sizeInGbs = Objects.requireNonNull(sizeInGbs);
+            if (sizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail", "sizeInGbs");
+            }
+            this.sizeInGbs = sizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder sourceDetails(List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail> sourceDetails) {
-            this.sourceDetails = Objects.requireNonNull(sourceDetails);
+            if (sourceDetails == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail", "sourceDetails");
+            }
+            this.sourceDetails = sourceDetails;
             return this;
         }
         public Builder sourceDetails(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail... sourceDetails) {
@@ -278,7 +315,10 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail
         }
         @CustomType.Setter
         public Builder vpusPerGb(String vpusPerGb) {
-            this.vpusPerGb = Objects.requireNonNull(vpusPerGb);
+            if (vpusPerGb == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail", "vpusPerGb");
+            }
+            this.vpusPerGb = vpusPerGb;
             return this;
         }
         public GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail build() {

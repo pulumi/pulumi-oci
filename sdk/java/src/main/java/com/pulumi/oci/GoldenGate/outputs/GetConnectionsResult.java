@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionsConnectionCollection;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionsFilter;
 import java.lang.String;
@@ -155,27 +156,36 @@ public final class GetConnectionsResult {
 
         @CustomType.Setter
         public Builder assignableDeploymentId(@Nullable String assignableDeploymentId) {
+
             this.assignableDeploymentId = assignableDeploymentId;
             return this;
         }
         @CustomType.Setter
         public Builder assignableDeploymentType(@Nullable String assignableDeploymentType) {
+
             this.assignableDeploymentType = assignableDeploymentType;
             return this;
         }
         @CustomType.Setter
         public Builder assignedDeploymentId(@Nullable String assignedDeploymentId) {
+
             this.assignedDeploymentId = assignedDeploymentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionCollections(List<GetConnectionsConnectionCollection> connectionCollections) {
-            this.connectionCollections = Objects.requireNonNull(connectionCollections);
+            if (connectionCollections == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsResult", "connectionCollections");
+            }
+            this.connectionCollections = connectionCollections;
             return this;
         }
         public Builder connectionCollections(GetConnectionsConnectionCollection... connectionCollections) {
@@ -183,6 +193,7 @@ public final class GetConnectionsResult {
         }
         @CustomType.Setter
         public Builder connectionTypes(@Nullable List<String> connectionTypes) {
+
             this.connectionTypes = connectionTypes;
             return this;
         }
@@ -191,11 +202,13 @@ public final class GetConnectionsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetConnectionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -204,16 +217,21 @@ public final class GetConnectionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder technologyTypes(@Nullable List<String> technologyTypes) {
+
             this.technologyTypes = technologyTypes;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -227,72 +228,114 @@ public final class GetEkmsPrivateEndpointsEkmsPrivateEndpoint {
 
         @CustomType.Setter
         public Builder caBundle(String caBundle) {
-            this.caBundle = Objects.requireNonNull(caBundle);
+            if (caBundle == null) {
+              throw new MissingRequiredPropertyException("GetEkmsPrivateEndpointsEkmsPrivateEndpoint", "caBundle");
+            }
+            this.caBundle = caBundle;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetEkmsPrivateEndpointsEkmsPrivateEndpoint", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetEkmsPrivateEndpointsEkmsPrivateEndpoint", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetEkmsPrivateEndpointsEkmsPrivateEndpoint", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalKeyManagerIp(String externalKeyManagerIp) {
-            this.externalKeyManagerIp = Objects.requireNonNull(externalKeyManagerIp);
+            if (externalKeyManagerIp == null) {
+              throw new MissingRequiredPropertyException("GetEkmsPrivateEndpointsEkmsPrivateEndpoint", "externalKeyManagerIp");
+            }
+            this.externalKeyManagerIp = externalKeyManagerIp;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetEkmsPrivateEndpointsEkmsPrivateEndpoint", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetEkmsPrivateEndpointsEkmsPrivateEndpoint", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetEkmsPrivateEndpointsEkmsPrivateEndpoint", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetEkmsPrivateEndpointsEkmsPrivateEndpoint", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpointIp(String privateEndpointIp) {
-            this.privateEndpointIp = Objects.requireNonNull(privateEndpointIp);
+            if (privateEndpointIp == null) {
+              throw new MissingRequiredPropertyException("GetEkmsPrivateEndpointsEkmsPrivateEndpoint", "privateEndpointIp");
+            }
+            this.privateEndpointIp = privateEndpointIp;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetEkmsPrivateEndpointsEkmsPrivateEndpoint", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetEkmsPrivateEndpointsEkmsPrivateEndpoint", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetEkmsPrivateEndpointsEkmsPrivateEndpoint", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetEkmsPrivateEndpointsEkmsPrivateEndpoint", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetEkmsPrivateEndpointsEkmsPrivateEndpoint build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.GetBackendsBackend;
 import com.pulumi.oci.LoadBalancer.outputs.GetBackendsFilter;
 import java.lang.String;
@@ -78,7 +79,10 @@ public final class GetBackendsResult {
 
         @CustomType.Setter
         public Builder backends(List<GetBackendsBackend> backends) {
-            this.backends = Objects.requireNonNull(backends);
+            if (backends == null) {
+              throw new MissingRequiredPropertyException("GetBackendsResult", "backends");
+            }
+            this.backends = backends;
             return this;
         }
         public Builder backends(GetBackendsBackend... backends) {
@@ -86,11 +90,15 @@ public final class GetBackendsResult {
         }
         @CustomType.Setter
         public Builder backendsetName(String backendsetName) {
-            this.backendsetName = Objects.requireNonNull(backendsetName);
+            if (backendsetName == null) {
+              throw new MissingRequiredPropertyException("GetBackendsResult", "backendsetName");
+            }
+            this.backendsetName = backendsetName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBackendsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -99,12 +107,18 @@ public final class GetBackendsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBackendsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetBackendsResult", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         public GetBackendsResult build() {

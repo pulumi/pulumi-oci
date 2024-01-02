@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowConfigurationsFilter;
 import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection;
 import java.lang.String;
@@ -109,16 +110,19 @@ public final class GetMediaWorkflowConfigurationsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMediaWorkflowConfigurationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +131,16 @@ public final class GetMediaWorkflowConfigurationsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder mediaWorkflowConfigurationCollections(List<GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection> mediaWorkflowConfigurationCollections) {
-            this.mediaWorkflowConfigurationCollections = Objects.requireNonNull(mediaWorkflowConfigurationCollections);
+            if (mediaWorkflowConfigurationCollections == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowConfigurationsResult", "mediaWorkflowConfigurationCollections");
+            }
+            this.mediaWorkflowConfigurationCollections = mediaWorkflowConfigurationCollections;
             return this;
         }
         public Builder mediaWorkflowConfigurationCollections(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection... mediaWorkflowConfigurationCollections) {
@@ -140,6 +148,7 @@ public final class GetMediaWorkflowConfigurationsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

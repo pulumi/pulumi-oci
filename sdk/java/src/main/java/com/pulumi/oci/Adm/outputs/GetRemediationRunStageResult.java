@@ -4,6 +4,7 @@
 package com.pulumi.oci.Adm.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Adm.outputs.GetRemediationRunStagePipelineProperty;
 import com.pulumi.oci.Adm.outputs.GetRemediationRunStagePullRequestProperty;
 import java.lang.Integer;
@@ -234,22 +235,34 @@ public final class GetRemediationRunStageResult {
 
         @CustomType.Setter
         public Builder auditId(String auditId) {
-            this.auditId = Objects.requireNonNull(auditId);
+            if (auditId == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStageResult", "auditId");
+            }
+            this.auditId = auditId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStageResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder nextStageType(String nextStageType) {
-            this.nextStageType = Objects.requireNonNull(nextStageType);
+            if (nextStageType == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStageResult", "nextStageType");
+            }
+            this.nextStageType = nextStageType;
             return this;
         }
         @CustomType.Setter
         public Builder pipelineProperties(List<GetRemediationRunStagePipelineProperty> pipelineProperties) {
-            this.pipelineProperties = Objects.requireNonNull(pipelineProperties);
+            if (pipelineProperties == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStageResult", "pipelineProperties");
+            }
+            this.pipelineProperties = pipelineProperties;
             return this;
         }
         public Builder pipelineProperties(GetRemediationRunStagePipelineProperty... pipelineProperties) {
@@ -257,12 +270,18 @@ public final class GetRemediationRunStageResult {
         }
         @CustomType.Setter
         public Builder previousStageType(String previousStageType) {
-            this.previousStageType = Objects.requireNonNull(previousStageType);
+            if (previousStageType == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStageResult", "previousStageType");
+            }
+            this.previousStageType = previousStageType;
             return this;
         }
         @CustomType.Setter
         public Builder pullRequestProperties(List<GetRemediationRunStagePullRequestProperty> pullRequestProperties) {
-            this.pullRequestProperties = Objects.requireNonNull(pullRequestProperties);
+            if (pullRequestProperties == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStageResult", "pullRequestProperties");
+            }
+            this.pullRequestProperties = pullRequestProperties;
             return this;
         }
         public Builder pullRequestProperties(GetRemediationRunStagePullRequestProperty... pullRequestProperties) {
@@ -270,47 +289,74 @@ public final class GetRemediationRunStageResult {
         }
         @CustomType.Setter
         public Builder recommendedUpdatesCount(Integer recommendedUpdatesCount) {
-            this.recommendedUpdatesCount = Objects.requireNonNull(recommendedUpdatesCount);
+            if (recommendedUpdatesCount == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStageResult", "recommendedUpdatesCount");
+            }
+            this.recommendedUpdatesCount = recommendedUpdatesCount;
             return this;
         }
         @CustomType.Setter
         public Builder remediationRunId(String remediationRunId) {
-            this.remediationRunId = Objects.requireNonNull(remediationRunId);
+            if (remediationRunId == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStageResult", "remediationRunId");
+            }
+            this.remediationRunId = remediationRunId;
             return this;
         }
         @CustomType.Setter
         public Builder stageType(String stageType) {
-            this.stageType = Objects.requireNonNull(stageType);
+            if (stageType == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStageResult", "stageType");
+            }
+            this.stageType = stageType;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStageResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder summary(String summary) {
-            this.summary = Objects.requireNonNull(summary);
+            if (summary == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStageResult", "summary");
+            }
+            this.summary = summary;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStageResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+            if (timeFinished == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStageResult", "timeFinished");
+            }
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStageResult", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStageResult", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetRemediationRunStageResult build() {

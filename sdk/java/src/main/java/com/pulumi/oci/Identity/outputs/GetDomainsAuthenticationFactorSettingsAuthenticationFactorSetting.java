@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingBypassCodeSetting;
 import com.pulumi.oci.Identity.outputs.GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingClientAppSetting;
 import com.pulumi.oci.Identity.outputs.GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingCompliancePolicy;
@@ -653,7 +654,10 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
 
         @CustomType.Setter
         public Builder attributeSets(List<String> attributeSets) {
-            this.attributeSets = Objects.requireNonNull(attributeSets);
+            if (attributeSets == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "attributeSets");
+            }
+            this.attributeSets = attributeSets;
             return this;
         }
         public Builder attributeSets(String... attributeSets) {
@@ -661,32 +665,50 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
         @CustomType.Setter
         public Builder attributes(String attributes) {
-            this.attributes = Objects.requireNonNull(attributes);
+            if (attributes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "attributes");
+            }
+            this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authenticationFactorSettingId(String authenticationFactorSettingId) {
-            this.authenticationFactorSettingId = Objects.requireNonNull(authenticationFactorSettingId);
+            if (authenticationFactorSettingId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "authenticationFactorSettingId");
+            }
+            this.authenticationFactorSettingId = authenticationFactorSettingId;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(String authorization) {
-            this.authorization = Objects.requireNonNull(authorization);
+            if (authorization == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "authorization");
+            }
+            this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder autoEnrollEmailFactorDisabled(Boolean autoEnrollEmailFactorDisabled) {
-            this.autoEnrollEmailFactorDisabled = Objects.requireNonNull(autoEnrollEmailFactorDisabled);
+            if (autoEnrollEmailFactorDisabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "autoEnrollEmailFactorDisabled");
+            }
+            this.autoEnrollEmailFactorDisabled = autoEnrollEmailFactorDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder bypassCodeEnabled(Boolean bypassCodeEnabled) {
-            this.bypassCodeEnabled = Objects.requireNonNull(bypassCodeEnabled);
+            if (bypassCodeEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "bypassCodeEnabled");
+            }
+            this.bypassCodeEnabled = bypassCodeEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder bypassCodeSettings(List<GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingBypassCodeSetting> bypassCodeSettings) {
-            this.bypassCodeSettings = Objects.requireNonNull(bypassCodeSettings);
+            if (bypassCodeSettings == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "bypassCodeSettings");
+            }
+            this.bypassCodeSettings = bypassCodeSettings;
             return this;
         }
         public Builder bypassCodeSettings(GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingBypassCodeSetting... bypassCodeSettings) {
@@ -694,7 +716,10 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
         @CustomType.Setter
         public Builder clientAppSettings(List<GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingClientAppSetting> clientAppSettings) {
-            this.clientAppSettings = Objects.requireNonNull(clientAppSettings);
+            if (clientAppSettings == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "clientAppSettings");
+            }
+            this.clientAppSettings = clientAppSettings;
             return this;
         }
         public Builder clientAppSettings(GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingClientAppSetting... clientAppSettings) {
@@ -702,12 +727,18 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder compliancePolicies(List<GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingCompliancePolicy> compliancePolicies) {
-            this.compliancePolicies = Objects.requireNonNull(compliancePolicies);
+            if (compliancePolicies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "compliancePolicies");
+            }
+            this.compliancePolicies = compliancePolicies;
             return this;
         }
         public Builder compliancePolicies(GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingCompliancePolicy... compliancePolicies) {
@@ -715,22 +746,34 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder emailEnabled(Boolean emailEnabled) {
-            this.emailEnabled = Objects.requireNonNull(emailEnabled);
+            if (emailEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "emailEnabled");
+            }
+            this.emailEnabled = emailEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder emailSettings(List<GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingEmailSetting> emailSettings) {
-            this.emailSettings = Objects.requireNonNull(emailSettings);
+            if (emailSettings == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "emailSettings");
+            }
+            this.emailSettings = emailSettings;
             return this;
         }
         public Builder emailSettings(GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingEmailSetting... emailSettings) {
@@ -738,7 +781,10 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
         @CustomType.Setter
         public Builder endpointRestrictions(List<GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingEndpointRestriction> endpointRestrictions) {
-            this.endpointRestrictions = Objects.requireNonNull(endpointRestrictions);
+            if (endpointRestrictions == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "endpointRestrictions");
+            }
+            this.endpointRestrictions = endpointRestrictions;
             return this;
         }
         public Builder endpointRestrictions(GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingEndpointRestriction... endpointRestrictions) {
@@ -746,22 +792,34 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
         @CustomType.Setter
         public Builder fidoAuthenticatorEnabled(Boolean fidoAuthenticatorEnabled) {
-            this.fidoAuthenticatorEnabled = Objects.requireNonNull(fidoAuthenticatorEnabled);
+            if (fidoAuthenticatorEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "fidoAuthenticatorEnabled");
+            }
+            this.fidoAuthenticatorEnabled = fidoAuthenticatorEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder hideBackupFactorEnabled(Boolean hideBackupFactorEnabled) {
-            this.hideBackupFactorEnabled = Objects.requireNonNull(hideBackupFactorEnabled);
+            if (hideBackupFactorEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "hideBackupFactorEnabled");
+            }
+            this.hideBackupFactorEnabled = hideBackupFactorEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingIdcsCreatedBy... idcsCreatedBies) {
@@ -769,12 +827,18 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -782,12 +846,18 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -795,7 +865,10 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
         @CustomType.Setter
         public Builder identityStoreSettings(List<GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingIdentityStoreSetting> identityStoreSettings) {
-            this.identityStoreSettings = Objects.requireNonNull(identityStoreSettings);
+            if (identityStoreSettings == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "identityStoreSettings");
+            }
+            this.identityStoreSettings = identityStoreSettings;
             return this;
         }
         public Builder identityStoreSettings(GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingIdentityStoreSetting... identityStoreSettings) {
@@ -803,7 +876,10 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingMeta... metas) {
@@ -811,17 +887,26 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
         @CustomType.Setter
         public Builder mfaEnabledCategory(String mfaEnabledCategory) {
-            this.mfaEnabledCategory = Objects.requireNonNull(mfaEnabledCategory);
+            if (mfaEnabledCategory == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "mfaEnabledCategory");
+            }
+            this.mfaEnabledCategory = mfaEnabledCategory;
             return this;
         }
         @CustomType.Setter
         public Builder mfaEnrollmentType(String mfaEnrollmentType) {
-            this.mfaEnrollmentType = Objects.requireNonNull(mfaEnrollmentType);
+            if (mfaEnrollmentType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "mfaEnrollmentType");
+            }
+            this.mfaEnrollmentType = mfaEnrollmentType;
             return this;
         }
         @CustomType.Setter
         public Builder notificationSettings(List<GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingNotificationSetting> notificationSettings) {
-            this.notificationSettings = Objects.requireNonNull(notificationSettings);
+            if (notificationSettings == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "notificationSettings");
+            }
+            this.notificationSettings = notificationSettings;
             return this;
         }
         public Builder notificationSettings(GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingNotificationSetting... notificationSettings) {
@@ -829,27 +914,42 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder phoneCallEnabled(Boolean phoneCallEnabled) {
-            this.phoneCallEnabled = Objects.requireNonNull(phoneCallEnabled);
+            if (phoneCallEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "phoneCallEnabled");
+            }
+            this.phoneCallEnabled = phoneCallEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder pushEnabled(Boolean pushEnabled) {
-            this.pushEnabled = Objects.requireNonNull(pushEnabled);
+            if (pushEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "pushEnabled");
+            }
+            this.pushEnabled = pushEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(String resourceTypeSchemaVersion) {
-            this.resourceTypeSchemaVersion = Objects.requireNonNull(resourceTypeSchemaVersion);
+            if (resourceTypeSchemaVersion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "resourceTypeSchemaVersion");
+            }
+            this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -857,17 +957,26 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
         @CustomType.Setter
         public Builder securityQuestionsEnabled(Boolean securityQuestionsEnabled) {
-            this.securityQuestionsEnabled = Objects.requireNonNull(securityQuestionsEnabled);
+            if (securityQuestionsEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "securityQuestionsEnabled");
+            }
+            this.securityQuestionsEnabled = securityQuestionsEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder smsEnabled(Boolean smsEnabled) {
-            this.smsEnabled = Objects.requireNonNull(smsEnabled);
+            if (smsEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "smsEnabled");
+            }
+            this.smsEnabled = smsEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingTag... tags) {
@@ -875,12 +984,18 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder thirdPartyFactors(List<GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingThirdPartyFactor> thirdPartyFactors) {
-            this.thirdPartyFactors = Objects.requireNonNull(thirdPartyFactors);
+            if (thirdPartyFactors == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "thirdPartyFactors");
+            }
+            this.thirdPartyFactors = thirdPartyFactors;
             return this;
         }
         public Builder thirdPartyFactors(GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingThirdPartyFactor... thirdPartyFactors) {
@@ -888,12 +1003,18 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
         @CustomType.Setter
         public Builder totpEnabled(Boolean totpEnabled) {
-            this.totpEnabled = Objects.requireNonNull(totpEnabled);
+            if (totpEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "totpEnabled");
+            }
+            this.totpEnabled = totpEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder totpSettings(List<GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingTotpSetting> totpSettings) {
-            this.totpSettings = Objects.requireNonNull(totpSettings);
+            if (totpSettings == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "totpSettings");
+            }
+            this.totpSettings = totpSettings;
             return this;
         }
         public Builder totpSettings(GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingTotpSetting... totpSettings) {
@@ -901,7 +1022,10 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings(List<GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting> urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings) {
-            this.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings);
+            if (urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings = urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings(GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting... urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings) {
@@ -909,7 +1033,10 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings(List<GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSetting> urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings) {
-            this.urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings);
+            if (urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings = urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings(GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSetting... urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings) {
@@ -917,7 +1044,10 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
         @CustomType.Setter
         public Builder userEnrollmentDisabledFactors(List<String> userEnrollmentDisabledFactors) {
-            this.userEnrollmentDisabledFactors = Objects.requireNonNull(userEnrollmentDisabledFactors);
+            if (userEnrollmentDisabledFactors == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "userEnrollmentDisabledFactors");
+            }
+            this.userEnrollmentDisabledFactors = userEnrollmentDisabledFactors;
             return this;
         }
         public Builder userEnrollmentDisabledFactors(String... userEnrollmentDisabledFactors) {
@@ -925,7 +1055,10 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
         @CustomType.Setter
         public Builder yubicoOtpEnabled(Boolean yubicoOtpEnabled) {
-            this.yubicoOtpEnabled = Objects.requireNonNull(yubicoOtpEnabled);
+            if (yubicoOtpEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting", "yubicoOtpEnabled");
+            }
+            this.yubicoOtpEnabled = yubicoOtpEnabled;
             return this;
         }
         public GetDomainsAuthenticationFactorSettingsAuthenticationFactorSetting build() {

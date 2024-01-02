@@ -5,6 +5,7 @@ package com.pulumi.oci.LogAnalytics.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageOverlappingRecallsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -173,7 +174,9 @@ public final class GetNamespaceStorageOverlappingRecallsArgs extends com.pulumi.
         }
 
         public GetNamespaceStorageOverlappingRecallsArgs build() {
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("GetNamespaceStorageOverlappingRecallsArgs", "namespace");
+            }
             return $;
         }
     }

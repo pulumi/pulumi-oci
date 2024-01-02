@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetExternalContainerDatabasesExternalContainerDatabase;
 import com.pulumi.oci.Database.outputs.GetExternalContainerDatabasesFilter;
 import java.lang.String;
@@ -109,17 +110,24 @@ public final class GetExternalContainerDatabasesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalContainerDatabasesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalContainerDatabases(List<GetExternalContainerDatabasesExternalContainerDatabase> externalContainerDatabases) {
-            this.externalContainerDatabases = Objects.requireNonNull(externalContainerDatabases);
+            if (externalContainerDatabases == null) {
+              throw new MissingRequiredPropertyException("GetExternalContainerDatabasesResult", "externalContainerDatabases");
+            }
+            this.externalContainerDatabases = externalContainerDatabases;
             return this;
         }
         public Builder externalContainerDatabases(GetExternalContainerDatabasesExternalContainerDatabase... externalContainerDatabases) {
@@ -127,6 +135,7 @@ public final class GetExternalContainerDatabasesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetExternalContainerDatabasesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,11 +144,15 @@ public final class GetExternalContainerDatabasesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalContainerDatabasesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

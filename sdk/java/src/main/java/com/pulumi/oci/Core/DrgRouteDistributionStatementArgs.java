@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.DrgRouteDistributionStatementMatchCriteriaArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -199,10 +200,18 @@ public final class DrgRouteDistributionStatementArgs extends com.pulumi.resource
         }
 
         public DrgRouteDistributionStatementArgs build() {
-            $.action = Objects.requireNonNull($.action, "expected parameter 'action' to be non-null");
-            $.drgRouteDistributionId = Objects.requireNonNull($.drgRouteDistributionId, "expected parameter 'drgRouteDistributionId' to be non-null");
-            $.matchCriteria = Objects.requireNonNull($.matchCriteria, "expected parameter 'matchCriteria' to be non-null");
-            $.priority = Objects.requireNonNull($.priority, "expected parameter 'priority' to be non-null");
+            if ($.action == null) {
+                throw new MissingRequiredPropertyException("DrgRouteDistributionStatementArgs", "action");
+            }
+            if ($.drgRouteDistributionId == null) {
+                throw new MissingRequiredPropertyException("DrgRouteDistributionStatementArgs", "drgRouteDistributionId");
+            }
+            if ($.matchCriteria == null) {
+                throw new MissingRequiredPropertyException("DrgRouteDistributionStatementArgs", "matchCriteria");
+            }
+            if ($.priority == null) {
+                throw new MissingRequiredPropertyException("DrgRouteDistributionStatementArgs", "priority");
+            }
             return $;
         }
     }

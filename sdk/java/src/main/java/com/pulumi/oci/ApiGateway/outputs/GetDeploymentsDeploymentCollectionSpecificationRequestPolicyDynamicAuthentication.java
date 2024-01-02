@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationSelectionSource;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyD
 
         @CustomType.Setter
         public Builder authenticationServers(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer> authenticationServers) {
-            this.authenticationServers = Objects.requireNonNull(authenticationServers);
+            if (authenticationServers == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthentication", "authenticationServers");
+            }
+            this.authenticationServers = authenticationServers;
             return this;
         }
         public Builder authenticationServers(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer... authenticationServers) {
@@ -66,7 +70,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyD
         }
         @CustomType.Setter
         public Builder selectionSources(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationSelectionSource> selectionSources) {
-            this.selectionSources = Objects.requireNonNull(selectionSources);
+            if (selectionSources == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthentication", "selectionSources");
+            }
+            this.selectionSources = selectionSources;
             return this;
         }
         public Builder selectionSources(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationSelectionSource... selectionSources) {

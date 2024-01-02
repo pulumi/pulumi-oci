@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetProfileTargetCompartment {
 
         @CustomType.Setter
         public Builder items(List<String> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetProfileTargetCompartment", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(String... items) {

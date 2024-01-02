@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetMeshPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetMeshPlainArgs build() {
-            $.meshId = Objects.requireNonNull($.meshId, "expected parameter 'meshId' to be non-null");
+            if ($.meshId == null) {
+                throw new MissingRequiredPropertyException("GetMeshPlainArgs", "meshId");
+            }
             return $;
         }
     }

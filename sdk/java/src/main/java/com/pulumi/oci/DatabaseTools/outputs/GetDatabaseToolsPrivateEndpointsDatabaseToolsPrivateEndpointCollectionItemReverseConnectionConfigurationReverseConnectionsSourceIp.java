@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseTools.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
 
         @CustomType.Setter
         public Builder sourceIp(String sourceIp) {
-            this.sourceIp = Objects.requireNonNull(sourceIp);
+            if (sourceIp == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp", "sourceIp");
+            }
+            this.sourceIp = sourceIp;
             return this;
         }
         public GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp build() {

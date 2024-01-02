@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape {
 
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder portSpeedInGbps(Integer portSpeedInGbps) {
-            this.portSpeedInGbps = Objects.requireNonNull(portSpeedInGbps);
+            if (portSpeedInGbps == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape", "portSpeedInGbps");
+            }
+            this.portSpeedInGbps = portSpeedInGbps;
             return this;
         }
         public GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape build() {

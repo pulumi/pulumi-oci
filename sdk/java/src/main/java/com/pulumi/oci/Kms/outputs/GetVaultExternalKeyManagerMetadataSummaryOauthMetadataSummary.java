@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary
 
         @CustomType.Setter
         public Builder clientAppId(String clientAppId) {
-            this.clientAppId = Objects.requireNonNull(clientAppId);
+            if (clientAppId == null) {
+              throw new MissingRequiredPropertyException("GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary", "clientAppId");
+            }
+            this.clientAppId = clientAppId;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAccountNameUrl(String idcsAccountNameUrl) {
-            this.idcsAccountNameUrl = Objects.requireNonNull(idcsAccountNameUrl);
+            if (idcsAccountNameUrl == null) {
+              throw new MissingRequiredPropertyException("GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary", "idcsAccountNameUrl");
+            }
+            this.idcsAccountNameUrl = idcsAccountNameUrl;
             return this;
         }
         public GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary build() {

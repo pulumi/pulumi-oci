@@ -4,6 +4,7 @@
 package com.pulumi.oci.Artifacts.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactsFilter;
 import java.lang.String;
 import java.util.List;
@@ -273,8 +274,12 @@ public final class GetGenericArtifactsPlainArgs extends com.pulumi.resources.Inv
         }
 
         public GetGenericArtifactsPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.repositoryId = Objects.requireNonNull($.repositoryId, "expected parameter 'repositoryId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetGenericArtifactsPlainArgs", "compartmentId");
+            }
+            if ($.repositoryId == null) {
+                throw new MissingRequiredPropertyException("GetGenericArtifactsPlainArgs", "repositoryId");
+            }
             return $;
         }
     }

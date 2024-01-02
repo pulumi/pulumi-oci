@@ -4,6 +4,7 @@
 package com.pulumi.oci.VnMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.VnMonitoring.outputs.GetPathAnalyzerTestDestinationEndpoint;
 import com.pulumi.oci.VnMonitoring.outputs.GetPathAnalyzerTestProtocolParameter;
 import com.pulumi.oci.VnMonitoring.outputs.GetPathAnalyzerTestQueryOption;
@@ -238,17 +239,26 @@ public final class GetPathAnalyzerTestResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder destinationEndpoints(List<GetPathAnalyzerTestDestinationEndpoint> destinationEndpoints) {
-            this.destinationEndpoints = Objects.requireNonNull(destinationEndpoints);
+            if (destinationEndpoints == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestResult", "destinationEndpoints");
+            }
+            this.destinationEndpoints = destinationEndpoints;
             return this;
         }
         public Builder destinationEndpoints(GetPathAnalyzerTestDestinationEndpoint... destinationEndpoints) {
@@ -256,32 +266,50 @@ public final class GetPathAnalyzerTestResult {
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder pathAnalyzerTestId(String pathAnalyzerTestId) {
-            this.pathAnalyzerTestId = Objects.requireNonNull(pathAnalyzerTestId);
+            if (pathAnalyzerTestId == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestResult", "pathAnalyzerTestId");
+            }
+            this.pathAnalyzerTestId = pathAnalyzerTestId;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(Integer protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestResult", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder protocolParameters(List<GetPathAnalyzerTestProtocolParameter> protocolParameters) {
-            this.protocolParameters = Objects.requireNonNull(protocolParameters);
+            if (protocolParameters == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestResult", "protocolParameters");
+            }
+            this.protocolParameters = protocolParameters;
             return this;
         }
         public Builder protocolParameters(GetPathAnalyzerTestProtocolParameter... protocolParameters) {
@@ -289,7 +317,10 @@ public final class GetPathAnalyzerTestResult {
         }
         @CustomType.Setter
         public Builder queryOptions(List<GetPathAnalyzerTestQueryOption> queryOptions) {
-            this.queryOptions = Objects.requireNonNull(queryOptions);
+            if (queryOptions == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestResult", "queryOptions");
+            }
+            this.queryOptions = queryOptions;
             return this;
         }
         public Builder queryOptions(GetPathAnalyzerTestQueryOption... queryOptions) {
@@ -297,7 +328,10 @@ public final class GetPathAnalyzerTestResult {
         }
         @CustomType.Setter
         public Builder sourceEndpoints(List<GetPathAnalyzerTestSourceEndpoint> sourceEndpoints) {
-            this.sourceEndpoints = Objects.requireNonNull(sourceEndpoints);
+            if (sourceEndpoints == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestResult", "sourceEndpoints");
+            }
+            this.sourceEndpoints = sourceEndpoints;
             return this;
         }
         public Builder sourceEndpoints(GetPathAnalyzerTestSourceEndpoint... sourceEndpoints) {
@@ -305,22 +339,34 @@ public final class GetPathAnalyzerTestResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetPathAnalyzerTestResult build() {

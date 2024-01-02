@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetManagementAgentImagesManagementAgentImageImageObjectStorag
 
         @CustomType.Setter
         public Builder checksum(String checksum) {
-            this.checksum = Objects.requireNonNull(checksum);
+            if (checksum == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail", "checksum");
+            }
+            this.checksum = checksum;
             return this;
         }
         @CustomType.Setter
         public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+            if (object == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail", "object");
+            }
+            this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder objectBucket(String objectBucket) {
-            this.objectBucket = Objects.requireNonNull(objectBucket);
+            if (objectBucket == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail", "objectBucket");
+            }
+            this.objectBucket = objectBucket;
             return this;
         }
         @CustomType.Setter
         public Builder objectNamespace(String objectNamespace) {
-            this.objectNamespace = Objects.requireNonNull(objectNamespace);
+            if (objectNamespace == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail", "objectNamespace");
+            }
+            this.objectNamespace = objectNamespace;
             return this;
         }
         @CustomType.Setter
         public Builder objectUrl(String objectUrl) {
-            this.objectUrl = Objects.requireNonNull(objectUrl);
+            if (objectUrl == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail", "objectUrl");
+            }
+            this.objectUrl = objectUrl;
             return this;
         }
         public GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail build() {

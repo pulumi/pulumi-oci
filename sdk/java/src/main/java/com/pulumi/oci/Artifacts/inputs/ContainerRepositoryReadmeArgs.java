@@ -5,6 +5,7 @@ package com.pulumi.oci.Artifacts.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -123,8 +124,12 @@ public final class ContainerRepositoryReadmeArgs extends com.pulumi.resources.Re
         }
 
         public ContainerRepositoryReadmeArgs build() {
-            $.content = Objects.requireNonNull($.content, "expected parameter 'content' to be non-null");
-            $.format = Objects.requireNonNull($.format, "expected parameter 'format' to be non-null");
+            if ($.content == null) {
+                throw new MissingRequiredPropertyException("ContainerRepositoryReadmeArgs", "content");
+            }
+            if ($.format == null) {
+                throw new MissingRequiredPropertyException("ContainerRepositoryReadmeArgs", "format");
+            }
             return $;
         }
     }

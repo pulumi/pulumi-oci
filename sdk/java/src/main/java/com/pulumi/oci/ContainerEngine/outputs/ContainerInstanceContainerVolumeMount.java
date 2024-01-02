@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -102,27 +103,36 @@ public final class ContainerInstanceContainerVolumeMount {
 
         @CustomType.Setter
         public Builder isReadOnly(@Nullable Boolean isReadOnly) {
+
             this.isReadOnly = isReadOnly;
             return this;
         }
         @CustomType.Setter
         public Builder mountPath(String mountPath) {
-            this.mountPath = Objects.requireNonNull(mountPath);
+            if (mountPath == null) {
+              throw new MissingRequiredPropertyException("ContainerInstanceContainerVolumeMount", "mountPath");
+            }
+            this.mountPath = mountPath;
             return this;
         }
         @CustomType.Setter
         public Builder partition(@Nullable Integer partition) {
+
             this.partition = partition;
             return this;
         }
         @CustomType.Setter
         public Builder subPath(@Nullable String subPath) {
+
             this.subPath = subPath;
             return this;
         }
         @CustomType.Setter
         public Builder volumeName(String volumeName) {
-            this.volumeName = Objects.requireNonNull(volumeName);
+            if (volumeName == null) {
+              throw new MissingRequiredPropertyException("ContainerInstanceContainerVolumeMount", "volumeName");
+            }
+            this.volumeName = volumeName;
             return this;
         }
         public ContainerInstanceContainerVolumeMount build() {

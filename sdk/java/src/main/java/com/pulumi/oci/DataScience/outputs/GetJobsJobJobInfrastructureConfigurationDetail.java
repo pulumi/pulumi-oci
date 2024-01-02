@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetail;
 import java.lang.Integer;
 import java.lang.String;
@@ -101,17 +102,26 @@ public final class GetJobsJobJobInfrastructureConfigurationDetail {
 
         @CustomType.Setter
         public Builder blockStorageSizeInGbs(Integer blockStorageSizeInGbs) {
-            this.blockStorageSizeInGbs = Objects.requireNonNull(blockStorageSizeInGbs);
+            if (blockStorageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetJobsJobJobInfrastructureConfigurationDetail", "blockStorageSizeInGbs");
+            }
+            this.blockStorageSizeInGbs = blockStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder jobInfrastructureType(String jobInfrastructureType) {
-            this.jobInfrastructureType = Objects.requireNonNull(jobInfrastructureType);
+            if (jobInfrastructureType == null) {
+              throw new MissingRequiredPropertyException("GetJobsJobJobInfrastructureConfigurationDetail", "jobInfrastructureType");
+            }
+            this.jobInfrastructureType = jobInfrastructureType;
             return this;
         }
         @CustomType.Setter
         public Builder jobShapeConfigDetails(List<GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails) {
-            this.jobShapeConfigDetails = Objects.requireNonNull(jobShapeConfigDetails);
+            if (jobShapeConfigDetails == null) {
+              throw new MissingRequiredPropertyException("GetJobsJobJobInfrastructureConfigurationDetail", "jobShapeConfigDetails");
+            }
+            this.jobShapeConfigDetails = jobShapeConfigDetails;
             return this;
         }
         public Builder jobShapeConfigDetails(GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetail... jobShapeConfigDetails) {
@@ -119,12 +129,18 @@ public final class GetJobsJobJobInfrastructureConfigurationDetail {
         }
         @CustomType.Setter
         public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+            if (shapeName == null) {
+              throw new MissingRequiredPropertyException("GetJobsJobJobInfrastructureConfigurationDetail", "shapeName");
+            }
+            this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetJobsJobJobInfrastructureConfigurationDetail", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         public GetJobsJobJobInfrastructureConfigurationDetail build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.outputs.GetPoolConfigurationShapeConfig;
 import java.lang.Integer;
 import java.lang.String;
@@ -87,22 +88,34 @@ public final class GetPoolConfiguration {
 
         @CustomType.Setter
         public Builder max(Integer max) {
-            this.max = Objects.requireNonNull(max);
+            if (max == null) {
+              throw new MissingRequiredPropertyException("GetPoolConfiguration", "max");
+            }
+            this.max = max;
             return this;
         }
         @CustomType.Setter
         public Builder min(Integer min) {
-            this.min = Objects.requireNonNull(min);
+            if (min == null) {
+              throw new MissingRequiredPropertyException("GetPoolConfiguration", "min");
+            }
+            this.min = min;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetPoolConfiguration", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder shapeConfigs(List<GetPoolConfigurationShapeConfig> shapeConfigs) {
-            this.shapeConfigs = Objects.requireNonNull(shapeConfigs);
+            if (shapeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetPoolConfiguration", "shapeConfigs");
+            }
+            this.shapeConfigs = shapeConfigs;
             return this;
         }
         public Builder shapeConfigs(GetPoolConfigurationShapeConfig... shapeConfigs) {

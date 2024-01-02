@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetsAssetCollectionItemCompute;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetsAssetCollectionItemVm;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetsAssetCollectionItemVmwareVcenter;
@@ -287,7 +288,10 @@ public final class GetAssetsAssetCollectionItem {
 
         @CustomType.Setter
         public Builder assetSourceIds(List<String> assetSourceIds) {
-            this.assetSourceIds = Objects.requireNonNull(assetSourceIds);
+            if (assetSourceIds == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "assetSourceIds");
+            }
+            this.assetSourceIds = assetSourceIds;
             return this;
         }
         public Builder assetSourceIds(String... assetSourceIds) {
@@ -295,17 +299,26 @@ public final class GetAssetsAssetCollectionItem {
         }
         @CustomType.Setter
         public Builder assetType(String assetType) {
-            this.assetType = Objects.requireNonNull(assetType);
+            if (assetType == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "assetType");
+            }
+            this.assetType = assetType;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computes(List<GetAssetsAssetCollectionItemCompute> computes) {
-            this.computes = Objects.requireNonNull(computes);
+            if (computes == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "computes");
+            }
+            this.computes = computes;
             return this;
         }
         public Builder computes(GetAssetsAssetCollectionItemCompute... computes) {
@@ -313,62 +326,98 @@ public final class GetAssetsAssetCollectionItem {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalAssetKey(String externalAssetKey) {
-            this.externalAssetKey = Objects.requireNonNull(externalAssetKey);
+            if (externalAssetKey == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "externalAssetKey");
+            }
+            this.externalAssetKey = externalAssetKey;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inventoryId(String inventoryId) {
-            this.inventoryId = Objects.requireNonNull(inventoryId);
+            if (inventoryId == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "inventoryId");
+            }
+            this.inventoryId = inventoryId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceKey(String sourceKey) {
-            this.sourceKey = Objects.requireNonNull(sourceKey);
+            if (sourceKey == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "sourceKey");
+            }
+            this.sourceKey = sourceKey;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder vms(List<GetAssetsAssetCollectionItemVm> vms) {
-            this.vms = Objects.requireNonNull(vms);
+            if (vms == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "vms");
+            }
+            this.vms = vms;
             return this;
         }
         public Builder vms(GetAssetsAssetCollectionItemVm... vms) {
@@ -376,7 +425,10 @@ public final class GetAssetsAssetCollectionItem {
         }
         @CustomType.Setter
         public Builder vmwareVcenters(List<GetAssetsAssetCollectionItemVmwareVcenter> vmwareVcenters) {
-            this.vmwareVcenters = Objects.requireNonNull(vmwareVcenters);
+            if (vmwareVcenters == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "vmwareVcenters");
+            }
+            this.vmwareVcenters = vmwareVcenters;
             return this;
         }
         public Builder vmwareVcenters(GetAssetsAssetCollectionItemVmwareVcenter... vmwareVcenters) {
@@ -384,7 +436,10 @@ public final class GetAssetsAssetCollectionItem {
         }
         @CustomType.Setter
         public Builder vmwareVms(List<GetAssetsAssetCollectionItemVmwareVm> vmwareVms) {
-            this.vmwareVms = Objects.requireNonNull(vmwareVms);
+            if (vmwareVms == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "vmwareVms");
+            }
+            this.vmwareVms = vmwareVms;
             return this;
         }
         public Builder vmwareVms(GetAssetsAssetCollectionItemVmwareVm... vmwareVms) {

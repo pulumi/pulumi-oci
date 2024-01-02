@@ -5,6 +5,7 @@ package com.pulumi.oci.ApiGateway.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationLoggingPoliciesArgs;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesArgs;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRouteArgs;
@@ -163,7 +164,9 @@ public final class DeploymentSpecificationArgs extends com.pulumi.resources.Reso
         }
 
         public DeploymentSpecificationArgs build() {
-            $.routes = Objects.requireNonNull($.routes, "expected parameter 'routes' to be non-null");
+            if ($.routes == null) {
+                throw new MissingRequiredPropertyException("DeploymentSpecificationArgs", "routes");
+            }
             return $;
         }
     }

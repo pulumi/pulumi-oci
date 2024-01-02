@@ -95,11 +95,13 @@ public final class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnic
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder ipv6addressIpv6subnetCidrPairDetails(@Nullable List<ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails) {
+
             this.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             return this;
         }
@@ -108,11 +110,13 @@ public final class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnic
         }
         @CustomType.Setter
         public Builder isAssignIpv6ip(@Nullable Boolean isAssignIpv6ip) {
+
             this.isAssignIpv6ip = isAssignIpv6ip;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
+
             this.subnetId = subnetId;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.GetUsageCarbonEmissionsQueriesFilter;
 import com.pulumi.oci.MeteringComputation.outputs.GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollection;
 import java.lang.String;
@@ -80,11 +81,15 @@ public final class GetUsageCarbonEmissionsQueriesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueriesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetUsageCarbonEmissionsQueriesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -93,12 +98,18 @@ public final class GetUsageCarbonEmissionsQueriesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueriesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder usageCarbonEmissionsQueryCollections(List<GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollection> usageCarbonEmissionsQueryCollections) {
-            this.usageCarbonEmissionsQueryCollections = Objects.requireNonNull(usageCarbonEmissionsQueryCollections);
+            if (usageCarbonEmissionsQueryCollections == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueriesResult", "usageCarbonEmissionsQueryCollections");
+            }
+            this.usageCarbonEmissionsQueryCollections = usageCarbonEmissionsQueryCollections;
             return this;
         }
         public Builder usageCarbonEmissionsQueryCollections(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollection... usageCarbonEmissionsQueryCollections) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.outputs.GetListingTaxesFilter;
 import com.pulumi.oci.Marketplace.outputs.GetListingTaxesTax;
 import java.lang.String;
@@ -79,11 +80,13 @@ public final class GetListingTaxesResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetListingTaxesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -92,17 +95,26 @@ public final class GetListingTaxesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetListingTaxesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder listingId(String listingId) {
-            this.listingId = Objects.requireNonNull(listingId);
+            if (listingId == null) {
+              throw new MissingRequiredPropertyException("GetListingTaxesResult", "listingId");
+            }
+            this.listingId = listingId;
             return this;
         }
         @CustomType.Setter
         public Builder taxes(List<GetListingTaxesTax> taxes) {
-            this.taxes = Objects.requireNonNull(taxes);
+            if (taxes == null) {
+              throw new MissingRequiredPropertyException("GetListingTaxesResult", "taxes");
+            }
+            this.taxes = taxes;
             return this;
         }
         public Builder taxes(GetListingTaxesTax... taxes) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ObjectStorage.outputs.GetObjectLifecyclePolicyRule;
 import java.lang.String;
 import java.util.List;
@@ -76,22 +77,34 @@ public final class GetObjectLifecyclePolicyResult {
 
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetObjectLifecyclePolicyResult", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetObjectLifecyclePolicyResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetObjectLifecyclePolicyResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder rules(List<GetObjectLifecyclePolicyRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+            if (rules == null) {
+              throw new MissingRequiredPropertyException("GetObjectLifecyclePolicyResult", "rules");
+            }
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetObjectLifecyclePolicyRule... rules) {
@@ -99,7 +112,10 @@ public final class GetObjectLifecyclePolicyResult {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetObjectLifecyclePolicyResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetObjectLifecyclePolicyResult build() {

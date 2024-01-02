@@ -58,11 +58,13 @@ public final class FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime {
 
         @CustomType.Setter
         public Builder beginTimesValue(@Nullable String beginTimesValue) {
+
             this.beginTimesValue = beginTimesValue;
             return this;
         }
         @CustomType.Setter
         public Builder overrideType(@Nullable String overrideType) {
+
             this.overrideType = overrideType;
             return this;
         }

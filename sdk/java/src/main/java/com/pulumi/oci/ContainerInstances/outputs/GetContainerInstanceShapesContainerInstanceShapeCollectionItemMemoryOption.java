@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerInstances.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetContainerInstanceShapesContainerInstanceShapeCollectionIte
 
         @CustomType.Setter
         public Builder defaultPerOcpuInGbs(Double defaultPerOcpuInGbs) {
-            this.defaultPerOcpuInGbs = Objects.requireNonNull(defaultPerOcpuInGbs);
+            if (defaultPerOcpuInGbs == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption", "defaultPerOcpuInGbs");
+            }
+            this.defaultPerOcpuInGbs = defaultPerOcpuInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder maxInGbs(Double maxInGbs) {
-            this.maxInGbs = Objects.requireNonNull(maxInGbs);
+            if (maxInGbs == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption", "maxInGbs");
+            }
+            this.maxInGbs = maxInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder maxPerOcpuInGbs(Double maxPerOcpuInGbs) {
-            this.maxPerOcpuInGbs = Objects.requireNonNull(maxPerOcpuInGbs);
+            if (maxPerOcpuInGbs == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption", "maxPerOcpuInGbs");
+            }
+            this.maxPerOcpuInGbs = maxPerOcpuInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder minInGbs(Double minInGbs) {
-            this.minInGbs = Objects.requireNonNull(minInGbs);
+            if (minInGbs == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption", "minInGbs");
+            }
+            this.minInGbs = minInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder minPerOcpuInGbs(Double minPerOcpuInGbs) {
-            this.minPerOcpuInGbs = Objects.requireNonNull(minPerOcpuInGbs);
+            if (minPerOcpuInGbs == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption", "minPerOcpuInGbs");
+            }
+            this.minPerOcpuInGbs = minPerOcpuInGbs;
             return this;
         }
         public GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption build() {

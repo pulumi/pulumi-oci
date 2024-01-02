@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaim;
 import java.lang.String;
 import java.util.List;
@@ -72,7 +73,10 @@ public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationA
 
         @CustomType.Setter
         public Builder audiences(List<String> audiences) {
-            this.audiences = Objects.requireNonNull(audiences);
+            if (audiences == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicy", "audiences");
+            }
+            this.audiences = audiences;
             return this;
         }
         public Builder audiences(String... audiences) {
@@ -80,7 +84,10 @@ public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationA
         }
         @CustomType.Setter
         public Builder issuers(List<String> issuers) {
-            this.issuers = Objects.requireNonNull(issuers);
+            if (issuers == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicy", "issuers");
+            }
+            this.issuers = issuers;
             return this;
         }
         public Builder issuers(String... issuers) {
@@ -88,7 +95,10 @@ public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationA
         }
         @CustomType.Setter
         public Builder verifyClaims(List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaim> verifyClaims) {
-            this.verifyClaims = Objects.requireNonNull(verifyClaims);
+            if (verifyClaims == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicy", "verifyClaims");
+            }
+            this.verifyClaims = verifyClaims;
             return this;
         }
         public Builder verifyClaims(GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaim... verifyClaims) {

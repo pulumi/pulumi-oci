@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment 
 
         @CustomType.Setter
         public Builder assetId(String assetId) {
-            this.assetId = Objects.requireNonNull(assetId);
+            if (assetId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment", "assetId");
+            }
+            this.assetId = assetId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder policyId(String policyId) {
-            this.policyId = Objects.requireNonNull(policyId);
+            if (policyId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment", "policyId");
+            }
+            this.policyId = policyId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyApiKeyIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyApiKeyIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyApiKeyMeta;
@@ -299,42 +300,64 @@ public final class GetDomainsMyApiKeyResult {
 
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyApiKeyResult", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyApiKeyResult", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyApiKeyResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyApiKeyResult", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder fingerprint(String fingerprint) {
-            this.fingerprint = Objects.requireNonNull(fingerprint);
+            if (fingerprint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyApiKeyResult", "fingerprint");
+            }
+            this.fingerprint = fingerprint;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyApiKeyResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsMyApiKeyIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyApiKeyResult", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsMyApiKeyIdcsCreatedBy... idcsCreatedBies) {
@@ -342,12 +365,18 @@ public final class GetDomainsMyApiKeyResult {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyApiKeyResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsMyApiKeyIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyApiKeyResult", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsMyApiKeyIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -355,12 +384,18 @@ public final class GetDomainsMyApiKeyResult {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyApiKeyResult", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyApiKeyResult", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -368,12 +403,18 @@ public final class GetDomainsMyApiKeyResult {
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyApiKeyResult", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsMyApiKeyMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyApiKeyResult", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsMyApiKeyMeta... metas) {
@@ -381,22 +422,32 @@ public final class GetDomainsMyApiKeyResult {
         }
         @CustomType.Setter
         public Builder myApiKeyId(String myApiKeyId) {
-            this.myApiKeyId = Objects.requireNonNull(myApiKeyId);
+            if (myApiKeyId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyApiKeyResult", "myApiKeyId");
+            }
+            this.myApiKeyId = myApiKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyApiKeyResult", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyApiKeyResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -404,7 +455,10 @@ public final class GetDomainsMyApiKeyResult {
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsMyApiKeyTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyApiKeyResult", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsMyApiKeyTag... tags) {
@@ -412,12 +466,18 @@ public final class GetDomainsMyApiKeyResult {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyApiKeyResult", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder users(List<GetDomainsMyApiKeyUser> users) {
-            this.users = Objects.requireNonNull(users);
+            if (users == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyApiKeyResult", "users");
+            }
+            this.users = users;
             return this;
         }
         public Builder users(GetDomainsMyApiKeyUser... users) {

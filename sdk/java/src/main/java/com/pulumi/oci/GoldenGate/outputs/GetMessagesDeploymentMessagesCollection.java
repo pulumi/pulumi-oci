@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetMessagesDeploymentMessagesCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetMessagesDeploymentMessagesCollection {
 
         @CustomType.Setter
         public Builder items(List<GetMessagesDeploymentMessagesCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetMessagesDeploymentMessagesCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetMessagesDeploymentMessagesCollectionItem... items) {

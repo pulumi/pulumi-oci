@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class PluggableDatabaseManagementsManagementCredentialDetails {
 
         @CustomType.Setter
         public Builder passwordSecretId(String passwordSecretId) {
-            this.passwordSecretId = Objects.requireNonNull(passwordSecretId);
+            if (passwordSecretId == null) {
+              throw new MissingRequiredPropertyException("PluggableDatabaseManagementsManagementCredentialDetails", "passwordSecretId");
+            }
+            this.passwordSecretId = passwordSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+            if (userName == null) {
+              throw new MissingRequiredPropertyException("PluggableDatabaseManagementsManagementCredentialDetails", "userName");
+            }
+            this.userName = userName;
             return this;
         }
         public PluggableDatabaseManagementsManagementCredentialDetails build() {

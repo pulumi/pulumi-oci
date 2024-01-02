@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -72,32 +73,50 @@ public final class GetPipelineStepArtifact {
 
         @CustomType.Setter
         public Builder artifactContentDisposition(String artifactContentDisposition) {
-            this.artifactContentDisposition = Objects.requireNonNull(artifactContentDisposition);
+            if (artifactContentDisposition == null) {
+              throw new MissingRequiredPropertyException("GetPipelineStepArtifact", "artifactContentDisposition");
+            }
+            this.artifactContentDisposition = artifactContentDisposition;
             return this;
         }
         @CustomType.Setter
         public Builder artifactContentLength(String artifactContentLength) {
-            this.artifactContentLength = Objects.requireNonNull(artifactContentLength);
+            if (artifactContentLength == null) {
+              throw new MissingRequiredPropertyException("GetPipelineStepArtifact", "artifactContentLength");
+            }
+            this.artifactContentLength = artifactContentLength;
             return this;
         }
         @CustomType.Setter
         public Builder artifactContentMd5(String artifactContentMd5) {
-            this.artifactContentMd5 = Objects.requireNonNull(artifactContentMd5);
+            if (artifactContentMd5 == null) {
+              throw new MissingRequiredPropertyException("GetPipelineStepArtifact", "artifactContentMd5");
+            }
+            this.artifactContentMd5 = artifactContentMd5;
             return this;
         }
         @CustomType.Setter
         public Builder artifactLastModified(String artifactLastModified) {
-            this.artifactLastModified = Objects.requireNonNull(artifactLastModified);
+            if (artifactLastModified == null) {
+              throw new MissingRequiredPropertyException("GetPipelineStepArtifact", "artifactLastModified");
+            }
+            this.artifactLastModified = artifactLastModified;
             return this;
         }
         @CustomType.Setter
         public Builder pipelineStepArtifact(String pipelineStepArtifact) {
-            this.pipelineStepArtifact = Objects.requireNonNull(pipelineStepArtifact);
+            if (pipelineStepArtifact == null) {
+              throw new MissingRequiredPropertyException("GetPipelineStepArtifact", "pipelineStepArtifact");
+            }
+            this.pipelineStepArtifact = pipelineStepArtifact;
             return this;
         }
         @CustomType.Setter
         public Builder stepName(String stepName) {
-            this.stepName = Objects.requireNonNull(stepName);
+            if (stepName == null) {
+              throw new MissingRequiredPropertyException("GetPipelineStepArtifact", "stepName");
+            }
+            this.stepName = stepName;
             return this;
         }
         public GetPipelineStepArtifact build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsOauth2clientCredentialScopeArgs;
 import com.pulumi.oci.Identity.inputs.DomainsOauth2clientCredentialTagArgs;
 import com.pulumi.oci.Identity.inputs.DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs;
@@ -1122,9 +1123,15 @@ public final class DomainsOauth2clientCredentialArgs extends com.pulumi.resource
         }
 
         public DomainsOauth2clientCredentialArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
-            $.scopes = Objects.requireNonNull($.scopes, "expected parameter 'scopes' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsOauth2clientCredentialArgs", "idcsEndpoint");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsOauth2clientCredentialArgs", "schemas");
+            }
+            if ($.scopes == null) {
+                throw new MissingRequiredPropertyException("DomainsOauth2clientCredentialArgs", "scopes");
+            }
             return $;
         }
     }

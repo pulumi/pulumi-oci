@@ -59,11 +59,13 @@ public final class DeploymentSpecificationLoggingPoliciesExecutionLog {
 
         @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
+
             this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder logLevel(@Nullable String logLevel) {
+
             this.logLevel = logLevel;
             return this;
         }

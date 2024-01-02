@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetIngressGatewayHostListenerTlClientValidationTrustedCaBundl
 
         @CustomType.Setter
         public Builder caBundleId(String caBundleId) {
-            this.caBundleId = Objects.requireNonNull(caBundleId);
+            if (caBundleId == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle", "caBundleId");
+            }
+            this.caBundleId = caBundleId;
             return this;
         }
         @CustomType.Setter
         public Builder secretName(String secretName) {
-            this.secretName = Objects.requireNonNull(secretName);
+            if (secretName == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle", "secretName");
+            }
+            this.secretName = secretName;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle build() {

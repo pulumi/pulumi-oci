@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetMigrationDumpTransferDetailTarget {
 
         @CustomType.Setter
         public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+            if (kind == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDumpTransferDetailTarget", "kind");
+            }
+            this.kind = kind;
             return this;
         }
         @CustomType.Setter
         public Builder ociHome(String ociHome) {
-            this.ociHome = Objects.requireNonNull(ociHome);
+            if (ociHome == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDumpTransferDetailTarget", "ociHome");
+            }
+            this.ociHome = ociHome;
             return this;
         }
         @CustomType.Setter
         public Builder walletLocation(String walletLocation) {
-            this.walletLocation = Objects.requireNonNull(walletLocation);
+            if (walletLocation == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDumpTransferDetailTarget", "walletLocation");
+            }
+            this.walletLocation = walletLocation;
             return this;
         }
         public GetMigrationDumpTransferDetailTarget build() {

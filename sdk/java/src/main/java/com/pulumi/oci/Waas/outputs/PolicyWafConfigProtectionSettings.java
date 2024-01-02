@@ -263,6 +263,7 @@ public final class PolicyWafConfigProtectionSettings {
 
         @CustomType.Setter
         public Builder allowedHttpMethods(@Nullable List<String> allowedHttpMethods) {
+
             this.allowedHttpMethods = allowedHttpMethods;
             return this;
         }
@@ -271,56 +272,67 @@ public final class PolicyWafConfigProtectionSettings {
         }
         @CustomType.Setter
         public Builder blockAction(@Nullable String blockAction) {
+
             this.blockAction = blockAction;
             return this;
         }
         @CustomType.Setter
         public Builder blockErrorPageCode(@Nullable String blockErrorPageCode) {
+
             this.blockErrorPageCode = blockErrorPageCode;
             return this;
         }
         @CustomType.Setter
         public Builder blockErrorPageDescription(@Nullable String blockErrorPageDescription) {
+
             this.blockErrorPageDescription = blockErrorPageDescription;
             return this;
         }
         @CustomType.Setter
         public Builder blockErrorPageMessage(@Nullable String blockErrorPageMessage) {
+
             this.blockErrorPageMessage = blockErrorPageMessage;
             return this;
         }
         @CustomType.Setter
         public Builder blockResponseCode(@Nullable Integer blockResponseCode) {
+
             this.blockResponseCode = blockResponseCode;
             return this;
         }
         @CustomType.Setter
         public Builder isResponseInspected(@Nullable Boolean isResponseInspected) {
+
             this.isResponseInspected = isResponseInspected;
             return this;
         }
         @CustomType.Setter
         public Builder maxArgumentCount(@Nullable Integer maxArgumentCount) {
+
             this.maxArgumentCount = maxArgumentCount;
             return this;
         }
         @CustomType.Setter
         public Builder maxNameLengthPerArgument(@Nullable Integer maxNameLengthPerArgument) {
+
             this.maxNameLengthPerArgument = maxNameLengthPerArgument;
             return this;
         }
         @CustomType.Setter
         public Builder maxResponseSizeInKiB(@Nullable Integer maxResponseSizeInKiB) {
+
             this.maxResponseSizeInKiB = maxResponseSizeInKiB;
             return this;
         }
         @CustomType.Setter
         public Builder maxTotalNameLengthOfArguments(@Nullable Integer maxTotalNameLengthOfArguments) {
+
             this.maxTotalNameLengthOfArguments = maxTotalNameLengthOfArguments;
             return this;
         }
         @CustomType.Setter
         public Builder mediaTypes(@Nullable List<String> mediaTypes) {
+
             this.mediaTypes = mediaTypes;
             return this;
         }
@@ -329,6 +341,7 @@ public final class PolicyWafConfigProtectionSettings {
         }
         @CustomType.Setter
         public Builder recommendationsPeriodInDays(@Nullable Integer recommendationsPeriodInDays) {
+
             this.recommendationsPeriodInDays = recommendationsPeriodInDays;
             return this;
         }

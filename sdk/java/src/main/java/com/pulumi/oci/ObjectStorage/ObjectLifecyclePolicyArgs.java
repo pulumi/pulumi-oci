@@ -5,6 +5,7 @@ package com.pulumi.oci.ObjectStorage;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ObjectStorage.inputs.ObjectLifecyclePolicyRuleArgs;
 import java.lang.String;
 import java.util.List;
@@ -162,8 +163,12 @@ public final class ObjectLifecyclePolicyArgs extends com.pulumi.resources.Resour
         }
 
         public ObjectLifecyclePolicyArgs build() {
-            $.bucket = Objects.requireNonNull($.bucket, "expected parameter 'bucket' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
+            if ($.bucket == null) {
+                throw new MissingRequiredPropertyException("ObjectLifecyclePolicyArgs", "bucket");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("ObjectLifecyclePolicyArgs", "namespace");
+            }
             return $;
         }
     }

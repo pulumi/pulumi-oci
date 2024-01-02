@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange;
 import java.lang.Integer;
 import java.util.List;
@@ -64,17 +65,26 @@ public final class GetSecurityListsSecurityListEgressSecurityRuleTcpOption {
 
         @CustomType.Setter
         public Builder max(Integer max) {
-            this.max = Objects.requireNonNull(max);
+            if (max == null) {
+              throw new MissingRequiredPropertyException("GetSecurityListsSecurityListEgressSecurityRuleTcpOption", "max");
+            }
+            this.max = max;
             return this;
         }
         @CustomType.Setter
         public Builder min(Integer min) {
-            this.min = Objects.requireNonNull(min);
+            if (min == null) {
+              throw new MissingRequiredPropertyException("GetSecurityListsSecurityListEgressSecurityRuleTcpOption", "min");
+            }
+            this.min = min;
             return this;
         }
         @CustomType.Setter
         public Builder sourcePortRanges(List<GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange> sourcePortRanges) {
-            this.sourcePortRanges = Objects.requireNonNull(sourcePortRanges);
+            if (sourcePortRanges == null) {
+              throw new MissingRequiredPropertyException("GetSecurityListsSecurityListEgressSecurityRuleTcpOption", "sourcePortRanges");
+            }
+            this.sourcePortRanges = sourcePortRanges;
             return this;
         }
         public Builder sourcePortRanges(GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange... sourcePortRanges) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -293,37 +294,52 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
 
         @CustomType.Setter
         public Builder lastUpdateTimestamp(String lastUpdateTimestamp) {
-            this.lastUpdateTimestamp = Objects.requireNonNull(lastUpdateTimestamp);
+            if (lastUpdateTimestamp == null) {
+              throw new MissingRequiredPropertyException("DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore", "lastUpdateTimestamp");
+            }
+            this.lastUpdateTimestamp = lastUpdateTimestamp;
             return this;
         }
         @CustomType.Setter
         public Builder ref(@Nullable String ref) {
+
             this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder riskLevel(String riskLevel) {
-            this.riskLevel = Objects.requireNonNull(riskLevel);
+            if (riskLevel == null) {
+              throw new MissingRequiredPropertyException("DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore", "riskLevel");
+            }
+            this.riskLevel = riskLevel;
             return this;
         }
         @CustomType.Setter
         public Builder score(Integer score) {
-            this.score = Objects.requireNonNull(score);
+            if (score == null) {
+              throw new MissingRequiredPropertyException("DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore", "score");
+            }
+            this.score = score;
             return this;
         }
         @CustomType.Setter
         public Builder source(@Nullable String source) {
+
             this.source = source;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore", "value");
+            }
+            this.value = value;
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore build() {

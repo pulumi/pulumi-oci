@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetInstanceConfigurationPlainArgs extends com.pulumi.resource
         }
 
         public GetInstanceConfigurationPlainArgs build() {
-            $.instanceConfigurationId = Objects.requireNonNull($.instanceConfigurationId, "expected parameter 'instanceConfigurationId' to be non-null");
+            if ($.instanceConfigurationId == null) {
+                throw new MissingRequiredPropertyException("GetInstanceConfigurationPlainArgs", "instanceConfigurationId");
+            }
             return $;
         }
     }

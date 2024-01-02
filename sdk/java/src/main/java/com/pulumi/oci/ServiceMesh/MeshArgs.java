@@ -5,6 +5,7 @@ package com.pulumi.oci.ServiceMesh;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.inputs.MeshCertificateAuthorityArgs;
 import com.pulumi.oci.ServiceMesh.inputs.MeshMtlsArgs;
 import java.lang.Object;
@@ -313,9 +314,15 @@ public final class MeshArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public MeshArgs build() {
-            $.certificateAuthorities = Objects.requireNonNull($.certificateAuthorities, "expected parameter 'certificateAuthorities' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
+            if ($.certificateAuthorities == null) {
+                throw new MissingRequiredPropertyException("MeshArgs", "certificateAuthorities");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("MeshArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("MeshArgs", "displayName");
+            }
             return $;
         }
     }

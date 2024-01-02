@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsKmsiSettingIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsKmsiSettingIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsKmsiSettingMeta;
@@ -367,6 +368,7 @@ public final class GetDomainsKmsiSettingResult {
 
         @CustomType.Setter
         public Builder attributeSets(@Nullable List<String> attributeSets) {
+
             this.attributeSets = attributeSets;
             return this;
         }
@@ -375,42 +377,62 @@ public final class GetDomainsKmsiSettingResult {
         }
         @CustomType.Setter
         public Builder attributes(@Nullable String attributes) {
+
             this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+            if (externalId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "externalId");
+            }
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsKmsiSettingIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsKmsiSettingIdcsCreatedBy... idcsCreatedBies) {
@@ -418,12 +440,18 @@ public final class GetDomainsKmsiSettingResult {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsKmsiSettingIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsKmsiSettingIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -431,12 +459,18 @@ public final class GetDomainsKmsiSettingResult {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -444,37 +478,58 @@ public final class GetDomainsKmsiSettingResult {
         }
         @CustomType.Setter
         public Builder kmsiFeatureEnabled(Boolean kmsiFeatureEnabled) {
-            this.kmsiFeatureEnabled = Objects.requireNonNull(kmsiFeatureEnabled);
+            if (kmsiFeatureEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "kmsiFeatureEnabled");
+            }
+            this.kmsiFeatureEnabled = kmsiFeatureEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder kmsiPromptEnabled(Boolean kmsiPromptEnabled) {
-            this.kmsiPromptEnabled = Objects.requireNonNull(kmsiPromptEnabled);
+            if (kmsiPromptEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "kmsiPromptEnabled");
+            }
+            this.kmsiPromptEnabled = kmsiPromptEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder kmsiSettingId(String kmsiSettingId) {
-            this.kmsiSettingId = Objects.requireNonNull(kmsiSettingId);
+            if (kmsiSettingId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "kmsiSettingId");
+            }
+            this.kmsiSettingId = kmsiSettingId;
             return this;
         }
         @CustomType.Setter
         public Builder lastEnabledOn(String lastEnabledOn) {
-            this.lastEnabledOn = Objects.requireNonNull(lastEnabledOn);
+            if (lastEnabledOn == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "lastEnabledOn");
+            }
+            this.lastEnabledOn = lastEnabledOn;
             return this;
         }
         @CustomType.Setter
         public Builder lastUsedValidityInDays(Integer lastUsedValidityInDays) {
-            this.lastUsedValidityInDays = Objects.requireNonNull(lastUsedValidityInDays);
+            if (lastUsedValidityInDays == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "lastUsedValidityInDays");
+            }
+            this.lastUsedValidityInDays = lastUsedValidityInDays;
             return this;
         }
         @CustomType.Setter
         public Builder maxAllowedSessions(Integer maxAllowedSessions) {
-            this.maxAllowedSessions = Objects.requireNonNull(maxAllowedSessions);
+            if (maxAllowedSessions == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "maxAllowedSessions");
+            }
+            this.maxAllowedSessions = maxAllowedSessions;
             return this;
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsKmsiSettingMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsKmsiSettingMeta... metas) {
@@ -482,17 +537,24 @@ public final class GetDomainsKmsiSettingResult {
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -500,7 +562,10 @@ public final class GetDomainsKmsiSettingResult {
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsKmsiSettingTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsKmsiSettingTag... tags) {
@@ -508,17 +573,26 @@ public final class GetDomainsKmsiSettingResult {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder tokenValidityInDays(Integer tokenValidityInDays) {
-            this.tokenValidityInDays = Objects.requireNonNull(tokenValidityInDays);
+            if (tokenValidityInDays == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "tokenValidityInDays");
+            }
+            this.tokenValidityInDays = tokenValidityInDays;
             return this;
         }
         @CustomType.Setter
         public Builder touPromptDisabled(Boolean touPromptDisabled) {
-            this.touPromptDisabled = Objects.requireNonNull(touPromptDisabled);
+            if (touPromptDisabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingResult", "touPromptDisabled");
+            }
+            this.touPromptDisabled = touPromptDisabled;
             return this;
         }
         public GetDomainsKmsiSettingResult build() {

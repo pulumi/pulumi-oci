@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetVmClusterDataCollectionOption {
 
         @CustomType.Setter
         public Builder isDiagnosticsEventsEnabled(Boolean isDiagnosticsEventsEnabled) {
-            this.isDiagnosticsEventsEnabled = Objects.requireNonNull(isDiagnosticsEventsEnabled);
+            if (isDiagnosticsEventsEnabled == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterDataCollectionOption", "isDiagnosticsEventsEnabled");
+            }
+            this.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isHealthMonitoringEnabled(Boolean isHealthMonitoringEnabled) {
-            this.isHealthMonitoringEnabled = Objects.requireNonNull(isHealthMonitoringEnabled);
+            if (isHealthMonitoringEnabled == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterDataCollectionOption", "isHealthMonitoringEnabled");
+            }
+            this.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isIncidentLogsEnabled(Boolean isIncidentLogsEnabled) {
-            this.isIncidentLogsEnabled = Objects.requireNonNull(isIncidentLogsEnabled);
+            if (isIncidentLogsEnabled == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterDataCollectionOption", "isIncidentLogsEnabled");
+            }
+            this.isIncidentLogsEnabled = isIncidentLogsEnabled;
             return this;
         }
         public GetVmClusterDataCollectionOption build() {

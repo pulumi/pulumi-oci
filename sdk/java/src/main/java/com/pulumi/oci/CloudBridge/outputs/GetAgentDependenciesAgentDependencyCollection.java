@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudBridge.outputs.GetAgentDependenciesAgentDependencyCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetAgentDependenciesAgentDependencyCollection {
 
         @CustomType.Setter
         public Builder items(List<GetAgentDependenciesAgentDependencyCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetAgentDependenciesAgentDependencyCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetAgentDependenciesAgentDependencyCollectionItem... items) {

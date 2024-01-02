@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseMigration.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -148,9 +149,15 @@ public final class MigrationDatapumpSettingsMetadataRemapArgs extends com.pulumi
         }
 
         public MigrationDatapumpSettingsMetadataRemapArgs build() {
-            $.newValue = Objects.requireNonNull($.newValue, "expected parameter 'newValue' to be non-null");
-            $.oldValue = Objects.requireNonNull($.oldValue, "expected parameter 'oldValue' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.newValue == null) {
+                throw new MissingRequiredPropertyException("MigrationDatapumpSettingsMetadataRemapArgs", "newValue");
+            }
+            if ($.oldValue == null) {
+                throw new MissingRequiredPropertyException("MigrationDatapumpSettingsMetadataRemapArgs", "oldValue");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("MigrationDatapumpSettingsMetadataRemapArgs", "type");
+            }
             return $;
         }
     }

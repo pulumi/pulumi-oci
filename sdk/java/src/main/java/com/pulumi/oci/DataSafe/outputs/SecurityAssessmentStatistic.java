@@ -135,6 +135,7 @@ public final class SecurityAssessmentStatistic {
 
         @CustomType.Setter
         public Builder advisories(@Nullable List<SecurityAssessmentStatisticAdvisory> advisories) {
+
             this.advisories = advisories;
             return this;
         }
@@ -143,6 +144,7 @@ public final class SecurityAssessmentStatistic {
         }
         @CustomType.Setter
         public Builder evaluates(@Nullable List<SecurityAssessmentStatisticEvaluate> evaluates) {
+
             this.evaluates = evaluates;
             return this;
         }
@@ -151,6 +153,7 @@ public final class SecurityAssessmentStatistic {
         }
         @CustomType.Setter
         public Builder highRisks(@Nullable List<SecurityAssessmentStatisticHighRisk> highRisks) {
+
             this.highRisks = highRisks;
             return this;
         }
@@ -159,6 +162,7 @@ public final class SecurityAssessmentStatistic {
         }
         @CustomType.Setter
         public Builder lowRisks(@Nullable List<SecurityAssessmentStatisticLowRisk> lowRisks) {
+
             this.lowRisks = lowRisks;
             return this;
         }
@@ -167,6 +171,7 @@ public final class SecurityAssessmentStatistic {
         }
         @CustomType.Setter
         public Builder mediumRisks(@Nullable List<SecurityAssessmentStatisticMediumRisk> mediumRisks) {
+
             this.mediumRisks = mediumRisks;
             return this;
         }
@@ -175,6 +180,7 @@ public final class SecurityAssessmentStatistic {
         }
         @CustomType.Setter
         public Builder passes(@Nullable List<SecurityAssessmentStatisticPass> passes) {
+
             this.passes = passes;
             return this;
         }
@@ -183,6 +189,7 @@ public final class SecurityAssessmentStatistic {
         }
         @CustomType.Setter
         public Builder targetsCount(@Nullable Integer targetsCount) {
+
             this.targetsCount = targetsCount;
             return this;
         }

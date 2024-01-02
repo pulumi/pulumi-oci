@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -236,9 +237,15 @@ public final class ApplicationVipArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public ApplicationVipArgs build() {
-            $.cloudVmClusterId = Objects.requireNonNull($.cloudVmClusterId, "expected parameter 'cloudVmClusterId' to be non-null");
-            $.hostnameLabel = Objects.requireNonNull($.hostnameLabel, "expected parameter 'hostnameLabel' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.cloudVmClusterId == null) {
+                throw new MissingRequiredPropertyException("ApplicationVipArgs", "cloudVmClusterId");
+            }
+            if ($.hostnameLabel == null) {
+                throw new MissingRequiredPropertyException("ApplicationVipArgs", "hostnameLabel");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("ApplicationVipArgs", "subnetId");
+            }
             return $;
         }
     }

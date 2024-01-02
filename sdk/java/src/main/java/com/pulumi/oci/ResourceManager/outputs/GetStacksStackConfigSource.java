@@ -4,6 +4,7 @@
 package com.pulumi.oci.ResourceManager.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -46,17 +47,26 @@ public final class GetStacksStackConfigSource {
 
         @CustomType.Setter
         public Builder configSourceType(String configSourceType) {
-            this.configSourceType = Objects.requireNonNull(configSourceType);
+            if (configSourceType == null) {
+              throw new MissingRequiredPropertyException("GetStacksStackConfigSource", "configSourceType");
+            }
+            this.configSourceType = configSourceType;
             return this;
         }
         @CustomType.Setter
         public Builder workingDirectory(String workingDirectory) {
-            this.workingDirectory = Objects.requireNonNull(workingDirectory);
+            if (workingDirectory == null) {
+              throw new MissingRequiredPropertyException("GetStacksStackConfigSource", "workingDirectory");
+            }
+            this.workingDirectory = workingDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder zipFileBase64encoded(String zipFileBase64encoded) {
-            this.zipFileBase64encoded = Objects.requireNonNull(zipFileBase64encoded);
+            if (zipFileBase64encoded == null) {
+              throw new MissingRequiredPropertyException("GetStacksStackConfigSource", "zipFileBase64encoded");
+            }
+            this.zipFileBase64encoded = zipFileBase64encoded;
             return this;
         }
         public GetStacksStackConfigSource build() {

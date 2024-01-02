@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseTools.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseTools.outputs.DatabaseToolsConnectionProxyClientUserPassword;
 import java.lang.String;
 import java.util.List;
@@ -88,11 +89,15 @@ public final class DatabaseToolsConnectionProxyClient {
 
         @CustomType.Setter
         public Builder proxyAuthenticationType(String proxyAuthenticationType) {
-            this.proxyAuthenticationType = Objects.requireNonNull(proxyAuthenticationType);
+            if (proxyAuthenticationType == null) {
+              throw new MissingRequiredPropertyException("DatabaseToolsConnectionProxyClient", "proxyAuthenticationType");
+            }
+            this.proxyAuthenticationType = proxyAuthenticationType;
             return this;
         }
         @CustomType.Setter
         public Builder roles(@Nullable List<String> roles) {
+
             this.roles = roles;
             return this;
         }
@@ -101,11 +106,13 @@ public final class DatabaseToolsConnectionProxyClient {
         }
         @CustomType.Setter
         public Builder userName(@Nullable String userName) {
+
             this.userName = userName;
             return this;
         }
         @CustomType.Setter
         public Builder userPassword(@Nullable DatabaseToolsConnectionProxyClientUserPassword userPassword) {
+
             this.userPassword = userPassword;
             return this;
         }

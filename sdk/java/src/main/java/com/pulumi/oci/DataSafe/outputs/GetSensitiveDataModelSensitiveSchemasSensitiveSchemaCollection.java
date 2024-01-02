@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectio
 
         @CustomType.Setter
         public Builder items(List<GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem... items) {

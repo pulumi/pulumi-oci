@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -186,37 +187,58 @@ public final class GetTargetAssetRecommendedSpecCreateVnicDetail {
 
         @CustomType.Setter
         public Builder assignPrivateDnsRecord(Boolean assignPrivateDnsRecord) {
-            this.assignPrivateDnsRecord = Objects.requireNonNull(assignPrivateDnsRecord);
+            if (assignPrivateDnsRecord == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpecCreateVnicDetail", "assignPrivateDnsRecord");
+            }
+            this.assignPrivateDnsRecord = assignPrivateDnsRecord;
             return this;
         }
         @CustomType.Setter
         public Builder assignPublicIp(Boolean assignPublicIp) {
-            this.assignPublicIp = Objects.requireNonNull(assignPublicIp);
+            if (assignPublicIp == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpecCreateVnicDetail", "assignPublicIp");
+            }
+            this.assignPublicIp = assignPublicIp;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpecCreateVnicDetail", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpecCreateVnicDetail", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpecCreateVnicDetail", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostnameLabel(String hostnameLabel) {
-            this.hostnameLabel = Objects.requireNonNull(hostnameLabel);
+            if (hostnameLabel == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpecCreateVnicDetail", "hostnameLabel");
+            }
+            this.hostnameLabel = hostnameLabel;
             return this;
         }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpecCreateVnicDetail", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
@@ -224,22 +246,34 @@ public final class GetTargetAssetRecommendedSpecCreateVnicDetail {
         }
         @CustomType.Setter
         public Builder privateIp(String privateIp) {
-            this.privateIp = Objects.requireNonNull(privateIp);
+            if (privateIp == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpecCreateVnicDetail", "privateIp");
+            }
+            this.privateIp = privateIp;
             return this;
         }
         @CustomType.Setter
         public Builder skipSourceDestCheck(Boolean skipSourceDestCheck) {
-            this.skipSourceDestCheck = Objects.requireNonNull(skipSourceDestCheck);
+            if (skipSourceDestCheck == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpecCreateVnicDetail", "skipSourceDestCheck");
+            }
+            this.skipSourceDestCheck = skipSourceDestCheck;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpecCreateVnicDetail", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder vlanId(String vlanId) {
-            this.vlanId = Objects.requireNonNull(vlanId);
+            if (vlanId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpecCreateVnicDetail", "vlanId");
+            }
+            this.vlanId = vlanId;
             return this;
         }
         public GetTargetAssetRecommendedSpecCreateVnicDetail build() {

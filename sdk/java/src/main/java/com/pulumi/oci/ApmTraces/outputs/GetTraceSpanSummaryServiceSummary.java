@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmTraces.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetTraceSpanSummaryServiceSummary {
 
         @CustomType.Setter
         public Builder errorSpans(String errorSpans) {
-            this.errorSpans = Objects.requireNonNull(errorSpans);
+            if (errorSpans == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanSummaryServiceSummary", "errorSpans");
+            }
+            this.errorSpans = errorSpans;
             return this;
         }
         @CustomType.Setter
         public Builder spanServiceName(String spanServiceName) {
-            this.spanServiceName = Objects.requireNonNull(spanServiceName);
+            if (spanServiceName == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanSummaryServiceSummary", "spanServiceName");
+            }
+            this.spanServiceName = spanServiceName;
             return this;
         }
         @CustomType.Setter
         public Builder totalSpans(String totalSpans) {
-            this.totalSpans = Objects.requireNonNull(totalSpans);
+            if (totalSpans == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanSummaryServiceSummary", "totalSpans");
+            }
+            this.totalSpans = totalSpans;
             return this;
         }
         public GetTraceSpanSummaryServiceSummary build() {

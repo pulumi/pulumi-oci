@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
@@ -367,42 +368,66 @@ public final class GetLibraryMaskingFormatFormatEntry {
 
         @CustomType.Setter
         public Builder columnName(String columnName) {
-            this.columnName = Objects.requireNonNull(columnName);
+            if (columnName == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "columnName");
+            }
+            this.columnName = columnName;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder endDate(String endDate) {
-            this.endDate = Objects.requireNonNull(endDate);
+            if (endDate == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "endDate");
+            }
+            this.endDate = endDate;
             return this;
         }
         @CustomType.Setter
         public Builder endLength(Integer endLength) {
-            this.endLength = Objects.requireNonNull(endLength);
+            if (endLength == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "endLength");
+            }
+            this.endLength = endLength;
             return this;
         }
         @CustomType.Setter
         public Builder endValue(Double endValue) {
-            this.endValue = Objects.requireNonNull(endValue);
+            if (endValue == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "endValue");
+            }
+            this.endValue = endValue;
             return this;
         }
         @CustomType.Setter
         public Builder fixedNumber(Double fixedNumber) {
-            this.fixedNumber = Objects.requireNonNull(fixedNumber);
+            if (fixedNumber == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "fixedNumber");
+            }
+            this.fixedNumber = fixedNumber;
             return this;
         }
         @CustomType.Setter
         public Builder fixedString(String fixedString) {
-            this.fixedString = Objects.requireNonNull(fixedString);
+            if (fixedString == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "fixedString");
+            }
+            this.fixedString = fixedString;
             return this;
         }
         @CustomType.Setter
         public Builder groupingColumns(List<String> groupingColumns) {
-            this.groupingColumns = Objects.requireNonNull(groupingColumns);
+            if (groupingColumns == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "groupingColumns");
+            }
+            this.groupingColumns = groupingColumns;
             return this;
         }
         public Builder groupingColumns(String... groupingColumns) {
@@ -410,27 +435,42 @@ public final class GetLibraryMaskingFormatFormatEntry {
         }
         @CustomType.Setter
         public Builder length(Integer length) {
-            this.length = Objects.requireNonNull(length);
+            if (length == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "length");
+            }
+            this.length = length;
             return this;
         }
         @CustomType.Setter
         public Builder libraryMaskingFormatId(String libraryMaskingFormatId) {
-            this.libraryMaskingFormatId = Objects.requireNonNull(libraryMaskingFormatId);
+            if (libraryMaskingFormatId == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "libraryMaskingFormatId");
+            }
+            this.libraryMaskingFormatId = libraryMaskingFormatId;
             return this;
         }
         @CustomType.Setter
         public Builder pattern(String pattern) {
-            this.pattern = Objects.requireNonNull(pattern);
+            if (pattern == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "pattern");
+            }
+            this.pattern = pattern;
             return this;
         }
         @CustomType.Setter
         public Builder postProcessingFunction(String postProcessingFunction) {
-            this.postProcessingFunction = Objects.requireNonNull(postProcessingFunction);
+            if (postProcessingFunction == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "postProcessingFunction");
+            }
+            this.postProcessingFunction = postProcessingFunction;
             return this;
         }
         @CustomType.Setter
         public Builder randomLists(List<String> randomLists) {
-            this.randomLists = Objects.requireNonNull(randomLists);
+            if (randomLists == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "randomLists");
+            }
+            this.randomLists = randomLists;
             return this;
         }
         public Builder randomLists(String... randomLists) {
@@ -438,57 +478,90 @@ public final class GetLibraryMaskingFormatFormatEntry {
         }
         @CustomType.Setter
         public Builder regularExpression(String regularExpression) {
-            this.regularExpression = Objects.requireNonNull(regularExpression);
+            if (regularExpression == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "regularExpression");
+            }
+            this.regularExpression = regularExpression;
             return this;
         }
         @CustomType.Setter
         public Builder replaceWith(String replaceWith) {
-            this.replaceWith = Objects.requireNonNull(replaceWith);
+            if (replaceWith == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "replaceWith");
+            }
+            this.replaceWith = replaceWith;
             return this;
         }
         @CustomType.Setter
         public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+            if (schemaName == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "schemaName");
+            }
+            this.schemaName = schemaName;
             return this;
         }
         @CustomType.Setter
         public Builder sqlExpression(String sqlExpression) {
-            this.sqlExpression = Objects.requireNonNull(sqlExpression);
+            if (sqlExpression == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "sqlExpression");
+            }
+            this.sqlExpression = sqlExpression;
             return this;
         }
         @CustomType.Setter
         public Builder startDate(String startDate) {
-            this.startDate = Objects.requireNonNull(startDate);
+            if (startDate == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "startDate");
+            }
+            this.startDate = startDate;
             return this;
         }
         @CustomType.Setter
         public Builder startLength(Integer startLength) {
-            this.startLength = Objects.requireNonNull(startLength);
+            if (startLength == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "startLength");
+            }
+            this.startLength = startLength;
             return this;
         }
         @CustomType.Setter
         public Builder startPosition(Integer startPosition) {
-            this.startPosition = Objects.requireNonNull(startPosition);
+            if (startPosition == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "startPosition");
+            }
+            this.startPosition = startPosition;
             return this;
         }
         @CustomType.Setter
         public Builder startValue(Double startValue) {
-            this.startValue = Objects.requireNonNull(startValue);
+            if (startValue == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "startValue");
+            }
+            this.startValue = startValue;
             return this;
         }
         @CustomType.Setter
         public Builder tableName(String tableName) {
-            this.tableName = Objects.requireNonNull(tableName);
+            if (tableName == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "tableName");
+            }
+            this.tableName = tableName;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder userDefinedFunction(String userDefinedFunction) {
-            this.userDefinedFunction = Objects.requireNonNull(userDefinedFunction);
+            if (userDefinedFunction == null) {
+              throw new MissingRequiredPropertyException("GetLibraryMaskingFormatFormatEntry", "userDefinedFunction");
+            }
+            this.userDefinedFunction = userDefinedFunction;
             return this;
         }
         public GetLibraryMaskingFormatFormatEntry build() {

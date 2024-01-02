@@ -4,6 +4,7 @@
 package com.pulumi.oci.Artifacts.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -240,77 +241,122 @@ public final class GetContainerSignaturesContainerImageSignatureCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetContainerSignaturesContainerImageSignatureCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetContainerSignaturesContainerImageSignatureCollectionItem", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetContainerSignaturesContainerImageSignatureCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetContainerSignaturesContainerImageSignatureCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetContainerSignaturesContainerImageSignatureCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetContainerSignaturesContainerImageSignatureCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imageId(String imageId) {
-            this.imageId = Objects.requireNonNull(imageId);
+            if (imageId == null) {
+              throw new MissingRequiredPropertyException("GetContainerSignaturesContainerImageSignatureCollectionItem", "imageId");
+            }
+            this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetContainerSignaturesContainerImageSignatureCollectionItem", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
-            this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
+            if (kmsKeyVersionId == null) {
+              throw new MissingRequiredPropertyException("GetContainerSignaturesContainerImageSignatureCollectionItem", "kmsKeyVersionId");
+            }
+            this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
         @CustomType.Setter
         public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+            if (message == null) {
+              throw new MissingRequiredPropertyException("GetContainerSignaturesContainerImageSignatureCollectionItem", "message");
+            }
+            this.message = message;
             return this;
         }
         @CustomType.Setter
         public Builder signature(String signature) {
-            this.signature = Objects.requireNonNull(signature);
+            if (signature == null) {
+              throw new MissingRequiredPropertyException("GetContainerSignaturesContainerImageSignatureCollectionItem", "signature");
+            }
+            this.signature = signature;
             return this;
         }
         @CustomType.Setter
         public Builder signingAlgorithm(String signingAlgorithm) {
-            this.signingAlgorithm = Objects.requireNonNull(signingAlgorithm);
+            if (signingAlgorithm == null) {
+              throw new MissingRequiredPropertyException("GetContainerSignaturesContainerImageSignatureCollectionItem", "signingAlgorithm");
+            }
+            this.signingAlgorithm = signingAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetContainerSignaturesContainerImageSignatureCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetContainerSignaturesContainerImageSignatureCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetContainerSignaturesContainerImageSignatureCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetContainerSignaturesContainerImageSignatureCollectionItem build() {

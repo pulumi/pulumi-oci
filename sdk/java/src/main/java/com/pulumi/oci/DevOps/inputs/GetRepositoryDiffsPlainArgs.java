@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffsFilter;
 import java.lang.Boolean;
 import java.lang.String;
@@ -166,9 +167,15 @@ public final class GetRepositoryDiffsPlainArgs extends com.pulumi.resources.Invo
         }
 
         public GetRepositoryDiffsPlainArgs build() {
-            $.baseVersion = Objects.requireNonNull($.baseVersion, "expected parameter 'baseVersion' to be non-null");
-            $.repositoryId = Objects.requireNonNull($.repositoryId, "expected parameter 'repositoryId' to be non-null");
-            $.targetVersion = Objects.requireNonNull($.targetVersion, "expected parameter 'targetVersion' to be non-null");
+            if ($.baseVersion == null) {
+                throw new MissingRequiredPropertyException("GetRepositoryDiffsPlainArgs", "baseVersion");
+            }
+            if ($.repositoryId == null) {
+                throw new MissingRequiredPropertyException("GetRepositoryDiffsPlainArgs", "repositoryId");
+            }
+            if ($.targetVersion == null) {
+                throw new MissingRequiredPropertyException("GetRepositoryDiffsPlainArgs", "targetVersion");
+            }
             return $;
         }
     }

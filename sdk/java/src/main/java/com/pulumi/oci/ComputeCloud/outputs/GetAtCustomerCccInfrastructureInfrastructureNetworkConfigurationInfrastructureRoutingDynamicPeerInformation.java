@@ -4,6 +4,7 @@
 package com.pulumi.oci.ComputeCloud.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
 
         @CustomType.Setter
         public Builder asn(Integer asn) {
-            this.asn = Objects.requireNonNull(asn);
+            if (asn == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation", "asn");
+            }
+            this.asn = asn;
             return this;
         }
         @CustomType.Setter
         public Builder ip(String ip) {
-            this.ip = Objects.requireNonNull(ip);
+            if (ip == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation", "ip");
+            }
+            this.ip = ip;
             return this;
         }
         public GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation build() {

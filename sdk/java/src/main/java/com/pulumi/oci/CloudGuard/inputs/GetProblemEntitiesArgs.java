@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.inputs.GetProblemEntitiesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -99,7 +100,9 @@ public final class GetProblemEntitiesArgs extends com.pulumi.resources.InvokeArg
         }
 
         public GetProblemEntitiesArgs build() {
-            $.problemId = Objects.requireNonNull($.problemId, "expected parameter 'problemId' to be non-null");
+            if ($.problemId == null) {
+                throw new MissingRequiredPropertyException("GetProblemEntitiesArgs", "problemId");
+            }
             return $;
         }
     }

@@ -86,21 +86,25 @@ public final class PublicationIcon {
 
         @CustomType.Setter
         public Builder contentUrl(@Nullable String contentUrl) {
+
             this.contentUrl = contentUrl;
             return this;
         }
         @CustomType.Setter
         public Builder fileExtension(@Nullable String fileExtension) {
+
             this.fileExtension = fileExtension;
             return this;
         }
         @CustomType.Setter
         public Builder mimeType(@Nullable String mimeType) {
+
             this.mimeType = mimeType;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }

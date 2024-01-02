@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -155,47 +156,74 @@ public final class GetFilesystemSnapshotPolicySchedule {
 
         @CustomType.Setter
         public Builder dayOfMonth(Integer dayOfMonth) {
-            this.dayOfMonth = Objects.requireNonNull(dayOfMonth);
+            if (dayOfMonth == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicySchedule", "dayOfMonth");
+            }
+            this.dayOfMonth = dayOfMonth;
             return this;
         }
         @CustomType.Setter
         public Builder dayOfWeek(String dayOfWeek) {
-            this.dayOfWeek = Objects.requireNonNull(dayOfWeek);
+            if (dayOfWeek == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicySchedule", "dayOfWeek");
+            }
+            this.dayOfWeek = dayOfWeek;
             return this;
         }
         @CustomType.Setter
         public Builder hourOfDay(Integer hourOfDay) {
-            this.hourOfDay = Objects.requireNonNull(hourOfDay);
+            if (hourOfDay == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicySchedule", "hourOfDay");
+            }
+            this.hourOfDay = hourOfDay;
             return this;
         }
         @CustomType.Setter
         public Builder month(String month) {
-            this.month = Objects.requireNonNull(month);
+            if (month == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicySchedule", "month");
+            }
+            this.month = month;
             return this;
         }
         @CustomType.Setter
         public Builder period(String period) {
-            this.period = Objects.requireNonNull(period);
+            if (period == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicySchedule", "period");
+            }
+            this.period = period;
             return this;
         }
         @CustomType.Setter
         public Builder retentionDurationInSeconds(String retentionDurationInSeconds) {
-            this.retentionDurationInSeconds = Objects.requireNonNull(retentionDurationInSeconds);
+            if (retentionDurationInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicySchedule", "retentionDurationInSeconds");
+            }
+            this.retentionDurationInSeconds = retentionDurationInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder schedulePrefix(String schedulePrefix) {
-            this.schedulePrefix = Objects.requireNonNull(schedulePrefix);
+            if (schedulePrefix == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicySchedule", "schedulePrefix");
+            }
+            this.schedulePrefix = schedulePrefix;
             return this;
         }
         @CustomType.Setter
         public Builder timeScheduleStart(String timeScheduleStart) {
-            this.timeScheduleStart = Objects.requireNonNull(timeScheduleStart);
+            if (timeScheduleStart == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicySchedule", "timeScheduleStart");
+            }
+            this.timeScheduleStart = timeScheduleStart;
             return this;
         }
         @CustomType.Setter
         public Builder timeZone(String timeZone) {
-            this.timeZone = Objects.requireNonNull(timeZone);
+            if (timeZone == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicySchedule", "timeZone");
+            }
+            this.timeZone = timeZone;
             return this;
         }
         public GetFilesystemSnapshotPolicySchedule build() {

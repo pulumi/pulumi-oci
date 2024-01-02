@@ -4,6 +4,7 @@
 package com.pulumi.oci.Bastion.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Bastion.inputs.GetBastionsFilter;
 import java.lang.String;
 import java.util.List;
@@ -165,7 +166,9 @@ public final class GetBastionsPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         public GetBastionsPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetBastionsPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

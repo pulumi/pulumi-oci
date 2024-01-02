@@ -4,6 +4,7 @@
 package com.pulumi.oci.FusionApps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FusionApps.outputs.FusionEnvironmentRuleCondition;
 import java.lang.String;
 import java.util.List;
@@ -80,12 +81,18 @@ public final class FusionEnvironmentRule {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("FusionEnvironmentRule", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder conditions(List<FusionEnvironmentRuleCondition> conditions) {
-            this.conditions = Objects.requireNonNull(conditions);
+            if (conditions == null) {
+              throw new MissingRequiredPropertyException("FusionEnvironmentRule", "conditions");
+            }
+            this.conditions = conditions;
             return this;
         }
         public Builder conditions(FusionEnvironmentRuleCondition... conditions) {
@@ -93,6 +100,7 @@ public final class FusionEnvironmentRule {
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }

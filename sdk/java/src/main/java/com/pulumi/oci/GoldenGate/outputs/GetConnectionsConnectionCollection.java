@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionsConnectionCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetConnectionsConnectionCollection {
 
         @CustomType.Setter
         public Builder items(List<GetConnectionsConnectionCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetConnectionsConnectionCollectionItem... items) {

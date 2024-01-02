@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetAppCatalogSubscriptionsAppCatalogSubscription;
 import com.pulumi.oci.Core.outputs.GetAppCatalogSubscriptionsFilter;
 import java.lang.String;
@@ -95,7 +96,10 @@ public final class GetAppCatalogSubscriptionsResult {
 
         @CustomType.Setter
         public Builder appCatalogSubscriptions(List<GetAppCatalogSubscriptionsAppCatalogSubscription> appCatalogSubscriptions) {
-            this.appCatalogSubscriptions = Objects.requireNonNull(appCatalogSubscriptions);
+            if (appCatalogSubscriptions == null) {
+              throw new MissingRequiredPropertyException("GetAppCatalogSubscriptionsResult", "appCatalogSubscriptions");
+            }
+            this.appCatalogSubscriptions = appCatalogSubscriptions;
             return this;
         }
         public Builder appCatalogSubscriptions(GetAppCatalogSubscriptionsAppCatalogSubscription... appCatalogSubscriptions) {
@@ -103,11 +107,15 @@ public final class GetAppCatalogSubscriptionsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAppCatalogSubscriptionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAppCatalogSubscriptionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -116,11 +124,15 @@ public final class GetAppCatalogSubscriptionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAppCatalogSubscriptionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder listingId(@Nullable String listingId) {
+
             this.listingId = listingId;
             return this;
         }

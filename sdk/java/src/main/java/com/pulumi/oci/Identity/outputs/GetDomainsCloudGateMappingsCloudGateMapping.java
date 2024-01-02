@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsCloudGateMappingsCloudGateMappingCloudGate;
 import com.pulumi.oci.Identity.outputs.GetDomainsCloudGateMappingsCloudGateMappingGatewayApp;
 import com.pulumi.oci.Identity.outputs.GetDomainsCloudGateMappingsCloudGateMappingIdcsCreatedBy;
@@ -430,7 +431,10 @@ public final class GetDomainsCloudGateMappingsCloudGateMapping {
 
         @CustomType.Setter
         public Builder attributeSets(List<String> attributeSets) {
-            this.attributeSets = Objects.requireNonNull(attributeSets);
+            if (attributeSets == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "attributeSets");
+            }
+            this.attributeSets = attributeSets;
             return this;
         }
         public Builder attributeSets(String... attributeSets) {
@@ -438,17 +442,26 @@ public final class GetDomainsCloudGateMappingsCloudGateMapping {
         }
         @CustomType.Setter
         public Builder attributes(String attributes) {
-            this.attributes = Objects.requireNonNull(attributes);
+            if (attributes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "attributes");
+            }
+            this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(String authorization) {
-            this.authorization = Objects.requireNonNull(authorization);
+            if (authorization == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "authorization");
+            }
+            this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder cloudGates(List<GetDomainsCloudGateMappingsCloudGateMappingCloudGate> cloudGates) {
-            this.cloudGates = Objects.requireNonNull(cloudGates);
+            if (cloudGates == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "cloudGates");
+            }
+            this.cloudGates = cloudGates;
             return this;
         }
         public Builder cloudGates(GetDomainsCloudGateMappingsCloudGateMappingCloudGate... cloudGates) {
@@ -456,27 +469,42 @@ public final class GetDomainsCloudGateMappingsCloudGateMapping {
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder gatewayApps(List<GetDomainsCloudGateMappingsCloudGateMappingGatewayApp> gatewayApps) {
-            this.gatewayApps = Objects.requireNonNull(gatewayApps);
+            if (gatewayApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "gatewayApps");
+            }
+            this.gatewayApps = gatewayApps;
             return this;
         }
         public Builder gatewayApps(GetDomainsCloudGateMappingsCloudGateMappingGatewayApp... gatewayApps) {
@@ -484,12 +512,18 @@ public final class GetDomainsCloudGateMappingsCloudGateMapping {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsCloudGateMappingsCloudGateMappingIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsCloudGateMappingsCloudGateMappingIdcsCreatedBy... idcsCreatedBies) {
@@ -497,12 +531,18 @@ public final class GetDomainsCloudGateMappingsCloudGateMapping {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsCloudGateMappingsCloudGateMappingIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsCloudGateMappingsCloudGateMappingIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -510,12 +550,18 @@ public final class GetDomainsCloudGateMappingsCloudGateMapping {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -523,12 +569,18 @@ public final class GetDomainsCloudGateMappingsCloudGateMapping {
         }
         @CustomType.Setter
         public Builder isOpcService(Boolean isOpcService) {
-            this.isOpcService = Objects.requireNonNull(isOpcService);
+            if (isOpcService == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "isOpcService");
+            }
+            this.isOpcService = isOpcService;
             return this;
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsCloudGateMappingsCloudGateMappingMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsCloudGateMappingsCloudGateMappingMeta... metas) {
@@ -536,37 +588,58 @@ public final class GetDomainsCloudGateMappingsCloudGateMapping {
         }
         @CustomType.Setter
         public Builder nginxSettings(String nginxSettings) {
-            this.nginxSettings = Objects.requireNonNull(nginxSettings);
+            if (nginxSettings == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "nginxSettings");
+            }
+            this.nginxSettings = nginxSettings;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder policyName(String policyName) {
-            this.policyName = Objects.requireNonNull(policyName);
+            if (policyName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "policyName");
+            }
+            this.policyName = policyName;
             return this;
         }
         @CustomType.Setter
         public Builder proxyPass(String proxyPass) {
-            this.proxyPass = Objects.requireNonNull(proxyPass);
+            if (proxyPass == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "proxyPass");
+            }
+            this.proxyPass = proxyPass;
             return this;
         }
         @CustomType.Setter
         public Builder resourcePrefix(String resourcePrefix) {
-            this.resourcePrefix = Objects.requireNonNull(resourcePrefix);
+            if (resourcePrefix == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "resourcePrefix");
+            }
+            this.resourcePrefix = resourcePrefix;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(String resourceTypeSchemaVersion) {
-            this.resourceTypeSchemaVersion = Objects.requireNonNull(resourceTypeSchemaVersion);
+            if (resourceTypeSchemaVersion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "resourceTypeSchemaVersion");
+            }
+            this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -574,7 +647,10 @@ public final class GetDomainsCloudGateMappingsCloudGateMapping {
         }
         @CustomType.Setter
         public Builder servers(List<GetDomainsCloudGateMappingsCloudGateMappingServer> servers) {
-            this.servers = Objects.requireNonNull(servers);
+            if (servers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "servers");
+            }
+            this.servers = servers;
             return this;
         }
         public Builder servers(GetDomainsCloudGateMappingsCloudGateMappingServer... servers) {
@@ -582,7 +658,10 @@ public final class GetDomainsCloudGateMappingsCloudGateMapping {
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsCloudGateMappingsCloudGateMappingTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsCloudGateMappingsCloudGateMappingTag... tags) {
@@ -590,12 +669,18 @@ public final class GetDomainsCloudGateMappingsCloudGateMapping {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder upstreamServerGroups(List<GetDomainsCloudGateMappingsCloudGateMappingUpstreamServerGroup> upstreamServerGroups) {
-            this.upstreamServerGroups = Objects.requireNonNull(upstreamServerGroups);
+            if (upstreamServerGroups == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGateMappingsCloudGateMapping", "upstreamServerGroups");
+            }
+            this.upstreamServerGroups = upstreamServerGroups;
             return this;
         }
         public Builder upstreamServerGroups(GetDomainsCloudGateMappingsCloudGateMappingUpstreamServerGroup... upstreamServerGroups) {

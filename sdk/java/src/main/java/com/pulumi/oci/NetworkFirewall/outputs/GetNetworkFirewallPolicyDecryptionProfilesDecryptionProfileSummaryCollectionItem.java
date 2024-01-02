@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -211,67 +212,106 @@ public final class GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSu
 
         @CustomType.Setter
         public Builder areCertificateExtensionsRestricted(Boolean areCertificateExtensionsRestricted) {
-            this.areCertificateExtensionsRestricted = Objects.requireNonNull(areCertificateExtensionsRestricted);
+            if (areCertificateExtensionsRestricted == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem", "areCertificateExtensionsRestricted");
+            }
+            this.areCertificateExtensionsRestricted = areCertificateExtensionsRestricted;
             return this;
         }
         @CustomType.Setter
         public Builder isAutoIncludeAltName(Boolean isAutoIncludeAltName) {
-            this.isAutoIncludeAltName = Objects.requireNonNull(isAutoIncludeAltName);
+            if (isAutoIncludeAltName == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem", "isAutoIncludeAltName");
+            }
+            this.isAutoIncludeAltName = isAutoIncludeAltName;
             return this;
         }
         @CustomType.Setter
         public Builder isExpiredCertificateBlocked(Boolean isExpiredCertificateBlocked) {
-            this.isExpiredCertificateBlocked = Objects.requireNonNull(isExpiredCertificateBlocked);
+            if (isExpiredCertificateBlocked == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem", "isExpiredCertificateBlocked");
+            }
+            this.isExpiredCertificateBlocked = isExpiredCertificateBlocked;
             return this;
         }
         @CustomType.Setter
         public Builder isOutOfCapacityBlocked(Boolean isOutOfCapacityBlocked) {
-            this.isOutOfCapacityBlocked = Objects.requireNonNull(isOutOfCapacityBlocked);
+            if (isOutOfCapacityBlocked == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem", "isOutOfCapacityBlocked");
+            }
+            this.isOutOfCapacityBlocked = isOutOfCapacityBlocked;
             return this;
         }
         @CustomType.Setter
         public Builder isRevocationStatusTimeoutBlocked(Boolean isRevocationStatusTimeoutBlocked) {
-            this.isRevocationStatusTimeoutBlocked = Objects.requireNonNull(isRevocationStatusTimeoutBlocked);
+            if (isRevocationStatusTimeoutBlocked == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem", "isRevocationStatusTimeoutBlocked");
+            }
+            this.isRevocationStatusTimeoutBlocked = isRevocationStatusTimeoutBlocked;
             return this;
         }
         @CustomType.Setter
         public Builder isUnknownRevocationStatusBlocked(Boolean isUnknownRevocationStatusBlocked) {
-            this.isUnknownRevocationStatusBlocked = Objects.requireNonNull(isUnknownRevocationStatusBlocked);
+            if (isUnknownRevocationStatusBlocked == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem", "isUnknownRevocationStatusBlocked");
+            }
+            this.isUnknownRevocationStatusBlocked = isUnknownRevocationStatusBlocked;
             return this;
         }
         @CustomType.Setter
         public Builder isUnsupportedCipherBlocked(Boolean isUnsupportedCipherBlocked) {
-            this.isUnsupportedCipherBlocked = Objects.requireNonNull(isUnsupportedCipherBlocked);
+            if (isUnsupportedCipherBlocked == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem", "isUnsupportedCipherBlocked");
+            }
+            this.isUnsupportedCipherBlocked = isUnsupportedCipherBlocked;
             return this;
         }
         @CustomType.Setter
         public Builder isUnsupportedVersionBlocked(Boolean isUnsupportedVersionBlocked) {
-            this.isUnsupportedVersionBlocked = Objects.requireNonNull(isUnsupportedVersionBlocked);
+            if (isUnsupportedVersionBlocked == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem", "isUnsupportedVersionBlocked");
+            }
+            this.isUnsupportedVersionBlocked = isUnsupportedVersionBlocked;
             return this;
         }
         @CustomType.Setter
         public Builder isUntrustedIssuerBlocked(Boolean isUntrustedIssuerBlocked) {
-            this.isUntrustedIssuerBlocked = Objects.requireNonNull(isUntrustedIssuerBlocked);
+            if (isUntrustedIssuerBlocked == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem", "isUntrustedIssuerBlocked");
+            }
+            this.isUntrustedIssuerBlocked = isUntrustedIssuerBlocked;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder networkFirewallPolicyId(String networkFirewallPolicyId) {
-            this.networkFirewallPolicyId = Objects.requireNonNull(networkFirewallPolicyId);
+            if (networkFirewallPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem", "networkFirewallPolicyId");
+            }
+            this.networkFirewallPolicyId = networkFirewallPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+            if (parentResourceId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem", "parentResourceId");
+            }
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem build() {

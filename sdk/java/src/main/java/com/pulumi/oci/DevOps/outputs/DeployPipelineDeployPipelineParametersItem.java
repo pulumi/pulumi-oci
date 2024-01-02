@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -72,17 +73,22 @@ public final class DeployPipelineDeployPipelineParametersItem {
 
         @CustomType.Setter
         public Builder defaultValue(@Nullable String defaultValue) {
+
             this.defaultValue = defaultValue;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("DeployPipelineDeployPipelineParametersItem", "name");
+            }
+            this.name = name;
             return this;
         }
         public DeployPipelineDeployPipelineParametersItem build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Functions;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.inputs.FunctionProvisionedConcurrencyConfigArgs;
 import com.pulumi.oci.Functions.inputs.FunctionSourceDetailsArgs;
 import com.pulumi.oci.Functions.inputs.FunctionTraceConfigArgs;
@@ -497,9 +498,15 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public FunctionArgs build() {
-            $.applicationId = Objects.requireNonNull($.applicationId, "expected parameter 'applicationId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.memoryInMbs = Objects.requireNonNull($.memoryInMbs, "expected parameter 'memoryInMbs' to be non-null");
+            if ($.applicationId == null) {
+                throw new MissingRequiredPropertyException("FunctionArgs", "applicationId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("FunctionArgs", "displayName");
+            }
+            if ($.memoryInMbs == null) {
+                throw new MissingRequiredPropertyException("FunctionArgs", "memoryInMbs");
+            }
             return $;
         }
     }

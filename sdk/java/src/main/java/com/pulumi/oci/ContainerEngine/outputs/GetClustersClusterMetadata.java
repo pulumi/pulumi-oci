@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -168,52 +169,82 @@ public final class GetClustersClusterMetadata {
 
         @CustomType.Setter
         public Builder createdByUserId(String createdByUserId) {
-            this.createdByUserId = Objects.requireNonNull(createdByUserId);
+            if (createdByUserId == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterMetadata", "createdByUserId");
+            }
+            this.createdByUserId = createdByUserId;
             return this;
         }
         @CustomType.Setter
         public Builder createdByWorkRequestId(String createdByWorkRequestId) {
-            this.createdByWorkRequestId = Objects.requireNonNull(createdByWorkRequestId);
+            if (createdByWorkRequestId == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterMetadata", "createdByWorkRequestId");
+            }
+            this.createdByWorkRequestId = createdByWorkRequestId;
             return this;
         }
         @CustomType.Setter
         public Builder deletedByUserId(String deletedByUserId) {
-            this.deletedByUserId = Objects.requireNonNull(deletedByUserId);
+            if (deletedByUserId == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterMetadata", "deletedByUserId");
+            }
+            this.deletedByUserId = deletedByUserId;
             return this;
         }
         @CustomType.Setter
         public Builder deletedByWorkRequestId(String deletedByWorkRequestId) {
-            this.deletedByWorkRequestId = Objects.requireNonNull(deletedByWorkRequestId);
+            if (deletedByWorkRequestId == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterMetadata", "deletedByWorkRequestId");
+            }
+            this.deletedByWorkRequestId = deletedByWorkRequestId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterMetadata", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeCredentialExpiration(String timeCredentialExpiration) {
-            this.timeCredentialExpiration = Objects.requireNonNull(timeCredentialExpiration);
+            if (timeCredentialExpiration == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterMetadata", "timeCredentialExpiration");
+            }
+            this.timeCredentialExpiration = timeCredentialExpiration;
             return this;
         }
         @CustomType.Setter
         public Builder timeDeleted(String timeDeleted) {
-            this.timeDeleted = Objects.requireNonNull(timeDeleted);
+            if (timeDeleted == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterMetadata", "timeDeleted");
+            }
+            this.timeDeleted = timeDeleted;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterMetadata", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder updatedByUserId(String updatedByUserId) {
-            this.updatedByUserId = Objects.requireNonNull(updatedByUserId);
+            if (updatedByUserId == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterMetadata", "updatedByUserId");
+            }
+            this.updatedByUserId = updatedByUserId;
             return this;
         }
         @CustomType.Setter
         public Builder updatedByWorkRequestId(String updatedByWorkRequestId) {
-            this.updatedByWorkRequestId = Objects.requireNonNull(updatedByWorkRequestId);
+            if (updatedByWorkRequestId == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterMetadata", "updatedByWorkRequestId");
+            }
+            this.updatedByWorkRequestId = updatedByWorkRequestId;
             return this;
         }
         public GetClustersClusterMetadata build() {

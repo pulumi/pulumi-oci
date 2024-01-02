@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
@@ -204,67 +205,106 @@ public final class GetInstancesInstanceShapeConfig {
 
         @CustomType.Setter
         public Builder baselineOcpuUtilization(String baselineOcpuUtilization) {
-            this.baselineOcpuUtilization = Objects.requireNonNull(baselineOcpuUtilization);
+            if (baselineOcpuUtilization == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstanceShapeConfig", "baselineOcpuUtilization");
+            }
+            this.baselineOcpuUtilization = baselineOcpuUtilization;
             return this;
         }
         @CustomType.Setter
         public Builder gpuDescription(String gpuDescription) {
-            this.gpuDescription = Objects.requireNonNull(gpuDescription);
+            if (gpuDescription == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstanceShapeConfig", "gpuDescription");
+            }
+            this.gpuDescription = gpuDescription;
             return this;
         }
         @CustomType.Setter
         public Builder gpus(Integer gpus) {
-            this.gpus = Objects.requireNonNull(gpus);
+            if (gpus == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstanceShapeConfig", "gpus");
+            }
+            this.gpus = gpus;
             return this;
         }
         @CustomType.Setter
         public Builder localDiskDescription(String localDiskDescription) {
-            this.localDiskDescription = Objects.requireNonNull(localDiskDescription);
+            if (localDiskDescription == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstanceShapeConfig", "localDiskDescription");
+            }
+            this.localDiskDescription = localDiskDescription;
             return this;
         }
         @CustomType.Setter
         public Builder localDisks(Integer localDisks) {
-            this.localDisks = Objects.requireNonNull(localDisks);
+            if (localDisks == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstanceShapeConfig", "localDisks");
+            }
+            this.localDisks = localDisks;
             return this;
         }
         @CustomType.Setter
         public Builder localDisksTotalSizeInGbs(Double localDisksTotalSizeInGbs) {
-            this.localDisksTotalSizeInGbs = Objects.requireNonNull(localDisksTotalSizeInGbs);
+            if (localDisksTotalSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstanceShapeConfig", "localDisksTotalSizeInGbs");
+            }
+            this.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder maxVnicAttachments(Integer maxVnicAttachments) {
-            this.maxVnicAttachments = Objects.requireNonNull(maxVnicAttachments);
+            if (maxVnicAttachments == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstanceShapeConfig", "maxVnicAttachments");
+            }
+            this.maxVnicAttachments = maxVnicAttachments;
             return this;
         }
         @CustomType.Setter
         public Builder memoryInGbs(Double memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+            if (memoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstanceShapeConfig", "memoryInGbs");
+            }
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder networkingBandwidthInGbps(Double networkingBandwidthInGbps) {
-            this.networkingBandwidthInGbps = Objects.requireNonNull(networkingBandwidthInGbps);
+            if (networkingBandwidthInGbps == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstanceShapeConfig", "networkingBandwidthInGbps");
+            }
+            this.networkingBandwidthInGbps = networkingBandwidthInGbps;
             return this;
         }
         @CustomType.Setter
         public Builder nvmes(Integer nvmes) {
-            this.nvmes = Objects.requireNonNull(nvmes);
+            if (nvmes == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstanceShapeConfig", "nvmes");
+            }
+            this.nvmes = nvmes;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(Double ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+            if (ocpus == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstanceShapeConfig", "ocpus");
+            }
+            this.ocpus = ocpus;
             return this;
         }
         @CustomType.Setter
         public Builder processorDescription(String processorDescription) {
-            this.processorDescription = Objects.requireNonNull(processorDescription);
+            if (processorDescription == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstanceShapeConfig", "processorDescription");
+            }
+            this.processorDescription = processorDescription;
             return this;
         }
         @CustomType.Setter
         public Builder vcpus(Integer vcpus) {
-            this.vcpus = Objects.requireNonNull(vcpus);
+            if (vcpus == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstanceShapeConfig", "vcpus");
+            }
+            this.vcpus = vcpus;
             return this;
         }
         public GetInstancesInstanceShapeConfig build() {

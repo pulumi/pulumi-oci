@@ -58,6 +58,7 @@ public final class DiscoveryJobsResultModifiedAttribute {
 
         @CustomType.Setter
         public Builder appDefinedChildColumnKeys(@Nullable List<String> appDefinedChildColumnKeys) {
+
             this.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
             return this;
         }
@@ -66,6 +67,7 @@ public final class DiscoveryJobsResultModifiedAttribute {
         }
         @CustomType.Setter
         public Builder dbDefinedChildColumnKeys(@Nullable List<String> dbDefinedChildColumnKeys) {
+
             this.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
             return this;
         }

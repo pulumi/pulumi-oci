@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.GetQueriesQueryCollectionItemQueryDefinition;
 import java.lang.String;
 import java.util.List;
@@ -72,17 +73,26 @@ public final class GetQueriesQueryCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder queryDefinitions(List<GetQueriesQueryCollectionItemQueryDefinition> queryDefinitions) {
-            this.queryDefinitions = Objects.requireNonNull(queryDefinitions);
+            if (queryDefinitions == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollectionItem", "queryDefinitions");
+            }
+            this.queryDefinitions = queryDefinitions;
             return this;
         }
         public Builder queryDefinitions(GetQueriesQueryCollectionItemQueryDefinition... queryDefinitions) {

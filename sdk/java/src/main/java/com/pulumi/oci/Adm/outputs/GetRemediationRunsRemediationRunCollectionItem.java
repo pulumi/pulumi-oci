@@ -4,6 +4,7 @@
 package com.pulumi.oci.Adm.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Adm.outputs.GetRemediationRunsRemediationRunCollectionItemStage;
 import java.lang.Object;
 import java.lang.String;
@@ -242,47 +243,74 @@ public final class GetRemediationRunsRemediationRunCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunsRemediationRunCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder currentStageType(String currentStageType) {
-            this.currentStageType = Objects.requireNonNull(currentStageType);
+            if (currentStageType == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunsRemediationRunCollectionItem", "currentStageType");
+            }
+            this.currentStageType = currentStageType;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunsRemediationRunCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunsRemediationRunCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunsRemediationRunCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunsRemediationRunCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder remediationRecipeId(String remediationRecipeId) {
-            this.remediationRecipeId = Objects.requireNonNull(remediationRecipeId);
+            if (remediationRecipeId == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunsRemediationRunCollectionItem", "remediationRecipeId");
+            }
+            this.remediationRecipeId = remediationRecipeId;
             return this;
         }
         @CustomType.Setter
         public Builder remediationRunSource(String remediationRunSource) {
-            this.remediationRunSource = Objects.requireNonNull(remediationRunSource);
+            if (remediationRunSource == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunsRemediationRunCollectionItem", "remediationRunSource");
+            }
+            this.remediationRunSource = remediationRunSource;
             return this;
         }
         @CustomType.Setter
         public Builder stages(List<GetRemediationRunsRemediationRunCollectionItemStage> stages) {
-            this.stages = Objects.requireNonNull(stages);
+            if (stages == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunsRemediationRunCollectionItem", "stages");
+            }
+            this.stages = stages;
             return this;
         }
         public Builder stages(GetRemediationRunsRemediationRunCollectionItemStage... stages) {
@@ -290,32 +318,50 @@ public final class GetRemediationRunsRemediationRunCollectionItem {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunsRemediationRunCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunsRemediationRunCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunsRemediationRunCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+            if (timeFinished == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunsRemediationRunCollectionItem", "timeFinished");
+            }
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunsRemediationRunCollectionItem", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunsRemediationRunCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetRemediationRunsRemediationRunCollectionItem build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetDomainsIdentitySettingPosixUid {
 
         @CustomType.Setter
         public Builder manualAssignmentEndsAt(Integer manualAssignmentEndsAt) {
-            this.manualAssignmentEndsAt = Objects.requireNonNull(manualAssignmentEndsAt);
+            if (manualAssignmentEndsAt == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentitySettingPosixUid", "manualAssignmentEndsAt");
+            }
+            this.manualAssignmentEndsAt = manualAssignmentEndsAt;
             return this;
         }
         @CustomType.Setter
         public Builder manualAssignmentStartsFrom(Integer manualAssignmentStartsFrom) {
-            this.manualAssignmentStartsFrom = Objects.requireNonNull(manualAssignmentStartsFrom);
+            if (manualAssignmentStartsFrom == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentitySettingPosixUid", "manualAssignmentStartsFrom");
+            }
+            this.manualAssignmentStartsFrom = manualAssignmentStartsFrom;
             return this;
         }
         public GetDomainsIdentitySettingPosixUid build() {

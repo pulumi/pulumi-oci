@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -232,77 +233,122 @@ public final class GetAwrHubResult {
 
         @CustomType.Setter
         public Builder awrHubId(String awrHubId) {
-            this.awrHubId = Objects.requireNonNull(awrHubId);
+            if (awrHubId == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubResult", "awrHubId");
+            }
+            this.awrHubId = awrHubId;
             return this;
         }
         @CustomType.Setter
         public Builder awrMailboxUrl(String awrMailboxUrl) {
-            this.awrMailboxUrl = Objects.requireNonNull(awrMailboxUrl);
+            if (awrMailboxUrl == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubResult", "awrMailboxUrl");
+            }
+            this.awrMailboxUrl = awrMailboxUrl;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hubDstTimezoneVersion(String hubDstTimezoneVersion) {
-            this.hubDstTimezoneVersion = Objects.requireNonNull(hubDstTimezoneVersion);
+            if (hubDstTimezoneVersion == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubResult", "hubDstTimezoneVersion");
+            }
+            this.hubDstTimezoneVersion = hubDstTimezoneVersion;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageBucketName(String objectStorageBucketName) {
-            this.objectStorageBucketName = Objects.requireNonNull(objectStorageBucketName);
+            if (objectStorageBucketName == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubResult", "objectStorageBucketName");
+            }
+            this.objectStorageBucketName = objectStorageBucketName;
             return this;
         }
         @CustomType.Setter
         public Builder operationsInsightsWarehouseId(String operationsInsightsWarehouseId) {
-            this.operationsInsightsWarehouseId = Objects.requireNonNull(operationsInsightsWarehouseId);
+            if (operationsInsightsWarehouseId == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubResult", "operationsInsightsWarehouseId");
+            }
+            this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetAwrHubResult build() {

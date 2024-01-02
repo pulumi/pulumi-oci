@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetDomainsNotificationSettingFromEmailAddress {
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingFromEmailAddress", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder validate(String validate) {
-            this.validate = Objects.requireNonNull(validate);
+            if (validate == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingFromEmailAddress", "validate");
+            }
+            this.validate = validate;
             return this;
         }
         @CustomType.Setter
         public Builder validationStatus(String validationStatus) {
-            this.validationStatus = Objects.requireNonNull(validationStatus);
+            if (validationStatus == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingFromEmailAddress", "validationStatus");
+            }
+            this.validationStatus = validationStatus;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsNotificationSettingFromEmailAddress", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDomainsNotificationSettingFromEmailAddress build() {

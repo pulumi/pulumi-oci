@@ -4,6 +4,7 @@
 package com.pulumi.oci.Bastion.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -318,17 +319,26 @@ public final class GetBastionResult {
 
         @CustomType.Setter
         public Builder bastionId(String bastionId) {
-            this.bastionId = Objects.requireNonNull(bastionId);
+            if (bastionId == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "bastionId");
+            }
+            this.bastionId = bastionId;
             return this;
         }
         @CustomType.Setter
         public Builder bastionType(String bastionType) {
-            this.bastionType = Objects.requireNonNull(bastionType);
+            if (bastionType == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "bastionType");
+            }
+            this.bastionType = bastionType;
             return this;
         }
         @CustomType.Setter
         public Builder clientCidrBlockAllowLists(List<String> clientCidrBlockAllowLists) {
-            this.clientCidrBlockAllowLists = Objects.requireNonNull(clientCidrBlockAllowLists);
+            if (clientCidrBlockAllowLists == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "clientCidrBlockAllowLists");
+            }
+            this.clientCidrBlockAllowLists = clientCidrBlockAllowLists;
             return this;
         }
         public Builder clientCidrBlockAllowLists(String... clientCidrBlockAllowLists) {
@@ -336,67 +346,106 @@ public final class GetBastionResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder dnsProxyStatus(String dnsProxyStatus) {
-            this.dnsProxyStatus = Objects.requireNonNull(dnsProxyStatus);
+            if (dnsProxyStatus == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "dnsProxyStatus");
+            }
+            this.dnsProxyStatus = dnsProxyStatus;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder maxSessionTtlInSeconds(Integer maxSessionTtlInSeconds) {
-            this.maxSessionTtlInSeconds = Objects.requireNonNull(maxSessionTtlInSeconds);
+            if (maxSessionTtlInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "maxSessionTtlInSeconds");
+            }
+            this.maxSessionTtlInSeconds = maxSessionTtlInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder maxSessionsAllowed(Integer maxSessionsAllowed) {
-            this.maxSessionsAllowed = Objects.requireNonNull(maxSessionsAllowed);
+            if (maxSessionsAllowed == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "maxSessionsAllowed");
+            }
+            this.maxSessionsAllowed = maxSessionsAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder phoneBookEntry(String phoneBookEntry) {
-            this.phoneBookEntry = Objects.requireNonNull(phoneBookEntry);
+            if (phoneBookEntry == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "phoneBookEntry");
+            }
+            this.phoneBookEntry = phoneBookEntry;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpointIpAddress(String privateEndpointIpAddress) {
-            this.privateEndpointIpAddress = Objects.requireNonNull(privateEndpointIpAddress);
+            if (privateEndpointIpAddress == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "privateEndpointIpAddress");
+            }
+            this.privateEndpointIpAddress = privateEndpointIpAddress;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder staticJumpHostIpAddresses(List<String> staticJumpHostIpAddresses) {
-            this.staticJumpHostIpAddresses = Objects.requireNonNull(staticJumpHostIpAddresses);
+            if (staticJumpHostIpAddresses == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "staticJumpHostIpAddresses");
+            }
+            this.staticJumpHostIpAddresses = staticJumpHostIpAddresses;
             return this;
         }
         public Builder staticJumpHostIpAddresses(String... staticJumpHostIpAddresses) {
@@ -404,27 +453,42 @@ public final class GetBastionResult {
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder targetSubnetId(String targetSubnetId) {
-            this.targetSubnetId = Objects.requireNonNull(targetSubnetId);
+            if (targetSubnetId == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "targetSubnetId");
+            }
+            this.targetSubnetId = targetSubnetId;
             return this;
         }
         @CustomType.Setter
         public Builder targetVcnId(String targetVcnId) {
-            this.targetVcnId = Objects.requireNonNull(targetVcnId);
+            if (targetVcnId == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "targetVcnId");
+            }
+            this.targetVcnId = targetVcnId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetBastionResult build() {

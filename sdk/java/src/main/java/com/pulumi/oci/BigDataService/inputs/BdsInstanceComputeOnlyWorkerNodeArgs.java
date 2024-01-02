@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -226,9 +227,15 @@ public final class BdsInstanceComputeOnlyWorkerNodeArgs extends com.pulumi.resou
         }
 
         public BdsInstanceComputeOnlyWorkerNodeArgs build() {
-            $.numberOfNodes = Objects.requireNonNull($.numberOfNodes, "expected parameter 'numberOfNodes' to be non-null");
-            $.shape = Objects.requireNonNull($.shape, "expected parameter 'shape' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.numberOfNodes == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceComputeOnlyWorkerNodeArgs", "numberOfNodes");
+            }
+            if ($.shape == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceComputeOnlyWorkerNodeArgs", "shape");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceComputeOnlyWorkerNodeArgs", "subnetId");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class GetDbSystemsUpgradeHistoryEntryArgs extends com.pulumi.resour
         }
 
         public GetDbSystemsUpgradeHistoryEntryArgs build() {
-            $.dbSystemId = Objects.requireNonNull($.dbSystemId, "expected parameter 'dbSystemId' to be non-null");
-            $.upgradeHistoryEntryId = Objects.requireNonNull($.upgradeHistoryEntryId, "expected parameter 'upgradeHistoryEntryId' to be non-null");
+            if ($.dbSystemId == null) {
+                throw new MissingRequiredPropertyException("GetDbSystemsUpgradeHistoryEntryArgs", "dbSystemId");
+            }
+            if ($.upgradeHistoryEntryId == null) {
+                throw new MissingRequiredPropertyException("GetDbSystemsUpgradeHistoryEntryArgs", "upgradeHistoryEntryId");
+            }
             return $;
         }
     }

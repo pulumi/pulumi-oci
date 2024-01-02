@@ -173,21 +173,25 @@ public final class DrPlanExecutionGroupExecutionStepExecution {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder executionDurationInSec(@Nullable Integer executionDurationInSec) {
+
             this.executionDurationInSec = executionDurationInSec;
             return this;
         }
         @CustomType.Setter
         public Builder groupId(@Nullable String groupId) {
+
             this.groupId = groupId;
             return this;
         }
         @CustomType.Setter
         public Builder logLocations(@Nullable List<DrPlanExecutionGroupExecutionStepExecutionLogLocation> logLocations) {
+
             this.logLocations = logLocations;
             return this;
         }
@@ -196,31 +200,37 @@ public final class DrPlanExecutionGroupExecutionStepExecution {
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder statusDetails(@Nullable String statusDetails) {
+
             this.statusDetails = statusDetails;
             return this;
         }
         @CustomType.Setter
         public Builder stepId(@Nullable String stepId) {
+
             this.stepId = stepId;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnded(@Nullable String timeEnded) {
+
             this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(@Nullable String timeStarted) {
+
             this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }

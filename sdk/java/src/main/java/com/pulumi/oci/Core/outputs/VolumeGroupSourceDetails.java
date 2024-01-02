@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -101,26 +102,33 @@ public final class VolumeGroupSourceDetails {
 
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("VolumeGroupSourceDetails", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder volumeGroupBackupId(@Nullable String volumeGroupBackupId) {
+
             this.volumeGroupBackupId = volumeGroupBackupId;
             return this;
         }
         @CustomType.Setter
         public Builder volumeGroupId(@Nullable String volumeGroupId) {
+
             this.volumeGroupId = volumeGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder volumeGroupReplicaId(@Nullable String volumeGroupReplicaId) {
+
             this.volumeGroupReplicaId = volumeGroupReplicaId;
             return this;
         }
         @CustomType.Setter
         public Builder volumeIds(@Nullable List<String> volumeIds) {
+
             this.volumeIds = volumeIds;
             return this;
         }

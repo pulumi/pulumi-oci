@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseMigration.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetJobAdvisorReportArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetJobAdvisorReportArgs build() {
-            $.jobId = Objects.requireNonNull($.jobId, "expected parameter 'jobId' to be non-null");
+            if ($.jobId == null) {
+                throw new MissingRequiredPropertyException("GetJobAdvisorReportArgs", "jobId");
+            }
             return $;
         }
     }

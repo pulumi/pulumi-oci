@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricsBaselineableMetricSummaryCollection;
 import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricsFilter;
 import java.lang.String;
@@ -121,12 +122,16 @@ public final class GetBaselineableMetricsResult {
 
         @CustomType.Setter
         public Builder baselineableMetricId(@Nullable String baselineableMetricId) {
+
             this.baselineableMetricId = baselineableMetricId;
             return this;
         }
         @CustomType.Setter
         public Builder baselineableMetricSummaryCollections(List<GetBaselineableMetricsBaselineableMetricSummaryCollection> baselineableMetricSummaryCollections) {
-            this.baselineableMetricSummaryCollections = Objects.requireNonNull(baselineableMetricSummaryCollections);
+            if (baselineableMetricSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsResult", "baselineableMetricSummaryCollections");
+            }
+            this.baselineableMetricSummaryCollections = baselineableMetricSummaryCollections;
             return this;
         }
         public Builder baselineableMetricSummaryCollections(GetBaselineableMetricsBaselineableMetricSummaryCollection... baselineableMetricSummaryCollections) {
@@ -134,11 +139,13 @@ public final class GetBaselineableMetricsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBaselineableMetricsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -147,21 +154,27 @@ public final class GetBaselineableMetricsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder metricNamespace(@Nullable String metricNamespace) {
+
             this.metricNamespace = metricNamespace;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder resourceGroup(@Nullable String resourceGroup) {
+
             this.resourceGroup = resourceGroup;
             return this;
         }

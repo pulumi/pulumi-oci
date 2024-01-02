@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -101,12 +102,18 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTa
 
         @CustomType.Setter
         public Builder allowedTimeLimit(Integer allowedTimeLimit) {
-            this.allowedTimeLimit = Objects.requireNonNull(allowedTimeLimit);
+            if (allowedTimeLimit == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter", "allowedTimeLimit");
+            }
+            this.allowedTimeLimit = allowedTimeLimit;
             return this;
         }
         @CustomType.Setter
         public Builder alternatePlanBaselines(List<String> alternatePlanBaselines) {
-            this.alternatePlanBaselines = Objects.requireNonNull(alternatePlanBaselines);
+            if (alternatePlanBaselines == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter", "alternatePlanBaselines");
+            }
+            this.alternatePlanBaselines = alternatePlanBaselines;
             return this;
         }
         public Builder alternatePlanBaselines(String... alternatePlanBaselines) {
@@ -114,12 +121,18 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTa
         }
         @CustomType.Setter
         public Builder alternatePlanLimit(Integer alternatePlanLimit) {
-            this.alternatePlanLimit = Objects.requireNonNull(alternatePlanLimit);
+            if (alternatePlanLimit == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter", "alternatePlanLimit");
+            }
+            this.alternatePlanLimit = alternatePlanLimit;
             return this;
         }
         @CustomType.Setter
         public Builder alternatePlanSources(List<String> alternatePlanSources) {
-            this.alternatePlanSources = Objects.requireNonNull(alternatePlanSources);
+            if (alternatePlanSources == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter", "alternatePlanSources");
+            }
+            this.alternatePlanSources = alternatePlanSources;
             return this;
         }
         public Builder alternatePlanSources(String... alternatePlanSources) {
@@ -127,7 +140,10 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTa
         }
         @CustomType.Setter
         public Builder arePlansAutoAccepted(Boolean arePlansAutoAccepted) {
-            this.arePlansAutoAccepted = Objects.requireNonNull(arePlansAutoAccepted);
+            if (arePlansAutoAccepted == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter", "arePlansAutoAccepted");
+            }
+            this.arePlansAutoAccepted = arePlansAutoAccepted;
             return this;
         }
         public GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter build() {

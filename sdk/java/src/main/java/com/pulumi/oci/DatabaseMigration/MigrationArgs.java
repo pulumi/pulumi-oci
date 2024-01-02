@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseMigration;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationAdvisorSettingsArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationDataTransferMediumDetailsArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationDataTransferMediumDetailsV2Args;
@@ -792,10 +793,18 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public MigrationArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.sourceDatabaseConnectionId = Objects.requireNonNull($.sourceDatabaseConnectionId, "expected parameter 'sourceDatabaseConnectionId' to be non-null");
-            $.targetDatabaseConnectionId = Objects.requireNonNull($.targetDatabaseConnectionId, "expected parameter 'targetDatabaseConnectionId' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("MigrationArgs", "compartmentId");
+            }
+            if ($.sourceDatabaseConnectionId == null) {
+                throw new MissingRequiredPropertyException("MigrationArgs", "sourceDatabaseConnectionId");
+            }
+            if ($.targetDatabaseConnectionId == null) {
+                throw new MissingRequiredPropertyException("MigrationArgs", "targetDatabaseConnectionId");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("MigrationArgs", "type");
+            }
             return $;
         }
     }

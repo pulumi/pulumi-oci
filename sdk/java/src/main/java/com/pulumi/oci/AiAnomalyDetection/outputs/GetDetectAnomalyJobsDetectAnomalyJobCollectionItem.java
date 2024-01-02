@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail;
 import java.lang.Double;
@@ -272,37 +273,58 @@ public final class GetDetectAnomalyJobsDetectAnomalyJobCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobsDetectAnomalyJobCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobsDetectAnomalyJobCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobsDetectAnomalyJobCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobsDetectAnomalyJobCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobsDetectAnomalyJobCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobsDetectAnomalyJobCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inputDetails(List<GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail> inputDetails) {
-            this.inputDetails = Objects.requireNonNull(inputDetails);
+            if (inputDetails == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobsDetectAnomalyJobCollectionItem", "inputDetails");
+            }
+            this.inputDetails = inputDetails;
             return this;
         }
         public Builder inputDetails(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail... inputDetails) {
@@ -310,17 +332,26 @@ public final class GetDetectAnomalyJobsDetectAnomalyJobCollectionItem {
         }
         @CustomType.Setter
         public Builder lifecycleStateDetails(String lifecycleStateDetails) {
-            this.lifecycleStateDetails = Objects.requireNonNull(lifecycleStateDetails);
+            if (lifecycleStateDetails == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobsDetectAnomalyJobCollectionItem", "lifecycleStateDetails");
+            }
+            this.lifecycleStateDetails = lifecycleStateDetails;
             return this;
         }
         @CustomType.Setter
         public Builder modelId(String modelId) {
-            this.modelId = Objects.requireNonNull(modelId);
+            if (modelId == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobsDetectAnomalyJobCollectionItem", "modelId");
+            }
+            this.modelId = modelId;
             return this;
         }
         @CustomType.Setter
         public Builder outputDetails(List<GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail> outputDetails) {
-            this.outputDetails = Objects.requireNonNull(outputDetails);
+            if (outputDetails == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobsDetectAnomalyJobCollectionItem", "outputDetails");
+            }
+            this.outputDetails = outputDetails;
             return this;
         }
         public Builder outputDetails(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail... outputDetails) {
@@ -328,37 +359,58 @@ public final class GetDetectAnomalyJobsDetectAnomalyJobCollectionItem {
         }
         @CustomType.Setter
         public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+            if (projectId == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobsDetectAnomalyJobCollectionItem", "projectId");
+            }
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder sensitivity(Double sensitivity) {
-            this.sensitivity = Objects.requireNonNull(sensitivity);
+            if (sensitivity == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobsDetectAnomalyJobCollectionItem", "sensitivity");
+            }
+            this.sensitivity = sensitivity;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobsDetectAnomalyJobCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobsDetectAnomalyJobCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeAccepted(String timeAccepted) {
-            this.timeAccepted = Objects.requireNonNull(timeAccepted);
+            if (timeAccepted == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobsDetectAnomalyJobCollectionItem", "timeAccepted");
+            }
+            this.timeAccepted = timeAccepted;
             return this;
         }
         @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+            if (timeFinished == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobsDetectAnomalyJobCollectionItem", "timeFinished");
+            }
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobsDetectAnomalyJobCollectionItem", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetDetectAnomalyJobsDetectAnomalyJobCollectionItem build() {

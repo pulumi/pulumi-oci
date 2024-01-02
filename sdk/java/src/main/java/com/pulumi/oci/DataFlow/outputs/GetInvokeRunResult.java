@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.outputs.GetInvokeRunApplicationLogConfig;
 import com.pulumi.oci.DataFlow.outputs.GetInvokeRunDriverShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.GetInvokeRunExecutorShapeConfig;
@@ -665,12 +666,18 @@ public final class GetInvokeRunResult {
 
         @CustomType.Setter
         public Builder applicationId(String applicationId) {
-            this.applicationId = Objects.requireNonNull(applicationId);
+            if (applicationId == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "applicationId");
+            }
+            this.applicationId = applicationId;
             return this;
         }
         @CustomType.Setter
         public Builder applicationLogConfigs(List<GetInvokeRunApplicationLogConfig> applicationLogConfigs) {
-            this.applicationLogConfigs = Objects.requireNonNull(applicationLogConfigs);
+            if (applicationLogConfigs == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "applicationLogConfigs");
+            }
+            this.applicationLogConfigs = applicationLogConfigs;
             return this;
         }
         public Builder applicationLogConfigs(GetInvokeRunApplicationLogConfig... applicationLogConfigs) {
@@ -678,12 +685,18 @@ public final class GetInvokeRunResult {
         }
         @CustomType.Setter
         public Builder archiveUri(String archiveUri) {
-            this.archiveUri = Objects.requireNonNull(archiveUri);
+            if (archiveUri == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "archiveUri");
+            }
+            this.archiveUri = archiveUri;
             return this;
         }
         @CustomType.Setter
         public Builder arguments(List<String> arguments) {
-            this.arguments = Objects.requireNonNull(arguments);
+            if (arguments == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "arguments");
+            }
+            this.arguments = arguments;
             return this;
         }
         public Builder arguments(String... arguments) {
@@ -691,52 +704,82 @@ public final class GetInvokeRunResult {
         }
         @CustomType.Setter
         public Builder asynchronous(Boolean asynchronous) {
-            this.asynchronous = Objects.requireNonNull(asynchronous);
+            if (asynchronous == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "asynchronous");
+            }
+            this.asynchronous = asynchronous;
             return this;
         }
         @CustomType.Setter
         public Builder className(String className) {
-            this.className = Objects.requireNonNull(className);
+            if (className == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "className");
+            }
+            this.className = className;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder configuration(Map<String,Object> configuration) {
-            this.configuration = Objects.requireNonNull(configuration);
+            if (configuration == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "configuration");
+            }
+            this.configuration = configuration;
             return this;
         }
         @CustomType.Setter
         public Builder dataReadInBytes(String dataReadInBytes) {
-            this.dataReadInBytes = Objects.requireNonNull(dataReadInBytes);
+            if (dataReadInBytes == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "dataReadInBytes");
+            }
+            this.dataReadInBytes = dataReadInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder dataWrittenInBytes(String dataWrittenInBytes) {
-            this.dataWrittenInBytes = Objects.requireNonNull(dataWrittenInBytes);
+            if (dataWrittenInBytes == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "dataWrittenInBytes");
+            }
+            this.dataWrittenInBytes = dataWrittenInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder driverShape(String driverShape) {
-            this.driverShape = Objects.requireNonNull(driverShape);
+            if (driverShape == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "driverShape");
+            }
+            this.driverShape = driverShape;
             return this;
         }
         @CustomType.Setter
         public Builder driverShapeConfigs(List<GetInvokeRunDriverShapeConfig> driverShapeConfigs) {
-            this.driverShapeConfigs = Objects.requireNonNull(driverShapeConfigs);
+            if (driverShapeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "driverShapeConfigs");
+            }
+            this.driverShapeConfigs = driverShapeConfigs;
             return this;
         }
         public Builder driverShapeConfigs(GetInvokeRunDriverShapeConfig... driverShapeConfigs) {
@@ -744,17 +787,26 @@ public final class GetInvokeRunResult {
         }
         @CustomType.Setter
         public Builder execute(String execute) {
-            this.execute = Objects.requireNonNull(execute);
+            if (execute == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "execute");
+            }
+            this.execute = execute;
             return this;
         }
         @CustomType.Setter
         public Builder executorShape(String executorShape) {
-            this.executorShape = Objects.requireNonNull(executorShape);
+            if (executorShape == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "executorShape");
+            }
+            this.executorShape = executorShape;
             return this;
         }
         @CustomType.Setter
         public Builder executorShapeConfigs(List<GetInvokeRunExecutorShapeConfig> executorShapeConfigs) {
-            this.executorShapeConfigs = Objects.requireNonNull(executorShapeConfigs);
+            if (executorShapeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "executorShapeConfigs");
+            }
+            this.executorShapeConfigs = executorShapeConfigs;
             return this;
         }
         public Builder executorShapeConfigs(GetInvokeRunExecutorShapeConfig... executorShapeConfigs) {
@@ -762,72 +814,114 @@ public final class GetInvokeRunResult {
         }
         @CustomType.Setter
         public Builder fileUri(String fileUri) {
-            this.fileUri = Objects.requireNonNull(fileUri);
+            if (fileUri == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "fileUri");
+            }
+            this.fileUri = fileUri;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idleTimeoutInMinutes(String idleTimeoutInMinutes) {
-            this.idleTimeoutInMinutes = Objects.requireNonNull(idleTimeoutInMinutes);
+            if (idleTimeoutInMinutes == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "idleTimeoutInMinutes");
+            }
+            this.idleTimeoutInMinutes = idleTimeoutInMinutes;
             return this;
         }
         @CustomType.Setter
         public Builder language(String language) {
-            this.language = Objects.requireNonNull(language);
+            if (language == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "language");
+            }
+            this.language = language;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder logsBucketUri(String logsBucketUri) {
-            this.logsBucketUri = Objects.requireNonNull(logsBucketUri);
+            if (logsBucketUri == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "logsBucketUri");
+            }
+            this.logsBucketUri = logsBucketUri;
             return this;
         }
         @CustomType.Setter
         public Builder maxDurationInMinutes(String maxDurationInMinutes) {
-            this.maxDurationInMinutes = Objects.requireNonNull(maxDurationInMinutes);
+            if (maxDurationInMinutes == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "maxDurationInMinutes");
+            }
+            this.maxDurationInMinutes = maxDurationInMinutes;
             return this;
         }
         @CustomType.Setter
         public Builder metastoreId(String metastoreId) {
-            this.metastoreId = Objects.requireNonNull(metastoreId);
+            if (metastoreId == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "metastoreId");
+            }
+            this.metastoreId = metastoreId;
             return this;
         }
         @CustomType.Setter
         public Builder numExecutors(Integer numExecutors) {
-            this.numExecutors = Objects.requireNonNull(numExecutors);
+            if (numExecutors == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "numExecutors");
+            }
+            this.numExecutors = numExecutors;
             return this;
         }
         @CustomType.Setter
         public Builder opcRequestId(String opcRequestId) {
-            this.opcRequestId = Objects.requireNonNull(opcRequestId);
+            if (opcRequestId == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "opcRequestId");
+            }
+            this.opcRequestId = opcRequestId;
             return this;
         }
         @CustomType.Setter
         public Builder ownerPrincipalId(String ownerPrincipalId) {
-            this.ownerPrincipalId = Objects.requireNonNull(ownerPrincipalId);
+            if (ownerPrincipalId == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "ownerPrincipalId");
+            }
+            this.ownerPrincipalId = ownerPrincipalId;
             return this;
         }
         @CustomType.Setter
         public Builder ownerUserName(String ownerUserName) {
-            this.ownerUserName = Objects.requireNonNull(ownerUserName);
+            if (ownerUserName == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "ownerUserName");
+            }
+            this.ownerUserName = ownerUserName;
             return this;
         }
         @CustomType.Setter
         public Builder parameters(List<GetInvokeRunParameter> parameters) {
-            this.parameters = Objects.requireNonNull(parameters);
+            if (parameters == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "parameters");
+            }
+            this.parameters = parameters;
             return this;
         }
         public Builder parameters(GetInvokeRunParameter... parameters) {
@@ -835,12 +929,18 @@ public final class GetInvokeRunResult {
         }
         @CustomType.Setter
         public Builder poolId(String poolId) {
-            this.poolId = Objects.requireNonNull(poolId);
+            if (poolId == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "poolId");
+            }
+            this.poolId = poolId;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpointDnsZones(List<String> privateEndpointDnsZones) {
-            this.privateEndpointDnsZones = Objects.requireNonNull(privateEndpointDnsZones);
+            if (privateEndpointDnsZones == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "privateEndpointDnsZones");
+            }
+            this.privateEndpointDnsZones = privateEndpointDnsZones;
             return this;
         }
         public Builder privateEndpointDnsZones(String... privateEndpointDnsZones) {
@@ -848,17 +948,26 @@ public final class GetInvokeRunResult {
         }
         @CustomType.Setter
         public Builder privateEndpointId(String privateEndpointId) {
-            this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
+            if (privateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "privateEndpointId");
+            }
+            this.privateEndpointId = privateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpointMaxHostCount(Integer privateEndpointMaxHostCount) {
-            this.privateEndpointMaxHostCount = Objects.requireNonNull(privateEndpointMaxHostCount);
+            if (privateEndpointMaxHostCount == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "privateEndpointMaxHostCount");
+            }
+            this.privateEndpointMaxHostCount = privateEndpointMaxHostCount;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpointNsgIds(List<String> privateEndpointNsgIds) {
-            this.privateEndpointNsgIds = Objects.requireNonNull(privateEndpointNsgIds);
+            if (privateEndpointNsgIds == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "privateEndpointNsgIds");
+            }
+            this.privateEndpointNsgIds = privateEndpointNsgIds;
             return this;
         }
         public Builder privateEndpointNsgIds(String... privateEndpointNsgIds) {
@@ -866,52 +975,82 @@ public final class GetInvokeRunResult {
         }
         @CustomType.Setter
         public Builder privateEndpointSubnetId(String privateEndpointSubnetId) {
-            this.privateEndpointSubnetId = Objects.requireNonNull(privateEndpointSubnetId);
+            if (privateEndpointSubnetId == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "privateEndpointSubnetId");
+            }
+            this.privateEndpointSubnetId = privateEndpointSubnetId;
             return this;
         }
         @CustomType.Setter
         public Builder runDurationInMilliseconds(String runDurationInMilliseconds) {
-            this.runDurationInMilliseconds = Objects.requireNonNull(runDurationInMilliseconds);
+            if (runDurationInMilliseconds == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "runDurationInMilliseconds");
+            }
+            this.runDurationInMilliseconds = runDurationInMilliseconds;
             return this;
         }
         @CustomType.Setter
         public Builder runId(String runId) {
-            this.runId = Objects.requireNonNull(runId);
+            if (runId == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "runId");
+            }
+            this.runId = runId;
             return this;
         }
         @CustomType.Setter
         public Builder sparkVersion(String sparkVersion) {
-            this.sparkVersion = Objects.requireNonNull(sparkVersion);
+            if (sparkVersion == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "sparkVersion");
+            }
+            this.sparkVersion = sparkVersion;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder totalOcpu(Integer totalOcpu) {
-            this.totalOcpu = Objects.requireNonNull(totalOcpu);
+            if (totalOcpu == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "totalOcpu");
+            }
+            this.totalOcpu = totalOcpu;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder warehouseBucketUri(String warehouseBucketUri) {
-            this.warehouseBucketUri = Objects.requireNonNull(warehouseBucketUri);
+            if (warehouseBucketUri == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunResult", "warehouseBucketUri");
+            }
+            this.warehouseBucketUri = warehouseBucketUri;
             return this;
         }
         public GetInvokeRunResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -72,17 +73,26 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemColumnSorti
 
         @CustomType.Setter
         public Builder fieldName(String fieldName) {
-            this.fieldName = Objects.requireNonNull(fieldName);
+            if (fieldName == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionsReportDefinitionCollectionItemColumnSorting", "fieldName");
+            }
+            this.fieldName = fieldName;
             return this;
         }
         @CustomType.Setter
         public Builder isAscending(Boolean isAscending) {
-            this.isAscending = Objects.requireNonNull(isAscending);
+            if (isAscending == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionsReportDefinitionCollectionItemColumnSorting", "isAscending");
+            }
+            this.isAscending = isAscending;
             return this;
         }
         @CustomType.Setter
         public Builder sortingOrder(Integer sortingOrder) {
-            this.sortingOrder = Objects.requireNonNull(sortingOrder);
+            if (sortingOrder == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionsReportDefinitionCollectionItemColumnSorting", "sortingOrder");
+            }
+            this.sortingOrder = sortingOrder;
             return this;
         }
         public GetReportDefinitionsReportDefinitionCollectionItemColumnSorting build() {

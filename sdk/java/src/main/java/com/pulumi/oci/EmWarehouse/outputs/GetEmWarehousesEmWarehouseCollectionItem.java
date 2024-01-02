@@ -4,6 +4,7 @@
 package com.pulumi.oci.EmWarehouse.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -254,82 +255,130 @@ public final class GetEmWarehousesEmWarehouseCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetEmWarehousesEmWarehouseCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetEmWarehousesEmWarehouseCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetEmWarehousesEmWarehouseCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder emBridgeId(String emBridgeId) {
-            this.emBridgeId = Objects.requireNonNull(emBridgeId);
+            if (emBridgeId == null) {
+              throw new MissingRequiredPropertyException("GetEmWarehousesEmWarehouseCollectionItem", "emBridgeId");
+            }
+            this.emBridgeId = emBridgeId;
             return this;
         }
         @CustomType.Setter
         public Builder emWarehouseType(String emWarehouseType) {
-            this.emWarehouseType = Objects.requireNonNull(emWarehouseType);
+            if (emWarehouseType == null) {
+              throw new MissingRequiredPropertyException("GetEmWarehousesEmWarehouseCollectionItem", "emWarehouseType");
+            }
+            this.emWarehouseType = emWarehouseType;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetEmWarehousesEmWarehouseCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetEmWarehousesEmWarehouseCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder latestEtlRunMessage(String latestEtlRunMessage) {
-            this.latestEtlRunMessage = Objects.requireNonNull(latestEtlRunMessage);
+            if (latestEtlRunMessage == null) {
+              throw new MissingRequiredPropertyException("GetEmWarehousesEmWarehouseCollectionItem", "latestEtlRunMessage");
+            }
+            this.latestEtlRunMessage = latestEtlRunMessage;
             return this;
         }
         @CustomType.Setter
         public Builder latestEtlRunStatus(String latestEtlRunStatus) {
-            this.latestEtlRunStatus = Objects.requireNonNull(latestEtlRunStatus);
+            if (latestEtlRunStatus == null) {
+              throw new MissingRequiredPropertyException("GetEmWarehousesEmWarehouseCollectionItem", "latestEtlRunStatus");
+            }
+            this.latestEtlRunStatus = latestEtlRunStatus;
             return this;
         }
         @CustomType.Setter
         public Builder latestEtlRunTime(String latestEtlRunTime) {
-            this.latestEtlRunTime = Objects.requireNonNull(latestEtlRunTime);
+            if (latestEtlRunTime == null) {
+              throw new MissingRequiredPropertyException("GetEmWarehousesEmWarehouseCollectionItem", "latestEtlRunTime");
+            }
+            this.latestEtlRunTime = latestEtlRunTime;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetEmWarehousesEmWarehouseCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder operationsInsightsWarehouseId(String operationsInsightsWarehouseId) {
-            this.operationsInsightsWarehouseId = Objects.requireNonNull(operationsInsightsWarehouseId);
+            if (operationsInsightsWarehouseId == null) {
+              throw new MissingRequiredPropertyException("GetEmWarehousesEmWarehouseCollectionItem", "operationsInsightsWarehouseId");
+            }
+            this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetEmWarehousesEmWarehouseCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetEmWarehousesEmWarehouseCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetEmWarehousesEmWarehouseCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetEmWarehousesEmWarehouseCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetEmWarehousesEmWarehouseCollectionItem build() {

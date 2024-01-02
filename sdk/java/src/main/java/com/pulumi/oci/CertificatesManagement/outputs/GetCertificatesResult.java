@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificatesCertificateCollection;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificatesFilter;
 import java.lang.String;
@@ -137,7 +138,10 @@ public final class GetCertificatesResult {
 
         @CustomType.Setter
         public Builder certificateCollections(List<GetCertificatesCertificateCollection> certificateCollections) {
-            this.certificateCollections = Objects.requireNonNull(certificateCollections);
+            if (certificateCollections == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesResult", "certificateCollections");
+            }
+            this.certificateCollections = certificateCollections;
             return this;
         }
         public Builder certificateCollections(GetCertificatesCertificateCollection... certificateCollections) {
@@ -145,16 +149,19 @@ public final class GetCertificatesResult {
         }
         @CustomType.Setter
         public Builder certificateId(@Nullable String certificateId) {
+
             this.certificateId = certificateId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCertificatesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -163,21 +170,27 @@ public final class GetCertificatesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder issuerCertificateAuthorityId(@Nullable String issuerCertificateAuthorityId) {
+
             this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

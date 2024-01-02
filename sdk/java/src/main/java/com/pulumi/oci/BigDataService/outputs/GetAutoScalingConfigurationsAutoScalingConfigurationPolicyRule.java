@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric;
 import java.lang.String;
 import java.util.List;
@@ -42,12 +43,18 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder metrics(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+            if (metrics == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule", "metrics");
+            }
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric... metrics) {

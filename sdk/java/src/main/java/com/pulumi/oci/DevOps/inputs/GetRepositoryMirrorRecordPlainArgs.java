@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetRepositoryMirrorRecordPlainArgs extends com.pulumi.resourc
         }
 
         public GetRepositoryMirrorRecordPlainArgs build() {
-            $.mirrorRecordType = Objects.requireNonNull($.mirrorRecordType, "expected parameter 'mirrorRecordType' to be non-null");
-            $.repositoryId = Objects.requireNonNull($.repositoryId, "expected parameter 'repositoryId' to be non-null");
+            if ($.mirrorRecordType == null) {
+                throw new MissingRequiredPropertyException("GetRepositoryMirrorRecordPlainArgs", "mirrorRecordType");
+            }
+            if ($.repositoryId == null) {
+                throw new MissingRequiredPropertyException("GetRepositoryMirrorRecordPlainArgs", "repositoryId");
+            }
             return $;
         }
     }

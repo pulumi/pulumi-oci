@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricsEvaluateItemDataPoint;
 import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricsEvaluateItemEvaluationDataPoint;
 import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricsEvaluateItemTrainingDataPoint;
@@ -90,7 +91,10 @@ public final class GetBaselineableMetricsEvaluateItem {
 
         @CustomType.Setter
         public Builder dataPoints(List<GetBaselineableMetricsEvaluateItemDataPoint> dataPoints) {
-            this.dataPoints = Objects.requireNonNull(dataPoints);
+            if (dataPoints == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateItem", "dataPoints");
+            }
+            this.dataPoints = dataPoints;
             return this;
         }
         public Builder dataPoints(GetBaselineableMetricsEvaluateItemDataPoint... dataPoints) {
@@ -98,12 +102,18 @@ public final class GetBaselineableMetricsEvaluateItem {
         }
         @CustomType.Setter
         public Builder dimensions(Map<String,Object> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+            if (dimensions == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateItem", "dimensions");
+            }
+            this.dimensions = dimensions;
             return this;
         }
         @CustomType.Setter
         public Builder evaluationDataPoints(List<GetBaselineableMetricsEvaluateItemEvaluationDataPoint> evaluationDataPoints) {
-            this.evaluationDataPoints = Objects.requireNonNull(evaluationDataPoints);
+            if (evaluationDataPoints == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateItem", "evaluationDataPoints");
+            }
+            this.evaluationDataPoints = evaluationDataPoints;
             return this;
         }
         public Builder evaluationDataPoints(GetBaselineableMetricsEvaluateItemEvaluationDataPoint... evaluationDataPoints) {
@@ -111,7 +121,10 @@ public final class GetBaselineableMetricsEvaluateItem {
         }
         @CustomType.Setter
         public Builder trainingDataPoints(List<GetBaselineableMetricsEvaluateItemTrainingDataPoint> trainingDataPoints) {
-            this.trainingDataPoints = Objects.requireNonNull(trainingDataPoints);
+            if (trainingDataPoints == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateItem", "trainingDataPoints");
+            }
+            this.trainingDataPoints = trainingDataPoints;
             return this;
         }
         public Builder trainingDataPoints(GetBaselineableMetricsEvaluateItemTrainingDataPoint... trainingDataPoints) {

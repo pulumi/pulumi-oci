@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.outputs.GetExportsExport;
 import com.pulumi.oci.FileStorage.outputs.GetExportsFilter;
 import java.lang.String;
@@ -115,17 +116,22 @@ public final class GetExportsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder exportSetId(@Nullable String exportSetId) {
+
             this.exportSetId = exportSetId;
             return this;
         }
         @CustomType.Setter
         public Builder exports(List<GetExportsExport> exports) {
-            this.exports = Objects.requireNonNull(exports);
+            if (exports == null) {
+              throw new MissingRequiredPropertyException("GetExportsResult", "exports");
+            }
+            this.exports = exports;
             return this;
         }
         public Builder exports(GetExportsExport... exports) {
@@ -133,11 +139,13 @@ public final class GetExportsResult {
         }
         @CustomType.Setter
         public Builder fileSystemId(@Nullable String fileSystemId) {
+
             this.fileSystemId = fileSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetExportsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -146,11 +154,13 @@ public final class GetExportsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

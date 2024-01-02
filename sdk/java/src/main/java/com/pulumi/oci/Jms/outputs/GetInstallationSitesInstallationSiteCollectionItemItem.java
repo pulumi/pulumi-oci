@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetInstallationSitesInstallationSiteCollectionItemItemBlocklist;
 import com.pulumi.oci.Jms.outputs.GetInstallationSitesInstallationSiteCollectionItemItemJre;
 import com.pulumi.oci.Jms.outputs.GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem;
@@ -173,12 +174,18 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItem {
 
         @CustomType.Setter
         public Builder approximateApplicationCount(Integer approximateApplicationCount) {
-            this.approximateApplicationCount = Objects.requireNonNull(approximateApplicationCount);
+            if (approximateApplicationCount == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItemItem", "approximateApplicationCount");
+            }
+            this.approximateApplicationCount = approximateApplicationCount;
             return this;
         }
         @CustomType.Setter
         public Builder blocklists(List<GetInstallationSitesInstallationSiteCollectionItemItemBlocklist> blocklists) {
-            this.blocklists = Objects.requireNonNull(blocklists);
+            if (blocklists == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItemItem", "blocklists");
+            }
+            this.blocklists = blocklists;
             return this;
         }
         public Builder blocklists(GetInstallationSitesInstallationSiteCollectionItemItemBlocklist... blocklists) {
@@ -186,12 +193,18 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItem {
         }
         @CustomType.Setter
         public Builder installationKey(String installationKey) {
-            this.installationKey = Objects.requireNonNull(installationKey);
+            if (installationKey == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItemItem", "installationKey");
+            }
+            this.installationKey = installationKey;
             return this;
         }
         @CustomType.Setter
         public Builder jres(List<GetInstallationSitesInstallationSiteCollectionItemItemJre> jres) {
-            this.jres = Objects.requireNonNull(jres);
+            if (jres == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItemItem", "jres");
+            }
+            this.jres = jres;
             return this;
         }
         public Builder jres(GetInstallationSitesInstallationSiteCollectionItemItemJre... jres) {
@@ -199,12 +212,18 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItem {
         }
         @CustomType.Setter
         public Builder managedInstanceId(String managedInstanceId) {
-            this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
+            if (managedInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItemItem", "managedInstanceId");
+            }
+            this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystems(List<GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem> operatingSystems) {
-            this.operatingSystems = Objects.requireNonNull(operatingSystems);
+            if (operatingSystems == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItemItem", "operatingSystems");
+            }
+            this.operatingSystems = operatingSystems;
             return this;
         }
         public Builder operatingSystems(GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem... operatingSystems) {
@@ -212,22 +231,34 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItem {
         }
         @CustomType.Setter
         public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+            if (path == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItemItem", "path");
+            }
+            this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder securityStatus(String securityStatus) {
-            this.securityStatus = Objects.requireNonNull(securityStatus);
+            if (securityStatus == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItemItem", "securityStatus");
+            }
+            this.securityStatus = securityStatus;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItemItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastSeen(String timeLastSeen) {
-            this.timeLastSeen = Objects.requireNonNull(timeLastSeen);
+            if (timeLastSeen == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItemItem", "timeLastSeen");
+            }
+            this.timeLastSeen = timeLastSeen;
             return this;
         }
         public GetInstallationSitesInstallationSiteCollectionItemItem build() {

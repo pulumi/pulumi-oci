@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
 
         @CustomType.Setter
         public Builder secQuestions(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion> secQuestions) {
-            this.secQuestions = Objects.requireNonNull(secQuestions);
+            if (secQuestions == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser", "secQuestions");
+            }
+            this.secQuestions = secQuestions;
             return this;
         }
         public Builder secQuestions(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion... secQuestions) {

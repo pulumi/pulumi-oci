@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -147,9 +148,15 @@ public final class GetRepoFileLinePlainArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetRepoFileLinePlainArgs build() {
-            $.filePath = Objects.requireNonNull($.filePath, "expected parameter 'filePath' to be non-null");
-            $.repositoryId = Objects.requireNonNull($.repositoryId, "expected parameter 'repositoryId' to be non-null");
-            $.revision = Objects.requireNonNull($.revision, "expected parameter 'revision' to be non-null");
+            if ($.filePath == null) {
+                throw new MissingRequiredPropertyException("GetRepoFileLinePlainArgs", "filePath");
+            }
+            if ($.repositoryId == null) {
+                throw new MissingRequiredPropertyException("GetRepoFileLinePlainArgs", "repositoryId");
+            }
+            if ($.revision == null) {
+                throw new MissingRequiredPropertyException("GetRepoFileLinePlainArgs", "revision");
+            }
             return $;
         }
     }

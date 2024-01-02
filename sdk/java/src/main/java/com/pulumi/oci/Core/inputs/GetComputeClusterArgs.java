@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetComputeClusterArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetComputeClusterArgs build() {
-            $.computeClusterId = Objects.requireNonNull($.computeClusterId, "expected parameter 'computeClusterId' to be non-null");
+            if ($.computeClusterId == null) {
+                throw new MissingRequiredPropertyException("GetComputeClusterArgs", "computeClusterId");
+            }
             return $;
         }
     }

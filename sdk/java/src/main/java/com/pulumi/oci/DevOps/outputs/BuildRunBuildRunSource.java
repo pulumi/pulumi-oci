@@ -88,21 +88,25 @@ public final class BuildRunBuildRunSource {
 
         @CustomType.Setter
         public Builder repositoryId(@Nullable String repositoryId) {
+
             this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(@Nullable String sourceType) {
+
             this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
         public Builder triggerId(@Nullable String triggerId) {
+
             this.triggerId = triggerId;
             return this;
         }
         @CustomType.Setter
         public Builder triggerInfos(@Nullable List<BuildRunBuildRunSourceTriggerInfo> triggerInfos) {
+
             this.triggerInfos = triggerInfos;
             return this;
         }

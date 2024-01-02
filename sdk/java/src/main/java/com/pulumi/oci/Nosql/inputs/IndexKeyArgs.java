@@ -5,6 +5,7 @@ package com.pulumi.oci.Nosql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -150,7 +151,9 @@ public final class IndexKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public IndexKeyArgs build() {
-            $.columnName = Objects.requireNonNull($.columnName, "expected parameter 'columnName' to be non-null");
+            if ($.columnName == null) {
+                throw new MissingRequiredPropertyException("IndexKeyArgs", "columnName");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemas
 
         @CustomType.Setter
         public Builder duoSecuritySettings(List<GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting> duoSecuritySettings) {
-            this.duoSecuritySettings = Objects.requireNonNull(duoSecuritySettings);
+            if (duoSecuritySettings == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSetting", "duoSecuritySettings");
+            }
+            this.duoSecuritySettings = duoSecuritySettings;
             return this;
         }
         public Builder duoSecuritySettings(GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting... duoSecuritySettings) {

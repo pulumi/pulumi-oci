@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.CaptureFilterFlowLogCaptureFilterRuleArgs;
 import com.pulumi.oci.Core.inputs.CaptureFilterVtapCaptureFilterRuleArgs;
 import java.lang.Object;
@@ -323,8 +324,12 @@ public final class CaptureFilterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public CaptureFilterArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.filterType = Objects.requireNonNull($.filterType, "expected parameter 'filterType' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("CaptureFilterArgs", "compartmentId");
+            }
+            if ($.filterType == null) {
+                throw new MissingRequiredPropertyException("CaptureFilterArgs", "filterType");
+            }
             return $;
         }
     }

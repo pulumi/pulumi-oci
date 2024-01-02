@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetail;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
 
         @CustomType.Setter
         public Builder authenticationServerDetails(List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetail> authenticationServerDetails) {
-            this.authenticationServerDetails = Objects.requireNonNull(authenticationServerDetails);
+            if (authenticationServerDetails == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer", "authenticationServerDetails");
+            }
+            this.authenticationServerDetails = authenticationServerDetails;
             return this;
         }
         public Builder authenticationServerDetails(GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetail... authenticationServerDetails) {
@@ -66,7 +70,10 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
         }
         @CustomType.Setter
         public Builder keys(List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey> keys) {
-            this.keys = Objects.requireNonNull(keys);
+            if (keys == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer", "keys");
+            }
+            this.keys = keys;
             return this;
         }
         public Builder keys(GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey... keys) {

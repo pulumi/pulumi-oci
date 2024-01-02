@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Dns.outputs.GetRrsetsRrsetItem;
 import java.lang.String;
 import java.util.List;
@@ -64,12 +65,18 @@ public final class GetRrsetsRrset {
 
         @CustomType.Setter
         public Builder domain(String domain) {
-            this.domain = Objects.requireNonNull(domain);
+            if (domain == null) {
+              throw new MissingRequiredPropertyException("GetRrsetsRrset", "domain");
+            }
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetRrsetsRrsetItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetRrsetsRrset", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetRrsetsRrsetItem... items) {
@@ -77,7 +84,10 @@ public final class GetRrsetsRrset {
         }
         @CustomType.Setter
         public Builder rtype(String rtype) {
-            this.rtype = Objects.requireNonNull(rtype);
+            if (rtype == null) {
+              throw new MissingRequiredPropertyException("GetRrsetsRrset", "rtype");
+            }
+            this.rtype = rtype;
             return this;
         }
         public GetRrsetsRrset build() {

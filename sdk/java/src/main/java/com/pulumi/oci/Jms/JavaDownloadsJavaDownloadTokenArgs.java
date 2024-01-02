@@ -5,6 +5,7 @@ package com.pulumi.oci.Jms;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -398,12 +399,24 @@ public final class JavaDownloadsJavaDownloadTokenArgs extends com.pulumi.resourc
         }
 
         public JavaDownloadsJavaDownloadTokenArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.description = Objects.requireNonNull($.description, "expected parameter 'description' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.javaVersion = Objects.requireNonNull($.javaVersion, "expected parameter 'javaVersion' to be non-null");
-            $.licenseTypes = Objects.requireNonNull($.licenseTypes, "expected parameter 'licenseTypes' to be non-null");
-            $.timeExpires = Objects.requireNonNull($.timeExpires, "expected parameter 'timeExpires' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("JavaDownloadsJavaDownloadTokenArgs", "compartmentId");
+            }
+            if ($.description == null) {
+                throw new MissingRequiredPropertyException("JavaDownloadsJavaDownloadTokenArgs", "description");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("JavaDownloadsJavaDownloadTokenArgs", "displayName");
+            }
+            if ($.javaVersion == null) {
+                throw new MissingRequiredPropertyException("JavaDownloadsJavaDownloadTokenArgs", "javaVersion");
+            }
+            if ($.licenseTypes == null) {
+                throw new MissingRequiredPropertyException("JavaDownloadsJavaDownloadTokenArgs", "licenseTypes");
+            }
+            if ($.timeExpires == null) {
+                throw new MissingRequiredPropertyException("JavaDownloadsJavaDownloadTokenArgs", "timeExpires");
+            }
             return $;
         }
     }

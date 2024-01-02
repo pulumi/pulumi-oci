@@ -44,6 +44,7 @@ public final class AppAccelerationPolicyResponseCompressionPolicy {
 
         @CustomType.Setter
         public Builder gzipCompression(@Nullable AppAccelerationPolicyResponseCompressionPolicyGzipCompression gzipCompression) {
+
             this.gzipCompression = gzipCompression;
             return this;
         }

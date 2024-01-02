@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.PolicyWafConfigHumanInteractionChallengeChallengeSettings;
 import com.pulumi.oci.Waas.outputs.PolicyWafConfigHumanInteractionChallengeSetHttpHeader;
 import java.lang.Boolean;
@@ -174,51 +175,63 @@ public final class PolicyWafConfigHumanInteractionChallenge {
 
         @CustomType.Setter
         public Builder action(@Nullable String action) {
+
             this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder actionExpirationInSeconds(@Nullable Integer actionExpirationInSeconds) {
+
             this.actionExpirationInSeconds = actionExpirationInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder challengeSettings(@Nullable PolicyWafConfigHumanInteractionChallengeChallengeSettings challengeSettings) {
+
             this.challengeSettings = challengeSettings;
             return this;
         }
         @CustomType.Setter
         public Builder failureThreshold(@Nullable Integer failureThreshold) {
+
             this.failureThreshold = failureThreshold;
             return this;
         }
         @CustomType.Setter
         public Builder failureThresholdExpirationInSeconds(@Nullable Integer failureThresholdExpirationInSeconds) {
+
             this.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder interactionThreshold(@Nullable Integer interactionThreshold) {
+
             this.interactionThreshold = interactionThreshold;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("PolicyWafConfigHumanInteractionChallenge", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isNatEnabled(@Nullable Boolean isNatEnabled) {
+
             this.isNatEnabled = isNatEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder recordingPeriodInSeconds(@Nullable Integer recordingPeriodInSeconds) {
+
             this.recordingPeriodInSeconds = recordingPeriodInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder setHttpHeader(@Nullable PolicyWafConfigHumanInteractionChallengeSetHttpHeader setHttpHeader) {
+
             this.setHttpHeader = setHttpHeader;
             return this;
         }

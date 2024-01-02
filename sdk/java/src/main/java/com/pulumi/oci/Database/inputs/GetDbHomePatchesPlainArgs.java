@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.GetDbHomePatchesFilter;
 import java.lang.String;
 import java.util.List;
@@ -84,7 +85,9 @@ public final class GetDbHomePatchesPlainArgs extends com.pulumi.resources.Invoke
         }
 
         public GetDbHomePatchesPlainArgs build() {
-            $.dbHomeId = Objects.requireNonNull($.dbHomeId, "expected parameter 'dbHomeId' to be non-null");
+            if ($.dbHomeId == null) {
+                throw new MissingRequiredPropertyException("GetDbHomePatchesPlainArgs", "dbHomeId");
+            }
             return $;
         }
     }

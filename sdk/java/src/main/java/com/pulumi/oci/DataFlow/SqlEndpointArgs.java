@@ -5,6 +5,7 @@ package com.pulumi.oci.DataFlow;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.inputs.SqlEndpointDriverShapeConfigArgs;
 import com.pulumi.oci.DataFlow.inputs.SqlEndpointExecutorShapeConfigArgs;
 import com.pulumi.oci.DataFlow.inputs.SqlEndpointNetworkConfigurationArgs;
@@ -600,15 +601,33 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public SqlEndpointArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.driverShape = Objects.requireNonNull($.driverShape, "expected parameter 'driverShape' to be non-null");
-            $.executorShape = Objects.requireNonNull($.executorShape, "expected parameter 'executorShape' to be non-null");
-            $.maxExecutorCount = Objects.requireNonNull($.maxExecutorCount, "expected parameter 'maxExecutorCount' to be non-null");
-            $.metastoreId = Objects.requireNonNull($.metastoreId, "expected parameter 'metastoreId' to be non-null");
-            $.minExecutorCount = Objects.requireNonNull($.minExecutorCount, "expected parameter 'minExecutorCount' to be non-null");
-            $.networkConfiguration = Objects.requireNonNull($.networkConfiguration, "expected parameter 'networkConfiguration' to be non-null");
-            $.sqlEndpointVersion = Objects.requireNonNull($.sqlEndpointVersion, "expected parameter 'sqlEndpointVersion' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("SqlEndpointArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("SqlEndpointArgs", "displayName");
+            }
+            if ($.driverShape == null) {
+                throw new MissingRequiredPropertyException("SqlEndpointArgs", "driverShape");
+            }
+            if ($.executorShape == null) {
+                throw new MissingRequiredPropertyException("SqlEndpointArgs", "executorShape");
+            }
+            if ($.maxExecutorCount == null) {
+                throw new MissingRequiredPropertyException("SqlEndpointArgs", "maxExecutorCount");
+            }
+            if ($.metastoreId == null) {
+                throw new MissingRequiredPropertyException("SqlEndpointArgs", "metastoreId");
+            }
+            if ($.minExecutorCount == null) {
+                throw new MissingRequiredPropertyException("SqlEndpointArgs", "minExecutorCount");
+            }
+            if ($.networkConfiguration == null) {
+                throw new MissingRequiredPropertyException("SqlEndpointArgs", "networkConfiguration");
+            }
+            if ($.sqlEndpointVersion == null) {
+                throw new MissingRequiredPropertyException("SqlEndpointArgs", "sqlEndpointVersion");
+            }
             return $;
         }
     }

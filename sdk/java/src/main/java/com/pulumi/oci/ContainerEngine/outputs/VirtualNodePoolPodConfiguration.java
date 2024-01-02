@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -72,6 +73,7 @@ public final class VirtualNodePoolPodConfiguration {
 
         @CustomType.Setter
         public Builder nsgIds(@Nullable List<String> nsgIds) {
+
             this.nsgIds = nsgIds;
             return this;
         }
@@ -80,12 +82,18 @@ public final class VirtualNodePoolPodConfiguration {
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("VirtualNodePoolPodConfiguration", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("VirtualNodePoolPodConfiguration", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         public VirtualNodePoolPodConfiguration build() {

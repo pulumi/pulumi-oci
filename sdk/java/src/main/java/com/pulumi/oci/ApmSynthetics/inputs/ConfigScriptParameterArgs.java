@@ -5,6 +5,7 @@ package com.pulumi.oci.ApmSynthetics.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigScriptParameterMonitorScriptParameterArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -237,8 +238,12 @@ public final class ConfigScriptParameterArgs extends com.pulumi.resources.Resour
         }
 
         public ConfigScriptParameterArgs build() {
-            $.paramName = Objects.requireNonNull($.paramName, "expected parameter 'paramName' to be non-null");
-            $.paramValue = Objects.requireNonNull($.paramValue, "expected parameter 'paramValue' to be non-null");
+            if ($.paramName == null) {
+                throw new MissingRequiredPropertyException("ConfigScriptParameterArgs", "paramName");
+            }
+            if ($.paramValue == null) {
+                throw new MissingRequiredPropertyException("ConfigScriptParameterArgs", "paramValue");
+            }
             return $;
         }
     }

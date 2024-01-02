@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceManagerProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceManagerProxy.outputs.GetServiceEnvironmentServiceDefinition;
 import com.pulumi.oci.ServiceManagerProxy.outputs.GetServiceEnvironmentServiceEnvironmentEndpoint;
 import java.lang.String;
@@ -135,22 +136,34 @@ public final class GetServiceEnvironmentResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder consoleUrl(String consoleUrl) {
-            this.consoleUrl = Objects.requireNonNull(consoleUrl);
+            if (consoleUrl == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentResult", "consoleUrl");
+            }
+            this.consoleUrl = consoleUrl;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder serviceDefinitions(List<GetServiceEnvironmentServiceDefinition> serviceDefinitions) {
-            this.serviceDefinitions = Objects.requireNonNull(serviceDefinitions);
+            if (serviceDefinitions == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentResult", "serviceDefinitions");
+            }
+            this.serviceDefinitions = serviceDefinitions;
             return this;
         }
         public Builder serviceDefinitions(GetServiceEnvironmentServiceDefinition... serviceDefinitions) {
@@ -158,7 +171,10 @@ public final class GetServiceEnvironmentResult {
         }
         @CustomType.Setter
         public Builder serviceEnvironmentEndpoints(List<GetServiceEnvironmentServiceEnvironmentEndpoint> serviceEnvironmentEndpoints) {
-            this.serviceEnvironmentEndpoints = Objects.requireNonNull(serviceEnvironmentEndpoints);
+            if (serviceEnvironmentEndpoints == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentResult", "serviceEnvironmentEndpoints");
+            }
+            this.serviceEnvironmentEndpoints = serviceEnvironmentEndpoints;
             return this;
         }
         public Builder serviceEnvironmentEndpoints(GetServiceEnvironmentServiceEnvironmentEndpoint... serviceEnvironmentEndpoints) {
@@ -166,17 +182,26 @@ public final class GetServiceEnvironmentResult {
         }
         @CustomType.Setter
         public Builder serviceEnvironmentId(String serviceEnvironmentId) {
-            this.serviceEnvironmentId = Objects.requireNonNull(serviceEnvironmentId);
+            if (serviceEnvironmentId == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentResult", "serviceEnvironmentId");
+            }
+            this.serviceEnvironmentId = serviceEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentResult", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
             return this;
         }
         public GetServiceEnvironmentResult build() {

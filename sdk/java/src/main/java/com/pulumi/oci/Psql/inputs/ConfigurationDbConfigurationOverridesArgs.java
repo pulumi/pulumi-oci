@@ -5,6 +5,7 @@ package com.pulumi.oci.Psql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.inputs.ConfigurationDbConfigurationOverridesItemArgs;
 import java.util.List;
 import java.util.Objects;
@@ -85,7 +86,9 @@ public final class ConfigurationDbConfigurationOverridesArgs extends com.pulumi.
         }
 
         public ConfigurationDbConfigurationOverridesArgs build() {
-            $.items = Objects.requireNonNull($.items, "expected parameter 'items' to be non-null");
+            if ($.items == null) {
+                throw new MissingRequiredPropertyException("ConfigurationDbConfigurationOverridesArgs", "items");
+            }
             return $;
         }
     }

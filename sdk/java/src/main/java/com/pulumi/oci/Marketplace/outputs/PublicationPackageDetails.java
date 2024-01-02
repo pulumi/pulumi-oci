@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.outputs.PublicationPackageDetailsEula;
 import com.pulumi.oci.Marketplace.outputs.PublicationPackageDetailsOperatingSystem;
 import java.lang.String;
@@ -103,7 +104,10 @@ public final class PublicationPackageDetails {
 
         @CustomType.Setter
         public Builder eulas(List<PublicationPackageDetailsEula> eulas) {
-            this.eulas = Objects.requireNonNull(eulas);
+            if (eulas == null) {
+              throw new MissingRequiredPropertyException("PublicationPackageDetails", "eulas");
+            }
+            this.eulas = eulas;
             return this;
         }
         public Builder eulas(PublicationPackageDetailsEula... eulas) {
@@ -111,22 +115,32 @@ public final class PublicationPackageDetails {
         }
         @CustomType.Setter
         public Builder imageId(@Nullable String imageId) {
+
             this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystem(PublicationPackageDetailsOperatingSystem operatingSystem) {
-            this.operatingSystem = Objects.requireNonNull(operatingSystem);
+            if (operatingSystem == null) {
+              throw new MissingRequiredPropertyException("PublicationPackageDetails", "operatingSystem");
+            }
+            this.operatingSystem = operatingSystem;
             return this;
         }
         @CustomType.Setter
         public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+            if (packageType == null) {
+              throw new MissingRequiredPropertyException("PublicationPackageDetails", "packageType");
+            }
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
         public Builder packageVersion(String packageVersion) {
-            this.packageVersion = Objects.requireNonNull(packageVersion);
+            if (packageVersion == null) {
+              throw new MissingRequiredPropertyException("PublicationPackageDetails", "packageVersion");
+            }
+            this.packageVersion = packageVersion;
             return this;
         }
         public PublicationPackageDetails build() {

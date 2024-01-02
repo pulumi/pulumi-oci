@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
@@ -269,87 +270,138 @@ public final class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSum
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder cpuAllocated(Double cpuAllocated) {
-            this.cpuAllocated = Objects.requireNonNull(cpuAllocated);
+            if (cpuAllocated == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem", "cpuAllocated");
+            }
+            this.cpuAllocated = cpuAllocated;
             return this;
         }
         @CustomType.Setter
         public Builder cpuUsed(Double cpuUsed) {
-            this.cpuUsed = Objects.requireNonNull(cpuUsed);
+            if (cpuUsed == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem", "cpuUsed");
+            }
+            this.cpuUsed = cpuUsed;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder dynamicGroupId(String dynamicGroupId) {
-            this.dynamicGroupId = Objects.requireNonNull(dynamicGroupId);
+            if (dynamicGroupId == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem", "dynamicGroupId");
+            }
+            this.dynamicGroupId = dynamicGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder operationsInsightsTenancyId(String operationsInsightsTenancyId) {
-            this.operationsInsightsTenancyId = Objects.requireNonNull(operationsInsightsTenancyId);
+            if (operationsInsightsTenancyId == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem", "operationsInsightsTenancyId");
+            }
+            this.operationsInsightsTenancyId = operationsInsightsTenancyId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder storageAllocatedInGbs(Double storageAllocatedInGbs) {
-            this.storageAllocatedInGbs = Objects.requireNonNull(storageAllocatedInGbs);
+            if (storageAllocatedInGbs == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem", "storageAllocatedInGbs");
+            }
+            this.storageAllocatedInGbs = storageAllocatedInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder storageUsedInGbs(Double storageUsedInGbs) {
-            this.storageUsedInGbs = Objects.requireNonNull(storageUsedInGbs);
+            if (storageUsedInGbs == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem", "storageUsedInGbs");
+            }
+            this.storageUsedInGbs = storageUsedInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastWalletRotated(String timeLastWalletRotated) {
-            this.timeLastWalletRotated = Objects.requireNonNull(timeLastWalletRotated);
+            if (timeLastWalletRotated == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem", "timeLastWalletRotated");
+            }
+            this.timeLastWalletRotated = timeLastWalletRotated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -275,9 +276,15 @@ public final class ExternalPluggableDatabaseArgs extends com.pulumi.resources.Re
         }
 
         public ExternalPluggableDatabaseArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.externalContainerDatabaseId = Objects.requireNonNull($.externalContainerDatabaseId, "expected parameter 'externalContainerDatabaseId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ExternalPluggableDatabaseArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ExternalPluggableDatabaseArgs", "displayName");
+            }
+            if ($.externalContainerDatabaseId == null) {
+                throw new MissingRequiredPropertyException("ExternalPluggableDatabaseArgs", "externalContainerDatabaseId");
+            }
             return $;
         }
     }

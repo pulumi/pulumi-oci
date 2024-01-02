@@ -5,6 +5,7 @@ package com.pulumi.oci.ApiGateway.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
         }
 
         public DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgs build() {
-            $.from = Objects.requireNonNull($.from, "expected parameter 'from' to be non-null");
-            $.to = Objects.requireNonNull($.to, "expected parameter 'to' to be non-null");
+            if ($.from == null) {
+                throw new MissingRequiredPropertyException("DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgs", "from");
+            }
+            if ($.to == null) {
+                throw new MissingRequiredPropertyException("DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgs", "to");
+            }
             return $;
         }
     }

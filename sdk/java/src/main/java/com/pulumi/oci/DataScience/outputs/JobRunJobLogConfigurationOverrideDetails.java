@@ -87,21 +87,25 @@ public final class JobRunJobLogConfigurationOverrideDetails {
 
         @CustomType.Setter
         public Builder enableAutoLogCreation(@Nullable Boolean enableAutoLogCreation) {
+
             this.enableAutoLogCreation = enableAutoLogCreation;
             return this;
         }
         @CustomType.Setter
         public Builder enableLogging(@Nullable Boolean enableLogging) {
+
             this.enableLogging = enableLogging;
             return this;
         }
         @CustomType.Setter
         public Builder logGroupId(@Nullable String logGroupId) {
+
             this.logGroupId = logGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder logId(@Nullable String logId) {
+
             this.logId = logId;
             return this;
         }

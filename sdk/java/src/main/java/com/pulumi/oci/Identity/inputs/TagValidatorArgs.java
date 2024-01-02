@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -122,8 +123,12 @@ public final class TagValidatorArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public TagValidatorArgs build() {
-            $.validatorType = Objects.requireNonNull($.validatorType, "expected parameter 'validatorType' to be non-null");
-            $.values = Objects.requireNonNull($.values, "expected parameter 'values' to be non-null");
+            if ($.validatorType == null) {
+                throw new MissingRequiredPropertyException("TagValidatorArgs", "validatorType");
+            }
+            if ($.values == null) {
+                throw new MissingRequiredPropertyException("TagValidatorArgs", "values");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem
 
         @CustomType.Setter
         public Builder properties(List<String> properties) {
-            this.properties = Objects.requireNonNull(properties);
+            if (properties == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet", "properties");
+            }
+            this.properties = properties;
             return this;
         }
         public Builder properties(String... properties) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -140,42 +141,66 @@ public final class GetSubscribedServiceSoldToContact {
 
         @CustomType.Setter
         public Builder email(String email) {
-            this.email = Objects.requireNonNull(email);
+            if (email == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServiceSoldToContact", "email");
+            }
+            this.email = email;
             return this;
         }
         @CustomType.Setter
         public Builder firstName(String firstName) {
-            this.firstName = Objects.requireNonNull(firstName);
+            if (firstName == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServiceSoldToContact", "firstName");
+            }
+            this.firstName = firstName;
             return this;
         }
         @CustomType.Setter
         public Builder lastName(String lastName) {
-            this.lastName = Objects.requireNonNull(lastName);
+            if (lastName == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServiceSoldToContact", "lastName");
+            }
+            this.lastName = lastName;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServiceSoldToContact", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder tcaContactId(String tcaContactId) {
-            this.tcaContactId = Objects.requireNonNull(tcaContactId);
+            if (tcaContactId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServiceSoldToContact", "tcaContactId");
+            }
+            this.tcaContactId = tcaContactId;
             return this;
         }
         @CustomType.Setter
         public Builder tcaCustAccntSiteId(String tcaCustAccntSiteId) {
-            this.tcaCustAccntSiteId = Objects.requireNonNull(tcaCustAccntSiteId);
+            if (tcaCustAccntSiteId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServiceSoldToContact", "tcaCustAccntSiteId");
+            }
+            this.tcaCustAccntSiteId = tcaCustAccntSiteId;
             return this;
         }
         @CustomType.Setter
         public Builder tcaPartyId(String tcaPartyId) {
-            this.tcaPartyId = Objects.requireNonNull(tcaPartyId);
+            if (tcaPartyId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServiceSoldToContact", "tcaPartyId");
+            }
+            this.tcaPartyId = tcaPartyId;
             return this;
         }
         @CustomType.Setter
         public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+            if (username == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServiceSoldToContact", "username");
+            }
+            this.username = username;
             return this;
         }
         public GetSubscribedServiceSoldToContact build() {

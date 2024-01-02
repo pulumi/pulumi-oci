@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyAddressListsAddressListSummaryCollection;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyAddressListsFilter;
 import java.lang.String;
@@ -79,7 +80,10 @@ public final class GetNetworkFirewallPolicyAddressListsResult {
 
         @CustomType.Setter
         public Builder addressListSummaryCollections(List<GetNetworkFirewallPolicyAddressListsAddressListSummaryCollection> addressListSummaryCollections) {
-            this.addressListSummaryCollections = Objects.requireNonNull(addressListSummaryCollections);
+            if (addressListSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyAddressListsResult", "addressListSummaryCollections");
+            }
+            this.addressListSummaryCollections = addressListSummaryCollections;
             return this;
         }
         public Builder addressListSummaryCollections(GetNetworkFirewallPolicyAddressListsAddressListSummaryCollection... addressListSummaryCollections) {
@@ -87,11 +91,13 @@ public final class GetNetworkFirewallPolicyAddressListsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNetworkFirewallPolicyAddressListsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -100,12 +106,18 @@ public final class GetNetworkFirewallPolicyAddressListsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyAddressListsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder networkFirewallPolicyId(String networkFirewallPolicyId) {
-            this.networkFirewallPolicyId = Objects.requireNonNull(networkFirewallPolicyId);
+            if (networkFirewallPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyAddressListsResult", "networkFirewallPolicyId");
+            }
+            this.networkFirewallPolicyId = networkFirewallPolicyId;
             return this;
         }
         public GetNetworkFirewallPolicyAddressListsResult build() {

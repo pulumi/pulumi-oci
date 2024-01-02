@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
 
         @CustomType.Setter
         public Builder operations(List<String> operations) {
-            this.operations = Objects.requireNonNull(operations);
+            if (operations == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail", "operations");
+            }
+            this.operations = operations;
             return this;
         }
         public Builder operations(String... operations) {
@@ -66,7 +70,10 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
         }
         @CustomType.Setter
         public Builder schemas(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema... schemas) {

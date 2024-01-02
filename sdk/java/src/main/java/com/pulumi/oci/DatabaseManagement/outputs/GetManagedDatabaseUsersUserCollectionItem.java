@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -364,122 +365,194 @@ public final class GetManagedDatabaseUsersUserCollectionItem {
 
         @CustomType.Setter
         public Builder allShared(String allShared) {
-            this.allShared = Objects.requireNonNull(allShared);
+            if (allShared == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "allShared");
+            }
+            this.allShared = allShared;
             return this;
         }
         @CustomType.Setter
         public Builder authentication(String authentication) {
-            this.authentication = Objects.requireNonNull(authentication);
+            if (authentication == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "authentication");
+            }
+            this.authentication = authentication;
             return this;
         }
         @CustomType.Setter
         public Builder common(String common) {
-            this.common = Objects.requireNonNull(common);
+            if (common == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "common");
+            }
+            this.common = common;
             return this;
         }
         @CustomType.Setter
         public Builder consumerGroup(String consumerGroup) {
-            this.consumerGroup = Objects.requireNonNull(consumerGroup);
+            if (consumerGroup == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "consumerGroup");
+            }
+            this.consumerGroup = consumerGroup;
             return this;
         }
         @CustomType.Setter
         public Builder defaultCollation(String defaultCollation) {
-            this.defaultCollation = Objects.requireNonNull(defaultCollation);
+            if (defaultCollation == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "defaultCollation");
+            }
+            this.defaultCollation = defaultCollation;
             return this;
         }
         @CustomType.Setter
         public Builder defaultTablespace(String defaultTablespace) {
-            this.defaultTablespace = Objects.requireNonNull(defaultTablespace);
+            if (defaultTablespace == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "defaultTablespace");
+            }
+            this.defaultTablespace = defaultTablespace;
             return this;
         }
         @CustomType.Setter
         public Builder editionsEnabled(String editionsEnabled) {
-            this.editionsEnabled = Objects.requireNonNull(editionsEnabled);
+            if (editionsEnabled == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "editionsEnabled");
+            }
+            this.editionsEnabled = editionsEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder externalName(String externalName) {
-            this.externalName = Objects.requireNonNull(externalName);
+            if (externalName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "externalName");
+            }
+            this.externalName = externalName;
             return this;
         }
         @CustomType.Setter
         public Builder externalShared(String externalShared) {
-            this.externalShared = Objects.requireNonNull(externalShared);
+            if (externalShared == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "externalShared");
+            }
+            this.externalShared = externalShared;
             return this;
         }
         @CustomType.Setter
         public Builder implicit(String implicit) {
-            this.implicit = Objects.requireNonNull(implicit);
+            if (implicit == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "implicit");
+            }
+            this.implicit = implicit;
             return this;
         }
         @CustomType.Setter
         public Builder inherited(String inherited) {
-            this.inherited = Objects.requireNonNull(inherited);
+            if (inherited == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "inherited");
+            }
+            this.inherited = inherited;
             return this;
         }
         @CustomType.Setter
         public Builder localTempTablespace(String localTempTablespace) {
-            this.localTempTablespace = Objects.requireNonNull(localTempTablespace);
+            if (localTempTablespace == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "localTempTablespace");
+            }
+            this.localTempTablespace = localTempTablespace;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder oracleMaintained(String oracleMaintained) {
-            this.oracleMaintained = Objects.requireNonNull(oracleMaintained);
+            if (oracleMaintained == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "oracleMaintained");
+            }
+            this.oracleMaintained = oracleMaintained;
             return this;
         }
         @CustomType.Setter
         public Builder passwordVersions(String passwordVersions) {
-            this.passwordVersions = Objects.requireNonNull(passwordVersions);
+            if (passwordVersions == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "passwordVersions");
+            }
+            this.passwordVersions = passwordVersions;
             return this;
         }
         @CustomType.Setter
         public Builder profile(String profile) {
-            this.profile = Objects.requireNonNull(profile);
+            if (profile == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "profile");
+            }
+            this.profile = profile;
             return this;
         }
         @CustomType.Setter
         public Builder proxyConnect(String proxyConnect) {
-            this.proxyConnect = Objects.requireNonNull(proxyConnect);
+            if (proxyConnect == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "proxyConnect");
+            }
+            this.proxyConnect = proxyConnect;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder tempTablespace(String tempTablespace) {
-            this.tempTablespace = Objects.requireNonNull(tempTablespace);
+            if (tempTablespace == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "tempTablespace");
+            }
+            this.tempTablespace = tempTablespace;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeExpiring(String timeExpiring) {
-            this.timeExpiring = Objects.requireNonNull(timeExpiring);
+            if (timeExpiring == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "timeExpiring");
+            }
+            this.timeExpiring = timeExpiring;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastLogin(String timeLastLogin) {
-            this.timeLastLogin = Objects.requireNonNull(timeLastLogin);
+            if (timeLastLogin == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "timeLastLogin");
+            }
+            this.timeLastLogin = timeLastLogin;
             return this;
         }
         @CustomType.Setter
         public Builder timeLocked(String timeLocked) {
-            this.timeLocked = Objects.requireNonNull(timeLocked);
+            if (timeLocked == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "timeLocked");
+            }
+            this.timeLocked = timeLocked;
             return this;
         }
         @CustomType.Setter
         public Builder timePasswordChanged(String timePasswordChanged) {
-            this.timePasswordChanged = Objects.requireNonNull(timePasswordChanged);
+            if (timePasswordChanged == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUsersUserCollectionItem", "timePasswordChanged");
+            }
+            this.timePasswordChanged = timePasswordChanged;
             return this;
         }
         public GetManagedDatabaseUsersUserCollectionItem build() {

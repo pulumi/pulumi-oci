@@ -73,16 +73,19 @@ public final class ExternalClusterVipConfiguration {
 
         @CustomType.Setter
         public Builder address(@Nullable String address) {
+
             this.address = address;
             return this;
         }
         @CustomType.Setter
         public Builder networkNumber(@Nullable Integer networkNumber) {
+
             this.networkNumber = networkNumber;
             return this;
         }
         @CustomType.Setter
         public Builder nodeName(@Nullable String nodeName) {
+
             this.nodeName = nodeName;
             return this;
         }

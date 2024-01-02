@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionNotebookSessionConfigDetail;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionNotebookSessionConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetail;
@@ -251,42 +252,66 @@ public final class GetNotebookSessionResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionResult", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder notebookSessionConfigDetails(List<GetNotebookSessionNotebookSessionConfigDetail> notebookSessionConfigDetails) {
-            this.notebookSessionConfigDetails = Objects.requireNonNull(notebookSessionConfigDetails);
+            if (notebookSessionConfigDetails == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionResult", "notebookSessionConfigDetails");
+            }
+            this.notebookSessionConfigDetails = notebookSessionConfigDetails;
             return this;
         }
         public Builder notebookSessionConfigDetails(GetNotebookSessionNotebookSessionConfigDetail... notebookSessionConfigDetails) {
@@ -294,7 +319,10 @@ public final class GetNotebookSessionResult {
         }
         @CustomType.Setter
         public Builder notebookSessionConfigurationDetails(List<GetNotebookSessionNotebookSessionConfigurationDetail> notebookSessionConfigurationDetails) {
-            this.notebookSessionConfigurationDetails = Objects.requireNonNull(notebookSessionConfigurationDetails);
+            if (notebookSessionConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionResult", "notebookSessionConfigurationDetails");
+            }
+            this.notebookSessionConfigurationDetails = notebookSessionConfigurationDetails;
             return this;
         }
         public Builder notebookSessionConfigurationDetails(GetNotebookSessionNotebookSessionConfigurationDetail... notebookSessionConfigurationDetails) {
@@ -302,12 +330,18 @@ public final class GetNotebookSessionResult {
         }
         @CustomType.Setter
         public Builder notebookSessionId(String notebookSessionId) {
-            this.notebookSessionId = Objects.requireNonNull(notebookSessionId);
+            if (notebookSessionId == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionResult", "notebookSessionId");
+            }
+            this.notebookSessionId = notebookSessionId;
             return this;
         }
         @CustomType.Setter
         public Builder notebookSessionRuntimeConfigDetails(List<GetNotebookSessionNotebookSessionRuntimeConfigDetail> notebookSessionRuntimeConfigDetails) {
-            this.notebookSessionRuntimeConfigDetails = Objects.requireNonNull(notebookSessionRuntimeConfigDetails);
+            if (notebookSessionRuntimeConfigDetails == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionResult", "notebookSessionRuntimeConfigDetails");
+            }
+            this.notebookSessionRuntimeConfigDetails = notebookSessionRuntimeConfigDetails;
             return this;
         }
         public Builder notebookSessionRuntimeConfigDetails(GetNotebookSessionNotebookSessionRuntimeConfigDetail... notebookSessionRuntimeConfigDetails) {
@@ -315,7 +349,10 @@ public final class GetNotebookSessionResult {
         }
         @CustomType.Setter
         public Builder notebookSessionStorageMountConfigurationDetailsLists(List<GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList> notebookSessionStorageMountConfigurationDetailsLists) {
-            this.notebookSessionStorageMountConfigurationDetailsLists = Objects.requireNonNull(notebookSessionStorageMountConfigurationDetailsLists);
+            if (notebookSessionStorageMountConfigurationDetailsLists == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionResult", "notebookSessionStorageMountConfigurationDetailsLists");
+            }
+            this.notebookSessionStorageMountConfigurationDetailsLists = notebookSessionStorageMountConfigurationDetailsLists;
             return this;
         }
         public Builder notebookSessionStorageMountConfigurationDetailsLists(GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList... notebookSessionStorageMountConfigurationDetailsLists) {
@@ -323,22 +360,34 @@ public final class GetNotebookSessionResult {
         }
         @CustomType.Setter
         public Builder notebookSessionUrl(String notebookSessionUrl) {
-            this.notebookSessionUrl = Objects.requireNonNull(notebookSessionUrl);
+            if (notebookSessionUrl == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionResult", "notebookSessionUrl");
+            }
+            this.notebookSessionUrl = notebookSessionUrl;
             return this;
         }
         @CustomType.Setter
         public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+            if (projectId == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionResult", "projectId");
+            }
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetNotebookSessionResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbNodeConsoleHistoriesConsoleHistoryCollection;
 import com.pulumi.oci.Database.outputs.GetDbNodeConsoleHistoriesFilter;
 import java.lang.String;
@@ -109,7 +110,10 @@ public final class GetDbNodeConsoleHistoriesResult {
 
         @CustomType.Setter
         public Builder consoleHistoryCollections(List<GetDbNodeConsoleHistoriesConsoleHistoryCollection> consoleHistoryCollections) {
-            this.consoleHistoryCollections = Objects.requireNonNull(consoleHistoryCollections);
+            if (consoleHistoryCollections == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeConsoleHistoriesResult", "consoleHistoryCollections");
+            }
+            this.consoleHistoryCollections = consoleHistoryCollections;
             return this;
         }
         public Builder consoleHistoryCollections(GetDbNodeConsoleHistoriesConsoleHistoryCollection... consoleHistoryCollections) {
@@ -117,16 +121,21 @@ public final class GetDbNodeConsoleHistoriesResult {
         }
         @CustomType.Setter
         public Builder dbNodeId(String dbNodeId) {
-            this.dbNodeId = Objects.requireNonNull(dbNodeId);
+            if (dbNodeId == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeConsoleHistoriesResult", "dbNodeId");
+            }
+            this.dbNodeId = dbNodeId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDbNodeConsoleHistoriesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,11 +144,15 @@ public final class GetDbNodeConsoleHistoriesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeConsoleHistoriesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

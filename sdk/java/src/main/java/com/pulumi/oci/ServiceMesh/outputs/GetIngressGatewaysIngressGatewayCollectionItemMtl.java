@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemMtl {
 
         @CustomType.Setter
         public Builder certificateId(String certificateId) {
-            this.certificateId = Objects.requireNonNull(certificateId);
+            if (certificateId == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewaysIngressGatewayCollectionItemMtl", "certificateId");
+            }
+            this.certificateId = certificateId;
             return this;
         }
         @CustomType.Setter
         public Builder maximumValidity(Integer maximumValidity) {
-            this.maximumValidity = Objects.requireNonNull(maximumValidity);
+            if (maximumValidity == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewaysIngressGatewayCollectionItemMtl", "maximumValidity");
+            }
+            this.maximumValidity = maximumValidity;
             return this;
         }
         public GetIngressGatewaysIngressGatewayCollectionItemMtl build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.outputs.GetListingPackageOperatingSystem;
 import com.pulumi.oci.Marketplace.outputs.GetListingPackagePricing;
 import com.pulumi.oci.Marketplace.outputs.GetListingPackageRegion;
@@ -257,42 +258,64 @@ public final class GetListingPackageResult {
 
         @CustomType.Setter
         public Builder appCatalogListingId(String appCatalogListingId) {
-            this.appCatalogListingId = Objects.requireNonNull(appCatalogListingId);
+            if (appCatalogListingId == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageResult", "appCatalogListingId");
+            }
+            this.appCatalogListingId = appCatalogListingId;
             return this;
         }
         @CustomType.Setter
         public Builder appCatalogListingResourceVersion(String appCatalogListingResourceVersion) {
-            this.appCatalogListingResourceVersion = Objects.requireNonNull(appCatalogListingResourceVersion);
+            if (appCatalogListingResourceVersion == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageResult", "appCatalogListingResourceVersion");
+            }
+            this.appCatalogListingResourceVersion = appCatalogListingResourceVersion;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imageId(String imageId) {
-            this.imageId = Objects.requireNonNull(imageId);
+            if (imageId == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageResult", "imageId");
+            }
+            this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder listingId(String listingId) {
-            this.listingId = Objects.requireNonNull(listingId);
+            if (listingId == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageResult", "listingId");
+            }
+            this.listingId = listingId;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystems(List<GetListingPackageOperatingSystem> operatingSystems) {
-            this.operatingSystems = Objects.requireNonNull(operatingSystems);
+            if (operatingSystems == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageResult", "operatingSystems");
+            }
+            this.operatingSystems = operatingSystems;
             return this;
         }
         public Builder operatingSystems(GetListingPackageOperatingSystem... operatingSystems) {
@@ -300,17 +323,26 @@ public final class GetListingPackageResult {
         }
         @CustomType.Setter
         public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+            if (packageType == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageResult", "packageType");
+            }
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
         public Builder packageVersion(String packageVersion) {
-            this.packageVersion = Objects.requireNonNull(packageVersion);
+            if (packageVersion == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageResult", "packageVersion");
+            }
+            this.packageVersion = packageVersion;
             return this;
         }
         @CustomType.Setter
         public Builder pricings(List<GetListingPackagePricing> pricings) {
-            this.pricings = Objects.requireNonNull(pricings);
+            if (pricings == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageResult", "pricings");
+            }
+            this.pricings = pricings;
             return this;
         }
         public Builder pricings(GetListingPackagePricing... pricings) {
@@ -318,7 +350,10 @@ public final class GetListingPackageResult {
         }
         @CustomType.Setter
         public Builder regions(List<GetListingPackageRegion> regions) {
-            this.regions = Objects.requireNonNull(regions);
+            if (regions == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageResult", "regions");
+            }
+            this.regions = regions;
             return this;
         }
         public Builder regions(GetListingPackageRegion... regions) {
@@ -326,22 +361,34 @@ public final class GetListingPackageResult {
         }
         @CustomType.Setter
         public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+            if (resourceId == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageResult", "resourceId");
+            }
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceLink(String resourceLink) {
-            this.resourceLink = Objects.requireNonNull(resourceLink);
+            if (resourceLink == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageResult", "resourceLink");
+            }
+            this.resourceLink = resourceLink;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder variables(List<GetListingPackageVariable> variables) {
-            this.variables = Objects.requireNonNull(variables);
+            if (variables == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageResult", "variables");
+            }
+            this.variables = variables;
             return this;
         }
         public Builder variables(GetListingPackageVariable... variables) {
@@ -349,7 +396,10 @@ public final class GetListingPackageResult {
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageResult", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetListingPackageResult build() {

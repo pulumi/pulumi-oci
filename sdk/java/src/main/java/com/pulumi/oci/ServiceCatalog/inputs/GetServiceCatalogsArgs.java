@@ -5,6 +5,7 @@ package com.pulumi.oci.ServiceCatalog.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -173,7 +174,9 @@ public final class GetServiceCatalogsArgs extends com.pulumi.resources.InvokeArg
         }
 
         public GetServiceCatalogsArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetServiceCatalogsArgs", "compartmentId");
+            }
             return $;
         }
     }

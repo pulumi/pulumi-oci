@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemDataPointArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemTrainingDataPointArgs;
@@ -221,10 +222,18 @@ public final class GetBaselineableMetricsEvaluateItemArgs extends com.pulumi.res
         }
 
         public GetBaselineableMetricsEvaluateItemArgs build() {
-            $.dataPoints = Objects.requireNonNull($.dataPoints, "expected parameter 'dataPoints' to be non-null");
-            $.dimensions = Objects.requireNonNull($.dimensions, "expected parameter 'dimensions' to be non-null");
-            $.evaluationDataPoints = Objects.requireNonNull($.evaluationDataPoints, "expected parameter 'evaluationDataPoints' to be non-null");
-            $.trainingDataPoints = Objects.requireNonNull($.trainingDataPoints, "expected parameter 'trainingDataPoints' to be non-null");
+            if ($.dataPoints == null) {
+                throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateItemArgs", "dataPoints");
+            }
+            if ($.dimensions == null) {
+                throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateItemArgs", "dimensions");
+            }
+            if ($.evaluationDataPoints == null) {
+                throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateItemArgs", "evaluationDataPoints");
+            }
+            if ($.trainingDataPoints == null) {
+                throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateItemArgs", "trainingDataPoints");
+            }
             return $;
         }
     }

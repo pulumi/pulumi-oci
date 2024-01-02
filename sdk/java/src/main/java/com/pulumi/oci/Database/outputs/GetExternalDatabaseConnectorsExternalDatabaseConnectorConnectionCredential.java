@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -112,32 +113,50 @@ public final class GetExternalDatabaseConnectorsExternalDatabaseConnectorConnect
 
         @CustomType.Setter
         public Builder credentialName(String credentialName) {
-            this.credentialName = Objects.requireNonNull(credentialName);
+            if (credentialName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential", "credentialName");
+            }
+            this.credentialName = credentialName;
             return this;
         }
         @CustomType.Setter
         public Builder credentialType(String credentialType) {
-            this.credentialType = Objects.requireNonNull(credentialType);
+            if (credentialType == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential", "credentialType");
+            }
+            this.credentialType = credentialType;
             return this;
         }
         @CustomType.Setter
         public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+            if (password == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential", "password");
+            }
+            this.password = password;
             return this;
         }
         @CustomType.Setter
         public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+            if (role == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential", "role");
+            }
+            this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder sslSecretId(String sslSecretId) {
-            this.sslSecretId = Objects.requireNonNull(sslSecretId);
+            if (sslSecretId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential", "sslSecretId");
+            }
+            this.sslSecretId = sslSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+            if (username == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential", "username");
+            }
+            this.username = username;
             return this;
         }
         public GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential build() {

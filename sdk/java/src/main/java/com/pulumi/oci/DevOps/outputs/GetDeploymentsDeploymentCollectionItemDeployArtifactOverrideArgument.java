@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideA
 
         @CustomType.Setter
         public Builder items(List<GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgument", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItem... items) {

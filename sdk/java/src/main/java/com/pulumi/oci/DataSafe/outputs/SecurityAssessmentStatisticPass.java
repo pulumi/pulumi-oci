@@ -142,41 +142,49 @@ public final class SecurityAssessmentStatisticPass {
 
         @CustomType.Setter
         public Builder auditingFindingsCount(@Nullable Integer auditingFindingsCount) {
+
             this.auditingFindingsCount = auditingFindingsCount;
             return this;
         }
         @CustomType.Setter
         public Builder authorizationControlFindingsCount(@Nullable Integer authorizationControlFindingsCount) {
+
             this.authorizationControlFindingsCount = authorizationControlFindingsCount;
             return this;
         }
         @CustomType.Setter
         public Builder dataEncryptionFindingsCount(@Nullable Integer dataEncryptionFindingsCount) {
+
             this.dataEncryptionFindingsCount = dataEncryptionFindingsCount;
             return this;
         }
         @CustomType.Setter
         public Builder dbConfigurationFindingsCount(@Nullable Integer dbConfigurationFindingsCount) {
+
             this.dbConfigurationFindingsCount = dbConfigurationFindingsCount;
             return this;
         }
         @CustomType.Setter
         public Builder fineGrainedAccessControlFindingsCount(@Nullable Integer fineGrainedAccessControlFindingsCount) {
+
             this.fineGrainedAccessControlFindingsCount = fineGrainedAccessControlFindingsCount;
             return this;
         }
         @CustomType.Setter
         public Builder privilegesAndRolesFindingsCount(@Nullable Integer privilegesAndRolesFindingsCount) {
+
             this.privilegesAndRolesFindingsCount = privilegesAndRolesFindingsCount;
             return this;
         }
         @CustomType.Setter
         public Builder targetsCount(@Nullable Integer targetsCount) {
+
             this.targetsCount = targetsCount;
             return this;
         }
         @CustomType.Setter
         public Builder userAccountsFindingsCount(@Nullable Integer userAccountsFindingsCount) {
+
             this.userAccountsFindingsCount = userAccountsFindingsCount;
             return this;
         }

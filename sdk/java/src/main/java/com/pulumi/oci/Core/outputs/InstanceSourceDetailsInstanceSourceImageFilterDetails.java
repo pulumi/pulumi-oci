@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -88,21 +89,27 @@ public final class InstanceSourceDetailsInstanceSourceImageFilterDetails {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("InstanceSourceDetailsInstanceSourceImageFilterDetails", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTagsFilter(@Nullable Map<String,Object> definedTagsFilter) {
+
             this.definedTagsFilter = definedTagsFilter;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystem(@Nullable String operatingSystem) {
+
             this.operatingSystem = operatingSystem;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystemVersion(@Nullable String operatingSystemVersion) {
+
             this.operatingSystemVersion = operatingSystemVersion;
             return this;
         }

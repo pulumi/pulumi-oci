@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
 
         @CustomType.Setter
         public Builder membershipRule(String membershipRule) {
-            this.membershipRule = Objects.requireNonNull(membershipRule);
+            if (membershipRule == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup", "membershipRule");
+            }
+            this.membershipRule = membershipRule;
             return this;
         }
         @CustomType.Setter
         public Builder membershipType(String membershipType) {
-            this.membershipType = Objects.requireNonNull(membershipType);
+            if (membershipType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup", "membershipType");
+            }
+            this.membershipType = membershipType;
             return this;
         }
         public GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup build() {

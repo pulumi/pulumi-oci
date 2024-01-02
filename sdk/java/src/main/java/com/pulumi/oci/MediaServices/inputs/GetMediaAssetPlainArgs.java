@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetMediaAssetPlainArgs extends com.pulumi.resources.InvokeArg
         }
 
         public GetMediaAssetPlainArgs build() {
-            $.mediaAssetId = Objects.requireNonNull($.mediaAssetId, "expected parameter 'mediaAssetId' to be non-null");
+            if ($.mediaAssetId == null) {
+                throw new MissingRequiredPropertyException("GetMediaAssetPlainArgs", "mediaAssetId");
+            }
             return $;
         }
     }

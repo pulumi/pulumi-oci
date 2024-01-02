@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetExternalDbSystemDatabaseManagementConfig {
 
         @CustomType.Setter
         public Builder licenseModel(String licenseModel) {
-            this.licenseModel = Objects.requireNonNull(licenseModel);
+            if (licenseModel == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDatabaseManagementConfig", "licenseModel");
+            }
+            this.licenseModel = licenseModel;
             return this;
         }
         public GetExternalDbSystemDatabaseManagementConfig build() {

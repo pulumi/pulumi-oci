@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetInstallationSiteItemJre {
 
         @CustomType.Setter
         public Builder distribution(String distribution) {
-            this.distribution = Objects.requireNonNull(distribution);
+            if (distribution == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSiteItemJre", "distribution");
+            }
+            this.distribution = distribution;
             return this;
         }
         @CustomType.Setter
         public Builder jreKey(String jreKey) {
-            this.jreKey = Objects.requireNonNull(jreKey);
+            if (jreKey == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSiteItemJre", "jreKey");
+            }
+            this.jreKey = jreKey;
             return this;
         }
         @CustomType.Setter
         public Builder vendor(String vendor) {
-            this.vendor = Objects.requireNonNull(vendor);
+            if (vendor == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSiteItemJre", "vendor");
+            }
+            this.vendor = vendor;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSiteItemJre", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetInstallationSiteItemJre build() {

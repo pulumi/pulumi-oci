@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetAuthenticationPolicyNetworkPolicy;
 import com.pulumi.oci.Identity.outputs.GetAuthenticationPolicyPasswordPolicy;
 import java.lang.String;
@@ -79,17 +80,26 @@ public final class GetAuthenticationPolicyResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAuthenticationPolicyResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAuthenticationPolicyResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder networkPolicies(List<GetAuthenticationPolicyNetworkPolicy> networkPolicies) {
-            this.networkPolicies = Objects.requireNonNull(networkPolicies);
+            if (networkPolicies == null) {
+              throw new MissingRequiredPropertyException("GetAuthenticationPolicyResult", "networkPolicies");
+            }
+            this.networkPolicies = networkPolicies;
             return this;
         }
         public Builder networkPolicies(GetAuthenticationPolicyNetworkPolicy... networkPolicies) {
@@ -97,7 +107,10 @@ public final class GetAuthenticationPolicyResult {
         }
         @CustomType.Setter
         public Builder passwordPolicies(List<GetAuthenticationPolicyPasswordPolicy> passwordPolicies) {
-            this.passwordPolicies = Objects.requireNonNull(passwordPolicies);
+            if (passwordPolicies == null) {
+              throw new MissingRequiredPropertyException("GetAuthenticationPolicyResult", "passwordPolicies");
+            }
+            this.passwordPolicies = passwordPolicies;
             return this;
         }
         public Builder passwordPolicies(GetAuthenticationPolicyPasswordPolicy... passwordPolicies) {

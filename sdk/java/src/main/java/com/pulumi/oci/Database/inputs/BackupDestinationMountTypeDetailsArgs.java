@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -198,7 +199,9 @@ public final class BackupDestinationMountTypeDetailsArgs extends com.pulumi.reso
         }
 
         public BackupDestinationMountTypeDetailsArgs build() {
-            $.mountType = Objects.requireNonNull($.mountType, "expected parameter 'mountType' to be non-null");
+            if ($.mountType == null) {
+                throw new MissingRequiredPropertyException("BackupDestinationMountTypeDetailsArgs", "mountType");
+            }
             return $;
         }
     }

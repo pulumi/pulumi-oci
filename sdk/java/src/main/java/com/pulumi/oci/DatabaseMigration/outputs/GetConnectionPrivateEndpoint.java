@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetConnectionPrivateEndpoint {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionPrivateEndpoint", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetConnectionPrivateEndpoint", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionPrivateEndpoint", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+            if (vcnId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionPrivateEndpoint", "vcnId");
+            }
+            this.vcnId = vcnId;
             return this;
         }
         public GetConnectionPrivateEndpoint build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal;
 import java.lang.String;
@@ -97,22 +98,34 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
 
         @CustomType.Setter
         public Builder executionId(String executionId) {
-            this.executionId = Objects.requireNonNull(executionId);
+            if (executionId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult", "executionId");
+            }
+            this.executionId = executionId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder modifieds(List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified> modifieds) {
-            this.modifieds = Objects.requireNonNull(modifieds);
+            if (modifieds == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult", "modifieds");
+            }
+            this.modifieds = modifieds;
             return this;
         }
         public Builder modifieds(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified... modifieds) {
@@ -120,7 +133,10 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
         }
         @CustomType.Setter
         public Builder originals(List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal> originals) {
-            this.originals = Objects.requireNonNull(originals);
+            if (originals == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult", "originals");
+            }
+            this.originals = originals;
             return this;
         }
         public Builder originals(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal... originals) {
@@ -128,12 +144,18 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
         }
         @CustomType.Setter
         public Builder sqlObjectId(String sqlObjectId) {
-            this.sqlObjectId = Objects.requireNonNull(sqlObjectId);
+            if (sqlObjectId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult", "sqlObjectId");
+            }
+            this.sqlObjectId = sqlObjectId;
             return this;
         }
         @CustomType.Setter
         public Builder sqlTuningAdvisorTaskId(String sqlTuningAdvisorTaskId) {
-            this.sqlTuningAdvisorTaskId = Objects.requireNonNull(sqlTuningAdvisorTaskId);
+            if (sqlTuningAdvisorTaskId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult", "sqlTuningAdvisorTaskId");
+            }
+            this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult build() {

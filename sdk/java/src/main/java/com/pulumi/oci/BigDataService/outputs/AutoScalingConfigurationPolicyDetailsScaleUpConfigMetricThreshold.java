@@ -73,16 +73,19 @@ public final class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThres
 
         @CustomType.Setter
         public Builder durationInMinutes(@Nullable Integer durationInMinutes) {
+
             this.durationInMinutes = durationInMinutes;
             return this;
         }
         @CustomType.Setter
         public Builder operator(@Nullable String operator) {
+
             this.operator = operator;
             return this;
         }
         @CustomType.Setter
         public Builder value(@Nullable Integer value) {
+
             this.value = value;
             return this;
         }

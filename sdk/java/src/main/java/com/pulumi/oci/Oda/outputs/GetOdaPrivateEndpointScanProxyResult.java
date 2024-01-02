@@ -4,6 +4,7 @@
 package com.pulumi.oci.Oda.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Oda.outputs.GetOdaPrivateEndpointScanProxyScanListenerInfo;
 import java.lang.String;
 import java.util.List;
@@ -126,27 +127,42 @@ public final class GetOdaPrivateEndpointScanProxyResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxyResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder odaPrivateEndpointId(String odaPrivateEndpointId) {
-            this.odaPrivateEndpointId = Objects.requireNonNull(odaPrivateEndpointId);
+            if (odaPrivateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxyResult", "odaPrivateEndpointId");
+            }
+            this.odaPrivateEndpointId = odaPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder odaPrivateEndpointScanProxyId(String odaPrivateEndpointScanProxyId) {
-            this.odaPrivateEndpointScanProxyId = Objects.requireNonNull(odaPrivateEndpointScanProxyId);
+            if (odaPrivateEndpointScanProxyId == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxyResult", "odaPrivateEndpointScanProxyId");
+            }
+            this.odaPrivateEndpointScanProxyId = odaPrivateEndpointScanProxyId;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxyResult", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder scanListenerInfos(List<GetOdaPrivateEndpointScanProxyScanListenerInfo> scanListenerInfos) {
-            this.scanListenerInfos = Objects.requireNonNull(scanListenerInfos);
+            if (scanListenerInfos == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxyResult", "scanListenerInfos");
+            }
+            this.scanListenerInfos = scanListenerInfos;
             return this;
         }
         public Builder scanListenerInfos(GetOdaPrivateEndpointScanProxyScanListenerInfo... scanListenerInfos) {
@@ -154,17 +170,26 @@ public final class GetOdaPrivateEndpointScanProxyResult {
         }
         @CustomType.Setter
         public Builder scanListenerType(String scanListenerType) {
-            this.scanListenerType = Objects.requireNonNull(scanListenerType);
+            if (scanListenerType == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxyResult", "scanListenerType");
+            }
+            this.scanListenerType = scanListenerType;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxyResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxyResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetOdaPrivateEndpointScanProxyResult build() {

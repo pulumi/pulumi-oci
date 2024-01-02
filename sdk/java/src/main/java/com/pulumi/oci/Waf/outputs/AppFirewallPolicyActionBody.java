@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class AppFirewallPolicyActionBody {
 
         @CustomType.Setter
         public Builder text(String text) {
-            this.text = Objects.requireNonNull(text);
+            if (text == null) {
+              throw new MissingRequiredPropertyException("AppFirewallPolicyActionBody", "text");
+            }
+            this.text = text;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("AppFirewallPolicyActionBody", "type");
+            }
+            this.type = type;
             return this;
         }
         public AppFirewallPolicyActionBody build() {

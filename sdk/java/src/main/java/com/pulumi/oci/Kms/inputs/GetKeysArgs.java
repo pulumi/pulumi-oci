@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Kms.inputs.GetKeysFilterArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -285,8 +286,12 @@ public final class GetKeysArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetKeysArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.managementEndpoint = Objects.requireNonNull($.managementEndpoint, "expected parameter 'managementEndpoint' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetKeysArgs", "compartmentId");
+            }
+            if ($.managementEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetKeysArgs", "managementEndpoint");
+            }
             return $;
         }
     }

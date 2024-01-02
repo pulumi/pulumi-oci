@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudMigrations;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.inputs.MigrationPlanStrategyArgs;
 import com.pulumi.oci.CloudMigrations.inputs.MigrationPlanTargetEnvironmentArgs;
 import java.lang.Object;
@@ -360,9 +361,15 @@ public final class MigrationPlanArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public MigrationPlanArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.migrationId = Objects.requireNonNull($.migrationId, "expected parameter 'migrationId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("MigrationPlanArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("MigrationPlanArgs", "displayName");
+            }
+            if ($.migrationId == null) {
+                throw new MissingRequiredPropertyException("MigrationPlanArgs", "migrationId");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -126,7 +127,9 @@ public final class DataSafeConfigurationArgs extends com.pulumi.resources.Resour
         }
 
         public DataSafeConfigurationArgs build() {
-            $.isEnabled = Objects.requireNonNull($.isEnabled, "expected parameter 'isEnabled' to be non-null");
+            if ($.isEnabled == null) {
+                throw new MissingRequiredPropertyException("DataSafeConfigurationArgs", "isEnabled");
+            }
             return $;
         }
     }

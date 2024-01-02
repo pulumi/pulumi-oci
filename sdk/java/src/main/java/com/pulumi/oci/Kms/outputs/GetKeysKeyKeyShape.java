@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetKeysKeyKeyShape {
 
         @CustomType.Setter
         public Builder algorithm(String algorithm) {
-            this.algorithm = Objects.requireNonNull(algorithm);
+            if (algorithm == null) {
+              throw new MissingRequiredPropertyException("GetKeysKeyKeyShape", "algorithm");
+            }
+            this.algorithm = algorithm;
             return this;
         }
         @CustomType.Setter
         public Builder curveId(String curveId) {
-            this.curveId = Objects.requireNonNull(curveId);
+            if (curveId == null) {
+              throw new MissingRequiredPropertyException("GetKeysKeyKeyShape", "curveId");
+            }
+            this.curveId = curveId;
             return this;
         }
         @CustomType.Setter
         public Builder length(Integer length) {
-            this.length = Objects.requireNonNull(length);
+            if (length == null) {
+              throw new MissingRequiredPropertyException("GetKeysKeyKeyShape", "length");
+            }
+            this.length = length;
             return this;
         }
         public GetKeysKeyKeyShape build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern;
 import java.lang.String;
 import java.util.List;
@@ -86,17 +87,26 @@ public final class GetNamespaceEffectivePropertiesEffectivePropertyCollectionIte
 
         @CustomType.Setter
         public Builder effectiveLevel(String effectiveLevel) {
-            this.effectiveLevel = Objects.requireNonNull(effectiveLevel);
+            if (effectiveLevel == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem", "effectiveLevel");
+            }
+            this.effectiveLevel = effectiveLevel;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder patterns(List<GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern> patterns) {
-            this.patterns = Objects.requireNonNull(patterns);
+            if (patterns == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem", "patterns");
+            }
+            this.patterns = patterns;
             return this;
         }
         public Builder patterns(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern... patterns) {
@@ -104,7 +114,10 @@ public final class GetNamespaceEffectivePropertiesEffectivePropertyCollectionIte
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem build() {

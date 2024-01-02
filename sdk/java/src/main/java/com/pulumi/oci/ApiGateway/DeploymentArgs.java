@@ -5,6 +5,7 @@ package com.pulumi.oci.ApiGateway;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -301,10 +302,18 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DeploymentArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.gatewayId = Objects.requireNonNull($.gatewayId, "expected parameter 'gatewayId' to be non-null");
-            $.pathPrefix = Objects.requireNonNull($.pathPrefix, "expected parameter 'pathPrefix' to be non-null");
-            $.specification = Objects.requireNonNull($.specification, "expected parameter 'specification' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("DeploymentArgs", "compartmentId");
+            }
+            if ($.gatewayId == null) {
+                throw new MissingRequiredPropertyException("DeploymentArgs", "gatewayId");
+            }
+            if ($.pathPrefix == null) {
+                throw new MissingRequiredPropertyException("DeploymentArgs", "pathPrefix");
+            }
+            if ($.specification == null) {
+                throw new MissingRequiredPropertyException("DeploymentArgs", "specification");
+            }
             return $;
         }
     }

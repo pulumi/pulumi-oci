@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ocvp.outputs.SddcInitialConfigurationInitialClusterConfiguration;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class SddcInitialConfiguration {
 
         @CustomType.Setter
         public Builder initialClusterConfigurations(List<SddcInitialConfigurationInitialClusterConfiguration> initialClusterConfigurations) {
-            this.initialClusterConfigurations = Objects.requireNonNull(initialClusterConfigurations);
+            if (initialClusterConfigurations == null) {
+              throw new MissingRequiredPropertyException("SddcInitialConfiguration", "initialClusterConfigurations");
+            }
+            this.initialClusterConfigurations = initialClusterConfigurations;
             return this;
         }
         public Builder initialClusterConfigurations(SddcInitialConfigurationInitialClusterConfiguration... initialClusterConfigurations) {

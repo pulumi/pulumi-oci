@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -310,7 +311,9 @@ public final class ModelProvenanceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public ModelProvenanceArgs build() {
-            $.modelId = Objects.requireNonNull($.modelId, "expected parameter 'modelId' to be non-null");
+            if ($.modelId == null) {
+                throw new MissingRequiredPropertyException("ModelProvenanceArgs", "modelId");
+            }
             return $;
         }
     }

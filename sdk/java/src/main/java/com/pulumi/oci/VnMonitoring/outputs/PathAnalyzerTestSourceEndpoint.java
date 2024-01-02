@@ -4,6 +4,7 @@
 package com.pulumi.oci.VnMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -176,51 +177,63 @@ public final class PathAnalyzerTestSourceEndpoint {
 
         @CustomType.Setter
         public Builder address(@Nullable String address) {
+
             this.address = address;
             return this;
         }
         @CustomType.Setter
         public Builder instanceId(@Nullable String instanceId) {
+
             this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
         public Builder listenerId(@Nullable String listenerId) {
+
             this.listenerId = listenerId;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(@Nullable String loadBalancerId) {
+
             this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder networkLoadBalancerId(@Nullable String networkLoadBalancerId) {
+
             this.networkLoadBalancerId = networkLoadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
+
             this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("PathAnalyzerTestSourceEndpoint", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder vlanId(@Nullable String vlanId) {
+
             this.vlanId = vlanId;
             return this;
         }
         @CustomType.Setter
         public Builder vnicId(@Nullable String vnicId) {
+
             this.vnicId = vnicId;
             return this;
         }

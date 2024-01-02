@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.outputs.GetStreamCdnConfigsFilter;
 import com.pulumi.oci.MediaServices.outputs.GetStreamCdnConfigsStreamCdnConfigCollection;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetStreamCdnConfigsResult {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder distributionChannelId(String distributionChannelId) {
-            this.distributionChannelId = Objects.requireNonNull(distributionChannelId);
+            if (distributionChannelId == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigsResult", "distributionChannelId");
+            }
+            this.distributionChannelId = distributionChannelId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetStreamCdnConfigsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,17 +133,22 @@ public final class GetStreamCdnConfigsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder streamCdnConfigCollections(List<GetStreamCdnConfigsStreamCdnConfigCollection> streamCdnConfigCollections) {
-            this.streamCdnConfigCollections = Objects.requireNonNull(streamCdnConfigCollections);
+            if (streamCdnConfigCollections == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigsResult", "streamCdnConfigCollections");
+            }
+            this.streamCdnConfigCollections = streamCdnConfigCollections;
             return this;
         }
         public Builder streamCdnConfigCollections(GetStreamCdnConfigsStreamCdnConfigCollection... streamCdnConfigCollections) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -211,67 +212,106 @@ public final class GetFleetExportSettingResult {
 
         @CustomType.Setter
         public Builder exportDuration(String exportDuration) {
-            this.exportDuration = Objects.requireNonNull(exportDuration);
+            if (exportDuration == null) {
+              throw new MissingRequiredPropertyException("GetFleetExportSettingResult", "exportDuration");
+            }
+            this.exportDuration = exportDuration;
             return this;
         }
         @CustomType.Setter
         public Builder exportFrequency(String exportFrequency) {
-            this.exportFrequency = Objects.requireNonNull(exportFrequency);
+            if (exportFrequency == null) {
+              throw new MissingRequiredPropertyException("GetFleetExportSettingResult", "exportFrequency");
+            }
+            this.exportFrequency = exportFrequency;
             return this;
         }
         @CustomType.Setter
         public Builder exportResources(String exportResources) {
-            this.exportResources = Objects.requireNonNull(exportResources);
+            if (exportResources == null) {
+              throw new MissingRequiredPropertyException("GetFleetExportSettingResult", "exportResources");
+            }
+            this.exportResources = exportResources;
             return this;
         }
         @CustomType.Setter
         public Builder exportSettingKey(String exportSettingKey) {
-            this.exportSettingKey = Objects.requireNonNull(exportSettingKey);
+            if (exportSettingKey == null) {
+              throw new MissingRequiredPropertyException("GetFleetExportSettingResult", "exportSettingKey");
+            }
+            this.exportSettingKey = exportSettingKey;
             return this;
         }
         @CustomType.Setter
         public Builder fleetId(String fleetId) {
-            this.fleetId = Objects.requireNonNull(fleetId);
+            if (fleetId == null) {
+              throw new MissingRequiredPropertyException("GetFleetExportSettingResult", "fleetId");
+            }
+            this.fleetId = fleetId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFleetExportSettingResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCrossRegionAcknowledged(Boolean isCrossRegionAcknowledged) {
-            this.isCrossRegionAcknowledged = Objects.requireNonNull(isCrossRegionAcknowledged);
+            if (isCrossRegionAcknowledged == null) {
+              throw new MissingRequiredPropertyException("GetFleetExportSettingResult", "isCrossRegionAcknowledged");
+            }
+            this.isCrossRegionAcknowledged = isCrossRegionAcknowledged;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetFleetExportSettingResult", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder targetBucketName(String targetBucketName) {
-            this.targetBucketName = Objects.requireNonNull(targetBucketName);
+            if (targetBucketName == null) {
+              throw new MissingRequiredPropertyException("GetFleetExportSettingResult", "targetBucketName");
+            }
+            this.targetBucketName = targetBucketName;
             return this;
         }
         @CustomType.Setter
         public Builder targetBucketNamespace(String targetBucketNamespace) {
-            this.targetBucketNamespace = Objects.requireNonNull(targetBucketNamespace);
+            if (targetBucketNamespace == null) {
+              throw new MissingRequiredPropertyException("GetFleetExportSettingResult", "targetBucketNamespace");
+            }
+            this.targetBucketNamespace = targetBucketNamespace;
             return this;
         }
         @CustomType.Setter
         public Builder targetBucketRegion(String targetBucketRegion) {
-            this.targetBucketRegion = Objects.requireNonNull(targetBucketRegion);
+            if (targetBucketRegion == null) {
+              throw new MissingRequiredPropertyException("GetFleetExportSettingResult", "targetBucketRegion");
+            }
+            this.targetBucketRegion = targetBucketRegion;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetFleetExportSettingResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastModified(String timeLastModified) {
-            this.timeLastModified = Objects.requireNonNull(timeLastModified);
+            if (timeLastModified == null) {
+              throw new MissingRequiredPropertyException("GetFleetExportSettingResult", "timeLastModified");
+            }
+            this.timeLastModified = timeLastModified;
             return this;
         }
         public GetFleetExportSettingResult build() {

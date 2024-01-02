@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -150,9 +151,15 @@ public final class ReportDefinitionColumnSortingArgs extends com.pulumi.resource
         }
 
         public ReportDefinitionColumnSortingArgs build() {
-            $.fieldName = Objects.requireNonNull($.fieldName, "expected parameter 'fieldName' to be non-null");
-            $.isAscending = Objects.requireNonNull($.isAscending, "expected parameter 'isAscending' to be non-null");
-            $.sortingOrder = Objects.requireNonNull($.sortingOrder, "expected parameter 'sortingOrder' to be non-null");
+            if ($.fieldName == null) {
+                throw new MissingRequiredPropertyException("ReportDefinitionColumnSortingArgs", "fieldName");
+            }
+            if ($.isAscending == null) {
+                throw new MissingRequiredPropertyException("ReportDefinitionColumnSortingArgs", "isAscending");
+            }
+            if ($.sortingOrder == null) {
+                throw new MissingRequiredPropertyException("ReportDefinitionColumnSortingArgs", "sortingOrder");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -200,8 +201,12 @@ public final class ExternalDbSystemStackMonitoringsManagementArgs extends com.pu
         }
 
         public ExternalDbSystemStackMonitoringsManagementArgs build() {
-            $.enableStackMonitoring = Objects.requireNonNull($.enableStackMonitoring, "expected parameter 'enableStackMonitoring' to be non-null");
-            $.externalDbSystemId = Objects.requireNonNull($.externalDbSystemId, "expected parameter 'externalDbSystemId' to be non-null");
+            if ($.enableStackMonitoring == null) {
+                throw new MissingRequiredPropertyException("ExternalDbSystemStackMonitoringsManagementArgs", "enableStackMonitoring");
+            }
+            if ($.externalDbSystemId == null) {
+                throw new MissingRequiredPropertyException("ExternalDbSystemStackMonitoringsManagementArgs", "externalDbSystemId");
+            }
             return $;
         }
     }

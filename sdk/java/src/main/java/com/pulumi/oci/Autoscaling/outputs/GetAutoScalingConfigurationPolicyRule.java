@@ -4,6 +4,7 @@
 package com.pulumi.oci.Autoscaling.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Autoscaling.outputs.GetAutoScalingConfigurationPolicyRuleAction;
 import com.pulumi.oci.Autoscaling.outputs.GetAutoScalingConfigurationPolicyRuleMetric;
 import java.lang.String;
@@ -87,7 +88,10 @@ public final class GetAutoScalingConfigurationPolicyRule {
 
         @CustomType.Setter
         public Builder actions(List<GetAutoScalingConfigurationPolicyRuleAction> actions) {
-            this.actions = Objects.requireNonNull(actions);
+            if (actions == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyRule", "actions");
+            }
+            this.actions = actions;
             return this;
         }
         public Builder actions(GetAutoScalingConfigurationPolicyRuleAction... actions) {
@@ -95,17 +99,26 @@ public final class GetAutoScalingConfigurationPolicyRule {
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyRule", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyRule", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder metrics(List<GetAutoScalingConfigurationPolicyRuleMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+            if (metrics == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyRule", "metrics");
+            }
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetAutoScalingConfigurationPolicyRuleMetric... metrics) {

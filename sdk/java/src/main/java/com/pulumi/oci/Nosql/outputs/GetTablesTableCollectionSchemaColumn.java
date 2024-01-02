@@ -4,6 +4,7 @@
 package com.pulumi.oci.Nosql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -73,32 +74,50 @@ public final class GetTablesTableCollectionSchemaColumn {
 
         @CustomType.Setter
         public Builder defaultValue(String defaultValue) {
-            this.defaultValue = Objects.requireNonNull(defaultValue);
+            if (defaultValue == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollectionSchemaColumn", "defaultValue");
+            }
+            this.defaultValue = defaultValue;
             return this;
         }
         @CustomType.Setter
         public Builder isAsUuid(Boolean isAsUuid) {
-            this.isAsUuid = Objects.requireNonNull(isAsUuid);
+            if (isAsUuid == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollectionSchemaColumn", "isAsUuid");
+            }
+            this.isAsUuid = isAsUuid;
             return this;
         }
         @CustomType.Setter
         public Builder isGenerated(Boolean isGenerated) {
-            this.isGenerated = Objects.requireNonNull(isGenerated);
+            if (isGenerated == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollectionSchemaColumn", "isGenerated");
+            }
+            this.isGenerated = isGenerated;
             return this;
         }
         @CustomType.Setter
         public Builder isNullable(Boolean isNullable) {
-            this.isNullable = Objects.requireNonNull(isNullable);
+            if (isNullable == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollectionSchemaColumn", "isNullable");
+            }
+            this.isNullable = isNullable;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollectionSchemaColumn", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollectionSchemaColumn", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetTablesTableCollectionSchemaColumn build() {

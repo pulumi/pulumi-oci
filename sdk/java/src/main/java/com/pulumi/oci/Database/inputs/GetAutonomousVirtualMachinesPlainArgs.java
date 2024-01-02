@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachinesFilter;
 import java.lang.String;
 import java.util.List;
@@ -138,8 +139,12 @@ public final class GetAutonomousVirtualMachinesPlainArgs extends com.pulumi.reso
         }
 
         public GetAutonomousVirtualMachinesPlainArgs build() {
-            $.autonomousVmClusterId = Objects.requireNonNull($.autonomousVmClusterId, "expected parameter 'autonomousVmClusterId' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.autonomousVmClusterId == null) {
+                throw new MissingRequiredPropertyException("GetAutonomousVirtualMachinesPlainArgs", "autonomousVmClusterId");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetAutonomousVirtualMachinesPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

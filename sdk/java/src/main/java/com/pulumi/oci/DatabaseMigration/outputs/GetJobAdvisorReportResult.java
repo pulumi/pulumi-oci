@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.GetJobAdvisorReportReportLocationDetail;
 import java.lang.Integer;
 import java.lang.String;
@@ -135,37 +136,58 @@ public final class GetJobAdvisorReportResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetJobAdvisorReportResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder jobId(String jobId) {
-            this.jobId = Objects.requireNonNull(jobId);
+            if (jobId == null) {
+              throw new MissingRequiredPropertyException("GetJobAdvisorReportResult", "jobId");
+            }
+            this.jobId = jobId;
             return this;
         }
         @CustomType.Setter
         public Builder numberOfFatal(Integer numberOfFatal) {
-            this.numberOfFatal = Objects.requireNonNull(numberOfFatal);
+            if (numberOfFatal == null) {
+              throw new MissingRequiredPropertyException("GetJobAdvisorReportResult", "numberOfFatal");
+            }
+            this.numberOfFatal = numberOfFatal;
             return this;
         }
         @CustomType.Setter
         public Builder numberOfFatalBlockers(Integer numberOfFatalBlockers) {
-            this.numberOfFatalBlockers = Objects.requireNonNull(numberOfFatalBlockers);
+            if (numberOfFatalBlockers == null) {
+              throw new MissingRequiredPropertyException("GetJobAdvisorReportResult", "numberOfFatalBlockers");
+            }
+            this.numberOfFatalBlockers = numberOfFatalBlockers;
             return this;
         }
         @CustomType.Setter
         public Builder numberOfInformationalResults(Integer numberOfInformationalResults) {
-            this.numberOfInformationalResults = Objects.requireNonNull(numberOfInformationalResults);
+            if (numberOfInformationalResults == null) {
+              throw new MissingRequiredPropertyException("GetJobAdvisorReportResult", "numberOfInformationalResults");
+            }
+            this.numberOfInformationalResults = numberOfInformationalResults;
             return this;
         }
         @CustomType.Setter
         public Builder numberOfWarnings(Integer numberOfWarnings) {
-            this.numberOfWarnings = Objects.requireNonNull(numberOfWarnings);
+            if (numberOfWarnings == null) {
+              throw new MissingRequiredPropertyException("GetJobAdvisorReportResult", "numberOfWarnings");
+            }
+            this.numberOfWarnings = numberOfWarnings;
             return this;
         }
         @CustomType.Setter
         public Builder reportLocationDetails(List<GetJobAdvisorReportReportLocationDetail> reportLocationDetails) {
-            this.reportLocationDetails = Objects.requireNonNull(reportLocationDetails);
+            if (reportLocationDetails == null) {
+              throw new MissingRequiredPropertyException("GetJobAdvisorReportResult", "reportLocationDetails");
+            }
+            this.reportLocationDetails = reportLocationDetails;
             return this;
         }
         public Builder reportLocationDetails(GetJobAdvisorReportReportLocationDetail... reportLocationDetails) {
@@ -173,7 +195,10 @@ public final class GetJobAdvisorReportResult {
         }
         @CustomType.Setter
         public Builder result(String result) {
-            this.result = Objects.requireNonNull(result);
+            if (result == null) {
+              throw new MissingRequiredPropertyException("GetJobAdvisorReportResult", "result");
+            }
+            this.result = result;
             return this;
         }
         public GetJobAdvisorReportResult build() {

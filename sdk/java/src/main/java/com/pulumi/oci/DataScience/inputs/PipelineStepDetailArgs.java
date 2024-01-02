@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepInfrastructureConfigurationDetailsArgs;
 import java.lang.Boolean;
@@ -361,8 +362,12 @@ public final class PipelineStepDetailArgs extends com.pulumi.resources.ResourceA
         }
 
         public PipelineStepDetailArgs build() {
-            $.stepName = Objects.requireNonNull($.stepName, "expected parameter 'stepName' to be non-null");
-            $.stepType = Objects.requireNonNull($.stepType, "expected parameter 'stepType' to be non-null");
+            if ($.stepName == null) {
+                throw new MissingRequiredPropertyException("PipelineStepDetailArgs", "stepName");
+            }
+            if ($.stepType == null) {
+                throw new MissingRequiredPropertyException("PipelineStepDetailArgs", "stepType");
+            }
             return $;
         }
     }

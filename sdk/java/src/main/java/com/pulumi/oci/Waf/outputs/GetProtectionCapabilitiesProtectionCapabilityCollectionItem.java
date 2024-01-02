@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -158,12 +159,18 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollectionItem {
 
         @CustomType.Setter
         public Builder collaborativeActionThreshold(Integer collaborativeActionThreshold) {
-            this.collaborativeActionThreshold = Objects.requireNonNull(collaborativeActionThreshold);
+            if (collaborativeActionThreshold == null) {
+              throw new MissingRequiredPropertyException("GetProtectionCapabilitiesProtectionCapabilityCollectionItem", "collaborativeActionThreshold");
+            }
+            this.collaborativeActionThreshold = collaborativeActionThreshold;
             return this;
         }
         @CustomType.Setter
         public Builder collaborativeWeights(List<GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight> collaborativeWeights) {
-            this.collaborativeWeights = Objects.requireNonNull(collaborativeWeights);
+            if (collaborativeWeights == null) {
+              throw new MissingRequiredPropertyException("GetProtectionCapabilitiesProtectionCapabilityCollectionItem", "collaborativeWeights");
+            }
+            this.collaborativeWeights = collaborativeWeights;
             return this;
         }
         public Builder collaborativeWeights(GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight... collaborativeWeights) {
@@ -171,17 +178,26 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollectionItem {
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetProtectionCapabilitiesProtectionCapabilityCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetProtectionCapabilitiesProtectionCapabilityCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder groupTags(List<String> groupTags) {
-            this.groupTags = Objects.requireNonNull(groupTags);
+            if (groupTags == null) {
+              throw new MissingRequiredPropertyException("GetProtectionCapabilitiesProtectionCapabilityCollectionItem", "groupTags");
+            }
+            this.groupTags = groupTags;
             return this;
         }
         public Builder groupTags(String... groupTags) {
@@ -189,22 +205,34 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollectionItem {
         }
         @CustomType.Setter
         public Builder isLatestVersion(Boolean isLatestVersion) {
-            this.isLatestVersion = Objects.requireNonNull(isLatestVersion);
+            if (isLatestVersion == null) {
+              throw new MissingRequiredPropertyException("GetProtectionCapabilitiesProtectionCapabilityCollectionItem", "isLatestVersion");
+            }
+            this.isLatestVersion = isLatestVersion;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetProtectionCapabilitiesProtectionCapabilityCollectionItem", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetProtectionCapabilitiesProtectionCapabilityCollectionItem", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder version(Integer version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetProtectionCapabilitiesProtectionCapabilityCollectionItem", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetProtectionCapabilitiesProtectionCapabilityCollectionItem build() {

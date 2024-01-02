@@ -4,6 +4,7 @@
 package com.pulumi.oci.ResourceManager.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -54,17 +55,26 @@ public final class GetStackTfStateResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetStackTfStateResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder localPath(String localPath) {
-            this.localPath = Objects.requireNonNull(localPath);
+            if (localPath == null) {
+              throw new MissingRequiredPropertyException("GetStackTfStateResult", "localPath");
+            }
+            this.localPath = localPath;
             return this;
         }
         @CustomType.Setter
         public Builder stackId(String stackId) {
-            this.stackId = Objects.requireNonNull(stackId);
+            if (stackId == null) {
+              throw new MissingRequiredPropertyException("GetStackTfStateResult", "stackId");
+            }
+            this.stackId = stackId;
             return this;
         }
         public GetStackTfStateResult build() {

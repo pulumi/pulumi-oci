@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetClusterNetworksClusterNetworkInstancePoolLoadBalancer;
 import com.pulumi.oci.Core.outputs.GetClusterNetworksClusterNetworkInstancePoolPlacementConfiguration;
 import java.lang.Integer;
@@ -200,47 +201,74 @@ public final class GetClusterNetworksClusterNetworkInstancePool {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkInstancePool", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkInstancePool", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkInstancePool", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkInstancePool", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkInstancePool", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceConfigurationId(String instanceConfigurationId) {
-            this.instanceConfigurationId = Objects.requireNonNull(instanceConfigurationId);
+            if (instanceConfigurationId == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkInstancePool", "instanceConfigurationId");
+            }
+            this.instanceConfigurationId = instanceConfigurationId;
             return this;
         }
         @CustomType.Setter
         public Builder instanceDisplayNameFormatter(String instanceDisplayNameFormatter) {
-            this.instanceDisplayNameFormatter = Objects.requireNonNull(instanceDisplayNameFormatter);
+            if (instanceDisplayNameFormatter == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkInstancePool", "instanceDisplayNameFormatter");
+            }
+            this.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
             return this;
         }
         @CustomType.Setter
         public Builder instanceHostnameFormatter(String instanceHostnameFormatter) {
-            this.instanceHostnameFormatter = Objects.requireNonNull(instanceHostnameFormatter);
+            if (instanceHostnameFormatter == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkInstancePool", "instanceHostnameFormatter");
+            }
+            this.instanceHostnameFormatter = instanceHostnameFormatter;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancers(List<GetClusterNetworksClusterNetworkInstancePoolLoadBalancer> loadBalancers) {
-            this.loadBalancers = Objects.requireNonNull(loadBalancers);
+            if (loadBalancers == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkInstancePool", "loadBalancers");
+            }
+            this.loadBalancers = loadBalancers;
             return this;
         }
         public Builder loadBalancers(GetClusterNetworksClusterNetworkInstancePoolLoadBalancer... loadBalancers) {
@@ -248,7 +276,10 @@ public final class GetClusterNetworksClusterNetworkInstancePool {
         }
         @CustomType.Setter
         public Builder placementConfigurations(List<GetClusterNetworksClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations) {
-            this.placementConfigurations = Objects.requireNonNull(placementConfigurations);
+            if (placementConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkInstancePool", "placementConfigurations");
+            }
+            this.placementConfigurations = placementConfigurations;
             return this;
         }
         public Builder placementConfigurations(GetClusterNetworksClusterNetworkInstancePoolPlacementConfiguration... placementConfigurations) {
@@ -256,17 +287,26 @@ public final class GetClusterNetworksClusterNetworkInstancePool {
         }
         @CustomType.Setter
         public Builder size(Integer size) {
-            this.size = Objects.requireNonNull(size);
+            if (size == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkInstancePool", "size");
+            }
+            this.size = size;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkInstancePool", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkInstancePool", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetClusterNetworksClusterNetworkInstancePool build() {

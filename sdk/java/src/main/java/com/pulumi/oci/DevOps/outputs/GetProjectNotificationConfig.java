@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetProjectNotificationConfig {
 
         @CustomType.Setter
         public Builder topicId(String topicId) {
-            this.topicId = Objects.requireNonNull(topicId);
+            if (topicId == null) {
+              throw new MissingRequiredPropertyException("GetProjectNotificationConfig", "topicId");
+            }
+            this.topicId = topicId;
             return this;
         }
         public GetProjectNotificationConfig build() {

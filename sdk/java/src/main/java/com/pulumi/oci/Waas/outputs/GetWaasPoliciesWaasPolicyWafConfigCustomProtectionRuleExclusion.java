@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -57,7 +58,10 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusi
 
         @CustomType.Setter
         public Builder exclusions(List<String> exclusions) {
-            this.exclusions = Objects.requireNonNull(exclusions);
+            if (exclusions == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion", "exclusions");
+            }
+            this.exclusions = exclusions;
             return this;
         }
         public Builder exclusions(String... exclusions) {
@@ -65,7 +69,10 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusi
         }
         @CustomType.Setter
         public Builder target(String target) {
-            this.target = Objects.requireNonNull(target);
+            if (target == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion", "target");
+            }
+            this.target = target;
             return this;
         }
         public GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion build() {

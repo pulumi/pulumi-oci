@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeader;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeader;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeader;
@@ -73,7 +74,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyD
 
         @CustomType.Setter
         public Builder filterHeaders(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeader> filterHeaders) {
-            this.filterHeaders = Objects.requireNonNull(filterHeaders);
+            if (filterHeaders == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformation", "filterHeaders");
+            }
+            this.filterHeaders = filterHeaders;
             return this;
         }
         public Builder filterHeaders(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeader... filterHeaders) {
@@ -81,7 +85,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyD
         }
         @CustomType.Setter
         public Builder renameHeaders(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeader> renameHeaders) {
-            this.renameHeaders = Objects.requireNonNull(renameHeaders);
+            if (renameHeaders == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformation", "renameHeaders");
+            }
+            this.renameHeaders = renameHeaders;
             return this;
         }
         public Builder renameHeaders(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeader... renameHeaders) {
@@ -89,7 +96,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyD
         }
         @CustomType.Setter
         public Builder setHeaders(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeader> setHeaders) {
-            this.setHeaders = Objects.requireNonNull(setHeaders);
+            if (setHeaders == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformation", "setHeaders");
+            }
+            this.setHeaders = setHeaders;
             return this;
         }
         public Builder setHeaders(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeader... setHeaders) {

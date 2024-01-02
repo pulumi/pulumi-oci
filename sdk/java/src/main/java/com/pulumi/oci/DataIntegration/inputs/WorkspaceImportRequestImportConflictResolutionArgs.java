@@ -5,6 +5,7 @@ package com.pulumi.oci.DataIntegration.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -150,7 +151,9 @@ public final class WorkspaceImportRequestImportConflictResolutionArgs extends co
         }
 
         public WorkspaceImportRequestImportConflictResolutionArgs build() {
-            $.importConflictResolutionType = Objects.requireNonNull($.importConflictResolutionType, "expected parameter 'importConflictResolutionType' to be non-null");
+            if ($.importConflictResolutionType == null) {
+                throw new MissingRequiredPropertyException("WorkspaceImportRequestImportConflictResolutionArgs", "importConflictResolutionType");
+            }
             return $;
         }
     }

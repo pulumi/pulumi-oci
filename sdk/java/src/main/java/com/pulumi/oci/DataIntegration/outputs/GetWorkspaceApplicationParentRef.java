@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetWorkspaceApplicationParentRef {
 
         @CustomType.Setter
         public Builder parent(String parent) {
-            this.parent = Objects.requireNonNull(parent);
+            if (parent == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationParentRef", "parent");
+            }
+            this.parent = parent;
             return this;
         }
         @CustomType.Setter
         public Builder rootDocId(String rootDocId) {
-            this.rootDocId = Objects.requireNonNull(rootDocId);
+            if (rootDocId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationParentRef", "rootDocId");
+            }
+            this.rootDocId = rootDocId;
             return this;
         }
         public GetWorkspaceApplicationParentRef build() {

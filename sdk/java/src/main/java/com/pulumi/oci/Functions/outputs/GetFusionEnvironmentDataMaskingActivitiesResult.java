@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentDataMaskingActivitiesFilter;
 import java.lang.String;
@@ -95,7 +96,10 @@ public final class GetFusionEnvironmentDataMaskingActivitiesResult {
 
         @CustomType.Setter
         public Builder dataMaskingActivityCollections(List<GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection> dataMaskingActivityCollections) {
-            this.dataMaskingActivityCollections = Objects.requireNonNull(dataMaskingActivityCollections);
+            if (dataMaskingActivityCollections == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentDataMaskingActivitiesResult", "dataMaskingActivityCollections");
+            }
+            this.dataMaskingActivityCollections = dataMaskingActivityCollections;
             return this;
         }
         public Builder dataMaskingActivityCollections(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection... dataMaskingActivityCollections) {
@@ -103,6 +107,7 @@ public final class GetFusionEnvironmentDataMaskingActivitiesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetFusionEnvironmentDataMaskingActivitiesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -111,16 +116,23 @@ public final class GetFusionEnvironmentDataMaskingActivitiesResult {
         }
         @CustomType.Setter
         public Builder fusionEnvironmentId(String fusionEnvironmentId) {
-            this.fusionEnvironmentId = Objects.requireNonNull(fusionEnvironmentId);
+            if (fusionEnvironmentId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentDataMaskingActivitiesResult", "fusionEnvironmentId");
+            }
+            this.fusionEnvironmentId = fusionEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentDataMaskingActivitiesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

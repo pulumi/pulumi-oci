@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -134,42 +135,66 @@ public final class GetTenancyResult {
 
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetTenancyResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetTenancyResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetTenancyResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder homeRegionKey(String homeRegionKey) {
-            this.homeRegionKey = Objects.requireNonNull(homeRegionKey);
+            if (homeRegionKey == null) {
+              throw new MissingRequiredPropertyException("GetTenancyResult", "homeRegionKey");
+            }
+            this.homeRegionKey = homeRegionKey;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTenancyResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetTenancyResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
-            this.tenancyId = Objects.requireNonNull(tenancyId);
+            if (tenancyId == null) {
+              throw new MissingRequiredPropertyException("GetTenancyResult", "tenancyId");
+            }
+            this.tenancyId = tenancyId;
             return this;
         }
         @CustomType.Setter
         public Builder upiIdcsCompatibilityLayerEndpoint(String upiIdcsCompatibilityLayerEndpoint) {
-            this.upiIdcsCompatibilityLayerEndpoint = Objects.requireNonNull(upiIdcsCompatibilityLayerEndpoint);
+            if (upiIdcsCompatibilityLayerEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetTenancyResult", "upiIdcsCompatibilityLayerEndpoint");
+            }
+            this.upiIdcsCompatibilityLayerEndpoint = upiIdcsCompatibilityLayerEndpoint;
             return this;
         }
         public GetTenancyResult build() {

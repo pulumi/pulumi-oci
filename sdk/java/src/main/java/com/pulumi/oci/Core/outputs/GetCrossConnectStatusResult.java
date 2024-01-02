@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -123,32 +124,50 @@ public final class GetCrossConnectStatusResult {
 
         @CustomType.Setter
         public Builder crossConnectId(String crossConnectId) {
-            this.crossConnectId = Objects.requireNonNull(crossConnectId);
+            if (crossConnectId == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectStatusResult", "crossConnectId");
+            }
+            this.crossConnectId = crossConnectId;
             return this;
         }
         @CustomType.Setter
         public Builder encryptionStatus(String encryptionStatus) {
-            this.encryptionStatus = Objects.requireNonNull(encryptionStatus);
+            if (encryptionStatus == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectStatusResult", "encryptionStatus");
+            }
+            this.encryptionStatus = encryptionStatus;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectStatusResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder interfaceState(String interfaceState) {
-            this.interfaceState = Objects.requireNonNull(interfaceState);
+            if (interfaceState == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectStatusResult", "interfaceState");
+            }
+            this.interfaceState = interfaceState;
             return this;
         }
         @CustomType.Setter
         public Builder lightLevelIndBm(Double lightLevelIndBm) {
-            this.lightLevelIndBm = Objects.requireNonNull(lightLevelIndBm);
+            if (lightLevelIndBm == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectStatusResult", "lightLevelIndBm");
+            }
+            this.lightLevelIndBm = lightLevelIndBm;
             return this;
         }
         @CustomType.Setter
         public Builder lightLevelIndicator(String lightLevelIndicator) {
-            this.lightLevelIndicator = Objects.requireNonNull(lightLevelIndicator);
+            if (lightLevelIndicator == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectStatusResult", "lightLevelIndicator");
+            }
+            this.lightLevelIndicator = lightLevelIndicator;
             return this;
         }
         public GetCrossConnectStatusResult build() {

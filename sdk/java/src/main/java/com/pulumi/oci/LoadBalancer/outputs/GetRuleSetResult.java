@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.GetRuleSetItem;
 import java.lang.String;
 import java.util.List;
@@ -76,12 +77,18 @@ public final class GetRuleSetResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRuleSetResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetRuleSetItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetRuleSetResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetRuleSetItem... items) {
@@ -89,17 +96,26 @@ public final class GetRuleSetResult {
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetRuleSetResult", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetRuleSetResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetRuleSetResult", "state");
+            }
+            this.state = state;
             return this;
         }
         public GetRuleSetResult build() {

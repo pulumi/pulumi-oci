@@ -5,6 +5,7 @@ package com.pulumi.oci.ServiceMesh.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.inputs.AccessPolicyRuleDestinationArgs;
 import com.pulumi.oci.ServiceMesh.inputs.AccessPolicyRuleSourceArgs;
 import java.lang.String;
@@ -150,9 +151,15 @@ public final class AccessPolicyRuleArgs extends com.pulumi.resources.ResourceArg
         }
 
         public AccessPolicyRuleArgs build() {
-            $.action = Objects.requireNonNull($.action, "expected parameter 'action' to be non-null");
-            $.destination = Objects.requireNonNull($.destination, "expected parameter 'destination' to be non-null");
-            $.source = Objects.requireNonNull($.source, "expected parameter 'source' to be non-null");
+            if ($.action == null) {
+                throw new MissingRequiredPropertyException("AccessPolicyRuleArgs", "action");
+            }
+            if ($.destination == null) {
+                throw new MissingRequiredPropertyException("AccessPolicyRuleArgs", "destination");
+            }
+            if ($.source == null) {
+                throw new MissingRequiredPropertyException("AccessPolicyRuleArgs", "source");
+            }
             return $;
         }
     }

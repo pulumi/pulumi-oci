@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetDeployPipelineDeployPipelineEnvironmentItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetDeployPipelineDeployPipelineEnvironment {
 
         @CustomType.Setter
         public Builder items(List<GetDeployPipelineDeployPipelineEnvironmentItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetDeployPipelineDeployPipelineEnvironment", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetDeployPipelineDeployPipelineEnvironmentItem... items) {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -350,11 +351,21 @@ public final class EkmsPrivateEndpointArgs extends com.pulumi.resources.Resource
         }
 
         public EkmsPrivateEndpointArgs build() {
-            $.caBundle = Objects.requireNonNull($.caBundle, "expected parameter 'caBundle' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.externalKeyManagerIp = Objects.requireNonNull($.externalKeyManagerIp, "expected parameter 'externalKeyManagerIp' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.caBundle == null) {
+                throw new MissingRequiredPropertyException("EkmsPrivateEndpointArgs", "caBundle");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("EkmsPrivateEndpointArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("EkmsPrivateEndpointArgs", "displayName");
+            }
+            if ($.externalKeyManagerIp == null) {
+                throw new MissingRequiredPropertyException("EkmsPrivateEndpointArgs", "externalKeyManagerIp");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("EkmsPrivateEndpointArgs", "subnetId");
+            }
             return $;
         }
     }

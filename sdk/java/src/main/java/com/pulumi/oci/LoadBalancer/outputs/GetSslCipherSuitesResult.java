@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.GetSslCipherSuitesFilter;
 import com.pulumi.oci.LoadBalancer.outputs.GetSslCipherSuitesSslCipherSuite;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetSslCipherSuitesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSslCipherSuitesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,17 +82,26 @@ public final class GetSslCipherSuitesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSslCipherSuitesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetSslCipherSuitesResult", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder sslCipherSuites(List<GetSslCipherSuitesSslCipherSuite> sslCipherSuites) {
-            this.sslCipherSuites = Objects.requireNonNull(sslCipherSuites);
+            if (sslCipherSuites == null) {
+              throw new MissingRequiredPropertyException("GetSslCipherSuitesResult", "sslCipherSuites");
+            }
+            this.sslCipherSuites = sslCipherSuites;
             return this;
         }
         public Builder sslCipherSuites(GetSslCipherSuitesSslCipherSuite... sslCipherSuites) {

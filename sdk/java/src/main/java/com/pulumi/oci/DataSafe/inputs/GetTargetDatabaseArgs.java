@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetTargetDatabaseArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetTargetDatabaseArgs build() {
-            $.targetDatabaseId = Objects.requireNonNull($.targetDatabaseId, "expected parameter 'targetDatabaseId' to be non-null");
+            if ($.targetDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetTargetDatabaseArgs", "targetDatabaseId");
+            }
             return $;
         }
     }

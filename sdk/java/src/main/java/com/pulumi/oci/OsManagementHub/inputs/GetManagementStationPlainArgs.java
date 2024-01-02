@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetManagementStationPlainArgs extends com.pulumi.resources.In
         }
 
         public GetManagementStationPlainArgs build() {
-            $.managementStationId = Objects.requireNonNull($.managementStationId, "expected parameter 'managementStationId' to be non-null");
+            if ($.managementStationId == null) {
+                throw new MissingRequiredPropertyException("GetManagementStationPlainArgs", "managementStationId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetAddonOptionsAddonOptionVersion;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -187,57 +188,90 @@ public final class GetAddonOptionsAddonOption {
 
         @CustomType.Setter
         public Builder addonGroup(String addonGroup) {
-            this.addonGroup = Objects.requireNonNull(addonGroup);
+            if (addonGroup == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsAddonOption", "addonGroup");
+            }
+            this.addonGroup = addonGroup;
             return this;
         }
         @CustomType.Setter
         public Builder addonSchemaVersion(String addonSchemaVersion) {
-            this.addonSchemaVersion = Objects.requireNonNull(addonSchemaVersion);
+            if (addonSchemaVersion == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsAddonOption", "addonSchemaVersion");
+            }
+            this.addonSchemaVersion = addonSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsAddonOption", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsAddonOption", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsAddonOption", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder isEssential(Boolean isEssential) {
-            this.isEssential = Objects.requireNonNull(isEssential);
+            if (isEssential == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsAddonOption", "isEssential");
+            }
+            this.isEssential = isEssential;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsAddonOption", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsAddonOption", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsAddonOption", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsAddonOption", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder versions(List<GetAddonOptionsAddonOptionVersion> versions) {
-            this.versions = Objects.requireNonNull(versions);
+            if (versions == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsAddonOption", "versions");
+            }
+            this.versions = versions;
             return this;
         }
         public Builder versions(GetAddonOptionsAddonOptionVersion... versions) {

@@ -44,6 +44,7 @@ public final class MetricExtensionEnabledOnResource {
 
         @CustomType.Setter
         public Builder resourceId(@Nullable String resourceId) {
+
             this.resourceId = resourceId;
             return this;
         }

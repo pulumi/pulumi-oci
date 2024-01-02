@@ -5,6 +5,7 @@ package com.pulumi.oci.Analytics;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Analytics.inputs.AnalyticsInstanceCapacityArgs;
 import com.pulumi.oci.Analytics.inputs.AnalyticsInstanceNetworkEndpointDetailsArgs;
 import java.lang.Object;
@@ -536,11 +537,21 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         public AnalyticsInstanceArgs build() {
-            $.capacity = Objects.requireNonNull($.capacity, "expected parameter 'capacity' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.featureSet = Objects.requireNonNull($.featureSet, "expected parameter 'featureSet' to be non-null");
-            $.idcsAccessToken = Objects.requireNonNull($.idcsAccessToken, "expected parameter 'idcsAccessToken' to be non-null");
-            $.licenseType = Objects.requireNonNull($.licenseType, "expected parameter 'licenseType' to be non-null");
+            if ($.capacity == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstanceArgs", "capacity");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstanceArgs", "compartmentId");
+            }
+            if ($.featureSet == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstanceArgs", "featureSet");
+            }
+            if ($.idcsAccessToken == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstanceArgs", "idcsAccessToken");
+            }
+            if ($.licenseType == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstanceArgs", "licenseType");
+            }
             return $;
         }
     }

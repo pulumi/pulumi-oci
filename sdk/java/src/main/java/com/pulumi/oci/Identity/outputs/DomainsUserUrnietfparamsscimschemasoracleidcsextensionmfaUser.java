@@ -448,6 +448,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         @CustomType.Setter
         public Builder bypassCodes(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode> bypassCodes) {
+
             this.bypassCodes = bypassCodes;
             return this;
         }
@@ -456,6 +457,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
         @CustomType.Setter
         public Builder devices(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice> devices) {
+
             this.devices = devices;
             return this;
         }
@@ -464,16 +466,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
         @CustomType.Setter
         public Builder loginAttempts(@Nullable Integer loginAttempts) {
+
             this.loginAttempts = loginAttempts;
             return this;
         }
         @CustomType.Setter
         public Builder mfaEnabledOn(@Nullable String mfaEnabledOn) {
+
             this.mfaEnabledOn = mfaEnabledOn;
             return this;
         }
         @CustomType.Setter
         public Builder mfaIgnoredApps(@Nullable List<String> mfaIgnoredApps) {
+
             this.mfaIgnoredApps = mfaIgnoredApps;
             return this;
         }
@@ -482,31 +487,37 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
         @CustomType.Setter
         public Builder mfaStatus(@Nullable String mfaStatus) {
+
             this.mfaStatus = mfaStatus;
             return this;
         }
         @CustomType.Setter
         public Builder preferredAuthenticationFactor(@Nullable String preferredAuthenticationFactor) {
+
             this.preferredAuthenticationFactor = preferredAuthenticationFactor;
             return this;
         }
         @CustomType.Setter
         public Builder preferredAuthenticationMethod(@Nullable String preferredAuthenticationMethod) {
+
             this.preferredAuthenticationMethod = preferredAuthenticationMethod;
             return this;
         }
         @CustomType.Setter
         public Builder preferredDevice(@Nullable DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice preferredDevice) {
+
             this.preferredDevice = preferredDevice;
             return this;
         }
         @CustomType.Setter
         public Builder preferredThirdPartyVendor(@Nullable String preferredThirdPartyVendor) {
+
             this.preferredThirdPartyVendor = preferredThirdPartyVendor;
             return this;
         }
         @CustomType.Setter
         public Builder trustedUserAgents(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent> trustedUserAgents) {
+
             this.trustedUserAgents = trustedUserAgents;
             return this;
         }

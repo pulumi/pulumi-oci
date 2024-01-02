@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class GetBdsInstanceMetastoreConfigArgs extends com.pulumi.resource
         }
 
         public GetBdsInstanceMetastoreConfigArgs build() {
-            $.bdsInstanceId = Objects.requireNonNull($.bdsInstanceId, "expected parameter 'bdsInstanceId' to be non-null");
-            $.metastoreConfigId = Objects.requireNonNull($.metastoreConfigId, "expected parameter 'metastoreConfigId' to be non-null");
+            if ($.bdsInstanceId == null) {
+                throw new MissingRequiredPropertyException("GetBdsInstanceMetastoreConfigArgs", "bdsInstanceId");
+            }
+            if ($.metastoreConfigId == null) {
+                throw new MissingRequiredPropertyException("GetBdsInstanceMetastoreConfigArgs", "metastoreConfigId");
+            }
             return $;
         }
     }

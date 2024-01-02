@@ -5,6 +5,7 @@ package com.pulumi.oci.Adm;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Adm.inputs.RemediationRecipeDetectConfigurationArgs;
 import com.pulumi.oci.Adm.inputs.RemediationRecipeNetworkConfigurationArgs;
 import com.pulumi.oci.Adm.inputs.RemediationRecipeScmConfigurationArgs;
@@ -465,13 +466,27 @@ public final class RemediationRecipeArgs extends com.pulumi.resources.ResourceAr
         }
 
         public RemediationRecipeArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.detectConfiguration = Objects.requireNonNull($.detectConfiguration, "expected parameter 'detectConfiguration' to be non-null");
-            $.isRunTriggeredOnKbChange = Objects.requireNonNull($.isRunTriggeredOnKbChange, "expected parameter 'isRunTriggeredOnKbChange' to be non-null");
-            $.knowledgeBaseId = Objects.requireNonNull($.knowledgeBaseId, "expected parameter 'knowledgeBaseId' to be non-null");
-            $.networkConfiguration = Objects.requireNonNull($.networkConfiguration, "expected parameter 'networkConfiguration' to be non-null");
-            $.scmConfiguration = Objects.requireNonNull($.scmConfiguration, "expected parameter 'scmConfiguration' to be non-null");
-            $.verifyConfiguration = Objects.requireNonNull($.verifyConfiguration, "expected parameter 'verifyConfiguration' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("RemediationRecipeArgs", "compartmentId");
+            }
+            if ($.detectConfiguration == null) {
+                throw new MissingRequiredPropertyException("RemediationRecipeArgs", "detectConfiguration");
+            }
+            if ($.isRunTriggeredOnKbChange == null) {
+                throw new MissingRequiredPropertyException("RemediationRecipeArgs", "isRunTriggeredOnKbChange");
+            }
+            if ($.knowledgeBaseId == null) {
+                throw new MissingRequiredPropertyException("RemediationRecipeArgs", "knowledgeBaseId");
+            }
+            if ($.networkConfiguration == null) {
+                throw new MissingRequiredPropertyException("RemediationRecipeArgs", "networkConfiguration");
+            }
+            if ($.scmConfiguration == null) {
+                throw new MissingRequiredPropertyException("RemediationRecipeArgs", "scmConfiguration");
+            }
+            if ($.verifyConfiguration == null) {
+                throw new MissingRequiredPropertyException("RemediationRecipeArgs", "verifyConfiguration");
+            }
             return $;
         }
     }

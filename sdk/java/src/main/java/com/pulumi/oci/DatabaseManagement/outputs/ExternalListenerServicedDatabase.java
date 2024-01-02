@@ -129,36 +129,43 @@ public final class ExternalListenerServicedDatabase {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseSubType(@Nullable String databaseSubType) {
+
             this.databaseSubType = databaseSubType;
             return this;
         }
         @CustomType.Setter
         public Builder databaseType(@Nullable String databaseType) {
+
             this.databaseType = databaseType;
             return this;
         }
         @CustomType.Setter
         public Builder dbUniqueName(@Nullable String dbUniqueName) {
+
             this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isManaged(@Nullable Boolean isManaged) {
+
             this.isManaged = isManaged;
             return this;
         }

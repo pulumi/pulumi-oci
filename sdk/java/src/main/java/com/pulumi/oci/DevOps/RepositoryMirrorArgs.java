@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -86,7 +87,9 @@ public final class RepositoryMirrorArgs extends com.pulumi.resources.ResourceArg
         }
 
         public RepositoryMirrorArgs build() {
-            $.repositoryId = Objects.requireNonNull($.repositoryId, "expected parameter 'repositoryId' to be non-null");
+            if ($.repositoryId == null) {
+                throw new MissingRequiredPropertyException("RepositoryMirrorArgs", "repositoryId");
+            }
             return $;
         }
     }

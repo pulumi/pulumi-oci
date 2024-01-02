@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.outputs.GetLogSavedSearchesFilter;
 import com.pulumi.oci.Logging.outputs.GetLogSavedSearchesLogSavedSearchSummaryCollection;
 import java.lang.String;
@@ -101,11 +102,15 @@ public final class GetLogSavedSearchesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLogSavedSearchesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetLogSavedSearchesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -114,17 +119,24 @@ public final class GetLogSavedSearchesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLogSavedSearchesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder logSavedSearchId(@Nullable String logSavedSearchId) {
+
             this.logSavedSearchId = logSavedSearchId;
             return this;
         }
         @CustomType.Setter
         public Builder logSavedSearchSummaryCollections(List<GetLogSavedSearchesLogSavedSearchSummaryCollection> logSavedSearchSummaryCollections) {
-            this.logSavedSearchSummaryCollections = Objects.requireNonNull(logSavedSearchSummaryCollections);
+            if (logSavedSearchSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetLogSavedSearchesResult", "logSavedSearchSummaryCollections");
+            }
+            this.logSavedSearchSummaryCollections = logSavedSearchSummaryCollections;
             return this;
         }
         public Builder logSavedSearchSummaryCollections(GetLogSavedSearchesLogSavedSearchSummaryCollection... logSavedSearchSummaryCollections) {
@@ -132,6 +144,7 @@ public final class GetLogSavedSearchesResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }

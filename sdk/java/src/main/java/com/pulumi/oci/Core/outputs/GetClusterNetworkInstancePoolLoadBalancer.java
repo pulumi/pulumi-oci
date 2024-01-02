@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -127,37 +128,58 @@ public final class GetClusterNetworkInstancePoolLoadBalancer {
 
         @CustomType.Setter
         public Builder backendSetName(String backendSetName) {
-            this.backendSetName = Objects.requireNonNull(backendSetName);
+            if (backendSetName == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancePoolLoadBalancer", "backendSetName");
+            }
+            this.backendSetName = backendSetName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancePoolLoadBalancer", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instancePoolId(String instancePoolId) {
-            this.instancePoolId = Objects.requireNonNull(instancePoolId);
+            if (instancePoolId == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancePoolLoadBalancer", "instancePoolId");
+            }
+            this.instancePoolId = instancePoolId;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancePoolLoadBalancer", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancePoolLoadBalancer", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancePoolLoadBalancer", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vnicSelection(String vnicSelection) {
-            this.vnicSelection = Objects.requireNonNull(vnicSelection);
+            if (vnicSelection == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancePoolLoadBalancer", "vnicSelection");
+            }
+            this.vnicSelection = vnicSelection;
             return this;
         }
         public GetClusterNetworkInstancePoolLoadBalancer build() {

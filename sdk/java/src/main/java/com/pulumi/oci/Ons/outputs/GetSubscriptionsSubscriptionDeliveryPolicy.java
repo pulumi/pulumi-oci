@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ons.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ons.outputs.GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetSubscriptionsSubscriptionDeliveryPolicy {
 
         @CustomType.Setter
         public Builder backoffRetryPolicies(List<GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy> backoffRetryPolicies) {
-            this.backoffRetryPolicies = Objects.requireNonNull(backoffRetryPolicies);
+            if (backoffRetryPolicies == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionDeliveryPolicy", "backoffRetryPolicies");
+            }
+            this.backoffRetryPolicies = backoffRetryPolicies;
             return this;
         }
         public Builder backoffRetryPolicies(GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy... backoffRetryPolicies) {

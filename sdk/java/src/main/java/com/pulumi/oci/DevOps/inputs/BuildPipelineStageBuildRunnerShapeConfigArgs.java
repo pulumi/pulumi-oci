@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -151,7 +152,9 @@ public final class BuildPipelineStageBuildRunnerShapeConfigArgs extends com.pulu
         }
 
         public BuildPipelineStageBuildRunnerShapeConfigArgs build() {
-            $.buildRunnerType = Objects.requireNonNull($.buildRunnerType, "expected parameter 'buildRunnerType' to be non-null");
+            if ($.buildRunnerType == null) {
+                throw new MissingRequiredPropertyException("BuildPipelineStageBuildRunnerShapeConfigArgs", "buildRunnerType");
+            }
             return $;
         }
     }

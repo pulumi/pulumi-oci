@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -136,6 +137,7 @@ public final class AccessPolicyRuleDestination {
 
         @CustomType.Setter
         public Builder hostnames(@Nullable List<String> hostnames) {
+
             this.hostnames = hostnames;
             return this;
         }
@@ -144,11 +146,13 @@ public final class AccessPolicyRuleDestination {
         }
         @CustomType.Setter
         public Builder ingressGatewayId(@Nullable String ingressGatewayId) {
+
             this.ingressGatewayId = ingressGatewayId;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddresses(@Nullable List<String> ipAddresses) {
+
             this.ipAddresses = ipAddresses;
             return this;
         }
@@ -157,6 +161,7 @@ public final class AccessPolicyRuleDestination {
         }
         @CustomType.Setter
         public Builder ports(@Nullable List<Integer> ports) {
+
             this.ports = ports;
             return this;
         }
@@ -165,16 +170,21 @@ public final class AccessPolicyRuleDestination {
         }
         @CustomType.Setter
         public Builder protocol(@Nullable String protocol) {
+
             this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("AccessPolicyRuleDestination", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder virtualServiceId(@Nullable String virtualServiceId) {
+
             this.virtualServiceId = virtualServiceId;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.outputs.GetMeshesFilter;
 import com.pulumi.oci.ServiceMesh.outputs.GetMeshesMeshCollection;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetMeshesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMeshesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMeshesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +133,16 @@ public final class GetMeshesResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder meshCollections(List<GetMeshesMeshCollection> meshCollections) {
-            this.meshCollections = Objects.requireNonNull(meshCollections);
+            if (meshCollections == null) {
+              throw new MissingRequiredPropertyException("GetMeshesResult", "meshCollections");
+            }
+            this.meshCollections = meshCollections;
             return this;
         }
         public Builder meshCollections(GetMeshesMeshCollection... meshCollections) {
@@ -140,6 +150,7 @@ public final class GetMeshesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsAppRoleAppArgs;
 import com.pulumi.oci.Identity.inputs.DomainsAppRoleTagArgs;
 import java.lang.Boolean;
@@ -1190,10 +1191,18 @@ public final class DomainsAppRoleArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public DomainsAppRoleArgs build() {
-            $.app = Objects.requireNonNull($.app, "expected parameter 'app' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.app == null) {
+                throw new MissingRequiredPropertyException("DomainsAppRoleArgs", "app");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("DomainsAppRoleArgs", "displayName");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsAppRoleArgs", "idcsEndpoint");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsAppRoleArgs", "schemas");
+            }
             return $;
         }
     }

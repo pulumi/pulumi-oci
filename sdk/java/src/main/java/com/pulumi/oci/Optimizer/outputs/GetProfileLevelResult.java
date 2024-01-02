@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetProfileLevelItem;
 import java.lang.Boolean;
 import java.lang.String;
@@ -101,22 +102,34 @@ public final class GetProfileLevelResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetProfileLevelResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
-            this.compartmentIdInSubtree = Objects.requireNonNull(compartmentIdInSubtree);
+            if (compartmentIdInSubtree == null) {
+              throw new MissingRequiredPropertyException("GetProfileLevelResult", "compartmentIdInSubtree");
+            }
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetProfileLevelResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetProfileLevelItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetProfileLevelResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetProfileLevelItem... items) {
@@ -124,11 +137,13 @@ public final class GetProfileLevelResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder recommendationName(@Nullable String recommendationName) {
+
             this.recommendationName = recommendationName;
             return this;
         }

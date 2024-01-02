@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetDatabaseSoftwareImagePlainArgs extends com.pulumi.resource
         }
 
         public GetDatabaseSoftwareImagePlainArgs build() {
-            $.databaseSoftwareImageId = Objects.requireNonNull($.databaseSoftwareImageId, "expected parameter 'databaseSoftwareImageId' to be non-null");
+            if ($.databaseSoftwareImageId == null) {
+                throw new MissingRequiredPropertyException("GetDatabaseSoftwareImagePlainArgs", "databaseSoftwareImageId");
+            }
             return $;
         }
     }

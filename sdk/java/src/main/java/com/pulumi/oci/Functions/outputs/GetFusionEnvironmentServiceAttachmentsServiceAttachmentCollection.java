@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollec
 
         @CustomType.Setter
         public Builder items(List<GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem... items) {

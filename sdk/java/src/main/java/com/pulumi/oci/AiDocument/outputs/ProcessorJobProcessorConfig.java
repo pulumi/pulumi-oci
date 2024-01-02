@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiDocument.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiDocument.outputs.ProcessorJobProcessorConfigFeature;
 import java.lang.Boolean;
 import java.lang.String;
@@ -109,12 +110,16 @@ public final class ProcessorJobProcessorConfig {
 
         @CustomType.Setter
         public Builder documentType(@Nullable String documentType) {
+
             this.documentType = documentType;
             return this;
         }
         @CustomType.Setter
         public Builder features(List<ProcessorJobProcessorConfigFeature> features) {
-            this.features = Objects.requireNonNull(features);
+            if (features == null) {
+              throw new MissingRequiredPropertyException("ProcessorJobProcessorConfig", "features");
+            }
+            this.features = features;
             return this;
         }
         public Builder features(ProcessorJobProcessorConfigFeature... features) {
@@ -122,17 +127,22 @@ public final class ProcessorJobProcessorConfig {
         }
         @CustomType.Setter
         public Builder isZipOutputEnabled(@Nullable Boolean isZipOutputEnabled) {
+
             this.isZipOutputEnabled = isZipOutputEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder language(@Nullable String language) {
+
             this.language = language;
             return this;
         }
         @CustomType.Setter
         public Builder processorType(String processorType) {
-            this.processorType = Objects.requireNonNull(processorType);
+            if (processorType == null) {
+              throw new MissingRequiredPropertyException("ProcessorJobProcessorConfig", "processorType");
+            }
+            this.processorType = processorType;
             return this;
         }
         public ProcessorJobProcessorConfig build() {

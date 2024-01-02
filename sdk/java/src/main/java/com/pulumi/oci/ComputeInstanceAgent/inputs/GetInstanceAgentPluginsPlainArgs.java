@@ -4,6 +4,7 @@
 package com.pulumi.oci.ComputeInstanceAgent.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ComputeInstanceAgent.inputs.GetInstanceAgentPluginsFilter;
 import java.lang.String;
 import java.util.List;
@@ -151,8 +152,12 @@ public final class GetInstanceAgentPluginsPlainArgs extends com.pulumi.resources
         }
 
         public GetInstanceAgentPluginsPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.instanceagentId = Objects.requireNonNull($.instanceagentId, "expected parameter 'instanceagentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetInstanceAgentPluginsPlainArgs", "compartmentId");
+            }
+            if ($.instanceagentId == null) {
+                throw new MissingRequiredPropertyException("GetInstanceAgentPluginsPlainArgs", "instanceagentId");
+            }
             return $;
         }
     }

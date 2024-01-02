@@ -142,41 +142,49 @@ public final class JobRunJobStorageMountConfigurationDetailsList {
 
         @CustomType.Setter
         public Builder bucket(@Nullable String bucket) {
+
             this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder destinationDirectoryName(@Nullable String destinationDirectoryName) {
+
             this.destinationDirectoryName = destinationDirectoryName;
             return this;
         }
         @CustomType.Setter
         public Builder destinationPath(@Nullable String destinationPath) {
+
             this.destinationPath = destinationPath;
             return this;
         }
         @CustomType.Setter
         public Builder exportId(@Nullable String exportId) {
+
             this.exportId = exportId;
             return this;
         }
         @CustomType.Setter
         public Builder mountTargetId(@Nullable String mountTargetId) {
+
             this.mountTargetId = mountTargetId;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(@Nullable String namespace) {
+
             this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder prefix(@Nullable String prefix) {
+
             this.prefix = prefix;
             return this;
         }
         @CustomType.Setter
         public Builder storageType(@Nullable String storageType) {
+
             this.storageType = storageType;
             return this;
         }

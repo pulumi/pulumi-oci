@@ -94,6 +94,7 @@ public final class DbSystemIormConfigCach {
 
         @CustomType.Setter
         public Builder dbPlans(@Nullable List<DbSystemIormConfigCachDbPlan> dbPlans) {
+
             this.dbPlans = dbPlans;
             return this;
         }
@@ -102,21 +103,25 @@ public final class DbSystemIormConfigCach {
         }
         @CustomType.Setter
         public Builder dbSystemId(@Nullable String dbSystemId) {
+
             this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder objective(@Nullable String objective) {
+
             this.objective = objective;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetManagementAgentPluginCountPlainArgs extends com.pulumi.res
         }
 
         public GetManagementAgentPluginCountPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.groupBy = Objects.requireNonNull($.groupBy, "expected parameter 'groupBy' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetManagementAgentPluginCountPlainArgs", "compartmentId");
+            }
+            if ($.groupBy == null) {
+                throw new MissingRequiredPropertyException("GetManagementAgentPluginCountPlainArgs", "groupBy");
+            }
             return $;
         }
     }

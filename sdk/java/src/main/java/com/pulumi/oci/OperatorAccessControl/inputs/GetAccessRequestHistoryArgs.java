@@ -5,6 +5,7 @@ package com.pulumi.oci.OperatorAccessControl.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetAccessRequestHistoryArgs extends com.pulumi.resources.Invo
         }
 
         public GetAccessRequestHistoryArgs build() {
-            $.accessRequestId = Objects.requireNonNull($.accessRequestId, "expected parameter 'accessRequestId' to be non-null");
+            if ($.accessRequestId == null) {
+                throw new MissingRequiredPropertyException("GetAccessRequestHistoryArgs", "accessRequestId");
+            }
             return $;
         }
     }

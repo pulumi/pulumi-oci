@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRulesFilter;
 import java.lang.String;
 import java.util.List;
@@ -246,8 +247,12 @@ public final class GetNamespaceIngestTimeRulesPlainArgs extends com.pulumi.resou
         }
 
         public GetNamespaceIngestTimeRulesPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetNamespaceIngestTimeRulesPlainArgs", "compartmentId");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("GetNamespaceIngestTimeRulesPlainArgs", "namespace");
+            }
             return $;
         }
     }

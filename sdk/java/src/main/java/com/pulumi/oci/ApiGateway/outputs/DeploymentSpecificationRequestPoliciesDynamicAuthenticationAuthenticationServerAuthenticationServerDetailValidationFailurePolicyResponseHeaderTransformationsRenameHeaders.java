@@ -44,6 +44,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
 
         @CustomType.Setter
         public Builder items(@Nullable List<DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItem> items) {
+
             this.items = items;
             return this;
         }

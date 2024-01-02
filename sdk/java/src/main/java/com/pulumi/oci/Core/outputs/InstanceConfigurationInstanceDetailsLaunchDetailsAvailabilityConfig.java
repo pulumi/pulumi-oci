@@ -59,11 +59,13 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAvailability
 
         @CustomType.Setter
         public Builder isLiveMigrationPreferred(@Nullable Boolean isLiveMigrationPreferred) {
+
             this.isLiveMigrationPreferred = isLiveMigrationPreferred;
             return this;
         }
         @CustomType.Setter
         public Builder recoveryAction(@Nullable String recoveryAction) {
+
             this.recoveryAction = recoveryAction;
             return this;
         }

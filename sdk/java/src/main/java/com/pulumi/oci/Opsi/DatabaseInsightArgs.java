@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.inputs.DatabaseInsightConnectionCredentialDetailsArgs;
 import com.pulumi.oci.Opsi.inputs.DatabaseInsightConnectionDetailsArgs;
 import com.pulumi.oci.Opsi.inputs.DatabaseInsightCredentialDetailsArgs;
@@ -759,8 +760,12 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public DatabaseInsightArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.entitySource = Objects.requireNonNull($.entitySource, "expected parameter 'entitySource' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("DatabaseInsightArgs", "compartmentId");
+            }
+            if ($.entitySource == null) {
+                throw new MissingRequiredPropertyException("DatabaseInsightArgs", "entitySource");
+            }
             return $;
         }
     }

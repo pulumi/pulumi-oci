@@ -5,6 +5,7 @@ package com.pulumi.oci.LoadBalancer;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -162,8 +163,12 @@ public final class HostnameArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public HostnameArgs build() {
-            $.hostname = Objects.requireNonNull($.hostname, "expected parameter 'hostname' to be non-null");
-            $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
+            if ($.hostname == null) {
+                throw new MissingRequiredPropertyException("HostnameArgs", "hostname");
+            }
+            if ($.loadBalancerId == null) {
+                throw new MissingRequiredPropertyException("HostnameArgs", "loadBalancerId");
+            }
             return $;
         }
     }

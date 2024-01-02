@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlansDrPlanCollection;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlansFilter;
 import java.lang.String;
@@ -121,12 +122,16 @@ public final class GetDrPlansResult {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder drPlanCollections(List<GetDrPlansDrPlanCollection> drPlanCollections) {
-            this.drPlanCollections = Objects.requireNonNull(drPlanCollections);
+            if (drPlanCollections == null) {
+              throw new MissingRequiredPropertyException("GetDrPlansResult", "drPlanCollections");
+            }
+            this.drPlanCollections = drPlanCollections;
             return this;
         }
         public Builder drPlanCollections(GetDrPlansDrPlanCollection... drPlanCollections) {
@@ -134,21 +139,27 @@ public final class GetDrPlansResult {
         }
         @CustomType.Setter
         public Builder drPlanId(@Nullable String drPlanId) {
+
             this.drPlanId = drPlanId;
             return this;
         }
         @CustomType.Setter
         public Builder drPlanType(@Nullable String drPlanType) {
+
             this.drPlanType = drPlanType;
             return this;
         }
         @CustomType.Setter
         public Builder drProtectionGroupId(String drProtectionGroupId) {
-            this.drProtectionGroupId = Objects.requireNonNull(drProtectionGroupId);
+            if (drProtectionGroupId == null) {
+              throw new MissingRequiredPropertyException("GetDrPlansResult", "drProtectionGroupId");
+            }
+            this.drProtectionGroupId = drProtectionGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDrPlansFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -157,11 +168,15 @@ public final class GetDrPlansResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDrPlansResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoS
 
         @CustomType.Setter
         public Builder diskIops(Double diskIops) {
-            this.diskIops = Objects.requireNonNull(diskIops);
+            if (diskIops == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance", "diskIops");
+            }
+            this.diskIops = diskIops;
             return this;
         }
         @CustomType.Setter
         public Builder diskThroughputInMbps(Double diskThroughputInMbps) {
-            this.diskThroughputInMbps = Objects.requireNonNull(diskThroughputInMbps);
+            if (diskThroughputInMbps == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance", "diskThroughputInMbps");
+            }
+            this.diskThroughputInMbps = diskThroughputInMbps;
             return this;
         }
         public GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance build() {

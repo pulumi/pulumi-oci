@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetPeerRegionForRemotePeeringsFilter;
 import com.pulumi.oci.Core.outputs.GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering;
 import java.lang.String;
@@ -66,6 +67,7 @@ public final class GetPeerRegionForRemotePeeringsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPeerRegionForRemotePeeringsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -74,12 +76,18 @@ public final class GetPeerRegionForRemotePeeringsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPeerRegionForRemotePeeringsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder peerRegionForRemotePeerings(List<GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering> peerRegionForRemotePeerings) {
-            this.peerRegionForRemotePeerings = Objects.requireNonNull(peerRegionForRemotePeerings);
+            if (peerRegionForRemotePeerings == null) {
+              throw new MissingRequiredPropertyException("GetPeerRegionForRemotePeeringsResult", "peerRegionForRemotePeerings");
+            }
+            this.peerRegionForRemotePeerings = peerRegionForRemotePeerings;
             return this;
         }
         public Builder peerRegionForRemotePeerings(GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering... peerRegionForRemotePeerings) {

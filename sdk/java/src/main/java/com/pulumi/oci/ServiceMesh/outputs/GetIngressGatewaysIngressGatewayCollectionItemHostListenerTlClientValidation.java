@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlC
 
         @CustomType.Setter
         public Builder subjectAlternateNames(List<String> subjectAlternateNames) {
-            this.subjectAlternateNames = Objects.requireNonNull(subjectAlternateNames);
+            if (subjectAlternateNames == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation", "subjectAlternateNames");
+            }
+            this.subjectAlternateNames = subjectAlternateNames;
             return this;
         }
         public Builder subjectAlternateNames(String... subjectAlternateNames) {
@@ -66,7 +70,10 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlC
         }
         @CustomType.Setter
         public Builder trustedCaBundles(List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle> trustedCaBundles) {
-            this.trustedCaBundles = Objects.requireNonNull(trustedCaBundles);
+            if (trustedCaBundles == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation", "trustedCaBundles");
+            }
+            this.trustedCaBundles = trustedCaBundles;
             return this;
         }
         public Builder trustedCaBundles(GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle... trustedCaBundles) {

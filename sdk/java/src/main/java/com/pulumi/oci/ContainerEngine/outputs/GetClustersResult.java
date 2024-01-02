@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersCluster;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersFilter;
 import java.lang.String;
@@ -109,7 +110,10 @@ public final class GetClustersResult {
 
         @CustomType.Setter
         public Builder clusters(List<GetClustersCluster> clusters) {
-            this.clusters = Objects.requireNonNull(clusters);
+            if (clusters == null) {
+              throw new MissingRequiredPropertyException("GetClustersResult", "clusters");
+            }
+            this.clusters = clusters;
             return this;
         }
         public Builder clusters(GetClustersCluster... clusters) {
@@ -117,11 +121,15 @@ public final class GetClustersResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetClustersResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetClustersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -130,16 +138,21 @@ public final class GetClustersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetClustersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
+
             this.states = states;
             return this;
         }

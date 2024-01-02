@@ -207,26 +207,31 @@ public final class DomainsAppAccount {
 
         @CustomType.Setter
         public Builder active(@Nullable Boolean active) {
+
             this.active = active;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder ownerId(@Nullable String ownerId) {
+
             this.ownerId = ownerId;
             return this;
         }
         @CustomType.Setter
         public Builder ref(@Nullable String ref) {
+
             this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder value(@Nullable String value) {
+
             this.value = value;
             return this;
         }

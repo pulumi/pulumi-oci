@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetDomainsAppAllowedScope {
 
         @CustomType.Setter
         public Builder fqs(String fqs) {
-            this.fqs = Objects.requireNonNull(fqs);
+            if (fqs == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppAllowedScope", "fqs");
+            }
+            this.fqs = fqs;
             return this;
         }
         @CustomType.Setter
         public Builder idOfDefiningApp(String idOfDefiningApp) {
-            this.idOfDefiningApp = Objects.requireNonNull(idOfDefiningApp);
+            if (idOfDefiningApp == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppAllowedScope", "idOfDefiningApp");
+            }
+            this.idOfDefiningApp = idOfDefiningApp;
             return this;
         }
         @CustomType.Setter
         public Builder readOnly(Boolean readOnly) {
-            this.readOnly = Objects.requireNonNull(readOnly);
+            if (readOnly == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppAllowedScope", "readOnly");
+            }
+            this.readOnly = readOnly;
             return this;
         }
         public GetDomainsAppAllowedScope build() {

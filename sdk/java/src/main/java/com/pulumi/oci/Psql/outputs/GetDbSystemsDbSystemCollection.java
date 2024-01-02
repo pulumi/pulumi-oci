@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetDbSystemsDbSystemCollection {
 
         @CustomType.Setter
         public Builder items(List<GetDbSystemsDbSystemCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetDbSystemsDbSystemCollectionItem... items) {

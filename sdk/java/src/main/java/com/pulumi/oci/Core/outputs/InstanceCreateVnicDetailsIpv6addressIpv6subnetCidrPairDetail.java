@@ -42,11 +42,13 @@ public final class InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail 
 
         @CustomType.Setter
         public Builder ipv6address(@Nullable String ipv6address) {
+
             this.ipv6address = ipv6address;
             return this;
         }
         @CustomType.Setter
         public Builder ipv6subnetCidr(@Nullable String ipv6subnetCidr) {
+
             this.ipv6subnetCidr = ipv6subnetCidr;
             return this;
         }

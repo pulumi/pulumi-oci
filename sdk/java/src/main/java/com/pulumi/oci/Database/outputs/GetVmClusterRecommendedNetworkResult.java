@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetVmClusterRecommendedNetworkDrScan;
 import com.pulumi.oci.Database.outputs.GetVmClusterRecommendedNetworkNetwork;
 import com.pulumi.oci.Database.outputs.GetVmClusterRecommendedNetworkScan;
@@ -230,11 +231,15 @@ public final class GetVmClusterRecommendedNetworkResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dbServers(@Nullable List<String> dbServers) {
+
             this.dbServers = dbServers;
             return this;
         }
@@ -243,17 +248,26 @@ public final class GetVmClusterRecommendedNetworkResult {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder dns(List<String> dns) {
-            this.dns = Objects.requireNonNull(dns);
+            if (dns == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkResult", "dns");
+            }
+            this.dns = dns;
             return this;
         }
         public Builder dns(String... dns) {
@@ -261,12 +275,16 @@ public final class GetVmClusterRecommendedNetworkResult {
         }
         @CustomType.Setter
         public Builder drScanListenerPortTcp(@Nullable Integer drScanListenerPortTcp) {
+
             this.drScanListenerPortTcp = drScanListenerPortTcp;
             return this;
         }
         @CustomType.Setter
         public Builder drScans(List<GetVmClusterRecommendedNetworkDrScan> drScans) {
-            this.drScans = Objects.requireNonNull(drScans);
+            if (drScans == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkResult", "drScans");
+            }
+            this.drScans = drScans;
             return this;
         }
         public Builder drScans(GetVmClusterRecommendedNetworkDrScan... drScans) {
@@ -274,22 +292,34 @@ public final class GetVmClusterRecommendedNetworkResult {
         }
         @CustomType.Setter
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
-            this.exadataInfrastructureId = Objects.requireNonNull(exadataInfrastructureId);
+            if (exadataInfrastructureId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkResult", "exadataInfrastructureId");
+            }
+            this.exadataInfrastructureId = exadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder networks(List<GetVmClusterRecommendedNetworkNetwork> networks) {
-            this.networks = Objects.requireNonNull(networks);
+            if (networks == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkResult", "networks");
+            }
+            this.networks = networks;
             return this;
         }
         public Builder networks(GetVmClusterRecommendedNetworkNetwork... networks) {
@@ -297,7 +327,10 @@ public final class GetVmClusterRecommendedNetworkResult {
         }
         @CustomType.Setter
         public Builder ntps(List<String> ntps) {
-            this.ntps = Objects.requireNonNull(ntps);
+            if (ntps == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkResult", "ntps");
+            }
+            this.ntps = ntps;
             return this;
         }
         public Builder ntps(String... ntps) {
@@ -305,17 +338,22 @@ public final class GetVmClusterRecommendedNetworkResult {
         }
         @CustomType.Setter
         public Builder scanListenerPortTcp(@Nullable Integer scanListenerPortTcp) {
+
             this.scanListenerPortTcp = scanListenerPortTcp;
             return this;
         }
         @CustomType.Setter
         public Builder scanListenerPortTcpSsl(@Nullable Integer scanListenerPortTcpSsl) {
+
             this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
             return this;
         }
         @CustomType.Setter
         public Builder scans(List<GetVmClusterRecommendedNetworkScan> scans) {
-            this.scans = Objects.requireNonNull(scans);
+            if (scans == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkResult", "scans");
+            }
+            this.scans = scans;
             return this;
         }
         public Builder scans(GetVmClusterRecommendedNetworkScan... scans) {
@@ -323,7 +361,10 @@ public final class GetVmClusterRecommendedNetworkResult {
         }
         @CustomType.Setter
         public Builder vmNetworks(List<GetVmClusterRecommendedNetworkVmNetwork> vmNetworks) {
-            this.vmNetworks = Objects.requireNonNull(vmNetworks);
+            if (vmNetworks == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkResult", "vmNetworks");
+            }
+            this.vmNetworks = vmNetworks;
             return this;
         }
         public Builder vmNetworks(GetVmClusterRecommendedNetworkVmNetwork... vmNetworks) {

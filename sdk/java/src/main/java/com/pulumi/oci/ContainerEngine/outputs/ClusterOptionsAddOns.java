@@ -58,11 +58,13 @@ public final class ClusterOptionsAddOns {
 
         @CustomType.Setter
         public Builder isKubernetesDashboardEnabled(@Nullable Boolean isKubernetesDashboardEnabled) {
+
             this.isKubernetesDashboardEnabled = isKubernetesDashboardEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isTillerEnabled(@Nullable Boolean isTillerEnabled) {
+
             this.isTillerEnabled = isTillerEnabled;
             return this;
         }

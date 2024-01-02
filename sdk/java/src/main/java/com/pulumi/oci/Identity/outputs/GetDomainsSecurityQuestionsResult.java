@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsSecurityQuestionsSecurityQuestion;
 import java.lang.Integer;
 import java.lang.String;
@@ -167,6 +168,7 @@ public final class GetDomainsSecurityQuestionsResult {
 
         @CustomType.Setter
         public Builder attributeSets(@Nullable List<String> attributeSets) {
+
             this.attributeSets = attributeSets;
             return this;
         }
@@ -175,42 +177,58 @@ public final class GetDomainsSecurityQuestionsResult {
         }
         @CustomType.Setter
         public Builder attributes(@Nullable String attributes) {
+
             this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionsResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder itemsPerPage(Integer itemsPerPage) {
-            this.itemsPerPage = Objects.requireNonNull(itemsPerPage);
+            if (itemsPerPage == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionsResult", "itemsPerPage");
+            }
+            this.itemsPerPage = itemsPerPage;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionsResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -218,17 +236,22 @@ public final class GetDomainsSecurityQuestionsResult {
         }
         @CustomType.Setter
         public Builder securityQuestionCount(@Nullable Integer securityQuestionCount) {
+
             this.securityQuestionCount = securityQuestionCount;
             return this;
         }
         @CustomType.Setter
         public Builder securityQuestionFilter(@Nullable String securityQuestionFilter) {
+
             this.securityQuestionFilter = securityQuestionFilter;
             return this;
         }
         @CustomType.Setter
         public Builder securityQuestions(List<GetDomainsSecurityQuestionsSecurityQuestion> securityQuestions) {
-            this.securityQuestions = Objects.requireNonNull(securityQuestions);
+            if (securityQuestions == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionsResult", "securityQuestions");
+            }
+            this.securityQuestions = securityQuestions;
             return this;
         }
         public Builder securityQuestions(GetDomainsSecurityQuestionsSecurityQuestion... securityQuestions) {
@@ -236,27 +259,36 @@ public final class GetDomainsSecurityQuestionsResult {
         }
         @CustomType.Setter
         public Builder sortBy(@Nullable String sortBy) {
+
             this.sortBy = sortBy;
             return this;
         }
         @CustomType.Setter
         public Builder sortOrder(@Nullable String sortOrder) {
+
             this.sortOrder = sortOrder;
             return this;
         }
         @CustomType.Setter
         public Builder startIndex(@Nullable Integer startIndex) {
+
             this.startIndex = startIndex;
             return this;
         }
         @CustomType.Setter
         public Builder totalResults(Integer totalResults) {
-            this.totalResults = Objects.requireNonNull(totalResults);
+            if (totalResults == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionsResult", "totalResults");
+            }
+            this.totalResults = totalResults;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionsResult", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetDomainsSecurityQuestionsResult build() {

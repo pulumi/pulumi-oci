@@ -72,16 +72,19 @@ public final class TargetAssetCompatibilityMessage {
 
         @CustomType.Setter
         public Builder message(@Nullable String message) {
+
             this.message = message;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder severity(@Nullable String severity) {
+
             this.severity = severity;
             return this;
         }

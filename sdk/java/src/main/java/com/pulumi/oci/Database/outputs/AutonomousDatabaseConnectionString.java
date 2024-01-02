@@ -118,31 +118,37 @@ public final class AutonomousDatabaseConnectionString {
 
         @CustomType.Setter
         public Builder allConnectionStrings(@Nullable Map<String,Object> allConnectionStrings) {
+
             this.allConnectionStrings = allConnectionStrings;
             return this;
         }
         @CustomType.Setter
         public Builder dedicated(@Nullable String dedicated) {
+
             this.dedicated = dedicated;
             return this;
         }
         @CustomType.Setter
         public Builder high(@Nullable String high) {
+
             this.high = high;
             return this;
         }
         @CustomType.Setter
         public Builder low(@Nullable String low) {
+
             this.low = low;
             return this;
         }
         @CustomType.Setter
         public Builder medium(@Nullable String medium) {
+
             this.medium = medium;
             return this;
         }
         @CustomType.Setter
         public Builder profiles(@Nullable List<AutonomousDatabaseConnectionStringProfile> profiles) {
+
             this.profiles = profiles;
             return this;
         }

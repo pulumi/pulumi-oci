@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetImportableAgentEntitiesItem;
 import java.lang.String;
 import java.util.List;
@@ -64,17 +65,26 @@ public final class GetImportableAgentEntitiesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetImportableAgentEntitiesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetImportableAgentEntitiesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetImportableAgentEntitiesItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetImportableAgentEntitiesResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetImportableAgentEntitiesItem... items) {

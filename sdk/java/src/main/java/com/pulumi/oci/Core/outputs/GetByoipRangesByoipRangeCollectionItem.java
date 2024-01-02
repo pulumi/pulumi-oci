@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetByoipRangesByoipRangeCollectionItemByoipRangeVcnIpv6allocation;
 import java.lang.Object;
 import java.lang.String;
@@ -244,7 +245,10 @@ public final class GetByoipRangesByoipRangeCollectionItem {
 
         @CustomType.Setter
         public Builder byoipRangeVcnIpv6allocations(List<GetByoipRangesByoipRangeCollectionItemByoipRangeVcnIpv6allocation> byoipRangeVcnIpv6allocations) {
-            this.byoipRangeVcnIpv6allocations = Objects.requireNonNull(byoipRangeVcnIpv6allocations);
+            if (byoipRangeVcnIpv6allocations == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangesByoipRangeCollectionItem", "byoipRangeVcnIpv6allocations");
+            }
+            this.byoipRangeVcnIpv6allocations = byoipRangeVcnIpv6allocations;
             return this;
         }
         public Builder byoipRangeVcnIpv6allocations(GetByoipRangesByoipRangeCollectionItemByoipRangeVcnIpv6allocation... byoipRangeVcnIpv6allocations) {
@@ -252,72 +256,110 @@ public final class GetByoipRangesByoipRangeCollectionItem {
         }
         @CustomType.Setter
         public Builder cidrBlock(@Nullable String cidrBlock) {
+
             this.cidrBlock = cidrBlock;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangesByoipRangeCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangesByoipRangeCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangesByoipRangeCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangesByoipRangeCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipv6cidrBlock(String ipv6cidrBlock) {
-            this.ipv6cidrBlock = Objects.requireNonNull(ipv6cidrBlock);
+            if (ipv6cidrBlock == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangesByoipRangeCollectionItem", "ipv6cidrBlock");
+            }
+            this.ipv6cidrBlock = ipv6cidrBlock;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangesByoipRangeCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangesByoipRangeCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeAdvertised(String timeAdvertised) {
-            this.timeAdvertised = Objects.requireNonNull(timeAdvertised);
+            if (timeAdvertised == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangesByoipRangeCollectionItem", "timeAdvertised");
+            }
+            this.timeAdvertised = timeAdvertised;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangesByoipRangeCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeValidated(String timeValidated) {
-            this.timeValidated = Objects.requireNonNull(timeValidated);
+            if (timeValidated == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangesByoipRangeCollectionItem", "timeValidated");
+            }
+            this.timeValidated = timeValidated;
             return this;
         }
         @CustomType.Setter
         public Builder timeWithdrawn(String timeWithdrawn) {
-            this.timeWithdrawn = Objects.requireNonNull(timeWithdrawn);
+            if (timeWithdrawn == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangesByoipRangeCollectionItem", "timeWithdrawn");
+            }
+            this.timeWithdrawn = timeWithdrawn;
             return this;
         }
         @CustomType.Setter
         public Builder validationToken(String validationToken) {
-            this.validationToken = Objects.requireNonNull(validationToken);
+            if (validationToken == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangesByoipRangeCollectionItem", "validationToken");
+            }
+            this.validationToken = validationToken;
             return this;
         }
         public GetByoipRangesByoipRangeCollectionItem build() {

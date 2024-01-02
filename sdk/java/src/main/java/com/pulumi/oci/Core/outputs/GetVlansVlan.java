@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -214,42 +215,66 @@ public final class GetVlansVlan {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetVlansVlan", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder cidrBlock(String cidrBlock) {
-            this.cidrBlock = Objects.requireNonNull(cidrBlock);
+            if (cidrBlock == null) {
+              throw new MissingRequiredPropertyException("GetVlansVlan", "cidrBlock");
+            }
+            this.cidrBlock = cidrBlock;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVlansVlan", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetVlansVlan", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetVlansVlan", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetVlansVlan", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVlansVlan", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetVlansVlan", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
@@ -257,27 +282,42 @@ public final class GetVlansVlan {
         }
         @CustomType.Setter
         public Builder routeTableId(String routeTableId) {
-            this.routeTableId = Objects.requireNonNull(routeTableId);
+            if (routeTableId == null) {
+              throw new MissingRequiredPropertyException("GetVlansVlan", "routeTableId");
+            }
+            this.routeTableId = routeTableId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetVlansVlan", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetVlansVlan", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+            if (vcnId == null) {
+              throw new MissingRequiredPropertyException("GetVlansVlan", "vcnId");
+            }
+            this.vcnId = vcnId;
             return this;
         }
         @CustomType.Setter
         public Builder vlanTag(Integer vlanTag) {
-            this.vlanTag = Objects.requireNonNull(vlanTag);
+            if (vlanTag == null) {
+              throw new MissingRequiredPropertyException("GetVlansVlan", "vlanTag");
+            }
+            this.vlanTag = vlanTag;
             return this;
         }
         public GetVlansVlan build() {

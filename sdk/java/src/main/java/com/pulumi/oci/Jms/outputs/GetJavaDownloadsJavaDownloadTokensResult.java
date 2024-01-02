@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetJavaDownloadsJavaDownloadTokensFilter;
 import com.pulumi.oci.Jms.outputs.GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollection;
 import java.lang.String;
@@ -135,21 +136,27 @@ public final class GetJavaDownloadsJavaDownloadTokensResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokensResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder familyVersion(@Nullable String familyVersion) {
+
             this.familyVersion = familyVersion;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetJavaDownloadsJavaDownloadTokensFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -158,12 +165,16 @@ public final class GetJavaDownloadsJavaDownloadTokensResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder javaDownloadTokenCollections(List<GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollection> javaDownloadTokenCollections) {
-            this.javaDownloadTokenCollections = Objects.requireNonNull(javaDownloadTokenCollections);
+            if (javaDownloadTokenCollections == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokensResult", "javaDownloadTokenCollections");
+            }
+            this.javaDownloadTokenCollections = javaDownloadTokenCollections;
             return this;
         }
         public Builder javaDownloadTokenCollections(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollection... javaDownloadTokenCollections) {
@@ -171,16 +182,19 @@ public final class GetJavaDownloadsJavaDownloadTokensResult {
         }
         @CustomType.Setter
         public Builder searchByUser(@Nullable String searchByUser) {
+
             this.searchByUser = searchByUser;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder value(@Nullable String value) {
+
             this.value = value;
             return this;
         }

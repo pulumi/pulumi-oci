@@ -5,6 +5,7 @@ package com.pulumi.oci.ObjectStorage.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -465,9 +466,15 @@ public final class GetObjectArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetObjectArgs build() {
-            $.bucket = Objects.requireNonNull($.bucket, "expected parameter 'bucket' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
-            $.object = Objects.requireNonNull($.object, "expected parameter 'object' to be non-null");
+            if ($.bucket == null) {
+                throw new MissingRequiredPropertyException("GetObjectArgs", "bucket");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("GetObjectArgs", "namespace");
+            }
+            if ($.object == null) {
+                throw new MissingRequiredPropertyException("GetObjectArgs", "object");
+            }
             return $;
         }
     }

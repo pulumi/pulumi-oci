@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.inputs.MetricExtensionQueryPropertiesInParamDetailArgs;
 import com.pulumi.oci.StackMonitoring.inputs.MetricExtensionQueryPropertiesOutParamDetailsArgs;
 import com.pulumi.oci.StackMonitoring.inputs.MetricExtensionQueryPropertiesScriptDetailsArgs;
@@ -610,7 +611,9 @@ public final class MetricExtensionQueryPropertiesArgs extends com.pulumi.resourc
         }
 
         public MetricExtensionQueryPropertiesArgs build() {
-            $.collectionMethod = Objects.requireNonNull($.collectionMethod, "expected parameter 'collectionMethod' to be non-null");
+            if ($.collectionMethod == null) {
+                throw new MissingRequiredPropertyException("MetricExtensionQueryPropertiesArgs", "collectionMethod");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -270,7 +271,9 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         public InstanceSourceDetailsArgs build() {
-            $.sourceType = Objects.requireNonNull($.sourceType, "expected parameter 'sourceType' to be non-null");
+            if ($.sourceType == null) {
+                throw new MissingRequiredPropertyException("InstanceSourceDetailsArgs", "sourceType");
+            }
             return $;
         }
     }

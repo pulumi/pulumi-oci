@@ -5,6 +5,7 @@ package com.pulumi.oci.CertificatesManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CertificatesManagement.inputs.CertificateAuthorityCertificateAuthorityConfigSubjectArgs;
 import com.pulumi.oci.CertificatesManagement.inputs.CertificateAuthorityCertificateAuthorityConfigValidityArgs;
 import java.lang.String;
@@ -263,8 +264,12 @@ public final class CertificateAuthorityCertificateAuthorityConfigArgs extends co
         }
 
         public CertificateAuthorityCertificateAuthorityConfigArgs build() {
-            $.configType = Objects.requireNonNull($.configType, "expected parameter 'configType' to be non-null");
-            $.subject = Objects.requireNonNull($.subject, "expected parameter 'subject' to be non-null");
+            if ($.configType == null) {
+                throw new MissingRequiredPropertyException("CertificateAuthorityCertificateAuthorityConfigArgs", "configType");
+            }
+            if ($.subject == null) {
+                throw new MissingRequiredPropertyException("CertificateAuthorityCertificateAuthorityConfigArgs", "subject");
+            }
             return $;
         }
     }

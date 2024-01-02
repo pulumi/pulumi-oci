@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAnalyticsFilter;
 import java.lang.Boolean;
 import java.lang.String;
@@ -481,7 +482,9 @@ public final class GetUserAssessmentUserAnalyticsPlainArgs extends com.pulumi.re
         }
 
         public GetUserAssessmentUserAnalyticsPlainArgs build() {
-            $.userAssessmentId = Objects.requireNonNull($.userAssessmentId, "expected parameter 'userAssessmentId' to be non-null");
+            if ($.userAssessmentId == null) {
+                throw new MissingRequiredPropertyException("GetUserAssessmentUserAnalyticsPlainArgs", "userAssessmentId");
+            }
             return $;
         }
     }

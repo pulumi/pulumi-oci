@@ -5,6 +5,7 @@ package com.pulumi.oci.ApiGateway.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -186,10 +187,18 @@ public final class UsagePlanEntitlementQuotaArgs extends com.pulumi.resources.Re
         }
 
         public UsagePlanEntitlementQuotaArgs build() {
-            $.operationOnBreach = Objects.requireNonNull($.operationOnBreach, "expected parameter 'operationOnBreach' to be non-null");
-            $.resetPolicy = Objects.requireNonNull($.resetPolicy, "expected parameter 'resetPolicy' to be non-null");
-            $.unit = Objects.requireNonNull($.unit, "expected parameter 'unit' to be non-null");
-            $.value = Objects.requireNonNull($.value, "expected parameter 'value' to be non-null");
+            if ($.operationOnBreach == null) {
+                throw new MissingRequiredPropertyException("UsagePlanEntitlementQuotaArgs", "operationOnBreach");
+            }
+            if ($.resetPolicy == null) {
+                throw new MissingRequiredPropertyException("UsagePlanEntitlementQuotaArgs", "resetPolicy");
+            }
+            if ($.unit == null) {
+                throw new MissingRequiredPropertyException("UsagePlanEntitlementQuotaArgs", "unit");
+            }
+            if ($.value == null) {
+                throw new MissingRequiredPropertyException("UsagePlanEntitlementQuotaArgs", "value");
+            }
             return $;
         }
     }

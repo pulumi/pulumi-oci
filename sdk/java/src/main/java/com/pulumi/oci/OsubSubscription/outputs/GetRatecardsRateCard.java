@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsubSubscription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsubSubscription.outputs.GetRatecardsRateCardCurrency;
 import com.pulumi.oci.OsubSubscription.outputs.GetRatecardsRateCardProduct;
 import com.pulumi.oci.OsubSubscription.outputs.GetRatecardsRateCardRateCardTier;
@@ -159,7 +160,10 @@ public final class GetRatecardsRateCard {
 
         @CustomType.Setter
         public Builder currencies(List<GetRatecardsRateCardCurrency> currencies) {
-            this.currencies = Objects.requireNonNull(currencies);
+            if (currencies == null) {
+              throw new MissingRequiredPropertyException("GetRatecardsRateCard", "currencies");
+            }
+            this.currencies = currencies;
             return this;
         }
         public Builder currencies(GetRatecardsRateCardCurrency... currencies) {
@@ -167,27 +171,42 @@ public final class GetRatecardsRateCard {
         }
         @CustomType.Setter
         public Builder discretionaryDiscountPercentage(String discretionaryDiscountPercentage) {
-            this.discretionaryDiscountPercentage = Objects.requireNonNull(discretionaryDiscountPercentage);
+            if (discretionaryDiscountPercentage == null) {
+              throw new MissingRequiredPropertyException("GetRatecardsRateCard", "discretionaryDiscountPercentage");
+            }
+            this.discretionaryDiscountPercentage = discretionaryDiscountPercentage;
             return this;
         }
         @CustomType.Setter
         public Builder isTier(Boolean isTier) {
-            this.isTier = Objects.requireNonNull(isTier);
+            if (isTier == null) {
+              throw new MissingRequiredPropertyException("GetRatecardsRateCard", "isTier");
+            }
+            this.isTier = isTier;
             return this;
         }
         @CustomType.Setter
         public Builder netUnitPrice(String netUnitPrice) {
-            this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
+            if (netUnitPrice == null) {
+              throw new MissingRequiredPropertyException("GetRatecardsRateCard", "netUnitPrice");
+            }
+            this.netUnitPrice = netUnitPrice;
             return this;
         }
         @CustomType.Setter
         public Builder overagePrice(String overagePrice) {
-            this.overagePrice = Objects.requireNonNull(overagePrice);
+            if (overagePrice == null) {
+              throw new MissingRequiredPropertyException("GetRatecardsRateCard", "overagePrice");
+            }
+            this.overagePrice = overagePrice;
             return this;
         }
         @CustomType.Setter
         public Builder products(List<GetRatecardsRateCardProduct> products) {
-            this.products = Objects.requireNonNull(products);
+            if (products == null) {
+              throw new MissingRequiredPropertyException("GetRatecardsRateCard", "products");
+            }
+            this.products = products;
             return this;
         }
         public Builder products(GetRatecardsRateCardProduct... products) {
@@ -195,7 +214,10 @@ public final class GetRatecardsRateCard {
         }
         @CustomType.Setter
         public Builder rateCardTiers(List<GetRatecardsRateCardRateCardTier> rateCardTiers) {
-            this.rateCardTiers = Objects.requireNonNull(rateCardTiers);
+            if (rateCardTiers == null) {
+              throw new MissingRequiredPropertyException("GetRatecardsRateCard", "rateCardTiers");
+            }
+            this.rateCardTiers = rateCardTiers;
             return this;
         }
         public Builder rateCardTiers(GetRatecardsRateCardRateCardTier... rateCardTiers) {
@@ -203,12 +225,18 @@ public final class GetRatecardsRateCard {
         }
         @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+            if (timeEnd == null) {
+              throw new MissingRequiredPropertyException("GetRatecardsRateCard", "timeEnd");
+            }
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+            if (timeStart == null) {
+              throw new MissingRequiredPropertyException("GetRatecardsRateCard", "timeStart");
+            }
+            this.timeStart = timeStart;
             return this;
         }
         public GetRatecardsRateCard build() {

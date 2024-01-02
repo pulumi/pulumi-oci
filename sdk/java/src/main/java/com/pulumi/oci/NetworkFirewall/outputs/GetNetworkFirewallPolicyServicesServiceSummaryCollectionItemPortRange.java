@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemP
 
         @CustomType.Setter
         public Builder maximumPort(Integer maximumPort) {
-            this.maximumPort = Objects.requireNonNull(maximumPort);
+            if (maximumPort == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRange", "maximumPort");
+            }
+            this.maximumPort = maximumPort;
             return this;
         }
         @CustomType.Setter
         public Builder minimumPort(Integer minimumPort) {
-            this.minimumPort = Objects.requireNonNull(minimumPort);
+            if (minimumPort == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRange", "minimumPort");
+            }
+            this.minimumPort = minimumPort;
             return this;
         }
         public GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRange build() {

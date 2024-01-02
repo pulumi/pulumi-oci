@@ -5,6 +5,7 @@ package com.pulumi.oci.Events.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -397,8 +398,12 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
         }
 
         public RuleActionsActionArgs build() {
-            $.actionType = Objects.requireNonNull($.actionType, "expected parameter 'actionType' to be non-null");
-            $.isEnabled = Objects.requireNonNull($.isEnabled, "expected parameter 'isEnabled' to be non-null");
+            if ($.actionType == null) {
+                throw new MissingRequiredPropertyException("RuleActionsActionArgs", "actionType");
+            }
+            if ($.isEnabled == null) {
+                throw new MissingRequiredPropertyException("RuleActionsActionArgs", "isEnabled");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,27 +91,42 @@ public final class GetMysqlDbSystemSource {
 
         @CustomType.Setter
         public Builder backupId(String backupId) {
-            this.backupId = Objects.requireNonNull(backupId);
+            if (backupId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemSource", "backupId");
+            }
+            this.backupId = backupId;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemSource", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder recoveryPoint(String recoveryPoint) {
-            this.recoveryPoint = Objects.requireNonNull(recoveryPoint);
+            if (recoveryPoint == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemSource", "recoveryPoint");
+            }
+            this.recoveryPoint = recoveryPoint;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemSource", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
         public Builder sourceUrl(String sourceUrl) {
-            this.sourceUrl = Objects.requireNonNull(sourceUrl);
+            if (sourceUrl == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemSource", "sourceUrl");
+            }
+            this.sourceUrl = sourceUrl;
             return this;
         }
         public GetMysqlDbSystemSource build() {

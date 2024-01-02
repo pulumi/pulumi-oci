@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetMeshMtl {
 
         @CustomType.Setter
         public Builder minimum(String minimum) {
-            this.minimum = Objects.requireNonNull(minimum);
+            if (minimum == null) {
+              throw new MissingRequiredPropertyException("GetMeshMtl", "minimum");
+            }
+            this.minimum = minimum;
             return this;
         }
         public GetMeshMtl build() {

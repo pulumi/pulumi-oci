@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsDynamicResourceGroupsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag;
 import com.pulumi.oci.Identity.outputs.GetDomainsDynamicResourceGroupsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetDomainsDynamicResourceGroupsDynamicResourceGroupUrnietfpar
 
         @CustomType.Setter
         public Builder definedTags(List<GetDomainsDynamicResourceGroupsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDynamicResourceGroupsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTag", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         public Builder definedTags(GetDomainsDynamicResourceGroupsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag... definedTags) {
@@ -81,7 +85,10 @@ public final class GetDomainsDynamicResourceGroupsDynamicResourceGroupUrnietfpar
         }
         @CustomType.Setter
         public Builder freeformTags(List<GetDomainsDynamicResourceGroupsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDynamicResourceGroupsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTag", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         public Builder freeformTags(GetDomainsDynamicResourceGroupsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag... freeformTags) {
@@ -89,7 +96,10 @@ public final class GetDomainsDynamicResourceGroupsDynamicResourceGroupUrnietfpar
         }
         @CustomType.Setter
         public Builder tagSlug(String tagSlug) {
-            this.tagSlug = Objects.requireNonNull(tagSlug);
+            if (tagSlug == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDynamicResourceGroupsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTag", "tagSlug");
+            }
+            this.tagSlug = tagSlug;
             return this;
         }
         public GetDomainsDynamicResourceGroupsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTag build() {

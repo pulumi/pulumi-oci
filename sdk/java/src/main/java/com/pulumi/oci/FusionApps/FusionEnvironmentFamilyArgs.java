@@ -5,6 +5,7 @@ package com.pulumi.oci.FusionApps;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentFamilyFamilyMaintenancePolicyArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -307,9 +308,15 @@ public final class FusionEnvironmentFamilyArgs extends com.pulumi.resources.Reso
         }
 
         public FusionEnvironmentFamilyArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.subscriptionIds = Objects.requireNonNull($.subscriptionIds, "expected parameter 'subscriptionIds' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("FusionEnvironmentFamilyArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("FusionEnvironmentFamilyArgs", "displayName");
+            }
+            if ($.subscriptionIds == null) {
+                throw new MissingRequiredPropertyException("FusionEnvironmentFamilyArgs", "subscriptionIds");
+            }
             return $;
         }
     }

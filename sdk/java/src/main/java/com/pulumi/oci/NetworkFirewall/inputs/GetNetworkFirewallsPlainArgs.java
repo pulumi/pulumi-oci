@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkFirewall.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallsFilter;
 import java.lang.String;
 import java.util.List;
@@ -219,7 +220,9 @@ public final class GetNetworkFirewallsPlainArgs extends com.pulumi.resources.Inv
         }
 
         public GetNetworkFirewallsPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetNetworkFirewallsPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

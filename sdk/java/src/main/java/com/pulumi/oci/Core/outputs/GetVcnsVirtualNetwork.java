@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetVcnsVirtualNetworkByoipv6cidrDetail;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -289,7 +290,10 @@ public final class GetVcnsVirtualNetwork {
 
         @CustomType.Setter
         public Builder byoipv6cidrBlocks(List<String> byoipv6cidrBlocks) {
-            this.byoipv6cidrBlocks = Objects.requireNonNull(byoipv6cidrBlocks);
+            if (byoipv6cidrBlocks == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetwork", "byoipv6cidrBlocks");
+            }
+            this.byoipv6cidrBlocks = byoipv6cidrBlocks;
             return this;
         }
         public Builder byoipv6cidrBlocks(String... byoipv6cidrBlocks) {
@@ -297,7 +301,10 @@ public final class GetVcnsVirtualNetwork {
         }
         @CustomType.Setter
         public Builder byoipv6cidrDetails(List<GetVcnsVirtualNetworkByoipv6cidrDetail> byoipv6cidrDetails) {
-            this.byoipv6cidrDetails = Objects.requireNonNull(byoipv6cidrDetails);
+            if (byoipv6cidrDetails == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetwork", "byoipv6cidrDetails");
+            }
+            this.byoipv6cidrDetails = byoipv6cidrDetails;
             return this;
         }
         public Builder byoipv6cidrDetails(GetVcnsVirtualNetworkByoipv6cidrDetail... byoipv6cidrDetails) {
@@ -305,12 +312,18 @@ public final class GetVcnsVirtualNetwork {
         }
         @CustomType.Setter
         public Builder cidrBlock(String cidrBlock) {
-            this.cidrBlock = Objects.requireNonNull(cidrBlock);
+            if (cidrBlock == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetwork", "cidrBlock");
+            }
+            this.cidrBlock = cidrBlock;
             return this;
         }
         @CustomType.Setter
         public Builder cidrBlocks(List<String> cidrBlocks) {
-            this.cidrBlocks = Objects.requireNonNull(cidrBlocks);
+            if (cidrBlocks == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetwork", "cidrBlocks");
+            }
+            this.cidrBlocks = cidrBlocks;
             return this;
         }
         public Builder cidrBlocks(String... cidrBlocks) {
@@ -318,52 +331,82 @@ public final class GetVcnsVirtualNetwork {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetwork", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder defaultDhcpOptionsId(String defaultDhcpOptionsId) {
-            this.defaultDhcpOptionsId = Objects.requireNonNull(defaultDhcpOptionsId);
+            if (defaultDhcpOptionsId == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetwork", "defaultDhcpOptionsId");
+            }
+            this.defaultDhcpOptionsId = defaultDhcpOptionsId;
             return this;
         }
         @CustomType.Setter
         public Builder defaultRouteTableId(String defaultRouteTableId) {
-            this.defaultRouteTableId = Objects.requireNonNull(defaultRouteTableId);
+            if (defaultRouteTableId == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetwork", "defaultRouteTableId");
+            }
+            this.defaultRouteTableId = defaultRouteTableId;
             return this;
         }
         @CustomType.Setter
         public Builder defaultSecurityListId(String defaultSecurityListId) {
-            this.defaultSecurityListId = Objects.requireNonNull(defaultSecurityListId);
+            if (defaultSecurityListId == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetwork", "defaultSecurityListId");
+            }
+            this.defaultSecurityListId = defaultSecurityListId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetwork", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetwork", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder dnsLabel(String dnsLabel) {
-            this.dnsLabel = Objects.requireNonNull(dnsLabel);
+            if (dnsLabel == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetwork", "dnsLabel");
+            }
+            this.dnsLabel = dnsLabel;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetwork", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetwork", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipv6cidrBlocks(List<String> ipv6cidrBlocks) {
-            this.ipv6cidrBlocks = Objects.requireNonNull(ipv6cidrBlocks);
+            if (ipv6cidrBlocks == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetwork", "ipv6cidrBlocks");
+            }
+            this.ipv6cidrBlocks = ipv6cidrBlocks;
             return this;
         }
         public Builder ipv6cidrBlocks(String... ipv6cidrBlocks) {
@@ -371,7 +414,10 @@ public final class GetVcnsVirtualNetwork {
         }
         @CustomType.Setter
         public Builder ipv6privateCidrBlocks(List<String> ipv6privateCidrBlocks) {
-            this.ipv6privateCidrBlocks = Objects.requireNonNull(ipv6privateCidrBlocks);
+            if (ipv6privateCidrBlocks == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetwork", "ipv6privateCidrBlocks");
+            }
+            this.ipv6privateCidrBlocks = ipv6privateCidrBlocks;
             return this;
         }
         public Builder ipv6privateCidrBlocks(String... ipv6privateCidrBlocks) {
@@ -379,27 +425,42 @@ public final class GetVcnsVirtualNetwork {
         }
         @CustomType.Setter
         public Builder isIpv6enabled(Boolean isIpv6enabled) {
-            this.isIpv6enabled = Objects.requireNonNull(isIpv6enabled);
+            if (isIpv6enabled == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetwork", "isIpv6enabled");
+            }
+            this.isIpv6enabled = isIpv6enabled;
             return this;
         }
         @CustomType.Setter
         public Builder isOracleGuaAllocationEnabled(Boolean isOracleGuaAllocationEnabled) {
-            this.isOracleGuaAllocationEnabled = Objects.requireNonNull(isOracleGuaAllocationEnabled);
+            if (isOracleGuaAllocationEnabled == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetwork", "isOracleGuaAllocationEnabled");
+            }
+            this.isOracleGuaAllocationEnabled = isOracleGuaAllocationEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetwork", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetwork", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder vcnDomainName(String vcnDomainName) {
-            this.vcnDomainName = Objects.requireNonNull(vcnDomainName);
+            if (vcnDomainName == null) {
+              throw new MissingRequiredPropertyException("GetVcnsVirtualNetwork", "vcnDomainName");
+            }
+            this.vcnDomainName = vcnDomainName;
             return this;
         }
         public GetVcnsVirtualNetwork build() {

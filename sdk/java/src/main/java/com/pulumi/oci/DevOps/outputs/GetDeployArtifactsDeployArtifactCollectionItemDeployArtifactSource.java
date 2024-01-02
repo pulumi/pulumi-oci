@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource;
 import java.lang.String;
 import java.util.List;
@@ -156,32 +157,50 @@ public final class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactS
 
         @CustomType.Setter
         public Builder base64encodedContent(String base64encodedContent) {
-            this.base64encodedContent = Objects.requireNonNull(base64encodedContent);
+            if (base64encodedContent == null) {
+              throw new MissingRequiredPropertyException("GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource", "base64encodedContent");
+            }
+            this.base64encodedContent = base64encodedContent;
             return this;
         }
         @CustomType.Setter
         public Builder chartUrl(String chartUrl) {
-            this.chartUrl = Objects.requireNonNull(chartUrl);
+            if (chartUrl == null) {
+              throw new MissingRequiredPropertyException("GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource", "chartUrl");
+            }
+            this.chartUrl = chartUrl;
             return this;
         }
         @CustomType.Setter
         public Builder deployArtifactPath(String deployArtifactPath) {
-            this.deployArtifactPath = Objects.requireNonNull(deployArtifactPath);
+            if (deployArtifactPath == null) {
+              throw new MissingRequiredPropertyException("GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource", "deployArtifactPath");
+            }
+            this.deployArtifactPath = deployArtifactPath;
             return this;
         }
         @CustomType.Setter
         public Builder deployArtifactSourceType(String deployArtifactSourceType) {
-            this.deployArtifactSourceType = Objects.requireNonNull(deployArtifactSourceType);
+            if (deployArtifactSourceType == null) {
+              throw new MissingRequiredPropertyException("GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource", "deployArtifactSourceType");
+            }
+            this.deployArtifactSourceType = deployArtifactSourceType;
             return this;
         }
         @CustomType.Setter
         public Builder deployArtifactVersion(String deployArtifactVersion) {
-            this.deployArtifactVersion = Objects.requireNonNull(deployArtifactVersion);
+            if (deployArtifactVersion == null) {
+              throw new MissingRequiredPropertyException("GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource", "deployArtifactVersion");
+            }
+            this.deployArtifactVersion = deployArtifactVersion;
             return this;
         }
         @CustomType.Setter
         public Builder helmVerificationKeySources(List<GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource> helmVerificationKeySources) {
-            this.helmVerificationKeySources = Objects.requireNonNull(helmVerificationKeySources);
+            if (helmVerificationKeySources == null) {
+              throw new MissingRequiredPropertyException("GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource", "helmVerificationKeySources");
+            }
+            this.helmVerificationKeySources = helmVerificationKeySources;
             return this;
         }
         public Builder helmVerificationKeySources(GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource... helmVerificationKeySources) {
@@ -189,17 +208,26 @@ public final class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactS
         }
         @CustomType.Setter
         public Builder imageDigest(String imageDigest) {
-            this.imageDigest = Objects.requireNonNull(imageDigest);
+            if (imageDigest == null) {
+              throw new MissingRequiredPropertyException("GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource", "imageDigest");
+            }
+            this.imageDigest = imageDigest;
             return this;
         }
         @CustomType.Setter
         public Builder imageUri(String imageUri) {
-            this.imageUri = Objects.requireNonNull(imageUri);
+            if (imageUri == null) {
+              throw new MissingRequiredPropertyException("GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource", "imageUri");
+            }
+            this.imageUri = imageUri;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+            if (repositoryId == null) {
+              throw new MissingRequiredPropertyException("GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource", "repositoryId");
+            }
+            this.repositoryId = repositoryId;
             return this;
         }
         public GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource build() {

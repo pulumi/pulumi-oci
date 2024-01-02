@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetVolumeGroupReplicaMemberReplica {
 
         @CustomType.Setter
         public Builder membershipState(String membershipState) {
-            this.membershipState = Objects.requireNonNull(membershipState);
+            if (membershipState == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupReplicaMemberReplica", "membershipState");
+            }
+            this.membershipState = membershipState;
             return this;
         }
         @CustomType.Setter
         public Builder volumeReplicaId(String volumeReplicaId) {
-            this.volumeReplicaId = Objects.requireNonNull(volumeReplicaId);
+            if (volumeReplicaId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupReplicaMemberReplica", "volumeReplicaId");
+            }
+            this.volumeReplicaId = volumeReplicaId;
             return this;
         }
         public GetVolumeGroupReplicaMemberReplica build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -162,8 +163,12 @@ public final class VolumeGroupBackupSourceDetailsArgs extends com.pulumi.resourc
         }
 
         public VolumeGroupBackupSourceDetailsArgs build() {
-            $.region = Objects.requireNonNull($.region, "expected parameter 'region' to be non-null");
-            $.volumeGroupBackupId = Objects.requireNonNull($.volumeGroupBackupId, "expected parameter 'volumeGroupBackupId' to be non-null");
+            if ($.region == null) {
+                throw new MissingRequiredPropertyException("VolumeGroupBackupSourceDetailsArgs", "region");
+            }
+            if ($.volumeGroupBackupId == null) {
+                throw new MissingRequiredPropertyException("VolumeGroupBackupSourceDetailsArgs", "volumeGroupBackupId");
+            }
             return $;
         }
     }

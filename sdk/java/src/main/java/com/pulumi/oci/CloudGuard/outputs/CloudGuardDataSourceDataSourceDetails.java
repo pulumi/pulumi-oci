@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails;
 import com.pulumi.oci.CloudGuard.outputs.CloudGuardDataSourceDataSourceDetailsQueryStartTime;
 import java.lang.Integer;
@@ -174,46 +175,57 @@ public final class CloudGuardDataSourceDataSourceDetails {
 
         @CustomType.Setter
         public Builder additionalEntitiesCount(@Nullable Integer additionalEntitiesCount) {
+
             this.additionalEntitiesCount = additionalEntitiesCount;
             return this;
         }
         @CustomType.Setter
         public Builder dataSourceFeedProvider(String dataSourceFeedProvider) {
-            this.dataSourceFeedProvider = Objects.requireNonNull(dataSourceFeedProvider);
+            if (dataSourceFeedProvider == null) {
+              throw new MissingRequiredPropertyException("CloudGuardDataSourceDataSourceDetails", "dataSourceFeedProvider");
+            }
+            this.dataSourceFeedProvider = dataSourceFeedProvider;
             return this;
         }
         @CustomType.Setter
         public Builder intervalInMinutes(@Nullable Integer intervalInMinutes) {
+
             this.intervalInMinutes = intervalInMinutes;
             return this;
         }
         @CustomType.Setter
         public Builder loggingQueryDetails(@Nullable CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails loggingQueryDetails) {
+
             this.loggingQueryDetails = loggingQueryDetails;
             return this;
         }
         @CustomType.Setter
         public Builder loggingQueryType(@Nullable String loggingQueryType) {
+
             this.loggingQueryType = loggingQueryType;
             return this;
         }
         @CustomType.Setter
         public Builder operator(@Nullable String operator) {
+
             this.operator = operator;
             return this;
         }
         @CustomType.Setter
         public Builder query(@Nullable String query) {
+
             this.query = query;
             return this;
         }
         @CustomType.Setter
         public Builder queryStartTime(@Nullable CloudGuardDataSourceDataSourceDetailsQueryStartTime queryStartTime) {
+
             this.queryStartTime = queryStartTime;
             return this;
         }
         @CustomType.Setter
         public Builder regions(@Nullable List<String> regions) {
+
             this.regions = regions;
             return this;
         }
@@ -222,6 +234,7 @@ public final class CloudGuardDataSourceDataSourceDetails {
         }
         @CustomType.Setter
         public Builder threshold(@Nullable Integer threshold) {
+
             this.threshold = threshold;
             return this;
         }

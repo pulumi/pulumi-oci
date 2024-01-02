@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfig;
 import java.lang.Boolean;
@@ -147,27 +148,42 @@ public final class GetNodePoolsNodePoolNodeConfigDetail {
 
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePoolNodeConfigDetail", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePoolNodeConfigDetail", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
-            this.isPvEncryptionInTransitEnabled = Objects.requireNonNull(isPvEncryptionInTransitEnabled);
+            if (isPvEncryptionInTransitEnabled == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePoolNodeConfigDetail", "isPvEncryptionInTransitEnabled");
+            }
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePoolNodeConfigDetail", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder nodePoolPodNetworkOptionDetails(List<GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail> nodePoolPodNetworkOptionDetails) {
-            this.nodePoolPodNetworkOptionDetails = Objects.requireNonNull(nodePoolPodNetworkOptionDetails);
+            if (nodePoolPodNetworkOptionDetails == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePoolNodeConfigDetail", "nodePoolPodNetworkOptionDetails");
+            }
+            this.nodePoolPodNetworkOptionDetails = nodePoolPodNetworkOptionDetails;
             return this;
         }
         public Builder nodePoolPodNetworkOptionDetails(GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail... nodePoolPodNetworkOptionDetails) {
@@ -175,7 +191,10 @@ public final class GetNodePoolsNodePoolNodeConfigDetail {
         }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePoolNodeConfigDetail", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
@@ -183,7 +202,10 @@ public final class GetNodePoolsNodePoolNodeConfigDetail {
         }
         @CustomType.Setter
         public Builder placementConfigs(List<GetNodePoolsNodePoolNodeConfigDetailPlacementConfig> placementConfigs) {
-            this.placementConfigs = Objects.requireNonNull(placementConfigs);
+            if (placementConfigs == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePoolNodeConfigDetail", "placementConfigs");
+            }
+            this.placementConfigs = placementConfigs;
             return this;
         }
         public Builder placementConfigs(GetNodePoolsNodePoolNodeConfigDetailPlacementConfig... placementConfigs) {
@@ -191,7 +213,10 @@ public final class GetNodePoolsNodePoolNodeConfigDetail {
         }
         @CustomType.Setter
         public Builder size(Integer size) {
-            this.size = Objects.requireNonNull(size);
+            if (size == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePoolNodeConfigDetail", "size");
+            }
+            this.size = size;
             return this;
         }
         public GetNodePoolsNodePoolNodeConfigDetail build() {

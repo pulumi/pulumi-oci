@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfileDisp
 
         @CustomType.Setter("default")
         public Builder default_(Boolean default_) {
-            this.default_ = Objects.requireNonNull(default_);
+            if (default_ == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfileDisplayName", "default_");
+            }
+            this.default_ = default_;
             return this;
         }
         @CustomType.Setter
         public Builder locale(String locale) {
-            this.locale = Objects.requireNonNull(locale);
+            if (locale == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfileDisplayName", "locale");
+            }
+            this.locale = locale;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfileDisplayName", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDomainsSelfRegistrationProfilesSelfRegistrationProfileDisplayName build() {

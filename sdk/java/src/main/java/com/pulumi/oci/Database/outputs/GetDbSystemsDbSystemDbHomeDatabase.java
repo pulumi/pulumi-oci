@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbSystemsDbSystemDbHomeDatabaseConnectionString;
 import com.pulumi.oci.Database.outputs.GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig;
 import java.lang.Object;
@@ -253,27 +254,42 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
 
         @CustomType.Setter
         public Builder adminPassword(String adminPassword) {
-            this.adminPassword = Objects.requireNonNull(adminPassword);
+            if (adminPassword == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "adminPassword");
+            }
+            this.adminPassword = adminPassword;
             return this;
         }
         @CustomType.Setter
         public Builder backupId(String backupId) {
-            this.backupId = Objects.requireNonNull(backupId);
+            if (backupId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "backupId");
+            }
+            this.backupId = backupId;
             return this;
         }
         @CustomType.Setter
         public Builder backupTdePassword(String backupTdePassword) {
-            this.backupTdePassword = Objects.requireNonNull(backupTdePassword);
+            if (backupTdePassword == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "backupTdePassword");
+            }
+            this.backupTdePassword = backupTdePassword;
             return this;
         }
         @CustomType.Setter
         public Builder characterSet(String characterSet) {
-            this.characterSet = Objects.requireNonNull(characterSet);
+            if (characterSet == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "characterSet");
+            }
+            this.characterSet = characterSet;
             return this;
         }
         @CustomType.Setter
         public Builder connectionStrings(List<GetDbSystemsDbSystemDbHomeDatabaseConnectionString> connectionStrings) {
-            this.connectionStrings = Objects.requireNonNull(connectionStrings);
+            if (connectionStrings == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "connectionStrings");
+            }
+            this.connectionStrings = connectionStrings;
             return this;
         }
         public Builder connectionStrings(GetDbSystemsDbSystemDbHomeDatabaseConnectionString... connectionStrings) {
@@ -281,17 +297,26 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
         }
         @CustomType.Setter
         public Builder databaseId(String databaseId) {
-            this.databaseId = Objects.requireNonNull(databaseId);
+            if (databaseId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "databaseId");
+            }
+            this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
-            this.databaseSoftwareImageId = Objects.requireNonNull(databaseSoftwareImageId);
+            if (databaseSoftwareImageId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "databaseSoftwareImageId");
+            }
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
             return this;
         }
         @CustomType.Setter
         public Builder dbBackupConfigs(List<GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig> dbBackupConfigs) {
-            this.dbBackupConfigs = Objects.requireNonNull(dbBackupConfigs);
+            if (dbBackupConfigs == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "dbBackupConfigs");
+            }
+            this.dbBackupConfigs = dbBackupConfigs;
             return this;
         }
         public Builder dbBackupConfigs(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig... dbBackupConfigs) {
@@ -299,67 +324,106 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
         }
         @CustomType.Setter
         public Builder dbDomain(String dbDomain) {
-            this.dbDomain = Objects.requireNonNull(dbDomain);
+            if (dbDomain == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "dbDomain");
+            }
+            this.dbDomain = dbDomain;
             return this;
         }
         @CustomType.Setter
         public Builder dbName(String dbName) {
-            this.dbName = Objects.requireNonNull(dbName);
+            if (dbName == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "dbName");
+            }
+            this.dbName = dbName;
             return this;
         }
         @CustomType.Setter
         public Builder dbUniqueName(String dbUniqueName) {
-            this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
+            if (dbUniqueName == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "dbUniqueName");
+            }
+            this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
         public Builder dbWorkload(String dbWorkload) {
-            this.dbWorkload = Objects.requireNonNull(dbWorkload);
+            if (dbWorkload == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "dbWorkload");
+            }
+            this.dbWorkload = dbWorkload;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
-            this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
+            if (kmsKeyVersionId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "kmsKeyVersionId");
+            }
+            this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder ncharacterSet(String ncharacterSet) {
-            this.ncharacterSet = Objects.requireNonNull(ncharacterSet);
+            if (ncharacterSet == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "ncharacterSet");
+            }
+            this.ncharacterSet = ncharacterSet;
             return this;
         }
         @CustomType.Setter
         public Builder pdbName(String pdbName) {
-            this.pdbName = Objects.requireNonNull(pdbName);
+            if (pdbName == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "pdbName");
+            }
+            this.pdbName = pdbName;
             return this;
         }
         @CustomType.Setter
         public Builder pluggableDatabases(List<String> pluggableDatabases) {
-            this.pluggableDatabases = Objects.requireNonNull(pluggableDatabases);
+            if (pluggableDatabases == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "pluggableDatabases");
+            }
+            this.pluggableDatabases = pluggableDatabases;
             return this;
         }
         public Builder pluggableDatabases(String... pluggableDatabases) {
@@ -367,27 +431,42 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder tdeWalletPassword(String tdeWalletPassword) {
-            this.tdeWalletPassword = Objects.requireNonNull(tdeWalletPassword);
+            if (tdeWalletPassword == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "tdeWalletPassword");
+            }
+            this.tdeWalletPassword = tdeWalletPassword;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeStampForPointInTimeRecovery(String timeStampForPointInTimeRecovery) {
-            this.timeStampForPointInTimeRecovery = Objects.requireNonNull(timeStampForPointInTimeRecovery);
+            if (timeStampForPointInTimeRecovery == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "timeStampForPointInTimeRecovery");
+            }
+            this.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
             return this;
         }
         @CustomType.Setter
         public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+            if (vaultId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "vaultId");
+            }
+            this.vaultId = vaultId;
             return this;
         }
         public GetDbSystemsDbSystemDbHomeDatabase build() {

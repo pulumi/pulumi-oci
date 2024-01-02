@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlPlanBaselineJobsFilter;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection;
 import java.lang.String;
@@ -87,6 +88,7 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseSqlPlanBaselineJobsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -95,22 +97,32 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineJobsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineJobsResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder sqlPlanBaselineJobCollections(List<GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection> sqlPlanBaselineJobCollections) {
-            this.sqlPlanBaselineJobCollections = Objects.requireNonNull(sqlPlanBaselineJobCollections);
+            if (sqlPlanBaselineJobCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineJobsResult", "sqlPlanBaselineJobCollections");
+            }
+            this.sqlPlanBaselineJobCollections = sqlPlanBaselineJobCollections;
             return this;
         }
         public Builder sqlPlanBaselineJobCollections(GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection... sqlPlanBaselineJobCollections) {

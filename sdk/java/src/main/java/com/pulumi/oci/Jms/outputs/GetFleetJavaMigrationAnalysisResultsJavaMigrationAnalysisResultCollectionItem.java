@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -267,62 +268,98 @@ public final class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResu
 
         @CustomType.Setter
         public Builder applicationExecutionType(String applicationExecutionType) {
-            this.applicationExecutionType = Objects.requireNonNull(applicationExecutionType);
+            if (applicationExecutionType == null) {
+              throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem", "applicationExecutionType");
+            }
+            this.applicationExecutionType = applicationExecutionType;
             return this;
         }
         @CustomType.Setter
         public Builder applicationKey(String applicationKey) {
-            this.applicationKey = Objects.requireNonNull(applicationKey);
+            if (applicationKey == null) {
+              throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem", "applicationKey");
+            }
+            this.applicationKey = applicationKey;
             return this;
         }
         @CustomType.Setter
         public Builder applicationName(String applicationName) {
-            this.applicationName = Objects.requireNonNull(applicationName);
+            if (applicationName == null) {
+              throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem", "applicationName");
+            }
+            this.applicationName = applicationName;
             return this;
         }
         @CustomType.Setter
         public Builder applicationPath(String applicationPath) {
-            this.applicationPath = Objects.requireNonNull(applicationPath);
+            if (applicationPath == null) {
+              throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem", "applicationPath");
+            }
+            this.applicationPath = applicationPath;
             return this;
         }
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder fleetId(String fleetId) {
-            this.fleetId = Objects.requireNonNull(fleetId);
+            if (fleetId == null) {
+              throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem", "fleetId");
+            }
+            this.fleetId = fleetId;
             return this;
         }
         @CustomType.Setter
         public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+            if (hostName == null) {
+              throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem", "hostName");
+            }
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceId(String managedInstanceId) {
-            this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
+            if (managedInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem", "managedInstanceId");
+            }
+            this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder metadata(String metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+            if (metadata == null) {
+              throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem", "metadata");
+            }
+            this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder objectLists(List<String> objectLists) {
-            this.objectLists = Objects.requireNonNull(objectLists);
+            if (objectLists == null) {
+              throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem", "objectLists");
+            }
+            this.objectLists = objectLists;
             return this;
         }
         public Builder objectLists(String... objectLists) {
@@ -330,27 +367,42 @@ public final class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResu
         }
         @CustomType.Setter
         public Builder objectStorageUploadDirPath(String objectStorageUploadDirPath) {
-            this.objectStorageUploadDirPath = Objects.requireNonNull(objectStorageUploadDirPath);
+            if (objectStorageUploadDirPath == null) {
+              throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem", "objectStorageUploadDirPath");
+            }
+            this.objectStorageUploadDirPath = objectStorageUploadDirPath;
             return this;
         }
         @CustomType.Setter
         public Builder sourceJdkVersion(String sourceJdkVersion) {
-            this.sourceJdkVersion = Objects.requireNonNull(sourceJdkVersion);
+            if (sourceJdkVersion == null) {
+              throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem", "sourceJdkVersion");
+            }
+            this.sourceJdkVersion = sourceJdkVersion;
             return this;
         }
         @CustomType.Setter
         public Builder targetJdkVersion(String targetJdkVersion) {
-            this.targetJdkVersion = Objects.requireNonNull(targetJdkVersion);
+            if (targetJdkVersion == null) {
+              throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem", "targetJdkVersion");
+            }
+            this.targetJdkVersion = targetJdkVersion;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder workRequestId(String workRequestId) {
-            this.workRequestId = Objects.requireNonNull(workRequestId);
+            if (workRequestId == null) {
+              throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem", "workRequestId");
+            }
+            this.workRequestId = workRequestId;
             return this;
         }
         public GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem build() {

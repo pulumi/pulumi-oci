@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountSt
 
         @CustomType.Setter
         public Builder objectTypeCountLists(List<GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList> objectTypeCountLists) {
-            this.objectTypeCountLists = Objects.requireNonNull(objectTypeCountLists);
+            if (objectTypeCountLists == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic", "objectTypeCountLists");
+            }
+            this.objectTypeCountLists = objectTypeCountLists;
             return this;
         }
         public Builder objectTypeCountLists(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList... objectTypeCountLists) {

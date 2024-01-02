@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -236,10 +237,18 @@ public final class BaselineableMetricArgs extends com.pulumi.resources.ResourceA
         }
 
         public BaselineableMetricArgs build() {
-            $.column = Objects.requireNonNull($.column, "expected parameter 'column' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
-            $.resourceGroup = Objects.requireNonNull($.resourceGroup, "expected parameter 'resourceGroup' to be non-null");
+            if ($.column == null) {
+                throw new MissingRequiredPropertyException("BaselineableMetricArgs", "column");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("BaselineableMetricArgs", "compartmentId");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("BaselineableMetricArgs", "namespace");
+            }
+            if ($.resourceGroup == null) {
+                throw new MissingRequiredPropertyException("BaselineableMetricArgs", "resourceGroup");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetManagedPreferredCredentialsFilter;
 import com.pulumi.oci.Database.outputs.GetManagedPreferredCredentialsPreferredCredentialCollection;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetManagedPreferredCredentialsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedPreferredCredentialsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,17 +82,26 @@ public final class GetManagedPreferredCredentialsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedPreferredCredentialsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedPreferredCredentialsResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder preferredCredentialCollections(List<GetManagedPreferredCredentialsPreferredCredentialCollection> preferredCredentialCollections) {
-            this.preferredCredentialCollections = Objects.requireNonNull(preferredCredentialCollections);
+            if (preferredCredentialCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedPreferredCredentialsResult", "preferredCredentialCollections");
+            }
+            this.preferredCredentialCollections = preferredCredentialCollections;
             return this;
         }
         public Builder preferredCredentialCollections(GetManagedPreferredCredentialsPreferredCredentialCollection... preferredCredentialCollections) {

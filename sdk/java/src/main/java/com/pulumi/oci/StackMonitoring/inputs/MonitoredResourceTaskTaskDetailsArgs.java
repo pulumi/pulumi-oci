@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -293,9 +294,15 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
         }
 
         public MonitoredResourceTaskTaskDetailsArgs build() {
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
-            $.source = Objects.requireNonNull($.source, "expected parameter 'source' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("MonitoredResourceTaskTaskDetailsArgs", "namespace");
+            }
+            if ($.source == null) {
+                throw new MissingRequiredPropertyException("MonitoredResourceTaskTaskDetailsArgs", "source");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("MonitoredResourceTaskTaskDetailsArgs", "type");
+            }
             return $;
         }
     }

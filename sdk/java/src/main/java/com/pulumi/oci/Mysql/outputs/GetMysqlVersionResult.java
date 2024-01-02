@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlVersionFilter;
 import com.pulumi.oci.Mysql.outputs.GetMysqlVersionVersion;
 import java.lang.String;
@@ -72,11 +73,15 @@ public final class GetMysqlVersionResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlVersionResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMysqlVersionFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -85,12 +90,18 @@ public final class GetMysqlVersionResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMysqlVersionResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder versions(List<GetMysqlVersionVersion> versions) {
-            this.versions = Objects.requireNonNull(versions);
+            if (versions == null) {
+              throw new MissingRequiredPropertyException("GetMysqlVersionResult", "versions");
+            }
+            this.versions = versions;
             return this;
         }
         public Builder versions(GetMysqlVersionVersion... versions) {

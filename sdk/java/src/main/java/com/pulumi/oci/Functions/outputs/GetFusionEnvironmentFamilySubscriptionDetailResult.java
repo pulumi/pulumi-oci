@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentFamilySubscriptionDetailSubscription;
 import java.lang.String;
 import java.util.List;
@@ -64,17 +65,26 @@ public final class GetFusionEnvironmentFamilySubscriptionDetailResult {
 
         @CustomType.Setter
         public Builder fusionEnvironmentFamilyId(String fusionEnvironmentFamilyId) {
-            this.fusionEnvironmentFamilyId = Objects.requireNonNull(fusionEnvironmentFamilyId);
+            if (fusionEnvironmentFamilyId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamilySubscriptionDetailResult", "fusionEnvironmentFamilyId");
+            }
+            this.fusionEnvironmentFamilyId = fusionEnvironmentFamilyId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamilySubscriptionDetailResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptions(List<GetFusionEnvironmentFamilySubscriptionDetailSubscription> subscriptions) {
-            this.subscriptions = Objects.requireNonNull(subscriptions);
+            if (subscriptions == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamilySubscriptionDetailResult", "subscriptions");
+            }
+            this.subscriptions = subscriptions;
             return this;
         }
         public Builder subscriptions(GetFusionEnvironmentFamilySubscriptionDetailSubscription... subscriptions) {

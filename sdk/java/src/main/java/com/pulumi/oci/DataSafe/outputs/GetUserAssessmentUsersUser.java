@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -197,12 +198,18 @@ public final class GetUserAssessmentUsersUser {
 
         @CustomType.Setter
         public Builder accountStatus(String accountStatus) {
-            this.accountStatus = Objects.requireNonNull(accountStatus);
+            if (accountStatus == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentUsersUser", "accountStatus");
+            }
+            this.accountStatus = accountStatus;
             return this;
         }
         @CustomType.Setter
         public Builder adminRoles(List<String> adminRoles) {
-            this.adminRoles = Objects.requireNonNull(adminRoles);
+            if (adminRoles == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentUsersUser", "adminRoles");
+            }
+            this.adminRoles = adminRoles;
             return this;
         }
         public Builder adminRoles(String... adminRoles) {
@@ -210,52 +217,82 @@ public final class GetUserAssessmentUsersUser {
         }
         @CustomType.Setter
         public Builder authenticationType(String authenticationType) {
-            this.authenticationType = Objects.requireNonNull(authenticationType);
+            if (authenticationType == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentUsersUser", "authenticationType");
+            }
+            this.authenticationType = authenticationType;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentUsersUser", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentUsersUser", "targetId");
+            }
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastLogin(String timeLastLogin) {
-            this.timeLastLogin = Objects.requireNonNull(timeLastLogin);
+            if (timeLastLogin == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentUsersUser", "timeLastLogin");
+            }
+            this.timeLastLogin = timeLastLogin;
             return this;
         }
         @CustomType.Setter
         public Builder timePasswordChanged(String timePasswordChanged) {
-            this.timePasswordChanged = Objects.requireNonNull(timePasswordChanged);
+            if (timePasswordChanged == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentUsersUser", "timePasswordChanged");
+            }
+            this.timePasswordChanged = timePasswordChanged;
             return this;
         }
         @CustomType.Setter
         public Builder timeUserCreated(String timeUserCreated) {
-            this.timeUserCreated = Objects.requireNonNull(timeUserCreated);
+            if (timeUserCreated == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentUsersUser", "timeUserCreated");
+            }
+            this.timeUserCreated = timeUserCreated;
             return this;
         }
         @CustomType.Setter
         public Builder userCategory(String userCategory) {
-            this.userCategory = Objects.requireNonNull(userCategory);
+            if (userCategory == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentUsersUser", "userCategory");
+            }
+            this.userCategory = userCategory;
             return this;
         }
         @CustomType.Setter
         public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+            if (userName == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentUsersUser", "userName");
+            }
+            this.userName = userName;
             return this;
         }
         @CustomType.Setter
         public Builder userProfile(String userProfile) {
-            this.userProfile = Objects.requireNonNull(userProfile);
+            if (userProfile == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentUsersUser", "userProfile");
+            }
+            this.userProfile = userProfile;
             return this;
         }
         @CustomType.Setter
         public Builder userTypes(List<String> userTypes) {
-            this.userTypes = Objects.requireNonNull(userTypes);
+            if (userTypes == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentUsersUser", "userTypes");
+            }
+            this.userTypes = userTypes;
             return this;
         }
         public Builder userTypes(String... userTypes) {

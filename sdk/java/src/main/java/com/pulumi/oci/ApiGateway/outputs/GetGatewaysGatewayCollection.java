@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewaysGatewayCollectionCaBundle;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewaysGatewayCollectionIpAddress;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewaysGatewayCollectionResponseCacheDetail;
@@ -272,7 +273,10 @@ public final class GetGatewaysGatewayCollection {
 
         @CustomType.Setter
         public Builder caBundles(List<GetGatewaysGatewayCollectionCaBundle> caBundles) {
-            this.caBundles = Objects.requireNonNull(caBundles);
+            if (caBundles == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "caBundles");
+            }
+            this.caBundles = caBundles;
             return this;
         }
         public Builder caBundles(GetGatewaysGatewayCollectionCaBundle... caBundles) {
@@ -280,47 +284,74 @@ public final class GetGatewaysGatewayCollection {
         }
         @CustomType.Setter
         public Builder certificateId(String certificateId) {
-            this.certificateId = Objects.requireNonNull(certificateId);
+            if (certificateId == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "certificateId");
+            }
+            this.certificateId = certificateId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder endpointType(String endpointType) {
-            this.endpointType = Objects.requireNonNull(endpointType);
+            if (endpointType == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "endpointType");
+            }
+            this.endpointType = endpointType;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddresses(List<GetGatewaysGatewayCollectionIpAddress> ipAddresses) {
-            this.ipAddresses = Objects.requireNonNull(ipAddresses);
+            if (ipAddresses == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "ipAddresses");
+            }
+            this.ipAddresses = ipAddresses;
             return this;
         }
         public Builder ipAddresses(GetGatewaysGatewayCollectionIpAddress... ipAddresses) {
@@ -328,12 +359,18 @@ public final class GetGatewaysGatewayCollection {
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder networkSecurityGroupIds(List<String> networkSecurityGroupIds) {
-            this.networkSecurityGroupIds = Objects.requireNonNull(networkSecurityGroupIds);
+            if (networkSecurityGroupIds == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "networkSecurityGroupIds");
+            }
+            this.networkSecurityGroupIds = networkSecurityGroupIds;
             return this;
         }
         public Builder networkSecurityGroupIds(String... networkSecurityGroupIds) {
@@ -341,7 +378,10 @@ public final class GetGatewaysGatewayCollection {
         }
         @CustomType.Setter
         public Builder responseCacheDetails(List<GetGatewaysGatewayCollectionResponseCacheDetail> responseCacheDetails) {
-            this.responseCacheDetails = Objects.requireNonNull(responseCacheDetails);
+            if (responseCacheDetails == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "responseCacheDetails");
+            }
+            this.responseCacheDetails = responseCacheDetails;
             return this;
         }
         public Builder responseCacheDetails(GetGatewaysGatewayCollectionResponseCacheDetail... responseCacheDetails) {
@@ -349,22 +389,34 @@ public final class GetGatewaysGatewayCollection {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetGatewaysGatewayCollection build() {

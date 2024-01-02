@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ObjectStorage.inputs.GetBucketSummariesFilter;
 import java.lang.String;
 import java.util.List;
@@ -111,8 +112,12 @@ public final class GetBucketSummariesPlainArgs extends com.pulumi.resources.Invo
         }
 
         public GetBucketSummariesPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetBucketSummariesPlainArgs", "compartmentId");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("GetBucketSummariesPlainArgs", "namespace");
+            }
             return $;
         }
     }

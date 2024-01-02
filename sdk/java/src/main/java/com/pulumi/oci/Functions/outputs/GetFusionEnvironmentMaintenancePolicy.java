@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime;
 import java.lang.String;
 import java.util.List;
@@ -72,17 +73,26 @@ public final class GetFusionEnvironmentMaintenancePolicy {
 
         @CustomType.Setter
         public Builder environmentMaintenanceOverride(String environmentMaintenanceOverride) {
-            this.environmentMaintenanceOverride = Objects.requireNonNull(environmentMaintenanceOverride);
+            if (environmentMaintenanceOverride == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentMaintenancePolicy", "environmentMaintenanceOverride");
+            }
+            this.environmentMaintenanceOverride = environmentMaintenanceOverride;
             return this;
         }
         @CustomType.Setter
         public Builder monthlyPatchingOverride(String monthlyPatchingOverride) {
-            this.monthlyPatchingOverride = Objects.requireNonNull(monthlyPatchingOverride);
+            if (monthlyPatchingOverride == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentMaintenancePolicy", "monthlyPatchingOverride");
+            }
+            this.monthlyPatchingOverride = monthlyPatchingOverride;
             return this;
         }
         @CustomType.Setter
         public Builder quarterlyUpgradeBeginTimes(List<GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime> quarterlyUpgradeBeginTimes) {
-            this.quarterlyUpgradeBeginTimes = Objects.requireNonNull(quarterlyUpgradeBeginTimes);
+            if (quarterlyUpgradeBeginTimes == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentMaintenancePolicy", "quarterlyUpgradeBeginTimes");
+            }
+            this.quarterlyUpgradeBeginTimes = quarterlyUpgradeBeginTimes;
             return this;
         }
         public Builder quarterlyUpgradeBeginTimes(GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime... quarterlyUpgradeBeginTimes) {

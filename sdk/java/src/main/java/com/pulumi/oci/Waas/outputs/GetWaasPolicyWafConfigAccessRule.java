@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.GetWaasPolicyWafConfigAccessRuleCriteria;
 import com.pulumi.oci.Waas.outputs.GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation;
 import java.lang.Integer;
@@ -268,37 +269,58 @@ public final class GetWaasPolicyWafConfigAccessRule {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigAccessRule", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder blockAction(String blockAction) {
-            this.blockAction = Objects.requireNonNull(blockAction);
+            if (blockAction == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigAccessRule", "blockAction");
+            }
+            this.blockAction = blockAction;
             return this;
         }
         @CustomType.Setter
         public Builder blockErrorPageCode(String blockErrorPageCode) {
-            this.blockErrorPageCode = Objects.requireNonNull(blockErrorPageCode);
+            if (blockErrorPageCode == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigAccessRule", "blockErrorPageCode");
+            }
+            this.blockErrorPageCode = blockErrorPageCode;
             return this;
         }
         @CustomType.Setter
         public Builder blockErrorPageDescription(String blockErrorPageDescription) {
-            this.blockErrorPageDescription = Objects.requireNonNull(blockErrorPageDescription);
+            if (blockErrorPageDescription == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigAccessRule", "blockErrorPageDescription");
+            }
+            this.blockErrorPageDescription = blockErrorPageDescription;
             return this;
         }
         @CustomType.Setter
         public Builder blockErrorPageMessage(String blockErrorPageMessage) {
-            this.blockErrorPageMessage = Objects.requireNonNull(blockErrorPageMessage);
+            if (blockErrorPageMessage == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigAccessRule", "blockErrorPageMessage");
+            }
+            this.blockErrorPageMessage = blockErrorPageMessage;
             return this;
         }
         @CustomType.Setter
         public Builder blockResponseCode(Integer blockResponseCode) {
-            this.blockResponseCode = Objects.requireNonNull(blockResponseCode);
+            if (blockResponseCode == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigAccessRule", "blockResponseCode");
+            }
+            this.blockResponseCode = blockResponseCode;
             return this;
         }
         @CustomType.Setter
         public Builder bypassChallenges(List<String> bypassChallenges) {
-            this.bypassChallenges = Objects.requireNonNull(bypassChallenges);
+            if (bypassChallenges == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigAccessRule", "bypassChallenges");
+            }
+            this.bypassChallenges = bypassChallenges;
             return this;
         }
         public Builder bypassChallenges(String... bypassChallenges) {
@@ -306,27 +328,42 @@ public final class GetWaasPolicyWafConfigAccessRule {
         }
         @CustomType.Setter
         public Builder captchaFooter(String captchaFooter) {
-            this.captchaFooter = Objects.requireNonNull(captchaFooter);
+            if (captchaFooter == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigAccessRule", "captchaFooter");
+            }
+            this.captchaFooter = captchaFooter;
             return this;
         }
         @CustomType.Setter
         public Builder captchaHeader(String captchaHeader) {
-            this.captchaHeader = Objects.requireNonNull(captchaHeader);
+            if (captchaHeader == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigAccessRule", "captchaHeader");
+            }
+            this.captchaHeader = captchaHeader;
             return this;
         }
         @CustomType.Setter
         public Builder captchaSubmitLabel(String captchaSubmitLabel) {
-            this.captchaSubmitLabel = Objects.requireNonNull(captchaSubmitLabel);
+            if (captchaSubmitLabel == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigAccessRule", "captchaSubmitLabel");
+            }
+            this.captchaSubmitLabel = captchaSubmitLabel;
             return this;
         }
         @CustomType.Setter
         public Builder captchaTitle(String captchaTitle) {
-            this.captchaTitle = Objects.requireNonNull(captchaTitle);
+            if (captchaTitle == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigAccessRule", "captchaTitle");
+            }
+            this.captchaTitle = captchaTitle;
             return this;
         }
         @CustomType.Setter
         public Builder criterias(List<GetWaasPolicyWafConfigAccessRuleCriteria> criterias) {
-            this.criterias = Objects.requireNonNull(criterias);
+            if (criterias == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigAccessRule", "criterias");
+            }
+            this.criterias = criterias;
             return this;
         }
         public Builder criterias(GetWaasPolicyWafConfigAccessRuleCriteria... criterias) {
@@ -334,22 +371,34 @@ public final class GetWaasPolicyWafConfigAccessRule {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigAccessRule", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder redirectResponseCode(String redirectResponseCode) {
-            this.redirectResponseCode = Objects.requireNonNull(redirectResponseCode);
+            if (redirectResponseCode == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigAccessRule", "redirectResponseCode");
+            }
+            this.redirectResponseCode = redirectResponseCode;
             return this;
         }
         @CustomType.Setter
         public Builder redirectUrl(String redirectUrl) {
-            this.redirectUrl = Objects.requireNonNull(redirectUrl);
+            if (redirectUrl == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigAccessRule", "redirectUrl");
+            }
+            this.redirectUrl = redirectUrl;
             return this;
         }
         @CustomType.Setter
         public Builder responseHeaderManipulations(List<GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation> responseHeaderManipulations) {
-            this.responseHeaderManipulations = Objects.requireNonNull(responseHeaderManipulations);
+            if (responseHeaderManipulations == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigAccessRule", "responseHeaderManipulations");
+            }
+            this.responseHeaderManipulations = responseHeaderManipulations;
             return this;
         }
         public Builder responseHeaderManipulations(GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation... responseHeaderManipulations) {

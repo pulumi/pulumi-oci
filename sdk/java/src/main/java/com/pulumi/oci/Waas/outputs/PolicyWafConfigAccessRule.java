@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.PolicyWafConfigAccessRuleCriteria;
 import com.pulumi.oci.Waas.outputs.PolicyWafConfigAccessRuleResponseHeaderManipulation;
 import java.lang.Integer;
@@ -276,36 +277,45 @@ public final class PolicyWafConfigAccessRule {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("PolicyWafConfigAccessRule", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder blockAction(@Nullable String blockAction) {
+
             this.blockAction = blockAction;
             return this;
         }
         @CustomType.Setter
         public Builder blockErrorPageCode(@Nullable String blockErrorPageCode) {
+
             this.blockErrorPageCode = blockErrorPageCode;
             return this;
         }
         @CustomType.Setter
         public Builder blockErrorPageDescription(@Nullable String blockErrorPageDescription) {
+
             this.blockErrorPageDescription = blockErrorPageDescription;
             return this;
         }
         @CustomType.Setter
         public Builder blockErrorPageMessage(@Nullable String blockErrorPageMessage) {
+
             this.blockErrorPageMessage = blockErrorPageMessage;
             return this;
         }
         @CustomType.Setter
         public Builder blockResponseCode(@Nullable Integer blockResponseCode) {
+
             this.blockResponseCode = blockResponseCode;
             return this;
         }
         @CustomType.Setter
         public Builder bypassChallenges(@Nullable List<String> bypassChallenges) {
+
             this.bypassChallenges = bypassChallenges;
             return this;
         }
@@ -314,27 +324,34 @@ public final class PolicyWafConfigAccessRule {
         }
         @CustomType.Setter
         public Builder captchaFooter(@Nullable String captchaFooter) {
+
             this.captchaFooter = captchaFooter;
             return this;
         }
         @CustomType.Setter
         public Builder captchaHeader(@Nullable String captchaHeader) {
+
             this.captchaHeader = captchaHeader;
             return this;
         }
         @CustomType.Setter
         public Builder captchaSubmitLabel(@Nullable String captchaSubmitLabel) {
+
             this.captchaSubmitLabel = captchaSubmitLabel;
             return this;
         }
         @CustomType.Setter
         public Builder captchaTitle(@Nullable String captchaTitle) {
+
             this.captchaTitle = captchaTitle;
             return this;
         }
         @CustomType.Setter
         public Builder criterias(List<PolicyWafConfigAccessRuleCriteria> criterias) {
-            this.criterias = Objects.requireNonNull(criterias);
+            if (criterias == null) {
+              throw new MissingRequiredPropertyException("PolicyWafConfigAccessRule", "criterias");
+            }
+            this.criterias = criterias;
             return this;
         }
         public Builder criterias(PolicyWafConfigAccessRuleCriteria... criterias) {
@@ -342,21 +359,27 @@ public final class PolicyWafConfigAccessRule {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("PolicyWafConfigAccessRule", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder redirectResponseCode(@Nullable String redirectResponseCode) {
+
             this.redirectResponseCode = redirectResponseCode;
             return this;
         }
         @CustomType.Setter
         public Builder redirectUrl(@Nullable String redirectUrl) {
+
             this.redirectUrl = redirectUrl;
             return this;
         }
         @CustomType.Setter
         public Builder responseHeaderManipulations(@Nullable List<PolicyWafConfigAccessRuleResponseHeaderManipulation> responseHeaderManipulations) {
+
             this.responseHeaderManipulations = responseHeaderManipulations;
             return this;
         }

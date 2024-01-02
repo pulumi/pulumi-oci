@@ -4,6 +4,7 @@
 package com.pulumi.oci.Artifacts.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Artifacts.outputs.GetContainerImageLayer;
 import com.pulumi.oci.Artifacts.outputs.GetContainerImageVersion;
 import java.lang.Integer;
@@ -306,47 +307,74 @@ public final class GetContainerImageResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetContainerImageResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetContainerImageResult", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetContainerImageResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder digest(String digest) {
-            this.digest = Objects.requireNonNull(digest);
+            if (digest == null) {
+              throw new MissingRequiredPropertyException("GetContainerImageResult", "digest");
+            }
+            this.digest = digest;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetContainerImageResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetContainerImageResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetContainerImageResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imageId(String imageId) {
-            this.imageId = Objects.requireNonNull(imageId);
+            if (imageId == null) {
+              throw new MissingRequiredPropertyException("GetContainerImageResult", "imageId");
+            }
+            this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder layers(List<GetContainerImageLayer> layers) {
-            this.layers = Objects.requireNonNull(layers);
+            if (layers == null) {
+              throw new MissingRequiredPropertyException("GetContainerImageResult", "layers");
+            }
+            this.layers = layers;
             return this;
         }
         public Builder layers(GetContainerImageLayer... layers) {
@@ -354,57 +382,90 @@ public final class GetContainerImageResult {
         }
         @CustomType.Setter
         public Builder layersSizeInBytes(String layersSizeInBytes) {
-            this.layersSizeInBytes = Objects.requireNonNull(layersSizeInBytes);
+            if (layersSizeInBytes == null) {
+              throw new MissingRequiredPropertyException("GetContainerImageResult", "layersSizeInBytes");
+            }
+            this.layersSizeInBytes = layersSizeInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder manifestSizeInBytes(Integer manifestSizeInBytes) {
-            this.manifestSizeInBytes = Objects.requireNonNull(manifestSizeInBytes);
+            if (manifestSizeInBytes == null) {
+              throw new MissingRequiredPropertyException("GetContainerImageResult", "manifestSizeInBytes");
+            }
+            this.manifestSizeInBytes = manifestSizeInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder pullCount(String pullCount) {
-            this.pullCount = Objects.requireNonNull(pullCount);
+            if (pullCount == null) {
+              throw new MissingRequiredPropertyException("GetContainerImageResult", "pullCount");
+            }
+            this.pullCount = pullCount;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+            if (repositoryId == null) {
+              throw new MissingRequiredPropertyException("GetContainerImageResult", "repositoryId");
+            }
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryName(String repositoryName) {
-            this.repositoryName = Objects.requireNonNull(repositoryName);
+            if (repositoryName == null) {
+              throw new MissingRequiredPropertyException("GetContainerImageResult", "repositoryName");
+            }
+            this.repositoryName = repositoryName;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetContainerImageResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetContainerImageResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetContainerImageResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastPulled(String timeLastPulled) {
-            this.timeLastPulled = Objects.requireNonNull(timeLastPulled);
+            if (timeLastPulled == null) {
+              throw new MissingRequiredPropertyException("GetContainerImageResult", "timeLastPulled");
+            }
+            this.timeLastPulled = timeLastPulled;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetContainerImageResult", "version");
+            }
+            this.version = version;
             return this;
         }
         @CustomType.Setter
         public Builder versions(List<GetContainerImageVersion> versions) {
-            this.versions = Objects.requireNonNull(versions);
+            if (versions == null) {
+              throw new MissingRequiredPropertyException("GetContainerImageResult", "versions");
+            }
+            this.versions = versions;
             return this;
         }
         public Builder versions(GetContainerImageVersion... versions) {

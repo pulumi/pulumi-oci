@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -119,37 +120,58 @@ public final class GetListenersListenerCollectionItem {
 
         @CustomType.Setter
         public Builder defaultBackendSetName(String defaultBackendSetName) {
-            this.defaultBackendSetName = Objects.requireNonNull(defaultBackendSetName);
+            if (defaultBackendSetName == null) {
+              throw new MissingRequiredPropertyException("GetListenersListenerCollectionItem", "defaultBackendSetName");
+            }
+            this.defaultBackendSetName = defaultBackendSetName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetListenersListenerCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipVersion(String ipVersion) {
-            this.ipVersion = Objects.requireNonNull(ipVersion);
+            if (ipVersion == null) {
+              throw new MissingRequiredPropertyException("GetListenersListenerCollectionItem", "ipVersion");
+            }
+            this.ipVersion = ipVersion;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetListenersListenerCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
-            this.networkLoadBalancerId = Objects.requireNonNull(networkLoadBalancerId);
+            if (networkLoadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetListenersListenerCollectionItem", "networkLoadBalancerId");
+            }
+            this.networkLoadBalancerId = networkLoadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetListenersListenerCollectionItem", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetListenersListenerCollectionItem", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         public GetListenersListenerCollectionItem build() {

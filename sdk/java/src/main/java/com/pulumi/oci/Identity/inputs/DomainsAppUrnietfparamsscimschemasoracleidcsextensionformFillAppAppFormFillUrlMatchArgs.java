@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -193,7 +194,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFill
         }
 
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchArgs build() {
-            $.formUrl = Objects.requireNonNull($.formUrl, "expected parameter 'formUrl' to be non-null");
+            if ($.formUrl == null) {
+                throw new MissingRequiredPropertyException("DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchArgs", "formUrl");
+            }
             return $;
         }
     }

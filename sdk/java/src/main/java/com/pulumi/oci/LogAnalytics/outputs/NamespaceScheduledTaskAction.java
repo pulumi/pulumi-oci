@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.NamespaceScheduledTaskActionMetricExtraction;
 import java.lang.Boolean;
 import java.lang.String;
@@ -144,42 +145,52 @@ public final class NamespaceScheduledTaskAction {
 
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder dataType(@Nullable String dataType) {
+
             this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
         public Builder metricExtraction(@Nullable NamespaceScheduledTaskActionMetricExtraction metricExtraction) {
+
             this.metricExtraction = metricExtraction;
             return this;
         }
         @CustomType.Setter
         public Builder purgeCompartmentId(@Nullable String purgeCompartmentId) {
+
             this.purgeCompartmentId = purgeCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder purgeDuration(@Nullable String purgeDuration) {
+
             this.purgeDuration = purgeDuration;
             return this;
         }
         @CustomType.Setter
         public Builder queryString(@Nullable String queryString) {
+
             this.queryString = queryString;
             return this;
         }
         @CustomType.Setter
         public Builder savedSearchId(@Nullable String savedSearchId) {
+
             this.savedSearchId = savedSearchId;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("NamespaceScheduledTaskAction", "type");
+            }
+            this.type = type;
             return this;
         }
         public NamespaceScheduledTaskAction build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ComputeCloud.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -100,27 +101,38 @@ public final class AtCustomerCccUpgradeScheduleEvent {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("AtCustomerCccUpgradeScheduleEvent", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder scheduleEventDuration(String scheduleEventDuration) {
-            this.scheduleEventDuration = Objects.requireNonNull(scheduleEventDuration);
+            if (scheduleEventDuration == null) {
+              throw new MissingRequiredPropertyException("AtCustomerCccUpgradeScheduleEvent", "scheduleEventDuration");
+            }
+            this.scheduleEventDuration = scheduleEventDuration;
             return this;
         }
         @CustomType.Setter
         public Builder scheduleEventRecurrences(@Nullable String scheduleEventRecurrences) {
+
             this.scheduleEventRecurrences = scheduleEventRecurrences;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+            if (timeStart == null) {
+              throw new MissingRequiredPropertyException("AtCustomerCccUpgradeScheduleEvent", "timeStart");
+            }
+            this.timeStart = timeStart;
             return this;
         }
         public AtCustomerCccUpgradeScheduleEvent build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetDetectionDataAssetPlainArgs extends com.pulumi.resources.I
         }
 
         public GetDetectionDataAssetPlainArgs build() {
-            $.dataAssetId = Objects.requireNonNull($.dataAssetId, "expected parameter 'dataAssetId' to be non-null");
+            if ($.dataAssetId == null) {
+                throw new MissingRequiredPropertyException("GetDetectionDataAssetPlainArgs", "dataAssetId");
+            }
             return $;
         }
     }

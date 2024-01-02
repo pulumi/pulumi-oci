@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -71,12 +72,18 @@ public final class VirtualNodePoolPlacementConfiguration {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("VirtualNodePoolPlacementConfiguration", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomains(List<String> faultDomains) {
-            this.faultDomains = Objects.requireNonNull(faultDomains);
+            if (faultDomains == null) {
+              throw new MissingRequiredPropertyException("VirtualNodePoolPlacementConfiguration", "faultDomains");
+            }
+            this.faultDomains = faultDomains;
             return this;
         }
         public Builder faultDomains(String... faultDomains) {
@@ -84,7 +91,10 @@ public final class VirtualNodePoolPlacementConfiguration {
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("VirtualNodePoolPlacementConfiguration", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         public VirtualNodePoolPlacementConfiguration build() {

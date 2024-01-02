@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetProfilesFilter;
 import com.pulumi.oci.Optimizer.outputs.GetProfilesProfileCollection;
 import java.lang.String;
@@ -109,11 +110,15 @@ public final class GetProfilesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetProfilesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetProfilesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -122,17 +127,24 @@ public final class GetProfilesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetProfilesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder profileCollections(List<GetProfilesProfileCollection> profileCollections) {
-            this.profileCollections = Objects.requireNonNull(profileCollections);
+            if (profileCollections == null) {
+              throw new MissingRequiredPropertyException("GetProfilesResult", "profileCollections");
+            }
+            this.profileCollections = profileCollections;
             return this;
         }
         public Builder profileCollections(GetProfilesProfileCollection... profileCollections) {
@@ -140,6 +152,7 @@ public final class GetProfilesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiLanguage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiLanguage.outputs.GetModelEvaluationResultsEvaluationResultCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetModelEvaluationResultsEvaluationResultCollection {
 
         @CustomType.Setter
         public Builder items(List<GetModelEvaluationResultsEvaluationResultCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetModelEvaluationResultsEvaluationResultCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetModelEvaluationResultsEvaluationResultCollectionItem... items) {

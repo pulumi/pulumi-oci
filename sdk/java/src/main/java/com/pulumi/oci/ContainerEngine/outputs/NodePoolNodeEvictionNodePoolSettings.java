@@ -59,11 +59,13 @@ public final class NodePoolNodeEvictionNodePoolSettings {
 
         @CustomType.Setter
         public Builder evictionGraceDuration(@Nullable String evictionGraceDuration) {
+
             this.evictionGraceDuration = evictionGraceDuration;
             return this;
         }
         @CustomType.Setter
         public Builder isForceDeleteAfterGraceDuration(@Nullable Boolean isForceDeleteAfterGraceDuration) {
+
             this.isForceDeleteAfterGraceDuration = isForceDeleteAfterGraceDuration;
             return this;
         }

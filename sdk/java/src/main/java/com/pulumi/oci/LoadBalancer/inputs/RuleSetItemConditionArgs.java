@@ -5,6 +5,7 @@ package com.pulumi.oci.LoadBalancer.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -178,8 +179,12 @@ public final class RuleSetItemConditionArgs extends com.pulumi.resources.Resourc
         }
 
         public RuleSetItemConditionArgs build() {
-            $.attributeName = Objects.requireNonNull($.attributeName, "expected parameter 'attributeName' to be non-null");
-            $.attributeValue = Objects.requireNonNull($.attributeValue, "expected parameter 'attributeValue' to be non-null");
+            if ($.attributeName == null) {
+                throw new MissingRequiredPropertyException("RuleSetItemConditionArgs", "attributeName");
+            }
+            if ($.attributeValue == null) {
+                throw new MissingRequiredPropertyException("RuleSetItemConditionArgs", "attributeValue");
+            }
             return $;
         }
     }

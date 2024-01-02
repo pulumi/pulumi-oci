@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.ModelCustomMetadataListArgs;
 import com.pulumi.oci.DataScience.inputs.ModelDefinedMetadataListArgs;
 import java.lang.Object;
@@ -594,10 +595,18 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ModelArgs build() {
-            $.artifactContentLength = Objects.requireNonNull($.artifactContentLength, "expected parameter 'artifactContentLength' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.modelArtifact = Objects.requireNonNull($.modelArtifact, "expected parameter 'modelArtifact' to be non-null");
-            $.projectId = Objects.requireNonNull($.projectId, "expected parameter 'projectId' to be non-null");
+            if ($.artifactContentLength == null) {
+                throw new MissingRequiredPropertyException("ModelArgs", "artifactContentLength");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ModelArgs", "compartmentId");
+            }
+            if ($.modelArtifact == null) {
+                throw new MissingRequiredPropertyException("ModelArgs", "modelArtifact");
+            }
+            if ($.projectId == null) {
+                throw new MissingRequiredPropertyException("ModelArgs", "projectId");
+            }
             return $;
         }
     }

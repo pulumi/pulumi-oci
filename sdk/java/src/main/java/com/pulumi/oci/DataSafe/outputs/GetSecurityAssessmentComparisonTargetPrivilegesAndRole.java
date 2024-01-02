@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent;
 import java.lang.String;
@@ -115,7 +116,10 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRole {
 
         @CustomType.Setter
         public Builder addedItems(List<String> addedItems) {
-            this.addedItems = Objects.requireNonNull(addedItems);
+            if (addedItems == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetPrivilegesAndRole", "addedItems");
+            }
+            this.addedItems = addedItems;
             return this;
         }
         public Builder addedItems(String... addedItems) {
@@ -123,7 +127,10 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRole {
         }
         @CustomType.Setter
         public Builder baselines(List<GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline> baselines) {
-            this.baselines = Objects.requireNonNull(baselines);
+            if (baselines == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetPrivilegesAndRole", "baselines");
+            }
+            this.baselines = baselines;
             return this;
         }
         public Builder baselines(GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline... baselines) {
@@ -131,7 +138,10 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRole {
         }
         @CustomType.Setter
         public Builder currents(List<GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent> currents) {
-            this.currents = Objects.requireNonNull(currents);
+            if (currents == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetPrivilegesAndRole", "currents");
+            }
+            this.currents = currents;
             return this;
         }
         public Builder currents(GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent... currents) {
@@ -139,7 +149,10 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRole {
         }
         @CustomType.Setter
         public Builder modifiedItems(List<String> modifiedItems) {
-            this.modifiedItems = Objects.requireNonNull(modifiedItems);
+            if (modifiedItems == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetPrivilegesAndRole", "modifiedItems");
+            }
+            this.modifiedItems = modifiedItems;
             return this;
         }
         public Builder modifiedItems(String... modifiedItems) {
@@ -147,7 +160,10 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRole {
         }
         @CustomType.Setter
         public Builder removedItems(List<String> removedItems) {
-            this.removedItems = Objects.requireNonNull(removedItems);
+            if (removedItems == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetPrivilegesAndRole", "removedItems");
+            }
+            this.removedItems = removedItems;
             return this;
         }
         public Builder removedItems(String... removedItems) {
@@ -155,7 +171,10 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRole {
         }
         @CustomType.Setter
         public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+            if (severity == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetPrivilegesAndRole", "severity");
+            }
+            this.severity = severity;
             return this;
         }
         public GetSecurityAssessmentComparisonTargetPrivilegesAndRole build() {

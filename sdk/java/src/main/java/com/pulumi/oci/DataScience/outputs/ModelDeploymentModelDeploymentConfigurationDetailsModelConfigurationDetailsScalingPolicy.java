@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
 
         @CustomType.Setter
         public Builder instanceCount(Integer instanceCount) {
-            this.instanceCount = Objects.requireNonNull(instanceCount);
+            if (instanceCount == null) {
+              throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy", "instanceCount");
+            }
+            this.instanceCount = instanceCount;
             return this;
         }
         @CustomType.Setter
         public Builder policyType(String policyType) {
-            this.policyType = Objects.requireNonNull(policyType);
+            if (policyType == null) {
+              throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy", "policyType");
+            }
+            this.policyType = policyType;
             return this;
         }
         public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy build() {

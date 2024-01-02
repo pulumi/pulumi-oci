@@ -4,6 +4,7 @@
 package com.pulumi.oci.Adm.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Adm.outputs.GetRemediationRecipesFilter;
 import com.pulumi.oci.Adm.outputs.GetRemediationRecipesRemediationRecipeCollection;
 import java.lang.String;
@@ -109,16 +110,19 @@ public final class GetRemediationRecipesResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRemediationRecipesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +131,16 @@ public final class GetRemediationRecipesResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder remediationRecipeCollections(List<GetRemediationRecipesRemediationRecipeCollection> remediationRecipeCollections) {
-            this.remediationRecipeCollections = Objects.requireNonNull(remediationRecipeCollections);
+            if (remediationRecipeCollections == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipesResult", "remediationRecipeCollections");
+            }
+            this.remediationRecipeCollections = remediationRecipeCollections;
             return this;
         }
         public Builder remediationRecipeCollections(GetRemediationRecipesRemediationRecipeCollection... remediationRecipeCollections) {
@@ -140,6 +148,7 @@ public final class GetRemediationRecipesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

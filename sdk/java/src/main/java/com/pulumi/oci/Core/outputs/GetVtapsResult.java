@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetVtapsFilter;
 import com.pulumi.oci.Core.outputs.GetVtapsVtap;
 import java.lang.Boolean;
@@ -172,16 +173,21 @@ public final class GetVtapsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVtapsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVtapsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -190,42 +196,54 @@ public final class GetVtapsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVtapsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isVtapEnabled(@Nullable Boolean isVtapEnabled) {
+
             this.isVtapEnabled = isVtapEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder source(@Nullable String source) {
+
             this.source = source;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
+
             this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder targetIp(@Nullable String targetIp) {
+
             this.targetIp = targetIp;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
+
             this.vcnId = vcnId;
             return this;
         }
         @CustomType.Setter
         public Builder vtaps(List<GetVtapsVtap> vtaps) {
-            this.vtaps = Objects.requireNonNull(vtaps);
+            if (vtaps == null) {
+              throw new MissingRequiredPropertyException("GetVtapsResult", "vtaps");
+            }
+            this.vtaps = vtaps;
             return this;
         }
         public Builder vtaps(GetVtapsVtap... vtaps) {

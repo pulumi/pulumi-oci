@@ -5,6 +5,7 @@ package com.pulumi.oci.Dns;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Dns.inputs.ZoneExternalDownstreamArgs;
 import com.pulumi.oci.Dns.inputs.ZoneExternalMasterArgs;
 import java.lang.Object;
@@ -429,8 +430,12 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ZoneArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.zoneType = Objects.requireNonNull($.zoneType, "expected parameter 'zoneType' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ZoneArgs", "compartmentId");
+            }
+            if ($.zoneType == null) {
+                throw new MissingRequiredPropertyException("ZoneArgs", "zoneType");
+            }
             return $;
         }
     }

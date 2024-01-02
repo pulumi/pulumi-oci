@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -114,17 +115,26 @@ public final class GetExternalAsmConfigurationInitParameter {
 
         @CustomType.Setter
         public Builder asmInstanceDisplayName(String asmInstanceDisplayName) {
-            this.asmInstanceDisplayName = Objects.requireNonNull(asmInstanceDisplayName);
+            if (asmInstanceDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmConfigurationInitParameter", "asmInstanceDisplayName");
+            }
+            this.asmInstanceDisplayName = asmInstanceDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder asmInstanceId(String asmInstanceId) {
-            this.asmInstanceId = Objects.requireNonNull(asmInstanceId);
+            if (asmInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmConfigurationInitParameter", "asmInstanceId");
+            }
+            this.asmInstanceId = asmInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder autoMountDiskGroups(List<String> autoMountDiskGroups) {
-            this.autoMountDiskGroups = Objects.requireNonNull(autoMountDiskGroups);
+            if (autoMountDiskGroups == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmConfigurationInitParameter", "autoMountDiskGroups");
+            }
+            this.autoMountDiskGroups = autoMountDiskGroups;
             return this;
         }
         public Builder autoMountDiskGroups(String... autoMountDiskGroups) {
@@ -132,12 +142,18 @@ public final class GetExternalAsmConfigurationInitParameter {
         }
         @CustomType.Setter
         public Builder diskDiscoveryPath(String diskDiscoveryPath) {
-            this.diskDiscoveryPath = Objects.requireNonNull(diskDiscoveryPath);
+            if (diskDiscoveryPath == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmConfigurationInitParameter", "diskDiscoveryPath");
+            }
+            this.diskDiscoveryPath = diskDiscoveryPath;
             return this;
         }
         @CustomType.Setter
         public Builder preferredReadFailureGroups(List<String> preferredReadFailureGroups) {
-            this.preferredReadFailureGroups = Objects.requireNonNull(preferredReadFailureGroups);
+            if (preferredReadFailureGroups == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmConfigurationInitParameter", "preferredReadFailureGroups");
+            }
+            this.preferredReadFailureGroups = preferredReadFailureGroups;
             return this;
         }
         public Builder preferredReadFailureGroups(String... preferredReadFailureGroups) {
@@ -145,7 +161,10 @@ public final class GetExternalAsmConfigurationInitParameter {
         }
         @CustomType.Setter
         public Builder rebalancePower(Integer rebalancePower) {
-            this.rebalancePower = Objects.requireNonNull(rebalancePower);
+            if (rebalancePower == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmConfigurationInitParameter", "rebalancePower");
+            }
+            this.rebalancePower = rebalancePower;
             return this;
         }
         public GetExternalAsmConfigurationInitParameter build() {

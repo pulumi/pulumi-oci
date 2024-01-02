@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.MaskingPoliciesMaskingColumnMaskingFormatFormatEntry;
 import java.lang.String;
 import java.util.List;
@@ -74,17 +75,22 @@ public final class MaskingPoliciesMaskingColumnMaskingFormat {
 
         @CustomType.Setter
         public Builder condition(@Nullable String condition) {
+
             this.condition = condition;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder formatEntries(List<MaskingPoliciesMaskingColumnMaskingFormatFormatEntry> formatEntries) {
-            this.formatEntries = Objects.requireNonNull(formatEntries);
+            if (formatEntries == null) {
+              throw new MissingRequiredPropertyException("MaskingPoliciesMaskingColumnMaskingFormat", "formatEntries");
+            }
+            this.formatEntries = formatEntries;
             return this;
         }
         public Builder formatEntries(MaskingPoliciesMaskingColumnMaskingFormatFormatEntry... formatEntries) {

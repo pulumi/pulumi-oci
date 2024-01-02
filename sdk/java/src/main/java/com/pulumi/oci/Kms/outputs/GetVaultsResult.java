@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Kms.outputs.GetVaultsFilter;
 import com.pulumi.oci.Kms.outputs.GetVaultsVault;
 import java.lang.String;
@@ -80,11 +81,15 @@ public final class GetVaultsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVaultsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVaultsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -93,12 +98,18 @@ public final class GetVaultsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVaultsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder vaults(List<GetVaultsVault> vaults) {
-            this.vaults = Objects.requireNonNull(vaults);
+            if (vaults == null) {
+              throw new MissingRequiredPropertyException("GetVaultsResult", "vaults");
+            }
+            this.vaults = vaults;
             return this;
         }
         public Builder vaults(GetVaultsVault... vaults) {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.InstanceAgentConfigArgs;
 import com.pulumi.oci.Core.inputs.InstanceAvailabilityConfigArgs;
 import com.pulumi.oci.Core.inputs.InstanceCreateVnicDetailsArgs;
@@ -1510,8 +1511,12 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public InstanceArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.availabilityDomain == null) {
+                throw new MissingRequiredPropertyException("InstanceArgs", "availabilityDomain");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("InstanceArgs", "compartmentId");
+            }
             return $;
         }
     }

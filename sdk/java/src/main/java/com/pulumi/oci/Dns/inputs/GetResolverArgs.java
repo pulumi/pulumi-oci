@@ -5,6 +5,7 @@ package com.pulumi.oci.Dns.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -113,7 +114,9 @@ public final class GetResolverArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetResolverArgs build() {
-            $.resolverId = Objects.requireNonNull($.resolverId, "expected parameter 'resolverId' to be non-null");
+            if ($.resolverId == null) {
+                throw new MissingRequiredPropertyException("GetResolverArgs", "resolverId");
+            }
             return $;
         }
     }

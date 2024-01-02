@@ -90,6 +90,7 @@ public final class ModelMetric {
 
         @CustomType.Setter
         public Builder datasetSummaries(@Nullable List<ModelMetricDatasetSummary> datasetSummaries) {
+
             this.datasetSummaries = datasetSummaries;
             return this;
         }
@@ -98,6 +99,7 @@ public final class ModelMetric {
         }
         @CustomType.Setter
         public Builder labelMetricsReports(@Nullable List<ModelMetricLabelMetricsReport> labelMetricsReports) {
+
             this.labelMetricsReports = labelMetricsReports;
             return this;
         }
@@ -106,11 +108,13 @@ public final class ModelMetric {
         }
         @CustomType.Setter
         public Builder modelType(@Nullable String modelType) {
+
             this.modelType = modelType;
             return this;
         }
         @CustomType.Setter
         public Builder overallMetricsReports(@Nullable List<ModelMetricOverallMetricsReport> overallMetricsReports) {
+
             this.overallMetricsReports = overallMetricsReports;
             return this;
         }

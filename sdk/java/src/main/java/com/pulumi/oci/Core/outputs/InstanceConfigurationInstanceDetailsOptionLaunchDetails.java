@@ -482,121 +482,145 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
 
         @CustomType.Setter
         public Builder agentConfig(@Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfig agentConfig) {
+
             this.agentConfig = agentConfig;
             return this;
         }
         @CustomType.Setter
         public Builder availabilityConfig(@Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfig availabilityConfig) {
+
             this.availabilityConfig = availabilityConfig;
             return this;
         }
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder capacityReservationId(@Nullable String capacityReservationId) {
+
             this.capacityReservationId = capacityReservationId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createVnicDetails(@Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails createVnicDetails) {
+
             this.createVnicDetails = createVnicDetails;
             return this;
         }
         @CustomType.Setter
         public Builder dedicatedVmHostId(@Nullable String dedicatedVmHostId) {
+
             this.dedicatedVmHostId = dedicatedVmHostId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+
             this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder extendedMetadata(@Nullable Map<String,Object> extendedMetadata) {
+
             this.extendedMetadata = extendedMetadata;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomain(@Nullable String faultDomain) {
+
             this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+
             this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder instanceOptions(@Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptions instanceOptions) {
+
             this.instanceOptions = instanceOptions;
             return this;
         }
         @CustomType.Setter
         public Builder ipxeScript(@Nullable String ipxeScript) {
+
             this.ipxeScript = ipxeScript;
             return this;
         }
         @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(@Nullable Boolean isPvEncryptionInTransitEnabled) {
+
             this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder launchMode(@Nullable String launchMode) {
+
             this.launchMode = launchMode;
             return this;
         }
         @CustomType.Setter
         public Builder launchOptions(@Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions launchOptions) {
+
             this.launchOptions = launchOptions;
             return this;
         }
         @CustomType.Setter
         public Builder metadata(@Nullable Map<String,Object> metadata) {
+
             this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
         public Builder platformConfig(@Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig platformConfig) {
+
             this.platformConfig = platformConfig;
             return this;
         }
         @CustomType.Setter
         public Builder preemptibleInstanceConfig(@Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfig preemptibleInstanceConfig) {
+
             this.preemptibleInstanceConfig = preemptibleInstanceConfig;
             return this;
         }
         @CustomType.Setter
         public Builder preferredMaintenanceAction(@Nullable String preferredMaintenanceAction) {
+
             this.preferredMaintenanceAction = preferredMaintenanceAction;
             return this;
         }
         @CustomType.Setter
         public Builder shape(@Nullable String shape) {
+
             this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder shapeConfig(@Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfig shapeConfig) {
+
             this.shapeConfig = shapeConfig;
             return this;
         }
         @CustomType.Setter
         public Builder sourceDetails(@Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetails sourceDetails) {
+
             this.sourceDetails = sourceDetails;
             return this;
         }

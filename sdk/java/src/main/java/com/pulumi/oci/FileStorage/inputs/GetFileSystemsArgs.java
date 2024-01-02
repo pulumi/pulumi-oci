@@ -5,6 +5,7 @@ package com.pulumi.oci.FileStorage.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.inputs.GetFileSystemsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -358,8 +359,12 @@ public final class GetFileSystemsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetFileSystemsArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.availabilityDomain == null) {
+                throw new MissingRequiredPropertyException("GetFileSystemsArgs", "availabilityDomain");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetFileSystemsArgs", "compartmentId");
+            }
             return $;
         }
     }

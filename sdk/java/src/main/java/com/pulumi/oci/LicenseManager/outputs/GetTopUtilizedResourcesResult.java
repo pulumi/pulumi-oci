@@ -4,6 +4,7 @@
 package com.pulumi.oci.LicenseManager.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LicenseManager.outputs.GetTopUtilizedResourcesItem;
 import java.lang.Boolean;
 import java.lang.String;
@@ -79,22 +80,32 @@ public final class GetTopUtilizedResourcesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetTopUtilizedResourcesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTopUtilizedResourcesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCompartmentIdInSubtree(@Nullable Boolean isCompartmentIdInSubtree) {
+
             this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetTopUtilizedResourcesItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetTopUtilizedResourcesResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetTopUtilizedResourcesItem... items) {
@@ -102,6 +113,7 @@ public final class GetTopUtilizedResourcesResult {
         }
         @CustomType.Setter
         public Builder resourceUnitType(@Nullable String resourceUnitType) {
+
             this.resourceUnitType = resourceUnitType;
             return this;
         }

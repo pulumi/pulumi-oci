@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class GetAutonomousDatabaseDataguardAssociationArgs extends com.pul
         }
 
         public GetAutonomousDatabaseDataguardAssociationArgs build() {
-            $.autonomousDatabaseDataguardAssociationId = Objects.requireNonNull($.autonomousDatabaseDataguardAssociationId, "expected parameter 'autonomousDatabaseDataguardAssociationId' to be non-null");
-            $.autonomousDatabaseId = Objects.requireNonNull($.autonomousDatabaseId, "expected parameter 'autonomousDatabaseId' to be non-null");
+            if ($.autonomousDatabaseDataguardAssociationId == null) {
+                throw new MissingRequiredPropertyException("GetAutonomousDatabaseDataguardAssociationArgs", "autonomousDatabaseDataguardAssociationId");
+            }
+            if ($.autonomousDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetAutonomousDatabaseDataguardAssociationArgs", "autonomousDatabaseId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Dns.outputs.GetSteeringPoliciesFilter;
 import com.pulumi.oci.Dns.outputs.GetSteeringPoliciesSteeringPolicy;
 import java.lang.String;
@@ -155,21 +156,27 @@ public final class GetSteeringPoliciesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPoliciesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder displayNameContains(@Nullable String displayNameContains) {
+
             this.displayNameContains = displayNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSteeringPoliciesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -178,22 +185,28 @@ public final class GetSteeringPoliciesResult {
         }
         @CustomType.Setter
         public Builder healthCheckMonitorId(@Nullable String healthCheckMonitorId) {
+
             this.healthCheckMonitorId = healthCheckMonitorId;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder steeringPolicies(List<GetSteeringPoliciesSteeringPolicy> steeringPolicies) {
-            this.steeringPolicies = Objects.requireNonNull(steeringPolicies);
+            if (steeringPolicies == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPoliciesResult", "steeringPolicies");
+            }
+            this.steeringPolicies = steeringPolicies;
             return this;
         }
         public Builder steeringPolicies(GetSteeringPoliciesSteeringPolicy... steeringPolicies) {
@@ -201,16 +214,19 @@ public final class GetSteeringPoliciesResult {
         }
         @CustomType.Setter
         public Builder template(@Nullable String template) {
+
             this.template = template;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
+
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
+
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }

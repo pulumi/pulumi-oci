@@ -36,6 +36,7 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterExclude {
 
         @CustomType.Setter
         public Builder fileFilters(@Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter> fileFilters) {
+
             this.fileFilters = fileFilters;
             return this;
         }

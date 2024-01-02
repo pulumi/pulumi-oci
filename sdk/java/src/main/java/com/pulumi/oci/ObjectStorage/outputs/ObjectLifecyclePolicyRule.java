@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ObjectStorage.outputs.ObjectLifecyclePolicyRuleObjectNameFilter;
 import java.lang.Boolean;
 import java.lang.String;
@@ -136,37 +137,54 @@ public final class ObjectLifecyclePolicyRule {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("ObjectLifecyclePolicyRule", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("ObjectLifecyclePolicyRule", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("ObjectLifecyclePolicyRule", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder objectNameFilter(@Nullable ObjectLifecyclePolicyRuleObjectNameFilter objectNameFilter) {
+
             this.objectNameFilter = objectNameFilter;
             return this;
         }
         @CustomType.Setter
         public Builder target(@Nullable String target) {
+
             this.target = target;
             return this;
         }
         @CustomType.Setter
         public Builder timeAmount(String timeAmount) {
-            this.timeAmount = Objects.requireNonNull(timeAmount);
+            if (timeAmount == null) {
+              throw new MissingRequiredPropertyException("ObjectLifecyclePolicyRule", "timeAmount");
+            }
+            this.timeAmount = timeAmount;
             return this;
         }
         @CustomType.Setter
         public Builder timeUnit(String timeUnit) {
-            this.timeUnit = Objects.requireNonNull(timeUnit);
+            if (timeUnit == null) {
+              throw new MissingRequiredPropertyException("ObjectLifecyclePolicyRule", "timeUnit");
+            }
+            this.timeUnit = timeUnit;
             return this;
         }
         public ObjectLifecyclePolicyRule build() {

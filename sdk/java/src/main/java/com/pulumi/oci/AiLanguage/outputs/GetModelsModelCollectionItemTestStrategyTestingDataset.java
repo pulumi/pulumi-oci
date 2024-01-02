@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiLanguage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiLanguage.outputs.GetModelsModelCollectionItemTestStrategyTestingDatasetLocationDetail;
 import java.lang.String;
 import java.util.List;
@@ -72,17 +73,26 @@ public final class GetModelsModelCollectionItemTestStrategyTestingDataset {
 
         @CustomType.Setter
         public Builder datasetId(String datasetId) {
-            this.datasetId = Objects.requireNonNull(datasetId);
+            if (datasetId == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemTestStrategyTestingDataset", "datasetId");
+            }
+            this.datasetId = datasetId;
             return this;
         }
         @CustomType.Setter
         public Builder datasetType(String datasetType) {
-            this.datasetType = Objects.requireNonNull(datasetType);
+            if (datasetType == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemTestStrategyTestingDataset", "datasetType");
+            }
+            this.datasetType = datasetType;
             return this;
         }
         @CustomType.Setter
         public Builder locationDetails(List<GetModelsModelCollectionItemTestStrategyTestingDatasetLocationDetail> locationDetails) {
-            this.locationDetails = Objects.requireNonNull(locationDetails);
+            if (locationDetails == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemTestStrategyTestingDataset", "locationDetails");
+            }
+            this.locationDetails = locationDetails;
             return this;
         }
         public Builder locationDetails(GetModelsModelCollectionItemTestStrategyTestingDatasetLocationDetail... locationDetails) {

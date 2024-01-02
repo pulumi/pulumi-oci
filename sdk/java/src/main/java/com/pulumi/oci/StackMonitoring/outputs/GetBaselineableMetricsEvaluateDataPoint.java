@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetBaselineableMetricsEvaluateDataPoint {
 
         @CustomType.Setter
         public Builder anomaly(Double anomaly) {
-            this.anomaly = Objects.requireNonNull(anomaly);
+            if (anomaly == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateDataPoint", "anomaly");
+            }
+            this.anomaly = anomaly;
             return this;
         }
         @CustomType.Setter
         public Builder high(Double high) {
-            this.high = Objects.requireNonNull(high);
+            if (high == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateDataPoint", "high");
+            }
+            this.high = high;
             return this;
         }
         @CustomType.Setter
         public Builder low(Double low) {
-            this.low = Objects.requireNonNull(low);
+            if (low == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateDataPoint", "low");
+            }
+            this.low = low;
             return this;
         }
         @CustomType.Setter
         public Builder timestamp(String timestamp) {
-            this.timestamp = Objects.requireNonNull(timestamp);
+            if (timestamp == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateDataPoint", "timestamp");
+            }
+            this.timestamp = timestamp;
             return this;
         }
         @CustomType.Setter
         public Builder value(Double value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateDataPoint", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetBaselineableMetricsEvaluateDataPoint build() {

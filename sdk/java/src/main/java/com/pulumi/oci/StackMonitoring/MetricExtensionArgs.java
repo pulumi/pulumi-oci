@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.inputs.MetricExtensionMetricListArgs;
 import com.pulumi.oci.StackMonitoring.inputs.MetricExtensionQueryPropertiesArgs;
 import java.lang.Boolean;
@@ -398,12 +399,24 @@ public final class MetricExtensionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public MetricExtensionArgs build() {
-            $.collectionRecurrences = Objects.requireNonNull($.collectionRecurrences, "expected parameter 'collectionRecurrences' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.metricLists = Objects.requireNonNull($.metricLists, "expected parameter 'metricLists' to be non-null");
-            $.queryProperties = Objects.requireNonNull($.queryProperties, "expected parameter 'queryProperties' to be non-null");
-            $.resourceType = Objects.requireNonNull($.resourceType, "expected parameter 'resourceType' to be non-null");
+            if ($.collectionRecurrences == null) {
+                throw new MissingRequiredPropertyException("MetricExtensionArgs", "collectionRecurrences");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("MetricExtensionArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("MetricExtensionArgs", "displayName");
+            }
+            if ($.metricLists == null) {
+                throw new MissingRequiredPropertyException("MetricExtensionArgs", "metricLists");
+            }
+            if ($.queryProperties == null) {
+                throw new MissingRequiredPropertyException("MetricExtensionArgs", "queryProperties");
+            }
+            if ($.resourceType == null) {
+                throw new MissingRequiredPropertyException("MetricExtensionArgs", "resourceType");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Vault.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetSecretsSecretSecretRule {
 
         @CustomType.Setter
         public Builder isEnforcedOnDeletedSecretVersions(Boolean isEnforcedOnDeletedSecretVersions) {
-            this.isEnforcedOnDeletedSecretVersions = Objects.requireNonNull(isEnforcedOnDeletedSecretVersions);
+            if (isEnforcedOnDeletedSecretVersions == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecretSecretRule", "isEnforcedOnDeletedSecretVersions");
+            }
+            this.isEnforcedOnDeletedSecretVersions = isEnforcedOnDeletedSecretVersions;
             return this;
         }
         @CustomType.Setter
         public Builder isSecretContentRetrievalBlockedOnExpiry(Boolean isSecretContentRetrievalBlockedOnExpiry) {
-            this.isSecretContentRetrievalBlockedOnExpiry = Objects.requireNonNull(isSecretContentRetrievalBlockedOnExpiry);
+            if (isSecretContentRetrievalBlockedOnExpiry == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecretSecretRule", "isSecretContentRetrievalBlockedOnExpiry");
+            }
+            this.isSecretContentRetrievalBlockedOnExpiry = isSecretContentRetrievalBlockedOnExpiry;
             return this;
         }
         @CustomType.Setter
         public Builder ruleType(String ruleType) {
-            this.ruleType = Objects.requireNonNull(ruleType);
+            if (ruleType == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecretSecretRule", "ruleType");
+            }
+            this.ruleType = ruleType;
             return this;
         }
         @CustomType.Setter
         public Builder secretVersionExpiryInterval(String secretVersionExpiryInterval) {
-            this.secretVersionExpiryInterval = Objects.requireNonNull(secretVersionExpiryInterval);
+            if (secretVersionExpiryInterval == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecretSecretRule", "secretVersionExpiryInterval");
+            }
+            this.secretVersionExpiryInterval = secretVersionExpiryInterval;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfAbsoluteExpiry(String timeOfAbsoluteExpiry) {
-            this.timeOfAbsoluteExpiry = Objects.requireNonNull(timeOfAbsoluteExpiry);
+            if (timeOfAbsoluteExpiry == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecretSecretRule", "timeOfAbsoluteExpiry");
+            }
+            this.timeOfAbsoluteExpiry = timeOfAbsoluteExpiry;
             return this;
         }
         public GetSecretsSecretSecretRule build() {

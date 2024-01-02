@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -123,8 +124,12 @@ public final class VolumeBackupPolicyAssignmentArgs extends com.pulumi.resources
         }
 
         public VolumeBackupPolicyAssignmentArgs build() {
-            $.assetId = Objects.requireNonNull($.assetId, "expected parameter 'assetId' to be non-null");
-            $.policyId = Objects.requireNonNull($.policyId, "expected parameter 'policyId' to be non-null");
+            if ($.assetId == null) {
+                throw new MissingRequiredPropertyException("VolumeBackupPolicyAssignmentArgs", "assetId");
+            }
+            if ($.policyId == null) {
+                throw new MissingRequiredPropertyException("VolumeBackupPolicyAssignmentArgs", "policyId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningSetsFilter;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection;
 import java.lang.String;
@@ -101,6 +102,7 @@ public final class GetManagedDatabaseSqlTuningSetsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseSqlTuningSetsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -109,27 +111,38 @@ public final class GetManagedDatabaseSqlTuningSetsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningSetsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningSetsResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder nameContains(@Nullable String nameContains) {
+
             this.nameContains = nameContains;
             return this;
         }
         @CustomType.Setter
         public Builder owner(@Nullable String owner) {
+
             this.owner = owner;
             return this;
         }
         @CustomType.Setter
         public Builder sqlTuningSetCollections(List<GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection> sqlTuningSetCollections) {
-            this.sqlTuningSetCollections = Objects.requireNonNull(sqlTuningSetCollections);
+            if (sqlTuningSetCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningSetsResult", "sqlTuningSetCollections");
+            }
+            this.sqlTuningSetCollections = sqlTuningSetCollections;
             return this;
         }
         public Builder sqlTuningSetCollections(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection... sqlTuningSetCollections) {

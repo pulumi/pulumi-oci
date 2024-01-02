@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Kms.outputs.GetKeysFilter;
 import com.pulumi.oci.Kms.outputs.GetKeysKey;
 import java.lang.Integer;
@@ -150,21 +151,27 @@ public final class GetKeysResult {
 
         @CustomType.Setter
         public Builder algorithm(@Nullable String algorithm) {
+
             this.algorithm = algorithm;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetKeysResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder curveId(@Nullable String curveId) {
+
             this.curveId = curveId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetKeysFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -173,12 +180,18 @@ public final class GetKeysResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetKeysResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder keys(List<GetKeysKey> keys) {
-            this.keys = Objects.requireNonNull(keys);
+            if (keys == null) {
+              throw new MissingRequiredPropertyException("GetKeysResult", "keys");
+            }
+            this.keys = keys;
             return this;
         }
         public Builder keys(GetKeysKey... keys) {
@@ -186,16 +199,21 @@ public final class GetKeysResult {
         }
         @CustomType.Setter
         public Builder length(@Nullable Integer length) {
+
             this.length = length;
             return this;
         }
         @CustomType.Setter
         public Builder managementEndpoint(String managementEndpoint) {
-            this.managementEndpoint = Objects.requireNonNull(managementEndpoint);
+            if (managementEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetKeysResult", "managementEndpoint");
+            }
+            this.managementEndpoint = managementEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder protectionMode(@Nullable String protectionMode) {
+
             this.protectionMode = protectionMode;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetIamWorkRequestErrorsIamWorkRequestError {
 
         @CustomType.Setter
         public Builder code(String code) {
-            this.code = Objects.requireNonNull(code);
+            if (code == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestErrorsIamWorkRequestError", "code");
+            }
+            this.code = code;
             return this;
         }
         @CustomType.Setter
         public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+            if (message == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestErrorsIamWorkRequestError", "message");
+            }
+            this.message = message;
             return this;
         }
         @CustomType.Setter
         public Builder timestamp(String timestamp) {
-            this.timestamp = Objects.requireNonNull(timestamp);
+            if (timestamp == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestErrorsIamWorkRequestError", "timestamp");
+            }
+            this.timestamp = timestamp;
             return this;
         }
         public GetIamWorkRequestErrorsIamWorkRequestError build() {

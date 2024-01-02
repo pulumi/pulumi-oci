@@ -72,16 +72,19 @@ public final class DbSystemInstancesDetail {
 
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder privateIp(@Nullable String privateIp) {
+
             this.privateIp = privateIp;
             return this;
         }

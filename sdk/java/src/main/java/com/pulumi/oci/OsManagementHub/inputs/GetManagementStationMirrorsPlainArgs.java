@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationMirrorsFilter;
 import java.lang.String;
 import java.util.List;
@@ -175,7 +176,9 @@ public final class GetManagementStationMirrorsPlainArgs extends com.pulumi.resou
         }
 
         public GetManagementStationMirrorsPlainArgs build() {
-            $.managementStationId = Objects.requireNonNull($.managementStationId, "expected parameter 'managementStationId' to be non-null");
+            if ($.managementStationId == null) {
+                throw new MissingRequiredPropertyException("GetManagementStationMirrorsPlainArgs", "managementStationId");
+            }
             return $;
         }
     }

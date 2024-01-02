@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetBootVolumeBackupArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetBootVolumeBackupArgs build() {
-            $.bootVolumeBackupId = Objects.requireNonNull($.bootVolumeBackupId, "expected parameter 'bootVolumeBackupId' to be non-null");
+            if ($.bootVolumeBackupId == null) {
+                throw new MissingRequiredPropertyException("GetBootVolumeBackupArgs", "bootVolumeBackupId");
+            }
             return $;
         }
     }

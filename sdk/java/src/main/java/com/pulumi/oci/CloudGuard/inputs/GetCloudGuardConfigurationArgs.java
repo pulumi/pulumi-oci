@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetCloudGuardConfigurationArgs extends com.pulumi.resources.I
         }
 
         public GetCloudGuardConfigurationArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetCloudGuardConfigurationArgs", "compartmentId");
+            }
             return $;
         }
     }

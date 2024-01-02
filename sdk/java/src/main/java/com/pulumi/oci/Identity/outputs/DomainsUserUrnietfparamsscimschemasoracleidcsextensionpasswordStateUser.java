@@ -310,41 +310,49 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
 
         @CustomType.Setter
         public Builder applicablePasswordPolicy(@Nullable DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy applicablePasswordPolicy) {
+
             this.applicablePasswordPolicy = applicablePasswordPolicy;
             return this;
         }
         @CustomType.Setter
         public Builder cantChange(@Nullable Boolean cantChange) {
+
             this.cantChange = cantChange;
             return this;
         }
         @CustomType.Setter
         public Builder cantExpire(@Nullable Boolean cantExpire) {
+
             this.cantExpire = cantExpire;
             return this;
         }
         @CustomType.Setter
         public Builder expired(@Nullable Boolean expired) {
+
             this.expired = expired;
             return this;
         }
         @CustomType.Setter
         public Builder lastFailedValidationDate(@Nullable String lastFailedValidationDate) {
+
             this.lastFailedValidationDate = lastFailedValidationDate;
             return this;
         }
         @CustomType.Setter
         public Builder lastSuccessfulSetDate(@Nullable String lastSuccessfulSetDate) {
+
             this.lastSuccessfulSetDate = lastSuccessfulSetDate;
             return this;
         }
         @CustomType.Setter
         public Builder lastSuccessfulValidationDate(@Nullable String lastSuccessfulValidationDate) {
+
             this.lastSuccessfulValidationDate = lastSuccessfulValidationDate;
             return this;
         }
         @CustomType.Setter
         public Builder mustChange(@Nullable Boolean mustChange) {
+
             this.mustChange = mustChange;
             return this;
         }

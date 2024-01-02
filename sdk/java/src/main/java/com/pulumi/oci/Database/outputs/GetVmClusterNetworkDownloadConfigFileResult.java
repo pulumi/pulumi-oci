@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -77,27 +78,40 @@ public final class GetVmClusterNetworkDownloadConfigFileResult {
 
         @CustomType.Setter
         public Builder base64EncodeContent(@Nullable Boolean base64EncodeContent) {
+
             this.base64EncodeContent = base64EncodeContent;
             return this;
         }
         @CustomType.Setter
         public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+            if (content == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkDownloadConfigFileResult", "content");
+            }
+            this.content = content;
             return this;
         }
         @CustomType.Setter
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
-            this.exadataInfrastructureId = Objects.requireNonNull(exadataInfrastructureId);
+            if (exadataInfrastructureId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkDownloadConfigFileResult", "exadataInfrastructureId");
+            }
+            this.exadataInfrastructureId = exadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkDownloadConfigFileResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder vmClusterNetworkId(String vmClusterNetworkId) {
-            this.vmClusterNetworkId = Objects.requireNonNull(vmClusterNetworkId);
+            if (vmClusterNetworkId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkDownloadConfigFileResult", "vmClusterNetworkId");
+            }
+            this.vmClusterNetworkId = vmClusterNetworkId;
             return this;
         }
         public GetVmClusterNetworkDownloadConfigFileResult build() {

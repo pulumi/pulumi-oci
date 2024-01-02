@@ -4,6 +4,7 @@
 package com.pulumi.oci.Blockchain.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder patchInfoUrl(String patchInfoUrl) {
-            this.patchInfoUrl = Objects.requireNonNull(patchInfoUrl);
+            if (patchInfoUrl == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem", "patchInfoUrl");
+            }
+            this.patchInfoUrl = patchInfoUrl;
             return this;
         }
         @CustomType.Setter
         public Builder serviceVersion(String serviceVersion) {
-            this.serviceVersion = Objects.requireNonNull(serviceVersion);
+            if (serviceVersion == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem", "serviceVersion");
+            }
+            this.serviceVersion = serviceVersion;
             return this;
         }
         @CustomType.Setter
         public Builder timePatchDue(String timePatchDue) {
-            this.timePatchDue = Objects.requireNonNull(timePatchDue);
+            if (timePatchDue == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem", "timePatchDue");
+            }
+            this.timePatchDue = timePatchDue;
             return this;
         }
         public GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem build() {

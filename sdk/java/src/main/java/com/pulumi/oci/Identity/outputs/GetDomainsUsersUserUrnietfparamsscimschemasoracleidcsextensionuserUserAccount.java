@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
 
         @CustomType.Setter
         public Builder active(Boolean active) {
-            this.active = Objects.requireNonNull(active);
+            if (active == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount", "active");
+            }
+            this.active = active;
             return this;
         }
         @CustomType.Setter
         public Builder appId(String appId) {
-            this.appId = Objects.requireNonNull(appId);
+            if (appId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount", "appId");
+            }
+            this.appId = appId;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+            if (ref == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount", "ref");
+            }
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount build() {

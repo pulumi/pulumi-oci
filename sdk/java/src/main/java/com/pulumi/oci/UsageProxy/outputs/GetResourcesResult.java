@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.UsageProxy.outputs.GetResourcesFilter;
 import com.pulumi.oci.UsageProxy.outputs.GetResourcesResourcesCollection;
 import java.lang.String;
@@ -85,16 +86,21 @@ public final class GetResourcesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetResourcesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder entitlementId(@Nullable String entitlementId) {
+
             this.entitlementId = entitlementId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetResourcesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -103,12 +109,18 @@ public final class GetResourcesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetResourcesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder resourcesCollections(List<GetResourcesResourcesCollection> resourcesCollections) {
-            this.resourcesCollections = Objects.requireNonNull(resourcesCollections);
+            if (resourcesCollections == null) {
+              throw new MissingRequiredPropertyException("GetResourcesResult", "resourcesCollections");
+            }
+            this.resourcesCollections = resourcesCollections;
             return this;
         }
         public Builder resourcesCollections(GetResourcesResourcesCollection... resourcesCollections) {
@@ -116,7 +128,10 @@ public final class GetResourcesResult {
         }
         @CustomType.Setter
         public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+            if (serviceName == null) {
+              throw new MissingRequiredPropertyException("GetResourcesResult", "serviceName");
+            }
+            this.serviceName = serviceName;
             return this;
         }
         public GetResourcesResult build() {

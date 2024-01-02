@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetVolumeBackupPoliciesFilter;
 import com.pulumi.oci.Core.outputs.GetVolumeBackupPoliciesVolumeBackupPolicy;
 import java.lang.String;
@@ -81,11 +82,13 @@ public final class GetVolumeBackupPoliciesResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVolumeBackupPoliciesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -94,12 +97,18 @@ public final class GetVolumeBackupPoliciesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPoliciesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder volumeBackupPolicies(List<GetVolumeBackupPoliciesVolumeBackupPolicy> volumeBackupPolicies) {
-            this.volumeBackupPolicies = Objects.requireNonNull(volumeBackupPolicies);
+            if (volumeBackupPolicies == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPoliciesResult", "volumeBackupPolicies");
+            }
+            this.volumeBackupPolicies = volumeBackupPolicies;
             return this;
         }
         public Builder volumeBackupPolicies(GetVolumeBackupPoliciesVolumeBackupPolicy... volumeBackupPolicies) {

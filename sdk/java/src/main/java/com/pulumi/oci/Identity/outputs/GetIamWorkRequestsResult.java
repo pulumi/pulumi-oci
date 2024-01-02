@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetIamWorkRequestsFilter;
 import com.pulumi.oci.Identity.outputs.GetIamWorkRequestsIamWorkRequest;
 import java.lang.String;
@@ -87,11 +88,15 @@ public final class GetIamWorkRequestsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetIamWorkRequestsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -100,7 +105,10 @@ public final class GetIamWorkRequestsResult {
         }
         @CustomType.Setter
         public Builder iamWorkRequests(List<GetIamWorkRequestsIamWorkRequest> iamWorkRequests) {
-            this.iamWorkRequests = Objects.requireNonNull(iamWorkRequests);
+            if (iamWorkRequests == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestsResult", "iamWorkRequests");
+            }
+            this.iamWorkRequests = iamWorkRequests;
             return this;
         }
         public Builder iamWorkRequests(GetIamWorkRequestsIamWorkRequest... iamWorkRequests) {
@@ -108,11 +116,15 @@ public final class GetIamWorkRequestsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder resourceIdentifier(@Nullable String resourceIdentifier) {
+
             this.resourceIdentifier = resourceIdentifier;
             return this;
         }

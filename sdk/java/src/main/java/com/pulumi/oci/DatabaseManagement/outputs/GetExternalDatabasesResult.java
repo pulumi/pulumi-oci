@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDatabasesExternalDatabaseCollection;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDatabasesFilter;
 import java.lang.String;
@@ -101,17 +102,22 @@ public final class GetExternalDatabasesResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalDatabaseCollections(List<GetExternalDatabasesExternalDatabaseCollection> externalDatabaseCollections) {
-            this.externalDatabaseCollections = Objects.requireNonNull(externalDatabaseCollections);
+            if (externalDatabaseCollections == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabasesResult", "externalDatabaseCollections");
+            }
+            this.externalDatabaseCollections = externalDatabaseCollections;
             return this;
         }
         public Builder externalDatabaseCollections(GetExternalDatabasesExternalDatabaseCollection... externalDatabaseCollections) {
@@ -119,11 +125,13 @@ public final class GetExternalDatabasesResult {
         }
         @CustomType.Setter
         public Builder externalDbSystemId(@Nullable String externalDbSystemId) {
+
             this.externalDbSystemId = externalDbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetExternalDatabasesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -132,7 +140,10 @@ public final class GetExternalDatabasesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabasesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetExternalDatabasesResult build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.inputs.AddonConfigurationArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -249,9 +250,15 @@ public final class AddonArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public AddonArgs build() {
-            $.addonName = Objects.requireNonNull($.addonName, "expected parameter 'addonName' to be non-null");
-            $.clusterId = Objects.requireNonNull($.clusterId, "expected parameter 'clusterId' to be non-null");
-            $.removeAddonResourcesOnDelete = Objects.requireNonNull($.removeAddonResourcesOnDelete, "expected parameter 'removeAddonResourcesOnDelete' to be non-null");
+            if ($.addonName == null) {
+                throw new MissingRequiredPropertyException("AddonArgs", "addonName");
+            }
+            if ($.clusterId == null) {
+                throw new MissingRequiredPropertyException("AddonArgs", "clusterId");
+            }
+            if ($.removeAddonResourcesOnDelete == null) {
+                throw new MissingRequiredPropertyException("AddonArgs", "removeAddonResourcesOnDelete");
+            }
             return $;
         }
     }

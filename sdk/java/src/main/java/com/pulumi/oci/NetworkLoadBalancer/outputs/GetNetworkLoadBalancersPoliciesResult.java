@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetNetworkLoadBalancersPoliciesFilter;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection;
 import java.lang.String;
@@ -66,6 +67,7 @@ public final class GetNetworkLoadBalancersPoliciesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNetworkLoadBalancersPoliciesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -74,12 +76,18 @@ public final class GetNetworkLoadBalancersPoliciesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancersPoliciesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder networkLoadBalancersPolicyCollections(List<GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection> networkLoadBalancersPolicyCollections) {
-            this.networkLoadBalancersPolicyCollections = Objects.requireNonNull(networkLoadBalancersPolicyCollections);
+            if (networkLoadBalancersPolicyCollections == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancersPoliciesResult", "networkLoadBalancersPolicyCollections");
+            }
+            this.networkLoadBalancersPolicyCollections = networkLoadBalancersPolicyCollections;
             return this;
         }
         public Builder networkLoadBalancersPolicyCollections(GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection... networkLoadBalancersPolicyCollections) {

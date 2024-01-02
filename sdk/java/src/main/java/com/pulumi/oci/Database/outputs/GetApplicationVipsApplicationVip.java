@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -190,62 +191,98 @@ public final class GetApplicationVipsApplicationVip {
 
         @CustomType.Setter
         public Builder cloudVmClusterId(String cloudVmClusterId) {
-            this.cloudVmClusterId = Objects.requireNonNull(cloudVmClusterId);
+            if (cloudVmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetApplicationVipsApplicationVip", "cloudVmClusterId");
+            }
+            this.cloudVmClusterId = cloudVmClusterId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetApplicationVipsApplicationVip", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dbNodeId(String dbNodeId) {
-            this.dbNodeId = Objects.requireNonNull(dbNodeId);
+            if (dbNodeId == null) {
+              throw new MissingRequiredPropertyException("GetApplicationVipsApplicationVip", "dbNodeId");
+            }
+            this.dbNodeId = dbNodeId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetApplicationVipsApplicationVip", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetApplicationVipsApplicationVip", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostnameLabel(String hostnameLabel) {
-            this.hostnameLabel = Objects.requireNonNull(hostnameLabel);
+            if (hostnameLabel == null) {
+              throw new MissingRequiredPropertyException("GetApplicationVipsApplicationVip", "hostnameLabel");
+            }
+            this.hostnameLabel = hostnameLabel;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetApplicationVipsApplicationVip", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+            if (ipAddress == null) {
+              throw new MissingRequiredPropertyException("GetApplicationVipsApplicationVip", "ipAddress");
+            }
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetApplicationVipsApplicationVip", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetApplicationVipsApplicationVip", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetApplicationVipsApplicationVip", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeAssigned(String timeAssigned) {
-            this.timeAssigned = Objects.requireNonNull(timeAssigned);
+            if (timeAssigned == null) {
+              throw new MissingRequiredPropertyException("GetApplicationVipsApplicationVip", "timeAssigned");
+            }
+            this.timeAssigned = timeAssigned;
             return this;
         }
         public GetApplicationVipsApplicationVip build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.outputs.GetListingPackagePricingInternationalMarketPrice;
 import java.lang.Double;
 import java.lang.String;
@@ -101,12 +102,18 @@ public final class GetListingPackagePricing {
 
         @CustomType.Setter
         public Builder currency(String currency) {
-            this.currency = Objects.requireNonNull(currency);
+            if (currency == null) {
+              throw new MissingRequiredPropertyException("GetListingPackagePricing", "currency");
+            }
+            this.currency = currency;
             return this;
         }
         @CustomType.Setter
         public Builder internationalMarketPrices(List<GetListingPackagePricingInternationalMarketPrice> internationalMarketPrices) {
-            this.internationalMarketPrices = Objects.requireNonNull(internationalMarketPrices);
+            if (internationalMarketPrices == null) {
+              throw new MissingRequiredPropertyException("GetListingPackagePricing", "internationalMarketPrices");
+            }
+            this.internationalMarketPrices = internationalMarketPrices;
             return this;
         }
         public Builder internationalMarketPrices(GetListingPackagePricingInternationalMarketPrice... internationalMarketPrices) {
@@ -114,17 +121,26 @@ public final class GetListingPackagePricing {
         }
         @CustomType.Setter
         public Builder payGoStrategy(String payGoStrategy) {
-            this.payGoStrategy = Objects.requireNonNull(payGoStrategy);
+            if (payGoStrategy == null) {
+              throw new MissingRequiredPropertyException("GetListingPackagePricing", "payGoStrategy");
+            }
+            this.payGoStrategy = payGoStrategy;
             return this;
         }
         @CustomType.Setter
         public Builder rate(Double rate) {
-            this.rate = Objects.requireNonNull(rate);
+            if (rate == null) {
+              throw new MissingRequiredPropertyException("GetListingPackagePricing", "rate");
+            }
+            this.rate = rate;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetListingPackagePricing", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetListingPackagePricing build() {

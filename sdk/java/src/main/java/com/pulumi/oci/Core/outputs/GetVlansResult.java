@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetVlansFilter;
 import com.pulumi.oci.Core.outputs.GetVlansVlan;
 import java.lang.String;
@@ -123,16 +124,21 @@ public final class GetVlansResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVlansResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVlansFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -141,22 +147,30 @@ public final class GetVlansResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVlansResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
+
             this.vcnId = vcnId;
             return this;
         }
         @CustomType.Setter
         public Builder vlans(List<GetVlansVlan> vlans) {
-            this.vlans = Objects.requireNonNull(vlans);
+            if (vlans == null) {
+              throw new MissingRequiredPropertyException("GetVlansResult", "vlans");
+            }
+            this.vlans = vlans;
             return this;
         }
         public Builder vlans(GetVlansVlan... vlans) {

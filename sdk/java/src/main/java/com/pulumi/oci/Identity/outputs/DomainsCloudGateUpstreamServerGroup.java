@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -227,27 +228,36 @@ public final class DomainsCloudGateUpstreamServerGroup {
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("DomainsCloudGateUpstreamServerGroup", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder nginxSettings(@Nullable String nginxSettings) {
+
             this.nginxSettings = nginxSettings;
             return this;
         }
         @CustomType.Setter
         public Builder ref(@Nullable String ref) {
+
             this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder ssl(@Nullable Boolean ssl) {
+
             this.ssl = ssl;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("DomainsCloudGateUpstreamServerGroup", "value");
+            }
+            this.value = value;
             return this;
         }
         public DomainsCloudGateUpstreamServerGroup build() {

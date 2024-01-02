@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetTargetDetectorRecipeDetectorRule;
 import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule;
 import java.lang.String;
@@ -199,27 +200,42 @@ public final class GetGuardTargetTargetDetectorRecipe {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipe", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipe", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder detector(String detector) {
-            this.detector = Objects.requireNonNull(detector);
+            if (detector == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipe", "detector");
+            }
+            this.detector = detector;
             return this;
         }
         @CustomType.Setter
         public Builder detectorRecipeId(String detectorRecipeId) {
-            this.detectorRecipeId = Objects.requireNonNull(detectorRecipeId);
+            if (detectorRecipeId == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipe", "detectorRecipeId");
+            }
+            this.detectorRecipeId = detectorRecipeId;
             return this;
         }
         @CustomType.Setter
         public Builder detectorRules(List<GetGuardTargetTargetDetectorRecipeDetectorRule> detectorRules) {
-            this.detectorRules = Objects.requireNonNull(detectorRules);
+            if (detectorRules == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipe", "detectorRules");
+            }
+            this.detectorRules = detectorRules;
             return this;
         }
         public Builder detectorRules(GetGuardTargetTargetDetectorRecipeDetectorRule... detectorRules) {
@@ -227,12 +243,18 @@ public final class GetGuardTargetTargetDetectorRecipe {
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipe", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder effectiveDetectorRules(List<GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules) {
-            this.effectiveDetectorRules = Objects.requireNonNull(effectiveDetectorRules);
+            if (effectiveDetectorRules == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipe", "effectiveDetectorRules");
+            }
+            this.effectiveDetectorRules = effectiveDetectorRules;
             return this;
         }
         public Builder effectiveDetectorRules(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule... effectiveDetectorRules) {
@@ -240,27 +262,42 @@ public final class GetGuardTargetTargetDetectorRecipe {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipe", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder owner(String owner) {
-            this.owner = Objects.requireNonNull(owner);
+            if (owner == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipe", "owner");
+            }
+            this.owner = owner;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipe", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipe", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipe", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetGuardTargetTargetDetectorRecipe build() {

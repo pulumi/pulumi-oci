@@ -5,6 +5,7 @@ package com.pulumi.oci.Autoscaling.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Autoscaling.inputs.AutoScalingConfigurationPolicyCapacityArgs;
 import com.pulumi.oci.Autoscaling.inputs.AutoScalingConfigurationPolicyExecutionScheduleArgs;
 import com.pulumi.oci.Autoscaling.inputs.AutoScalingConfigurationPolicyResourceActionArgs;
@@ -342,7 +343,9 @@ public final class AutoScalingConfigurationPolicyArgs extends com.pulumi.resourc
         }
 
         public AutoScalingConfigurationPolicyArgs build() {
-            $.policyType = Objects.requireNonNull($.policyType, "expected parameter 'policyType' to be non-null");
+            if ($.policyType == null) {
+                throw new MissingRequiredPropertyException("AutoScalingConfigurationPolicyArgs", "policyType");
+            }
             return $;
         }
     }

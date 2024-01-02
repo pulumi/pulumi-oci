@@ -88,21 +88,25 @@ public final class AutonomousDatabaseLongTermBackupSchedule {
 
         @CustomType.Setter
         public Builder isDisabled(@Nullable Boolean isDisabled) {
+
             this.isDisabled = isDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder repeatCadence(@Nullable String repeatCadence) {
+
             this.repeatCadence = repeatCadence;
             return this;
         }
         @CustomType.Setter
         public Builder retentionPeriodInDays(@Nullable Integer retentionPeriodInDays) {
+
             this.retentionPeriodInDays = retentionPeriodInDays;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfBackup(@Nullable String timeOfBackup) {
+
             this.timeOfBackup = timeOfBackup;
             return this;
         }

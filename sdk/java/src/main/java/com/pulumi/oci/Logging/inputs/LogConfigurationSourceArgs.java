@@ -5,6 +5,7 @@ package com.pulumi.oci.Logging.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -230,10 +231,18 @@ public final class LogConfigurationSourceArgs extends com.pulumi.resources.Resou
         }
 
         public LogConfigurationSourceArgs build() {
-            $.category = Objects.requireNonNull($.category, "expected parameter 'category' to be non-null");
-            $.resource = Objects.requireNonNull($.resource, "expected parameter 'resource' to be non-null");
-            $.service = Objects.requireNonNull($.service, "expected parameter 'service' to be non-null");
-            $.sourceType = Objects.requireNonNull($.sourceType, "expected parameter 'sourceType' to be non-null");
+            if ($.category == null) {
+                throw new MissingRequiredPropertyException("LogConfigurationSourceArgs", "category");
+            }
+            if ($.resource == null) {
+                throw new MissingRequiredPropertyException("LogConfigurationSourceArgs", "resource");
+            }
+            if ($.service == null) {
+                throw new MissingRequiredPropertyException("LogConfigurationSourceArgs", "service");
+            }
+            if ($.sourceType == null) {
+                throw new MissingRequiredPropertyException("LogConfigurationSourceArgs", "sourceType");
+            }
             return $;
         }
     }

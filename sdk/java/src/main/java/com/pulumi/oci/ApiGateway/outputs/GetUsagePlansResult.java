@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetUsagePlansFilter;
 import com.pulumi.oci.ApiGateway.outputs.GetUsagePlansUsagePlanCollection;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetUsagePlansResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetUsagePlansResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetUsagePlansFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,17 +133,24 @@ public final class GetUsagePlansResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetUsagePlansResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder usagePlanCollections(List<GetUsagePlansUsagePlanCollection> usagePlanCollections) {
-            this.usagePlanCollections = Objects.requireNonNull(usagePlanCollections);
+            if (usagePlanCollections == null) {
+              throw new MissingRequiredPropertyException("GetUsagePlansResult", "usagePlanCollections");
+            }
+            this.usagePlanCollections = usagePlanCollections;
             return this;
         }
         public Builder usagePlanCollections(GetUsagePlansUsagePlanCollection... usagePlanCollections) {

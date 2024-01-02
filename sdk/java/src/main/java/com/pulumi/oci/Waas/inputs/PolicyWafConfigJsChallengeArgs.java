@@ -5,6 +5,7 @@ package com.pulumi.oci.Waas.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.inputs.PolicyWafConfigJsChallengeChallengeSettingsArgs;
 import com.pulumi.oci.Waas.inputs.PolicyWafConfigJsChallengeCriteriaArgs;
 import com.pulumi.oci.Waas.inputs.PolicyWafConfigJsChallengeSetHttpHeaderArgs;
@@ -388,7 +389,9 @@ public final class PolicyWafConfigJsChallengeArgs extends com.pulumi.resources.R
         }
 
         public PolicyWafConfigJsChallengeArgs build() {
-            $.isEnabled = Objects.requireNonNull($.isEnabled, "expected parameter 'isEnabled' to be non-null");
+            if ($.isEnabled == null) {
+                throw new MissingRequiredPropertyException("PolicyWafConfigJsChallengeArgs", "isEnabled");
+            }
             return $;
         }
     }

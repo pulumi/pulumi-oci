@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus 
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder licensePartDescription(String licensePartDescription) {
-            this.licensePartDescription = Objects.requireNonNull(licensePartDescription);
+            if (licensePartDescription == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus", "licensePartDescription");
+            }
+            this.licensePartDescription = licensePartDescription;
             return this;
         }
         @CustomType.Setter
         public Builder metricName(String metricName) {
-            this.metricName = Objects.requireNonNull(metricName);
+            if (metricName == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus", "metricName");
+            }
+            this.metricName = metricName;
             return this;
         }
         @CustomType.Setter
         public Builder quantity(Integer quantity) {
-            this.quantity = Objects.requireNonNull(quantity);
+            if (quantity == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus", "quantity");
+            }
+            this.quantity = quantity;
             return this;
         }
         @CustomType.Setter
         public Builder sku(String sku) {
-            this.sku = Objects.requireNonNull(sku);
+            if (sku == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus", "sku");
+            }
+            this.sku = sku;
             return this;
         }
         public GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Email.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -246,82 +247,130 @@ public final class GetDkimResult {
 
         @CustomType.Setter
         public Builder cnameRecordValue(String cnameRecordValue) {
-            this.cnameRecordValue = Objects.requireNonNull(cnameRecordValue);
+            if (cnameRecordValue == null) {
+              throw new MissingRequiredPropertyException("GetDkimResult", "cnameRecordValue");
+            }
+            this.cnameRecordValue = cnameRecordValue;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDkimResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDkimResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDkimResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder dkimId(String dkimId) {
-            this.dkimId = Objects.requireNonNull(dkimId);
+            if (dkimId == null) {
+              throw new MissingRequiredPropertyException("GetDkimResult", "dkimId");
+            }
+            this.dkimId = dkimId;
             return this;
         }
         @CustomType.Setter
         public Builder dnsSubdomainName(String dnsSubdomainName) {
-            this.dnsSubdomainName = Objects.requireNonNull(dnsSubdomainName);
+            if (dnsSubdomainName == null) {
+              throw new MissingRequiredPropertyException("GetDkimResult", "dnsSubdomainName");
+            }
+            this.dnsSubdomainName = dnsSubdomainName;
             return this;
         }
         @CustomType.Setter
         public Builder emailDomainId(String emailDomainId) {
-            this.emailDomainId = Objects.requireNonNull(emailDomainId);
+            if (emailDomainId == null) {
+              throw new MissingRequiredPropertyException("GetDkimResult", "emailDomainId");
+            }
+            this.emailDomainId = emailDomainId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDkimResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDkimResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDkimResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDkimResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDkimResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDkimResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDkimResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDkimResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder txtRecordValue(String txtRecordValue) {
-            this.txtRecordValue = Objects.requireNonNull(txtRecordValue);
+            if (txtRecordValue == null) {
+              throw new MissingRequiredPropertyException("GetDkimResult", "txtRecordValue");
+            }
+            this.txtRecordValue = txtRecordValue;
             return this;
         }
         public GetDkimResult build() {

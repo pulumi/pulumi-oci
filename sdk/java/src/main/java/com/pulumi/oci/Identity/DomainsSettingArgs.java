@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsSettingCertificateValidationArgs;
 import com.pulumi.oci.Identity.inputs.DomainsSettingCloudGateCorsSettingsArgs;
 import com.pulumi.oci.Identity.inputs.DomainsSettingCompanyNameArgs;
@@ -3916,10 +3917,18 @@ public final class DomainsSettingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public DomainsSettingArgs build() {
-            $.csrAccess = Objects.requireNonNull($.csrAccess, "expected parameter 'csrAccess' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
-            $.settingId = Objects.requireNonNull($.settingId, "expected parameter 'settingId' to be non-null");
+            if ($.csrAccess == null) {
+                throw new MissingRequiredPropertyException("DomainsSettingArgs", "csrAccess");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsSettingArgs", "idcsEndpoint");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsSettingArgs", "schemas");
+            }
+            if ($.settingId == null) {
+                throw new MissingRequiredPropertyException("DomainsSettingArgs", "settingId");
+            }
             return $;
         }
     }

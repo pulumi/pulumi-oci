@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollection;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesFilter;
 import java.lang.String;
@@ -95,17 +96,24 @@ public final class GetExternalDbSystemDiscoveriesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalDbSystemDiscoveryCollections(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollection> externalDbSystemDiscoveryCollections) {
-            this.externalDbSystemDiscoveryCollections = Objects.requireNonNull(externalDbSystemDiscoveryCollections);
+            if (externalDbSystemDiscoveryCollections == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesResult", "externalDbSystemDiscoveryCollections");
+            }
+            this.externalDbSystemDiscoveryCollections = externalDbSystemDiscoveryCollections;
             return this;
         }
         public Builder externalDbSystemDiscoveryCollections(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollection... externalDbSystemDiscoveryCollections) {
@@ -113,6 +121,7 @@ public final class GetExternalDbSystemDiscoveriesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetExternalDbSystemDiscoveriesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -121,7 +130,10 @@ public final class GetExternalDbSystemDiscoveriesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetExternalDbSystemDiscoveriesResult build() {

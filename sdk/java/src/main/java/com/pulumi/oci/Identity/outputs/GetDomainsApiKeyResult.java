@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsApiKeyIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsApiKeyIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsApiKeyMeta;
@@ -326,11 +327,15 @@ public final class GetDomainsApiKeyResult {
 
         @CustomType.Setter
         public Builder apiKeyId(String apiKeyId) {
-            this.apiKeyId = Objects.requireNonNull(apiKeyId);
+            if (apiKeyId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApiKeyResult", "apiKeyId");
+            }
+            this.apiKeyId = apiKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder attributeSets(@Nullable List<String> attributeSets) {
+
             this.attributeSets = attributeSets;
             return this;
         }
@@ -339,47 +344,70 @@ public final class GetDomainsApiKeyResult {
         }
         @CustomType.Setter
         public Builder attributes(@Nullable String attributes) {
+
             this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApiKeyResult", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApiKeyResult", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApiKeyResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApiKeyResult", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder fingerprint(String fingerprint) {
-            this.fingerprint = Objects.requireNonNull(fingerprint);
+            if (fingerprint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApiKeyResult", "fingerprint");
+            }
+            this.fingerprint = fingerprint;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApiKeyResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsApiKeyIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApiKeyResult", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsApiKeyIdcsCreatedBy... idcsCreatedBies) {
@@ -387,12 +415,18 @@ public final class GetDomainsApiKeyResult {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApiKeyResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsApiKeyIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApiKeyResult", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsApiKeyIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -400,12 +434,18 @@ public final class GetDomainsApiKeyResult {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApiKeyResult", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApiKeyResult", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -413,12 +453,18 @@ public final class GetDomainsApiKeyResult {
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApiKeyResult", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsApiKeyMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApiKeyResult", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsApiKeyMeta... metas) {
@@ -426,17 +472,24 @@ public final class GetDomainsApiKeyResult {
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApiKeyResult", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApiKeyResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -444,7 +497,10 @@ public final class GetDomainsApiKeyResult {
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsApiKeyTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApiKeyResult", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsApiKeyTag... tags) {
@@ -452,12 +508,18 @@ public final class GetDomainsApiKeyResult {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApiKeyResult", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionselfChangeUsers(List<GetDomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionselfChangeUsers);
+            if (urnietfparamsscimschemasoracleidcsextensionselfChangeUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApiKeyResult", "urnietfparamsscimschemasoracleidcsextensionselfChangeUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers = urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionselfChangeUsers(GetDomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser... urnietfparamsscimschemasoracleidcsextensionselfChangeUsers) {
@@ -465,7 +527,10 @@ public final class GetDomainsApiKeyResult {
         }
         @CustomType.Setter
         public Builder users(List<GetDomainsApiKeyUser> users) {
-            this.users = Objects.requireNonNull(users);
+            if (users == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApiKeyResult", "users");
+            }
+            this.users = users;
             return this;
         }
         public Builder users(GetDomainsApiKeyUser... users) {

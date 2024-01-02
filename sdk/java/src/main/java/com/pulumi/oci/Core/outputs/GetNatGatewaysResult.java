@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetNatGatewaysFilter;
 import com.pulumi.oci.Core.outputs.GetNatGatewaysNatGateway;
 import java.lang.String;
@@ -123,16 +124,21 @@ public final class GetNatGatewaysResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNatGatewaysResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNatGatewaysFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -141,12 +147,18 @@ public final class GetNatGatewaysResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNatGatewaysResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder natGateways(List<GetNatGatewaysNatGateway> natGateways) {
-            this.natGateways = Objects.requireNonNull(natGateways);
+            if (natGateways == null) {
+              throw new MissingRequiredPropertyException("GetNatGatewaysResult", "natGateways");
+            }
+            this.natGateways = natGateways;
             return this;
         }
         public Builder natGateways(GetNatGatewaysNatGateway... natGateways) {
@@ -154,11 +166,13 @@ public final class GetNatGatewaysResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
+
             this.vcnId = vcnId;
             return this;
         }

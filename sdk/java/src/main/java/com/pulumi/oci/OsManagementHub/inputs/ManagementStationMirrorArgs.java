@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagementHub.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -199,9 +200,15 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
         }
 
         public ManagementStationMirrorArgs build() {
-            $.directory = Objects.requireNonNull($.directory, "expected parameter 'directory' to be non-null");
-            $.port = Objects.requireNonNull($.port, "expected parameter 'port' to be non-null");
-            $.sslport = Objects.requireNonNull($.sslport, "expected parameter 'sslport' to be non-null");
+            if ($.directory == null) {
+                throw new MissingRequiredPropertyException("ManagementStationMirrorArgs", "directory");
+            }
+            if ($.port == null) {
+                throw new MissingRequiredPropertyException("ManagementStationMirrorArgs", "port");
+            }
+            if ($.sslport == null) {
+                throw new MissingRequiredPropertyException("ManagementStationMirrorArgs", "sslport");
+            }
             return $;
         }
     }

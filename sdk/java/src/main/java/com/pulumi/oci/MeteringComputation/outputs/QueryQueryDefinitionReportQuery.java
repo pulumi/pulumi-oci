@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.QueryQueryDefinitionReportQueryForecast;
 import com.pulumi.oci.MeteringComputation.outputs.QueryQueryDefinitionReportQueryGroupByTag;
 import java.lang.Boolean;
@@ -203,31 +204,39 @@ public final class QueryQueryDefinitionReportQuery {
 
         @CustomType.Setter
         public Builder compartmentDepth(@Nullable Double compartmentDepth) {
+
             this.compartmentDepth = compartmentDepth;
             return this;
         }
         @CustomType.Setter
         public Builder dateRangeName(@Nullable String dateRangeName) {
+
             this.dateRangeName = dateRangeName;
             return this;
         }
         @CustomType.Setter
         public Builder filter(@Nullable String filter) {
+
             this.filter = filter;
             return this;
         }
         @CustomType.Setter
         public Builder forecast(@Nullable QueryQueryDefinitionReportQueryForecast forecast) {
+
             this.forecast = forecast;
             return this;
         }
         @CustomType.Setter
         public Builder granularity(String granularity) {
-            this.granularity = Objects.requireNonNull(granularity);
+            if (granularity == null) {
+              throw new MissingRequiredPropertyException("QueryQueryDefinitionReportQuery", "granularity");
+            }
+            this.granularity = granularity;
             return this;
         }
         @CustomType.Setter
         public Builder groupBies(@Nullable List<String> groupBies) {
+
             this.groupBies = groupBies;
             return this;
         }
@@ -236,6 +245,7 @@ public final class QueryQueryDefinitionReportQuery {
         }
         @CustomType.Setter
         public Builder groupByTags(@Nullable List<QueryQueryDefinitionReportQueryGroupByTag> groupByTags) {
+
             this.groupByTags = groupByTags;
             return this;
         }
@@ -244,26 +254,33 @@ public final class QueryQueryDefinitionReportQuery {
         }
         @CustomType.Setter
         public Builder isAggregateByTime(@Nullable Boolean isAggregateByTime) {
+
             this.isAggregateByTime = isAggregateByTime;
             return this;
         }
         @CustomType.Setter
         public Builder queryType(@Nullable String queryType) {
+
             this.queryType = queryType;
             return this;
         }
         @CustomType.Setter
         public Builder tenantId(String tenantId) {
-            this.tenantId = Objects.requireNonNull(tenantId);
+            if (tenantId == null) {
+              throw new MissingRequiredPropertyException("QueryQueryDefinitionReportQuery", "tenantId");
+            }
+            this.tenantId = tenantId;
             return this;
         }
         @CustomType.Setter
         public Builder timeUsageEnded(@Nullable String timeUsageEnded) {
+
             this.timeUsageEnded = timeUsageEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeUsageStarted(@Nullable String timeUsageStarted) {
+
             this.timeUsageStarted = timeUsageStarted;
             return this;
         }

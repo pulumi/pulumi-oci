@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.outputs.GetLogGroupsFilter;
 import com.pulumi.oci.Logging.outputs.GetLogGroupsLogGroup;
 import java.lang.Boolean;
@@ -102,16 +103,21 @@ public final class GetLogGroupsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLogGroupsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetLogGroupsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -120,17 +126,24 @@ public final class GetLogGroupsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLogGroupsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCompartmentIdInSubtree(@Nullable Boolean isCompartmentIdInSubtree) {
+
             this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder logGroups(List<GetLogGroupsLogGroup> logGroups) {
-            this.logGroups = Objects.requireNonNull(logGroups);
+            if (logGroups == null) {
+              throw new MissingRequiredPropertyException("GetLogGroupsResult", "logGroups");
+            }
+            this.logGroups = logGroups;
             return this;
         }
         public Builder logGroups(GetLogGroupsLogGroup... logGroups) {

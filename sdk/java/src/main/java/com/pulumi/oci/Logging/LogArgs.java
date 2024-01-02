@@ -5,6 +5,7 @@ package com.pulumi.oci.Logging;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.inputs.LogConfigurationArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -352,9 +353,15 @@ public final class LogArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public LogArgs build() {
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.logGroupId = Objects.requireNonNull($.logGroupId, "expected parameter 'logGroupId' to be non-null");
-            $.logType = Objects.requireNonNull($.logType, "expected parameter 'logType' to be non-null");
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("LogArgs", "displayName");
+            }
+            if ($.logGroupId == null) {
+                throw new MissingRequiredPropertyException("LogArgs", "logGroupId");
+            }
+            if ($.logType == null) {
+                throw new MissingRequiredPropertyException("LogArgs", "logType");
+            }
             return $;
         }
     }

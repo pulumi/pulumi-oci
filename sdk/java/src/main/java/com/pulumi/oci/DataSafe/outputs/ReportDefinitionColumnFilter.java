@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -100,7 +101,10 @@ public final class ReportDefinitionColumnFilter {
 
         @CustomType.Setter
         public Builder expressions(List<String> expressions) {
-            this.expressions = Objects.requireNonNull(expressions);
+            if (expressions == null) {
+              throw new MissingRequiredPropertyException("ReportDefinitionColumnFilter", "expressions");
+            }
+            this.expressions = expressions;
             return this;
         }
         public Builder expressions(String... expressions) {
@@ -108,22 +112,34 @@ public final class ReportDefinitionColumnFilter {
         }
         @CustomType.Setter
         public Builder fieldName(String fieldName) {
-            this.fieldName = Objects.requireNonNull(fieldName);
+            if (fieldName == null) {
+              throw new MissingRequiredPropertyException("ReportDefinitionColumnFilter", "fieldName");
+            }
+            this.fieldName = fieldName;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("ReportDefinitionColumnFilter", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isHidden(Boolean isHidden) {
-            this.isHidden = Objects.requireNonNull(isHidden);
+            if (isHidden == null) {
+              throw new MissingRequiredPropertyException("ReportDefinitionColumnFilter", "isHidden");
+            }
+            this.isHidden = isHidden;
             return this;
         }
         @CustomType.Setter
         public Builder operator(String operator) {
-            this.operator = Objects.requireNonNull(operator);
+            if (operator == null) {
+              throw new MissingRequiredPropertyException("ReportDefinitionColumnFilter", "operator");
+            }
+            this.operator = operator;
             return this;
         }
         public ReportDefinitionColumnFilter build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetAuditProfileAnalyticItem;
 import java.lang.Boolean;
 import java.lang.String;
@@ -85,21 +86,27 @@ public final class GetAuditProfileAnalyticResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileAnalyticResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder groupBies(@Nullable List<String> groupBies) {
+
             this.groupBies = groupBies;
             return this;
         }
@@ -108,12 +115,18 @@ public final class GetAuditProfileAnalyticResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileAnalyticResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetAuditProfileAnalyticItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileAnalyticResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetAuditProfileAnalyticItem... items) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetSecurityAssessmentComparisonTargetAuditingBaselineReferenc
 
         @CustomType.Setter
         public Builder cis(String cis) {
-            this.cis = Objects.requireNonNull(cis);
+            if (cis == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetAuditingBaselineReference", "cis");
+            }
+            this.cis = cis;
             return this;
         }
         @CustomType.Setter
         public Builder gdpr(String gdpr) {
-            this.gdpr = Objects.requireNonNull(gdpr);
+            if (gdpr == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetAuditingBaselineReference", "gdpr");
+            }
+            this.gdpr = gdpr;
             return this;
         }
         @CustomType.Setter
         public Builder stig(String stig) {
-            this.stig = Objects.requireNonNull(stig);
+            if (stig == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetAuditingBaselineReference", "stig");
+            }
+            this.stig = stig;
             return this;
         }
         public GetSecurityAssessmentComparisonTargetAuditingBaselineReference build() {

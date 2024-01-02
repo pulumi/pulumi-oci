@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
@@ -100,27 +101,42 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
 
         @CustomType.Setter
         public Builder baselineOcpuUtilization(String baselineOcpuUtilization) {
-            this.baselineOcpuUtilization = Objects.requireNonNull(baselineOcpuUtilization);
+            if (baselineOcpuUtilization == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig", "baselineOcpuUtilization");
+            }
+            this.baselineOcpuUtilization = baselineOcpuUtilization;
             return this;
         }
         @CustomType.Setter
         public Builder memoryInGbs(Double memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+            if (memoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig", "memoryInGbs");
+            }
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder nvmes(Integer nvmes) {
-            this.nvmes = Objects.requireNonNull(nvmes);
+            if (nvmes == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig", "nvmes");
+            }
+            this.nvmes = nvmes;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(Double ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+            if (ocpus == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig", "ocpus");
+            }
+            this.ocpus = ocpus;
             return this;
         }
         @CustomType.Setter
         public Builder vcpus(Integer vcpus) {
-            this.vcpus = Objects.requireNonNull(vcpus);
+            if (vcpus == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig", "vcpus");
+            }
+            this.vcpus = vcpus;
             return this;
         }
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig build() {

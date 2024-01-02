@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetsFilter;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetsTargetAssetCollection;
 import java.lang.String;
@@ -115,11 +116,13 @@ public final class GetTargetAssetsResult {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetTargetAssetsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -128,22 +131,30 @@ public final class GetTargetAssetsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder migrationPlanId(@Nullable String migrationPlanId) {
+
             this.migrationPlanId = migrationPlanId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targetAssetCollections(List<GetTargetAssetsTargetAssetCollection> targetAssetCollections) {
-            this.targetAssetCollections = Objects.requireNonNull(targetAssetCollections);
+            if (targetAssetCollections == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsResult", "targetAssetCollections");
+            }
+            this.targetAssetCollections = targetAssetCollections;
             return this;
         }
         public Builder targetAssetCollections(GetTargetAssetsTargetAssetCollection... targetAssetCollections) {
@@ -151,6 +162,7 @@ public final class GetTargetAssetsResult {
         }
         @CustomType.Setter
         public Builder targetAssetId(@Nullable String targetAssetId) {
+
             this.targetAssetId = targetAssetId;
             return this;
         }

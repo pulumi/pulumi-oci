@@ -58,11 +58,13 @@ public final class ClusterUpgradeLicense {
 
         @CustomType.Setter
         public Builder licenseKey(@Nullable String licenseKey) {
+
             this.licenseKey = licenseKey;
             return this;
         }
         @CustomType.Setter
         public Builder licenseType(@Nullable String licenseType) {
+
             this.licenseType = licenseType;
             return this;
         }

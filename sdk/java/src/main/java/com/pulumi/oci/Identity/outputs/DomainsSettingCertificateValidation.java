@@ -376,51 +376,61 @@ public final class DomainsSettingCertificateValidation {
 
         @CustomType.Setter
         public Builder crlCheckOnOcspFailureEnabled(@Nullable Boolean crlCheckOnOcspFailureEnabled) {
+
             this.crlCheckOnOcspFailureEnabled = crlCheckOnOcspFailureEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder crlEnabled(@Nullable Boolean crlEnabled) {
+
             this.crlEnabled = crlEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder crlLocation(@Nullable String crlLocation) {
+
             this.crlLocation = crlLocation;
             return this;
         }
         @CustomType.Setter
         public Builder crlRefreshInterval(@Nullable Integer crlRefreshInterval) {
+
             this.crlRefreshInterval = crlRefreshInterval;
             return this;
         }
         @CustomType.Setter
         public Builder ocspEnabled(@Nullable Boolean ocspEnabled) {
+
             this.ocspEnabled = ocspEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder ocspResponderUrl(@Nullable String ocspResponderUrl) {
+
             this.ocspResponderUrl = ocspResponderUrl;
             return this;
         }
         @CustomType.Setter
         public Builder ocspSettingsResponderUrlPreferred(@Nullable Boolean ocspSettingsResponderUrlPreferred) {
+
             this.ocspSettingsResponderUrlPreferred = ocspSettingsResponderUrlPreferred;
             return this;
         }
         @CustomType.Setter
         public Builder ocspSigningCertificateAlias(@Nullable String ocspSigningCertificateAlias) {
+
             this.ocspSigningCertificateAlias = ocspSigningCertificateAlias;
             return this;
         }
         @CustomType.Setter
         public Builder ocspTimeoutDuration(@Nullable Integer ocspTimeoutDuration) {
+
             this.ocspTimeoutDuration = ocspTimeoutDuration;
             return this;
         }
         @CustomType.Setter
         public Builder ocspUnknownResponseStatusAllowed(@Nullable Boolean ocspUnknownResponseStatusAllowed) {
+
             this.ocspUnknownResponseStatusAllowed = ocspUnknownResponseStatusAllowed;
             return this;
         }

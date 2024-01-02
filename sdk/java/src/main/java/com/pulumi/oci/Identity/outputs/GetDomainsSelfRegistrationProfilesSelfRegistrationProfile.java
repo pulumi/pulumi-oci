@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsSelfRegistrationProfilesSelfRegistrationProfileAfterSubmitText;
 import com.pulumi.oci.Identity.outputs.GetDomainsSelfRegistrationProfilesSelfRegistrationProfileConsentText;
 import com.pulumi.oci.Identity.outputs.GetDomainsSelfRegistrationProfilesSelfRegistrationProfileDefaultGroup;
@@ -607,17 +608,26 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
 
         @CustomType.Setter
         public Builder activationEmailRequired(Boolean activationEmailRequired) {
-            this.activationEmailRequired = Objects.requireNonNull(activationEmailRequired);
+            if (activationEmailRequired == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "activationEmailRequired");
+            }
+            this.activationEmailRequired = activationEmailRequired;
             return this;
         }
         @CustomType.Setter
         public Builder active(Boolean active) {
-            this.active = Objects.requireNonNull(active);
+            if (active == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "active");
+            }
+            this.active = active;
             return this;
         }
         @CustomType.Setter
         public Builder afterSubmitTexts(List<GetDomainsSelfRegistrationProfilesSelfRegistrationProfileAfterSubmitText> afterSubmitTexts) {
-            this.afterSubmitTexts = Objects.requireNonNull(afterSubmitTexts);
+            if (afterSubmitTexts == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "afterSubmitTexts");
+            }
+            this.afterSubmitTexts = afterSubmitTexts;
             return this;
         }
         public Builder afterSubmitTexts(GetDomainsSelfRegistrationProfilesSelfRegistrationProfileAfterSubmitText... afterSubmitTexts) {
@@ -625,7 +635,10 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
         }
         @CustomType.Setter
         public Builder allowedEmailDomains(List<String> allowedEmailDomains) {
-            this.allowedEmailDomains = Objects.requireNonNull(allowedEmailDomains);
+            if (allowedEmailDomains == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "allowedEmailDomains");
+            }
+            this.allowedEmailDomains = allowedEmailDomains;
             return this;
         }
         public Builder allowedEmailDomains(String... allowedEmailDomains) {
@@ -633,7 +646,10 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
         }
         @CustomType.Setter
         public Builder attributeSets(List<String> attributeSets) {
-            this.attributeSets = Objects.requireNonNull(attributeSets);
+            if (attributeSets == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "attributeSets");
+            }
+            this.attributeSets = attributeSets;
             return this;
         }
         public Builder attributeSets(String... attributeSets) {
@@ -641,27 +657,42 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
         }
         @CustomType.Setter
         public Builder attributes(String attributes) {
-            this.attributes = Objects.requireNonNull(attributes);
+            if (attributes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "attributes");
+            }
+            this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(String authorization) {
-            this.authorization = Objects.requireNonNull(authorization);
+            if (authorization == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "authorization");
+            }
+            this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder consentTextPresent(Boolean consentTextPresent) {
-            this.consentTextPresent = Objects.requireNonNull(consentTextPresent);
+            if (consentTextPresent == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "consentTextPresent");
+            }
+            this.consentTextPresent = consentTextPresent;
             return this;
         }
         @CustomType.Setter
         public Builder consentTexts(List<GetDomainsSelfRegistrationProfilesSelfRegistrationProfileConsentText> consentTexts) {
-            this.consentTexts = Objects.requireNonNull(consentTexts);
+            if (consentTexts == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "consentTexts");
+            }
+            this.consentTexts = consentTexts;
             return this;
         }
         public Builder consentTexts(GetDomainsSelfRegistrationProfilesSelfRegistrationProfileConsentText... consentTexts) {
@@ -669,7 +700,10 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
         }
         @CustomType.Setter
         public Builder defaultGroups(List<GetDomainsSelfRegistrationProfilesSelfRegistrationProfileDefaultGroup> defaultGroups) {
-            this.defaultGroups = Objects.requireNonNull(defaultGroups);
+            if (defaultGroups == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "defaultGroups");
+            }
+            this.defaultGroups = defaultGroups;
             return this;
         }
         public Builder defaultGroups(GetDomainsSelfRegistrationProfilesSelfRegistrationProfileDefaultGroup... defaultGroups) {
@@ -677,12 +711,18 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder disallowedEmailDomains(List<String> disallowedEmailDomains) {
-            this.disallowedEmailDomains = Objects.requireNonNull(disallowedEmailDomains);
+            if (disallowedEmailDomains == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "disallowedEmailDomains");
+            }
+            this.disallowedEmailDomains = disallowedEmailDomains;
             return this;
         }
         public Builder disallowedEmailDomains(String... disallowedEmailDomains) {
@@ -690,7 +730,10 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
         }
         @CustomType.Setter
         public Builder displayNames(List<GetDomainsSelfRegistrationProfilesSelfRegistrationProfileDisplayName> displayNames) {
-            this.displayNames = Objects.requireNonNull(displayNames);
+            if (displayNames == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "displayNames");
+            }
+            this.displayNames = displayNames;
             return this;
         }
         public Builder displayNames(GetDomainsSelfRegistrationProfilesSelfRegistrationProfileDisplayName... displayNames) {
@@ -698,12 +741,18 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder emailTemplates(List<GetDomainsSelfRegistrationProfilesSelfRegistrationProfileEmailTemplate> emailTemplates) {
-            this.emailTemplates = Objects.requireNonNull(emailTemplates);
+            if (emailTemplates == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "emailTemplates");
+            }
+            this.emailTemplates = emailTemplates;
             return this;
         }
         public Builder emailTemplates(GetDomainsSelfRegistrationProfilesSelfRegistrationProfileEmailTemplate... emailTemplates) {
@@ -711,17 +760,26 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
         }
         @CustomType.Setter
         public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+            if (externalId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "externalId");
+            }
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
         public Builder footerLogo(String footerLogo) {
-            this.footerLogo = Objects.requireNonNull(footerLogo);
+            if (footerLogo == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "footerLogo");
+            }
+            this.footerLogo = footerLogo;
             return this;
         }
         @CustomType.Setter
         public Builder footerTexts(List<GetDomainsSelfRegistrationProfilesSelfRegistrationProfileFooterText> footerTexts) {
-            this.footerTexts = Objects.requireNonNull(footerTexts);
+            if (footerTexts == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "footerTexts");
+            }
+            this.footerTexts = footerTexts;
             return this;
         }
         public Builder footerTexts(GetDomainsSelfRegistrationProfilesSelfRegistrationProfileFooterText... footerTexts) {
@@ -729,12 +787,18 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
         }
         @CustomType.Setter
         public Builder headerLogo(String headerLogo) {
-            this.headerLogo = Objects.requireNonNull(headerLogo);
+            if (headerLogo == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "headerLogo");
+            }
+            this.headerLogo = headerLogo;
             return this;
         }
         @CustomType.Setter
         public Builder headerTexts(List<GetDomainsSelfRegistrationProfilesSelfRegistrationProfileHeaderText> headerTexts) {
-            this.headerTexts = Objects.requireNonNull(headerTexts);
+            if (headerTexts == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "headerTexts");
+            }
+            this.headerTexts = headerTexts;
             return this;
         }
         public Builder headerTexts(GetDomainsSelfRegistrationProfilesSelfRegistrationProfileHeaderText... headerTexts) {
@@ -742,12 +806,18 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsSelfRegistrationProfilesSelfRegistrationProfileIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsSelfRegistrationProfilesSelfRegistrationProfileIdcsCreatedBy... idcsCreatedBies) {
@@ -755,12 +825,18 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsSelfRegistrationProfilesSelfRegistrationProfileIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsSelfRegistrationProfilesSelfRegistrationProfileIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -768,12 +844,18 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -781,7 +863,10 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsSelfRegistrationProfilesSelfRegistrationProfileMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsSelfRegistrationProfilesSelfRegistrationProfileMeta... metas) {
@@ -789,32 +874,50 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder numberOfDaysRedirectUrlIsValid(Integer numberOfDaysRedirectUrlIsValid) {
-            this.numberOfDaysRedirectUrlIsValid = Objects.requireNonNull(numberOfDaysRedirectUrlIsValid);
+            if (numberOfDaysRedirectUrlIsValid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "numberOfDaysRedirectUrlIsValid");
+            }
+            this.numberOfDaysRedirectUrlIsValid = numberOfDaysRedirectUrlIsValid;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder redirectUrl(String redirectUrl) {
-            this.redirectUrl = Objects.requireNonNull(redirectUrl);
+            if (redirectUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "redirectUrl");
+            }
+            this.redirectUrl = redirectUrl;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(String resourceTypeSchemaVersion) {
-            this.resourceTypeSchemaVersion = Objects.requireNonNull(resourceTypeSchemaVersion);
+            if (resourceTypeSchemaVersion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "resourceTypeSchemaVersion");
+            }
+            this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -822,12 +925,18 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
         }
         @CustomType.Setter
         public Builder showOnLoginPage(Boolean showOnLoginPage) {
-            this.showOnLoginPage = Objects.requireNonNull(showOnLoginPage);
+            if (showOnLoginPage == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "showOnLoginPage");
+            }
+            this.showOnLoginPage = showOnLoginPage;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsSelfRegistrationProfilesSelfRegistrationProfileTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsSelfRegistrationProfilesSelfRegistrationProfileTag... tags) {
@@ -835,12 +944,18 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder userAttributes(List<GetDomainsSelfRegistrationProfilesSelfRegistrationProfileUserAttribute> userAttributes) {
-            this.userAttributes = Objects.requireNonNull(userAttributes);
+            if (userAttributes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilesSelfRegistrationProfile", "userAttributes");
+            }
+            this.userAttributes = userAttributes;
             return this;
         }
         public Builder userAttributes(GetDomainsSelfRegistrationProfilesSelfRegistrationProfileUserAttribute... userAttributes) {

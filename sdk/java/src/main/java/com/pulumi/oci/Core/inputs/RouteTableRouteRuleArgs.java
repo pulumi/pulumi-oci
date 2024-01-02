@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -317,7 +318,9 @@ public final class RouteTableRouteRuleArgs extends com.pulumi.resources.Resource
         }
 
         public RouteTableRouteRuleArgs build() {
-            $.networkEntityId = Objects.requireNonNull($.networkEntityId, "expected parameter 'networkEntityId' to be non-null");
+            if ($.networkEntityId == null) {
+                throw new MissingRequiredPropertyException("RouteTableRouteRuleArgs", "networkEntityId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -201,42 +202,66 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
 
         @CustomType.Setter
         public Builder assignIpv6ip(Boolean assignIpv6ip) {
-            this.assignIpv6ip = Objects.requireNonNull(assignIpv6ip);
+            if (assignIpv6ip == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail", "assignIpv6ip");
+            }
+            this.assignIpv6ip = assignIpv6ip;
             return this;
         }
         @CustomType.Setter
         public Builder assignPrivateDnsRecord(Boolean assignPrivateDnsRecord) {
-            this.assignPrivateDnsRecord = Objects.requireNonNull(assignPrivateDnsRecord);
+            if (assignPrivateDnsRecord == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail", "assignPrivateDnsRecord");
+            }
+            this.assignPrivateDnsRecord = assignPrivateDnsRecord;
             return this;
         }
         @CustomType.Setter
         public Builder assignPublicIp(Boolean assignPublicIp) {
-            this.assignPublicIp = Objects.requireNonNull(assignPublicIp);
+            if (assignPublicIp == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail", "assignPublicIp");
+            }
+            this.assignPublicIp = assignPublicIp;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostnameLabel(String hostnameLabel) {
-            this.hostnameLabel = Objects.requireNonNull(hostnameLabel);
+            if (hostnameLabel == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail", "hostnameLabel");
+            }
+            this.hostnameLabel = hostnameLabel;
             return this;
         }
         @CustomType.Setter
         public Builder ipv6addressIpv6subnetCidrPairDetails(List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails) {
-            this.ipv6addressIpv6subnetCidrPairDetails = Objects.requireNonNull(ipv6addressIpv6subnetCidrPairDetails);
+            if (ipv6addressIpv6subnetCidrPairDetails == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail", "ipv6addressIpv6subnetCidrPairDetails");
+            }
+            this.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             return this;
         }
         public Builder ipv6addressIpv6subnetCidrPairDetails(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail... ipv6addressIpv6subnetCidrPairDetails) {
@@ -244,7 +269,10 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
@@ -252,17 +280,26 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         }
         @CustomType.Setter
         public Builder privateIp(String privateIp) {
-            this.privateIp = Objects.requireNonNull(privateIp);
+            if (privateIp == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail", "privateIp");
+            }
+            this.privateIp = privateIp;
             return this;
         }
         @CustomType.Setter
         public Builder skipSourceDestCheck(Boolean skipSourceDestCheck) {
-            this.skipSourceDestCheck = Objects.requireNonNull(skipSourceDestCheck);
+            if (skipSourceDestCheck == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail", "skipSourceDestCheck");
+            }
+            this.skipSourceDestCheck = skipSourceDestCheck;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail build() {

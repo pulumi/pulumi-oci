@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationGoldenGateDetailsHub;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationGoldenGateDetailsSettings;
 import java.util.Objects;
@@ -59,11 +60,15 @@ public final class MigrationGoldenGateDetails {
 
         @CustomType.Setter
         public Builder hub(MigrationGoldenGateDetailsHub hub) {
-            this.hub = Objects.requireNonNull(hub);
+            if (hub == null) {
+              throw new MissingRequiredPropertyException("MigrationGoldenGateDetails", "hub");
+            }
+            this.hub = hub;
             return this;
         }
         @CustomType.Setter
         public Builder settings(@Nullable MigrationGoldenGateDetailsSettings settings) {
+
             this.settings = settings;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetJavaDownloadsJavaLicenseResult {
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder licenseType(String licenseType) {
-            this.licenseType = Objects.requireNonNull(licenseType);
+            if (licenseType == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseResult", "licenseType");
+            }
+            this.licenseType = licenseType;
             return this;
         }
         @CustomType.Setter
         public Builder licenseUrl(String licenseUrl) {
-            this.licenseUrl = Objects.requireNonNull(licenseUrl);
+            if (licenseUrl == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseResult", "licenseUrl");
+            }
+            this.licenseUrl = licenseUrl;
             return this;
         }
         public GetJavaDownloadsJavaLicenseResult build() {

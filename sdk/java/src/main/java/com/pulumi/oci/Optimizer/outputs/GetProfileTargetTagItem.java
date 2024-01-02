@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetProfileTargetTagItem {
 
         @CustomType.Setter
         public Builder tagDefinitionName(String tagDefinitionName) {
-            this.tagDefinitionName = Objects.requireNonNull(tagDefinitionName);
+            if (tagDefinitionName == null) {
+              throw new MissingRequiredPropertyException("GetProfileTargetTagItem", "tagDefinitionName");
+            }
+            this.tagDefinitionName = tagDefinitionName;
             return this;
         }
         @CustomType.Setter
         public Builder tagNamespaceName(String tagNamespaceName) {
-            this.tagNamespaceName = Objects.requireNonNull(tagNamespaceName);
+            if (tagNamespaceName == null) {
+              throw new MissingRequiredPropertyException("GetProfileTargetTagItem", "tagNamespaceName");
+            }
+            this.tagNamespaceName = tagNamespaceName;
             return this;
         }
         @CustomType.Setter
         public Builder tagValueType(String tagValueType) {
-            this.tagValueType = Objects.requireNonNull(tagValueType);
+            if (tagValueType == null) {
+              throw new MissingRequiredPropertyException("GetProfileTargetTagItem", "tagValueType");
+            }
+            this.tagValueType = tagValueType;
             return this;
         }
         @CustomType.Setter
         public Builder tagValues(List<String> tagValues) {
-            this.tagValues = Objects.requireNonNull(tagValues);
+            if (tagValues == null) {
+              throw new MissingRequiredPropertyException("GetProfileTargetTagItem", "tagValues");
+            }
+            this.tagValues = tagValues;
             return this;
         }
         public Builder tagValues(String... tagValues) {

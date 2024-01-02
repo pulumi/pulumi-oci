@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetImageShapeMemoryConstraint;
 import com.pulumi.oci.Core.outputs.GetImageShapeOcpuConstraint;
 import java.lang.String;
@@ -107,17 +108,26 @@ public final class GetImageShapeResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetImageShapeResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imageId(String imageId) {
-            this.imageId = Objects.requireNonNull(imageId);
+            if (imageId == null) {
+              throw new MissingRequiredPropertyException("GetImageShapeResult", "imageId");
+            }
+            this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder memoryConstraints(List<GetImageShapeMemoryConstraint> memoryConstraints) {
-            this.memoryConstraints = Objects.requireNonNull(memoryConstraints);
+            if (memoryConstraints == null) {
+              throw new MissingRequiredPropertyException("GetImageShapeResult", "memoryConstraints");
+            }
+            this.memoryConstraints = memoryConstraints;
             return this;
         }
         public Builder memoryConstraints(GetImageShapeMemoryConstraint... memoryConstraints) {
@@ -125,7 +135,10 @@ public final class GetImageShapeResult {
         }
         @CustomType.Setter
         public Builder ocpuConstraints(List<GetImageShapeOcpuConstraint> ocpuConstraints) {
-            this.ocpuConstraints = Objects.requireNonNull(ocpuConstraints);
+            if (ocpuConstraints == null) {
+              throw new MissingRequiredPropertyException("GetImageShapeResult", "ocpuConstraints");
+            }
+            this.ocpuConstraints = ocpuConstraints;
             return this;
         }
         public Builder ocpuConstraints(GetImageShapeOcpuConstraint... ocpuConstraints) {
@@ -133,12 +146,18 @@ public final class GetImageShapeResult {
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetImageShapeResult", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+            if (shapeName == null) {
+              throw new MissingRequiredPropertyException("GetImageShapeResult", "shapeName");
+            }
+            this.shapeName = shapeName;
             return this;
         }
         public GetImageShapeResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Kms.outputs.GetReplicationStatusReplicaDetail;
 import java.lang.String;
 import java.util.List;
@@ -70,17 +71,26 @@ public final class GetReplicationStatusResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetReplicationStatusResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managementEndpoint(String managementEndpoint) {
-            this.managementEndpoint = Objects.requireNonNull(managementEndpoint);
+            if (managementEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetReplicationStatusResult", "managementEndpoint");
+            }
+            this.managementEndpoint = managementEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder replicaDetails(List<GetReplicationStatusReplicaDetail> replicaDetails) {
-            this.replicaDetails = Objects.requireNonNull(replicaDetails);
+            if (replicaDetails == null) {
+              throw new MissingRequiredPropertyException("GetReplicationStatusResult", "replicaDetails");
+            }
+            this.replicaDetails = replicaDetails;
             return this;
         }
         public Builder replicaDetails(GetReplicationStatusReplicaDetail... replicaDetails) {
@@ -88,7 +98,10 @@ public final class GetReplicationStatusResult {
         }
         @CustomType.Setter
         public Builder replicationId(String replicationId) {
-            this.replicationId = Objects.requireNonNull(replicationId);
+            if (replicationId == null) {
+              throw new MissingRequiredPropertyException("GetReplicationStatusResult", "replicationId");
+            }
+            this.replicationId = replicationId;
             return this;
         }
         public GetReplicationStatusResult build() {

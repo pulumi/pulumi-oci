@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.outputs.UnifiedAgentConfigurationServiceConfigurationSourceParser;
 import java.lang.String;
 import java.util.List;
@@ -108,6 +109,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSource {
 
         @CustomType.Setter
         public Builder channels(@Nullable List<String> channels) {
+
             this.channels = channels;
             return this;
         }
@@ -116,16 +118,19 @@ public final class UnifiedAgentConfigurationServiceConfigurationSource {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder parser(@Nullable UnifiedAgentConfigurationServiceConfigurationSourceParser parser) {
+
             this.parser = parser;
             return this;
         }
         @CustomType.Setter
         public Builder paths(@Nullable List<String> paths) {
+
             this.paths = paths;
             return this;
         }
@@ -134,7 +139,10 @@ public final class UnifiedAgentConfigurationServiceConfigurationSource {
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("UnifiedAgentConfigurationServiceConfigurationSource", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         public UnifiedAgentConfigurationServiceConfigurationSource build() {

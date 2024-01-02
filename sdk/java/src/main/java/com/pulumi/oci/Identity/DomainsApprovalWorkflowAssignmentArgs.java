@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsApprovalWorkflowAssignmentApprovalWorkflowArgs;
 import com.pulumi.oci.Identity.inputs.DomainsApprovalWorkflowAssignmentAssignedToArgs;
 import com.pulumi.oci.Identity.inputs.DomainsApprovalWorkflowAssignmentTagArgs;
@@ -740,11 +741,21 @@ public final class DomainsApprovalWorkflowAssignmentArgs extends com.pulumi.reso
         }
 
         public DomainsApprovalWorkflowAssignmentArgs build() {
-            $.approvalWorkflow = Objects.requireNonNull($.approvalWorkflow, "expected parameter 'approvalWorkflow' to be non-null");
-            $.assignedTo = Objects.requireNonNull($.assignedTo, "expected parameter 'assignedTo' to be non-null");
-            $.assignmentType = Objects.requireNonNull($.assignmentType, "expected parameter 'assignmentType' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.approvalWorkflow == null) {
+                throw new MissingRequiredPropertyException("DomainsApprovalWorkflowAssignmentArgs", "approvalWorkflow");
+            }
+            if ($.assignedTo == null) {
+                throw new MissingRequiredPropertyException("DomainsApprovalWorkflowAssignmentArgs", "assignedTo");
+            }
+            if ($.assignmentType == null) {
+                throw new MissingRequiredPropertyException("DomainsApprovalWorkflowAssignmentArgs", "assignmentType");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsApprovalWorkflowAssignmentArgs", "idcsEndpoint");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsApprovalWorkflowAssignmentArgs", "schemas");
+            }
             return $;
         }
     }

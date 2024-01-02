@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig;
 import java.lang.String;
 import java.util.List;
@@ -102,16 +103,21 @@ public final class NodePoolNodeConfigDetailsPlacementConfig {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("NodePoolNodeConfigDetailsPlacementConfig", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder capacityReservationId(@Nullable String capacityReservationId) {
+
             this.capacityReservationId = capacityReservationId;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomains(@Nullable List<String> faultDomains) {
+
             this.faultDomains = faultDomains;
             return this;
         }
@@ -120,12 +126,16 @@ public final class NodePoolNodeConfigDetailsPlacementConfig {
         }
         @CustomType.Setter
         public Builder preemptibleNodeConfig(@Nullable NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig preemptibleNodeConfig) {
+
             this.preemptibleNodeConfig = preemptibleNodeConfig;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("NodePoolNodeConfigDetailsPlacementConfig", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         public NodePoolNodeConfigDetailsPlacementConfig build() {

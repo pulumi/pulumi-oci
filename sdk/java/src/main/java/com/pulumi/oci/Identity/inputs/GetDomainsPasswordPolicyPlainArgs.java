@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -211,8 +212,12 @@ public final class GetDomainsPasswordPolicyPlainArgs extends com.pulumi.resource
         }
 
         public GetDomainsPasswordPolicyPlainArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.passwordPolicyId = Objects.requireNonNull($.passwordPolicyId, "expected parameter 'passwordPolicyId' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyPlainArgs", "idcsEndpoint");
+            }
+            if ($.passwordPolicyId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyPlainArgs", "passwordPolicyId");
+            }
             return $;
         }
     }

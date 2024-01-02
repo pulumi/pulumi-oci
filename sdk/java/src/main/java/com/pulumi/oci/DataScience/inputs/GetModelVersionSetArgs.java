@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetModelVersionSetArgs extends com.pulumi.resources.InvokeArg
         }
 
         public GetModelVersionSetArgs build() {
-            $.modelVersionSetId = Objects.requireNonNull($.modelVersionSetId, "expected parameter 'modelVersionSetId' to be non-null");
+            if ($.modelVersionSetId == null) {
+                throw new MissingRequiredPropertyException("GetModelVersionSetArgs", "modelVersionSetId");
+            }
             return $;
         }
     }

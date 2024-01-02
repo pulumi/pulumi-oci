@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -268,117 +269,170 @@ public final class GetObjectResult {
 
         @CustomType.Setter
         public Builder base64EncodeContent(@Nullable Boolean base64EncodeContent) {
+
             this.base64EncodeContent = base64EncodeContent;
             return this;
         }
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetObjectResult", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder cacheControl(String cacheControl) {
-            this.cacheControl = Objects.requireNonNull(cacheControl);
+            if (cacheControl == null) {
+              throw new MissingRequiredPropertyException("GetObjectResult", "cacheControl");
+            }
+            this.cacheControl = cacheControl;
             return this;
         }
         @CustomType.Setter
         public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+            if (content == null) {
+              throw new MissingRequiredPropertyException("GetObjectResult", "content");
+            }
+            this.content = content;
             return this;
         }
         @CustomType.Setter
         public Builder contentDisposition(String contentDisposition) {
-            this.contentDisposition = Objects.requireNonNull(contentDisposition);
+            if (contentDisposition == null) {
+              throw new MissingRequiredPropertyException("GetObjectResult", "contentDisposition");
+            }
+            this.contentDisposition = contentDisposition;
             return this;
         }
         @CustomType.Setter
         public Builder contentEncoding(String contentEncoding) {
-            this.contentEncoding = Objects.requireNonNull(contentEncoding);
+            if (contentEncoding == null) {
+              throw new MissingRequiredPropertyException("GetObjectResult", "contentEncoding");
+            }
+            this.contentEncoding = contentEncoding;
             return this;
         }
         @CustomType.Setter
         public Builder contentLanguage(String contentLanguage) {
-            this.contentLanguage = Objects.requireNonNull(contentLanguage);
+            if (contentLanguage == null) {
+              throw new MissingRequiredPropertyException("GetObjectResult", "contentLanguage");
+            }
+            this.contentLanguage = contentLanguage;
             return this;
         }
         @CustomType.Setter
         public Builder contentLength(String contentLength) {
-            this.contentLength = Objects.requireNonNull(contentLength);
+            if (contentLength == null) {
+              throw new MissingRequiredPropertyException("GetObjectResult", "contentLength");
+            }
+            this.contentLength = contentLength;
             return this;
         }
         @CustomType.Setter
         public Builder contentLengthLimit(@Nullable Integer contentLengthLimit) {
+
             this.contentLengthLimit = contentLengthLimit;
             return this;
         }
         @CustomType.Setter
         public Builder contentMd5(String contentMd5) {
-            this.contentMd5 = Objects.requireNonNull(contentMd5);
+            if (contentMd5 == null) {
+              throw new MissingRequiredPropertyException("GetObjectResult", "contentMd5");
+            }
+            this.contentMd5 = contentMd5;
             return this;
         }
         @CustomType.Setter
         public Builder contentType(String contentType) {
-            this.contentType = Objects.requireNonNull(contentType);
+            if (contentType == null) {
+              throw new MissingRequiredPropertyException("GetObjectResult", "contentType");
+            }
+            this.contentType = contentType;
             return this;
         }
         @CustomType.Setter
         public Builder httpResponseCacheControl(@Nullable String httpResponseCacheControl) {
+
             this.httpResponseCacheControl = httpResponseCacheControl;
             return this;
         }
         @CustomType.Setter
         public Builder httpResponseContentDisposition(@Nullable String httpResponseContentDisposition) {
+
             this.httpResponseContentDisposition = httpResponseContentDisposition;
             return this;
         }
         @CustomType.Setter
         public Builder httpResponseContentEncoding(@Nullable String httpResponseContentEncoding) {
+
             this.httpResponseContentEncoding = httpResponseContentEncoding;
             return this;
         }
         @CustomType.Setter
         public Builder httpResponseContentLanguage(@Nullable String httpResponseContentLanguage) {
+
             this.httpResponseContentLanguage = httpResponseContentLanguage;
             return this;
         }
         @CustomType.Setter
         public Builder httpResponseContentType(@Nullable String httpResponseContentType) {
+
             this.httpResponseContentType = httpResponseContentType;
             return this;
         }
         @CustomType.Setter
         public Builder httpResponseExpires(@Nullable String httpResponseExpires) {
+
             this.httpResponseExpires = httpResponseExpires;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetObjectResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder metadata(Map<String,Object> metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+            if (metadata == null) {
+              throw new MissingRequiredPropertyException("GetObjectResult", "metadata");
+            }
+            this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetObjectResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+            if (object == null) {
+              throw new MissingRequiredPropertyException("GetObjectResult", "object");
+            }
+            this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder storageTier(String storageTier) {
-            this.storageTier = Objects.requireNonNull(storageTier);
+            if (storageTier == null) {
+              throw new MissingRequiredPropertyException("GetObjectResult", "storageTier");
+            }
+            this.storageTier = storageTier;
             return this;
         }
         @CustomType.Setter
         public Builder versionId(String versionId) {
-            this.versionId = Objects.requireNonNull(versionId);
+            if (versionId == null) {
+              throw new MissingRequiredPropertyException("GetObjectResult", "versionId");
+            }
+            this.versionId = versionId;
             return this;
         }
         public GetObjectResult build() {

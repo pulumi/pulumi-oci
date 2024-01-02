@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.List;
@@ -74,7 +75,10 @@ public final class ClusterDatastore {
 
         @CustomType.Setter
         public Builder blockVolumeIds(List<String> blockVolumeIds) {
-            this.blockVolumeIds = Objects.requireNonNull(blockVolumeIds);
+            if (blockVolumeIds == null) {
+              throw new MissingRequiredPropertyException("ClusterDatastore", "blockVolumeIds");
+            }
+            this.blockVolumeIds = blockVolumeIds;
             return this;
         }
         public Builder blockVolumeIds(String... blockVolumeIds) {
@@ -82,12 +86,16 @@ public final class ClusterDatastore {
         }
         @CustomType.Setter
         public Builder capacity(@Nullable Double capacity) {
+
             this.capacity = capacity;
             return this;
         }
         @CustomType.Setter
         public Builder datastoreType(String datastoreType) {
-            this.datastoreType = Objects.requireNonNull(datastoreType);
+            if (datastoreType == null) {
+              throw new MissingRequiredPropertyException("ClusterDatastore", "datastoreType");
+            }
+            this.datastoreType = datastoreType;
             return this;
         }
         public ClusterDatastore build() {

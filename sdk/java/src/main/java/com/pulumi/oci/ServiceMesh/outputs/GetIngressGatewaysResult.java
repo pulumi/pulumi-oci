@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.outputs.GetIngressGatewaysFilter;
 import com.pulumi.oci.ServiceMesh.outputs.GetIngressGatewaysIngressGatewayCollection;
 import java.lang.String;
@@ -123,11 +124,15 @@ public final class GetIngressGatewaysResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewaysResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetIngressGatewaysFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -136,12 +141,16 @@ public final class GetIngressGatewaysResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ingressGatewayCollections(List<GetIngressGatewaysIngressGatewayCollection> ingressGatewayCollections) {
-            this.ingressGatewayCollections = Objects.requireNonNull(ingressGatewayCollections);
+            if (ingressGatewayCollections == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewaysResult", "ingressGatewayCollections");
+            }
+            this.ingressGatewayCollections = ingressGatewayCollections;
             return this;
         }
         public Builder ingressGatewayCollections(GetIngressGatewaysIngressGatewayCollection... ingressGatewayCollections) {
@@ -149,16 +158,19 @@ public final class GetIngressGatewaysResult {
         }
         @CustomType.Setter
         public Builder meshId(@Nullable String meshId) {
+
             this.meshId = meshId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

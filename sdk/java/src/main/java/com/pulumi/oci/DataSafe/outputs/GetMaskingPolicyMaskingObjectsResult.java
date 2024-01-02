@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPolicyMaskingObjectsFilter;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPolicyMaskingObjectsMaskingObjectCollection;
 import java.lang.String;
@@ -114,6 +115,7 @@ public final class GetMaskingPolicyMaskingObjectsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMaskingPolicyMaskingObjectsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -122,12 +124,18 @@ public final class GetMaskingPolicyMaskingObjectsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPolicyMaskingObjectsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder maskingObjectCollections(List<GetMaskingPolicyMaskingObjectsMaskingObjectCollection> maskingObjectCollections) {
-            this.maskingObjectCollections = Objects.requireNonNull(maskingObjectCollections);
+            if (maskingObjectCollections == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPolicyMaskingObjectsResult", "maskingObjectCollections");
+            }
+            this.maskingObjectCollections = maskingObjectCollections;
             return this;
         }
         public Builder maskingObjectCollections(GetMaskingPolicyMaskingObjectsMaskingObjectCollection... maskingObjectCollections) {
@@ -135,11 +143,15 @@ public final class GetMaskingPolicyMaskingObjectsResult {
         }
         @CustomType.Setter
         public Builder maskingPolicyId(String maskingPolicyId) {
-            this.maskingPolicyId = Objects.requireNonNull(maskingPolicyId);
+            if (maskingPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPolicyMaskingObjectsResult", "maskingPolicyId");
+            }
+            this.maskingPolicyId = maskingPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder objectTypes(@Nullable List<String> objectTypes) {
+
             this.objectTypes = objectTypes;
             return this;
         }
@@ -148,6 +160,7 @@ public final class GetMaskingPolicyMaskingObjectsResult {
         }
         @CustomType.Setter
         public Builder objects(@Nullable List<String> objects) {
+
             this.objects = objects;
             return this;
         }
@@ -156,6 +169,7 @@ public final class GetMaskingPolicyMaskingObjectsResult {
         }
         @CustomType.Setter
         public Builder schemaNames(@Nullable List<String> schemaNames) {
+
             this.schemaNames = schemaNames;
             return this;
         }

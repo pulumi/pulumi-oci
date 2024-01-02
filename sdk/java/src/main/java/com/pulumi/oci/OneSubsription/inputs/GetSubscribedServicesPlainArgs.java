@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServicesFilter;
 import java.lang.String;
 import java.util.List;
@@ -165,8 +166,12 @@ public final class GetSubscribedServicesPlainArgs extends com.pulumi.resources.I
         }
 
         public GetSubscribedServicesPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.subscriptionId = Objects.requireNonNull($.subscriptionId, "expected parameter 'subscriptionId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetSubscribedServicesPlainArgs", "compartmentId");
+            }
+            if ($.subscriptionId == null) {
+                throw new MissingRequiredPropertyException("GetSubscribedServicesPlainArgs", "subscriptionId");
+            }
             return $;
         }
     }

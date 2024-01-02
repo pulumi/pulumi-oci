@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -126,37 +127,58 @@ public final class GetUsersUserCapability {
 
         @CustomType.Setter
         public Builder canUseApiKeys(Boolean canUseApiKeys) {
-            this.canUseApiKeys = Objects.requireNonNull(canUseApiKeys);
+            if (canUseApiKeys == null) {
+              throw new MissingRequiredPropertyException("GetUsersUserCapability", "canUseApiKeys");
+            }
+            this.canUseApiKeys = canUseApiKeys;
             return this;
         }
         @CustomType.Setter
         public Builder canUseAuthTokens(Boolean canUseAuthTokens) {
-            this.canUseAuthTokens = Objects.requireNonNull(canUseAuthTokens);
+            if (canUseAuthTokens == null) {
+              throw new MissingRequiredPropertyException("GetUsersUserCapability", "canUseAuthTokens");
+            }
+            this.canUseAuthTokens = canUseAuthTokens;
             return this;
         }
         @CustomType.Setter
         public Builder canUseConsolePassword(Boolean canUseConsolePassword) {
-            this.canUseConsolePassword = Objects.requireNonNull(canUseConsolePassword);
+            if (canUseConsolePassword == null) {
+              throw new MissingRequiredPropertyException("GetUsersUserCapability", "canUseConsolePassword");
+            }
+            this.canUseConsolePassword = canUseConsolePassword;
             return this;
         }
         @CustomType.Setter
         public Builder canUseCustomerSecretKeys(Boolean canUseCustomerSecretKeys) {
-            this.canUseCustomerSecretKeys = Objects.requireNonNull(canUseCustomerSecretKeys);
+            if (canUseCustomerSecretKeys == null) {
+              throw new MissingRequiredPropertyException("GetUsersUserCapability", "canUseCustomerSecretKeys");
+            }
+            this.canUseCustomerSecretKeys = canUseCustomerSecretKeys;
             return this;
         }
         @CustomType.Setter
         public Builder canUseDbCredentials(Boolean canUseDbCredentials) {
-            this.canUseDbCredentials = Objects.requireNonNull(canUseDbCredentials);
+            if (canUseDbCredentials == null) {
+              throw new MissingRequiredPropertyException("GetUsersUserCapability", "canUseDbCredentials");
+            }
+            this.canUseDbCredentials = canUseDbCredentials;
             return this;
         }
         @CustomType.Setter
         public Builder canUseOauth2clientCredentials(Boolean canUseOauth2clientCredentials) {
-            this.canUseOauth2clientCredentials = Objects.requireNonNull(canUseOauth2clientCredentials);
+            if (canUseOauth2clientCredentials == null) {
+              throw new MissingRequiredPropertyException("GetUsersUserCapability", "canUseOauth2clientCredentials");
+            }
+            this.canUseOauth2clientCredentials = canUseOauth2clientCredentials;
             return this;
         }
         @CustomType.Setter
         public Builder canUseSmtpCredentials(Boolean canUseSmtpCredentials) {
-            this.canUseSmtpCredentials = Objects.requireNonNull(canUseSmtpCredentials);
+            if (canUseSmtpCredentials == null) {
+              throw new MissingRequiredPropertyException("GetUsersUserCapability", "canUseSmtpCredentials");
+            }
+            this.canUseSmtpCredentials = canUseSmtpCredentials;
             return this;
         }
         public GetUsersUserCapability build() {

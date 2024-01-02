@@ -4,6 +4,7 @@
 package com.pulumi.oci.Blockchain.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Blockchain.outputs.GetOsnsFilter;
 import com.pulumi.oci.Blockchain.outputs.GetOsnsOsnCollection;
 import java.lang.String;
@@ -79,16 +80,21 @@ public final class GetOsnsResult {
 
         @CustomType.Setter
         public Builder blockchainPlatformId(String blockchainPlatformId) {
-            this.blockchainPlatformId = Objects.requireNonNull(blockchainPlatformId);
+            if (blockchainPlatformId == null) {
+              throw new MissingRequiredPropertyException("GetOsnsResult", "blockchainPlatformId");
+            }
+            this.blockchainPlatformId = blockchainPlatformId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetOsnsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -97,12 +103,18 @@ public final class GetOsnsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOsnsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder osnCollections(List<GetOsnsOsnCollection> osnCollections) {
-            this.osnCollections = Objects.requireNonNull(osnCollections);
+            if (osnCollections == null) {
+              throw new MissingRequiredPropertyException("GetOsnsResult", "osnCollections");
+            }
+            this.osnCollections = osnCollections;
             return this;
         }
         public Builder osnCollections(GetOsnsOsnCollection... osnCollections) {

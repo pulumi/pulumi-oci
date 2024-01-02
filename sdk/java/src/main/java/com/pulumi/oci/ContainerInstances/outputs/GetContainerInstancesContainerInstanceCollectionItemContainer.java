@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerInstances.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext;
@@ -283,7 +284,10 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
 
         @CustomType.Setter
         public Builder arguments(List<String> arguments) {
-            this.arguments = Objects.requireNonNull(arguments);
+            if (arguments == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "arguments");
+            }
+            this.arguments = arguments;
             return this;
         }
         public Builder arguments(String... arguments) {
@@ -291,12 +295,18 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder commands(List<String> commands) {
-            this.commands = Objects.requireNonNull(commands);
+            if (commands == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "commands");
+            }
+            this.commands = commands;
             return this;
         }
         public Builder commands(String... commands) {
@@ -304,52 +314,82 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder containerId(String containerId) {
-            this.containerId = Objects.requireNonNull(containerId);
+            if (containerId == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "containerId");
+            }
+            this.containerId = containerId;
             return this;
         }
         @CustomType.Setter
         public Builder containerInstanceId(String containerInstanceId) {
-            this.containerInstanceId = Objects.requireNonNull(containerInstanceId);
+            if (containerInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "containerInstanceId");
+            }
+            this.containerInstanceId = containerInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder environmentVariables(Map<String,Object> environmentVariables) {
-            this.environmentVariables = Objects.requireNonNull(environmentVariables);
+            if (environmentVariables == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "environmentVariables");
+            }
+            this.environmentVariables = environmentVariables;
             return this;
         }
         @CustomType.Setter
         public Builder exitCode(Integer exitCode) {
-            this.exitCode = Objects.requireNonNull(exitCode);
+            if (exitCode == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "exitCode");
+            }
+            this.exitCode = exitCode;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+            if (faultDomain == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "faultDomain");
+            }
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder healthChecks(List<GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck> healthChecks) {
-            this.healthChecks = Objects.requireNonNull(healthChecks);
+            if (healthChecks == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "healthChecks");
+            }
+            this.healthChecks = healthChecks;
             return this;
         }
         public Builder healthChecks(GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck... healthChecks) {
@@ -357,22 +397,34 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
         }
         @CustomType.Setter
         public Builder imageUrl(String imageUrl) {
-            this.imageUrl = Objects.requireNonNull(imageUrl);
+            if (imageUrl == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "imageUrl");
+            }
+            this.imageUrl = imageUrl;
             return this;
         }
         @CustomType.Setter
         public Builder isResourcePrincipalDisabled(Boolean isResourcePrincipalDisabled) {
-            this.isResourcePrincipalDisabled = Objects.requireNonNull(isResourcePrincipalDisabled);
+            if (isResourcePrincipalDisabled == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "isResourcePrincipalDisabled");
+            }
+            this.isResourcePrincipalDisabled = isResourcePrincipalDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder resourceConfigs(List<GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig> resourceConfigs) {
-            this.resourceConfigs = Objects.requireNonNull(resourceConfigs);
+            if (resourceConfigs == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "resourceConfigs");
+            }
+            this.resourceConfigs = resourceConfigs;
             return this;
         }
         public Builder resourceConfigs(GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig... resourceConfigs) {
@@ -380,7 +432,10 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
         }
         @CustomType.Setter
         public Builder securityContexts(List<GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext> securityContexts) {
-            this.securityContexts = Objects.requireNonNull(securityContexts);
+            if (securityContexts == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "securityContexts");
+            }
+            this.securityContexts = securityContexts;
             return this;
         }
         public Builder securityContexts(GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext... securityContexts) {
@@ -388,32 +443,50 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeTerminated(String timeTerminated) {
-            this.timeTerminated = Objects.requireNonNull(timeTerminated);
+            if (timeTerminated == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "timeTerminated");
+            }
+            this.timeTerminated = timeTerminated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder volumeMounts(List<GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount> volumeMounts) {
-            this.volumeMounts = Objects.requireNonNull(volumeMounts);
+            if (volumeMounts == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "volumeMounts");
+            }
+            this.volumeMounts = volumeMounts;
             return this;
         }
         public Builder volumeMounts(GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount... volumeMounts) {
@@ -421,7 +494,10 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
         }
         @CustomType.Setter
         public Builder workingDirectory(String workingDirectory) {
-            this.workingDirectory = Objects.requireNonNull(workingDirectory);
+            if (workingDirectory == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "workingDirectory");
+            }
+            this.workingDirectory = workingDirectory;
             return this;
         }
         public GetContainerInstancesContainerInstanceCollectionItemContainer build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensions
 
         @CustomType.Setter
         public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+            if (condition == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute", "condition");
+            }
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
         public Builder format(String format) {
-            this.format = Objects.requireNonNull(format);
+            if (format == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute", "format");
+            }
+            this.format = format;
             return this;
         }
         @CustomType.Setter
         public Builder groupName(String groupName) {
-            this.groupName = Objects.requireNonNull(groupName);
+            if (groupName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute", "groupName");
+            }
+            this.groupName = groupName;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute build() {

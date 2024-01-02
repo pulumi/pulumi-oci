@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.GetCustomProtectionRulesCustomProtectionRule;
 import com.pulumi.oci.Waas.outputs.GetCustomProtectionRulesFilter;
 import java.lang.String;
@@ -111,12 +112,18 @@ public final class GetCustomProtectionRulesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCustomProtectionRulesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder customProtectionRules(List<GetCustomProtectionRulesCustomProtectionRule> customProtectionRules) {
-            this.customProtectionRules = Objects.requireNonNull(customProtectionRules);
+            if (customProtectionRules == null) {
+              throw new MissingRequiredPropertyException("GetCustomProtectionRulesResult", "customProtectionRules");
+            }
+            this.customProtectionRules = customProtectionRules;
             return this;
         }
         public Builder customProtectionRules(GetCustomProtectionRulesCustomProtectionRule... customProtectionRules) {
@@ -124,6 +131,7 @@ public final class GetCustomProtectionRulesResult {
         }
         @CustomType.Setter
         public Builder displayNames(@Nullable List<String> displayNames) {
+
             this.displayNames = displayNames;
             return this;
         }
@@ -132,6 +140,7 @@ public final class GetCustomProtectionRulesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCustomProtectionRulesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -140,11 +149,15 @@ public final class GetCustomProtectionRulesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCustomProtectionRulesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ids(@Nullable List<String> ids) {
+
             this.ids = ids;
             return this;
         }
@@ -153,6 +166,7 @@ public final class GetCustomProtectionRulesResult {
         }
         @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
+
             this.states = states;
             return this;
         }
@@ -161,11 +175,13 @@ public final class GetCustomProtectionRulesResult {
         }
         @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
+
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
+
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }

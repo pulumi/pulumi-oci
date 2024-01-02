@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseCustomerContactArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseDbToolsDetailArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseLongTermBackupScheduleArgs;
@@ -2949,8 +2950,12 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         public AutonomousDatabaseArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.dbName = Objects.requireNonNull($.dbName, "expected parameter 'dbName' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AutonomousDatabaseArgs", "compartmentId");
+            }
+            if ($.dbName == null) {
+                throw new MissingRequiredPropertyException("AutonomousDatabaseArgs", "dbName");
+            }
             return $;
         }
     }

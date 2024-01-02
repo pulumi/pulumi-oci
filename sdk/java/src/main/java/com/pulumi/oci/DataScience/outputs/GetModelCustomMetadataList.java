@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -96,22 +97,34 @@ public final class GetModelCustomMetadataList {
 
         @CustomType.Setter
         public Builder category(String category) {
-            this.category = Objects.requireNonNull(category);
+            if (category == null) {
+              throw new MissingRequiredPropertyException("GetModelCustomMetadataList", "category");
+            }
+            this.category = category;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetModelCustomMetadataList", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetModelCustomMetadataList", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetModelCustomMetadataList", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetModelCustomMetadataList build() {

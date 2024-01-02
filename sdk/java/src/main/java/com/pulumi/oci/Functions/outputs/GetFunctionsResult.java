@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetFunctionsFilter;
 import com.pulumi.oci.Functions.outputs.GetFunctionsFunction;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetFunctionsResult {
 
         @CustomType.Setter
         public Builder applicationId(String applicationId) {
-            this.applicationId = Objects.requireNonNull(applicationId);
+            if (applicationId == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsResult", "applicationId");
+            }
+            this.applicationId = applicationId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetFunctionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,7 +133,10 @@ public final class GetFunctionsResult {
         }
         @CustomType.Setter
         public Builder functions(List<GetFunctionsFunction> functions) {
-            this.functions = Objects.requireNonNull(functions);
+            if (functions == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsResult", "functions");
+            }
+            this.functions = functions;
             return this;
         }
         public Builder functions(GetFunctionsFunction... functions) {
@@ -135,11 +144,13 @@ public final class GetFunctionsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

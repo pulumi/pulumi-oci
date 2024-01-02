@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTa
 
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag build() {

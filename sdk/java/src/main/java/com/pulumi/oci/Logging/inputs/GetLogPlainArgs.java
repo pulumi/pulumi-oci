@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetLogPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetLogPlainArgs build() {
-            $.logGroupId = Objects.requireNonNull($.logGroupId, "expected parameter 'logGroupId' to be non-null");
-            $.logId = Objects.requireNonNull($.logId, "expected parameter 'logId' to be non-null");
+            if ($.logGroupId == null) {
+                throw new MissingRequiredPropertyException("GetLogPlainArgs", "logGroupId");
+            }
+            if ($.logId == null) {
+                throw new MissingRequiredPropertyException("GetLogPlainArgs", "logId");
+            }
             return $;
         }
     }

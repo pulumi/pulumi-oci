@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementBgpSessionInfoArgs;
 import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementDpdConfigArgs;
 import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementEncryptionDomainConfigArgs;
@@ -586,8 +587,12 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
         }
 
         public IpsecConnectionTunnelManagementArgs build() {
-            $.ipsecId = Objects.requireNonNull($.ipsecId, "expected parameter 'ipsecId' to be non-null");
-            $.tunnelId = Objects.requireNonNull($.tunnelId, "expected parameter 'tunnelId' to be non-null");
+            if ($.ipsecId == null) {
+                throw new MissingRequiredPropertyException("IpsecConnectionTunnelManagementArgs", "ipsecId");
+            }
+            if ($.tunnelId == null) {
+                throw new MissingRequiredPropertyException("IpsecConnectionTunnelManagementArgs", "tunnelId");
+            }
             return $;
         }
     }

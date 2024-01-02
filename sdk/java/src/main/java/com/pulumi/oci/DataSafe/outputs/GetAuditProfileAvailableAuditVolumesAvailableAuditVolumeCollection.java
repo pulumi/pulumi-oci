@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeColle
 
         @CustomType.Setter
         public Builder items(List<GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItem... items) {

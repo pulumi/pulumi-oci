@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.outputs.GetListingsListingRegionCountry;
 import java.lang.String;
 import java.util.List;
@@ -72,12 +73,18 @@ public final class GetListingsListingRegion {
 
         @CustomType.Setter
         public Builder code(String code) {
-            this.code = Objects.requireNonNull(code);
+            if (code == null) {
+              throw new MissingRequiredPropertyException("GetListingsListingRegion", "code");
+            }
+            this.code = code;
             return this;
         }
         @CustomType.Setter
         public Builder countries(List<GetListingsListingRegionCountry> countries) {
-            this.countries = Objects.requireNonNull(countries);
+            if (countries == null) {
+              throw new MissingRequiredPropertyException("GetListingsListingRegion", "countries");
+            }
+            this.countries = countries;
             return this;
         }
         public Builder countries(GetListingsListingRegionCountry... countries) {
@@ -85,7 +92,10 @@ public final class GetListingsListingRegion {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetListingsListingRegion", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetListingsListingRegion build() {

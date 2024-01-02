@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetResourceActionsResourceActionCollectionItemAction;
 import java.lang.Double;
 import java.lang.Object;
@@ -291,7 +292,10 @@ public final class GetResourceActionsResourceActionCollectionItem {
 
         @CustomType.Setter
         public Builder actions(List<GetResourceActionsResourceActionCollectionItemAction> actions) {
-            this.actions = Objects.requireNonNull(actions);
+            if (actions == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "actions");
+            }
+            this.actions = actions;
             return this;
         }
         public Builder actions(GetResourceActionsResourceActionCollectionItemAction... actions) {
@@ -299,92 +303,146 @@ public final class GetResourceActionsResourceActionCollectionItem {
         }
         @CustomType.Setter
         public Builder categoryId(String categoryId) {
-            this.categoryId = Objects.requireNonNull(categoryId);
+            if (categoryId == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "categoryId");
+            }
+            this.categoryId = categoryId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentName(String compartmentName) {
-            this.compartmentName = Objects.requireNonNull(compartmentName);
+            if (compartmentName == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "compartmentName");
+            }
+            this.compartmentName = compartmentName;
             return this;
         }
         @CustomType.Setter
         public Builder estimatedCostSaving(Double estimatedCostSaving) {
-            this.estimatedCostSaving = Objects.requireNonNull(estimatedCostSaving);
+            if (estimatedCostSaving == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "estimatedCostSaving");
+            }
+            this.estimatedCostSaving = estimatedCostSaving;
             return this;
         }
         @CustomType.Setter
         public Builder extendedMetadata(Map<String,Object> extendedMetadata) {
-            this.extendedMetadata = Objects.requireNonNull(extendedMetadata);
+            if (extendedMetadata == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "extendedMetadata");
+            }
+            this.extendedMetadata = extendedMetadata;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder metadata(Map<String,Object> metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+            if (metadata == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "metadata");
+            }
+            this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder recommendationId(String recommendationId) {
-            this.recommendationId = Objects.requireNonNull(recommendationId);
+            if (recommendationId == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "recommendationId");
+            }
+            this.recommendationId = recommendationId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceActionId(String resourceActionId) {
-            this.resourceActionId = Objects.requireNonNull(resourceActionId);
+            if (resourceActionId == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "resourceActionId");
+            }
+            this.resourceActionId = resourceActionId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+            if (resourceId == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "resourceId");
+            }
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeStatusBegin(String timeStatusBegin) {
-            this.timeStatusBegin = Objects.requireNonNull(timeStatusBegin);
+            if (timeStatusBegin == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "timeStatusBegin");
+            }
+            this.timeStatusBegin = timeStatusBegin;
             return this;
         }
         @CustomType.Setter
         public Builder timeStatusEnd(String timeStatusEnd) {
-            this.timeStatusEnd = Objects.requireNonNull(timeStatusEnd);
+            if (timeStatusEnd == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "timeStatusEnd");
+            }
+            this.timeStatusEnd = timeStatusEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetResourceActionsResourceActionCollectionItem build() {

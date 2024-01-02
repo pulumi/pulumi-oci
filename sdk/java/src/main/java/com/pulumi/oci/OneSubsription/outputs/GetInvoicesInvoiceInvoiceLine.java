@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OneSubsription.outputs.GetInvoicesInvoiceInvoiceLineProduct;
 import java.lang.String;
 import java.util.List;
@@ -114,22 +115,34 @@ public final class GetInvoicesInvoiceInvoiceLine {
 
         @CustomType.Setter
         public Builder arInvoiceNumber(String arInvoiceNumber) {
-            this.arInvoiceNumber = Objects.requireNonNull(arInvoiceNumber);
+            if (arInvoiceNumber == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceInvoiceLine", "arInvoiceNumber");
+            }
+            this.arInvoiceNumber = arInvoiceNumber;
             return this;
         }
         @CustomType.Setter
         public Builder dataCenter(String dataCenter) {
-            this.dataCenter = Objects.requireNonNull(dataCenter);
+            if (dataCenter == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceInvoiceLine", "dataCenter");
+            }
+            this.dataCenter = dataCenter;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceInvoiceLine", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder products(List<GetInvoicesInvoiceInvoiceLineProduct> products) {
-            this.products = Objects.requireNonNull(products);
+            if (products == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceInvoiceLine", "products");
+            }
+            this.products = products;
             return this;
         }
         public Builder products(GetInvoicesInvoiceInvoiceLineProduct... products) {
@@ -137,12 +150,18 @@ public final class GetInvoicesInvoiceInvoiceLine {
         }
         @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+            if (timeEnd == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceInvoiceLine", "timeEnd");
+            }
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+            if (timeStart == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceInvoiceLine", "timeStart");
+            }
+            this.timeStart = timeStart;
             return this;
         }
         public GetInvoicesInvoiceInvoiceLine build() {

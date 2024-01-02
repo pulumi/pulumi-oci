@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -113,7 +114,10 @@ public final class GetAssetsAssetCollectionItemComputeNic {
 
         @CustomType.Setter
         public Builder ipAddresses(List<String> ipAddresses) {
-            this.ipAddresses = Objects.requireNonNull(ipAddresses);
+            if (ipAddresses == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeNic", "ipAddresses");
+            }
+            this.ipAddresses = ipAddresses;
             return this;
         }
         public Builder ipAddresses(String... ipAddresses) {
@@ -121,27 +125,42 @@ public final class GetAssetsAssetCollectionItemComputeNic {
         }
         @CustomType.Setter
         public Builder label(String label) {
-            this.label = Objects.requireNonNull(label);
+            if (label == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeNic", "label");
+            }
+            this.label = label;
             return this;
         }
         @CustomType.Setter
         public Builder macAddress(String macAddress) {
-            this.macAddress = Objects.requireNonNull(macAddress);
+            if (macAddress == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeNic", "macAddress");
+            }
+            this.macAddress = macAddress;
             return this;
         }
         @CustomType.Setter
         public Builder macAddressType(String macAddressType) {
-            this.macAddressType = Objects.requireNonNull(macAddressType);
+            if (macAddressType == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeNic", "macAddressType");
+            }
+            this.macAddressType = macAddressType;
             return this;
         }
         @CustomType.Setter
         public Builder networkName(String networkName) {
-            this.networkName = Objects.requireNonNull(networkName);
+            if (networkName == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeNic", "networkName");
+            }
+            this.networkName = networkName;
             return this;
         }
         @CustomType.Setter
         public Builder switchName(String switchName) {
-            this.switchName = Objects.requireNonNull(switchName);
+            if (switchName == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeNic", "switchName");
+            }
+            this.switchName = switchName;
             return this;
         }
         public GetAssetsAssetCollectionItemComputeNic build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.GenericArtifactsContent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -48,12 +49,18 @@ public final class GetGenericArtifactsContentResult {
 
         @CustomType.Setter
         public Builder artifactId(String artifactId) {
-            this.artifactId = Objects.requireNonNull(artifactId);
+            if (artifactId == null) {
+              throw new MissingRequiredPropertyException("GetGenericArtifactsContentResult", "artifactId");
+            }
+            this.artifactId = artifactId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetGenericArtifactsContentResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetGenericArtifactsContentResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetNetworkLoadBalancersFilter;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetNetworkLoadBalancersNetworkLoadBalancerCollection;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetNetworkLoadBalancersResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancersResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNetworkLoadBalancersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +133,18 @@ public final class GetNetworkLoadBalancersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder networkLoadBalancerCollections(List<GetNetworkLoadBalancersNetworkLoadBalancerCollection> networkLoadBalancerCollections) {
-            this.networkLoadBalancerCollections = Objects.requireNonNull(networkLoadBalancerCollections);
+            if (networkLoadBalancerCollections == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancersResult", "networkLoadBalancerCollections");
+            }
+            this.networkLoadBalancerCollections = networkLoadBalancerCollections;
             return this;
         }
         public Builder networkLoadBalancerCollections(GetNetworkLoadBalancersNetworkLoadBalancerCollection... networkLoadBalancerCollections) {
@@ -140,6 +152,7 @@ public final class GetNetworkLoadBalancersResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

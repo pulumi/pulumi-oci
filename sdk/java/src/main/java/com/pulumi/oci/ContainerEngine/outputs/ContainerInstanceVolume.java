@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.ContainerInstanceVolumeConfig;
 import java.lang.String;
 import java.util.List;
@@ -88,11 +89,13 @@ public final class ContainerInstanceVolume {
 
         @CustomType.Setter
         public Builder backingStore(@Nullable String backingStore) {
+
             this.backingStore = backingStore;
             return this;
         }
         @CustomType.Setter
         public Builder configs(@Nullable List<ContainerInstanceVolumeConfig> configs) {
+
             this.configs = configs;
             return this;
         }
@@ -101,12 +104,18 @@ public final class ContainerInstanceVolume {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("ContainerInstanceVolume", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder volumeType(String volumeType) {
-            this.volumeType = Objects.requireNonNull(volumeType);
+            if (volumeType == null) {
+              throw new MissingRequiredPropertyException("ContainerInstanceVolume", "volumeType");
+            }
+            this.volumeType = volumeType;
             return this;
         }
         public ContainerInstanceVolume build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.outputs.GetPrivateEndpointsFilter;
 import com.pulumi.oci.DataFlow.outputs.GetPrivateEndpointsPrivateEndpointCollection;
 import java.lang.String;
@@ -129,21 +130,27 @@ public final class GetPrivateEndpointsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetPrivateEndpointsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder displayNameStartsWith(@Nullable String displayNameStartsWith) {
+
             this.displayNameStartsWith = displayNameStartsWith;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPrivateEndpointsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -152,17 +159,24 @@ public final class GetPrivateEndpointsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPrivateEndpointsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ownerPrincipalId(@Nullable String ownerPrincipalId) {
+
             this.ownerPrincipalId = ownerPrincipalId;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpointCollections(List<GetPrivateEndpointsPrivateEndpointCollection> privateEndpointCollections) {
-            this.privateEndpointCollections = Objects.requireNonNull(privateEndpointCollections);
+            if (privateEndpointCollections == null) {
+              throw new MissingRequiredPropertyException("GetPrivateEndpointsResult", "privateEndpointCollections");
+            }
+            this.privateEndpointCollections = privateEndpointCollections;
             return this;
         }
         public Builder privateEndpointCollections(GetPrivateEndpointsPrivateEndpointCollection... privateEndpointCollections) {
@@ -170,6 +184,7 @@ public final class GetPrivateEndpointsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Budget.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Budget.inputs.GetAlertRulesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -173,7 +174,9 @@ public final class GetAlertRulesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetAlertRulesArgs build() {
-            $.budgetId = Objects.requireNonNull($.budgetId, "expected parameter 'budgetId' to be non-null");
+            if ($.budgetId == null) {
+                throw new MissingRequiredPropertyException("GetAlertRulesArgs", "budgetId");
+            }
             return $;
         }
     }

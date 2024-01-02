@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -126,37 +127,58 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationDatab
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dbDeploymentType(String dbDeploymentType) {
-            this.dbDeploymentType = Objects.requireNonNull(dbDeploymentType);
+            if (dbDeploymentType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase", "dbDeploymentType");
+            }
+            this.dbDeploymentType = dbDeploymentType;
             return this;
         }
         @CustomType.Setter
         public Builder dbSubType(String dbSubType) {
-            this.dbSubType = Objects.requireNonNull(dbSubType);
+            if (dbSubType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase", "dbSubType");
+            }
+            this.dbSubType = dbSubType;
             return this;
         }
         @CustomType.Setter
         public Builder dbType(String dbType) {
-            this.dbType = Objects.requireNonNull(dbType);
+            if (dbType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase", "dbType");
+            }
+            this.dbType = dbType;
             return this;
         }
         @CustomType.Setter
         public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+            if (dbVersion == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase", "dbVersion");
+            }
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase build() {

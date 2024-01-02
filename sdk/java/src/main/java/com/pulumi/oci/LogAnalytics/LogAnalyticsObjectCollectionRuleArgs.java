@@ -5,6 +5,7 @@ package com.pulumi.oci.LogAnalytics;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.inputs.LogAnalyticsObjectCollectionRuleOverrideArgs;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -890,12 +891,24 @@ public final class LogAnalyticsObjectCollectionRuleArgs extends com.pulumi.resou
         }
 
         public LogAnalyticsObjectCollectionRuleArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.logGroupId = Objects.requireNonNull($.logGroupId, "expected parameter 'logGroupId' to be non-null");
-            $.logSourceName = Objects.requireNonNull($.logSourceName, "expected parameter 'logSourceName' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
-            $.osBucketName = Objects.requireNonNull($.osBucketName, "expected parameter 'osBucketName' to be non-null");
-            $.osNamespace = Objects.requireNonNull($.osNamespace, "expected parameter 'osNamespace' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("LogAnalyticsObjectCollectionRuleArgs", "compartmentId");
+            }
+            if ($.logGroupId == null) {
+                throw new MissingRequiredPropertyException("LogAnalyticsObjectCollectionRuleArgs", "logGroupId");
+            }
+            if ($.logSourceName == null) {
+                throw new MissingRequiredPropertyException("LogAnalyticsObjectCollectionRuleArgs", "logSourceName");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("LogAnalyticsObjectCollectionRuleArgs", "namespace");
+            }
+            if ($.osBucketName == null) {
+                throw new MissingRequiredPropertyException("LogAnalyticsObjectCollectionRuleArgs", "osBucketName");
+            }
+            if ($.osNamespace == null) {
+                throw new MissingRequiredPropertyException("LogAnalyticsObjectCollectionRuleArgs", "osNamespace");
+            }
             return $;
         }
     }

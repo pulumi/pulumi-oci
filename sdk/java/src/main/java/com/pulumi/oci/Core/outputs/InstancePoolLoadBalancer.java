@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -135,37 +136,52 @@ public final class InstancePoolLoadBalancer {
 
         @CustomType.Setter
         public Builder backendSetName(String backendSetName) {
-            this.backendSetName = Objects.requireNonNull(backendSetName);
+            if (backendSetName == null) {
+              throw new MissingRequiredPropertyException("InstancePoolLoadBalancer", "backendSetName");
+            }
+            this.backendSetName = backendSetName;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instancePoolId(@Nullable String instancePoolId) {
+
             this.instancePoolId = instancePoolId;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("InstancePoolLoadBalancer", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("InstancePoolLoadBalancer", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vnicSelection(String vnicSelection) {
-            this.vnicSelection = Objects.requireNonNull(vnicSelection);
+            if (vnicSelection == null) {
+              throw new MissingRequiredPropertyException("InstancePoolLoadBalancer", "vnicSelection");
+            }
+            this.vnicSelection = vnicSelection;
             return this;
         }
         public InstancePoolLoadBalancer build() {

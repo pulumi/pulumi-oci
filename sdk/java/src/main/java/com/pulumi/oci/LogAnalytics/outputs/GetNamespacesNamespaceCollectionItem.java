@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetNamespacesNamespaceCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNamespacesNamespaceCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder isOnboarded(Boolean isOnboarded) {
-            this.isOnboarded = Objects.requireNonNull(isOnboarded);
+            if (isOnboarded == null) {
+              throw new MissingRequiredPropertyException("GetNamespacesNamespaceCollectionItem", "isOnboarded");
+            }
+            this.isOnboarded = isOnboarded;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetNamespacesNamespaceCollectionItem", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         public GetNamespacesNamespaceCollectionItem build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -72,17 +73,24 @@ public final class CertificateAuthorityCertificateRevocationListDetailsObjectSto
 
         @CustomType.Setter
         public Builder objectStorageBucketName(String objectStorageBucketName) {
-            this.objectStorageBucketName = Objects.requireNonNull(objectStorageBucketName);
+            if (objectStorageBucketName == null) {
+              throw new MissingRequiredPropertyException("CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig", "objectStorageBucketName");
+            }
+            this.objectStorageBucketName = objectStorageBucketName;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageNamespace(@Nullable String objectStorageNamespace) {
+
             this.objectStorageNamespace = objectStorageNamespace;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageObjectNameFormat(String objectStorageObjectNameFormat) {
-            this.objectStorageObjectNameFormat = Objects.requireNonNull(objectStorageObjectNameFormat);
+            if (objectStorageObjectNameFormat == null) {
+              throw new MissingRequiredPropertyException("CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig", "objectStorageObjectNameFormat");
+            }
+            this.objectStorageObjectNameFormat = objectStorageObjectNameFormat;
             return this;
         }
         public CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig build() {

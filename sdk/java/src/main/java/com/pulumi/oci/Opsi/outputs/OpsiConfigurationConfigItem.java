@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.OpsiConfigurationConfigItemMetadata;
 import java.lang.String;
 import java.util.List;
@@ -116,6 +117,7 @@ public final class OpsiConfigurationConfigItem {
 
         @CustomType.Setter
         public Builder applicableContexts(@Nullable List<String> applicableContexts) {
+
             this.applicableContexts = applicableContexts;
             return this;
         }
@@ -124,16 +126,21 @@ public final class OpsiConfigurationConfigItem {
         }
         @CustomType.Setter
         public Builder configItemType(String configItemType) {
-            this.configItemType = Objects.requireNonNull(configItemType);
+            if (configItemType == null) {
+              throw new MissingRequiredPropertyException("OpsiConfigurationConfigItem", "configItemType");
+            }
+            this.configItemType = configItemType;
             return this;
         }
         @CustomType.Setter
         public Builder defaultValue(@Nullable String defaultValue) {
+
             this.defaultValue = defaultValue;
             return this;
         }
         @CustomType.Setter
         public Builder metadatas(@Nullable List<OpsiConfigurationConfigItemMetadata> metadatas) {
+
             this.metadatas = metadatas;
             return this;
         }
@@ -142,11 +149,13 @@ public final class OpsiConfigurationConfigItem {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder value(@Nullable String value) {
+
             this.value = value;
             return this;
         }

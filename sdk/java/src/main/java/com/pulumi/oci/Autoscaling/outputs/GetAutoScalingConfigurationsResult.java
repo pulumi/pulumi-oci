@@ -4,6 +4,7 @@
 package com.pulumi.oci.Autoscaling.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Autoscaling.outputs.GetAutoScalingConfigurationsAutoScalingConfiguration;
 import com.pulumi.oci.Autoscaling.outputs.GetAutoScalingConfigurationsFilter;
 import java.lang.String;
@@ -95,7 +96,10 @@ public final class GetAutoScalingConfigurationsResult {
 
         @CustomType.Setter
         public Builder autoScalingConfigurations(List<GetAutoScalingConfigurationsAutoScalingConfiguration> autoScalingConfigurations) {
-            this.autoScalingConfigurations = Objects.requireNonNull(autoScalingConfigurations);
+            if (autoScalingConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsResult", "autoScalingConfigurations");
+            }
+            this.autoScalingConfigurations = autoScalingConfigurations;
             return this;
         }
         public Builder autoScalingConfigurations(GetAutoScalingConfigurationsAutoScalingConfiguration... autoScalingConfigurations) {
@@ -103,16 +107,21 @@ public final class GetAutoScalingConfigurationsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAutoScalingConfigurationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -121,7 +130,10 @@ public final class GetAutoScalingConfigurationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetAutoScalingConfigurationsResult build() {

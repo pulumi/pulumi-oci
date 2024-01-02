@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -211,7 +212,9 @@ public final class GetDomainsAuthenticationFactorSettingPlainArgs extends com.pu
         }
 
         public GetDomainsAuthenticationFactorSettingPlainArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingPlainArgs", "idcsEndpoint");
+            }
             return $;
         }
     }

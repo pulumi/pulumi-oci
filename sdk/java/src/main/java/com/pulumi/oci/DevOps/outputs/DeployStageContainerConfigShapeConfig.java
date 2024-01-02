@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.util.Objects;
 import java.util.Optional;
@@ -58,12 +59,16 @@ public final class DeployStageContainerConfigShapeConfig {
 
         @CustomType.Setter
         public Builder memoryInGbs(@Nullable Double memoryInGbs) {
+
             this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(Double ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+            if (ocpus == null) {
+              throw new MissingRequiredPropertyException("DeployStageContainerConfigShapeConfig", "ocpus");
+            }
+            this.ocpus = ocpus;
             return this;
         }
         public DeployStageContainerConfigShapeConfig build() {

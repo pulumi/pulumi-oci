@@ -299,96 +299,115 @@ public final class AuditProfileAuditTrail {
 
         @CustomType.Setter
         public Builder auditCollectionStartTime(@Nullable String auditCollectionStartTime) {
+
             this.auditCollectionStartTime = auditCollectionStartTime;
             return this;
         }
         @CustomType.Setter
         public Builder auditProfileId(@Nullable String auditProfileId) {
+
             this.auditProfileId = auditProfileId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+
             this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+
             this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAutoPurgeEnabled(@Nullable Boolean isAutoPurgeEnabled) {
+
             this.isAutoPurgeEnabled = isAutoPurgeEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+
             this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
+
             this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastCollected(@Nullable String timeLastCollected) {
+
             this.timeLastCollected = timeLastCollected;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
+
             this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder trailLocation(@Nullable String trailLocation) {
+
             this.trailLocation = trailLocation;
             return this;
         }
         @CustomType.Setter
         public Builder workRequestId(@Nullable String workRequestId) {
+
             this.workRequestId = workRequestId;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.DisasterRecovery;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -238,9 +239,15 @@ public final class DrPlanArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DrPlanArgs build() {
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.drProtectionGroupId = Objects.requireNonNull($.drProtectionGroupId, "expected parameter 'drProtectionGroupId' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("DrPlanArgs", "displayName");
+            }
+            if ($.drProtectionGroupId == null) {
+                throw new MissingRequiredPropertyException("DrPlanArgs", "drProtectionGroupId");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("DrPlanArgs", "type");
+            }
             return $;
         }
     }

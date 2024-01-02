@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataLabellingService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -115,31 +116,41 @@ public final class DatasetDatasetFormatDetailsTextFileTypeMetadata {
 
         @CustomType.Setter
         public Builder columnDelimiter(@Nullable String columnDelimiter) {
+
             this.columnDelimiter = columnDelimiter;
             return this;
         }
         @CustomType.Setter
         public Builder columnIndex(Integer columnIndex) {
-            this.columnIndex = Objects.requireNonNull(columnIndex);
+            if (columnIndex == null) {
+              throw new MissingRequiredPropertyException("DatasetDatasetFormatDetailsTextFileTypeMetadata", "columnIndex");
+            }
+            this.columnIndex = columnIndex;
             return this;
         }
         @CustomType.Setter
         public Builder columnName(@Nullable String columnName) {
+
             this.columnName = columnName;
             return this;
         }
         @CustomType.Setter
         public Builder escapeCharacter(@Nullable String escapeCharacter) {
+
             this.escapeCharacter = escapeCharacter;
             return this;
         }
         @CustomType.Setter
         public Builder formatType(String formatType) {
-            this.formatType = Objects.requireNonNull(formatType);
+            if (formatType == null) {
+              throw new MissingRequiredPropertyException("DatasetDatasetFormatDetailsTextFileTypeMetadata", "formatType");
+            }
+            this.formatType = formatType;
             return this;
         }
         @CustomType.Setter
         public Builder lineDelimiter(@Nullable String lineDelimiter) {
+
             this.lineDelimiter = lineDelimiter;
             return this;
         }

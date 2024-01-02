@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.GetLoadBalancerRoutingPolicyRule;
 import java.lang.String;
 import java.util.List;
@@ -96,32 +97,50 @@ public final class GetLoadBalancerRoutingPolicyResult {
 
         @CustomType.Setter
         public Builder conditionLanguageVersion(String conditionLanguageVersion) {
-            this.conditionLanguageVersion = Objects.requireNonNull(conditionLanguageVersion);
+            if (conditionLanguageVersion == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancerRoutingPolicyResult", "conditionLanguageVersion");
+            }
+            this.conditionLanguageVersion = conditionLanguageVersion;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancerRoutingPolicyResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancerRoutingPolicyResult", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancerRoutingPolicyResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder routingPolicyName(String routingPolicyName) {
-            this.routingPolicyName = Objects.requireNonNull(routingPolicyName);
+            if (routingPolicyName == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancerRoutingPolicyResult", "routingPolicyName");
+            }
+            this.routingPolicyName = routingPolicyName;
             return this;
         }
         @CustomType.Setter
         public Builder rules(List<GetLoadBalancerRoutingPolicyRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+            if (rules == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancerRoutingPolicyResult", "rules");
+            }
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetLoadBalancerRoutingPolicyRule... rules) {
@@ -129,7 +148,10 @@ public final class GetLoadBalancerRoutingPolicyResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancerRoutingPolicyResult", "state");
+            }
+            this.state = state;
             return this;
         }
         public GetLoadBalancerRoutingPolicyResult build() {

@@ -80,11 +80,13 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterInclude {
 
         @CustomType.Setter
         public Builder baseRef(@Nullable String baseRef) {
+
             this.baseRef = baseRef;
             return this;
         }
         @CustomType.Setter
         public Builder fileFilters(@Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter> fileFilters) {
+
             this.fileFilters = fileFilters;
             return this;
         }
@@ -93,11 +95,13 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterInclude {
         }
         @CustomType.Setter
         public Builder headRef(@Nullable String headRef) {
+
             this.headRef = headRef;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryName(@Nullable String repositoryName) {
+
             this.repositoryName = repositoryName;
             return this;
         }

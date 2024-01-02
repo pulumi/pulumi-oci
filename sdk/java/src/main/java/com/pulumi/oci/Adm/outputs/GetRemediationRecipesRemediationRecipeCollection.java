@@ -4,6 +4,7 @@
 package com.pulumi.oci.Adm.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Adm.outputs.GetRemediationRecipesRemediationRecipeCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetRemediationRecipesRemediationRecipeCollection {
 
         @CustomType.Setter
         public Builder items(List<GetRemediationRecipesRemediationRecipeCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipesRemediationRecipeCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetRemediationRecipesRemediationRecipeCollectionItem... items) {

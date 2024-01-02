@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyAppsMyAppApp;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyAppsMyAppIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyAppsMyAppIdcsLastModifiedBy;
@@ -373,17 +374,26 @@ public final class GetDomainsMyAppsMyApp {
 
         @CustomType.Setter
         public Builder accountType(String accountType) {
-            this.accountType = Objects.requireNonNull(accountType);
+            if (accountType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "accountType");
+            }
+            this.accountType = accountType;
             return this;
         }
         @CustomType.Setter
         public Builder active(Boolean active) {
-            this.active = Objects.requireNonNull(active);
+            if (active == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "active");
+            }
+            this.active = active;
             return this;
         }
         @CustomType.Setter
         public Builder apps(List<GetDomainsMyAppsMyAppApp> apps) {
-            this.apps = Objects.requireNonNull(apps);
+            if (apps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "apps");
+            }
+            this.apps = apps;
             return this;
         }
         public Builder apps(GetDomainsMyAppsMyAppApp... apps) {
@@ -391,32 +401,50 @@ public final class GetDomainsMyAppsMyApp {
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder favorite(Boolean favorite) {
-            this.favorite = Objects.requireNonNull(favorite);
+            if (favorite == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "favorite");
+            }
+            this.favorite = favorite;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsMyAppsMyAppIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsMyAppsMyAppIdcsCreatedBy... idcsCreatedBies) {
@@ -424,7 +452,10 @@ public final class GetDomainsMyAppsMyApp {
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsMyAppsMyAppIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsMyAppsMyAppIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -432,12 +463,18 @@ public final class GetDomainsMyAppsMyApp {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -445,22 +482,34 @@ public final class GetDomainsMyAppsMyApp {
         }
         @CustomType.Setter
         public Builder isAccount(Boolean isAccount) {
-            this.isAccount = Objects.requireNonNull(isAccount);
+            if (isAccount == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "isAccount");
+            }
+            this.isAccount = isAccount;
             return this;
         }
         @CustomType.Setter
         public Builder lastAccessed(String lastAccessed) {
-            this.lastAccessed = Objects.requireNonNull(lastAccessed);
+            if (lastAccessed == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "lastAccessed");
+            }
+            this.lastAccessed = lastAccessed;
             return this;
         }
         @CustomType.Setter
         public Builder launchUrl(String launchUrl) {
-            this.launchUrl = Objects.requireNonNull(launchUrl);
+            if (launchUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "launchUrl");
+            }
+            this.launchUrl = launchUrl;
             return this;
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsMyAppsMyAppMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsMyAppsMyAppMeta... metas) {
@@ -468,17 +517,26 @@ public final class GetDomainsMyAppsMyApp {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder owners(List<GetDomainsMyAppsMyAppOwner> owners) {
-            this.owners = Objects.requireNonNull(owners);
+            if (owners == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "owners");
+            }
+            this.owners = owners;
             return this;
         }
         public Builder owners(GetDomainsMyAppsMyAppOwner... owners) {
@@ -486,7 +544,10 @@ public final class GetDomainsMyAppsMyApp {
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -494,7 +555,10 @@ public final class GetDomainsMyAppsMyApp {
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsMyAppsMyAppTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsMyAppsMyAppTag... tags) {
@@ -502,17 +566,26 @@ public final class GetDomainsMyAppsMyApp {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder uid(String uid) {
-            this.uid = Objects.requireNonNull(uid);
+            if (uid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "uid");
+            }
+            this.uid = uid;
             return this;
         }
         @CustomType.Setter
         public Builder userWalletArtifacts(List<GetDomainsMyAppsMyAppUserWalletArtifact> userWalletArtifacts) {
-            this.userWalletArtifacts = Objects.requireNonNull(userWalletArtifacts);
+            if (userWalletArtifacts == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyAppsMyApp", "userWalletArtifacts");
+            }
+            this.userWalletArtifacts = userWalletArtifacts;
             return this;
         }
         public Builder userWalletArtifacts(GetDomainsMyAppsMyAppUserWalletArtifact... userWalletArtifacts) {

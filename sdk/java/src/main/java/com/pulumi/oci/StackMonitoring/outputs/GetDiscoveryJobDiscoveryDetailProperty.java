@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -44,7 +45,10 @@ public final class GetDiscoveryJobDiscoveryDetailProperty {
 
         @CustomType.Setter
         public Builder propertiesMap(Map<String,Object> propertiesMap) {
-            this.propertiesMap = Objects.requireNonNull(propertiesMap);
+            if (propertiesMap == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobDiscoveryDetailProperty", "propertiesMap");
+            }
+            this.propertiesMap = propertiesMap;
             return this;
         }
         public GetDiscoveryJobDiscoveryDetailProperty build() {

@@ -103,16 +103,19 @@ public final class JobRunJobInfrastructureConfigurationDetail {
 
         @CustomType.Setter
         public Builder blockStorageSizeInGbs(@Nullable Integer blockStorageSizeInGbs) {
+
             this.blockStorageSizeInGbs = blockStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder jobInfrastructureType(@Nullable String jobInfrastructureType) {
+
             this.jobInfrastructureType = jobInfrastructureType;
             return this;
         }
         @CustomType.Setter
         public Builder jobShapeConfigDetails(@Nullable List<JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails) {
+
             this.jobShapeConfigDetails = jobShapeConfigDetails;
             return this;
         }
@@ -121,11 +124,13 @@ public final class JobRunJobInfrastructureConfigurationDetail {
         }
         @CustomType.Setter
         public Builder shapeName(@Nullable String shapeName) {
+
             this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
+
             this.subnetId = subnetId;
             return this;
         }

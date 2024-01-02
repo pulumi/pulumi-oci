@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerb
 
         @CustomType.Setter
         public Builder realmUsers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> realmUsers) {
-            this.realmUsers = Objects.requireNonNull(realmUsers);
+            if (realmUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser", "realmUsers");
+            }
+            this.realmUsers = realmUsers;
             return this;
         }
         public Builder realmUsers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser... realmUsers) {

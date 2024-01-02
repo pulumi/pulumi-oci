@@ -5,6 +5,7 @@ package com.pulumi.oci.Vault;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Vault.inputs.SecretSecretContentArgs;
 import com.pulumi.oci.Vault.inputs.SecretSecretRuleArgs;
 import java.lang.Object;
@@ -436,11 +437,21 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public SecretArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.keyId = Objects.requireNonNull($.keyId, "expected parameter 'keyId' to be non-null");
-            $.secretContent = Objects.requireNonNull($.secretContent, "expected parameter 'secretContent' to be non-null");
-            $.secretName = Objects.requireNonNull($.secretName, "expected parameter 'secretName' to be non-null");
-            $.vaultId = Objects.requireNonNull($.vaultId, "expected parameter 'vaultId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("SecretArgs", "compartmentId");
+            }
+            if ($.keyId == null) {
+                throw new MissingRequiredPropertyException("SecretArgs", "keyId");
+            }
+            if ($.secretContent == null) {
+                throw new MissingRequiredPropertyException("SecretArgs", "secretContent");
+            }
+            if ($.secretName == null) {
+                throw new MissingRequiredPropertyException("SecretArgs", "secretName");
+            }
+            if ($.vaultId == null) {
+                throw new MissingRequiredPropertyException("SecretArgs", "vaultId");
+            }
             return $;
         }
     }

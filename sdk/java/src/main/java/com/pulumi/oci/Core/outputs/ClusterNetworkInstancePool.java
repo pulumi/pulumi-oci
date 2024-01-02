@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.ClusterNetworkInstancePoolLoadBalancer;
 import com.pulumi.oci.Core.outputs.ClusterNetworkInstancePoolPlacementConfiguration;
 import java.lang.Integer;
@@ -202,46 +203,57 @@ public final class ClusterNetworkInstancePool {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+
             this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+
             this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceConfigurationId(String instanceConfigurationId) {
-            this.instanceConfigurationId = Objects.requireNonNull(instanceConfigurationId);
+            if (instanceConfigurationId == null) {
+              throw new MissingRequiredPropertyException("ClusterNetworkInstancePool", "instanceConfigurationId");
+            }
+            this.instanceConfigurationId = instanceConfigurationId;
             return this;
         }
         @CustomType.Setter
         public Builder instanceDisplayNameFormatter(@Nullable String instanceDisplayNameFormatter) {
+
             this.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
             return this;
         }
         @CustomType.Setter
         public Builder instanceHostnameFormatter(@Nullable String instanceHostnameFormatter) {
+
             this.instanceHostnameFormatter = instanceHostnameFormatter;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancers(@Nullable List<ClusterNetworkInstancePoolLoadBalancer> loadBalancers) {
+
             this.loadBalancers = loadBalancers;
             return this;
         }
@@ -250,6 +262,7 @@ public final class ClusterNetworkInstancePool {
         }
         @CustomType.Setter
         public Builder placementConfigurations(@Nullable List<ClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations) {
+
             this.placementConfigurations = placementConfigurations;
             return this;
         }
@@ -258,16 +271,21 @@ public final class ClusterNetworkInstancePool {
         }
         @CustomType.Setter
         public Builder size(Integer size) {
-            this.size = Objects.requireNonNull(size);
+            if (size == null) {
+              throw new MissingRequiredPropertyException("ClusterNetworkInstancePool", "size");
+            }
+            this.size = size;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }

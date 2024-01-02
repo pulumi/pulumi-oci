@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.inputs.ChannelSourceAnonymousTransactionsHandlingArgs;
 import com.pulumi.oci.Mysql.inputs.ChannelSourceSslCaCertificateArgs;
 import java.lang.Integer;
@@ -338,11 +339,21 @@ public final class ChannelSourceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ChannelSourceArgs build() {
-            $.hostname = Objects.requireNonNull($.hostname, "expected parameter 'hostname' to be non-null");
-            $.password = Objects.requireNonNull($.password, "expected parameter 'password' to be non-null");
-            $.sourceType = Objects.requireNonNull($.sourceType, "expected parameter 'sourceType' to be non-null");
-            $.sslMode = Objects.requireNonNull($.sslMode, "expected parameter 'sslMode' to be non-null");
-            $.username = Objects.requireNonNull($.username, "expected parameter 'username' to be non-null");
+            if ($.hostname == null) {
+                throw new MissingRequiredPropertyException("ChannelSourceArgs", "hostname");
+            }
+            if ($.password == null) {
+                throw new MissingRequiredPropertyException("ChannelSourceArgs", "password");
+            }
+            if ($.sourceType == null) {
+                throw new MissingRequiredPropertyException("ChannelSourceArgs", "sourceType");
+            }
+            if ($.sslMode == null) {
+                throw new MissingRequiredPropertyException("ChannelSourceArgs", "sslMode");
+            }
+            if ($.username == null) {
+                throw new MissingRequiredPropertyException("ChannelSourceArgs", "username");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.SecurityListEgressSecurityRuleArgs;
 import com.pulumi.oci.Core.inputs.SecurityListIngressSecurityRuleArgs;
 import java.lang.Object;
@@ -335,8 +336,12 @@ public final class SecurityListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public SecurityListArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.vcnId = Objects.requireNonNull($.vcnId, "expected parameter 'vcnId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("SecurityListArgs", "compartmentId");
+            }
+            if ($.vcnId == null) {
+                throw new MissingRequiredPropertyException("SecurityListArgs", "vcnId");
+            }
             return $;
         }
     }

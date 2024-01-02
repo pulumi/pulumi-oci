@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -118,22 +119,34 @@ public final class GetMysqlBackupDbSystemSnapshotBackupPolicy {
 
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshotBackupPolicy", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshotBackupPolicy", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshotBackupPolicy", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder pitrPolicies(List<GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy> pitrPolicies) {
-            this.pitrPolicies = Objects.requireNonNull(pitrPolicies);
+            if (pitrPolicies == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshotBackupPolicy", "pitrPolicies");
+            }
+            this.pitrPolicies = pitrPolicies;
             return this;
         }
         public Builder pitrPolicies(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy... pitrPolicies) {
@@ -141,12 +154,18 @@ public final class GetMysqlBackupDbSystemSnapshotBackupPolicy {
         }
         @CustomType.Setter
         public Builder retentionInDays(Integer retentionInDays) {
-            this.retentionInDays = Objects.requireNonNull(retentionInDays);
+            if (retentionInDays == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshotBackupPolicy", "retentionInDays");
+            }
+            this.retentionInDays = retentionInDays;
             return this;
         }
         @CustomType.Setter
         public Builder windowStartTime(String windowStartTime) {
-            this.windowStartTime = Objects.requireNonNull(windowStartTime);
+            if (windowStartTime == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshotBackupPolicy", "windowStartTime");
+            }
+            this.windowStartTime = windowStartTime;
             return this;
         }
         public GetMysqlBackupDbSystemSnapshotBackupPolicy build() {

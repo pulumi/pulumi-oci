@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.outputs.GetPublicationPackagesFilter;
 import com.pulumi.oci.Marketplace.outputs.GetPublicationPackagesPublicationPackage;
 import java.lang.String;
@@ -93,6 +94,7 @@ public final class GetPublicationPackagesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPublicationPackagesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -101,27 +103,38 @@ public final class GetPublicationPackagesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackagesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder packageType(@Nullable String packageType) {
+
             this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
         public Builder packageVersion(@Nullable String packageVersion) {
+
             this.packageVersion = packageVersion;
             return this;
         }
         @CustomType.Setter
         public Builder publicationId(String publicationId) {
-            this.publicationId = Objects.requireNonNull(publicationId);
+            if (publicationId == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackagesResult", "publicationId");
+            }
+            this.publicationId = publicationId;
             return this;
         }
         @CustomType.Setter
         public Builder publicationPackages(List<GetPublicationPackagesPublicationPackage> publicationPackages) {
-            this.publicationPackages = Objects.requireNonNull(publicationPackages);
+            if (publicationPackages == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackagesResult", "publicationPackages");
+            }
+            this.publicationPackages = publicationPackages;
             return this;
         }
         public Builder publicationPackages(GetPublicationPackagesPublicationPackage... publicationPackages) {

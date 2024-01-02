@@ -5,6 +5,7 @@ package com.pulumi.oci.LogAnalytics.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -150,7 +151,9 @@ public final class GetNamespaceStorageRecalledDataSizeArgs extends com.pulumi.re
         }
 
         public GetNamespaceStorageRecalledDataSizeArgs build() {
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("GetNamespaceStorageRecalledDataSizeArgs", "namespace");
+            }
             return $;
         }
     }

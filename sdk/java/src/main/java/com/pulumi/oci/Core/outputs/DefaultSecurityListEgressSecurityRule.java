@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.DefaultSecurityListEgressSecurityRuleIcmpOptions;
 import com.pulumi.oci.Core.outputs.DefaultSecurityListEgressSecurityRuleTcpOptions;
 import com.pulumi.oci.Core.outputs.DefaultSecurityListEgressSecurityRuleUdpOptions;
@@ -82,41 +83,53 @@ public final class DefaultSecurityListEgressSecurityRule {
 
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder destination(String destination) {
-            this.destination = Objects.requireNonNull(destination);
+            if (destination == null) {
+              throw new MissingRequiredPropertyException("DefaultSecurityListEgressSecurityRule", "destination");
+            }
+            this.destination = destination;
             return this;
         }
         @CustomType.Setter
         public Builder destinationType(@Nullable String destinationType) {
+
             this.destinationType = destinationType;
             return this;
         }
         @CustomType.Setter
         public Builder icmpOptions(@Nullable DefaultSecurityListEgressSecurityRuleIcmpOptions icmpOptions) {
+
             this.icmpOptions = icmpOptions;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("DefaultSecurityListEgressSecurityRule", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder stateless(@Nullable Boolean stateless) {
+
             this.stateless = stateless;
             return this;
         }
         @CustomType.Setter
         public Builder tcpOptions(@Nullable DefaultSecurityListEgressSecurityRuleTcpOptions tcpOptions) {
+
             this.tcpOptions = tcpOptions;
             return this;
         }
         @CustomType.Setter
         public Builder udpOptions(@Nullable DefaultSecurityListEgressSecurityRuleUdpOptions udpOptions) {
+
             this.udpOptions = udpOptions;
             return this;
         }

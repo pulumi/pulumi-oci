@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionCredential;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionString;
 import java.lang.String;
@@ -73,12 +74,18 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
 
         @CustomType.Setter
         public Builder componentType(String componentType) {
-            this.componentType = Objects.requireNonNull(componentType);
+            if (componentType == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfo", "componentType");
+            }
+            this.componentType = componentType;
             return this;
         }
         @CustomType.Setter
         public Builder connectionCredentials(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionCredential> connectionCredentials) {
-            this.connectionCredentials = Objects.requireNonNull(connectionCredentials);
+            if (connectionCredentials == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfo", "connectionCredentials");
+            }
+            this.connectionCredentials = connectionCredentials;
             return this;
         }
         public Builder connectionCredentials(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionCredential... connectionCredentials) {
@@ -86,7 +93,10 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         }
         @CustomType.Setter
         public Builder connectionStrings(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionString> connectionStrings) {
-            this.connectionStrings = Objects.requireNonNull(connectionStrings);
+            if (connectionStrings == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfo", "connectionStrings");
+            }
+            this.connectionStrings = connectionStrings;
             return this;
         }
         public Builder connectionStrings(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionString... connectionStrings) {

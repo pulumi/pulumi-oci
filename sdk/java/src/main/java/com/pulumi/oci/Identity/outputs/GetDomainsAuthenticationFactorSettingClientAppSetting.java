@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -240,77 +241,122 @@ public final class GetDomainsAuthenticationFactorSettingClientAppSetting {
 
         @CustomType.Setter
         public Builder deviceProtectionPolicy(String deviceProtectionPolicy) {
-            this.deviceProtectionPolicy = Objects.requireNonNull(deviceProtectionPolicy);
+            if (deviceProtectionPolicy == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingClientAppSetting", "deviceProtectionPolicy");
+            }
+            this.deviceProtectionPolicy = deviceProtectionPolicy;
             return this;
         }
         @CustomType.Setter
         public Builder initialLockoutPeriodInSecs(Integer initialLockoutPeriodInSecs) {
-            this.initialLockoutPeriodInSecs = Objects.requireNonNull(initialLockoutPeriodInSecs);
+            if (initialLockoutPeriodInSecs == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingClientAppSetting", "initialLockoutPeriodInSecs");
+            }
+            this.initialLockoutPeriodInSecs = initialLockoutPeriodInSecs;
             return this;
         }
         @CustomType.Setter
         public Builder keyPairLength(Integer keyPairLength) {
-            this.keyPairLength = Objects.requireNonNull(keyPairLength);
+            if (keyPairLength == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingClientAppSetting", "keyPairLength");
+            }
+            this.keyPairLength = keyPairLength;
             return this;
         }
         @CustomType.Setter
         public Builder lockoutEscalationPattern(String lockoutEscalationPattern) {
-            this.lockoutEscalationPattern = Objects.requireNonNull(lockoutEscalationPattern);
+            if (lockoutEscalationPattern == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingClientAppSetting", "lockoutEscalationPattern");
+            }
+            this.lockoutEscalationPattern = lockoutEscalationPattern;
             return this;
         }
         @CustomType.Setter
         public Builder maxFailuresBeforeLockout(Integer maxFailuresBeforeLockout) {
-            this.maxFailuresBeforeLockout = Objects.requireNonNull(maxFailuresBeforeLockout);
+            if (maxFailuresBeforeLockout == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingClientAppSetting", "maxFailuresBeforeLockout");
+            }
+            this.maxFailuresBeforeLockout = maxFailuresBeforeLockout;
             return this;
         }
         @CustomType.Setter
         public Builder maxFailuresBeforeWarning(Integer maxFailuresBeforeWarning) {
-            this.maxFailuresBeforeWarning = Objects.requireNonNull(maxFailuresBeforeWarning);
+            if (maxFailuresBeforeWarning == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingClientAppSetting", "maxFailuresBeforeWarning");
+            }
+            this.maxFailuresBeforeWarning = maxFailuresBeforeWarning;
             return this;
         }
         @CustomType.Setter
         public Builder maxLockoutIntervalInSecs(Integer maxLockoutIntervalInSecs) {
-            this.maxLockoutIntervalInSecs = Objects.requireNonNull(maxLockoutIntervalInSecs);
+            if (maxLockoutIntervalInSecs == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingClientAppSetting", "maxLockoutIntervalInSecs");
+            }
+            this.maxLockoutIntervalInSecs = maxLockoutIntervalInSecs;
             return this;
         }
         @CustomType.Setter
         public Builder minPinLength(Integer minPinLength) {
-            this.minPinLength = Objects.requireNonNull(minPinLength);
+            if (minPinLength == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingClientAppSetting", "minPinLength");
+            }
+            this.minPinLength = minPinLength;
             return this;
         }
         @CustomType.Setter
         public Builder policyUpdateFreqInDays(Integer policyUpdateFreqInDays) {
-            this.policyUpdateFreqInDays = Objects.requireNonNull(policyUpdateFreqInDays);
+            if (policyUpdateFreqInDays == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingClientAppSetting", "policyUpdateFreqInDays");
+            }
+            this.policyUpdateFreqInDays = policyUpdateFreqInDays;
             return this;
         }
         @CustomType.Setter
         public Builder requestSigningAlgo(String requestSigningAlgo) {
-            this.requestSigningAlgo = Objects.requireNonNull(requestSigningAlgo);
+            if (requestSigningAlgo == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingClientAppSetting", "requestSigningAlgo");
+            }
+            this.requestSigningAlgo = requestSigningAlgo;
             return this;
         }
         @CustomType.Setter
         public Builder sharedSecretEncoding(String sharedSecretEncoding) {
-            this.sharedSecretEncoding = Objects.requireNonNull(sharedSecretEncoding);
+            if (sharedSecretEncoding == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingClientAppSetting", "sharedSecretEncoding");
+            }
+            this.sharedSecretEncoding = sharedSecretEncoding;
             return this;
         }
         @CustomType.Setter
         public Builder unlockAppForEachRequestEnabled(Boolean unlockAppForEachRequestEnabled) {
-            this.unlockAppForEachRequestEnabled = Objects.requireNonNull(unlockAppForEachRequestEnabled);
+            if (unlockAppForEachRequestEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingClientAppSetting", "unlockAppForEachRequestEnabled");
+            }
+            this.unlockAppForEachRequestEnabled = unlockAppForEachRequestEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder unlockAppIntervalInSecs(Integer unlockAppIntervalInSecs) {
-            this.unlockAppIntervalInSecs = Objects.requireNonNull(unlockAppIntervalInSecs);
+            if (unlockAppIntervalInSecs == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingClientAppSetting", "unlockAppIntervalInSecs");
+            }
+            this.unlockAppIntervalInSecs = unlockAppIntervalInSecs;
             return this;
         }
         @CustomType.Setter
         public Builder unlockOnAppForegroundEnabled(Boolean unlockOnAppForegroundEnabled) {
-            this.unlockOnAppForegroundEnabled = Objects.requireNonNull(unlockOnAppForegroundEnabled);
+            if (unlockOnAppForegroundEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingClientAppSetting", "unlockOnAppForegroundEnabled");
+            }
+            this.unlockOnAppForegroundEnabled = unlockOnAppForegroundEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder unlockOnAppStartEnabled(Boolean unlockOnAppStartEnabled) {
-            this.unlockOnAppStartEnabled = Objects.requireNonNull(unlockOnAppStartEnabled);
+            if (unlockOnAppStartEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingClientAppSetting", "unlockOnAppStartEnabled");
+            }
+            this.unlockOnAppStartEnabled = unlockOnAppStartEnabled;
             return this;
         }
         public GetDomainsAuthenticationFactorSettingClientAppSetting build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition;
 import java.lang.Boolean;
 import java.lang.String;
@@ -87,12 +88,18 @@ public final class GetAuditPoliciesAuditPolicyCollectionItemAuditCondition {
 
         @CustomType.Setter
         public Builder auditPolicyName(String auditPolicyName) {
-            this.auditPolicyName = Objects.requireNonNull(auditPolicyName);
+            if (auditPolicyName == null) {
+              throw new MissingRequiredPropertyException("GetAuditPoliciesAuditPolicyCollectionItemAuditCondition", "auditPolicyName");
+            }
+            this.auditPolicyName = auditPolicyName;
             return this;
         }
         @CustomType.Setter
         public Builder enableConditions(List<GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition> enableConditions) {
-            this.enableConditions = Objects.requireNonNull(enableConditions);
+            if (enableConditions == null) {
+              throw new MissingRequiredPropertyException("GetAuditPoliciesAuditPolicyCollectionItemAuditCondition", "enableConditions");
+            }
+            this.enableConditions = enableConditions;
             return this;
         }
         public Builder enableConditions(GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition... enableConditions) {
@@ -100,12 +107,18 @@ public final class GetAuditPoliciesAuditPolicyCollectionItemAuditCondition {
         }
         @CustomType.Setter
         public Builder isDataSafeServiceAccountAudited(Boolean isDataSafeServiceAccountAudited) {
-            this.isDataSafeServiceAccountAudited = Objects.requireNonNull(isDataSafeServiceAccountAudited);
+            if (isDataSafeServiceAccountAudited == null) {
+              throw new MissingRequiredPropertyException("GetAuditPoliciesAuditPolicyCollectionItemAuditCondition", "isDataSafeServiceAccountAudited");
+            }
+            this.isDataSafeServiceAccountAudited = isDataSafeServiceAccountAudited;
             return this;
         }
         @CustomType.Setter
         public Builder isPrivUsersManagedByDataSafe(Boolean isPrivUsersManagedByDataSafe) {
-            this.isPrivUsersManagedByDataSafe = Objects.requireNonNull(isPrivUsersManagedByDataSafe);
+            if (isPrivUsersManagedByDataSafe == null) {
+              throw new MissingRequiredPropertyException("GetAuditPoliciesAuditPolicyCollectionItemAuditCondition", "isPrivUsersManagedByDataSafe");
+            }
+            this.isPrivUsersManagedByDataSafe = isPrivUsersManagedByDataSafe;
             return this;
         }
         public GetAuditPoliciesAuditPolicyCollectionItemAuditCondition build() {

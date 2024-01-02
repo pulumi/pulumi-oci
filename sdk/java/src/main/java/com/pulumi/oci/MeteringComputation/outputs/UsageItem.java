@@ -446,111 +446,133 @@ public final class UsageItem {
 
         @CustomType.Setter
         public Builder ad(@Nullable String ad) {
+
             this.ad = ad;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentName(@Nullable String compartmentName) {
+
             this.compartmentName = compartmentName;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentPath(@Nullable String compartmentPath) {
+
             this.compartmentPath = compartmentPath;
             return this;
         }
         @CustomType.Setter
         public Builder computedAmount(@Nullable Double computedAmount) {
+
             this.computedAmount = computedAmount;
             return this;
         }
         @CustomType.Setter
         public Builder computedQuantity(@Nullable Double computedQuantity) {
+
             this.computedQuantity = computedQuantity;
             return this;
         }
         @CustomType.Setter
         public Builder currency(@Nullable String currency) {
+
             this.currency = currency;
             return this;
         }
         @CustomType.Setter
         public Builder discount(@Nullable Double discount) {
+
             this.discount = discount;
             return this;
         }
         @CustomType.Setter
         public Builder isForecast(@Nullable Boolean isForecast) {
+
             this.isForecast = isForecast;
             return this;
         }
         @CustomType.Setter
         public Builder listRate(@Nullable Double listRate) {
+
             this.listRate = listRate;
             return this;
         }
         @CustomType.Setter
         public Builder overage(@Nullable String overage) {
+
             this.overage = overage;
             return this;
         }
         @CustomType.Setter
         public Builder overagesFlag(@Nullable String overagesFlag) {
+
             this.overagesFlag = overagesFlag;
             return this;
         }
         @CustomType.Setter
         public Builder platform(@Nullable String platform) {
+
             this.platform = platform;
             return this;
         }
         @CustomType.Setter
         public Builder region(@Nullable String region) {
+
             this.region = region;
             return this;
         }
         @CustomType.Setter
         public Builder resourceId(@Nullable String resourceId) {
+
             this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceName(@Nullable String resourceName) {
+
             this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
         public Builder service(@Nullable String service) {
+
             this.service = service;
             return this;
         }
         @CustomType.Setter
         public Builder shape(@Nullable String shape) {
+
             this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder skuName(@Nullable String skuName) {
+
             this.skuName = skuName;
             return this;
         }
         @CustomType.Setter
         public Builder skuPartNumber(@Nullable String skuPartNumber) {
+
             this.skuPartNumber = skuPartNumber;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptionId(@Nullable String subscriptionId) {
+
             this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
         public Builder tags(@Nullable List<UsageItemTag> tags) {
+
             this.tags = tags;
             return this;
         }
@@ -559,36 +581,43 @@ public final class UsageItem {
         }
         @CustomType.Setter
         public Builder tenantId(@Nullable String tenantId) {
+
             this.tenantId = tenantId;
             return this;
         }
         @CustomType.Setter
         public Builder tenantName(@Nullable String tenantName) {
+
             this.tenantName = tenantName;
             return this;
         }
         @CustomType.Setter
         public Builder timeUsageEnded(@Nullable String timeUsageEnded) {
+
             this.timeUsageEnded = timeUsageEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeUsageStarted(@Nullable String timeUsageStarted) {
+
             this.timeUsageStarted = timeUsageStarted;
             return this;
         }
         @CustomType.Setter
         public Builder unit(@Nullable String unit) {
+
             this.unit = unit;
             return this;
         }
         @CustomType.Setter
         public Builder unitPrice(@Nullable Double unitPrice) {
+
             this.unitPrice = unitPrice;
             return this;
         }
         @CustomType.Setter
         public Builder weight(@Nullable Double weight) {
+
             this.weight = weight;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceApiKeysBdsApiKey;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceApiKeysFilter;
 import java.lang.String;
@@ -99,7 +100,10 @@ public final class GetBdsInstanceApiKeysResult {
 
         @CustomType.Setter
         public Builder bdsApiKeys(List<GetBdsInstanceApiKeysBdsApiKey> bdsApiKeys) {
-            this.bdsApiKeys = Objects.requireNonNull(bdsApiKeys);
+            if (bdsApiKeys == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceApiKeysResult", "bdsApiKeys");
+            }
+            this.bdsApiKeys = bdsApiKeys;
             return this;
         }
         public Builder bdsApiKeys(GetBdsInstanceApiKeysBdsApiKey... bdsApiKeys) {
@@ -107,16 +111,21 @@ public final class GetBdsInstanceApiKeysResult {
         }
         @CustomType.Setter
         public Builder bdsInstanceId(String bdsInstanceId) {
-            this.bdsInstanceId = Objects.requireNonNull(bdsInstanceId);
+            if (bdsInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceApiKeysResult", "bdsInstanceId");
+            }
+            this.bdsInstanceId = bdsInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBdsInstanceApiKeysFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -125,16 +134,21 @@ public final class GetBdsInstanceApiKeysResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceApiKeysResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder userId(@Nullable String userId) {
+
             this.userId = userId;
             return this;
         }

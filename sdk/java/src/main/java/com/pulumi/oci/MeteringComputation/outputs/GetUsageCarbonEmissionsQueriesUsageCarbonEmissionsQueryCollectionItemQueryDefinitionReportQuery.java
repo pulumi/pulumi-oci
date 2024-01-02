@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTag;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -158,17 +159,26 @@ public final class GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollec
 
         @CustomType.Setter
         public Builder compartmentDepth(Integer compartmentDepth) {
-            this.compartmentDepth = Objects.requireNonNull(compartmentDepth);
+            if (compartmentDepth == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery", "compartmentDepth");
+            }
+            this.compartmentDepth = compartmentDepth;
             return this;
         }
         @CustomType.Setter
         public Builder dateRangeName(String dateRangeName) {
-            this.dateRangeName = Objects.requireNonNull(dateRangeName);
+            if (dateRangeName == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery", "dateRangeName");
+            }
+            this.dateRangeName = dateRangeName;
             return this;
         }
         @CustomType.Setter
         public Builder groupBies(List<String> groupBies) {
-            this.groupBies = Objects.requireNonNull(groupBies);
+            if (groupBies == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery", "groupBies");
+            }
+            this.groupBies = groupBies;
             return this;
         }
         public Builder groupBies(String... groupBies) {
@@ -176,7 +186,10 @@ public final class GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollec
         }
         @CustomType.Setter
         public Builder groupByTags(List<GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTag> groupByTags) {
-            this.groupByTags = Objects.requireNonNull(groupByTags);
+            if (groupByTags == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery", "groupByTags");
+            }
+            this.groupByTags = groupByTags;
             return this;
         }
         public Builder groupByTags(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTag... groupByTags) {
@@ -184,27 +197,42 @@ public final class GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollec
         }
         @CustomType.Setter
         public Builder isAggregateByTime(Boolean isAggregateByTime) {
-            this.isAggregateByTime = Objects.requireNonNull(isAggregateByTime);
+            if (isAggregateByTime == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery", "isAggregateByTime");
+            }
+            this.isAggregateByTime = isAggregateByTime;
             return this;
         }
         @CustomType.Setter
         public Builder tenantId(String tenantId) {
-            this.tenantId = Objects.requireNonNull(tenantId);
+            if (tenantId == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery", "tenantId");
+            }
+            this.tenantId = tenantId;
             return this;
         }
         @CustomType.Setter
         public Builder timeUsageEnded(String timeUsageEnded) {
-            this.timeUsageEnded = Objects.requireNonNull(timeUsageEnded);
+            if (timeUsageEnded == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery", "timeUsageEnded");
+            }
+            this.timeUsageEnded = timeUsageEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeUsageStarted(String timeUsageStarted) {
-            this.timeUsageStarted = Objects.requireNonNull(timeUsageStarted);
+            if (timeUsageStarted == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery", "timeUsageStarted");
+            }
+            this.timeUsageStarted = timeUsageStarted;
             return this;
         }
         @CustomType.Setter
         public Builder usageCarbonEmissionsQueryFilter(String usageCarbonEmissionsQueryFilter) {
-            this.usageCarbonEmissionsQueryFilter = Objects.requireNonNull(usageCarbonEmissionsQueryFilter);
+            if (usageCarbonEmissionsQueryFilter == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery", "usageCarbonEmissionsQueryFilter");
+            }
+            this.usageCarbonEmissionsQueryFilter = usageCarbonEmissionsQueryFilter;
             return this;
         }
         public GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery build() {

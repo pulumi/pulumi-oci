@@ -200,61 +200,73 @@ public final class ExternalExadataInfrastructureDatabaseSystem {
 
         @CustomType.Setter
         public Builder additionalDetails(@Nullable Map<String,Object> additionalDetails) {
+
             this.additionalDetails = additionalDetails;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder internalId(@Nullable String internalId) {
+
             this.internalId = internalId;
             return this;
         }
         @CustomType.Setter
         public Builder licenseModel(@Nullable String licenseModel) {
+
             this.licenseModel = licenseModel;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
+
             this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder version(@Nullable String version) {
+
             this.version = version;
             return this;
         }

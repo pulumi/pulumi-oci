@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyCustomerSecretKeysMyCustomerSecretKey;
 import java.lang.Integer;
 import java.lang.String;
@@ -141,42 +142,58 @@ public final class GetDomainsMyCustomerSecretKeysResult {
 
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCustomerSecretKeysResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCustomerSecretKeysResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder itemsPerPage(Integer itemsPerPage) {
-            this.itemsPerPage = Objects.requireNonNull(itemsPerPage);
+            if (itemsPerPage == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCustomerSecretKeysResult", "itemsPerPage");
+            }
+            this.itemsPerPage = itemsPerPage;
             return this;
         }
         @CustomType.Setter
         public Builder myCustomerSecretKeyCount(@Nullable Integer myCustomerSecretKeyCount) {
+
             this.myCustomerSecretKeyCount = myCustomerSecretKeyCount;
             return this;
         }
         @CustomType.Setter
         public Builder myCustomerSecretKeyFilter(@Nullable String myCustomerSecretKeyFilter) {
+
             this.myCustomerSecretKeyFilter = myCustomerSecretKeyFilter;
             return this;
         }
         @CustomType.Setter
         public Builder myCustomerSecretKeys(List<GetDomainsMyCustomerSecretKeysMyCustomerSecretKey> myCustomerSecretKeys) {
-            this.myCustomerSecretKeys = Objects.requireNonNull(myCustomerSecretKeys);
+            if (myCustomerSecretKeys == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCustomerSecretKeysResult", "myCustomerSecretKeys");
+            }
+            this.myCustomerSecretKeys = myCustomerSecretKeys;
             return this;
         }
         public Builder myCustomerSecretKeys(GetDomainsMyCustomerSecretKeysMyCustomerSecretKey... myCustomerSecretKeys) {
@@ -184,12 +201,16 @@ public final class GetDomainsMyCustomerSecretKeysResult {
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCustomerSecretKeysResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -197,22 +218,28 @@ public final class GetDomainsMyCustomerSecretKeysResult {
         }
         @CustomType.Setter
         public Builder sortBy(@Nullable String sortBy) {
+
             this.sortBy = sortBy;
             return this;
         }
         @CustomType.Setter
         public Builder sortOrder(@Nullable String sortOrder) {
+
             this.sortOrder = sortOrder;
             return this;
         }
         @CustomType.Setter
         public Builder startIndex(@Nullable Integer startIndex) {
+
             this.startIndex = startIndex;
             return this;
         }
         @CustomType.Setter
         public Builder totalResults(Integer totalResults) {
-            this.totalResults = Objects.requireNonNull(totalResults);
+            if (totalResults == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyCustomerSecretKeysResult", "totalResults");
+            }
+            this.totalResults = totalResults;
             return this;
         }
         public GetDomainsMyCustomerSecretKeysResult build() {

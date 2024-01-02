@@ -44,6 +44,7 @@ public final class ConfigurationConfigurationDetail {
 
         @CustomType.Setter
         public Builder items(@Nullable List<ConfigurationConfigurationDetailItem> items) {
+
             this.items = items;
             return this;
         }

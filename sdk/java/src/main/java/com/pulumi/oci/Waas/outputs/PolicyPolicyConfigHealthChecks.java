@@ -207,6 +207,7 @@ public final class PolicyPolicyConfigHealthChecks {
 
         @CustomType.Setter
         public Builder expectedResponseCodeGroups(@Nullable List<String> expectedResponseCodeGroups) {
+
             this.expectedResponseCodeGroups = expectedResponseCodeGroups;
             return this;
         }
@@ -215,51 +216,61 @@ public final class PolicyPolicyConfigHealthChecks {
         }
         @CustomType.Setter
         public Builder expectedResponseText(@Nullable String expectedResponseText) {
+
             this.expectedResponseText = expectedResponseText;
             return this;
         }
         @CustomType.Setter
         public Builder headers(@Nullable Map<String,Object> headers) {
+
             this.headers = headers;
             return this;
         }
         @CustomType.Setter
         public Builder healthyThreshold(@Nullable Integer healthyThreshold) {
+
             this.healthyThreshold = healthyThreshold;
             return this;
         }
         @CustomType.Setter
         public Builder intervalInSeconds(@Nullable Integer intervalInSeconds) {
+
             this.intervalInSeconds = intervalInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
+
             this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isResponseTextCheckEnabled(@Nullable Boolean isResponseTextCheckEnabled) {
+
             this.isResponseTextCheckEnabled = isResponseTextCheckEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder method(@Nullable String method) {
+
             this.method = method;
             return this;
         }
         @CustomType.Setter
         public Builder path(@Nullable String path) {
+
             this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder timeoutInSeconds(@Nullable Integer timeoutInSeconds) {
+
             this.timeoutInSeconds = timeoutInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder unhealthyThreshold(@Nullable Integer unhealthyThreshold) {
+
             this.unhealthyThreshold = unhealthyThreshold;
             return this;
         }

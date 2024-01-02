@@ -5,6 +5,7 @@ package com.pulumi.oci.Optimizer.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -229,9 +230,15 @@ public final class ProfileTargetTagsItemArgs extends com.pulumi.resources.Resour
         }
 
         public ProfileTargetTagsItemArgs build() {
-            $.tagDefinitionName = Objects.requireNonNull($.tagDefinitionName, "expected parameter 'tagDefinitionName' to be non-null");
-            $.tagNamespaceName = Objects.requireNonNull($.tagNamespaceName, "expected parameter 'tagNamespaceName' to be non-null");
-            $.tagValueType = Objects.requireNonNull($.tagValueType, "expected parameter 'tagValueType' to be non-null");
+            if ($.tagDefinitionName == null) {
+                throw new MissingRequiredPropertyException("ProfileTargetTagsItemArgs", "tagDefinitionName");
+            }
+            if ($.tagNamespaceName == null) {
+                throw new MissingRequiredPropertyException("ProfileTargetTagsItemArgs", "tagNamespaceName");
+            }
+            if ($.tagValueType == null) {
+                throw new MissingRequiredPropertyException("ProfileTargetTagsItemArgs", "tagValueType");
+            }
             return $;
         }
     }

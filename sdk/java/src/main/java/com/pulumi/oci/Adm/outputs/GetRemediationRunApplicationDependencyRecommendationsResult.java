@@ -4,6 +4,7 @@
 package com.pulumi.oci.Adm.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Adm.outputs.GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection;
 import com.pulumi.oci.Adm.outputs.GetRemediationRunApplicationDependencyRecommendationsFilter;
 import java.lang.String;
@@ -87,7 +88,10 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
 
         @CustomType.Setter
         public Builder applicationDependencyRecommendationCollections(List<GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection> applicationDependencyRecommendationCollections) {
-            this.applicationDependencyRecommendationCollections = Objects.requireNonNull(applicationDependencyRecommendationCollections);
+            if (applicationDependencyRecommendationCollections == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunApplicationDependencyRecommendationsResult", "applicationDependencyRecommendationCollections");
+            }
+            this.applicationDependencyRecommendationCollections = applicationDependencyRecommendationCollections;
             return this;
         }
         public Builder applicationDependencyRecommendationCollections(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection... applicationDependencyRecommendationCollections) {
@@ -95,6 +99,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRemediationRunApplicationDependencyRecommendationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -103,17 +108,24 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
         }
         @CustomType.Setter
         public Builder gav(@Nullable String gav) {
+
             this.gav = gav;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunApplicationDependencyRecommendationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder remediationRunId(String remediationRunId) {
-            this.remediationRunId = Objects.requireNonNull(remediationRunId);
+            if (remediationRunId == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunApplicationDependencyRecommendationsResult", "remediationRunId");
+            }
+            this.remediationRunId = remediationRunId;
             return this;
         }
         public GetRemediationRunApplicationDependencyRecommendationsResult build() {

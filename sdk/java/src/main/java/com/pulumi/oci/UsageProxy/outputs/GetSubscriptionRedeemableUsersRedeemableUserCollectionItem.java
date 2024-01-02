@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem;
 import java.lang.String;
 import java.util.List;
@@ -78,7 +79,10 @@ public final class GetSubscriptionRedeemableUsersRedeemableUserCollectionItem {
 
         @CustomType.Setter
         public Builder items(List<GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedeemableUsersRedeemableUserCollectionItem", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem... items) {
@@ -86,17 +90,26 @@ public final class GetSubscriptionRedeemableUsersRedeemableUserCollectionItem {
         }
         @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedeemableUsersRedeemableUserCollectionItem", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
-            this.tenancyId = Objects.requireNonNull(tenancyId);
+            if (tenancyId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedeemableUsersRedeemableUserCollectionItem", "tenancyId");
+            }
+            this.tenancyId = tenancyId;
             return this;
         }
         @CustomType.Setter
         public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+            if (userId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedeemableUsersRedeemableUserCollectionItem", "userId");
+            }
+            this.userId = userId;
             return this;
         }
         public GetSubscriptionRedeemableUsersRedeemableUserCollectionItem build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsNetworkPerimeterIpAddressArgs;
 import com.pulumi.oci.Identity.inputs.DomainsNetworkPerimeterTagArgs;
 import java.lang.String;
@@ -832,9 +833,15 @@ public final class DomainsNetworkPerimeterArgs extends com.pulumi.resources.Reso
         }
 
         public DomainsNetworkPerimeterArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.ipAddresses = Objects.requireNonNull($.ipAddresses, "expected parameter 'ipAddresses' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsNetworkPerimeterArgs", "idcsEndpoint");
+            }
+            if ($.ipAddresses == null) {
+                throw new MissingRequiredPropertyException("DomainsNetworkPerimeterArgs", "ipAddresses");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsNetworkPerimeterArgs", "schemas");
+            }
             return $;
         }
     }

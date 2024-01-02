@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.inputs.GetOutboundConnectorsFilter;
 import java.lang.String;
 import java.util.List;
@@ -192,8 +193,12 @@ public final class GetOutboundConnectorsPlainArgs extends com.pulumi.resources.I
         }
 
         public GetOutboundConnectorsPlainArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.availabilityDomain == null) {
+                throw new MissingRequiredPropertyException("GetOutboundConnectorsPlainArgs", "availabilityDomain");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetOutboundConnectorsPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

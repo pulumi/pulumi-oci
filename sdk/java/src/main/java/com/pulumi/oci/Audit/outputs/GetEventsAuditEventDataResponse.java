@@ -4,6 +4,7 @@
 package com.pulumi.oci.Audit.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -100,27 +101,42 @@ public final class GetEventsAuditEventDataResponse {
 
         @CustomType.Setter
         public Builder headers(Map<String,Object> headers) {
-            this.headers = Objects.requireNonNull(headers);
+            if (headers == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataResponse", "headers");
+            }
+            this.headers = headers;
             return this;
         }
         @CustomType.Setter
         public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+            if (message == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataResponse", "message");
+            }
+            this.message = message;
             return this;
         }
         @CustomType.Setter
         public Builder payload(Map<String,Object> payload) {
-            this.payload = Objects.requireNonNull(payload);
+            if (payload == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataResponse", "payload");
+            }
+            this.payload = payload;
             return this;
         }
         @CustomType.Setter
         public Builder responseTime(String responseTime) {
-            this.responseTime = Objects.requireNonNull(responseTime);
+            if (responseTime == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataResponse", "responseTime");
+            }
+            this.responseTime = responseTime;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataResponse", "status");
+            }
+            this.status = status;
             return this;
         }
         public GetEventsAuditEventDataResponse build() {

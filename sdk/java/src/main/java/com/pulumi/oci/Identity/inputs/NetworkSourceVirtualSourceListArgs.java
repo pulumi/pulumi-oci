@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -76,8 +77,12 @@ public final class NetworkSourceVirtualSourceListArgs extends com.pulumi.resourc
         }
 
         public NetworkSourceVirtualSourceListArgs build() {
-            $.ipRanges = Objects.requireNonNull($.ipRanges, "expected parameter 'ipRanges' to be non-null");
-            $.vcnId = Objects.requireNonNull($.vcnId, "expected parameter 'vcnId' to be non-null");
+            if ($.ipRanges == null) {
+                throw new MissingRequiredPropertyException("NetworkSourceVirtualSourceListArgs", "ipRanges");
+            }
+            if ($.vcnId == null) {
+                throw new MissingRequiredPropertyException("NetworkSourceVirtualSourceListArgs", "vcnId");
+            }
             return $;
         }
     }

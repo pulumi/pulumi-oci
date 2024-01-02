@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabasesManagedDatabaseCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetManagedDatabasesManagedDatabaseCollection {
 
         @CustomType.Setter
         public Builder items(List<GetManagedDatabasesManagedDatabaseCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesManagedDatabaseCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabasesManagedDatabaseCollectionItem... items) {

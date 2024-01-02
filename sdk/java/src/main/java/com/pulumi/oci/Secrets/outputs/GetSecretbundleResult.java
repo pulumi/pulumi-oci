@@ -4,6 +4,7 @@
 package com.pulumi.oci.Secrets.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Secrets.outputs.GetSecretbundleSecretBundleContent;
 import java.lang.Object;
 import java.lang.String;
@@ -186,17 +187,26 @@ public final class GetSecretbundleResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder metadata(Map<String,Object> metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+            if (metadata == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleResult", "metadata");
+            }
+            this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
         public Builder secretBundleContents(List<GetSecretbundleSecretBundleContent> secretBundleContents) {
-            this.secretBundleContents = Objects.requireNonNull(secretBundleContents);
+            if (secretBundleContents == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleResult", "secretBundleContents");
+            }
+            this.secretBundleContents = secretBundleContents;
             return this;
         }
         public Builder secretBundleContents(GetSecretbundleSecretBundleContent... secretBundleContents) {
@@ -204,22 +214,30 @@ public final class GetSecretbundleResult {
         }
         @CustomType.Setter
         public Builder secretId(String secretId) {
-            this.secretId = Objects.requireNonNull(secretId);
+            if (secretId == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleResult", "secretId");
+            }
+            this.secretId = secretId;
             return this;
         }
         @CustomType.Setter
         public Builder secretVersionName(@Nullable String secretVersionName) {
+
             this.secretVersionName = secretVersionName;
             return this;
         }
         @CustomType.Setter
         public Builder stage(@Nullable String stage) {
+
             this.stage = stage;
             return this;
         }
         @CustomType.Setter
         public Builder stages(List<String> stages) {
-            this.stages = Objects.requireNonNull(stages);
+            if (stages == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleResult", "stages");
+            }
+            this.stages = stages;
             return this;
         }
         public Builder stages(String... stages) {
@@ -227,27 +245,42 @@ public final class GetSecretbundleResult {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfDeletion(String timeOfDeletion) {
-            this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
+            if (timeOfDeletion == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleResult", "timeOfDeletion");
+            }
+            this.timeOfDeletion = timeOfDeletion;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfExpiry(String timeOfExpiry) {
-            this.timeOfExpiry = Objects.requireNonNull(timeOfExpiry);
+            if (timeOfExpiry == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleResult", "timeOfExpiry");
+            }
+            this.timeOfExpiry = timeOfExpiry;
             return this;
         }
         @CustomType.Setter
         public Builder versionName(String versionName) {
-            this.versionName = Objects.requireNonNull(versionName);
+            if (versionName == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleResult", "versionName");
+            }
+            this.versionName = versionName;
             return this;
         }
         @CustomType.Setter
         public Builder versionNumber(String versionNumber) {
-            this.versionNumber = Objects.requireNonNull(versionNumber);
+            if (versionNumber == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleResult", "versionNumber");
+            }
+            this.versionNumber = versionNumber;
             return this;
         }
         public GetSecretbundleResult build() {

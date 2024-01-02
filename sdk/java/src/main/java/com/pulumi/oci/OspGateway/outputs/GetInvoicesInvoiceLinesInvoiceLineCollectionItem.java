@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OspGateway.outputs.GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency;
 import java.lang.Double;
 import java.lang.String;
@@ -157,7 +158,10 @@ public final class GetInvoicesInvoiceLinesInvoiceLineCollectionItem {
 
         @CustomType.Setter
         public Builder currencies(List<GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency> currencies) {
-            this.currencies = Objects.requireNonNull(currencies);
+            if (currencies == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLinesInvoiceLineCollectionItem", "currencies");
+            }
+            this.currencies = currencies;
             return this;
         }
         public Builder currencies(GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency... currencies) {
@@ -165,42 +169,66 @@ public final class GetInvoicesInvoiceLinesInvoiceLineCollectionItem {
         }
         @CustomType.Setter
         public Builder netUnitPrice(Double netUnitPrice) {
-            this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
+            if (netUnitPrice == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLinesInvoiceLineCollectionItem", "netUnitPrice");
+            }
+            this.netUnitPrice = netUnitPrice;
             return this;
         }
         @CustomType.Setter
         public Builder orderNo(String orderNo) {
-            this.orderNo = Objects.requireNonNull(orderNo);
+            if (orderNo == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLinesInvoiceLineCollectionItem", "orderNo");
+            }
+            this.orderNo = orderNo;
             return this;
         }
         @CustomType.Setter
         public Builder partNumber(String partNumber) {
-            this.partNumber = Objects.requireNonNull(partNumber);
+            if (partNumber == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLinesInvoiceLineCollectionItem", "partNumber");
+            }
+            this.partNumber = partNumber;
             return this;
         }
         @CustomType.Setter
         public Builder product(String product) {
-            this.product = Objects.requireNonNull(product);
+            if (product == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLinesInvoiceLineCollectionItem", "product");
+            }
+            this.product = product;
             return this;
         }
         @CustomType.Setter
         public Builder quantity(Double quantity) {
-            this.quantity = Objects.requireNonNull(quantity);
+            if (quantity == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLinesInvoiceLineCollectionItem", "quantity");
+            }
+            this.quantity = quantity;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+            if (timeEnd == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLinesInvoiceLineCollectionItem", "timeEnd");
+            }
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+            if (timeStart == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLinesInvoiceLineCollectionItem", "timeStart");
+            }
+            this.timeStart = timeStart;
             return this;
         }
         @CustomType.Setter
         public Builder totalPrice(Double totalPrice) {
-            this.totalPrice = Objects.requireNonNull(totalPrice);
+            if (totalPrice == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLinesInvoiceLineCollectionItem", "totalPrice");
+            }
+            this.totalPrice = totalPrice;
             return this;
         }
         public GetInvoicesInvoiceLinesInvoiceLineCollectionItem build() {

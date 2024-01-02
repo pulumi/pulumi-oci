@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection;
 import java.lang.String;
@@ -85,11 +86,13 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult 
 
         @CustomType.Setter
         public Builder endTimeLessThanOrEqualTo(@Nullable String endTimeLessThanOrEqualTo) {
+
             this.endTimeLessThanOrEqualTo = endTimeLessThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -98,17 +101,26 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult 
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder optimizerStatisticsAdvisorExecutionsCollections(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection> optimizerStatisticsAdvisorExecutionsCollections) {
-            this.optimizerStatisticsAdvisorExecutionsCollections = Objects.requireNonNull(optimizerStatisticsAdvisorExecutionsCollections);
+            if (optimizerStatisticsAdvisorExecutionsCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult", "optimizerStatisticsAdvisorExecutionsCollections");
+            }
+            this.optimizerStatisticsAdvisorExecutionsCollections = optimizerStatisticsAdvisorExecutionsCollections;
             return this;
         }
         public Builder optimizerStatisticsAdvisorExecutionsCollections(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection... optimizerStatisticsAdvisorExecutionsCollections) {
@@ -116,6 +128,7 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult 
         }
         @CustomType.Setter
         public Builder startTimeGreaterThanOrEqualTo(@Nullable String startTimeGreaterThanOrEqualTo) {
+
             this.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
             return this;
         }

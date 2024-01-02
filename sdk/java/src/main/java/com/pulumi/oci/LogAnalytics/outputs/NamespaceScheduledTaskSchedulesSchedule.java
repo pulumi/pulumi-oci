@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -115,32 +116,40 @@ public final class NamespaceScheduledTaskSchedulesSchedule {
 
         @CustomType.Setter
         public Builder expression(@Nullable String expression) {
+
             this.expression = expression;
             return this;
         }
         @CustomType.Setter
         public Builder misfirePolicy(@Nullable String misfirePolicy) {
+
             this.misfirePolicy = misfirePolicy;
             return this;
         }
         @CustomType.Setter
         public Builder recurringInterval(@Nullable String recurringInterval) {
+
             this.recurringInterval = recurringInterval;
             return this;
         }
         @CustomType.Setter
         public Builder repeatCount(@Nullable Integer repeatCount) {
+
             this.repeatCount = repeatCount;
             return this;
         }
         @CustomType.Setter
         public Builder timeZone(@Nullable String timeZone) {
+
             this.timeZone = timeZone;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("NamespaceScheduledTaskSchedulesSchedule", "type");
+            }
+            this.type = type;
             return this;
         }
         public NamespaceScheduledTaskSchedulesSchedule build() {

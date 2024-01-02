@@ -5,6 +5,7 @@ package com.pulumi.oci.LogAnalytics;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -200,8 +201,12 @@ public final class LogAnalyticsImportCustomContentArgs extends com.pulumi.resour
         }
 
         public LogAnalyticsImportCustomContentArgs build() {
-            $.importCustomContentFile = Objects.requireNonNull($.importCustomContentFile, "expected parameter 'importCustomContentFile' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
+            if ($.importCustomContentFile == null) {
+                throw new MissingRequiredPropertyException("LogAnalyticsImportCustomContentArgs", "importCustomContentFile");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("LogAnalyticsImportCustomContentArgs", "namespace");
+            }
             return $;
         }
     }

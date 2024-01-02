@@ -72,16 +72,19 @@ public final class CertificateCertificateRevocationListDetailObjectStorageConfig
 
         @CustomType.Setter
         public Builder objectStorageBucketName(@Nullable String objectStorageBucketName) {
+
             this.objectStorageBucketName = objectStorageBucketName;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageNamespace(@Nullable String objectStorageNamespace) {
+
             this.objectStorageNamespace = objectStorageNamespace;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageObjectNameFormat(@Nullable String objectStorageObjectNameFormat) {
+
             this.objectStorageObjectNameFormat = objectStorageObjectNameFormat;
             return this;
         }

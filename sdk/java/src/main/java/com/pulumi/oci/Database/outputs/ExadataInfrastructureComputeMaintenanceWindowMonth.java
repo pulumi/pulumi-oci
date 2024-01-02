@@ -44,6 +44,7 @@ public final class ExadataInfrastructureComputeMaintenanceWindowMonth {
 
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }

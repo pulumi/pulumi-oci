@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -199,62 +200,98 @@ public final class GetNatGatewaysNatGateway {
 
         @CustomType.Setter
         public Builder blockTraffic(Boolean blockTraffic) {
-            this.blockTraffic = Objects.requireNonNull(blockTraffic);
+            if (blockTraffic == null) {
+              throw new MissingRequiredPropertyException("GetNatGatewaysNatGateway", "blockTraffic");
+            }
+            this.blockTraffic = blockTraffic;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNatGatewaysNatGateway", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetNatGatewaysNatGateway", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetNatGatewaysNatGateway", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetNatGatewaysNatGateway", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNatGatewaysNatGateway", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder natIp(String natIp) {
-            this.natIp = Objects.requireNonNull(natIp);
+            if (natIp == null) {
+              throw new MissingRequiredPropertyException("GetNatGatewaysNatGateway", "natIp");
+            }
+            this.natIp = natIp;
             return this;
         }
         @CustomType.Setter
         public Builder publicIpId(String publicIpId) {
-            this.publicIpId = Objects.requireNonNull(publicIpId);
+            if (publicIpId == null) {
+              throw new MissingRequiredPropertyException("GetNatGatewaysNatGateway", "publicIpId");
+            }
+            this.publicIpId = publicIpId;
             return this;
         }
         @CustomType.Setter
         public Builder routeTableId(String routeTableId) {
-            this.routeTableId = Objects.requireNonNull(routeTableId);
+            if (routeTableId == null) {
+              throw new MissingRequiredPropertyException("GetNatGatewaysNatGateway", "routeTableId");
+            }
+            this.routeTableId = routeTableId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetNatGatewaysNatGateway", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetNatGatewaysNatGateway", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+            if (vcnId == null) {
+              throw new MissingRequiredPropertyException("GetNatGatewaysNatGateway", "vcnId");
+            }
+            this.vcnId = vcnId;
             return this;
         }
         public GetNatGatewaysNatGateway build() {

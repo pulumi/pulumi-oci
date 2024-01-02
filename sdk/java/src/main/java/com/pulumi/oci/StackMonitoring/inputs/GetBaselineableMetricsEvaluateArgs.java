@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemArgs;
 import java.lang.String;
 import java.util.List;
@@ -160,9 +161,15 @@ public final class GetBaselineableMetricsEvaluateArgs extends com.pulumi.resourc
         }
 
         public GetBaselineableMetricsEvaluateArgs build() {
-            $.baselineableMetricId = Objects.requireNonNull($.baselineableMetricId, "expected parameter 'baselineableMetricId' to be non-null");
-            $.items = Objects.requireNonNull($.items, "expected parameter 'items' to be non-null");
-            $.resourceId = Objects.requireNonNull($.resourceId, "expected parameter 'resourceId' to be non-null");
+            if ($.baselineableMetricId == null) {
+                throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateArgs", "baselineableMetricId");
+            }
+            if ($.items == null) {
+                throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateArgs", "items");
+            }
+            if ($.resourceId == null) {
+                throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateArgs", "resourceId");
+            }
             return $;
         }
     }

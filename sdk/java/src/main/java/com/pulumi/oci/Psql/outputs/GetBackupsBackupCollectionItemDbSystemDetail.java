@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetBackupsBackupCollectionItemDbSystemDetail {
 
         @CustomType.Setter
         public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+            if (dbVersion == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItemDbSystemDetail", "dbVersion");
+            }
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder systemType(String systemType) {
-            this.systemType = Objects.requireNonNull(systemType);
+            if (systemType == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItemDbSystemDetail", "systemType");
+            }
+            this.systemType = systemType;
             return this;
         }
         public GetBackupsBackupCollectionItemDbSystemDetail build() {

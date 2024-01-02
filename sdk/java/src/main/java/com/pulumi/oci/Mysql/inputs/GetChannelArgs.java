@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetChannelArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetChannelArgs build() {
-            $.channelId = Objects.requireNonNull($.channelId, "expected parameter 'channelId' to be non-null");
+            if ($.channelId == null) {
+                throw new MissingRequiredPropertyException("GetChannelArgs", "channelId");
+            }
             return $;
         }
     }

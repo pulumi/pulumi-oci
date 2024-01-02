@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
@@ -332,112 +333,178 @@ public final class GetExternalExadataStorageServersExternalExadataStorageServerC
 
         @CustomType.Setter
         public Builder additionalDetails(Map<String,Object> additionalDetails) {
-            this.additionalDetails = Objects.requireNonNull(additionalDetails);
+            if (additionalDetails == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "additionalDetails");
+            }
+            this.additionalDetails = additionalDetails;
             return this;
         }
         @CustomType.Setter
         public Builder connectorId(String connectorId) {
-            this.connectorId = Objects.requireNonNull(connectorId);
+            if (connectorId == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "connectorId");
+            }
+            this.connectorId = connectorId;
             return this;
         }
         @CustomType.Setter
         public Builder cpuCount(Double cpuCount) {
-            this.cpuCount = Objects.requireNonNull(cpuCount);
+            if (cpuCount == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "cpuCount");
+            }
+            this.cpuCount = cpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
-            this.exadataInfrastructureId = Objects.requireNonNull(exadataInfrastructureId);
+            if (exadataInfrastructureId == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "exadataInfrastructureId");
+            }
+            this.exadataInfrastructureId = exadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder internalId(String internalId) {
-            this.internalId = Objects.requireNonNull(internalId);
+            if (internalId == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "internalId");
+            }
+            this.internalId = internalId;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+            if (ipAddress == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "ipAddress");
+            }
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder makeModel(String makeModel) {
-            this.makeModel = Objects.requireNonNull(makeModel);
+            if (makeModel == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "makeModel");
+            }
+            this.makeModel = makeModel;
             return this;
         }
         @CustomType.Setter
         public Builder maxFlashDiskIops(Integer maxFlashDiskIops) {
-            this.maxFlashDiskIops = Objects.requireNonNull(maxFlashDiskIops);
+            if (maxFlashDiskIops == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "maxFlashDiskIops");
+            }
+            this.maxFlashDiskIops = maxFlashDiskIops;
             return this;
         }
         @CustomType.Setter
         public Builder maxFlashDiskThroughput(Integer maxFlashDiskThroughput) {
-            this.maxFlashDiskThroughput = Objects.requireNonNull(maxFlashDiskThroughput);
+            if (maxFlashDiskThroughput == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "maxFlashDiskThroughput");
+            }
+            this.maxFlashDiskThroughput = maxFlashDiskThroughput;
             return this;
         }
         @CustomType.Setter
         public Builder maxHardDiskIops(Integer maxHardDiskIops) {
-            this.maxHardDiskIops = Objects.requireNonNull(maxHardDiskIops);
+            if (maxHardDiskIops == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "maxHardDiskIops");
+            }
+            this.maxHardDiskIops = maxHardDiskIops;
             return this;
         }
         @CustomType.Setter
         public Builder maxHardDiskThroughput(Integer maxHardDiskThroughput) {
-            this.maxHardDiskThroughput = Objects.requireNonNull(maxHardDiskThroughput);
+            if (maxHardDiskThroughput == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "maxHardDiskThroughput");
+            }
+            this.maxHardDiskThroughput = maxHardDiskThroughput;
             return this;
         }
         @CustomType.Setter
         public Builder memoryGb(Double memoryGb) {
-            this.memoryGb = Objects.requireNonNull(memoryGb);
+            if (memoryGb == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "memoryGb");
+            }
+            this.memoryGb = memoryGb;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder storageGridId(String storageGridId) {
-            this.storageGridId = Objects.requireNonNull(storageGridId);
+            if (storageGridId == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "storageGridId");
+            }
+            this.storageGridId = storageGridId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem build() {

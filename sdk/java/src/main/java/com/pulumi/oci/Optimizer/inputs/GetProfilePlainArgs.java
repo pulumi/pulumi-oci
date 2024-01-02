@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetProfilePlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetProfilePlainArgs build() {
-            $.profileId = Objects.requireNonNull($.profileId, "expected parameter 'profileId' to be non-null");
+            if ($.profileId == null) {
+                throw new MissingRequiredPropertyException("GetProfilePlainArgs", "profileId");
+            }
             return $;
         }
     }

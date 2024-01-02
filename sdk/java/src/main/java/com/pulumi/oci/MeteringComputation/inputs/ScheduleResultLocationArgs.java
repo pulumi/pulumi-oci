@@ -5,6 +5,7 @@ package com.pulumi.oci.MeteringComputation.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -185,10 +186,18 @@ public final class ScheduleResultLocationArgs extends com.pulumi.resources.Resou
         }
 
         public ScheduleResultLocationArgs build() {
-            $.bucket = Objects.requireNonNull($.bucket, "expected parameter 'bucket' to be non-null");
-            $.locationType = Objects.requireNonNull($.locationType, "expected parameter 'locationType' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
-            $.region = Objects.requireNonNull($.region, "expected parameter 'region' to be non-null");
+            if ($.bucket == null) {
+                throw new MissingRequiredPropertyException("ScheduleResultLocationArgs", "bucket");
+            }
+            if ($.locationType == null) {
+                throw new MissingRequiredPropertyException("ScheduleResultLocationArgs", "locationType");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("ScheduleResultLocationArgs", "namespace");
+            }
+            if ($.region == null) {
+                throw new MissingRequiredPropertyException("ScheduleResultLocationArgs", "region");
+            }
             return $;
         }
     }

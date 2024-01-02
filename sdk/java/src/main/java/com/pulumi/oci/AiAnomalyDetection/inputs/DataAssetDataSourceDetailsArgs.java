@@ -5,6 +5,7 @@ package com.pulumi.oci.AiAnomalyDetection.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiAnomalyDetection.inputs.DataAssetDataSourceDetailsVersionSpecificDetailsArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -780,7 +781,9 @@ public final class DataAssetDataSourceDetailsArgs extends com.pulumi.resources.R
         }
 
         public DataAssetDataSourceDetailsArgs build() {
-            $.dataSourceType = Objects.requireNonNull($.dataSourceType, "expected parameter 'dataSourceType' to be non-null");
+            if ($.dataSourceType == null) {
+                throw new MissingRequiredPropertyException("DataAssetDataSourceDetailsArgs", "dataSourceType");
+            }
             return $;
         }
     }

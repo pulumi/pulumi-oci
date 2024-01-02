@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenan
 
         @CustomType.Setter
         public Builder beginTimesValue(String beginTimesValue) {
-            this.beginTimesValue = Objects.requireNonNull(beginTimesValue);
+            if (beginTimesValue == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime", "beginTimesValue");
+            }
+            this.beginTimesValue = beginTimesValue;
             return this;
         }
         @CustomType.Setter
         public Builder overrideType(String overrideType) {
-            this.overrideType = Objects.requireNonNull(overrideType);
+            if (overrideType == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime", "overrideType");
+            }
+            this.overrideType = overrideType;
             return this;
         }
         public GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime build() {

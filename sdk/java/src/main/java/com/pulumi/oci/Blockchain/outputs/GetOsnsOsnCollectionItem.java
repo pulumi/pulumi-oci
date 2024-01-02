@@ -4,6 +4,7 @@
 package com.pulumi.oci.Blockchain.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Blockchain.outputs.GetOsnsOsnCollectionItemOcpuAllocationParam;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetOsnsOsnCollectionItem {
 
         @CustomType.Setter
         public Builder ad(String ad) {
-            this.ad = Objects.requireNonNull(ad);
+            if (ad == null) {
+              throw new MissingRequiredPropertyException("GetOsnsOsnCollectionItem", "ad");
+            }
+            this.ad = ad;
             return this;
         }
         @CustomType.Setter
         public Builder blockchainPlatformId(String blockchainPlatformId) {
-            this.blockchainPlatformId = Objects.requireNonNull(blockchainPlatformId);
+            if (blockchainPlatformId == null) {
+              throw new MissingRequiredPropertyException("GetOsnsOsnCollectionItem", "blockchainPlatformId");
+            }
+            this.blockchainPlatformId = blockchainPlatformId;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuAllocationParam(GetOsnsOsnCollectionItemOcpuAllocationParam ocpuAllocationParam) {
-            this.ocpuAllocationParam = Objects.requireNonNull(ocpuAllocationParam);
+            if (ocpuAllocationParam == null) {
+              throw new MissingRequiredPropertyException("GetOsnsOsnCollectionItem", "ocpuAllocationParam");
+            }
+            this.ocpuAllocationParam = ocpuAllocationParam;
             return this;
         }
         @CustomType.Setter
         public Builder osnKey(String osnKey) {
-            this.osnKey = Objects.requireNonNull(osnKey);
+            if (osnKey == null) {
+              throw new MissingRequiredPropertyException("GetOsnsOsnCollectionItem", "osnKey");
+            }
+            this.osnKey = osnKey;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetOsnsOsnCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         public GetOsnsOsnCollectionItem build() {

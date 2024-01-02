@@ -87,21 +87,25 @@ public final class OpsiConfigurationConfigItemMetadataValueInputDetail {
 
         @CustomType.Setter
         public Builder allowedValueType(@Nullable String allowedValueType) {
+
             this.allowedValueType = allowedValueType;
             return this;
         }
         @CustomType.Setter
         public Builder maxValue(@Nullable String maxValue) {
+
             this.maxValue = maxValue;
             return this;
         }
         @CustomType.Setter
         public Builder minValue(@Nullable String minValue) {
+
             this.minValue = minValue;
             return this;
         }
         @CustomType.Setter
         public Builder possibleValues(@Nullable List<String> possibleValues) {
+
             this.possibleValues = possibleValues;
             return this;
         }

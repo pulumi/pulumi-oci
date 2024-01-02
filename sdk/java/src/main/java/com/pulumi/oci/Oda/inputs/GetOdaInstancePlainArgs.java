@@ -4,6 +4,7 @@
 package com.pulumi.oci.Oda.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetOdaInstancePlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetOdaInstancePlainArgs build() {
-            $.odaInstanceId = Objects.requireNonNull($.odaInstanceId, "expected parameter 'odaInstanceId' to be non-null");
+            if ($.odaInstanceId == null) {
+                throw new MissingRequiredPropertyException("GetOdaInstancePlainArgs", "odaInstanceId");
+            }
             return $;
         }
     }

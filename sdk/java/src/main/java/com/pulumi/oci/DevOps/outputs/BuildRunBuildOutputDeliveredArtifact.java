@@ -44,6 +44,7 @@ public final class BuildRunBuildOutputDeliveredArtifact {
 
         @CustomType.Setter
         public Builder items(@Nullable List<BuildRunBuildOutputDeliveredArtifactItem> items) {
+
             this.items = items;
             return this;
         }

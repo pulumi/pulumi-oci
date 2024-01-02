@@ -4,6 +4,7 @@
 package com.pulumi.oci.VisualBuilder.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -92,7 +93,9 @@ public final class GetVbInstanceApplicationsPlainArgs extends com.pulumi.resourc
         }
 
         public GetVbInstanceApplicationsPlainArgs build() {
-            $.vbInstanceId = Objects.requireNonNull($.vbInstanceId, "expected parameter 'vbInstanceId' to be non-null");
+            if ($.vbInstanceId == null) {
+                throw new MissingRequiredPropertyException("GetVbInstanceApplicationsPlainArgs", "vbInstanceId");
+            }
             return $;
         }
     }

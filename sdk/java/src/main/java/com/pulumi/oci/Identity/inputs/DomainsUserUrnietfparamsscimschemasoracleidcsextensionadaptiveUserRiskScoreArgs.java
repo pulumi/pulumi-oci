@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -627,10 +628,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
         }
 
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs build() {
-            $.lastUpdateTimestamp = Objects.requireNonNull($.lastUpdateTimestamp, "expected parameter 'lastUpdateTimestamp' to be non-null");
-            $.riskLevel = Objects.requireNonNull($.riskLevel, "expected parameter 'riskLevel' to be non-null");
-            $.score = Objects.requireNonNull($.score, "expected parameter 'score' to be non-null");
-            $.value = Objects.requireNonNull($.value, "expected parameter 'value' to be non-null");
+            if ($.lastUpdateTimestamp == null) {
+                throw new MissingRequiredPropertyException("DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs", "lastUpdateTimestamp");
+            }
+            if ($.riskLevel == null) {
+                throw new MissingRequiredPropertyException("DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs", "riskLevel");
+            }
+            if ($.score == null) {
+                throw new MissingRequiredPropertyException("DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs", "score");
+            }
+            if ($.value == null) {
+                throw new MissingRequiredPropertyException("DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs", "value");
+            }
             return $;
         }
     }

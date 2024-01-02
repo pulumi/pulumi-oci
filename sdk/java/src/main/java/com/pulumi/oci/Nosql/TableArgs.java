@@ -5,6 +5,7 @@ package com.pulumi.oci.Nosql;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Nosql.inputs.TableTableLimitsArgs;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -302,8 +303,12 @@ public final class TableArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public TableArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.ddlStatement = Objects.requireNonNull($.ddlStatement, "expected parameter 'ddlStatement' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("TableArgs", "compartmentId");
+            }
+            if ($.ddlStatement == null) {
+                throw new MissingRequiredPropertyException("TableArgs", "ddlStatement");
+            }
             return $;
         }
     }

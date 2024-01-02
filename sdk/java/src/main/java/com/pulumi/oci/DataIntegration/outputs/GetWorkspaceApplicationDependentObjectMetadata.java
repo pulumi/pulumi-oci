@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -127,37 +128,58 @@ public final class GetWorkspaceApplicationDependentObjectMetadata {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationDependentObjectMetadata", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder identifier(String identifier) {
-            this.identifier = Objects.requireNonNull(identifier);
+            if (identifier == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationDependentObjectMetadata", "identifier");
+            }
+            this.identifier = identifier;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationDependentObjectMetadata", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationDependentObjectMetadata", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder namePath(String namePath) {
-            this.namePath = Objects.requireNonNull(namePath);
+            if (namePath == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationDependentObjectMetadata", "namePath");
+            }
+            this.namePath = namePath;
             return this;
         }
         @CustomType.Setter
         public Builder objectVersion(Integer objectVersion) {
-            this.objectVersion = Objects.requireNonNull(objectVersion);
+            if (objectVersion == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationDependentObjectMetadata", "objectVersion");
+            }
+            this.objectVersion = objectVersion;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationDependentObjectMetadata", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetWorkspaceApplicationDependentObjectMetadata build() {

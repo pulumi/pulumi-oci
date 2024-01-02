@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetOperationsInsightsWarehousesFilter;
 import com.pulumi.oci.Opsi.outputs.GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection;
 import java.lang.String;
@@ -109,16 +110,19 @@ public final class GetOperationsInsightsWarehousesResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetOperationsInsightsWarehousesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +131,16 @@ public final class GetOperationsInsightsWarehousesResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder operationsInsightsWarehouseSummaryCollections(List<GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection> operationsInsightsWarehouseSummaryCollections) {
-            this.operationsInsightsWarehouseSummaryCollections = Objects.requireNonNull(operationsInsightsWarehouseSummaryCollections);
+            if (operationsInsightsWarehouseSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehousesResult", "operationsInsightsWarehouseSummaryCollections");
+            }
+            this.operationsInsightsWarehouseSummaryCollections = operationsInsightsWarehouseSummaryCollections;
             return this;
         }
         public Builder operationsInsightsWarehouseSummaryCollections(GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection... operationsInsightsWarehouseSummaryCollections) {
@@ -140,6 +148,7 @@ public final class GetOperationsInsightsWarehousesResult {
         }
         @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
+
             this.states = states;
             return this;
         }

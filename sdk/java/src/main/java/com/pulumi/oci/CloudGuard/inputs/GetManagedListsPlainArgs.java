@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.inputs.GetManagedListsFilter;
 import java.lang.Boolean;
 import java.lang.String;
@@ -247,7 +248,9 @@ public final class GetManagedListsPlainArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetManagedListsPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetManagedListsPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

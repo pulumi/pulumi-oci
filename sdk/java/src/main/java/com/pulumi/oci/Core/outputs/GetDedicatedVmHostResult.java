@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
@@ -233,77 +234,122 @@ public final class GetDedicatedVmHostResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostResult", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dedicatedVmHostId(String dedicatedVmHostId) {
-            this.dedicatedVmHostId = Objects.requireNonNull(dedicatedVmHostId);
+            if (dedicatedVmHostId == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostResult", "dedicatedVmHostId");
+            }
+            this.dedicatedVmHostId = dedicatedVmHostId;
             return this;
         }
         @CustomType.Setter
         public Builder dedicatedVmHostShape(String dedicatedVmHostShape) {
-            this.dedicatedVmHostShape = Objects.requireNonNull(dedicatedVmHostShape);
+            if (dedicatedVmHostShape == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostResult", "dedicatedVmHostShape");
+            }
+            this.dedicatedVmHostShape = dedicatedVmHostShape;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+            if (faultDomain == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostResult", "faultDomain");
+            }
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder remainingMemoryInGbs(Double remainingMemoryInGbs) {
-            this.remainingMemoryInGbs = Objects.requireNonNull(remainingMemoryInGbs);
+            if (remainingMemoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostResult", "remainingMemoryInGbs");
+            }
+            this.remainingMemoryInGbs = remainingMemoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder remainingOcpus(Double remainingOcpus) {
-            this.remainingOcpus = Objects.requireNonNull(remainingOcpus);
+            if (remainingOcpus == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostResult", "remainingOcpus");
+            }
+            this.remainingOcpus = remainingOcpus;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder totalMemoryInGbs(Double totalMemoryInGbs) {
-            this.totalMemoryInGbs = Objects.requireNonNull(totalMemoryInGbs);
+            if (totalMemoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostResult", "totalMemoryInGbs");
+            }
+            this.totalMemoryInGbs = totalMemoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder totalOcpus(Double totalOcpus) {
-            this.totalOcpus = Objects.requireNonNull(totalOcpus);
+            if (totalOcpus == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostResult", "totalOcpus");
+            }
+            this.totalOcpus = totalOcpus;
             return this;
         }
         public GetDedicatedVmHostResult build() {

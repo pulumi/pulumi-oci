@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -1446,11 +1447,21 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         }
 
         public DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs build() {
-            $.accountLinkingEnabled = Objects.requireNonNull($.accountLinkingEnabled, "expected parameter 'accountLinkingEnabled' to be non-null");
-            $.consumerKey = Objects.requireNonNull($.consumerKey, "expected parameter 'consumerKey' to be non-null");
-            $.consumerSecret = Objects.requireNonNull($.consumerSecret, "expected parameter 'consumerSecret' to be non-null");
-            $.registrationEnabled = Objects.requireNonNull($.registrationEnabled, "expected parameter 'registrationEnabled' to be non-null");
-            $.serviceProviderName = Objects.requireNonNull($.serviceProviderName, "expected parameter 'serviceProviderName' to be non-null");
+            if ($.accountLinkingEnabled == null) {
+                throw new MissingRequiredPropertyException("DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs", "accountLinkingEnabled");
+            }
+            if ($.consumerKey == null) {
+                throw new MissingRequiredPropertyException("DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs", "consumerKey");
+            }
+            if ($.consumerSecret == null) {
+                throw new MissingRequiredPropertyException("DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs", "consumerSecret");
+            }
+            if ($.registrationEnabled == null) {
+                throw new MissingRequiredPropertyException("DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs", "registrationEnabled");
+            }
+            if ($.serviceProviderName == null) {
+                throw new MissingRequiredPropertyException("DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs", "serviceProviderName");
+            }
             return $;
         }
     }

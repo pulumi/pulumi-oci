@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetEstimatedCostCompute;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetEstimatedCostOsImage;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetEstimatedCostStorage;
@@ -131,7 +132,10 @@ public final class GetTargetAssetEstimatedCost {
 
         @CustomType.Setter
         public Builder computes(List<GetTargetAssetEstimatedCostCompute> computes) {
-            this.computes = Objects.requireNonNull(computes);
+            if (computes == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetEstimatedCost", "computes");
+            }
+            this.computes = computes;
             return this;
         }
         public Builder computes(GetTargetAssetEstimatedCostCompute... computes) {
@@ -139,12 +143,18 @@ public final class GetTargetAssetEstimatedCost {
         }
         @CustomType.Setter
         public Builder currencyCode(String currencyCode) {
-            this.currencyCode = Objects.requireNonNull(currencyCode);
+            if (currencyCode == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetEstimatedCost", "currencyCode");
+            }
+            this.currencyCode = currencyCode;
             return this;
         }
         @CustomType.Setter
         public Builder osImages(List<GetTargetAssetEstimatedCostOsImage> osImages) {
-            this.osImages = Objects.requireNonNull(osImages);
+            if (osImages == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetEstimatedCost", "osImages");
+            }
+            this.osImages = osImages;
             return this;
         }
         public Builder osImages(GetTargetAssetEstimatedCostOsImage... osImages) {
@@ -152,7 +162,10 @@ public final class GetTargetAssetEstimatedCost {
         }
         @CustomType.Setter
         public Builder storages(List<GetTargetAssetEstimatedCostStorage> storages) {
-            this.storages = Objects.requireNonNull(storages);
+            if (storages == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetEstimatedCost", "storages");
+            }
+            this.storages = storages;
             return this;
         }
         public Builder storages(GetTargetAssetEstimatedCostStorage... storages) {
@@ -160,17 +173,26 @@ public final class GetTargetAssetEstimatedCost {
         }
         @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetEstimatedCost", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
         public Builder totalEstimationPerMonth(Double totalEstimationPerMonth) {
-            this.totalEstimationPerMonth = Objects.requireNonNull(totalEstimationPerMonth);
+            if (totalEstimationPerMonth == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetEstimatedCost", "totalEstimationPerMonth");
+            }
+            this.totalEstimationPerMonth = totalEstimationPerMonth;
             return this;
         }
         @CustomType.Setter
         public Builder totalEstimationPerMonthBySubscription(Double totalEstimationPerMonthBySubscription) {
-            this.totalEstimationPerMonthBySubscription = Objects.requireNonNull(totalEstimationPerMonthBySubscription);
+            if (totalEstimationPerMonthBySubscription == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetEstimatedCost", "totalEstimationPerMonthBySubscription");
+            }
+            this.totalEstimationPerMonthBySubscription = totalEstimationPerMonthBySubscription;
             return this;
         }
         public GetTargetAssetEstimatedCost build() {

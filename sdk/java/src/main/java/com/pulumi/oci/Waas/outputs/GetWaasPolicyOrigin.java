@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.GetWaasPolicyOriginCustomHeader;
 import java.lang.Integer;
 import java.lang.String;
@@ -95,7 +96,10 @@ public final class GetWaasPolicyOrigin {
 
         @CustomType.Setter
         public Builder customHeaders(List<GetWaasPolicyOriginCustomHeader> customHeaders) {
-            this.customHeaders = Objects.requireNonNull(customHeaders);
+            if (customHeaders == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyOrigin", "customHeaders");
+            }
+            this.customHeaders = customHeaders;
             return this;
         }
         public Builder customHeaders(GetWaasPolicyOriginCustomHeader... customHeaders) {
@@ -103,22 +107,30 @@ public final class GetWaasPolicyOrigin {
         }
         @CustomType.Setter
         public Builder httpPort(@Nullable Integer httpPort) {
+
             this.httpPort = httpPort;
             return this;
         }
         @CustomType.Setter
         public Builder httpsPort(@Nullable Integer httpsPort) {
+
             this.httpsPort = httpsPort;
             return this;
         }
         @CustomType.Setter
         public Builder label(String label) {
-            this.label = Objects.requireNonNull(label);
+            if (label == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyOrigin", "label");
+            }
+            this.label = label;
             return this;
         }
         @CustomType.Setter
         public Builder uri(String uri) {
-            this.uri = Objects.requireNonNull(uri);
+            if (uri == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyOrigin", "uri");
+            }
+            this.uri = uri;
             return this;
         }
         public GetWaasPolicyOrigin build() {

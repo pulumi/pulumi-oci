@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociati
 
         @CustomType.Setter
         public Builder peerId(String peerId) {
-            this.peerId = Objects.requireNonNull(peerId);
+            if (peerId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation", "peerId");
+            }
+            this.peerId = peerId;
             return this;
         }
         @CustomType.Setter
         public Builder peerRegion(String peerRegion) {
-            this.peerRegion = Objects.requireNonNull(peerRegion);
+            if (peerRegion == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation", "peerRegion");
+            }
+            this.peerRegion = peerRegion;
             return this;
         }
         @CustomType.Setter
         public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+            if (role == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation", "role");
+            }
+            this.role = role;
             return this;
         }
         public GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.HealthChecks.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetPingMonitorPlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetPingMonitorPlainArgs build() {
-            $.monitorId = Objects.requireNonNull($.monitorId, "expected parameter 'monitorId' to be non-null");
+            if ($.monitorId == null) {
+                throw new MissingRequiredPropertyException("GetPingMonitorPlainArgs", "monitorId");
+            }
             return $;
         }
     }

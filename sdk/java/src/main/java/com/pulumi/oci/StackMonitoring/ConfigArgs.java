@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -350,8 +351,12 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ConfigArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.configType = Objects.requireNonNull($.configType, "expected parameter 'configType' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ConfigArgs", "compartmentId");
+            }
+            if ($.configType == null) {
+                throw new MissingRequiredPropertyException("ConfigArgs", "configType");
+            }
             return $;
         }
     }

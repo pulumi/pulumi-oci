@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.inputs.DataMaskRuleTargetSelectedArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -439,11 +440,21 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DataMaskRuleArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.dataMaskCategories = Objects.requireNonNull($.dataMaskCategories, "expected parameter 'dataMaskCategories' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.iamGroupId = Objects.requireNonNull($.iamGroupId, "expected parameter 'iamGroupId' to be non-null");
-            $.targetSelected = Objects.requireNonNull($.targetSelected, "expected parameter 'targetSelected' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("DataMaskRuleArgs", "compartmentId");
+            }
+            if ($.dataMaskCategories == null) {
+                throw new MissingRequiredPropertyException("DataMaskRuleArgs", "dataMaskCategories");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("DataMaskRuleArgs", "displayName");
+            }
+            if ($.iamGroupId == null) {
+                throw new MissingRequiredPropertyException("DataMaskRuleArgs", "iamGroupId");
+            }
+            if ($.targetSelected == null) {
+                throw new MissingRequiredPropertyException("DataMaskRuleArgs", "targetSelected");
+            }
             return $;
         }
     }

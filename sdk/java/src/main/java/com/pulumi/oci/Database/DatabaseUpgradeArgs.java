@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -151,8 +152,12 @@ public final class DatabaseUpgradeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public DatabaseUpgradeArgs build() {
-            $.action = Objects.requireNonNull($.action, "expected parameter 'action' to be non-null");
-            $.databaseId = Objects.requireNonNull($.databaseId, "expected parameter 'databaseId' to be non-null");
+            if ($.action == null) {
+                throw new MissingRequiredPropertyException("DatabaseUpgradeArgs", "action");
+            }
+            if ($.databaseId == null) {
+                throw new MissingRequiredPropertyException("DatabaseUpgradeArgs", "databaseId");
+            }
             return $;
         }
     }

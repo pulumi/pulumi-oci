@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetail;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyD
 
         @CustomType.Setter
         public Builder authenticationServerDetails(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetail> authenticationServerDetails) {
-            this.authenticationServerDetails = Objects.requireNonNull(authenticationServerDetails);
+            if (authenticationServerDetails == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer", "authenticationServerDetails");
+            }
+            this.authenticationServerDetails = authenticationServerDetails;
             return this;
         }
         public Builder authenticationServerDetails(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetail... authenticationServerDetails) {
@@ -66,7 +70,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyD
         }
         @CustomType.Setter
         public Builder keys(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey> keys) {
-            this.keys = Objects.requireNonNull(keys);
+            if (keys == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer", "keys");
+            }
+            this.keys = keys;
             return this;
         }
         public Builder keys(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey... keys) {

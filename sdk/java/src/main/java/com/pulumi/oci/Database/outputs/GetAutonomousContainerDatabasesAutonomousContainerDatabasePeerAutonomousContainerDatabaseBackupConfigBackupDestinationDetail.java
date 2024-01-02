@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabasePee
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder internetProxy(String internetProxy) {
-            this.internetProxy = Objects.requireNonNull(internetProxy);
+            if (internetProxy == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail", "internetProxy");
+            }
+            this.internetProxy = internetProxy;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder vpcPassword(String vpcPassword) {
-            this.vpcPassword = Objects.requireNonNull(vpcPassword);
+            if (vpcPassword == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail", "vpcPassword");
+            }
+            this.vpcPassword = vpcPassword;
             return this;
         }
         @CustomType.Setter
         public Builder vpcUser(String vpcUser) {
-            this.vpcUser = Objects.requireNonNull(vpcUser);
+            if (vpcUser == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail", "vpcUser");
+            }
+            this.vpcUser = vpcUser;
             return this;
         }
         public GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail build() {

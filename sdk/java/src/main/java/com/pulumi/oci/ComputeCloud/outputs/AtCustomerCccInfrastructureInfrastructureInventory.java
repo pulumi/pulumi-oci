@@ -101,26 +101,31 @@ public final class AtCustomerCccInfrastructureInfrastructureInventory {
 
         @CustomType.Setter
         public Builder capacityStorageTrayCount(@Nullable Integer capacityStorageTrayCount) {
+
             this.capacityStorageTrayCount = capacityStorageTrayCount;
             return this;
         }
         @CustomType.Setter
         public Builder computeNodeCount(@Nullable Integer computeNodeCount) {
+
             this.computeNodeCount = computeNodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder managementNodeCount(@Nullable Integer managementNodeCount) {
+
             this.managementNodeCount = managementNodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder performanceStorageTrayCount(@Nullable Integer performanceStorageTrayCount) {
+
             this.performanceStorageTrayCount = performanceStorageTrayCount;
             return this;
         }
         @CustomType.Setter
         public Builder serialNumber(@Nullable String serialNumber) {
+
             this.serialNumber = serialNumber;
             return this;
         }

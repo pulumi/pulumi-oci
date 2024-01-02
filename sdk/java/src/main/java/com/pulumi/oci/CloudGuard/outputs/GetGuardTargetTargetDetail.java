@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetTargetDetailTargetSecurityZoneRecipe;
 import java.lang.String;
 import java.util.List;
@@ -86,22 +87,34 @@ public final class GetGuardTargetTargetDetail {
 
         @CustomType.Setter
         public Builder securityZoneDisplayName(String securityZoneDisplayName) {
-            this.securityZoneDisplayName = Objects.requireNonNull(securityZoneDisplayName);
+            if (securityZoneDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetail", "securityZoneDisplayName");
+            }
+            this.securityZoneDisplayName = securityZoneDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder securityZoneId(String securityZoneId) {
-            this.securityZoneId = Objects.requireNonNull(securityZoneId);
+            if (securityZoneId == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetail", "securityZoneId");
+            }
+            this.securityZoneId = securityZoneId;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourceType(String targetResourceType) {
-            this.targetResourceType = Objects.requireNonNull(targetResourceType);
+            if (targetResourceType == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetail", "targetResourceType");
+            }
+            this.targetResourceType = targetResourceType;
             return this;
         }
         @CustomType.Setter
         public Builder targetSecurityZoneRecipes(List<GetGuardTargetTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes) {
-            this.targetSecurityZoneRecipes = Objects.requireNonNull(targetSecurityZoneRecipes);
+            if (targetSecurityZoneRecipes == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetail", "targetSecurityZoneRecipes");
+            }
+            this.targetSecurityZoneRecipes = targetSecurityZoneRecipes;
             return this;
         }
         public Builder targetSecurityZoneRecipes(GetGuardTargetTargetDetailTargetSecurityZoneRecipe... targetSecurityZoneRecipes) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetMediaAssetMetadata {
 
         @CustomType.Setter
         public Builder metadata(String metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+            if (metadata == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetMetadata", "metadata");
+            }
+            this.metadata = metadata;
             return this;
         }
         public GetMediaAssetMetadata build() {

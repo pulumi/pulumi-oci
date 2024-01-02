@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfo;
 import java.lang.String;
 import java.util.List;
@@ -226,22 +227,34 @@ public final class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollect
 
         @CustomType.Setter
         public Builder agentId(String agentId) {
-            this.agentId = Objects.requireNonNull(agentId);
+            if (agentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem", "agentId");
+            }
+            this.agentId = agentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionFailureMessage(String connectionFailureMessage) {
-            this.connectionFailureMessage = Objects.requireNonNull(connectionFailureMessage);
+            if (connectionFailureMessage == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem", "connectionFailureMessage");
+            }
+            this.connectionFailureMessage = connectionFailureMessage;
             return this;
         }
         @CustomType.Setter
         public Builder connectionInfos(List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfo> connectionInfos) {
-            this.connectionInfos = Objects.requireNonNull(connectionInfos);
+            if (connectionInfos == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem", "connectionInfos");
+            }
+            this.connectionInfos = connectionInfos;
             return this;
         }
         public Builder connectionInfos(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfo... connectionInfos) {
@@ -249,52 +262,82 @@ public final class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollect
         }
         @CustomType.Setter
         public Builder connectionStatus(String connectionStatus) {
-            this.connectionStatus = Objects.requireNonNull(connectionStatus);
+            if (connectionStatus == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem", "connectionStatus");
+            }
+            this.connectionStatus = connectionStatus;
             return this;
         }
         @CustomType.Setter
         public Builder connectorType(String connectorType) {
-            this.connectorType = Objects.requireNonNull(connectorType);
+            if (connectorType == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem", "connectorType");
+            }
+            this.connectorType = connectorType;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalDbSystemId(String externalDbSystemId) {
-            this.externalDbSystemId = Objects.requireNonNull(externalDbSystemId);
+            if (externalDbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem", "externalDbSystemId");
+            }
+            this.externalDbSystemId = externalDbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeConnectionStatusLastUpdated(String timeConnectionStatusLastUpdated) {
-            this.timeConnectionStatusLastUpdated = Objects.requireNonNull(timeConnectionStatusLastUpdated);
+            if (timeConnectionStatusLastUpdated == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem", "timeConnectionStatusLastUpdated");
+            }
+            this.timeConnectionStatusLastUpdated = timeConnectionStatusLastUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem build() {

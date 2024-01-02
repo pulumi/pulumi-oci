@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -140,42 +141,66 @@ public final class GetIdpGroupMappingsIdpGroupMapping {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetIdpGroupMappingsIdpGroupMapping", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder groupId(String groupId) {
-            this.groupId = Objects.requireNonNull(groupId);
+            if (groupId == null) {
+              throw new MissingRequiredPropertyException("GetIdpGroupMappingsIdpGroupMapping", "groupId");
+            }
+            this.groupId = groupId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIdpGroupMappingsIdpGroupMapping", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder identityProviderId(String identityProviderId) {
-            this.identityProviderId = Objects.requireNonNull(identityProviderId);
+            if (identityProviderId == null) {
+              throw new MissingRequiredPropertyException("GetIdpGroupMappingsIdpGroupMapping", "identityProviderId");
+            }
+            this.identityProviderId = identityProviderId;
             return this;
         }
         @CustomType.Setter
         public Builder idpGroupName(String idpGroupName) {
-            this.idpGroupName = Objects.requireNonNull(idpGroupName);
+            if (idpGroupName == null) {
+              throw new MissingRequiredPropertyException("GetIdpGroupMappingsIdpGroupMapping", "idpGroupName");
+            }
+            this.idpGroupName = idpGroupName;
             return this;
         }
         @CustomType.Setter
         public Builder inactiveState(String inactiveState) {
-            this.inactiveState = Objects.requireNonNull(inactiveState);
+            if (inactiveState == null) {
+              throw new MissingRequiredPropertyException("GetIdpGroupMappingsIdpGroupMapping", "inactiveState");
+            }
+            this.inactiveState = inactiveState;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetIdpGroupMappingsIdpGroupMapping", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetIdpGroupMappingsIdpGroupMapping", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetIdpGroupMappingsIdpGroupMapping build() {

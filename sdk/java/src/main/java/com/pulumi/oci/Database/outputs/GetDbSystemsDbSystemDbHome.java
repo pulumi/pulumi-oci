@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbSystemsDbSystemDbHomeDatabase;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -175,17 +176,26 @@ public final class GetDbSystemsDbSystemDbHome {
 
         @CustomType.Setter
         public Builder createAsync(Boolean createAsync) {
-            this.createAsync = Objects.requireNonNull(createAsync);
+            if (createAsync == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHome", "createAsync");
+            }
+            this.createAsync = createAsync;
             return this;
         }
         @CustomType.Setter
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
-            this.databaseSoftwareImageId = Objects.requireNonNull(databaseSoftwareImageId);
+            if (databaseSoftwareImageId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHome", "databaseSoftwareImageId");
+            }
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
             return this;
         }
         @CustomType.Setter
         public Builder databases(List<GetDbSystemsDbSystemDbHomeDatabase> databases) {
-            this.databases = Objects.requireNonNull(databases);
+            if (databases == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHome", "databases");
+            }
+            this.databases = databases;
             return this;
         }
         public Builder databases(GetDbSystemsDbSystemDbHomeDatabase... databases) {
@@ -193,52 +203,82 @@ public final class GetDbSystemsDbSystemDbHome {
         }
         @CustomType.Setter
         public Builder dbHomeLocation(String dbHomeLocation) {
-            this.dbHomeLocation = Objects.requireNonNull(dbHomeLocation);
+            if (dbHomeLocation == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHome", "dbHomeLocation");
+            }
+            this.dbHomeLocation = dbHomeLocation;
             return this;
         }
         @CustomType.Setter
         public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+            if (dbVersion == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHome", "dbVersion");
+            }
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHome", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHome", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHome", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHome", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lastPatchHistoryEntryId(String lastPatchHistoryEntryId) {
-            this.lastPatchHistoryEntryId = Objects.requireNonNull(lastPatchHistoryEntryId);
+            if (lastPatchHistoryEntryId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHome", "lastPatchHistoryEntryId");
+            }
+            this.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHome", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHome", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHome", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetDbSystemsDbSystemDbHome build() {

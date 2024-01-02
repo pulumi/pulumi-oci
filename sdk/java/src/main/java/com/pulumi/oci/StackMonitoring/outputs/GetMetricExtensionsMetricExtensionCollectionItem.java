@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource;
 import com.pulumi.oci.StackMonitoring.outputs.GetMetricExtensionsMetricExtensionCollectionItemMetricList;
 import com.pulumi.oci.StackMonitoring.outputs.GetMetricExtensionsMetricExtensionCollectionItemQueryProperty;
@@ -320,37 +321,58 @@ public final class GetMetricExtensionsMetricExtensionCollectionItem {
 
         @CustomType.Setter
         public Builder collectionMethod(String collectionMethod) {
-            this.collectionMethod = Objects.requireNonNull(collectionMethod);
+            if (collectionMethod == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "collectionMethod");
+            }
+            this.collectionMethod = collectionMethod;
             return this;
         }
         @CustomType.Setter
         public Builder collectionRecurrences(String collectionRecurrences) {
-            this.collectionRecurrences = Objects.requireNonNull(collectionRecurrences);
+            if (collectionRecurrences == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "collectionRecurrences");
+            }
+            this.collectionRecurrences = collectionRecurrences;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder enabledOnResources(List<GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource> enabledOnResources) {
-            this.enabledOnResources = Objects.requireNonNull(enabledOnResources);
+            if (enabledOnResources == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "enabledOnResources");
+            }
+            this.enabledOnResources = enabledOnResources;
             return this;
         }
         public Builder enabledOnResources(GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource... enabledOnResources) {
@@ -358,22 +380,34 @@ public final class GetMetricExtensionsMetricExtensionCollectionItem {
         }
         @CustomType.Setter
         public Builder enabledOnResourcesCount(Integer enabledOnResourcesCount) {
-            this.enabledOnResourcesCount = Objects.requireNonNull(enabledOnResourcesCount);
+            if (enabledOnResourcesCount == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "enabledOnResourcesCount");
+            }
+            this.enabledOnResourcesCount = enabledOnResourcesCount;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lastUpdatedBy(String lastUpdatedBy) {
-            this.lastUpdatedBy = Objects.requireNonNull(lastUpdatedBy);
+            if (lastUpdatedBy == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "lastUpdatedBy");
+            }
+            this.lastUpdatedBy = lastUpdatedBy;
             return this;
         }
         @CustomType.Setter
         public Builder metricLists(List<GetMetricExtensionsMetricExtensionCollectionItemMetricList> metricLists) {
-            this.metricLists = Objects.requireNonNull(metricLists);
+            if (metricLists == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "metricLists");
+            }
+            this.metricLists = metricLists;
             return this;
         }
         public Builder metricLists(GetMetricExtensionsMetricExtensionCollectionItemMetricList... metricLists) {
@@ -381,17 +415,26 @@ public final class GetMetricExtensionsMetricExtensionCollectionItem {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder publishTrigger(Boolean publishTrigger) {
-            this.publishTrigger = Objects.requireNonNull(publishTrigger);
+            if (publishTrigger == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "publishTrigger");
+            }
+            this.publishTrigger = publishTrigger;
             return this;
         }
         @CustomType.Setter
         public Builder queryProperties(List<GetMetricExtensionsMetricExtensionCollectionItemQueryProperty> queryProperties) {
-            this.queryProperties = Objects.requireNonNull(queryProperties);
+            if (queryProperties == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "queryProperties");
+            }
+            this.queryProperties = queryProperties;
             return this;
         }
         public Builder queryProperties(GetMetricExtensionsMetricExtensionCollectionItemQueryProperty... queryProperties) {
@@ -399,37 +442,58 @@ public final class GetMetricExtensionsMetricExtensionCollectionItem {
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder resourceUri(String resourceUri) {
-            this.resourceUri = Objects.requireNonNull(resourceUri);
+            if (resourceUri == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "resourceUri");
+            }
+            this.resourceUri = resourceUri;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder tenantId(String tenantId) {
-            this.tenantId = Objects.requireNonNull(tenantId);
+            if (tenantId == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "tenantId");
+            }
+            this.tenantId = tenantId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetMetricExtensionsMetricExtensionCollectionItem build() {

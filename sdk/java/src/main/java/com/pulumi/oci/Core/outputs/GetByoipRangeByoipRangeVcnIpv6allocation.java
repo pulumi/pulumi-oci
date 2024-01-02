@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetByoipRangeByoipRangeVcnIpv6allocation {
 
         @CustomType.Setter
         public Builder byoipRangeId(String byoipRangeId) {
-            this.byoipRangeId = Objects.requireNonNull(byoipRangeId);
+            if (byoipRangeId == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeByoipRangeVcnIpv6allocation", "byoipRangeId");
+            }
+            this.byoipRangeId = byoipRangeId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeByoipRangeVcnIpv6allocation", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder ipv6cidrBlock(String ipv6cidrBlock) {
-            this.ipv6cidrBlock = Objects.requireNonNull(ipv6cidrBlock);
+            if (ipv6cidrBlock == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeByoipRangeVcnIpv6allocation", "ipv6cidrBlock");
+            }
+            this.ipv6cidrBlock = ipv6cidrBlock;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+            if (vcnId == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeByoipRangeVcnIpv6allocation", "vcnId");
+            }
+            this.vcnId = vcnId;
             return this;
         }
         public GetByoipRangeByoipRangeVcnIpv6allocation build() {

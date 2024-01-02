@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetAuditPolicyAuditCondition;
 import com.pulumi.oci.DataSafe.outputs.GetAuditPolicyAuditSpecification;
 import java.lang.Boolean;
@@ -291,7 +292,10 @@ public final class GetAuditPolicyResult {
 
         @CustomType.Setter
         public Builder auditConditions(List<GetAuditPolicyAuditCondition> auditConditions) {
-            this.auditConditions = Objects.requireNonNull(auditConditions);
+            if (auditConditions == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyResult", "auditConditions");
+            }
+            this.auditConditions = auditConditions;
             return this;
         }
         public Builder auditConditions(GetAuditPolicyAuditCondition... auditConditions) {
@@ -299,12 +303,18 @@ public final class GetAuditPolicyResult {
         }
         @CustomType.Setter
         public Builder auditPolicyId(String auditPolicyId) {
-            this.auditPolicyId = Objects.requireNonNull(auditPolicyId);
+            if (auditPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyResult", "auditPolicyId");
+            }
+            this.auditPolicyId = auditPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder auditSpecifications(List<GetAuditPolicyAuditSpecification> auditSpecifications) {
-            this.auditSpecifications = Objects.requireNonNull(auditSpecifications);
+            if (auditSpecifications == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyResult", "auditSpecifications");
+            }
+            this.auditSpecifications = auditSpecifications;
             return this;
         }
         public Builder auditSpecifications(GetAuditPolicyAuditSpecification... auditSpecifications) {
@@ -312,87 +322,138 @@ public final class GetAuditPolicyResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isDataSafeServiceAccountExcluded(Boolean isDataSafeServiceAccountExcluded) {
-            this.isDataSafeServiceAccountExcluded = Objects.requireNonNull(isDataSafeServiceAccountExcluded);
+            if (isDataSafeServiceAccountExcluded == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyResult", "isDataSafeServiceAccountExcluded");
+            }
+            this.isDataSafeServiceAccountExcluded = isDataSafeServiceAccountExcluded;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder provisionTrigger(Integer provisionTrigger) {
-            this.provisionTrigger = Objects.requireNonNull(provisionTrigger);
+            if (provisionTrigger == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyResult", "provisionTrigger");
+            }
+            this.provisionTrigger = provisionTrigger;
             return this;
         }
         @CustomType.Setter
         public Builder retrieveFromTargetTrigger(Integer retrieveFromTargetTrigger) {
-            this.retrieveFromTargetTrigger = Objects.requireNonNull(retrieveFromTargetTrigger);
+            if (retrieveFromTargetTrigger == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyResult", "retrieveFromTargetTrigger");
+            }
+            this.retrieveFromTargetTrigger = retrieveFromTargetTrigger;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyResult", "targetId");
+            }
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastProvisioned(String timeLastProvisioned) {
-            this.timeLastProvisioned = Objects.requireNonNull(timeLastProvisioned);
+            if (timeLastProvisioned == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyResult", "timeLastProvisioned");
+            }
+            this.timeLastProvisioned = timeLastProvisioned;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastRetrieved(String timeLastRetrieved) {
-            this.timeLastRetrieved = Objects.requireNonNull(timeLastRetrieved);
+            if (timeLastRetrieved == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyResult", "timeLastRetrieved");
+            }
+            this.timeLastRetrieved = timeLastRetrieved;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetAuditPolicyResult build() {

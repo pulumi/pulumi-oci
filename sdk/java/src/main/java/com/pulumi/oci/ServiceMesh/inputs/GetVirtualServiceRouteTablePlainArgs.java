@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetVirtualServiceRouteTablePlainArgs extends com.pulumi.resou
         }
 
         public GetVirtualServiceRouteTablePlainArgs build() {
-            $.virtualServiceRouteTableId = Objects.requireNonNull($.virtualServiceRouteTableId, "expected parameter 'virtualServiceRouteTableId' to be non-null");
+            if ($.virtualServiceRouteTableId == null) {
+                throw new MissingRequiredPropertyException("GetVirtualServiceRouteTablePlainArgs", "virtualServiceRouteTableId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.HealthChecks.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetVantagePointsHealthChecksVantagePointRouting {
 
         @CustomType.Setter
         public Builder asLabel(String asLabel) {
-            this.asLabel = Objects.requireNonNull(asLabel);
+            if (asLabel == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsHealthChecksVantagePointRouting", "asLabel");
+            }
+            this.asLabel = asLabel;
             return this;
         }
         @CustomType.Setter
         public Builder asn(Integer asn) {
-            this.asn = Objects.requireNonNull(asn);
+            if (asn == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsHealthChecksVantagePointRouting", "asn");
+            }
+            this.asn = asn;
             return this;
         }
         @CustomType.Setter
         public Builder prefix(String prefix) {
-            this.prefix = Objects.requireNonNull(prefix);
+            if (prefix == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsHealthChecksVantagePointRouting", "prefix");
+            }
+            this.prefix = prefix;
             return this;
         }
         @CustomType.Setter
         public Builder weight(Integer weight) {
-            this.weight = Objects.requireNonNull(weight);
+            if (weight == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsHealthChecksVantagePointRouting", "weight");
+            }
+            this.weight = weight;
             return this;
         }
         public GetVantagePointsHealthChecksVantagePointRouting build() {

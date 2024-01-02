@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetClusterNetworkClusterConfiguration {
 
         @CustomType.Setter
         public Builder hpcIslandId(String hpcIslandId) {
-            this.hpcIslandId = Objects.requireNonNull(hpcIslandId);
+            if (hpcIslandId == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkClusterConfiguration", "hpcIslandId");
+            }
+            this.hpcIslandId = hpcIslandId;
             return this;
         }
         @CustomType.Setter
         public Builder networkBlockIds(List<String> networkBlockIds) {
-            this.networkBlockIds = Objects.requireNonNull(networkBlockIds);
+            if (networkBlockIds == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkClusterConfiguration", "networkBlockIds");
+            }
+            this.networkBlockIds = networkBlockIds;
             return this;
         }
         public Builder networkBlockIds(String... networkBlockIds) {

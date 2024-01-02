@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ocvp.outputs.GetSddcsSddcCollectionDatastore;
 import com.pulumi.oci.Ocvp.outputs.GetSddcsSddcCollectionHcxOnPremLicense;
 import com.pulumi.oci.Ocvp.outputs.GetSddcsSddcCollectionInitialConfiguration;
@@ -977,32 +978,50 @@ public final class GetSddcsSddcCollection {
 
         @CustomType.Setter
         public Builder actualEsxiHostsCount(Integer actualEsxiHostsCount) {
-            this.actualEsxiHostsCount = Objects.requireNonNull(actualEsxiHostsCount);
+            if (actualEsxiHostsCount == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "actualEsxiHostsCount");
+            }
+            this.actualEsxiHostsCount = actualEsxiHostsCount;
             return this;
         }
         @CustomType.Setter
         public Builder capacityReservationId(String capacityReservationId) {
-            this.capacityReservationId = Objects.requireNonNull(capacityReservationId);
+            if (capacityReservationId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "capacityReservationId");
+            }
+            this.capacityReservationId = capacityReservationId;
             return this;
         }
         @CustomType.Setter
         public Builder clustersCount(Integer clustersCount) {
-            this.clustersCount = Objects.requireNonNull(clustersCount);
+            if (clustersCount == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "clustersCount");
+            }
+            this.clustersCount = clustersCount;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
-            this.computeAvailabilityDomain = Objects.requireNonNull(computeAvailabilityDomain);
+            if (computeAvailabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "computeAvailabilityDomain");
+            }
+            this.computeAvailabilityDomain = computeAvailabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder datastores(List<GetSddcsSddcCollectionDatastore> datastores) {
-            this.datastores = Objects.requireNonNull(datastores);
+            if (datastores == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "datastores");
+            }
+            this.datastores = datastores;
             return this;
         }
         public Builder datastores(GetSddcsSddcCollectionDatastore... datastores) {
@@ -1010,57 +1029,90 @@ public final class GetSddcsSddcCollection {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder esxiHostsCount(Integer esxiHostsCount) {
-            this.esxiHostsCount = Objects.requireNonNull(esxiHostsCount);
+            if (esxiHostsCount == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "esxiHostsCount");
+            }
+            this.esxiHostsCount = esxiHostsCount;
             return this;
         }
         @CustomType.Setter
         public Builder esxiSoftwareVersion(String esxiSoftwareVersion) {
-            this.esxiSoftwareVersion = Objects.requireNonNull(esxiSoftwareVersion);
+            if (esxiSoftwareVersion == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "esxiSoftwareVersion");
+            }
+            this.esxiSoftwareVersion = esxiSoftwareVersion;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hcxAction(String hcxAction) {
-            this.hcxAction = Objects.requireNonNull(hcxAction);
+            if (hcxAction == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "hcxAction");
+            }
+            this.hcxAction = hcxAction;
             return this;
         }
         @CustomType.Setter
         public Builder hcxFqdn(String hcxFqdn) {
-            this.hcxFqdn = Objects.requireNonNull(hcxFqdn);
+            if (hcxFqdn == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "hcxFqdn");
+            }
+            this.hcxFqdn = hcxFqdn;
             return this;
         }
         @CustomType.Setter
         public Builder hcxInitialPassword(String hcxInitialPassword) {
-            this.hcxInitialPassword = Objects.requireNonNull(hcxInitialPassword);
+            if (hcxInitialPassword == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "hcxInitialPassword");
+            }
+            this.hcxInitialPassword = hcxInitialPassword;
             return this;
         }
         @CustomType.Setter
         public Builder hcxMode(String hcxMode) {
-            this.hcxMode = Objects.requireNonNull(hcxMode);
+            if (hcxMode == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "hcxMode");
+            }
+            this.hcxMode = hcxMode;
             return this;
         }
         @CustomType.Setter
         public Builder hcxOnPremKey(String hcxOnPremKey) {
-            this.hcxOnPremKey = Objects.requireNonNull(hcxOnPremKey);
+            if (hcxOnPremKey == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "hcxOnPremKey");
+            }
+            this.hcxOnPremKey = hcxOnPremKey;
             return this;
         }
         @CustomType.Setter
         public Builder hcxOnPremLicenses(List<GetSddcsSddcCollectionHcxOnPremLicense> hcxOnPremLicenses) {
-            this.hcxOnPremLicenses = Objects.requireNonNull(hcxOnPremLicenses);
+            if (hcxOnPremLicenses == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "hcxOnPremLicenses");
+            }
+            this.hcxOnPremLicenses = hcxOnPremLicenses;
             return this;
         }
         public Builder hcxOnPremLicenses(GetSddcsSddcCollectionHcxOnPremLicense... hcxOnPremLicenses) {
@@ -1068,22 +1120,34 @@ public final class GetSddcsSddcCollection {
         }
         @CustomType.Setter
         public Builder hcxPrivateIpId(String hcxPrivateIpId) {
-            this.hcxPrivateIpId = Objects.requireNonNull(hcxPrivateIpId);
+            if (hcxPrivateIpId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "hcxPrivateIpId");
+            }
+            this.hcxPrivateIpId = hcxPrivateIpId;
             return this;
         }
         @CustomType.Setter
         public Builder hcxVlanId(String hcxVlanId) {
-            this.hcxVlanId = Objects.requireNonNull(hcxVlanId);
+            if (hcxVlanId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "hcxVlanId");
+            }
+            this.hcxVlanId = hcxVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder initialConfigurations(List<GetSddcsSddcCollectionInitialConfiguration> initialConfigurations) {
-            this.initialConfigurations = Objects.requireNonNull(initialConfigurations);
+            if (initialConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "initialConfigurations");
+            }
+            this.initialConfigurations = initialConfigurations;
             return this;
         }
         public Builder initialConfigurations(GetSddcsSddcCollectionInitialConfiguration... initialConfigurations) {
@@ -1091,122 +1155,194 @@ public final class GetSddcsSddcCollection {
         }
         @CustomType.Setter
         public Builder initialHostOcpuCount(Double initialHostOcpuCount) {
-            this.initialHostOcpuCount = Objects.requireNonNull(initialHostOcpuCount);
+            if (initialHostOcpuCount == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "initialHostOcpuCount");
+            }
+            this.initialHostOcpuCount = initialHostOcpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder initialHostShapeName(String initialHostShapeName) {
-            this.initialHostShapeName = Objects.requireNonNull(initialHostShapeName);
+            if (initialHostShapeName == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "initialHostShapeName");
+            }
+            this.initialHostShapeName = initialHostShapeName;
             return this;
         }
         @CustomType.Setter
         public Builder initialSku(String initialSku) {
-            this.initialSku = Objects.requireNonNull(initialSku);
+            if (initialSku == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "initialSku");
+            }
+            this.initialSku = initialSku;
             return this;
         }
         @CustomType.Setter
         public Builder instanceDisplayNamePrefix(String instanceDisplayNamePrefix) {
-            this.instanceDisplayNamePrefix = Objects.requireNonNull(instanceDisplayNamePrefix);
+            if (instanceDisplayNamePrefix == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "instanceDisplayNamePrefix");
+            }
+            this.instanceDisplayNamePrefix = instanceDisplayNamePrefix;
             return this;
         }
         @CustomType.Setter
         public Builder isHcxEnabled(Boolean isHcxEnabled) {
-            this.isHcxEnabled = Objects.requireNonNull(isHcxEnabled);
+            if (isHcxEnabled == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "isHcxEnabled");
+            }
+            this.isHcxEnabled = isHcxEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isHcxEnterpriseEnabled(Boolean isHcxEnterpriseEnabled) {
-            this.isHcxEnterpriseEnabled = Objects.requireNonNull(isHcxEnterpriseEnabled);
+            if (isHcxEnterpriseEnabled == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "isHcxEnterpriseEnabled");
+            }
+            this.isHcxEnterpriseEnabled = isHcxEnterpriseEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isHcxPendingDowngrade(Boolean isHcxPendingDowngrade) {
-            this.isHcxPendingDowngrade = Objects.requireNonNull(isHcxPendingDowngrade);
+            if (isHcxPendingDowngrade == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "isHcxPendingDowngrade");
+            }
+            this.isHcxPendingDowngrade = isHcxPendingDowngrade;
             return this;
         }
         @CustomType.Setter
         public Builder isShieldedInstanceEnabled(Boolean isShieldedInstanceEnabled) {
-            this.isShieldedInstanceEnabled = Objects.requireNonNull(isShieldedInstanceEnabled);
+            if (isShieldedInstanceEnabled == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "isShieldedInstanceEnabled");
+            }
+            this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isSingleHostSddc(Boolean isSingleHostSddc) {
-            this.isSingleHostSddc = Objects.requireNonNull(isSingleHostSddc);
+            if (isSingleHostSddc == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "isSingleHostSddc");
+            }
+            this.isSingleHostSddc = isSingleHostSddc;
             return this;
         }
         @CustomType.Setter
         public Builder nsxEdgeUplink1vlanId(String nsxEdgeUplink1vlanId) {
-            this.nsxEdgeUplink1vlanId = Objects.requireNonNull(nsxEdgeUplink1vlanId);
+            if (nsxEdgeUplink1vlanId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "nsxEdgeUplink1vlanId");
+            }
+            this.nsxEdgeUplink1vlanId = nsxEdgeUplink1vlanId;
             return this;
         }
         @CustomType.Setter
         public Builder nsxEdgeUplink2vlanId(String nsxEdgeUplink2vlanId) {
-            this.nsxEdgeUplink2vlanId = Objects.requireNonNull(nsxEdgeUplink2vlanId);
+            if (nsxEdgeUplink2vlanId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "nsxEdgeUplink2vlanId");
+            }
+            this.nsxEdgeUplink2vlanId = nsxEdgeUplink2vlanId;
             return this;
         }
         @CustomType.Setter
         public Builder nsxEdgeUplinkIpId(String nsxEdgeUplinkIpId) {
-            this.nsxEdgeUplinkIpId = Objects.requireNonNull(nsxEdgeUplinkIpId);
+            if (nsxEdgeUplinkIpId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "nsxEdgeUplinkIpId");
+            }
+            this.nsxEdgeUplinkIpId = nsxEdgeUplinkIpId;
             return this;
         }
         @CustomType.Setter
         public Builder nsxEdgeVtepVlanId(String nsxEdgeVtepVlanId) {
-            this.nsxEdgeVtepVlanId = Objects.requireNonNull(nsxEdgeVtepVlanId);
+            if (nsxEdgeVtepVlanId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "nsxEdgeVtepVlanId");
+            }
+            this.nsxEdgeVtepVlanId = nsxEdgeVtepVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder nsxManagerFqdn(String nsxManagerFqdn) {
-            this.nsxManagerFqdn = Objects.requireNonNull(nsxManagerFqdn);
+            if (nsxManagerFqdn == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "nsxManagerFqdn");
+            }
+            this.nsxManagerFqdn = nsxManagerFqdn;
             return this;
         }
         @CustomType.Setter
         public Builder nsxManagerInitialPassword(String nsxManagerInitialPassword) {
-            this.nsxManagerInitialPassword = Objects.requireNonNull(nsxManagerInitialPassword);
+            if (nsxManagerInitialPassword == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "nsxManagerInitialPassword");
+            }
+            this.nsxManagerInitialPassword = nsxManagerInitialPassword;
             return this;
         }
         @CustomType.Setter
         public Builder nsxManagerPrivateIpId(String nsxManagerPrivateIpId) {
-            this.nsxManagerPrivateIpId = Objects.requireNonNull(nsxManagerPrivateIpId);
+            if (nsxManagerPrivateIpId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "nsxManagerPrivateIpId");
+            }
+            this.nsxManagerPrivateIpId = nsxManagerPrivateIpId;
             return this;
         }
         @CustomType.Setter
         public Builder nsxManagerUsername(String nsxManagerUsername) {
-            this.nsxManagerUsername = Objects.requireNonNull(nsxManagerUsername);
+            if (nsxManagerUsername == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "nsxManagerUsername");
+            }
+            this.nsxManagerUsername = nsxManagerUsername;
             return this;
         }
         @CustomType.Setter
         public Builder nsxOverlaySegmentName(String nsxOverlaySegmentName) {
-            this.nsxOverlaySegmentName = Objects.requireNonNull(nsxOverlaySegmentName);
+            if (nsxOverlaySegmentName == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "nsxOverlaySegmentName");
+            }
+            this.nsxOverlaySegmentName = nsxOverlaySegmentName;
             return this;
         }
         @CustomType.Setter
         public Builder nsxVtepVlanId(String nsxVtepVlanId) {
-            this.nsxVtepVlanId = Objects.requireNonNull(nsxVtepVlanId);
+            if (nsxVtepVlanId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "nsxVtepVlanId");
+            }
+            this.nsxVtepVlanId = nsxVtepVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder provisioningSubnetId(String provisioningSubnetId) {
-            this.provisioningSubnetId = Objects.requireNonNull(provisioningSubnetId);
+            if (provisioningSubnetId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "provisioningSubnetId");
+            }
+            this.provisioningSubnetId = provisioningSubnetId;
             return this;
         }
         @CustomType.Setter
         public Builder provisioningVlanId(String provisioningVlanId) {
-            this.provisioningVlanId = Objects.requireNonNull(provisioningVlanId);
+            if (provisioningVlanId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "provisioningVlanId");
+            }
+            this.provisioningVlanId = provisioningVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder refreshHcxLicenseStatus(Boolean refreshHcxLicenseStatus) {
-            this.refreshHcxLicenseStatus = Objects.requireNonNull(refreshHcxLicenseStatus);
+            if (refreshHcxLicenseStatus == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "refreshHcxLicenseStatus");
+            }
+            this.refreshHcxLicenseStatus = refreshHcxLicenseStatus;
             return this;
         }
         @CustomType.Setter
         public Builder replicationVlanId(String replicationVlanId) {
-            this.replicationVlanId = Objects.requireNonNull(replicationVlanId);
+            if (replicationVlanId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "replicationVlanId");
+            }
+            this.replicationVlanId = replicationVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder reservingHcxOnPremiseLicenseKeys(List<String> reservingHcxOnPremiseLicenseKeys) {
-            this.reservingHcxOnPremiseLicenseKeys = Objects.requireNonNull(reservingHcxOnPremiseLicenseKeys);
+            if (reservingHcxOnPremiseLicenseKeys == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "reservingHcxOnPremiseLicenseKeys");
+            }
+            this.reservingHcxOnPremiseLicenseKeys = reservingHcxOnPremiseLicenseKeys;
             return this;
         }
         public Builder reservingHcxOnPremiseLicenseKeys(String... reservingHcxOnPremiseLicenseKeys) {
@@ -1214,37 +1350,58 @@ public final class GetSddcsSddcCollection {
         }
         @CustomType.Setter
         public Builder sshAuthorizedKeys(String sshAuthorizedKeys) {
-            this.sshAuthorizedKeys = Objects.requireNonNull(sshAuthorizedKeys);
+            if (sshAuthorizedKeys == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "sshAuthorizedKeys");
+            }
+            this.sshAuthorizedKeys = sshAuthorizedKeys;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeHcxBillingCycleEnd(String timeHcxBillingCycleEnd) {
-            this.timeHcxBillingCycleEnd = Objects.requireNonNull(timeHcxBillingCycleEnd);
+            if (timeHcxBillingCycleEnd == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "timeHcxBillingCycleEnd");
+            }
+            this.timeHcxBillingCycleEnd = timeHcxBillingCycleEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeHcxLicenseStatusUpdated(String timeHcxLicenseStatusUpdated) {
-            this.timeHcxLicenseStatusUpdated = Objects.requireNonNull(timeHcxLicenseStatusUpdated);
+            if (timeHcxLicenseStatusUpdated == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "timeHcxLicenseStatusUpdated");
+            }
+            this.timeHcxLicenseStatusUpdated = timeHcxLicenseStatusUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder upgradeLicenses(List<GetSddcsSddcCollectionUpgradeLicense> upgradeLicenses) {
-            this.upgradeLicenses = Objects.requireNonNull(upgradeLicenses);
+            if (upgradeLicenses == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "upgradeLicenses");
+            }
+            this.upgradeLicenses = upgradeLicenses;
             return this;
         }
         public Builder upgradeLicenses(GetSddcsSddcCollectionUpgradeLicense... upgradeLicenses) {
@@ -1252,47 +1409,74 @@ public final class GetSddcsSddcCollection {
         }
         @CustomType.Setter
         public Builder vcenterFqdn(String vcenterFqdn) {
-            this.vcenterFqdn = Objects.requireNonNull(vcenterFqdn);
+            if (vcenterFqdn == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "vcenterFqdn");
+            }
+            this.vcenterFqdn = vcenterFqdn;
             return this;
         }
         @CustomType.Setter
         public Builder vcenterInitialPassword(String vcenterInitialPassword) {
-            this.vcenterInitialPassword = Objects.requireNonNull(vcenterInitialPassword);
+            if (vcenterInitialPassword == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "vcenterInitialPassword");
+            }
+            this.vcenterInitialPassword = vcenterInitialPassword;
             return this;
         }
         @CustomType.Setter
         public Builder vcenterPrivateIpId(String vcenterPrivateIpId) {
-            this.vcenterPrivateIpId = Objects.requireNonNull(vcenterPrivateIpId);
+            if (vcenterPrivateIpId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "vcenterPrivateIpId");
+            }
+            this.vcenterPrivateIpId = vcenterPrivateIpId;
             return this;
         }
         @CustomType.Setter
         public Builder vcenterUsername(String vcenterUsername) {
-            this.vcenterUsername = Objects.requireNonNull(vcenterUsername);
+            if (vcenterUsername == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "vcenterUsername");
+            }
+            this.vcenterUsername = vcenterUsername;
             return this;
         }
         @CustomType.Setter
         public Builder vmotionVlanId(String vmotionVlanId) {
-            this.vmotionVlanId = Objects.requireNonNull(vmotionVlanId);
+            if (vmotionVlanId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "vmotionVlanId");
+            }
+            this.vmotionVlanId = vmotionVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder vmwareSoftwareVersion(String vmwareSoftwareVersion) {
-            this.vmwareSoftwareVersion = Objects.requireNonNull(vmwareSoftwareVersion);
+            if (vmwareSoftwareVersion == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "vmwareSoftwareVersion");
+            }
+            this.vmwareSoftwareVersion = vmwareSoftwareVersion;
             return this;
         }
         @CustomType.Setter
         public Builder vsanVlanId(String vsanVlanId) {
-            this.vsanVlanId = Objects.requireNonNull(vsanVlanId);
+            if (vsanVlanId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "vsanVlanId");
+            }
+            this.vsanVlanId = vsanVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder vsphereUpgradeGuide(String vsphereUpgradeGuide) {
-            this.vsphereUpgradeGuide = Objects.requireNonNull(vsphereUpgradeGuide);
+            if (vsphereUpgradeGuide == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "vsphereUpgradeGuide");
+            }
+            this.vsphereUpgradeGuide = vsphereUpgradeGuide;
             return this;
         }
         @CustomType.Setter
         public Builder vsphereUpgradeObjects(List<GetSddcsSddcCollectionVsphereUpgradeObject> vsphereUpgradeObjects) {
-            this.vsphereUpgradeObjects = Objects.requireNonNull(vsphereUpgradeObjects);
+            if (vsphereUpgradeObjects == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "vsphereUpgradeObjects");
+            }
+            this.vsphereUpgradeObjects = vsphereUpgradeObjects;
             return this;
         }
         public Builder vsphereUpgradeObjects(GetSddcsSddcCollectionVsphereUpgradeObject... vsphereUpgradeObjects) {
@@ -1300,12 +1484,18 @@ public final class GetSddcsSddcCollection {
         }
         @CustomType.Setter
         public Builder vsphereVlanId(String vsphereVlanId) {
-            this.vsphereVlanId = Objects.requireNonNull(vsphereVlanId);
+            if (vsphereVlanId == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "vsphereVlanId");
+            }
+            this.vsphereVlanId = vsphereVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder workloadNetworkCidr(String workloadNetworkCidr) {
-            this.workloadNetworkCidr = Objects.requireNonNull(workloadNetworkCidr);
+            if (workloadNetworkCidr == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "workloadNetworkCidr");
+            }
+            this.workloadNetworkCidr = workloadNetworkCidr;
             return this;
         }
         public GetSddcsSddcCollection build() {

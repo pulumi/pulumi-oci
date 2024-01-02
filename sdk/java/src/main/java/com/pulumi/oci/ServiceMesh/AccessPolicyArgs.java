@@ -5,6 +5,7 @@ package com.pulumi.oci.ServiceMesh;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.inputs.AccessPolicyRuleArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -312,9 +313,15 @@ public final class AccessPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public AccessPolicyArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.meshId = Objects.requireNonNull($.meshId, "expected parameter 'meshId' to be non-null");
-            $.rules = Objects.requireNonNull($.rules, "expected parameter 'rules' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AccessPolicyArgs", "compartmentId");
+            }
+            if ($.meshId == null) {
+                throw new MissingRequiredPropertyException("AccessPolicyArgs", "meshId");
+            }
+            if ($.rules == null) {
+                throw new MissingRequiredPropertyException("AccessPolicyArgs", "rules");
+            }
             return $;
         }
     }

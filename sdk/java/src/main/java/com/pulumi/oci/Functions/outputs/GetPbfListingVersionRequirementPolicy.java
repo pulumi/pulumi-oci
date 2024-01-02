@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetPbfListingVersionRequirementPolicy {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionRequirementPolicy", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder policy(String policy) {
-            this.policy = Objects.requireNonNull(policy);
+            if (policy == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionRequirementPolicy", "policy");
+            }
+            this.policy = policy;
             return this;
         }
         public GetPbfListingVersionRequirementPolicy build() {

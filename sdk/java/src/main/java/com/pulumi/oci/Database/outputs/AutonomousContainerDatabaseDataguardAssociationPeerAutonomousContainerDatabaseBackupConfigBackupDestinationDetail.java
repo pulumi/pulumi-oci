@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -114,31 +115,39 @@ public final class AutonomousContainerDatabaseDataguardAssociationPeerAutonomous
 
         @CustomType.Setter
         public Builder dbrsPolicyId(@Nullable String dbrsPolicyId) {
+
             this.dbrsPolicyId = dbrsPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder internetProxy(@Nullable String internetProxy) {
+
             this.internetProxy = internetProxy;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder vpcPassword(@Nullable String vpcPassword) {
+
             this.vpcPassword = vpcPassword;
             return this;
         }
         @CustomType.Setter
         public Builder vpcUser(@Nullable String vpcUser) {
+
             this.vpcUser = vpcUser;
             return this;
         }

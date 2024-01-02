@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetInvoicesInvoiceOrganization {
 
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceOrganization", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder number(Double number) {
-            this.number = Objects.requireNonNull(number);
+            if (number == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceOrganization", "number");
+            }
+            this.number = number;
             return this;
         }
         public GetInvoicesInvoiceOrganization build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -86,7 +87,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheL
 
         @CustomType.Setter
         public Builder cacheKeyAdditions(List<String> cacheKeyAdditions) {
-            this.cacheKeyAdditions = Objects.requireNonNull(cacheKeyAdditions);
+            if (cacheKeyAdditions == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheLookup", "cacheKeyAdditions");
+            }
+            this.cacheKeyAdditions = cacheKeyAdditions;
             return this;
         }
         public Builder cacheKeyAdditions(String... cacheKeyAdditions) {
@@ -94,17 +98,26 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheL
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheLookup", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isPrivateCachingEnabled(Boolean isPrivateCachingEnabled) {
-            this.isPrivateCachingEnabled = Objects.requireNonNull(isPrivateCachingEnabled);
+            if (isPrivateCachingEnabled == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheLookup", "isPrivateCachingEnabled");
+            }
+            this.isPrivateCachingEnabled = isPrivateCachingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheLookup", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheLookup build() {

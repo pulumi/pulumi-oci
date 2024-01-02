@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.inputs.VirtualNodePoolInitialVirtualNodeLabelArgs;
 import com.pulumi.oci.ContainerEngine.inputs.VirtualNodePoolPlacementConfigurationArgs;
 import com.pulumi.oci.ContainerEngine.inputs.VirtualNodePoolPodConfigurationArgs;
@@ -544,12 +545,24 @@ public final class VirtualNodePoolArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public VirtualNodePoolArgs build() {
-            $.clusterId = Objects.requireNonNull($.clusterId, "expected parameter 'clusterId' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.placementConfigurations = Objects.requireNonNull($.placementConfigurations, "expected parameter 'placementConfigurations' to be non-null");
-            $.podConfiguration = Objects.requireNonNull($.podConfiguration, "expected parameter 'podConfiguration' to be non-null");
-            $.size = Objects.requireNonNull($.size, "expected parameter 'size' to be non-null");
+            if ($.clusterId == null) {
+                throw new MissingRequiredPropertyException("VirtualNodePoolArgs", "clusterId");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("VirtualNodePoolArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("VirtualNodePoolArgs", "displayName");
+            }
+            if ($.placementConfigurations == null) {
+                throw new MissingRequiredPropertyException("VirtualNodePoolArgs", "placementConfigurations");
+            }
+            if ($.podConfiguration == null) {
+                throw new MissingRequiredPropertyException("VirtualNodePoolArgs", "podConfiguration");
+            }
+            if ($.size == null) {
+                throw new MissingRequiredPropertyException("VirtualNodePoolArgs", "size");
+            }
             return $;
         }
     }

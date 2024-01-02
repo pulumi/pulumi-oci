@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiDocument.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiDocument.outputs.GetModelMetricLabelMetricsReportConfidenceEntry;
 import java.lang.Double;
 import java.lang.Integer;
@@ -88,7 +89,10 @@ public final class GetModelMetricLabelMetricsReport {
 
         @CustomType.Setter
         public Builder confidenceEntries(List<GetModelMetricLabelMetricsReportConfidenceEntry> confidenceEntries) {
-            this.confidenceEntries = Objects.requireNonNull(confidenceEntries);
+            if (confidenceEntries == null) {
+              throw new MissingRequiredPropertyException("GetModelMetricLabelMetricsReport", "confidenceEntries");
+            }
+            this.confidenceEntries = confidenceEntries;
             return this;
         }
         public Builder confidenceEntries(GetModelMetricLabelMetricsReportConfidenceEntry... confidenceEntries) {
@@ -96,17 +100,26 @@ public final class GetModelMetricLabelMetricsReport {
         }
         @CustomType.Setter
         public Builder documentCount(Integer documentCount) {
-            this.documentCount = Objects.requireNonNull(documentCount);
+            if (documentCount == null) {
+              throw new MissingRequiredPropertyException("GetModelMetricLabelMetricsReport", "documentCount");
+            }
+            this.documentCount = documentCount;
             return this;
         }
         @CustomType.Setter
         public Builder label(String label) {
-            this.label = Objects.requireNonNull(label);
+            if (label == null) {
+              throw new MissingRequiredPropertyException("GetModelMetricLabelMetricsReport", "label");
+            }
+            this.label = label;
             return this;
         }
         @CustomType.Setter
         public Builder meanAveragePrecision(Double meanAveragePrecision) {
-            this.meanAveragePrecision = Objects.requireNonNull(meanAveragePrecision);
+            if (meanAveragePrecision == null) {
+              throw new MissingRequiredPropertyException("GetModelMetricLabelMetricsReport", "meanAveragePrecision");
+            }
+            this.meanAveragePrecision = meanAveragePrecision;
             return this;
         }
         public GetModelMetricLabelMetricsReport build() {

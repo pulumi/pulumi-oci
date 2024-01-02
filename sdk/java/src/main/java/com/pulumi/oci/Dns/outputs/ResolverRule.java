@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -100,11 +101,15 @@ public final class ResolverRule {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("ResolverRule", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder clientAddressConditions(@Nullable List<String> clientAddressConditions) {
+
             this.clientAddressConditions = clientAddressConditions;
             return this;
         }
@@ -113,7 +118,10 @@ public final class ResolverRule {
         }
         @CustomType.Setter
         public Builder destinationAddresses(List<String> destinationAddresses) {
-            this.destinationAddresses = Objects.requireNonNull(destinationAddresses);
+            if (destinationAddresses == null) {
+              throw new MissingRequiredPropertyException("ResolverRule", "destinationAddresses");
+            }
+            this.destinationAddresses = destinationAddresses;
             return this;
         }
         public Builder destinationAddresses(String... destinationAddresses) {
@@ -121,6 +129,7 @@ public final class ResolverRule {
         }
         @CustomType.Setter
         public Builder qnameCoverConditions(@Nullable List<String> qnameCoverConditions) {
+
             this.qnameCoverConditions = qnameCoverConditions;
             return this;
         }
@@ -129,7 +138,10 @@ public final class ResolverRule {
         }
         @CustomType.Setter
         public Builder sourceEndpointName(String sourceEndpointName) {
-            this.sourceEndpointName = Objects.requireNonNull(sourceEndpointName);
+            if (sourceEndpointName == null) {
+              throw new MissingRequiredPropertyException("ResolverRule", "sourceEndpointName");
+            }
+            this.sourceEndpointName = sourceEndpointName;
             return this;
         }
         public ResolverRule build() {

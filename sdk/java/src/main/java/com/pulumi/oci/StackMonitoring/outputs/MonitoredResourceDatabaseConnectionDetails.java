@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -129,36 +130,49 @@ public final class MonitoredResourceDatabaseConnectionDetails {
 
         @CustomType.Setter
         public Builder connectorId(@Nullable String connectorId) {
+
             this.connectorId = connectorId;
             return this;
         }
         @CustomType.Setter
         public Builder dbId(@Nullable String dbId) {
+
             this.dbId = dbId;
             return this;
         }
         @CustomType.Setter
         public Builder dbUniqueName(@Nullable String dbUniqueName) {
+
             this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("MonitoredResourceDatabaseConnectionDetails", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("MonitoredResourceDatabaseConnectionDetails", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+            if (serviceName == null) {
+              throw new MissingRequiredPropertyException("MonitoredResourceDatabaseConnectionDetails", "serviceName");
+            }
+            this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
         public Builder sslSecretId(@Nullable String sslSecretId) {
+
             this.sslSecretId = sslSecretId;
             return this;
         }

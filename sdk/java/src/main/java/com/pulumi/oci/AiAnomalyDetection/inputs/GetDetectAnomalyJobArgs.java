@@ -5,6 +5,7 @@ package com.pulumi.oci.AiAnomalyDetection.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetDetectAnomalyJobArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetDetectAnomalyJobArgs build() {
-            $.detectAnomalyJobId = Objects.requireNonNull($.detectAnomalyJobId, "expected parameter 'detectAnomalyJobId' to be non-null");
+            if ($.detectAnomalyJobId == null) {
+                throw new MissingRequiredPropertyException("GetDetectAnomalyJobArgs", "detectAnomalyJobId");
+            }
             return $;
         }
     }

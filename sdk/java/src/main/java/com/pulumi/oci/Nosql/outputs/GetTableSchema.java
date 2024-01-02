@@ -4,6 +4,7 @@
 package com.pulumi.oci.Nosql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Nosql.outputs.GetTableSchemaColumn;
 import com.pulumi.oci.Nosql.outputs.GetTableSchemaIdentity;
 import java.lang.Integer;
@@ -102,7 +103,10 @@ public final class GetTableSchema {
 
         @CustomType.Setter
         public Builder columns(List<GetTableSchemaColumn> columns) {
-            this.columns = Objects.requireNonNull(columns);
+            if (columns == null) {
+              throw new MissingRequiredPropertyException("GetTableSchema", "columns");
+            }
+            this.columns = columns;
             return this;
         }
         public Builder columns(GetTableSchemaColumn... columns) {
@@ -110,7 +114,10 @@ public final class GetTableSchema {
         }
         @CustomType.Setter
         public Builder identities(List<GetTableSchemaIdentity> identities) {
-            this.identities = Objects.requireNonNull(identities);
+            if (identities == null) {
+              throw new MissingRequiredPropertyException("GetTableSchema", "identities");
+            }
+            this.identities = identities;
             return this;
         }
         public Builder identities(GetTableSchemaIdentity... identities) {
@@ -118,7 +125,10 @@ public final class GetTableSchema {
         }
         @CustomType.Setter
         public Builder primaryKeys(List<String> primaryKeys) {
-            this.primaryKeys = Objects.requireNonNull(primaryKeys);
+            if (primaryKeys == null) {
+              throw new MissingRequiredPropertyException("GetTableSchema", "primaryKeys");
+            }
+            this.primaryKeys = primaryKeys;
             return this;
         }
         public Builder primaryKeys(String... primaryKeys) {
@@ -126,7 +136,10 @@ public final class GetTableSchema {
         }
         @CustomType.Setter
         public Builder shardKeys(List<String> shardKeys) {
-            this.shardKeys = Objects.requireNonNull(shardKeys);
+            if (shardKeys == null) {
+              throw new MissingRequiredPropertyException("GetTableSchema", "shardKeys");
+            }
+            this.shardKeys = shardKeys;
             return this;
         }
         public Builder shardKeys(String... shardKeys) {
@@ -134,7 +147,10 @@ public final class GetTableSchema {
         }
         @CustomType.Setter
         public Builder ttl(Integer ttl) {
-            this.ttl = Objects.requireNonNull(ttl);
+            if (ttl == null) {
+              throw new MissingRequiredPropertyException("GetTableSchema", "ttl");
+            }
+            this.ttl = ttl;
             return this;
         }
         public GetTableSchema build() {

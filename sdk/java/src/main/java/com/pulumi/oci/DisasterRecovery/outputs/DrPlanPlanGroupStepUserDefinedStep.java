@@ -158,16 +158,19 @@ public final class DrPlanPlanGroupStepUserDefinedStep {
 
         @CustomType.Setter
         public Builder functionId(@Nullable String functionId) {
+
             this.functionId = functionId;
             return this;
         }
         @CustomType.Setter
         public Builder functionRegion(@Nullable String functionRegion) {
+
             this.functionRegion = functionRegion;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageScriptLocations(@Nullable List<DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation> objectStorageScriptLocations) {
+
             this.objectStorageScriptLocations = objectStorageScriptLocations;
             return this;
         }
@@ -176,31 +179,37 @@ public final class DrPlanPlanGroupStepUserDefinedStep {
         }
         @CustomType.Setter
         public Builder requestBody(@Nullable String requestBody) {
+
             this.requestBody = requestBody;
             return this;
         }
         @CustomType.Setter
         public Builder runAsUser(@Nullable String runAsUser) {
+
             this.runAsUser = runAsUser;
             return this;
         }
         @CustomType.Setter
         public Builder runOnInstanceId(@Nullable String runOnInstanceId) {
+
             this.runOnInstanceId = runOnInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder runOnInstanceRegion(@Nullable String runOnInstanceRegion) {
+
             this.runOnInstanceRegion = runOnInstanceRegion;
             return this;
         }
         @CustomType.Setter
         public Builder scriptCommand(@Nullable String scriptCommand) {
+
             this.scriptCommand = scriptCommand;
             return this;
         }
         @CustomType.Setter
         public Builder stepType(@Nullable String stepType) {
+
             this.stepType = stepType;
             return this;
         }

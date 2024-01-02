@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -100,21 +101,31 @@ public final class ProfileTargetTagsItem {
 
         @CustomType.Setter
         public Builder tagDefinitionName(String tagDefinitionName) {
-            this.tagDefinitionName = Objects.requireNonNull(tagDefinitionName);
+            if (tagDefinitionName == null) {
+              throw new MissingRequiredPropertyException("ProfileTargetTagsItem", "tagDefinitionName");
+            }
+            this.tagDefinitionName = tagDefinitionName;
             return this;
         }
         @CustomType.Setter
         public Builder tagNamespaceName(String tagNamespaceName) {
-            this.tagNamespaceName = Objects.requireNonNull(tagNamespaceName);
+            if (tagNamespaceName == null) {
+              throw new MissingRequiredPropertyException("ProfileTargetTagsItem", "tagNamespaceName");
+            }
+            this.tagNamespaceName = tagNamespaceName;
             return this;
         }
         @CustomType.Setter
         public Builder tagValueType(String tagValueType) {
-            this.tagValueType = Objects.requireNonNull(tagValueType);
+            if (tagValueType == null) {
+              throw new MissingRequiredPropertyException("ProfileTargetTagsItem", "tagValueType");
+            }
+            this.tagValueType = tagValueType;
             return this;
         }
         @CustomType.Setter
         public Builder tagValues(@Nullable List<String> tagValues) {
+
             this.tagValues = tagValues;
             return this;
         }

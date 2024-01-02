@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -123,8 +124,12 @@ public final class ClusterStartCredentialRotationManagementArgs extends com.pulu
         }
 
         public ClusterStartCredentialRotationManagementArgs build() {
-            $.autoCompletionDelayDuration = Objects.requireNonNull($.autoCompletionDelayDuration, "expected parameter 'autoCompletionDelayDuration' to be non-null");
-            $.clusterId = Objects.requireNonNull($.clusterId, "expected parameter 'clusterId' to be non-null");
+            if ($.autoCompletionDelayDuration == null) {
+                throw new MissingRequiredPropertyException("ClusterStartCredentialRotationManagementArgs", "autoCompletionDelayDuration");
+            }
+            if ($.clusterId == null) {
+                throw new MissingRequiredPropertyException("ClusterStartCredentialRotationManagementArgs", "clusterId");
+            }
             return $;
         }
     }

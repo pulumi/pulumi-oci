@@ -44,6 +44,7 @@ public final class ProfileLevelsConfiguration {
 
         @CustomType.Setter
         public Builder items(@Nullable List<ProfileLevelsConfigurationItem> items) {
+
             this.items = items;
             return this;
         }

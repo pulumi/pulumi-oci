@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -205,7 +206,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticlo
         }
 
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs build() {
-            $.multicloudServiceType = Objects.requireNonNull($.multicloudServiceType, "expected parameter 'multicloudServiceType' to be non-null");
+            if ($.multicloudServiceType == null) {
+                throw new MissingRequiredPropertyException("DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs", "multicloudServiceType");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseBackupBackupDestinationDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -239,7 +240,9 @@ public final class AutonomousDatabaseBackupArgs extends com.pulumi.resources.Res
         }
 
         public AutonomousDatabaseBackupArgs build() {
-            $.autonomousDatabaseId = Objects.requireNonNull($.autonomousDatabaseId, "expected parameter 'autonomousDatabaseId' to be non-null");
+            if ($.autonomousDatabaseId == null) {
+                throw new MissingRequiredPropertyException("AutonomousDatabaseBackupArgs", "autonomousDatabaseId");
+            }
             return $;
         }
     }

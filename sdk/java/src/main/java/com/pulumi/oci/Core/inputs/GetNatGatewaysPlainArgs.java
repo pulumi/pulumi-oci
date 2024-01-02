@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetNatGatewaysFilter;
 import java.lang.String;
 import java.util.List;
@@ -165,7 +166,9 @@ public final class GetNatGatewaysPlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetNatGatewaysPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetNatGatewaysPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

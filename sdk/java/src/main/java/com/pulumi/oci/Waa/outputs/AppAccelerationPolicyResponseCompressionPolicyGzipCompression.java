@@ -48,6 +48,7 @@ public final class AppAccelerationPolicyResponseCompressionPolicyGzipCompression
 
         @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
+
             this.isEnabled = isEnabled;
             return this;
         }

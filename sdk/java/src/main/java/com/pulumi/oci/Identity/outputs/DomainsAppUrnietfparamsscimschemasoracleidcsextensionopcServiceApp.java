@@ -281,36 +281,43 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServi
 
         @CustomType.Setter
         public Builder currentFederationMode(@Nullable String currentFederationMode) {
+
             this.currentFederationMode = currentFederationMode;
             return this;
         }
         @CustomType.Setter
         public Builder currentSynchronizationMode(@Nullable String currentSynchronizationMode) {
+
             this.currentSynchronizationMode = currentSynchronizationMode;
             return this;
         }
         @CustomType.Setter
         public Builder enablingNextFedSyncModes(@Nullable Boolean enablingNextFedSyncModes) {
+
             this.enablingNextFedSyncModes = enablingNextFedSyncModes;
             return this;
         }
         @CustomType.Setter
         public Builder nextFederationMode(@Nullable String nextFederationMode) {
+
             this.nextFederationMode = nextFederationMode;
             return this;
         }
         @CustomType.Setter
         public Builder nextSynchronizationMode(@Nullable String nextSynchronizationMode) {
+
             this.nextSynchronizationMode = nextSynchronizationMode;
             return this;
         }
         @CustomType.Setter
         public Builder region(@Nullable String region) {
+
             this.region = region;
             return this;
         }
         @CustomType.Setter
         public Builder serviceInstanceIdentifier(@Nullable String serviceInstanceIdentifier) {
+
             this.serviceInstanceIdentifier = serviceInstanceIdentifier;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.OperatorAccessControl.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -473,17 +474,26 @@ public final class GetAccessRequestResult {
 
         @CustomType.Setter
         public Builder accessReasonSummary(String accessReasonSummary) {
-            this.accessReasonSummary = Objects.requireNonNull(accessReasonSummary);
+            if (accessReasonSummary == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "accessReasonSummary");
+            }
+            this.accessReasonSummary = accessReasonSummary;
             return this;
         }
         @CustomType.Setter
         public Builder accessRequestId(String accessRequestId) {
-            this.accessRequestId = Objects.requireNonNull(accessRequestId);
+            if (accessRequestId == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "accessRequestId");
+            }
+            this.accessRequestId = accessRequestId;
             return this;
         }
         @CustomType.Setter
         public Builder actionRequestsLists(List<String> actionRequestsLists) {
-            this.actionRequestsLists = Objects.requireNonNull(actionRequestsLists);
+            if (actionRequestsLists == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "actionRequestsLists");
+            }
+            this.actionRequestsLists = actionRequestsLists;
             return this;
         }
         public Builder actionRequestsLists(String... actionRequestsLists) {
@@ -491,12 +501,18 @@ public final class GetAccessRequestResult {
         }
         @CustomType.Setter
         public Builder approverComment(String approverComment) {
-            this.approverComment = Objects.requireNonNull(approverComment);
+            if (approverComment == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "approverComment");
+            }
+            this.approverComment = approverComment;
             return this;
         }
         @CustomType.Setter
         public Builder auditTypes(List<String> auditTypes) {
-            this.auditTypes = Objects.requireNonNull(auditTypes);
+            if (auditTypes == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "auditTypes");
+            }
+            this.auditTypes = auditTypes;
             return this;
         }
         public Builder auditTypes(String... auditTypes) {
@@ -504,107 +520,170 @@ public final class GetAccessRequestResult {
         }
         @CustomType.Setter
         public Builder closureComment(String closureComment) {
-            this.closureComment = Objects.requireNonNull(closureComment);
+            if (closureComment == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "closureComment");
+            }
+            this.closureComment = closureComment;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder duration(Integer duration) {
-            this.duration = Objects.requireNonNull(duration);
+            if (duration == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "duration");
+            }
+            this.duration = duration;
             return this;
         }
         @CustomType.Setter
         public Builder extendDuration(Integer extendDuration) {
-            this.extendDuration = Objects.requireNonNull(extendDuration);
+            if (extendDuration == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "extendDuration");
+            }
+            this.extendDuration = extendDuration;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAutoApproved(Boolean isAutoApproved) {
-            this.isAutoApproved = Objects.requireNonNull(isAutoApproved);
+            if (isAutoApproved == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "isAutoApproved");
+            }
+            this.isAutoApproved = isAutoApproved;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder opctlAdditionalMessage(String opctlAdditionalMessage) {
-            this.opctlAdditionalMessage = Objects.requireNonNull(opctlAdditionalMessage);
+            if (opctlAdditionalMessage == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "opctlAdditionalMessage");
+            }
+            this.opctlAdditionalMessage = opctlAdditionalMessage;
             return this;
         }
         @CustomType.Setter
         public Builder opctlId(String opctlId) {
-            this.opctlId = Objects.requireNonNull(opctlId);
+            if (opctlId == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "opctlId");
+            }
+            this.opctlId = opctlId;
             return this;
         }
         @CustomType.Setter
         public Builder opctlName(String opctlName) {
-            this.opctlName = Objects.requireNonNull(opctlName);
+            if (opctlName == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "opctlName");
+            }
+            this.opctlName = opctlName;
             return this;
         }
         @CustomType.Setter
         public Builder operatorId(String operatorId) {
-            this.operatorId = Objects.requireNonNull(operatorId);
+            if (operatorId == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "operatorId");
+            }
+            this.operatorId = operatorId;
             return this;
         }
         @CustomType.Setter
         public Builder reason(String reason) {
-            this.reason = Objects.requireNonNull(reason);
+            if (reason == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "reason");
+            }
+            this.reason = reason;
             return this;
         }
         @CustomType.Setter
         public Builder requestId(String requestId) {
-            this.requestId = Objects.requireNonNull(requestId);
+            if (requestId == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "requestId");
+            }
+            this.requestId = requestId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+            if (resourceId == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "resourceId");
+            }
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceName(String resourceName) {
-            this.resourceName = Objects.requireNonNull(resourceName);
+            if (resourceName == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "resourceName");
+            }
+            this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+            if (severity == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "severity");
+            }
+            this.severity = severity;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subResourceLists(List<String> subResourceLists) {
-            this.subResourceLists = Objects.requireNonNull(subResourceLists);
+            if (subResourceLists == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "subResourceLists");
+            }
+            this.subResourceLists = subResourceLists;
             return this;
         }
         public Builder subResourceLists(String... subResourceLists) {
@@ -612,32 +691,50 @@ public final class GetAccessRequestResult {
         }
         @CustomType.Setter
         public Builder systemMessage(String systemMessage) {
-            this.systemMessage = Objects.requireNonNull(systemMessage);
+            if (systemMessage == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "systemMessage");
+            }
+            this.systemMessage = systemMessage;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfCreation(String timeOfCreation) {
-            this.timeOfCreation = Objects.requireNonNull(timeOfCreation);
+            if (timeOfCreation == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "timeOfCreation");
+            }
+            this.timeOfCreation = timeOfCreation;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfModification(String timeOfModification) {
-            this.timeOfModification = Objects.requireNonNull(timeOfModification);
+            if (timeOfModification == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "timeOfModification");
+            }
+            this.timeOfModification = timeOfModification;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfUserCreation(String timeOfUserCreation) {
-            this.timeOfUserCreation = Objects.requireNonNull(timeOfUserCreation);
+            if (timeOfUserCreation == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "timeOfUserCreation");
+            }
+            this.timeOfUserCreation = timeOfUserCreation;
             return this;
         }
         @CustomType.Setter
         public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+            if (userId == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "userId");
+            }
+            this.userId = userId;
             return this;
         }
         @CustomType.Setter
         public Builder workflowIds(List<String> workflowIds) {
-            this.workflowIds = Objects.requireNonNull(workflowIds);
+            if (workflowIds == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestResult", "workflowIds");
+            }
+            this.workflowIds = workflowIds;
             return this;
         }
         public Builder workflowIds(String... workflowIds) {

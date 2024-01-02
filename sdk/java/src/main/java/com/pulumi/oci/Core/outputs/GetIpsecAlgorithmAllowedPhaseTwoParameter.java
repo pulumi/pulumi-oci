@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -71,7 +72,10 @@ public final class GetIpsecAlgorithmAllowedPhaseTwoParameter {
 
         @CustomType.Setter
         public Builder authenticationAlgorithms(List<String> authenticationAlgorithms) {
-            this.authenticationAlgorithms = Objects.requireNonNull(authenticationAlgorithms);
+            if (authenticationAlgorithms == null) {
+              throw new MissingRequiredPropertyException("GetIpsecAlgorithmAllowedPhaseTwoParameter", "authenticationAlgorithms");
+            }
+            this.authenticationAlgorithms = authenticationAlgorithms;
             return this;
         }
         public Builder authenticationAlgorithms(String... authenticationAlgorithms) {
@@ -79,7 +83,10 @@ public final class GetIpsecAlgorithmAllowedPhaseTwoParameter {
         }
         @CustomType.Setter
         public Builder encryptionAlgorithms(List<String> encryptionAlgorithms) {
-            this.encryptionAlgorithms = Objects.requireNonNull(encryptionAlgorithms);
+            if (encryptionAlgorithms == null) {
+              throw new MissingRequiredPropertyException("GetIpsecAlgorithmAllowedPhaseTwoParameter", "encryptionAlgorithms");
+            }
+            this.encryptionAlgorithms = encryptionAlgorithms;
             return this;
         }
         public Builder encryptionAlgorithms(String... encryptionAlgorithms) {
@@ -87,7 +94,10 @@ public final class GetIpsecAlgorithmAllowedPhaseTwoParameter {
         }
         @CustomType.Setter
         public Builder pfsDhGroups(List<String> pfsDhGroups) {
-            this.pfsDhGroups = Objects.requireNonNull(pfsDhGroups);
+            if (pfsDhGroups == null) {
+              throw new MissingRequiredPropertyException("GetIpsecAlgorithmAllowedPhaseTwoParameter", "pfsDhGroups");
+            }
+            this.pfsDhGroups = pfsDhGroups;
             return this;
         }
         public Builder pfsDhGroups(String... pfsDhGroups) {

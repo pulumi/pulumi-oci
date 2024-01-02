@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.inputs.BuildRunBuildRunArgumentsArgs;
 import com.pulumi.oci.DevOps.inputs.BuildRunCommitInfoArgs;
 import java.lang.Object;
@@ -277,7 +278,9 @@ public final class BuildRunArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public BuildRunArgs build() {
-            $.buildPipelineId = Objects.requireNonNull($.buildPipelineId, "expected parameter 'buildPipelineId' to be non-null");
+            if ($.buildPipelineId == null) {
+                throw new MissingRequiredPropertyException("BuildRunArgs", "buildPipelineId");
+            }
             return $;
         }
     }

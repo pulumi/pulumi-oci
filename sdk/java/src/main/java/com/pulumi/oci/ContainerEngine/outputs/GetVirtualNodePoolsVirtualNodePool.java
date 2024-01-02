@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel;
 import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration;
 import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolsVirtualNodePoolPodConfiguration;
@@ -309,37 +310,58 @@ public final class GetVirtualNodePoolsVirtualNodePool {
 
         @CustomType.Setter
         public Builder clusterId(String clusterId) {
-            this.clusterId = Objects.requireNonNull(clusterId);
+            if (clusterId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "clusterId");
+            }
+            this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder initialVirtualNodeLabels(List<GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel> initialVirtualNodeLabels) {
-            this.initialVirtualNodeLabels = Objects.requireNonNull(initialVirtualNodeLabels);
+            if (initialVirtualNodeLabels == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "initialVirtualNodeLabels");
+            }
+            this.initialVirtualNodeLabels = initialVirtualNodeLabels;
             return this;
         }
         public Builder initialVirtualNodeLabels(GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel... initialVirtualNodeLabels) {
@@ -347,17 +369,26 @@ public final class GetVirtualNodePoolsVirtualNodePool {
         }
         @CustomType.Setter
         public Builder kubernetesVersion(String kubernetesVersion) {
-            this.kubernetesVersion = Objects.requireNonNull(kubernetesVersion);
+            if (kubernetesVersion == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "kubernetesVersion");
+            }
+            this.kubernetesVersion = kubernetesVersion;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
@@ -365,7 +396,10 @@ public final class GetVirtualNodePoolsVirtualNodePool {
         }
         @CustomType.Setter
         public Builder placementConfigurations(List<GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration> placementConfigurations) {
-            this.placementConfigurations = Objects.requireNonNull(placementConfigurations);
+            if (placementConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "placementConfigurations");
+            }
+            this.placementConfigurations = placementConfigurations;
             return this;
         }
         public Builder placementConfigurations(GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration... placementConfigurations) {
@@ -373,7 +407,10 @@ public final class GetVirtualNodePoolsVirtualNodePool {
         }
         @CustomType.Setter
         public Builder podConfigurations(List<GetVirtualNodePoolsVirtualNodePoolPodConfiguration> podConfigurations) {
-            this.podConfigurations = Objects.requireNonNull(podConfigurations);
+            if (podConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "podConfigurations");
+            }
+            this.podConfigurations = podConfigurations;
             return this;
         }
         public Builder podConfigurations(GetVirtualNodePoolsVirtualNodePoolPodConfiguration... podConfigurations) {
@@ -381,22 +418,34 @@ public final class GetVirtualNodePoolsVirtualNodePool {
         }
         @CustomType.Setter
         public Builder size(Integer size) {
-            this.size = Objects.requireNonNull(size);
+            if (size == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "size");
+            }
+            this.size = size;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder taints(List<GetVirtualNodePoolsVirtualNodePoolTaint> taints) {
-            this.taints = Objects.requireNonNull(taints);
+            if (taints == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "taints");
+            }
+            this.taints = taints;
             return this;
         }
         public Builder taints(GetVirtualNodePoolsVirtualNodePoolTaint... taints) {
@@ -404,22 +453,34 @@ public final class GetVirtualNodePoolsVirtualNodePool {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder virtualNodePoolId(String virtualNodePoolId) {
-            this.virtualNodePoolId = Objects.requireNonNull(virtualNodePoolId);
+            if (virtualNodePoolId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "virtualNodePoolId");
+            }
+            this.virtualNodePoolId = virtualNodePoolId;
             return this;
         }
         @CustomType.Setter
         public Builder virtualNodeTags(List<GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag> virtualNodeTags) {
-            this.virtualNodeTags = Objects.requireNonNull(virtualNodeTags);
+            if (virtualNodeTags == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "virtualNodeTags");
+            }
+            this.virtualNodeTags = virtualNodeTags;
             return this;
         }
         public Builder virtualNodeTags(GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag... virtualNodeTags) {

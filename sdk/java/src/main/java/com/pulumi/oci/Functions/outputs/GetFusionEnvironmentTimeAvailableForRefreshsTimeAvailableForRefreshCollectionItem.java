@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForR
 
         @CustomType.Setter
         public Builder timeAvailableForRefresh(String timeAvailableForRefresh) {
-            this.timeAvailableForRefresh = Objects.requireNonNull(timeAvailableForRefresh);
+            if (timeAvailableForRefresh == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem", "timeAvailableForRefresh");
+            }
+            this.timeAvailableForRefresh = timeAvailableForRefresh;
             return this;
         }
         public GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem build() {

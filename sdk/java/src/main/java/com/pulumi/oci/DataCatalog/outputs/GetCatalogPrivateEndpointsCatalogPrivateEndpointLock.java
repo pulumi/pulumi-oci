@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetCatalogPrivateEndpointsCatalogPrivateEndpointLock {
 
         @CustomType.Setter
         public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+            if (message == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsCatalogPrivateEndpointLock", "message");
+            }
+            this.message = message;
             return this;
         }
         @CustomType.Setter
         public Builder relatedResourceId(String relatedResourceId) {
-            this.relatedResourceId = Objects.requireNonNull(relatedResourceId);
+            if (relatedResourceId == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsCatalogPrivateEndpointLock", "relatedResourceId");
+            }
+            this.relatedResourceId = relatedResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsCatalogPrivateEndpointLock", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsCatalogPrivateEndpointLock", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetCatalogPrivateEndpointsCatalogPrivateEndpointLock build() {

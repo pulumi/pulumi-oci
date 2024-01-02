@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -112,32 +113,50 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
 
         @CustomType.Setter
         public Builder alternatePlan(Integer alternatePlan) {
-            this.alternatePlan = Objects.requireNonNull(alternatePlan);
+            if (alternatePlan == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount", "alternatePlan");
+            }
+            this.alternatePlan = alternatePlan;
             return this;
         }
         @CustomType.Setter
         public Builder implementedSqlProfile(Integer implementedSqlProfile) {
-            this.implementedSqlProfile = Objects.requireNonNull(implementedSqlProfile);
+            if (implementedSqlProfile == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount", "implementedSqlProfile");
+            }
+            this.implementedSqlProfile = implementedSqlProfile;
             return this;
         }
         @CustomType.Setter
         public Builder index(Integer index) {
-            this.index = Objects.requireNonNull(index);
+            if (index == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount", "index");
+            }
+            this.index = index;
             return this;
         }
         @CustomType.Setter
         public Builder recommendedSqlProfile(Integer recommendedSqlProfile) {
-            this.recommendedSqlProfile = Objects.requireNonNull(recommendedSqlProfile);
+            if (recommendedSqlProfile == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount", "recommendedSqlProfile");
+            }
+            this.recommendedSqlProfile = recommendedSqlProfile;
             return this;
         }
         @CustomType.Setter
         public Builder restructure(Integer restructure) {
-            this.restructure = Objects.requireNonNull(restructure);
+            if (restructure == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount", "restructure");
+            }
+            this.restructure = restructure;
             return this;
         }
         @CustomType.Setter
         public Builder statistics(Integer statistics) {
-            this.statistics = Objects.requireNonNull(statistics);
+            if (statistics == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount", "statistics");
+            }
+            this.statistics = statistics;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount build() {

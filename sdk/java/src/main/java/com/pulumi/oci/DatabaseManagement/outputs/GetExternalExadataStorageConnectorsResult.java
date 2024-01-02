@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollection;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageConnectorsFilter;
 import java.lang.String;
@@ -93,22 +94,32 @@ public final class GetExternalExadataStorageConnectorsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalExadataInfrastructureId(String externalExadataInfrastructureId) {
-            this.externalExadataInfrastructureId = Objects.requireNonNull(externalExadataInfrastructureId);
+            if (externalExadataInfrastructureId == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorsResult", "externalExadataInfrastructureId");
+            }
+            this.externalExadataInfrastructureId = externalExadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
         public Builder externalExadataStorageConnectorCollections(List<GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollection> externalExadataStorageConnectorCollections) {
-            this.externalExadataStorageConnectorCollections = Objects.requireNonNull(externalExadataStorageConnectorCollections);
+            if (externalExadataStorageConnectorCollections == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorsResult", "externalExadataStorageConnectorCollections");
+            }
+            this.externalExadataStorageConnectorCollections = externalExadataStorageConnectorCollections;
             return this;
         }
         public Builder externalExadataStorageConnectorCollections(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollection... externalExadataStorageConnectorCollections) {
@@ -116,6 +127,7 @@ public final class GetExternalExadataStorageConnectorsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetExternalExadataStorageConnectorsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -124,7 +136,10 @@ public final class GetExternalExadataStorageConnectorsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetExternalExadataStorageConnectorsResult build() {

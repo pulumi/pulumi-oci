@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceSoftwarePackagesFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection;
 import java.lang.Boolean;
@@ -108,16 +109,19 @@ public final class GetSoftwareSourceSoftwarePackagesResult {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder displayNameContains(@Nullable String displayNameContains) {
+
             this.displayNameContains = displayNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSoftwareSourceSoftwarePackagesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -126,17 +130,24 @@ public final class GetSoftwareSourceSoftwarePackagesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isLatest(@Nullable Boolean isLatest) {
+
             this.isLatest = isLatest;
             return this;
         }
         @CustomType.Setter
         public Builder softwarePackageCollections(List<GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection> softwarePackageCollections) {
-            this.softwarePackageCollections = Objects.requireNonNull(softwarePackageCollections);
+            if (softwarePackageCollections == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesResult", "softwarePackageCollections");
+            }
+            this.softwarePackageCollections = softwarePackageCollections;
             return this;
         }
         public Builder softwarePackageCollections(GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection... softwarePackageCollections) {
@@ -144,7 +155,10 @@ public final class GetSoftwareSourceSoftwarePackagesResult {
         }
         @CustomType.Setter
         public Builder softwareSourceId(String softwareSourceId) {
-            this.softwareSourceId = Objects.requireNonNull(softwareSourceId);
+            if (softwareSourceId == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesResult", "softwareSourceId");
+            }
+            this.softwareSourceId = softwareSourceId;
             return this;
         }
         public GetSoftwareSourceSoftwarePackagesResult build() {

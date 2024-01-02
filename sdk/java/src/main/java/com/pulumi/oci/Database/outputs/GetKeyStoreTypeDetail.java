@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -99,12 +100,18 @@ public final class GetKeyStoreTypeDetail {
 
         @CustomType.Setter
         public Builder adminUsername(String adminUsername) {
-            this.adminUsername = Objects.requireNonNull(adminUsername);
+            if (adminUsername == null) {
+              throw new MissingRequiredPropertyException("GetKeyStoreTypeDetail", "adminUsername");
+            }
+            this.adminUsername = adminUsername;
             return this;
         }
         @CustomType.Setter
         public Builder connectionIps(List<String> connectionIps) {
-            this.connectionIps = Objects.requireNonNull(connectionIps);
+            if (connectionIps == null) {
+              throw new MissingRequiredPropertyException("GetKeyStoreTypeDetail", "connectionIps");
+            }
+            this.connectionIps = connectionIps;
             return this;
         }
         public Builder connectionIps(String... connectionIps) {
@@ -112,17 +119,26 @@ public final class GetKeyStoreTypeDetail {
         }
         @CustomType.Setter
         public Builder secretId(String secretId) {
-            this.secretId = Objects.requireNonNull(secretId);
+            if (secretId == null) {
+              throw new MissingRequiredPropertyException("GetKeyStoreTypeDetail", "secretId");
+            }
+            this.secretId = secretId;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetKeyStoreTypeDetail", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+            if (vaultId == null) {
+              throw new MissingRequiredPropertyException("GetKeyStoreTypeDetail", "vaultId");
+            }
+            this.vaultId = vaultId;
             return this;
         }
         public GetKeyStoreTypeDetail build() {

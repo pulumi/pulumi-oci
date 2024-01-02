@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.ExadataIormConfigDbPlanArgs;
 import java.lang.String;
 import java.util.List;
@@ -174,8 +175,12 @@ public final class ExadataIormConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         public ExadataIormConfigArgs build() {
-            $.dbPlans = Objects.requireNonNull($.dbPlans, "expected parameter 'dbPlans' to be non-null");
-            $.dbSystemId = Objects.requireNonNull($.dbSystemId, "expected parameter 'dbSystemId' to be non-null");
+            if ($.dbPlans == null) {
+                throw new MissingRequiredPropertyException("ExadataIormConfigArgs", "dbPlans");
+            }
+            if ($.dbSystemId == null) {
+                throw new MissingRequiredPropertyException("ExadataIormConfigArgs", "dbSystemId");
+            }
             return $;
         }
     }

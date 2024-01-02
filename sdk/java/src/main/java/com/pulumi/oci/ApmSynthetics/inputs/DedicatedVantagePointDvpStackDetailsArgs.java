@@ -5,6 +5,7 @@ package com.pulumi.oci.ApmSynthetics.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -185,10 +186,18 @@ public final class DedicatedVantagePointDvpStackDetailsArgs extends com.pulumi.r
         }
 
         public DedicatedVantagePointDvpStackDetailsArgs build() {
-            $.dvpStackId = Objects.requireNonNull($.dvpStackId, "expected parameter 'dvpStackId' to be non-null");
-            $.dvpStackType = Objects.requireNonNull($.dvpStackType, "expected parameter 'dvpStackType' to be non-null");
-            $.dvpStreamId = Objects.requireNonNull($.dvpStreamId, "expected parameter 'dvpStreamId' to be non-null");
-            $.dvpVersion = Objects.requireNonNull($.dvpVersion, "expected parameter 'dvpVersion' to be non-null");
+            if ($.dvpStackId == null) {
+                throw new MissingRequiredPropertyException("DedicatedVantagePointDvpStackDetailsArgs", "dvpStackId");
+            }
+            if ($.dvpStackType == null) {
+                throw new MissingRequiredPropertyException("DedicatedVantagePointDvpStackDetailsArgs", "dvpStackType");
+            }
+            if ($.dvpStreamId == null) {
+                throw new MissingRequiredPropertyException("DedicatedVantagePointDvpStackDetailsArgs", "dvpStreamId");
+            }
+            if ($.dvpVersion == null) {
+                throw new MissingRequiredPropertyException("DedicatedVantagePointDvpStackDetailsArgs", "dvpVersion");
+            }
             return $;
         }
     }

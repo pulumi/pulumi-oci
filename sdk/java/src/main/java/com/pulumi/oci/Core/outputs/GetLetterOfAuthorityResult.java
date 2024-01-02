@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -140,42 +141,66 @@ public final class GetLetterOfAuthorityResult {
 
         @CustomType.Setter
         public Builder authorizedEntityName(String authorizedEntityName) {
-            this.authorizedEntityName = Objects.requireNonNull(authorizedEntityName);
+            if (authorizedEntityName == null) {
+              throw new MissingRequiredPropertyException("GetLetterOfAuthorityResult", "authorizedEntityName");
+            }
+            this.authorizedEntityName = authorizedEntityName;
             return this;
         }
         @CustomType.Setter
         public Builder circuitType(String circuitType) {
-            this.circuitType = Objects.requireNonNull(circuitType);
+            if (circuitType == null) {
+              throw new MissingRequiredPropertyException("GetLetterOfAuthorityResult", "circuitType");
+            }
+            this.circuitType = circuitType;
             return this;
         }
         @CustomType.Setter
         public Builder crossConnectId(String crossConnectId) {
-            this.crossConnectId = Objects.requireNonNull(crossConnectId);
+            if (crossConnectId == null) {
+              throw new MissingRequiredPropertyException("GetLetterOfAuthorityResult", "crossConnectId");
+            }
+            this.crossConnectId = crossConnectId;
             return this;
         }
         @CustomType.Setter
         public Builder facilityLocation(String facilityLocation) {
-            this.facilityLocation = Objects.requireNonNull(facilityLocation);
+            if (facilityLocation == null) {
+              throw new MissingRequiredPropertyException("GetLetterOfAuthorityResult", "facilityLocation");
+            }
+            this.facilityLocation = facilityLocation;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLetterOfAuthorityResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder portName(String portName) {
-            this.portName = Objects.requireNonNull(portName);
+            if (portName == null) {
+              throw new MissingRequiredPropertyException("GetLetterOfAuthorityResult", "portName");
+            }
+            this.portName = portName;
             return this;
         }
         @CustomType.Setter
         public Builder timeExpires(String timeExpires) {
-            this.timeExpires = Objects.requireNonNull(timeExpires);
+            if (timeExpires == null) {
+              throw new MissingRequiredPropertyException("GetLetterOfAuthorityResult", "timeExpires");
+            }
+            this.timeExpires = timeExpires;
             return this;
         }
         @CustomType.Setter
         public Builder timeIssued(String timeIssued) {
-            this.timeIssued = Objects.requireNonNull(timeIssued);
+            if (timeIssued == null) {
+              throw new MissingRequiredPropertyException("GetLetterOfAuthorityResult", "timeIssued");
+            }
+            this.timeIssued = timeIssued;
             return this;
         }
         public GetLetterOfAuthorityResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetFleetDiagnosesFilter;
 import com.pulumi.oci.Jms.outputs.GetFleetDiagnosesFleetDiagnosisCollection;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetFleetDiagnosesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetFleetDiagnosesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,7 +82,10 @@ public final class GetFleetDiagnosesResult {
         }
         @CustomType.Setter
         public Builder fleetDiagnosisCollections(List<GetFleetDiagnosesFleetDiagnosisCollection> fleetDiagnosisCollections) {
-            this.fleetDiagnosisCollections = Objects.requireNonNull(fleetDiagnosisCollections);
+            if (fleetDiagnosisCollections == null) {
+              throw new MissingRequiredPropertyException("GetFleetDiagnosesResult", "fleetDiagnosisCollections");
+            }
+            this.fleetDiagnosisCollections = fleetDiagnosisCollections;
             return this;
         }
         public Builder fleetDiagnosisCollections(GetFleetDiagnosesFleetDiagnosisCollection... fleetDiagnosisCollections) {
@@ -88,12 +93,18 @@ public final class GetFleetDiagnosesResult {
         }
         @CustomType.Setter
         public Builder fleetId(String fleetId) {
-            this.fleetId = Objects.requireNonNull(fleetId);
+            if (fleetId == null) {
+              throw new MissingRequiredPropertyException("GetFleetDiagnosesResult", "fleetId");
+            }
+            this.fleetId = fleetId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFleetDiagnosesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetFleetDiagnosesResult build() {

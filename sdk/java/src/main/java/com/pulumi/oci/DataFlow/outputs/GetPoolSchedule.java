@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetPoolSchedule {
 
         @CustomType.Setter
         public Builder dayOfWeek(String dayOfWeek) {
-            this.dayOfWeek = Objects.requireNonNull(dayOfWeek);
+            if (dayOfWeek == null) {
+              throw new MissingRequiredPropertyException("GetPoolSchedule", "dayOfWeek");
+            }
+            this.dayOfWeek = dayOfWeek;
             return this;
         }
         @CustomType.Setter
         public Builder startTime(Integer startTime) {
-            this.startTime = Objects.requireNonNull(startTime);
+            if (startTime == null) {
+              throw new MissingRequiredPropertyException("GetPoolSchedule", "startTime");
+            }
+            this.startTime = startTime;
             return this;
         }
         @CustomType.Setter
         public Builder stopTime(Integer stopTime) {
-            this.stopTime = Objects.requireNonNull(stopTime);
+            if (stopTime == null) {
+              throw new MissingRequiredPropertyException("GetPoolSchedule", "stopTime");
+            }
+            this.stopTime = stopTime;
             return this;
         }
         public GetPoolSchedule build() {

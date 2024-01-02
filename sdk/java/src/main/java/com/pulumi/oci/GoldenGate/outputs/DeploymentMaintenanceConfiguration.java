@@ -101,26 +101,31 @@ public final class DeploymentMaintenanceConfiguration {
 
         @CustomType.Setter
         public Builder bundleReleaseUpgradePeriodInDays(@Nullable Integer bundleReleaseUpgradePeriodInDays) {
+
             this.bundleReleaseUpgradePeriodInDays = bundleReleaseUpgradePeriodInDays;
             return this;
         }
         @CustomType.Setter
         public Builder interimReleaseUpgradePeriodInDays(@Nullable Integer interimReleaseUpgradePeriodInDays) {
+
             this.interimReleaseUpgradePeriodInDays = interimReleaseUpgradePeriodInDays;
             return this;
         }
         @CustomType.Setter
         public Builder isInterimReleaseAutoUpgradeEnabled(@Nullable Boolean isInterimReleaseAutoUpgradeEnabled) {
+
             this.isInterimReleaseAutoUpgradeEnabled = isInterimReleaseAutoUpgradeEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder majorReleaseUpgradePeriodInDays(@Nullable Integer majorReleaseUpgradePeriodInDays) {
+
             this.majorReleaseUpgradePeriodInDays = majorReleaseUpgradePeriodInDays;
             return this;
         }
         @CustomType.Setter
         public Builder securityPatchUpgradePeriodInDays(@Nullable Integer securityPatchUpgradePeriodInDays) {
+
             this.securityPatchUpgradePeriodInDays = securityPatchUpgradePeriodInDays;
             return this;
         }

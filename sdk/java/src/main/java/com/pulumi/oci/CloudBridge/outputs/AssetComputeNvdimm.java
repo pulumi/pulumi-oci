@@ -73,16 +73,19 @@ public final class AssetComputeNvdimm {
 
         @CustomType.Setter
         public Builder controllerKey(@Nullable Integer controllerKey) {
+
             this.controllerKey = controllerKey;
             return this;
         }
         @CustomType.Setter
         public Builder label(@Nullable String label) {
+
             this.label = label;
             return this;
         }
         @CustomType.Setter
         public Builder unitNumber(@Nullable Integer unitNumber) {
+
             this.unitNumber = unitNumber;
             return this;
         }

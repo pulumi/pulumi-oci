@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesTargetDatabaseConnectionOption;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesTargetDatabaseCredential;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesTargetDatabaseDatabaseDetail;
@@ -259,7 +260,10 @@ public final class GetTargetDatabasesTargetDatabase {
 
         @CustomType.Setter
         public Builder associatedResourceIds(List<String> associatedResourceIds) {
-            this.associatedResourceIds = Objects.requireNonNull(associatedResourceIds);
+            if (associatedResourceIds == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "associatedResourceIds");
+            }
+            this.associatedResourceIds = associatedResourceIds;
             return this;
         }
         public Builder associatedResourceIds(String... associatedResourceIds) {
@@ -267,12 +271,18 @@ public final class GetTargetDatabasesTargetDatabase {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionOptions(List<GetTargetDatabasesTargetDatabaseConnectionOption> connectionOptions) {
-            this.connectionOptions = Objects.requireNonNull(connectionOptions);
+            if (connectionOptions == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "connectionOptions");
+            }
+            this.connectionOptions = connectionOptions;
             return this;
         }
         public Builder connectionOptions(GetTargetDatabasesTargetDatabaseConnectionOption... connectionOptions) {
@@ -280,7 +290,10 @@ public final class GetTargetDatabasesTargetDatabase {
         }
         @CustomType.Setter
         public Builder credentials(List<GetTargetDatabasesTargetDatabaseCredential> credentials) {
-            this.credentials = Objects.requireNonNull(credentials);
+            if (credentials == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "credentials");
+            }
+            this.credentials = credentials;
             return this;
         }
         public Builder credentials(GetTargetDatabasesTargetDatabaseCredential... credentials) {
@@ -288,7 +301,10 @@ public final class GetTargetDatabasesTargetDatabase {
         }
         @CustomType.Setter
         public Builder databaseDetails(List<GetTargetDatabasesTargetDatabaseDatabaseDetail> databaseDetails) {
-            this.databaseDetails = Objects.requireNonNull(databaseDetails);
+            if (databaseDetails == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "databaseDetails");
+            }
+            this.databaseDetails = databaseDetails;
             return this;
         }
         public Builder databaseDetails(GetTargetDatabasesTargetDatabaseDatabaseDetail... databaseDetails) {
@@ -296,57 +312,90 @@ public final class GetTargetDatabasesTargetDatabase {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder tlsConfigs(List<GetTargetDatabasesTargetDatabaseTlsConfig> tlsConfigs) {
-            this.tlsConfigs = Objects.requireNonNull(tlsConfigs);
+            if (tlsConfigs == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "tlsConfigs");
+            }
+            this.tlsConfigs = tlsConfigs;
             return this;
         }
         public Builder tlsConfigs(GetTargetDatabasesTargetDatabaseTlsConfig... tlsConfigs) {

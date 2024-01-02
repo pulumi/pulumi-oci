@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.inputs.DeployStageApprovalPolicyArgs;
 import com.pulumi.oci.DevOps.inputs.DeployStageBlueBackendIpsArgs;
 import com.pulumi.oci.DevOps.inputs.DeployStageBlueGreenStrategyArgs;
@@ -2310,9 +2311,15 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DeployStageArgs build() {
-            $.deployPipelineId = Objects.requireNonNull($.deployPipelineId, "expected parameter 'deployPipelineId' to be non-null");
-            $.deployStagePredecessorCollection = Objects.requireNonNull($.deployStagePredecessorCollection, "expected parameter 'deployStagePredecessorCollection' to be non-null");
-            $.deployStageType = Objects.requireNonNull($.deployStageType, "expected parameter 'deployStageType' to be non-null");
+            if ($.deployPipelineId == null) {
+                throw new MissingRequiredPropertyException("DeployStageArgs", "deployPipelineId");
+            }
+            if ($.deployStagePredecessorCollection == null) {
+                throw new MissingRequiredPropertyException("DeployStageArgs", "deployStagePredecessorCollection");
+            }
+            if ($.deployStageType == null) {
+                throw new MissingRequiredPropertyException("DeployStageArgs", "deployStageType");
+            }
             return $;
         }
     }

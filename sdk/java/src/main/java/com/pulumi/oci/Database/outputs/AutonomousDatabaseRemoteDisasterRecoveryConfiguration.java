@@ -44,6 +44,7 @@ public final class AutonomousDatabaseRemoteDisasterRecoveryConfiguration {
 
         @CustomType.Setter
         public Builder disasterRecoveryType(@Nullable String disasterRecoveryType) {
+
             this.disasterRecoveryType = disasterRecoveryType;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -275,9 +276,15 @@ public final class AwrHubArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public AwrHubArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.operationsInsightsWarehouseId = Objects.requireNonNull($.operationsInsightsWarehouseId, "expected parameter 'operationsInsightsWarehouseId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AwrHubArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("AwrHubArgs", "displayName");
+            }
+            if ($.operationsInsightsWarehouseId == null) {
+                throw new MissingRequiredPropertyException("AwrHubArgs", "operationsInsightsWarehouseId");
+            }
             return $;
         }
     }

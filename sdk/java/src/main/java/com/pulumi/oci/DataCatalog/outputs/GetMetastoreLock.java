@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetMetastoreLock {
 
         @CustomType.Setter
         public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+            if (message == null) {
+              throw new MissingRequiredPropertyException("GetMetastoreLock", "message");
+            }
+            this.message = message;
             return this;
         }
         @CustomType.Setter
         public Builder relatedResourceId(String relatedResourceId) {
-            this.relatedResourceId = Objects.requireNonNull(relatedResourceId);
+            if (relatedResourceId == null) {
+              throw new MissingRequiredPropertyException("GetMetastoreLock", "relatedResourceId");
+            }
+            this.relatedResourceId = relatedResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetMetastoreLock", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetMetastoreLock", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetMetastoreLock build() {

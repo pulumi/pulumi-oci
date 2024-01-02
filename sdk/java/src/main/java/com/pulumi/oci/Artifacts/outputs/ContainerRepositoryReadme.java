@@ -4,6 +4,7 @@
 package com.pulumi.oci.Artifacts.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -62,12 +63,18 @@ public final class ContainerRepositoryReadme {
 
         @CustomType.Setter
         public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+            if (content == null) {
+              throw new MissingRequiredPropertyException("ContainerRepositoryReadme", "content");
+            }
+            this.content = content;
             return this;
         }
         @CustomType.Setter
         public Builder format(String format) {
-            this.format = Objects.requireNonNull(format);
+            if (format == null) {
+              throw new MissingRequiredPropertyException("ContainerRepositoryReadme", "format");
+            }
+            this.format = format;
             return this;
         }
         public ContainerRepositoryReadme build() {

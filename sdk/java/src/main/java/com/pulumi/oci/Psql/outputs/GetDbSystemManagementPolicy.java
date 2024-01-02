@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetDbSystemManagementPolicyBackupPolicy;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetDbSystemManagementPolicy {
 
         @CustomType.Setter
         public Builder backupPolicies(List<GetDbSystemManagementPolicyBackupPolicy> backupPolicies) {
-            this.backupPolicies = Objects.requireNonNull(backupPolicies);
+            if (backupPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemManagementPolicy", "backupPolicies");
+            }
+            this.backupPolicies = backupPolicies;
             return this;
         }
         public Builder backupPolicies(GetDbSystemManagementPolicyBackupPolicy... backupPolicies) {
@@ -66,7 +70,10 @@ public final class GetDbSystemManagementPolicy {
         }
         @CustomType.Setter
         public Builder maintenanceWindowStart(String maintenanceWindowStart) {
-            this.maintenanceWindowStart = Objects.requireNonNull(maintenanceWindowStart);
+            if (maintenanceWindowStart == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemManagementPolicy", "maintenanceWindowStart");
+            }
+            this.maintenanceWindowStart = maintenanceWindowStart;
             return this;
         }
         public GetDbSystemManagementPolicy build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ComputeCloud.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ComputeCloud.outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollection {
 
         @CustomType.Setter
         public Builder items(List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructuresCccInfrastructureCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem... items) {

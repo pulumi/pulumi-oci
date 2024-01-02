@@ -5,6 +5,7 @@ package com.pulumi.oci.Waf.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.inputs.AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs;
 import java.lang.String;
 import java.util.List;
@@ -277,10 +278,18 @@ public final class AppFirewallPolicyRequestRateLimitingRuleArgs extends com.pulu
         }
 
         public AppFirewallPolicyRequestRateLimitingRuleArgs build() {
-            $.actionName = Objects.requireNonNull($.actionName, "expected parameter 'actionName' to be non-null");
-            $.configurations = Objects.requireNonNull($.configurations, "expected parameter 'configurations' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.actionName == null) {
+                throw new MissingRequiredPropertyException("AppFirewallPolicyRequestRateLimitingRuleArgs", "actionName");
+            }
+            if ($.configurations == null) {
+                throw new MissingRequiredPropertyException("AppFirewallPolicyRequestRateLimitingRuleArgs", "configurations");
+            }
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("AppFirewallPolicyRequestRateLimitingRuleArgs", "name");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("AppFirewallPolicyRequestRateLimitingRuleArgs", "type");
+            }
             return $;
         }
     }

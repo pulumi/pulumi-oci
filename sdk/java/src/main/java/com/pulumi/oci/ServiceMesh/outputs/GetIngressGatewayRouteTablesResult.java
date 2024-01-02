@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.outputs.GetIngressGatewayRouteTablesFilter;
 import com.pulumi.oci.ServiceMesh.outputs.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection;
 import java.lang.String;
@@ -123,11 +124,15 @@ public final class GetIngressGatewayRouteTablesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewayRouteTablesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetIngressGatewayRouteTablesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -136,17 +141,22 @@ public final class GetIngressGatewayRouteTablesResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ingressGatewayId(@Nullable String ingressGatewayId) {
+
             this.ingressGatewayId = ingressGatewayId;
             return this;
         }
         @CustomType.Setter
         public Builder ingressGatewayRouteTableCollections(List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection> ingressGatewayRouteTableCollections) {
-            this.ingressGatewayRouteTableCollections = Objects.requireNonNull(ingressGatewayRouteTableCollections);
+            if (ingressGatewayRouteTableCollections == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewayRouteTablesResult", "ingressGatewayRouteTableCollections");
+            }
+            this.ingressGatewayRouteTableCollections = ingressGatewayRouteTableCollections;
             return this;
         }
         public Builder ingressGatewayRouteTableCollections(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection... ingressGatewayRouteTableCollections) {
@@ -154,11 +164,13 @@ public final class GetIngressGatewayRouteTablesResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

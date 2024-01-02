@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -218,27 +219,38 @@ public final class DomainsCloudGateServer {
 
         @CustomType.Setter
         public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+            if (hostName == null) {
+              throw new MissingRequiredPropertyException("DomainsCloudGateServer", "hostName");
+            }
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder nginxSettings(@Nullable String nginxSettings) {
+
             this.nginxSettings = nginxSettings;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("DomainsCloudGateServer", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder serverId(@Nullable String serverId) {
+
             this.serverId = serverId;
             return this;
         }
         @CustomType.Setter
         public Builder ssl(Boolean ssl) {
-            this.ssl = Objects.requireNonNull(ssl);
+            if (ssl == null) {
+              throw new MissingRequiredPropertyException("DomainsCloudGateServer", "ssl");
+            }
+            this.ssl = ssl;
             return this;
         }
         public DomainsCloudGateServer build() {

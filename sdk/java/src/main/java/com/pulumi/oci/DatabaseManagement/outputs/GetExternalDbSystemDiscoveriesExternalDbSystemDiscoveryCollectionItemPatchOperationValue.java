@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnector;
 import java.lang.Boolean;
 import java.lang.String;
@@ -87,12 +88,18 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValue", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectors(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnector> connectors) {
-            this.connectors = Objects.requireNonNull(connectors);
+            if (connectors == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValue", "connectors");
+            }
+            this.connectors = connectors;
             return this;
         }
         public Builder connectors(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnector... connectors) {
@@ -100,12 +107,18 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValue", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder isSelectedForMonitoring(Boolean isSelectedForMonitoring) {
-            this.isSelectedForMonitoring = Objects.requireNonNull(isSelectedForMonitoring);
+            if (isSelectedForMonitoring == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValue", "isSelectedForMonitoring");
+            }
+            this.isSelectedForMonitoring = isSelectedForMonitoring;
             return this;
         }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValue build() {

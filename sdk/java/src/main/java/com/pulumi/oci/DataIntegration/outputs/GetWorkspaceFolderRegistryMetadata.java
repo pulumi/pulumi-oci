@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -101,22 +102,34 @@ public final class GetWorkspaceFolderRegistryMetadata {
 
         @CustomType.Setter
         public Builder aggregatorKey(String aggregatorKey) {
-            this.aggregatorKey = Objects.requireNonNull(aggregatorKey);
+            if (aggregatorKey == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFolderRegistryMetadata", "aggregatorKey");
+            }
+            this.aggregatorKey = aggregatorKey;
             return this;
         }
         @CustomType.Setter
         public Builder isFavorite(Boolean isFavorite) {
-            this.isFavorite = Objects.requireNonNull(isFavorite);
+            if (isFavorite == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFolderRegistryMetadata", "isFavorite");
+            }
+            this.isFavorite = isFavorite;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFolderRegistryMetadata", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder labels(List<String> labels) {
-            this.labels = Objects.requireNonNull(labels);
+            if (labels == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFolderRegistryMetadata", "labels");
+            }
+            this.labels = labels;
             return this;
         }
         public Builder labels(String... labels) {
@@ -124,7 +137,10 @@ public final class GetWorkspaceFolderRegistryMetadata {
         }
         @CustomType.Setter
         public Builder registryVersion(Integer registryVersion) {
-            this.registryVersion = Objects.requireNonNull(registryVersion);
+            if (registryVersion == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFolderRegistryMetadata", "registryVersion");
+            }
+            this.registryVersion = registryVersion;
             return this;
         }
         public GetWorkspaceFolderRegistryMetadata build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollection;
 import com.pulumi.oci.DevOps.outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig;
 import com.pulumi.oci.DevOps.outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection;
@@ -417,12 +418,18 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItem {
 
         @CustomType.Setter
         public Builder buildPipelineId(String buildPipelineId) {
-            this.buildPipelineId = Objects.requireNonNull(buildPipelineId);
+            if (buildPipelineId == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "buildPipelineId");
+            }
+            this.buildPipelineId = buildPipelineId;
             return this;
         }
         @CustomType.Setter
         public Builder buildPipelineStagePredecessorCollections(List<GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollection> buildPipelineStagePredecessorCollections) {
-            this.buildPipelineStagePredecessorCollections = Objects.requireNonNull(buildPipelineStagePredecessorCollections);
+            if (buildPipelineStagePredecessorCollections == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "buildPipelineStagePredecessorCollections");
+            }
+            this.buildPipelineStagePredecessorCollections = buildPipelineStagePredecessorCollections;
             return this;
         }
         public Builder buildPipelineStagePredecessorCollections(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollection... buildPipelineStagePredecessorCollections) {
@@ -430,127 +437,202 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItem {
         }
         @CustomType.Setter
         public Builder buildPipelineStageType(String buildPipelineStageType) {
-            this.buildPipelineStageType = Objects.requireNonNull(buildPipelineStageType);
+            if (buildPipelineStageType == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "buildPipelineStageType");
+            }
+            this.buildPipelineStageType = buildPipelineStageType;
             return this;
         }
         @CustomType.Setter
         public Builder buildRunnerShapeConfig(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig buildRunnerShapeConfig) {
-            this.buildRunnerShapeConfig = Objects.requireNonNull(buildRunnerShapeConfig);
+            if (buildRunnerShapeConfig == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "buildRunnerShapeConfig");
+            }
+            this.buildRunnerShapeConfig = buildRunnerShapeConfig;
             return this;
         }
         @CustomType.Setter
         public Builder buildSourceCollection(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection buildSourceCollection) {
-            this.buildSourceCollection = Objects.requireNonNull(buildSourceCollection);
+            if (buildSourceCollection == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "buildSourceCollection");
+            }
+            this.buildSourceCollection = buildSourceCollection;
             return this;
         }
         @CustomType.Setter
         public Builder buildSpecFile(String buildSpecFile) {
-            this.buildSpecFile = Objects.requireNonNull(buildSpecFile);
+            if (buildSpecFile == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "buildSpecFile");
+            }
+            this.buildSpecFile = buildSpecFile;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionType(String connectionType) {
-            this.connectionType = Objects.requireNonNull(connectionType);
+            if (connectionType == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "connectionType");
+            }
+            this.connectionType = connectionType;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder deliverArtifactCollection(GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection deliverArtifactCollection) {
-            this.deliverArtifactCollection = Objects.requireNonNull(deliverArtifactCollection);
+            if (deliverArtifactCollection == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "deliverArtifactCollection");
+            }
+            this.deliverArtifactCollection = deliverArtifactCollection;
             return this;
         }
         @CustomType.Setter
         public Builder deployPipelineId(String deployPipelineId) {
-            this.deployPipelineId = Objects.requireNonNull(deployPipelineId);
+            if (deployPipelineId == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "deployPipelineId");
+            }
+            this.deployPipelineId = deployPipelineId;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder image(String image) {
-            this.image = Objects.requireNonNull(image);
+            if (image == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "image");
+            }
+            this.image = image;
             return this;
         }
         @CustomType.Setter
         public Builder isPassAllParametersEnabled(Boolean isPassAllParametersEnabled) {
-            this.isPassAllParametersEnabled = Objects.requireNonNull(isPassAllParametersEnabled);
+            if (isPassAllParametersEnabled == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "isPassAllParametersEnabled");
+            }
+            this.isPassAllParametersEnabled = isPassAllParametersEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder primaryBuildSource(String primaryBuildSource) {
-            this.primaryBuildSource = Objects.requireNonNull(primaryBuildSource);
+            if (primaryBuildSource == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "primaryBuildSource");
+            }
+            this.primaryBuildSource = primaryBuildSource;
             return this;
         }
         @CustomType.Setter
         public Builder privateAccessConfig(GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig privateAccessConfig) {
-            this.privateAccessConfig = Objects.requireNonNull(privateAccessConfig);
+            if (privateAccessConfig == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "privateAccessConfig");
+            }
+            this.privateAccessConfig = privateAccessConfig;
             return this;
         }
         @CustomType.Setter
         public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+            if (projectId == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "projectId");
+            }
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder stageExecutionTimeoutInSeconds(Integer stageExecutionTimeoutInSeconds) {
-            this.stageExecutionTimeoutInSeconds = Objects.requireNonNull(stageExecutionTimeoutInSeconds);
+            if (stageExecutionTimeoutInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "stageExecutionTimeoutInSeconds");
+            }
+            this.stageExecutionTimeoutInSeconds = stageExecutionTimeoutInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder waitCriteria(GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria waitCriteria) {
-            this.waitCriteria = Objects.requireNonNull(waitCriteria);
+            if (waitCriteria == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItem", "waitCriteria");
+            }
+            this.waitCriteria = waitCriteria;
             return this;
         }
         public GetBuildPipelineStagesBuildPipelineStageCollectionItem build() {

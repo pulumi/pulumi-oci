@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.KeyStoreTypeDetailsArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -227,9 +228,15 @@ public final class KeyStoreArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public KeyStoreArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.typeDetails = Objects.requireNonNull($.typeDetails, "expected parameter 'typeDetails' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("KeyStoreArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("KeyStoreArgs", "displayName");
+            }
+            if ($.typeDetails == null) {
+                throw new MissingRequiredPropertyException("KeyStoreArgs", "typeDetails");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
 
         @CustomType.Setter
         public Builder allowSelfChange(Boolean allowSelfChange) {
-            this.allowSelfChange = Objects.requireNonNull(allowSelfChange);
+            if (allowSelfChange == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser", "allowSelfChange");
+            }
+            this.allowSelfChange = allowSelfChange;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser build() {

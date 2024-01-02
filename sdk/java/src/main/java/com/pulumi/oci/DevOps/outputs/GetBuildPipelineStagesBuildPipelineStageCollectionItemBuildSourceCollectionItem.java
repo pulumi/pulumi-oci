@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -112,32 +113,50 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSo
 
         @CustomType.Setter
         public Builder branch(String branch) {
-            this.branch = Objects.requireNonNull(branch);
+            if (branch == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem", "branch");
+            }
+            this.branch = branch;
             return this;
         }
         @CustomType.Setter
         public Builder connectionId(String connectionId) {
-            this.connectionId = Objects.requireNonNull(connectionId);
+            if (connectionId == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem", "connectionId");
+            }
+            this.connectionId = connectionId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionType(String connectionType) {
-            this.connectionType = Objects.requireNonNull(connectionType);
+            if (connectionType == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem", "connectionType");
+            }
+            this.connectionType = connectionType;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+            if (repositoryId == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem", "repositoryId");
+            }
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryUrl(String repositoryUrl) {
-            this.repositoryUrl = Objects.requireNonNull(repositoryUrl);
+            if (repositoryUrl == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem", "repositoryUrl");
+            }
+            this.repositoryUrl = repositoryUrl;
             return this;
         }
         public GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem build() {

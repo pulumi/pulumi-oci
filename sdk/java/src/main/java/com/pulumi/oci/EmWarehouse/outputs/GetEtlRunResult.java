@@ -4,6 +4,7 @@
 package com.pulumi.oci.EmWarehouse.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.EmWarehouse.outputs.GetEtlRunItem;
 import java.lang.String;
 import java.util.List;
@@ -94,27 +95,38 @@ public final class GetEtlRunResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder emWarehouseId(String emWarehouseId) {
-            this.emWarehouseId = Objects.requireNonNull(emWarehouseId);
+            if (emWarehouseId == null) {
+              throw new MissingRequiredPropertyException("GetEtlRunResult", "emWarehouseId");
+            }
+            this.emWarehouseId = emWarehouseId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetEtlRunResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetEtlRunItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetEtlRunResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetEtlRunItem... items) {

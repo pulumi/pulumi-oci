@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.NamespaceIngestTimeRuleConditionsAdditionalCondition;
 import java.lang.String;
 import java.util.List;
@@ -101,6 +102,7 @@ public final class NamespaceIngestTimeRuleConditions {
 
         @CustomType.Setter
         public Builder additionalConditions(@Nullable List<NamespaceIngestTimeRuleConditionsAdditionalCondition> additionalConditions) {
+
             this.additionalConditions = additionalConditions;
             return this;
         }
@@ -109,22 +111,34 @@ public final class NamespaceIngestTimeRuleConditions {
         }
         @CustomType.Setter
         public Builder fieldName(String fieldName) {
-            this.fieldName = Objects.requireNonNull(fieldName);
+            if (fieldName == null) {
+              throw new MissingRequiredPropertyException("NamespaceIngestTimeRuleConditions", "fieldName");
+            }
+            this.fieldName = fieldName;
             return this;
         }
         @CustomType.Setter
         public Builder fieldOperator(String fieldOperator) {
-            this.fieldOperator = Objects.requireNonNull(fieldOperator);
+            if (fieldOperator == null) {
+              throw new MissingRequiredPropertyException("NamespaceIngestTimeRuleConditions", "fieldOperator");
+            }
+            this.fieldOperator = fieldOperator;
             return this;
         }
         @CustomType.Setter
         public Builder fieldValue(String fieldValue) {
-            this.fieldValue = Objects.requireNonNull(fieldValue);
+            if (fieldValue == null) {
+              throw new MissingRequiredPropertyException("NamespaceIngestTimeRuleConditions", "fieldValue");
+            }
+            this.fieldValue = fieldValue;
             return this;
         }
         @CustomType.Setter
         public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+            if (kind == null) {
+              throw new MissingRequiredPropertyException("NamespaceIngestTimeRuleConditions", "kind");
+            }
+            this.kind = kind;
             return this;
         }
         public NamespaceIngestTimeRuleConditions build() {

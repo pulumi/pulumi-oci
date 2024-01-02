@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetDetectorRecipesDetectorRecipeCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetDetectorRecipesDetectorRecipeCollection {
 
         @CustomType.Setter
         public Builder items(List<GetDetectorRecipesDetectorRecipeCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipesDetectorRecipeCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetDetectorRecipesDetectorRecipeCollectionItem... items) {

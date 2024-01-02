@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetJobExecutionsStatusItem;
 import java.lang.String;
 import java.util.List;
@@ -88,22 +89,32 @@ public final class GetJobExecutionsStatusResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetJobExecutionsStatusResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder endTime(String endTime) {
-            this.endTime = Objects.requireNonNull(endTime);
+            if (endTime == null) {
+              throw new MissingRequiredPropertyException("GetJobExecutionsStatusResult", "endTime");
+            }
+            this.endTime = endTime;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetJobExecutionsStatusItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetJobExecutionsStatusResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetJobExecutionsStatusItem... items) {
@@ -111,22 +122,28 @@ public final class GetJobExecutionsStatusResult {
         }
         @CustomType.Setter
         public Builder managedDatabaseGroupId(@Nullable String managedDatabaseGroupId) {
+
             this.managedDatabaseGroupId = managedDatabaseGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(@Nullable String managedDatabaseId) {
+
             this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder startTime(String startTime) {
-            this.startTime = Objects.requireNonNull(startTime);
+            if (startTime == null) {
+              throw new MissingRequiredPropertyException("GetJobExecutionsStatusResult", "startTime");
+            }
+            this.startTime = startTime;
             return this;
         }
         public GetJobExecutionsStatusResult build() {

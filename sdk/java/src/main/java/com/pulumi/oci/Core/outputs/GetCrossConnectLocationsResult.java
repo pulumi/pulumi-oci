@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetCrossConnectLocationsCrossConnectLocation;
 import com.pulumi.oci.Core.outputs.GetCrossConnectLocationsFilter;
 import java.lang.String;
@@ -72,12 +73,18 @@ public final class GetCrossConnectLocationsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectLocationsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder crossConnectLocations(List<GetCrossConnectLocationsCrossConnectLocation> crossConnectLocations) {
-            this.crossConnectLocations = Objects.requireNonNull(crossConnectLocations);
+            if (crossConnectLocations == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectLocationsResult", "crossConnectLocations");
+            }
+            this.crossConnectLocations = crossConnectLocations;
             return this;
         }
         public Builder crossConnectLocations(GetCrossConnectLocationsCrossConnectLocation... crossConnectLocations) {
@@ -85,6 +92,7 @@ public final class GetCrossConnectLocationsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCrossConnectLocationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -93,7 +101,10 @@ public final class GetCrossConnectLocationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectLocationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetCrossConnectLocationsResult build() {

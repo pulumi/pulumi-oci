@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -126,37 +127,58 @@ public final class GetSubscribedServicesSubscribedServiceServiceToAddressLocatio
 
         @CustomType.Setter
         public Builder address1(String address1) {
-            this.address1 = Objects.requireNonNull(address1);
+            if (address1 == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServiceServiceToAddressLocation", "address1");
+            }
+            this.address1 = address1;
             return this;
         }
         @CustomType.Setter
         public Builder address2(String address2) {
-            this.address2 = Objects.requireNonNull(address2);
+            if (address2 == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServiceServiceToAddressLocation", "address2");
+            }
+            this.address2 = address2;
             return this;
         }
         @CustomType.Setter
         public Builder city(String city) {
-            this.city = Objects.requireNonNull(city);
+            if (city == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServiceServiceToAddressLocation", "city");
+            }
+            this.city = city;
             return this;
         }
         @CustomType.Setter
         public Builder country(String country) {
-            this.country = Objects.requireNonNull(country);
+            if (country == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServiceServiceToAddressLocation", "country");
+            }
+            this.country = country;
             return this;
         }
         @CustomType.Setter
         public Builder postalCode(String postalCode) {
-            this.postalCode = Objects.requireNonNull(postalCode);
+            if (postalCode == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServiceServiceToAddressLocation", "postalCode");
+            }
+            this.postalCode = postalCode;
             return this;
         }
         @CustomType.Setter
         public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+            if (region == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServiceServiceToAddressLocation", "region");
+            }
+            this.region = region;
             return this;
         }
         @CustomType.Setter
         public Builder tcaLocationId(String tcaLocationId) {
-            this.tcaLocationId = Objects.requireNonNull(tcaLocationId);
+            if (tcaLocationId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServiceServiceToAddressLocation", "tcaLocationId");
+            }
+            this.tcaLocationId = tcaLocationId;
             return this;
         }
         public GetSubscribedServicesSubscribedServiceServiceToAddressLocation build() {

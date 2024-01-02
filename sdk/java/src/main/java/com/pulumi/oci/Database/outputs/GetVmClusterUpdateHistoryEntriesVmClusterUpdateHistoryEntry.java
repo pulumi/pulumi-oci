@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -140,42 +141,66 @@ public final class GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCompleted(String timeCompleted) {
-            this.timeCompleted = Objects.requireNonNull(timeCompleted);
+            if (timeCompleted == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry", "timeCompleted");
+            }
+            this.timeCompleted = timeCompleted;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
         public Builder updateAction(String updateAction) {
-            this.updateAction = Objects.requireNonNull(updateAction);
+            if (updateAction == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry", "updateAction");
+            }
+            this.updateAction = updateAction;
             return this;
         }
         @CustomType.Setter
         public Builder updateId(String updateId) {
-            this.updateId = Objects.requireNonNull(updateId);
+            if (updateId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry", "updateId");
+            }
+            this.updateId = updateId;
             return this;
         }
         @CustomType.Setter
         public Builder updateType(String updateType) {
-            this.updateType = Objects.requireNonNull(updateType);
+            if (updateType == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry", "updateType");
+            }
+            this.updateType = updateType;
             return this;
         }
         public GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry build() {

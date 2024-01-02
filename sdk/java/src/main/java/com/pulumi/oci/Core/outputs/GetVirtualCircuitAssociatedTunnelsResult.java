@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetVirtualCircuitAssociatedTunnelsFilter;
 import com.pulumi.oci.Core.outputs.GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetVirtualCircuitAssociatedTunnelsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVirtualCircuitAssociatedTunnelsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,12 +82,18 @@ public final class GetVirtualCircuitAssociatedTunnelsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitAssociatedTunnelsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder virtualCircuitAssociatedTunnelDetails(List<GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail> virtualCircuitAssociatedTunnelDetails) {
-            this.virtualCircuitAssociatedTunnelDetails = Objects.requireNonNull(virtualCircuitAssociatedTunnelDetails);
+            if (virtualCircuitAssociatedTunnelDetails == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitAssociatedTunnelsResult", "virtualCircuitAssociatedTunnelDetails");
+            }
+            this.virtualCircuitAssociatedTunnelDetails = virtualCircuitAssociatedTunnelDetails;
             return this;
         }
         public Builder virtualCircuitAssociatedTunnelDetails(GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail... virtualCircuitAssociatedTunnelDetails) {
@@ -93,7 +101,10 @@ public final class GetVirtualCircuitAssociatedTunnelsResult {
         }
         @CustomType.Setter
         public Builder virtualCircuitId(String virtualCircuitId) {
-            this.virtualCircuitId = Objects.requireNonNull(virtualCircuitId);
+            if (virtualCircuitId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitAssociatedTunnelsResult", "virtualCircuitId");
+            }
+            this.virtualCircuitId = virtualCircuitId;
             return this;
         }
         public GetVirtualCircuitAssociatedTunnelsResult build() {

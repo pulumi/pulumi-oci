@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -100,12 +101,18 @@ public final class GetDbSystemManagementPolicyBackupPolicy {
 
         @CustomType.Setter
         public Builder backupStart(String backupStart) {
-            this.backupStart = Objects.requireNonNull(backupStart);
+            if (backupStart == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemManagementPolicyBackupPolicy", "backupStart");
+            }
+            this.backupStart = backupStart;
             return this;
         }
         @CustomType.Setter
         public Builder daysOfTheMonths(List<Integer> daysOfTheMonths) {
-            this.daysOfTheMonths = Objects.requireNonNull(daysOfTheMonths);
+            if (daysOfTheMonths == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemManagementPolicyBackupPolicy", "daysOfTheMonths");
+            }
+            this.daysOfTheMonths = daysOfTheMonths;
             return this;
         }
         public Builder daysOfTheMonths(Integer... daysOfTheMonths) {
@@ -113,7 +120,10 @@ public final class GetDbSystemManagementPolicyBackupPolicy {
         }
         @CustomType.Setter
         public Builder daysOfTheWeeks(List<String> daysOfTheWeeks) {
-            this.daysOfTheWeeks = Objects.requireNonNull(daysOfTheWeeks);
+            if (daysOfTheWeeks == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemManagementPolicyBackupPolicy", "daysOfTheWeeks");
+            }
+            this.daysOfTheWeeks = daysOfTheWeeks;
             return this;
         }
         public Builder daysOfTheWeeks(String... daysOfTheWeeks) {
@@ -121,12 +131,18 @@ public final class GetDbSystemManagementPolicyBackupPolicy {
         }
         @CustomType.Setter
         public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+            if (kind == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemManagementPolicyBackupPolicy", "kind");
+            }
+            this.kind = kind;
             return this;
         }
         @CustomType.Setter
         public Builder retentionDays(Integer retentionDays) {
-            this.retentionDays = Objects.requireNonNull(retentionDays);
+            if (retentionDays == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemManagementPolicyBackupPolicy", "retentionDays");
+            }
+            this.retentionDays = retentionDays;
             return this;
         }
         public GetDbSystemManagementPolicyBackupPolicy build() {

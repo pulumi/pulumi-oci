@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class ConfigurationDbConfigurationOverridesItem {
 
         @CustomType.Setter
         public Builder configKey(String configKey) {
-            this.configKey = Objects.requireNonNull(configKey);
+            if (configKey == null) {
+              throw new MissingRequiredPropertyException("ConfigurationDbConfigurationOverridesItem", "configKey");
+            }
+            this.configKey = configKey;
             return this;
         }
         @CustomType.Setter
         public Builder overridenConfigValue(String overridenConfigValue) {
-            this.overridenConfigValue = Objects.requireNonNull(overridenConfigValue);
+            if (overridenConfigValue == null) {
+              throw new MissingRequiredPropertyException("ConfigurationDbConfigurationOverridesItem", "overridenConfigValue");
+            }
+            this.overridenConfigValue = overridenConfigValue;
             return this;
         }
         public ConfigurationDbConfigurationOverridesItem build() {

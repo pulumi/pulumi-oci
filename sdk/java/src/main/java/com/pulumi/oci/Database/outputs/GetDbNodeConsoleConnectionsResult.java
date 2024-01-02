@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbNodeConsoleConnectionsConsoleConnection;
 import com.pulumi.oci.Database.outputs.GetDbNodeConsoleConnectionsFilter;
 import java.lang.String;
@@ -80,7 +81,10 @@ public final class GetDbNodeConsoleConnectionsResult {
 
         @CustomType.Setter
         public Builder consoleConnections(List<GetDbNodeConsoleConnectionsConsoleConnection> consoleConnections) {
-            this.consoleConnections = Objects.requireNonNull(consoleConnections);
+            if (consoleConnections == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeConsoleConnectionsResult", "consoleConnections");
+            }
+            this.consoleConnections = consoleConnections;
             return this;
         }
         public Builder consoleConnections(GetDbNodeConsoleConnectionsConsoleConnection... consoleConnections) {
@@ -88,11 +92,15 @@ public final class GetDbNodeConsoleConnectionsResult {
         }
         @CustomType.Setter
         public Builder dbNodeId(String dbNodeId) {
-            this.dbNodeId = Objects.requireNonNull(dbNodeId);
+            if (dbNodeId == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeConsoleConnectionsResult", "dbNodeId");
+            }
+            this.dbNodeId = dbNodeId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDbNodeConsoleConnectionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -101,7 +109,10 @@ public final class GetDbNodeConsoleConnectionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeConsoleConnectionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetDbNodeConsoleConnectionsResult build() {

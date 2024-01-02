@@ -5,6 +5,7 @@ package com.pulumi.oci.MeteringComputation;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.inputs.ScheduleQueryPropertiesArgs;
 import com.pulumi.oci.MeteringComputation.inputs.ScheduleResultLocationArgs;
 import java.lang.Object;
@@ -462,10 +463,18 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ScheduleArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.resultLocation = Objects.requireNonNull($.resultLocation, "expected parameter 'resultLocation' to be non-null");
-            $.scheduleRecurrences = Objects.requireNonNull($.scheduleRecurrences, "expected parameter 'scheduleRecurrences' to be non-null");
-            $.timeScheduled = Objects.requireNonNull($.timeScheduled, "expected parameter 'timeScheduled' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ScheduleArgs", "compartmentId");
+            }
+            if ($.resultLocation == null) {
+                throw new MissingRequiredPropertyException("ScheduleArgs", "resultLocation");
+            }
+            if ($.scheduleRecurrences == null) {
+                throw new MissingRequiredPropertyException("ScheduleArgs", "scheduleRecurrences");
+            }
+            if ($.timeScheduled == null) {
+                throw new MissingRequiredPropertyException("ScheduleArgs", "timeScheduled");
+            }
             return $;
         }
     }

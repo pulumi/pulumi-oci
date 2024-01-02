@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -211,8 +212,12 @@ public final class GetDomainsSecurityQuestionSettingPlainArgs extends com.pulumi
         }
 
         public GetDomainsSecurityQuestionSettingPlainArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.securityQuestionSettingId = Objects.requireNonNull($.securityQuestionSettingId, "expected parameter 'securityQuestionSettingId' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingPlainArgs", "idcsEndpoint");
+            }
+            if ($.securityQuestionSettingId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingPlainArgs", "securityQuestionSettingId");
+            }
             return $;
         }
     }

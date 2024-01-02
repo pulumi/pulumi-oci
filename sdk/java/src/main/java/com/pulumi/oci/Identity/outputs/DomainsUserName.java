@@ -240,31 +240,37 @@ public final class DomainsUserName {
 
         @CustomType.Setter
         public Builder familyName(@Nullable String familyName) {
+
             this.familyName = familyName;
             return this;
         }
         @CustomType.Setter
         public Builder formatted(@Nullable String formatted) {
+
             this.formatted = formatted;
             return this;
         }
         @CustomType.Setter
         public Builder givenName(@Nullable String givenName) {
+
             this.givenName = givenName;
             return this;
         }
         @CustomType.Setter
         public Builder honorificPrefix(@Nullable String honorificPrefix) {
+
             this.honorificPrefix = honorificPrefix;
             return this;
         }
         @CustomType.Setter
         public Builder honorificSuffix(@Nullable String honorificSuffix) {
+
             this.honorificSuffix = honorificSuffix;
             return this;
         }
         @CustomType.Setter
         public Builder middleName(@Nullable String middleName) {
+
             this.middleName = middleName;
             return this;
         }

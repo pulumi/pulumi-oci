@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateCertificateRevocationListDetailObjectStorageConfig;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetCertificateCertificateRevocationListDetail {
 
         @CustomType.Setter
         public Builder customFormattedUrls(List<String> customFormattedUrls) {
-            this.customFormattedUrls = Objects.requireNonNull(customFormattedUrls);
+            if (customFormattedUrls == null) {
+              throw new MissingRequiredPropertyException("GetCertificateCertificateRevocationListDetail", "customFormattedUrls");
+            }
+            this.customFormattedUrls = customFormattedUrls;
             return this;
         }
         public Builder customFormattedUrls(String... customFormattedUrls) {
@@ -66,7 +70,10 @@ public final class GetCertificateCertificateRevocationListDetail {
         }
         @CustomType.Setter
         public Builder objectStorageConfigs(List<GetCertificateCertificateRevocationListDetailObjectStorageConfig> objectStorageConfigs) {
-            this.objectStorageConfigs = Objects.requireNonNull(objectStorageConfigs);
+            if (objectStorageConfigs == null) {
+              throw new MissingRequiredPropertyException("GetCertificateCertificateRevocationListDetail", "objectStorageConfigs");
+            }
+            this.objectStorageConfigs = objectStorageConfigs;
             return this;
         }
         public Builder objectStorageConfigs(GetCertificateCertificateRevocationListDetailObjectStorageConfig... objectStorageConfigs) {

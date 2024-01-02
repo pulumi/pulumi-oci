@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -113,7 +114,9 @@ public final class GetNodePoolOptionArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetNodePoolOptionArgs build() {
-            $.nodePoolOptionId = Objects.requireNonNull($.nodePoolOptionId, "expected parameter 'nodePoolOptionId' to be non-null");
+            if ($.nodePoolOptionId == null) {
+                throw new MissingRequiredPropertyException("GetNodePoolOptionArgs", "nodePoolOptionId");
+            }
             return $;
         }
     }

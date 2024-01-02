@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule;
 import java.lang.String;
 import java.util.List;
@@ -62,12 +63,18 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
 
         @CustomType.Setter
         public Builder defaultActionName(String defaultActionName) {
-            this.defaultActionName = Objects.requireNonNull(defaultActionName);
+            if (defaultActionName == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl", "defaultActionName");
+            }
+            this.defaultActionName = defaultActionName;
             return this;
         }
         @CustomType.Setter
         public Builder rules(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+            if (rules == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl", "rules");
+            }
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule... rules) {

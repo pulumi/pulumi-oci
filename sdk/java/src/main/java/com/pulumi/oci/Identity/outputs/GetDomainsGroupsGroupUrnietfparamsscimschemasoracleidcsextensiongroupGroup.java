@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole;
 import com.pulumi.oci.Identity.outputs.GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant;
 import com.pulumi.oci.Identity.outputs.GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner;
@@ -132,7 +133,10 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
 
         @CustomType.Setter
         public Builder appRoles(List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole> appRoles) {
-            this.appRoles = Objects.requireNonNull(appRoles);
+            if (appRoles == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup", "appRoles");
+            }
+            this.appRoles = appRoles;
             return this;
         }
         public Builder appRoles(GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole... appRoles) {
@@ -140,17 +144,26 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
         }
         @CustomType.Setter
         public Builder creationMechanism(String creationMechanism) {
-            this.creationMechanism = Objects.requireNonNull(creationMechanism);
+            if (creationMechanism == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup", "creationMechanism");
+            }
+            this.creationMechanism = creationMechanism;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder grants(List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant> grants) {
-            this.grants = Objects.requireNonNull(grants);
+            if (grants == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup", "grants");
+            }
+            this.grants = grants;
             return this;
         }
         public Builder grants(GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant... grants) {
@@ -158,7 +171,10 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
         }
         @CustomType.Setter
         public Builder owners(List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner> owners) {
-            this.owners = Objects.requireNonNull(owners);
+            if (owners == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup", "owners");
+            }
+            this.owners = owners;
             return this;
         }
         public Builder owners(GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner... owners) {
@@ -166,7 +182,10 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
         }
         @CustomType.Setter
         public Builder passwordPolicies(List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy> passwordPolicies) {
-            this.passwordPolicies = Objects.requireNonNull(passwordPolicies);
+            if (passwordPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup", "passwordPolicies");
+            }
+            this.passwordPolicies = passwordPolicies;
             return this;
         }
         public Builder passwordPolicies(GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy... passwordPolicies) {
@@ -174,7 +193,10 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
         }
         @CustomType.Setter
         public Builder syncedFromApps(List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp> syncedFromApps) {
-            this.syncedFromApps = Objects.requireNonNull(syncedFromApps);
+            if (syncedFromApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup", "syncedFromApps");
+            }
+            this.syncedFromApps = syncedFromApps;
             return this;
         }
         public Builder syncedFromApps(GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp... syncedFromApps) {

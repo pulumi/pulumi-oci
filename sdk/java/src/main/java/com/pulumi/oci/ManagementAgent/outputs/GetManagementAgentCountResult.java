@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentCountItem;
 import java.lang.Boolean;
 import java.lang.String;
@@ -101,12 +102,18 @@ public final class GetManagementAgentCountResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentCountResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder groupBies(List<String> groupBies) {
-            this.groupBies = Objects.requireNonNull(groupBies);
+            if (groupBies == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentCountResult", "groupBies");
+            }
+            this.groupBies = groupBies;
             return this;
         }
         public Builder groupBies(String... groupBies) {
@@ -114,22 +121,30 @@ public final class GetManagementAgentCountResult {
         }
         @CustomType.Setter
         public Builder hasPlugins(@Nullable Boolean hasPlugins) {
+
             this.hasPlugins = hasPlugins;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentCountResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder installType(@Nullable String installType) {
+
             this.installType = installType;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetManagementAgentCountItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentCountResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetManagementAgentCountItem... items) {

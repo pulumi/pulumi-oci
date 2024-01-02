@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameter;
 import java.lang.String;
 import java.util.List;
@@ -50,7 +51,10 @@ public final class GetDeploymentSpecificationRouteRequestPolicyQueryParameterVal
 
         @CustomType.Setter
         public Builder parameters(List<GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameter> parameters) {
-            this.parameters = Objects.requireNonNull(parameters);
+            if (parameters == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidation", "parameters");
+            }
+            this.parameters = parameters;
             return this;
         }
         public Builder parameters(GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameter... parameters) {
@@ -58,7 +62,10 @@ public final class GetDeploymentSpecificationRouteRequestPolicyQueryParameterVal
         }
         @CustomType.Setter
         public Builder validationMode(String validationMode) {
-            this.validationMode = Objects.requireNonNull(validationMode);
+            if (validationMode == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidation", "validationMode");
+            }
+            this.validationMode = validationMode;
             return this;
         }
         public GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidation build() {

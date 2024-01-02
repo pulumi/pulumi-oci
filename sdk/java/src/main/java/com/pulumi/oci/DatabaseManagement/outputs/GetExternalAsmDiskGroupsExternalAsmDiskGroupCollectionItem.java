@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -158,7 +159,10 @@ public final class GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem {
 
         @CustomType.Setter
         public Builder databases(List<String> databases) {
-            this.databases = Objects.requireNonNull(databases);
+            if (databases == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem", "databases");
+            }
+            this.databases = databases;
             return this;
         }
         public Builder databases(String... databases) {
@@ -166,42 +170,66 @@ public final class GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem {
         }
         @CustomType.Setter
         public Builder dismountingInstanceCount(Integer dismountingInstanceCount) {
-            this.dismountingInstanceCount = Objects.requireNonNull(dismountingInstanceCount);
+            if (dismountingInstanceCount == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem", "dismountingInstanceCount");
+            }
+            this.dismountingInstanceCount = dismountingInstanceCount;
             return this;
         }
         @CustomType.Setter
         public Builder isSparse(Boolean isSparse) {
-            this.isSparse = Objects.requireNonNull(isSparse);
+            if (isSparse == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem", "isSparse");
+            }
+            this.isSparse = isSparse;
             return this;
         }
         @CustomType.Setter
         public Builder mountingInstanceCount(Integer mountingInstanceCount) {
-            this.mountingInstanceCount = Objects.requireNonNull(mountingInstanceCount);
+            if (mountingInstanceCount == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem", "mountingInstanceCount");
+            }
+            this.mountingInstanceCount = mountingInstanceCount;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder redundancyType(String redundancyType) {
-            this.redundancyType = Objects.requireNonNull(redundancyType);
+            if (redundancyType == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem", "redundancyType");
+            }
+            this.redundancyType = redundancyType;
             return this;
         }
         @CustomType.Setter
         public Builder totalSizeInMbs(String totalSizeInMbs) {
-            this.totalSizeInMbs = Objects.requireNonNull(totalSizeInMbs);
+            if (totalSizeInMbs == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem", "totalSizeInMbs");
+            }
+            this.totalSizeInMbs = totalSizeInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder usedPercent(Double usedPercent) {
-            this.usedPercent = Objects.requireNonNull(usedPercent);
+            if (usedPercent == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem", "usedPercent");
+            }
+            this.usedPercent = usedPercent;
             return this;
         }
         @CustomType.Setter
         public Builder usedSizeInMbs(String usedSizeInMbs) {
-            this.usedSizeInMbs = Objects.requireNonNull(usedSizeInMbs);
+            if (usedSizeInMbs == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem", "usedSizeInMbs");
+            }
+            this.usedSizeInMbs = usedSizeInMbs;
             return this;
         }
         public GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem build() {

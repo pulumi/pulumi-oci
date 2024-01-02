@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParser;
 import java.lang.String;
 import java.util.List;
@@ -100,7 +101,10 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
 
         @CustomType.Setter
         public Builder channels(List<String> channels) {
-            this.channels = Objects.requireNonNull(channels);
+            if (channels == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSource", "channels");
+            }
+            this.channels = channels;
             return this;
         }
         public Builder channels(String... channels) {
@@ -108,12 +112,18 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSource", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder parsers(List<GetUnifiedAgentConfigurationServiceConfigurationSourceParser> parsers) {
-            this.parsers = Objects.requireNonNull(parsers);
+            if (parsers == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSource", "parsers");
+            }
+            this.parsers = parsers;
             return this;
         }
         public Builder parsers(GetUnifiedAgentConfigurationServiceConfigurationSourceParser... parsers) {
@@ -121,7 +131,10 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
         }
         @CustomType.Setter
         public Builder paths(List<String> paths) {
-            this.paths = Objects.requireNonNull(paths);
+            if (paths == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSource", "paths");
+            }
+            this.paths = paths;
             return this;
         }
         public Builder paths(String... paths) {
@@ -129,7 +142,10 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSource", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         public GetUnifiedAgentConfigurationServiceConfigurationSource build() {

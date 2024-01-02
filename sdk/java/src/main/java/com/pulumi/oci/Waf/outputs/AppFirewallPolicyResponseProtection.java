@@ -44,6 +44,7 @@ public final class AppFirewallPolicyResponseProtection {
 
         @CustomType.Setter
         public Builder rules(@Nullable List<AppFirewallPolicyResponseProtectionRule> rules) {
+
             this.rules = rules;
             return this;
         }

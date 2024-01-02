@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.NamespaceScheduledTaskSchedulesSchedule;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class NamespaceScheduledTaskSchedules {
 
         @CustomType.Setter
         public Builder schedules(List<NamespaceScheduledTaskSchedulesSchedule> schedules) {
-            this.schedules = Objects.requireNonNull(schedules);
+            if (schedules == null) {
+              throw new MissingRequiredPropertyException("NamespaceScheduledTaskSchedules", "schedules");
+            }
+            this.schedules = schedules;
             return this;
         }
         public Builder schedules(NamespaceScheduledTaskSchedulesSchedule... schedules) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -143,42 +144,66 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
 
         @CustomType.Setter
         public Builder confidential(Boolean confidential) {
-            this.confidential = Objects.requireNonNull(confidential);
+            if (confidential == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty", "confidential");
+            }
+            this.confidential = confidential;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder helpMessage(String helpMessage) {
-            this.helpMessage = Objects.requireNonNull(helpMessage);
+            if (helpMessage == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty", "helpMessage");
+            }
+            this.helpMessage = helpMessage;
             return this;
         }
         @CustomType.Setter
         public Builder icfType(String icfType) {
-            this.icfType = Objects.requireNonNull(icfType);
+            if (icfType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty", "icfType");
+            }
+            this.icfType = icfType;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder order(Integer order) {
-            this.order = Objects.requireNonNull(order);
+            if (order == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty", "order");
+            }
+            this.order = order;
             return this;
         }
         @CustomType.Setter
         public Builder required(Boolean required) {
-            this.required = Objects.requireNonNull(required);
+            if (required == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty", "required");
+            }
+            this.required = required;
             return this;
         }
         @CustomType.Setter
         public Builder values(List<String> values) {
-            this.values = Objects.requireNonNull(values);
+            if (values == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty", "values");
+            }
+            this.values = values;
             return this;
         }
         public Builder values(String... values) {

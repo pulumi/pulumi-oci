@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -102,27 +103,40 @@ public final class ReportDefinitionColumnInfo {
 
         @CustomType.Setter
         public Builder dataType(@Nullable String dataType) {
+
             this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("ReportDefinitionColumnInfo", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder displayOrder(Integer displayOrder) {
-            this.displayOrder = Objects.requireNonNull(displayOrder);
+            if (displayOrder == null) {
+              throw new MissingRequiredPropertyException("ReportDefinitionColumnInfo", "displayOrder");
+            }
+            this.displayOrder = displayOrder;
             return this;
         }
         @CustomType.Setter
         public Builder fieldName(String fieldName) {
-            this.fieldName = Objects.requireNonNull(fieldName);
+            if (fieldName == null) {
+              throw new MissingRequiredPropertyException("ReportDefinitionColumnInfo", "fieldName");
+            }
+            this.fieldName = fieldName;
             return this;
         }
         @CustomType.Setter
         public Builder isHidden(Boolean isHidden) {
-            this.isHidden = Objects.requireNonNull(isHidden);
+            if (isHidden == null) {
+              throw new MissingRequiredPropertyException("ReportDefinitionColumnInfo", "isHidden");
+            }
+            this.isHidden = isHidden;
             return this;
         }
         public ReportDefinitionColumnInfo build() {

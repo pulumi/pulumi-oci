@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.DeployArtifactDeployArtifactSourceHelmVerificationKeySource;
 import java.lang.String;
 import java.util.Objects;
@@ -157,46 +158,57 @@ public final class DeployArtifactDeployArtifactSource {
 
         @CustomType.Setter
         public Builder base64encodedContent(@Nullable String base64encodedContent) {
+
             this.base64encodedContent = base64encodedContent;
             return this;
         }
         @CustomType.Setter
         public Builder chartUrl(@Nullable String chartUrl) {
+
             this.chartUrl = chartUrl;
             return this;
         }
         @CustomType.Setter
         public Builder deployArtifactPath(@Nullable String deployArtifactPath) {
+
             this.deployArtifactPath = deployArtifactPath;
             return this;
         }
         @CustomType.Setter
         public Builder deployArtifactSourceType(String deployArtifactSourceType) {
-            this.deployArtifactSourceType = Objects.requireNonNull(deployArtifactSourceType);
+            if (deployArtifactSourceType == null) {
+              throw new MissingRequiredPropertyException("DeployArtifactDeployArtifactSource", "deployArtifactSourceType");
+            }
+            this.deployArtifactSourceType = deployArtifactSourceType;
             return this;
         }
         @CustomType.Setter
         public Builder deployArtifactVersion(@Nullable String deployArtifactVersion) {
+
             this.deployArtifactVersion = deployArtifactVersion;
             return this;
         }
         @CustomType.Setter
         public Builder helmVerificationKeySource(@Nullable DeployArtifactDeployArtifactSourceHelmVerificationKeySource helmVerificationKeySource) {
+
             this.helmVerificationKeySource = helmVerificationKeySource;
             return this;
         }
         @CustomType.Setter
         public Builder imageDigest(@Nullable String imageDigest) {
+
             this.imageDigest = imageDigest;
             return this;
         }
         @CustomType.Setter
         public Builder imageUri(@Nullable String imageUri) {
+
             this.imageUri = imageUri;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryId(@Nullable String repositoryId) {
+
             this.repositoryId = repositoryId;
             return this;
         }

@@ -114,31 +114,37 @@ public final class DatabaseInsightConnectionCredentialDetails {
 
         @CustomType.Setter
         public Builder credentialSourceName(@Nullable String credentialSourceName) {
+
             this.credentialSourceName = credentialSourceName;
             return this;
         }
         @CustomType.Setter
         public Builder credentialType(@Nullable String credentialType) {
+
             this.credentialType = credentialType;
             return this;
         }
         @CustomType.Setter
         public Builder passwordSecretId(@Nullable String passwordSecretId) {
+
             this.passwordSecretId = passwordSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder role(@Nullable String role) {
+
             this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder userName(@Nullable String userName) {
+
             this.userName = userName;
             return this;
         }
         @CustomType.Setter
         public Builder walletSecretId(@Nullable String walletSecretId) {
+
             this.walletSecretId = walletSecretId;
             return this;
         }

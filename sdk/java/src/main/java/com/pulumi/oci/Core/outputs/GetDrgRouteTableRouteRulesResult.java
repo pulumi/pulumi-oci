@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetDrgRouteTableRouteRulesDrgRouteRule;
 import com.pulumi.oci.Core.outputs.GetDrgRouteTableRouteRulesFilter;
 import java.lang.String;
@@ -87,7 +88,10 @@ public final class GetDrgRouteTableRouteRulesResult {
 
         @CustomType.Setter
         public Builder drgRouteRules(List<GetDrgRouteTableRouteRulesDrgRouteRule> drgRouteRules) {
-            this.drgRouteRules = Objects.requireNonNull(drgRouteRules);
+            if (drgRouteRules == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteTableRouteRulesResult", "drgRouteRules");
+            }
+            this.drgRouteRules = drgRouteRules;
             return this;
         }
         public Builder drgRouteRules(GetDrgRouteTableRouteRulesDrgRouteRule... drgRouteRules) {
@@ -95,11 +99,15 @@ public final class GetDrgRouteTableRouteRulesResult {
         }
         @CustomType.Setter
         public Builder drgRouteTableId(String drgRouteTableId) {
-            this.drgRouteTableId = Objects.requireNonNull(drgRouteTableId);
+            if (drgRouteTableId == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteTableRouteRulesResult", "drgRouteTableId");
+            }
+            this.drgRouteTableId = drgRouteTableId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDrgRouteTableRouteRulesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -108,11 +116,15 @@ public final class GetDrgRouteTableRouteRulesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteTableRouteRulesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder routeType(@Nullable String routeType) {
+
             this.routeType = routeType;
             return this;
         }

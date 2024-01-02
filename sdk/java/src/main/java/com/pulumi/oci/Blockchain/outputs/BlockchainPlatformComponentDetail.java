@@ -59,6 +59,7 @@ public final class BlockchainPlatformComponentDetail {
 
         @CustomType.Setter
         public Builder osns(@Nullable List<BlockchainPlatformComponentDetailOsn> osns) {
+
             this.osns = osns;
             return this;
         }
@@ -67,6 +68,7 @@ public final class BlockchainPlatformComponentDetail {
         }
         @CustomType.Setter
         public Builder peers(@Nullable List<BlockchainPlatformComponentDetailPeer> peers) {
+
             this.peers = peers;
             return this;
         }

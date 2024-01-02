@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemOperati
 
         @CustomType.Setter
         public Builder architecture(String architecture) {
-            this.architecture = Objects.requireNonNull(architecture);
+            if (architecture == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem", "architecture");
+            }
+            this.architecture = architecture;
             return this;
         }
         @CustomType.Setter
         public Builder family(String family) {
-            this.family = Objects.requireNonNull(family);
+            if (family == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem", "family");
+            }
+            this.family = family;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceCount(Integer managedInstanceCount) {
-            this.managedInstanceCount = Objects.requireNonNull(managedInstanceCount);
+            if (managedInstanceCount == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem", "managedInstanceCount");
+            }
+            this.managedInstanceCount = managedInstanceCount;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem build() {

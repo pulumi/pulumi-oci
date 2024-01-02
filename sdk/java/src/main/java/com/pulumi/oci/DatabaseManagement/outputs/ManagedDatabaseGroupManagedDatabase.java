@@ -148,41 +148,49 @@ public final class ManagedDatabaseGroupManagedDatabase {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseSubType(@Nullable String databaseSubType) {
+
             this.databaseSubType = databaseSubType;
             return this;
         }
         @CustomType.Setter
         public Builder databaseType(@Nullable String databaseType) {
+
             this.databaseType = databaseType;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentType(@Nullable String deploymentType) {
+
             this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder timeAdded(@Nullable String timeAdded) {
+
             this.timeAdded = timeAdded;
             return this;
         }
         @CustomType.Setter
         public Builder workloadType(@Nullable String workloadType) {
+
             this.workloadType = workloadType;
             return this;
         }

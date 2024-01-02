@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetProfileLevelsFilter;
 import com.pulumi.oci.Optimizer.outputs.GetProfileLevelsProfileLevelCollection;
 import java.lang.Boolean;
@@ -108,16 +109,23 @@ public final class GetProfileLevelsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetProfileLevelsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
-            this.compartmentIdInSubtree = Objects.requireNonNull(compartmentIdInSubtree);
+            if (compartmentIdInSubtree == null) {
+              throw new MissingRequiredPropertyException("GetProfileLevelsResult", "compartmentIdInSubtree");
+            }
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetProfileLevelsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -126,17 +134,24 @@ public final class GetProfileLevelsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetProfileLevelsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder profileLevelCollections(List<GetProfileLevelsProfileLevelCollection> profileLevelCollections) {
-            this.profileLevelCollections = Objects.requireNonNull(profileLevelCollections);
+            if (profileLevelCollections == null) {
+              throw new MissingRequiredPropertyException("GetProfileLevelsResult", "profileLevelCollections");
+            }
+            this.profileLevelCollections = profileLevelCollections;
             return this;
         }
         public Builder profileLevelCollections(GetProfileLevelsProfileLevelCollection... profileLevelCollections) {
@@ -144,6 +159,7 @@ public final class GetProfileLevelsResult {
         }
         @CustomType.Setter
         public Builder recommendationName(@Nullable String recommendationName) {
+
             this.recommendationName = recommendationName;
             return this;
         }

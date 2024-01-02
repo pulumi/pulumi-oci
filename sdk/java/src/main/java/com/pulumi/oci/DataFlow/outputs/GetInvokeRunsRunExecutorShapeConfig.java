@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetInvokeRunsRunExecutorShapeConfig {
 
         @CustomType.Setter
         public Builder memoryInGbs(Double memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+            if (memoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunsRunExecutorShapeConfig", "memoryInGbs");
+            }
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(Double ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+            if (ocpus == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunsRunExecutorShapeConfig", "ocpus");
+            }
+            this.ocpus = ocpus;
             return this;
         }
         public GetInvokeRunsRunExecutorShapeConfig build() {

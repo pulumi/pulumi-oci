@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetProfilesFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetProfilesProfileCollection;
 import java.lang.String;
@@ -177,21 +178,25 @@ public final class GetProfilesResult {
 
         @CustomType.Setter
         public Builder archType(@Nullable String archType) {
+
             this.archType = archType;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayNameContains(@Nullable String displayNameContains) {
+
             this.displayNameContains = displayNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder displayNames(@Nullable List<String> displayNames) {
+
             this.displayNames = displayNames;
             return this;
         }
@@ -200,6 +205,7 @@ public final class GetProfilesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetProfilesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -208,17 +214,24 @@ public final class GetProfilesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetProfilesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder osFamily(@Nullable String osFamily) {
+
             this.osFamily = osFamily;
             return this;
         }
         @CustomType.Setter
         public Builder profileCollections(List<GetProfilesProfileCollection> profileCollections) {
-            this.profileCollections = Objects.requireNonNull(profileCollections);
+            if (profileCollections == null) {
+              throw new MissingRequiredPropertyException("GetProfilesResult", "profileCollections");
+            }
+            this.profileCollections = profileCollections;
             return this;
         }
         public Builder profileCollections(GetProfilesProfileCollection... profileCollections) {
@@ -226,11 +239,13 @@ public final class GetProfilesResult {
         }
         @CustomType.Setter
         public Builder profileId(@Nullable String profileId) {
+
             this.profileId = profileId;
             return this;
         }
         @CustomType.Setter
         public Builder profileTypes(@Nullable List<String> profileTypes) {
+
             this.profileTypes = profileTypes;
             return this;
         }
@@ -239,11 +254,13 @@ public final class GetProfilesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vendorName(@Nullable String vendorName) {
+
             this.vendorName = vendorName;
             return this;
         }

@@ -74,11 +74,13 @@ public final class PolicyWafConfigCustomProtectionRule {
 
         @CustomType.Setter
         public Builder action(@Nullable String action) {
+
             this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder exclusions(@Nullable List<PolicyWafConfigCustomProtectionRuleExclusion> exclusions) {
+
             this.exclusions = exclusions;
             return this;
         }
@@ -87,6 +89,7 @@ public final class PolicyWafConfigCustomProtectionRule {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsSmtpCredentialIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsSmtpCredentialIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsSmtpCredentialMeta;
@@ -340,6 +341,7 @@ public final class GetDomainsSmtpCredentialResult {
 
         @CustomType.Setter
         public Builder attributeSets(@Nullable List<String> attributeSets) {
+
             this.attributeSets = attributeSets;
             return this;
         }
@@ -348,47 +350,70 @@ public final class GetDomainsSmtpCredentialResult {
         }
         @CustomType.Setter
         public Builder attributes(@Nullable String attributes) {
+
             this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder expiresOn(String expiresOn) {
-            this.expiresOn = Objects.requireNonNull(expiresOn);
+            if (expiresOn == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "expiresOn");
+            }
+            this.expiresOn = expiresOn;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsSmtpCredentialIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsSmtpCredentialIdcsCreatedBy... idcsCreatedBies) {
@@ -396,12 +421,18 @@ public final class GetDomainsSmtpCredentialResult {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsSmtpCredentialIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsSmtpCredentialIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -409,12 +440,18 @@ public final class GetDomainsSmtpCredentialResult {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -422,7 +459,10 @@ public final class GetDomainsSmtpCredentialResult {
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsSmtpCredentialMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsSmtpCredentialMeta... metas) {
@@ -430,17 +470,24 @@ public final class GetDomainsSmtpCredentialResult {
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -448,17 +495,26 @@ public final class GetDomainsSmtpCredentialResult {
         }
         @CustomType.Setter
         public Builder smtpCredentialId(String smtpCredentialId) {
-            this.smtpCredentialId = Objects.requireNonNull(smtpCredentialId);
+            if (smtpCredentialId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "smtpCredentialId");
+            }
+            this.smtpCredentialId = smtpCredentialId;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsSmtpCredentialTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsSmtpCredentialTag... tags) {
@@ -466,12 +522,18 @@ public final class GetDomainsSmtpCredentialResult {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionselfChangeUsers(List<GetDomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionselfChangeUsers);
+            if (urnietfparamsscimschemasoracleidcsextensionselfChangeUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "urnietfparamsscimschemasoracleidcsextensionselfChangeUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers = urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionselfChangeUsers(GetDomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser... urnietfparamsscimschemasoracleidcsextensionselfChangeUsers) {
@@ -479,12 +541,18 @@ public final class GetDomainsSmtpCredentialResult {
         }
         @CustomType.Setter
         public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+            if (userName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "userName");
+            }
+            this.userName = userName;
             return this;
         }
         @CustomType.Setter
         public Builder users(List<GetDomainsSmtpCredentialUser> users) {
-            this.users = Objects.requireNonNull(users);
+            if (users == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "users");
+            }
+            this.users = users;
             return this;
         }
         public Builder users(GetDomainsSmtpCredentialUser... users) {

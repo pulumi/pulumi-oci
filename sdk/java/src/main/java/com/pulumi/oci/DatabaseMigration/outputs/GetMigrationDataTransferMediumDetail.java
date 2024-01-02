@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDataTransferMediumDetailDatabaseLinkDetail;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDataTransferMediumDetailObjectStorageDetail;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetMigrationDataTransferMediumDetail {
 
         @CustomType.Setter
         public Builder databaseLinkDetails(List<GetMigrationDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails) {
-            this.databaseLinkDetails = Objects.requireNonNull(databaseLinkDetails);
+            if (databaseLinkDetails == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDataTransferMediumDetail", "databaseLinkDetails");
+            }
+            this.databaseLinkDetails = databaseLinkDetails;
             return this;
         }
         public Builder databaseLinkDetails(GetMigrationDataTransferMediumDetailDatabaseLinkDetail... databaseLinkDetails) {
@@ -66,7 +70,10 @@ public final class GetMigrationDataTransferMediumDetail {
         }
         @CustomType.Setter
         public Builder objectStorageDetails(List<GetMigrationDataTransferMediumDetailObjectStorageDetail> objectStorageDetails) {
-            this.objectStorageDetails = Objects.requireNonNull(objectStorageDetails);
+            if (objectStorageDetails == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDataTransferMediumDetail", "objectStorageDetails");
+            }
+            this.objectStorageDetails = objectStorageDetails;
             return this;
         }
         public Builder objectStorageDetails(GetMigrationDataTransferMediumDetailObjectStorageDetail... objectStorageDetails) {

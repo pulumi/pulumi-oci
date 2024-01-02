@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetComputeImageCapabilitySchemasComputeImageCapabilitySchema;
 import com.pulumi.oci.Core.outputs.GetComputeImageCapabilitySchemasFilter;
 import java.lang.String;
@@ -109,12 +110,16 @@ public final class GetComputeImageCapabilitySchemasResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeImageCapabilitySchemas(List<GetComputeImageCapabilitySchemasComputeImageCapabilitySchema> computeImageCapabilitySchemas) {
-            this.computeImageCapabilitySchemas = Objects.requireNonNull(computeImageCapabilitySchemas);
+            if (computeImageCapabilitySchemas == null) {
+              throw new MissingRequiredPropertyException("GetComputeImageCapabilitySchemasResult", "computeImageCapabilitySchemas");
+            }
+            this.computeImageCapabilitySchemas = computeImageCapabilitySchemas;
             return this;
         }
         public Builder computeImageCapabilitySchemas(GetComputeImageCapabilitySchemasComputeImageCapabilitySchema... computeImageCapabilitySchemas) {
@@ -122,11 +127,13 @@ public final class GetComputeImageCapabilitySchemasResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetComputeImageCapabilitySchemasFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,11 +142,15 @@ public final class GetComputeImageCapabilitySchemasResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetComputeImageCapabilitySchemasResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imageId(@Nullable String imageId) {
+
             this.imageId = imageId;
             return this;
         }

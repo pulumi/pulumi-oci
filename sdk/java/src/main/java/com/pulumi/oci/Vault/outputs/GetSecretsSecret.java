@@ -4,6 +4,7 @@
 package com.pulumi.oci.Vault.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Vault.outputs.GetSecretsSecretSecretContent;
 import com.pulumi.oci.Vault.outputs.GetSecretsSecretSecretRule;
 import java.lang.Object;
@@ -263,52 +264,82 @@ public final class GetSecretsSecret {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecret", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder currentVersionNumber(String currentVersionNumber) {
-            this.currentVersionNumber = Objects.requireNonNull(currentVersionNumber);
+            if (currentVersionNumber == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecret", "currentVersionNumber");
+            }
+            this.currentVersionNumber = currentVersionNumber;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecret", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecret", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecret", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecret", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder keyId(String keyId) {
-            this.keyId = Objects.requireNonNull(keyId);
+            if (keyId == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecret", "keyId");
+            }
+            this.keyId = keyId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecret", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder metadata(Map<String,Object> metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+            if (metadata == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecret", "metadata");
+            }
+            this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
         public Builder secretContents(List<GetSecretsSecretSecretContent> secretContents) {
-            this.secretContents = Objects.requireNonNull(secretContents);
+            if (secretContents == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecret", "secretContents");
+            }
+            this.secretContents = secretContents;
             return this;
         }
         public Builder secretContents(GetSecretsSecretSecretContent... secretContents) {
@@ -316,12 +347,18 @@ public final class GetSecretsSecret {
         }
         @CustomType.Setter
         public Builder secretName(String secretName) {
-            this.secretName = Objects.requireNonNull(secretName);
+            if (secretName == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecret", "secretName");
+            }
+            this.secretName = secretName;
             return this;
         }
         @CustomType.Setter
         public Builder secretRules(List<GetSecretsSecretSecretRule> secretRules) {
-            this.secretRules = Objects.requireNonNull(secretRules);
+            if (secretRules == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecret", "secretRules");
+            }
+            this.secretRules = secretRules;
             return this;
         }
         public Builder secretRules(GetSecretsSecretSecretRule... secretRules) {
@@ -329,27 +366,42 @@ public final class GetSecretsSecret {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecret", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecret", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfCurrentVersionExpiry(String timeOfCurrentVersionExpiry) {
-            this.timeOfCurrentVersionExpiry = Objects.requireNonNull(timeOfCurrentVersionExpiry);
+            if (timeOfCurrentVersionExpiry == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecret", "timeOfCurrentVersionExpiry");
+            }
+            this.timeOfCurrentVersionExpiry = timeOfCurrentVersionExpiry;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfDeletion(String timeOfDeletion) {
-            this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
+            if (timeOfDeletion == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecret", "timeOfDeletion");
+            }
+            this.timeOfDeletion = timeOfDeletion;
             return this;
         }
         @CustomType.Setter
         public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+            if (vaultId == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecret", "vaultId");
+            }
+            this.vaultId = vaultId;
             return this;
         }
         public GetSecretsSecret build() {

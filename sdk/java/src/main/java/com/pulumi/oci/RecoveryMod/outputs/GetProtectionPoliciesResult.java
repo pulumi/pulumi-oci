@@ -4,6 +4,7 @@
 package com.pulumi.oci.RecoveryMod.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.RecoveryMod.outputs.GetProtectionPoliciesFilter;
 import com.pulumi.oci.RecoveryMod.outputs.GetProtectionPoliciesProtectionPolicyCollection;
 import java.lang.String;
@@ -133,16 +134,21 @@ public final class GetProtectionPoliciesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetProtectionPoliciesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetProtectionPoliciesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -151,17 +157,24 @@ public final class GetProtectionPoliciesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetProtectionPoliciesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder owner(@Nullable String owner) {
+
             this.owner = owner;
             return this;
         }
         @CustomType.Setter
         public Builder protectionPolicyCollections(List<GetProtectionPoliciesProtectionPolicyCollection> protectionPolicyCollections) {
-            this.protectionPolicyCollections = Objects.requireNonNull(protectionPolicyCollections);
+            if (protectionPolicyCollections == null) {
+              throw new MissingRequiredPropertyException("GetProtectionPoliciesResult", "protectionPolicyCollections");
+            }
+            this.protectionPolicyCollections = protectionPolicyCollections;
             return this;
         }
         public Builder protectionPolicyCollections(GetProtectionPoliciesProtectionPolicyCollection... protectionPolicyCollections) {
@@ -169,11 +182,13 @@ public final class GetProtectionPoliciesResult {
         }
         @CustomType.Setter
         public Builder protectionPolicyId(@Nullable String protectionPolicyId) {
+
             this.protectionPolicyId = protectionPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

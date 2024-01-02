@@ -72,16 +72,19 @@ public final class BdsInstanceOperationCertificateManagementsManagementHostCertD
 
         @CustomType.Setter
         public Builder certificate(@Nullable String certificate) {
+
             this.certificate = certificate;
             return this;
         }
         @CustomType.Setter
         public Builder hostName(@Nullable String hostName) {
+
             this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder privateKey(@Nullable String privateKey) {
+
             this.privateKey = privateKey;
             return this;
         }

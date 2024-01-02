@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetDataSourceEventItem;
 import java.lang.String;
 import java.util.List;
@@ -88,17 +89,26 @@ public final class GetDataSourceEventResult {
 
         @CustomType.Setter
         public Builder dataSourceId(String dataSourceId) {
-            this.dataSourceId = Objects.requireNonNull(dataSourceId);
+            if (dataSourceId == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceEventResult", "dataSourceId");
+            }
+            this.dataSourceId = dataSourceId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceEventResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetDataSourceEventItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceEventResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetDataSourceEventItem... items) {
@@ -106,6 +116,7 @@ public final class GetDataSourceEventResult {
         }
         @CustomType.Setter
         public Builder region(@Nullable String region) {
+
             this.region = region;
             return this;
         }

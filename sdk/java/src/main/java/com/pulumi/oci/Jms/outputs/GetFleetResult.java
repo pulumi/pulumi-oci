@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetFleetInventoryLog;
 import com.pulumi.oci.Jms.outputs.GetFleetOperationLog;
 import java.lang.Boolean;
@@ -293,67 +294,106 @@ public final class GetFleetResult {
 
         @CustomType.Setter
         public Builder approximateApplicationCount(Integer approximateApplicationCount) {
-            this.approximateApplicationCount = Objects.requireNonNull(approximateApplicationCount);
+            if (approximateApplicationCount == null) {
+              throw new MissingRequiredPropertyException("GetFleetResult", "approximateApplicationCount");
+            }
+            this.approximateApplicationCount = approximateApplicationCount;
             return this;
         }
         @CustomType.Setter
         public Builder approximateInstallationCount(Integer approximateInstallationCount) {
-            this.approximateInstallationCount = Objects.requireNonNull(approximateInstallationCount);
+            if (approximateInstallationCount == null) {
+              throw new MissingRequiredPropertyException("GetFleetResult", "approximateInstallationCount");
+            }
+            this.approximateInstallationCount = approximateInstallationCount;
             return this;
         }
         @CustomType.Setter
         public Builder approximateJavaServerCount(Integer approximateJavaServerCount) {
-            this.approximateJavaServerCount = Objects.requireNonNull(approximateJavaServerCount);
+            if (approximateJavaServerCount == null) {
+              throw new MissingRequiredPropertyException("GetFleetResult", "approximateJavaServerCount");
+            }
+            this.approximateJavaServerCount = approximateJavaServerCount;
             return this;
         }
         @CustomType.Setter
         public Builder approximateJreCount(Integer approximateJreCount) {
-            this.approximateJreCount = Objects.requireNonNull(approximateJreCount);
+            if (approximateJreCount == null) {
+              throw new MissingRequiredPropertyException("GetFleetResult", "approximateJreCount");
+            }
+            this.approximateJreCount = approximateJreCount;
             return this;
         }
         @CustomType.Setter
         public Builder approximateManagedInstanceCount(Integer approximateManagedInstanceCount) {
-            this.approximateManagedInstanceCount = Objects.requireNonNull(approximateManagedInstanceCount);
+            if (approximateManagedInstanceCount == null) {
+              throw new MissingRequiredPropertyException("GetFleetResult", "approximateManagedInstanceCount");
+            }
+            this.approximateManagedInstanceCount = approximateManagedInstanceCount;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetFleetResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetFleetResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetFleetResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetFleetResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder fleetId(String fleetId) {
-            this.fleetId = Objects.requireNonNull(fleetId);
+            if (fleetId == null) {
+              throw new MissingRequiredPropertyException("GetFleetResult", "fleetId");
+            }
+            this.fleetId = fleetId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetFleetResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFleetResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inventoryLogs(List<GetFleetInventoryLog> inventoryLogs) {
-            this.inventoryLogs = Objects.requireNonNull(inventoryLogs);
+            if (inventoryLogs == null) {
+              throw new MissingRequiredPropertyException("GetFleetResult", "inventoryLogs");
+            }
+            this.inventoryLogs = inventoryLogs;
             return this;
         }
         public Builder inventoryLogs(GetFleetInventoryLog... inventoryLogs) {
@@ -361,17 +401,26 @@ public final class GetFleetResult {
         }
         @CustomType.Setter
         public Builder isAdvancedFeaturesEnabled(Boolean isAdvancedFeaturesEnabled) {
-            this.isAdvancedFeaturesEnabled = Objects.requireNonNull(isAdvancedFeaturesEnabled);
+            if (isAdvancedFeaturesEnabled == null) {
+              throw new MissingRequiredPropertyException("GetFleetResult", "isAdvancedFeaturesEnabled");
+            }
+            this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isExportSettingEnabled(Boolean isExportSettingEnabled) {
-            this.isExportSettingEnabled = Objects.requireNonNull(isExportSettingEnabled);
+            if (isExportSettingEnabled == null) {
+              throw new MissingRequiredPropertyException("GetFleetResult", "isExportSettingEnabled");
+            }
+            this.isExportSettingEnabled = isExportSettingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder operationLogs(List<GetFleetOperationLog> operationLogs) {
-            this.operationLogs = Objects.requireNonNull(operationLogs);
+            if (operationLogs == null) {
+              throw new MissingRequiredPropertyException("GetFleetResult", "operationLogs");
+            }
+            this.operationLogs = operationLogs;
             return this;
         }
         public Builder operationLogs(GetFleetOperationLog... operationLogs) {
@@ -379,17 +428,26 @@ public final class GetFleetResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetFleetResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetFleetResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetFleetResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetFleetResult build() {

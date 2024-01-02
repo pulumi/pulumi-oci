@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -312,9 +313,15 @@ public final class EncryptedDataArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public EncryptedDataArgs build() {
-            $.cryptoEndpoint = Objects.requireNonNull($.cryptoEndpoint, "expected parameter 'cryptoEndpoint' to be non-null");
-            $.keyId = Objects.requireNonNull($.keyId, "expected parameter 'keyId' to be non-null");
-            $.plaintext = Objects.requireNonNull($.plaintext, "expected parameter 'plaintext' to be non-null");
+            if ($.cryptoEndpoint == null) {
+                throw new MissingRequiredPropertyException("EncryptedDataArgs", "cryptoEndpoint");
+            }
+            if ($.keyId == null) {
+                throw new MissingRequiredPropertyException("EncryptedDataArgs", "keyId");
+            }
+            if ($.plaintext == null) {
+                throw new MissingRequiredPropertyException("EncryptedDataArgs", "plaintext");
+            }
             return $;
         }
     }

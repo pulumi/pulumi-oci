@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.ProfileTargetTagsItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class ProfileTargetTags {
 
         @CustomType.Setter
         public Builder items(List<ProfileTargetTagsItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("ProfileTargetTags", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(ProfileTargetTagsItem... items) {

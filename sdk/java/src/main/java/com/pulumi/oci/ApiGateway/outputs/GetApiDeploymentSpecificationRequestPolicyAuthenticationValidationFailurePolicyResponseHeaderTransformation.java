@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeader;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeader;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeader;
@@ -73,7 +74,10 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationValid
 
         @CustomType.Setter
         public Builder filterHeaders(List<GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeader> filterHeaders) {
-            this.filterHeaders = Objects.requireNonNull(filterHeaders);
+            if (filterHeaders == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformation", "filterHeaders");
+            }
+            this.filterHeaders = filterHeaders;
             return this;
         }
         public Builder filterHeaders(GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeader... filterHeaders) {
@@ -81,7 +85,10 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationValid
         }
         @CustomType.Setter
         public Builder renameHeaders(List<GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeader> renameHeaders) {
-            this.renameHeaders = Objects.requireNonNull(renameHeaders);
+            if (renameHeaders == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformation", "renameHeaders");
+            }
+            this.renameHeaders = renameHeaders;
             return this;
         }
         public Builder renameHeaders(GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeader... renameHeaders) {
@@ -89,7 +96,10 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationValid
         }
         @CustomType.Setter
         public Builder setHeaders(List<GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeader> setHeaders) {
-            this.setHeaders = Objects.requireNonNull(setHeaders);
+            if (setHeaders == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformation", "setHeaders");
+            }
+            this.setHeaders = setHeaders;
             return this;
         }
         public Builder setHeaders(GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeader... setHeaders) {

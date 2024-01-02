@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -254,82 +255,130 @@ public final class GetIdentityProvidersIdentityProvider {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetIdentityProvidersIdentityProvider", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetIdentityProvidersIdentityProvider", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetIdentityProvidersIdentityProvider", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder freeformAttributes(Map<String,Object> freeformAttributes) {
-            this.freeformAttributes = Objects.requireNonNull(freeformAttributes);
+            if (freeformAttributes == null) {
+              throw new MissingRequiredPropertyException("GetIdentityProvidersIdentityProvider", "freeformAttributes");
+            }
+            this.freeformAttributes = freeformAttributes;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetIdentityProvidersIdentityProvider", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIdentityProvidersIdentityProvider", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inactiveState(String inactiveState) {
-            this.inactiveState = Objects.requireNonNull(inactiveState);
+            if (inactiveState == null) {
+              throw new MissingRequiredPropertyException("GetIdentityProvidersIdentityProvider", "inactiveState");
+            }
+            this.inactiveState = inactiveState;
             return this;
         }
         @CustomType.Setter
         public Builder metadata(String metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+            if (metadata == null) {
+              throw new MissingRequiredPropertyException("GetIdentityProvidersIdentityProvider", "metadata");
+            }
+            this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
         public Builder metadataUrl(String metadataUrl) {
-            this.metadataUrl = Objects.requireNonNull(metadataUrl);
+            if (metadataUrl == null) {
+              throw new MissingRequiredPropertyException("GetIdentityProvidersIdentityProvider", "metadataUrl");
+            }
+            this.metadataUrl = metadataUrl;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetIdentityProvidersIdentityProvider", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder productType(String productType) {
-            this.productType = Objects.requireNonNull(productType);
+            if (productType == null) {
+              throw new MissingRequiredPropertyException("GetIdentityProvidersIdentityProvider", "productType");
+            }
+            this.productType = productType;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetIdentityProvidersIdentityProvider", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder redirectUrl(String redirectUrl) {
-            this.redirectUrl = Objects.requireNonNull(redirectUrl);
+            if (redirectUrl == null) {
+              throw new MissingRequiredPropertyException("GetIdentityProvidersIdentityProvider", "redirectUrl");
+            }
+            this.redirectUrl = redirectUrl;
             return this;
         }
         @CustomType.Setter
         public Builder signingCertificate(String signingCertificate) {
-            this.signingCertificate = Objects.requireNonNull(signingCertificate);
+            if (signingCertificate == null) {
+              throw new MissingRequiredPropertyException("GetIdentityProvidersIdentityProvider", "signingCertificate");
+            }
+            this.signingCertificate = signingCertificate;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetIdentityProvidersIdentityProvider", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetIdentityProvidersIdentityProvider", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetIdentityProvidersIdentityProvider build() {

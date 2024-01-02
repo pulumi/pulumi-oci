@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class GetDatabasePdbConversionHistoryEntryArgs extends com.pulumi.r
         }
 
         public GetDatabasePdbConversionHistoryEntryArgs build() {
-            $.databaseId = Objects.requireNonNull($.databaseId, "expected parameter 'databaseId' to be non-null");
-            $.pdbConversionHistoryEntryId = Objects.requireNonNull($.pdbConversionHistoryEntryId, "expected parameter 'pdbConversionHistoryEntryId' to be non-null");
+            if ($.databaseId == null) {
+                throw new MissingRequiredPropertyException("GetDatabasePdbConversionHistoryEntryArgs", "databaseId");
+            }
+            if ($.pdbConversionHistoryEntryId == null) {
+                throw new MissingRequiredPropertyException("GetDatabasePdbConversionHistoryEntryArgs", "pdbConversionHistoryEntryId");
+            }
             return $;
         }
     }

@@ -118,6 +118,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetail {
 
         @CustomType.Setter
         public Builder conditionGroups(@Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup> conditionGroups) {
+
             this.conditionGroups = conditionGroups;
             return this;
         }
@@ -126,6 +127,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetail {
         }
         @CustomType.Setter
         public Builder configurations(@Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations) {
+
             this.configurations = configurations;
             return this;
         }
@@ -134,16 +136,19 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetail {
         }
         @CustomType.Setter
         public Builder isConfigurationAllowed(@Nullable Boolean isConfigurationAllowed) {
+
             this.isConfigurationAllowed = isConfigurationAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
+
             this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder labels(@Nullable List<String> labels) {
+
             this.labels = labels;
             return this;
         }
@@ -152,6 +157,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetail {
         }
         @CustomType.Setter
         public Builder riskLevel(@Nullable String riskLevel) {
+
             this.riskLevel = riskLevel;
             return this;
         }

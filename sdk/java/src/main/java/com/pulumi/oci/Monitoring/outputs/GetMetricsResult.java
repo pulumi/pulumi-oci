@@ -4,6 +4,7 @@
 package com.pulumi.oci.Monitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Monitoring.outputs.GetMetricsFilter;
 import com.pulumi.oci.Monitoring.outputs.GetMetricsMetric;
 import java.lang.Boolean;
@@ -144,21 +145,27 @@ public final class GetMetricsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMetricsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder dimensionFilters(@Nullable Map<String,Object> dimensionFilters) {
+
             this.dimensionFilters = dimensionFilters;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMetricsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -167,6 +174,7 @@ public final class GetMetricsResult {
         }
         @CustomType.Setter
         public Builder groupBies(@Nullable List<String> groupBies) {
+
             this.groupBies = groupBies;
             return this;
         }
@@ -175,12 +183,18 @@ public final class GetMetricsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMetricsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder metrics(List<GetMetricsMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+            if (metrics == null) {
+              throw new MissingRequiredPropertyException("GetMetricsResult", "metrics");
+            }
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetMetricsMetric... metrics) {
@@ -188,16 +202,19 @@ public final class GetMetricsResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(@Nullable String namespace) {
+
             this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder resourceGroup(@Nullable String resourceGroup) {
+
             this.resourceGroup = resourceGroup;
             return this;
         }

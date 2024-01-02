@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemChannelSourceSslCaCertificate;
 import java.lang.Integer;
@@ -130,7 +131,10 @@ public final class GetMysqlDbSystemChannelSource {
 
         @CustomType.Setter
         public Builder anonymousTransactionsHandlings(List<GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings) {
-            this.anonymousTransactionsHandlings = Objects.requireNonNull(anonymousTransactionsHandlings);
+            if (anonymousTransactionsHandlings == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemChannelSource", "anonymousTransactionsHandlings");
+            }
+            this.anonymousTransactionsHandlings = anonymousTransactionsHandlings;
             return this;
         }
         public Builder anonymousTransactionsHandlings(GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling... anonymousTransactionsHandlings) {
@@ -138,22 +142,34 @@ public final class GetMysqlDbSystemChannelSource {
         }
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemChannelSource", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemChannelSource", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemChannelSource", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
         public Builder sslCaCertificates(List<GetMysqlDbSystemChannelSourceSslCaCertificate> sslCaCertificates) {
-            this.sslCaCertificates = Objects.requireNonNull(sslCaCertificates);
+            if (sslCaCertificates == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemChannelSource", "sslCaCertificates");
+            }
+            this.sslCaCertificates = sslCaCertificates;
             return this;
         }
         public Builder sslCaCertificates(GetMysqlDbSystemChannelSourceSslCaCertificate... sslCaCertificates) {
@@ -161,12 +177,18 @@ public final class GetMysqlDbSystemChannelSource {
         }
         @CustomType.Setter
         public Builder sslMode(String sslMode) {
-            this.sslMode = Objects.requireNonNull(sslMode);
+            if (sslMode == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemChannelSource", "sslMode");
+            }
+            this.sslMode = sslMode;
             return this;
         }
         @CustomType.Setter
         public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+            if (username == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemChannelSource", "username");
+            }
+            this.username = username;
             return this;
         }
         public GetMysqlDbSystemChannelSource build() {

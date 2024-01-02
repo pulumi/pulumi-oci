@@ -44,6 +44,7 @@ public final class PluggableDatabasesRemoteCloneRefreshableCloneConfig {
 
         @CustomType.Setter
         public Builder isRefreshableClone(@Nullable Boolean isRefreshableClone) {
+
             this.isRefreshableClone = isRefreshableClone;
             return this;
         }

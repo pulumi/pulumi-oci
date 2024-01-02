@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseTools.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionKeyStoreKeyStoreContent;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionKeyStoreKeyStorePassword;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetDatabaseToolsConnectionKeyStore {
 
         @CustomType.Setter
         public Builder keyStoreContents(List<GetDatabaseToolsConnectionKeyStoreKeyStoreContent> keyStoreContents) {
-            this.keyStoreContents = Objects.requireNonNull(keyStoreContents);
+            if (keyStoreContents == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionKeyStore", "keyStoreContents");
+            }
+            this.keyStoreContents = keyStoreContents;
             return this;
         }
         public Builder keyStoreContents(GetDatabaseToolsConnectionKeyStoreKeyStoreContent... keyStoreContents) {
@@ -81,7 +85,10 @@ public final class GetDatabaseToolsConnectionKeyStore {
         }
         @CustomType.Setter
         public Builder keyStorePasswords(List<GetDatabaseToolsConnectionKeyStoreKeyStorePassword> keyStorePasswords) {
-            this.keyStorePasswords = Objects.requireNonNull(keyStorePasswords);
+            if (keyStorePasswords == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionKeyStore", "keyStorePasswords");
+            }
+            this.keyStorePasswords = keyStorePasswords;
             return this;
         }
         public Builder keyStorePasswords(GetDatabaseToolsConnectionKeyStoreKeyStorePassword... keyStorePasswords) {
@@ -89,7 +96,10 @@ public final class GetDatabaseToolsConnectionKeyStore {
         }
         @CustomType.Setter
         public Builder keyStoreType(String keyStoreType) {
-            this.keyStoreType = Objects.requireNonNull(keyStoreType);
+            if (keyStoreType == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionKeyStore", "keyStoreType");
+            }
+            this.keyStoreType = keyStoreType;
             return this;
         }
         public GetDatabaseToolsConnectionKeyStore build() {

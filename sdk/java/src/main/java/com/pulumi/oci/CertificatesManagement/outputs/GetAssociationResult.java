@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -146,47 +147,74 @@ public final class GetAssociationResult {
 
         @CustomType.Setter
         public Builder associatedResourceId(String associatedResourceId) {
-            this.associatedResourceId = Objects.requireNonNull(associatedResourceId);
+            if (associatedResourceId == null) {
+              throw new MissingRequiredPropertyException("GetAssociationResult", "associatedResourceId");
+            }
+            this.associatedResourceId = associatedResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder associationId(String associationId) {
-            this.associationId = Objects.requireNonNull(associationId);
+            if (associationId == null) {
+              throw new MissingRequiredPropertyException("GetAssociationResult", "associationId");
+            }
+            this.associationId = associationId;
             return this;
         }
         @CustomType.Setter
         public Builder associationType(String associationType) {
-            this.associationType = Objects.requireNonNull(associationType);
+            if (associationType == null) {
+              throw new MissingRequiredPropertyException("GetAssociationResult", "associationType");
+            }
+            this.associationType = associationType;
             return this;
         }
         @CustomType.Setter
         public Builder certificatesResourceId(String certificatesResourceId) {
-            this.certificatesResourceId = Objects.requireNonNull(certificatesResourceId);
+            if (certificatesResourceId == null) {
+              throw new MissingRequiredPropertyException("GetAssociationResult", "certificatesResourceId");
+            }
+            this.certificatesResourceId = certificatesResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAssociationResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAssociationResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetAssociationResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAssociationResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAssociationResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetAssociationResult build() {

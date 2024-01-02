@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster;
 import java.lang.Double;
 import java.lang.Integer;
@@ -151,7 +152,10 @@ public final class GetCloudExadataInfrastructureUnAllocatedResourceResult {
 
         @CustomType.Setter
         public Builder cloudAutonomousVmClusters(List<GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster> cloudAutonomousVmClusters) {
-            this.cloudAutonomousVmClusters = Objects.requireNonNull(cloudAutonomousVmClusters);
+            if (cloudAutonomousVmClusters == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureUnAllocatedResourceResult", "cloudAutonomousVmClusters");
+            }
+            this.cloudAutonomousVmClusters = cloudAutonomousVmClusters;
             return this;
         }
         public Builder cloudAutonomousVmClusters(GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster... cloudAutonomousVmClusters) {
@@ -159,16 +163,23 @@ public final class GetCloudExadataInfrastructureUnAllocatedResourceResult {
         }
         @CustomType.Setter
         public Builder cloudExadataInfrastructureDisplayName(String cloudExadataInfrastructureDisplayName) {
-            this.cloudExadataInfrastructureDisplayName = Objects.requireNonNull(cloudExadataInfrastructureDisplayName);
+            if (cloudExadataInfrastructureDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureUnAllocatedResourceResult", "cloudExadataInfrastructureDisplayName");
+            }
+            this.cloudExadataInfrastructureDisplayName = cloudExadataInfrastructureDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder cloudExadataInfrastructureId(String cloudExadataInfrastructureId) {
-            this.cloudExadataInfrastructureId = Objects.requireNonNull(cloudExadataInfrastructureId);
+            if (cloudExadataInfrastructureId == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureUnAllocatedResourceResult", "cloudExadataInfrastructureId");
+            }
+            this.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
         public Builder dbServers(@Nullable List<String> dbServers) {
+
             this.dbServers = dbServers;
             return this;
         }
@@ -177,27 +188,42 @@ public final class GetCloudExadataInfrastructureUnAllocatedResourceResult {
         }
         @CustomType.Setter
         public Builder exadataStorageInTbs(Double exadataStorageInTbs) {
-            this.exadataStorageInTbs = Objects.requireNonNull(exadataStorageInTbs);
+            if (exadataStorageInTbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureUnAllocatedResourceResult", "exadataStorageInTbs");
+            }
+            this.exadataStorageInTbs = exadataStorageInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureUnAllocatedResourceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder localStorageInGbs(Integer localStorageInGbs) {
-            this.localStorageInGbs = Objects.requireNonNull(localStorageInGbs);
+            if (localStorageInGbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureUnAllocatedResourceResult", "localStorageInGbs");
+            }
+            this.localStorageInGbs = localStorageInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder memoryInGbs(Integer memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+            if (memoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureUnAllocatedResourceResult", "memoryInGbs");
+            }
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(Integer ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+            if (ocpus == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureUnAllocatedResourceResult", "ocpus");
+            }
+            this.ocpus = ocpus;
             return this;
         }
         public GetCloudExadataInfrastructureUnAllocatedResourceResult build() {

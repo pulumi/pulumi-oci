@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -114,31 +115,39 @@ public final class DatabaseInsightCredentialDetails {
 
         @CustomType.Setter
         public Builder credentialSourceName(@Nullable String credentialSourceName) {
+
             this.credentialSourceName = credentialSourceName;
             return this;
         }
         @CustomType.Setter
         public Builder credentialType(String credentialType) {
-            this.credentialType = Objects.requireNonNull(credentialType);
+            if (credentialType == null) {
+              throw new MissingRequiredPropertyException("DatabaseInsightCredentialDetails", "credentialType");
+            }
+            this.credentialType = credentialType;
             return this;
         }
         @CustomType.Setter
         public Builder passwordSecretId(@Nullable String passwordSecretId) {
+
             this.passwordSecretId = passwordSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder role(@Nullable String role) {
+
             this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder userName(@Nullable String userName) {
+
             this.userName = userName;
             return this;
         }
         @CustomType.Setter
         public Builder walletSecretId(@Nullable String walletSecretId) {
+
             this.walletSecretId = walletSecretId;
             return this;
         }

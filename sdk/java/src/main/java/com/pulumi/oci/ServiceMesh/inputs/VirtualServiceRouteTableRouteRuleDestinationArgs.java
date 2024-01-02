@@ -5,6 +5,7 @@ package com.pulumi.oci.ServiceMesh.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -151,8 +152,12 @@ public final class VirtualServiceRouteTableRouteRuleDestinationArgs extends com.
         }
 
         public VirtualServiceRouteTableRouteRuleDestinationArgs build() {
-            $.virtualDeploymentId = Objects.requireNonNull($.virtualDeploymentId, "expected parameter 'virtualDeploymentId' to be non-null");
-            $.weight = Objects.requireNonNull($.weight, "expected parameter 'weight' to be non-null");
+            if ($.virtualDeploymentId == null) {
+                throw new MissingRequiredPropertyException("VirtualServiceRouteTableRouteRuleDestinationArgs", "virtualDeploymentId");
+            }
+            if ($.weight == null) {
+                throw new MissingRequiredPropertyException("VirtualServiceRouteTableRouteRuleDestinationArgs", "weight");
+            }
             return $;
         }
     }

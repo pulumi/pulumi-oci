@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.inputs.AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs;
 import com.pulumi.oci.BigDataService.inputs.AutoScalingConfigurationPolicyDetailsScaleInConfigArgs;
 import com.pulumi.oci.BigDataService.inputs.AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs;
@@ -400,7 +401,9 @@ public final class AutoScalingConfigurationPolicyDetailsArgs extends com.pulumi.
         }
 
         public AutoScalingConfigurationPolicyDetailsArgs build() {
-            $.policyType = Objects.requireNonNull($.policyType, "expected parameter 'policyType' to be non-null");
+            if ($.policyType == null) {
+                throw new MissingRequiredPropertyException("AutoScalingConfigurationPolicyDetailsArgs", "policyType");
+            }
             return $;
         }
     }

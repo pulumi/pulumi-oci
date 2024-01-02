@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudBridge;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudBridge.inputs.AssetComputeArgs;
 import com.pulumi.oci.CloudBridge.inputs.AssetVmArgs;
 import com.pulumi.oci.CloudBridge.inputs.AssetVmwareVcenterArgs;
@@ -537,11 +538,21 @@ public final class AssetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public AssetArgs build() {
-            $.assetType = Objects.requireNonNull($.assetType, "expected parameter 'assetType' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.externalAssetKey = Objects.requireNonNull($.externalAssetKey, "expected parameter 'externalAssetKey' to be non-null");
-            $.inventoryId = Objects.requireNonNull($.inventoryId, "expected parameter 'inventoryId' to be non-null");
-            $.sourceKey = Objects.requireNonNull($.sourceKey, "expected parameter 'sourceKey' to be non-null");
+            if ($.assetType == null) {
+                throw new MissingRequiredPropertyException("AssetArgs", "assetType");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AssetArgs", "compartmentId");
+            }
+            if ($.externalAssetKey == null) {
+                throw new MissingRequiredPropertyException("AssetArgs", "externalAssetKey");
+            }
+            if ($.inventoryId == null) {
+                throw new MissingRequiredPropertyException("AssetArgs", "inventoryId");
+            }
+            if ($.sourceKey == null) {
+                throw new MissingRequiredPropertyException("AssetArgs", "sourceKey");
+            }
             return $;
         }
     }

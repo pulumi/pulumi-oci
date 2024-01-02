@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
@@ -103,12 +104,16 @@ public final class ModelModelTrainingDetails {
 
         @CustomType.Setter
         public Builder algorithmHint(@Nullable String algorithmHint) {
+
             this.algorithmHint = algorithmHint;
             return this;
         }
         @CustomType.Setter
         public Builder dataAssetIds(List<String> dataAssetIds) {
-            this.dataAssetIds = Objects.requireNonNull(dataAssetIds);
+            if (dataAssetIds == null) {
+              throw new MissingRequiredPropertyException("ModelModelTrainingDetails", "dataAssetIds");
+            }
+            this.dataAssetIds = dataAssetIds;
             return this;
         }
         public Builder dataAssetIds(String... dataAssetIds) {
@@ -116,16 +121,19 @@ public final class ModelModelTrainingDetails {
         }
         @CustomType.Setter
         public Builder targetFap(@Nullable Double targetFap) {
+
             this.targetFap = targetFap;
             return this;
         }
         @CustomType.Setter
         public Builder trainingFraction(@Nullable Double trainingFraction) {
+
             this.trainingFraction = trainingFraction;
             return this;
         }
         @CustomType.Setter
         public Builder windowSize(@Nullable Integer windowSize) {
+
             this.windowSize = windowSize;
             return this;
         }

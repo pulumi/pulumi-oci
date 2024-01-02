@@ -92,21 +92,25 @@ public final class PublicationSupportContact {
 
         @CustomType.Setter
         public Builder email(@Nullable String email) {
+
             this.email = email;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder phone(@Nullable String phone) {
+
             this.phone = phone;
             return this;
         }
         @CustomType.Setter
         public Builder subject(@Nullable String subject) {
+
             this.subject = subject;
             return this;
         }

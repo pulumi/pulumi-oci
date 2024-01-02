@@ -4,6 +4,7 @@
 package com.pulumi.oci.Blockchain.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Blockchain.outputs.GetPeerOcpuAllocationParam;
 import java.lang.String;
 import java.util.List;
@@ -146,32 +147,50 @@ public final class GetPeerResult {
 
         @CustomType.Setter
         public Builder ad(String ad) {
-            this.ad = Objects.requireNonNull(ad);
+            if (ad == null) {
+              throw new MissingRequiredPropertyException("GetPeerResult", "ad");
+            }
+            this.ad = ad;
             return this;
         }
         @CustomType.Setter
         public Builder alias(String alias) {
-            this.alias = Objects.requireNonNull(alias);
+            if (alias == null) {
+              throw new MissingRequiredPropertyException("GetPeerResult", "alias");
+            }
+            this.alias = alias;
             return this;
         }
         @CustomType.Setter
         public Builder blockchainPlatformId(String blockchainPlatformId) {
-            this.blockchainPlatformId = Objects.requireNonNull(blockchainPlatformId);
+            if (blockchainPlatformId == null) {
+              throw new MissingRequiredPropertyException("GetPeerResult", "blockchainPlatformId");
+            }
+            this.blockchainPlatformId = blockchainPlatformId;
             return this;
         }
         @CustomType.Setter
         public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+            if (host == null) {
+              throw new MissingRequiredPropertyException("GetPeerResult", "host");
+            }
+            this.host = host;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPeerResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuAllocationParams(List<GetPeerOcpuAllocationParam> ocpuAllocationParams) {
-            this.ocpuAllocationParams = Objects.requireNonNull(ocpuAllocationParams);
+            if (ocpuAllocationParams == null) {
+              throw new MissingRequiredPropertyException("GetPeerResult", "ocpuAllocationParams");
+            }
+            this.ocpuAllocationParams = ocpuAllocationParams;
             return this;
         }
         public Builder ocpuAllocationParams(GetPeerOcpuAllocationParam... ocpuAllocationParams) {
@@ -179,22 +198,34 @@ public final class GetPeerResult {
         }
         @CustomType.Setter
         public Builder peerId(String peerId) {
-            this.peerId = Objects.requireNonNull(peerId);
+            if (peerId == null) {
+              throw new MissingRequiredPropertyException("GetPeerResult", "peerId");
+            }
+            this.peerId = peerId;
             return this;
         }
         @CustomType.Setter
         public Builder peerKey(String peerKey) {
-            this.peerKey = Objects.requireNonNull(peerKey);
+            if (peerKey == null) {
+              throw new MissingRequiredPropertyException("GetPeerResult", "peerKey");
+            }
+            this.peerKey = peerKey;
             return this;
         }
         @CustomType.Setter
         public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+            if (role == null) {
+              throw new MissingRequiredPropertyException("GetPeerResult", "role");
+            }
+            this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetPeerResult", "state");
+            }
+            this.state = state;
             return this;
         }
         public GetPeerResult build() {

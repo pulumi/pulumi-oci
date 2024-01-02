@@ -5,6 +5,7 @@ package com.pulumi.oci.DataFlow.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class ApplicationApplicationLogConfigArgs extends com.pulumi.resour
         }
 
         public ApplicationApplicationLogConfigArgs build() {
-            $.logGroupId = Objects.requireNonNull($.logGroupId, "expected parameter 'logGroupId' to be non-null");
-            $.logId = Objects.requireNonNull($.logId, "expected parameter 'logId' to be non-null");
+            if ($.logGroupId == null) {
+                throw new MissingRequiredPropertyException("ApplicationApplicationLogConfigArgs", "logGroupId");
+            }
+            if ($.logId == null) {
+                throw new MissingRequiredPropertyException("ApplicationApplicationLogConfigArgs", "logId");
+            }
             return $;
         }
     }

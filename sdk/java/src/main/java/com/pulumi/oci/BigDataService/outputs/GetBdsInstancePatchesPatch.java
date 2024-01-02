@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetBdsInstancePatchesPatch {
 
         @CustomType.Setter
         public Builder timeReleased(String timeReleased) {
-            this.timeReleased = Objects.requireNonNull(timeReleased);
+            if (timeReleased == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancePatchesPatch", "timeReleased");
+            }
+            this.timeReleased = timeReleased;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancePatchesPatch", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetBdsInstancePatchesPatch build() {

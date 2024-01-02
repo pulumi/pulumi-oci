@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetAwrHubAwrSnapshotsAwrSnapshotCollection;
 import com.pulumi.oci.Opsi.outputs.GetAwrHubAwrSnapshotsFilter;
 import java.lang.String;
@@ -91,12 +92,18 @@ public final class GetAwrHubAwrSnapshotsResult {
 
         @CustomType.Setter
         public Builder awrHubId(String awrHubId) {
-            this.awrHubId = Objects.requireNonNull(awrHubId);
+            if (awrHubId == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSnapshotsResult", "awrHubId");
+            }
+            this.awrHubId = awrHubId;
             return this;
         }
         @CustomType.Setter
         public Builder awrSnapshotCollections(List<GetAwrHubAwrSnapshotsAwrSnapshotCollection> awrSnapshotCollections) {
-            this.awrSnapshotCollections = Objects.requireNonNull(awrSnapshotCollections);
+            if (awrSnapshotCollections == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSnapshotsResult", "awrSnapshotCollections");
+            }
+            this.awrSnapshotCollections = awrSnapshotCollections;
             return this;
         }
         public Builder awrSnapshotCollections(GetAwrHubAwrSnapshotsAwrSnapshotCollection... awrSnapshotCollections) {
@@ -104,11 +111,15 @@ public final class GetAwrHubAwrSnapshotsResult {
         }
         @CustomType.Setter
         public Builder awrSourceDatabaseIdentifier(String awrSourceDatabaseIdentifier) {
-            this.awrSourceDatabaseIdentifier = Objects.requireNonNull(awrSourceDatabaseIdentifier);
+            if (awrSourceDatabaseIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSnapshotsResult", "awrSourceDatabaseIdentifier");
+            }
+            this.awrSourceDatabaseIdentifier = awrSourceDatabaseIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAwrHubAwrSnapshotsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -117,16 +128,21 @@ public final class GetAwrHubAwrSnapshotsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSnapshotsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder timeGreaterThanOrEqualTo(@Nullable String timeGreaterThanOrEqualTo) {
+
             this.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeLessThanOrEqualTo(@Nullable String timeLessThanOrEqualTo) {
+
             this.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
             return this;
         }

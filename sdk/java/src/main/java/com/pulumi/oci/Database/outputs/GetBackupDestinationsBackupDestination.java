@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetBackupDestinationsBackupDestinationAssociatedDatabase;
 import com.pulumi.oci.Database.outputs.GetBackupDestinationsBackupDestinationMountTypeDetail;
 import java.lang.Object;
@@ -271,7 +272,10 @@ public final class GetBackupDestinationsBackupDestination {
 
         @CustomType.Setter
         public Builder associatedDatabases(List<GetBackupDestinationsBackupDestinationAssociatedDatabase> associatedDatabases) {
-            this.associatedDatabases = Objects.requireNonNull(associatedDatabases);
+            if (associatedDatabases == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "associatedDatabases");
+            }
+            this.associatedDatabases = associatedDatabases;
             return this;
         }
         public Builder associatedDatabases(GetBackupDestinationsBackupDestinationAssociatedDatabase... associatedDatabases) {
@@ -279,47 +283,74 @@ public final class GetBackupDestinationsBackupDestination {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionString(String connectionString) {
-            this.connectionString = Objects.requireNonNull(connectionString);
+            if (connectionString == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "connectionString");
+            }
+            this.connectionString = connectionString;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder localMountPointPath(String localMountPointPath) {
-            this.localMountPointPath = Objects.requireNonNull(localMountPointPath);
+            if (localMountPointPath == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "localMountPointPath");
+            }
+            this.localMountPointPath = localMountPointPath;
             return this;
         }
         @CustomType.Setter
         public Builder mountTypeDetails(List<GetBackupDestinationsBackupDestinationMountTypeDetail> mountTypeDetails) {
-            this.mountTypeDetails = Objects.requireNonNull(mountTypeDetails);
+            if (mountTypeDetails == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "mountTypeDetails");
+            }
+            this.mountTypeDetails = mountTypeDetails;
             return this;
         }
         public Builder mountTypeDetails(GetBackupDestinationsBackupDestinationMountTypeDetail... mountTypeDetails) {
@@ -327,17 +358,26 @@ public final class GetBackupDestinationsBackupDestination {
         }
         @CustomType.Setter
         public Builder nfsMountType(String nfsMountType) {
-            this.nfsMountType = Objects.requireNonNull(nfsMountType);
+            if (nfsMountType == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "nfsMountType");
+            }
+            this.nfsMountType = nfsMountType;
             return this;
         }
         @CustomType.Setter
         public Builder nfsServerExport(String nfsServerExport) {
-            this.nfsServerExport = Objects.requireNonNull(nfsServerExport);
+            if (nfsServerExport == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "nfsServerExport");
+            }
+            this.nfsServerExport = nfsServerExport;
             return this;
         }
         @CustomType.Setter
         public Builder nfsServers(List<String> nfsServers) {
-            this.nfsServers = Objects.requireNonNull(nfsServers);
+            if (nfsServers == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "nfsServers");
+            }
+            this.nfsServers = nfsServers;
             return this;
         }
         public Builder nfsServers(String... nfsServers) {
@@ -345,22 +385,34 @@ public final class GetBackupDestinationsBackupDestination {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder vpcUsers(List<String> vpcUsers) {
-            this.vpcUsers = Objects.requireNonNull(vpcUsers);
+            if (vpcUsers == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "vpcUsers");
+            }
+            this.vpcUsers = vpcUsers;
             return this;
         }
         public Builder vpcUsers(String... vpcUsers) {

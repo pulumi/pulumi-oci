@@ -5,6 +5,7 @@ package com.pulumi.oci.Apm;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -276,8 +277,12 @@ public final class ApmDomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ApmDomainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ApmDomainArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ApmDomainArgs", "displayName");
+            }
             return $;
         }
     }

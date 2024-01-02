@@ -5,6 +5,7 @@ package com.pulumi.oci.DataCatalog;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -275,9 +276,15 @@ public final class MetastoreArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public MetastoreArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.defaultExternalTableLocation = Objects.requireNonNull($.defaultExternalTableLocation, "expected parameter 'defaultExternalTableLocation' to be non-null");
-            $.defaultManagedTableLocation = Objects.requireNonNull($.defaultManagedTableLocation, "expected parameter 'defaultManagedTableLocation' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("MetastoreArgs", "compartmentId");
+            }
+            if ($.defaultExternalTableLocation == null) {
+                throw new MissingRequiredPropertyException("MetastoreArgs", "defaultExternalTableLocation");
+            }
+            if ($.defaultManagedTableLocation == null) {
+                throw new MissingRequiredPropertyException("MetastoreArgs", "defaultManagedTableLocation");
+            }
             return $;
         }
     }

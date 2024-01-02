@@ -5,6 +5,7 @@ package com.pulumi.oci.Waas.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -150,8 +151,12 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs exten
         }
 
         public PolicyWafConfigAccessRuleResponseHeaderManipulationArgs build() {
-            $.action = Objects.requireNonNull($.action, "expected parameter 'action' to be non-null");
-            $.header = Objects.requireNonNull($.header, "expected parameter 'header' to be non-null");
+            if ($.action == null) {
+                throw new MissingRequiredPropertyException("PolicyWafConfigAccessRuleResponseHeaderManipulationArgs", "action");
+            }
+            if ($.header == null) {
+                throw new MissingRequiredPropertyException("PolicyWafConfigAccessRuleResponseHeaderManipulationArgs", "header");
+            }
             return $;
         }
     }

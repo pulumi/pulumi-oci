@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.outputs.GetVirtualDeploymentsFilter;
 import com.pulumi.oci.ServiceMesh.outputs.GetVirtualDeploymentsVirtualDeploymentCollection;
 import java.lang.String;
@@ -123,11 +124,15 @@ public final class GetVirtualDeploymentsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVirtualDeploymentsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -136,22 +141,28 @@ public final class GetVirtualDeploymentsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder virtualDeploymentCollections(List<GetVirtualDeploymentsVirtualDeploymentCollection> virtualDeploymentCollections) {
-            this.virtualDeploymentCollections = Objects.requireNonNull(virtualDeploymentCollections);
+            if (virtualDeploymentCollections == null) {
+              throw new MissingRequiredPropertyException("GetVirtualDeploymentsResult", "virtualDeploymentCollections");
+            }
+            this.virtualDeploymentCollections = virtualDeploymentCollections;
             return this;
         }
         public Builder virtualDeploymentCollections(GetVirtualDeploymentsVirtualDeploymentCollection... virtualDeploymentCollections) {
@@ -159,6 +170,7 @@ public final class GetVirtualDeploymentsResult {
         }
         @CustomType.Setter
         public Builder virtualServiceId(@Nullable String virtualServiceId) {
+
             this.virtualServiceId = virtualServiceId;
             return this;
         }

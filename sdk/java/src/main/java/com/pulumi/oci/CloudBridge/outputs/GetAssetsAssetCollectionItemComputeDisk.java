@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -127,37 +128,58 @@ public final class GetAssetsAssetCollectionItemComputeDisk {
 
         @CustomType.Setter
         public Builder bootOrder(Integer bootOrder) {
-            this.bootOrder = Objects.requireNonNull(bootOrder);
+            if (bootOrder == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeDisk", "bootOrder");
+            }
+            this.bootOrder = bootOrder;
             return this;
         }
         @CustomType.Setter
         public Builder location(String location) {
-            this.location = Objects.requireNonNull(location);
+            if (location == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeDisk", "location");
+            }
+            this.location = location;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeDisk", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder persistentMode(String persistentMode) {
-            this.persistentMode = Objects.requireNonNull(persistentMode);
+            if (persistentMode == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeDisk", "persistentMode");
+            }
+            this.persistentMode = persistentMode;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInMbs(String sizeInMbs) {
-            this.sizeInMbs = Objects.requireNonNull(sizeInMbs);
+            if (sizeInMbs == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeDisk", "sizeInMbs");
+            }
+            this.sizeInMbs = sizeInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder uuid(String uuid) {
-            this.uuid = Objects.requireNonNull(uuid);
+            if (uuid == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeDisk", "uuid");
+            }
+            this.uuid = uuid;
             return this;
         }
         @CustomType.Setter
         public Builder uuidLun(String uuidLun) {
-            this.uuidLun = Objects.requireNonNull(uuidLun);
+            if (uuidLun == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeDisk", "uuidLun");
+            }
+            this.uuidLun = uuidLun;
             return this;
         }
         public GetAssetsAssetCollectionItemComputeDisk build() {

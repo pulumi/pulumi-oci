@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OspGateway.outputs.GetAddressRuleTaxField;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetAddressRuleTax {
 
         @CustomType.Setter
         public Builder fields(List<GetAddressRuleTaxField> fields) {
-            this.fields = Objects.requireNonNull(fields);
+            if (fields == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleTax", "fields");
+            }
+            this.fields = fields;
             return this;
         }
         public Builder fields(GetAddressRuleTaxField... fields) {

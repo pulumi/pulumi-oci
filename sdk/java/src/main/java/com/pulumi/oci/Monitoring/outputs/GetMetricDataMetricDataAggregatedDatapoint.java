@@ -4,6 +4,7 @@
 package com.pulumi.oci.Monitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetMetricDataMetricDataAggregatedDatapoint {
 
         @CustomType.Setter
         public Builder timestamp(String timestamp) {
-            this.timestamp = Objects.requireNonNull(timestamp);
+            if (timestamp == null) {
+              throw new MissingRequiredPropertyException("GetMetricDataMetricDataAggregatedDatapoint", "timestamp");
+            }
+            this.timestamp = timestamp;
             return this;
         }
         @CustomType.Setter
         public Builder value(Double value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetMetricDataMetricDataAggregatedDatapoint", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetMetricDataMetricDataAggregatedDatapoint build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerch
 
         @CustomType.Setter
         public Builder cloudAccountName(String cloudAccountName) {
-            this.cloudAccountName = Objects.requireNonNull(cloudAccountName);
+            if (cloudAccountName == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData", "cloudAccountName");
+            }
+            this.cloudAccountName = cloudAccountName;
             return this;
         }
         @CustomType.Setter
         public Builder promoType(String promoType) {
-            this.promoType = Objects.requireNonNull(promoType);
+            if (promoType == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData", "promoType");
+            }
+            this.promoType = promoType;
             return this;
         }
         public GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData build() {

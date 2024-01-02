@@ -4,6 +4,7 @@
 package com.pulumi.oci.Nosql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Nosql.outputs.GetTablesFilter;
 import com.pulumi.oci.Nosql.outputs.GetTablesTableCollection;
 import java.lang.String;
@@ -109,11 +110,15 @@ public final class GetTablesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetTablesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetTablesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -122,22 +127,30 @@ public final class GetTablesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTablesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder tableCollections(List<GetTablesTableCollection> tableCollections) {
-            this.tableCollections = Objects.requireNonNull(tableCollections);
+            if (tableCollections == null) {
+              throw new MissingRequiredPropertyException("GetTablesResult", "tableCollections");
+            }
+            this.tableCollections = tableCollections;
             return this;
         }
         public Builder tableCollections(GetTablesTableCollection... tableCollections) {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Dns.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -255,9 +256,15 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ResolverRuleArgs build() {
-            $.action = Objects.requireNonNull($.action, "expected parameter 'action' to be non-null");
-            $.destinationAddresses = Objects.requireNonNull($.destinationAddresses, "expected parameter 'destinationAddresses' to be non-null");
-            $.sourceEndpointName = Objects.requireNonNull($.sourceEndpointName, "expected parameter 'sourceEndpointName' to be non-null");
+            if ($.action == null) {
+                throw new MissingRequiredPropertyException("ResolverRuleArgs", "action");
+            }
+            if ($.destinationAddresses == null) {
+                throw new MissingRequiredPropertyException("ResolverRuleArgs", "destinationAddresses");
+            }
+            if ($.sourceEndpointName == null) {
+                throw new MissingRequiredPropertyException("ResolverRuleArgs", "sourceEndpointName");
+            }
             return $;
         }
     }

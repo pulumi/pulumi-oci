@@ -87,6 +87,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesBodyValidation {
 
         @CustomType.Setter
         public Builder contents(@Nullable List<DeploymentSpecificationRouteRequestPoliciesBodyValidationContent> contents) {
+
             this.contents = contents;
             return this;
         }
@@ -95,11 +96,13 @@ public final class DeploymentSpecificationRouteRequestPoliciesBodyValidation {
         }
         @CustomType.Setter
         public Builder required(@Nullable Boolean required) {
+
             this.required = required;
             return this;
         }
         @CustomType.Setter
         public Builder validationMode(@Nullable String validationMode) {
+
             this.validationMode = validationMode;
             return this;
         }

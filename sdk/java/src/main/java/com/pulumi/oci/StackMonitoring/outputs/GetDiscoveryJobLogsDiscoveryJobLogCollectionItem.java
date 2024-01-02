@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollectionItem {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobLogsDiscoveryJobLogCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder logMessage(String logMessage) {
-            this.logMessage = Objects.requireNonNull(logMessage);
+            if (logMessage == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobLogsDiscoveryJobLogCollectionItem", "logMessage");
+            }
+            this.logMessage = logMessage;
             return this;
         }
         @CustomType.Setter
         public Builder logType(String logType) {
-            this.logType = Objects.requireNonNull(logType);
+            if (logType == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobLogsDiscoveryJobLogCollectionItem", "logType");
+            }
+            this.logType = logType;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobLogsDiscoveryJobLogCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetDiscoveryJobLogsDiscoveryJobLogCollectionItem build() {

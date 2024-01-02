@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,27 +75,42 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptRe
 
         @CustomType.Setter
         public Builder executionName(String executionName) {
-            this.executionName = Objects.requireNonNull(executionName);
+            if (executionName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult", "executionName");
+            }
+            this.executionName = executionName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder script(String script) {
-            this.script = Objects.requireNonNull(script);
+            if (script == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult", "script");
+            }
+            this.script = script;
             return this;
         }
         @CustomType.Setter
         public Builder taskName(String taskName) {
-            this.taskName = Objects.requireNonNull(taskName);
+            if (taskName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult", "taskName");
+            }
+            this.taskName = taskName;
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult build() {

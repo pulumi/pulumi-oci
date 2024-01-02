@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -127,37 +128,58 @@ public final class GetVirtualCircuitCrossConnectMapping {
 
         @CustomType.Setter
         public Builder bgpMd5authKey(String bgpMd5authKey) {
-            this.bgpMd5authKey = Objects.requireNonNull(bgpMd5authKey);
+            if (bgpMd5authKey == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitCrossConnectMapping", "bgpMd5authKey");
+            }
+            this.bgpMd5authKey = bgpMd5authKey;
             return this;
         }
         @CustomType.Setter
         public Builder crossConnectOrCrossConnectGroupId(String crossConnectOrCrossConnectGroupId) {
-            this.crossConnectOrCrossConnectGroupId = Objects.requireNonNull(crossConnectOrCrossConnectGroupId);
+            if (crossConnectOrCrossConnectGroupId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitCrossConnectMapping", "crossConnectOrCrossConnectGroupId");
+            }
+            this.crossConnectOrCrossConnectGroupId = crossConnectOrCrossConnectGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder customerBgpPeeringIp(String customerBgpPeeringIp) {
-            this.customerBgpPeeringIp = Objects.requireNonNull(customerBgpPeeringIp);
+            if (customerBgpPeeringIp == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitCrossConnectMapping", "customerBgpPeeringIp");
+            }
+            this.customerBgpPeeringIp = customerBgpPeeringIp;
             return this;
         }
         @CustomType.Setter
         public Builder customerBgpPeeringIpv6(String customerBgpPeeringIpv6) {
-            this.customerBgpPeeringIpv6 = Objects.requireNonNull(customerBgpPeeringIpv6);
+            if (customerBgpPeeringIpv6 == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitCrossConnectMapping", "customerBgpPeeringIpv6");
+            }
+            this.customerBgpPeeringIpv6 = customerBgpPeeringIpv6;
             return this;
         }
         @CustomType.Setter
         public Builder oracleBgpPeeringIp(String oracleBgpPeeringIp) {
-            this.oracleBgpPeeringIp = Objects.requireNonNull(oracleBgpPeeringIp);
+            if (oracleBgpPeeringIp == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitCrossConnectMapping", "oracleBgpPeeringIp");
+            }
+            this.oracleBgpPeeringIp = oracleBgpPeeringIp;
             return this;
         }
         @CustomType.Setter
         public Builder oracleBgpPeeringIpv6(String oracleBgpPeeringIpv6) {
-            this.oracleBgpPeeringIpv6 = Objects.requireNonNull(oracleBgpPeeringIpv6);
+            if (oracleBgpPeeringIpv6 == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitCrossConnectMapping", "oracleBgpPeeringIpv6");
+            }
+            this.oracleBgpPeeringIpv6 = oracleBgpPeeringIpv6;
             return this;
         }
         @CustomType.Setter
         public Builder vlan(Integer vlan) {
-            this.vlan = Objects.requireNonNull(vlan);
+            if (vlan == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitCrossConnectMapping", "vlan");
+            }
+            this.vlan = vlan;
             return this;
         }
         public GetVirtualCircuitCrossConnectMapping build() {

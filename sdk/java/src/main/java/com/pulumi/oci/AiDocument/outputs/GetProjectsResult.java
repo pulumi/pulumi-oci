@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiDocument.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiDocument.outputs.GetProjectsFilter;
 import com.pulumi.oci.AiDocument.outputs.GetProjectsProjectCollection;
 import java.lang.String;
@@ -109,16 +110,19 @@ public final class GetProjectsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetProjectsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +131,16 @@ public final class GetProjectsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder projectCollections(List<GetProjectsProjectCollection> projectCollections) {
-            this.projectCollections = Objects.requireNonNull(projectCollections);
+            if (projectCollections == null) {
+              throw new MissingRequiredPropertyException("GetProjectsResult", "projectCollections");
+            }
+            this.projectCollections = projectCollections;
             return this;
         }
         public Builder projectCollections(GetProjectsProjectCollection... projectCollections) {
@@ -140,6 +148,7 @@ public final class GetProjectsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

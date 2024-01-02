@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Dns.outputs.GetResolversFilter;
 import com.pulumi.oci.Dns.outputs.GetResolversResolver;
 import java.lang.String;
@@ -115,16 +116,21 @@ public final class GetResolversResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetResolversResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetResolversFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -133,12 +139,16 @@ public final class GetResolversResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder resolvers(List<GetResolversResolver> resolvers) {
-            this.resolvers = Objects.requireNonNull(resolvers);
+            if (resolvers == null) {
+              throw new MissingRequiredPropertyException("GetResolversResult", "resolvers");
+            }
+            this.resolvers = resolvers;
             return this;
         }
         public Builder resolvers(GetResolversResolver... resolvers) {
@@ -146,11 +156,15 @@ public final class GetResolversResult {
         }
         @CustomType.Setter
         public Builder scope(String scope) {
-            this.scope = Objects.requireNonNull(scope);
+            if (scope == null) {
+              throw new MissingRequiredPropertyException("GetResolversResult", "scope");
+            }
+            this.scope = scope;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

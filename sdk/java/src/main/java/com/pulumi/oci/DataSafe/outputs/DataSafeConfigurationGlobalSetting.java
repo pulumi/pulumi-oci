@@ -73,16 +73,19 @@ public final class DataSafeConfigurationGlobalSetting {
 
         @CustomType.Setter
         public Builder isPaidUsage(@Nullable Boolean isPaidUsage) {
+
             this.isPaidUsage = isPaidUsage;
             return this;
         }
         @CustomType.Setter
         public Builder offlineRetentionPeriod(@Nullable Integer offlineRetentionPeriod) {
+
             this.offlineRetentionPeriod = offlineRetentionPeriod;
             return this;
         }
         @CustomType.Setter
         public Builder onlineRetentionPeriod(@Nullable Integer onlineRetentionPeriod) {
+
             this.onlineRetentionPeriod = onlineRetentionPeriod;
             return this;
         }

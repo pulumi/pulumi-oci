@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime {
 
         @CustomType.Setter
         public Builder estimatedDbServerPatchingTime(Integer estimatedDbServerPatchingTime) {
-            this.estimatedDbServerPatchingTime = Objects.requireNonNull(estimatedDbServerPatchingTime);
+            if (estimatedDbServerPatchingTime == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime", "estimatedDbServerPatchingTime");
+            }
+            this.estimatedDbServerPatchingTime = estimatedDbServerPatchingTime;
             return this;
         }
         @CustomType.Setter
         public Builder estimatedNetworkSwitchesPatchingTime(Integer estimatedNetworkSwitchesPatchingTime) {
-            this.estimatedNetworkSwitchesPatchingTime = Objects.requireNonNull(estimatedNetworkSwitchesPatchingTime);
+            if (estimatedNetworkSwitchesPatchingTime == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime", "estimatedNetworkSwitchesPatchingTime");
+            }
+            this.estimatedNetworkSwitchesPatchingTime = estimatedNetworkSwitchesPatchingTime;
             return this;
         }
         @CustomType.Setter
         public Builder estimatedStorageServerPatchingTime(Integer estimatedStorageServerPatchingTime) {
-            this.estimatedStorageServerPatchingTime = Objects.requireNonNull(estimatedStorageServerPatchingTime);
+            if (estimatedStorageServerPatchingTime == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime", "estimatedStorageServerPatchingTime");
+            }
+            this.estimatedStorageServerPatchingTime = estimatedStorageServerPatchingTime;
             return this;
         }
         @CustomType.Setter
         public Builder totalEstimatedPatchingTime(Integer totalEstimatedPatchingTime) {
-            this.totalEstimatedPatchingTime = Objects.requireNonNull(totalEstimatedPatchingTime);
+            if (totalEstimatedPatchingTime == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime", "totalEstimatedPatchingTime");
+            }
+            this.totalEstimatedPatchingTime = totalEstimatedPatchingTime;
             return this;
         }
         public GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime build() {

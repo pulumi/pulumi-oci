@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -240,77 +241,122 @@ public final class GetDomainsAppAttrRenderingMetadata {
 
         @CustomType.Setter
         public Builder datatype(String datatype) {
-            this.datatype = Objects.requireNonNull(datatype);
+            if (datatype == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppAttrRenderingMetadata", "datatype");
+            }
+            this.datatype = datatype;
             return this;
         }
         @CustomType.Setter
         public Builder helptext(String helptext) {
-            this.helptext = Objects.requireNonNull(helptext);
+            if (helptext == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppAttrRenderingMetadata", "helptext");
+            }
+            this.helptext = helptext;
             return this;
         }
         @CustomType.Setter
         public Builder label(String label) {
-            this.label = Objects.requireNonNull(label);
+            if (label == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppAttrRenderingMetadata", "label");
+            }
+            this.label = label;
             return this;
         }
         @CustomType.Setter
         public Builder maxLength(Integer maxLength) {
-            this.maxLength = Objects.requireNonNull(maxLength);
+            if (maxLength == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppAttrRenderingMetadata", "maxLength");
+            }
+            this.maxLength = maxLength;
             return this;
         }
         @CustomType.Setter
         public Builder maxSize(Integer maxSize) {
-            this.maxSize = Objects.requireNonNull(maxSize);
+            if (maxSize == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppAttrRenderingMetadata", "maxSize");
+            }
+            this.maxSize = maxSize;
             return this;
         }
         @CustomType.Setter
         public Builder minLength(Integer minLength) {
-            this.minLength = Objects.requireNonNull(minLength);
+            if (minLength == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppAttrRenderingMetadata", "minLength");
+            }
+            this.minLength = minLength;
             return this;
         }
         @CustomType.Setter
         public Builder minSize(Integer minSize) {
-            this.minSize = Objects.requireNonNull(minSize);
+            if (minSize == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppAttrRenderingMetadata", "minSize");
+            }
+            this.minSize = minSize;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppAttrRenderingMetadata", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder order(Integer order) {
-            this.order = Objects.requireNonNull(order);
+            if (order == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppAttrRenderingMetadata", "order");
+            }
+            this.order = order;
             return this;
         }
         @CustomType.Setter
         public Builder readOnly(Boolean readOnly) {
-            this.readOnly = Objects.requireNonNull(readOnly);
+            if (readOnly == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppAttrRenderingMetadata", "readOnly");
+            }
+            this.readOnly = readOnly;
             return this;
         }
         @CustomType.Setter
         public Builder regexp(String regexp) {
-            this.regexp = Objects.requireNonNull(regexp);
+            if (regexp == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppAttrRenderingMetadata", "regexp");
+            }
+            this.regexp = regexp;
             return this;
         }
         @CustomType.Setter
         public Builder required(Boolean required) {
-            this.required = Objects.requireNonNull(required);
+            if (required == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppAttrRenderingMetadata", "required");
+            }
+            this.required = required;
             return this;
         }
         @CustomType.Setter
         public Builder section(String section) {
-            this.section = Objects.requireNonNull(section);
+            if (section == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppAttrRenderingMetadata", "section");
+            }
+            this.section = section;
             return this;
         }
         @CustomType.Setter
         public Builder visible(Boolean visible) {
-            this.visible = Objects.requireNonNull(visible);
+            if (visible == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppAttrRenderingMetadata", "visible");
+            }
+            this.visible = visible;
             return this;
         }
         @CustomType.Setter
         public Builder widget(String widget) {
-            this.widget = Objects.requireNonNull(widget);
+            if (widget == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppAttrRenderingMetadata", "widget");
+            }
+            this.widget = widget;
             return this;
         }
         public GetDomainsAppAttrRenderingMetadata build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmConfig.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmConfig.outputs.GetConfigsConfigCollection;
 import com.pulumi.oci.ApmConfig.outputs.GetConfigsFilter;
 import java.lang.String;
@@ -139,12 +140,18 @@ public final class GetConfigsResult {
 
         @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
-            this.apmDomainId = Objects.requireNonNull(apmDomainId);
+            if (apmDomainId == null) {
+              throw new MissingRequiredPropertyException("GetConfigsResult", "apmDomainId");
+            }
+            this.apmDomainId = apmDomainId;
             return this;
         }
         @CustomType.Setter
         public Builder configCollections(List<GetConfigsConfigCollection> configCollections) {
-            this.configCollections = Objects.requireNonNull(configCollections);
+            if (configCollections == null) {
+              throw new MissingRequiredPropertyException("GetConfigsResult", "configCollections");
+            }
+            this.configCollections = configCollections;
             return this;
         }
         public Builder configCollections(GetConfigsConfigCollection... configCollections) {
@@ -152,11 +159,13 @@ public final class GetConfigsResult {
         }
         @CustomType.Setter
         public Builder configType(@Nullable String configType) {
+
             this.configType = configType;
             return this;
         }
         @CustomType.Setter
         public Builder definedTagEquals(@Nullable List<String> definedTagEquals) {
+
             this.definedTagEquals = definedTagEquals;
             return this;
         }
@@ -165,6 +174,7 @@ public final class GetConfigsResult {
         }
         @CustomType.Setter
         public Builder definedTagExists(@Nullable List<String> definedTagExists) {
+
             this.definedTagExists = definedTagExists;
             return this;
         }
@@ -173,11 +183,13 @@ public final class GetConfigsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetConfigsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -186,6 +198,7 @@ public final class GetConfigsResult {
         }
         @CustomType.Setter
         public Builder freeformTagEquals(@Nullable List<String> freeformTagEquals) {
+
             this.freeformTagEquals = freeformTagEquals;
             return this;
         }
@@ -194,6 +207,7 @@ public final class GetConfigsResult {
         }
         @CustomType.Setter
         public Builder freeformTagExists(@Nullable List<String> freeformTagExists) {
+
             this.freeformTagExists = freeformTagExists;
             return this;
         }
@@ -202,11 +216,15 @@ public final class GetConfigsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetConfigsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder optionsGroup(@Nullable String optionsGroup) {
+
             this.optionsGroup = optionsGroup;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.GetWaasPolicyWafConfigAccessRule;
 import com.pulumi.oci.Waas.outputs.GetWaasPolicyWafConfigAddressRateLimiting;
 import com.pulumi.oci.Waas.outputs.GetWaasPolicyWafConfigCachingRule;
@@ -207,7 +208,10 @@ public final class GetWaasPolicyWafConfig {
 
         @CustomType.Setter
         public Builder accessRules(List<GetWaasPolicyWafConfigAccessRule> accessRules) {
-            this.accessRules = Objects.requireNonNull(accessRules);
+            if (accessRules == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfig", "accessRules");
+            }
+            this.accessRules = accessRules;
             return this;
         }
         public Builder accessRules(GetWaasPolicyWafConfigAccessRule... accessRules) {
@@ -215,12 +219,18 @@ public final class GetWaasPolicyWafConfig {
         }
         @CustomType.Setter
         public Builder addressRateLimiting(GetWaasPolicyWafConfigAddressRateLimiting addressRateLimiting) {
-            this.addressRateLimiting = Objects.requireNonNull(addressRateLimiting);
+            if (addressRateLimiting == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfig", "addressRateLimiting");
+            }
+            this.addressRateLimiting = addressRateLimiting;
             return this;
         }
         @CustomType.Setter
         public Builder cachingRules(List<GetWaasPolicyWafConfigCachingRule> cachingRules) {
-            this.cachingRules = Objects.requireNonNull(cachingRules);
+            if (cachingRules == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfig", "cachingRules");
+            }
+            this.cachingRules = cachingRules;
             return this;
         }
         public Builder cachingRules(GetWaasPolicyWafConfigCachingRule... cachingRules) {
@@ -228,7 +238,10 @@ public final class GetWaasPolicyWafConfig {
         }
         @CustomType.Setter
         public Builder captchas(List<GetWaasPolicyWafConfigCaptcha> captchas) {
-            this.captchas = Objects.requireNonNull(captchas);
+            if (captchas == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfig", "captchas");
+            }
+            this.captchas = captchas;
             return this;
         }
         public Builder captchas(GetWaasPolicyWafConfigCaptcha... captchas) {
@@ -236,7 +249,10 @@ public final class GetWaasPolicyWafConfig {
         }
         @CustomType.Setter
         public Builder customProtectionRules(List<GetWaasPolicyWafConfigCustomProtectionRule> customProtectionRules) {
-            this.customProtectionRules = Objects.requireNonNull(customProtectionRules);
+            if (customProtectionRules == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfig", "customProtectionRules");
+            }
+            this.customProtectionRules = customProtectionRules;
             return this;
         }
         public Builder customProtectionRules(GetWaasPolicyWafConfigCustomProtectionRule... customProtectionRules) {
@@ -244,27 +260,42 @@ public final class GetWaasPolicyWafConfig {
         }
         @CustomType.Setter
         public Builder deviceFingerprintChallenge(GetWaasPolicyWafConfigDeviceFingerprintChallenge deviceFingerprintChallenge) {
-            this.deviceFingerprintChallenge = Objects.requireNonNull(deviceFingerprintChallenge);
+            if (deviceFingerprintChallenge == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfig", "deviceFingerprintChallenge");
+            }
+            this.deviceFingerprintChallenge = deviceFingerprintChallenge;
             return this;
         }
         @CustomType.Setter
         public Builder humanInteractionChallenge(GetWaasPolicyWafConfigHumanInteractionChallenge humanInteractionChallenge) {
-            this.humanInteractionChallenge = Objects.requireNonNull(humanInteractionChallenge);
+            if (humanInteractionChallenge == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfig", "humanInteractionChallenge");
+            }
+            this.humanInteractionChallenge = humanInteractionChallenge;
             return this;
         }
         @CustomType.Setter
         public Builder jsChallenge(GetWaasPolicyWafConfigJsChallenge jsChallenge) {
-            this.jsChallenge = Objects.requireNonNull(jsChallenge);
+            if (jsChallenge == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfig", "jsChallenge");
+            }
+            this.jsChallenge = jsChallenge;
             return this;
         }
         @CustomType.Setter
         public Builder origin(String origin) {
-            this.origin = Objects.requireNonNull(origin);
+            if (origin == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfig", "origin");
+            }
+            this.origin = origin;
             return this;
         }
         @CustomType.Setter
         public Builder originGroups(List<String> originGroups) {
-            this.originGroups = Objects.requireNonNull(originGroups);
+            if (originGroups == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfig", "originGroups");
+            }
+            this.originGroups = originGroups;
             return this;
         }
         public Builder originGroups(String... originGroups) {
@@ -272,12 +303,18 @@ public final class GetWaasPolicyWafConfig {
         }
         @CustomType.Setter
         public Builder protectionSettings(GetWaasPolicyWafConfigProtectionSettings protectionSettings) {
-            this.protectionSettings = Objects.requireNonNull(protectionSettings);
+            if (protectionSettings == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfig", "protectionSettings");
+            }
+            this.protectionSettings = protectionSettings;
             return this;
         }
         @CustomType.Setter
         public Builder whitelists(List<GetWaasPolicyWafConfigWhitelist> whitelists) {
-            this.whitelists = Objects.requireNonNull(whitelists);
+            if (whitelists == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfig", "whitelists");
+            }
+            this.whitelists = whitelists;
             return this;
         }
         public Builder whitelists(GetWaasPolicyWafConfigWhitelist... whitelists) {

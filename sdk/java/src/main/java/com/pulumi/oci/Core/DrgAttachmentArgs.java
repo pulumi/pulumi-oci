@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.DrgAttachmentNetworkDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -457,7 +458,9 @@ public final class DrgAttachmentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DrgAttachmentArgs build() {
-            $.drgId = Objects.requireNonNull($.drgId, "expected parameter 'drgId' to be non-null");
+            if ($.drgId == null) {
+                throw new MissingRequiredPropertyException("DrgAttachmentArgs", "drgId");
+            }
             return $;
         }
     }

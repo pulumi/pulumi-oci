@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.outputs.VirtualServiceRouteTableRouteRuleDestination;
 import java.lang.Boolean;
 import java.lang.String;
@@ -117,7 +118,10 @@ public final class VirtualServiceRouteTableRouteRule {
 
         @CustomType.Setter
         public Builder destinations(List<VirtualServiceRouteTableRouteRuleDestination> destinations) {
-            this.destinations = Objects.requireNonNull(destinations);
+            if (destinations == null) {
+              throw new MissingRequiredPropertyException("VirtualServiceRouteTableRouteRule", "destinations");
+            }
+            this.destinations = destinations;
             return this;
         }
         public Builder destinations(VirtualServiceRouteTableRouteRuleDestination... destinations) {
@@ -125,27 +129,34 @@ public final class VirtualServiceRouteTableRouteRule {
         }
         @CustomType.Setter
         public Builder isGrpc(@Nullable Boolean isGrpc) {
+
             this.isGrpc = isGrpc;
             return this;
         }
         @CustomType.Setter
         public Builder path(@Nullable String path) {
+
             this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder pathType(@Nullable String pathType) {
+
             this.pathType = pathType;
             return this;
         }
         @CustomType.Setter
         public Builder requestTimeoutInMs(@Nullable String requestTimeoutInMs) {
+
             this.requestTimeoutInMs = requestTimeoutInMs;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("VirtualServiceRouteTableRouteRule", "type");
+            }
+            this.type = type;
             return this;
         }
         public VirtualServiceRouteTableRouteRule build() {

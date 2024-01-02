@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetDbSystemStorageDetail {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemStorageDetail", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder iops(String iops) {
-            this.iops = Objects.requireNonNull(iops);
+            if (iops == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemStorageDetail", "iops");
+            }
+            this.iops = iops;
             return this;
         }
         @CustomType.Setter
         public Builder isRegionallyDurable(Boolean isRegionallyDurable) {
-            this.isRegionallyDurable = Objects.requireNonNull(isRegionallyDurable);
+            if (isRegionallyDurable == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemStorageDetail", "isRegionallyDurable");
+            }
+            this.isRegionallyDurable = isRegionallyDurable;
             return this;
         }
         @CustomType.Setter
         public Builder systemType(String systemType) {
-            this.systemType = Objects.requireNonNull(systemType);
+            if (systemType == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemStorageDetail", "systemType");
+            }
+            this.systemType = systemType;
             return this;
         }
         public GetDbSystemStorageDetail build() {

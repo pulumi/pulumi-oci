@@ -4,6 +4,7 @@
 package com.pulumi.oci.OperatorAccessControl.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OperatorAccessControl.outputs.GetControlsOperatorControlCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetControlsOperatorControlCollection {
 
         @CustomType.Setter
         public Builder items(List<GetControlsOperatorControlCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetControlsOperatorControlCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetControlsOperatorControlCollectionItem... items) {

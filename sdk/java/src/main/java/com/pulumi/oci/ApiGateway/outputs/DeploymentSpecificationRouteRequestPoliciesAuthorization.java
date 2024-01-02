@@ -65,6 +65,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesAuthorization {
 
         @CustomType.Setter
         public Builder allowedScopes(@Nullable List<String> allowedScopes) {
+
             this.allowedScopes = allowedScopes;
             return this;
         }
@@ -73,6 +74,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesAuthorization {
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }

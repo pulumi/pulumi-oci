@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.util.Objects;
@@ -508,12 +509,24 @@ public final class DomainsAuthenticationFactorSettingBypassCodeSettingsArgs exte
         }
 
         public DomainsAuthenticationFactorSettingBypassCodeSettingsArgs build() {
-            $.helpDeskCodeExpiryInMins = Objects.requireNonNull($.helpDeskCodeExpiryInMins, "expected parameter 'helpDeskCodeExpiryInMins' to be non-null");
-            $.helpDeskGenerationEnabled = Objects.requireNonNull($.helpDeskGenerationEnabled, "expected parameter 'helpDeskGenerationEnabled' to be non-null");
-            $.helpDeskMaxUsage = Objects.requireNonNull($.helpDeskMaxUsage, "expected parameter 'helpDeskMaxUsage' to be non-null");
-            $.length = Objects.requireNonNull($.length, "expected parameter 'length' to be non-null");
-            $.maxActive = Objects.requireNonNull($.maxActive, "expected parameter 'maxActive' to be non-null");
-            $.selfServiceGenerationEnabled = Objects.requireNonNull($.selfServiceGenerationEnabled, "expected parameter 'selfServiceGenerationEnabled' to be non-null");
+            if ($.helpDeskCodeExpiryInMins == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingBypassCodeSettingsArgs", "helpDeskCodeExpiryInMins");
+            }
+            if ($.helpDeskGenerationEnabled == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingBypassCodeSettingsArgs", "helpDeskGenerationEnabled");
+            }
+            if ($.helpDeskMaxUsage == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingBypassCodeSettingsArgs", "helpDeskMaxUsage");
+            }
+            if ($.length == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingBypassCodeSettingsArgs", "length");
+            }
+            if ($.maxActive == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingBypassCodeSettingsArgs", "maxActive");
+            }
+            if ($.selfServiceGenerationEnabled == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingBypassCodeSettingsArgs", "selfServiceGenerationEnabled");
+            }
             return $;
         }
     }

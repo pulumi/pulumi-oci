@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -59,12 +60,18 @@ public final class GetResolversResolverRule {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetResolversResolverRule", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder clientAddressConditions(List<String> clientAddressConditions) {
-            this.clientAddressConditions = Objects.requireNonNull(clientAddressConditions);
+            if (clientAddressConditions == null) {
+              throw new MissingRequiredPropertyException("GetResolversResolverRule", "clientAddressConditions");
+            }
+            this.clientAddressConditions = clientAddressConditions;
             return this;
         }
         public Builder clientAddressConditions(String... clientAddressConditions) {
@@ -72,7 +79,10 @@ public final class GetResolversResolverRule {
         }
         @CustomType.Setter
         public Builder destinationAddresses(List<String> destinationAddresses) {
-            this.destinationAddresses = Objects.requireNonNull(destinationAddresses);
+            if (destinationAddresses == null) {
+              throw new MissingRequiredPropertyException("GetResolversResolverRule", "destinationAddresses");
+            }
+            this.destinationAddresses = destinationAddresses;
             return this;
         }
         public Builder destinationAddresses(String... destinationAddresses) {
@@ -80,7 +90,10 @@ public final class GetResolversResolverRule {
         }
         @CustomType.Setter
         public Builder qnameCoverConditions(List<String> qnameCoverConditions) {
-            this.qnameCoverConditions = Objects.requireNonNull(qnameCoverConditions);
+            if (qnameCoverConditions == null) {
+              throw new MissingRequiredPropertyException("GetResolversResolverRule", "qnameCoverConditions");
+            }
+            this.qnameCoverConditions = qnameCoverConditions;
             return this;
         }
         public Builder qnameCoverConditions(String... qnameCoverConditions) {
@@ -88,7 +101,10 @@ public final class GetResolversResolverRule {
         }
         @CustomType.Setter
         public Builder sourceEndpointName(String sourceEndpointName) {
-            this.sourceEndpointName = Objects.requireNonNull(sourceEndpointName);
+            if (sourceEndpointName == null) {
+              throw new MissingRequiredPropertyException("GetResolversResolverRule", "sourceEndpointName");
+            }
+            this.sourceEndpointName = sourceEndpointName;
             return this;
         }
         public GetResolversResolverRule build() {

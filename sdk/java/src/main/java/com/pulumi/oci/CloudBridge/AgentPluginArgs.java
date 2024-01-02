@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudBridge;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -162,8 +163,12 @@ public final class AgentPluginArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public AgentPluginArgs build() {
-            $.agentId = Objects.requireNonNull($.agentId, "expected parameter 'agentId' to be non-null");
-            $.pluginName = Objects.requireNonNull($.pluginName, "expected parameter 'pluginName' to be non-null");
+            if ($.agentId == null) {
+                throw new MissingRequiredPropertyException("AgentPluginArgs", "agentId");
+            }
+            if ($.pluginName == null) {
+                throw new MissingRequiredPropertyException("AgentPluginArgs", "pluginName");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -572,9 +573,15 @@ public final class SqlCollectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public SqlCollectionArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.dbUserName = Objects.requireNonNull($.dbUserName, "expected parameter 'dbUserName' to be non-null");
-            $.targetId = Objects.requireNonNull($.targetId, "expected parameter 'targetId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("SqlCollectionArgs", "compartmentId");
+            }
+            if ($.dbUserName == null) {
+                throw new MissingRequiredPropertyException("SqlCollectionArgs", "dbUserName");
+            }
+            if ($.targetId == null) {
+                throw new MissingRequiredPropertyException("SqlCollectionArgs", "targetId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.SecurityListIngressSecurityRuleIcmpOptions;
 import com.pulumi.oci.Core.outputs.SecurityListIngressSecurityRuleTcpOptions;
 import com.pulumi.oci.Core.outputs.SecurityListIngressSecurityRuleUdpOptions;
@@ -162,41 +163,53 @@ public final class SecurityListIngressSecurityRule {
 
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder icmpOptions(@Nullable SecurityListIngressSecurityRuleIcmpOptions icmpOptions) {
+
             this.icmpOptions = icmpOptions;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("SecurityListIngressSecurityRule", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("SecurityListIngressSecurityRule", "source");
+            }
+            this.source = source;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(@Nullable String sourceType) {
+
             this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
         public Builder stateless(@Nullable Boolean stateless) {
+
             this.stateless = stateless;
             return this;
         }
         @CustomType.Setter
         public Builder tcpOptions(@Nullable SecurityListIngressSecurityRuleTcpOptions tcpOptions) {
+
             this.tcpOptions = tcpOptions;
             return this;
         }
         @CustomType.Setter
         public Builder udpOptions(@Nullable SecurityListIngressSecurityRuleUdpOptions udpOptions) {
+
             this.udpOptions = udpOptions;
             return this;
         }

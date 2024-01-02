@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsApprovalWorkflowApprovalWorkflowStepArgs;
 import com.pulumi.oci.Identity.inputs.DomainsApprovalWorkflowMaxDurationArgs;
 import com.pulumi.oci.Identity.inputs.DomainsApprovalWorkflowTagArgs;
@@ -842,9 +843,15 @@ public final class DomainsApprovalWorkflowArgs extends com.pulumi.resources.Reso
         }
 
         public DomainsApprovalWorkflowArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.maxDuration = Objects.requireNonNull($.maxDuration, "expected parameter 'maxDuration' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsApprovalWorkflowArgs", "idcsEndpoint");
+            }
+            if ($.maxDuration == null) {
+                throw new MissingRequiredPropertyException("DomainsApprovalWorkflowArgs", "maxDuration");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsApprovalWorkflowArgs", "schemas");
+            }
             return $;
         }
     }

@@ -44,6 +44,7 @@ public final class PathAnalyzerTestQueryOptions {
 
         @CustomType.Setter
         public Builder isBiDirectionalAnalysis(@Nullable Boolean isBiDirectionalAnalysis) {
+
             this.isBiDirectionalAnalysis = isBiDirectionalAnalysis;
             return this;
         }

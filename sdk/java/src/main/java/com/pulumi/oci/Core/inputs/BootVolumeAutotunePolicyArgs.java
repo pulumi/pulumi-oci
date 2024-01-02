@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -113,7 +114,9 @@ public final class BootVolumeAutotunePolicyArgs extends com.pulumi.resources.Res
         }
 
         public BootVolumeAutotunePolicyArgs build() {
-            $.autotuneType = Objects.requireNonNull($.autotuneType, "expected parameter 'autotuneType' to be non-null");
+            if ($.autotuneType == null) {
+                throw new MissingRequiredPropertyException("BootVolumeAutotunePolicyArgs", "autotuneType");
+            }
             return $;
         }
     }

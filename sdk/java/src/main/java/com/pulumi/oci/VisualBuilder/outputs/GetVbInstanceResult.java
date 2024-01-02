@@ -4,6 +4,7 @@
 package com.pulumi.oci.VisualBuilder.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.VisualBuilder.outputs.GetVbInstanceAlternateCustomEndpoint;
 import com.pulumi.oci.VisualBuilder.outputs.GetVbInstanceAttachment;
 import com.pulumi.oci.VisualBuilder.outputs.GetVbInstanceCustomEndpoint;
@@ -357,7 +358,10 @@ public final class GetVbInstanceResult {
 
         @CustomType.Setter
         public Builder alternateCustomEndpoints(List<GetVbInstanceAlternateCustomEndpoint> alternateCustomEndpoints) {
-            this.alternateCustomEndpoints = Objects.requireNonNull(alternateCustomEndpoints);
+            if (alternateCustomEndpoints == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "alternateCustomEndpoints");
+            }
+            this.alternateCustomEndpoints = alternateCustomEndpoints;
             return this;
         }
         public Builder alternateCustomEndpoints(GetVbInstanceAlternateCustomEndpoint... alternateCustomEndpoints) {
@@ -365,7 +369,10 @@ public final class GetVbInstanceResult {
         }
         @CustomType.Setter
         public Builder attachments(List<GetVbInstanceAttachment> attachments) {
-            this.attachments = Objects.requireNonNull(attachments);
+            if (attachments == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "attachments");
+            }
+            this.attachments = attachments;
             return this;
         }
         public Builder attachments(GetVbInstanceAttachment... attachments) {
@@ -373,17 +380,26 @@ public final class GetVbInstanceResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder consumptionModel(String consumptionModel) {
-            this.consumptionModel = Objects.requireNonNull(consumptionModel);
+            if (consumptionModel == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "consumptionModel");
+            }
+            this.consumptionModel = consumptionModel;
             return this;
         }
         @CustomType.Setter
         public Builder customEndpoints(List<GetVbInstanceCustomEndpoint> customEndpoints) {
-            this.customEndpoints = Objects.requireNonNull(customEndpoints);
+            if (customEndpoints == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "customEndpoints");
+            }
+            this.customEndpoints = customEndpoints;
             return this;
         }
         public Builder customEndpoints(GetVbInstanceCustomEndpoint... customEndpoints) {
@@ -391,27 +407,42 @@ public final class GetVbInstanceResult {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsInfos(List<GetVbInstanceIdcsInfo> idcsInfos) {
-            this.idcsInfos = Objects.requireNonNull(idcsInfos);
+            if (idcsInfos == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "idcsInfos");
+            }
+            this.idcsInfos = idcsInfos;
             return this;
         }
         public Builder idcsInfos(GetVbInstanceIdcsInfo... idcsInfos) {
@@ -419,72 +450,114 @@ public final class GetVbInstanceResult {
         }
         @CustomType.Setter
         public Builder idcsOpenId(String idcsOpenId) {
-            this.idcsOpenId = Objects.requireNonNull(idcsOpenId);
+            if (idcsOpenId == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "idcsOpenId");
+            }
+            this.idcsOpenId = idcsOpenId;
             return this;
         }
         @CustomType.Setter
         public Builder instanceUrl(String instanceUrl) {
-            this.instanceUrl = Objects.requireNonNull(instanceUrl);
+            if (instanceUrl == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "instanceUrl");
+            }
+            this.instanceUrl = instanceUrl;
             return this;
         }
         @CustomType.Setter
         public Builder isVisualBuilderEnabled(Boolean isVisualBuilderEnabled) {
-            this.isVisualBuilderEnabled = Objects.requireNonNull(isVisualBuilderEnabled);
+            if (isVisualBuilderEnabled == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "isVisualBuilderEnabled");
+            }
+            this.isVisualBuilderEnabled = isVisualBuilderEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder managementNatGatewayIp(String managementNatGatewayIp) {
-            this.managementNatGatewayIp = Objects.requireNonNull(managementNatGatewayIp);
+            if (managementNatGatewayIp == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "managementNatGatewayIp");
+            }
+            this.managementNatGatewayIp = managementNatGatewayIp;
             return this;
         }
         @CustomType.Setter
         public Builder managementVcnId(String managementVcnId) {
-            this.managementVcnId = Objects.requireNonNull(managementVcnId);
+            if (managementVcnId == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "managementVcnId");
+            }
+            this.managementVcnId = managementVcnId;
             return this;
         }
         @CustomType.Setter
         public Builder nodeCount(Integer nodeCount) {
-            this.nodeCount = Objects.requireNonNull(nodeCount);
+            if (nodeCount == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "nodeCount");
+            }
+            this.nodeCount = nodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder serviceNatGatewayIp(String serviceNatGatewayIp) {
-            this.serviceNatGatewayIp = Objects.requireNonNull(serviceNatGatewayIp);
+            if (serviceNatGatewayIp == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "serviceNatGatewayIp");
+            }
+            this.serviceNatGatewayIp = serviceNatGatewayIp;
             return this;
         }
         @CustomType.Setter
         public Builder serviceVcnId(String serviceVcnId) {
-            this.serviceVcnId = Objects.requireNonNull(serviceVcnId);
+            if (serviceVcnId == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "serviceVcnId");
+            }
+            this.serviceVcnId = serviceVcnId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder stateMessage(String stateMessage) {
-            this.stateMessage = Objects.requireNonNull(stateMessage);
+            if (stateMessage == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "stateMessage");
+            }
+            this.stateMessage = stateMessage;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder vbInstanceId(String vbInstanceId) {
-            this.vbInstanceId = Objects.requireNonNull(vbInstanceId);
+            if (vbInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "vbInstanceId");
+            }
+            this.vbInstanceId = vbInstanceId;
             return this;
         }
         public GetVbInstanceResult build() {

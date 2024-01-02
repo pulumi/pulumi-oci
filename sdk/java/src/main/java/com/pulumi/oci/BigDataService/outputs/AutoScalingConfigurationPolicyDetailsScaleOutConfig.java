@@ -73,16 +73,19 @@ public final class AutoScalingConfigurationPolicyDetailsScaleOutConfig {
 
         @CustomType.Setter
         public Builder maxNodeCount(@Nullable Integer maxNodeCount) {
+
             this.maxNodeCount = maxNodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder metric(@Nullable AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric metric) {
+
             this.metric = metric;
             return this;
         }
         @CustomType.Setter
         public Builder stepSize(@Nullable Integer stepSize) {
+
             this.stepSize = stepSize;
             return this;
         }

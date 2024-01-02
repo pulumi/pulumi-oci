@@ -4,6 +4,7 @@
 package com.pulumi.oci.Nosql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Nosql.outputs.GetIndexesFilter;
 import com.pulumi.oci.Nosql.outputs.GetIndexesIndexCollection;
 import java.lang.String;
@@ -115,11 +116,13 @@ public final class GetIndexesResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetIndexesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -128,12 +131,18 @@ public final class GetIndexesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIndexesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder indexCollections(List<GetIndexesIndexCollection> indexCollections) {
-            this.indexCollections = Objects.requireNonNull(indexCollections);
+            if (indexCollections == null) {
+              throw new MissingRequiredPropertyException("GetIndexesResult", "indexCollections");
+            }
+            this.indexCollections = indexCollections;
             return this;
         }
         public Builder indexCollections(GetIndexesIndexCollection... indexCollections) {
@@ -141,17 +150,22 @@ public final class GetIndexesResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder tableNameOrId(String tableNameOrId) {
-            this.tableNameOrId = Objects.requireNonNull(tableNameOrId);
+            if (tableNameOrId == null) {
+              throw new MissingRequiredPropertyException("GetIndexesResult", "tableNameOrId");
+            }
+            this.tableNameOrId = tableNameOrId;
             return this;
         }
         public GetIndexesResult build() {

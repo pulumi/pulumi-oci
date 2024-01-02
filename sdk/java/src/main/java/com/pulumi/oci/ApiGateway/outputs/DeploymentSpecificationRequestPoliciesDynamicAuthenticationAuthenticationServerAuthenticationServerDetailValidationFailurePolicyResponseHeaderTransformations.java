@@ -74,16 +74,19 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
 
         @CustomType.Setter
         public Builder filterHeaders(@Nullable DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeaders filterHeaders) {
+
             this.filterHeaders = filterHeaders;
             return this;
         }
         @CustomType.Setter
         public Builder renameHeaders(@Nullable DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeaders renameHeaders) {
+
             this.renameHeaders = renameHeaders;
             return this;
         }
         @CustomType.Setter
         public Builder setHeaders(@Nullable DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeaders setHeaders) {
+
             this.setHeaders = setHeaders;
             return this;
         }

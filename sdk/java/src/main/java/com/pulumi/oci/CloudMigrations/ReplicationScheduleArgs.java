@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudMigrations;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -238,9 +239,15 @@ public final class ReplicationScheduleArgs extends com.pulumi.resources.Resource
         }
 
         public ReplicationScheduleArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.executionRecurrences = Objects.requireNonNull($.executionRecurrences, "expected parameter 'executionRecurrences' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ReplicationScheduleArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ReplicationScheduleArgs", "displayName");
+            }
+            if ($.executionRecurrences == null) {
+                throw new MissingRequiredPropertyException("ReplicationScheduleArgs", "executionRecurrences");
+            }
             return $;
         }
     }

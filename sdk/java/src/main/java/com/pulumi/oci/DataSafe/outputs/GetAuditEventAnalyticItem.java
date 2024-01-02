@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetAuditEventAnalyticItemDimension;
 import java.lang.String;
 import java.util.List;
@@ -114,12 +115,18 @@ public final class GetAuditEventAnalyticItem {
 
         @CustomType.Setter
         public Builder count(String count) {
-            this.count = Objects.requireNonNull(count);
+            if (count == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventAnalyticItem", "count");
+            }
+            this.count = count;
             return this;
         }
         @CustomType.Setter
         public Builder dimensions(List<GetAuditEventAnalyticItemDimension> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+            if (dimensions == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventAnalyticItem", "dimensions");
+            }
+            this.dimensions = dimensions;
             return this;
         }
         public Builder dimensions(GetAuditEventAnalyticItemDimension... dimensions) {
@@ -127,22 +134,34 @@ public final class GetAuditEventAnalyticItem {
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventAnalyticItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder metricName(String metricName) {
-            this.metricName = Objects.requireNonNull(metricName);
+            if (metricName == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventAnalyticItem", "metricName");
+            }
+            this.metricName = metricName;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+            if (timeEnded == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventAnalyticItem", "timeEnded");
+            }
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventAnalyticItem", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetAuditEventAnalyticItem build() {

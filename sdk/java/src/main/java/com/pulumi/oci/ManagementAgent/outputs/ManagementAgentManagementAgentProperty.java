@@ -73,16 +73,19 @@ public final class ManagementAgentManagementAgentProperty {
 
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder units(@Nullable String units) {
+
             this.units = units;
             return this;
         }
         @CustomType.Setter
         public Builder values(@Nullable List<String> values) {
+
             this.values = values;
             return this;
         }

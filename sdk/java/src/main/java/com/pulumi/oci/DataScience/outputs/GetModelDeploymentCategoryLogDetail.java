@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentCategoryLogDetailAccess;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentCategoryLogDetailPredict;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetModelDeploymentCategoryLogDetail {
 
         @CustomType.Setter
         public Builder accesses(List<GetModelDeploymentCategoryLogDetailAccess> accesses) {
-            this.accesses = Objects.requireNonNull(accesses);
+            if (accesses == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentCategoryLogDetail", "accesses");
+            }
+            this.accesses = accesses;
             return this;
         }
         public Builder accesses(GetModelDeploymentCategoryLogDetailAccess... accesses) {
@@ -66,7 +70,10 @@ public final class GetModelDeploymentCategoryLogDetail {
         }
         @CustomType.Setter
         public Builder predicts(List<GetModelDeploymentCategoryLogDetailPredict> predicts) {
-            this.predicts = Objects.requireNonNull(predicts);
+            if (predicts == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentCategoryLogDetail", "predicts");
+            }
+            this.predicts = predicts;
             return this;
         }
         public Builder predicts(GetModelDeploymentCategoryLogDetailPredict... predicts) {

@@ -58,11 +58,13 @@ public final class DatabaseDatabaseManagementConfig {
 
         @CustomType.Setter
         public Builder managementStatus(@Nullable String managementStatus) {
+
             this.managementStatus = managementStatus;
             return this;
         }
         @CustomType.Setter
         public Builder managementType(@Nullable String managementType) {
+
             this.managementType = managementType;
             return this;
         }

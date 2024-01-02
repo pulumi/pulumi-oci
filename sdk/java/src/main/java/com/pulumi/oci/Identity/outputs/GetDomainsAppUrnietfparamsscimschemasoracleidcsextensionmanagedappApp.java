@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationProperty;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle;
@@ -374,17 +375,26 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
 
         @CustomType.Setter
         public Builder accountFormVisible(Boolean accountFormVisible) {
-            this.accountFormVisible = Objects.requireNonNull(accountFormVisible);
+            if (accountFormVisible == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "accountFormVisible");
+            }
+            this.accountFormVisible = accountFormVisible;
             return this;
         }
         @CustomType.Setter
         public Builder adminConsentGranted(Boolean adminConsentGranted) {
-            this.adminConsentGranted = Objects.requireNonNull(adminConsentGranted);
+            if (adminConsentGranted == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "adminConsentGranted");
+            }
+            this.adminConsentGranted = adminConsentGranted;
             return this;
         }
         @CustomType.Setter
         public Builder bundleConfigurationProperties(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationProperty> bundleConfigurationProperties) {
-            this.bundleConfigurationProperties = Objects.requireNonNull(bundleConfigurationProperties);
+            if (bundleConfigurationProperties == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "bundleConfigurationProperties");
+            }
+            this.bundleConfigurationProperties = bundleConfigurationProperties;
             return this;
         }
         public Builder bundleConfigurationProperties(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationProperty... bundleConfigurationProperties) {
@@ -392,7 +402,10 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
         }
         @CustomType.Setter
         public Builder bundlePoolConfigurations(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration> bundlePoolConfigurations) {
-            this.bundlePoolConfigurations = Objects.requireNonNull(bundlePoolConfigurations);
+            if (bundlePoolConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "bundlePoolConfigurations");
+            }
+            this.bundlePoolConfigurations = bundlePoolConfigurations;
             return this;
         }
         public Builder bundlePoolConfigurations(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration... bundlePoolConfigurations) {
@@ -400,17 +413,26 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
         }
         @CustomType.Setter
         public Builder canBeAuthoritative(Boolean canBeAuthoritative) {
-            this.canBeAuthoritative = Objects.requireNonNull(canBeAuthoritative);
+            if (canBeAuthoritative == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "canBeAuthoritative");
+            }
+            this.canBeAuthoritative = canBeAuthoritative;
             return this;
         }
         @CustomType.Setter
         public Builder connected(Boolean connected) {
-            this.connected = Objects.requireNonNull(connected);
+            if (connected == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "connected");
+            }
+            this.connected = connected;
             return this;
         }
         @CustomType.Setter
         public Builder connectorBundles(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle> connectorBundles) {
-            this.connectorBundles = Objects.requireNonNull(connectorBundles);
+            if (connectorBundles == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "connectorBundles");
+            }
+            this.connectorBundles = connectorBundles;
             return this;
         }
         public Builder connectorBundles(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle... connectorBundles) {
@@ -418,22 +440,34 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
         }
         @CustomType.Setter
         public Builder enableAuthSyncNewUserNotification(Boolean enableAuthSyncNewUserNotification) {
-            this.enableAuthSyncNewUserNotification = Objects.requireNonNull(enableAuthSyncNewUserNotification);
+            if (enableAuthSyncNewUserNotification == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "enableAuthSyncNewUserNotification");
+            }
+            this.enableAuthSyncNewUserNotification = enableAuthSyncNewUserNotification;
             return this;
         }
         @CustomType.Setter
         public Builder enableSync(Boolean enableSync) {
-            this.enableSync = Objects.requireNonNull(enableSync);
+            if (enableSync == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "enableSync");
+            }
+            this.enableSync = enableSync;
             return this;
         }
         @CustomType.Setter
         public Builder enableSyncSummaryReportNotification(Boolean enableSyncSummaryReportNotification) {
-            this.enableSyncSummaryReportNotification = Objects.requireNonNull(enableSyncSummaryReportNotification);
+            if (enableSyncSummaryReportNotification == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "enableSyncSummaryReportNotification");
+            }
+            this.enableSyncSummaryReportNotification = enableSyncSummaryReportNotification;
             return this;
         }
         @CustomType.Setter
         public Builder flatFileBundleConfigurationProperties(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty> flatFileBundleConfigurationProperties) {
-            this.flatFileBundleConfigurationProperties = Objects.requireNonNull(flatFileBundleConfigurationProperties);
+            if (flatFileBundleConfigurationProperties == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "flatFileBundleConfigurationProperties");
+            }
+            this.flatFileBundleConfigurationProperties = flatFileBundleConfigurationProperties;
             return this;
         }
         public Builder flatFileBundleConfigurationProperties(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty... flatFileBundleConfigurationProperties) {
@@ -441,7 +475,10 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
         }
         @CustomType.Setter
         public Builder flatFileConnectorBundles(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundle> flatFileConnectorBundles) {
-            this.flatFileConnectorBundles = Objects.requireNonNull(flatFileConnectorBundles);
+            if (flatFileConnectorBundles == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "flatFileConnectorBundles");
+            }
+            this.flatFileConnectorBundles = flatFileConnectorBundles;
             return this;
         }
         public Builder flatFileConnectorBundles(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundle... flatFileConnectorBundles) {
@@ -449,7 +486,10 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
         }
         @CustomType.Setter
         public Builder identityBridges(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridge> identityBridges) {
-            this.identityBridges = Objects.requireNonNull(identityBridges);
+            if (identityBridges == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "identityBridges");
+            }
+            this.identityBridges = identityBridges;
             return this;
         }
         public Builder identityBridges(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridge... identityBridges) {
@@ -457,42 +497,66 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
         }
         @CustomType.Setter
         public Builder isAuthoritative(Boolean isAuthoritative) {
-            this.isAuthoritative = Objects.requireNonNull(isAuthoritative);
+            if (isAuthoritative == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "isAuthoritative");
+            }
+            this.isAuthoritative = isAuthoritative;
             return this;
         }
         @CustomType.Setter
         public Builder isDirectory(Boolean isDirectory) {
-            this.isDirectory = Objects.requireNonNull(isDirectory);
+            if (isDirectory == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "isDirectory");
+            }
+            this.isDirectory = isDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder isOnPremiseApp(Boolean isOnPremiseApp) {
-            this.isOnPremiseApp = Objects.requireNonNull(isOnPremiseApp);
+            if (isOnPremiseApp == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "isOnPremiseApp");
+            }
+            this.isOnPremiseApp = isOnPremiseApp;
             return this;
         }
         @CustomType.Setter
         public Builder isSchemaCustomizationSupported(Boolean isSchemaCustomizationSupported) {
-            this.isSchemaCustomizationSupported = Objects.requireNonNull(isSchemaCustomizationSupported);
+            if (isSchemaCustomizationSupported == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "isSchemaCustomizationSupported");
+            }
+            this.isSchemaCustomizationSupported = isSchemaCustomizationSupported;
             return this;
         }
         @CustomType.Setter
         public Builder isSchemaDiscoverySupported(Boolean isSchemaDiscoverySupported) {
-            this.isSchemaDiscoverySupported = Objects.requireNonNull(isSchemaDiscoverySupported);
+            if (isSchemaDiscoverySupported == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "isSchemaDiscoverySupported");
+            }
+            this.isSchemaDiscoverySupported = isSchemaDiscoverySupported;
             return this;
         }
         @CustomType.Setter
         public Builder isThreeLeggedOauthEnabled(Boolean isThreeLeggedOauthEnabled) {
-            this.isThreeLeggedOauthEnabled = Objects.requireNonNull(isThreeLeggedOauthEnabled);
+            if (isThreeLeggedOauthEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "isThreeLeggedOauthEnabled");
+            }
+            this.isThreeLeggedOauthEnabled = isThreeLeggedOauthEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isTwoLeggedOauthEnabled(Boolean isTwoLeggedOauthEnabled) {
-            this.isTwoLeggedOauthEnabled = Objects.requireNonNull(isTwoLeggedOauthEnabled);
+            if (isTwoLeggedOauthEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "isTwoLeggedOauthEnabled");
+            }
+            this.isTwoLeggedOauthEnabled = isTwoLeggedOauthEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder objectClasses(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass> objectClasses) {
-            this.objectClasses = Objects.requireNonNull(objectClasses);
+            if (objectClasses == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "objectClasses");
+            }
+            this.objectClasses = objectClasses;
             return this;
         }
         public Builder objectClasses(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass... objectClasses) {
@@ -500,12 +564,18 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
         }
         @CustomType.Setter
         public Builder syncConfigLastModified(String syncConfigLastModified) {
-            this.syncConfigLastModified = Objects.requireNonNull(syncConfigLastModified);
+            if (syncConfigLastModified == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "syncConfigLastModified");
+            }
+            this.syncConfigLastModified = syncConfigLastModified;
             return this;
         }
         @CustomType.Setter
         public Builder threeLeggedOauthCredentials(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential> threeLeggedOauthCredentials) {
-            this.threeLeggedOauthCredentials = Objects.requireNonNull(threeLeggedOauthCredentials);
+            if (threeLeggedOauthCredentials == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "threeLeggedOauthCredentials");
+            }
+            this.threeLeggedOauthCredentials = threeLeggedOauthCredentials;
             return this;
         }
         public Builder threeLeggedOauthCredentials(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential... threeLeggedOauthCredentials) {
@@ -513,7 +583,10 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
         }
         @CustomType.Setter
         public Builder threeLeggedOauthProviderName(String threeLeggedOauthProviderName) {
-            this.threeLeggedOauthProviderName = Objects.requireNonNull(threeLeggedOauthProviderName);
+            if (threeLeggedOauthProviderName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp", "threeLeggedOauthProviderName");
+            }
+            this.threeLeggedOauthProviderName = threeLeggedOauthProviderName;
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -62,17 +63,26 @@ public final class GetInstanceMaintenanceRebootResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInstanceMaintenanceRebootResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceId(String instanceId) {
-            this.instanceId = Objects.requireNonNull(instanceId);
+            if (instanceId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceMaintenanceRebootResult", "instanceId");
+            }
+            this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
         public Builder timeMaintenanceRebootDueMax(String timeMaintenanceRebootDueMax) {
-            this.timeMaintenanceRebootDueMax = Objects.requireNonNull(timeMaintenanceRebootDueMax);
+            if (timeMaintenanceRebootDueMax == null) {
+              throw new MissingRequiredPropertyException("GetInstanceMaintenanceRebootResult", "timeMaintenanceRebootDueMax");
+            }
+            this.timeMaintenanceRebootDueMax = timeMaintenanceRebootDueMax;
             return this;
         }
         public GetInstanceMaintenanceRebootResult build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.UsageProxy.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -150,7 +151,9 @@ public final class SubscriptionRedeemableUserItemArgs extends com.pulumi.resourc
         }
 
         public SubscriptionRedeemableUserItemArgs build() {
-            $.emailId = Objects.requireNonNull($.emailId, "expected parameter 'emailId' to be non-null");
+            if ($.emailId == null) {
+                throw new MissingRequiredPropertyException("SubscriptionRedeemableUserItemArgs", "emailId");
+            }
             return $;
         }
     }

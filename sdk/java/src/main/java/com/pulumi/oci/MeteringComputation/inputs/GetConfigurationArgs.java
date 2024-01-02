@@ -5,6 +5,7 @@ package com.pulumi.oci.MeteringComputation.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetConfigurationArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         public GetConfigurationArgs build() {
-            $.tenantId = Objects.requireNonNull($.tenantId, "expected parameter 'tenantId' to be non-null");
+            if ($.tenantId == null) {
+                throw new MissingRequiredPropertyException("GetConfigurationArgs", "tenantId");
+            }
             return $;
         }
     }

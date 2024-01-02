@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject;
@@ -103,7 +104,10 @@ public final class GetMigrationsMigrationCollectionItemDatapumpSetting {
 
         @CustomType.Setter
         public Builder dataPumpParameters(List<GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter> dataPumpParameters) {
-            this.dataPumpParameters = Objects.requireNonNull(dataPumpParameters);
+            if (dataPumpParameters == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItemDatapumpSetting", "dataPumpParameters");
+            }
+            this.dataPumpParameters = dataPumpParameters;
             return this;
         }
         public Builder dataPumpParameters(GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter... dataPumpParameters) {
@@ -111,7 +115,10 @@ public final class GetMigrationsMigrationCollectionItemDatapumpSetting {
         }
         @CustomType.Setter
         public Builder exportDirectoryObjects(List<GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject> exportDirectoryObjects) {
-            this.exportDirectoryObjects = Objects.requireNonNull(exportDirectoryObjects);
+            if (exportDirectoryObjects == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItemDatapumpSetting", "exportDirectoryObjects");
+            }
+            this.exportDirectoryObjects = exportDirectoryObjects;
             return this;
         }
         public Builder exportDirectoryObjects(GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject... exportDirectoryObjects) {
@@ -119,7 +126,10 @@ public final class GetMigrationsMigrationCollectionItemDatapumpSetting {
         }
         @CustomType.Setter
         public Builder importDirectoryObjects(List<GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject> importDirectoryObjects) {
-            this.importDirectoryObjects = Objects.requireNonNull(importDirectoryObjects);
+            if (importDirectoryObjects == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItemDatapumpSetting", "importDirectoryObjects");
+            }
+            this.importDirectoryObjects = importDirectoryObjects;
             return this;
         }
         public Builder importDirectoryObjects(GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject... importDirectoryObjects) {
@@ -127,12 +137,18 @@ public final class GetMigrationsMigrationCollectionItemDatapumpSetting {
         }
         @CustomType.Setter
         public Builder jobMode(String jobMode) {
-            this.jobMode = Objects.requireNonNull(jobMode);
+            if (jobMode == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItemDatapumpSetting", "jobMode");
+            }
+            this.jobMode = jobMode;
             return this;
         }
         @CustomType.Setter
         public Builder metadataRemaps(List<GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap> metadataRemaps) {
-            this.metadataRemaps = Objects.requireNonNull(metadataRemaps);
+            if (metadataRemaps == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItemDatapumpSetting", "metadataRemaps");
+            }
+            this.metadataRemaps = metadataRemaps;
             return this;
         }
         public Builder metadataRemaps(GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap... metadataRemaps) {

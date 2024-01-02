@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagementHub.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -124,7 +125,9 @@ public final class SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArg
         }
 
         public SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs build() {
-            $.filterType = Objects.requireNonNull($.filterType, "expected parameter 'filterType' to be non-null");
+            if ($.filterType == null) {
+                throw new MissingRequiredPropertyException("SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs", "filterType");
+            }
             return $;
         }
     }

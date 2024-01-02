@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ocvp.outputs.GetExsiHostsEsxiHostCollection;
 import com.pulumi.oci.Ocvp.outputs.GetExsiHostsFilter;
 import java.lang.Boolean;
@@ -164,27 +165,34 @@ public final class GetExsiHostsResult {
 
         @CustomType.Setter
         public Builder clusterId(@Nullable String clusterId) {
+
             this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeInstanceId(@Nullable String computeInstanceId) {
+
             this.computeInstanceId = computeInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder esxiHostCollections(List<GetExsiHostsEsxiHostCollection> esxiHostCollections) {
-            this.esxiHostCollections = Objects.requireNonNull(esxiHostCollections);
+            if (esxiHostCollections == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostsResult", "esxiHostCollections");
+            }
+            this.esxiHostCollections = esxiHostCollections;
             return this;
         }
         public Builder esxiHostCollections(GetExsiHostsEsxiHostCollection... esxiHostCollections) {
@@ -192,6 +200,7 @@ public final class GetExsiHostsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetExsiHostsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -200,26 +209,33 @@ public final class GetExsiHostsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isBillingDonorsOnly(@Nullable Boolean isBillingDonorsOnly) {
+
             this.isBillingDonorsOnly = isBillingDonorsOnly;
             return this;
         }
         @CustomType.Setter
         public Builder isSwapBillingOnly(@Nullable Boolean isSwapBillingOnly) {
+
             this.isSwapBillingOnly = isSwapBillingOnly;
             return this;
         }
         @CustomType.Setter
         public Builder sddcId(@Nullable String sddcId) {
+
             this.sddcId = sddcId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

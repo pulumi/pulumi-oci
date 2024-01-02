@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetMaintenanceRunArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetMaintenanceRunArgs build() {
-            $.maintenanceRunId = Objects.requireNonNull($.maintenanceRunId, "expected parameter 'maintenanceRunId' to be non-null");
+            if ($.maintenanceRunId == null) {
+                throw new MissingRequiredPropertyException("GetMaintenanceRunArgs", "maintenanceRunId");
+            }
             return $;
         }
     }

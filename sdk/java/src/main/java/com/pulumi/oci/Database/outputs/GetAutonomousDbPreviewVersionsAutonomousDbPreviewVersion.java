@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -106,27 +107,42 @@ public final class GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion {
 
         @CustomType.Setter
         public Builder dbWorkload(String dbWorkload) {
-            this.dbWorkload = Objects.requireNonNull(dbWorkload);
+            if (dbWorkload == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion", "dbWorkload");
+            }
+            this.dbWorkload = dbWorkload;
             return this;
         }
         @CustomType.Setter
         public Builder details(String details) {
-            this.details = Objects.requireNonNull(details);
+            if (details == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion", "details");
+            }
+            this.details = details;
             return this;
         }
         @CustomType.Setter
         public Builder timePreviewBegin(String timePreviewBegin) {
-            this.timePreviewBegin = Objects.requireNonNull(timePreviewBegin);
+            if (timePreviewBegin == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion", "timePreviewBegin");
+            }
+            this.timePreviewBegin = timePreviewBegin;
             return this;
         }
         @CustomType.Setter
         public Builder timePreviewEnd(String timePreviewEnd) {
-            this.timePreviewEnd = Objects.requireNonNull(timePreviewEnd);
+            if (timePreviewEnd == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion", "timePreviewEnd");
+            }
+            this.timePreviewEnd = timePreviewEnd;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion build() {

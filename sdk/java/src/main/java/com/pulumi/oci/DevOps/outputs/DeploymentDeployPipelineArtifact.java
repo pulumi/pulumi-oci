@@ -44,6 +44,7 @@ public final class DeploymentDeployPipelineArtifact {
 
         @CustomType.Setter
         public Builder items(@Nullable List<DeploymentDeployPipelineArtifactItem> items) {
+
             this.items = items;
             return this;
         }

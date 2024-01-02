@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetAppCatalogListingResourceVersionsAppCatalogListingResourceVersion;
 import com.pulumi.oci.Core.outputs.GetAppCatalogListingResourceVersionsFilter;
 import java.lang.String;
@@ -80,7 +81,10 @@ public final class GetAppCatalogListingResourceVersionsResult {
 
         @CustomType.Setter
         public Builder appCatalogListingResourceVersions(List<GetAppCatalogListingResourceVersionsAppCatalogListingResourceVersion> appCatalogListingResourceVersions) {
-            this.appCatalogListingResourceVersions = Objects.requireNonNull(appCatalogListingResourceVersions);
+            if (appCatalogListingResourceVersions == null) {
+              throw new MissingRequiredPropertyException("GetAppCatalogListingResourceVersionsResult", "appCatalogListingResourceVersions");
+            }
+            this.appCatalogListingResourceVersions = appCatalogListingResourceVersions;
             return this;
         }
         public Builder appCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsAppCatalogListingResourceVersion... appCatalogListingResourceVersions) {
@@ -88,6 +92,7 @@ public final class GetAppCatalogListingResourceVersionsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAppCatalogListingResourceVersionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -96,12 +101,18 @@ public final class GetAppCatalogListingResourceVersionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAppCatalogListingResourceVersionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder listingId(String listingId) {
-            this.listingId = Objects.requireNonNull(listingId);
+            if (listingId == null) {
+              throw new MissingRequiredPropertyException("GetAppCatalogListingResourceVersionsResult", "listingId");
+            }
+            this.listingId = listingId;
             return this;
         }
         public GetAppCatalogListingResourceVersionsResult build() {

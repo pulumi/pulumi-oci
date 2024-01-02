@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension;
 import java.lang.String;
 import java.util.List;
@@ -72,12 +73,18 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItem {
 
         @CustomType.Setter
         public Builder count(String count) {
-            this.count = Objects.requireNonNull(count);
+            if (count == null) {
+              throw new MissingRequiredPropertyException("GetMaskingAnalyticsMaskingAnalyticsCollectionItem", "count");
+            }
+            this.count = count;
             return this;
         }
         @CustomType.Setter
         public Builder dimensions(List<GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+            if (dimensions == null) {
+              throw new MissingRequiredPropertyException("GetMaskingAnalyticsMaskingAnalyticsCollectionItem", "dimensions");
+            }
+            this.dimensions = dimensions;
             return this;
         }
         public Builder dimensions(GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension... dimensions) {
@@ -85,7 +92,10 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItem {
         }
         @CustomType.Setter
         public Builder metricName(String metricName) {
-            this.metricName = Objects.requireNonNull(metricName);
+            if (metricName == null) {
+              throw new MissingRequiredPropertyException("GetMaskingAnalyticsMaskingAnalyticsCollectionItem", "metricName");
+            }
+            this.metricName = metricName;
             return this;
         }
         public GetMaskingAnalyticsMaskingAnalyticsCollectionItem build() {

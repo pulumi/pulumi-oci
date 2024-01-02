@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -223,11 +224,21 @@ public final class GetBaselineableMetricsEvaluateItemDataPointArgs extends com.p
         }
 
         public GetBaselineableMetricsEvaluateItemDataPointArgs build() {
-            $.anomaly = Objects.requireNonNull($.anomaly, "expected parameter 'anomaly' to be non-null");
-            $.high = Objects.requireNonNull($.high, "expected parameter 'high' to be non-null");
-            $.low = Objects.requireNonNull($.low, "expected parameter 'low' to be non-null");
-            $.timestamp = Objects.requireNonNull($.timestamp, "expected parameter 'timestamp' to be non-null");
-            $.value = Objects.requireNonNull($.value, "expected parameter 'value' to be non-null");
+            if ($.anomaly == null) {
+                throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateItemDataPointArgs", "anomaly");
+            }
+            if ($.high == null) {
+                throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateItemDataPointArgs", "high");
+            }
+            if ($.low == null) {
+                throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateItemDataPointArgs", "low");
+            }
+            if ($.timestamp == null) {
+                throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateItemDataPointArgs", "timestamp");
+            }
+            if ($.value == null) {
+                throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateItemDataPointArgs", "value");
+            }
             return $;
         }
     }

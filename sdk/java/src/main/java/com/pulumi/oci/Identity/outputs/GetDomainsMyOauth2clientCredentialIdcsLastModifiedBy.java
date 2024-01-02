@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetDomainsMyOauth2clientCredentialIdcsLastModifiedBy {
 
         @CustomType.Setter
         public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+            if (display == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialIdcsLastModifiedBy", "display");
+            }
+            this.display = display;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialIdcsLastModifiedBy", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+            if (ref == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialIdcsLastModifiedBy", "ref");
+            }
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialIdcsLastModifiedBy", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialIdcsLastModifiedBy", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDomainsMyOauth2clientCredentialIdcsLastModifiedBy build() {

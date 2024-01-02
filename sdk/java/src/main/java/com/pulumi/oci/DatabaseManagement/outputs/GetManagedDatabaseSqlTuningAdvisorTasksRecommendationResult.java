@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem;
 import java.lang.String;
 import java.util.List;
@@ -90,17 +91,26 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult {
 
         @CustomType.Setter
         public Builder executionId(String executionId) {
-            this.executionId = Objects.requireNonNull(executionId);
+            if (executionId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult", "executionId");
+            }
+            this.executionId = executionId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem... items) {
@@ -108,17 +118,26 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult {
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder sqlObjectId(String sqlObjectId) {
-            this.sqlObjectId = Objects.requireNonNull(sqlObjectId);
+            if (sqlObjectId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult", "sqlObjectId");
+            }
+            this.sqlObjectId = sqlObjectId;
             return this;
         }
         @CustomType.Setter
         public Builder sqlTuningAdvisorTaskId(String sqlTuningAdvisorTaskId) {
-            this.sqlTuningAdvisorTaskId = Objects.requireNonNull(sqlTuningAdvisorTaskId);
+            if (sqlTuningAdvisorTaskId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult", "sqlTuningAdvisorTaskId");
+            }
+            this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult build() {

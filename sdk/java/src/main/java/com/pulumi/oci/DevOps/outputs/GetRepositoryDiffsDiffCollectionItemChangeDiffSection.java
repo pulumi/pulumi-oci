@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetRepositoryDiffsDiffCollectionItemChangeDiffSection {
 
         @CustomType.Setter
         public Builder lines(List<GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine> lines) {
-            this.lines = Objects.requireNonNull(lines);
+            if (lines == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffsDiffCollectionItemChangeDiffSection", "lines");
+            }
+            this.lines = lines;
             return this;
         }
         public Builder lines(GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine... lines) {
@@ -66,7 +70,10 @@ public final class GetRepositoryDiffsDiffCollectionItemChangeDiffSection {
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffsDiffCollectionItemChangeDiffSection", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetRepositoryDiffsDiffCollectionItemChangeDiffSection build() {

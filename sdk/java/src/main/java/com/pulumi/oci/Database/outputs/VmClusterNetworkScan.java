@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -102,12 +103,18 @@ public final class VmClusterNetworkScan {
 
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("VmClusterNetworkScan", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder ips(List<String> ips) {
-            this.ips = Objects.requireNonNull(ips);
+            if (ips == null) {
+              throw new MissingRequiredPropertyException("VmClusterNetworkScan", "ips");
+            }
+            this.ips = ips;
             return this;
         }
         public Builder ips(String... ips) {
@@ -115,16 +122,19 @@ public final class VmClusterNetworkScan {
         }
         @CustomType.Setter
         public Builder port(@Nullable Integer port) {
+
             this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder scanListenerPortTcp(@Nullable Integer scanListenerPortTcp) {
+
             this.scanListenerPortTcp = scanListenerPortTcp;
             return this;
         }
         @CustomType.Setter
         public Builder scanListenerPortTcpSsl(@Nullable Integer scanListenerPortTcpSsl) {
+
             this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
             return this;
         }

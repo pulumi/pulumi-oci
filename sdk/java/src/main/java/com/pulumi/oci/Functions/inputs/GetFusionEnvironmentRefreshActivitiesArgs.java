@@ -5,6 +5,7 @@ package com.pulumi.oci.Functions.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentRefreshActivitiesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -247,7 +248,9 @@ public final class GetFusionEnvironmentRefreshActivitiesArgs extends com.pulumi.
         }
 
         public GetFusionEnvironmentRefreshActivitiesArgs build() {
-            $.fusionEnvironmentId = Objects.requireNonNull($.fusionEnvironmentId, "expected parameter 'fusionEnvironmentId' to be non-null");
+            if ($.fusionEnvironmentId == null) {
+                throw new MissingRequiredPropertyException("GetFusionEnvironmentRefreshActivitiesArgs", "fusionEnvironmentId");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.LoadBalancer.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.inputs.GetShapesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -99,7 +100,9 @@ public final class GetShapesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetShapesArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetShapesArgs", "compartmentId");
+            }
             return $;
         }
     }

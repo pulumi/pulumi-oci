@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetDomainsKmsiSettingsKmsiSettingMeta {
 
         @CustomType.Setter
         public Builder created(String created) {
-            this.created = Objects.requireNonNull(created);
+            if (created == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingsKmsiSettingMeta", "created");
+            }
+            this.created = created;
             return this;
         }
         @CustomType.Setter
         public Builder lastModified(String lastModified) {
-            this.lastModified = Objects.requireNonNull(lastModified);
+            if (lastModified == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingsKmsiSettingMeta", "lastModified");
+            }
+            this.lastModified = lastModified;
             return this;
         }
         @CustomType.Setter
         public Builder location(String location) {
-            this.location = Objects.requireNonNull(location);
+            if (location == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingsKmsiSettingMeta", "location");
+            }
+            this.location = location;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingsKmsiSettingMeta", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetDomainsKmsiSettingsKmsiSettingMeta", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetDomainsKmsiSettingsKmsiSettingMeta build() {

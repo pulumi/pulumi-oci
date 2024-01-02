@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.inputs.AutoScalingConfigurationPolicyRuleMetricThresholdArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -112,8 +113,12 @@ public final class AutoScalingConfigurationPolicyRuleMetricArgs extends com.pulu
         }
 
         public AutoScalingConfigurationPolicyRuleMetricArgs build() {
-            $.metricType = Objects.requireNonNull($.metricType, "expected parameter 'metricType' to be non-null");
-            $.threshold = Objects.requireNonNull($.threshold, "expected parameter 'threshold' to be non-null");
+            if ($.metricType == null) {
+                throw new MissingRequiredPropertyException("AutoScalingConfigurationPolicyRuleMetricArgs", "metricType");
+            }
+            if ($.threshold == null) {
+                throw new MissingRequiredPropertyException("AutoScalingConfigurationPolicyRuleMetricArgs", "threshold");
+            }
             return $;
         }
     }

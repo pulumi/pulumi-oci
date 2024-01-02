@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetTagPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetTagPlainArgs build() {
-            $.tagName = Objects.requireNonNull($.tagName, "expected parameter 'tagName' to be non-null");
-            $.tagNamespaceId = Objects.requireNonNull($.tagNamespaceId, "expected parameter 'tagNamespaceId' to be non-null");
+            if ($.tagName == null) {
+                throw new MissingRequiredPropertyException("GetTagPlainArgs", "tagName");
+            }
+            if ($.tagNamespaceId == null) {
+                throw new MissingRequiredPropertyException("GetTagPlainArgs", "tagNamespaceId");
+            }
             return $;
         }
     }

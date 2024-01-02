@@ -245,6 +245,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
 
         @CustomType.Setter
         public Builder dnsIps(@Nullable List<String> dnsIps) {
+
             this.dnsIps = dnsIps;
             return this;
         }
@@ -253,6 +254,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
         @CustomType.Setter
         public Builder infrastructureRoutingDynamics(@Nullable List<AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic> infrastructureRoutingDynamics) {
+
             this.infrastructureRoutingDynamics = infrastructureRoutingDynamics;
             return this;
         }
@@ -261,6 +263,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
         @CustomType.Setter
         public Builder infrastructureRoutingStatics(@Nullable List<AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic> infrastructureRoutingStatics) {
+
             this.infrastructureRoutingStatics = infrastructureRoutingStatics;
             return this;
         }
@@ -269,6 +272,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
         @CustomType.Setter
         public Builder managementNodes(@Nullable List<AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode> managementNodes) {
+
             this.managementNodes = managementNodes;
             return this;
         }
@@ -277,16 +281,19 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
         @CustomType.Setter
         public Builder mgmtVipHostname(@Nullable String mgmtVipHostname) {
+
             this.mgmtVipHostname = mgmtVipHostname;
             return this;
         }
         @CustomType.Setter
         public Builder mgmtVipIp(@Nullable String mgmtVipIp) {
+
             this.mgmtVipIp = mgmtVipIp;
             return this;
         }
         @CustomType.Setter
         public Builder spineIps(@Nullable List<String> spineIps) {
+
             this.spineIps = spineIps;
             return this;
         }
@@ -295,41 +302,49 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
         @CustomType.Setter
         public Builder spineVip(@Nullable String spineVip) {
+
             this.spineVip = spineVip;
             return this;
         }
         @CustomType.Setter
         public Builder uplinkDomain(@Nullable String uplinkDomain) {
+
             this.uplinkDomain = uplinkDomain;
             return this;
         }
         @CustomType.Setter
         public Builder uplinkGatewayIp(@Nullable String uplinkGatewayIp) {
+
             this.uplinkGatewayIp = uplinkGatewayIp;
             return this;
         }
         @CustomType.Setter
         public Builder uplinkNetmask(@Nullable String uplinkNetmask) {
+
             this.uplinkNetmask = uplinkNetmask;
             return this;
         }
         @CustomType.Setter
         public Builder uplinkPortCount(@Nullable Integer uplinkPortCount) {
+
             this.uplinkPortCount = uplinkPortCount;
             return this;
         }
         @CustomType.Setter
         public Builder uplinkPortForwardErrorCorrection(@Nullable String uplinkPortForwardErrorCorrection) {
+
             this.uplinkPortForwardErrorCorrection = uplinkPortForwardErrorCorrection;
             return this;
         }
         @CustomType.Setter
         public Builder uplinkPortSpeedInGbps(@Nullable Integer uplinkPortSpeedInGbps) {
+
             this.uplinkPortSpeedInGbps = uplinkPortSpeedInGbps;
             return this;
         }
         @CustomType.Setter
         public Builder uplinkVlanMtu(@Nullable Integer uplinkVlanMtu) {
+
             this.uplinkVlanMtu = uplinkVlanMtu;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.ApmTraces.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class GetTraceArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetTraceArgs build() {
-            $.apmDomainId = Objects.requireNonNull($.apmDomainId, "expected parameter 'apmDomainId' to be non-null");
-            $.traceKey = Objects.requireNonNull($.traceKey, "expected parameter 'traceKey' to be non-null");
+            if ($.apmDomainId == null) {
+                throw new MissingRequiredPropertyException("GetTraceArgs", "apmDomainId");
+            }
+            if ($.traceKey == null) {
+                throw new MissingRequiredPropertyException("GetTraceArgs", "traceKey");
+            }
             return $;
         }
     }

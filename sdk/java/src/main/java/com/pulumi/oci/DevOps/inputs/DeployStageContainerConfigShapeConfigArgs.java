@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.util.Objects;
 import java.util.Optional;
@@ -113,7 +114,9 @@ public final class DeployStageContainerConfigShapeConfigArgs extends com.pulumi.
         }
 
         public DeployStageContainerConfigShapeConfigArgs build() {
-            $.ocpus = Objects.requireNonNull($.ocpus, "expected parameter 'ocpus' to be non-null");
+            if ($.ocpus == null) {
+                throw new MissingRequiredPropertyException("DeployStageContainerConfigShapeConfigArgs", "ocpus");
+            }
             return $;
         }
     }

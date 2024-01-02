@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamsFilter;
 import java.lang.Boolean;
 import java.lang.String;
@@ -193,7 +194,9 @@ public final class GetSoftwareSourceModuleStreamsPlainArgs extends com.pulumi.re
         }
 
         public GetSoftwareSourceModuleStreamsPlainArgs build() {
-            $.softwareSourceId = Objects.requireNonNull($.softwareSourceId, "expected parameter 'softwareSourceId' to be non-null");
+            if ($.softwareSourceId == null) {
+                throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamsPlainArgs", "softwareSourceId");
+            }
             return $;
         }
     }

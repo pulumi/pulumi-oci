@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabase;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesFilter;
 import java.lang.String;
@@ -121,12 +122,18 @@ public final class GetAutonomousDatabasesClonesResult {
 
         @CustomType.Setter
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
-            this.autonomousDatabaseId = Objects.requireNonNull(autonomousDatabaseId);
+            if (autonomousDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesResult", "autonomousDatabaseId");
+            }
+            this.autonomousDatabaseId = autonomousDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder autonomousDatabases(List<GetAutonomousDatabasesClonesAutonomousDatabase> autonomousDatabases) {
-            this.autonomousDatabases = Objects.requireNonNull(autonomousDatabases);
+            if (autonomousDatabases == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesResult", "autonomousDatabases");
+            }
+            this.autonomousDatabases = autonomousDatabases;
             return this;
         }
         public Builder autonomousDatabases(GetAutonomousDatabasesClonesAutonomousDatabase... autonomousDatabases) {
@@ -134,21 +141,27 @@ public final class GetAutonomousDatabasesClonesResult {
         }
         @CustomType.Setter
         public Builder cloneType(@Nullable String cloneType) {
+
             this.cloneType = cloneType;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousDatabasesClonesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -157,11 +170,15 @@ public final class GetAutonomousDatabasesClonesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

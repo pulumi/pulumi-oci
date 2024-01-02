@@ -59,11 +59,13 @@ public final class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric {
 
         @CustomType.Setter
         public Builder metricType(@Nullable String metricType) {
+
             this.metricType = metricType;
             return this;
         }
         @CustomType.Setter
         public Builder threshold(@Nullable AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold threshold) {
+
             this.threshold = threshold;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConf
 
         @CustomType.Setter
         public Builder preemptionActions(List<GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction> preemptionActions) {
-            this.preemptionActions = Objects.requireNonNull(preemptionActions);
+            if (preemptionActions == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig", "preemptionActions");
+            }
+            this.preemptionActions = preemptionActions;
             return this;
         }
         public Builder preemptionActions(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction... preemptionActions) {

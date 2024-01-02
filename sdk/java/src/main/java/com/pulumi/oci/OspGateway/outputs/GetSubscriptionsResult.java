@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OspGateway.outputs.GetSubscriptionsFilter;
 import com.pulumi.oci.OspGateway.outputs.GetSubscriptionsSubscriptionCollection;
 import java.lang.String;
@@ -78,11 +79,15 @@ public final class GetSubscriptionsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSubscriptionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -91,17 +96,26 @@ public final class GetSubscriptionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ospHomeRegion(String ospHomeRegion) {
-            this.ospHomeRegion = Objects.requireNonNull(ospHomeRegion);
+            if (ospHomeRegion == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsResult", "ospHomeRegion");
+            }
+            this.ospHomeRegion = ospHomeRegion;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptionCollections(List<GetSubscriptionsSubscriptionCollection> subscriptionCollections) {
-            this.subscriptionCollections = Objects.requireNonNull(subscriptionCollections);
+            if (subscriptionCollections == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsResult", "subscriptionCollections");
+            }
+            this.subscriptionCollections = subscriptionCollections;
             return this;
         }
         public Builder subscriptionCollections(GetSubscriptionsSubscriptionCollection... subscriptionCollections) {

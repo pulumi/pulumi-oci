@@ -4,6 +4,7 @@
 package com.pulumi.oci.OperatorAccessControl.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetControlPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetControlPlainArgs build() {
-            $.operatorControlId = Objects.requireNonNull($.operatorControlId, "expected parameter 'operatorControlId' to be non-null");
+            if ($.operatorControlId == null) {
+                throw new MissingRequiredPropertyException("GetControlPlainArgs", "operatorControlId");
+            }
             return $;
         }
     }

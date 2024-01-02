@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.outputs.GetSystemMediaWorkflowItemTask;
 import java.lang.String;
 import java.util.List;
@@ -86,22 +87,34 @@ public final class GetSystemMediaWorkflowItem {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetSystemMediaWorkflowItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetSystemMediaWorkflowItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder parameters(String parameters) {
-            this.parameters = Objects.requireNonNull(parameters);
+            if (parameters == null) {
+              throw new MissingRequiredPropertyException("GetSystemMediaWorkflowItem", "parameters");
+            }
+            this.parameters = parameters;
             return this;
         }
         @CustomType.Setter
         public Builder tasks(List<GetSystemMediaWorkflowItemTask> tasks) {
-            this.tasks = Objects.requireNonNull(tasks);
+            if (tasks == null) {
+              throw new MissingRequiredPropertyException("GetSystemMediaWorkflowItem", "tasks");
+            }
+            this.tasks = tasks;
             return this;
         }
         public Builder tasks(GetSystemMediaWorkflowItemTask... tasks) {

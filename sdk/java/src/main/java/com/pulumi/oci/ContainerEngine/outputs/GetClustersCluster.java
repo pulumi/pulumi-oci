@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterClusterPodNetworkOption;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterEndpoint;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterEndpointConfig;
@@ -289,7 +290,10 @@ public final class GetClustersCluster {
 
         @CustomType.Setter
         public Builder availableKubernetesUpgrades(List<String> availableKubernetesUpgrades) {
-            this.availableKubernetesUpgrades = Objects.requireNonNull(availableKubernetesUpgrades);
+            if (availableKubernetesUpgrades == null) {
+              throw new MissingRequiredPropertyException("GetClustersCluster", "availableKubernetesUpgrades");
+            }
+            this.availableKubernetesUpgrades = availableKubernetesUpgrades;
             return this;
         }
         public Builder availableKubernetesUpgrades(String... availableKubernetesUpgrades) {
@@ -297,7 +301,10 @@ public final class GetClustersCluster {
         }
         @CustomType.Setter
         public Builder clusterPodNetworkOptions(List<GetClustersClusterClusterPodNetworkOption> clusterPodNetworkOptions) {
-            this.clusterPodNetworkOptions = Objects.requireNonNull(clusterPodNetworkOptions);
+            if (clusterPodNetworkOptions == null) {
+              throw new MissingRequiredPropertyException("GetClustersCluster", "clusterPodNetworkOptions");
+            }
+            this.clusterPodNetworkOptions = clusterPodNetworkOptions;
             return this;
         }
         public Builder clusterPodNetworkOptions(GetClustersClusterClusterPodNetworkOption... clusterPodNetworkOptions) {
@@ -305,17 +312,26 @@ public final class GetClustersCluster {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetClustersCluster", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetClustersCluster", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder endpointConfigs(List<GetClustersClusterEndpointConfig> endpointConfigs) {
-            this.endpointConfigs = Objects.requireNonNull(endpointConfigs);
+            if (endpointConfigs == null) {
+              throw new MissingRequiredPropertyException("GetClustersCluster", "endpointConfigs");
+            }
+            this.endpointConfigs = endpointConfigs;
             return this;
         }
         public Builder endpointConfigs(GetClustersClusterEndpointConfig... endpointConfigs) {
@@ -323,7 +339,10 @@ public final class GetClustersCluster {
         }
         @CustomType.Setter
         public Builder endpoints(List<GetClustersClusterEndpoint> endpoints) {
-            this.endpoints = Objects.requireNonNull(endpoints);
+            if (endpoints == null) {
+              throw new MissingRequiredPropertyException("GetClustersCluster", "endpoints");
+            }
+            this.endpoints = endpoints;
             return this;
         }
         public Builder endpoints(GetClustersClusterEndpoint... endpoints) {
@@ -331,17 +350,26 @@ public final class GetClustersCluster {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetClustersCluster", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetClustersCluster", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imagePolicyConfigs(List<GetClustersClusterImagePolicyConfig> imagePolicyConfigs) {
-            this.imagePolicyConfigs = Objects.requireNonNull(imagePolicyConfigs);
+            if (imagePolicyConfigs == null) {
+              throw new MissingRequiredPropertyException("GetClustersCluster", "imagePolicyConfigs");
+            }
+            this.imagePolicyConfigs = imagePolicyConfigs;
             return this;
         }
         public Builder imagePolicyConfigs(GetClustersClusterImagePolicyConfig... imagePolicyConfigs) {
@@ -349,22 +377,34 @@ public final class GetClustersCluster {
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetClustersCluster", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder kubernetesVersion(String kubernetesVersion) {
-            this.kubernetesVersion = Objects.requireNonNull(kubernetesVersion);
+            if (kubernetesVersion == null) {
+              throw new MissingRequiredPropertyException("GetClustersCluster", "kubernetesVersion");
+            }
+            this.kubernetesVersion = kubernetesVersion;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetClustersCluster", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder metadatas(List<GetClustersClusterMetadata> metadatas) {
-            this.metadatas = Objects.requireNonNull(metadatas);
+            if (metadatas == null) {
+              throw new MissingRequiredPropertyException("GetClustersCluster", "metadatas");
+            }
+            this.metadatas = metadatas;
             return this;
         }
         public Builder metadatas(GetClustersClusterMetadata... metadatas) {
@@ -372,12 +412,18 @@ public final class GetClustersCluster {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetClustersCluster", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder options(List<GetClustersClusterOption> options) {
-            this.options = Objects.requireNonNull(options);
+            if (options == null) {
+              throw new MissingRequiredPropertyException("GetClustersCluster", "options");
+            }
+            this.options = options;
             return this;
         }
         public Builder options(GetClustersClusterOption... options) {
@@ -385,17 +431,26 @@ public final class GetClustersCluster {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetClustersCluster", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetClustersCluster", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+            if (vcnId == null) {
+              throw new MissingRequiredPropertyException("GetClustersCluster", "vcnId");
+            }
+            this.vcnId = vcnId;
             return this;
         }
         public GetClustersCluster build() {

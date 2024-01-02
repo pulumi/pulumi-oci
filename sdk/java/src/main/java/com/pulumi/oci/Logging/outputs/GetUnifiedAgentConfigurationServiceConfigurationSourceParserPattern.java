@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserP
 
         @CustomType.Setter
         public Builder fieldTimeFormat(String fieldTimeFormat) {
-            this.fieldTimeFormat = Objects.requireNonNull(fieldTimeFormat);
+            if (fieldTimeFormat == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern", "fieldTimeFormat");
+            }
+            this.fieldTimeFormat = fieldTimeFormat;
             return this;
         }
         @CustomType.Setter
         public Builder fieldTimeKey(String fieldTimeKey) {
-            this.fieldTimeKey = Objects.requireNonNull(fieldTimeKey);
+            if (fieldTimeKey == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern", "fieldTimeKey");
+            }
+            this.fieldTimeKey = fieldTimeKey;
             return this;
         }
         @CustomType.Setter
         public Builder fieldTimeZone(String fieldTimeZone) {
-            this.fieldTimeZone = Objects.requireNonNull(fieldTimeZone);
+            if (fieldTimeZone == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern", "fieldTimeZone");
+            }
+            this.fieldTimeZone = fieldTimeZone;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder pattern(String pattern) {
-            this.pattern = Objects.requireNonNull(pattern);
+            if (pattern == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern", "pattern");
+            }
+            this.pattern = pattern;
             return this;
         }
         public GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern build() {

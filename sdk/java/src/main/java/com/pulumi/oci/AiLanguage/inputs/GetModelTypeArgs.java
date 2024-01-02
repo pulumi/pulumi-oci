@@ -5,6 +5,7 @@ package com.pulumi.oci.AiLanguage.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetModelTypeArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetModelTypeArgs build() {
-            $.modelType = Objects.requireNonNull($.modelType, "expected parameter 'modelType' to be non-null");
+            if ($.modelType == null) {
+                throw new MissingRequiredPropertyException("GetModelTypeArgs", "modelType");
+            }
             return $;
         }
     }

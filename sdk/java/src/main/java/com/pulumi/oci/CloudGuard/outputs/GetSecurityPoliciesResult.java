@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetSecurityPoliciesFilter;
 import com.pulumi.oci.CloudGuard.outputs.GetSecurityPoliciesSecurityPolicyCollection;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetSecurityPoliciesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityPoliciesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSecurityPoliciesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +133,16 @@ public final class GetSecurityPoliciesResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder securityPolicyCollections(List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections) {
-            this.securityPolicyCollections = Objects.requireNonNull(securityPolicyCollections);
+            if (securityPolicyCollections == null) {
+              throw new MissingRequiredPropertyException("GetSecurityPoliciesResult", "securityPolicyCollections");
+            }
+            this.securityPolicyCollections = securityPolicyCollections;
             return this;
         }
         public Builder securityPolicyCollections(GetSecurityPoliciesSecurityPolicyCollection... securityPolicyCollections) {
@@ -140,6 +150,7 @@ public final class GetSecurityPoliciesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

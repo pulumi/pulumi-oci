@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlConfigurationsConfiguration;
 import com.pulumi.oci.Mysql.outputs.GetMysqlConfigurationsFilter;
 import java.lang.String;
@@ -143,17 +144,24 @@ public final class GetMysqlConfigurationsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder configurationId(@Nullable String configurationId) {
+
             this.configurationId = configurationId;
             return this;
         }
         @CustomType.Setter
         public Builder configurations(List<GetMysqlConfigurationsConfiguration> configurations) {
-            this.configurations = Objects.requireNonNull(configurations);
+            if (configurations == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsResult", "configurations");
+            }
+            this.configurations = configurations;
             return this;
         }
         public Builder configurations(GetMysqlConfigurationsConfiguration... configurations) {
@@ -161,11 +169,13 @@ public final class GetMysqlConfigurationsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMysqlConfigurationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -174,21 +184,27 @@ public final class GetMysqlConfigurationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder shapeName(@Nullable String shapeName) {
+
             this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder types(@Nullable List<String> types) {
+
             this.types = types;
             return this;
         }

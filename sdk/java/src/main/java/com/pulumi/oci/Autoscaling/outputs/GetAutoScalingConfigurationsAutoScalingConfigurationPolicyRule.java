@@ -4,6 +4,7 @@
 package com.pulumi.oci.Autoscaling.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Autoscaling.outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction;
 import com.pulumi.oci.Autoscaling.outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric;
 import java.lang.String;
@@ -87,7 +88,10 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
 
         @CustomType.Setter
         public Builder actions(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction> actions) {
-            this.actions = Objects.requireNonNull(actions);
+            if (actions == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule", "actions");
+            }
+            this.actions = actions;
             return this;
         }
         public Builder actions(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction... actions) {
@@ -95,17 +99,26 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder metrics(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+            if (metrics == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule", "metrics");
+            }
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric... metrics) {

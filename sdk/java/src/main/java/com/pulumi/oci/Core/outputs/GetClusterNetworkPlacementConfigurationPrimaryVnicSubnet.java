@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetClusterNetworkPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail;
 import java.lang.Boolean;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetClusterNetworkPlacementConfigurationPrimaryVnicSubnet {
 
         @CustomType.Setter
         public Builder ipv6addressIpv6subnetCidrPairDetails(List<GetClusterNetworkPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails) {
-            this.ipv6addressIpv6subnetCidrPairDetails = Objects.requireNonNull(ipv6addressIpv6subnetCidrPairDetails);
+            if (ipv6addressIpv6subnetCidrPairDetails == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkPlacementConfigurationPrimaryVnicSubnet", "ipv6addressIpv6subnetCidrPairDetails");
+            }
+            this.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             return this;
         }
         public Builder ipv6addressIpv6subnetCidrPairDetails(GetClusterNetworkPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail... ipv6addressIpv6subnetCidrPairDetails) {
@@ -81,12 +85,18 @@ public final class GetClusterNetworkPlacementConfigurationPrimaryVnicSubnet {
         }
         @CustomType.Setter
         public Builder isAssignIpv6ip(Boolean isAssignIpv6ip) {
-            this.isAssignIpv6ip = Objects.requireNonNull(isAssignIpv6ip);
+            if (isAssignIpv6ip == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkPlacementConfigurationPrimaryVnicSubnet", "isAssignIpv6ip");
+            }
+            this.isAssignIpv6ip = isAssignIpv6ip;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkPlacementConfigurationPrimaryVnicSubnet", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         public GetClusterNetworkPlacementConfigurationPrimaryVnicSubnet build() {

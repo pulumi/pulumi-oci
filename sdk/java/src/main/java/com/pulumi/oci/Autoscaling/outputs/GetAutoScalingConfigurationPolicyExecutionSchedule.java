@@ -4,6 +4,7 @@
 package com.pulumi.oci.Autoscaling.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetAutoScalingConfigurationPolicyExecutionSchedule {
 
         @CustomType.Setter
         public Builder expression(String expression) {
-            this.expression = Objects.requireNonNull(expression);
+            if (expression == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyExecutionSchedule", "expression");
+            }
+            this.expression = expression;
             return this;
         }
         @CustomType.Setter
         public Builder timezone(String timezone) {
-            this.timezone = Objects.requireNonNull(timezone);
+            if (timezone == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyExecutionSchedule", "timezone");
+            }
+            this.timezone = timezone;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyExecutionSchedule", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetAutoScalingConfigurationPolicyExecutionSchedule build() {

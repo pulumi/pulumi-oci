@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage;
@@ -94,7 +95,10 @@ public final class GetFusionEnvironmentFamilyLimitsAndUsageResult {
 
         @CustomType.Setter
         public Builder developmentLimitAndUsages(List<GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage> developmentLimitAndUsages) {
-            this.developmentLimitAndUsages = Objects.requireNonNull(developmentLimitAndUsages);
+            if (developmentLimitAndUsages == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamilyLimitsAndUsageResult", "developmentLimitAndUsages");
+            }
+            this.developmentLimitAndUsages = developmentLimitAndUsages;
             return this;
         }
         public Builder developmentLimitAndUsages(GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage... developmentLimitAndUsages) {
@@ -102,17 +106,26 @@ public final class GetFusionEnvironmentFamilyLimitsAndUsageResult {
         }
         @CustomType.Setter
         public Builder fusionEnvironmentFamilyId(String fusionEnvironmentFamilyId) {
-            this.fusionEnvironmentFamilyId = Objects.requireNonNull(fusionEnvironmentFamilyId);
+            if (fusionEnvironmentFamilyId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamilyLimitsAndUsageResult", "fusionEnvironmentFamilyId");
+            }
+            this.fusionEnvironmentFamilyId = fusionEnvironmentFamilyId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamilyLimitsAndUsageResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder productionLimitAndUsages(List<GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage> productionLimitAndUsages) {
-            this.productionLimitAndUsages = Objects.requireNonNull(productionLimitAndUsages);
+            if (productionLimitAndUsages == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamilyLimitsAndUsageResult", "productionLimitAndUsages");
+            }
+            this.productionLimitAndUsages = productionLimitAndUsages;
             return this;
         }
         public Builder productionLimitAndUsages(GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage... productionLimitAndUsages) {
@@ -120,7 +133,10 @@ public final class GetFusionEnvironmentFamilyLimitsAndUsageResult {
         }
         @CustomType.Setter
         public Builder testLimitAndUsages(List<GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage> testLimitAndUsages) {
-            this.testLimitAndUsages = Objects.requireNonNull(testLimitAndUsages);
+            if (testLimitAndUsages == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamilyLimitsAndUsageResult", "testLimitAndUsages");
+            }
+            this.testLimitAndUsages = testLimitAndUsages;
             return this;
         }
         public Builder testLimitAndUsages(GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage... testLimitAndUsages) {

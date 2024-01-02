@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetDedicatedVantagePointPlainArgs extends com.pulumi.resource
         }
 
         public GetDedicatedVantagePointPlainArgs build() {
-            $.apmDomainId = Objects.requireNonNull($.apmDomainId, "expected parameter 'apmDomainId' to be non-null");
-            $.dedicatedVantagePointId = Objects.requireNonNull($.dedicatedVantagePointId, "expected parameter 'dedicatedVantagePointId' to be non-null");
+            if ($.apmDomainId == null) {
+                throw new MissingRequiredPropertyException("GetDedicatedVantagePointPlainArgs", "apmDomainId");
+            }
+            if ($.dedicatedVantagePointId == null) {
+                throw new MissingRequiredPropertyException("GetDedicatedVantagePointPlainArgs", "dedicatedVantagePointId");
+            }
             return $;
         }
     }

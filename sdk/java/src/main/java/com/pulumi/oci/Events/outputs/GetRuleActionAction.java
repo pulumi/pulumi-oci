@@ -4,6 +4,7 @@
 package com.pulumi.oci.Events.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -161,47 +162,74 @@ public final class GetRuleActionAction {
 
         @CustomType.Setter
         public Builder actionType(String actionType) {
-            this.actionType = Objects.requireNonNull(actionType);
+            if (actionType == null) {
+              throw new MissingRequiredPropertyException("GetRuleActionAction", "actionType");
+            }
+            this.actionType = actionType;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetRuleActionAction", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder functionId(String functionId) {
-            this.functionId = Objects.requireNonNull(functionId);
+            if (functionId == null) {
+              throw new MissingRequiredPropertyException("GetRuleActionAction", "functionId");
+            }
+            this.functionId = functionId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRuleActionAction", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetRuleActionAction", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleMessage(String lifecycleMessage) {
-            this.lifecycleMessage = Objects.requireNonNull(lifecycleMessage);
+            if (lifecycleMessage == null) {
+              throw new MissingRequiredPropertyException("GetRuleActionAction", "lifecycleMessage");
+            }
+            this.lifecycleMessage = lifecycleMessage;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetRuleActionAction", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder streamId(String streamId) {
-            this.streamId = Objects.requireNonNull(streamId);
+            if (streamId == null) {
+              throw new MissingRequiredPropertyException("GetRuleActionAction", "streamId");
+            }
+            this.streamId = streamId;
             return this;
         }
         @CustomType.Setter
         public Builder topicId(String topicId) {
-            this.topicId = Objects.requireNonNull(topicId);
+            if (topicId == null) {
+              throw new MissingRequiredPropertyException("GetRuleActionAction", "topicId");
+            }
+            this.topicId = topicId;
             return this;
         }
         public GetRuleActionAction build() {

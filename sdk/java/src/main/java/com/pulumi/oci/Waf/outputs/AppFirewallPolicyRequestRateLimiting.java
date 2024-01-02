@@ -44,6 +44,7 @@ public final class AppFirewallPolicyRequestRateLimiting {
 
         @CustomType.Setter
         public Builder rules(@Nullable List<AppFirewallPolicyRequestRateLimitingRule> rules) {
+
             this.rules = rules;
             return this;
         }

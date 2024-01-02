@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Dns.outputs.GetZonesFilter;
 import com.pulumi.oci.Dns.outputs.GetZonesZone;
 import java.lang.String;
@@ -195,11 +196,15 @@ public final class GetZonesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetZonesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetZonesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -208,67 +213,84 @@ public final class GetZonesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetZonesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder nameContains(@Nullable String nameContains) {
+
             this.nameContains = nameContains;
             return this;
         }
         @CustomType.Setter
         public Builder scope(@Nullable String scope) {
+
             this.scope = scope;
             return this;
         }
         @CustomType.Setter
         public Builder sortBy(@Nullable String sortBy) {
+
             this.sortBy = sortBy;
             return this;
         }
         @CustomType.Setter
         public Builder sortOrder(@Nullable String sortOrder) {
+
             this.sortOrder = sortOrder;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
+
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
+
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }
         @CustomType.Setter
         public Builder tsigKeyId(@Nullable String tsigKeyId) {
+
             this.tsigKeyId = tsigKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder viewId(@Nullable String viewId) {
+
             this.viewId = viewId;
             return this;
         }
         @CustomType.Setter
         public Builder zoneType(@Nullable String zoneType) {
+
             this.zoneType = zoneType;
             return this;
         }
         @CustomType.Setter
         public Builder zones(List<GetZonesZone> zones) {
-            this.zones = Objects.requireNonNull(zones);
+            if (zones == null) {
+              throw new MissingRequiredPropertyException("GetZonesResult", "zones");
+            }
+            this.zones = zones;
             return this;
         }
         public Builder zones(GetZonesZone... zones) {

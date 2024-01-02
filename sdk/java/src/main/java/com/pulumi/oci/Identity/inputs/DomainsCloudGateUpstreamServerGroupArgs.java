@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -477,8 +478,12 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
         }
 
         public DomainsCloudGateUpstreamServerGroupArgs build() {
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.value = Objects.requireNonNull($.value, "expected parameter 'value' to be non-null");
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateUpstreamServerGroupArgs", "displayName");
+            }
+            if ($.value == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateUpstreamServerGroupArgs", "value");
+            }
             return $;
         }
     }

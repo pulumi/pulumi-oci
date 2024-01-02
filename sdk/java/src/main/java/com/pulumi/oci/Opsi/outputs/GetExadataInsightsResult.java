@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetExadataInsightsExadataInsightSummaryCollection;
 import com.pulumi.oci.Opsi.outputs.GetExadataInsightsFilter;
 import java.lang.Boolean;
@@ -144,22 +145,28 @@ public final class GetExadataInsightsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerBridgeId(@Nullable String enterpriseManagerBridgeId) {
+
             this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             return this;
         }
         @CustomType.Setter
         public Builder exadataInsightSummaryCollections(List<GetExadataInsightsExadataInsightSummaryCollection> exadataInsightSummaryCollections) {
-            this.exadataInsightSummaryCollections = Objects.requireNonNull(exadataInsightSummaryCollections);
+            if (exadataInsightSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightsResult", "exadataInsightSummaryCollections");
+            }
+            this.exadataInsightSummaryCollections = exadataInsightSummaryCollections;
             return this;
         }
         public Builder exadataInsightSummaryCollections(GetExadataInsightsExadataInsightSummaryCollection... exadataInsightSummaryCollections) {
@@ -167,6 +174,7 @@ public final class GetExadataInsightsResult {
         }
         @CustomType.Setter
         public Builder exadataTypes(@Nullable List<String> exadataTypes) {
+
             this.exadataTypes = exadataTypes;
             return this;
         }
@@ -175,6 +183,7 @@ public final class GetExadataInsightsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetExadataInsightsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -183,11 +192,13 @@ public final class GetExadataInsightsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
+
             this.states = states;
             return this;
         }
@@ -196,6 +207,7 @@ public final class GetExadataInsightsResult {
         }
         @CustomType.Setter
         public Builder statuses(@Nullable List<String> statuses) {
+
             this.statuses = statuses;
             return this;
         }

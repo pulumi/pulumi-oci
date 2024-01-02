@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Dns.outputs.GetSteeringPolicyRuleCaseAnswerData;
 import java.lang.Integer;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetSteeringPolicyRuleCase {
 
         @CustomType.Setter
         public Builder answerDatas(List<GetSteeringPolicyRuleCaseAnswerData> answerDatas) {
-            this.answerDatas = Objects.requireNonNull(answerDatas);
+            if (answerDatas == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPolicyRuleCase", "answerDatas");
+            }
+            this.answerDatas = answerDatas;
             return this;
         }
         public Builder answerDatas(GetSteeringPolicyRuleCaseAnswerData... answerDatas) {
@@ -81,12 +85,18 @@ public final class GetSteeringPolicyRuleCase {
         }
         @CustomType.Setter
         public Builder caseCondition(String caseCondition) {
-            this.caseCondition = Objects.requireNonNull(caseCondition);
+            if (caseCondition == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPolicyRuleCase", "caseCondition");
+            }
+            this.caseCondition = caseCondition;
             return this;
         }
         @CustomType.Setter
         public Builder count(Integer count) {
-            this.count = Objects.requireNonNull(count);
+            if (count == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPolicyRuleCase", "count");
+            }
+            this.count = count;
             return this;
         }
         public GetSteeringPolicyRuleCase build() {

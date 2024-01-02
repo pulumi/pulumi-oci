@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ons.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ons.outputs.GetNotificationTopicsFilter;
 import com.pulumi.oci.Ons.outputs.GetNotificationTopicsNotificationTopic;
 import java.lang.String;
@@ -101,11 +102,15 @@ public final class GetNotificationTopicsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNotificationTopicsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNotificationTopicsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -114,17 +119,22 @@ public final class GetNotificationTopicsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder notificationTopics(List<GetNotificationTopicsNotificationTopic> notificationTopics) {
-            this.notificationTopics = Objects.requireNonNull(notificationTopics);
+            if (notificationTopics == null) {
+              throw new MissingRequiredPropertyException("GetNotificationTopicsResult", "notificationTopics");
+            }
+            this.notificationTopics = notificationTopics;
             return this;
         }
         public Builder notificationTopics(GetNotificationTopicsNotificationTopic... notificationTopics) {
@@ -132,6 +142,7 @@ public final class GetNotificationTopicsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

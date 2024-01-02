@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -86,16 +87,23 @@ public final class RuleSetItemCondition {
 
         @CustomType.Setter
         public Builder attributeName(String attributeName) {
-            this.attributeName = Objects.requireNonNull(attributeName);
+            if (attributeName == null) {
+              throw new MissingRequiredPropertyException("RuleSetItemCondition", "attributeName");
+            }
+            this.attributeName = attributeName;
             return this;
         }
         @CustomType.Setter
         public Builder attributeValue(String attributeValue) {
-            this.attributeValue = Objects.requireNonNull(attributeValue);
+            if (attributeValue == null) {
+              throw new MissingRequiredPropertyException("RuleSetItemCondition", "attributeValue");
+            }
+            this.attributeValue = attributeValue;
             return this;
         }
         @CustomType.Setter
         public Builder operator(@Nullable String operator) {
+
             this.operator = operator;
             return this;
         }

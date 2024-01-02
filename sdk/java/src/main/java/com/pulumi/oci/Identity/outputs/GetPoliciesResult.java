@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetPoliciesFilter;
 import com.pulumi.oci.Identity.outputs.GetPoliciesPolicy;
 import java.lang.String;
@@ -109,11 +110,15 @@ public final class GetPoliciesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetPoliciesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPoliciesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -122,17 +127,24 @@ public final class GetPoliciesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPoliciesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder policies(List<GetPoliciesPolicy> policies) {
-            this.policies = Objects.requireNonNull(policies);
+            if (policies == null) {
+              throw new MissingRequiredPropertyException("GetPoliciesResult", "policies");
+            }
+            this.policies = policies;
             return this;
         }
         public Builder policies(GetPoliciesPolicy... policies) {
@@ -140,6 +152,7 @@ public final class GetPoliciesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

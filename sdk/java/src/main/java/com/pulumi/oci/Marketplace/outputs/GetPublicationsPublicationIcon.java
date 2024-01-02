@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetPublicationsPublicationIcon {
 
         @CustomType.Setter
         public Builder contentUrl(String contentUrl) {
-            this.contentUrl = Objects.requireNonNull(contentUrl);
+            if (contentUrl == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublicationIcon", "contentUrl");
+            }
+            this.contentUrl = contentUrl;
             return this;
         }
         @CustomType.Setter
         public Builder fileExtension(String fileExtension) {
-            this.fileExtension = Objects.requireNonNull(fileExtension);
+            if (fileExtension == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublicationIcon", "fileExtension");
+            }
+            this.fileExtension = fileExtension;
             return this;
         }
         @CustomType.Setter
         public Builder mimeType(String mimeType) {
-            this.mimeType = Objects.requireNonNull(mimeType);
+            if (mimeType == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublicationIcon", "mimeType");
+            }
+            this.mimeType = mimeType;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublicationIcon", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetPublicationsPublicationIcon build() {

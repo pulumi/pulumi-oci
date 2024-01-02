@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetTrailSequencesFilter;
 import com.pulumi.oci.GoldenGate.outputs.GetTrailSequencesTrailSequenceCollection;
 import java.lang.String;
@@ -98,16 +99,23 @@ public final class GetTrailSequencesResult {
 
         @CustomType.Setter
         public Builder deploymentId(String deploymentId) {
-            this.deploymentId = Objects.requireNonNull(deploymentId);
+            if (deploymentId == null) {
+              throw new MissingRequiredPropertyException("GetTrailSequencesResult", "deploymentId");
+            }
+            this.deploymentId = deploymentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetTrailSequencesResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetTrailSequencesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -116,17 +124,26 @@ public final class GetTrailSequencesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTrailSequencesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder trailFileId(String trailFileId) {
-            this.trailFileId = Objects.requireNonNull(trailFileId);
+            if (trailFileId == null) {
+              throw new MissingRequiredPropertyException("GetTrailSequencesResult", "trailFileId");
+            }
+            this.trailFileId = trailFileId;
             return this;
         }
         @CustomType.Setter
         public Builder trailSequenceCollections(List<GetTrailSequencesTrailSequenceCollection> trailSequenceCollections) {
-            this.trailSequenceCollections = Objects.requireNonNull(trailSequenceCollections);
+            if (trailSequenceCollections == null) {
+              throw new MissingRequiredPropertyException("GetTrailSequencesResult", "trailSequenceCollections");
+            }
+            this.trailSequenceCollections = trailSequenceCollections;
             return this;
         }
         public Builder trailSequenceCollections(GetTrailSequencesTrailSequenceCollection... trailSequenceCollections) {
@@ -134,7 +151,10 @@ public final class GetTrailSequencesResult {
         }
         @CustomType.Setter
         public Builder trailSequenceId(String trailSequenceId) {
-            this.trailSequenceId = Objects.requireNonNull(trailSequenceId);
+            if (trailSequenceId == null) {
+              throw new MissingRequiredPropertyException("GetTrailSequencesResult", "trailSequenceId");
+            }
+            this.trailSequenceId = trailSequenceId;
             return this;
         }
         public GetTrailSequencesResult build() {

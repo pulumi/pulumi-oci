@@ -4,6 +4,7 @@
 package com.pulumi.oci.RecoveryMod.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.util.Objects;
@@ -127,37 +128,58 @@ public final class GetProtectedDatabaseMetric {
 
         @CustomType.Setter
         public Builder backupSpaceEstimateInGbs(Double backupSpaceEstimateInGbs) {
-            this.backupSpaceEstimateInGbs = Objects.requireNonNull(backupSpaceEstimateInGbs);
+            if (backupSpaceEstimateInGbs == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabaseMetric", "backupSpaceEstimateInGbs");
+            }
+            this.backupSpaceEstimateInGbs = backupSpaceEstimateInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder backupSpaceUsedInGbs(Double backupSpaceUsedInGbs) {
-            this.backupSpaceUsedInGbs = Objects.requireNonNull(backupSpaceUsedInGbs);
+            if (backupSpaceUsedInGbs == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabaseMetric", "backupSpaceUsedInGbs");
+            }
+            this.backupSpaceUsedInGbs = backupSpaceUsedInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder currentRetentionPeriodInSeconds(Double currentRetentionPeriodInSeconds) {
-            this.currentRetentionPeriodInSeconds = Objects.requireNonNull(currentRetentionPeriodInSeconds);
+            if (currentRetentionPeriodInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabaseMetric", "currentRetentionPeriodInSeconds");
+            }
+            this.currentRetentionPeriodInSeconds = currentRetentionPeriodInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder dbSizeInGbs(Double dbSizeInGbs) {
-            this.dbSizeInGbs = Objects.requireNonNull(dbSizeInGbs);
+            if (dbSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabaseMetric", "dbSizeInGbs");
+            }
+            this.dbSizeInGbs = dbSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder isRedoLogsEnabled(Boolean isRedoLogsEnabled) {
-            this.isRedoLogsEnabled = Objects.requireNonNull(isRedoLogsEnabled);
+            if (isRedoLogsEnabled == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabaseMetric", "isRedoLogsEnabled");
+            }
+            this.isRedoLogsEnabled = isRedoLogsEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder retentionPeriodInDays(Double retentionPeriodInDays) {
-            this.retentionPeriodInDays = Objects.requireNonNull(retentionPeriodInDays);
+            if (retentionPeriodInDays == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabaseMetric", "retentionPeriodInDays");
+            }
+            this.retentionPeriodInDays = retentionPeriodInDays;
             return this;
         }
         @CustomType.Setter
         public Builder unprotectedWindowInSeconds(Double unprotectedWindowInSeconds) {
-            this.unprotectedWindowInSeconds = Objects.requireNonNull(unprotectedWindowInSeconds);
+            if (unprotectedWindowInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabaseMetric", "unprotectedWindowInSeconds");
+            }
+            this.unprotectedWindowInSeconds = unprotectedWindowInSeconds;
             return this;
         }
         public GetProtectedDatabaseMetric build() {

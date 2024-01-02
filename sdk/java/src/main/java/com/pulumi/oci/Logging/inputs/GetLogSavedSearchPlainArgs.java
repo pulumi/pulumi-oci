@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetLogSavedSearchPlainArgs extends com.pulumi.resources.Invok
         }
 
         public GetLogSavedSearchPlainArgs build() {
-            $.logSavedSearchId = Objects.requireNonNull($.logSavedSearchId, "expected parameter 'logSavedSearchId' to be non-null");
+            if ($.logSavedSearchId == null) {
+                throw new MissingRequiredPropertyException("GetLogSavedSearchPlainArgs", "logSavedSearchId");
+            }
             return $;
         }
     }

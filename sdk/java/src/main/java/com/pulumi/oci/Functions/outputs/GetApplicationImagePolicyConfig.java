@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetApplicationImagePolicyConfigKeyDetail;
 import java.lang.Boolean;
 import java.util.List;
@@ -58,12 +59,18 @@ public final class GetApplicationImagePolicyConfig {
 
         @CustomType.Setter
         public Builder isPolicyEnabled(Boolean isPolicyEnabled) {
-            this.isPolicyEnabled = Objects.requireNonNull(isPolicyEnabled);
+            if (isPolicyEnabled == null) {
+              throw new MissingRequiredPropertyException("GetApplicationImagePolicyConfig", "isPolicyEnabled");
+            }
+            this.isPolicyEnabled = isPolicyEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder keyDetails(List<GetApplicationImagePolicyConfigKeyDetail> keyDetails) {
-            this.keyDetails = Objects.requireNonNull(keyDetails);
+            if (keyDetails == null) {
+              throw new MissingRequiredPropertyException("GetApplicationImagePolicyConfig", "keyDetails");
+            }
+            this.keyDetails = keyDetails;
             return this;
         }
         public Builder keyDetails(GetApplicationImagePolicyConfigKeyDetail... keyDetails) {

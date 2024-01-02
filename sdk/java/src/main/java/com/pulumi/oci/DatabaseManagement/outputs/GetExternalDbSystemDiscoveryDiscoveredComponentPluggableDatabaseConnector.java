@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo;
 import java.lang.String;
 import java.util.List;
@@ -128,17 +129,26 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatab
 
         @CustomType.Setter
         public Builder agentId(String agentId) {
-            this.agentId = Objects.requireNonNull(agentId);
+            if (agentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnector", "agentId");
+            }
+            this.agentId = agentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionFailureMessage(String connectionFailureMessage) {
-            this.connectionFailureMessage = Objects.requireNonNull(connectionFailureMessage);
+            if (connectionFailureMessage == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnector", "connectionFailureMessage");
+            }
+            this.connectionFailureMessage = connectionFailureMessage;
             return this;
         }
         @CustomType.Setter
         public Builder connectionInfos(List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo> connectionInfos) {
-            this.connectionInfos = Objects.requireNonNull(connectionInfos);
+            if (connectionInfos == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnector", "connectionInfos");
+            }
+            this.connectionInfos = connectionInfos;
             return this;
         }
         public Builder connectionInfos(GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo... connectionInfos) {
@@ -146,22 +156,34 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatab
         }
         @CustomType.Setter
         public Builder connectionStatus(String connectionStatus) {
-            this.connectionStatus = Objects.requireNonNull(connectionStatus);
+            if (connectionStatus == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnector", "connectionStatus");
+            }
+            this.connectionStatus = connectionStatus;
             return this;
         }
         @CustomType.Setter
         public Builder connectorType(String connectorType) {
-            this.connectorType = Objects.requireNonNull(connectorType);
+            if (connectorType == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnector", "connectorType");
+            }
+            this.connectorType = connectorType;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnector", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder timeConnectionStatusLastUpdated(String timeConnectionStatusLastUpdated) {
-            this.timeConnectionStatusLastUpdated = Objects.requireNonNull(timeConnectionStatusLastUpdated);
+            if (timeConnectionStatusLastUpdated == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnector", "timeConnectionStatusLastUpdated");
+            }
+            this.timeConnectionStatusLastUpdated = timeConnectionStatusLastUpdated;
             return this;
         }
         public GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnector build() {

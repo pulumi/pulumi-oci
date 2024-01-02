@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsCustomerSecretKeyIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsCustomerSecretKeyIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsCustomerSecretKeyMeta;
@@ -354,11 +355,15 @@ public final class GetDomainsCustomerSecretKeyResult {
 
         @CustomType.Setter
         public Builder accessKey(String accessKey) {
-            this.accessKey = Objects.requireNonNull(accessKey);
+            if (accessKey == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "accessKey");
+            }
+            this.accessKey = accessKey;
             return this;
         }
         @CustomType.Setter
         public Builder attributeSets(@Nullable List<String> attributeSets) {
+
             this.attributeSets = attributeSets;
             return this;
         }
@@ -367,57 +372,86 @@ public final class GetDomainsCustomerSecretKeyResult {
         }
         @CustomType.Setter
         public Builder attributes(@Nullable String attributes) {
+
             this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder customerSecretKeyId(String customerSecretKeyId) {
-            this.customerSecretKeyId = Objects.requireNonNull(customerSecretKeyId);
+            if (customerSecretKeyId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "customerSecretKeyId");
+            }
+            this.customerSecretKeyId = customerSecretKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder expiresOn(String expiresOn) {
-            this.expiresOn = Objects.requireNonNull(expiresOn);
+            if (expiresOn == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "expiresOn");
+            }
+            this.expiresOn = expiresOn;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsCustomerSecretKeyIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsCustomerSecretKeyIdcsCreatedBy... idcsCreatedBies) {
@@ -425,12 +459,18 @@ public final class GetDomainsCustomerSecretKeyResult {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsCustomerSecretKeyIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsCustomerSecretKeyIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -438,12 +478,18 @@ public final class GetDomainsCustomerSecretKeyResult {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -451,7 +497,10 @@ public final class GetDomainsCustomerSecretKeyResult {
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsCustomerSecretKeyMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsCustomerSecretKeyMeta... metas) {
@@ -459,17 +508,24 @@ public final class GetDomainsCustomerSecretKeyResult {
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -477,12 +533,18 @@ public final class GetDomainsCustomerSecretKeyResult {
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsCustomerSecretKeyTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsCustomerSecretKeyTag... tags) {
@@ -490,12 +552,18 @@ public final class GetDomainsCustomerSecretKeyResult {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionselfChangeUsers(List<GetDomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionselfChangeUsers);
+            if (urnietfparamsscimschemasoracleidcsextensionselfChangeUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "urnietfparamsscimschemasoracleidcsextensionselfChangeUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers = urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionselfChangeUsers(GetDomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser... urnietfparamsscimschemasoracleidcsextensionselfChangeUsers) {
@@ -503,7 +571,10 @@ public final class GetDomainsCustomerSecretKeyResult {
         }
         @CustomType.Setter
         public Builder users(List<GetDomainsCustomerSecretKeyUser> users) {
-            this.users = Objects.requireNonNull(users);
+            if (users == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "users");
+            }
+            this.users = users;
             return this;
         }
         public Builder users(GetDomainsCustomerSecretKeyUser... users) {

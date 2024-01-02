@@ -5,6 +5,7 @@ package com.pulumi.oci.ComputeCloud.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetAtCustomerCccUpgradeScheduleArgs extends com.pulumi.resour
         }
 
         public GetAtCustomerCccUpgradeScheduleArgs build() {
-            $.cccUpgradeScheduleId = Objects.requireNonNull($.cccUpgradeScheduleId, "expected parameter 'cccUpgradeScheduleId' to be non-null");
+            if ($.cccUpgradeScheduleId == null) {
+                throw new MissingRequiredPropertyException("GetAtCustomerCccUpgradeScheduleArgs", "cccUpgradeScheduleId");
+            }
             return $;
         }
     }

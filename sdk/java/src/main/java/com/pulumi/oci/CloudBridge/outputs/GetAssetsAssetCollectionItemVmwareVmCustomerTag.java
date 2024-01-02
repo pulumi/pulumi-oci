@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetAssetsAssetCollectionItemVmwareVmCustomerTag {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemVmwareVmCustomerTag", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemVmwareVmCustomerTag", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetAssetsAssetCollectionItemVmwareVmCustomerTag build() {

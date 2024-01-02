@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetTriggerActionFilter;
 import java.lang.String;
 import java.util.List;
@@ -72,12 +73,18 @@ public final class GetTriggerAction {
 
         @CustomType.Setter
         public Builder buildPipelineId(String buildPipelineId) {
-            this.buildPipelineId = Objects.requireNonNull(buildPipelineId);
+            if (buildPipelineId == null) {
+              throw new MissingRequiredPropertyException("GetTriggerAction", "buildPipelineId");
+            }
+            this.buildPipelineId = buildPipelineId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(List<GetTriggerActionFilter> filters) {
-            this.filters = Objects.requireNonNull(filters);
+            if (filters == null) {
+              throw new MissingRequiredPropertyException("GetTriggerAction", "filters");
+            }
+            this.filters = filters;
             return this;
         }
         public Builder filters(GetTriggerActionFilter... filters) {
@@ -85,7 +92,10 @@ public final class GetTriggerAction {
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetTriggerAction", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetTriggerAction build() {

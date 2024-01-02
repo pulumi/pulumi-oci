@@ -4,6 +4,7 @@
 package com.pulumi.oci.LicenseManager.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LicenseManager.outputs.GetTopUtilizedProductLicensesItem;
 import java.lang.Boolean;
 import java.lang.String;
@@ -73,22 +74,32 @@ public final class GetTopUtilizedProductLicensesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetTopUtilizedProductLicensesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTopUtilizedProductLicensesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCompartmentIdInSubtree(@Nullable Boolean isCompartmentIdInSubtree) {
+
             this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetTopUtilizedProductLicensesItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetTopUtilizedProductLicensesResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetTopUtilizedProductLicensesItem... items) {

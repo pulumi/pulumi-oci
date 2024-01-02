@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnector;
 import java.lang.String;
 import java.util.List;
@@ -114,17 +115,26 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanc
 
         @CustomType.Setter
         public Builder adrHomeDirectory(String adrHomeDirectory) {
-            this.adrHomeDirectory = Objects.requireNonNull(adrHomeDirectory);
+            if (adrHomeDirectory == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstance", "adrHomeDirectory");
+            }
+            this.adrHomeDirectory = adrHomeDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder clusterId(String clusterId) {
-            this.clusterId = Objects.requireNonNull(clusterId);
+            if (clusterId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstance", "clusterId");
+            }
+            this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
         public Builder connectors(List<GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnector> connectors) {
-            this.connectors = Objects.requireNonNull(connectors);
+            if (connectors == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstance", "connectors");
+            }
+            this.connectors = connectors;
             return this;
         }
         public Builder connectors(GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnector... connectors) {
@@ -132,17 +142,26 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanc
         }
         @CustomType.Setter
         public Builder crsBaseDirectory(String crsBaseDirectory) {
-            this.crsBaseDirectory = Objects.requireNonNull(crsBaseDirectory);
+            if (crsBaseDirectory == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstance", "crsBaseDirectory");
+            }
+            this.crsBaseDirectory = crsBaseDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+            if (hostName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstance", "hostName");
+            }
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder nodeRole(String nodeRole) {
-            this.nodeRole = Objects.requireNonNull(nodeRole);
+            if (nodeRole == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstance", "nodeRole");
+            }
+            this.nodeRole = nodeRole;
             return this;
         }
         public GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstance build() {

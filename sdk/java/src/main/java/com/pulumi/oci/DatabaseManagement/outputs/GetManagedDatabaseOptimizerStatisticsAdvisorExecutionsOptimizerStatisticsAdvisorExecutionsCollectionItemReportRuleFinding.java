@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
 
         @CustomType.Setter
         public Builder details(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail> details) {
-            this.details = Objects.requireNonNull(details);
+            if (details == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding", "details");
+            }
+            this.details = details;
             return this;
         }
         public Builder details(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail... details) {
@@ -81,12 +85,18 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
         }
         @CustomType.Setter
         public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+            if (message == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding", "message");
+            }
+            this.message = message;
             return this;
         }
         @CustomType.Setter
         public Builder recommendations(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation> recommendations) {
-            this.recommendations = Objects.requireNonNull(recommendations);
+            if (recommendations == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding", "recommendations");
+            }
+            this.recommendations = recommendations;
             return this;
         }
         public Builder recommendations(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation... recommendations) {

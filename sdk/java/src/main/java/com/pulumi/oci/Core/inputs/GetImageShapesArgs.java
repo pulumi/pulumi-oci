@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetImageShapesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -99,7 +100,9 @@ public final class GetImageShapesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetImageShapesArgs build() {
-            $.imageId = Objects.requireNonNull($.imageId, "expected parameter 'imageId' to be non-null");
+            if ($.imageId == null) {
+                throw new MissingRequiredPropertyException("GetImageShapesArgs", "imageId");
+            }
             return $;
         }
     }

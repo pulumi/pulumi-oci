@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseTools.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsPrivateEndpointsFilter;
 import java.lang.String;
@@ -137,12 +138,18 @@ public final class GetDatabaseToolsPrivateEndpointsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseToolsPrivateEndpointCollections(List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection> databaseToolsPrivateEndpointCollections) {
-            this.databaseToolsPrivateEndpointCollections = Objects.requireNonNull(databaseToolsPrivateEndpointCollections);
+            if (databaseToolsPrivateEndpointCollections == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointsResult", "databaseToolsPrivateEndpointCollections");
+            }
+            this.databaseToolsPrivateEndpointCollections = databaseToolsPrivateEndpointCollections;
             return this;
         }
         public Builder databaseToolsPrivateEndpointCollections(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection... databaseToolsPrivateEndpointCollections) {
@@ -150,16 +157,19 @@ public final class GetDatabaseToolsPrivateEndpointsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder endpointServiceId(@Nullable String endpointServiceId) {
+
             this.endpointServiceId = endpointServiceId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDatabaseToolsPrivateEndpointsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -168,16 +178,21 @@ public final class GetDatabaseToolsPrivateEndpointsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
+
             this.subnetId = subnetId;
             return this;
         }

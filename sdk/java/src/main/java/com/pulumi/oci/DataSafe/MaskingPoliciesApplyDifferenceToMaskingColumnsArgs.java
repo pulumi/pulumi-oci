@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -71,8 +72,12 @@ public final class MaskingPoliciesApplyDifferenceToMaskingColumnsArgs extends co
         }
 
         public MaskingPoliciesApplyDifferenceToMaskingColumnsArgs build() {
-            $.maskingPolicyId = Objects.requireNonNull($.maskingPolicyId, "expected parameter 'maskingPolicyId' to be non-null");
-            $.sdmMaskingPolicyDifferenceId = Objects.requireNonNull($.sdmMaskingPolicyDifferenceId, "expected parameter 'sdmMaskingPolicyDifferenceId' to be non-null");
+            if ($.maskingPolicyId == null) {
+                throw new MissingRequiredPropertyException("MaskingPoliciesApplyDifferenceToMaskingColumnsArgs", "maskingPolicyId");
+            }
+            if ($.sdmMaskingPolicyDifferenceId == null) {
+                throw new MissingRequiredPropertyException("MaskingPoliciesApplyDifferenceToMaskingColumnsArgs", "sdmMaskingPolicyDifferenceId");
+            }
             return $;
         }
     }

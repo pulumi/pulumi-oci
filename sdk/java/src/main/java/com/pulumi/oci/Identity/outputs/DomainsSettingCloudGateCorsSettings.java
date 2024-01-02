@@ -213,11 +213,13 @@ public final class DomainsSettingCloudGateCorsSettings {
 
         @CustomType.Setter
         public Builder cloudGateCorsAllowNullOrigin(@Nullable Boolean cloudGateCorsAllowNullOrigin) {
+
             this.cloudGateCorsAllowNullOrigin = cloudGateCorsAllowNullOrigin;
             return this;
         }
         @CustomType.Setter
         public Builder cloudGateCorsAllowedOrigins(@Nullable List<String> cloudGateCorsAllowedOrigins) {
+
             this.cloudGateCorsAllowedOrigins = cloudGateCorsAllowedOrigins;
             return this;
         }
@@ -226,11 +228,13 @@ public final class DomainsSettingCloudGateCorsSettings {
         }
         @CustomType.Setter
         public Builder cloudGateCorsEnabled(@Nullable Boolean cloudGateCorsEnabled) {
+
             this.cloudGateCorsEnabled = cloudGateCorsEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder cloudGateCorsExposedHeaders(@Nullable List<String> cloudGateCorsExposedHeaders) {
+
             this.cloudGateCorsExposedHeaders = cloudGateCorsExposedHeaders;
             return this;
         }
@@ -239,6 +243,7 @@ public final class DomainsSettingCloudGateCorsSettings {
         }
         @CustomType.Setter
         public Builder cloudGateCorsMaxAge(@Nullable Integer cloudGateCorsMaxAge) {
+
             this.cloudGateCorsMaxAge = cloudGateCorsMaxAge;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetResourcesResourcesCollectionItemSkus {
 
         @CustomType.Setter
         public Builder cloudCreditType(String cloudCreditType) {
-            this.cloudCreditType = Objects.requireNonNull(cloudCreditType);
+            if (cloudCreditType == null) {
+              throw new MissingRequiredPropertyException("GetResourcesResourcesCollectionItemSkus", "cloudCreditType");
+            }
+            this.cloudCreditType = cloudCreditType;
             return this;
         }
         @CustomType.Setter
         public Builder skuId(String skuId) {
-            this.skuId = Objects.requireNonNull(skuId);
+            if (skuId == null) {
+              throw new MissingRequiredPropertyException("GetResourcesResourcesCollectionItemSkus", "skuId");
+            }
+            this.skuId = skuId;
             return this;
         }
         @CustomType.Setter
         public Builder skuType(String skuType) {
-            this.skuType = Objects.requireNonNull(skuType);
+            if (skuType == null) {
+              throw new MissingRequiredPropertyException("GetResourcesResourcesCollectionItemSkus", "skuType");
+            }
+            this.skuType = skuType;
             return this;
         }
         public GetResourcesResourcesCollectionItemSkus build() {

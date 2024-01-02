@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetPublicIpPoolArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetPublicIpPoolArgs build() {
-            $.publicIpPoolId = Objects.requireNonNull($.publicIpPoolId, "expected parameter 'publicIpPoolId' to be non-null");
+            if ($.publicIpPoolId == null) {
+                throw new MissingRequiredPropertyException("GetPublicIpPoolArgs", "publicIpPoolId");
+            }
             return $;
         }
     }

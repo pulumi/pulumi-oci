@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -95,32 +96,46 @@ public final class GetAutonomousDatabaseWalletResult {
 
         @CustomType.Setter
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
-            this.autonomousDatabaseId = Objects.requireNonNull(autonomousDatabaseId);
+            if (autonomousDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseWalletResult", "autonomousDatabaseId");
+            }
+            this.autonomousDatabaseId = autonomousDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder base64EncodeContent(@Nullable Boolean base64EncodeContent) {
+
             this.base64EncodeContent = base64EncodeContent;
             return this;
         }
         @CustomType.Setter
         public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+            if (content == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseWalletResult", "content");
+            }
+            this.content = content;
             return this;
         }
         @CustomType.Setter
         public Builder generateType(@Nullable String generateType) {
+
             this.generateType = generateType;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseWalletResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+            if (password == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseWalletResult", "password");
+            }
+            this.password = password;
             return this;
         }
         public GetAutonomousDatabaseWalletResult build() {

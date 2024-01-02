@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -213,57 +214,90 @@ public final class GetIpsecConnectionsConnection {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionsConnection", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder cpeId(String cpeId) {
-            this.cpeId = Objects.requireNonNull(cpeId);
+            if (cpeId == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionsConnection", "cpeId");
+            }
+            this.cpeId = cpeId;
             return this;
         }
         @CustomType.Setter
         public Builder cpeLocalIdentifier(String cpeLocalIdentifier) {
-            this.cpeLocalIdentifier = Objects.requireNonNull(cpeLocalIdentifier);
+            if (cpeLocalIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionsConnection", "cpeLocalIdentifier");
+            }
+            this.cpeLocalIdentifier = cpeLocalIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder cpeLocalIdentifierType(String cpeLocalIdentifierType) {
-            this.cpeLocalIdentifierType = Objects.requireNonNull(cpeLocalIdentifierType);
+            if (cpeLocalIdentifierType == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionsConnection", "cpeLocalIdentifierType");
+            }
+            this.cpeLocalIdentifierType = cpeLocalIdentifierType;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionsConnection", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionsConnection", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder drgId(String drgId) {
-            this.drgId = Objects.requireNonNull(drgId);
+            if (drgId == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionsConnection", "drgId");
+            }
+            this.drgId = drgId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionsConnection", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionsConnection", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionsConnection", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder staticRoutes(List<String> staticRoutes) {
-            this.staticRoutes = Objects.requireNonNull(staticRoutes);
+            if (staticRoutes == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionsConnection", "staticRoutes");
+            }
+            this.staticRoutes = staticRoutes;
             return this;
         }
         public Builder staticRoutes(String... staticRoutes) {
@@ -271,12 +305,18 @@ public final class GetIpsecConnectionsConnection {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionsConnection", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder transportType(String transportType) {
-            this.transportType = Objects.requireNonNull(transportType);
+            if (transportType == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionsConnection", "transportType");
+            }
+            this.transportType = transportType;
             return this;
         }
         public GetIpsecConnectionsConnection build() {

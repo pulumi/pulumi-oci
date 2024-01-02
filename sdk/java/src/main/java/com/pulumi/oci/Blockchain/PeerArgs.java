@@ -5,6 +5,7 @@ package com.pulumi.oci.Blockchain;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Blockchain.inputs.PeerOcpuAllocationParamArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -237,10 +238,18 @@ public final class PeerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public PeerArgs build() {
-            $.ad = Objects.requireNonNull($.ad, "expected parameter 'ad' to be non-null");
-            $.blockchainPlatformId = Objects.requireNonNull($.blockchainPlatformId, "expected parameter 'blockchainPlatformId' to be non-null");
-            $.ocpuAllocationParam = Objects.requireNonNull($.ocpuAllocationParam, "expected parameter 'ocpuAllocationParam' to be non-null");
-            $.role = Objects.requireNonNull($.role, "expected parameter 'role' to be non-null");
+            if ($.ad == null) {
+                throw new MissingRequiredPropertyException("PeerArgs", "ad");
+            }
+            if ($.blockchainPlatformId == null) {
+                throw new MissingRequiredPropertyException("PeerArgs", "blockchainPlatformId");
+            }
+            if ($.ocpuAllocationParam == null) {
+                throw new MissingRequiredPropertyException("PeerArgs", "ocpuAllocationParam");
+            }
+            if ($.role == null) {
+                throw new MissingRequiredPropertyException("PeerArgs", "role");
+            }
             return $;
         }
     }

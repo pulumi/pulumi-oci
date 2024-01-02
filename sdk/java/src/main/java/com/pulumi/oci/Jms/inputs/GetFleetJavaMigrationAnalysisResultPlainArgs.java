@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetFleetJavaMigrationAnalysisResultPlainArgs extends com.pulu
         }
 
         public GetFleetJavaMigrationAnalysisResultPlainArgs build() {
-            $.fleetId = Objects.requireNonNull($.fleetId, "expected parameter 'fleetId' to be non-null");
-            $.javaMigrationAnalysisResultId = Objects.requireNonNull($.javaMigrationAnalysisResultId, "expected parameter 'javaMigrationAnalysisResultId' to be non-null");
+            if ($.fleetId == null) {
+                throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultPlainArgs", "fleetId");
+            }
+            if ($.javaMigrationAnalysisResultId == null) {
+                throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultPlainArgs", "javaMigrationAnalysisResultId");
+            }
             return $;
         }
     }

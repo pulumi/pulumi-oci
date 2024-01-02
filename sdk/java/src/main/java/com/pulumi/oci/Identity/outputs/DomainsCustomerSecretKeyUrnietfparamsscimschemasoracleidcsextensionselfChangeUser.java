@@ -66,6 +66,7 @@ public final class DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsext
 
         @CustomType.Setter
         public Builder allowSelfChange(@Nullable Boolean allowSelfChange) {
+
             this.allowSelfChange = allowSelfChange;
             return this;
         }

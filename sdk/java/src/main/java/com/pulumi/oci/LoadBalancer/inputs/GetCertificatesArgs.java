@@ -5,6 +5,7 @@ package com.pulumi.oci.LoadBalancer.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.inputs.GetCertificatesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -99,7 +100,9 @@ public final class GetCertificatesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetCertificatesArgs build() {
-            $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
+            if ($.loadBalancerId == null) {
+                throw new MissingRequiredPropertyException("GetCertificatesArgs", "loadBalancerId");
+            }
             return $;
         }
     }

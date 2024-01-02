@@ -54,21 +54,25 @@ public final class DatabaseSecurityConfigManagementSqlFirewallConfig {
 
         @CustomType.Setter
         public Builder excludeJob(@Nullable String excludeJob) {
+
             this.excludeJob = excludeJob;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder timeStatusUpdated(@Nullable String timeStatusUpdated) {
+
             this.timeStatusUpdated = timeStatusUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder violationLogAutoPurge(@Nullable String violationLogAutoPurge) {
+
             this.violationLogAutoPurge = violationLogAutoPurge;
             return this;
         }

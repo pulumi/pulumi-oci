@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetVirtualServicePlainArgs extends com.pulumi.resources.Invok
         }
 
         public GetVirtualServicePlainArgs build() {
-            $.virtualServiceId = Objects.requireNonNull($.virtualServiceId, "expected parameter 'virtualServiceId' to be non-null");
+            if ($.virtualServiceId == null) {
+                throw new MissingRequiredPropertyException("GetVirtualServicePlainArgs", "virtualServiceId");
+            }
             return $;
         }
     }

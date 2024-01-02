@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
@@ -72,17 +73,26 @@ public final class GetManagedDatabasesDatabaseParameterItemAllowedValue {
 
         @CustomType.Setter
         public Builder isDefault(Boolean isDefault) {
-            this.isDefault = Objects.requireNonNull(isDefault);
+            if (isDefault == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItemAllowedValue", "isDefault");
+            }
+            this.isDefault = isDefault;
             return this;
         }
         @CustomType.Setter
         public Builder ordinal(Double ordinal) {
-            this.ordinal = Objects.requireNonNull(ordinal);
+            if (ordinal == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItemAllowedValue", "ordinal");
+            }
+            this.ordinal = ordinal;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItemAllowedValue", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetManagedDatabasesDatabaseParameterItemAllowedValue build() {

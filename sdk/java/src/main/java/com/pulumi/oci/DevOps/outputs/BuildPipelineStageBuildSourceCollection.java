@@ -44,6 +44,7 @@ public final class BuildPipelineStageBuildSourceCollection {
 
         @CustomType.Setter
         public Builder items(@Nullable List<BuildPipelineStageBuildSourceCollectionItem> items) {
+
             this.items = items;
             return this;
         }

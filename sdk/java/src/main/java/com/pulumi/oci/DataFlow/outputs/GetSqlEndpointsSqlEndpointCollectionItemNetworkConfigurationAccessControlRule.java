@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationA
 
         @CustomType.Setter
         public Builder ipNotation(String ipNotation) {
-            this.ipNotation = Objects.requireNonNull(ipNotation);
+            if (ipNotation == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule", "ipNotation");
+            }
+            this.ipNotation = ipNotation;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule", "value");
+            }
+            this.value = value;
             return this;
         }
         @CustomType.Setter
         public Builder vcnIps(String vcnIps) {
-            this.vcnIps = Objects.requireNonNull(vcnIps);
+            if (vcnIps == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule", "vcnIps");
+            }
+            this.vcnIps = vcnIps;
             return this;
         }
         public GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule build() {

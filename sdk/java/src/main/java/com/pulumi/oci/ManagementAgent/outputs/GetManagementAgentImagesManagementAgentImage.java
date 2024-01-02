@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail;
 import java.lang.Double;
 import java.lang.String;
@@ -185,17 +186,26 @@ public final class GetManagementAgentImagesManagementAgentImage {
 
         @CustomType.Setter
         public Builder checksum(String checksum) {
-            this.checksum = Objects.requireNonNull(checksum);
+            if (checksum == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentImagesManagementAgentImage", "checksum");
+            }
+            this.checksum = checksum;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentImagesManagementAgentImage", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imageObjectStorageDetails(List<GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail> imageObjectStorageDetails) {
-            this.imageObjectStorageDetails = Objects.requireNonNull(imageObjectStorageDetails);
+            if (imageObjectStorageDetails == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentImagesManagementAgentImage", "imageObjectStorageDetails");
+            }
+            this.imageObjectStorageDetails = imageObjectStorageDetails;
             return this;
         }
         public Builder imageObjectStorageDetails(GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail... imageObjectStorageDetails) {
@@ -203,42 +213,66 @@ public final class GetManagementAgentImagesManagementAgentImage {
         }
         @CustomType.Setter
         public Builder objectUrl(String objectUrl) {
-            this.objectUrl = Objects.requireNonNull(objectUrl);
+            if (objectUrl == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentImagesManagementAgentImage", "objectUrl");
+            }
+            this.objectUrl = objectUrl;
             return this;
         }
         @CustomType.Setter
         public Builder packageArchitectureType(String packageArchitectureType) {
-            this.packageArchitectureType = Objects.requireNonNull(packageArchitectureType);
+            if (packageArchitectureType == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentImagesManagementAgentImage", "packageArchitectureType");
+            }
+            this.packageArchitectureType = packageArchitectureType;
             return this;
         }
         @CustomType.Setter
         public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+            if (packageType == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentImagesManagementAgentImage", "packageType");
+            }
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
         public Builder platformName(String platformName) {
-            this.platformName = Objects.requireNonNull(platformName);
+            if (platformName == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentImagesManagementAgentImage", "platformName");
+            }
+            this.platformName = platformName;
             return this;
         }
         @CustomType.Setter
         public Builder platformType(String platformType) {
-            this.platformType = Objects.requireNonNull(platformType);
+            if (platformType == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentImagesManagementAgentImage", "platformType");
+            }
+            this.platformType = platformType;
             return this;
         }
         @CustomType.Setter
         public Builder size(Double size) {
-            this.size = Objects.requireNonNull(size);
+            if (size == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentImagesManagementAgentImage", "size");
+            }
+            this.size = size;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentImagesManagementAgentImage", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentImagesManagementAgentImage", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetManagementAgentImagesManagementAgentImage build() {

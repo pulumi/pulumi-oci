@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -213,67 +214,106 @@ public final class GetRemotePeeringConnectionsRemotePeeringConnection {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetRemotePeeringConnectionsRemotePeeringConnection", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetRemotePeeringConnectionsRemotePeeringConnection", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetRemotePeeringConnectionsRemotePeeringConnection", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder drgId(String drgId) {
-            this.drgId = Objects.requireNonNull(drgId);
+            if (drgId == null) {
+              throw new MissingRequiredPropertyException("GetRemotePeeringConnectionsRemotePeeringConnection", "drgId");
+            }
+            this.drgId = drgId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetRemotePeeringConnectionsRemotePeeringConnection", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRemotePeeringConnectionsRemotePeeringConnection", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCrossTenancyPeering(Boolean isCrossTenancyPeering) {
-            this.isCrossTenancyPeering = Objects.requireNonNull(isCrossTenancyPeering);
+            if (isCrossTenancyPeering == null) {
+              throw new MissingRequiredPropertyException("GetRemotePeeringConnectionsRemotePeeringConnection", "isCrossTenancyPeering");
+            }
+            this.isCrossTenancyPeering = isCrossTenancyPeering;
             return this;
         }
         @CustomType.Setter
         public Builder peerId(String peerId) {
-            this.peerId = Objects.requireNonNull(peerId);
+            if (peerId == null) {
+              throw new MissingRequiredPropertyException("GetRemotePeeringConnectionsRemotePeeringConnection", "peerId");
+            }
+            this.peerId = peerId;
             return this;
         }
         @CustomType.Setter
         public Builder peerRegionName(String peerRegionName) {
-            this.peerRegionName = Objects.requireNonNull(peerRegionName);
+            if (peerRegionName == null) {
+              throw new MissingRequiredPropertyException("GetRemotePeeringConnectionsRemotePeeringConnection", "peerRegionName");
+            }
+            this.peerRegionName = peerRegionName;
             return this;
         }
         @CustomType.Setter
         public Builder peerTenancyId(String peerTenancyId) {
-            this.peerTenancyId = Objects.requireNonNull(peerTenancyId);
+            if (peerTenancyId == null) {
+              throw new MissingRequiredPropertyException("GetRemotePeeringConnectionsRemotePeeringConnection", "peerTenancyId");
+            }
+            this.peerTenancyId = peerTenancyId;
             return this;
         }
         @CustomType.Setter
         public Builder peeringStatus(String peeringStatus) {
-            this.peeringStatus = Objects.requireNonNull(peeringStatus);
+            if (peeringStatus == null) {
+              throw new MissingRequiredPropertyException("GetRemotePeeringConnectionsRemotePeeringConnection", "peeringStatus");
+            }
+            this.peeringStatus = peeringStatus;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetRemotePeeringConnectionsRemotePeeringConnection", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetRemotePeeringConnectionsRemotePeeringConnection", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetRemotePeeringConnectionsRemotePeeringConnection build() {

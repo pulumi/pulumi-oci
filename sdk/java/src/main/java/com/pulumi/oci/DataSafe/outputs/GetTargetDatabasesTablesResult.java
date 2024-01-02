@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesTablesFilter;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesTablesTable;
 import java.lang.String;
@@ -113,6 +114,7 @@ public final class GetTargetDatabasesTablesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetTargetDatabasesTablesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -121,16 +123,21 @@ public final class GetTargetDatabasesTablesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTablesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder schemaNameContains(@Nullable String schemaNameContains) {
+
             this.schemaNameContains = schemaNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder schemaNames(@Nullable List<String> schemaNames) {
+
             this.schemaNames = schemaNames;
             return this;
         }
@@ -139,11 +146,13 @@ public final class GetTargetDatabasesTablesResult {
         }
         @CustomType.Setter
         public Builder tableNameContains(@Nullable String tableNameContains) {
+
             this.tableNameContains = tableNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder tableNames(@Nullable List<String> tableNames) {
+
             this.tableNames = tableNames;
             return this;
         }
@@ -152,7 +161,10 @@ public final class GetTargetDatabasesTablesResult {
         }
         @CustomType.Setter
         public Builder tables(List<GetTargetDatabasesTablesTable> tables) {
-            this.tables = Objects.requireNonNull(tables);
+            if (tables == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTablesResult", "tables");
+            }
+            this.tables = tables;
             return this;
         }
         public Builder tables(GetTargetDatabasesTablesTable... tables) {
@@ -160,7 +172,10 @@ public final class GetTargetDatabasesTablesResult {
         }
         @CustomType.Setter
         public Builder targetDatabaseId(String targetDatabaseId) {
-            this.targetDatabaseId = Objects.requireNonNull(targetDatabaseId);
+            if (targetDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTablesResult", "targetDatabaseId");
+            }
+            this.targetDatabaseId = targetDatabaseId;
             return this;
         }
         public GetTargetDatabasesTablesResult build() {

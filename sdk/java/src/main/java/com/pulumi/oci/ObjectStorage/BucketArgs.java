@@ -5,6 +5,7 @@ package com.pulumi.oci.ObjectStorage;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ObjectStorage.inputs.BucketRetentionRuleArgs;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -547,8 +548,12 @@ public final class BucketArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public BucketArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("BucketArgs", "compartmentId");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("BucketArgs", "namespace");
+            }
             return $;
         }
     }

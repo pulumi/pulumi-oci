@@ -204,61 +204,73 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetail {
 
         @CustomType.Setter
         public Builder customAuthenticationAlgorithm(@Nullable String customAuthenticationAlgorithm) {
+
             this.customAuthenticationAlgorithm = customAuthenticationAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder customDhGroup(@Nullable String customDhGroup) {
+
             this.customDhGroup = customDhGroup;
             return this;
         }
         @CustomType.Setter
         public Builder customEncryptionAlgorithm(@Nullable String customEncryptionAlgorithm) {
+
             this.customEncryptionAlgorithm = customEncryptionAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder isCustomPhaseOneConfig(@Nullable Boolean isCustomPhaseOneConfig) {
+
             this.isCustomPhaseOneConfig = isCustomPhaseOneConfig;
             return this;
         }
         @CustomType.Setter
         public Builder isIkeEstablished(@Nullable Boolean isIkeEstablished) {
+
             this.isIkeEstablished = isIkeEstablished;
             return this;
         }
         @CustomType.Setter
         public Builder lifetime(@Nullable Integer lifetime) {
+
             this.lifetime = lifetime;
             return this;
         }
         @CustomType.Setter
         public Builder negotiatedAuthenticationAlgorithm(@Nullable String negotiatedAuthenticationAlgorithm) {
+
             this.negotiatedAuthenticationAlgorithm = negotiatedAuthenticationAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder negotiatedDhGroup(@Nullable String negotiatedDhGroup) {
+
             this.negotiatedDhGroup = negotiatedDhGroup;
             return this;
         }
         @CustomType.Setter
         public Builder negotiatedEncryptionAlgorithm(@Nullable String negotiatedEncryptionAlgorithm) {
+
             this.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder remainingLifetime(@Nullable String remainingLifetime) {
+
             this.remainingLifetime = remainingLifetime;
             return this;
         }
         @CustomType.Setter
         public Builder remainingLifetimeInt(@Nullable Integer remainingLifetimeInt) {
+
             this.remainingLifetimeInt = remainingLifetimeInt;
             return this;
         }
         @CustomType.Setter
         public Builder remainingLifetimeLastRetrieved(@Nullable String remainingLifetimeLastRetrieved) {
+
             this.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
             return this;
         }

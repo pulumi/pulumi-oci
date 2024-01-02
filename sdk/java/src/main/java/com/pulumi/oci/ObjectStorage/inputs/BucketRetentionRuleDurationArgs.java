@@ -5,6 +5,7 @@ package com.pulumi.oci.ObjectStorage.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class BucketRetentionRuleDurationArgs extends com.pulumi.resources.
         }
 
         public BucketRetentionRuleDurationArgs build() {
-            $.timeAmount = Objects.requireNonNull($.timeAmount, "expected parameter 'timeAmount' to be non-null");
-            $.timeUnit = Objects.requireNonNull($.timeUnit, "expected parameter 'timeUnit' to be non-null");
+            if ($.timeAmount == null) {
+                throw new MissingRequiredPropertyException("BucketRetentionRuleDurationArgs", "timeAmount");
+            }
+            if ($.timeUnit == null) {
+                throw new MissingRequiredPropertyException("BucketRetentionRuleDurationArgs", "timeUnit");
+            }
             return $;
         }
     }

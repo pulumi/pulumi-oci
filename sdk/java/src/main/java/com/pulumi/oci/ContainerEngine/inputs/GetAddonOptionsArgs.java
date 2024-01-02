@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.inputs.GetAddonOptionsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -136,7 +137,9 @@ public final class GetAddonOptionsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetAddonOptionsArgs build() {
-            $.kubernetesVersion = Objects.requireNonNull($.kubernetesVersion, "expected parameter 'kubernetesVersion' to be non-null");
+            if ($.kubernetesVersion == null) {
+                throw new MissingRequiredPropertyException("GetAddonOptionsArgs", "kubernetesVersion");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetJobRunJobLogConfigurationOverrideDetail {
 
         @CustomType.Setter
         public Builder enableAutoLogCreation(Boolean enableAutoLogCreation) {
-            this.enableAutoLogCreation = Objects.requireNonNull(enableAutoLogCreation);
+            if (enableAutoLogCreation == null) {
+              throw new MissingRequiredPropertyException("GetJobRunJobLogConfigurationOverrideDetail", "enableAutoLogCreation");
+            }
+            this.enableAutoLogCreation = enableAutoLogCreation;
             return this;
         }
         @CustomType.Setter
         public Builder enableLogging(Boolean enableLogging) {
-            this.enableLogging = Objects.requireNonNull(enableLogging);
+            if (enableLogging == null) {
+              throw new MissingRequiredPropertyException("GetJobRunJobLogConfigurationOverrideDetail", "enableLogging");
+            }
+            this.enableLogging = enableLogging;
             return this;
         }
         @CustomType.Setter
         public Builder logGroupId(String logGroupId) {
-            this.logGroupId = Objects.requireNonNull(logGroupId);
+            if (logGroupId == null) {
+              throw new MissingRequiredPropertyException("GetJobRunJobLogConfigurationOverrideDetail", "logGroupId");
+            }
+            this.logGroupId = logGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder logId(String logId) {
-            this.logId = Objects.requireNonNull(logId);
+            if (logId == null) {
+              throw new MissingRequiredPropertyException("GetJobRunJobLogConfigurationOverrideDetail", "logId");
+            }
+            this.logId = logId;
             return this;
         }
         public GetJobRunJobLogConfigurationOverrideDetail build() {

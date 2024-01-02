@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CertificatesManagement.outputs.GetAssociationsAssociationCollection;
 import com.pulumi.oci.CertificatesManagement.outputs.GetAssociationsFilter;
 import java.lang.String;
@@ -143,12 +144,16 @@ public final class GetAssociationsResult {
 
         @CustomType.Setter
         public Builder associatedResourceId(@Nullable String associatedResourceId) {
+
             this.associatedResourceId = associatedResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder associationCollections(List<GetAssociationsAssociationCollection> associationCollections) {
-            this.associationCollections = Objects.requireNonNull(associationCollections);
+            if (associationCollections == null) {
+              throw new MissingRequiredPropertyException("GetAssociationsResult", "associationCollections");
+            }
+            this.associationCollections = associationCollections;
             return this;
         }
         public Builder associationCollections(GetAssociationsAssociationCollection... associationCollections) {
@@ -156,26 +161,31 @@ public final class GetAssociationsResult {
         }
         @CustomType.Setter
         public Builder associationId(@Nullable String associationId) {
+
             this.associationId = associationId;
             return this;
         }
         @CustomType.Setter
         public Builder associationType(@Nullable String associationType) {
+
             this.associationType = associationType;
             return this;
         }
         @CustomType.Setter
         public Builder certificatesResourceId(@Nullable String certificatesResourceId) {
+
             this.certificatesResourceId = certificatesResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAssociationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -184,11 +194,15 @@ public final class GetAssociationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAssociationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }

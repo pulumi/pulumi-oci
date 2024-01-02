@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenerServicesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -136,8 +137,12 @@ public final class GetExternalListenerServicesArgs extends com.pulumi.resources.
         }
 
         public GetExternalListenerServicesArgs build() {
-            $.externalListenerId = Objects.requireNonNull($.externalListenerId, "expected parameter 'externalListenerId' to be non-null");
-            $.managedDatabaseId = Objects.requireNonNull($.managedDatabaseId, "expected parameter 'managedDatabaseId' to be non-null");
+            if ($.externalListenerId == null) {
+                throw new MissingRequiredPropertyException("GetExternalListenerServicesArgs", "externalListenerId");
+            }
+            if ($.managedDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetExternalListenerServicesArgs", "managedDatabaseId");
+            }
             return $;
         }
     }

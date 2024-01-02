@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.util.Objects;
@@ -113,32 +114,50 @@ public final class GetDomainsAuthenticationFactorSettingBypassCodeSetting {
 
         @CustomType.Setter
         public Builder helpDeskCodeExpiryInMins(Integer helpDeskCodeExpiryInMins) {
-            this.helpDeskCodeExpiryInMins = Objects.requireNonNull(helpDeskCodeExpiryInMins);
+            if (helpDeskCodeExpiryInMins == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingBypassCodeSetting", "helpDeskCodeExpiryInMins");
+            }
+            this.helpDeskCodeExpiryInMins = helpDeskCodeExpiryInMins;
             return this;
         }
         @CustomType.Setter
         public Builder helpDeskGenerationEnabled(Boolean helpDeskGenerationEnabled) {
-            this.helpDeskGenerationEnabled = Objects.requireNonNull(helpDeskGenerationEnabled);
+            if (helpDeskGenerationEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingBypassCodeSetting", "helpDeskGenerationEnabled");
+            }
+            this.helpDeskGenerationEnabled = helpDeskGenerationEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder helpDeskMaxUsage(Integer helpDeskMaxUsage) {
-            this.helpDeskMaxUsage = Objects.requireNonNull(helpDeskMaxUsage);
+            if (helpDeskMaxUsage == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingBypassCodeSetting", "helpDeskMaxUsage");
+            }
+            this.helpDeskMaxUsage = helpDeskMaxUsage;
             return this;
         }
         @CustomType.Setter
         public Builder length(Integer length) {
-            this.length = Objects.requireNonNull(length);
+            if (length == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingBypassCodeSetting", "length");
+            }
+            this.length = length;
             return this;
         }
         @CustomType.Setter
         public Builder maxActive(Integer maxActive) {
-            this.maxActive = Objects.requireNonNull(maxActive);
+            if (maxActive == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingBypassCodeSetting", "maxActive");
+            }
+            this.maxActive = maxActive;
             return this;
         }
         @CustomType.Setter
         public Builder selfServiceGenerationEnabled(Boolean selfServiceGenerationEnabled) {
-            this.selfServiceGenerationEnabled = Objects.requireNonNull(selfServiceGenerationEnabled);
+            if (selfServiceGenerationEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingBypassCodeSetting", "selfServiceGenerationEnabled");
+            }
+            this.selfServiceGenerationEnabled = selfServiceGenerationEnabled;
             return this;
         }
         public GetDomainsAuthenticationFactorSettingBypassCodeSetting build() {

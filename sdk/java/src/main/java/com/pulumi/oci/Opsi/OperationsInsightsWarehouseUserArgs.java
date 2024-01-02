@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -387,10 +388,18 @@ public final class OperationsInsightsWarehouseUserArgs extends com.pulumi.resour
         }
 
         public OperationsInsightsWarehouseUserArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.connectionPassword = Objects.requireNonNull($.connectionPassword, "expected parameter 'connectionPassword' to be non-null");
-            $.isAwrDataAccess = Objects.requireNonNull($.isAwrDataAccess, "expected parameter 'isAwrDataAccess' to be non-null");
-            $.operationsInsightsWarehouseId = Objects.requireNonNull($.operationsInsightsWarehouseId, "expected parameter 'operationsInsightsWarehouseId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("OperationsInsightsWarehouseUserArgs", "compartmentId");
+            }
+            if ($.connectionPassword == null) {
+                throw new MissingRequiredPropertyException("OperationsInsightsWarehouseUserArgs", "connectionPassword");
+            }
+            if ($.isAwrDataAccess == null) {
+                throw new MissingRequiredPropertyException("OperationsInsightsWarehouseUserArgs", "isAwrDataAccess");
+            }
+            if ($.operationsInsightsWarehouseId == null) {
+                throw new MissingRequiredPropertyException("OperationsInsightsWarehouseUserArgs", "operationsInsightsWarehouseId");
+            }
             return $;
         }
     }

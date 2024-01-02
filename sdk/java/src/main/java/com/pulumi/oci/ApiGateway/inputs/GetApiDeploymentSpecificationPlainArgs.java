@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetApiDeploymentSpecificationPlainArgs extends com.pulumi.res
         }
 
         public GetApiDeploymentSpecificationPlainArgs build() {
-            $.apiId = Objects.requireNonNull($.apiId, "expected parameter 'apiId' to be non-null");
+            if ($.apiId == null) {
+                throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationPlainArgs", "apiId");
+            }
             return $;
         }
     }

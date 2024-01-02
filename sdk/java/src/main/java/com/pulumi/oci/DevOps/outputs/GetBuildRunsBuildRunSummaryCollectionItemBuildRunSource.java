@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo;
 import java.lang.String;
 import java.util.List;
@@ -72,17 +73,26 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource {
 
         @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+            if (repositoryId == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource", "repositoryId");
+            }
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
         public Builder triggerInfos(List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo> triggerInfos) {
-            this.triggerInfos = Objects.requireNonNull(triggerInfos);
+            if (triggerInfos == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource", "triggerInfos");
+            }
+            this.triggerInfos = triggerInfos;
             return this;
         }
         public Builder triggerInfos(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo... triggerInfos) {

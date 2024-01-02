@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabasesFilter;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabasesManagedMySqlDatabaseCollection;
 import java.lang.String;
@@ -80,11 +81,15 @@ public final class GetManagedMySqlDatabasesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabasesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedMySqlDatabasesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -93,12 +98,18 @@ public final class GetManagedMySqlDatabasesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabasesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedMySqlDatabaseCollections(List<GetManagedMySqlDatabasesManagedMySqlDatabaseCollection> managedMySqlDatabaseCollections) {
-            this.managedMySqlDatabaseCollections = Objects.requireNonNull(managedMySqlDatabaseCollections);
+            if (managedMySqlDatabaseCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabasesResult", "managedMySqlDatabaseCollections");
+            }
+            this.managedMySqlDatabaseCollections = managedMySqlDatabaseCollections;
             return this;
         }
         public Builder managedMySqlDatabaseCollections(GetManagedMySqlDatabasesManagedMySqlDatabaseCollection... managedMySqlDatabaseCollections) {

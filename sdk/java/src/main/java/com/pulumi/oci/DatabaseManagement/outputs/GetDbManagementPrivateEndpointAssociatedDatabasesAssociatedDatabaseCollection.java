@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDa
 
         @CustomType.Setter
         public Builder items(List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem... items) {

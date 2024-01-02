@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -107,22 +108,34 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilt
 
         @CustomType.Setter
         public Builder modifiedBy(String modifiedBy) {
-            this.modifiedBy = Objects.requireNonNull(modifiedBy);
+            if (modifiedBy == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter", "modifiedBy");
+            }
+            this.modifiedBy = modifiedBy;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastModified(String timeLastModified) {
-            this.timeLastModified = Objects.requireNonNull(timeLastModified);
+            if (timeLastModified == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter", "timeLastModified");
+            }
+            this.timeLastModified = timeLastModified;
             return this;
         }
         @CustomType.Setter
         public Builder valuesToExcludes(List<String> valuesToExcludes) {
-            this.valuesToExcludes = Objects.requireNonNull(valuesToExcludes);
+            if (valuesToExcludes == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter", "valuesToExcludes");
+            }
+            this.valuesToExcludes = valuesToExcludes;
             return this;
         }
         public Builder valuesToExcludes(String... valuesToExcludes) {
@@ -130,7 +143,10 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilt
         }
         @CustomType.Setter
         public Builder valuesToIncludes(List<String> valuesToIncludes) {
-            this.valuesToIncludes = Objects.requireNonNull(valuesToIncludes);
+            if (valuesToIncludes == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter", "valuesToIncludes");
+            }
+            this.valuesToIncludes = valuesToIncludes;
             return this;
         }
         public Builder valuesToIncludes(String... valuesToIncludes) {

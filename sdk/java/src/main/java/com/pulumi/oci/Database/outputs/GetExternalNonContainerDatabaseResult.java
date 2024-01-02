@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetExternalNonContainerDatabaseDatabaseManagementConfig;
 import com.pulumi.oci.Database.outputs.GetExternalNonContainerDatabaseOperationsInsightsConfig;
 import com.pulumi.oci.Database.outputs.GetExternalNonContainerDatabaseStackMonitoringConfig;
@@ -320,27 +321,42 @@ public final class GetExternalNonContainerDatabaseResult {
 
         @CustomType.Setter
         public Builder characterSet(String characterSet) {
-            this.characterSet = Objects.requireNonNull(characterSet);
+            if (characterSet == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "characterSet");
+            }
+            this.characterSet = characterSet;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseConfiguration(String databaseConfiguration) {
-            this.databaseConfiguration = Objects.requireNonNull(databaseConfiguration);
+            if (databaseConfiguration == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "databaseConfiguration");
+            }
+            this.databaseConfiguration = databaseConfiguration;
             return this;
         }
         @CustomType.Setter
         public Builder databaseEdition(String databaseEdition) {
-            this.databaseEdition = Objects.requireNonNull(databaseEdition);
+            if (databaseEdition == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "databaseEdition");
+            }
+            this.databaseEdition = databaseEdition;
             return this;
         }
         @CustomType.Setter
         public Builder databaseManagementConfigs(List<GetExternalNonContainerDatabaseDatabaseManagementConfig> databaseManagementConfigs) {
-            this.databaseManagementConfigs = Objects.requireNonNull(databaseManagementConfigs);
+            if (databaseManagementConfigs == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "databaseManagementConfigs");
+            }
+            this.databaseManagementConfigs = databaseManagementConfigs;
             return this;
         }
         public Builder databaseManagementConfigs(GetExternalNonContainerDatabaseDatabaseManagementConfig... databaseManagementConfigs) {
@@ -348,62 +364,98 @@ public final class GetExternalNonContainerDatabaseResult {
         }
         @CustomType.Setter
         public Builder databaseVersion(String databaseVersion) {
-            this.databaseVersion = Objects.requireNonNull(databaseVersion);
+            if (databaseVersion == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "databaseVersion");
+            }
+            this.databaseVersion = databaseVersion;
             return this;
         }
         @CustomType.Setter
         public Builder dbId(String dbId) {
-            this.dbId = Objects.requireNonNull(dbId);
+            if (dbId == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "dbId");
+            }
+            this.dbId = dbId;
             return this;
         }
         @CustomType.Setter
         public Builder dbPacks(String dbPacks) {
-            this.dbPacks = Objects.requireNonNull(dbPacks);
+            if (dbPacks == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "dbPacks");
+            }
+            this.dbPacks = dbPacks;
             return this;
         }
         @CustomType.Setter
         public Builder dbUniqueName(String dbUniqueName) {
-            this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
+            if (dbUniqueName == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "dbUniqueName");
+            }
+            this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalNonContainerDatabaseId(String externalNonContainerDatabaseId) {
-            this.externalNonContainerDatabaseId = Objects.requireNonNull(externalNonContainerDatabaseId);
+            if (externalNonContainerDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "externalNonContainerDatabaseId");
+            }
+            this.externalNonContainerDatabaseId = externalNonContainerDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder ncharacterSet(String ncharacterSet) {
-            this.ncharacterSet = Objects.requireNonNull(ncharacterSet);
+            if (ncharacterSet == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "ncharacterSet");
+            }
+            this.ncharacterSet = ncharacterSet;
             return this;
         }
         @CustomType.Setter
         public Builder operationsInsightsConfigs(List<GetExternalNonContainerDatabaseOperationsInsightsConfig> operationsInsightsConfigs) {
-            this.operationsInsightsConfigs = Objects.requireNonNull(operationsInsightsConfigs);
+            if (operationsInsightsConfigs == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "operationsInsightsConfigs");
+            }
+            this.operationsInsightsConfigs = operationsInsightsConfigs;
             return this;
         }
         public Builder operationsInsightsConfigs(GetExternalNonContainerDatabaseOperationsInsightsConfig... operationsInsightsConfigs) {
@@ -411,7 +463,10 @@ public final class GetExternalNonContainerDatabaseResult {
         }
         @CustomType.Setter
         public Builder stackMonitoringConfigs(List<GetExternalNonContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs) {
-            this.stackMonitoringConfigs = Objects.requireNonNull(stackMonitoringConfigs);
+            if (stackMonitoringConfigs == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "stackMonitoringConfigs");
+            }
+            this.stackMonitoringConfigs = stackMonitoringConfigs;
             return this;
         }
         public Builder stackMonitoringConfigs(GetExternalNonContainerDatabaseStackMonitoringConfig... stackMonitoringConfigs) {
@@ -419,17 +474,26 @@ public final class GetExternalNonContainerDatabaseResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeZone(String timeZone) {
-            this.timeZone = Objects.requireNonNull(timeZone);
+            if (timeZone == null) {
+              throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "timeZone");
+            }
+            this.timeZone = timeZone;
             return this;
         }
         public GetExternalNonContainerDatabaseResult build() {

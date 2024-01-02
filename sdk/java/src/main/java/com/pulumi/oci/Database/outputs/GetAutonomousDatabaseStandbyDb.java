@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetAutonomousDatabaseStandbyDb {
 
         @CustomType.Setter
         public Builder lagTimeInSeconds(Integer lagTimeInSeconds) {
-            this.lagTimeInSeconds = Objects.requireNonNull(lagTimeInSeconds);
+            if (lagTimeInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseStandbyDb", "lagTimeInSeconds");
+            }
+            this.lagTimeInSeconds = lagTimeInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseStandbyDb", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseStandbyDb", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeDataGuardRoleChanged(String timeDataGuardRoleChanged) {
-            this.timeDataGuardRoleChanged = Objects.requireNonNull(timeDataGuardRoleChanged);
+            if (timeDataGuardRoleChanged == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseStandbyDb", "timeDataGuardRoleChanged");
+            }
+            this.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
             return this;
         }
         @CustomType.Setter
         public Builder timeDisasterRecoveryRoleChanged(String timeDisasterRecoveryRoleChanged) {
-            this.timeDisasterRecoveryRoleChanged = Objects.requireNonNull(timeDisasterRecoveryRoleChanged);
+            if (timeDisasterRecoveryRoleChanged == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseStandbyDb", "timeDisasterRecoveryRoleChanged");
+            }
+            this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
             return this;
         }
         public GetAutonomousDatabaseStandbyDb build() {

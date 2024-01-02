@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.util.Objects;
 
@@ -182,57 +183,90 @@ public final class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat
 
         @CustomType.Setter
         public Builder gpuCount(Double gpuCount) {
-            this.gpuCount = Objects.requireNonNull(gpuCount);
+            if (gpuCount == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute", "gpuCount");
+            }
+            this.gpuCount = gpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder gpuPerHour(Double gpuPerHour) {
-            this.gpuPerHour = Objects.requireNonNull(gpuPerHour);
+            if (gpuPerHour == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute", "gpuPerHour");
+            }
+            this.gpuPerHour = gpuPerHour;
             return this;
         }
         @CustomType.Setter
         public Builder gpuPerHourBySubscription(Double gpuPerHourBySubscription) {
-            this.gpuPerHourBySubscription = Objects.requireNonNull(gpuPerHourBySubscription);
+            if (gpuPerHourBySubscription == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute", "gpuPerHourBySubscription");
+            }
+            this.gpuPerHourBySubscription = gpuPerHourBySubscription;
             return this;
         }
         @CustomType.Setter
         public Builder memoryAmountGb(Double memoryAmountGb) {
-            this.memoryAmountGb = Objects.requireNonNull(memoryAmountGb);
+            if (memoryAmountGb == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute", "memoryAmountGb");
+            }
+            this.memoryAmountGb = memoryAmountGb;
             return this;
         }
         @CustomType.Setter
         public Builder memoryGbPerHour(Double memoryGbPerHour) {
-            this.memoryGbPerHour = Objects.requireNonNull(memoryGbPerHour);
+            if (memoryGbPerHour == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute", "memoryGbPerHour");
+            }
+            this.memoryGbPerHour = memoryGbPerHour;
             return this;
         }
         @CustomType.Setter
         public Builder memoryGbPerHourBySubscription(Double memoryGbPerHourBySubscription) {
-            this.memoryGbPerHourBySubscription = Objects.requireNonNull(memoryGbPerHourBySubscription);
+            if (memoryGbPerHourBySubscription == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute", "memoryGbPerHourBySubscription");
+            }
+            this.memoryGbPerHourBySubscription = memoryGbPerHourBySubscription;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuCount(Double ocpuCount) {
-            this.ocpuCount = Objects.requireNonNull(ocpuCount);
+            if (ocpuCount == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute", "ocpuCount");
+            }
+            this.ocpuCount = ocpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuPerHour(Double ocpuPerHour) {
-            this.ocpuPerHour = Objects.requireNonNull(ocpuPerHour);
+            if (ocpuPerHour == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute", "ocpuPerHour");
+            }
+            this.ocpuPerHour = ocpuPerHour;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuPerHourBySubscription(Double ocpuPerHourBySubscription) {
-            this.ocpuPerHourBySubscription = Objects.requireNonNull(ocpuPerHourBySubscription);
+            if (ocpuPerHourBySubscription == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute", "ocpuPerHourBySubscription");
+            }
+            this.ocpuPerHourBySubscription = ocpuPerHourBySubscription;
             return this;
         }
         @CustomType.Setter
         public Builder totalPerHour(Double totalPerHour) {
-            this.totalPerHour = Objects.requireNonNull(totalPerHour);
+            if (totalPerHour == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute", "totalPerHour");
+            }
+            this.totalPerHour = totalPerHour;
             return this;
         }
         @CustomType.Setter
         public Builder totalPerHourBySubscription(Double totalPerHourBySubscription) {
-            this.totalPerHourBySubscription = Objects.requireNonNull(totalPerHourBySubscription);
+            if (totalPerHourBySubscription == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute", "totalPerHourBySubscription");
+            }
+            this.totalPerHourBySubscription = totalPerHourBySubscription;
             return this;
         }
         public GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute build() {

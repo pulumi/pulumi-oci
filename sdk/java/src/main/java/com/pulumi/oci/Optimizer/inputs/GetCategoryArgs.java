@@ -5,6 +5,7 @@ package com.pulumi.oci.Optimizer.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetCategoryArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetCategoryArgs build() {
-            $.categoryId = Objects.requireNonNull($.categoryId, "expected parameter 'categoryId' to be non-null");
+            if ($.categoryId == null) {
+                throw new MissingRequiredPropertyException("GetCategoryArgs", "categoryId");
+            }
             return $;
         }
     }

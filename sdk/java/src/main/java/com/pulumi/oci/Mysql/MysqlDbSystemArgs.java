@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemBackupPolicyArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDeletionPolicyArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemMaintenanceArgs;
@@ -1129,10 +1130,18 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public MysqlDbSystemArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.shapeName = Objects.requireNonNull($.shapeName, "expected parameter 'shapeName' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.availabilityDomain == null) {
+                throw new MissingRequiredPropertyException("MysqlDbSystemArgs", "availabilityDomain");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("MysqlDbSystemArgs", "compartmentId");
+            }
+            if ($.shapeName == null) {
+                throw new MissingRequiredPropertyException("MysqlDbSystemArgs", "shapeName");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("MysqlDbSystemArgs", "subnetId");
+            }
             return $;
         }
     }

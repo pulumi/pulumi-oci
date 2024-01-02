@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationsFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationsManagementStationCollection;
 import java.lang.String;
@@ -129,21 +130,25 @@ public final class GetManagementStationsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder displayNameContains(@Nullable String displayNameContains) {
+
             this.displayNameContains = displayNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagementStationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -152,17 +157,22 @@ public final class GetManagementStationsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceId(@Nullable String managedInstanceId) {
+
             this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder managementStationCollections(List<GetManagementStationsManagementStationCollection> managementStationCollections) {
-            this.managementStationCollections = Objects.requireNonNull(managementStationCollections);
+            if (managementStationCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationsResult", "managementStationCollections");
+            }
+            this.managementStationCollections = managementStationCollections;
             return this;
         }
         public Builder managementStationCollections(GetManagementStationsManagementStationCollection... managementStationCollections) {
@@ -170,6 +180,7 @@ public final class GetManagementStationsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

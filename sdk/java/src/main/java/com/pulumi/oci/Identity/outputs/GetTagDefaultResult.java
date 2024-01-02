@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -165,52 +166,82 @@ public final class GetTagDefaultResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetTagDefaultResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTagDefaultResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isRequired(Boolean isRequired) {
-            this.isRequired = Objects.requireNonNull(isRequired);
+            if (isRequired == null) {
+              throw new MissingRequiredPropertyException("GetTagDefaultResult", "isRequired");
+            }
+            this.isRequired = isRequired;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetTagDefaultResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder tagDefaultId(String tagDefaultId) {
-            this.tagDefaultId = Objects.requireNonNull(tagDefaultId);
+            if (tagDefaultId == null) {
+              throw new MissingRequiredPropertyException("GetTagDefaultResult", "tagDefaultId");
+            }
+            this.tagDefaultId = tagDefaultId;
             return this;
         }
         @CustomType.Setter
         public Builder tagDefinitionId(String tagDefinitionId) {
-            this.tagDefinitionId = Objects.requireNonNull(tagDefinitionId);
+            if (tagDefinitionId == null) {
+              throw new MissingRequiredPropertyException("GetTagDefaultResult", "tagDefinitionId");
+            }
+            this.tagDefinitionId = tagDefinitionId;
             return this;
         }
         @CustomType.Setter
         public Builder tagDefinitionName(String tagDefinitionName) {
-            this.tagDefinitionName = Objects.requireNonNull(tagDefinitionName);
+            if (tagDefinitionName == null) {
+              throw new MissingRequiredPropertyException("GetTagDefaultResult", "tagDefinitionName");
+            }
+            this.tagDefinitionName = tagDefinitionName;
             return this;
         }
         @CustomType.Setter
         public Builder tagNamespaceId(String tagNamespaceId) {
-            this.tagNamespaceId = Objects.requireNonNull(tagNamespaceId);
+            if (tagNamespaceId == null) {
+              throw new MissingRequiredPropertyException("GetTagDefaultResult", "tagNamespaceId");
+            }
+            this.tagNamespaceId = tagNamespaceId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetTagDefaultResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetTagDefaultResult", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetTagDefaultResult build() {

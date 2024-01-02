@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmDiskGroupsFilter;
 import java.lang.String;
 import java.util.List;
@@ -84,7 +85,9 @@ public final class GetExternalAsmDiskGroupsPlainArgs extends com.pulumi.resource
         }
 
         public GetExternalAsmDiskGroupsPlainArgs build() {
-            $.externalAsmId = Objects.requireNonNull($.externalAsmId, "expected parameter 'externalAsmId' to be non-null");
+            if ($.externalAsmId == null) {
+                throw new MissingRequiredPropertyException("GetExternalAsmDiskGroupsPlainArgs", "externalAsmId");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.FusionApps;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs;
 import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentMaintenancePolicyArgs;
 import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentRuleArgs;
@@ -509,11 +510,21 @@ public final class FusionEnvironmentArgs extends com.pulumi.resources.ResourceAr
         }
 
         public FusionEnvironmentArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.createFusionEnvironmentAdminUserDetails = Objects.requireNonNull($.createFusionEnvironmentAdminUserDetails, "expected parameter 'createFusionEnvironmentAdminUserDetails' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.fusionEnvironmentFamilyId = Objects.requireNonNull($.fusionEnvironmentFamilyId, "expected parameter 'fusionEnvironmentFamilyId' to be non-null");
-            $.fusionEnvironmentType = Objects.requireNonNull($.fusionEnvironmentType, "expected parameter 'fusionEnvironmentType' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("FusionEnvironmentArgs", "compartmentId");
+            }
+            if ($.createFusionEnvironmentAdminUserDetails == null) {
+                throw new MissingRequiredPropertyException("FusionEnvironmentArgs", "createFusionEnvironmentAdminUserDetails");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("FusionEnvironmentArgs", "displayName");
+            }
+            if ($.fusionEnvironmentFamilyId == null) {
+                throw new MissingRequiredPropertyException("FusionEnvironmentArgs", "fusionEnvironmentFamilyId");
+            }
+            if ($.fusionEnvironmentType == null) {
+                throw new MissingRequiredPropertyException("FusionEnvironmentArgs", "fusionEnvironmentType");
+            }
             return $;
         }
     }

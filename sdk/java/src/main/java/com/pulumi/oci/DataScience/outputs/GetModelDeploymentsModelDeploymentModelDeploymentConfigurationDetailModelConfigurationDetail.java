@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy;
 import java.lang.Integer;
@@ -88,12 +89,18 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
 
         @CustomType.Setter
         public Builder bandwidthMbps(Integer bandwidthMbps) {
-            this.bandwidthMbps = Objects.requireNonNull(bandwidthMbps);
+            if (bandwidthMbps == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail", "bandwidthMbps");
+            }
+            this.bandwidthMbps = bandwidthMbps;
             return this;
         }
         @CustomType.Setter
         public Builder instanceConfigurations(List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration> instanceConfigurations) {
-            this.instanceConfigurations = Objects.requireNonNull(instanceConfigurations);
+            if (instanceConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail", "instanceConfigurations");
+            }
+            this.instanceConfigurations = instanceConfigurations;
             return this;
         }
         public Builder instanceConfigurations(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration... instanceConfigurations) {
@@ -101,12 +108,18 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
         }
         @CustomType.Setter
         public Builder modelId(String modelId) {
-            this.modelId = Objects.requireNonNull(modelId);
+            if (modelId == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail", "modelId");
+            }
+            this.modelId = modelId;
             return this;
         }
         @CustomType.Setter
         public Builder scalingPolicies(List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy> scalingPolicies) {
-            this.scalingPolicies = Objects.requireNonNull(scalingPolicies);
+            if (scalingPolicies == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail", "scalingPolicies");
+            }
+            this.scalingPolicies = scalingPolicies;
             return this;
         }
         public Builder scalingPolicies(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy... scalingPolicies) {

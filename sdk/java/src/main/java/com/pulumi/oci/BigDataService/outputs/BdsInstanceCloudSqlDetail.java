@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceCloudSqlDetailKerberosDetail;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -150,21 +151,25 @@ public final class BdsInstanceCloudSqlDetail {
 
         @CustomType.Setter
         public Builder blockVolumeSizeInGbs(@Nullable String blockVolumeSizeInGbs) {
+
             this.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddress(@Nullable String ipAddress) {
+
             this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder isKerberosMappedToDatabaseUsers(@Nullable Boolean isKerberosMappedToDatabaseUsers) {
+
             this.isKerberosMappedToDatabaseUsers = isKerberosMappedToDatabaseUsers;
             return this;
         }
         @CustomType.Setter
         public Builder kerberosDetails(@Nullable List<BdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails) {
+
             this.kerberosDetails = kerberosDetails;
             return this;
         }
@@ -173,22 +178,28 @@ public final class BdsInstanceCloudSqlDetail {
         }
         @CustomType.Setter
         public Builder memoryInGbs(@Nullable Integer memoryInGbs) {
+
             this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder nvmes(@Nullable Integer nvmes) {
+
             this.nvmes = nvmes;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(@Nullable Integer ocpus) {
+
             this.ocpus = ocpus;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("BdsInstanceCloudSqlDetail", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         public BdsInstanceCloudSqlDetail build() {

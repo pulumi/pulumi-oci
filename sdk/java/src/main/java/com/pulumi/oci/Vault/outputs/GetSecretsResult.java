@@ -4,6 +4,7 @@
 package com.pulumi.oci.Vault.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Vault.outputs.GetSecretsFilter;
 import com.pulumi.oci.Vault.outputs.GetSecretsSecret;
 import java.lang.String;
@@ -115,11 +116,15 @@ public final class GetSecretsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSecretsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSecretsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -128,17 +133,24 @@ public final class GetSecretsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSecretsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder secrets(List<GetSecretsSecret> secrets) {
-            this.secrets = Objects.requireNonNull(secrets);
+            if (secrets == null) {
+              throw new MissingRequiredPropertyException("GetSecretsResult", "secrets");
+            }
+            this.secrets = secrets;
             return this;
         }
         public Builder secrets(GetSecretsSecret... secrets) {
@@ -146,11 +158,13 @@ public final class GetSecretsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vaultId(@Nullable String vaultId) {
+
             this.vaultId = vaultId;
             return this;
         }

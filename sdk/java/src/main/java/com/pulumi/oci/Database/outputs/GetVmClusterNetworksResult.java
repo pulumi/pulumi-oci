@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetVmClusterNetworksFilter;
 import com.pulumi.oci.Database.outputs.GetVmClusterNetworksVmClusterNetwork;
 import java.lang.String;
@@ -123,21 +124,29 @@ public final class GetVmClusterNetworksResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworksResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
-            this.exadataInfrastructureId = Objects.requireNonNull(exadataInfrastructureId);
+            if (exadataInfrastructureId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworksResult", "exadataInfrastructureId");
+            }
+            this.exadataInfrastructureId = exadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVmClusterNetworksFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -146,17 +155,24 @@ public final class GetVmClusterNetworksResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworksResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vmClusterNetworks(List<GetVmClusterNetworksVmClusterNetwork> vmClusterNetworks) {
-            this.vmClusterNetworks = Objects.requireNonNull(vmClusterNetworks);
+            if (vmClusterNetworks == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworksResult", "vmClusterNetworks");
+            }
+            this.vmClusterNetworks = vmClusterNetworks;
             return this;
         }
         public Builder vmClusterNetworks(GetVmClusterNetworksVmClusterNetwork... vmClusterNetworks) {

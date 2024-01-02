@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetSddcVsphereUpgradeObject {
 
         @CustomType.Setter
         public Builder downloadLink(String downloadLink) {
-            this.downloadLink = Objects.requireNonNull(downloadLink);
+            if (downloadLink == null) {
+              throw new MissingRequiredPropertyException("GetSddcVsphereUpgradeObject", "downloadLink");
+            }
+            this.downloadLink = downloadLink;
             return this;
         }
         @CustomType.Setter
         public Builder linkDescription(String linkDescription) {
-            this.linkDescription = Objects.requireNonNull(linkDescription);
+            if (linkDescription == null) {
+              throw new MissingRequiredPropertyException("GetSddcVsphereUpgradeObject", "linkDescription");
+            }
+            this.linkDescription = linkDescription;
             return this;
         }
         public GetSddcVsphereUpgradeObject build() {

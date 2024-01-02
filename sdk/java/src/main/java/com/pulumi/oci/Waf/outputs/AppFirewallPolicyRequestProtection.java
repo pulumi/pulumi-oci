@@ -93,16 +93,19 @@ public final class AppFirewallPolicyRequestProtection {
 
         @CustomType.Setter
         public Builder bodyInspectionSizeLimitExceededActionName(@Nullable String bodyInspectionSizeLimitExceededActionName) {
+
             this.bodyInspectionSizeLimitExceededActionName = bodyInspectionSizeLimitExceededActionName;
             return this;
         }
         @CustomType.Setter
         public Builder bodyInspectionSizeLimitInBytes(@Nullable Integer bodyInspectionSizeLimitInBytes) {
+
             this.bodyInspectionSizeLimitInBytes = bodyInspectionSizeLimitInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder rules(@Nullable List<AppFirewallPolicyRequestProtectionRule> rules) {
+
             this.rules = rules;
             return this;
         }

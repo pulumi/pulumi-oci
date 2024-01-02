@@ -5,6 +5,7 @@ package com.pulumi.oci.RecoveryMod.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabasesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -284,7 +285,9 @@ public final class GetProtectedDatabasesArgs extends com.pulumi.resources.Invoke
         }
 
         public GetProtectedDatabasesArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetProtectedDatabasesArgs", "compartmentId");
+            }
             return $;
         }
     }

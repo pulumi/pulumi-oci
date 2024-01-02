@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetFleetJavaMigrationAnalysisResultsFilter;
 import com.pulumi.oci.Jms.outputs.GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection;
 import java.lang.String;
@@ -107,6 +108,7 @@ public final class GetFleetJavaMigrationAnalysisResultsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetFleetJavaMigrationAnalysisResultsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -115,17 +117,26 @@ public final class GetFleetJavaMigrationAnalysisResultsResult {
         }
         @CustomType.Setter
         public Builder fleetId(String fleetId) {
-            this.fleetId = Objects.requireNonNull(fleetId);
+            if (fleetId == null) {
+              throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsResult", "fleetId");
+            }
+            this.fleetId = fleetId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder javaMigrationAnalysisResultCollections(List<GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection> javaMigrationAnalysisResultCollections) {
-            this.javaMigrationAnalysisResultCollections = Objects.requireNonNull(javaMigrationAnalysisResultCollections);
+            if (javaMigrationAnalysisResultCollections == null) {
+              throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsResult", "javaMigrationAnalysisResultCollections");
+            }
+            this.javaMigrationAnalysisResultCollections = javaMigrationAnalysisResultCollections;
             return this;
         }
         public Builder javaMigrationAnalysisResultCollections(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection... javaMigrationAnalysisResultCollections) {
@@ -133,16 +144,19 @@ public final class GetFleetJavaMigrationAnalysisResultsResult {
         }
         @CustomType.Setter
         public Builder managedInstanceId(@Nullable String managedInstanceId) {
+
             this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnd(@Nullable String timeEnd) {
+
             this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(@Nullable String timeStart) {
+
             this.timeStart = timeStart;
             return this;
         }

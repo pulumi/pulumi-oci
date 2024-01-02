@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OspGateway.outputs.SubscriptionSubscriptionBillingAddress;
 import com.pulumi.oci.OspGateway.outputs.SubscriptionSubscriptionPaymentGateway;
 import com.pulumi.oci.OspGateway.outputs.SubscriptionSubscriptionPaymentOption;
@@ -330,16 +331,19 @@ public final class SubscriptionSubscription {
 
         @CustomType.Setter
         public Builder accountType(@Nullable String accountType) {
+
             this.accountType = accountType;
             return this;
         }
         @CustomType.Setter
         public Builder billToCustAccountId(@Nullable String billToCustAccountId) {
+
             this.billToCustAccountId = billToCustAccountId;
             return this;
         }
         @CustomType.Setter
         public Builder billingAddresses(@Nullable List<SubscriptionSubscriptionBillingAddress> billingAddresses) {
+
             this.billingAddresses = billingAddresses;
             return this;
         }
@@ -348,41 +352,49 @@ public final class SubscriptionSubscription {
         }
         @CustomType.Setter
         public Builder currencyCode(@Nullable String currencyCode) {
+
             this.currencyCode = currencyCode;
             return this;
         }
         @CustomType.Setter
         public Builder gsiOrgCode(@Nullable String gsiOrgCode) {
+
             this.gsiOrgCode = gsiOrgCode;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isIntentToPay(@Nullable Boolean isIntentToPay) {
+
             this.isIntentToPay = isIntentToPay;
             return this;
         }
         @CustomType.Setter
         public Builder languageCode(@Nullable String languageCode) {
+
             this.languageCode = languageCode;
             return this;
         }
         @CustomType.Setter
         public Builder organizationId(@Nullable String organizationId) {
+
             this.organizationId = organizationId;
             return this;
         }
         @CustomType.Setter
         public Builder paymentGateway(@Nullable SubscriptionSubscriptionPaymentGateway paymentGateway) {
+
             this.paymentGateway = paymentGateway;
             return this;
         }
         @CustomType.Setter
         public Builder paymentOptions(@Nullable List<SubscriptionSubscriptionPaymentOption> paymentOptions) {
+
             this.paymentOptions = paymentOptions;
             return this;
         }
@@ -391,51 +403,63 @@ public final class SubscriptionSubscription {
         }
         @CustomType.Setter
         public Builder planType(@Nullable String planType) {
+
             this.planType = planType;
             return this;
         }
         @CustomType.Setter
         public Builder shipToCustAcctRoleId(@Nullable String shipToCustAcctRoleId) {
+
             this.shipToCustAcctRoleId = shipToCustAcctRoleId;
             return this;
         }
         @CustomType.Setter
         public Builder shipToCustAcctSiteId(@Nullable String shipToCustAcctSiteId) {
+
             this.shipToCustAcctSiteId = shipToCustAcctSiteId;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptionPlanNumber(String subscriptionPlanNumber) {
-            this.subscriptionPlanNumber = Objects.requireNonNull(subscriptionPlanNumber);
+            if (subscriptionPlanNumber == null) {
+              throw new MissingRequiredPropertyException("SubscriptionSubscription", "subscriptionPlanNumber");
+            }
+            this.subscriptionPlanNumber = subscriptionPlanNumber;
             return this;
         }
         @CustomType.Setter
         public Builder taxInfo(@Nullable SubscriptionSubscriptionTaxInfo taxInfo) {
+
             this.taxInfo = taxInfo;
             return this;
         }
         @CustomType.Setter
         public Builder timePersonalToCorporateConv(@Nullable String timePersonalToCorporateConv) {
+
             this.timePersonalToCorporateConv = timePersonalToCorporateConv;
             return this;
         }
         @CustomType.Setter
         public Builder timePlanUpgrade(@Nullable String timePlanUpgrade) {
+
             this.timePlanUpgrade = timePlanUpgrade;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(@Nullable String timeStart) {
+
             this.timeStart = timeStart;
             return this;
         }
         @CustomType.Setter
         public Builder upgradeState(@Nullable String upgradeState) {
+
             this.upgradeState = upgradeState;
             return this;
         }
         @CustomType.Setter
         public Builder upgradeStateDetails(@Nullable String upgradeStateDetails) {
+
             this.upgradeStateDetails = upgradeStateDetails;
             return this;
         }

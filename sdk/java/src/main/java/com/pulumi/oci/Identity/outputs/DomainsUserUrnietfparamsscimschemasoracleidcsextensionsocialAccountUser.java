@@ -66,6 +66,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
 
         @CustomType.Setter
         public Builder socialAccounts(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount> socialAccounts) {
+
             this.socialAccounts = socialAccounts;
             return this;
         }

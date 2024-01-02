@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -141,42 +142,66 @@ public final class GetSubscribedServicesSubscribedServicePaymentTerm {
 
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServicePaymentTerm", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServicePaymentTerm", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder isActive(Boolean isActive) {
-            this.isActive = Objects.requireNonNull(isActive);
+            if (isActive == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServicePaymentTerm", "isActive");
+            }
+            this.isActive = isActive;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServicePaymentTerm", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServicePaymentTerm", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServicePaymentTerm", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder updatedBy(String updatedBy) {
-            this.updatedBy = Objects.requireNonNull(updatedBy);
+            if (updatedBy == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServicePaymentTerm", "updatedBy");
+            }
+            this.updatedBy = updatedBy;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesSubscribedServicePaymentTerm", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetSubscribedServicesSubscribedServicePaymentTerm build() {

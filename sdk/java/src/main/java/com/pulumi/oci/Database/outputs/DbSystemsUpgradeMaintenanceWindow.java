@@ -120,6 +120,7 @@ public final class DbSystemsUpgradeMaintenanceWindow {
 
         @CustomType.Setter
         public Builder daysOfWeeks(@Nullable List<DbSystemsUpgradeMaintenanceWindowDaysOfWeek> daysOfWeeks) {
+
             this.daysOfWeeks = daysOfWeeks;
             return this;
         }
@@ -128,6 +129,7 @@ public final class DbSystemsUpgradeMaintenanceWindow {
         }
         @CustomType.Setter
         public Builder hoursOfDays(@Nullable List<Integer> hoursOfDays) {
+
             this.hoursOfDays = hoursOfDays;
             return this;
         }
@@ -136,11 +138,13 @@ public final class DbSystemsUpgradeMaintenanceWindow {
         }
         @CustomType.Setter
         public Builder leadTimeInWeeks(@Nullable Integer leadTimeInWeeks) {
+
             this.leadTimeInWeeks = leadTimeInWeeks;
             return this;
         }
         @CustomType.Setter
         public Builder months(@Nullable List<DbSystemsUpgradeMaintenanceWindowMonth> months) {
+
             this.months = months;
             return this;
         }
@@ -149,11 +153,13 @@ public final class DbSystemsUpgradeMaintenanceWindow {
         }
         @CustomType.Setter
         public Builder preference(@Nullable String preference) {
+
             this.preference = preference;
             return this;
         }
         @CustomType.Setter
         public Builder weeksOfMonths(@Nullable List<Integer> weeksOfMonths) {
+
             this.weeksOfMonths = weeksOfMonths;
             return this;
         }

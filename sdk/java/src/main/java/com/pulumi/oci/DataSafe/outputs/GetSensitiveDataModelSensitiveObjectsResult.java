@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelSensitiveObjectsFilter;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection;
 import java.lang.String;
@@ -114,6 +115,7 @@ public final class GetSensitiveDataModelSensitiveObjectsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSensitiveDataModelSensitiveObjectsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -122,11 +124,15 @@ public final class GetSensitiveDataModelSensitiveObjectsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelSensitiveObjectsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder objectTypes(@Nullable List<String> objectTypes) {
+
             this.objectTypes = objectTypes;
             return this;
         }
@@ -135,6 +141,7 @@ public final class GetSensitiveDataModelSensitiveObjectsResult {
         }
         @CustomType.Setter
         public Builder objects(@Nullable List<String> objects) {
+
             this.objects = objects;
             return this;
         }
@@ -143,6 +150,7 @@ public final class GetSensitiveDataModelSensitiveObjectsResult {
         }
         @CustomType.Setter
         public Builder schemaNames(@Nullable List<String> schemaNames) {
+
             this.schemaNames = schemaNames;
             return this;
         }
@@ -151,12 +159,18 @@ public final class GetSensitiveDataModelSensitiveObjectsResult {
         }
         @CustomType.Setter
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
-            this.sensitiveDataModelId = Objects.requireNonNull(sensitiveDataModelId);
+            if (sensitiveDataModelId == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelSensitiveObjectsResult", "sensitiveDataModelId");
+            }
+            this.sensitiveDataModelId = sensitiveDataModelId;
             return this;
         }
         @CustomType.Setter
         public Builder sensitiveObjectCollections(List<GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection> sensitiveObjectCollections) {
-            this.sensitiveObjectCollections = Objects.requireNonNull(sensitiveObjectCollections);
+            if (sensitiveObjectCollections == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelSensitiveObjectsResult", "sensitiveObjectCollections");
+            }
+            this.sensitiveObjectCollections = sensitiveObjectCollections;
             return this;
         }
         public Builder sensitiveObjectCollections(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection... sensitiveObjectCollections) {

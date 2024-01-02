@@ -5,6 +5,7 @@ package com.pulumi.oci.MeteringComputation.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetQueryArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetQueryArgs build() {
-            $.queryId = Objects.requireNonNull($.queryId, "expected parameter 'queryId' to be non-null");
+            if ($.queryId == null) {
+                throw new MissingRequiredPropertyException("GetQueryArgs", "queryId");
+            }
             return $;
         }
     }

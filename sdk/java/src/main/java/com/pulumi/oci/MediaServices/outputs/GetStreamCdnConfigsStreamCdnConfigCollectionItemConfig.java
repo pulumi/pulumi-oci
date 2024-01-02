@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -197,62 +198,98 @@ public final class GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig {
 
         @CustomType.Setter
         public Builder edgeHostname(String edgeHostname) {
-            this.edgeHostname = Objects.requireNonNull(edgeHostname);
+            if (edgeHostname == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig", "edgeHostname");
+            }
+            this.edgeHostname = edgeHostname;
             return this;
         }
         @CustomType.Setter
         public Builder edgePathPrefix(String edgePathPrefix) {
-            this.edgePathPrefix = Objects.requireNonNull(edgePathPrefix);
+            if (edgePathPrefix == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig", "edgePathPrefix");
+            }
+            this.edgePathPrefix = edgePathPrefix;
             return this;
         }
         @CustomType.Setter
         public Builder edgeTokenKey(String edgeTokenKey) {
-            this.edgeTokenKey = Objects.requireNonNull(edgeTokenKey);
+            if (edgeTokenKey == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig", "edgeTokenKey");
+            }
+            this.edgeTokenKey = edgeTokenKey;
             return this;
         }
         @CustomType.Setter
         public Builder edgeTokenSalt(String edgeTokenSalt) {
-            this.edgeTokenSalt = Objects.requireNonNull(edgeTokenSalt);
+            if (edgeTokenSalt == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig", "edgeTokenSalt");
+            }
+            this.edgeTokenSalt = edgeTokenSalt;
             return this;
         }
         @CustomType.Setter
         public Builder isEdgeTokenAuth(Boolean isEdgeTokenAuth) {
-            this.isEdgeTokenAuth = Objects.requireNonNull(isEdgeTokenAuth);
+            if (isEdgeTokenAuth == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig", "isEdgeTokenAuth");
+            }
+            this.isEdgeTokenAuth = isEdgeTokenAuth;
             return this;
         }
         @CustomType.Setter
         public Builder originAuthSecretKeyA(String originAuthSecretKeyA) {
-            this.originAuthSecretKeyA = Objects.requireNonNull(originAuthSecretKeyA);
+            if (originAuthSecretKeyA == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig", "originAuthSecretKeyA");
+            }
+            this.originAuthSecretKeyA = originAuthSecretKeyA;
             return this;
         }
         @CustomType.Setter
         public Builder originAuthSecretKeyB(String originAuthSecretKeyB) {
-            this.originAuthSecretKeyB = Objects.requireNonNull(originAuthSecretKeyB);
+            if (originAuthSecretKeyB == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig", "originAuthSecretKeyB");
+            }
+            this.originAuthSecretKeyB = originAuthSecretKeyB;
             return this;
         }
         @CustomType.Setter
         public Builder originAuthSecretKeyNonceA(String originAuthSecretKeyNonceA) {
-            this.originAuthSecretKeyNonceA = Objects.requireNonNull(originAuthSecretKeyNonceA);
+            if (originAuthSecretKeyNonceA == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig", "originAuthSecretKeyNonceA");
+            }
+            this.originAuthSecretKeyNonceA = originAuthSecretKeyNonceA;
             return this;
         }
         @CustomType.Setter
         public Builder originAuthSecretKeyNonceB(String originAuthSecretKeyNonceB) {
-            this.originAuthSecretKeyNonceB = Objects.requireNonNull(originAuthSecretKeyNonceB);
+            if (originAuthSecretKeyNonceB == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig", "originAuthSecretKeyNonceB");
+            }
+            this.originAuthSecretKeyNonceB = originAuthSecretKeyNonceB;
             return this;
         }
         @CustomType.Setter
         public Builder originAuthSignEncryption(String originAuthSignEncryption) {
-            this.originAuthSignEncryption = Objects.requireNonNull(originAuthSignEncryption);
+            if (originAuthSignEncryption == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig", "originAuthSignEncryption");
+            }
+            this.originAuthSignEncryption = originAuthSignEncryption;
             return this;
         }
         @CustomType.Setter
         public Builder originAuthSignType(String originAuthSignType) {
-            this.originAuthSignType = Objects.requireNonNull(originAuthSignType);
+            if (originAuthSignType == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig", "originAuthSignType");
+            }
+            this.originAuthSignType = originAuthSignType;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig build() {

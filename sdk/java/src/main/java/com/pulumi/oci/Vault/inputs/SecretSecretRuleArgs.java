@@ -5,6 +5,7 @@ package com.pulumi.oci.Vault.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -225,7 +226,9 @@ public final class SecretSecretRuleArgs extends com.pulumi.resources.ResourceArg
         }
 
         public SecretSecretRuleArgs build() {
-            $.ruleType = Objects.requireNonNull($.ruleType, "expected parameter 'ruleType' to be non-null");
+            if ($.ruleType == null) {
+                throw new MissingRequiredPropertyException("SecretSecretRuleArgs", "ruleType");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -144,7 +145,10 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailEnvironme
 
         @CustomType.Setter
         public Builder cmds(List<String> cmds) {
-            this.cmds = Objects.requireNonNull(cmds);
+            if (cmds == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail", "cmds");
+            }
+            this.cmds = cmds;
             return this;
         }
         public Builder cmds(String... cmds) {
@@ -152,7 +156,10 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailEnvironme
         }
         @CustomType.Setter
         public Builder entrypoints(List<String> entrypoints) {
-            this.entrypoints = Objects.requireNonNull(entrypoints);
+            if (entrypoints == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail", "entrypoints");
+            }
+            this.entrypoints = entrypoints;
             return this;
         }
         public Builder entrypoints(String... entrypoints) {
@@ -160,32 +167,50 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailEnvironme
         }
         @CustomType.Setter
         public Builder environmentConfigurationType(String environmentConfigurationType) {
-            this.environmentConfigurationType = Objects.requireNonNull(environmentConfigurationType);
+            if (environmentConfigurationType == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail", "environmentConfigurationType");
+            }
+            this.environmentConfigurationType = environmentConfigurationType;
             return this;
         }
         @CustomType.Setter
         public Builder environmentVariables(Map<String,Object> environmentVariables) {
-            this.environmentVariables = Objects.requireNonNull(environmentVariables);
+            if (environmentVariables == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail", "environmentVariables");
+            }
+            this.environmentVariables = environmentVariables;
             return this;
         }
         @CustomType.Setter
         public Builder healthCheckPort(Integer healthCheckPort) {
-            this.healthCheckPort = Objects.requireNonNull(healthCheckPort);
+            if (healthCheckPort == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail", "healthCheckPort");
+            }
+            this.healthCheckPort = healthCheckPort;
             return this;
         }
         @CustomType.Setter
         public Builder image(String image) {
-            this.image = Objects.requireNonNull(image);
+            if (image == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail", "image");
+            }
+            this.image = image;
             return this;
         }
         @CustomType.Setter
         public Builder imageDigest(String imageDigest) {
-            this.imageDigest = Objects.requireNonNull(imageDigest);
+            if (imageDigest == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail", "imageDigest");
+            }
+            this.imageDigest = imageDigest;
             return this;
         }
         @CustomType.Setter
         public Builder serverPort(Integer serverPort) {
-            this.serverPort = Objects.requireNonNull(serverPort);
+            if (serverPort == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail", "serverPort");
+            }
+            this.serverPort = serverPort;
             return this;
         }
         public GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail build() {

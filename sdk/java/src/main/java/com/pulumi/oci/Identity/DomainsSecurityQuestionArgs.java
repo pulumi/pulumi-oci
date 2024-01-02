@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsSecurityQuestionQuestionTextArgs;
 import com.pulumi.oci.Identity.inputs.DomainsSecurityQuestionTagArgs;
 import java.lang.Boolean;
@@ -850,11 +851,21 @@ public final class DomainsSecurityQuestionArgs extends com.pulumi.resources.Reso
         }
 
         public DomainsSecurityQuestionArgs build() {
-            $.active = Objects.requireNonNull($.active, "expected parameter 'active' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.questionTexts = Objects.requireNonNull($.questionTexts, "expected parameter 'questionTexts' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.active == null) {
+                throw new MissingRequiredPropertyException("DomainsSecurityQuestionArgs", "active");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsSecurityQuestionArgs", "idcsEndpoint");
+            }
+            if ($.questionTexts == null) {
+                throw new MissingRequiredPropertyException("DomainsSecurityQuestionArgs", "questionTexts");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsSecurityQuestionArgs", "schemas");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("DomainsSecurityQuestionArgs", "type");
+            }
             return $;
         }
     }

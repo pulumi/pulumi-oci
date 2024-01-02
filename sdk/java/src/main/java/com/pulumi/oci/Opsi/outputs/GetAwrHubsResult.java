@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetAwrHubsAwrHubSummaryCollection;
 import com.pulumi.oci.Opsi.outputs.GetAwrHubsFilter;
 import java.lang.String;
@@ -123,7 +124,10 @@ public final class GetAwrHubsResult {
 
         @CustomType.Setter
         public Builder awrHubSummaryCollections(List<GetAwrHubsAwrHubSummaryCollection> awrHubSummaryCollections) {
-            this.awrHubSummaryCollections = Objects.requireNonNull(awrHubSummaryCollections);
+            if (awrHubSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubsResult", "awrHubSummaryCollections");
+            }
+            this.awrHubSummaryCollections = awrHubSummaryCollections;
             return this;
         }
         public Builder awrHubSummaryCollections(GetAwrHubsAwrHubSummaryCollection... awrHubSummaryCollections) {
@@ -131,16 +135,19 @@ public final class GetAwrHubsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAwrHubsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -149,16 +156,21 @@ public final class GetAwrHubsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder operationsInsightsWarehouseId(String operationsInsightsWarehouseId) {
-            this.operationsInsightsWarehouseId = Objects.requireNonNull(operationsInsightsWarehouseId);
+            if (operationsInsightsWarehouseId == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubsResult", "operationsInsightsWarehouseId");
+            }
+            this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
             return this;
         }
         @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
+
             this.states = states;
             return this;
         }

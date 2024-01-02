@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetVolumesVolumeAutotunePolicy;
 import com.pulumi.oci.Core.outputs.GetVolumesVolumeBlockVolumeReplica;
 import com.pulumi.oci.Core.outputs.GetVolumesVolumeSourceDetail;
@@ -345,12 +346,18 @@ public final class GetVolumesVolume {
 
         @CustomType.Setter
         public Builder autoTunedVpusPerGb(String autoTunedVpusPerGb) {
-            this.autoTunedVpusPerGb = Objects.requireNonNull(autoTunedVpusPerGb);
+            if (autoTunedVpusPerGb == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "autoTunedVpusPerGb");
+            }
+            this.autoTunedVpusPerGb = autoTunedVpusPerGb;
             return this;
         }
         @CustomType.Setter
         public Builder autotunePolicies(List<GetVolumesVolumeAutotunePolicy> autotunePolicies) {
-            this.autotunePolicies = Objects.requireNonNull(autotunePolicies);
+            if (autotunePolicies == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "autotunePolicies");
+            }
+            this.autotunePolicies = autotunePolicies;
             return this;
         }
         public Builder autotunePolicies(GetVolumesVolumeAutotunePolicy... autotunePolicies) {
@@ -358,17 +365,26 @@ public final class GetVolumesVolume {
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder backupPolicyId(String backupPolicyId) {
-            this.backupPolicyId = Objects.requireNonNull(backupPolicyId);
+            if (backupPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "backupPolicyId");
+            }
+            this.backupPolicyId = backupPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder blockVolumeReplicas(List<GetVolumesVolumeBlockVolumeReplica> blockVolumeReplicas) {
-            this.blockVolumeReplicas = Objects.requireNonNull(blockVolumeReplicas);
+            if (blockVolumeReplicas == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "blockVolumeReplicas");
+            }
+            this.blockVolumeReplicas = blockVolumeReplicas;
             return this;
         }
         public Builder blockVolumeReplicas(GetVolumesVolumeBlockVolumeReplica... blockVolumeReplicas) {
@@ -376,62 +392,98 @@ public final class GetVolumesVolume {
         }
         @CustomType.Setter
         public Builder blockVolumeReplicasDeletion(Boolean blockVolumeReplicasDeletion) {
-            this.blockVolumeReplicasDeletion = Objects.requireNonNull(blockVolumeReplicasDeletion);
+            if (blockVolumeReplicasDeletion == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "blockVolumeReplicasDeletion");
+            }
+            this.blockVolumeReplicasDeletion = blockVolumeReplicasDeletion;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAutoTuneEnabled(Boolean isAutoTuneEnabled) {
-            this.isAutoTuneEnabled = Objects.requireNonNull(isAutoTuneEnabled);
+            if (isAutoTuneEnabled == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "isAutoTuneEnabled");
+            }
+            this.isAutoTuneEnabled = isAutoTuneEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isHydrated(Boolean isHydrated) {
-            this.isHydrated = Objects.requireNonNull(isHydrated);
+            if (isHydrated == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "isHydrated");
+            }
+            this.isHydrated = isHydrated;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInGbs(String sizeInGbs) {
-            this.sizeInGbs = Objects.requireNonNull(sizeInGbs);
+            if (sizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "sizeInGbs");
+            }
+            this.sizeInGbs = sizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInMbs(String sizeInMbs) {
-            this.sizeInMbs = Objects.requireNonNull(sizeInMbs);
+            if (sizeInMbs == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "sizeInMbs");
+            }
+            this.sizeInMbs = sizeInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder sourceDetails(List<GetVolumesVolumeSourceDetail> sourceDetails) {
-            this.sourceDetails = Objects.requireNonNull(sourceDetails);
+            if (sourceDetails == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "sourceDetails");
+            }
+            this.sourceDetails = sourceDetails;
             return this;
         }
         public Builder sourceDetails(GetVolumesVolumeSourceDetail... sourceDetails) {
@@ -439,32 +491,50 @@ public final class GetVolumesVolume {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder volumeBackupId(String volumeBackupId) {
-            this.volumeBackupId = Objects.requireNonNull(volumeBackupId);
+            if (volumeBackupId == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "volumeBackupId");
+            }
+            this.volumeBackupId = volumeBackupId;
             return this;
         }
         @CustomType.Setter
         public Builder volumeGroupId(String volumeGroupId) {
-            this.volumeGroupId = Objects.requireNonNull(volumeGroupId);
+            if (volumeGroupId == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "volumeGroupId");
+            }
+            this.volumeGroupId = volumeGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder vpusPerGb(String vpusPerGb) {
-            this.vpusPerGb = Objects.requireNonNull(vpusPerGb);
+            if (vpusPerGb == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "vpusPerGb");
+            }
+            this.vpusPerGb = vpusPerGb;
             return this;
         }
         public GetVolumesVolume build() {

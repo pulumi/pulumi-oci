@@ -5,6 +5,7 @@ package com.pulumi.oci.FileStorage;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.inputs.OutboundConnectorEndpointArgs;
 import java.lang.Integer;
 import java.lang.Object;
@@ -436,11 +437,21 @@ public final class OutboundConnectorArgs extends com.pulumi.resources.ResourceAr
         }
 
         public OutboundConnectorArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
-            $.bindDistinguishedName = Objects.requireNonNull($.bindDistinguishedName, "expected parameter 'bindDistinguishedName' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.connectorType = Objects.requireNonNull($.connectorType, "expected parameter 'connectorType' to be non-null");
-            $.endpoints = Objects.requireNonNull($.endpoints, "expected parameter 'endpoints' to be non-null");
+            if ($.availabilityDomain == null) {
+                throw new MissingRequiredPropertyException("OutboundConnectorArgs", "availabilityDomain");
+            }
+            if ($.bindDistinguishedName == null) {
+                throw new MissingRequiredPropertyException("OutboundConnectorArgs", "bindDistinguishedName");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("OutboundConnectorArgs", "compartmentId");
+            }
+            if ($.connectorType == null) {
+                throw new MissingRequiredPropertyException("OutboundConnectorArgs", "connectorType");
+            }
+            if ($.endpoints == null) {
+                throw new MissingRequiredPropertyException("OutboundConnectorArgs", "endpoints");
+            }
             return $;
         }
     }

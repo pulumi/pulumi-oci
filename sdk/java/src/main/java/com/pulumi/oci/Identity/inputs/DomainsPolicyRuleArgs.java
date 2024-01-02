@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -352,8 +353,12 @@ public final class DomainsPolicyRuleArgs extends com.pulumi.resources.ResourceAr
         }
 
         public DomainsPolicyRuleArgs build() {
-            $.sequence = Objects.requireNonNull($.sequence, "expected parameter 'sequence' to be non-null");
-            $.value = Objects.requireNonNull($.value, "expected parameter 'value' to be non-null");
+            if ($.sequence == null) {
+                throw new MissingRequiredPropertyException("DomainsPolicyRuleArgs", "sequence");
+            }
+            if ($.value == null) {
+                throw new MissingRequiredPropertyException("DomainsPolicyRuleArgs", "value");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetVirtualServiceMtl {
 
         @CustomType.Setter
         public Builder certificateId(String certificateId) {
-            this.certificateId = Objects.requireNonNull(certificateId);
+            if (certificateId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualServiceMtl", "certificateId");
+            }
+            this.certificateId = certificateId;
             return this;
         }
         @CustomType.Setter
         public Builder maximumValidity(Integer maximumValidity) {
-            this.maximumValidity = Objects.requireNonNull(maximumValidity);
+            if (maximumValidity == null) {
+              throw new MissingRequiredPropertyException("GetVirtualServiceMtl", "maximumValidity");
+            }
+            this.maximumValidity = maximumValidity;
             return this;
         }
         @CustomType.Setter
         public Builder mode(String mode) {
-            this.mode = Objects.requireNonNull(mode);
+            if (mode == null) {
+              throw new MissingRequiredPropertyException("GetVirtualServiceMtl", "mode");
+            }
+            this.mode = mode;
             return this;
         }
         public GetVirtualServiceMtl build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -452,10 +453,18 @@ public final class IpsecArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public IpsecArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.cpeId = Objects.requireNonNull($.cpeId, "expected parameter 'cpeId' to be non-null");
-            $.drgId = Objects.requireNonNull($.drgId, "expected parameter 'drgId' to be non-null");
-            $.staticRoutes = Objects.requireNonNull($.staticRoutes, "expected parameter 'staticRoutes' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("IpsecArgs", "compartmentId");
+            }
+            if ($.cpeId == null) {
+                throw new MissingRequiredPropertyException("IpsecArgs", "cpeId");
+            }
+            if ($.drgId == null) {
+                throw new MissingRequiredPropertyException("IpsecArgs", "drgId");
+            }
+            if ($.staticRoutes == null) {
+                throw new MissingRequiredPropertyException("IpsecArgs", "staticRoutes");
+            }
             return $;
         }
     }

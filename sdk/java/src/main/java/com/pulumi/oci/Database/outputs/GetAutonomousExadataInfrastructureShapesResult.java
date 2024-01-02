@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape;
 import com.pulumi.oci.Database.outputs.GetAutonomousExadataInfrastructureShapesFilter;
 import java.lang.String;
@@ -78,7 +79,10 @@ public final class GetAutonomousExadataInfrastructureShapesResult {
 
         @CustomType.Setter
         public Builder autonomousExadataInfrastructureShapes(List<GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape> autonomousExadataInfrastructureShapes) {
-            this.autonomousExadataInfrastructureShapes = Objects.requireNonNull(autonomousExadataInfrastructureShapes);
+            if (autonomousExadataInfrastructureShapes == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructureShapesResult", "autonomousExadataInfrastructureShapes");
+            }
+            this.autonomousExadataInfrastructureShapes = autonomousExadataInfrastructureShapes;
             return this;
         }
         public Builder autonomousExadataInfrastructureShapes(GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape... autonomousExadataInfrastructureShapes) {
@@ -86,16 +90,23 @@ public final class GetAutonomousExadataInfrastructureShapesResult {
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructureShapesResult", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructureShapesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousExadataInfrastructureShapesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -104,7 +115,10 @@ public final class GetAutonomousExadataInfrastructureShapesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructureShapesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetAutonomousExadataInfrastructureShapesResult build() {

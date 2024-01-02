@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetCategoriesCategoryCollectionItemRecommendationCount {
 
         @CustomType.Setter
         public Builder count(Integer count) {
-            this.count = Objects.requireNonNull(count);
+            if (count == null) {
+              throw new MissingRequiredPropertyException("GetCategoriesCategoryCollectionItemRecommendationCount", "count");
+            }
+            this.count = count;
             return this;
         }
         @CustomType.Setter
         public Builder importance(String importance) {
-            this.importance = Objects.requireNonNull(importance);
+            if (importance == null) {
+              throw new MissingRequiredPropertyException("GetCategoriesCategoryCollectionItemRecommendationCount", "importance");
+            }
+            this.importance = importance;
             return this;
         }
         public GetCategoriesCategoryCollectionItemRecommendationCount build() {

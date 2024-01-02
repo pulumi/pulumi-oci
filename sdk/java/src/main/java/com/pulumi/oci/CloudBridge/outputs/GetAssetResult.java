@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetCompute;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetVm;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetVmwareVcenter;
@@ -293,12 +294,18 @@ public final class GetAssetResult {
 
         @CustomType.Setter
         public Builder assetId(String assetId) {
-            this.assetId = Objects.requireNonNull(assetId);
+            if (assetId == null) {
+              throw new MissingRequiredPropertyException("GetAssetResult", "assetId");
+            }
+            this.assetId = assetId;
             return this;
         }
         @CustomType.Setter
         public Builder assetSourceIds(List<String> assetSourceIds) {
-            this.assetSourceIds = Objects.requireNonNull(assetSourceIds);
+            if (assetSourceIds == null) {
+              throw new MissingRequiredPropertyException("GetAssetResult", "assetSourceIds");
+            }
+            this.assetSourceIds = assetSourceIds;
             return this;
         }
         public Builder assetSourceIds(String... assetSourceIds) {
@@ -306,17 +313,26 @@ public final class GetAssetResult {
         }
         @CustomType.Setter
         public Builder assetType(String assetType) {
-            this.assetType = Objects.requireNonNull(assetType);
+            if (assetType == null) {
+              throw new MissingRequiredPropertyException("GetAssetResult", "assetType");
+            }
+            this.assetType = assetType;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAssetResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computes(List<GetAssetCompute> computes) {
-            this.computes = Objects.requireNonNull(computes);
+            if (computes == null) {
+              throw new MissingRequiredPropertyException("GetAssetResult", "computes");
+            }
+            this.computes = computes;
             return this;
         }
         public Builder computes(GetAssetCompute... computes) {
@@ -324,62 +340,98 @@ public final class GetAssetResult {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAssetResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAssetResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalAssetKey(String externalAssetKey) {
-            this.externalAssetKey = Objects.requireNonNull(externalAssetKey);
+            if (externalAssetKey == null) {
+              throw new MissingRequiredPropertyException("GetAssetResult", "externalAssetKey");
+            }
+            this.externalAssetKey = externalAssetKey;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAssetResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAssetResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inventoryId(String inventoryId) {
-            this.inventoryId = Objects.requireNonNull(inventoryId);
+            if (inventoryId == null) {
+              throw new MissingRequiredPropertyException("GetAssetResult", "inventoryId");
+            }
+            this.inventoryId = inventoryId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceKey(String sourceKey) {
-            this.sourceKey = Objects.requireNonNull(sourceKey);
+            if (sourceKey == null) {
+              throw new MissingRequiredPropertyException("GetAssetResult", "sourceKey");
+            }
+            this.sourceKey = sourceKey;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAssetResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetAssetResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAssetResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetAssetResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder vms(List<GetAssetVm> vms) {
-            this.vms = Objects.requireNonNull(vms);
+            if (vms == null) {
+              throw new MissingRequiredPropertyException("GetAssetResult", "vms");
+            }
+            this.vms = vms;
             return this;
         }
         public Builder vms(GetAssetVm... vms) {
@@ -387,7 +439,10 @@ public final class GetAssetResult {
         }
         @CustomType.Setter
         public Builder vmwareVcenters(List<GetAssetVmwareVcenter> vmwareVcenters) {
-            this.vmwareVcenters = Objects.requireNonNull(vmwareVcenters);
+            if (vmwareVcenters == null) {
+              throw new MissingRequiredPropertyException("GetAssetResult", "vmwareVcenters");
+            }
+            this.vmwareVcenters = vmwareVcenters;
             return this;
         }
         public Builder vmwareVcenters(GetAssetVmwareVcenter... vmwareVcenters) {
@@ -395,7 +450,10 @@ public final class GetAssetResult {
         }
         @CustomType.Setter
         public Builder vmwareVms(List<GetAssetVmwareVm> vmwareVms) {
-            this.vmwareVms = Objects.requireNonNull(vmwareVms);
+            if (vmwareVms == null) {
+              throw new MissingRequiredPropertyException("GetAssetResult", "vmwareVms");
+            }
+            this.vmwareVms = vmwareVms;
             return this;
         }
         public Builder vmwareVms(GetAssetVmwareVm... vmwareVms) {

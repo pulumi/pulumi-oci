@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiLanguage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiLanguage.outputs.GetModelsModelCollectionItemEvaluationResultClassMetric;
 import com.pulumi.oci.AiLanguage.outputs.GetModelsModelCollectionItemEvaluationResultEntityMetric;
 import com.pulumi.oci.AiLanguage.outputs.GetModelsModelCollectionItemEvaluationResultMetric;
@@ -116,7 +117,10 @@ public final class GetModelsModelCollectionItemEvaluationResult {
 
         @CustomType.Setter
         public Builder classMetrics(List<GetModelsModelCollectionItemEvaluationResultClassMetric> classMetrics) {
-            this.classMetrics = Objects.requireNonNull(classMetrics);
+            if (classMetrics == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResult", "classMetrics");
+            }
+            this.classMetrics = classMetrics;
             return this;
         }
         public Builder classMetrics(GetModelsModelCollectionItemEvaluationResultClassMetric... classMetrics) {
@@ -124,12 +128,18 @@ public final class GetModelsModelCollectionItemEvaluationResult {
         }
         @CustomType.Setter
         public Builder confusionMatrix(String confusionMatrix) {
-            this.confusionMatrix = Objects.requireNonNull(confusionMatrix);
+            if (confusionMatrix == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResult", "confusionMatrix");
+            }
+            this.confusionMatrix = confusionMatrix;
             return this;
         }
         @CustomType.Setter
         public Builder entityMetrics(List<GetModelsModelCollectionItemEvaluationResultEntityMetric> entityMetrics) {
-            this.entityMetrics = Objects.requireNonNull(entityMetrics);
+            if (entityMetrics == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResult", "entityMetrics");
+            }
+            this.entityMetrics = entityMetrics;
             return this;
         }
         public Builder entityMetrics(GetModelsModelCollectionItemEvaluationResultEntityMetric... entityMetrics) {
@@ -137,7 +147,10 @@ public final class GetModelsModelCollectionItemEvaluationResult {
         }
         @CustomType.Setter
         public Builder labels(List<String> labels) {
-            this.labels = Objects.requireNonNull(labels);
+            if (labels == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResult", "labels");
+            }
+            this.labels = labels;
             return this;
         }
         public Builder labels(String... labels) {
@@ -145,7 +158,10 @@ public final class GetModelsModelCollectionItemEvaluationResult {
         }
         @CustomType.Setter
         public Builder metrics(List<GetModelsModelCollectionItemEvaluationResultMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+            if (metrics == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResult", "metrics");
+            }
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetModelsModelCollectionItemEvaluationResultMetric... metrics) {
@@ -153,7 +169,10 @@ public final class GetModelsModelCollectionItemEvaluationResult {
         }
         @CustomType.Setter
         public Builder modelType(String modelType) {
-            this.modelType = Objects.requireNonNull(modelType);
+            if (modelType == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemEvaluationResult", "modelType");
+            }
+            this.modelType = modelType;
             return this;
         }
         public GetModelsModelCollectionItemEvaluationResult build() {

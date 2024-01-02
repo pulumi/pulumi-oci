@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipesFilterArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -285,7 +286,9 @@ public final class GetResponderRecipesArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetResponderRecipesArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetResponderRecipesArgs", "compartmentId");
+            }
             return $;
         }
     }

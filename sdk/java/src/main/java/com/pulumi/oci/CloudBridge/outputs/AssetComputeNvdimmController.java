@@ -59,11 +59,13 @@ public final class AssetComputeNvdimmController {
 
         @CustomType.Setter
         public Builder busNumber(@Nullable Integer busNumber) {
+
             this.busNumber = busNumber;
             return this;
         }
         @CustomType.Setter
         public Builder label(@Nullable String label) {
+
             this.label = label;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -204,62 +205,98 @@ public final class GetFastConnectProviderServiceResult {
 
         @CustomType.Setter
         public Builder bandwithShapeManagement(String bandwithShapeManagement) {
-            this.bandwithShapeManagement = Objects.requireNonNull(bandwithShapeManagement);
+            if (bandwithShapeManagement == null) {
+              throw new MissingRequiredPropertyException("GetFastConnectProviderServiceResult", "bandwithShapeManagement");
+            }
+            this.bandwithShapeManagement = bandwithShapeManagement;
             return this;
         }
         @CustomType.Setter
         public Builder customerAsnManagement(String customerAsnManagement) {
-            this.customerAsnManagement = Objects.requireNonNull(customerAsnManagement);
+            if (customerAsnManagement == null) {
+              throw new MissingRequiredPropertyException("GetFastConnectProviderServiceResult", "customerAsnManagement");
+            }
+            this.customerAsnManagement = customerAsnManagement;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetFastConnectProviderServiceResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFastConnectProviderServiceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder privatePeeringBgpManagement(String privatePeeringBgpManagement) {
-            this.privatePeeringBgpManagement = Objects.requireNonNull(privatePeeringBgpManagement);
+            if (privatePeeringBgpManagement == null) {
+              throw new MissingRequiredPropertyException("GetFastConnectProviderServiceResult", "privatePeeringBgpManagement");
+            }
+            this.privatePeeringBgpManagement = privatePeeringBgpManagement;
             return this;
         }
         @CustomType.Setter
         public Builder providerName(String providerName) {
-            this.providerName = Objects.requireNonNull(providerName);
+            if (providerName == null) {
+              throw new MissingRequiredPropertyException("GetFastConnectProviderServiceResult", "providerName");
+            }
+            this.providerName = providerName;
             return this;
         }
         @CustomType.Setter
         public Builder providerServiceId(String providerServiceId) {
-            this.providerServiceId = Objects.requireNonNull(providerServiceId);
+            if (providerServiceId == null) {
+              throw new MissingRequiredPropertyException("GetFastConnectProviderServiceResult", "providerServiceId");
+            }
+            this.providerServiceId = providerServiceId;
             return this;
         }
         @CustomType.Setter
         public Builder providerServiceKeyManagement(String providerServiceKeyManagement) {
-            this.providerServiceKeyManagement = Objects.requireNonNull(providerServiceKeyManagement);
+            if (providerServiceKeyManagement == null) {
+              throw new MissingRequiredPropertyException("GetFastConnectProviderServiceResult", "providerServiceKeyManagement");
+            }
+            this.providerServiceKeyManagement = providerServiceKeyManagement;
             return this;
         }
         @CustomType.Setter
         public Builder providerServiceName(String providerServiceName) {
-            this.providerServiceName = Objects.requireNonNull(providerServiceName);
+            if (providerServiceName == null) {
+              throw new MissingRequiredPropertyException("GetFastConnectProviderServiceResult", "providerServiceName");
+            }
+            this.providerServiceName = providerServiceName;
             return this;
         }
         @CustomType.Setter
         public Builder publicPeeringBgpManagement(String publicPeeringBgpManagement) {
-            this.publicPeeringBgpManagement = Objects.requireNonNull(publicPeeringBgpManagement);
+            if (publicPeeringBgpManagement == null) {
+              throw new MissingRequiredPropertyException("GetFastConnectProviderServiceResult", "publicPeeringBgpManagement");
+            }
+            this.publicPeeringBgpManagement = publicPeeringBgpManagement;
             return this;
         }
         @CustomType.Setter
         public Builder requiredTotalCrossConnects(Integer requiredTotalCrossConnects) {
-            this.requiredTotalCrossConnects = Objects.requireNonNull(requiredTotalCrossConnects);
+            if (requiredTotalCrossConnects == null) {
+              throw new MissingRequiredPropertyException("GetFastConnectProviderServiceResult", "requiredTotalCrossConnects");
+            }
+            this.requiredTotalCrossConnects = requiredTotalCrossConnects;
             return this;
         }
         @CustomType.Setter
         public Builder supportedVirtualCircuitTypes(List<String> supportedVirtualCircuitTypes) {
-            this.supportedVirtualCircuitTypes = Objects.requireNonNull(supportedVirtualCircuitTypes);
+            if (supportedVirtualCircuitTypes == null) {
+              throw new MissingRequiredPropertyException("GetFastConnectProviderServiceResult", "supportedVirtualCircuitTypes");
+            }
+            this.supportedVirtualCircuitTypes = supportedVirtualCircuitTypes;
             return this;
         }
         public Builder supportedVirtualCircuitTypes(String... supportedVirtualCircuitTypes) {
@@ -267,7 +304,10 @@ public final class GetFastConnectProviderServiceResult {
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetFastConnectProviderServiceResult", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetFastConnectProviderServiceResult build() {

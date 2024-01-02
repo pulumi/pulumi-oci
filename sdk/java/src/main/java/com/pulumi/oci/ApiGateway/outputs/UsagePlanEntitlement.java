@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.UsagePlanEntitlementQuota;
 import com.pulumi.oci.ApiGateway.outputs.UsagePlanEntitlementRateLimit;
 import com.pulumi.oci.ApiGateway.outputs.UsagePlanEntitlementTarget;
@@ -104,26 +105,33 @@ public final class UsagePlanEntitlement {
 
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("UsagePlanEntitlement", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder quota(@Nullable UsagePlanEntitlementQuota quota) {
+
             this.quota = quota;
             return this;
         }
         @CustomType.Setter
         public Builder rateLimit(@Nullable UsagePlanEntitlementRateLimit rateLimit) {
+
             this.rateLimit = rateLimit;
             return this;
         }
         @CustomType.Setter
         public Builder targets(@Nullable List<UsagePlanEntitlementTarget> targets) {
+
             this.targets = targets;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.MediaServices;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.inputs.MediaAssetMediaAssetTagArgs;
 import com.pulumi.oci.MediaServices.inputs.MediaAssetMetadataArgs;
 import java.lang.Object;
@@ -742,8 +743,12 @@ public final class MediaAssetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public MediaAssetArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("MediaAssetArgs", "compartmentId");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("MediaAssetArgs", "type");
+            }
             return $;
         }
     }

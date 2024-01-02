@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.GetScheduledRunsFilter;
 import com.pulumi.oci.MeteringComputation.outputs.GetScheduledRunsScheduledRunCollection;
 import java.lang.String;
@@ -80,6 +81,7 @@ public final class GetScheduledRunsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetScheduledRunsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -88,17 +90,26 @@ public final class GetScheduledRunsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetScheduledRunsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder scheduleId(String scheduleId) {
-            this.scheduleId = Objects.requireNonNull(scheduleId);
+            if (scheduleId == null) {
+              throw new MissingRequiredPropertyException("GetScheduledRunsResult", "scheduleId");
+            }
+            this.scheduleId = scheduleId;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledRunCollections(List<GetScheduledRunsScheduledRunCollection> scheduledRunCollections) {
-            this.scheduledRunCollections = Objects.requireNonNull(scheduledRunCollections);
+            if (scheduledRunCollections == null) {
+              throw new MissingRequiredPropertyException("GetScheduledRunsResult", "scheduledRunCollections");
+            }
+            this.scheduledRunCollections = scheduledRunCollections;
             return this;
         }
         public Builder scheduledRunCollections(GetScheduledRunsScheduledRunCollection... scheduledRunCollections) {

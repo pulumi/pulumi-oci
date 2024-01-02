@@ -4,6 +4,7 @@
 package com.pulumi.oci.Streaming.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -205,67 +206,106 @@ public final class GetStreamResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetStreamResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetStreamResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetStreamResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetStreamResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleStateDetails(String lifecycleStateDetails) {
-            this.lifecycleStateDetails = Objects.requireNonNull(lifecycleStateDetails);
+            if (lifecycleStateDetails == null) {
+              throw new MissingRequiredPropertyException("GetStreamResult", "lifecycleStateDetails");
+            }
+            this.lifecycleStateDetails = lifecycleStateDetails;
             return this;
         }
         @CustomType.Setter
         public Builder messagesEndpoint(String messagesEndpoint) {
-            this.messagesEndpoint = Objects.requireNonNull(messagesEndpoint);
+            if (messagesEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetStreamResult", "messagesEndpoint");
+            }
+            this.messagesEndpoint = messagesEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetStreamResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder partitions(Integer partitions) {
-            this.partitions = Objects.requireNonNull(partitions);
+            if (partitions == null) {
+              throw new MissingRequiredPropertyException("GetStreamResult", "partitions");
+            }
+            this.partitions = partitions;
             return this;
         }
         @CustomType.Setter
         public Builder retentionInHours(Integer retentionInHours) {
-            this.retentionInHours = Objects.requireNonNull(retentionInHours);
+            if (retentionInHours == null) {
+              throw new MissingRequiredPropertyException("GetStreamResult", "retentionInHours");
+            }
+            this.retentionInHours = retentionInHours;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetStreamResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder streamId(String streamId) {
-            this.streamId = Objects.requireNonNull(streamId);
+            if (streamId == null) {
+              throw new MissingRequiredPropertyException("GetStreamResult", "streamId");
+            }
+            this.streamId = streamId;
             return this;
         }
         @CustomType.Setter
         public Builder streamPoolId(String streamPoolId) {
-            this.streamPoolId = Objects.requireNonNull(streamPoolId);
+            if (streamPoolId == null) {
+              throw new MissingRequiredPropertyException("GetStreamResult", "streamPoolId");
+            }
+            this.streamPoolId = streamPoolId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetStreamResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetStreamResult build() {

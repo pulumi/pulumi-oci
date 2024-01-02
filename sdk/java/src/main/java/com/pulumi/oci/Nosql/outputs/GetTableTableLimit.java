@@ -4,6 +4,7 @@
 package com.pulumi.oci.Nosql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetTableTableLimit {
 
         @CustomType.Setter
         public Builder capacityMode(String capacityMode) {
-            this.capacityMode = Objects.requireNonNull(capacityMode);
+            if (capacityMode == null) {
+              throw new MissingRequiredPropertyException("GetTableTableLimit", "capacityMode");
+            }
+            this.capacityMode = capacityMode;
             return this;
         }
         @CustomType.Setter
         public Builder maxReadUnits(Integer maxReadUnits) {
-            this.maxReadUnits = Objects.requireNonNull(maxReadUnits);
+            if (maxReadUnits == null) {
+              throw new MissingRequiredPropertyException("GetTableTableLimit", "maxReadUnits");
+            }
+            this.maxReadUnits = maxReadUnits;
             return this;
         }
         @CustomType.Setter
         public Builder maxStorageInGbs(Integer maxStorageInGbs) {
-            this.maxStorageInGbs = Objects.requireNonNull(maxStorageInGbs);
+            if (maxStorageInGbs == null) {
+              throw new MissingRequiredPropertyException("GetTableTableLimit", "maxStorageInGbs");
+            }
+            this.maxStorageInGbs = maxStorageInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder maxWriteUnits(Integer maxWriteUnits) {
-            this.maxWriteUnits = Objects.requireNonNull(maxWriteUnits);
+            if (maxWriteUnits == null) {
+              throw new MissingRequiredPropertyException("GetTableTableLimit", "maxWriteUnits");
+            }
+            this.maxWriteUnits = maxWriteUnits;
             return this;
         }
         public GetTableTableLimit build() {

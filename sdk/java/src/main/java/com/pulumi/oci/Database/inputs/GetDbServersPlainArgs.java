@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.GetDbServersFilter;
 import java.lang.String;
 import java.util.List;
@@ -165,8 +166,12 @@ public final class GetDbServersPlainArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetDbServersPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.exadataInfrastructureId = Objects.requireNonNull($.exadataInfrastructureId, "expected parameter 'exadataInfrastructureId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetDbServersPlainArgs", "compartmentId");
+            }
+            if ($.exadataInfrastructureId == null) {
+                throw new MissingRequiredPropertyException("GetDbServersPlainArgs", "exadataInfrastructureId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemBackupPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemChannel;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemCurrentPlacement;
@@ -550,22 +551,34 @@ public final class GetMysqlDbSystemResult {
 
         @CustomType.Setter
         public Builder adminPassword(String adminPassword) {
-            this.adminPassword = Objects.requireNonNull(adminPassword);
+            if (adminPassword == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "adminPassword");
+            }
+            this.adminPassword = adminPassword;
             return this;
         }
         @CustomType.Setter
         public Builder adminUsername(String adminUsername) {
-            this.adminUsername = Objects.requireNonNull(adminUsername);
+            if (adminUsername == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "adminUsername");
+            }
+            this.adminUsername = adminUsername;
             return this;
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder backupPolicies(List<GetMysqlDbSystemBackupPolicy> backupPolicies) {
-            this.backupPolicies = Objects.requireNonNull(backupPolicies);
+            if (backupPolicies == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "backupPolicies");
+            }
+            this.backupPolicies = backupPolicies;
             return this;
         }
         public Builder backupPolicies(GetMysqlDbSystemBackupPolicy... backupPolicies) {
@@ -573,7 +586,10 @@ public final class GetMysqlDbSystemResult {
         }
         @CustomType.Setter
         public Builder channels(List<GetMysqlDbSystemChannel> channels) {
-            this.channels = Objects.requireNonNull(channels);
+            if (channels == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "channels");
+            }
+            this.channels = channels;
             return this;
         }
         public Builder channels(GetMysqlDbSystemChannel... channels) {
@@ -581,22 +597,34 @@ public final class GetMysqlDbSystemResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder configurationId(String configurationId) {
-            this.configurationId = Objects.requireNonNull(configurationId);
+            if (configurationId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "configurationId");
+            }
+            this.configurationId = configurationId;
             return this;
         }
         @CustomType.Setter
         public Builder crashRecovery(String crashRecovery) {
-            this.crashRecovery = Objects.requireNonNull(crashRecovery);
+            if (crashRecovery == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "crashRecovery");
+            }
+            this.crashRecovery = crashRecovery;
             return this;
         }
         @CustomType.Setter
         public Builder currentPlacements(List<GetMysqlDbSystemCurrentPlacement> currentPlacements) {
-            this.currentPlacements = Objects.requireNonNull(currentPlacements);
+            if (currentPlacements == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "currentPlacements");
+            }
+            this.currentPlacements = currentPlacements;
             return this;
         }
         public Builder currentPlacements(GetMysqlDbSystemCurrentPlacement... currentPlacements) {
@@ -604,27 +632,42 @@ public final class GetMysqlDbSystemResult {
         }
         @CustomType.Setter
         public Builder dataStorageSizeInGb(Integer dataStorageSizeInGb) {
-            this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
+            if (dataStorageSizeInGb == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "dataStorageSizeInGb");
+            }
+            this.dataStorageSizeInGb = dataStorageSizeInGb;
             return this;
         }
         @CustomType.Setter
         public Builder databaseManagement(String databaseManagement) {
-            this.databaseManagement = Objects.requireNonNull(databaseManagement);
+            if (databaseManagement == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "databaseManagement");
+            }
+            this.databaseManagement = databaseManagement;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder deletionPolicies(List<GetMysqlDbSystemDeletionPolicy> deletionPolicies) {
-            this.deletionPolicies = Objects.requireNonNull(deletionPolicies);
+            if (deletionPolicies == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "deletionPolicies");
+            }
+            this.deletionPolicies = deletionPolicies;
             return this;
         }
         public Builder deletionPolicies(GetMysqlDbSystemDeletionPolicy... deletionPolicies) {
@@ -632,17 +675,26 @@ public final class GetMysqlDbSystemResult {
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder endpoints(List<GetMysqlDbSystemEndpoint> endpoints) {
-            this.endpoints = Objects.requireNonNull(endpoints);
+            if (endpoints == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "endpoints");
+            }
+            this.endpoints = endpoints;
             return this;
         }
         public Builder endpoints(GetMysqlDbSystemEndpoint... endpoints) {
@@ -650,17 +702,26 @@ public final class GetMysqlDbSystemResult {
         }
         @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+            if (faultDomain == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "faultDomain");
+            }
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder heatWaveClusters(List<GetMysqlDbSystemHeatWaveCluster> heatWaveClusters) {
-            this.heatWaveClusters = Objects.requireNonNull(heatWaveClusters);
+            if (heatWaveClusters == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "heatWaveClusters");
+            }
+            this.heatWaveClusters = heatWaveClusters;
             return this;
         }
         public Builder heatWaveClusters(GetMysqlDbSystemHeatWaveCluster... heatWaveClusters) {
@@ -668,37 +729,58 @@ public final class GetMysqlDbSystemResult {
         }
         @CustomType.Setter
         public Builder hostnameLabel(String hostnameLabel) {
-            this.hostnameLabel = Objects.requireNonNull(hostnameLabel);
+            if (hostnameLabel == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "hostnameLabel");
+            }
+            this.hostnameLabel = hostnameLabel;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+            if (ipAddress == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "ipAddress");
+            }
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder isHeatWaveClusterAttached(Boolean isHeatWaveClusterAttached) {
-            this.isHeatWaveClusterAttached = Objects.requireNonNull(isHeatWaveClusterAttached);
+            if (isHeatWaveClusterAttached == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "isHeatWaveClusterAttached");
+            }
+            this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
             return this;
         }
         @CustomType.Setter
         public Builder isHighlyAvailable(Boolean isHighlyAvailable) {
-            this.isHighlyAvailable = Objects.requireNonNull(isHighlyAvailable);
+            if (isHighlyAvailable == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "isHighlyAvailable");
+            }
+            this.isHighlyAvailable = isHighlyAvailable;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder maintenances(List<GetMysqlDbSystemMaintenance> maintenances) {
-            this.maintenances = Objects.requireNonNull(maintenances);
+            if (maintenances == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "maintenances");
+            }
+            this.maintenances = maintenances;
             return this;
         }
         public Builder maintenances(GetMysqlDbSystemMaintenance... maintenances) {
@@ -706,12 +788,18 @@ public final class GetMysqlDbSystemResult {
         }
         @CustomType.Setter
         public Builder mysqlVersion(String mysqlVersion) {
-            this.mysqlVersion = Objects.requireNonNull(mysqlVersion);
+            if (mysqlVersion == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "mysqlVersion");
+            }
+            this.mysqlVersion = mysqlVersion;
             return this;
         }
         @CustomType.Setter
         public Builder pointInTimeRecoveryDetails(List<GetMysqlDbSystemPointInTimeRecoveryDetail> pointInTimeRecoveryDetails) {
-            this.pointInTimeRecoveryDetails = Objects.requireNonNull(pointInTimeRecoveryDetails);
+            if (pointInTimeRecoveryDetails == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "pointInTimeRecoveryDetails");
+            }
+            this.pointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
             return this;
         }
         public Builder pointInTimeRecoveryDetails(GetMysqlDbSystemPointInTimeRecoveryDetail... pointInTimeRecoveryDetails) {
@@ -719,27 +807,42 @@ public final class GetMysqlDbSystemResult {
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder portX(Integer portX) {
-            this.portX = Objects.requireNonNull(portX);
+            if (portX == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "portX");
+            }
+            this.portX = portX;
             return this;
         }
         @CustomType.Setter
         public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+            if (shapeName == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "shapeName");
+            }
+            this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
         public Builder shutdownType(String shutdownType) {
-            this.shutdownType = Objects.requireNonNull(shutdownType);
+            if (shutdownType == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "shutdownType");
+            }
+            this.shutdownType = shutdownType;
             return this;
         }
         @CustomType.Setter
         public Builder sources(List<GetMysqlDbSystemSource> sources) {
-            this.sources = Objects.requireNonNull(sources);
+            if (sources == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "sources");
+            }
+            this.sources = sources;
             return this;
         }
         public Builder sources(GetMysqlDbSystemSource... sources) {
@@ -747,22 +850,34 @@ public final class GetMysqlDbSystemResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetMysqlDbSystemResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Events.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Events.outputs.GetRuleAction;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -209,7 +210,10 @@ public final class GetRuleResult {
 
         @CustomType.Setter
         public Builder actions(List<GetRuleAction> actions) {
-            this.actions = Objects.requireNonNull(actions);
+            if (actions == null) {
+              throw new MissingRequiredPropertyException("GetRuleResult", "actions");
+            }
+            this.actions = actions;
             return this;
         }
         public Builder actions(GetRuleAction... actions) {
@@ -217,62 +221,98 @@ public final class GetRuleResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetRuleResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+            if (condition == null) {
+              throw new MissingRequiredPropertyException("GetRuleResult", "condition");
+            }
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetRuleResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetRuleResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetRuleResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetRuleResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRuleResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetRuleResult", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleMessage(String lifecycleMessage) {
-            this.lifecycleMessage = Objects.requireNonNull(lifecycleMessage);
+            if (lifecycleMessage == null) {
+              throw new MissingRequiredPropertyException("GetRuleResult", "lifecycleMessage");
+            }
+            this.lifecycleMessage = lifecycleMessage;
             return this;
         }
         @CustomType.Setter
         public Builder ruleId(String ruleId) {
-            this.ruleId = Objects.requireNonNull(ruleId);
+            if (ruleId == null) {
+              throw new MissingRequiredPropertyException("GetRuleResult", "ruleId");
+            }
+            this.ruleId = ruleId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetRuleResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetRuleResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetRuleResult build() {

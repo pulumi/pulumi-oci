@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -174,22 +175,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
 
         @CustomType.Setter
         public Builder answer(String answer) {
-            this.answer = Objects.requireNonNull(answer);
+            if (answer == null) {
+              throw new MissingRequiredPropertyException("DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion", "answer");
+            }
+            this.answer = answer;
             return this;
         }
         @CustomType.Setter
         public Builder hintText(@Nullable String hintText) {
+
             this.hintText = hintText;
             return this;
         }
         @CustomType.Setter
         public Builder ref(@Nullable String ref) {
+
             this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion", "value");
+            }
+            this.value = value;
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion build() {

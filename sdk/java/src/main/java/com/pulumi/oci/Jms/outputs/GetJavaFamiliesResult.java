@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetJavaFamiliesFilter;
 import com.pulumi.oci.Jms.outputs.GetJavaFamiliesJavaFamilyCollection;
 import java.lang.Boolean;
@@ -110,16 +111,19 @@ public final class GetJavaFamiliesResult {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder familyVersion(@Nullable String familyVersion) {
+
             this.familyVersion = familyVersion;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetJavaFamiliesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -128,17 +132,24 @@ public final class GetJavaFamiliesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamiliesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isSupportedVersion(@Nullable Boolean isSupportedVersion) {
+
             this.isSupportedVersion = isSupportedVersion;
             return this;
         }
         @CustomType.Setter
         public Builder javaFamilyCollections(List<GetJavaFamiliesJavaFamilyCollection> javaFamilyCollections) {
-            this.javaFamilyCollections = Objects.requireNonNull(javaFamilyCollections);
+            if (javaFamilyCollections == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamiliesResult", "javaFamilyCollections");
+            }
+            this.javaFamilyCollections = javaFamilyCollections;
             return this;
         }
         public Builder javaFamilyCollections(GetJavaFamiliesJavaFamilyCollection... javaFamilyCollections) {

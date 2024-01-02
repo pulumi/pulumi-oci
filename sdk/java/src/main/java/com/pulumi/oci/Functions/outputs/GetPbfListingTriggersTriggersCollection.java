@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetPbfListingTriggersTriggersCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetPbfListingTriggersTriggersCollection {
 
         @CustomType.Setter
         public Builder items(List<GetPbfListingTriggersTriggersCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingTriggersTriggersCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetPbfListingTriggersTriggersCollectionItem... items) {

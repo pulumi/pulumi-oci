@@ -5,6 +5,7 @@ package com.pulumi.oci.AiLanguage.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiLanguage.inputs.ModelTestStrategyTestingDatasetLocationDetailsArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -151,7 +152,9 @@ public final class ModelTestStrategyTestingDatasetArgs extends com.pulumi.resour
         }
 
         public ModelTestStrategyTestingDatasetArgs build() {
-            $.datasetType = Objects.requireNonNull($.datasetType, "expected parameter 'datasetType' to be non-null");
+            if ($.datasetType == null) {
+                throw new MissingRequiredPropertyException("ModelTestStrategyTestingDatasetArgs", "datasetType");
+            }
             return $;
         }
     }

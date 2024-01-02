@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -161,9 +162,15 @@ public final class ExternalNonContainerDatabaseOperationsInsightsManagementArgs 
         }
 
         public ExternalNonContainerDatabaseOperationsInsightsManagementArgs build() {
-            $.enableOperationsInsights = Objects.requireNonNull($.enableOperationsInsights, "expected parameter 'enableOperationsInsights' to be non-null");
-            $.externalDatabaseConnectorId = Objects.requireNonNull($.externalDatabaseConnectorId, "expected parameter 'externalDatabaseConnectorId' to be non-null");
-            $.externalNonContainerDatabaseId = Objects.requireNonNull($.externalNonContainerDatabaseId, "expected parameter 'externalNonContainerDatabaseId' to be non-null");
+            if ($.enableOperationsInsights == null) {
+                throw new MissingRequiredPropertyException("ExternalNonContainerDatabaseOperationsInsightsManagementArgs", "enableOperationsInsights");
+            }
+            if ($.externalDatabaseConnectorId == null) {
+                throw new MissingRequiredPropertyException("ExternalNonContainerDatabaseOperationsInsightsManagementArgs", "externalDatabaseConnectorId");
+            }
+            if ($.externalNonContainerDatabaseId == null) {
+                throw new MissingRequiredPropertyException("ExternalNonContainerDatabaseOperationsInsightsManagementArgs", "externalNonContainerDatabaseId");
+            }
             return $;
         }
     }

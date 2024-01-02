@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -346,117 +347,186 @@ public final class GetVtapResult {
 
         @CustomType.Setter
         public Builder captureFilterId(String captureFilterId) {
-            this.captureFilterId = Objects.requireNonNull(captureFilterId);
+            if (captureFilterId == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "captureFilterId");
+            }
+            this.captureFilterId = captureFilterId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder encapsulationProtocol(String encapsulationProtocol) {
-            this.encapsulationProtocol = Objects.requireNonNull(encapsulationProtocol);
+            if (encapsulationProtocol == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "encapsulationProtocol");
+            }
+            this.encapsulationProtocol = encapsulationProtocol;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isVtapEnabled(Boolean isVtapEnabled) {
-            this.isVtapEnabled = Objects.requireNonNull(isVtapEnabled);
+            if (isVtapEnabled == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "isVtapEnabled");
+            }
+            this.isVtapEnabled = isVtapEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleStateDetails(String lifecycleStateDetails) {
-            this.lifecycleStateDetails = Objects.requireNonNull(lifecycleStateDetails);
+            if (lifecycleStateDetails == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "lifecycleStateDetails");
+            }
+            this.lifecycleStateDetails = lifecycleStateDetails;
             return this;
         }
         @CustomType.Setter
         public Builder maxPacketSize(Integer maxPacketSize) {
-            this.maxPacketSize = Objects.requireNonNull(maxPacketSize);
+            if (maxPacketSize == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "maxPacketSize");
+            }
+            this.maxPacketSize = maxPacketSize;
             return this;
         }
         @CustomType.Setter
         public Builder sourceId(String sourceId) {
-            this.sourceId = Objects.requireNonNull(sourceId);
+            if (sourceId == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "sourceId");
+            }
+            this.sourceId = sourceId;
             return this;
         }
         @CustomType.Setter
         public Builder sourcePrivateEndpointIp(String sourcePrivateEndpointIp) {
-            this.sourcePrivateEndpointIp = Objects.requireNonNull(sourcePrivateEndpointIp);
+            if (sourcePrivateEndpointIp == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "sourcePrivateEndpointIp");
+            }
+            this.sourcePrivateEndpointIp = sourcePrivateEndpointIp;
             return this;
         }
         @CustomType.Setter
         public Builder sourcePrivateEndpointSubnetId(String sourcePrivateEndpointSubnetId) {
-            this.sourcePrivateEndpointSubnetId = Objects.requireNonNull(sourcePrivateEndpointSubnetId);
+            if (sourcePrivateEndpointSubnetId == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "sourcePrivateEndpointSubnetId");
+            }
+            this.sourcePrivateEndpointSubnetId = sourcePrivateEndpointSubnetId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "targetId");
+            }
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder targetIp(String targetIp) {
-            this.targetIp = Objects.requireNonNull(targetIp);
+            if (targetIp == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "targetIp");
+            }
+            this.targetIp = targetIp;
             return this;
         }
         @CustomType.Setter
         public Builder targetType(String targetType) {
-            this.targetType = Objects.requireNonNull(targetType);
+            if (targetType == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "targetType");
+            }
+            this.targetType = targetType;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder trafficMode(String trafficMode) {
-            this.trafficMode = Objects.requireNonNull(trafficMode);
+            if (trafficMode == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "trafficMode");
+            }
+            this.trafficMode = trafficMode;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+            if (vcnId == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "vcnId");
+            }
+            this.vcnId = vcnId;
             return this;
         }
         @CustomType.Setter
         public Builder vtapId(String vtapId) {
-            this.vtapId = Objects.requireNonNull(vtapId);
+            if (vtapId == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "vtapId");
+            }
+            this.vtapId = vtapId;
             return this;
         }
         @CustomType.Setter
         public Builder vxlanNetworkIdentifier(String vxlanNetworkIdentifier) {
-            this.vxlanNetworkIdentifier = Objects.requireNonNull(vxlanNetworkIdentifier);
+            if (vxlanNetworkIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetVtapResult", "vxlanNetworkIdentifier");
+            }
+            this.vxlanNetworkIdentifier = vxlanNetworkIdentifier;
             return this;
         }
         public GetVtapResult build() {

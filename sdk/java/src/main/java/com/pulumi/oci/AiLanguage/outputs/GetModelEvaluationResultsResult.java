@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiLanguage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiLanguage.outputs.GetModelEvaluationResultsEvaluationResultCollection;
 import com.pulumi.oci.AiLanguage.outputs.GetModelEvaluationResultsFilter;
 import java.lang.String;
@@ -72,7 +73,10 @@ public final class GetModelEvaluationResultsResult {
 
         @CustomType.Setter
         public Builder evaluationResultCollections(List<GetModelEvaluationResultsEvaluationResultCollection> evaluationResultCollections) {
-            this.evaluationResultCollections = Objects.requireNonNull(evaluationResultCollections);
+            if (evaluationResultCollections == null) {
+              throw new MissingRequiredPropertyException("GetModelEvaluationResultsResult", "evaluationResultCollections");
+            }
+            this.evaluationResultCollections = evaluationResultCollections;
             return this;
         }
         public Builder evaluationResultCollections(GetModelEvaluationResultsEvaluationResultCollection... evaluationResultCollections) {
@@ -80,6 +84,7 @@ public final class GetModelEvaluationResultsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetModelEvaluationResultsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -88,12 +93,18 @@ public final class GetModelEvaluationResultsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetModelEvaluationResultsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder modelId(String modelId) {
-            this.modelId = Objects.requireNonNull(modelId);
+            if (modelId == null) {
+              throw new MissingRequiredPropertyException("GetModelEvaluationResultsResult", "modelId");
+            }
+            this.modelId = modelId;
             return this;
         }
         public GetModelEvaluationResultsResult build() {

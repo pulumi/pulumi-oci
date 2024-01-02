@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentAdminUsersAdminUserCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetFusionEnvironmentAdminUsersAdminUserCollection {
 
         @CustomType.Setter
         public Builder items(List<GetFusionEnvironmentAdminUsersAdminUserCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentAdminUsersAdminUserCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetFusionEnvironmentAdminUsersAdminUserCollectionItem... items) {

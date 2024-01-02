@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsubOrganizationSubscription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsubOrganizationSubscription.outputs.GetOrganizationSubscriptionsFilter;
 import com.pulumi.oci.OsubOrganizationSubscription.outputs.GetOrganizationSubscriptionsSubscription;
 import java.lang.String;
@@ -85,11 +86,15 @@ public final class GetOrganizationSubscriptionsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOrganizationSubscriptionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetOrganizationSubscriptionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -98,17 +103,26 @@ public final class GetOrganizationSubscriptionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOrganizationSubscriptionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptionIds(String subscriptionIds) {
-            this.subscriptionIds = Objects.requireNonNull(subscriptionIds);
+            if (subscriptionIds == null) {
+              throw new MissingRequiredPropertyException("GetOrganizationSubscriptionsResult", "subscriptionIds");
+            }
+            this.subscriptionIds = subscriptionIds;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptions(List<GetOrganizationSubscriptionsSubscription> subscriptions) {
-            this.subscriptions = Objects.requireNonNull(subscriptions);
+            if (subscriptions == null) {
+              throw new MissingRequiredPropertyException("GetOrganizationSubscriptionsResult", "subscriptions");
+            }
+            this.subscriptions = subscriptions;
             return this;
         }
         public Builder subscriptions(GetOrganizationSubscriptionsSubscription... subscriptions) {
@@ -116,6 +130,7 @@ public final class GetOrganizationSubscriptionsResult {
         }
         @CustomType.Setter
         public Builder xOneOriginRegion(@Nullable String xOneOriginRegion) {
+
             this.xOneOriginRegion = xOneOriginRegion;
             return this;
         }

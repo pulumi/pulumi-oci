@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetShapesFilter;
 import com.pulumi.oci.Psql.outputs.GetShapesShapeCollection;
 import java.lang.String;
@@ -73,11 +74,13 @@ public final class GetShapesResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetShapesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -86,12 +89,16 @@ public final class GetShapesResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder shapeCollections(List<GetShapesShapeCollection> shapeCollections) {
-            this.shapeCollections = Objects.requireNonNull(shapeCollections);
+            if (shapeCollections == null) {
+              throw new MissingRequiredPropertyException("GetShapesResult", "shapeCollections");
+            }
+            this.shapeCollections = shapeCollections;
             return this;
         }
         public Builder shapeCollections(GetShapesShapeCollection... shapeCollections) {

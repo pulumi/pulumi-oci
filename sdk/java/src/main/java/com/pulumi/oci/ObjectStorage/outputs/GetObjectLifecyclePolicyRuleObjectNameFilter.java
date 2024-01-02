@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -71,7 +72,10 @@ public final class GetObjectLifecyclePolicyRuleObjectNameFilter {
 
         @CustomType.Setter
         public Builder exclusionPatterns(List<String> exclusionPatterns) {
-            this.exclusionPatterns = Objects.requireNonNull(exclusionPatterns);
+            if (exclusionPatterns == null) {
+              throw new MissingRequiredPropertyException("GetObjectLifecyclePolicyRuleObjectNameFilter", "exclusionPatterns");
+            }
+            this.exclusionPatterns = exclusionPatterns;
             return this;
         }
         public Builder exclusionPatterns(String... exclusionPatterns) {
@@ -79,7 +83,10 @@ public final class GetObjectLifecyclePolicyRuleObjectNameFilter {
         }
         @CustomType.Setter
         public Builder inclusionPatterns(List<String> inclusionPatterns) {
-            this.inclusionPatterns = Objects.requireNonNull(inclusionPatterns);
+            if (inclusionPatterns == null) {
+              throw new MissingRequiredPropertyException("GetObjectLifecyclePolicyRuleObjectNameFilter", "inclusionPatterns");
+            }
+            this.inclusionPatterns = inclusionPatterns;
             return this;
         }
         public Builder inclusionPatterns(String... inclusionPatterns) {
@@ -87,7 +94,10 @@ public final class GetObjectLifecyclePolicyRuleObjectNameFilter {
         }
         @CustomType.Setter
         public Builder inclusionPrefixes(List<String> inclusionPrefixes) {
-            this.inclusionPrefixes = Objects.requireNonNull(inclusionPrefixes);
+            if (inclusionPrefixes == null) {
+              throw new MissingRequiredPropertyException("GetObjectLifecyclePolicyRuleObjectNameFilter", "inclusionPrefixes");
+            }
+            this.inclusionPrefixes = inclusionPrefixes;
             return this;
         }
         public Builder inclusionPrefixes(String... inclusionPrefixes) {

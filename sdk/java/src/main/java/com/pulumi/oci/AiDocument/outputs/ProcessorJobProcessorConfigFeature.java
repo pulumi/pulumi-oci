@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiDocument.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -102,26 +103,33 @@ public final class ProcessorJobProcessorConfigFeature {
 
         @CustomType.Setter
         public Builder featureType(String featureType) {
-            this.featureType = Objects.requireNonNull(featureType);
+            if (featureType == null) {
+              throw new MissingRequiredPropertyException("ProcessorJobProcessorConfigFeature", "featureType");
+            }
+            this.featureType = featureType;
             return this;
         }
         @CustomType.Setter
         public Builder generateSearchablePdf(@Nullable Boolean generateSearchablePdf) {
+
             this.generateSearchablePdf = generateSearchablePdf;
             return this;
         }
         @CustomType.Setter
         public Builder maxResults(@Nullable Integer maxResults) {
+
             this.maxResults = maxResults;
             return this;
         }
         @CustomType.Setter
         public Builder modelId(@Nullable String modelId) {
+
             this.modelId = modelId;
             return this;
         }
         @CustomType.Setter
         public Builder tenancyId(@Nullable String tenancyId) {
+
             this.tenancyId = tenancyId;
             return this;
         }

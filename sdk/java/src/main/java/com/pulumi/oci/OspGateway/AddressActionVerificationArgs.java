@@ -5,6 +5,7 @@ package com.pulumi.oci.OspGateway;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -1087,8 +1088,12 @@ public final class AddressActionVerificationArgs extends com.pulumi.resources.Re
         }
 
         public AddressActionVerificationArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.ospHomeRegion = Objects.requireNonNull($.ospHomeRegion, "expected parameter 'ospHomeRegion' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AddressActionVerificationArgs", "compartmentId");
+            }
+            if ($.ospHomeRegion == null) {
+                throw new MissingRequiredPropertyException("AddressActionVerificationArgs", "ospHomeRegion");
+            }
             return $;
         }
     }

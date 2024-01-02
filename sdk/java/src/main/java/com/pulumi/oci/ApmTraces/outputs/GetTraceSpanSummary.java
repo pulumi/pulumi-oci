@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmTraces.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmTraces.outputs.GetTraceSpanSummaryServiceSummary;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -256,37 +257,58 @@ public final class GetTraceSpanSummary {
 
         @CustomType.Setter
         public Builder errorSpanCount(Integer errorSpanCount) {
-            this.errorSpanCount = Objects.requireNonNull(errorSpanCount);
+            if (errorSpanCount == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanSummary", "errorSpanCount");
+            }
+            this.errorSpanCount = errorSpanCount;
             return this;
         }
         @CustomType.Setter
         public Builder isFault(Boolean isFault) {
-            this.isFault = Objects.requireNonNull(isFault);
+            if (isFault == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanSummary", "isFault");
+            }
+            this.isFault = isFault;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanSummary", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder rootSpanDurationInMs(Integer rootSpanDurationInMs) {
-            this.rootSpanDurationInMs = Objects.requireNonNull(rootSpanDurationInMs);
+            if (rootSpanDurationInMs == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanSummary", "rootSpanDurationInMs");
+            }
+            this.rootSpanDurationInMs = rootSpanDurationInMs;
             return this;
         }
         @CustomType.Setter
         public Builder rootSpanOperationName(String rootSpanOperationName) {
-            this.rootSpanOperationName = Objects.requireNonNull(rootSpanOperationName);
+            if (rootSpanOperationName == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanSummary", "rootSpanOperationName");
+            }
+            this.rootSpanOperationName = rootSpanOperationName;
             return this;
         }
         @CustomType.Setter
         public Builder rootSpanServiceName(String rootSpanServiceName) {
-            this.rootSpanServiceName = Objects.requireNonNull(rootSpanServiceName);
+            if (rootSpanServiceName == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanSummary", "rootSpanServiceName");
+            }
+            this.rootSpanServiceName = rootSpanServiceName;
             return this;
         }
         @CustomType.Setter
         public Builder serviceSummaries(List<GetTraceSpanSummaryServiceSummary> serviceSummaries) {
-            this.serviceSummaries = Objects.requireNonNull(serviceSummaries);
+            if (serviceSummaries == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanSummary", "serviceSummaries");
+            }
+            this.serviceSummaries = serviceSummaries;
             return this;
         }
         public Builder serviceSummaries(GetTraceSpanSummaryServiceSummary... serviceSummaries) {
@@ -294,47 +316,74 @@ public final class GetTraceSpanSummary {
         }
         @CustomType.Setter
         public Builder spanCount(Integer spanCount) {
-            this.spanCount = Objects.requireNonNull(spanCount);
+            if (spanCount == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanSummary", "spanCount");
+            }
+            this.spanCount = spanCount;
             return this;
         }
         @CustomType.Setter
         public Builder timeEarliestSpanStarted(String timeEarliestSpanStarted) {
-            this.timeEarliestSpanStarted = Objects.requireNonNull(timeEarliestSpanStarted);
+            if (timeEarliestSpanStarted == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanSummary", "timeEarliestSpanStarted");
+            }
+            this.timeEarliestSpanStarted = timeEarliestSpanStarted;
             return this;
         }
         @CustomType.Setter
         public Builder timeLatestSpanEnded(String timeLatestSpanEnded) {
-            this.timeLatestSpanEnded = Objects.requireNonNull(timeLatestSpanEnded);
+            if (timeLatestSpanEnded == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanSummary", "timeLatestSpanEnded");
+            }
+            this.timeLatestSpanEnded = timeLatestSpanEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeRootSpanEnded(String timeRootSpanEnded) {
-            this.timeRootSpanEnded = Objects.requireNonNull(timeRootSpanEnded);
+            if (timeRootSpanEnded == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanSummary", "timeRootSpanEnded");
+            }
+            this.timeRootSpanEnded = timeRootSpanEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeRootSpanStarted(String timeRootSpanStarted) {
-            this.timeRootSpanStarted = Objects.requireNonNull(timeRootSpanStarted);
+            if (timeRootSpanStarted == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanSummary", "timeRootSpanStarted");
+            }
+            this.timeRootSpanStarted = timeRootSpanStarted;
             return this;
         }
         @CustomType.Setter
         public Builder traceDurationInMs(Integer traceDurationInMs) {
-            this.traceDurationInMs = Objects.requireNonNull(traceDurationInMs);
+            if (traceDurationInMs == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanSummary", "traceDurationInMs");
+            }
+            this.traceDurationInMs = traceDurationInMs;
             return this;
         }
         @CustomType.Setter
         public Builder traceErrorCode(String traceErrorCode) {
-            this.traceErrorCode = Objects.requireNonNull(traceErrorCode);
+            if (traceErrorCode == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanSummary", "traceErrorCode");
+            }
+            this.traceErrorCode = traceErrorCode;
             return this;
         }
         @CustomType.Setter
         public Builder traceErrorType(String traceErrorType) {
-            this.traceErrorType = Objects.requireNonNull(traceErrorType);
+            if (traceErrorType == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanSummary", "traceErrorType");
+            }
+            this.traceErrorType = traceErrorType;
             return this;
         }
         @CustomType.Setter
         public Builder traceStatus(String traceStatus) {
-            this.traceStatus = Objects.requireNonNull(traceStatus);
+            if (traceStatus == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanSummary", "traceStatus");
+            }
+            this.traceStatus = traceStatus;
             return this;
         }
         public GetTraceSpanSummary build() {

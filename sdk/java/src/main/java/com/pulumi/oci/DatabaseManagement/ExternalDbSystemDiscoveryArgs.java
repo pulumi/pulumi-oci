@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemDiscoveryPatchOperationArgs;
 import java.lang.String;
 import java.util.List;
@@ -199,8 +200,12 @@ public final class ExternalDbSystemDiscoveryArgs extends com.pulumi.resources.Re
         }
 
         public ExternalDbSystemDiscoveryArgs build() {
-            $.agentId = Objects.requireNonNull($.agentId, "expected parameter 'agentId' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.agentId == null) {
+                throw new MissingRequiredPropertyException("ExternalDbSystemDiscoveryArgs", "agentId");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ExternalDbSystemDiscoveryArgs", "compartmentId");
+            }
             return $;
         }
     }

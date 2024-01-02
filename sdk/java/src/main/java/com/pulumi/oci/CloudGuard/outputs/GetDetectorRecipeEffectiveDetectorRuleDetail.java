@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetDetectorRecipeEffectiveDetectorRuleDetailConfiguration;
 import java.lang.Boolean;
 import java.lang.String;
@@ -115,12 +116,18 @@ public final class GetDetectorRecipeEffectiveDetectorRuleDetail {
 
         @CustomType.Setter
         public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+            if (condition == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeEffectiveDetectorRuleDetail", "condition");
+            }
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
         public Builder configurations(List<GetDetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations) {
-            this.configurations = Objects.requireNonNull(configurations);
+            if (configurations == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeEffectiveDetectorRuleDetail", "configurations");
+            }
+            this.configurations = configurations;
             return this;
         }
         public Builder configurations(GetDetectorRecipeEffectiveDetectorRuleDetailConfiguration... configurations) {
@@ -128,17 +135,26 @@ public final class GetDetectorRecipeEffectiveDetectorRuleDetail {
         }
         @CustomType.Setter
         public Builder isConfigurationAllowed(Boolean isConfigurationAllowed) {
-            this.isConfigurationAllowed = Objects.requireNonNull(isConfigurationAllowed);
+            if (isConfigurationAllowed == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeEffectiveDetectorRuleDetail", "isConfigurationAllowed");
+            }
+            this.isConfigurationAllowed = isConfigurationAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeEffectiveDetectorRuleDetail", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder labels(List<String> labels) {
-            this.labels = Objects.requireNonNull(labels);
+            if (labels == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeEffectiveDetectorRuleDetail", "labels");
+            }
+            this.labels = labels;
             return this;
         }
         public Builder labels(String... labels) {
@@ -146,7 +162,10 @@ public final class GetDetectorRecipeEffectiveDetectorRuleDetail {
         }
         @CustomType.Setter
         public Builder riskLevel(String riskLevel) {
-            this.riskLevel = Objects.requireNonNull(riskLevel);
+            if (riskLevel == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeEffectiveDetectorRuleDetail", "riskLevel");
+            }
+            this.riskLevel = riskLevel;
             return this;
         }
         public GetDetectorRecipeEffectiveDetectorRuleDetail build() {

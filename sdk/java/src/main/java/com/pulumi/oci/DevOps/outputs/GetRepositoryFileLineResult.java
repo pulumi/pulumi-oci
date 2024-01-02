@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryFileLineLine;
 import java.lang.Integer;
 import java.lang.String;
@@ -85,17 +86,26 @@ public final class GetRepositoryFileLineResult {
 
         @CustomType.Setter
         public Builder filePath(String filePath) {
-            this.filePath = Objects.requireNonNull(filePath);
+            if (filePath == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryFileLineResult", "filePath");
+            }
+            this.filePath = filePath;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryFileLineResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lines(List<GetRepositoryFileLineLine> lines) {
-            this.lines = Objects.requireNonNull(lines);
+            if (lines == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryFileLineResult", "lines");
+            }
+            this.lines = lines;
             return this;
         }
         public Builder lines(GetRepositoryFileLineLine... lines) {
@@ -103,16 +113,23 @@ public final class GetRepositoryFileLineResult {
         }
         @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+            if (repositoryId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryFileLineResult", "repositoryId");
+            }
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder revision(String revision) {
-            this.revision = Objects.requireNonNull(revision);
+            if (revision == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryFileLineResult", "revision");
+            }
+            this.revision = revision;
             return this;
         }
         @CustomType.Setter
         public Builder startLineNumber(@Nullable Integer startLineNumber) {
+
             this.startLineNumber = startLineNumber;
             return this;
         }

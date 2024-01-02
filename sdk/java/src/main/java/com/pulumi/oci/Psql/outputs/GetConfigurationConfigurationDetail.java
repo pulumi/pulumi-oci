@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetConfigurationConfigurationDetailItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetConfigurationConfigurationDetail {
 
         @CustomType.Setter
         public Builder items(List<GetConfigurationConfigurationDetailItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetConfigurationConfigurationDetail", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetConfigurationConfigurationDetailItem... items) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ComputeCloud.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetAtCustomerCccUpgradeScheduleEvent {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccUpgradeScheduleEvent", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccUpgradeScheduleEvent", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder scheduleEventDuration(String scheduleEventDuration) {
-            this.scheduleEventDuration = Objects.requireNonNull(scheduleEventDuration);
+            if (scheduleEventDuration == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccUpgradeScheduleEvent", "scheduleEventDuration");
+            }
+            this.scheduleEventDuration = scheduleEventDuration;
             return this;
         }
         @CustomType.Setter
         public Builder scheduleEventRecurrences(String scheduleEventRecurrences) {
-            this.scheduleEventRecurrences = Objects.requireNonNull(scheduleEventRecurrences);
+            if (scheduleEventRecurrences == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccUpgradeScheduleEvent", "scheduleEventRecurrences");
+            }
+            this.scheduleEventRecurrences = scheduleEventRecurrences;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+            if (timeStart == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccUpgradeScheduleEvent", "timeStart");
+            }
+            this.timeStart = timeStart;
             return this;
         }
         public GetAtCustomerCccUpgradeScheduleEvent build() {

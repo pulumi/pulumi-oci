@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetail;
 import java.lang.Integer;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
 
         @CustomType.Setter
         public Builder createVnicDetails(List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetail> createVnicDetails) {
-            this.createVnicDetails = Objects.requireNonNull(createVnicDetails);
+            if (createVnicDetails == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnic", "createVnicDetails");
+            }
+            this.createVnicDetails = createVnicDetails;
             return this;
         }
         public Builder createVnicDetails(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetail... createVnicDetails) {
@@ -81,12 +85,18 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnic", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder nicIndex(Integer nicIndex) {
-            this.nicIndex = Objects.requireNonNull(nicIndex);
+            if (nicIndex == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnic", "nicIndex");
+            }
+            this.nicIndex = nicIndex;
             return this;
         }
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnic build() {

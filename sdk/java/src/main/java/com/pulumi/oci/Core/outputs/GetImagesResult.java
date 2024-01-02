@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetImagesFilter;
 import com.pulumi.oci.Core.outputs.GetImagesImage;
 import java.lang.String;
@@ -155,16 +156,21 @@ public final class GetImagesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetImagesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetImagesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -173,12 +179,18 @@ public final class GetImagesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetImagesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder images(List<GetImagesImage> images) {
-            this.images = Objects.requireNonNull(images);
+            if (images == null) {
+              throw new MissingRequiredPropertyException("GetImagesResult", "images");
+            }
+            this.images = images;
             return this;
         }
         public Builder images(GetImagesImage... images) {
@@ -186,31 +198,37 @@ public final class GetImagesResult {
         }
         @CustomType.Setter
         public Builder operatingSystem(@Nullable String operatingSystem) {
+
             this.operatingSystem = operatingSystem;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystemVersion(@Nullable String operatingSystemVersion) {
+
             this.operatingSystemVersion = operatingSystemVersion;
             return this;
         }
         @CustomType.Setter
         public Builder shape(@Nullable String shape) {
+
             this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder sortBy(@Nullable String sortBy) {
+
             this.sortBy = sortBy;
             return this;
         }
         @CustomType.Setter
         public Builder sortOrder(@Nullable String sortOrder) {
+
             this.sortOrder = sortOrder;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

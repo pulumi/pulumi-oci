@@ -4,6 +4,7 @@
 package com.pulumi.oci.Apm.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Apm.outputs.GetDataKeysDataKey;
 import com.pulumi.oci.Apm.outputs.GetDataKeysFilter;
 import java.lang.String;
@@ -79,17 +80,24 @@ public final class GetDataKeysResult {
 
         @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
-            this.apmDomainId = Objects.requireNonNull(apmDomainId);
+            if (apmDomainId == null) {
+              throw new MissingRequiredPropertyException("GetDataKeysResult", "apmDomainId");
+            }
+            this.apmDomainId = apmDomainId;
             return this;
         }
         @CustomType.Setter
         public Builder dataKeyType(@Nullable String dataKeyType) {
+
             this.dataKeyType = dataKeyType;
             return this;
         }
         @CustomType.Setter
         public Builder dataKeys(List<GetDataKeysDataKey> dataKeys) {
-            this.dataKeys = Objects.requireNonNull(dataKeys);
+            if (dataKeys == null) {
+              throw new MissingRequiredPropertyException("GetDataKeysResult", "dataKeys");
+            }
+            this.dataKeys = dataKeys;
             return this;
         }
         public Builder dataKeys(GetDataKeysDataKey... dataKeys) {
@@ -97,6 +105,7 @@ public final class GetDataKeysResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDataKeysFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -105,7 +114,10 @@ public final class GetDataKeysResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDataKeysResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetDataKeysResult build() {

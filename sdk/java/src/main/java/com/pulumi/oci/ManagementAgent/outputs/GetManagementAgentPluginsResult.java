@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentPluginsFilter;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentPluginsManagementAgentPlugin;
 import java.lang.String;
@@ -113,21 +114,27 @@ public final class GetManagementAgentPluginsResult {
 
         @CustomType.Setter
         public Builder agentId(@Nullable String agentId) {
+
             this.agentId = agentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentPluginsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagementAgentPluginsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -136,12 +143,18 @@ public final class GetManagementAgentPluginsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentPluginsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managementAgentPlugins(List<GetManagementAgentPluginsManagementAgentPlugin> managementAgentPlugins) {
-            this.managementAgentPlugins = Objects.requireNonNull(managementAgentPlugins);
+            if (managementAgentPlugins == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentPluginsResult", "managementAgentPlugins");
+            }
+            this.managementAgentPlugins = managementAgentPlugins;
             return this;
         }
         public Builder managementAgentPlugins(GetManagementAgentPluginsManagementAgentPlugin... managementAgentPlugins) {
@@ -149,6 +162,7 @@ public final class GetManagementAgentPluginsResult {
         }
         @CustomType.Setter
         public Builder platformTypes(@Nullable List<String> platformTypes) {
+
             this.platformTypes = platformTypes;
             return this;
         }
@@ -157,6 +171,7 @@ public final class GetManagementAgentPluginsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

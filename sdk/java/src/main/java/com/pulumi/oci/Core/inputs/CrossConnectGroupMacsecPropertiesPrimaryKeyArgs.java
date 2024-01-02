@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -203,8 +204,12 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
         }
 
         public CrossConnectGroupMacsecPropertiesPrimaryKeyArgs build() {
-            $.connectivityAssociationKeySecretId = Objects.requireNonNull($.connectivityAssociationKeySecretId, "expected parameter 'connectivityAssociationKeySecretId' to be non-null");
-            $.connectivityAssociationNameSecretId = Objects.requireNonNull($.connectivityAssociationNameSecretId, "expected parameter 'connectivityAssociationNameSecretId' to be non-null");
+            if ($.connectivityAssociationKeySecretId == null) {
+                throw new MissingRequiredPropertyException("CrossConnectGroupMacsecPropertiesPrimaryKeyArgs", "connectivityAssociationKeySecretId");
+            }
+            if ($.connectivityAssociationNameSecretId == null) {
+                throw new MissingRequiredPropertyException("CrossConnectGroupMacsecPropertiesPrimaryKeyArgs", "connectivityAssociationNameSecretId");
+            }
             return $;
         }
     }

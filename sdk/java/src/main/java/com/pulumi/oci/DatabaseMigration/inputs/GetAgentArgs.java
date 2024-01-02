@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseMigration.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetAgentArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetAgentArgs build() {
-            $.agentId = Objects.requireNonNull($.agentId, "expected parameter 'agentId' to be non-null");
+            if ($.agentId == null) {
+                throw new MissingRequiredPropertyException("GetAgentArgs", "agentId");
+            }
             return $;
         }
     }

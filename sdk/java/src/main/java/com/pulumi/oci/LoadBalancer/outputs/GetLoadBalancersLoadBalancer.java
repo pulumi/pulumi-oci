@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.GetLoadBalancersLoadBalancerIpAddressDetail;
 import com.pulumi.oci.LoadBalancer.outputs.GetLoadBalancersLoadBalancerReservedIp;
 import com.pulumi.oci.LoadBalancer.outputs.GetLoadBalancersLoadBalancerShapeDetail;
@@ -265,32 +266,50 @@ public final class GetLoadBalancersLoadBalancer {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddressDetails(List<GetLoadBalancersLoadBalancerIpAddressDetail> ipAddressDetails) {
-            this.ipAddressDetails = Objects.requireNonNull(ipAddressDetails);
+            if (ipAddressDetails == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "ipAddressDetails");
+            }
+            this.ipAddressDetails = ipAddressDetails;
             return this;
         }
         public Builder ipAddressDetails(GetLoadBalancersLoadBalancerIpAddressDetail... ipAddressDetails) {
@@ -298,7 +317,10 @@ public final class GetLoadBalancersLoadBalancer {
         }
         @CustomType.Setter
         public Builder ipAddresses(List<String> ipAddresses) {
-            this.ipAddresses = Objects.requireNonNull(ipAddresses);
+            if (ipAddresses == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "ipAddresses");
+            }
+            this.ipAddresses = ipAddresses;
             return this;
         }
         public Builder ipAddresses(String... ipAddresses) {
@@ -306,17 +328,26 @@ public final class GetLoadBalancersLoadBalancer {
         }
         @CustomType.Setter
         public Builder ipMode(String ipMode) {
-            this.ipMode = Objects.requireNonNull(ipMode);
+            if (ipMode == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "ipMode");
+            }
+            this.ipMode = ipMode;
             return this;
         }
         @CustomType.Setter
         public Builder isPrivate(Boolean isPrivate) {
-            this.isPrivate = Objects.requireNonNull(isPrivate);
+            if (isPrivate == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "isPrivate");
+            }
+            this.isPrivate = isPrivate;
             return this;
         }
         @CustomType.Setter
         public Builder networkSecurityGroupIds(List<String> networkSecurityGroupIds) {
-            this.networkSecurityGroupIds = Objects.requireNonNull(networkSecurityGroupIds);
+            if (networkSecurityGroupIds == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "networkSecurityGroupIds");
+            }
+            this.networkSecurityGroupIds = networkSecurityGroupIds;
             return this;
         }
         public Builder networkSecurityGroupIds(String... networkSecurityGroupIds) {
@@ -324,7 +355,10 @@ public final class GetLoadBalancersLoadBalancer {
         }
         @CustomType.Setter
         public Builder reservedIps(List<GetLoadBalancersLoadBalancerReservedIp> reservedIps) {
-            this.reservedIps = Objects.requireNonNull(reservedIps);
+            if (reservedIps == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "reservedIps");
+            }
+            this.reservedIps = reservedIps;
             return this;
         }
         public Builder reservedIps(GetLoadBalancersLoadBalancerReservedIp... reservedIps) {
@@ -332,12 +366,18 @@ public final class GetLoadBalancersLoadBalancer {
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder shapeDetails(List<GetLoadBalancersLoadBalancerShapeDetail> shapeDetails) {
-            this.shapeDetails = Objects.requireNonNull(shapeDetails);
+            if (shapeDetails == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "shapeDetails");
+            }
+            this.shapeDetails = shapeDetails;
             return this;
         }
         public Builder shapeDetails(GetLoadBalancersLoadBalancerShapeDetail... shapeDetails) {
@@ -345,12 +385,18 @@ public final class GetLoadBalancersLoadBalancer {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetIds(List<String> subnetIds) {
-            this.subnetIds = Objects.requireNonNull(subnetIds);
+            if (subnetIds == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "subnetIds");
+            }
+            this.subnetIds = subnetIds;
             return this;
         }
         public Builder subnetIds(String... subnetIds) {
@@ -358,12 +404,18 @@ public final class GetLoadBalancersLoadBalancer {
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetLoadBalancersLoadBalancer build() {

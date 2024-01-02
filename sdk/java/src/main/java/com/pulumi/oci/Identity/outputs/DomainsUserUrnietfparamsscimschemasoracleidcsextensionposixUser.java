@@ -191,26 +191,31 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUs
 
         @CustomType.Setter
         public Builder gecos(@Nullable String gecos) {
+
             this.gecos = gecos;
             return this;
         }
         @CustomType.Setter
         public Builder gidNumber(@Nullable Integer gidNumber) {
+
             this.gidNumber = gidNumber;
             return this;
         }
         @CustomType.Setter
         public Builder homeDirectory(@Nullable String homeDirectory) {
+
             this.homeDirectory = homeDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder loginShell(@Nullable String loginShell) {
+
             this.loginShell = loginShell;
             return this;
         }
         @CustomType.Setter
         public Builder uidNumber(@Nullable Integer uidNumber) {
+
             this.uidNumber = uidNumber;
             return this;
         }

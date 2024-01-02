@@ -218,66 +218,79 @@ public final class InstanceShapeConfig {
 
         @CustomType.Setter
         public Builder baselineOcpuUtilization(@Nullable String baselineOcpuUtilization) {
+
             this.baselineOcpuUtilization = baselineOcpuUtilization;
             return this;
         }
         @CustomType.Setter
         public Builder gpuDescription(@Nullable String gpuDescription) {
+
             this.gpuDescription = gpuDescription;
             return this;
         }
         @CustomType.Setter
         public Builder gpus(@Nullable Integer gpus) {
+
             this.gpus = gpus;
             return this;
         }
         @CustomType.Setter
         public Builder localDiskDescription(@Nullable String localDiskDescription) {
+
             this.localDiskDescription = localDiskDescription;
             return this;
         }
         @CustomType.Setter
         public Builder localDisks(@Nullable Integer localDisks) {
+
             this.localDisks = localDisks;
             return this;
         }
         @CustomType.Setter
         public Builder localDisksTotalSizeInGbs(@Nullable Double localDisksTotalSizeInGbs) {
+
             this.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder maxVnicAttachments(@Nullable Integer maxVnicAttachments) {
+
             this.maxVnicAttachments = maxVnicAttachments;
             return this;
         }
         @CustomType.Setter
         public Builder memoryInGbs(@Nullable Double memoryInGbs) {
+
             this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder networkingBandwidthInGbps(@Nullable Double networkingBandwidthInGbps) {
+
             this.networkingBandwidthInGbps = networkingBandwidthInGbps;
             return this;
         }
         @CustomType.Setter
         public Builder nvmes(@Nullable Integer nvmes) {
+
             this.nvmes = nvmes;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(@Nullable Double ocpus) {
+
             this.ocpus = ocpus;
             return this;
         }
         @CustomType.Setter
         public Builder processorDescription(@Nullable String processorDescription) {
+
             this.processorDescription = processorDescription;
             return this;
         }
         @CustomType.Setter
         public Builder vcpus(@Nullable Integer vcpus) {
+
             this.vcpus = vcpus;
             return this;
         }

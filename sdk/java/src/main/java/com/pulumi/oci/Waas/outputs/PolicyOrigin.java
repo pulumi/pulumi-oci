@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.PolicyOriginCustomHeader;
 import java.lang.Integer;
 import java.lang.String;
@@ -95,6 +96,7 @@ public final class PolicyOrigin {
 
         @CustomType.Setter
         public Builder customHeaders(@Nullable List<PolicyOriginCustomHeader> customHeaders) {
+
             this.customHeaders = customHeaders;
             return this;
         }
@@ -103,22 +105,30 @@ public final class PolicyOrigin {
         }
         @CustomType.Setter
         public Builder httpPort(@Nullable Integer httpPort) {
+
             this.httpPort = httpPort;
             return this;
         }
         @CustomType.Setter
         public Builder httpsPort(@Nullable Integer httpsPort) {
+
             this.httpsPort = httpsPort;
             return this;
         }
         @CustomType.Setter
         public Builder label(String label) {
-            this.label = Objects.requireNonNull(label);
+            if (label == null) {
+              throw new MissingRequiredPropertyException("PolicyOrigin", "label");
+            }
+            this.label = label;
             return this;
         }
         @CustomType.Setter
         public Builder uri(String uri) {
-            this.uri = Objects.requireNonNull(uri);
+            if (uri == null) {
+              throw new MissingRequiredPropertyException("PolicyOrigin", "uri");
+            }
+            this.uri = uri;
             return this;
         }
         public PolicyOrigin build() {

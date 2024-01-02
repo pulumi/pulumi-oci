@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetPluggableDatabaseConnectionString;
 import com.pulumi.oci.Database.outputs.GetPluggableDatabasePdbCreationTypeDetail;
 import com.pulumi.oci.Database.outputs.GetPluggableDatabasePdbNodeLevelDetail;
@@ -308,12 +309,18 @@ public final class GetPluggableDatabaseResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionStrings(List<GetPluggableDatabaseConnectionString> connectionStrings) {
-            this.connectionStrings = Objects.requireNonNull(connectionStrings);
+            if (connectionStrings == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "connectionStrings");
+            }
+            this.connectionStrings = connectionStrings;
             return this;
         }
         public Builder connectionStrings(GetPluggableDatabaseConnectionString... connectionStrings) {
@@ -321,57 +328,90 @@ public final class GetPluggableDatabaseResult {
         }
         @CustomType.Setter
         public Builder containerDatabaseAdminPassword(String containerDatabaseAdminPassword) {
-            this.containerDatabaseAdminPassword = Objects.requireNonNull(containerDatabaseAdminPassword);
+            if (containerDatabaseAdminPassword == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "containerDatabaseAdminPassword");
+            }
+            this.containerDatabaseAdminPassword = containerDatabaseAdminPassword;
             return this;
         }
         @CustomType.Setter
         public Builder containerDatabaseId(String containerDatabaseId) {
-            this.containerDatabaseId = Objects.requireNonNull(containerDatabaseId);
+            if (containerDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "containerDatabaseId");
+            }
+            this.containerDatabaseId = containerDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder convertToRegularTrigger(Integer convertToRegularTrigger) {
-            this.convertToRegularTrigger = Objects.requireNonNull(convertToRegularTrigger);
+            if (convertToRegularTrigger == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "convertToRegularTrigger");
+            }
+            this.convertToRegularTrigger = convertToRegularTrigger;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isRestricted(Boolean isRestricted) {
-            this.isRestricted = Objects.requireNonNull(isRestricted);
+            if (isRestricted == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "isRestricted");
+            }
+            this.isRestricted = isRestricted;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder openMode(String openMode) {
-            this.openMode = Objects.requireNonNull(openMode);
+            if (openMode == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "openMode");
+            }
+            this.openMode = openMode;
             return this;
         }
         @CustomType.Setter
         public Builder pdbAdminPassword(String pdbAdminPassword) {
-            this.pdbAdminPassword = Objects.requireNonNull(pdbAdminPassword);
+            if (pdbAdminPassword == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "pdbAdminPassword");
+            }
+            this.pdbAdminPassword = pdbAdminPassword;
             return this;
         }
         @CustomType.Setter
         public Builder pdbCreationTypeDetails(List<GetPluggableDatabasePdbCreationTypeDetail> pdbCreationTypeDetails) {
-            this.pdbCreationTypeDetails = Objects.requireNonNull(pdbCreationTypeDetails);
+            if (pdbCreationTypeDetails == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "pdbCreationTypeDetails");
+            }
+            this.pdbCreationTypeDetails = pdbCreationTypeDetails;
             return this;
         }
         public Builder pdbCreationTypeDetails(GetPluggableDatabasePdbCreationTypeDetail... pdbCreationTypeDetails) {
@@ -379,12 +419,18 @@ public final class GetPluggableDatabaseResult {
         }
         @CustomType.Setter
         public Builder pdbName(String pdbName) {
-            this.pdbName = Objects.requireNonNull(pdbName);
+            if (pdbName == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "pdbName");
+            }
+            this.pdbName = pdbName;
             return this;
         }
         @CustomType.Setter
         public Builder pdbNodeLevelDetails(List<GetPluggableDatabasePdbNodeLevelDetail> pdbNodeLevelDetails) {
-            this.pdbNodeLevelDetails = Objects.requireNonNull(pdbNodeLevelDetails);
+            if (pdbNodeLevelDetails == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "pdbNodeLevelDetails");
+            }
+            this.pdbNodeLevelDetails = pdbNodeLevelDetails;
             return this;
         }
         public Builder pdbNodeLevelDetails(GetPluggableDatabasePdbNodeLevelDetail... pdbNodeLevelDetails) {
@@ -392,12 +438,18 @@ public final class GetPluggableDatabaseResult {
         }
         @CustomType.Setter
         public Builder pluggableDatabaseId(String pluggableDatabaseId) {
-            this.pluggableDatabaseId = Objects.requireNonNull(pluggableDatabaseId);
+            if (pluggableDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "pluggableDatabaseId");
+            }
+            this.pluggableDatabaseId = pluggableDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder pluggableDatabaseManagementConfigs(List<GetPluggableDatabasePluggableDatabaseManagementConfig> pluggableDatabaseManagementConfigs) {
-            this.pluggableDatabaseManagementConfigs = Objects.requireNonNull(pluggableDatabaseManagementConfigs);
+            if (pluggableDatabaseManagementConfigs == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "pluggableDatabaseManagementConfigs");
+            }
+            this.pluggableDatabaseManagementConfigs = pluggableDatabaseManagementConfigs;
             return this;
         }
         public Builder pluggableDatabaseManagementConfigs(GetPluggableDatabasePluggableDatabaseManagementConfig... pluggableDatabaseManagementConfigs) {
@@ -405,12 +457,18 @@ public final class GetPluggableDatabaseResult {
         }
         @CustomType.Setter
         public Builder refreshTrigger(Integer refreshTrigger) {
-            this.refreshTrigger = Objects.requireNonNull(refreshTrigger);
+            if (refreshTrigger == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "refreshTrigger");
+            }
+            this.refreshTrigger = refreshTrigger;
             return this;
         }
         @CustomType.Setter
         public Builder refreshableCloneConfigs(List<GetPluggableDatabaseRefreshableCloneConfig> refreshableCloneConfigs) {
-            this.refreshableCloneConfigs = Objects.requireNonNull(refreshableCloneConfigs);
+            if (refreshableCloneConfigs == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "refreshableCloneConfigs");
+            }
+            this.refreshableCloneConfigs = refreshableCloneConfigs;
             return this;
         }
         public Builder refreshableCloneConfigs(GetPluggableDatabaseRefreshableCloneConfig... refreshableCloneConfigs) {
@@ -418,32 +476,50 @@ public final class GetPluggableDatabaseResult {
         }
         @CustomType.Setter
         public Builder rotateKeyTrigger(Integer rotateKeyTrigger) {
-            this.rotateKeyTrigger = Objects.requireNonNull(rotateKeyTrigger);
+            if (rotateKeyTrigger == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "rotateKeyTrigger");
+            }
+            this.rotateKeyTrigger = rotateKeyTrigger;
             return this;
         }
         @CustomType.Setter
         public Builder shouldCreatePdbBackup(Boolean shouldCreatePdbBackup) {
-            this.shouldCreatePdbBackup = Objects.requireNonNull(shouldCreatePdbBackup);
+            if (shouldCreatePdbBackup == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "shouldCreatePdbBackup");
+            }
+            this.shouldCreatePdbBackup = shouldCreatePdbBackup;
             return this;
         }
         @CustomType.Setter
         public Builder shouldPdbAdminAccountBeLocked(Boolean shouldPdbAdminAccountBeLocked) {
-            this.shouldPdbAdminAccountBeLocked = Objects.requireNonNull(shouldPdbAdminAccountBeLocked);
+            if (shouldPdbAdminAccountBeLocked == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "shouldPdbAdminAccountBeLocked");
+            }
+            this.shouldPdbAdminAccountBeLocked = shouldPdbAdminAccountBeLocked;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder tdeWalletPassword(String tdeWalletPassword) {
-            this.tdeWalletPassword = Objects.requireNonNull(tdeWalletPassword);
+            if (tdeWalletPassword == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "tdeWalletPassword");
+            }
+            this.tdeWalletPassword = tdeWalletPassword;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabaseResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetPluggableDatabaseResult build() {

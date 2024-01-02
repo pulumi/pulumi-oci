@@ -5,6 +5,7 @@ package com.pulumi.oci.LoadBalancer.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -130,7 +131,9 @@ public final class ListenerConnectionConfigurationArgs extends com.pulumi.resour
         }
 
         public ListenerConnectionConfigurationArgs build() {
-            $.idleTimeoutInSeconds = Objects.requireNonNull($.idleTimeoutInSeconds, "expected parameter 'idleTimeoutInSeconds' to be non-null");
+            if ($.idleTimeoutInSeconds == null) {
+                throw new MissingRequiredPropertyException("ListenerConnectionConfigurationArgs", "idleTimeoutInSeconds");
+            }
             return $;
         }
     }

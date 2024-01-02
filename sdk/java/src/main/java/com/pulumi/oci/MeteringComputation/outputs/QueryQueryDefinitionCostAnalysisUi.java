@@ -59,11 +59,13 @@ public final class QueryQueryDefinitionCostAnalysisUi {
 
         @CustomType.Setter
         public Builder graph(@Nullable String graph) {
+
             this.graph = graph;
             return this;
         }
         @CustomType.Setter
         public Builder isCumulativeGraph(@Nullable Boolean isCumulativeGraph) {
+
             this.isCumulativeGraph = isCumulativeGraph;
             return this;
         }

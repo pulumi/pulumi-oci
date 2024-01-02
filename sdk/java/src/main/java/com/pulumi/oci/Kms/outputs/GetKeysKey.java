@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Kms.outputs.GetKeysKeyExternalKeyReference;
 import com.pulumi.oci.Kms.outputs.GetKeysKeyExternalKeyReferenceDetail;
 import com.pulumi.oci.Kms.outputs.GetKeysKeyKeyShape;
@@ -298,32 +299,50 @@ public final class GetKeysKey {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder currentKeyVersion(String currentKeyVersion) {
-            this.currentKeyVersion = Objects.requireNonNull(currentKeyVersion);
+            if (currentKeyVersion == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "currentKeyVersion");
+            }
+            this.currentKeyVersion = currentKeyVersion;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder desiredState(String desiredState) {
-            this.desiredState = Objects.requireNonNull(desiredState);
+            if (desiredState == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "desiredState");
+            }
+            this.desiredState = desiredState;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalKeyReferenceDetails(List<GetKeysKeyExternalKeyReferenceDetail> externalKeyReferenceDetails) {
-            this.externalKeyReferenceDetails = Objects.requireNonNull(externalKeyReferenceDetails);
+            if (externalKeyReferenceDetails == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "externalKeyReferenceDetails");
+            }
+            this.externalKeyReferenceDetails = externalKeyReferenceDetails;
             return this;
         }
         public Builder externalKeyReferenceDetails(GetKeysKeyExternalKeyReferenceDetail... externalKeyReferenceDetails) {
@@ -331,7 +350,10 @@ public final class GetKeysKey {
         }
         @CustomType.Setter
         public Builder externalKeyReferences(List<GetKeysKeyExternalKeyReference> externalKeyReferences) {
-            this.externalKeyReferences = Objects.requireNonNull(externalKeyReferences);
+            if (externalKeyReferences == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "externalKeyReferences");
+            }
+            this.externalKeyReferences = externalKeyReferences;
             return this;
         }
         public Builder externalKeyReferences(GetKeysKeyExternalKeyReference... externalKeyReferences) {
@@ -339,22 +361,34 @@ public final class GetKeysKey {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isPrimary(Boolean isPrimary) {
-            this.isPrimary = Objects.requireNonNull(isPrimary);
+            if (isPrimary == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "isPrimary");
+            }
+            this.isPrimary = isPrimary;
             return this;
         }
         @CustomType.Setter
         public Builder keyShapes(List<GetKeysKeyKeyShape> keyShapes) {
-            this.keyShapes = Objects.requireNonNull(keyShapes);
+            if (keyShapes == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "keyShapes");
+            }
+            this.keyShapes = keyShapes;
             return this;
         }
         public Builder keyShapes(GetKeysKeyKeyShape... keyShapes) {
@@ -362,17 +396,26 @@ public final class GetKeysKey {
         }
         @CustomType.Setter
         public Builder managementEndpoint(String managementEndpoint) {
-            this.managementEndpoint = Objects.requireNonNull(managementEndpoint);
+            if (managementEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "managementEndpoint");
+            }
+            this.managementEndpoint = managementEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder protectionMode(String protectionMode) {
-            this.protectionMode = Objects.requireNonNull(protectionMode);
+            if (protectionMode == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "protectionMode");
+            }
+            this.protectionMode = protectionMode;
             return this;
         }
         @CustomType.Setter
         public Builder replicaDetails(List<GetKeysKeyReplicaDetail> replicaDetails) {
-            this.replicaDetails = Objects.requireNonNull(replicaDetails);
+            if (replicaDetails == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "replicaDetails");
+            }
+            this.replicaDetails = replicaDetails;
             return this;
         }
         public Builder replicaDetails(GetKeysKeyReplicaDetail... replicaDetails) {
@@ -380,7 +423,10 @@ public final class GetKeysKey {
         }
         @CustomType.Setter
         public Builder restoreFromFiles(List<GetKeysKeyRestoreFromFile> restoreFromFiles) {
-            this.restoreFromFiles = Objects.requireNonNull(restoreFromFiles);
+            if (restoreFromFiles == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "restoreFromFiles");
+            }
+            this.restoreFromFiles = restoreFromFiles;
             return this;
         }
         public Builder restoreFromFiles(GetKeysKeyRestoreFromFile... restoreFromFiles) {
@@ -388,7 +434,10 @@ public final class GetKeysKey {
         }
         @CustomType.Setter
         public Builder restoreFromObjectStores(List<GetKeysKeyRestoreFromObjectStore> restoreFromObjectStores) {
-            this.restoreFromObjectStores = Objects.requireNonNull(restoreFromObjectStores);
+            if (restoreFromObjectStores == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "restoreFromObjectStores");
+            }
+            this.restoreFromObjectStores = restoreFromObjectStores;
             return this;
         }
         public Builder restoreFromObjectStores(GetKeysKeyRestoreFromObjectStore... restoreFromObjectStores) {
@@ -396,32 +445,50 @@ public final class GetKeysKey {
         }
         @CustomType.Setter
         public Builder restoreTrigger(Boolean restoreTrigger) {
-            this.restoreTrigger = Objects.requireNonNull(restoreTrigger);
+            if (restoreTrigger == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "restoreTrigger");
+            }
+            this.restoreTrigger = restoreTrigger;
             return this;
         }
         @CustomType.Setter
         public Builder restoredFromKeyId(String restoredFromKeyId) {
-            this.restoredFromKeyId = Objects.requireNonNull(restoredFromKeyId);
+            if (restoredFromKeyId == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "restoredFromKeyId");
+            }
+            this.restoredFromKeyId = restoredFromKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfDeletion(String timeOfDeletion) {
-            this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
+            if (timeOfDeletion == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "timeOfDeletion");
+            }
+            this.timeOfDeletion = timeOfDeletion;
             return this;
         }
         @CustomType.Setter
         public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+            if (vaultId == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "vaultId");
+            }
+            this.vaultId = vaultId;
             return this;
         }
         public GetKeysKey build() {

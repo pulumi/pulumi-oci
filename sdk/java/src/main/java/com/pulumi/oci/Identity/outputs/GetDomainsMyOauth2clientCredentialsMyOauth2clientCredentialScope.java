@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialSc
 
         @CustomType.Setter
         public Builder audience(String audience) {
-            this.audience = Objects.requireNonNull(audience);
+            if (audience == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialScope", "audience");
+            }
+            this.audience = audience;
             return this;
         }
         @CustomType.Setter
         public Builder scope(String scope) {
-            this.scope = Objects.requireNonNull(scope);
+            if (scope == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialScope", "scope");
+            }
+            this.scope = scope;
             return this;
         }
         public GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialScope build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -161,8 +162,12 @@ public final class DeployStageContainerConfigNetworkChannelArgs extends com.pulu
         }
 
         public DeployStageContainerConfigNetworkChannelArgs build() {
-            $.networkChannelType = Objects.requireNonNull($.networkChannelType, "expected parameter 'networkChannelType' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.networkChannelType == null) {
+                throw new MissingRequiredPropertyException("DeployStageContainerConfigNetworkChannelArgs", "networkChannelType");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("DeployStageContainerConfigNetworkChannelArgs", "subnetId");
+            }
             return $;
         }
     }

@@ -103,11 +103,13 @@ public final class ClusterNetworkInstancePoolPlacementConfiguration {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomains(@Nullable List<String> faultDomains) {
+
             this.faultDomains = faultDomains;
             return this;
         }
@@ -116,11 +118,13 @@ public final class ClusterNetworkInstancePoolPlacementConfiguration {
         }
         @CustomType.Setter
         public Builder primarySubnetId(@Nullable String primarySubnetId) {
+
             this.primarySubnetId = primarySubnetId;
             return this;
         }
         @CustomType.Setter
         public Builder primaryVnicSubnets(@Nullable List<ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet> primaryVnicSubnets) {
+
             this.primaryVnicSubnets = primaryVnicSubnets;
             return this;
         }
@@ -129,6 +133,7 @@ public final class ClusterNetworkInstancePoolPlacementConfiguration {
         }
         @CustomType.Setter
         public Builder secondaryVnicSubnets(@Nullable List<ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets) {
+
             this.secondaryVnicSubnets = secondaryVnicSubnets;
             return this;
         }

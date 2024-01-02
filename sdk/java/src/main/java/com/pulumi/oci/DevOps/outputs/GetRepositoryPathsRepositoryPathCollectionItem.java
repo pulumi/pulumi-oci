@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -142,42 +143,66 @@ public final class GetRepositoryPathsRepositoryPathCollectionItem {
 
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryPathsRepositoryPathCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryPathsRepositoryPathCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryPathsRepositoryPathCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+            if (path == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryPathsRepositoryPathCollectionItem", "path");
+            }
+            this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder sha(String sha) {
-            this.sha = Objects.requireNonNull(sha);
+            if (sha == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryPathsRepositoryPathCollectionItem", "sha");
+            }
+            this.sha = sha;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInBytes(String sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+            if (sizeInBytes == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryPathsRepositoryPathCollectionItem", "sizeInBytes");
+            }
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder submoduleGitUrl(String submoduleGitUrl) {
-            this.submoduleGitUrl = Objects.requireNonNull(submoduleGitUrl);
+            if (submoduleGitUrl == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryPathsRepositoryPathCollectionItem", "submoduleGitUrl");
+            }
+            this.submoduleGitUrl = submoduleGitUrl;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryPathsRepositoryPathCollectionItem", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetRepositoryPathsRepositoryPathCollectionItem build() {

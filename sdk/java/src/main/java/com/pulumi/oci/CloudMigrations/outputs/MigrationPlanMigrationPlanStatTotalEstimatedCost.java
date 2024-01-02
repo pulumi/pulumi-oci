@@ -133,6 +133,7 @@ public final class MigrationPlanMigrationPlanStatTotalEstimatedCost {
 
         @CustomType.Setter
         public Builder computes(@Nullable List<MigrationPlanMigrationPlanStatTotalEstimatedCostCompute> computes) {
+
             this.computes = computes;
             return this;
         }
@@ -141,11 +142,13 @@ public final class MigrationPlanMigrationPlanStatTotalEstimatedCost {
         }
         @CustomType.Setter
         public Builder currencyCode(@Nullable String currencyCode) {
+
             this.currencyCode = currencyCode;
             return this;
         }
         @CustomType.Setter
         public Builder osImages(@Nullable List<MigrationPlanMigrationPlanStatTotalEstimatedCostOsImage> osImages) {
+
             this.osImages = osImages;
             return this;
         }
@@ -154,6 +157,7 @@ public final class MigrationPlanMigrationPlanStatTotalEstimatedCost {
         }
         @CustomType.Setter
         public Builder storages(@Nullable List<MigrationPlanMigrationPlanStatTotalEstimatedCostStorage> storages) {
+
             this.storages = storages;
             return this;
         }
@@ -162,16 +166,19 @@ public final class MigrationPlanMigrationPlanStatTotalEstimatedCost {
         }
         @CustomType.Setter
         public Builder subscriptionId(@Nullable String subscriptionId) {
+
             this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
         public Builder totalEstimationPerMonth(@Nullable Double totalEstimationPerMonth) {
+
             this.totalEstimationPerMonth = totalEstimationPerMonth;
             return this;
         }
         @CustomType.Setter
         public Builder totalEstimationPerMonthBySubscription(@Nullable Double totalEstimationPerMonthBySubscription) {
+
             this.totalEstimationPerMonthBySubscription = totalEstimationPerMonthBySubscription;
             return this;
         }

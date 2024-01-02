@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionsFilter;
 import java.lang.String;
 import java.util.List;
@@ -84,7 +85,9 @@ public final class GetDbNodeConsoleConnectionsPlainArgs extends com.pulumi.resou
         }
 
         public GetDbNodeConsoleConnectionsPlainArgs build() {
-            $.dbNodeId = Objects.requireNonNull($.dbNodeId, "expected parameter 'dbNodeId' to be non-null");
+            if ($.dbNodeId == null) {
+                throw new MissingRequiredPropertyException("GetDbNodeConsoleConnectionsPlainArgs", "dbNodeId");
+            }
             return $;
         }
     }

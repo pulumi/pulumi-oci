@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -119,42 +120,62 @@ public final class GetRepositoryObjectResult {
 
         @CustomType.Setter
         public Builder filePath(@Nullable String filePath) {
+
             this.filePath = filePath;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryObjectResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isBinary(Boolean isBinary) {
-            this.isBinary = Objects.requireNonNull(isBinary);
+            if (isBinary == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryObjectResult", "isBinary");
+            }
+            this.isBinary = isBinary;
             return this;
         }
         @CustomType.Setter
         public Builder refName(@Nullable String refName) {
+
             this.refName = refName;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+            if (repositoryId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryObjectResult", "repositoryId");
+            }
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder sha(String sha) {
-            this.sha = Objects.requireNonNull(sha);
+            if (sha == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryObjectResult", "sha");
+            }
+            this.sha = sha;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInBytes(String sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+            if (sizeInBytes == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryObjectResult", "sizeInBytes");
+            }
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryObjectResult", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetRepositoryObjectResult build() {

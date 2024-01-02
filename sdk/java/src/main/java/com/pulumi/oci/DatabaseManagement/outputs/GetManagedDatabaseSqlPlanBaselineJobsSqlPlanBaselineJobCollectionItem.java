@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollec
 
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails;
 import java.lang.String;
@@ -74,17 +75,24 @@ public final class ModelDeploymentModelDeploymentConfigurationDetails {
 
         @CustomType.Setter
         public Builder deploymentType(String deploymentType) {
-            this.deploymentType = Objects.requireNonNull(deploymentType);
+            if (deploymentType == null) {
+              throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetails", "deploymentType");
+            }
+            this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
         public Builder environmentConfigurationDetails(@Nullable ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails environmentConfigurationDetails) {
+
             this.environmentConfigurationDetails = environmentConfigurationDetails;
             return this;
         }
         @CustomType.Setter
         public Builder modelConfigurationDetails(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails modelConfigurationDetails) {
-            this.modelConfigurationDetails = Objects.requireNonNull(modelConfigurationDetails);
+            if (modelConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetails", "modelConfigurationDetails");
+            }
+            this.modelConfigurationDetails = modelConfigurationDetails;
             return this;
         }
         public ModelDeploymentModelDeploymentConfigurationDetails build() {

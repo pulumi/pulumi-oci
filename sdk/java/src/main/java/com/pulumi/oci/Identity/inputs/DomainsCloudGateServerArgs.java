@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -458,9 +459,15 @@ public final class DomainsCloudGateServerArgs extends com.pulumi.resources.Resou
         }
 
         public DomainsCloudGateServerArgs build() {
-            $.hostName = Objects.requireNonNull($.hostName, "expected parameter 'hostName' to be non-null");
-            $.port = Objects.requireNonNull($.port, "expected parameter 'port' to be non-null");
-            $.ssl = Objects.requireNonNull($.ssl, "expected parameter 'ssl' to be non-null");
+            if ($.hostName == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateServerArgs", "hostName");
+            }
+            if ($.port == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateServerArgs", "port");
+            }
+            if ($.ssl == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateServerArgs", "ssl");
+            }
             return $;
         }
     }

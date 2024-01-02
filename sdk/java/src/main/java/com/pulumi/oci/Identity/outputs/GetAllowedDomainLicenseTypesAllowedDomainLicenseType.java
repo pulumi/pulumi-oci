@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetAllowedDomainLicenseTypesAllowedDomainLicenseType {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAllowedDomainLicenseTypesAllowedDomainLicenseType", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder licenseType(String licenseType) {
-            this.licenseType = Objects.requireNonNull(licenseType);
+            if (licenseType == null) {
+              throw new MissingRequiredPropertyException("GetAllowedDomainLicenseTypesAllowedDomainLicenseType", "licenseType");
+            }
+            this.licenseType = licenseType;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetAllowedDomainLicenseTypesAllowedDomainLicenseType", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetAllowedDomainLicenseTypesAllowedDomainLicenseType build() {

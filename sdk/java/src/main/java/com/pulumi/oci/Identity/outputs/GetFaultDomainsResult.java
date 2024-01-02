@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetFaultDomainsFaultDomain;
 import com.pulumi.oci.Identity.outputs.GetFaultDomainsFilter;
 import java.lang.String;
@@ -94,17 +95,26 @@ public final class GetFaultDomainsResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetFaultDomainsResult", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetFaultDomainsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomains(List<GetFaultDomainsFaultDomain> faultDomains) {
-            this.faultDomains = Objects.requireNonNull(faultDomains);
+            if (faultDomains == null) {
+              throw new MissingRequiredPropertyException("GetFaultDomainsResult", "faultDomains");
+            }
+            this.faultDomains = faultDomains;
             return this;
         }
         public Builder faultDomains(GetFaultDomainsFaultDomain... faultDomains) {
@@ -112,6 +122,7 @@ public final class GetFaultDomainsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetFaultDomainsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -120,7 +131,10 @@ public final class GetFaultDomainsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFaultDomainsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetFaultDomainsResult build() {

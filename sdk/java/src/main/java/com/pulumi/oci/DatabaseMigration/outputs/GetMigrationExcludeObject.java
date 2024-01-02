@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetMigrationExcludeObject {
 
         @CustomType.Setter
         public Builder isOmitExcludedTableFromReplication(Boolean isOmitExcludedTableFromReplication) {
-            this.isOmitExcludedTableFromReplication = Objects.requireNonNull(isOmitExcludedTableFromReplication);
+            if (isOmitExcludedTableFromReplication == null) {
+              throw new MissingRequiredPropertyException("GetMigrationExcludeObject", "isOmitExcludedTableFromReplication");
+            }
+            this.isOmitExcludedTableFromReplication = isOmitExcludedTableFromReplication;
             return this;
         }
         @CustomType.Setter
         public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+            if (object == null) {
+              throw new MissingRequiredPropertyException("GetMigrationExcludeObject", "object");
+            }
+            this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder owner(String owner) {
-            this.owner = Objects.requireNonNull(owner);
+            if (owner == null) {
+              throw new MissingRequiredPropertyException("GetMigrationExcludeObject", "owner");
+            }
+            this.owner = owner;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetMigrationExcludeObject", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetMigrationExcludeObject build() {

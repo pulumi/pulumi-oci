@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Object;
@@ -520,162 +521,258 @@ public final class GetExsiHostResult {
 
         @CustomType.Setter
         public Builder billingContractEndDate(String billingContractEndDate) {
-            this.billingContractEndDate = Objects.requireNonNull(billingContractEndDate);
+            if (billingContractEndDate == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "billingContractEndDate");
+            }
+            this.billingContractEndDate = billingContractEndDate;
             return this;
         }
         @CustomType.Setter
         public Builder billingDonorHostId(String billingDonorHostId) {
-            this.billingDonorHostId = Objects.requireNonNull(billingDonorHostId);
+            if (billingDonorHostId == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "billingDonorHostId");
+            }
+            this.billingDonorHostId = billingDonorHostId;
             return this;
         }
         @CustomType.Setter
         public Builder capacityReservationId(String capacityReservationId) {
-            this.capacityReservationId = Objects.requireNonNull(capacityReservationId);
+            if (capacityReservationId == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "capacityReservationId");
+            }
+            this.capacityReservationId = capacityReservationId;
             return this;
         }
         @CustomType.Setter
         public Builder clusterId(String clusterId) {
-            this.clusterId = Objects.requireNonNull(clusterId);
+            if (clusterId == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "clusterId");
+            }
+            this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
-            this.computeAvailabilityDomain = Objects.requireNonNull(computeAvailabilityDomain);
+            if (computeAvailabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "computeAvailabilityDomain");
+            }
+            this.computeAvailabilityDomain = computeAvailabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder computeInstanceId(String computeInstanceId) {
-            this.computeInstanceId = Objects.requireNonNull(computeInstanceId);
+            if (computeInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "computeInstanceId");
+            }
+            this.computeInstanceId = computeInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder currentCommitment(String currentCommitment) {
-            this.currentCommitment = Objects.requireNonNull(currentCommitment);
+            if (currentCommitment == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "currentCommitment");
+            }
+            this.currentCommitment = currentCommitment;
             return this;
         }
         @CustomType.Setter
         public Builder currentSku(String currentSku) {
-            this.currentSku = Objects.requireNonNull(currentSku);
+            if (currentSku == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "currentSku");
+            }
+            this.currentSku = currentSku;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder esxiHostId(String esxiHostId) {
-            this.esxiHostId = Objects.requireNonNull(esxiHostId);
+            if (esxiHostId == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "esxiHostId");
+            }
+            this.esxiHostId = esxiHostId;
             return this;
         }
         @CustomType.Setter
         public Builder esxiSoftwareVersion(String esxiSoftwareVersion) {
-            this.esxiSoftwareVersion = Objects.requireNonNull(esxiSoftwareVersion);
+            if (esxiSoftwareVersion == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "esxiSoftwareVersion");
+            }
+            this.esxiSoftwareVersion = esxiSoftwareVersion;
             return this;
         }
         @CustomType.Setter
         public Builder failedEsxiHostId(String failedEsxiHostId) {
-            this.failedEsxiHostId = Objects.requireNonNull(failedEsxiHostId);
+            if (failedEsxiHostId == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "failedEsxiHostId");
+            }
+            this.failedEsxiHostId = failedEsxiHostId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder gracePeriodEndDate(String gracePeriodEndDate) {
-            this.gracePeriodEndDate = Objects.requireNonNull(gracePeriodEndDate);
+            if (gracePeriodEndDate == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "gracePeriodEndDate");
+            }
+            this.gracePeriodEndDate = gracePeriodEndDate;
             return this;
         }
         @CustomType.Setter
         public Builder hostOcpuCount(Double hostOcpuCount) {
-            this.hostOcpuCount = Objects.requireNonNull(hostOcpuCount);
+            if (hostOcpuCount == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "hostOcpuCount");
+            }
+            this.hostOcpuCount = hostOcpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder hostShapeName(String hostShapeName) {
-            this.hostShapeName = Objects.requireNonNull(hostShapeName);
+            if (hostShapeName == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "hostShapeName");
+            }
+            this.hostShapeName = hostShapeName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isBillingContinuationInProgress(Boolean isBillingContinuationInProgress) {
-            this.isBillingContinuationInProgress = Objects.requireNonNull(isBillingContinuationInProgress);
+            if (isBillingContinuationInProgress == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "isBillingContinuationInProgress");
+            }
+            this.isBillingContinuationInProgress = isBillingContinuationInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder isBillingSwappingInProgress(Boolean isBillingSwappingInProgress) {
-            this.isBillingSwappingInProgress = Objects.requireNonNull(isBillingSwappingInProgress);
+            if (isBillingSwappingInProgress == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "isBillingSwappingInProgress");
+            }
+            this.isBillingSwappingInProgress = isBillingSwappingInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder nextCommitment(String nextCommitment) {
-            this.nextCommitment = Objects.requireNonNull(nextCommitment);
+            if (nextCommitment == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "nextCommitment");
+            }
+            this.nextCommitment = nextCommitment;
             return this;
         }
         @CustomType.Setter
         public Builder nextSku(String nextSku) {
-            this.nextSku = Objects.requireNonNull(nextSku);
+            if (nextSku == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "nextSku");
+            }
+            this.nextSku = nextSku;
             return this;
         }
         @CustomType.Setter
         public Builder nonUpgradedEsxiHostId(String nonUpgradedEsxiHostId) {
-            this.nonUpgradedEsxiHostId = Objects.requireNonNull(nonUpgradedEsxiHostId);
+            if (nonUpgradedEsxiHostId == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "nonUpgradedEsxiHostId");
+            }
+            this.nonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
             return this;
         }
         @CustomType.Setter
         public Builder replacementEsxiHostId(String replacementEsxiHostId) {
-            this.replacementEsxiHostId = Objects.requireNonNull(replacementEsxiHostId);
+            if (replacementEsxiHostId == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "replacementEsxiHostId");
+            }
+            this.replacementEsxiHostId = replacementEsxiHostId;
             return this;
         }
         @CustomType.Setter
         public Builder sddcId(String sddcId) {
-            this.sddcId = Objects.requireNonNull(sddcId);
+            if (sddcId == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "sddcId");
+            }
+            this.sddcId = sddcId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder swapBillingHostId(String swapBillingHostId) {
-            this.swapBillingHostId = Objects.requireNonNull(swapBillingHostId);
+            if (swapBillingHostId == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "swapBillingHostId");
+            }
+            this.swapBillingHostId = swapBillingHostId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder upgradedReplacementEsxiHostId(String upgradedReplacementEsxiHostId) {
-            this.upgradedReplacementEsxiHostId = Objects.requireNonNull(upgradedReplacementEsxiHostId);
+            if (upgradedReplacementEsxiHostId == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "upgradedReplacementEsxiHostId");
+            }
+            this.upgradedReplacementEsxiHostId = upgradedReplacementEsxiHostId;
             return this;
         }
         @CustomType.Setter
         public Builder vmwareSoftwareVersion(String vmwareSoftwareVersion) {
-            this.vmwareSoftwareVersion = Objects.requireNonNull(vmwareSoftwareVersion);
+            if (vmwareSoftwareVersion == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "vmwareSoftwareVersion");
+            }
+            this.vmwareSoftwareVersion = vmwareSoftwareVersion;
             return this;
         }
         public GetExsiHostResult build() {

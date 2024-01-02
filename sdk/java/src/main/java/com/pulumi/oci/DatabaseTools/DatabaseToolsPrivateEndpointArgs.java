@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseTools;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsPrivateEndpointLockArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -445,10 +446,18 @@ public final class DatabaseToolsPrivateEndpointArgs extends com.pulumi.resources
         }
 
         public DatabaseToolsPrivateEndpointArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.endpointServiceId = Objects.requireNonNull($.endpointServiceId, "expected parameter 'endpointServiceId' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("DatabaseToolsPrivateEndpointArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("DatabaseToolsPrivateEndpointArgs", "displayName");
+            }
+            if ($.endpointServiceId == null) {
+                throw new MissingRequiredPropertyException("DatabaseToolsPrivateEndpointArgs", "endpointServiceId");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("DatabaseToolsPrivateEndpointArgs", "subnetId");
+            }
             return $;
         }
     }

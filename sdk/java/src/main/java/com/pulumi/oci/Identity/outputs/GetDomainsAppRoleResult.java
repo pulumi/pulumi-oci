@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppRoleApp;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppRoleIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppRoleIdcsLastModifiedBy;
@@ -438,17 +439,26 @@ public final class GetDomainsAppRoleResult {
 
         @CustomType.Setter
         public Builder adminRole(Boolean adminRole) {
-            this.adminRole = Objects.requireNonNull(adminRole);
+            if (adminRole == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "adminRole");
+            }
+            this.adminRole = adminRole;
             return this;
         }
         @CustomType.Setter
         public Builder appRoleId(String appRoleId) {
-            this.appRoleId = Objects.requireNonNull(appRoleId);
+            if (appRoleId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "appRoleId");
+            }
+            this.appRoleId = appRoleId;
             return this;
         }
         @CustomType.Setter
         public Builder apps(List<GetDomainsAppRoleApp> apps) {
-            this.apps = Objects.requireNonNull(apps);
+            if (apps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "apps");
+            }
+            this.apps = apps;
             return this;
         }
         public Builder apps(GetDomainsAppRoleApp... apps) {
@@ -456,6 +466,7 @@ public final class GetDomainsAppRoleResult {
         }
         @CustomType.Setter
         public Builder attributeSets(@Nullable List<String> attributeSets) {
+
             this.attributeSets = attributeSets;
             return this;
         }
@@ -464,62 +475,94 @@ public final class GetDomainsAppRoleResult {
         }
         @CustomType.Setter
         public Builder attributes(@Nullable String attributes) {
+
             this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder availableToClients(Boolean availableToClients) {
-            this.availableToClients = Objects.requireNonNull(availableToClients);
+            if (availableToClients == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "availableToClients");
+            }
+            this.availableToClients = availableToClients;
             return this;
         }
         @CustomType.Setter
         public Builder availableToGroups(Boolean availableToGroups) {
-            this.availableToGroups = Objects.requireNonNull(availableToGroups);
+            if (availableToGroups == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "availableToGroups");
+            }
+            this.availableToGroups = availableToGroups;
             return this;
         }
         @CustomType.Setter
         public Builder availableToUsers(Boolean availableToUsers) {
-            this.availableToUsers = Objects.requireNonNull(availableToUsers);
+            if (availableToUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "availableToUsers");
+            }
+            this.availableToUsers = availableToUsers;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsAppRoleIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsAppRoleIdcsCreatedBy... idcsCreatedBies) {
@@ -527,12 +570,18 @@ public final class GetDomainsAppRoleResult {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsAppRoleIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsAppRoleIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -540,12 +589,18 @@ public final class GetDomainsAppRoleResult {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -553,22 +608,34 @@ public final class GetDomainsAppRoleResult {
         }
         @CustomType.Setter
         public Builder legacyGroupName(String legacyGroupName) {
-            this.legacyGroupName = Objects.requireNonNull(legacyGroupName);
+            if (legacyGroupName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "legacyGroupName");
+            }
+            this.legacyGroupName = legacyGroupName;
             return this;
         }
         @CustomType.Setter
         public Builder limitedToOneOrMoreGroups(Boolean limitedToOneOrMoreGroups) {
-            this.limitedToOneOrMoreGroups = Objects.requireNonNull(limitedToOneOrMoreGroups);
+            if (limitedToOneOrMoreGroups == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "limitedToOneOrMoreGroups");
+            }
+            this.limitedToOneOrMoreGroups = limitedToOneOrMoreGroups;
             return this;
         }
         @CustomType.Setter
         public Builder localizedDisplayName(String localizedDisplayName) {
-            this.localizedDisplayName = Objects.requireNonNull(localizedDisplayName);
+            if (localizedDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "localizedDisplayName");
+            }
+            this.localizedDisplayName = localizedDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder members(List<GetDomainsAppRoleMember> members) {
-            this.members = Objects.requireNonNull(members);
+            if (members == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "members");
+            }
+            this.members = members;
             return this;
         }
         public Builder members(GetDomainsAppRoleMember... members) {
@@ -576,7 +643,10 @@ public final class GetDomainsAppRoleResult {
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsAppRoleMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsAppRoleMeta... metas) {
@@ -584,22 +654,32 @@ public final class GetDomainsAppRoleResult {
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter("public")
         public Builder public_(Boolean public_) {
-            this.public_ = Objects.requireNonNull(public_);
+            if (public_ == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "public_");
+            }
+            this.public_ = public_;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -607,7 +687,10 @@ public final class GetDomainsAppRoleResult {
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsAppRoleTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsAppRoleTag... tags) {
@@ -615,12 +698,18 @@ public final class GetDomainsAppRoleResult {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder uniqueName(String uniqueName) {
-            this.uniqueName = Objects.requireNonNull(uniqueName);
+            if (uniqueName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppRoleResult", "uniqueName");
+            }
+            this.uniqueName = uniqueName;
             return this;
         }
         public GetDomainsAppRoleResult build() {

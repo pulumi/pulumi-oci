@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class GetDbNodeConsoleHistoryArgs extends com.pulumi.resources.Invo
         }
 
         public GetDbNodeConsoleHistoryArgs build() {
-            $.consoleHistoryId = Objects.requireNonNull($.consoleHistoryId, "expected parameter 'consoleHistoryId' to be non-null");
-            $.dbNodeId = Objects.requireNonNull($.dbNodeId, "expected parameter 'dbNodeId' to be non-null");
+            if ($.consoleHistoryId == null) {
+                throw new MissingRequiredPropertyException("GetDbNodeConsoleHistoryArgs", "consoleHistoryId");
+            }
+            if ($.dbNodeId == null) {
+                throw new MissingRequiredPropertyException("GetDbNodeConsoleHistoryArgs", "dbNodeId");
+            }
             return $;
         }
     }

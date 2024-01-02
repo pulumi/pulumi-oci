@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentProfileAnalyticsFilter;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentProfileAnalyticsProfileAggregation;
 import java.lang.Boolean;
@@ -104,21 +105,27 @@ public final class GetUserAssessmentProfileAnalyticsResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfileAnalyticsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetUserAssessmentProfileAnalyticsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +134,18 @@ public final class GetUserAssessmentProfileAnalyticsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfileAnalyticsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder profileAggregations(List<GetUserAssessmentProfileAnalyticsProfileAggregation> profileAggregations) {
-            this.profileAggregations = Objects.requireNonNull(profileAggregations);
+            if (profileAggregations == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfileAnalyticsResult", "profileAggregations");
+            }
+            this.profileAggregations = profileAggregations;
             return this;
         }
         public Builder profileAggregations(GetUserAssessmentProfileAnalyticsProfileAggregation... profileAggregations) {
@@ -140,17 +153,22 @@ public final class GetUserAssessmentProfileAnalyticsResult {
         }
         @CustomType.Setter
         public Builder profileName(@Nullable String profileName) {
+
             this.profileName = profileName;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
+
             this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder userAssessmentId(String userAssessmentId) {
-            this.userAssessmentId = Objects.requireNonNull(userAssessmentId);
+            if (userAssessmentId == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentProfileAnalyticsResult", "userAssessmentId");
+            }
+            this.userAssessmentId = userAssessmentId;
             return this;
         }
         public GetUserAssessmentProfileAnalyticsResult build() {

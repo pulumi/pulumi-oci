@@ -44,6 +44,7 @@ public final class ConnectorSourceCursor {
 
         @CustomType.Setter
         public Builder kind(@Nullable String kind) {
+
             this.kind = kind;
             return this;
         }

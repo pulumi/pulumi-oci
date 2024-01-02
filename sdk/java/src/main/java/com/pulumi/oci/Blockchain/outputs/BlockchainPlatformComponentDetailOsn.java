@@ -88,11 +88,13 @@ public final class BlockchainPlatformComponentDetailOsn {
 
         @CustomType.Setter
         public Builder ad(@Nullable String ad) {
+
             this.ad = ad;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuAllocationParams(@Nullable List<BlockchainPlatformComponentDetailOsnOcpuAllocationParam> ocpuAllocationParams) {
+
             this.ocpuAllocationParams = ocpuAllocationParams;
             return this;
         }
@@ -101,11 +103,13 @@ public final class BlockchainPlatformComponentDetailOsn {
         }
         @CustomType.Setter
         public Builder osnKey(@Nullable String osnKey) {
+
             this.osnKey = osnKey;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

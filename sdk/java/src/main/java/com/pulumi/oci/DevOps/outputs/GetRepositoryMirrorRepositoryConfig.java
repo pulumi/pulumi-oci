@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryMirrorRepositoryConfigTriggerSchedule;
 import java.lang.String;
 import java.util.List;
@@ -72,17 +73,26 @@ public final class GetRepositoryMirrorRepositoryConfig {
 
         @CustomType.Setter
         public Builder connectorId(String connectorId) {
-            this.connectorId = Objects.requireNonNull(connectorId);
+            if (connectorId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryMirrorRepositoryConfig", "connectorId");
+            }
+            this.connectorId = connectorId;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryUrl(String repositoryUrl) {
-            this.repositoryUrl = Objects.requireNonNull(repositoryUrl);
+            if (repositoryUrl == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryMirrorRepositoryConfig", "repositoryUrl");
+            }
+            this.repositoryUrl = repositoryUrl;
             return this;
         }
         @CustomType.Setter
         public Builder triggerSchedules(List<GetRepositoryMirrorRepositoryConfigTriggerSchedule> triggerSchedules) {
-            this.triggerSchedules = Objects.requireNonNull(triggerSchedules);
+            if (triggerSchedules == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryMirrorRepositoryConfig", "triggerSchedules");
+            }
+            this.triggerSchedules = triggerSchedules;
             return this;
         }
         public Builder triggerSchedules(GetRepositoryMirrorRepositoryConfigTriggerSchedule... triggerSchedules) {

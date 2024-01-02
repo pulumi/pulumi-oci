@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetAssetSourcePlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetAssetSourcePlainArgs build() {
-            $.assetSourceId = Objects.requireNonNull($.assetSourceId, "expected parameter 'assetSourceId' to be non-null");
+            if ($.assetSourceId == null) {
+                throw new MissingRequiredPropertyException("GetAssetSourcePlainArgs", "assetSourceId");
+            }
             return $;
         }
     }

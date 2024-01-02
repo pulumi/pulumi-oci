@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseRoleFilter;
 import java.lang.Boolean;
 import java.lang.String;
@@ -127,7 +128,9 @@ public final class GetTargetDatabaseRolePlainArgs extends com.pulumi.resources.I
         }
 
         public GetTargetDatabaseRolePlainArgs build() {
-            $.targetDatabaseId = Objects.requireNonNull($.targetDatabaseId, "expected parameter 'targetDatabaseId' to be non-null");
+            if ($.targetDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetTargetDatabaseRolePlainArgs", "targetDatabaseId");
+            }
             return $;
         }
     }

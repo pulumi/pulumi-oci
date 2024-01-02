@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetNetworkSecurityGroupVnicsFilter;
 import com.pulumi.oci.Core.outputs.GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetNetworkSecurityGroupVnicsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNetworkSecurityGroupVnicsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,17 +82,26 @@ public final class GetNetworkSecurityGroupVnicsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupVnicsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder networkSecurityGroupId(String networkSecurityGroupId) {
-            this.networkSecurityGroupId = Objects.requireNonNull(networkSecurityGroupId);
+            if (networkSecurityGroupId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupVnicsResult", "networkSecurityGroupId");
+            }
+            this.networkSecurityGroupId = networkSecurityGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder networkSecurityGroupVnics(List<GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic> networkSecurityGroupVnics) {
-            this.networkSecurityGroupVnics = Objects.requireNonNull(networkSecurityGroupVnics);
+            if (networkSecurityGroupVnics == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupVnicsResult", "networkSecurityGroupVnics");
+            }
+            this.networkSecurityGroupVnics = networkSecurityGroupVnics;
             return this;
         }
         public Builder networkSecurityGroupVnics(GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic... networkSecurityGroupVnics) {

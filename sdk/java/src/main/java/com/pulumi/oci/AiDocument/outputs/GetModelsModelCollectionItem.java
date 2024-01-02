@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiDocument.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiDocument.outputs.GetModelsModelCollectionItemComponentModel;
 import com.pulumi.oci.AiDocument.outputs.GetModelsModelCollectionItemMetric;
 import com.pulumi.oci.AiDocument.outputs.GetModelsModelCollectionItemTestingDataset;
@@ -402,12 +403,18 @@ public final class GetModelsModelCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder componentModels(List<GetModelsModelCollectionItemComponentModel> componentModels) {
-            this.componentModels = Objects.requireNonNull(componentModels);
+            if (componentModels == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "componentModels");
+            }
+            this.componentModels = componentModels;
             return this;
         }
         public Builder componentModels(GetModelsModelCollectionItemComponentModel... componentModels) {
@@ -415,42 +422,66 @@ public final class GetModelsModelCollectionItem {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isComposedModel(Boolean isComposedModel) {
-            this.isComposedModel = Objects.requireNonNull(isComposedModel);
+            if (isComposedModel == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "isComposedModel");
+            }
+            this.isComposedModel = isComposedModel;
             return this;
         }
         @CustomType.Setter
         public Builder isQuickMode(Boolean isQuickMode) {
-            this.isQuickMode = Objects.requireNonNull(isQuickMode);
+            if (isQuickMode == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "isQuickMode");
+            }
+            this.isQuickMode = isQuickMode;
             return this;
         }
         @CustomType.Setter
         public Builder labels(List<String> labels) {
-            this.labels = Objects.requireNonNull(labels);
+            if (labels == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "labels");
+            }
+            this.labels = labels;
             return this;
         }
         public Builder labels(String... labels) {
@@ -458,17 +489,26 @@ public final class GetModelsModelCollectionItem {
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder maxTrainingTimeInHours(Double maxTrainingTimeInHours) {
-            this.maxTrainingTimeInHours = Objects.requireNonNull(maxTrainingTimeInHours);
+            if (maxTrainingTimeInHours == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "maxTrainingTimeInHours");
+            }
+            this.maxTrainingTimeInHours = maxTrainingTimeInHours;
             return this;
         }
         @CustomType.Setter
         public Builder metrics(List<GetModelsModelCollectionItemMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+            if (metrics == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "metrics");
+            }
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetModelsModelCollectionItemMetric... metrics) {
@@ -476,42 +516,66 @@ public final class GetModelsModelCollectionItem {
         }
         @CustomType.Setter
         public Builder modelId(String modelId) {
-            this.modelId = Objects.requireNonNull(modelId);
+            if (modelId == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "modelId");
+            }
+            this.modelId = modelId;
             return this;
         }
         @CustomType.Setter
         public Builder modelType(String modelType) {
-            this.modelType = Objects.requireNonNull(modelType);
+            if (modelType == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "modelType");
+            }
+            this.modelType = modelType;
             return this;
         }
         @CustomType.Setter
         public Builder modelVersion(String modelVersion) {
-            this.modelVersion = Objects.requireNonNull(modelVersion);
+            if (modelVersion == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "modelVersion");
+            }
+            this.modelVersion = modelVersion;
             return this;
         }
         @CustomType.Setter
         public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+            if (projectId == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "projectId");
+            }
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
-            this.tenancyId = Objects.requireNonNull(tenancyId);
+            if (tenancyId == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "tenancyId");
+            }
+            this.tenancyId = tenancyId;
             return this;
         }
         @CustomType.Setter
         public Builder testingDatasets(List<GetModelsModelCollectionItemTestingDataset> testingDatasets) {
-            this.testingDatasets = Objects.requireNonNull(testingDatasets);
+            if (testingDatasets == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "testingDatasets");
+            }
+            this.testingDatasets = testingDatasets;
             return this;
         }
         public Builder testingDatasets(GetModelsModelCollectionItemTestingDataset... testingDatasets) {
@@ -519,22 +583,34 @@ public final class GetModelsModelCollectionItem {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder trainedTimeInHours(Double trainedTimeInHours) {
-            this.trainedTimeInHours = Objects.requireNonNull(trainedTimeInHours);
+            if (trainedTimeInHours == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "trainedTimeInHours");
+            }
+            this.trainedTimeInHours = trainedTimeInHours;
             return this;
         }
         @CustomType.Setter
         public Builder trainingDatasets(List<GetModelsModelCollectionItemTrainingDataset> trainingDatasets) {
-            this.trainingDatasets = Objects.requireNonNull(trainingDatasets);
+            if (trainingDatasets == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "trainingDatasets");
+            }
+            this.trainingDatasets = trainingDatasets;
             return this;
         }
         public Builder trainingDatasets(GetModelsModelCollectionItemTrainingDataset... trainingDatasets) {
@@ -542,7 +618,10 @@ public final class GetModelsModelCollectionItem {
         }
         @CustomType.Setter
         public Builder validationDatasets(List<GetModelsModelCollectionItemValidationDataset> validationDatasets) {
-            this.validationDatasets = Objects.requireNonNull(validationDatasets);
+            if (validationDatasets == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "validationDatasets");
+            }
+            this.validationDatasets = validationDatasets;
             return this;
         }
         public Builder validationDatasets(GetModelsModelCollectionItemValidationDataset... validationDatasets) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceCatalog.outputs.GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetServiceCatalogAssociationsServiceCatalogAssociationCollect
 
         @CustomType.Setter
         public Builder items(List<GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetServiceCatalogAssociationsServiceCatalogAssociationCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem... items) {

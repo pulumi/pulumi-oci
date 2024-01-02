@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetDeploymentCertificatePlainArgs extends com.pulumi.resource
         }
 
         public GetDeploymentCertificatePlainArgs build() {
-            $.certificateKey = Objects.requireNonNull($.certificateKey, "expected parameter 'certificateKey' to be non-null");
-            $.deploymentId = Objects.requireNonNull($.deploymentId, "expected parameter 'deploymentId' to be non-null");
+            if ($.certificateKey == null) {
+                throw new MissingRequiredPropertyException("GetDeploymentCertificatePlainArgs", "certificateKey");
+            }
+            if ($.deploymentId == null) {
+                throw new MissingRequiredPropertyException("GetDeploymentCertificatePlainArgs", "deploymentId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Analytics.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetAnalyticsInstancePlainArgs extends com.pulumi.resources.In
         }
 
         public GetAnalyticsInstancePlainArgs build() {
-            $.analyticsInstanceId = Objects.requireNonNull($.analyticsInstanceId, "expected parameter 'analyticsInstanceId' to be non-null");
+            if ($.analyticsInstanceId == null) {
+                throw new MissingRequiredPropertyException("GetAnalyticsInstancePlainArgs", "analyticsInstanceId");
+            }
             return $;
         }
     }

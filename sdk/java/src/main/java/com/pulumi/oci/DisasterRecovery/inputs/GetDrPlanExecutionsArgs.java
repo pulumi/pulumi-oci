@@ -5,6 +5,7 @@ package com.pulumi.oci.DisasterRecovery.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanExecutionsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -247,7 +248,9 @@ public final class GetDrPlanExecutionsArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetDrPlanExecutionsArgs build() {
-            $.drProtectionGroupId = Objects.requireNonNull($.drProtectionGroupId, "expected parameter 'drProtectionGroupId' to be non-null");
+            if ($.drProtectionGroupId == null) {
+                throw new MissingRequiredPropertyException("GetDrPlanExecutionsArgs", "drProtectionGroupId");
+            }
             return $;
         }
     }

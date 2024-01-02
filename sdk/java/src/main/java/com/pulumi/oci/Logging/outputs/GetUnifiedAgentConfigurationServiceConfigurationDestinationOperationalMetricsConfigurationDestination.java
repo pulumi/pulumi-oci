@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOp
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestination", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         public GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestination build() {

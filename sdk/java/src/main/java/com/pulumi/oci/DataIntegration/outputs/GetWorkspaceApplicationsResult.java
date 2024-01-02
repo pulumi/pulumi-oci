@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationsApplicationSummaryCollection;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationsFilter;
 import java.lang.String;
@@ -121,7 +122,10 @@ public final class GetWorkspaceApplicationsResult {
 
         @CustomType.Setter
         public Builder applicationSummaryCollections(List<GetWorkspaceApplicationsApplicationSummaryCollection> applicationSummaryCollections) {
-            this.applicationSummaryCollections = Objects.requireNonNull(applicationSummaryCollections);
+            if (applicationSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsResult", "applicationSummaryCollections");
+            }
+            this.applicationSummaryCollections = applicationSummaryCollections;
             return this;
         }
         public Builder applicationSummaryCollections(GetWorkspaceApplicationsApplicationSummaryCollection... applicationSummaryCollections) {
@@ -129,6 +133,7 @@ public final class GetWorkspaceApplicationsResult {
         }
         @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
+
             this.fields = fields;
             return this;
         }
@@ -137,6 +142,7 @@ public final class GetWorkspaceApplicationsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetWorkspaceApplicationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -145,11 +151,15 @@ public final class GetWorkspaceApplicationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder identifiers(@Nullable List<String> identifiers) {
+
             this.identifiers = identifiers;
             return this;
         }
@@ -158,17 +168,22 @@ public final class GetWorkspaceApplicationsResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder nameContains(@Nullable String nameContains) {
+
             this.nameContains = nameContains;
             return this;
         }
         @CustomType.Setter
         public Builder workspaceId(String workspaceId) {
-            this.workspaceId = Objects.requireNonNull(workspaceId);
+            if (workspaceId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsResult", "workspaceId");
+            }
+            this.workspaceId = workspaceId;
             return this;
         }
         public GetWorkspaceApplicationsResult build() {

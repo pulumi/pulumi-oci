@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput;
 import java.lang.String;
 import java.util.List;
@@ -72,7 +73,10 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOp
 
         @CustomType.Setter
         public Builder metrics(List<String> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+            if (metrics == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource", "metrics");
+            }
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(String... metrics) {
@@ -80,7 +84,10 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOp
         }
         @CustomType.Setter
         public Builder recordInputs(List<GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput> recordInputs) {
-            this.recordInputs = Objects.requireNonNull(recordInputs);
+            if (recordInputs == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource", "recordInputs");
+            }
+            this.recordInputs = recordInputs;
             return this;
         }
         public Builder recordInputs(GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput... recordInputs) {
@@ -88,7 +95,10 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOp
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource build() {

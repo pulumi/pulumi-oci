@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetImageAgentFeature {
 
         @CustomType.Setter
         public Builder isManagementSupported(Boolean isManagementSupported) {
-            this.isManagementSupported = Objects.requireNonNull(isManagementSupported);
+            if (isManagementSupported == null) {
+              throw new MissingRequiredPropertyException("GetImageAgentFeature", "isManagementSupported");
+            }
+            this.isManagementSupported = isManagementSupported;
             return this;
         }
         @CustomType.Setter
         public Builder isMonitoringSupported(Boolean isMonitoringSupported) {
-            this.isMonitoringSupported = Objects.requireNonNull(isMonitoringSupported);
+            if (isMonitoringSupported == null) {
+              throw new MissingRequiredPropertyException("GetImageAgentFeature", "isMonitoringSupported");
+            }
+            this.isMonitoringSupported = isMonitoringSupported;
             return this;
         }
         public GetImageAgentFeature build() {

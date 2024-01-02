@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -225,72 +226,114 @@ public final class GetInvoicesInvoiceCollectionItemLastPaymentDetail {
 
         @CustomType.Setter
         public Builder accountNumber(String accountNumber) {
-            this.accountNumber = Objects.requireNonNull(accountNumber);
+            if (accountNumber == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceCollectionItemLastPaymentDetail", "accountNumber");
+            }
+            this.accountNumber = accountNumber;
             return this;
         }
         @CustomType.Setter
         public Builder amountPaid(Double amountPaid) {
-            this.amountPaid = Objects.requireNonNull(amountPaid);
+            if (amountPaid == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceCollectionItemLastPaymentDetail", "amountPaid");
+            }
+            this.amountPaid = amountPaid;
             return this;
         }
         @CustomType.Setter
         public Builder cardType(String cardType) {
-            this.cardType = Objects.requireNonNull(cardType);
+            if (cardType == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceCollectionItemLastPaymentDetail", "cardType");
+            }
+            this.cardType = cardType;
             return this;
         }
         @CustomType.Setter
         public Builder creditCardType(String creditCardType) {
-            this.creditCardType = Objects.requireNonNull(creditCardType);
+            if (creditCardType == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceCollectionItemLastPaymentDetail", "creditCardType");
+            }
+            this.creditCardType = creditCardType;
             return this;
         }
         @CustomType.Setter
         public Builder echeckRouting(String echeckRouting) {
-            this.echeckRouting = Objects.requireNonNull(echeckRouting);
+            if (echeckRouting == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceCollectionItemLastPaymentDetail", "echeckRouting");
+            }
+            this.echeckRouting = echeckRouting;
             return this;
         }
         @CustomType.Setter
         public Builder lastDigits(String lastDigits) {
-            this.lastDigits = Objects.requireNonNull(lastDigits);
+            if (lastDigits == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceCollectionItemLastPaymentDetail", "lastDigits");
+            }
+            this.lastDigits = lastDigits;
             return this;
         }
         @CustomType.Setter
         public Builder nameOnCard(String nameOnCard) {
-            this.nameOnCard = Objects.requireNonNull(nameOnCard);
+            if (nameOnCard == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceCollectionItemLastPaymentDetail", "nameOnCard");
+            }
+            this.nameOnCard = nameOnCard;
             return this;
         }
         @CustomType.Setter
         public Builder paidBy(String paidBy) {
-            this.paidBy = Objects.requireNonNull(paidBy);
+            if (paidBy == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceCollectionItemLastPaymentDetail", "paidBy");
+            }
+            this.paidBy = paidBy;
             return this;
         }
         @CustomType.Setter
         public Builder paymentMethod(String paymentMethod) {
-            this.paymentMethod = Objects.requireNonNull(paymentMethod);
+            if (paymentMethod == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceCollectionItemLastPaymentDetail", "paymentMethod");
+            }
+            this.paymentMethod = paymentMethod;
             return this;
         }
         @CustomType.Setter
         public Builder paypalId(String paypalId) {
-            this.paypalId = Objects.requireNonNull(paypalId);
+            if (paypalId == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceCollectionItemLastPaymentDetail", "paypalId");
+            }
+            this.paypalId = paypalId;
             return this;
         }
         @CustomType.Setter
         public Builder paypalReference(String paypalReference) {
-            this.paypalReference = Objects.requireNonNull(paypalReference);
+            if (paypalReference == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceCollectionItemLastPaymentDetail", "paypalReference");
+            }
+            this.paypalReference = paypalReference;
             return this;
         }
         @CustomType.Setter
         public Builder routingNumber(String routingNumber) {
-            this.routingNumber = Objects.requireNonNull(routingNumber);
+            if (routingNumber == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceCollectionItemLastPaymentDetail", "routingNumber");
+            }
+            this.routingNumber = routingNumber;
             return this;
         }
         @CustomType.Setter
         public Builder timeExpiration(String timeExpiration) {
-            this.timeExpiration = Objects.requireNonNull(timeExpiration);
+            if (timeExpiration == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceCollectionItemLastPaymentDetail", "timeExpiration");
+            }
+            this.timeExpiration = timeExpiration;
             return this;
         }
         @CustomType.Setter
         public Builder timePaidOn(String timePaidOn) {
-            this.timePaidOn = Objects.requireNonNull(timePaidOn);
+            if (timePaidOn == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceCollectionItemLastPaymentDetail", "timePaidOn");
+            }
+            this.timePaidOn = timePaidOn;
             return this;
         }
         public GetInvoicesInvoiceCollectionItemLastPaymentDetail build() {

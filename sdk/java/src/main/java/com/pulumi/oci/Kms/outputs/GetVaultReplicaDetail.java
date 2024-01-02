@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetVaultReplicaDetail {
 
         @CustomType.Setter
         public Builder replicationId(String replicationId) {
-            this.replicationId = Objects.requireNonNull(replicationId);
+            if (replicationId == null) {
+              throw new MissingRequiredPropertyException("GetVaultReplicaDetail", "replicationId");
+            }
+            this.replicationId = replicationId;
             return this;
         }
         public GetVaultReplicaDetail build() {

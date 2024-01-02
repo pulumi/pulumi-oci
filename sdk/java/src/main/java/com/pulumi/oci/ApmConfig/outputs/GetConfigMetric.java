@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmConfig.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetConfigMetric {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetConfigMetric", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetConfigMetric", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder unit(String unit) {
-            this.unit = Objects.requireNonNull(unit);
+            if (unit == null) {
+              throw new MissingRequiredPropertyException("GetConfigMetric", "unit");
+            }
+            this.unit = unit;
             return this;
         }
         @CustomType.Setter
         public Builder valueSource(String valueSource) {
-            this.valueSource = Objects.requireNonNull(valueSource);
+            if (valueSource == null) {
+              throw new MissingRequiredPropertyException("GetConfigMetric", "valueSource");
+            }
+            this.valueSource = valueSource;
             return this;
         }
         public GetConfigMetric build() {

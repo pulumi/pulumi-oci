@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatch;
 import java.lang.Boolean;
 import java.lang.String;
@@ -157,22 +158,34 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformF
 
         @CustomType.Setter
         public Builder configuration(String configuration) {
-            this.configuration = Objects.requireNonNull(configuration);
+            if (configuration == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp", "configuration");
+            }
+            this.configuration = configuration;
             return this;
         }
         @CustomType.Setter
         public Builder formCredMethod(String formCredMethod) {
-            this.formCredMethod = Objects.requireNonNull(formCredMethod);
+            if (formCredMethod == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp", "formCredMethod");
+            }
+            this.formCredMethod = formCredMethod;
             return this;
         }
         @CustomType.Setter
         public Builder formCredentialSharingGroupId(String formCredentialSharingGroupId) {
-            this.formCredentialSharingGroupId = Objects.requireNonNull(formCredentialSharingGroupId);
+            if (formCredentialSharingGroupId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp", "formCredentialSharingGroupId");
+            }
+            this.formCredentialSharingGroupId = formCredentialSharingGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder formFillUrlMatches(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatch> formFillUrlMatches) {
-            this.formFillUrlMatches = Objects.requireNonNull(formFillUrlMatches);
+            if (formFillUrlMatches == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp", "formFillUrlMatches");
+            }
+            this.formFillUrlMatches = formFillUrlMatches;
             return this;
         }
         public Builder formFillUrlMatches(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatch... formFillUrlMatches) {
@@ -180,27 +193,42 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformF
         }
         @CustomType.Setter
         public Builder formType(String formType) {
-            this.formType = Objects.requireNonNull(formType);
+            if (formType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp", "formType");
+            }
+            this.formType = formType;
             return this;
         }
         @CustomType.Setter
         public Builder revealPasswordOnForm(Boolean revealPasswordOnForm) {
-            this.revealPasswordOnForm = Objects.requireNonNull(revealPasswordOnForm);
+            if (revealPasswordOnForm == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp", "revealPasswordOnForm");
+            }
+            this.revealPasswordOnForm = revealPasswordOnForm;
             return this;
         }
         @CustomType.Setter
         public Builder syncFromTemplate(Boolean syncFromTemplate) {
-            this.syncFromTemplate = Objects.requireNonNull(syncFromTemplate);
+            if (syncFromTemplate == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp", "syncFromTemplate");
+            }
+            this.syncFromTemplate = syncFromTemplate;
             return this;
         }
         @CustomType.Setter
         public Builder userNameFormExpression(String userNameFormExpression) {
-            this.userNameFormExpression = Objects.requireNonNull(userNameFormExpression);
+            if (userNameFormExpression == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp", "userNameFormExpression");
+            }
+            this.userNameFormExpression = userNameFormExpression;
             return this;
         }
         @CustomType.Setter
         public Builder userNameFormTemplate(String userNameFormTemplate) {
-            this.userNameFormTemplate = Objects.requireNonNull(userNameFormTemplate);
+            if (userNameFormTemplate == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp", "userNameFormTemplate");
+            }
+            this.userNameFormTemplate = userNameFormTemplate;
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp build() {

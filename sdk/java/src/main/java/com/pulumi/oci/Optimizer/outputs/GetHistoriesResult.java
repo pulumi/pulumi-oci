@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetHistoriesFilter;
 import com.pulumi.oci.Optimizer.outputs.GetHistoriesHistoryCollection;
 import java.lang.Boolean;
@@ -178,16 +179,23 @@ public final class GetHistoriesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetHistoriesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
-            this.compartmentIdInSubtree = Objects.requireNonNull(compartmentIdInSubtree);
+            if (compartmentIdInSubtree == null) {
+              throw new MissingRequiredPropertyException("GetHistoriesResult", "compartmentIdInSubtree");
+            }
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetHistoriesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -196,7 +204,10 @@ public final class GetHistoriesResult {
         }
         @CustomType.Setter
         public Builder historyCollections(List<GetHistoriesHistoryCollection> historyCollections) {
-            this.historyCollections = Objects.requireNonNull(historyCollections);
+            if (historyCollections == null) {
+              throw new MissingRequiredPropertyException("GetHistoriesResult", "historyCollections");
+            }
+            this.historyCollections = historyCollections;
             return this;
         }
         public Builder historyCollections(GetHistoriesHistoryCollection... historyCollections) {
@@ -204,41 +215,51 @@ public final class GetHistoriesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetHistoriesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder includeResourceMetadata(@Nullable Boolean includeResourceMetadata) {
+
             this.includeResourceMetadata = includeResourceMetadata;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder recommendationId(@Nullable String recommendationId) {
+
             this.recommendationId = recommendationId;
             return this;
         }
         @CustomType.Setter
         public Builder recommendationName(@Nullable String recommendationName) {
+
             this.recommendationName = recommendationName;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(@Nullable String resourceType) {
+
             this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }

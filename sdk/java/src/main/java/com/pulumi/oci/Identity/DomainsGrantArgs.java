@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsGrantAppArgs;
 import com.pulumi.oci.Identity.inputs.DomainsGrantAppEntitlementCollectionArgs;
 import com.pulumi.oci.Identity.inputs.DomainsGrantEntitlementArgs;
@@ -993,10 +994,18 @@ public final class DomainsGrantArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DomainsGrantArgs build() {
-            $.grantMechanism = Objects.requireNonNull($.grantMechanism, "expected parameter 'grantMechanism' to be non-null");
-            $.grantee = Objects.requireNonNull($.grantee, "expected parameter 'grantee' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.grantMechanism == null) {
+                throw new MissingRequiredPropertyException("DomainsGrantArgs", "grantMechanism");
+            }
+            if ($.grantee == null) {
+                throw new MissingRequiredPropertyException("DomainsGrantArgs", "grantee");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsGrantArgs", "idcsEndpoint");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsGrantArgs", "schemas");
+            }
             return $;
         }
     }

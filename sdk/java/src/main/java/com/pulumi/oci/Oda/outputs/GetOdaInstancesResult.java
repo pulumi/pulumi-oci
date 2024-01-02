@@ -4,6 +4,7 @@
 package com.pulumi.oci.Oda.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Oda.outputs.GetOdaInstancesFilter;
 import com.pulumi.oci.Oda.outputs.GetOdaInstancesOdaInstance;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetOdaInstancesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstancesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetOdaInstancesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +133,18 @@ public final class GetOdaInstancesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstancesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder odaInstances(List<GetOdaInstancesOdaInstance> odaInstances) {
-            this.odaInstances = Objects.requireNonNull(odaInstances);
+            if (odaInstances == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstancesResult", "odaInstances");
+            }
+            this.odaInstances = odaInstances;
             return this;
         }
         public Builder odaInstances(GetOdaInstancesOdaInstance... odaInstances) {
@@ -140,6 +152,7 @@ public final class GetOdaInstancesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

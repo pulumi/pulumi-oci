@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetHostInsightsFilter;
 import com.pulumi.oci.Opsi.outputs.GetHostInsightsHostInsightSummaryCollection;
 import java.lang.Boolean;
@@ -158,26 +159,31 @@ public final class GetHostInsightsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerBridgeId(@Nullable String enterpriseManagerBridgeId) {
+
             this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             return this;
         }
         @CustomType.Setter
         public Builder exadataInsightId(@Nullable String exadataInsightId) {
+
             this.exadataInsightId = exadataInsightId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetHostInsightsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -186,7 +192,10 @@ public final class GetHostInsightsResult {
         }
         @CustomType.Setter
         public Builder hostInsightSummaryCollections(List<GetHostInsightsHostInsightSummaryCollection> hostInsightSummaryCollections) {
-            this.hostInsightSummaryCollections = Objects.requireNonNull(hostInsightSummaryCollections);
+            if (hostInsightSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightsResult", "hostInsightSummaryCollections");
+            }
+            this.hostInsightSummaryCollections = hostInsightSummaryCollections;
             return this;
         }
         public Builder hostInsightSummaryCollections(GetHostInsightsHostInsightSummaryCollection... hostInsightSummaryCollections) {
@@ -194,6 +203,7 @@ public final class GetHostInsightsResult {
         }
         @CustomType.Setter
         public Builder hostTypes(@Nullable List<String> hostTypes) {
+
             this.hostTypes = hostTypes;
             return this;
         }
@@ -202,11 +212,13 @@ public final class GetHostInsightsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
+
             this.states = states;
             return this;
         }
@@ -215,6 +227,7 @@ public final class GetHostInsightsResult {
         }
         @CustomType.Setter
         public Builder statuses(@Nullable List<String> statuses) {
+
             this.statuses = statuses;
             return this;
         }

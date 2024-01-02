@@ -5,6 +5,7 @@ package com.pulumi.oci.Analytics.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -113,7 +114,9 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs
         }
 
         public AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs build() {
-            $.dnsZone = Objects.requireNonNull($.dnsZone, "expected parameter 'dnsZone' to be non-null");
+            if ($.dnsZone == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs", "dnsZone");
+            }
             return $;
         }
     }

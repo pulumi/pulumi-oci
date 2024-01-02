@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
 
         @CustomType.Setter
         public Builder dependency(String dependency) {
-            this.dependency = Objects.requireNonNull(dependency);
+            if (dependency == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency", "dependency");
+            }
+            this.dependency = dependency;
             return this;
         }
         @CustomType.Setter
         public Builder dependencyModifier(String dependencyModifier) {
-            this.dependencyModifier = Objects.requireNonNull(dependencyModifier);
+            if (dependencyModifier == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency", "dependencyModifier");
+            }
+            this.dependencyModifier = dependencyModifier;
             return this;
         }
         @CustomType.Setter
         public Builder dependencyType(String dependencyType) {
-            this.dependencyType = Objects.requireNonNull(dependencyType);
+            if (dependencyType == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency", "dependencyType");
+            }
+            this.dependencyType = dependencyType;
             return this;
         }
         public GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency build() {

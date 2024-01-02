@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionAssignmentsConnectionAssignmentCollection;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionAssignmentsFilter;
 import java.lang.String;
@@ -129,12 +130,18 @@ public final class GetConnectionAssignmentsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionAssignmentsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionAssignmentCollections(List<GetConnectionAssignmentsConnectionAssignmentCollection> connectionAssignmentCollections) {
-            this.connectionAssignmentCollections = Objects.requireNonNull(connectionAssignmentCollections);
+            if (connectionAssignmentCollections == null) {
+              throw new MissingRequiredPropertyException("GetConnectionAssignmentsResult", "connectionAssignmentCollections");
+            }
+            this.connectionAssignmentCollections = connectionAssignmentCollections;
             return this;
         }
         public Builder connectionAssignmentCollections(GetConnectionAssignmentsConnectionAssignmentCollection... connectionAssignmentCollections) {
@@ -142,16 +149,19 @@ public final class GetConnectionAssignmentsResult {
         }
         @CustomType.Setter
         public Builder connectionId(@Nullable String connectionId) {
+
             this.connectionId = connectionId;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentId(@Nullable String deploymentId) {
+
             this.deploymentId = deploymentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetConnectionAssignmentsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -160,16 +170,21 @@ public final class GetConnectionAssignmentsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetConnectionAssignmentsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

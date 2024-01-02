@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -183,57 +184,90 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOp
 
         @CustomType.Setter
         public Builder completed(Integer completed) {
-            this.completed = Objects.requireNonNull(completed);
+            if (completed == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem", "completed");
+            }
+            this.completed = completed;
             return this;
         }
         @CustomType.Setter
         public Builder failed(Integer failed) {
-            this.failed = Objects.requireNonNull(failed);
+            if (failed == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem", "failed");
+            }
+            this.failed = failed;
             return this;
         }
         @CustomType.Setter
         public Builder groupBy(String groupBy) {
-            this.groupBy = Objects.requireNonNull(groupBy);
+            if (groupBy == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem", "groupBy");
+            }
+            this.groupBy = groupBy;
             return this;
         }
         @CustomType.Setter
         public Builder inProgress(Integer inProgress) {
-            this.inProgress = Objects.requireNonNull(inProgress);
+            if (inProgress == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem", "inProgress");
+            }
+            this.inProgress = inProgress;
             return this;
         }
         @CustomType.Setter
         public Builder pending(Integer pending) {
-            this.pending = Objects.requireNonNull(pending);
+            if (pending == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem", "pending");
+            }
+            this.pending = pending;
             return this;
         }
         @CustomType.Setter
         public Builder skipped(Integer skipped) {
-            this.skipped = Objects.requireNonNull(skipped);
+            if (skipped == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem", "skipped");
+            }
+            this.skipped = skipped;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+            if (timeEnd == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem", "timeEnd");
+            }
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+            if (timeStart == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem", "timeStart");
+            }
+            this.timeStart = timeStart;
             return this;
         }
         @CustomType.Setter
         public Builder timedOut(Integer timedOut) {
-            this.timedOut = Objects.requireNonNull(timedOut);
+            if (timedOut == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem", "timedOut");
+            }
+            this.timedOut = timedOut;
             return this;
         }
         @CustomType.Setter
         public Builder total(Integer total) {
-            this.total = Objects.requireNonNull(total);
+            if (total == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem", "total");
+            }
+            this.total = total;
             return this;
         }
         @CustomType.Setter
         public Builder unknown(Integer unknown) {
-            this.unknown = Objects.requireNonNull(unknown);
+            if (unknown == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem", "unknown");
+            }
+            this.unknown = unknown;
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem build() {

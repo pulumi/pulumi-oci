@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
@@ -142,42 +143,66 @@ public final class GetResourceQuotasResourceQuotumCollectionItem {
 
         @CustomType.Setter
         public Builder affectedResource(String affectedResource) {
-            this.affectedResource = Objects.requireNonNull(affectedResource);
+            if (affectedResource == null) {
+              throw new MissingRequiredPropertyException("GetResourceQuotasResourceQuotumCollectionItem", "affectedResource");
+            }
+            this.affectedResource = affectedResource;
             return this;
         }
         @CustomType.Setter
         public Builder balance(Double balance) {
-            this.balance = Objects.requireNonNull(balance);
+            if (balance == null) {
+              throw new MissingRequiredPropertyException("GetResourceQuotasResourceQuotumCollectionItem", "balance");
+            }
+            this.balance = balance;
             return this;
         }
         @CustomType.Setter
         public Builder isAllowed(Boolean isAllowed) {
-            this.isAllowed = Objects.requireNonNull(isAllowed);
+            if (isAllowed == null) {
+              throw new MissingRequiredPropertyException("GetResourceQuotasResourceQuotumCollectionItem", "isAllowed");
+            }
+            this.isAllowed = isAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder isDependency(Boolean isDependency) {
-            this.isDependency = Objects.requireNonNull(isDependency);
+            if (isDependency == null) {
+              throw new MissingRequiredPropertyException("GetResourceQuotasResourceQuotumCollectionItem", "isDependency");
+            }
+            this.isDependency = isDependency;
             return this;
         }
         @CustomType.Setter
         public Builder isOverage(Boolean isOverage) {
-            this.isOverage = Objects.requireNonNull(isOverage);
+            if (isOverage == null) {
+              throw new MissingRequiredPropertyException("GetResourceQuotasResourceQuotumCollectionItem", "isOverage");
+            }
+            this.isOverage = isOverage;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetResourceQuotasResourceQuotumCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder purchasedLimit(Double purchasedLimit) {
-            this.purchasedLimit = Objects.requireNonNull(purchasedLimit);
+            if (purchasedLimit == null) {
+              throw new MissingRequiredPropertyException("GetResourceQuotasResourceQuotumCollectionItem", "purchasedLimit");
+            }
+            this.purchasedLimit = purchasedLimit;
             return this;
         }
         @CustomType.Setter
         public Builder service(String service) {
-            this.service = Objects.requireNonNull(service);
+            if (service == null) {
+              throw new MissingRequiredPropertyException("GetResourceQuotasResourceQuotumCollectionItem", "service");
+            }
+            this.service = service;
             return this;
         }
         public GetResourceQuotasResourceQuotumCollectionItem build() {

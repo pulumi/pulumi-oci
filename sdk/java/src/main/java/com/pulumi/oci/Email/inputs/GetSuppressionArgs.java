@@ -5,6 +5,7 @@ package com.pulumi.oci.Email.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetSuppressionArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetSuppressionArgs build() {
-            $.suppressionId = Objects.requireNonNull($.suppressionId, "expected parameter 'suppressionId' to be non-null");
+            if ($.suppressionId == null) {
+                throw new MissingRequiredPropertyException("GetSuppressionArgs", "suppressionId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -192,57 +193,90 @@ public final class GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEnt
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder additionalCdbParams(String additionalCdbParams) {
-            this.additionalCdbParams = Objects.requireNonNull(additionalCdbParams);
+            if (additionalCdbParams == null) {
+              throw new MissingRequiredPropertyException("GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry", "additionalCdbParams");
+            }
+            this.additionalCdbParams = additionalCdbParams;
             return this;
         }
         @CustomType.Setter
         public Builder cdbName(String cdbName) {
-            this.cdbName = Objects.requireNonNull(cdbName);
+            if (cdbName == null) {
+              throw new MissingRequiredPropertyException("GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry", "cdbName");
+            }
+            this.cdbName = cdbName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder sourceDatabaseId(String sourceDatabaseId) {
-            this.sourceDatabaseId = Objects.requireNonNull(sourceDatabaseId);
+            if (sourceDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry", "sourceDatabaseId");
+            }
+            this.sourceDatabaseId = sourceDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder target(String target) {
-            this.target = Objects.requireNonNull(target);
+            if (target == null) {
+              throw new MissingRequiredPropertyException("GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry", "target");
+            }
+            this.target = target;
             return this;
         }
         @CustomType.Setter
         public Builder targetDatabaseId(String targetDatabaseId) {
-            this.targetDatabaseId = Objects.requireNonNull(targetDatabaseId);
+            if (targetDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry", "targetDatabaseId");
+            }
+            this.targetDatabaseId = targetDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+            if (timeEnded == null) {
+              throw new MissingRequiredPropertyException("GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry", "timeEnded");
+            }
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition;
 import java.lang.String;
@@ -149,37 +150,56 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder condition(GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition condition) {
-            this.condition = Objects.requireNonNull(condition);
+            if (condition == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem", "condition");
+            }
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
         public Builder inspection(@Nullable String inspection) {
+
             this.inspection = inspection;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder networkFirewallPolicyId(String networkFirewallPolicyId) {
-            this.networkFirewallPolicyId = Objects.requireNonNull(networkFirewallPolicyId);
+            if (networkFirewallPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem", "networkFirewallPolicyId");
+            }
+            this.networkFirewallPolicyId = networkFirewallPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+            if (parentResourceId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem", "parentResourceId");
+            }
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder positions(List<GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition> positions) {
-            this.positions = Objects.requireNonNull(positions);
+            if (positions == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem", "positions");
+            }
+            this.positions = positions;
             return this;
         }
         public Builder positions(GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition... positions) {
@@ -187,6 +207,7 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
         }
         @CustomType.Setter
         public Builder priorityOrder(@Nullable String priorityOrder) {
+
             this.priorityOrder = priorityOrder;
             return this;
         }

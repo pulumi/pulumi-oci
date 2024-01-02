@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.AutoScalingConfigurationPolicyDetailsScaleDownConfig;
 import com.pulumi.oci.BigDataService.outputs.AutoScalingConfigurationPolicyDetailsScaleInConfig;
 import com.pulumi.oci.BigDataService.outputs.AutoScalingConfigurationPolicyDetailsScaleOutConfig;
@@ -168,36 +169,45 @@ public final class AutoScalingConfigurationPolicyDetails {
 
         @CustomType.Setter
         public Builder actionType(@Nullable String actionType) {
+
             this.actionType = actionType;
             return this;
         }
         @CustomType.Setter
         public Builder policyType(String policyType) {
-            this.policyType = Objects.requireNonNull(policyType);
+            if (policyType == null) {
+              throw new MissingRequiredPropertyException("AutoScalingConfigurationPolicyDetails", "policyType");
+            }
+            this.policyType = policyType;
             return this;
         }
         @CustomType.Setter
         public Builder scaleDownConfig(@Nullable AutoScalingConfigurationPolicyDetailsScaleDownConfig scaleDownConfig) {
+
             this.scaleDownConfig = scaleDownConfig;
             return this;
         }
         @CustomType.Setter
         public Builder scaleInConfig(@Nullable AutoScalingConfigurationPolicyDetailsScaleInConfig scaleInConfig) {
+
             this.scaleInConfig = scaleInConfig;
             return this;
         }
         @CustomType.Setter
         public Builder scaleOutConfig(@Nullable AutoScalingConfigurationPolicyDetailsScaleOutConfig scaleOutConfig) {
+
             this.scaleOutConfig = scaleOutConfig;
             return this;
         }
         @CustomType.Setter
         public Builder scaleUpConfig(@Nullable AutoScalingConfigurationPolicyDetailsScaleUpConfig scaleUpConfig) {
+
             this.scaleUpConfig = scaleUpConfig;
             return this;
         }
         @CustomType.Setter
         public Builder scheduleDetails(@Nullable List<AutoScalingConfigurationPolicyDetailsScheduleDetail> scheduleDetails) {
+
             this.scheduleDetails = scheduleDetails;
             return this;
         }
@@ -206,11 +216,13 @@ public final class AutoScalingConfigurationPolicyDetails {
         }
         @CustomType.Setter
         public Builder timezone(@Nullable String timezone) {
+
             this.timezone = timezone;
             return this;
         }
         @CustomType.Setter
         public Builder triggerType(@Nullable String triggerType) {
+
             this.triggerType = triggerType;
             return this;
         }

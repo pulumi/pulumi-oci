@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentsManagementAgentManagementAgentProperty;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentsManagementAgentPluginList;
 import java.lang.Boolean;
@@ -396,22 +397,34 @@ public final class GetManagementAgentsManagementAgent {
 
         @CustomType.Setter
         public Builder availabilityStatus(String availabilityStatus) {
-            this.availabilityStatus = Objects.requireNonNull(availabilityStatus);
+            if (availabilityStatus == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "availabilityStatus");
+            }
+            this.availabilityStatus = availabilityStatus;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder deployPluginsIds(List<String> deployPluginsIds) {
-            this.deployPluginsIds = Objects.requireNonNull(deployPluginsIds);
+            if (deployPluginsIds == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "deployPluginsIds");
+            }
+            this.deployPluginsIds = deployPluginsIds;
             return this;
         }
         public Builder deployPluginsIds(String... deployPluginsIds) {
@@ -419,67 +432,106 @@ public final class GetManagementAgentsManagementAgent {
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+            if (host == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "host");
+            }
+            this.host = host;
             return this;
         }
         @CustomType.Setter
         public Builder hostId(String hostId) {
-            this.hostId = Objects.requireNonNull(hostId);
+            if (hostId == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "hostId");
+            }
+            this.hostId = hostId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder installKeyId(String installKeyId) {
-            this.installKeyId = Objects.requireNonNull(installKeyId);
+            if (installKeyId == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "installKeyId");
+            }
+            this.installKeyId = installKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder installPath(String installPath) {
-            this.installPath = Objects.requireNonNull(installPath);
+            if (installPath == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "installPath");
+            }
+            this.installPath = installPath;
             return this;
         }
         @CustomType.Setter
         public Builder installType(String installType) {
-            this.installType = Objects.requireNonNull(installType);
+            if (installType == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "installType");
+            }
+            this.installType = installType;
             return this;
         }
         @CustomType.Setter
         public Builder isAgentAutoUpgradable(Boolean isAgentAutoUpgradable) {
-            this.isAgentAutoUpgradable = Objects.requireNonNull(isAgentAutoUpgradable);
+            if (isAgentAutoUpgradable == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "isAgentAutoUpgradable");
+            }
+            this.isAgentAutoUpgradable = isAgentAutoUpgradable;
             return this;
         }
         @CustomType.Setter
         public Builder isCustomerDeployed(Boolean isCustomerDeployed) {
-            this.isCustomerDeployed = Objects.requireNonNull(isCustomerDeployed);
+            if (isCustomerDeployed == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "isCustomerDeployed");
+            }
+            this.isCustomerDeployed = isCustomerDeployed;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder managedAgentId(String managedAgentId) {
-            this.managedAgentId = Objects.requireNonNull(managedAgentId);
+            if (managedAgentId == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "managedAgentId");
+            }
+            this.managedAgentId = managedAgentId;
             return this;
         }
         @CustomType.Setter
         public Builder managementAgentProperties(List<GetManagementAgentsManagementAgentManagementAgentProperty> managementAgentProperties) {
-            this.managementAgentProperties = Objects.requireNonNull(managementAgentProperties);
+            if (managementAgentProperties == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "managementAgentProperties");
+            }
+            this.managementAgentProperties = managementAgentProperties;
             return this;
         }
         public Builder managementAgentProperties(GetManagementAgentsManagementAgentManagementAgentProperty... managementAgentProperties) {
@@ -487,22 +539,34 @@ public final class GetManagementAgentsManagementAgent {
         }
         @CustomType.Setter
         public Builder platformName(String platformName) {
-            this.platformName = Objects.requireNonNull(platformName);
+            if (platformName == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "platformName");
+            }
+            this.platformName = platformName;
             return this;
         }
         @CustomType.Setter
         public Builder platformType(String platformType) {
-            this.platformType = Objects.requireNonNull(platformType);
+            if (platformType == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "platformType");
+            }
+            this.platformType = platformType;
             return this;
         }
         @CustomType.Setter
         public Builder platformVersion(String platformVersion) {
-            this.platformVersion = Objects.requireNonNull(platformVersion);
+            if (platformVersion == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "platformVersion");
+            }
+            this.platformVersion = platformVersion;
             return this;
         }
         @CustomType.Setter
         public Builder pluginLists(List<GetManagementAgentsManagementAgentPluginList> pluginLists) {
-            this.pluginLists = Objects.requireNonNull(pluginLists);
+            if (pluginLists == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "pluginLists");
+            }
+            this.pluginLists = pluginLists;
             return this;
         }
         public Builder pluginLists(GetManagementAgentsManagementAgentPluginList... pluginLists) {
@@ -510,32 +574,50 @@ public final class GetManagementAgentsManagementAgent {
         }
         @CustomType.Setter
         public Builder resourceArtifactVersion(String resourceArtifactVersion) {
-            this.resourceArtifactVersion = Objects.requireNonNull(resourceArtifactVersion);
+            if (resourceArtifactVersion == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "resourceArtifactVersion");
+            }
+            this.resourceArtifactVersion = resourceArtifactVersion;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastHeartbeat(String timeLastHeartbeat) {
-            this.timeLastHeartbeat = Objects.requireNonNull(timeLastHeartbeat);
+            if (timeLastHeartbeat == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "timeLastHeartbeat");
+            }
+            this.timeLastHeartbeat = timeLastHeartbeat;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetManagementAgentsManagementAgent build() {

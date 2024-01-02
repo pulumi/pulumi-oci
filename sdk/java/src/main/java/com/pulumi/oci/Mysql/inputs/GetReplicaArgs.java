@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetReplicaArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetReplicaArgs build() {
-            $.replicaId = Objects.requireNonNull($.replicaId, "expected parameter 'replicaId' to be non-null");
+            if ($.replicaId == null) {
+                throw new MissingRequiredPropertyException("GetReplicaArgs", "replicaId");
+            }
             return $;
         }
     }

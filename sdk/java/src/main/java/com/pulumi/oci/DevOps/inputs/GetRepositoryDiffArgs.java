@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -225,10 +226,18 @@ public final class GetRepositoryDiffArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetRepositoryDiffArgs build() {
-            $.baseVersion = Objects.requireNonNull($.baseVersion, "expected parameter 'baseVersion' to be non-null");
-            $.filePath = Objects.requireNonNull($.filePath, "expected parameter 'filePath' to be non-null");
-            $.repositoryId = Objects.requireNonNull($.repositoryId, "expected parameter 'repositoryId' to be non-null");
-            $.targetVersion = Objects.requireNonNull($.targetVersion, "expected parameter 'targetVersion' to be non-null");
+            if ($.baseVersion == null) {
+                throw new MissingRequiredPropertyException("GetRepositoryDiffArgs", "baseVersion");
+            }
+            if ($.filePath == null) {
+                throw new MissingRequiredPropertyException("GetRepositoryDiffArgs", "filePath");
+            }
+            if ($.repositoryId == null) {
+                throw new MissingRequiredPropertyException("GetRepositoryDiffArgs", "repositoryId");
+            }
+            if ($.targetVersion == null) {
+                throw new MissingRequiredPropertyException("GetRepositoryDiffArgs", "targetVersion");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ObjectStorage.outputs.GetBucketSummariesBucketSummary;
 import com.pulumi.oci.ObjectStorage.outputs.GetBucketSummariesFilter;
 import java.lang.String;
@@ -94,7 +95,10 @@ public final class GetBucketSummariesResult {
 
         @CustomType.Setter
         public Builder bucketSummaries(List<GetBucketSummariesBucketSummary> bucketSummaries) {
-            this.bucketSummaries = Objects.requireNonNull(bucketSummaries);
+            if (bucketSummaries == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesResult", "bucketSummaries");
+            }
+            this.bucketSummaries = bucketSummaries;
             return this;
         }
         public Builder bucketSummaries(GetBucketSummariesBucketSummary... bucketSummaries) {
@@ -102,11 +106,15 @@ public final class GetBucketSummariesResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBucketSummariesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -115,12 +123,18 @@ public final class GetBucketSummariesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         public GetBucketSummariesResult build() {

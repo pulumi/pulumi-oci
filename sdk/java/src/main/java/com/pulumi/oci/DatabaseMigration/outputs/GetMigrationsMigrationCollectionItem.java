@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemAdvisorSetting;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetail;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2;
@@ -445,7 +446,10 @@ public final class GetMigrationsMigrationCollectionItem {
 
         @CustomType.Setter
         public Builder advisorSettings(List<GetMigrationsMigrationCollectionItemAdvisorSetting> advisorSettings) {
-            this.advisorSettings = Objects.requireNonNull(advisorSettings);
+            if (advisorSettings == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "advisorSettings");
+            }
+            this.advisorSettings = advisorSettings;
             return this;
         }
         public Builder advisorSettings(GetMigrationsMigrationCollectionItemAdvisorSetting... advisorSettings) {
@@ -453,27 +457,42 @@ public final class GetMigrationsMigrationCollectionItem {
         }
         @CustomType.Setter
         public Builder agentId(String agentId) {
-            this.agentId = Objects.requireNonNull(agentId);
+            if (agentId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "agentId");
+            }
+            this.agentId = agentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder credentialsSecretId(String credentialsSecretId) {
-            this.credentialsSecretId = Objects.requireNonNull(credentialsSecretId);
+            if (credentialsSecretId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "credentialsSecretId");
+            }
+            this.credentialsSecretId = credentialsSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder csvText(String csvText) {
-            this.csvText = Objects.requireNonNull(csvText);
+            if (csvText == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "csvText");
+            }
+            this.csvText = csvText;
             return this;
         }
         @CustomType.Setter
         public Builder dataTransferMediumDetails(List<GetMigrationsMigrationCollectionItemDataTransferMediumDetail> dataTransferMediumDetails) {
-            this.dataTransferMediumDetails = Objects.requireNonNull(dataTransferMediumDetails);
+            if (dataTransferMediumDetails == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "dataTransferMediumDetails");
+            }
+            this.dataTransferMediumDetails = dataTransferMediumDetails;
             return this;
         }
         public Builder dataTransferMediumDetails(GetMigrationsMigrationCollectionItemDataTransferMediumDetail... dataTransferMediumDetails) {
@@ -481,7 +500,10 @@ public final class GetMigrationsMigrationCollectionItem {
         }
         @CustomType.Setter
         public Builder dataTransferMediumDetailsV2s(List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2> dataTransferMediumDetailsV2s) {
-            this.dataTransferMediumDetailsV2s = Objects.requireNonNull(dataTransferMediumDetailsV2s);
+            if (dataTransferMediumDetailsV2s == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "dataTransferMediumDetailsV2s");
+            }
+            this.dataTransferMediumDetailsV2s = dataTransferMediumDetailsV2s;
             return this;
         }
         public Builder dataTransferMediumDetailsV2s(GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2... dataTransferMediumDetailsV2s) {
@@ -489,7 +511,10 @@ public final class GetMigrationsMigrationCollectionItem {
         }
         @CustomType.Setter
         public Builder datapumpSettings(List<GetMigrationsMigrationCollectionItemDatapumpSetting> datapumpSettings) {
-            this.datapumpSettings = Objects.requireNonNull(datapumpSettings);
+            if (datapumpSettings == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "datapumpSettings");
+            }
+            this.datapumpSettings = datapumpSettings;
             return this;
         }
         public Builder datapumpSettings(GetMigrationsMigrationCollectionItemDatapumpSetting... datapumpSettings) {
@@ -497,17 +522,26 @@ public final class GetMigrationsMigrationCollectionItem {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder dumpTransferDetails(List<GetMigrationsMigrationCollectionItemDumpTransferDetail> dumpTransferDetails) {
-            this.dumpTransferDetails = Objects.requireNonNull(dumpTransferDetails);
+            if (dumpTransferDetails == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "dumpTransferDetails");
+            }
+            this.dumpTransferDetails = dumpTransferDetails;
             return this;
         }
         public Builder dumpTransferDetails(GetMigrationsMigrationCollectionItemDumpTransferDetail... dumpTransferDetails) {
@@ -515,7 +549,10 @@ public final class GetMigrationsMigrationCollectionItem {
         }
         @CustomType.Setter
         public Builder excludeObjects(List<GetMigrationsMigrationCollectionItemExcludeObject> excludeObjects) {
-            this.excludeObjects = Objects.requireNonNull(excludeObjects);
+            if (excludeObjects == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "excludeObjects");
+            }
+            this.excludeObjects = excludeObjects;
             return this;
         }
         public Builder excludeObjects(GetMigrationsMigrationCollectionItemExcludeObject... excludeObjects) {
@@ -523,17 +560,26 @@ public final class GetMigrationsMigrationCollectionItem {
         }
         @CustomType.Setter
         public Builder executingJobId(String executingJobId) {
-            this.executingJobId = Objects.requireNonNull(executingJobId);
+            if (executingJobId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "executingJobId");
+            }
+            this.executingJobId = executingJobId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder goldenGateDetails(List<GetMigrationsMigrationCollectionItemGoldenGateDetail> goldenGateDetails) {
-            this.goldenGateDetails = Objects.requireNonNull(goldenGateDetails);
+            if (goldenGateDetails == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "goldenGateDetails");
+            }
+            this.goldenGateDetails = goldenGateDetails;
             return this;
         }
         public Builder goldenGateDetails(GetMigrationsMigrationCollectionItemGoldenGateDetail... goldenGateDetails) {
@@ -541,7 +587,10 @@ public final class GetMigrationsMigrationCollectionItem {
         }
         @CustomType.Setter
         public Builder goldenGateServiceDetails(List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetail> goldenGateServiceDetails) {
-            this.goldenGateServiceDetails = Objects.requireNonNull(goldenGateServiceDetails);
+            if (goldenGateServiceDetails == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "goldenGateServiceDetails");
+            }
+            this.goldenGateServiceDetails = goldenGateServiceDetails;
             return this;
         }
         public Builder goldenGateServiceDetails(GetMigrationsMigrationCollectionItemGoldenGateServiceDetail... goldenGateServiceDetails) {
@@ -549,12 +598,18 @@ public final class GetMigrationsMigrationCollectionItem {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder includeObjects(List<GetMigrationsMigrationCollectionItemIncludeObject> includeObjects) {
-            this.includeObjects = Objects.requireNonNull(includeObjects);
+            if (includeObjects == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "includeObjects");
+            }
+            this.includeObjects = includeObjects;
             return this;
         }
         public Builder includeObjects(GetMigrationsMigrationCollectionItemIncludeObject... includeObjects) {
@@ -562,57 +617,90 @@ public final class GetMigrationsMigrationCollectionItem {
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder sourceContainerDatabaseConnectionId(String sourceContainerDatabaseConnectionId) {
-            this.sourceContainerDatabaseConnectionId = Objects.requireNonNull(sourceContainerDatabaseConnectionId);
+            if (sourceContainerDatabaseConnectionId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "sourceContainerDatabaseConnectionId");
+            }
+            this.sourceContainerDatabaseConnectionId = sourceContainerDatabaseConnectionId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceDatabaseConnectionId(String sourceDatabaseConnectionId) {
-            this.sourceDatabaseConnectionId = Objects.requireNonNull(sourceDatabaseConnectionId);
+            if (sourceDatabaseConnectionId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "sourceDatabaseConnectionId");
+            }
+            this.sourceDatabaseConnectionId = sourceDatabaseConnectionId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder targetDatabaseConnectionId(String targetDatabaseConnectionId) {
-            this.targetDatabaseConnectionId = Objects.requireNonNull(targetDatabaseConnectionId);
+            if (targetDatabaseConnectionId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "targetDatabaseConnectionId");
+            }
+            this.targetDatabaseConnectionId = targetDatabaseConnectionId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastMigration(String timeLastMigration) {
-            this.timeLastMigration = Objects.requireNonNull(timeLastMigration);
+            if (timeLastMigration == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "timeLastMigration");
+            }
+            this.timeLastMigration = timeLastMigration;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder vaultDetails(List<GetMigrationsMigrationCollectionItemVaultDetail> vaultDetails) {
-            this.vaultDetails = Objects.requireNonNull(vaultDetails);
+            if (vaultDetails == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "vaultDetails");
+            }
+            this.vaultDetails = vaultDetails;
             return this;
         }
         public Builder vaultDetails(GetMigrationsMigrationCollectionItemVaultDetail... vaultDetails) {
@@ -620,7 +708,10 @@ public final class GetMigrationsMigrationCollectionItem {
         }
         @CustomType.Setter
         public Builder waitAfter(String waitAfter) {
-            this.waitAfter = Objects.requireNonNull(waitAfter);
+            if (waitAfter == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "waitAfter");
+            }
+            this.waitAfter = waitAfter;
             return this;
         }
         public GetMigrationsMigrationCollectionItem build() {

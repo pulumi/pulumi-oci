@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectAnomalyJobsDetectAnomalyJobCollection;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectAnomalyJobsFilter;
 import java.lang.String;
@@ -143,12 +144,18 @@ public final class GetDetectAnomalyJobsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder detectAnomalyJobCollections(List<GetDetectAnomalyJobsDetectAnomalyJobCollection> detectAnomalyJobCollections) {
-            this.detectAnomalyJobCollections = Objects.requireNonNull(detectAnomalyJobCollections);
+            if (detectAnomalyJobCollections == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobsResult", "detectAnomalyJobCollections");
+            }
+            this.detectAnomalyJobCollections = detectAnomalyJobCollections;
             return this;
         }
         public Builder detectAnomalyJobCollections(GetDetectAnomalyJobsDetectAnomalyJobCollection... detectAnomalyJobCollections) {
@@ -156,16 +163,19 @@ public final class GetDetectAnomalyJobsResult {
         }
         @CustomType.Setter
         public Builder detectAnomalyJobId(@Nullable String detectAnomalyJobId) {
+
             this.detectAnomalyJobId = detectAnomalyJobId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDetectAnomalyJobsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -174,21 +184,27 @@ public final class GetDetectAnomalyJobsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDetectAnomalyJobsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder modelId(@Nullable String modelId) {
+
             this.modelId = modelId;
             return this;
         }
         @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
+
             this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

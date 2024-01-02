@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturn;
 import java.lang.Boolean;
 import java.lang.String;
@@ -571,31 +572,39 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAp
 
         @CustomType.Setter
         public Builder captureClientIp(@Nullable Boolean captureClientIp) {
+
             this.captureClientIp = captureClientIp;
             return this;
         }
         @CustomType.Setter
         public Builder clientIp(String clientIp) {
-            this.clientIp = Objects.requireNonNull(clientIp);
+            if (clientIp == null) {
+              throw new MissingRequiredPropertyException("DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp", "clientIp");
+            }
+            this.clientIp = clientIp;
             return this;
         }
         @CustomType.Setter
         public Builder countryCodeResponseAttributeId(@Nullable String countryCodeResponseAttributeId) {
+
             this.countryCodeResponseAttributeId = countryCodeResponseAttributeId;
             return this;
         }
         @CustomType.Setter
         public Builder endUserIpAttribute(@Nullable String endUserIpAttribute) {
+
             this.endUserIpAttribute = endUserIpAttribute;
             return this;
         }
         @CustomType.Setter
         public Builder groupMembershipRadiusAttribute(@Nullable String groupMembershipRadiusAttribute) {
+
             this.groupMembershipRadiusAttribute = groupMembershipRadiusAttribute;
             return this;
         }
         @CustomType.Setter
         public Builder groupMembershipToReturns(@Nullable List<DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturn> groupMembershipToReturns) {
+
             this.groupMembershipToReturns = groupMembershipToReturns;
             return this;
         }
@@ -604,46 +613,61 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAp
         }
         @CustomType.Setter
         public Builder groupNameFormat(@Nullable String groupNameFormat) {
+
             this.groupNameFormat = groupNameFormat;
             return this;
         }
         @CustomType.Setter
         public Builder includeGroupInResponse(Boolean includeGroupInResponse) {
-            this.includeGroupInResponse = Objects.requireNonNull(includeGroupInResponse);
+            if (includeGroupInResponse == null) {
+              throw new MissingRequiredPropertyException("DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp", "includeGroupInResponse");
+            }
+            this.includeGroupInResponse = includeGroupInResponse;
             return this;
         }
         @CustomType.Setter
         public Builder passwordAndOtpTogether(@Nullable Boolean passwordAndOtpTogether) {
+
             this.passwordAndOtpTogether = passwordAndOtpTogether;
             return this;
         }
         @CustomType.Setter
         public Builder port(String port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder radiusVendorSpecificId(@Nullable String radiusVendorSpecificId) {
+
             this.radiusVendorSpecificId = radiusVendorSpecificId;
             return this;
         }
         @CustomType.Setter
         public Builder responseFormat(@Nullable String responseFormat) {
+
             this.responseFormat = responseFormat;
             return this;
         }
         @CustomType.Setter
         public Builder responseFormatDelimiter(@Nullable String responseFormatDelimiter) {
+
             this.responseFormatDelimiter = responseFormatDelimiter;
             return this;
         }
         @CustomType.Setter
         public Builder secretKey(String secretKey) {
-            this.secretKey = Objects.requireNonNull(secretKey);
+            if (secretKey == null) {
+              throw new MissingRequiredPropertyException("DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp", "secretKey");
+            }
+            this.secretKey = secretKey;
             return this;
         }
         @CustomType.Setter
         public Builder typeOfRadiusApp(@Nullable String typeOfRadiusApp) {
+
             this.typeOfRadiusApp = typeOfRadiusApp;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class GetBdsInstanceApiKeyArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetBdsInstanceApiKeyArgs build() {
-            $.apiKeyId = Objects.requireNonNull($.apiKeyId, "expected parameter 'apiKeyId' to be non-null");
-            $.bdsInstanceId = Objects.requireNonNull($.bdsInstanceId, "expected parameter 'bdsInstanceId' to be non-null");
+            if ($.apiKeyId == null) {
+                throw new MissingRequiredPropertyException("GetBdsInstanceApiKeyArgs", "apiKeyId");
+            }
+            if ($.bdsInstanceId == null) {
+                throw new MissingRequiredPropertyException("GetBdsInstanceApiKeyArgs", "bdsInstanceId");
+            }
             return $;
         }
     }

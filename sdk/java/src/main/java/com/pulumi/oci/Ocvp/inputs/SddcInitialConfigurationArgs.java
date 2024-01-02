@@ -5,6 +5,7 @@ package com.pulumi.oci.Ocvp.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ocvp.inputs.SddcInitialConfigurationInitialClusterConfigurationArgs;
 import java.util.List;
 import java.util.Objects;
@@ -85,7 +86,9 @@ public final class SddcInitialConfigurationArgs extends com.pulumi.resources.Res
         }
 
         public SddcInitialConfigurationArgs build() {
-            $.initialClusterConfigurations = Objects.requireNonNull($.initialClusterConfigurations, "expected parameter 'initialClusterConfigurations' to be non-null");
+            if ($.initialClusterConfigurations == null) {
+                throw new MissingRequiredPropertyException("SddcInitialConfigurationArgs", "initialClusterConfigurations");
+            }
             return $;
         }
     }

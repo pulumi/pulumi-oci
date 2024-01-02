@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetVmClusterNetworkDrScan;
 import com.pulumi.oci.Database.outputs.GetVmClusterNetworkScan;
 import com.pulumi.oci.Database.outputs.GetVmClusterNetworkVmNetwork;
@@ -263,27 +264,42 @@ public final class GetVmClusterNetworkResult {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkResult", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder dns(List<String> dns) {
-            this.dns = Objects.requireNonNull(dns);
+            if (dns == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkResult", "dns");
+            }
+            this.dns = dns;
             return this;
         }
         public Builder dns(String... dns) {
@@ -291,7 +307,10 @@ public final class GetVmClusterNetworkResult {
         }
         @CustomType.Setter
         public Builder drScans(List<GetVmClusterNetworkDrScan> drScans) {
-            this.drScans = Objects.requireNonNull(drScans);
+            if (drScans == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkResult", "drScans");
+            }
+            this.drScans = drScans;
             return this;
         }
         public Builder drScans(GetVmClusterNetworkDrScan... drScans) {
@@ -299,27 +318,42 @@ public final class GetVmClusterNetworkResult {
         }
         @CustomType.Setter
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
-            this.exadataInfrastructureId = Objects.requireNonNull(exadataInfrastructureId);
+            if (exadataInfrastructureId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkResult", "exadataInfrastructureId");
+            }
+            this.exadataInfrastructureId = exadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder ntps(List<String> ntps) {
-            this.ntps = Objects.requireNonNull(ntps);
+            if (ntps == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkResult", "ntps");
+            }
+            this.ntps = ntps;
             return this;
         }
         public Builder ntps(String... ntps) {
@@ -327,7 +361,10 @@ public final class GetVmClusterNetworkResult {
         }
         @CustomType.Setter
         public Builder scans(List<GetVmClusterNetworkScan> scans) {
-            this.scans = Objects.requireNonNull(scans);
+            if (scans == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkResult", "scans");
+            }
+            this.scans = scans;
             return this;
         }
         public Builder scans(GetVmClusterNetworkScan... scans) {
@@ -335,32 +372,50 @@ public final class GetVmClusterNetworkResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder validateVmClusterNetwork(Boolean validateVmClusterNetwork) {
-            this.validateVmClusterNetwork = Objects.requireNonNull(validateVmClusterNetwork);
+            if (validateVmClusterNetwork == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkResult", "validateVmClusterNetwork");
+            }
+            this.validateVmClusterNetwork = validateVmClusterNetwork;
             return this;
         }
         @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
-            this.vmClusterId = Objects.requireNonNull(vmClusterId);
+            if (vmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkResult", "vmClusterId");
+            }
+            this.vmClusterId = vmClusterId;
             return this;
         }
         @CustomType.Setter
         public Builder vmClusterNetworkId(String vmClusterNetworkId) {
-            this.vmClusterNetworkId = Objects.requireNonNull(vmClusterNetworkId);
+            if (vmClusterNetworkId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkResult", "vmClusterNetworkId");
+            }
+            this.vmClusterNetworkId = vmClusterNetworkId;
             return this;
         }
         @CustomType.Setter
         public Builder vmNetworks(List<GetVmClusterNetworkVmNetwork> vmNetworks) {
-            this.vmNetworks = Objects.requireNonNull(vmNetworks);
+            if (vmNetworks == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworkResult", "vmNetworks");
+            }
+            this.vmNetworks = vmNetworks;
             return this;
         }
         public Builder vmNetworks(GetVmClusterNetworkVmNetwork... vmNetworks) {

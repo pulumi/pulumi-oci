@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetIdpGroupMappingsFilter;
 import com.pulumi.oci.Identity.outputs.GetIdpGroupMappingsIdpGroupMapping;
 import java.lang.String;
@@ -80,6 +81,7 @@ public final class GetIdpGroupMappingsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetIdpGroupMappingsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -88,17 +90,26 @@ public final class GetIdpGroupMappingsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIdpGroupMappingsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder identityProviderId(String identityProviderId) {
-            this.identityProviderId = Objects.requireNonNull(identityProviderId);
+            if (identityProviderId == null) {
+              throw new MissingRequiredPropertyException("GetIdpGroupMappingsResult", "identityProviderId");
+            }
+            this.identityProviderId = identityProviderId;
             return this;
         }
         @CustomType.Setter
         public Builder idpGroupMappings(List<GetIdpGroupMappingsIdpGroupMapping> idpGroupMappings) {
-            this.idpGroupMappings = Objects.requireNonNull(idpGroupMappings);
+            if (idpGroupMappings == null) {
+              throw new MissingRequiredPropertyException("GetIdpGroupMappingsResult", "idpGroupMappings");
+            }
+            this.idpGroupMappings = idpGroupMappings;
             return this;
         }
         public Builder idpGroupMappings(GetIdpGroupMappingsIdpGroupMapping... idpGroupMappings) {

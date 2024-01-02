@@ -4,6 +4,7 @@
 package com.pulumi.oci.EmWarehouse.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.EmWarehouse.outputs.GetResourceUsageEmInstance;
 import java.lang.Integer;
 import java.lang.String;
@@ -121,12 +122,18 @@ public final class GetResourceUsageResult {
 
         @CustomType.Setter
         public Builder emInstanceCount(Integer emInstanceCount) {
-            this.emInstanceCount = Objects.requireNonNull(emInstanceCount);
+            if (emInstanceCount == null) {
+              throw new MissingRequiredPropertyException("GetResourceUsageResult", "emInstanceCount");
+            }
+            this.emInstanceCount = emInstanceCount;
             return this;
         }
         @CustomType.Setter
         public Builder emInstances(List<GetResourceUsageEmInstance> emInstances) {
-            this.emInstances = Objects.requireNonNull(emInstances);
+            if (emInstances == null) {
+              throw new MissingRequiredPropertyException("GetResourceUsageResult", "emInstances");
+            }
+            this.emInstances = emInstances;
             return this;
         }
         public Builder emInstances(GetResourceUsageEmInstance... emInstances) {
@@ -134,27 +141,42 @@ public final class GetResourceUsageResult {
         }
         @CustomType.Setter
         public Builder emWarehouseId(String emWarehouseId) {
-            this.emWarehouseId = Objects.requireNonNull(emWarehouseId);
+            if (emWarehouseId == null) {
+              throw new MissingRequiredPropertyException("GetResourceUsageResult", "emWarehouseId");
+            }
+            this.emWarehouseId = emWarehouseId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetResourceUsageResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder operationsInsightsWarehouseId(String operationsInsightsWarehouseId) {
-            this.operationsInsightsWarehouseId = Objects.requireNonNull(operationsInsightsWarehouseId);
+            if (operationsInsightsWarehouseId == null) {
+              throw new MissingRequiredPropertyException("GetResourceUsageResult", "operationsInsightsWarehouseId");
+            }
+            this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
             return this;
         }
         @CustomType.Setter
         public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+            if (schemaName == null) {
+              throw new MissingRequiredPropertyException("GetResourceUsageResult", "schemaName");
+            }
+            this.schemaName = schemaName;
             return this;
         }
         @CustomType.Setter
         public Builder targetsCount(Integer targetsCount) {
-            this.targetsCount = Objects.requireNonNull(targetsCount);
+            if (targetsCount == null) {
+              throw new MissingRequiredPropertyException("GetResourceUsageResult", "targetsCount");
+            }
+            this.targetsCount = targetsCount;
             return this;
         }
         public GetResourceUsageResult build() {

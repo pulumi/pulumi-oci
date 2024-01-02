@@ -4,6 +4,7 @@
 package com.pulumi.oci.Autoscaling.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Autoscaling.outputs.GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResource;
 import com.pulumi.oci.Autoscaling.outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicy;
 import java.lang.Boolean;
@@ -203,7 +204,10 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
 
         @CustomType.Setter
         public Builder autoScalingResources(List<GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResource> autoScalingResources) {
-            this.autoScalingResources = Objects.requireNonNull(autoScalingResources);
+            if (autoScalingResources == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfiguration", "autoScalingResources");
+            }
+            this.autoScalingResources = autoScalingResources;
             return this;
         }
         public Builder autoScalingResources(GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResource... autoScalingResources) {
@@ -211,52 +215,82 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfiguration", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder coolDownInSeconds(Integer coolDownInSeconds) {
-            this.coolDownInSeconds = Objects.requireNonNull(coolDownInSeconds);
+            if (coolDownInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfiguration", "coolDownInSeconds");
+            }
+            this.coolDownInSeconds = coolDownInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfiguration", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfiguration", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfiguration", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfiguration", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfiguration", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder maxResourceCount(Integer maxResourceCount) {
-            this.maxResourceCount = Objects.requireNonNull(maxResourceCount);
+            if (maxResourceCount == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfiguration", "maxResourceCount");
+            }
+            this.maxResourceCount = maxResourceCount;
             return this;
         }
         @CustomType.Setter
         public Builder minResourceCount(Integer minResourceCount) {
-            this.minResourceCount = Objects.requireNonNull(minResourceCount);
+            if (minResourceCount == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfiguration", "minResourceCount");
+            }
+            this.minResourceCount = minResourceCount;
             return this;
         }
         @CustomType.Setter
         public Builder policies(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicy> policies) {
-            this.policies = Objects.requireNonNull(policies);
+            if (policies == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfiguration", "policies");
+            }
+            this.policies = policies;
             return this;
         }
         public Builder policies(GetAutoScalingConfigurationsAutoScalingConfigurationPolicy... policies) {
@@ -264,7 +298,10 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfiguration", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetAutoScalingConfigurationsAutoScalingConfiguration build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserObjectPrivilegesFilter;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection;
 import java.lang.String;
@@ -93,6 +94,7 @@ public final class GetManagedDatabaseUserObjectPrivilegesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseUserObjectPrivilegesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -101,22 +103,32 @@ public final class GetManagedDatabaseUserObjectPrivilegesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserObjectPrivilegesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserObjectPrivilegesResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder objectPrivilegeCollections(List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection> objectPrivilegeCollections) {
-            this.objectPrivilegeCollections = Objects.requireNonNull(objectPrivilegeCollections);
+            if (objectPrivilegeCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserObjectPrivilegesResult", "objectPrivilegeCollections");
+            }
+            this.objectPrivilegeCollections = objectPrivilegeCollections;
             return this;
         }
         public Builder objectPrivilegeCollections(GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection... objectPrivilegeCollections) {
@@ -124,7 +136,10 @@ public final class GetManagedDatabaseUserObjectPrivilegesResult {
         }
         @CustomType.Setter
         public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+            if (userName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserObjectPrivilegesResult", "userName");
+            }
+            this.userName = userName;
             return this;
         }
         public GetManagedDatabaseUserObjectPrivilegesResult build() {

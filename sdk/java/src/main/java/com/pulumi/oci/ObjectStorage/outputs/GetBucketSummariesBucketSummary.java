@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ObjectStorage.outputs.GetBucketSummariesBucketSummaryRetentionRule;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -331,102 +332,162 @@ public final class GetBucketSummariesBucketSummary {
 
         @CustomType.Setter
         public Builder accessType(String accessType) {
-            this.accessType = Objects.requireNonNull(accessType);
+            if (accessType == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "accessType");
+            }
+            this.accessType = accessType;
             return this;
         }
         @CustomType.Setter
         public Builder approximateCount(String approximateCount) {
-            this.approximateCount = Objects.requireNonNull(approximateCount);
+            if (approximateCount == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "approximateCount");
+            }
+            this.approximateCount = approximateCount;
             return this;
         }
         @CustomType.Setter
         public Builder approximateSize(String approximateSize) {
-            this.approximateSize = Objects.requireNonNull(approximateSize);
+            if (approximateSize == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "approximateSize");
+            }
+            this.approximateSize = approximateSize;
             return this;
         }
         @CustomType.Setter
         public Builder autoTiering(String autoTiering) {
-            this.autoTiering = Objects.requireNonNull(autoTiering);
+            if (autoTiering == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "autoTiering");
+            }
+            this.autoTiering = autoTiering;
             return this;
         }
         @CustomType.Setter
         public Builder bucketId(String bucketId) {
-            this.bucketId = Objects.requireNonNull(bucketId);
+            if (bucketId == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "bucketId");
+            }
+            this.bucketId = bucketId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder etag(String etag) {
-            this.etag = Objects.requireNonNull(etag);
+            if (etag == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "etag");
+            }
+            this.etag = etag;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isReadOnly(Boolean isReadOnly) {
-            this.isReadOnly = Objects.requireNonNull(isReadOnly);
+            if (isReadOnly == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "isReadOnly");
+            }
+            this.isReadOnly = isReadOnly;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder metadata(Map<String,Object> metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+            if (metadata == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "metadata");
+            }
+            this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder objectEventsEnabled(Boolean objectEventsEnabled) {
-            this.objectEventsEnabled = Objects.requireNonNull(objectEventsEnabled);
+            if (objectEventsEnabled == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "objectEventsEnabled");
+            }
+            this.objectEventsEnabled = objectEventsEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder objectLifecyclePolicyEtag(String objectLifecyclePolicyEtag) {
-            this.objectLifecyclePolicyEtag = Objects.requireNonNull(objectLifecyclePolicyEtag);
+            if (objectLifecyclePolicyEtag == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "objectLifecyclePolicyEtag");
+            }
+            this.objectLifecyclePolicyEtag = objectLifecyclePolicyEtag;
             return this;
         }
         @CustomType.Setter
         public Builder replicationEnabled(Boolean replicationEnabled) {
-            this.replicationEnabled = Objects.requireNonNull(replicationEnabled);
+            if (replicationEnabled == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "replicationEnabled");
+            }
+            this.replicationEnabled = replicationEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder retentionRules(List<GetBucketSummariesBucketSummaryRetentionRule> retentionRules) {
-            this.retentionRules = Objects.requireNonNull(retentionRules);
+            if (retentionRules == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "retentionRules");
+            }
+            this.retentionRules = retentionRules;
             return this;
         }
         public Builder retentionRules(GetBucketSummariesBucketSummaryRetentionRule... retentionRules) {
@@ -434,17 +495,26 @@ public final class GetBucketSummariesBucketSummary {
         }
         @CustomType.Setter
         public Builder storageTier(String storageTier) {
-            this.storageTier = Objects.requireNonNull(storageTier);
+            if (storageTier == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "storageTier");
+            }
+            this.storageTier = storageTier;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder versioning(String versioning) {
-            this.versioning = Objects.requireNonNull(versioning);
+            if (versioning == null) {
+              throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "versioning");
+            }
+            this.versioning = versioning;
             return this;
         }
         public GetBucketSummariesBucketSummary build() {

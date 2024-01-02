@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetDefaultConfigurationPlainArgs extends com.pulumi.resources
         }
 
         public GetDefaultConfigurationPlainArgs build() {
-            $.defaultConfigurationId = Objects.requireNonNull($.defaultConfigurationId, "expected parameter 'defaultConfigurationId' to be non-null");
+            if ($.defaultConfigurationId == null) {
+                throw new MissingRequiredPropertyException("GetDefaultConfigurationPlainArgs", "defaultConfigurationId");
+            }
             return $;
         }
     }

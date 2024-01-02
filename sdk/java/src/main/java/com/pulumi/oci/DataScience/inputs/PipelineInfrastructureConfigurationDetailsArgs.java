@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -152,8 +153,12 @@ public final class PipelineInfrastructureConfigurationDetailsArgs extends com.pu
         }
 
         public PipelineInfrastructureConfigurationDetailsArgs build() {
-            $.blockStorageSizeInGbs = Objects.requireNonNull($.blockStorageSizeInGbs, "expected parameter 'blockStorageSizeInGbs' to be non-null");
-            $.shapeName = Objects.requireNonNull($.shapeName, "expected parameter 'shapeName' to be non-null");
+            if ($.blockStorageSizeInGbs == null) {
+                throw new MissingRequiredPropertyException("PipelineInfrastructureConfigurationDetailsArgs", "blockStorageSizeInGbs");
+            }
+            if ($.shapeName == null) {
+                throw new MissingRequiredPropertyException("PipelineInfrastructureConfigurationDetailsArgs", "shapeName");
+            }
             return $;
         }
     }

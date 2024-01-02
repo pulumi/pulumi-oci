@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstancePoolsFilter;
 import com.pulumi.oci.Core.outputs.GetInstancePoolsInstancePool;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetInstancePoolsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetInstancePoolsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +133,18 @@ public final class GetInstancePoolsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instancePools(List<GetInstancePoolsInstancePool> instancePools) {
-            this.instancePools = Objects.requireNonNull(instancePools);
+            if (instancePools == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolsResult", "instancePools");
+            }
+            this.instancePools = instancePools;
             return this;
         }
         public Builder instancePools(GetInstancePoolsInstancePool... instancePools) {
@@ -140,6 +152,7 @@ public final class GetInstancePoolsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

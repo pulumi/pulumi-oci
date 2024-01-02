@@ -64,11 +64,13 @@ public final class NetworkAddressListVcnAddress {
 
         @CustomType.Setter
         public Builder addresses(@Nullable String addresses) {
+
             this.addresses = addresses;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
+
             this.vcnId = vcnId;
             return this;
         }

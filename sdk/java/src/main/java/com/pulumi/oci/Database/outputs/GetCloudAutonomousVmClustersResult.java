@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClustersCloudAutonomousVmCluster;
 import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClustersFilter;
 import java.lang.String;
@@ -137,12 +138,16 @@ public final class GetCloudAutonomousVmClustersResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder cloudAutonomousVmClusters(List<GetCloudAutonomousVmClustersCloudAutonomousVmCluster> cloudAutonomousVmClusters) {
-            this.cloudAutonomousVmClusters = Objects.requireNonNull(cloudAutonomousVmClusters);
+            if (cloudAutonomousVmClusters == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClustersResult", "cloudAutonomousVmClusters");
+            }
+            this.cloudAutonomousVmClusters = cloudAutonomousVmClusters;
             return this;
         }
         public Builder cloudAutonomousVmClusters(GetCloudAutonomousVmClustersCloudAutonomousVmCluster... cloudAutonomousVmClusters) {
@@ -150,21 +155,27 @@ public final class GetCloudAutonomousVmClustersResult {
         }
         @CustomType.Setter
         public Builder cloudExadataInfrastructureId(@Nullable String cloudExadataInfrastructureId) {
+
             this.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClustersResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCloudAutonomousVmClustersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -173,11 +184,15 @@ public final class GetCloudAutonomousVmClustersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClustersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

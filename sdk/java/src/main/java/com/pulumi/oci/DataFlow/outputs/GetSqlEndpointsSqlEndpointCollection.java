@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.outputs.GetSqlEndpointsSqlEndpointCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetSqlEndpointsSqlEndpointCollection {
 
         @CustomType.Setter
         public Builder items(List<GetSqlEndpointsSqlEndpointCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsSqlEndpointCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetSqlEndpointsSqlEndpointCollectionItem... items) {

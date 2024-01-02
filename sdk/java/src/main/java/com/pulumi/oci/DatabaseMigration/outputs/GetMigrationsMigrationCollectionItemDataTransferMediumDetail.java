@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetMigrationsMigrationCollectionItemDataTransferMediumDetail 
 
         @CustomType.Setter
         public Builder databaseLinkDetails(List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails) {
-            this.databaseLinkDetails = Objects.requireNonNull(databaseLinkDetails);
+            if (databaseLinkDetails == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItemDataTransferMediumDetail", "databaseLinkDetails");
+            }
+            this.databaseLinkDetails = databaseLinkDetails;
             return this;
         }
         public Builder databaseLinkDetails(GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail... databaseLinkDetails) {
@@ -66,7 +70,10 @@ public final class GetMigrationsMigrationCollectionItemDataTransferMediumDetail 
         }
         @CustomType.Setter
         public Builder objectStorageDetails(List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail> objectStorageDetails) {
-            this.objectStorageDetails = Objects.requireNonNull(objectStorageDetails);
+            if (objectStorageDetails == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItemDataTransferMediumDetail", "objectStorageDetails");
+            }
+            this.objectStorageDetails = objectStorageDetails;
             return this;
         }
         public Builder objectStorageDetails(GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail... objectStorageDetails) {

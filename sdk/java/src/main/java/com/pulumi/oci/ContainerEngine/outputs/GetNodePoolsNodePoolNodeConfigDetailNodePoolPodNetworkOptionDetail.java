@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -86,17 +87,26 @@ public final class GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionD
 
         @CustomType.Setter
         public Builder cniType(String cniType) {
-            this.cniType = Objects.requireNonNull(cniType);
+            if (cniType == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail", "cniType");
+            }
+            this.cniType = cniType;
             return this;
         }
         @CustomType.Setter
         public Builder maxPodsPerNode(Integer maxPodsPerNode) {
-            this.maxPodsPerNode = Objects.requireNonNull(maxPodsPerNode);
+            if (maxPodsPerNode == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail", "maxPodsPerNode");
+            }
+            this.maxPodsPerNode = maxPodsPerNode;
             return this;
         }
         @CustomType.Setter
         public Builder podNsgIds(List<String> podNsgIds) {
-            this.podNsgIds = Objects.requireNonNull(podNsgIds);
+            if (podNsgIds == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail", "podNsgIds");
+            }
+            this.podNsgIds = podNsgIds;
             return this;
         }
         public Builder podNsgIds(String... podNsgIds) {
@@ -104,7 +114,10 @@ public final class GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionD
         }
         @CustomType.Setter
         public Builder podSubnetIds(List<String> podSubnetIds) {
-            this.podSubnetIds = Objects.requireNonNull(podSubnetIds);
+            if (podSubnetIds == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail", "podSubnetIds");
+            }
+            this.podSubnetIds = podSubnetIds;
             return this;
         }
         public Builder podSubnetIds(String... podSubnetIds) {

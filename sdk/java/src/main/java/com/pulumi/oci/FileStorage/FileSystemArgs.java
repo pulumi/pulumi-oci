@@ -5,6 +5,7 @@ package com.pulumi.oci.FileStorage;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -357,8 +358,12 @@ public final class FileSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public FileSystemArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.availabilityDomain == null) {
+                throw new MissingRequiredPropertyException("FileSystemArgs", "availabilityDomain");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("FileSystemArgs", "compartmentId");
+            }
             return $;
         }
     }

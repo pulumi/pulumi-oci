@@ -44,6 +44,7 @@ public final class GatewayIpAddress {
 
         @CustomType.Setter
         public Builder ipAddress(@Nullable String ipAddress) {
+
             this.ipAddress = ipAddress;
             return this;
         }

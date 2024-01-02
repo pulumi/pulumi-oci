@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -404,10 +405,18 @@ public final class AutonomousContainerDatabaseDataguardAssociationArgs extends c
         }
 
         public AutonomousContainerDatabaseDataguardAssociationArgs build() {
-            $.autonomousContainerDatabaseId = Objects.requireNonNull($.autonomousContainerDatabaseId, "expected parameter 'autonomousContainerDatabaseId' to be non-null");
-            $.peerAutonomousContainerDatabaseDisplayName = Objects.requireNonNull($.peerAutonomousContainerDatabaseDisplayName, "expected parameter 'peerAutonomousContainerDatabaseDisplayName' to be non-null");
-            $.peerCloudAutonomousVmClusterId = Objects.requireNonNull($.peerCloudAutonomousVmClusterId, "expected parameter 'peerCloudAutonomousVmClusterId' to be non-null");
-            $.protectionMode = Objects.requireNonNull($.protectionMode, "expected parameter 'protectionMode' to be non-null");
+            if ($.autonomousContainerDatabaseId == null) {
+                throw new MissingRequiredPropertyException("AutonomousContainerDatabaseDataguardAssociationArgs", "autonomousContainerDatabaseId");
+            }
+            if ($.peerAutonomousContainerDatabaseDisplayName == null) {
+                throw new MissingRequiredPropertyException("AutonomousContainerDatabaseDataguardAssociationArgs", "peerAutonomousContainerDatabaseDisplayName");
+            }
+            if ($.peerCloudAutonomousVmClusterId == null) {
+                throw new MissingRequiredPropertyException("AutonomousContainerDatabaseDataguardAssociationArgs", "peerCloudAutonomousVmClusterId");
+            }
+            if ($.protectionMode == null) {
+                throw new MissingRequiredPropertyException("AutonomousContainerDatabaseDataguardAssociationArgs", "protectionMode");
+            }
             return $;
         }
     }

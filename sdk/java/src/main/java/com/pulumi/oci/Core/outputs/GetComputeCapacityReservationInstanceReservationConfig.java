@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationInstanceReservationConfigClusterConfig;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig;
 import java.lang.String;
@@ -115,7 +116,10 @@ public final class GetComputeCapacityReservationInstanceReservationConfig {
 
         @CustomType.Setter
         public Builder clusterConfigs(List<GetComputeCapacityReservationInstanceReservationConfigClusterConfig> clusterConfigs) {
-            this.clusterConfigs = Objects.requireNonNull(clusterConfigs);
+            if (clusterConfigs == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationInstanceReservationConfig", "clusterConfigs");
+            }
+            this.clusterConfigs = clusterConfigs;
             return this;
         }
         public Builder clusterConfigs(GetComputeCapacityReservationInstanceReservationConfigClusterConfig... clusterConfigs) {
@@ -123,17 +127,26 @@ public final class GetComputeCapacityReservationInstanceReservationConfig {
         }
         @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+            if (faultDomain == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationInstanceReservationConfig", "faultDomain");
+            }
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder instanceShape(String instanceShape) {
-            this.instanceShape = Objects.requireNonNull(instanceShape);
+            if (instanceShape == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationInstanceReservationConfig", "instanceShape");
+            }
+            this.instanceShape = instanceShape;
             return this;
         }
         @CustomType.Setter
         public Builder instanceShapeConfigs(List<GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig> instanceShapeConfigs) {
-            this.instanceShapeConfigs = Objects.requireNonNull(instanceShapeConfigs);
+            if (instanceShapeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationInstanceReservationConfig", "instanceShapeConfigs");
+            }
+            this.instanceShapeConfigs = instanceShapeConfigs;
             return this;
         }
         public Builder instanceShapeConfigs(GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig... instanceShapeConfigs) {
@@ -141,12 +154,18 @@ public final class GetComputeCapacityReservationInstanceReservationConfig {
         }
         @CustomType.Setter
         public Builder reservedCount(String reservedCount) {
-            this.reservedCount = Objects.requireNonNull(reservedCount);
+            if (reservedCount == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationInstanceReservationConfig", "reservedCount");
+            }
+            this.reservedCount = reservedCount;
             return this;
         }
         @CustomType.Setter
         public Builder usedCount(String usedCount) {
-            this.usedCount = Objects.requireNonNull(usedCount);
+            if (usedCount == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationInstanceReservationConfig", "usedCount");
+            }
+            this.usedCount = usedCount;
             return this;
         }
         public GetComputeCapacityReservationInstanceReservationConfig build() {

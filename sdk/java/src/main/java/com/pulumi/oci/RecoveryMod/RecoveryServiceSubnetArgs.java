@@ -5,6 +5,7 @@ package com.pulumi.oci.RecoveryMod;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -275,10 +276,18 @@ public final class RecoveryServiceSubnetArgs extends com.pulumi.resources.Resour
         }
 
         public RecoveryServiceSubnetArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
-            $.vcnId = Objects.requireNonNull($.vcnId, "expected parameter 'vcnId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("RecoveryServiceSubnetArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("RecoveryServiceSubnetArgs", "displayName");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("RecoveryServiceSubnetArgs", "subnetId");
+            }
+            if ($.vcnId == null) {
+                throw new MissingRequiredPropertyException("RecoveryServiceSubnetArgs", "vcnId");
+            }
             return $;
         }
     }

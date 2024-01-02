@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -272,8 +273,12 @@ public final class GetDomainsApprovalWorkflowAssignmentArgs extends com.pulumi.r
         }
 
         public GetDomainsApprovalWorkflowAssignmentArgs build() {
-            $.approvalWorkflowAssignmentId = Objects.requireNonNull($.approvalWorkflowAssignmentId, "expected parameter 'approvalWorkflowAssignmentId' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
+            if ($.approvalWorkflowAssignmentId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowAssignmentArgs", "approvalWorkflowAssignmentId");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowAssignmentArgs", "idcsEndpoint");
+            }
             return $;
         }
     }

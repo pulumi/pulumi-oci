@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryDiffChangeDiffSection;
 import java.lang.Integer;
 import java.util.List;
@@ -100,17 +101,26 @@ public final class GetRepositoryDiffChange {
 
         @CustomType.Setter
         public Builder baseLine(Integer baseLine) {
-            this.baseLine = Objects.requireNonNull(baseLine);
+            if (baseLine == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffChange", "baseLine");
+            }
+            this.baseLine = baseLine;
             return this;
         }
         @CustomType.Setter
         public Builder baseSpan(Integer baseSpan) {
-            this.baseSpan = Objects.requireNonNull(baseSpan);
+            if (baseSpan == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffChange", "baseSpan");
+            }
+            this.baseSpan = baseSpan;
             return this;
         }
         @CustomType.Setter
         public Builder diffSections(List<GetRepositoryDiffChangeDiffSection> diffSections) {
-            this.diffSections = Objects.requireNonNull(diffSections);
+            if (diffSections == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffChange", "diffSections");
+            }
+            this.diffSections = diffSections;
             return this;
         }
         public Builder diffSections(GetRepositoryDiffChangeDiffSection... diffSections) {
@@ -118,12 +128,18 @@ public final class GetRepositoryDiffChange {
         }
         @CustomType.Setter
         public Builder targetLine(Integer targetLine) {
-            this.targetLine = Objects.requireNonNull(targetLine);
+            if (targetLine == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffChange", "targetLine");
+            }
+            this.targetLine = targetLine;
             return this;
         }
         @CustomType.Setter
         public Builder targetSpan(Integer targetSpan) {
-            this.targetSpan = Objects.requireNonNull(targetSpan);
+            if (targetSpan == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffChange", "targetSpan");
+            }
+            this.targetSpan = targetSpan;
             return this;
         }
         public GetRepositoryDiffChange build() {

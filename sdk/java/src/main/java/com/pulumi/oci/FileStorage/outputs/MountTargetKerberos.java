@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -102,26 +103,33 @@ public final class MountTargetKerberos {
 
         @CustomType.Setter
         public Builder backupKeyTabSecretVersion(@Nullable Integer backupKeyTabSecretVersion) {
+
             this.backupKeyTabSecretVersion = backupKeyTabSecretVersion;
             return this;
         }
         @CustomType.Setter
         public Builder currentKeyTabSecretVersion(@Nullable Integer currentKeyTabSecretVersion) {
+
             this.currentKeyTabSecretVersion = currentKeyTabSecretVersion;
             return this;
         }
         @CustomType.Setter
         public Builder isKerberosEnabled(@Nullable Boolean isKerberosEnabled) {
+
             this.isKerberosEnabled = isKerberosEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder kerberosRealm(String kerberosRealm) {
-            this.kerberosRealm = Objects.requireNonNull(kerberosRealm);
+            if (kerberosRealm == null) {
+              throw new MissingRequiredPropertyException("MountTargetKerberos", "kerberosRealm");
+            }
+            this.kerberosRealm = kerberosRealm;
             return this;
         }
         @CustomType.Setter
         public Builder keyTabSecretId(@Nullable String keyTabSecretId) {
+
             this.keyTabSecretId = keyTabSecretId;
             return this;
         }

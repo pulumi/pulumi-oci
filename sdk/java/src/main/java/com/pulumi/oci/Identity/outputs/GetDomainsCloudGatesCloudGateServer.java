@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -100,27 +101,42 @@ public final class GetDomainsCloudGatesCloudGateServer {
 
         @CustomType.Setter
         public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+            if (hostName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGatesCloudGateServer", "hostName");
+            }
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder nginxSettings(String nginxSettings) {
-            this.nginxSettings = Objects.requireNonNull(nginxSettings);
+            if (nginxSettings == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGatesCloudGateServer", "nginxSettings");
+            }
+            this.nginxSettings = nginxSettings;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGatesCloudGateServer", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder serverId(String serverId) {
-            this.serverId = Objects.requireNonNull(serverId);
+            if (serverId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGatesCloudGateServer", "serverId");
+            }
+            this.serverId = serverId;
             return this;
         }
         @CustomType.Setter
         public Builder ssl(Boolean ssl) {
-            this.ssl = Objects.requireNonNull(ssl);
+            if (ssl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCloudGatesCloudGateServer", "ssl");
+            }
+            this.ssl = ssl;
             return this;
         }
         public GetDomainsCloudGatesCloudGateServer build() {

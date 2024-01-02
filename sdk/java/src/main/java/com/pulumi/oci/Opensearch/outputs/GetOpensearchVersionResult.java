@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opensearch.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchVersionItem;
 import java.lang.String;
 import java.util.List;
@@ -64,17 +65,26 @@ public final class GetOpensearchVersionResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchVersionResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchVersionResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetOpensearchVersionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchVersionResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetOpensearchVersionItem... items) {

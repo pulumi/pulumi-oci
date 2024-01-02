@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetIpsecAlgorithmAllowedPhaseOneParameter;
 import com.pulumi.oci.Core.outputs.GetIpsecAlgorithmAllowedPhaseTwoParameter;
 import com.pulumi.oci.Core.outputs.GetIpsecAlgorithmDefaultPhaseOneParameter;
@@ -103,7 +104,10 @@ public final class GetIpsecAlgorithmResult {
 
         @CustomType.Setter
         public Builder allowedPhaseOneParameters(List<GetIpsecAlgorithmAllowedPhaseOneParameter> allowedPhaseOneParameters) {
-            this.allowedPhaseOneParameters = Objects.requireNonNull(allowedPhaseOneParameters);
+            if (allowedPhaseOneParameters == null) {
+              throw new MissingRequiredPropertyException("GetIpsecAlgorithmResult", "allowedPhaseOneParameters");
+            }
+            this.allowedPhaseOneParameters = allowedPhaseOneParameters;
             return this;
         }
         public Builder allowedPhaseOneParameters(GetIpsecAlgorithmAllowedPhaseOneParameter... allowedPhaseOneParameters) {
@@ -111,7 +115,10 @@ public final class GetIpsecAlgorithmResult {
         }
         @CustomType.Setter
         public Builder allowedPhaseTwoParameters(List<GetIpsecAlgorithmAllowedPhaseTwoParameter> allowedPhaseTwoParameters) {
-            this.allowedPhaseTwoParameters = Objects.requireNonNull(allowedPhaseTwoParameters);
+            if (allowedPhaseTwoParameters == null) {
+              throw new MissingRequiredPropertyException("GetIpsecAlgorithmResult", "allowedPhaseTwoParameters");
+            }
+            this.allowedPhaseTwoParameters = allowedPhaseTwoParameters;
             return this;
         }
         public Builder allowedPhaseTwoParameters(GetIpsecAlgorithmAllowedPhaseTwoParameter... allowedPhaseTwoParameters) {
@@ -119,7 +126,10 @@ public final class GetIpsecAlgorithmResult {
         }
         @CustomType.Setter
         public Builder defaultPhaseOneParameters(List<GetIpsecAlgorithmDefaultPhaseOneParameter> defaultPhaseOneParameters) {
-            this.defaultPhaseOneParameters = Objects.requireNonNull(defaultPhaseOneParameters);
+            if (defaultPhaseOneParameters == null) {
+              throw new MissingRequiredPropertyException("GetIpsecAlgorithmResult", "defaultPhaseOneParameters");
+            }
+            this.defaultPhaseOneParameters = defaultPhaseOneParameters;
             return this;
         }
         public Builder defaultPhaseOneParameters(GetIpsecAlgorithmDefaultPhaseOneParameter... defaultPhaseOneParameters) {
@@ -127,7 +137,10 @@ public final class GetIpsecAlgorithmResult {
         }
         @CustomType.Setter
         public Builder defaultPhaseTwoParameters(List<GetIpsecAlgorithmDefaultPhaseTwoParameter> defaultPhaseTwoParameters) {
-            this.defaultPhaseTwoParameters = Objects.requireNonNull(defaultPhaseTwoParameters);
+            if (defaultPhaseTwoParameters == null) {
+              throw new MissingRequiredPropertyException("GetIpsecAlgorithmResult", "defaultPhaseTwoParameters");
+            }
+            this.defaultPhaseTwoParameters = defaultPhaseTwoParameters;
             return this;
         }
         public Builder defaultPhaseTwoParameters(GetIpsecAlgorithmDefaultPhaseTwoParameter... defaultPhaseTwoParameters) {
@@ -135,7 +148,10 @@ public final class GetIpsecAlgorithmResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIpsecAlgorithmResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetIpsecAlgorithmResult build() {

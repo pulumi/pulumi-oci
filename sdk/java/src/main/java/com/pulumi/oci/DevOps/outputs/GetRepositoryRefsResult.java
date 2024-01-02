@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryRefsFilter;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryRefsRepositoryRefCollection;
 import java.lang.String;
@@ -123,11 +124,13 @@ public final class GetRepositoryRefsResult {
 
         @CustomType.Setter
         public Builder commitId(@Nullable String commitId) {
+
             this.commitId = commitId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRepositoryRefsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -136,27 +139,38 @@ public final class GetRepositoryRefsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryRefsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder refName(@Nullable String refName) {
+
             this.refName = refName;
             return this;
         }
         @CustomType.Setter
         public Builder refType(@Nullable String refType) {
+
             this.refType = refType;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+            if (repositoryId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryRefsResult", "repositoryId");
+            }
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryRefCollections(List<GetRepositoryRefsRepositoryRefCollection> repositoryRefCollections) {
-            this.repositoryRefCollections = Objects.requireNonNull(repositoryRefCollections);
+            if (repositoryRefCollections == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryRefsResult", "repositoryRefCollections");
+            }
+            this.repositoryRefCollections = repositoryRefCollections;
             return this;
         }
         public Builder repositoryRefCollections(GetRepositoryRefsRepositoryRefCollection... repositoryRefCollections) {

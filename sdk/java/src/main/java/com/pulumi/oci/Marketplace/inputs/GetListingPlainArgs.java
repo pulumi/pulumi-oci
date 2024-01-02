@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -92,7 +93,9 @@ public final class GetListingPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetListingPlainArgs build() {
-            $.listingId = Objects.requireNonNull($.listingId, "expected parameter 'listingId' to be non-null");
+            if ($.listingId == null) {
+                throw new MissingRequiredPropertyException("GetListingPlainArgs", "listingId");
+            }
             return $;
         }
     }

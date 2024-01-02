@@ -5,6 +5,7 @@ package com.pulumi.oci.AiAnomalyDetection;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiAnomalyDetection.inputs.ModelModelTrainingDetailsArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -313,9 +314,15 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ModelArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.modelTrainingDetails = Objects.requireNonNull($.modelTrainingDetails, "expected parameter 'modelTrainingDetails' to be non-null");
-            $.projectId = Objects.requireNonNull($.projectId, "expected parameter 'projectId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ModelArgs", "compartmentId");
+            }
+            if ($.modelTrainingDetails == null) {
+                throw new MissingRequiredPropertyException("ModelArgs", "modelTrainingDetails");
+            }
+            if ($.projectId == null) {
+                throw new MissingRequiredPropertyException("ModelArgs", "projectId");
+            }
             return $;
         }
     }

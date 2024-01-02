@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetTrailSequenceItem;
 import java.lang.String;
 import java.util.List;
@@ -104,22 +105,34 @@ public final class GetTrailSequenceResult {
 
         @CustomType.Setter
         public Builder deploymentId(String deploymentId) {
-            this.deploymentId = Objects.requireNonNull(deploymentId);
+            if (deploymentId == null) {
+              throw new MissingRequiredPropertyException("GetTrailSequenceResult", "deploymentId");
+            }
+            this.deploymentId = deploymentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetTrailSequenceResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTrailSequenceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetTrailSequenceItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetTrailSequenceResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetTrailSequenceItem... items) {
@@ -127,17 +140,26 @@ public final class GetTrailSequenceResult {
         }
         @CustomType.Setter
         public Builder timeLastFetched(String timeLastFetched) {
-            this.timeLastFetched = Objects.requireNonNull(timeLastFetched);
+            if (timeLastFetched == null) {
+              throw new MissingRequiredPropertyException("GetTrailSequenceResult", "timeLastFetched");
+            }
+            this.timeLastFetched = timeLastFetched;
             return this;
         }
         @CustomType.Setter
         public Builder trailFileId(String trailFileId) {
-            this.trailFileId = Objects.requireNonNull(trailFileId);
+            if (trailFileId == null) {
+              throw new MissingRequiredPropertyException("GetTrailSequenceResult", "trailFileId");
+            }
+            this.trailFileId = trailFileId;
             return this;
         }
         @CustomType.Setter
         public Builder trailSequenceId(String trailSequenceId) {
-            this.trailSequenceId = Objects.requireNonNull(trailSequenceId);
+            if (trailSequenceId == null) {
+              throw new MissingRequiredPropertyException("GetTrailSequenceResult", "trailSequenceId");
+            }
+            this.trailSequenceId = trailSequenceId;
             return this;
         }
         public GetTrailSequenceResult build() {

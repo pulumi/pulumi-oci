@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadata;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceFoldersFolderSummaryCollectionItemParentRef;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata;
@@ -229,37 +230,58 @@ public final class GetWorkspaceFoldersFolderSummaryCollectionItem {
 
         @CustomType.Setter
         public Builder categoryName(String categoryName) {
-            this.categoryName = Objects.requireNonNull(categoryName);
+            if (categoryName == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFoldersFolderSummaryCollectionItem", "categoryName");
+            }
+            this.categoryName = categoryName;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFoldersFolderSummaryCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder folderKey(String folderKey) {
-            this.folderKey = Objects.requireNonNull(folderKey);
+            if (folderKey == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFoldersFolderSummaryCollectionItem", "folderKey");
+            }
+            this.folderKey = folderKey;
             return this;
         }
         @CustomType.Setter
         public Builder identifier(String identifier) {
-            this.identifier = Objects.requireNonNull(identifier);
+            if (identifier == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFoldersFolderSummaryCollectionItem", "identifier");
+            }
+            this.identifier = identifier;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFoldersFolderSummaryCollectionItem", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder keyMap(Map<String,Object> keyMap) {
-            this.keyMap = Objects.requireNonNull(keyMap);
+            if (keyMap == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFoldersFolderSummaryCollectionItem", "keyMap");
+            }
+            this.keyMap = keyMap;
             return this;
         }
         @CustomType.Setter
         public Builder metadatas(List<GetWorkspaceFoldersFolderSummaryCollectionItemMetadata> metadatas) {
-            this.metadatas = Objects.requireNonNull(metadatas);
+            if (metadatas == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFoldersFolderSummaryCollectionItem", "metadatas");
+            }
+            this.metadatas = metadatas;
             return this;
         }
         public Builder metadatas(GetWorkspaceFoldersFolderSummaryCollectionItemMetadata... metadatas) {
@@ -267,32 +289,50 @@ public final class GetWorkspaceFoldersFolderSummaryCollectionItem {
         }
         @CustomType.Setter
         public Builder modelType(String modelType) {
-            this.modelType = Objects.requireNonNull(modelType);
+            if (modelType == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFoldersFolderSummaryCollectionItem", "modelType");
+            }
+            this.modelType = modelType;
             return this;
         }
         @CustomType.Setter
         public Builder modelVersion(String modelVersion) {
-            this.modelVersion = Objects.requireNonNull(modelVersion);
+            if (modelVersion == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFoldersFolderSummaryCollectionItem", "modelVersion");
+            }
+            this.modelVersion = modelVersion;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFoldersFolderSummaryCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder objectStatus(Integer objectStatus) {
-            this.objectStatus = Objects.requireNonNull(objectStatus);
+            if (objectStatus == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFoldersFolderSummaryCollectionItem", "objectStatus");
+            }
+            this.objectStatus = objectStatus;
             return this;
         }
         @CustomType.Setter
         public Builder objectVersion(Integer objectVersion) {
-            this.objectVersion = Objects.requireNonNull(objectVersion);
+            if (objectVersion == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFoldersFolderSummaryCollectionItem", "objectVersion");
+            }
+            this.objectVersion = objectVersion;
             return this;
         }
         @CustomType.Setter
         public Builder parentReves(List<GetWorkspaceFoldersFolderSummaryCollectionItemParentRef> parentReves) {
-            this.parentReves = Objects.requireNonNull(parentReves);
+            if (parentReves == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFoldersFolderSummaryCollectionItem", "parentReves");
+            }
+            this.parentReves = parentReves;
             return this;
         }
         public Builder parentReves(GetWorkspaceFoldersFolderSummaryCollectionItemParentRef... parentReves) {
@@ -300,12 +340,18 @@ public final class GetWorkspaceFoldersFolderSummaryCollectionItem {
         }
         @CustomType.Setter
         public Builder registryMetadata(GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata registryMetadata) {
-            this.registryMetadata = Objects.requireNonNull(registryMetadata);
+            if (registryMetadata == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFoldersFolderSummaryCollectionItem", "registryMetadata");
+            }
+            this.registryMetadata = registryMetadata;
             return this;
         }
         @CustomType.Setter
         public Builder workspaceId(String workspaceId) {
-            this.workspaceId = Objects.requireNonNull(workspaceId);
+            if (workspaceId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFoldersFolderSummaryCollectionItem", "workspaceId");
+            }
+            this.workspaceId = workspaceId;
             return this;
         }
         public GetWorkspaceFoldersFolderSummaryCollectionItem build() {

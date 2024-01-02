@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat
 
         @CustomType.Setter
         public Builder capacityGb(Double capacityGb) {
-            this.capacityGb = Objects.requireNonNull(capacityGb);
+            if (capacityGb == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolume", "capacityGb");
+            }
+            this.capacityGb = capacityGb;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolume", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder totalGbPerMonth(Double totalGbPerMonth) {
-            this.totalGbPerMonth = Objects.requireNonNull(totalGbPerMonth);
+            if (totalGbPerMonth == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolume", "totalGbPerMonth");
+            }
+            this.totalGbPerMonth = totalGbPerMonth;
             return this;
         }
         @CustomType.Setter
         public Builder totalGbPerMonthBySubscription(Double totalGbPerMonthBySubscription) {
-            this.totalGbPerMonthBySubscription = Objects.requireNonNull(totalGbPerMonthBySubscription);
+            if (totalGbPerMonthBySubscription == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolume", "totalGbPerMonthBySubscription");
+            }
+            this.totalGbPerMonthBySubscription = totalGbPerMonthBySubscription;
             return this;
         }
         public GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolume build() {

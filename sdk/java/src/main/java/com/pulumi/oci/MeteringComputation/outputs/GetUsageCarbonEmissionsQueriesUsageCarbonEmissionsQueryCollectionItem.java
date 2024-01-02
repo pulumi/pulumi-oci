@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition;
 import java.lang.String;
 import java.util.List;
@@ -72,17 +73,26 @@ public final class GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollec
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder queryDefinitions(List<GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition> queryDefinitions) {
-            this.queryDefinitions = Objects.requireNonNull(queryDefinitions);
+            if (queryDefinitions == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItem", "queryDefinitions");
+            }
+            this.queryDefinitions = queryDefinitions;
             return this;
         }
         public Builder queryDefinitions(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition... queryDefinitions) {

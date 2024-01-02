@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsRulesRule;
 import java.lang.Integer;
 import java.lang.String;
@@ -153,6 +154,7 @@ public final class GetDomainsRulesResult {
 
         @CustomType.Setter
         public Builder attributeSets(@Nullable List<String> attributeSets) {
+
             this.attributeSets = attributeSets;
             return this;
         }
@@ -161,52 +163,70 @@ public final class GetDomainsRulesResult {
         }
         @CustomType.Setter
         public Builder attributes(@Nullable String attributes) {
+
             this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsRulesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsRulesResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder itemsPerPage(Integer itemsPerPage) {
-            this.itemsPerPage = Objects.requireNonNull(itemsPerPage);
+            if (itemsPerPage == null) {
+              throw new MissingRequiredPropertyException("GetDomainsRulesResult", "itemsPerPage");
+            }
+            this.itemsPerPage = itemsPerPage;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder ruleCount(@Nullable Integer ruleCount) {
+
             this.ruleCount = ruleCount;
             return this;
         }
         @CustomType.Setter
         public Builder ruleFilter(@Nullable String ruleFilter) {
+
             this.ruleFilter = ruleFilter;
             return this;
         }
         @CustomType.Setter
         public Builder rules(List<GetDomainsRulesRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+            if (rules == null) {
+              throw new MissingRequiredPropertyException("GetDomainsRulesResult", "rules");
+            }
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetDomainsRulesRule... rules) {
@@ -214,7 +234,10 @@ public final class GetDomainsRulesResult {
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsRulesResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -222,22 +245,28 @@ public final class GetDomainsRulesResult {
         }
         @CustomType.Setter
         public Builder sortBy(@Nullable String sortBy) {
+
             this.sortBy = sortBy;
             return this;
         }
         @CustomType.Setter
         public Builder sortOrder(@Nullable String sortOrder) {
+
             this.sortOrder = sortOrder;
             return this;
         }
         @CustomType.Setter
         public Builder startIndex(@Nullable Integer startIndex) {
+
             this.startIndex = startIndex;
             return this;
         }
         @CustomType.Setter
         public Builder totalResults(Integer totalResults) {
-            this.totalResults = Objects.requireNonNull(totalResults);
+            if (totalResults == null) {
+              throw new MissingRequiredPropertyException("GetDomainsRulesResult", "totalResults");
+            }
+            this.totalResults = totalResults;
             return this;
         }
         public GetDomainsRulesResult build() {

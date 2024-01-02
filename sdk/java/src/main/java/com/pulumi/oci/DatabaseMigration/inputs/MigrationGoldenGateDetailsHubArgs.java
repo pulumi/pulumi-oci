@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseMigration.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsHubRestAdminCredentialsArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs;
@@ -339,8 +340,12 @@ public final class MigrationGoldenGateDetailsHubArgs extends com.pulumi.resource
         }
 
         public MigrationGoldenGateDetailsHubArgs build() {
-            $.restAdminCredentials = Objects.requireNonNull($.restAdminCredentials, "expected parameter 'restAdminCredentials' to be non-null");
-            $.url = Objects.requireNonNull($.url, "expected parameter 'url' to be non-null");
+            if ($.restAdminCredentials == null) {
+                throw new MissingRequiredPropertyException("MigrationGoldenGateDetailsHubArgs", "restAdminCredentials");
+            }
+            if ($.url == null) {
+                throw new MissingRequiredPropertyException("MigrationGoldenGateDetailsHubArgs", "url");
+            }
             return $;
         }
     }

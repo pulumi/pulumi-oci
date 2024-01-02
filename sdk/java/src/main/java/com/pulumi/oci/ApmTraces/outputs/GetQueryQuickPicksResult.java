@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmTraces.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmTraces.outputs.GetQueryQuickPicksFilter;
 import com.pulumi.oci.ApmTraces.outputs.GetQueryQuickPicksQuickPick;
 import java.lang.String;
@@ -72,11 +73,15 @@ public final class GetQueryQuickPicksResult {
 
         @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
-            this.apmDomainId = Objects.requireNonNull(apmDomainId);
+            if (apmDomainId == null) {
+              throw new MissingRequiredPropertyException("GetQueryQuickPicksResult", "apmDomainId");
+            }
+            this.apmDomainId = apmDomainId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetQueryQuickPicksFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -85,12 +90,18 @@ public final class GetQueryQuickPicksResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetQueryQuickPicksResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder quickPicks(List<GetQueryQuickPicksQuickPick> quickPicks) {
-            this.quickPicks = Objects.requireNonNull(quickPicks);
+            if (quickPicks == null) {
+              throw new MissingRequiredPropertyException("GetQueryQuickPicksResult", "quickPicks");
+            }
+            this.quickPicks = quickPicks;
             return this;
         }
         public Builder quickPicks(GetQueryQuickPicksQuickPick... quickPicks) {

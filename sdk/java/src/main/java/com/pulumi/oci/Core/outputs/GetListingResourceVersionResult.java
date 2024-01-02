@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -98,7 +99,10 @@ public final class GetListingResourceVersionResult {
 
         @CustomType.Setter
         public Builder accessiblePorts(List<Integer> accessiblePorts) {
-            this.accessiblePorts = Objects.requireNonNull(accessiblePorts);
+            if (accessiblePorts == null) {
+              throw new MissingRequiredPropertyException("GetListingResourceVersionResult", "accessiblePorts");
+            }
+            this.accessiblePorts = accessiblePorts;
             return this;
         }
         public Builder accessiblePorts(Integer... accessiblePorts) {
@@ -106,7 +110,10 @@ public final class GetListingResourceVersionResult {
         }
         @CustomType.Setter
         public Builder allowedActions(List<String> allowedActions) {
-            this.allowedActions = Objects.requireNonNull(allowedActions);
+            if (allowedActions == null) {
+              throw new MissingRequiredPropertyException("GetListingResourceVersionResult", "allowedActions");
+            }
+            this.allowedActions = allowedActions;
             return this;
         }
         public Builder allowedActions(String... allowedActions) {
@@ -114,7 +121,10 @@ public final class GetListingResourceVersionResult {
         }
         @CustomType.Setter
         public Builder availableRegions(List<String> availableRegions) {
-            this.availableRegions = Objects.requireNonNull(availableRegions);
+            if (availableRegions == null) {
+              throw new MissingRequiredPropertyException("GetListingResourceVersionResult", "availableRegions");
+            }
+            this.availableRegions = availableRegions;
             return this;
         }
         public Builder availableRegions(String... availableRegions) {
@@ -122,7 +132,10 @@ public final class GetListingResourceVersionResult {
         }
         @CustomType.Setter
         public Builder compatibleShapes(List<String> compatibleShapes) {
-            this.compatibleShapes = Objects.requireNonNull(compatibleShapes);
+            if (compatibleShapes == null) {
+              throw new MissingRequiredPropertyException("GetListingResourceVersionResult", "compatibleShapes");
+            }
+            this.compatibleShapes = compatibleShapes;
             return this;
         }
         public Builder compatibleShapes(String... compatibleShapes) {
@@ -130,32 +143,50 @@ public final class GetListingResourceVersionResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetListingResourceVersionResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder listingId(String listingId) {
-            this.listingId = Objects.requireNonNull(listingId);
+            if (listingId == null) {
+              throw new MissingRequiredPropertyException("GetListingResourceVersionResult", "listingId");
+            }
+            this.listingId = listingId;
             return this;
         }
         @CustomType.Setter
         public Builder listingResourceId(String listingResourceId) {
-            this.listingResourceId = Objects.requireNonNull(listingResourceId);
+            if (listingResourceId == null) {
+              throw new MissingRequiredPropertyException("GetListingResourceVersionResult", "listingResourceId");
+            }
+            this.listingResourceId = listingResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder listingResourceVersion(String listingResourceVersion) {
-            this.listingResourceVersion = Objects.requireNonNull(listingResourceVersion);
+            if (listingResourceVersion == null) {
+              throw new MissingRequiredPropertyException("GetListingResourceVersionResult", "listingResourceVersion");
+            }
+            this.listingResourceVersion = listingResourceVersion;
             return this;
         }
         @CustomType.Setter
         public Builder resourceVersion(String resourceVersion) {
-            this.resourceVersion = Objects.requireNonNull(resourceVersion);
+            if (resourceVersion == null) {
+              throw new MissingRequiredPropertyException("GetListingResourceVersionResult", "resourceVersion");
+            }
+            this.resourceVersion = resourceVersion;
             return this;
         }
         @CustomType.Setter
         public Builder timePublished(String timePublished) {
-            this.timePublished = Objects.requireNonNull(timePublished);
+            if (timePublished == null) {
+              throw new MissingRequiredPropertyException("GetListingResourceVersionResult", "timePublished");
+            }
+            this.timePublished = timePublished;
             return this;
         }
         public GetListingResourceVersionResult build() {

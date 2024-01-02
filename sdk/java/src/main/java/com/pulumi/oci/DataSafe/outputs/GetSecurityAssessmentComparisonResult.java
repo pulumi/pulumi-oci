@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentComparisonTarget;
 import java.lang.String;
 import java.util.List;
@@ -112,32 +113,50 @@ public final class GetSecurityAssessmentComparisonResult {
 
         @CustomType.Setter
         public Builder baselineId(String baselineId) {
-            this.baselineId = Objects.requireNonNull(baselineId);
+            if (baselineId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonResult", "baselineId");
+            }
+            this.baselineId = baselineId;
             return this;
         }
         @CustomType.Setter
         public Builder comparisonSecurityAssessmentId(String comparisonSecurityAssessmentId) {
-            this.comparisonSecurityAssessmentId = Objects.requireNonNull(comparisonSecurityAssessmentId);
+            if (comparisonSecurityAssessmentId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonResult", "comparisonSecurityAssessmentId");
+            }
+            this.comparisonSecurityAssessmentId = comparisonSecurityAssessmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder securityAssessmentId(String securityAssessmentId) {
-            this.securityAssessmentId = Objects.requireNonNull(securityAssessmentId);
+            if (securityAssessmentId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonResult", "securityAssessmentId");
+            }
+            this.securityAssessmentId = securityAssessmentId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targets(List<GetSecurityAssessmentComparisonTarget> targets) {
-            this.targets = Objects.requireNonNull(targets);
+            if (targets == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonResult", "targets");
+            }
+            this.targets = targets;
             return this;
         }
         public Builder targets(GetSecurityAssessmentComparisonTarget... targets) {
@@ -145,7 +164,10 @@ public final class GetSecurityAssessmentComparisonResult {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetSecurityAssessmentComparisonResult build() {

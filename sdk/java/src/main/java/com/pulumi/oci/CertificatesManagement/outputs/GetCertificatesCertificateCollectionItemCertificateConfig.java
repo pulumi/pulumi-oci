@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificatesCertificateCollectionItemCertificateConfigSubject;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificatesCertificateCollectionItemCertificateConfigValidity;
@@ -164,37 +165,58 @@ public final class GetCertificatesCertificateCollectionItemCertificateConfig {
 
         @CustomType.Setter
         public Builder certificateProfileType(String certificateProfileType) {
-            this.certificateProfileType = Objects.requireNonNull(certificateProfileType);
+            if (certificateProfileType == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfig", "certificateProfileType");
+            }
+            this.certificateProfileType = certificateProfileType;
             return this;
         }
         @CustomType.Setter
         public Builder configType(String configType) {
-            this.configType = Objects.requireNonNull(configType);
+            if (configType == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfig", "configType");
+            }
+            this.configType = configType;
             return this;
         }
         @CustomType.Setter
         public Builder csrPem(String csrPem) {
-            this.csrPem = Objects.requireNonNull(csrPem);
+            if (csrPem == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfig", "csrPem");
+            }
+            this.csrPem = csrPem;
             return this;
         }
         @CustomType.Setter
         public Builder issuerCertificateAuthorityId(String issuerCertificateAuthorityId) {
-            this.issuerCertificateAuthorityId = Objects.requireNonNull(issuerCertificateAuthorityId);
+            if (issuerCertificateAuthorityId == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfig", "issuerCertificateAuthorityId");
+            }
+            this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             return this;
         }
         @CustomType.Setter
         public Builder keyAlgorithm(String keyAlgorithm) {
-            this.keyAlgorithm = Objects.requireNonNull(keyAlgorithm);
+            if (keyAlgorithm == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfig", "keyAlgorithm");
+            }
+            this.keyAlgorithm = keyAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder signatureAlgorithm(String signatureAlgorithm) {
-            this.signatureAlgorithm = Objects.requireNonNull(signatureAlgorithm);
+            if (signatureAlgorithm == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfig", "signatureAlgorithm");
+            }
+            this.signatureAlgorithm = signatureAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder subjectAlternativeNames(List<GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName> subjectAlternativeNames) {
-            this.subjectAlternativeNames = Objects.requireNonNull(subjectAlternativeNames);
+            if (subjectAlternativeNames == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfig", "subjectAlternativeNames");
+            }
+            this.subjectAlternativeNames = subjectAlternativeNames;
             return this;
         }
         public Builder subjectAlternativeNames(GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName... subjectAlternativeNames) {
@@ -202,7 +224,10 @@ public final class GetCertificatesCertificateCollectionItemCertificateConfig {
         }
         @CustomType.Setter
         public Builder subjects(List<GetCertificatesCertificateCollectionItemCertificateConfigSubject> subjects) {
-            this.subjects = Objects.requireNonNull(subjects);
+            if (subjects == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfig", "subjects");
+            }
+            this.subjects = subjects;
             return this;
         }
         public Builder subjects(GetCertificatesCertificateCollectionItemCertificateConfigSubject... subjects) {
@@ -210,7 +235,10 @@ public final class GetCertificatesCertificateCollectionItemCertificateConfig {
         }
         @CustomType.Setter
         public Builder validities(List<GetCertificatesCertificateCollectionItemCertificateConfigValidity> validities) {
-            this.validities = Objects.requireNonNull(validities);
+            if (validities == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfig", "validities");
+            }
+            this.validities = validities;
             return this;
         }
         public Builder validities(GetCertificatesCertificateCollectionItemCertificateConfigValidity... validities) {
@@ -218,7 +246,10 @@ public final class GetCertificatesCertificateCollectionItemCertificateConfig {
         }
         @CustomType.Setter
         public Builder versionName(String versionName) {
-            this.versionName = Objects.requireNonNull(versionName);
+            if (versionName == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfig", "versionName");
+            }
+            this.versionName = versionName;
             return this;
         }
         public GetCertificatesCertificateCollectionItemCertificateConfig build() {

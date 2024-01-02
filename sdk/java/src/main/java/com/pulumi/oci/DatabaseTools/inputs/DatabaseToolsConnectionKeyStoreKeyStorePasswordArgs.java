@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseTools.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -125,7 +126,9 @@ public final class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs extends c
         }
 
         public DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs build() {
-            $.valueType = Objects.requireNonNull($.valueType, "expected parameter 'valueType' to be non-null");
+            if ($.valueType == null) {
+                throw new MissingRequiredPropertyException("DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs", "valueType");
+            }
             return $;
         }
     }

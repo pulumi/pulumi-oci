@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetRecommendationStrategyItem;
 import java.lang.Boolean;
 import java.lang.String;
@@ -93,22 +94,34 @@ public final class GetRecommendationStrategyResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationStrategyResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
-            this.compartmentIdInSubtree = Objects.requireNonNull(compartmentIdInSubtree);
+            if (compartmentIdInSubtree == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationStrategyResult", "compartmentIdInSubtree");
+            }
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationStrategyResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetRecommendationStrategyItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationStrategyResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetRecommendationStrategyItem... items) {
@@ -116,11 +129,13 @@ public final class GetRecommendationStrategyResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder recommendationName(@Nullable String recommendationName) {
+
             this.recommendationName = recommendationName;
             return this;
         }

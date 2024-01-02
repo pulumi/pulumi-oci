@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentFindingFindingReference;
 import java.lang.String;
 import java.util.List;
@@ -84,12 +85,18 @@ public final class GetSecurityAssessmentFindingFinding {
 
         @CustomType.Setter
         public Builder assessmentId(String assessmentId) {
-            this.assessmentId = Objects.requireNonNull(assessmentId);
+            if (assessmentId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingFinding", "assessmentId");
+            }
+            this.assessmentId = assessmentId;
             return this;
         }
         @CustomType.Setter
         public Builder details(List<String> details) {
-            this.details = Objects.requireNonNull(details);
+            if (details == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingFinding", "details");
+            }
+            this.details = details;
             return this;
         }
         public Builder details(String... details) {
@@ -97,12 +104,18 @@ public final class GetSecurityAssessmentFindingFinding {
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingFinding", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder references(List<GetSecurityAssessmentFindingFindingReference> references) {
-            this.references = Objects.requireNonNull(references);
+            if (references == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingFinding", "references");
+            }
+            this.references = references;
             return this;
         }
         public Builder references(GetSecurityAssessmentFindingFindingReference... references) {
@@ -110,27 +123,42 @@ public final class GetSecurityAssessmentFindingFinding {
         }
         @CustomType.Setter
         public Builder remarks(String remarks) {
-            this.remarks = Objects.requireNonNull(remarks);
+            if (remarks == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingFinding", "remarks");
+            }
+            this.remarks = remarks;
             return this;
         }
         @CustomType.Setter
         public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+            if (severity == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingFinding", "severity");
+            }
+            this.severity = severity;
             return this;
         }
         @CustomType.Setter
         public Builder summary(String summary) {
-            this.summary = Objects.requireNonNull(summary);
+            if (summary == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingFinding", "summary");
+            }
+            this.summary = summary;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingFinding", "targetId");
+            }
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder title(String title) {
-            this.title = Objects.requireNonNull(title);
+            if (title == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingFinding", "title");
+            }
+            this.title = title;
             return this;
         }
         public GetSecurityAssessmentFindingFinding build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -272,8 +273,12 @@ public final class GetDomainsCloudGateArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetDomainsCloudGateArgs build() {
-            $.cloudGateId = Objects.requireNonNull($.cloudGateId, "expected parameter 'cloudGateId' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
+            if ($.cloudGateId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsCloudGateArgs", "cloudGateId");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsCloudGateArgs", "idcsEndpoint");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -140,42 +141,66 @@ public final class GetManagedDatabaseGroupManagedDatabase {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseGroupManagedDatabase", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseSubType(String databaseSubType) {
-            this.databaseSubType = Objects.requireNonNull(databaseSubType);
+            if (databaseSubType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseGroupManagedDatabase", "databaseSubType");
+            }
+            this.databaseSubType = databaseSubType;
             return this;
         }
         @CustomType.Setter
         public Builder databaseType(String databaseType) {
-            this.databaseType = Objects.requireNonNull(databaseType);
+            if (databaseType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseGroupManagedDatabase", "databaseType");
+            }
+            this.databaseType = databaseType;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentType(String deploymentType) {
-            this.deploymentType = Objects.requireNonNull(deploymentType);
+            if (deploymentType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseGroupManagedDatabase", "deploymentType");
+            }
+            this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseGroupManagedDatabase", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseGroupManagedDatabase", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder timeAdded(String timeAdded) {
-            this.timeAdded = Objects.requireNonNull(timeAdded);
+            if (timeAdded == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseGroupManagedDatabase", "timeAdded");
+            }
+            this.timeAdded = timeAdded;
             return this;
         }
         @CustomType.Setter
         public Builder workloadType(String workloadType) {
-            this.workloadType = Objects.requireNonNull(workloadType);
+            if (workloadType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseGroupManagedDatabase", "workloadType");
+            }
+            this.workloadType = workloadType;
             return this;
         }
         public GetManagedDatabaseGroupManagedDatabase build() {

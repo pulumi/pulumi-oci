@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetDbSystemConnectionDetailInstanceEndpointEndpoint;
 import java.lang.String;
 import java.util.List;
@@ -58,12 +59,18 @@ public final class GetDbSystemConnectionDetailInstanceEndpoint {
 
         @CustomType.Setter
         public Builder dbInstanceId(String dbInstanceId) {
-            this.dbInstanceId = Objects.requireNonNull(dbInstanceId);
+            if (dbInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemConnectionDetailInstanceEndpoint", "dbInstanceId");
+            }
+            this.dbInstanceId = dbInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder endpoints(List<GetDbSystemConnectionDetailInstanceEndpointEndpoint> endpoints) {
-            this.endpoints = Objects.requireNonNull(endpoints);
+            if (endpoints == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemConnectionDetailInstanceEndpoint", "endpoints");
+            }
+            this.endpoints = endpoints;
             return this;
         }
         public Builder endpoints(GetDbSystemConnectionDetailInstanceEndpointEndpoint... endpoints) {

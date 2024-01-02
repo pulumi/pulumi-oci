@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetLifecycleStagesFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetLifecycleStagesLifecycleStageCollection;
 import java.lang.String;
@@ -163,21 +164,25 @@ public final class GetLifecycleStagesResult {
 
         @CustomType.Setter
         public Builder archType(@Nullable String archType) {
+
             this.archType = archType;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayNameContains(@Nullable String displayNameContains) {
+
             this.displayNameContains = displayNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder displayNames(@Nullable List<String> displayNames) {
+
             this.displayNames = displayNames;
             return this;
         }
@@ -186,6 +191,7 @@ public final class GetLifecycleStagesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetLifecycleStagesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -194,12 +200,18 @@ public final class GetLifecycleStagesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleStagesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleStageCollections(List<GetLifecycleStagesLifecycleStageCollection> lifecycleStageCollections) {
-            this.lifecycleStageCollections = Objects.requireNonNull(lifecycleStageCollections);
+            if (lifecycleStageCollections == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleStagesResult", "lifecycleStageCollections");
+            }
+            this.lifecycleStageCollections = lifecycleStageCollections;
             return this;
         }
         public Builder lifecycleStageCollections(GetLifecycleStagesLifecycleStageCollection... lifecycleStageCollections) {
@@ -207,21 +219,25 @@ public final class GetLifecycleStagesResult {
         }
         @CustomType.Setter
         public Builder lifecycleStageId(@Nullable String lifecycleStageId) {
+
             this.lifecycleStageId = lifecycleStageId;
             return this;
         }
         @CustomType.Setter
         public Builder osFamily(@Nullable String osFamily) {
+
             this.osFamily = osFamily;
             return this;
         }
         @CustomType.Setter
         public Builder softwareSourceId(@Nullable String softwareSourceId) {
+
             this.softwareSourceId = softwareSourceId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

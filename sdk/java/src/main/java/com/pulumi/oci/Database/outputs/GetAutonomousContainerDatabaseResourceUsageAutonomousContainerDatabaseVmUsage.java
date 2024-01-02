@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -113,32 +114,50 @@ public final class GetAutonomousContainerDatabaseResourceUsageAutonomousContaine
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder provisionedCpus(Double provisionedCpus) {
-            this.provisionedCpus = Objects.requireNonNull(provisionedCpus);
+            if (provisionedCpus == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage", "provisionedCpus");
+            }
+            this.provisionedCpus = provisionedCpus;
             return this;
         }
         @CustomType.Setter
         public Builder reclaimableCpus(Double reclaimableCpus) {
-            this.reclaimableCpus = Objects.requireNonNull(reclaimableCpus);
+            if (reclaimableCpus == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage", "reclaimableCpus");
+            }
+            this.reclaimableCpus = reclaimableCpus;
             return this;
         }
         @CustomType.Setter
         public Builder reservedCpus(Double reservedCpus) {
-            this.reservedCpus = Objects.requireNonNull(reservedCpus);
+            if (reservedCpus == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage", "reservedCpus");
+            }
+            this.reservedCpus = reservedCpus;
             return this;
         }
         @CustomType.Setter
         public Builder usedCpus(Double usedCpus) {
-            this.usedCpus = Objects.requireNonNull(usedCpus);
+            if (usedCpus == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage", "usedCpus");
+            }
+            this.usedCpus = usedCpus;
             return this;
         }
         public GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetGatewaysGatewayCollectionResponseCacheDetailServer {
 
         @CustomType.Setter
         public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+            if (host == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollectionResponseCacheDetailServer", "host");
+            }
+            this.host = host;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollectionResponseCacheDetailServer", "port");
+            }
+            this.port = port;
             return this;
         }
         public GetGatewaysGatewayCollectionResponseCacheDetailServer build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -60,12 +61,18 @@ public final class GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix {
 
         @CustomType.Setter
         public Builder cidrBlock(String cidrBlock) {
-            this.cidrBlock = Objects.requireNonNull(cidrBlock);
+            if (cidrBlock == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix", "cidrBlock");
+            }
+            this.cidrBlock = cidrBlock;
             return this;
         }
         @CustomType.Setter
         public Builder verificationState(String verificationState) {
-            this.verificationState = Objects.requireNonNull(verificationState);
+            if (verificationState == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix", "verificationState");
+            }
+            this.verificationState = verificationState;
             return this;
         }
         public GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix build() {

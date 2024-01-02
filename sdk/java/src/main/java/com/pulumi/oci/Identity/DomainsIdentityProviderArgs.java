@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsIdentityProviderCorrelationPolicyArgs;
 import com.pulumi.oci.Identity.inputs.DomainsIdentityProviderJitUserProvAssignedGroupArgs;
 import com.pulumi.oci.Identity.inputs.DomainsIdentityProviderJitUserProvAttributesArgs;
@@ -4079,10 +4080,18 @@ public final class DomainsIdentityProviderArgs extends com.pulumi.resources.Reso
         }
 
         public DomainsIdentityProviderArgs build() {
-            $.enabled = Objects.requireNonNull($.enabled, "expected parameter 'enabled' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.partnerName = Objects.requireNonNull($.partnerName, "expected parameter 'partnerName' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.enabled == null) {
+                throw new MissingRequiredPropertyException("DomainsIdentityProviderArgs", "enabled");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsIdentityProviderArgs", "idcsEndpoint");
+            }
+            if ($.partnerName == null) {
+                throw new MissingRequiredPropertyException("DomainsIdentityProviderArgs", "partnerName");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsIdentityProviderArgs", "schemas");
+            }
             return $;
         }
     }

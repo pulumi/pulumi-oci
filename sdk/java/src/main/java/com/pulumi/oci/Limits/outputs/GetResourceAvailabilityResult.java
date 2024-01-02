@@ -4,6 +4,7 @@
 package com.pulumi.oci.Limits.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -139,52 +140,80 @@ public final class GetResourceAvailabilityResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder available(String available) {
-            this.available = Objects.requireNonNull(available);
+            if (available == null) {
+              throw new MissingRequiredPropertyException("GetResourceAvailabilityResult", "available");
+            }
+            this.available = available;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetResourceAvailabilityResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder effectiveQuotaValue(Double effectiveQuotaValue) {
-            this.effectiveQuotaValue = Objects.requireNonNull(effectiveQuotaValue);
+            if (effectiveQuotaValue == null) {
+              throw new MissingRequiredPropertyException("GetResourceAvailabilityResult", "effectiveQuotaValue");
+            }
+            this.effectiveQuotaValue = effectiveQuotaValue;
             return this;
         }
         @CustomType.Setter
         public Builder fractionalAvailability(Double fractionalAvailability) {
-            this.fractionalAvailability = Objects.requireNonNull(fractionalAvailability);
+            if (fractionalAvailability == null) {
+              throw new MissingRequiredPropertyException("GetResourceAvailabilityResult", "fractionalAvailability");
+            }
+            this.fractionalAvailability = fractionalAvailability;
             return this;
         }
         @CustomType.Setter
         public Builder fractionalUsage(Double fractionalUsage) {
-            this.fractionalUsage = Objects.requireNonNull(fractionalUsage);
+            if (fractionalUsage == null) {
+              throw new MissingRequiredPropertyException("GetResourceAvailabilityResult", "fractionalUsage");
+            }
+            this.fractionalUsage = fractionalUsage;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetResourceAvailabilityResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder limitName(String limitName) {
-            this.limitName = Objects.requireNonNull(limitName);
+            if (limitName == null) {
+              throw new MissingRequiredPropertyException("GetResourceAvailabilityResult", "limitName");
+            }
+            this.limitName = limitName;
             return this;
         }
         @CustomType.Setter
         public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+            if (serviceName == null) {
+              throw new MissingRequiredPropertyException("GetResourceAvailabilityResult", "serviceName");
+            }
+            this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
         public Builder used(String used) {
-            this.used = Objects.requireNonNull(used);
+            if (used == null) {
+              throw new MissingRequiredPropertyException("GetResourceAvailabilityResult", "used");
+            }
+            this.used = used;
             return this;
         }
         public GetResourceAvailabilityResult build() {

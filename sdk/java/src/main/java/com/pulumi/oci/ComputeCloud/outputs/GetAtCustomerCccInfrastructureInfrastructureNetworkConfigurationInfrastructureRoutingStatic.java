@@ -4,6 +4,7 @@
 package com.pulumi.oci.ComputeCloud.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
 
         @CustomType.Setter
         public Builder uplinkHsrpGroup(Integer uplinkHsrpGroup) {
-            this.uplinkHsrpGroup = Objects.requireNonNull(uplinkHsrpGroup);
+            if (uplinkHsrpGroup == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic", "uplinkHsrpGroup");
+            }
+            this.uplinkHsrpGroup = uplinkHsrpGroup;
             return this;
         }
         @CustomType.Setter
         public Builder uplinkVlan(Integer uplinkVlan) {
-            this.uplinkVlan = Objects.requireNonNull(uplinkVlan);
+            if (uplinkVlan == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic", "uplinkVlan");
+            }
+            this.uplinkVlan = uplinkVlan;
             return this;
         }
         public GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus;
 import java.lang.String;
 import java.util.List;
@@ -86,22 +87,34 @@ public final class GetFusionEnvironmentFamilySubscriptionDetailSubscription {
 
         @CustomType.Setter
         public Builder classicSubscriptionId(String classicSubscriptionId) {
-            this.classicSubscriptionId = Objects.requireNonNull(classicSubscriptionId);
+            if (classicSubscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamilySubscriptionDetailSubscription", "classicSubscriptionId");
+            }
+            this.classicSubscriptionId = classicSubscriptionId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamilySubscriptionDetailSubscription", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+            if (serviceName == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamilySubscriptionDetailSubscription", "serviceName");
+            }
+            this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
         public Builder skuses(List<GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus> skuses) {
-            this.skuses = Objects.requireNonNull(skuses);
+            if (skuses == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamilySubscriptionDetailSubscription", "skuses");
+            }
+            this.skuses = skuses;
             return this;
         }
         public Builder skuses(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus... skuses) {

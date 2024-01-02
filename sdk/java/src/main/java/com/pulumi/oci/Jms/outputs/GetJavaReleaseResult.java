@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetJavaReleaseArtifact;
 import com.pulumi.oci.Jms.outputs.GetJavaReleaseFamilyDetail;
 import com.pulumi.oci.Jms.outputs.GetJavaReleaseLicenseDetail;
@@ -244,7 +245,10 @@ public final class GetJavaReleaseResult {
 
         @CustomType.Setter
         public Builder artifactContentTypes(List<String> artifactContentTypes) {
-            this.artifactContentTypes = Objects.requireNonNull(artifactContentTypes);
+            if (artifactContentTypes == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleaseResult", "artifactContentTypes");
+            }
+            this.artifactContentTypes = artifactContentTypes;
             return this;
         }
         public Builder artifactContentTypes(String... artifactContentTypes) {
@@ -252,7 +256,10 @@ public final class GetJavaReleaseResult {
         }
         @CustomType.Setter
         public Builder artifacts(List<GetJavaReleaseArtifact> artifacts) {
-            this.artifacts = Objects.requireNonNull(artifacts);
+            if (artifacts == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleaseResult", "artifacts");
+            }
+            this.artifacts = artifacts;
             return this;
         }
         public Builder artifacts(GetJavaReleaseArtifact... artifacts) {
@@ -260,12 +267,18 @@ public final class GetJavaReleaseResult {
         }
         @CustomType.Setter
         public Builder daysUnderSecurityBaseline(Integer daysUnderSecurityBaseline) {
-            this.daysUnderSecurityBaseline = Objects.requireNonNull(daysUnderSecurityBaseline);
+            if (daysUnderSecurityBaseline == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleaseResult", "daysUnderSecurityBaseline");
+            }
+            this.daysUnderSecurityBaseline = daysUnderSecurityBaseline;
             return this;
         }
         @CustomType.Setter
         public Builder familyDetails(List<GetJavaReleaseFamilyDetail> familyDetails) {
-            this.familyDetails = Objects.requireNonNull(familyDetails);
+            if (familyDetails == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleaseResult", "familyDetails");
+            }
+            this.familyDetails = familyDetails;
             return this;
         }
         public Builder familyDetails(GetJavaReleaseFamilyDetail... familyDetails) {
@@ -273,17 +286,26 @@ public final class GetJavaReleaseResult {
         }
         @CustomType.Setter
         public Builder familyVersion(String familyVersion) {
-            this.familyVersion = Objects.requireNonNull(familyVersion);
+            if (familyVersion == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleaseResult", "familyVersion");
+            }
+            this.familyVersion = familyVersion;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleaseResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder licenseDetails(List<GetJavaReleaseLicenseDetail> licenseDetails) {
-            this.licenseDetails = Objects.requireNonNull(licenseDetails);
+            if (licenseDetails == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleaseResult", "licenseDetails");
+            }
+            this.licenseDetails = licenseDetails;
             return this;
         }
         public Builder licenseDetails(GetJavaReleaseLicenseDetail... licenseDetails) {
@@ -291,12 +313,18 @@ public final class GetJavaReleaseResult {
         }
         @CustomType.Setter
         public Builder licenseType(String licenseType) {
-            this.licenseType = Objects.requireNonNull(licenseType);
+            if (licenseType == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleaseResult", "licenseType");
+            }
+            this.licenseType = licenseType;
             return this;
         }
         @CustomType.Setter
         public Builder mosPatches(List<GetJavaReleaseMosPatch> mosPatches) {
-            this.mosPatches = Objects.requireNonNull(mosPatches);
+            if (mosPatches == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleaseResult", "mosPatches");
+            }
+            this.mosPatches = mosPatches;
             return this;
         }
         public Builder mosPatches(GetJavaReleaseMosPatch... mosPatches) {
@@ -304,32 +332,50 @@ public final class GetJavaReleaseResult {
         }
         @CustomType.Setter
         public Builder parentReleaseVersion(String parentReleaseVersion) {
-            this.parentReleaseVersion = Objects.requireNonNull(parentReleaseVersion);
+            if (parentReleaseVersion == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleaseResult", "parentReleaseVersion");
+            }
+            this.parentReleaseVersion = parentReleaseVersion;
             return this;
         }
         @CustomType.Setter
         public Builder releaseDate(String releaseDate) {
-            this.releaseDate = Objects.requireNonNull(releaseDate);
+            if (releaseDate == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleaseResult", "releaseDate");
+            }
+            this.releaseDate = releaseDate;
             return this;
         }
         @CustomType.Setter
         public Builder releaseNotesUrl(String releaseNotesUrl) {
-            this.releaseNotesUrl = Objects.requireNonNull(releaseNotesUrl);
+            if (releaseNotesUrl == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleaseResult", "releaseNotesUrl");
+            }
+            this.releaseNotesUrl = releaseNotesUrl;
             return this;
         }
         @CustomType.Setter
         public Builder releaseType(String releaseType) {
-            this.releaseType = Objects.requireNonNull(releaseType);
+            if (releaseType == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleaseResult", "releaseType");
+            }
+            this.releaseType = releaseType;
             return this;
         }
         @CustomType.Setter
         public Builder releaseVersion(String releaseVersion) {
-            this.releaseVersion = Objects.requireNonNull(releaseVersion);
+            if (releaseVersion == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleaseResult", "releaseVersion");
+            }
+            this.releaseVersion = releaseVersion;
             return this;
         }
         @CustomType.Setter
         public Builder securityStatus(String securityStatus) {
-            this.securityStatus = Objects.requireNonNull(securityStatus);
+            if (securityStatus == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleaseResult", "securityStatus");
+            }
+            this.securityStatus = securityStatus;
             return this;
         }
         public GetJavaReleaseResult build() {

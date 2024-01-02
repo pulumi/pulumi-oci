@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaName;
 import com.pulumi.oci.Identity.outputs.GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName;
 import java.lang.String;
@@ -87,12 +88,18 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
 
         @CustomType.Setter
         public Builder domainLevelSchema(String domainLevelSchema) {
-            this.domainLevelSchema = Objects.requireNonNull(domainLevelSchema);
+            if (domainLevelSchema == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroup", "domainLevelSchema");
+            }
+            this.domainLevelSchema = domainLevelSchema;
             return this;
         }
         @CustomType.Setter
         public Builder domainLevelSchemaNames(List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaName> domainLevelSchemaNames) {
-            this.domainLevelSchemaNames = Objects.requireNonNull(domainLevelSchemaNames);
+            if (domainLevelSchemaNames == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroup", "domainLevelSchemaNames");
+            }
+            this.domainLevelSchemaNames = domainLevelSchemaNames;
             return this;
         }
         public Builder domainLevelSchemaNames(GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaName... domainLevelSchemaNames) {
@@ -100,12 +107,18 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
         }
         @CustomType.Setter
         public Builder instanceLevelSchema(String instanceLevelSchema) {
-            this.instanceLevelSchema = Objects.requireNonNull(instanceLevelSchema);
+            if (instanceLevelSchema == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroup", "instanceLevelSchema");
+            }
+            this.instanceLevelSchema = instanceLevelSchema;
             return this;
         }
         @CustomType.Setter
         public Builder instanceLevelSchemaNames(List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName> instanceLevelSchemaNames) {
-            this.instanceLevelSchemaNames = Objects.requireNonNull(instanceLevelSchemaNames);
+            if (instanceLevelSchemaNames == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroup", "instanceLevelSchemaNames");
+            }
+            this.instanceLevelSchemaNames = instanceLevelSchemaNames;
             return this;
         }
         public Builder instanceLevelSchemaNames(GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName... instanceLevelSchemaNames) {

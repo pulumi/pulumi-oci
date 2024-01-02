@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.outputs.GetLogsLogConfigurationSource;
 import java.lang.String;
 import java.util.List;
@@ -58,12 +59,18 @@ public final class GetLogsLogConfiguration {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLogsLogConfiguration", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder sources(List<GetLogsLogConfigurationSource> sources) {
-            this.sources = Objects.requireNonNull(sources);
+            if (sources == null) {
+              throw new MissingRequiredPropertyException("GetLogsLogConfiguration", "sources");
+            }
+            this.sources = sources;
             return this;
         }
         public Builder sources(GetLogsLogConfigurationSource... sources) {

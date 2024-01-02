@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -100,27 +101,42 @@ public final class GetMountTargetsMountTargetKerbero {
 
         @CustomType.Setter
         public Builder backupKeyTabSecretVersion(Integer backupKeyTabSecretVersion) {
-            this.backupKeyTabSecretVersion = Objects.requireNonNull(backupKeyTabSecretVersion);
+            if (backupKeyTabSecretVersion == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTargetKerbero", "backupKeyTabSecretVersion");
+            }
+            this.backupKeyTabSecretVersion = backupKeyTabSecretVersion;
             return this;
         }
         @CustomType.Setter
         public Builder currentKeyTabSecretVersion(Integer currentKeyTabSecretVersion) {
-            this.currentKeyTabSecretVersion = Objects.requireNonNull(currentKeyTabSecretVersion);
+            if (currentKeyTabSecretVersion == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTargetKerbero", "currentKeyTabSecretVersion");
+            }
+            this.currentKeyTabSecretVersion = currentKeyTabSecretVersion;
             return this;
         }
         @CustomType.Setter
         public Builder isKerberosEnabled(Boolean isKerberosEnabled) {
-            this.isKerberosEnabled = Objects.requireNonNull(isKerberosEnabled);
+            if (isKerberosEnabled == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTargetKerbero", "isKerberosEnabled");
+            }
+            this.isKerberosEnabled = isKerberosEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder kerberosRealm(String kerberosRealm) {
-            this.kerberosRealm = Objects.requireNonNull(kerberosRealm);
+            if (kerberosRealm == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTargetKerbero", "kerberosRealm");
+            }
+            this.kerberosRealm = kerberosRealm;
             return this;
         }
         @CustomType.Setter
         public Builder keyTabSecretId(String keyTabSecretId) {
-            this.keyTabSecretId = Objects.requireNonNull(keyTabSecretId);
+            if (keyTabSecretId == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTargetKerbero", "keyTabSecretId");
+            }
+            this.keyTabSecretId = keyTabSecretId;
             return this;
         }
         public GetMountTargetsMountTargetKerbero build() {

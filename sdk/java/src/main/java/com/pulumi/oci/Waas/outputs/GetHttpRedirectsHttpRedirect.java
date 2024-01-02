@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.GetHttpRedirectsHttpRedirectTarget;
 import java.lang.Integer;
 import java.lang.Object;
@@ -173,47 +174,74 @@ public final class GetHttpRedirectsHttpRedirect {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetHttpRedirectsHttpRedirect", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetHttpRedirectsHttpRedirect", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetHttpRedirectsHttpRedirect", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder domain(String domain) {
-            this.domain = Objects.requireNonNull(domain);
+            if (domain == null) {
+              throw new MissingRequiredPropertyException("GetHttpRedirectsHttpRedirect", "domain");
+            }
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetHttpRedirectsHttpRedirect", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetHttpRedirectsHttpRedirect", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder responseCode(Integer responseCode) {
-            this.responseCode = Objects.requireNonNull(responseCode);
+            if (responseCode == null) {
+              throw new MissingRequiredPropertyException("GetHttpRedirectsHttpRedirect", "responseCode");
+            }
+            this.responseCode = responseCode;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetHttpRedirectsHttpRedirect", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targets(List<GetHttpRedirectsHttpRedirectTarget> targets) {
-            this.targets = Objects.requireNonNull(targets);
+            if (targets == null) {
+              throw new MissingRequiredPropertyException("GetHttpRedirectsHttpRedirect", "targets");
+            }
+            this.targets = targets;
             return this;
         }
         public Builder targets(GetHttpRedirectsHttpRedirectTarget... targets) {
@@ -221,7 +249,10 @@ public final class GetHttpRedirectsHttpRedirect {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetHttpRedirectsHttpRedirect", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetHttpRedirectsHttpRedirect build() {

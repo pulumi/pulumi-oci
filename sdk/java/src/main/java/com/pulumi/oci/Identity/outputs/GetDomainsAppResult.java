@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppAccount;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppAdminRole;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppAliasApp;
@@ -1758,12 +1759,18 @@ public final class GetDomainsAppResult {
 
         @CustomType.Setter
         public Builder accessTokenExpiry(Integer accessTokenExpiry) {
-            this.accessTokenExpiry = Objects.requireNonNull(accessTokenExpiry);
+            if (accessTokenExpiry == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "accessTokenExpiry");
+            }
+            this.accessTokenExpiry = accessTokenExpiry;
             return this;
         }
         @CustomType.Setter
         public Builder accounts(List<GetDomainsAppAccount> accounts) {
-            this.accounts = Objects.requireNonNull(accounts);
+            if (accounts == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "accounts");
+            }
+            this.accounts = accounts;
             return this;
         }
         public Builder accounts(GetDomainsAppAccount... accounts) {
@@ -1771,12 +1778,18 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder active(Boolean active) {
-            this.active = Objects.requireNonNull(active);
+            if (active == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "active");
+            }
+            this.active = active;
             return this;
         }
         @CustomType.Setter
         public Builder adminRoles(List<GetDomainsAppAdminRole> adminRoles) {
-            this.adminRoles = Objects.requireNonNull(adminRoles);
+            if (adminRoles == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "adminRoles");
+            }
+            this.adminRoles = adminRoles;
             return this;
         }
         public Builder adminRoles(GetDomainsAppAdminRole... adminRoles) {
@@ -1784,7 +1797,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder aliasApps(List<GetDomainsAppAliasApp> aliasApps) {
-            this.aliasApps = Objects.requireNonNull(aliasApps);
+            if (aliasApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "aliasApps");
+            }
+            this.aliasApps = aliasApps;
             return this;
         }
         public Builder aliasApps(GetDomainsAppAliasApp... aliasApps) {
@@ -1792,22 +1808,34 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder allUrlSchemesAllowed(Boolean allUrlSchemesAllowed) {
-            this.allUrlSchemesAllowed = Objects.requireNonNull(allUrlSchemesAllowed);
+            if (allUrlSchemesAllowed == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "allUrlSchemesAllowed");
+            }
+            this.allUrlSchemesAllowed = allUrlSchemesAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder allowAccessControl(Boolean allowAccessControl) {
-            this.allowAccessControl = Objects.requireNonNull(allowAccessControl);
+            if (allowAccessControl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "allowAccessControl");
+            }
+            this.allowAccessControl = allowAccessControl;
             return this;
         }
         @CustomType.Setter
         public Builder allowOffline(Boolean allowOffline) {
-            this.allowOffline = Objects.requireNonNull(allowOffline);
+            if (allowOffline == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "allowOffline");
+            }
+            this.allowOffline = allowOffline;
             return this;
         }
         @CustomType.Setter
         public Builder allowedGrants(List<String> allowedGrants) {
-            this.allowedGrants = Objects.requireNonNull(allowedGrants);
+            if (allowedGrants == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "allowedGrants");
+            }
+            this.allowedGrants = allowedGrants;
             return this;
         }
         public Builder allowedGrants(String... allowedGrants) {
@@ -1815,7 +1843,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder allowedOperations(List<String> allowedOperations) {
-            this.allowedOperations = Objects.requireNonNull(allowedOperations);
+            if (allowedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "allowedOperations");
+            }
+            this.allowedOperations = allowedOperations;
             return this;
         }
         public Builder allowedOperations(String... allowedOperations) {
@@ -1823,7 +1854,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder allowedScopes(List<GetDomainsAppAllowedScope> allowedScopes) {
-            this.allowedScopes = Objects.requireNonNull(allowedScopes);
+            if (allowedScopes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "allowedScopes");
+            }
+            this.allowedScopes = allowedScopes;
             return this;
         }
         public Builder allowedScopes(GetDomainsAppAllowedScope... allowedScopes) {
@@ -1831,7 +1865,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder allowedTags(List<GetDomainsAppAllowedTag> allowedTags) {
-            this.allowedTags = Objects.requireNonNull(allowedTags);
+            if (allowedTags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "allowedTags");
+            }
+            this.allowedTags = allowedTags;
             return this;
         }
         public Builder allowedTags(GetDomainsAppAllowedTag... allowedTags) {
@@ -1839,17 +1876,26 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder appIcon(String appIcon) {
-            this.appIcon = Objects.requireNonNull(appIcon);
+            if (appIcon == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "appIcon");
+            }
+            this.appIcon = appIcon;
             return this;
         }
         @CustomType.Setter
         public Builder appId(String appId) {
-            this.appId = Objects.requireNonNull(appId);
+            if (appId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "appId");
+            }
+            this.appId = appId;
             return this;
         }
         @CustomType.Setter
         public Builder appSignonPolicies(List<GetDomainsAppAppSignonPolicy> appSignonPolicies) {
-            this.appSignonPolicies = Objects.requireNonNull(appSignonPolicies);
+            if (appSignonPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "appSignonPolicies");
+            }
+            this.appSignonPolicies = appSignonPolicies;
             return this;
         }
         public Builder appSignonPolicies(GetDomainsAppAppSignonPolicy... appSignonPolicies) {
@@ -1857,12 +1903,18 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder appThumbnail(String appThumbnail) {
-            this.appThumbnail = Objects.requireNonNull(appThumbnail);
+            if (appThumbnail == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "appThumbnail");
+            }
+            this.appThumbnail = appThumbnail;
             return this;
         }
         @CustomType.Setter
         public Builder appsNetworkPerimeters(List<GetDomainsAppAppsNetworkPerimeter> appsNetworkPerimeters) {
-            this.appsNetworkPerimeters = Objects.requireNonNull(appsNetworkPerimeters);
+            if (appsNetworkPerimeters == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "appsNetworkPerimeters");
+            }
+            this.appsNetworkPerimeters = appsNetworkPerimeters;
             return this;
         }
         public Builder appsNetworkPerimeters(GetDomainsAppAppsNetworkPerimeter... appsNetworkPerimeters) {
@@ -1870,7 +1922,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder asOpcServices(List<GetDomainsAppAsOpcService> asOpcServices) {
-            this.asOpcServices = Objects.requireNonNull(asOpcServices);
+            if (asOpcServices == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "asOpcServices");
+            }
+            this.asOpcServices = asOpcServices;
             return this;
         }
         public Builder asOpcServices(GetDomainsAppAsOpcService... asOpcServices) {
@@ -1878,7 +1933,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder attrRenderingMetadatas(List<GetDomainsAppAttrRenderingMetadata> attrRenderingMetadatas) {
-            this.attrRenderingMetadatas = Objects.requireNonNull(attrRenderingMetadatas);
+            if (attrRenderingMetadatas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "attrRenderingMetadatas");
+            }
+            this.attrRenderingMetadatas = attrRenderingMetadatas;
             return this;
         }
         public Builder attrRenderingMetadatas(GetDomainsAppAttrRenderingMetadata... attrRenderingMetadatas) {
@@ -1886,6 +1944,7 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder attributeSets(@Nullable List<String> attributeSets) {
+
             this.attributeSets = attributeSets;
             return this;
         }
@@ -1894,22 +1953,30 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder attributes(@Nullable String attributes) {
+
             this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder audience(String audience) {
-            this.audience = Objects.requireNonNull(audience);
+            if (audience == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "audience");
+            }
+            this.audience = audience;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder basedOnTemplates(List<GetDomainsAppBasedOnTemplate> basedOnTemplates) {
-            this.basedOnTemplates = Objects.requireNonNull(basedOnTemplates);
+            if (basedOnTemplates == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "basedOnTemplates");
+            }
+            this.basedOnTemplates = basedOnTemplates;
             return this;
         }
         public Builder basedOnTemplates(GetDomainsAppBasedOnTemplate... basedOnTemplates) {
@@ -1917,17 +1984,26 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder bypassConsent(Boolean bypassConsent) {
-            this.bypassConsent = Objects.requireNonNull(bypassConsent);
+            if (bypassConsent == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "bypassConsent");
+            }
+            this.bypassConsent = bypassConsent;
             return this;
         }
         @CustomType.Setter
         public Builder callbackServiceUrl(String callbackServiceUrl) {
-            this.callbackServiceUrl = Objects.requireNonNull(callbackServiceUrl);
+            if (callbackServiceUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "callbackServiceUrl");
+            }
+            this.callbackServiceUrl = callbackServiceUrl;
             return this;
         }
         @CustomType.Setter
         public Builder certificates(List<GetDomainsAppCertificate> certificates) {
-            this.certificates = Objects.requireNonNull(certificates);
+            if (certificates == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "certificates");
+            }
+            this.certificates = certificates;
             return this;
         }
         public Builder certificates(GetDomainsAppCertificate... certificates) {
@@ -1935,22 +2011,34 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder clientIpChecking(String clientIpChecking) {
-            this.clientIpChecking = Objects.requireNonNull(clientIpChecking);
+            if (clientIpChecking == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "clientIpChecking");
+            }
+            this.clientIpChecking = clientIpChecking;
             return this;
         }
         @CustomType.Setter
         public Builder clientSecret(String clientSecret) {
-            this.clientSecret = Objects.requireNonNull(clientSecret);
+            if (clientSecret == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "clientSecret");
+            }
+            this.clientSecret = clientSecret;
             return this;
         }
         @CustomType.Setter
         public Builder clientType(String clientType) {
-            this.clientType = Objects.requireNonNull(clientType);
+            if (clientType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "clientType");
+            }
+            this.clientType = clientType;
             return this;
         }
         @CustomType.Setter
         public Builder cloudControlProperties(List<GetDomainsAppCloudControlProperty> cloudControlProperties) {
-            this.cloudControlProperties = Objects.requireNonNull(cloudControlProperties);
+            if (cloudControlProperties == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "cloudControlProperties");
+            }
+            this.cloudControlProperties = cloudControlProperties;
             return this;
         }
         public Builder cloudControlProperties(GetDomainsAppCloudControlProperty... cloudControlProperties) {
@@ -1958,17 +2046,26 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder contactEmailAddress(String contactEmailAddress) {
-            this.contactEmailAddress = Objects.requireNonNull(contactEmailAddress);
+            if (contactEmailAddress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "contactEmailAddress");
+            }
+            this.contactEmailAddress = contactEmailAddress;
             return this;
         }
         @CustomType.Setter
         public Builder delegatedServiceNames(List<String> delegatedServiceNames) {
-            this.delegatedServiceNames = Objects.requireNonNull(delegatedServiceNames);
+            if (delegatedServiceNames == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "delegatedServiceNames");
+            }
+            this.delegatedServiceNames = delegatedServiceNames;
             return this;
         }
         public Builder delegatedServiceNames(String... delegatedServiceNames) {
@@ -1976,32 +2073,50 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder disableKmsiTokenAuthentication(Boolean disableKmsiTokenAuthentication) {
-            this.disableKmsiTokenAuthentication = Objects.requireNonNull(disableKmsiTokenAuthentication);
+            if (disableKmsiTokenAuthentication == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "disableKmsiTokenAuthentication");
+            }
+            this.disableKmsiTokenAuthentication = disableKmsiTokenAuthentication;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder editableAttributes(List<GetDomainsAppEditableAttribute> editableAttributes) {
-            this.editableAttributes = Objects.requireNonNull(editableAttributes);
+            if (editableAttributes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "editableAttributes");
+            }
+            this.editableAttributes = editableAttributes;
             return this;
         }
         public Builder editableAttributes(GetDomainsAppEditableAttribute... editableAttributes) {
@@ -2009,12 +2124,18 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder errorPageUrl(String errorPageUrl) {
-            this.errorPageUrl = Objects.requireNonNull(errorPageUrl);
+            if (errorPageUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "errorPageUrl");
+            }
+            this.errorPageUrl = errorPageUrl;
             return this;
         }
         @CustomType.Setter
         public Builder grantedAppRoles(List<GetDomainsAppGrantedAppRole> grantedAppRoles) {
-            this.grantedAppRoles = Objects.requireNonNull(grantedAppRoles);
+            if (grantedAppRoles == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "grantedAppRoles");
+            }
+            this.grantedAppRoles = grantedAppRoles;
             return this;
         }
         public Builder grantedAppRoles(GetDomainsAppGrantedAppRole... grantedAppRoles) {
@@ -2022,7 +2143,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder grants(List<GetDomainsAppGrant> grants) {
-            this.grants = Objects.requireNonNull(grants);
+            if (grants == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "grants");
+            }
+            this.grants = grants;
             return this;
         }
         public Builder grants(GetDomainsAppGrant... grants) {
@@ -2030,32 +2154,50 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder hashedClientSecret(String hashedClientSecret) {
-            this.hashedClientSecret = Objects.requireNonNull(hashedClientSecret);
+            if (hashedClientSecret == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "hashedClientSecret");
+            }
+            this.hashedClientSecret = hashedClientSecret;
             return this;
         }
         @CustomType.Setter
         public Builder homePageUrl(String homePageUrl) {
-            this.homePageUrl = Objects.requireNonNull(homePageUrl);
+            if (homePageUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "homePageUrl");
+            }
+            this.homePageUrl = homePageUrl;
             return this;
         }
         @CustomType.Setter
         public Builder icon(String icon) {
-            this.icon = Objects.requireNonNull(icon);
+            if (icon == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "icon");
+            }
+            this.icon = icon;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idTokenEncAlgo(String idTokenEncAlgo) {
-            this.idTokenEncAlgo = Objects.requireNonNull(idTokenEncAlgo);
+            if (idTokenEncAlgo == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "idTokenEncAlgo");
+            }
+            this.idTokenEncAlgo = idTokenEncAlgo;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsAppIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsAppIdcsCreatedBy... idcsCreatedBies) {
@@ -2063,12 +2205,18 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsAppIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsAppIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -2076,12 +2224,18 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -2089,7 +2243,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder identityProviders(List<GetDomainsAppIdentityProvider> identityProviders) {
-            this.identityProviders = Objects.requireNonNull(identityProviders);
+            if (identityProviders == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "identityProviders");
+            }
+            this.identityProviders = identityProviders;
             return this;
         }
         public Builder identityProviders(GetDomainsAppIdentityProvider... identityProviders) {
@@ -2097,7 +2254,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder idpPolicies(List<GetDomainsAppIdpPolicy> idpPolicies) {
-            this.idpPolicies = Objects.requireNonNull(idpPolicies);
+            if (idpPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "idpPolicies");
+            }
+            this.idpPolicies = idpPolicies;
             return this;
         }
         public Builder idpPolicies(GetDomainsAppIdpPolicy... idpPolicies) {
@@ -2105,127 +2265,202 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder infrastructure(Boolean infrastructure) {
-            this.infrastructure = Objects.requireNonNull(infrastructure);
+            if (infrastructure == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "infrastructure");
+            }
+            this.infrastructure = infrastructure;
             return this;
         }
         @CustomType.Setter
         public Builder isAliasApp(Boolean isAliasApp) {
-            this.isAliasApp = Objects.requireNonNull(isAliasApp);
+            if (isAliasApp == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "isAliasApp");
+            }
+            this.isAliasApp = isAliasApp;
             return this;
         }
         @CustomType.Setter
         public Builder isDatabaseService(Boolean isDatabaseService) {
-            this.isDatabaseService = Objects.requireNonNull(isDatabaseService);
+            if (isDatabaseService == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "isDatabaseService");
+            }
+            this.isDatabaseService = isDatabaseService;
             return this;
         }
         @CustomType.Setter
         public Builder isEnterpriseApp(Boolean isEnterpriseApp) {
-            this.isEnterpriseApp = Objects.requireNonNull(isEnterpriseApp);
+            if (isEnterpriseApp == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "isEnterpriseApp");
+            }
+            this.isEnterpriseApp = isEnterpriseApp;
             return this;
         }
         @CustomType.Setter
         public Builder isFormFill(Boolean isFormFill) {
-            this.isFormFill = Objects.requireNonNull(isFormFill);
+            if (isFormFill == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "isFormFill");
+            }
+            this.isFormFill = isFormFill;
             return this;
         }
         @CustomType.Setter
         public Builder isKerberosRealm(Boolean isKerberosRealm) {
-            this.isKerberosRealm = Objects.requireNonNull(isKerberosRealm);
+            if (isKerberosRealm == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "isKerberosRealm");
+            }
+            this.isKerberosRealm = isKerberosRealm;
             return this;
         }
         @CustomType.Setter
         public Builder isLoginTarget(Boolean isLoginTarget) {
-            this.isLoginTarget = Objects.requireNonNull(isLoginTarget);
+            if (isLoginTarget == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "isLoginTarget");
+            }
+            this.isLoginTarget = isLoginTarget;
             return this;
         }
         @CustomType.Setter
         public Builder isManagedApp(Boolean isManagedApp) {
-            this.isManagedApp = Objects.requireNonNull(isManagedApp);
+            if (isManagedApp == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "isManagedApp");
+            }
+            this.isManagedApp = isManagedApp;
             return this;
         }
         @CustomType.Setter
         public Builder isMobileTarget(Boolean isMobileTarget) {
-            this.isMobileTarget = Objects.requireNonNull(isMobileTarget);
+            if (isMobileTarget == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "isMobileTarget");
+            }
+            this.isMobileTarget = isMobileTarget;
             return this;
         }
         @CustomType.Setter
         public Builder isMulticloudServiceApp(Boolean isMulticloudServiceApp) {
-            this.isMulticloudServiceApp = Objects.requireNonNull(isMulticloudServiceApp);
+            if (isMulticloudServiceApp == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "isMulticloudServiceApp");
+            }
+            this.isMulticloudServiceApp = isMulticloudServiceApp;
             return this;
         }
         @CustomType.Setter
         public Builder isOauthClient(Boolean isOauthClient) {
-            this.isOauthClient = Objects.requireNonNull(isOauthClient);
+            if (isOauthClient == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "isOauthClient");
+            }
+            this.isOauthClient = isOauthClient;
             return this;
         }
         @CustomType.Setter
         public Builder isOauthResource(Boolean isOauthResource) {
-            this.isOauthResource = Objects.requireNonNull(isOauthResource);
+            if (isOauthResource == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "isOauthResource");
+            }
+            this.isOauthResource = isOauthResource;
             return this;
         }
         @CustomType.Setter
         public Builder isObligationCapable(Boolean isObligationCapable) {
-            this.isObligationCapable = Objects.requireNonNull(isObligationCapable);
+            if (isObligationCapable == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "isObligationCapable");
+            }
+            this.isObligationCapable = isObligationCapable;
             return this;
         }
         @CustomType.Setter
         public Builder isOpcService(Boolean isOpcService) {
-            this.isOpcService = Objects.requireNonNull(isOpcService);
+            if (isOpcService == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "isOpcService");
+            }
+            this.isOpcService = isOpcService;
             return this;
         }
         @CustomType.Setter
         public Builder isRadiusApp(Boolean isRadiusApp) {
-            this.isRadiusApp = Objects.requireNonNull(isRadiusApp);
+            if (isRadiusApp == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "isRadiusApp");
+            }
+            this.isRadiusApp = isRadiusApp;
             return this;
         }
         @CustomType.Setter
         public Builder isSamlServiceProvider(Boolean isSamlServiceProvider) {
-            this.isSamlServiceProvider = Objects.requireNonNull(isSamlServiceProvider);
+            if (isSamlServiceProvider == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "isSamlServiceProvider");
+            }
+            this.isSamlServiceProvider = isSamlServiceProvider;
             return this;
         }
         @CustomType.Setter
         public Builder isUnmanagedApp(Boolean isUnmanagedApp) {
-            this.isUnmanagedApp = Objects.requireNonNull(isUnmanagedApp);
+            if (isUnmanagedApp == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "isUnmanagedApp");
+            }
+            this.isUnmanagedApp = isUnmanagedApp;
             return this;
         }
         @CustomType.Setter
         public Builder isWebTierPolicy(Boolean isWebTierPolicy) {
-            this.isWebTierPolicy = Objects.requireNonNull(isWebTierPolicy);
+            if (isWebTierPolicy == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "isWebTierPolicy");
+            }
+            this.isWebTierPolicy = isWebTierPolicy;
             return this;
         }
         @CustomType.Setter
         public Builder landingPageUrl(String landingPageUrl) {
-            this.landingPageUrl = Objects.requireNonNull(landingPageUrl);
+            if (landingPageUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "landingPageUrl");
+            }
+            this.landingPageUrl = landingPageUrl;
             return this;
         }
         @CustomType.Setter
         public Builder linkingCallbackUrl(String linkingCallbackUrl) {
-            this.linkingCallbackUrl = Objects.requireNonNull(linkingCallbackUrl);
+            if (linkingCallbackUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "linkingCallbackUrl");
+            }
+            this.linkingCallbackUrl = linkingCallbackUrl;
             return this;
         }
         @CustomType.Setter
         public Builder loginMechanism(String loginMechanism) {
-            this.loginMechanism = Objects.requireNonNull(loginMechanism);
+            if (loginMechanism == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "loginMechanism");
+            }
+            this.loginMechanism = loginMechanism;
             return this;
         }
         @CustomType.Setter
         public Builder loginPageUrl(String loginPageUrl) {
-            this.loginPageUrl = Objects.requireNonNull(loginPageUrl);
+            if (loginPageUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "loginPageUrl");
+            }
+            this.loginPageUrl = loginPageUrl;
             return this;
         }
         @CustomType.Setter
         public Builder logoutPageUrl(String logoutPageUrl) {
-            this.logoutPageUrl = Objects.requireNonNull(logoutPageUrl);
+            if (logoutPageUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "logoutPageUrl");
+            }
+            this.logoutPageUrl = logoutPageUrl;
             return this;
         }
         @CustomType.Setter
         public Builder logoutUri(String logoutUri) {
-            this.logoutUri = Objects.requireNonNull(logoutUri);
+            if (logoutUri == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "logoutUri");
+            }
+            this.logoutUri = logoutUri;
             return this;
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsAppMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsAppMeta... metas) {
@@ -2233,27 +2468,42 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder meterAsOpcService(Boolean meterAsOpcService) {
-            this.meterAsOpcService = Objects.requireNonNull(meterAsOpcService);
+            if (meterAsOpcService == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "meterAsOpcService");
+            }
+            this.meterAsOpcService = meterAsOpcService;
             return this;
         }
         @CustomType.Setter
         public Builder migrated(Boolean migrated) {
-            this.migrated = Objects.requireNonNull(migrated);
+            if (migrated == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "migrated");
+            }
+            this.migrated = migrated;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder postLogoutRedirectUris(List<String> postLogoutRedirectUris) {
-            this.postLogoutRedirectUris = Objects.requireNonNull(postLogoutRedirectUris);
+            if (postLogoutRedirectUris == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "postLogoutRedirectUris");
+            }
+            this.postLogoutRedirectUris = postLogoutRedirectUris;
             return this;
         }
         public Builder postLogoutRedirectUris(String... postLogoutRedirectUris) {
@@ -2261,22 +2511,34 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder privacyPolicyUrl(String privacyPolicyUrl) {
-            this.privacyPolicyUrl = Objects.requireNonNull(privacyPolicyUrl);
+            if (privacyPolicyUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "privacyPolicyUrl");
+            }
+            this.privacyPolicyUrl = privacyPolicyUrl;
             return this;
         }
         @CustomType.Setter
         public Builder productLogoUrl(String productLogoUrl) {
-            this.productLogoUrl = Objects.requireNonNull(productLogoUrl);
+            if (productLogoUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "productLogoUrl");
+            }
+            this.productLogoUrl = productLogoUrl;
             return this;
         }
         @CustomType.Setter
         public Builder productName(String productName) {
-            this.productName = Objects.requireNonNull(productName);
+            if (productName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "productName");
+            }
+            this.productName = productName;
             return this;
         }
         @CustomType.Setter
         public Builder protectableSecondaryAudiences(List<GetDomainsAppProtectableSecondaryAudience> protectableSecondaryAudiences) {
-            this.protectableSecondaryAudiences = Objects.requireNonNull(protectableSecondaryAudiences);
+            if (protectableSecondaryAudiences == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "protectableSecondaryAudiences");
+            }
+            this.protectableSecondaryAudiences = protectableSecondaryAudiences;
             return this;
         }
         public Builder protectableSecondaryAudiences(GetDomainsAppProtectableSecondaryAudience... protectableSecondaryAudiences) {
@@ -2284,7 +2546,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder radiusPolicies(List<GetDomainsAppRadiusPolicy> radiusPolicies) {
-            this.radiusPolicies = Objects.requireNonNull(radiusPolicies);
+            if (radiusPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "radiusPolicies");
+            }
+            this.radiusPolicies = radiusPolicies;
             return this;
         }
         public Builder radiusPolicies(GetDomainsAppRadiusPolicy... radiusPolicies) {
@@ -2292,12 +2557,18 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder readyToUpgrade(Boolean readyToUpgrade) {
-            this.readyToUpgrade = Objects.requireNonNull(readyToUpgrade);
+            if (readyToUpgrade == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "readyToUpgrade");
+            }
+            this.readyToUpgrade = readyToUpgrade;
             return this;
         }
         @CustomType.Setter
         public Builder redirectUris(List<String> redirectUris) {
-            this.redirectUris = Objects.requireNonNull(redirectUris);
+            if (redirectUris == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "redirectUris");
+            }
+            this.redirectUris = redirectUris;
             return this;
         }
         public Builder redirectUris(String... redirectUris) {
@@ -2305,17 +2576,24 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder refreshTokenExpiry(Integer refreshTokenExpiry) {
-            this.refreshTokenExpiry = Objects.requireNonNull(refreshTokenExpiry);
+            if (refreshTokenExpiry == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "refreshTokenExpiry");
+            }
+            this.refreshTokenExpiry = refreshTokenExpiry;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder samlServiceProviders(List<GetDomainsAppSamlServiceProvider> samlServiceProviders) {
-            this.samlServiceProviders = Objects.requireNonNull(samlServiceProviders);
+            if (samlServiceProviders == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "samlServiceProviders");
+            }
+            this.samlServiceProviders = samlServiceProviders;
             return this;
         }
         public Builder samlServiceProviders(GetDomainsAppSamlServiceProvider... samlServiceProviders) {
@@ -2323,7 +2601,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -2331,7 +2612,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder scopes(List<GetDomainsAppScope> scopes) {
-            this.scopes = Objects.requireNonNull(scopes);
+            if (scopes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "scopes");
+            }
+            this.scopes = scopes;
             return this;
         }
         public Builder scopes(GetDomainsAppScope... scopes) {
@@ -2339,7 +2623,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder secondaryAudiences(List<String> secondaryAudiences) {
-            this.secondaryAudiences = Objects.requireNonNull(secondaryAudiences);
+            if (secondaryAudiences == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "secondaryAudiences");
+            }
+            this.secondaryAudiences = secondaryAudiences;
             return this;
         }
         public Builder secondaryAudiences(String... secondaryAudiences) {
@@ -2347,7 +2634,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder serviceParams(List<GetDomainsAppServiceParam> serviceParams) {
-            this.serviceParams = Objects.requireNonNull(serviceParams);
+            if (serviceParams == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "serviceParams");
+            }
+            this.serviceParams = serviceParams;
             return this;
         }
         public Builder serviceParams(GetDomainsAppServiceParam... serviceParams) {
@@ -2355,22 +2645,34 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder serviceTypeUrn(String serviceTypeUrn) {
-            this.serviceTypeUrn = Objects.requireNonNull(serviceTypeUrn);
+            if (serviceTypeUrn == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "serviceTypeUrn");
+            }
+            this.serviceTypeUrn = serviceTypeUrn;
             return this;
         }
         @CustomType.Setter
         public Builder serviceTypeVersion(String serviceTypeVersion) {
-            this.serviceTypeVersion = Objects.requireNonNull(serviceTypeVersion);
+            if (serviceTypeVersion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "serviceTypeVersion");
+            }
+            this.serviceTypeVersion = serviceTypeVersion;
             return this;
         }
         @CustomType.Setter
         public Builder showInMyApps(Boolean showInMyApps) {
-            this.showInMyApps = Objects.requireNonNull(showInMyApps);
+            if (showInMyApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "showInMyApps");
+            }
+            this.showInMyApps = showInMyApps;
             return this;
         }
         @CustomType.Setter
         public Builder signonPolicies(List<GetDomainsAppSignonPolicy> signonPolicies) {
-            this.signonPolicies = Objects.requireNonNull(signonPolicies);
+            if (signonPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "signonPolicies");
+            }
+            this.signonPolicies = signonPolicies;
             return this;
         }
         public Builder signonPolicies(GetDomainsAppSignonPolicy... signonPolicies) {
@@ -2378,7 +2680,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsAppTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsAppTag... tags) {
@@ -2386,17 +2691,26 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder termsOfServiceUrl(String termsOfServiceUrl) {
-            this.termsOfServiceUrl = Objects.requireNonNull(termsOfServiceUrl);
+            if (termsOfServiceUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "termsOfServiceUrl");
+            }
+            this.termsOfServiceUrl = termsOfServiceUrl;
             return this;
         }
         @CustomType.Setter
         public Builder termsOfUses(List<GetDomainsAppTermsOfUse> termsOfUses) {
-            this.termsOfUses = Objects.requireNonNull(termsOfUses);
+            if (termsOfUses == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "termsOfUses");
+            }
+            this.termsOfUses = termsOfUses;
             return this;
         }
         public Builder termsOfUses(GetDomainsAppTermsOfUse... termsOfUses) {
@@ -2404,7 +2718,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder trustPolicies(List<GetDomainsAppTrustPolicy> trustPolicies) {
-            this.trustPolicies = Objects.requireNonNull(trustPolicies);
+            if (trustPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "trustPolicies");
+            }
+            this.trustPolicies = trustPolicies;
             return this;
         }
         public Builder trustPolicies(GetDomainsAppTrustPolicy... trustPolicies) {
@@ -2412,12 +2729,18 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder trustScope(String trustScope) {
-            this.trustScope = Objects.requireNonNull(trustScope);
+            if (trustScope == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "trustScope");
+            }
+            this.trustScope = trustScope;
             return this;
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionOciTags(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTag> urnietfparamsscimschemasoracleidcsextensionOciTags) {
-            this.urnietfparamsscimschemasoracleidcsextensionOciTags = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionOciTags);
+            if (urnietfparamsscimschemasoracleidcsextensionOciTags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "urnietfparamsscimschemasoracleidcsextensionOciTags");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionOciTags = urnietfparamsscimschemasoracleidcsextensionOciTags;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionOciTags(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTag... urnietfparamsscimschemasoracleidcsextensionOciTags) {
@@ -2425,7 +2748,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensiondbcsApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp> urnietfparamsscimschemasoracleidcsextensiondbcsApps) {
-            this.urnietfparamsscimschemasoracleidcsextensiondbcsApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensiondbcsApps);
+            if (urnietfparamsscimschemasoracleidcsextensiondbcsApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "urnietfparamsscimschemasoracleidcsextensiondbcsApps");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensiondbcsApps = urnietfparamsscimschemasoracleidcsextensiondbcsApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensiondbcsApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp... urnietfparamsscimschemasoracleidcsextensiondbcsApps) {
@@ -2433,7 +2759,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp> urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps) {
-            this.urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps);
+            if (urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps = urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp... urnietfparamsscimschemasoracleidcsextensionenterpriseAppApps) {
@@ -2441,7 +2770,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionformFillAppApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp> urnietfparamsscimschemasoracleidcsextensionformFillAppApps) {
-            this.urnietfparamsscimschemasoracleidcsextensionformFillAppApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionformFillAppApps);
+            if (urnietfparamsscimschemasoracleidcsextensionformFillAppApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "urnietfparamsscimschemasoracleidcsextensionformFillAppApps");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionformFillAppApps = urnietfparamsscimschemasoracleidcsextensionformFillAppApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionformFillAppApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp... urnietfparamsscimschemasoracleidcsextensionformFillAppApps) {
@@ -2449,7 +2781,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate> urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates) {
-            this.urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates);
+            if (urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates = urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate... urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplates) {
@@ -2457,7 +2792,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp> urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps) {
-            this.urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps);
+            if (urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps = urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp... urnietfparamsscimschemasoracleidcsextensionkerberosRealmApps) {
@@ -2465,7 +2803,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionmanagedappApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp> urnietfparamsscimschemasoracleidcsextensionmanagedappApps) {
-            this.urnietfparamsscimschemasoracleidcsextensionmanagedappApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionmanagedappApps);
+            if (urnietfparamsscimschemasoracleidcsextensionmanagedappApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "urnietfparamsscimschemasoracleidcsextensionmanagedappApps");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionmanagedappApps = urnietfparamsscimschemasoracleidcsextensionmanagedappApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionmanagedappApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp... urnietfparamsscimschemasoracleidcsextensionmanagedappApps) {
@@ -2473,7 +2814,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp> urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps) {
-            this.urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps);
+            if (urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps = urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp... urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApps) {
@@ -2481,7 +2825,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionopcServiceApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp> urnietfparamsscimschemasoracleidcsextensionopcServiceApps) {
-            this.urnietfparamsscimschemasoracleidcsextensionopcServiceApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionopcServiceApps);
+            if (urnietfparamsscimschemasoracleidcsextensionopcServiceApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "urnietfparamsscimschemasoracleidcsextensionopcServiceApps");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionopcServiceApps = urnietfparamsscimschemasoracleidcsextensionopcServiceApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionopcServiceApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp... urnietfparamsscimschemasoracleidcsextensionopcServiceApps) {
@@ -2489,7 +2836,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionradiusAppApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp> urnietfparamsscimschemasoracleidcsextensionradiusAppApps) {
-            this.urnietfparamsscimschemasoracleidcsextensionradiusAppApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionradiusAppApps);
+            if (urnietfparamsscimschemasoracleidcsextensionradiusAppApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "urnietfparamsscimschemasoracleidcsextensionradiusAppApps");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionradiusAppApps = urnietfparamsscimschemasoracleidcsextensionradiusAppApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionradiusAppApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp... urnietfparamsscimschemasoracleidcsextensionradiusAppApps) {
@@ -2497,7 +2847,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionrequestableApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp> urnietfparamsscimschemasoracleidcsextensionrequestableApps) {
-            this.urnietfparamsscimschemasoracleidcsextensionrequestableApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionrequestableApps);
+            if (urnietfparamsscimschemasoracleidcsextensionrequestableApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "urnietfparamsscimschemasoracleidcsextensionrequestableApps");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionrequestableApps = urnietfparamsscimschemasoracleidcsextensionrequestableApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionrequestableApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp... urnietfparamsscimschemasoracleidcsextensionrequestableApps) {
@@ -2505,7 +2858,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp> urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps) {
-            this.urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps);
+            if (urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps = urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp... urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApps) {
@@ -2513,7 +2869,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp> urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps) {
-            this.urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps);
+            if (urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps = urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp... urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApps) {
@@ -2521,7 +2880,10 @@ public final class GetDomainsAppResult {
         }
         @CustomType.Setter
         public Builder userRoles(List<GetDomainsAppUserRole> userRoles) {
-            this.userRoles = Objects.requireNonNull(userRoles);
+            if (userRoles == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppResult", "userRoles");
+            }
+            this.userRoles = userRoles;
             return this;
         }
         public Builder userRoles(GetDomainsAppUserRole... userRoles) {

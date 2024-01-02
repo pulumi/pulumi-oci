@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbSystemPatchesFilter;
 import com.pulumi.oci.Database.outputs.GetDbSystemPatchesPatch;
 import java.lang.String;
@@ -72,11 +73,15 @@ public final class GetDbSystemPatchesResult {
 
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemPatchesResult", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDbSystemPatchesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -85,12 +90,18 @@ public final class GetDbSystemPatchesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemPatchesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder patches(List<GetDbSystemPatchesPatch> patches) {
-            this.patches = Objects.requireNonNull(patches);
+            if (patches == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemPatchesResult", "patches");
+            }
+            this.patches = patches;
             return this;
         }
         public Builder patches(GetDbSystemPatchesPatch... patches) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opensearch.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchVersionsFilter;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchVersionsOpensearchVersionsCollection;
 import java.lang.String;
@@ -72,11 +73,15 @@ public final class GetOpensearchVersionsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchVersionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetOpensearchVersionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -85,12 +90,18 @@ public final class GetOpensearchVersionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchVersionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder opensearchVersionsCollections(List<GetOpensearchVersionsOpensearchVersionsCollection> opensearchVersionsCollections) {
-            this.opensearchVersionsCollections = Objects.requireNonNull(opensearchVersionsCollections);
+            if (opensearchVersionsCollections == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchVersionsResult", "opensearchVersionsCollections");
+            }
+            this.opensearchVersionsCollections = opensearchVersionsCollections;
             return this;
         }
         public Builder opensearchVersionsCollections(GetOpensearchVersionsOpensearchVersionsCollection... opensearchVersionsCollections) {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.SecurityListEgressSecurityRuleIcmpOptionsArgs;
 import com.pulumi.oci.Core.inputs.SecurityListEgressSecurityRuleTcpOptionsArgs;
 import com.pulumi.oci.Core.inputs.SecurityListEgressSecurityRuleUdpOptionsArgs;
@@ -379,8 +380,12 @@ public final class SecurityListEgressSecurityRuleArgs extends com.pulumi.resourc
         }
 
         public SecurityListEgressSecurityRuleArgs build() {
-            $.destination = Objects.requireNonNull($.destination, "expected parameter 'destination' to be non-null");
-            $.protocol = Objects.requireNonNull($.protocol, "expected parameter 'protocol' to be non-null");
+            if ($.destination == null) {
+                throw new MissingRequiredPropertyException("SecurityListEgressSecurityRuleArgs", "destination");
+            }
+            if ($.protocol == null) {
+                throw new MissingRequiredPropertyException("SecurityListEgressSecurityRuleArgs", "protocol");
+            }
             return $;
         }
     }

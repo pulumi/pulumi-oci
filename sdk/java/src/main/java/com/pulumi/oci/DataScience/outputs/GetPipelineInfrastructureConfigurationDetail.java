@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetPipelineInfrastructureConfigurationDetailShapeConfigDetail;
 import java.lang.Integer;
 import java.lang.String;
@@ -73,12 +74,18 @@ public final class GetPipelineInfrastructureConfigurationDetail {
 
         @CustomType.Setter
         public Builder blockStorageSizeInGbs(Integer blockStorageSizeInGbs) {
-            this.blockStorageSizeInGbs = Objects.requireNonNull(blockStorageSizeInGbs);
+            if (blockStorageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetPipelineInfrastructureConfigurationDetail", "blockStorageSizeInGbs");
+            }
+            this.blockStorageSizeInGbs = blockStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder shapeConfigDetails(List<GetPipelineInfrastructureConfigurationDetailShapeConfigDetail> shapeConfigDetails) {
-            this.shapeConfigDetails = Objects.requireNonNull(shapeConfigDetails);
+            if (shapeConfigDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelineInfrastructureConfigurationDetail", "shapeConfigDetails");
+            }
+            this.shapeConfigDetails = shapeConfigDetails;
             return this;
         }
         public Builder shapeConfigDetails(GetPipelineInfrastructureConfigurationDetailShapeConfigDetail... shapeConfigDetails) {
@@ -86,7 +93,10 @@ public final class GetPipelineInfrastructureConfigurationDetail {
         }
         @CustomType.Setter
         public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+            if (shapeName == null) {
+              throw new MissingRequiredPropertyException("GetPipelineInfrastructureConfigurationDetail", "shapeName");
+            }
+            this.shapeName = shapeName;
             return this;
         }
         public GetPipelineInfrastructureConfigurationDetail build() {

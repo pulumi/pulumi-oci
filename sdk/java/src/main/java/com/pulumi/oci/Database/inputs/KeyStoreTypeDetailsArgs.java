@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -245,11 +246,21 @@ public final class KeyStoreTypeDetailsArgs extends com.pulumi.resources.Resource
         }
 
         public KeyStoreTypeDetailsArgs build() {
-            $.adminUsername = Objects.requireNonNull($.adminUsername, "expected parameter 'adminUsername' to be non-null");
-            $.connectionIps = Objects.requireNonNull($.connectionIps, "expected parameter 'connectionIps' to be non-null");
-            $.secretId = Objects.requireNonNull($.secretId, "expected parameter 'secretId' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
-            $.vaultId = Objects.requireNonNull($.vaultId, "expected parameter 'vaultId' to be non-null");
+            if ($.adminUsername == null) {
+                throw new MissingRequiredPropertyException("KeyStoreTypeDetailsArgs", "adminUsername");
+            }
+            if ($.connectionIps == null) {
+                throw new MissingRequiredPropertyException("KeyStoreTypeDetailsArgs", "connectionIps");
+            }
+            if ($.secretId == null) {
+                throw new MissingRequiredPropertyException("KeyStoreTypeDetailsArgs", "secretId");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("KeyStoreTypeDetailsArgs", "type");
+            }
+            if ($.vaultId == null) {
+                throw new MissingRequiredPropertyException("KeyStoreTypeDetailsArgs", "vaultId");
+            }
             return $;
         }
     }

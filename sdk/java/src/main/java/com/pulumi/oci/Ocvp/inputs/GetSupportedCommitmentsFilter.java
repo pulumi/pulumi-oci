@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -97,8 +98,12 @@ public final class GetSupportedCommitmentsFilter extends com.pulumi.resources.In
         }
 
         public GetSupportedCommitmentsFilter build() {
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
-            $.values = Objects.requireNonNull($.values, "expected parameter 'values' to be non-null");
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("GetSupportedCommitmentsFilter", "name");
+            }
+            if ($.values == null) {
+                throw new MissingRequiredPropertyException("GetSupportedCommitmentsFilter", "values");
+            }
             return $;
         }
     }

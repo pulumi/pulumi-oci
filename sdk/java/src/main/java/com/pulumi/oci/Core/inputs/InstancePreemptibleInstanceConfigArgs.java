@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.InstancePreemptibleInstanceConfigPreemptionActionArgs;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class InstancePreemptibleInstanceConfigArgs extends com.pulumi.reso
         }
 
         public InstancePreemptibleInstanceConfigArgs build() {
-            $.preemptionAction = Objects.requireNonNull($.preemptionAction, "expected parameter 'preemptionAction' to be non-null");
+            if ($.preemptionAction == null) {
+                throw new MissingRequiredPropertyException("InstancePreemptibleInstanceConfigArgs", "preemptionAction");
+            }
             return $;
         }
     }

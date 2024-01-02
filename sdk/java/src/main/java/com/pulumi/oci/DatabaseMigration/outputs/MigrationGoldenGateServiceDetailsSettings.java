@@ -74,16 +74,19 @@ public final class MigrationGoldenGateServiceDetailsSettings {
 
         @CustomType.Setter
         public Builder acceptableLag(@Nullable Integer acceptableLag) {
+
             this.acceptableLag = acceptableLag;
             return this;
         }
         @CustomType.Setter
         public Builder extract(@Nullable MigrationGoldenGateServiceDetailsSettingsExtract extract) {
+
             this.extract = extract;
             return this;
         }
         @CustomType.Setter
         public Builder replicat(@Nullable MigrationGoldenGateServiceDetailsSettingsReplicat replicat) {
+
             this.replicat = replicat;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange;
 import com.pulumi.oci.Core.outputs.GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange;
 import java.util.List;
@@ -42,7 +43,10 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption {
 
         @CustomType.Setter
         public Builder destinationPortRanges(List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange> destinationPortRanges) {
-            this.destinationPortRanges = Objects.requireNonNull(destinationPortRanges);
+            if (destinationPortRanges == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption", "destinationPortRanges");
+            }
+            this.destinationPortRanges = destinationPortRanges;
             return this;
         }
         public Builder destinationPortRanges(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange... destinationPortRanges) {
@@ -50,7 +54,10 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption {
         }
         @CustomType.Setter
         public Builder sourcePortRanges(List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange> sourcePortRanges) {
-            this.sourcePortRanges = Objects.requireNonNull(sourcePortRanges);
+            if (sourcePortRanges == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption", "sourcePortRanges");
+            }
+            this.sourcePortRanges = sourcePortRanges;
             return this;
         }
         public Builder sourcePortRanges(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange... sourcePortRanges) {

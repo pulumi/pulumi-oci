@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetDataSourceEventsDataSourceEventCollection;
 import com.pulumi.oci.CloudGuard.outputs.GetDataSourceEventsFilter;
 import java.lang.String;
@@ -95,7 +96,10 @@ public final class GetDataSourceEventsResult {
 
         @CustomType.Setter
         public Builder dataSourceEventCollections(List<GetDataSourceEventsDataSourceEventCollection> dataSourceEventCollections) {
-            this.dataSourceEventCollections = Objects.requireNonNull(dataSourceEventCollections);
+            if (dataSourceEventCollections == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceEventsResult", "dataSourceEventCollections");
+            }
+            this.dataSourceEventCollections = dataSourceEventCollections;
             return this;
         }
         public Builder dataSourceEventCollections(GetDataSourceEventsDataSourceEventCollection... dataSourceEventCollections) {
@@ -103,11 +107,15 @@ public final class GetDataSourceEventsResult {
         }
         @CustomType.Setter
         public Builder dataSourceId(String dataSourceId) {
-            this.dataSourceId = Objects.requireNonNull(dataSourceId);
+            if (dataSourceId == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceEventsResult", "dataSourceId");
+            }
+            this.dataSourceId = dataSourceId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDataSourceEventsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -116,11 +124,15 @@ public final class GetDataSourceEventsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceEventsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder region(@Nullable String region) {
+
             this.region = region;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -119,8 +120,12 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegePlainArgs extends
         }
 
         public GetManagedDatabaseUserConsumerGroupPrivilegePlainArgs build() {
-            $.managedDatabaseId = Objects.requireNonNull($.managedDatabaseId, "expected parameter 'managedDatabaseId' to be non-null");
-            $.userName = Objects.requireNonNull($.userName, "expected parameter 'userName' to be non-null");
+            if ($.managedDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseUserConsumerGroupPrivilegePlainArgs", "managedDatabaseId");
+            }
+            if ($.userName == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseUserConsumerGroupPrivilegePlainArgs", "userName");
+            }
             return $;
         }
     }

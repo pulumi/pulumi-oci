@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -328,8 +329,12 @@ public final class LocalPeeringGatewayArgs extends com.pulumi.resources.Resource
         }
 
         public LocalPeeringGatewayArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.vcnId = Objects.requireNonNull($.vcnId, "expected parameter 'vcnId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("LocalPeeringGatewayArgs", "compartmentId");
+            }
+            if ($.vcnId == null) {
+                throw new MissingRequiredPropertyException("LocalPeeringGatewayArgs", "vcnId");
+            }
             return $;
         }
     }

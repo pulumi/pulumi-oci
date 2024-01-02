@@ -5,6 +5,7 @@ package com.pulumi.oci.Logging.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs;
 import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs;
 import java.lang.Boolean;
@@ -1099,7 +1100,9 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         public UnifiedAgentConfigurationServiceConfigurationSourceParserArgs build() {
-            $.parserType = Objects.requireNonNull($.parserType, "expected parameter 'parserType' to be non-null");
+            if ($.parserType == null) {
+                throw new MissingRequiredPropertyException("UnifiedAgentConfigurationServiceConfigurationSourceParserArgs", "parserType");
+            }
             return $;
         }
     }

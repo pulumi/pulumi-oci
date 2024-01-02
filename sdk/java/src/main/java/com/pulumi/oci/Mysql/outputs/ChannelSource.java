@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.ChannelSourceAnonymousTransactionsHandling;
 import com.pulumi.oci.Mysql.outputs.ChannelSourceSslCaCertificate;
 import java.lang.Integer;
@@ -145,42 +146,60 @@ public final class ChannelSource {
 
         @CustomType.Setter
         public Builder anonymousTransactionsHandling(@Nullable ChannelSourceAnonymousTransactionsHandling anonymousTransactionsHandling) {
+
             this.anonymousTransactionsHandling = anonymousTransactionsHandling;
             return this;
         }
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("ChannelSource", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+            if (password == null) {
+              throw new MissingRequiredPropertyException("ChannelSource", "password");
+            }
+            this.password = password;
             return this;
         }
         @CustomType.Setter
         public Builder port(@Nullable Integer port) {
+
             this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("ChannelSource", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
         public Builder sslCaCertificate(@Nullable ChannelSourceSslCaCertificate sslCaCertificate) {
+
             this.sslCaCertificate = sslCaCertificate;
             return this;
         }
         @CustomType.Setter
         public Builder sslMode(String sslMode) {
-            this.sslMode = Objects.requireNonNull(sslMode);
+            if (sslMode == null) {
+              throw new MissingRequiredPropertyException("ChannelSource", "sslMode");
+            }
+            this.sslMode = sslMode;
             return this;
         }
         @CustomType.Setter
         public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+            if (username == null) {
+              throw new MissingRequiredPropertyException("ChannelSource", "username");
+            }
+            this.username = username;
             return this;
         }
         public ChannelSource build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewaysFilter;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewaysGatewayCollection;
 import java.lang.String;
@@ -123,21 +124,27 @@ public final class GetGatewaysResult {
 
         @CustomType.Setter
         public Builder certificateId(@Nullable String certificateId) {
+
             this.certificateId = certificateId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetGatewaysFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -146,7 +153,10 @@ public final class GetGatewaysResult {
         }
         @CustomType.Setter
         public Builder gatewayCollections(List<GetGatewaysGatewayCollection> gatewayCollections) {
-            this.gatewayCollections = Objects.requireNonNull(gatewayCollections);
+            if (gatewayCollections == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysResult", "gatewayCollections");
+            }
+            this.gatewayCollections = gatewayCollections;
             return this;
         }
         public Builder gatewayCollections(GetGatewaysGatewayCollection... gatewayCollections) {
@@ -154,11 +164,15 @@ public final class GetGatewaysResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

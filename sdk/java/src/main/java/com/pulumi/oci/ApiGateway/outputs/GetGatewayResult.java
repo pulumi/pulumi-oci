@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewayCaBundle;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewayIpAddress;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewayResponseCacheDetail;
@@ -278,7 +279,10 @@ public final class GetGatewayResult {
 
         @CustomType.Setter
         public Builder caBundles(List<GetGatewayCaBundle> caBundles) {
-            this.caBundles = Objects.requireNonNull(caBundles);
+            if (caBundles == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "caBundles");
+            }
+            this.caBundles = caBundles;
             return this;
         }
         public Builder caBundles(GetGatewayCaBundle... caBundles) {
@@ -286,52 +290,82 @@ public final class GetGatewayResult {
         }
         @CustomType.Setter
         public Builder certificateId(String certificateId) {
-            this.certificateId = Objects.requireNonNull(certificateId);
+            if (certificateId == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "certificateId");
+            }
+            this.certificateId = certificateId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder endpointType(String endpointType) {
-            this.endpointType = Objects.requireNonNull(endpointType);
+            if (endpointType == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "endpointType");
+            }
+            this.endpointType = endpointType;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder gatewayId(String gatewayId) {
-            this.gatewayId = Objects.requireNonNull(gatewayId);
+            if (gatewayId == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "gatewayId");
+            }
+            this.gatewayId = gatewayId;
             return this;
         }
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddresses(List<GetGatewayIpAddress> ipAddresses) {
-            this.ipAddresses = Objects.requireNonNull(ipAddresses);
+            if (ipAddresses == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "ipAddresses");
+            }
+            this.ipAddresses = ipAddresses;
             return this;
         }
         public Builder ipAddresses(GetGatewayIpAddress... ipAddresses) {
@@ -339,12 +373,18 @@ public final class GetGatewayResult {
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder networkSecurityGroupIds(List<String> networkSecurityGroupIds) {
-            this.networkSecurityGroupIds = Objects.requireNonNull(networkSecurityGroupIds);
+            if (networkSecurityGroupIds == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "networkSecurityGroupIds");
+            }
+            this.networkSecurityGroupIds = networkSecurityGroupIds;
             return this;
         }
         public Builder networkSecurityGroupIds(String... networkSecurityGroupIds) {
@@ -352,7 +392,10 @@ public final class GetGatewayResult {
         }
         @CustomType.Setter
         public Builder responseCacheDetails(List<GetGatewayResponseCacheDetail> responseCacheDetails) {
-            this.responseCacheDetails = Objects.requireNonNull(responseCacheDetails);
+            if (responseCacheDetails == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "responseCacheDetails");
+            }
+            this.responseCacheDetails = responseCacheDetails;
             return this;
         }
         public Builder responseCacheDetails(GetGatewayResponseCacheDetail... responseCacheDetails) {
@@ -360,22 +403,34 @@ public final class GetGatewayResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetGatewayResult build() {

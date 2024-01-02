@@ -4,6 +4,7 @@
 package com.pulumi.oci.Integration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Integration.outputs.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn;
 import java.lang.Boolean;
 import java.lang.String;
@@ -89,6 +90,7 @@ public final class IntegrationInstanceNetworkEndpointDetails {
 
         @CustomType.Setter
         public Builder allowlistedHttpIps(@Nullable List<String> allowlistedHttpIps) {
+
             this.allowlistedHttpIps = allowlistedHttpIps;
             return this;
         }
@@ -97,6 +99,7 @@ public final class IntegrationInstanceNetworkEndpointDetails {
         }
         @CustomType.Setter
         public Builder allowlistedHttpVcns(@Nullable List<IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn> allowlistedHttpVcns) {
+
             this.allowlistedHttpVcns = allowlistedHttpVcns;
             return this;
         }
@@ -105,12 +108,16 @@ public final class IntegrationInstanceNetworkEndpointDetails {
         }
         @CustomType.Setter
         public Builder isIntegrationVcnAllowlisted(@Nullable Boolean isIntegrationVcnAllowlisted) {
+
             this.isIntegrationVcnAllowlisted = isIntegrationVcnAllowlisted;
             return this;
         }
         @CustomType.Setter
         public Builder networkEndpointType(String networkEndpointType) {
-            this.networkEndpointType = Objects.requireNonNull(networkEndpointType);
+            if (networkEndpointType == null) {
+              throw new MissingRequiredPropertyException("IntegrationInstanceNetworkEndpointDetails", "networkEndpointType");
+            }
+            this.networkEndpointType = networkEndpointType;
             return this;
         }
         public IntegrationInstanceNetworkEndpointDetails build() {

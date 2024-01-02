@@ -4,6 +4,7 @@
 package com.pulumi.oci.ComputeCloud.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ComputeCloud.outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollection;
 import com.pulumi.oci.ComputeCloud.outputs.GetAtCustomerCccInfrastructuresFilter;
 import java.lang.Boolean;
@@ -134,12 +135,16 @@ public final class GetAtCustomerCccInfrastructuresResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder cccInfrastructureCollections(List<GetAtCustomerCccInfrastructuresCccInfrastructureCollection> cccInfrastructureCollections) {
-            this.cccInfrastructureCollections = Objects.requireNonNull(cccInfrastructureCollections);
+            if (cccInfrastructureCollections == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructuresResult", "cccInfrastructureCollections");
+            }
+            this.cccInfrastructureCollections = cccInfrastructureCollections;
             return this;
         }
         public Builder cccInfrastructureCollections(GetAtCustomerCccInfrastructuresCccInfrastructureCollection... cccInfrastructureCollections) {
@@ -147,31 +152,37 @@ public final class GetAtCustomerCccInfrastructuresResult {
         }
         @CustomType.Setter
         public Builder cccInfrastructureId(@Nullable String cccInfrastructureId) {
+
             this.cccInfrastructureId = cccInfrastructureId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder displayNameContains(@Nullable String displayNameContains) {
+
             this.displayNameContains = displayNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAtCustomerCccInfrastructuresFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -180,11 +191,15 @@ public final class GetAtCustomerCccInfrastructuresResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructuresResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

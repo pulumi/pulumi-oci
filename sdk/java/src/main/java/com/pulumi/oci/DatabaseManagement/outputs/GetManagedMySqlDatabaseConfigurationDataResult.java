@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabaseConfigurationDataFilter;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetManagedMySqlDatabaseConfigurationDataResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedMySqlDatabaseConfigurationDataFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,17 +82,26 @@ public final class GetManagedMySqlDatabaseConfigurationDataResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseConfigurationDataResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedMySqlDatabaseId(String managedMySqlDatabaseId) {
-            this.managedMySqlDatabaseId = Objects.requireNonNull(managedMySqlDatabaseId);
+            if (managedMySqlDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseConfigurationDataResult", "managedMySqlDatabaseId");
+            }
+            this.managedMySqlDatabaseId = managedMySqlDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder mySqlConfigurationDataCollections(List<GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection> mySqlConfigurationDataCollections) {
-            this.mySqlConfigurationDataCollections = Objects.requireNonNull(mySqlConfigurationDataCollections);
+            if (mySqlConfigurationDataCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseConfigurationDataResult", "mySqlConfigurationDataCollections");
+            }
+            this.mySqlConfigurationDataCollections = mySqlConfigurationDataCollections;
             return this;
         }
         public Builder mySqlConfigurationDataCollections(GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection... mySqlConfigurationDataCollections) {

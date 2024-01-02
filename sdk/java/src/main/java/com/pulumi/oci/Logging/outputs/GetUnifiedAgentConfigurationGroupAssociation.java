@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetUnifiedAgentConfigurationGroupAssociation {
 
         @CustomType.Setter
         public Builder groupLists(List<String> groupLists) {
-            this.groupLists = Objects.requireNonNull(groupLists);
+            if (groupLists == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationGroupAssociation", "groupLists");
+            }
+            this.groupLists = groupLists;
             return this;
         }
         public Builder groupLists(String... groupLists) {

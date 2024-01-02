@@ -292,6 +292,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
 
         @CustomType.Setter
         public Builder appRoles(@Nullable List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole> appRoles) {
+
             this.appRoles = appRoles;
             return this;
         }
@@ -300,16 +301,19 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         }
         @CustomType.Setter
         public Builder creationMechanism(@Nullable String creationMechanism) {
+
             this.creationMechanism = creationMechanism;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder grants(@Nullable List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant> grants) {
+
             this.grants = grants;
             return this;
         }
@@ -318,6 +322,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         }
         @CustomType.Setter
         public Builder owners(@Nullable List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner> owners) {
+
             this.owners = owners;
             return this;
         }
@@ -326,6 +331,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         }
         @CustomType.Setter
         public Builder passwordPolicies(@Nullable List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy> passwordPolicies) {
+
             this.passwordPolicies = passwordPolicies;
             return this;
         }
@@ -334,6 +340,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         }
         @CustomType.Setter
         public Builder syncedFromApps(@Nullable List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp> syncedFromApps) {
+
             this.syncedFromApps = syncedFromApps;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Waf.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.inputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs;
 import com.pulumi.oci.Waf.inputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs;
 import java.lang.Boolean;
@@ -353,10 +354,18 @@ public final class AppFirewallPolicyResponseProtectionRuleArgs extends com.pulum
         }
 
         public AppFirewallPolicyResponseProtectionRuleArgs build() {
-            $.actionName = Objects.requireNonNull($.actionName, "expected parameter 'actionName' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
-            $.protectionCapabilities = Objects.requireNonNull($.protectionCapabilities, "expected parameter 'protectionCapabilities' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.actionName == null) {
+                throw new MissingRequiredPropertyException("AppFirewallPolicyResponseProtectionRuleArgs", "actionName");
+            }
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("AppFirewallPolicyResponseProtectionRuleArgs", "name");
+            }
+            if ($.protectionCapabilities == null) {
+                throw new MissingRequiredPropertyException("AppFirewallPolicyResponseProtectionRuleArgs", "protectionCapabilities");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("AppFirewallPolicyResponseProtectionRuleArgs", "type");
+            }
             return $;
         }
     }

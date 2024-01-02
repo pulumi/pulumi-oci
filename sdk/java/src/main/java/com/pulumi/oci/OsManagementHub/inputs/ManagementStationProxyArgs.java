@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagementHub.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -211,7 +212,9 @@ public final class ManagementStationProxyArgs extends com.pulumi.resources.Resou
         }
 
         public ManagementStationProxyArgs build() {
-            $.isEnabled = Objects.requireNonNull($.isEnabled, "expected parameter 'isEnabled' to be non-null");
+            if ($.isEnabled == null) {
+                throw new MissingRequiredPropertyException("ManagementStationProxyArgs", "isEnabled");
+            }
             return $;
         }
     }

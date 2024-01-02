@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetReplicasReplicaReplicaOverride {
 
         @CustomType.Setter
         public Builder configurationId(String configurationId) {
-            this.configurationId = Objects.requireNonNull(configurationId);
+            if (configurationId == null) {
+              throw new MissingRequiredPropertyException("GetReplicasReplicaReplicaOverride", "configurationId");
+            }
+            this.configurationId = configurationId;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlVersion(String mysqlVersion) {
-            this.mysqlVersion = Objects.requireNonNull(mysqlVersion);
+            if (mysqlVersion == null) {
+              throw new MissingRequiredPropertyException("GetReplicasReplicaReplicaOverride", "mysqlVersion");
+            }
+            this.mysqlVersion = mysqlVersion;
             return this;
         }
         @CustomType.Setter
         public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+            if (shapeName == null) {
+              throw new MissingRequiredPropertyException("GetReplicasReplicaReplicaOverride", "shapeName");
+            }
+            this.shapeName = shapeName;
             return this;
         }
         public GetReplicasReplicaReplicaOverride build() {

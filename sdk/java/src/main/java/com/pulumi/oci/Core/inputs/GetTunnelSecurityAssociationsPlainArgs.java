@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetTunnelSecurityAssociationsFilter;
 import java.lang.String;
 import java.util.List;
@@ -111,8 +112,12 @@ public final class GetTunnelSecurityAssociationsPlainArgs extends com.pulumi.res
         }
 
         public GetTunnelSecurityAssociationsPlainArgs build() {
-            $.ipsecId = Objects.requireNonNull($.ipsecId, "expected parameter 'ipsecId' to be non-null");
-            $.tunnelId = Objects.requireNonNull($.tunnelId, "expected parameter 'tunnelId' to be non-null");
+            if ($.ipsecId == null) {
+                throw new MissingRequiredPropertyException("GetTunnelSecurityAssociationsPlainArgs", "ipsecId");
+            }
+            if ($.tunnelId == null) {
+                throw new MissingRequiredPropertyException("GetTunnelSecurityAssociationsPlainArgs", "tunnelId");
+            }
             return $;
         }
     }

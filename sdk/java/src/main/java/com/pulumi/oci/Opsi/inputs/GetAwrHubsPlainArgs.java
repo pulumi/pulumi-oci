@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.inputs.GetAwrHubsFilter;
 import java.lang.String;
 import java.util.List;
@@ -202,7 +203,9 @@ public final class GetAwrHubsPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetAwrHubsPlainArgs build() {
-            $.operationsInsightsWarehouseId = Objects.requireNonNull($.operationsInsightsWarehouseId, "expected parameter 'operationsInsightsWarehouseId' to be non-null");
+            if ($.operationsInsightsWarehouseId == null) {
+                throw new MissingRequiredPropertyException("GetAwrHubsPlainArgs", "operationsInsightsWarehouseId");
+            }
             return $;
         }
     }

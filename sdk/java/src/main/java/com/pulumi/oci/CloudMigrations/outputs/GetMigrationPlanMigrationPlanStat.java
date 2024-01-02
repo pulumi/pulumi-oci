@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.GetMigrationPlanMigrationPlanStatTotalEstimatedCost;
 import java.lang.Integer;
 import java.lang.String;
@@ -73,12 +74,18 @@ public final class GetMigrationPlanMigrationPlanStat {
 
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanMigrationPlanStat", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder totalEstimatedCosts(List<GetMigrationPlanMigrationPlanStatTotalEstimatedCost> totalEstimatedCosts) {
-            this.totalEstimatedCosts = Objects.requireNonNull(totalEstimatedCosts);
+            if (totalEstimatedCosts == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanMigrationPlanStat", "totalEstimatedCosts");
+            }
+            this.totalEstimatedCosts = totalEstimatedCosts;
             return this;
         }
         public Builder totalEstimatedCosts(GetMigrationPlanMigrationPlanStatTotalEstimatedCost... totalEstimatedCosts) {
@@ -86,7 +93,10 @@ public final class GetMigrationPlanMigrationPlanStat {
         }
         @CustomType.Setter
         public Builder vmCount(Integer vmCount) {
-            this.vmCount = Objects.requireNonNull(vmCount);
+            if (vmCount == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanMigrationPlanStat", "vmCount");
+            }
+            this.vmCount = vmCount;
             return this;
         }
         public GetMigrationPlanMigrationPlanStat build() {

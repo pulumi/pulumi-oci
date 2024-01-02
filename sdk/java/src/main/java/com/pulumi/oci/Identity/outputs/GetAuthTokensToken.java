@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -140,42 +141,66 @@ public final class GetAuthTokensToken {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAuthTokensToken", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAuthTokensToken", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inactiveState(String inactiveState) {
-            this.inactiveState = Objects.requireNonNull(inactiveState);
+            if (inactiveState == null) {
+              throw new MissingRequiredPropertyException("GetAuthTokensToken", "inactiveState");
+            }
+            this.inactiveState = inactiveState;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAuthTokensToken", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAuthTokensToken", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeExpires(String timeExpires) {
-            this.timeExpires = Objects.requireNonNull(timeExpires);
+            if (timeExpires == null) {
+              throw new MissingRequiredPropertyException("GetAuthTokensToken", "timeExpires");
+            }
+            this.timeExpires = timeExpires;
             return this;
         }
         @CustomType.Setter
         public Builder token(String token) {
-            this.token = Objects.requireNonNull(token);
+            if (token == null) {
+              throw new MissingRequiredPropertyException("GetAuthTokensToken", "token");
+            }
+            this.token = token;
             return this;
         }
         @CustomType.Setter
         public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+            if (userId == null) {
+              throw new MissingRequiredPropertyException("GetAuthTokensToken", "userId");
+            }
+            this.userId = userId;
             return this;
         }
         public GetAuthTokensToken build() {

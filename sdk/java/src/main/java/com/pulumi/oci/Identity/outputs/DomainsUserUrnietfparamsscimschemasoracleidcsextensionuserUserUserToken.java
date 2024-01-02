@@ -104,11 +104,13 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         @CustomType.Setter
         public Builder ref(@Nullable String ref) {
+
             this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder value(@Nullable String value) {
+
             this.value = value;
             return this;
         }

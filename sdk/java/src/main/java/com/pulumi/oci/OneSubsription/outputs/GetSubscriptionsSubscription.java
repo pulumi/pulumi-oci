@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OneSubsription.outputs.GetSubscriptionsSubscriptionCurrency;
 import com.pulumi.oci.OneSubsription.outputs.GetSubscriptionsSubscriptionSubscribedService;
 import java.lang.String;
@@ -143,7 +144,10 @@ public final class GetSubscriptionsSubscription {
 
         @CustomType.Setter
         public Builder currencies(List<GetSubscriptionsSubscriptionCurrency> currencies) {
-            this.currencies = Objects.requireNonNull(currencies);
+            if (currencies == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscription", "currencies");
+            }
+            this.currencies = currencies;
             return this;
         }
         public Builder currencies(GetSubscriptionsSubscriptionCurrency... currencies) {
@@ -151,22 +155,34 @@ public final class GetSubscriptionsSubscription {
         }
         @CustomType.Setter
         public Builder holdReason(String holdReason) {
-            this.holdReason = Objects.requireNonNull(holdReason);
+            if (holdReason == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscription", "holdReason");
+            }
+            this.holdReason = holdReason;
             return this;
         }
         @CustomType.Setter
         public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+            if (serviceName == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscription", "serviceName");
+            }
+            this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscription", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder subscribedServices(List<GetSubscriptionsSubscriptionSubscribedService> subscribedServices) {
-            this.subscribedServices = Objects.requireNonNull(subscribedServices);
+            if (subscribedServices == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscription", "subscribedServices");
+            }
+            this.subscribedServices = subscribedServices;
             return this;
         }
         public Builder subscribedServices(GetSubscriptionsSubscriptionSubscribedService... subscribedServices) {
@@ -174,17 +190,26 @@ public final class GetSubscriptionsSubscription {
         }
         @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+            if (timeEnd == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscription", "timeEnd");
+            }
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeHoldReleaseEta(String timeHoldReleaseEta) {
-            this.timeHoldReleaseEta = Objects.requireNonNull(timeHoldReleaseEta);
+            if (timeHoldReleaseEta == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscription", "timeHoldReleaseEta");
+            }
+            this.timeHoldReleaseEta = timeHoldReleaseEta;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+            if (timeStart == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscription", "timeStart");
+            }
+            this.timeStart = timeStart;
             return this;
         }
         public GetSubscriptionsSubscription build() {

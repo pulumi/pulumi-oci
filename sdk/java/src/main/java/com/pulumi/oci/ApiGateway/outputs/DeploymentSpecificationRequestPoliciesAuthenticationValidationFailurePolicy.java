@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetails;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformations;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetails;
@@ -238,46 +239,55 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
 
         @CustomType.Setter
         public Builder clientDetails(@Nullable DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetails clientDetails) {
+
             this.clientDetails = clientDetails;
             return this;
         }
         @CustomType.Setter
         public Builder fallbackRedirectPath(@Nullable String fallbackRedirectPath) {
+
             this.fallbackRedirectPath = fallbackRedirectPath;
             return this;
         }
         @CustomType.Setter
         public Builder logoutPath(@Nullable String logoutPath) {
+
             this.logoutPath = logoutPath;
             return this;
         }
         @CustomType.Setter
         public Builder maxExpiryDurationInHours(@Nullable Integer maxExpiryDurationInHours) {
+
             this.maxExpiryDurationInHours = maxExpiryDurationInHours;
             return this;
         }
         @CustomType.Setter
         public Builder responseCode(@Nullable String responseCode) {
+
             this.responseCode = responseCode;
             return this;
         }
         @CustomType.Setter
         public Builder responseHeaderTransformations(@Nullable DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformations responseHeaderTransformations) {
+
             this.responseHeaderTransformations = responseHeaderTransformations;
             return this;
         }
         @CustomType.Setter
         public Builder responseMessage(@Nullable String responseMessage) {
+
             this.responseMessage = responseMessage;
             return this;
         }
         @CustomType.Setter
         public Builder responseType(@Nullable String responseType) {
+
             this.responseType = responseType;
             return this;
         }
         @CustomType.Setter
         public Builder scopes(@Nullable List<String> scopes) {
+
             this.scopes = scopes;
             return this;
         }
@@ -286,26 +296,33 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
         }
         @CustomType.Setter
         public Builder sourceUriDetails(@Nullable DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetails sourceUriDetails) {
+
             this.sourceUriDetails = sourceUriDetails;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicy", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder useCookiesForIntermediateSteps(@Nullable Boolean useCookiesForIntermediateSteps) {
+
             this.useCookiesForIntermediateSteps = useCookiesForIntermediateSteps;
             return this;
         }
         @CustomType.Setter
         public Builder useCookiesForSession(@Nullable Boolean useCookiesForSession) {
+
             this.useCookiesForSession = useCookiesForSession;
             return this;
         }
         @CustomType.Setter
         public Builder usePkce(@Nullable Boolean usePkce) {
+
             this.usePkce = usePkce;
             return this;
         }

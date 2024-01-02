@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetCpeDeviceShapeParameter {
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetCpeDeviceShapeParameter", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder explanation(String explanation) {
-            this.explanation = Objects.requireNonNull(explanation);
+            if (explanation == null) {
+              throw new MissingRequiredPropertyException("GetCpeDeviceShapeParameter", "explanation");
+            }
+            this.explanation = explanation;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetCpeDeviceShapeParameter", "key");
+            }
+            this.key = key;
             return this;
         }
         public GetCpeDeviceShapeParameter build() {

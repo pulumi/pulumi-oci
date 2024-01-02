@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetDetectorRecipeDetectorRule;
 import com.pulumi.oci.CloudGuard.outputs.GetDetectorRecipeEffectiveDetectorRule;
 import java.lang.Object;
@@ -263,32 +264,50 @@ public final class GetDetectorRecipeResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder detector(String detector) {
-            this.detector = Objects.requireNonNull(detector);
+            if (detector == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeResult", "detector");
+            }
+            this.detector = detector;
             return this;
         }
         @CustomType.Setter
         public Builder detectorRecipeId(String detectorRecipeId) {
-            this.detectorRecipeId = Objects.requireNonNull(detectorRecipeId);
+            if (detectorRecipeId == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeResult", "detectorRecipeId");
+            }
+            this.detectorRecipeId = detectorRecipeId;
             return this;
         }
         @CustomType.Setter
         public Builder detectorRules(List<GetDetectorRecipeDetectorRule> detectorRules) {
-            this.detectorRules = Objects.requireNonNull(detectorRules);
+            if (detectorRules == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeResult", "detectorRules");
+            }
+            this.detectorRules = detectorRules;
             return this;
         }
         public Builder detectorRules(GetDetectorRecipeDetectorRule... detectorRules) {
@@ -296,12 +315,18 @@ public final class GetDetectorRecipeResult {
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder effectiveDetectorRules(List<GetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules) {
-            this.effectiveDetectorRules = Objects.requireNonNull(effectiveDetectorRules);
+            if (effectiveDetectorRules == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeResult", "effectiveDetectorRules");
+            }
+            this.effectiveDetectorRules = effectiveDetectorRules;
             return this;
         }
         public Builder effectiveDetectorRules(GetDetectorRecipeEffectiveDetectorRule... effectiveDetectorRules) {
@@ -309,37 +334,58 @@ public final class GetDetectorRecipeResult {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder owner(String owner) {
-            this.owner = Objects.requireNonNull(owner);
+            if (owner == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeResult", "owner");
+            }
+            this.owner = owner;
             return this;
         }
         @CustomType.Setter
         public Builder sourceDetectorRecipeId(String sourceDetectorRecipeId) {
-            this.sourceDetectorRecipeId = Objects.requireNonNull(sourceDetectorRecipeId);
+            if (sourceDetectorRecipeId == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeResult", "sourceDetectorRecipeId");
+            }
+            this.sourceDetectorRecipeId = sourceDetectorRecipeId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder targetIds(List<String> targetIds) {
-            this.targetIds = Objects.requireNonNull(targetIds);
+            if (targetIds == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeResult", "targetIds");
+            }
+            this.targetIds = targetIds;
             return this;
         }
         public Builder targetIds(String... targetIds) {
@@ -347,12 +393,18 @@ public final class GetDetectorRecipeResult {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDetectorRecipeResult build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.DisasterRecovery;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.inputs.DrPlanExecutionExecutionOptionsArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -239,8 +240,12 @@ public final class DrPlanExecutionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public DrPlanExecutionArgs build() {
-            $.executionOptions = Objects.requireNonNull($.executionOptions, "expected parameter 'executionOptions' to be non-null");
-            $.planId = Objects.requireNonNull($.planId, "expected parameter 'planId' to be non-null");
+            if ($.executionOptions == null) {
+                throw new MissingRequiredPropertyException("DrPlanExecutionArgs", "executionOptions");
+            }
+            if ($.planId == null) {
+                throw new MissingRequiredPropertyException("DrPlanExecutionArgs", "planId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetDataSafeConfigurationGlobalSetting;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -165,27 +166,42 @@ public final class GetDataSafeConfigurationResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDataSafeConfigurationResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dataSafeNatGatewayIpAddress(String dataSafeNatGatewayIpAddress) {
-            this.dataSafeNatGatewayIpAddress = Objects.requireNonNull(dataSafeNatGatewayIpAddress);
+            if (dataSafeNatGatewayIpAddress == null) {
+              throw new MissingRequiredPropertyException("GetDataSafeConfigurationResult", "dataSafeNatGatewayIpAddress");
+            }
+            this.dataSafeNatGatewayIpAddress = dataSafeNatGatewayIpAddress;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDataSafeConfigurationResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDataSafeConfigurationResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder globalSettings(List<GetDataSafeConfigurationGlobalSetting> globalSettings) {
-            this.globalSettings = Objects.requireNonNull(globalSettings);
+            if (globalSettings == null) {
+              throw new MissingRequiredPropertyException("GetDataSafeConfigurationResult", "globalSettings");
+            }
+            this.globalSettings = globalSettings;
             return this;
         }
         public Builder globalSettings(GetDataSafeConfigurationGlobalSetting... globalSettings) {
@@ -193,27 +209,42 @@ public final class GetDataSafeConfigurationResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDataSafeConfigurationResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDataSafeConfigurationResult", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDataSafeConfigurationResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnabled(String timeEnabled) {
-            this.timeEnabled = Objects.requireNonNull(timeEnabled);
+            if (timeEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDataSafeConfigurationResult", "timeEnabled");
+            }
+            this.timeEnabled = timeEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+            if (url == null) {
+              throw new MissingRequiredPropertyException("GetDataSafeConfigurationResult", "url");
+            }
+            this.url = url;
             return this;
         }
         public GetDataSafeConfigurationResult build() {

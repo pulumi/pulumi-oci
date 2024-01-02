@@ -4,6 +4,7 @@
 package com.pulumi.oci.Analytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Analytics.outputs.GetAnalyticsInstancesAnalyticsInstance;
 import com.pulumi.oci.Analytics.outputs.GetAnalyticsInstancesFilter;
 import java.lang.String;
@@ -137,7 +138,10 @@ public final class GetAnalyticsInstancesResult {
 
         @CustomType.Setter
         public Builder analyticsInstances(List<GetAnalyticsInstancesAnalyticsInstance> analyticsInstances) {
-            this.analyticsInstances = Objects.requireNonNull(analyticsInstances);
+            if (analyticsInstances == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancesResult", "analyticsInstances");
+            }
+            this.analyticsInstances = analyticsInstances;
             return this;
         }
         public Builder analyticsInstances(GetAnalyticsInstancesAnalyticsInstance... analyticsInstances) {
@@ -145,21 +149,27 @@ public final class GetAnalyticsInstancesResult {
         }
         @CustomType.Setter
         public Builder capacityType(@Nullable String capacityType) {
+
             this.capacityType = capacityType;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder featureSet(@Nullable String featureSet) {
+
             this.featureSet = featureSet;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAnalyticsInstancesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -168,16 +178,21 @@ public final class GetAnalyticsInstancesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

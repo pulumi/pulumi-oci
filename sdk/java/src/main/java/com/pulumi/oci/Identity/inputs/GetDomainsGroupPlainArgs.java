@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -211,8 +212,12 @@ public final class GetDomainsGroupPlainArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetDomainsGroupPlainArgs build() {
-            $.groupId = Objects.requireNonNull($.groupId, "expected parameter 'groupId' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
+            if ($.groupId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsGroupPlainArgs", "groupId");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsGroupPlainArgs", "idcsEndpoint");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseTableStatisticsFilter;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseTableStatisticsTableStatisticsCollection;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetManagedDatabaseTableStatisticsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseTableStatisticsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,17 +82,26 @@ public final class GetManagedDatabaseTableStatisticsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseTableStatisticsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseTableStatisticsResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder tableStatisticsCollections(List<GetManagedDatabaseTableStatisticsTableStatisticsCollection> tableStatisticsCollections) {
-            this.tableStatisticsCollections = Objects.requireNonNull(tableStatisticsCollections);
+            if (tableStatisticsCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseTableStatisticsResult", "tableStatisticsCollections");
+            }
+            this.tableStatisticsCollections = tableStatisticsCollections;
             return this;
         }
         public Builder tableStatisticsCollections(GetManagedDatabaseTableStatisticsTableStatisticsCollection... tableStatisticsCollections) {

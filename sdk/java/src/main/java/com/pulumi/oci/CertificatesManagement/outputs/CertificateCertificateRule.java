@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class CertificateCertificateRule {
 
         @CustomType.Setter
         public Builder advanceRenewalPeriod(String advanceRenewalPeriod) {
-            this.advanceRenewalPeriod = Objects.requireNonNull(advanceRenewalPeriod);
+            if (advanceRenewalPeriod == null) {
+              throw new MissingRequiredPropertyException("CertificateCertificateRule", "advanceRenewalPeriod");
+            }
+            this.advanceRenewalPeriod = advanceRenewalPeriod;
             return this;
         }
         @CustomType.Setter
         public Builder renewalInterval(String renewalInterval) {
-            this.renewalInterval = Objects.requireNonNull(renewalInterval);
+            if (renewalInterval == null) {
+              throw new MissingRequiredPropertyException("CertificateCertificateRule", "renewalInterval");
+            }
+            this.renewalInterval = renewalInterval;
             return this;
         }
         @CustomType.Setter
         public Builder ruleType(String ruleType) {
-            this.ruleType = Objects.requireNonNull(ruleType);
+            if (ruleType == null) {
+              throw new MissingRequiredPropertyException("CertificateCertificateRule", "ruleType");
+            }
+            this.ruleType = ruleType;
             return this;
         }
         public CertificateCertificateRule build() {

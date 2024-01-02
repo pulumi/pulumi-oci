@@ -5,6 +5,7 @@ package com.pulumi.oci.Ocvp.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ocvp.inputs.GetSupportedHostShapesFilterArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -264,7 +265,9 @@ public final class GetSupportedHostShapesArgs extends com.pulumi.resources.Invok
         }
 
         public GetSupportedHostShapesArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetSupportedHostShapesArgs", "compartmentId");
+            }
             return $;
         }
     }

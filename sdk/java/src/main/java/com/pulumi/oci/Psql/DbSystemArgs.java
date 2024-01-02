@@ -5,6 +5,7 @@ package com.pulumi.oci.Psql;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.inputs.DbSystemCredentialsArgs;
 import com.pulumi.oci.Psql.inputs.DbSystemInstancesDetailArgs;
 import com.pulumi.oci.Psql.inputs.DbSystemManagementPolicyArgs;
@@ -737,12 +738,24 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DbSystemArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.dbVersion = Objects.requireNonNull($.dbVersion, "expected parameter 'dbVersion' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.networkDetails = Objects.requireNonNull($.networkDetails, "expected parameter 'networkDetails' to be non-null");
-            $.shape = Objects.requireNonNull($.shape, "expected parameter 'shape' to be non-null");
-            $.storageDetails = Objects.requireNonNull($.storageDetails, "expected parameter 'storageDetails' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("DbSystemArgs", "compartmentId");
+            }
+            if ($.dbVersion == null) {
+                throw new MissingRequiredPropertyException("DbSystemArgs", "dbVersion");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("DbSystemArgs", "displayName");
+            }
+            if ($.networkDetails == null) {
+                throw new MissingRequiredPropertyException("DbSystemArgs", "networkDetails");
+            }
+            if ($.shape == null) {
+                throw new MissingRequiredPropertyException("DbSystemArgs", "shape");
+            }
+            if ($.storageDetails == null) {
+                throw new MissingRequiredPropertyException("DbSystemArgs", "storageDetails");
+            }
             return $;
         }
     }

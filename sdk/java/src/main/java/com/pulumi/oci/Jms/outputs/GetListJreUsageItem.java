@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetListJreUsageItemOperatingSystem;
 import java.lang.Integer;
 import java.lang.String;
@@ -297,57 +298,90 @@ public final class GetListJreUsageItem {
 
         @CustomType.Setter
         public Builder approximateApplicationCount(Integer approximateApplicationCount) {
-            this.approximateApplicationCount = Objects.requireNonNull(approximateApplicationCount);
+            if (approximateApplicationCount == null) {
+              throw new MissingRequiredPropertyException("GetListJreUsageItem", "approximateApplicationCount");
+            }
+            this.approximateApplicationCount = approximateApplicationCount;
             return this;
         }
         @CustomType.Setter
         public Builder approximateInstallationCount(Integer approximateInstallationCount) {
-            this.approximateInstallationCount = Objects.requireNonNull(approximateInstallationCount);
+            if (approximateInstallationCount == null) {
+              throw new MissingRequiredPropertyException("GetListJreUsageItem", "approximateInstallationCount");
+            }
+            this.approximateInstallationCount = approximateInstallationCount;
             return this;
         }
         @CustomType.Setter
         public Builder approximateManagedInstanceCount(Integer approximateManagedInstanceCount) {
-            this.approximateManagedInstanceCount = Objects.requireNonNull(approximateManagedInstanceCount);
+            if (approximateManagedInstanceCount == null) {
+              throw new MissingRequiredPropertyException("GetListJreUsageItem", "approximateManagedInstanceCount");
+            }
+            this.approximateManagedInstanceCount = approximateManagedInstanceCount;
             return this;
         }
         @CustomType.Setter
         public Builder approximatePendingWorkRequestCount(Integer approximatePendingWorkRequestCount) {
-            this.approximatePendingWorkRequestCount = Objects.requireNonNull(approximatePendingWorkRequestCount);
+            if (approximatePendingWorkRequestCount == null) {
+              throw new MissingRequiredPropertyException("GetListJreUsageItem", "approximatePendingWorkRequestCount");
+            }
+            this.approximatePendingWorkRequestCount = approximatePendingWorkRequestCount;
             return this;
         }
         @CustomType.Setter
         public Builder daysUnderSecurityBaseline(Integer daysUnderSecurityBaseline) {
-            this.daysUnderSecurityBaseline = Objects.requireNonNull(daysUnderSecurityBaseline);
+            if (daysUnderSecurityBaseline == null) {
+              throw new MissingRequiredPropertyException("GetListJreUsageItem", "daysUnderSecurityBaseline");
+            }
+            this.daysUnderSecurityBaseline = daysUnderSecurityBaseline;
             return this;
         }
         @CustomType.Setter
         public Builder distribution(String distribution) {
-            this.distribution = Objects.requireNonNull(distribution);
+            if (distribution == null) {
+              throw new MissingRequiredPropertyException("GetListJreUsageItem", "distribution");
+            }
+            this.distribution = distribution;
             return this;
         }
         @CustomType.Setter
         public Builder endOfSupportLifeDate(String endOfSupportLifeDate) {
-            this.endOfSupportLifeDate = Objects.requireNonNull(endOfSupportLifeDate);
+            if (endOfSupportLifeDate == null) {
+              throw new MissingRequiredPropertyException("GetListJreUsageItem", "endOfSupportLifeDate");
+            }
+            this.endOfSupportLifeDate = endOfSupportLifeDate;
             return this;
         }
         @CustomType.Setter
         public Builder fleetId(String fleetId) {
-            this.fleetId = Objects.requireNonNull(fleetId);
+            if (fleetId == null) {
+              throw new MissingRequiredPropertyException("GetListJreUsageItem", "fleetId");
+            }
+            this.fleetId = fleetId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetListJreUsageItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceId(String managedInstanceId) {
-            this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
+            if (managedInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetListJreUsageItem", "managedInstanceId");
+            }
+            this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystems(List<GetListJreUsageItemOperatingSystem> operatingSystems) {
-            this.operatingSystems = Objects.requireNonNull(operatingSystems);
+            if (operatingSystems == null) {
+              throw new MissingRequiredPropertyException("GetListJreUsageItem", "operatingSystems");
+            }
+            this.operatingSystems = operatingSystems;
             return this;
         }
         public Builder operatingSystems(GetListJreUsageItemOperatingSystem... operatingSystems) {
@@ -355,42 +389,66 @@ public final class GetListJreUsageItem {
         }
         @CustomType.Setter
         public Builder releaseDate(String releaseDate) {
-            this.releaseDate = Objects.requireNonNull(releaseDate);
+            if (releaseDate == null) {
+              throw new MissingRequiredPropertyException("GetListJreUsageItem", "releaseDate");
+            }
+            this.releaseDate = releaseDate;
             return this;
         }
         @CustomType.Setter
         public Builder securityStatus(String securityStatus) {
-            this.securityStatus = Objects.requireNonNull(securityStatus);
+            if (securityStatus == null) {
+              throw new MissingRequiredPropertyException("GetListJreUsageItem", "securityStatus");
+            }
+            this.securityStatus = securityStatus;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+            if (timeEnd == null) {
+              throw new MissingRequiredPropertyException("GetListJreUsageItem", "timeEnd");
+            }
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeFirstSeen(String timeFirstSeen) {
-            this.timeFirstSeen = Objects.requireNonNull(timeFirstSeen);
+            if (timeFirstSeen == null) {
+              throw new MissingRequiredPropertyException("GetListJreUsageItem", "timeFirstSeen");
+            }
+            this.timeFirstSeen = timeFirstSeen;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastSeen(String timeLastSeen) {
-            this.timeLastSeen = Objects.requireNonNull(timeLastSeen);
+            if (timeLastSeen == null) {
+              throw new MissingRequiredPropertyException("GetListJreUsageItem", "timeLastSeen");
+            }
+            this.timeLastSeen = timeLastSeen;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+            if (timeStart == null) {
+              throw new MissingRequiredPropertyException("GetListJreUsageItem", "timeStart");
+            }
+            this.timeStart = timeStart;
             return this;
         }
         @CustomType.Setter
         public Builder vendor(String vendor) {
-            this.vendor = Objects.requireNonNull(vendor);
+            if (vendor == null) {
+              throw new MissingRequiredPropertyException("GetListJreUsageItem", "vendor");
+            }
+            this.vendor = vendor;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetListJreUsageItem", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetListJreUsageItem build() {

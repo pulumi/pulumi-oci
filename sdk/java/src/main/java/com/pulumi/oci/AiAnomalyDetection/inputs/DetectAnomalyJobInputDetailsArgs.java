@@ -5,6 +5,7 @@ package com.pulumi.oci.AiAnomalyDetection.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiAnomalyDetection.inputs.DetectAnomalyJobInputDetailsDataArgs;
 import com.pulumi.oci.AiAnomalyDetection.inputs.DetectAnomalyJobInputDetailsObjectLocationArgs;
 import java.lang.String;
@@ -291,7 +292,9 @@ public final class DetectAnomalyJobInputDetailsArgs extends com.pulumi.resources
         }
 
         public DetectAnomalyJobInputDetailsArgs build() {
-            $.inputType = Objects.requireNonNull($.inputType, "expected parameter 'inputType' to be non-null");
+            if ($.inputType == null) {
+                throw new MissingRequiredPropertyException("DetectAnomalyJobInputDetailsArgs", "inputType");
+            }
             return $;
         }
     }

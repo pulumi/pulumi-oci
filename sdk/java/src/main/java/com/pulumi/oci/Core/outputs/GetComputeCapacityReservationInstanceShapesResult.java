@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationInstanceShapesFilter;
 import java.lang.String;
@@ -93,17 +94,24 @@ public final class GetComputeCapacityReservationInstanceShapesResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationInstanceShapesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeCapacityReservationInstanceShapes(List<GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape> computeCapacityReservationInstanceShapes) {
-            this.computeCapacityReservationInstanceShapes = Objects.requireNonNull(computeCapacityReservationInstanceShapes);
+            if (computeCapacityReservationInstanceShapes == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationInstanceShapesResult", "computeCapacityReservationInstanceShapes");
+            }
+            this.computeCapacityReservationInstanceShapes = computeCapacityReservationInstanceShapes;
             return this;
         }
         public Builder computeCapacityReservationInstanceShapes(GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape... computeCapacityReservationInstanceShapes) {
@@ -111,11 +119,13 @@ public final class GetComputeCapacityReservationInstanceShapesResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetComputeCapacityReservationInstanceShapesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -124,7 +134,10 @@ public final class GetComputeCapacityReservationInstanceShapesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationInstanceShapesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetComputeCapacityReservationInstanceShapesResult build() {

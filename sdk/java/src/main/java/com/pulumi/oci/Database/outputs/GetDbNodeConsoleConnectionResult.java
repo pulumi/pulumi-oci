@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -176,57 +177,90 @@ public final class GetDbNodeConsoleConnectionResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeConsoleConnectionResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionString(String connectionString) {
-            this.connectionString = Objects.requireNonNull(connectionString);
+            if (connectionString == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeConsoleConnectionResult", "connectionString");
+            }
+            this.connectionString = connectionString;
             return this;
         }
         @CustomType.Setter
         public Builder dbNodeId(String dbNodeId) {
-            this.dbNodeId = Objects.requireNonNull(dbNodeId);
+            if (dbNodeId == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeConsoleConnectionResult", "dbNodeId");
+            }
+            this.dbNodeId = dbNodeId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeConsoleConnectionResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder fingerprint(String fingerprint) {
-            this.fingerprint = Objects.requireNonNull(fingerprint);
+            if (fingerprint == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeConsoleConnectionResult", "fingerprint");
+            }
+            this.fingerprint = fingerprint;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeConsoleConnectionResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeConsoleConnectionResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeConsoleConnectionResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder publicKey(String publicKey) {
-            this.publicKey = Objects.requireNonNull(publicKey);
+            if (publicKey == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeConsoleConnectionResult", "publicKey");
+            }
+            this.publicKey = publicKey;
             return this;
         }
         @CustomType.Setter
         public Builder serviceHostKeyFingerprint(String serviceHostKeyFingerprint) {
-            this.serviceHostKeyFingerprint = Objects.requireNonNull(serviceHostKeyFingerprint);
+            if (serviceHostKeyFingerprint == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeConsoleConnectionResult", "serviceHostKeyFingerprint");
+            }
+            this.serviceHostKeyFingerprint = serviceHostKeyFingerprint;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeConsoleConnectionResult", "state");
+            }
+            this.state = state;
             return this;
         }
         public GetDbNodeConsoleConnectionResult build() {

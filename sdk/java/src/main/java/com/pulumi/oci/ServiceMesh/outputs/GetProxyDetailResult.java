@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetProxyDetailResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetProxyDetailResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder proxyImage(String proxyImage) {
-            this.proxyImage = Objects.requireNonNull(proxyImage);
+            if (proxyImage == null) {
+              throw new MissingRequiredPropertyException("GetProxyDetailResult", "proxyImage");
+            }
+            this.proxyImage = proxyImage;
             return this;
         }
         public GetProxyDetailResult build() {

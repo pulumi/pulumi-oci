@@ -44,6 +44,7 @@ public final class RecommendationSupportedLevel {
 
         @CustomType.Setter
         public Builder items(@Nullable List<RecommendationSupportedLevelItem> items) {
+
             this.items = items;
             return this;
         }

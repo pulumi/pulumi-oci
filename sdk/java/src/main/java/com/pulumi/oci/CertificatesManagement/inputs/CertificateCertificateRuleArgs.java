@@ -5,6 +5,7 @@ package com.pulumi.oci.CertificatesManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -148,9 +149,15 @@ public final class CertificateCertificateRuleArgs extends com.pulumi.resources.R
         }
 
         public CertificateCertificateRuleArgs build() {
-            $.advanceRenewalPeriod = Objects.requireNonNull($.advanceRenewalPeriod, "expected parameter 'advanceRenewalPeriod' to be non-null");
-            $.renewalInterval = Objects.requireNonNull($.renewalInterval, "expected parameter 'renewalInterval' to be non-null");
-            $.ruleType = Objects.requireNonNull($.ruleType, "expected parameter 'ruleType' to be non-null");
+            if ($.advanceRenewalPeriod == null) {
+                throw new MissingRequiredPropertyException("CertificateCertificateRuleArgs", "advanceRenewalPeriod");
+            }
+            if ($.renewalInterval == null) {
+                throw new MissingRequiredPropertyException("CertificateCertificateRuleArgs", "renewalInterval");
+            }
+            if ($.ruleType == null) {
+                throw new MissingRequiredPropertyException("CertificateCertificateRuleArgs", "ruleType");
+            }
             return $;
         }
     }

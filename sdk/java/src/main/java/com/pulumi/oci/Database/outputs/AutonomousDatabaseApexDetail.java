@@ -58,11 +58,13 @@ public final class AutonomousDatabaseApexDetail {
 
         @CustomType.Setter
         public Builder apexVersion(@Nullable String apexVersion) {
+
             this.apexVersion = apexVersion;
             return this;
         }
         @CustomType.Setter
         public Builder ordsVersion(@Nullable String ordsVersion) {
+
             this.ordsVersion = ordsVersion;
             return this;
         }

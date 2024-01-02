@@ -79,16 +79,19 @@ public final class ComputeCapacityReportShapeAvailabilityInstanceShapeConfig {
 
         @CustomType.Setter
         public Builder memoryInGbs(@Nullable Double memoryInGbs) {
+
             this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder nvmes(@Nullable Integer nvmes) {
+
             this.nvmes = nvmes;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(@Nullable Double ocpus) {
+
             this.ocpus = ocpus;
             return this;
         }

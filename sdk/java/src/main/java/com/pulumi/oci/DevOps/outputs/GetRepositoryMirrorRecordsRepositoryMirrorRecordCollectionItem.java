@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -98,32 +99,50 @@ public final class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionIte
 
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder mirrorStatus(String mirrorStatus) {
-            this.mirrorStatus = Objects.requireNonNull(mirrorStatus);
+            if (mirrorStatus == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem", "mirrorStatus");
+            }
+            this.mirrorStatus = mirrorStatus;
             return this;
         }
         @CustomType.Setter
         public Builder timeCompleted(String timeCompleted) {
-            this.timeCompleted = Objects.requireNonNull(timeCompleted);
+            if (timeCompleted == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem", "timeCompleted");
+            }
+            this.timeCompleted = timeCompleted;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnqueued(String timeEnqueued) {
-            this.timeEnqueued = Objects.requireNonNull(timeEnqueued);
+            if (timeEnqueued == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem", "timeEnqueued");
+            }
+            this.timeEnqueued = timeEnqueued;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
         public Builder workRequestId(String workRequestId) {
-            this.workRequestId = Objects.requireNonNull(workRequestId);
+            if (workRequestId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem", "workRequestId");
+            }
+            this.workRequestId = workRequestId;
             return this;
         }
         public GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem build() {

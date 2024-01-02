@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationGoldenGateServiceDetailSettingExtract;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationGoldenGateServiceDetailSettingReplicat;
 import java.lang.Integer;
@@ -73,12 +74,18 @@ public final class GetMigrationGoldenGateServiceDetailSetting {
 
         @CustomType.Setter
         public Builder acceptableLag(Integer acceptableLag) {
-            this.acceptableLag = Objects.requireNonNull(acceptableLag);
+            if (acceptableLag == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateServiceDetailSetting", "acceptableLag");
+            }
+            this.acceptableLag = acceptableLag;
             return this;
         }
         @CustomType.Setter
         public Builder extracts(List<GetMigrationGoldenGateServiceDetailSettingExtract> extracts) {
-            this.extracts = Objects.requireNonNull(extracts);
+            if (extracts == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateServiceDetailSetting", "extracts");
+            }
+            this.extracts = extracts;
             return this;
         }
         public Builder extracts(GetMigrationGoldenGateServiceDetailSettingExtract... extracts) {
@@ -86,7 +93,10 @@ public final class GetMigrationGoldenGateServiceDetailSetting {
         }
         @CustomType.Setter
         public Builder replicats(List<GetMigrationGoldenGateServiceDetailSettingReplicat> replicats) {
-            this.replicats = Objects.requireNonNull(replicats);
+            if (replicats == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateServiceDetailSetting", "replicats");
+            }
+            this.replicats = replicats;
             return this;
         }
         public Builder replicats(GetMigrationGoldenGateServiceDetailSettingReplicat... replicats) {

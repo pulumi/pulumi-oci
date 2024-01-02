@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -196,62 +197,98 @@ public final class GetManagedDatabaseAddmTaskItem {
 
         @CustomType.Setter
         public Builder beginSnapshotId(String beginSnapshotId) {
-            this.beginSnapshotId = Objects.requireNonNull(beginSnapshotId);
+            if (beginSnapshotId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAddmTaskItem", "beginSnapshotId");
+            }
+            this.beginSnapshotId = beginSnapshotId;
             return this;
         }
         @CustomType.Setter
         public Builder dbUser(String dbUser) {
-            this.dbUser = Objects.requireNonNull(dbUser);
+            if (dbUser == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAddmTaskItem", "dbUser");
+            }
+            this.dbUser = dbUser;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAddmTaskItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder endSnapshotId(String endSnapshotId) {
-            this.endSnapshotId = Objects.requireNonNull(endSnapshotId);
+            if (endSnapshotId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAddmTaskItem", "endSnapshotId");
+            }
+            this.endSnapshotId = endSnapshotId;
             return this;
         }
         @CustomType.Setter
         public Builder endSnapshotTime(String endSnapshotTime) {
-            this.endSnapshotTime = Objects.requireNonNull(endSnapshotTime);
+            if (endSnapshotTime == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAddmTaskItem", "endSnapshotTime");
+            }
+            this.endSnapshotTime = endSnapshotTime;
             return this;
         }
         @CustomType.Setter
         public Builder findings(String findings) {
-            this.findings = Objects.requireNonNull(findings);
+            if (findings == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAddmTaskItem", "findings");
+            }
+            this.findings = findings;
             return this;
         }
         @CustomType.Setter
         public Builder howCreated(String howCreated) {
-            this.howCreated = Objects.requireNonNull(howCreated);
+            if (howCreated == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAddmTaskItem", "howCreated");
+            }
+            this.howCreated = howCreated;
             return this;
         }
         @CustomType.Setter
         public Builder startSnapshotTime(String startSnapshotTime) {
-            this.startSnapshotTime = Objects.requireNonNull(startSnapshotTime);
+            if (startSnapshotTime == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAddmTaskItem", "startSnapshotTime");
+            }
+            this.startSnapshotTime = startSnapshotTime;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAddmTaskItem", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder taskId(String taskId) {
-            this.taskId = Objects.requireNonNull(taskId);
+            if (taskId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAddmTaskItem", "taskId");
+            }
+            this.taskId = taskId;
             return this;
         }
         @CustomType.Setter
         public Builder taskName(String taskName) {
-            this.taskName = Objects.requireNonNull(taskName);
+            if (taskName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAddmTaskItem", "taskName");
+            }
+            this.taskName = taskName;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAddmTaskItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetManagedDatabaseAddmTaskItem build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -187,8 +188,12 @@ public final class GetManagedInstanceEventReportArgs extends com.pulumi.resource
         }
 
         public GetManagedInstanceEventReportArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.managedInstanceId = Objects.requireNonNull($.managedInstanceId, "expected parameter 'managedInstanceId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetManagedInstanceEventReportArgs", "compartmentId");
+            }
+            if ($.managedInstanceId == null) {
+                throw new MissingRequiredPropertyException("GetManagedInstanceEventReportArgs", "managedInstanceId");
+            }
             return $;
         }
     }

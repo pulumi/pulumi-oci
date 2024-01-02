@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -349,10 +350,18 @@ public final class AuditArchiveRetrievalArgs extends com.pulumi.resources.Resour
         }
 
         public AuditArchiveRetrievalArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.endDate = Objects.requireNonNull($.endDate, "expected parameter 'endDate' to be non-null");
-            $.startDate = Objects.requireNonNull($.startDate, "expected parameter 'startDate' to be non-null");
-            $.targetId = Objects.requireNonNull($.targetId, "expected parameter 'targetId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AuditArchiveRetrievalArgs", "compartmentId");
+            }
+            if ($.endDate == null) {
+                throw new MissingRequiredPropertyException("AuditArchiveRetrievalArgs", "endDate");
+            }
+            if ($.startDate == null) {
+                throw new MissingRequiredPropertyException("AuditArchiveRetrievalArgs", "startDate");
+            }
+            if ($.targetId == null) {
+                throw new MissingRequiredPropertyException("AuditArchiveRetrievalArgs", "targetId");
+            }
             return $;
         }
     }

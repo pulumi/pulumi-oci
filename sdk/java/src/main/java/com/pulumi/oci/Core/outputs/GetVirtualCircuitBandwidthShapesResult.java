@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetVirtualCircuitBandwidthShapesFilter;
 import com.pulumi.oci.Core.outputs.GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetVirtualCircuitBandwidthShapesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVirtualCircuitBandwidthShapesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,17 +82,26 @@ public final class GetVirtualCircuitBandwidthShapesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitBandwidthShapesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder providerServiceId(String providerServiceId) {
-            this.providerServiceId = Objects.requireNonNull(providerServiceId);
+            if (providerServiceId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitBandwidthShapesResult", "providerServiceId");
+            }
+            this.providerServiceId = providerServiceId;
             return this;
         }
         @CustomType.Setter
         public Builder virtualCircuitBandwidthShapes(List<GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape> virtualCircuitBandwidthShapes) {
-            this.virtualCircuitBandwidthShapes = Objects.requireNonNull(virtualCircuitBandwidthShapes);
+            if (virtualCircuitBandwidthShapes == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitBandwidthShapesResult", "virtualCircuitBandwidthShapes");
+            }
+            this.virtualCircuitBandwidthShapes = virtualCircuitBandwidthShapes;
             return this;
         }
         public Builder virtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape... virtualCircuitBandwidthShapes) {

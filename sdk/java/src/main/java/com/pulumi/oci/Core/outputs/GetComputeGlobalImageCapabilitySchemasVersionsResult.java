@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion;
 import com.pulumi.oci.Core.outputs.GetComputeGlobalImageCapabilitySchemasVersionsFilter;
 import java.lang.String;
@@ -95,12 +96,18 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionsResult {
 
         @CustomType.Setter
         public Builder computeGlobalImageCapabilitySchemaId(String computeGlobalImageCapabilitySchemaId) {
-            this.computeGlobalImageCapabilitySchemaId = Objects.requireNonNull(computeGlobalImageCapabilitySchemaId);
+            if (computeGlobalImageCapabilitySchemaId == null) {
+              throw new MissingRequiredPropertyException("GetComputeGlobalImageCapabilitySchemasVersionsResult", "computeGlobalImageCapabilitySchemaId");
+            }
+            this.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
             return this;
         }
         @CustomType.Setter
         public Builder computeGlobalImageCapabilitySchemaVersions(List<GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion> computeGlobalImageCapabilitySchemaVersions) {
-            this.computeGlobalImageCapabilitySchemaVersions = Objects.requireNonNull(computeGlobalImageCapabilitySchemaVersions);
+            if (computeGlobalImageCapabilitySchemaVersions == null) {
+              throw new MissingRequiredPropertyException("GetComputeGlobalImageCapabilitySchemasVersionsResult", "computeGlobalImageCapabilitySchemaVersions");
+            }
+            this.computeGlobalImageCapabilitySchemaVersions = computeGlobalImageCapabilitySchemaVersions;
             return this;
         }
         public Builder computeGlobalImageCapabilitySchemaVersions(GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion... computeGlobalImageCapabilitySchemaVersions) {
@@ -108,11 +115,13 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetComputeGlobalImageCapabilitySchemasVersionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -121,7 +130,10 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetComputeGlobalImageCapabilitySchemasVersionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetComputeGlobalImageCapabilitySchemasVersionsResult build() {

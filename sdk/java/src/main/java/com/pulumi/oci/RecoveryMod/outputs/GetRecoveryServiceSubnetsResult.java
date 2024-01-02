@@ -4,6 +4,7 @@
 package com.pulumi.oci.RecoveryMod.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.RecoveryMod.outputs.GetRecoveryServiceSubnetsFilter;
 import com.pulumi.oci.RecoveryMod.outputs.GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection;
 import java.lang.String;
@@ -135,16 +136,21 @@ public final class GetRecoveryServiceSubnetsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetRecoveryServiceSubnetsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRecoveryServiceSubnetsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -153,12 +159,16 @@ public final class GetRecoveryServiceSubnetsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder recoveryServiceSubnetCollections(List<GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection> recoveryServiceSubnetCollections) {
-            this.recoveryServiceSubnetCollections = Objects.requireNonNull(recoveryServiceSubnetCollections);
+            if (recoveryServiceSubnetCollections == null) {
+              throw new MissingRequiredPropertyException("GetRecoveryServiceSubnetsResult", "recoveryServiceSubnetCollections");
+            }
+            this.recoveryServiceSubnetCollections = recoveryServiceSubnetCollections;
             return this;
         }
         public Builder recoveryServiceSubnetCollections(GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection... recoveryServiceSubnetCollections) {
@@ -166,11 +176,13 @@ public final class GetRecoveryServiceSubnetsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
+
             this.vcnId = vcnId;
             return this;
         }

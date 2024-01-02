@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag;
 import com.pulumi.oci.Identity.outputs.GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
 
         @CustomType.Setter
         public Builder definedTags(List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         public Builder definedTags(GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag... definedTags) {
@@ -81,7 +85,10 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
         }
         @CustomType.Setter
         public Builder freeformTags(List<GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         public Builder freeformTags(GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag... freeformTags) {
@@ -89,7 +96,10 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
         }
         @CustomType.Setter
         public Builder tagSlug(String tagSlug) {
-            this.tagSlug = Objects.requireNonNull(tagSlug);
+            if (tagSlug == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag", "tagSlug");
+            }
+            this.tagSlug = tagSlug;
             return this;
         }
         public GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag build() {

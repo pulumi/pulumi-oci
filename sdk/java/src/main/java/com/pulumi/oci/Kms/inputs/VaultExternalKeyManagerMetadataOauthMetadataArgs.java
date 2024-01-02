@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -148,9 +149,15 @@ public final class VaultExternalKeyManagerMetadataOauthMetadataArgs extends com.
         }
 
         public VaultExternalKeyManagerMetadataOauthMetadataArgs build() {
-            $.clientAppId = Objects.requireNonNull($.clientAppId, "expected parameter 'clientAppId' to be non-null");
-            $.clientAppSecret = Objects.requireNonNull($.clientAppSecret, "expected parameter 'clientAppSecret' to be non-null");
-            $.idcsAccountNameUrl = Objects.requireNonNull($.idcsAccountNameUrl, "expected parameter 'idcsAccountNameUrl' to be non-null");
+            if ($.clientAppId == null) {
+                throw new MissingRequiredPropertyException("VaultExternalKeyManagerMetadataOauthMetadataArgs", "clientAppId");
+            }
+            if ($.clientAppSecret == null) {
+                throw new MissingRequiredPropertyException("VaultExternalKeyManagerMetadataOauthMetadataArgs", "clientAppSecret");
+            }
+            if ($.idcsAccountNameUrl == null) {
+                throw new MissingRequiredPropertyException("VaultExternalKeyManagerMetadataOauthMetadataArgs", "idcsAccountNameUrl");
+            }
             return $;
         }
     }

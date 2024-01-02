@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetPrivateApplicationLogo {
 
         @CustomType.Setter
         public Builder contentUrl(String contentUrl) {
-            this.contentUrl = Objects.requireNonNull(contentUrl);
+            if (contentUrl == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationLogo", "contentUrl");
+            }
+            this.contentUrl = contentUrl;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationLogo", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder mimeType(String mimeType) {
-            this.mimeType = Objects.requireNonNull(mimeType);
+            if (mimeType == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationLogo", "mimeType");
+            }
+            this.mimeType = mimeType;
             return this;
         }
         public GetPrivateApplicationLogo build() {

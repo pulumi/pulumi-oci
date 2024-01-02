@@ -327,16 +327,19 @@ public final class TargetAssetMigrationAsset {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dependedOnBies(@Nullable List<String> dependedOnBies) {
+
             this.dependedOnBies = dependedOnBies;
             return this;
         }
@@ -345,6 +348,7 @@ public final class TargetAssetMigrationAsset {
         }
         @CustomType.Setter
         public Builder dependsOns(@Nullable List<String> dependsOns) {
+
             this.dependsOns = dependsOns;
             return this;
         }
@@ -353,26 +357,31 @@ public final class TargetAssetMigrationAsset {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder migrationId(@Nullable String migrationId) {
+
             this.migrationId = migrationId;
             return this;
         }
         @CustomType.Setter
         public Builder notifications(@Nullable List<String> notifications) {
+
             this.notifications = notifications;
             return this;
         }
@@ -381,61 +390,73 @@ public final class TargetAssetMigrationAsset {
         }
         @CustomType.Setter
         public Builder parentSnapshot(@Nullable String parentSnapshot) {
+
             this.parentSnapshot = parentSnapshot;
             return this;
         }
         @CustomType.Setter
         public Builder replicationCompartmentId(@Nullable String replicationCompartmentId) {
+
             this.replicationCompartmentId = replicationCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder replicationScheduleId(@Nullable String replicationScheduleId) {
+
             this.replicationScheduleId = replicationScheduleId;
             return this;
         }
         @CustomType.Setter
         public Builder snapShotBucketName(@Nullable String snapShotBucketName) {
+
             this.snapShotBucketName = snapShotBucketName;
             return this;
         }
         @CustomType.Setter
         public Builder snapshots(@Nullable Map<String,Object> snapshots) {
+
             this.snapshots = snapshots;
             return this;
         }
         @CustomType.Setter
         public Builder sourceAssetData(@Nullable Map<String,Object> sourceAssetData) {
+
             this.sourceAssetData = sourceAssetData;
             return this;
         }
         @CustomType.Setter
         public Builder sourceAssetId(@Nullable String sourceAssetId) {
+
             this.sourceAssetId = sourceAssetId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder tenancyId(@Nullable String tenancyId) {
+
             this.tenancyId = tenancyId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
+
             this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }

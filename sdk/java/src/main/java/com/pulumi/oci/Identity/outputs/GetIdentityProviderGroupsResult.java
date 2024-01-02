@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetIdentityProviderGroupsFilter;
 import com.pulumi.oci.Identity.outputs.GetIdentityProviderGroupsIdentityProviderGroup;
 import java.lang.String;
@@ -101,6 +102,7 @@ public final class GetIdentityProviderGroupsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetIdentityProviderGroupsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -109,12 +111,18 @@ public final class GetIdentityProviderGroupsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIdentityProviderGroupsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder identityProviderGroups(List<GetIdentityProviderGroupsIdentityProviderGroup> identityProviderGroups) {
-            this.identityProviderGroups = Objects.requireNonNull(identityProviderGroups);
+            if (identityProviderGroups == null) {
+              throw new MissingRequiredPropertyException("GetIdentityProviderGroupsResult", "identityProviderGroups");
+            }
+            this.identityProviderGroups = identityProviderGroups;
             return this;
         }
         public Builder identityProviderGroups(GetIdentityProviderGroupsIdentityProviderGroup... identityProviderGroups) {
@@ -122,16 +130,21 @@ public final class GetIdentityProviderGroupsResult {
         }
         @CustomType.Setter
         public Builder identityProviderId(String identityProviderId) {
-            this.identityProviderId = Objects.requireNonNull(identityProviderId);
+            if (identityProviderId == null) {
+              throw new MissingRequiredPropertyException("GetIdentityProviderGroupsResult", "identityProviderId");
+            }
+            this.identityProviderId = identityProviderId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -128,32 +129,50 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerbe
 
         @CustomType.Setter
         public Builder defaultEncryptionSaltType(String defaultEncryptionSaltType) {
-            this.defaultEncryptionSaltType = Objects.requireNonNull(defaultEncryptionSaltType);
+            if (defaultEncryptionSaltType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp", "defaultEncryptionSaltType");
+            }
+            this.defaultEncryptionSaltType = defaultEncryptionSaltType;
             return this;
         }
         @CustomType.Setter
         public Builder masterKey(String masterKey) {
-            this.masterKey = Objects.requireNonNull(masterKey);
+            if (masterKey == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp", "masterKey");
+            }
+            this.masterKey = masterKey;
             return this;
         }
         @CustomType.Setter
         public Builder maxRenewableAge(Integer maxRenewableAge) {
-            this.maxRenewableAge = Objects.requireNonNull(maxRenewableAge);
+            if (maxRenewableAge == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp", "maxRenewableAge");
+            }
+            this.maxRenewableAge = maxRenewableAge;
             return this;
         }
         @CustomType.Setter
         public Builder maxTicketLife(Integer maxTicketLife) {
-            this.maxTicketLife = Objects.requireNonNull(maxTicketLife);
+            if (maxTicketLife == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp", "maxTicketLife");
+            }
+            this.maxTicketLife = maxTicketLife;
             return this;
         }
         @CustomType.Setter
         public Builder realmName(String realmName) {
-            this.realmName = Objects.requireNonNull(realmName);
+            if (realmName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp", "realmName");
+            }
+            this.realmName = realmName;
             return this;
         }
         @CustomType.Setter
         public Builder supportedEncryptionSaltTypes(List<String> supportedEncryptionSaltTypes) {
-            this.supportedEncryptionSaltTypes = Objects.requireNonNull(supportedEncryptionSaltTypes);
+            if (supportedEncryptionSaltTypes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp", "supportedEncryptionSaltTypes");
+            }
+            this.supportedEncryptionSaltTypes = supportedEncryptionSaltTypes;
             return this;
         }
         public Builder supportedEncryptionSaltTypes(String... supportedEncryptionSaltTypes) {
@@ -161,7 +180,10 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerbe
         }
         @CustomType.Setter
         public Builder ticketFlags(Integer ticketFlags) {
-            this.ticketFlags = Objects.requireNonNull(ticketFlags);
+            if (ticketFlags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp", "ticketFlags");
+            }
+            this.ticketFlags = ticketFlags;
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp build() {

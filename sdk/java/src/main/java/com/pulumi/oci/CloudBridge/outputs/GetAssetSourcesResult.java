@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetSourcesAssetSourceCollection;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetSourcesFilter;
 import java.lang.String;
@@ -115,7 +116,10 @@ public final class GetAssetSourcesResult {
 
         @CustomType.Setter
         public Builder assetSourceCollections(List<GetAssetSourcesAssetSourceCollection> assetSourceCollections) {
-            this.assetSourceCollections = Objects.requireNonNull(assetSourceCollections);
+            if (assetSourceCollections == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourcesResult", "assetSourceCollections");
+            }
+            this.assetSourceCollections = assetSourceCollections;
             return this;
         }
         public Builder assetSourceCollections(GetAssetSourcesAssetSourceCollection... assetSourceCollections) {
@@ -123,21 +127,27 @@ public final class GetAssetSourcesResult {
         }
         @CustomType.Setter
         public Builder assetSourceId(@Nullable String assetSourceId) {
+
             this.assetSourceId = assetSourceId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourcesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAssetSourcesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -146,11 +156,15 @@ public final class GetAssetSourcesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourcesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

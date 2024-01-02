@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRange;
 import com.pulumi.oci.Core.outputs.GetCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRange;
 import java.util.List;
@@ -42,7 +43,10 @@ public final class GetCaptureFilterVtapCaptureFilterRuleUdpOption {
 
         @CustomType.Setter
         public Builder destinationPortRanges(List<GetCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRange> destinationPortRanges) {
-            this.destinationPortRanges = Objects.requireNonNull(destinationPortRanges);
+            if (destinationPortRanges == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFilterVtapCaptureFilterRuleUdpOption", "destinationPortRanges");
+            }
+            this.destinationPortRanges = destinationPortRanges;
             return this;
         }
         public Builder destinationPortRanges(GetCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRange... destinationPortRanges) {
@@ -50,7 +54,10 @@ public final class GetCaptureFilterVtapCaptureFilterRuleUdpOption {
         }
         @CustomType.Setter
         public Builder sourcePortRanges(List<GetCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRange> sourcePortRanges) {
-            this.sourcePortRanges = Objects.requireNonNull(sourcePortRanges);
+            if (sourcePortRanges == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFilterVtapCaptureFilterRuleUdpOption", "sourcePortRanges");
+            }
+            this.sourcePortRanges = sourcePortRanges;
             return this;
         }
         public Builder sourcePortRanges(GetCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRange... sourcePortRanges) {

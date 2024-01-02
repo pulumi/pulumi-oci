@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -115,7 +116,10 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
 
         @CustomType.Setter
         public Builder defaultValues(List<Object> defaultValues) {
-            this.defaultValues = Objects.requireNonNull(defaultValues);
+            if (defaultValues == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition", "defaultValues");
+            }
+            this.defaultValues = defaultValues;
             return this;
         }
         public Builder defaultValues(Object... defaultValues) {
@@ -123,22 +127,34 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder isRequired(Boolean isRequired) {
-            this.isRequired = Objects.requireNonNull(isRequired);
+            if (isRequired == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition", "isRequired");
+            }
+            this.isRequired = isRequired;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder possibleValues(List<Object> possibleValues) {
-            this.possibleValues = Objects.requireNonNull(possibleValues);
+            if (possibleValues == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition", "possibleValues");
+            }
+            this.possibleValues = possibleValues;
             return this;
         }
         public Builder possibleValues(Object... possibleValues) {
@@ -146,7 +162,10 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition build() {

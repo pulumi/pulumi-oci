@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -60,7 +61,10 @@ public final class PathRouteSetPathRoutePathMatchType {
 
         @CustomType.Setter
         public Builder matchType(String matchType) {
-            this.matchType = Objects.requireNonNull(matchType);
+            if (matchType == null) {
+              throw new MissingRequiredPropertyException("PathRouteSetPathRoutePathMatchType", "matchType");
+            }
+            this.matchType = matchType;
             return this;
         }
         public PathRouteSetPathRoutePathMatchType build() {

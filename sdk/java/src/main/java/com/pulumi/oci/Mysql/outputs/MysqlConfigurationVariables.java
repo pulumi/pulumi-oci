@@ -1376,396 +1376,475 @@ public final class MysqlConfigurationVariables {
 
         @CustomType.Setter
         public Builder autocommit(@Nullable Boolean autocommit) {
+
             this.autocommit = autocommit;
             return this;
         }
         @CustomType.Setter
         public Builder bigTables(@Nullable Boolean bigTables) {
+
             this.bigTables = bigTables;
             return this;
         }
         @CustomType.Setter
         public Builder binlogExpireLogsSeconds(@Nullable Integer binlogExpireLogsSeconds) {
+
             this.binlogExpireLogsSeconds = binlogExpireLogsSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder binlogRowMetadata(@Nullable String binlogRowMetadata) {
+
             this.binlogRowMetadata = binlogRowMetadata;
             return this;
         }
         @CustomType.Setter
         public Builder binlogRowValueOptions(@Nullable String binlogRowValueOptions) {
+
             this.binlogRowValueOptions = binlogRowValueOptions;
             return this;
         }
         @CustomType.Setter
         public Builder binlogTransactionCompression(@Nullable Boolean binlogTransactionCompression) {
+
             this.binlogTransactionCompression = binlogTransactionCompression;
             return this;
         }
         @CustomType.Setter
         public Builder completionType(@Nullable String completionType) {
+
             this.completionType = completionType;
             return this;
         }
         @CustomType.Setter
         public Builder connectTimeout(@Nullable Integer connectTimeout) {
+
             this.connectTimeout = connectTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder connectionMemoryChunkSize(@Nullable Integer connectionMemoryChunkSize) {
+
             this.connectionMemoryChunkSize = connectionMemoryChunkSize;
             return this;
         }
         @CustomType.Setter
         public Builder connectionMemoryLimit(@Nullable String connectionMemoryLimit) {
+
             this.connectionMemoryLimit = connectionMemoryLimit;
             return this;
         }
         @CustomType.Setter
         public Builder cteMaxRecursionDepth(@Nullable String cteMaxRecursionDepth) {
+
             this.cteMaxRecursionDepth = cteMaxRecursionDepth;
             return this;
         }
         @CustomType.Setter
         public Builder defaultAuthenticationPlugin(@Nullable String defaultAuthenticationPlugin) {
+
             this.defaultAuthenticationPlugin = defaultAuthenticationPlugin;
             return this;
         }
         @CustomType.Setter
         public Builder foreignKeyChecks(@Nullable Boolean foreignKeyChecks) {
+
             this.foreignKeyChecks = foreignKeyChecks;
             return this;
         }
         @CustomType.Setter
         public Builder generatedRandomPasswordLength(@Nullable Integer generatedRandomPasswordLength) {
+
             this.generatedRandomPasswordLength = generatedRandomPasswordLength;
             return this;
         }
         @CustomType.Setter
         public Builder globalConnectionMemoryLimit(@Nullable String globalConnectionMemoryLimit) {
+
             this.globalConnectionMemoryLimit = globalConnectionMemoryLimit;
             return this;
         }
         @CustomType.Setter
         public Builder globalConnectionMemoryTracking(@Nullable Boolean globalConnectionMemoryTracking) {
+
             this.globalConnectionMemoryTracking = globalConnectionMemoryTracking;
             return this;
         }
         @CustomType.Setter
         public Builder groupReplicationConsistency(@Nullable String groupReplicationConsistency) {
+
             this.groupReplicationConsistency = groupReplicationConsistency;
             return this;
         }
         @CustomType.Setter
         public Builder informationSchemaStatsExpiry(@Nullable Integer informationSchemaStatsExpiry) {
+
             this.informationSchemaStatsExpiry = informationSchemaStatsExpiry;
             return this;
         }
         @CustomType.Setter
         public Builder innodbBufferPoolDumpPct(@Nullable Integer innodbBufferPoolDumpPct) {
+
             this.innodbBufferPoolDumpPct = innodbBufferPoolDumpPct;
             return this;
         }
         @CustomType.Setter
         public Builder innodbBufferPoolInstances(@Nullable Integer innodbBufferPoolInstances) {
+
             this.innodbBufferPoolInstances = innodbBufferPoolInstances;
             return this;
         }
         @CustomType.Setter
         public Builder innodbBufferPoolSize(@Nullable String innodbBufferPoolSize) {
+
             this.innodbBufferPoolSize = innodbBufferPoolSize;
             return this;
         }
         @CustomType.Setter
         public Builder innodbDdlBufferSize(@Nullable String innodbDdlBufferSize) {
+
             this.innodbDdlBufferSize = innodbDdlBufferSize;
             return this;
         }
         @CustomType.Setter
         public Builder innodbDdlThreads(@Nullable Integer innodbDdlThreads) {
+
             this.innodbDdlThreads = innodbDdlThreads;
             return this;
         }
         @CustomType.Setter
         public Builder innodbFtEnableStopword(@Nullable Boolean innodbFtEnableStopword) {
+
             this.innodbFtEnableStopword = innodbFtEnableStopword;
             return this;
         }
         @CustomType.Setter
         public Builder innodbFtMaxTokenSize(@Nullable Integer innodbFtMaxTokenSize) {
+
             this.innodbFtMaxTokenSize = innodbFtMaxTokenSize;
             return this;
         }
         @CustomType.Setter
         public Builder innodbFtMinTokenSize(@Nullable Integer innodbFtMinTokenSize) {
+
             this.innodbFtMinTokenSize = innodbFtMinTokenSize;
             return this;
         }
         @CustomType.Setter
         public Builder innodbFtNumWordOptimize(@Nullable Integer innodbFtNumWordOptimize) {
+
             this.innodbFtNumWordOptimize = innodbFtNumWordOptimize;
             return this;
         }
         @CustomType.Setter
         public Builder innodbFtResultCacheLimit(@Nullable String innodbFtResultCacheLimit) {
+
             this.innodbFtResultCacheLimit = innodbFtResultCacheLimit;
             return this;
         }
         @CustomType.Setter
         public Builder innodbFtServerStopwordTable(@Nullable String innodbFtServerStopwordTable) {
+
             this.innodbFtServerStopwordTable = innodbFtServerStopwordTable;
             return this;
         }
         @CustomType.Setter
         public Builder innodbLockWaitTimeout(@Nullable Integer innodbLockWaitTimeout) {
+
             this.innodbLockWaitTimeout = innodbLockWaitTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder innodbLogWriterThreads(@Nullable Boolean innodbLogWriterThreads) {
+
             this.innodbLogWriterThreads = innodbLogWriterThreads;
             return this;
         }
         @CustomType.Setter
         public Builder innodbMaxPurgeLag(@Nullable String innodbMaxPurgeLag) {
+
             this.innodbMaxPurgeLag = innodbMaxPurgeLag;
             return this;
         }
         @CustomType.Setter
         public Builder innodbMaxPurgeLagDelay(@Nullable Integer innodbMaxPurgeLagDelay) {
+
             this.innodbMaxPurgeLagDelay = innodbMaxPurgeLagDelay;
             return this;
         }
         @CustomType.Setter
         public Builder innodbStatsPersistentSamplePages(@Nullable String innodbStatsPersistentSamplePages) {
+
             this.innodbStatsPersistentSamplePages = innodbStatsPersistentSamplePages;
             return this;
         }
         @CustomType.Setter
         public Builder innodbStatsTransientSamplePages(@Nullable String innodbStatsTransientSamplePages) {
+
             this.innodbStatsTransientSamplePages = innodbStatsTransientSamplePages;
             return this;
         }
         @CustomType.Setter
         public Builder interactiveTimeout(@Nullable Integer interactiveTimeout) {
+
             this.interactiveTimeout = interactiveTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder localInfile(@Nullable Boolean localInfile) {
+
             this.localInfile = localInfile;
             return this;
         }
         @CustomType.Setter
         public Builder mandatoryRoles(@Nullable String mandatoryRoles) {
+
             this.mandatoryRoles = mandatoryRoles;
             return this;
         }
         @CustomType.Setter
         public Builder maxAllowedPacket(@Nullable Integer maxAllowedPacket) {
+
             this.maxAllowedPacket = maxAllowedPacket;
             return this;
         }
         @CustomType.Setter
         public Builder maxBinlogCacheSize(@Nullable String maxBinlogCacheSize) {
+
             this.maxBinlogCacheSize = maxBinlogCacheSize;
             return this;
         }
         @CustomType.Setter
         public Builder maxConnectErrors(@Nullable String maxConnectErrors) {
+
             this.maxConnectErrors = maxConnectErrors;
             return this;
         }
         @CustomType.Setter
         public Builder maxConnections(@Nullable Integer maxConnections) {
+
             this.maxConnections = maxConnections;
             return this;
         }
         @CustomType.Setter
         public Builder maxExecutionTime(@Nullable String maxExecutionTime) {
+
             this.maxExecutionTime = maxExecutionTime;
             return this;
         }
         @CustomType.Setter
         public Builder maxHeapTableSize(@Nullable String maxHeapTableSize) {
+
             this.maxHeapTableSize = maxHeapTableSize;
             return this;
         }
         @CustomType.Setter
         public Builder maxPreparedStmtCount(@Nullable Integer maxPreparedStmtCount) {
+
             this.maxPreparedStmtCount = maxPreparedStmtCount;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlFirewallMode(@Nullable Boolean mysqlFirewallMode) {
+
             this.mysqlFirewallMode = mysqlFirewallMode;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlZstdDefaultCompressionLevel(@Nullable Integer mysqlZstdDefaultCompressionLevel) {
+
             this.mysqlZstdDefaultCompressionLevel = mysqlZstdDefaultCompressionLevel;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxConnectTimeout(@Nullable Integer mysqlxConnectTimeout) {
+
             this.mysqlxConnectTimeout = mysqlxConnectTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxDeflateDefaultCompressionLevel(@Nullable Integer mysqlxDeflateDefaultCompressionLevel) {
+
             this.mysqlxDeflateDefaultCompressionLevel = mysqlxDeflateDefaultCompressionLevel;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxDeflateMaxClientCompressionLevel(@Nullable Integer mysqlxDeflateMaxClientCompressionLevel) {
+
             this.mysqlxDeflateMaxClientCompressionLevel = mysqlxDeflateMaxClientCompressionLevel;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxDocumentIdUniquePrefix(@Nullable Integer mysqlxDocumentIdUniquePrefix) {
+
             this.mysqlxDocumentIdUniquePrefix = mysqlxDocumentIdUniquePrefix;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxEnableHelloNotice(@Nullable Boolean mysqlxEnableHelloNotice) {
+
             this.mysqlxEnableHelloNotice = mysqlxEnableHelloNotice;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxIdleWorkerThreadTimeout(@Nullable Integer mysqlxIdleWorkerThreadTimeout) {
+
             this.mysqlxIdleWorkerThreadTimeout = mysqlxIdleWorkerThreadTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxInteractiveTimeout(@Nullable Integer mysqlxInteractiveTimeout) {
+
             this.mysqlxInteractiveTimeout = mysqlxInteractiveTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxLz4defaultCompressionLevel(@Nullable Integer mysqlxLz4defaultCompressionLevel) {
+
             this.mysqlxLz4defaultCompressionLevel = mysqlxLz4defaultCompressionLevel;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxLz4maxClientCompressionLevel(@Nullable Integer mysqlxLz4maxClientCompressionLevel) {
+
             this.mysqlxLz4maxClientCompressionLevel = mysqlxLz4maxClientCompressionLevel;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxMaxAllowedPacket(@Nullable Integer mysqlxMaxAllowedPacket) {
+
             this.mysqlxMaxAllowedPacket = mysqlxMaxAllowedPacket;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxMinWorkerThreads(@Nullable Integer mysqlxMinWorkerThreads) {
+
             this.mysqlxMinWorkerThreads = mysqlxMinWorkerThreads;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxReadTimeout(@Nullable Integer mysqlxReadTimeout) {
+
             this.mysqlxReadTimeout = mysqlxReadTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxWaitTimeout(@Nullable Integer mysqlxWaitTimeout) {
+
             this.mysqlxWaitTimeout = mysqlxWaitTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxWriteTimeout(@Nullable Integer mysqlxWriteTimeout) {
+
             this.mysqlxWriteTimeout = mysqlxWriteTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxZstdDefaultCompressionLevel(@Nullable Integer mysqlxZstdDefaultCompressionLevel) {
+
             this.mysqlxZstdDefaultCompressionLevel = mysqlxZstdDefaultCompressionLevel;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxZstdMaxClientCompressionLevel(@Nullable Integer mysqlxZstdMaxClientCompressionLevel) {
+
             this.mysqlxZstdMaxClientCompressionLevel = mysqlxZstdMaxClientCompressionLevel;
             return this;
         }
         @CustomType.Setter
         public Builder netReadTimeout(@Nullable Integer netReadTimeout) {
+
             this.netReadTimeout = netReadTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder netWriteTimeout(@Nullable Integer netWriteTimeout) {
+
             this.netWriteTimeout = netWriteTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder parserMaxMemSize(@Nullable String parserMaxMemSize) {
+
             this.parserMaxMemSize = parserMaxMemSize;
             return this;
         }
         @CustomType.Setter
         public Builder queryAllocBlockSize(@Nullable String queryAllocBlockSize) {
+
             this.queryAllocBlockSize = queryAllocBlockSize;
             return this;
         }
         @CustomType.Setter
         public Builder queryPreallocSize(@Nullable String queryPreallocSize) {
+
             this.queryPreallocSize = queryPreallocSize;
             return this;
         }
         @CustomType.Setter
         public Builder regexpTimeLimit(@Nullable Integer regexpTimeLimit) {
+
             this.regexpTimeLimit = regexpTimeLimit;
             return this;
         }
         @CustomType.Setter
         public Builder sortBufferSize(@Nullable String sortBufferSize) {
+
             this.sortBufferSize = sortBufferSize;
             return this;
         }
         @CustomType.Setter
         public Builder sqlMode(@Nullable String sqlMode) {
+
             this.sqlMode = sqlMode;
             return this;
         }
         @CustomType.Setter
         public Builder sqlRequirePrimaryKey(@Nullable Boolean sqlRequirePrimaryKey) {
+
             this.sqlRequirePrimaryKey = sqlRequirePrimaryKey;
             return this;
         }
         @CustomType.Setter
         public Builder sqlWarnings(@Nullable Boolean sqlWarnings) {
+
             this.sqlWarnings = sqlWarnings;
             return this;
         }
         @CustomType.Setter
         public Builder threadPoolDedicatedListeners(@Nullable Boolean threadPoolDedicatedListeners) {
+
             this.threadPoolDedicatedListeners = threadPoolDedicatedListeners;
             return this;
         }
         @CustomType.Setter
         public Builder threadPoolMaxTransactionsLimit(@Nullable Integer threadPoolMaxTransactionsLimit) {
+
             this.threadPoolMaxTransactionsLimit = threadPoolMaxTransactionsLimit;
             return this;
         }
         @CustomType.Setter
         public Builder timeZone(@Nullable String timeZone) {
+
             this.timeZone = timeZone;
             return this;
         }
         @CustomType.Setter
         public Builder tmpTableSize(@Nullable String tmpTableSize) {
+
             this.tmpTableSize = tmpTableSize;
             return this;
         }
         @CustomType.Setter
         public Builder transactionIsolation(@Nullable String transactionIsolation) {
+
             this.transactionIsolation = transactionIsolation;
             return this;
         }
         @CustomType.Setter
         public Builder waitTimeout(@Nullable Integer waitTimeout) {
+
             this.waitTimeout = waitTimeout;
             return this;
         }

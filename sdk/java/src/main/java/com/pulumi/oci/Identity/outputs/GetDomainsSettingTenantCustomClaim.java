@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -128,27 +129,42 @@ public final class GetDomainsSettingTenantCustomClaim {
 
         @CustomType.Setter
         public Builder allScopes(Boolean allScopes) {
-            this.allScopes = Objects.requireNonNull(allScopes);
+            if (allScopes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingTenantCustomClaim", "allScopes");
+            }
+            this.allScopes = allScopes;
             return this;
         }
         @CustomType.Setter
         public Builder expression(Boolean expression) {
-            this.expression = Objects.requireNonNull(expression);
+            if (expression == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingTenantCustomClaim", "expression");
+            }
+            this.expression = expression;
             return this;
         }
         @CustomType.Setter
         public Builder mode(String mode) {
-            this.mode = Objects.requireNonNull(mode);
+            if (mode == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingTenantCustomClaim", "mode");
+            }
+            this.mode = mode;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingTenantCustomClaim", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder scopes(List<String> scopes) {
-            this.scopes = Objects.requireNonNull(scopes);
+            if (scopes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingTenantCustomClaim", "scopes");
+            }
+            this.scopes = scopes;
             return this;
         }
         public Builder scopes(String... scopes) {
@@ -156,12 +172,18 @@ public final class GetDomainsSettingTenantCustomClaim {
         }
         @CustomType.Setter
         public Builder tokenType(String tokenType) {
-            this.tokenType = Objects.requireNonNull(tokenType);
+            if (tokenType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingTenantCustomClaim", "tokenType");
+            }
+            this.tokenType = tokenType;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingTenantCustomClaim", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDomainsSettingTenantCustomClaim build() {

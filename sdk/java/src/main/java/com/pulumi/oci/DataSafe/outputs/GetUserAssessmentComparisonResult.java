@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentComparisonSummary;
 import java.lang.String;
 import java.util.List;
@@ -98,22 +99,34 @@ public final class GetUserAssessmentComparisonResult {
 
         @CustomType.Setter
         public Builder comparisonUserAssessmentId(String comparisonUserAssessmentId) {
-            this.comparisonUserAssessmentId = Objects.requireNonNull(comparisonUserAssessmentId);
+            if (comparisonUserAssessmentId == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentComparisonResult", "comparisonUserAssessmentId");
+            }
+            this.comparisonUserAssessmentId = comparisonUserAssessmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentComparisonResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentComparisonResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder summaries(List<GetUserAssessmentComparisonSummary> summaries) {
-            this.summaries = Objects.requireNonNull(summaries);
+            if (summaries == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentComparisonResult", "summaries");
+            }
+            this.summaries = summaries;
             return this;
         }
         public Builder summaries(GetUserAssessmentComparisonSummary... summaries) {
@@ -121,12 +134,18 @@ public final class GetUserAssessmentComparisonResult {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentComparisonResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder userAssessmentId(String userAssessmentId) {
-            this.userAssessmentId = Objects.requireNonNull(userAssessmentId);
+            if (userAssessmentId == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentComparisonResult", "userAssessmentId");
+            }
+            this.userAssessmentId = userAssessmentId;
             return this;
         }
         public GetUserAssessmentComparisonResult build() {

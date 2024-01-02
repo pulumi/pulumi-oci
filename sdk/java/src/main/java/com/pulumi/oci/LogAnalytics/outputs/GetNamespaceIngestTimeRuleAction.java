@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -113,12 +114,18 @@ public final class GetNamespaceIngestTimeRuleAction {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceIngestTimeRuleAction", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dimensions(List<String> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+            if (dimensions == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceIngestTimeRuleAction", "dimensions");
+            }
+            this.dimensions = dimensions;
             return this;
         }
         public Builder dimensions(String... dimensions) {
@@ -126,22 +133,34 @@ public final class GetNamespaceIngestTimeRuleAction {
         }
         @CustomType.Setter
         public Builder metricName(String metricName) {
-            this.metricName = Objects.requireNonNull(metricName);
+            if (metricName == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceIngestTimeRuleAction", "metricName");
+            }
+            this.metricName = metricName;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceIngestTimeRuleAction", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder resourceGroup(String resourceGroup) {
-            this.resourceGroup = Objects.requireNonNull(resourceGroup);
+            if (resourceGroup == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceIngestTimeRuleAction", "resourceGroup");
+            }
+            this.resourceGroup = resourceGroup;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceIngestTimeRuleAction", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetNamespaceIngestTimeRuleAction build() {

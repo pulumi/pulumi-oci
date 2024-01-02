@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetDbSystemPrimaryDbInstancePlainArgs extends com.pulumi.reso
         }
 
         public GetDbSystemPrimaryDbInstancePlainArgs build() {
-            $.dbSystemId = Objects.requireNonNull($.dbSystemId, "expected parameter 'dbSystemId' to be non-null");
+            if ($.dbSystemId == null) {
+                throw new MissingRequiredPropertyException("GetDbSystemPrimaryDbInstancePlainArgs", "dbSystemId");
+            }
             return $;
         }
     }

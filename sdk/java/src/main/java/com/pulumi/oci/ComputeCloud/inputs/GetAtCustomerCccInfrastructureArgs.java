@@ -5,6 +5,7 @@ package com.pulumi.oci.ComputeCloud.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetAtCustomerCccInfrastructureArgs extends com.pulumi.resourc
         }
 
         public GetAtCustomerCccInfrastructureArgs build() {
-            $.cccInfrastructureId = Objects.requireNonNull($.cccInfrastructureId, "expected parameter 'cccInfrastructureId' to be non-null");
+            if ($.cccInfrastructureId == null) {
+                throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructureArgs", "cccInfrastructureId");
+            }
             return $;
         }
     }

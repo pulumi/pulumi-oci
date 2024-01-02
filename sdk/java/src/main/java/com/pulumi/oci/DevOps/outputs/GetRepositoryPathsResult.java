@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryPathsFilter;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryPathsRepositoryPathCollection;
 import java.lang.Boolean;
@@ -98,11 +99,13 @@ public final class GetRepositoryPathsResult {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRepositoryPathsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -111,32 +114,44 @@ public final class GetRepositoryPathsResult {
         }
         @CustomType.Setter
         public Builder folderPath(@Nullable String folderPath) {
+
             this.folderPath = folderPath;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryPathsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder pathsInSubtree(@Nullable Boolean pathsInSubtree) {
+
             this.pathsInSubtree = pathsInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder ref(@Nullable String ref) {
+
             this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+            if (repositoryId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryPathsResult", "repositoryId");
+            }
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryPathCollections(List<GetRepositoryPathsRepositoryPathCollection> repositoryPathCollections) {
-            this.repositoryPathCollections = Objects.requireNonNull(repositoryPathCollections);
+            if (repositoryPathCollections == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryPathsResult", "repositoryPathCollections");
+            }
+            this.repositoryPathCollections = repositoryPathCollections;
             return this;
         }
         public Builder repositoryPathCollections(GetRepositoryPathsRepositoryPathCollection... repositoryPathCollections) {

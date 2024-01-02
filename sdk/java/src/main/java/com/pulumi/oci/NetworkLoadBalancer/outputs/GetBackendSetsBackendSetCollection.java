@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetBackendSetsBackendSetCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetBackendSetsBackendSetCollection {
 
         @CustomType.Setter
         public Builder items(List<GetBackendSetsBackendSetCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetBackendSetsBackendSetCollectionItem... items) {

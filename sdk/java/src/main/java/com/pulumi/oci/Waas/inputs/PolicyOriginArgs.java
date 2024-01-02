@@ -5,6 +5,7 @@ package com.pulumi.oci.Waas.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.inputs.PolicyOriginCustomHeaderArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -217,8 +218,12 @@ public final class PolicyOriginArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public PolicyOriginArgs build() {
-            $.label = Objects.requireNonNull($.label, "expected parameter 'label' to be non-null");
-            $.uri = Objects.requireNonNull($.uri, "expected parameter 'uri' to be non-null");
+            if ($.label == null) {
+                throw new MissingRequiredPropertyException("PolicyOriginArgs", "label");
+            }
+            if ($.uri == null) {
+                throw new MissingRequiredPropertyException("PolicyOriginArgs", "uri");
+            }
             return $;
         }
     }

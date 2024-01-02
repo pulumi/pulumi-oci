@@ -4,6 +4,7 @@
 package com.pulumi.oci.OperatorAccessControl.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -430,147 +431,234 @@ public final class GetControlAssignmentResult {
 
         @CustomType.Setter
         public Builder assignerId(String assignerId) {
-            this.assignerId = Objects.requireNonNull(assignerId);
+            if (assignerId == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "assignerId");
+            }
+            this.assignerId = assignerId;
             return this;
         }
         @CustomType.Setter
         public Builder comment(String comment) {
-            this.comment = Objects.requireNonNull(comment);
+            if (comment == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "comment");
+            }
+            this.comment = comment;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder detachmentDescription(String detachmentDescription) {
-            this.detachmentDescription = Objects.requireNonNull(detachmentDescription);
+            if (detachmentDescription == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "detachmentDescription");
+            }
+            this.detachmentDescription = detachmentDescription;
             return this;
         }
         @CustomType.Setter
         public Builder errorCode(Integer errorCode) {
-            this.errorCode = Objects.requireNonNull(errorCode);
+            if (errorCode == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "errorCode");
+            }
+            this.errorCode = errorCode;
             return this;
         }
         @CustomType.Setter
         public Builder errorMessage(String errorMessage) {
-            this.errorMessage = Objects.requireNonNull(errorMessage);
+            if (errorMessage == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "errorMessage");
+            }
+            this.errorMessage = errorMessage;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAutoApproveDuringMaintenance(Boolean isAutoApproveDuringMaintenance) {
-            this.isAutoApproveDuringMaintenance = Objects.requireNonNull(isAutoApproveDuringMaintenance);
+            if (isAutoApproveDuringMaintenance == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "isAutoApproveDuringMaintenance");
+            }
+            this.isAutoApproveDuringMaintenance = isAutoApproveDuringMaintenance;
             return this;
         }
         @CustomType.Setter
         public Builder isDefaultAssignment(Boolean isDefaultAssignment) {
-            this.isDefaultAssignment = Objects.requireNonNull(isDefaultAssignment);
+            if (isDefaultAssignment == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "isDefaultAssignment");
+            }
+            this.isDefaultAssignment = isDefaultAssignment;
             return this;
         }
         @CustomType.Setter
         public Builder isEnforcedAlways(Boolean isEnforcedAlways) {
-            this.isEnforcedAlways = Objects.requireNonNull(isEnforcedAlways);
+            if (isEnforcedAlways == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "isEnforcedAlways");
+            }
+            this.isEnforcedAlways = isEnforcedAlways;
             return this;
         }
         @CustomType.Setter
         public Builder isLogForwarded(Boolean isLogForwarded) {
-            this.isLogForwarded = Objects.requireNonNull(isLogForwarded);
+            if (isLogForwarded == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "isLogForwarded");
+            }
+            this.isLogForwarded = isLogForwarded;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder operatorControlAssignmentId(String operatorControlAssignmentId) {
-            this.operatorControlAssignmentId = Objects.requireNonNull(operatorControlAssignmentId);
+            if (operatorControlAssignmentId == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "operatorControlAssignmentId");
+            }
+            this.operatorControlAssignmentId = operatorControlAssignmentId;
             return this;
         }
         @CustomType.Setter
         public Builder operatorControlId(String operatorControlId) {
-            this.operatorControlId = Objects.requireNonNull(operatorControlId);
+            if (operatorControlId == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "operatorControlId");
+            }
+            this.operatorControlId = operatorControlId;
             return this;
         }
         @CustomType.Setter
         public Builder remoteSyslogServerAddress(String remoteSyslogServerAddress) {
-            this.remoteSyslogServerAddress = Objects.requireNonNull(remoteSyslogServerAddress);
+            if (remoteSyslogServerAddress == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "remoteSyslogServerAddress");
+            }
+            this.remoteSyslogServerAddress = remoteSyslogServerAddress;
             return this;
         }
         @CustomType.Setter
         public Builder remoteSyslogServerCaCert(String remoteSyslogServerCaCert) {
-            this.remoteSyslogServerCaCert = Objects.requireNonNull(remoteSyslogServerCaCert);
+            if (remoteSyslogServerCaCert == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "remoteSyslogServerCaCert");
+            }
+            this.remoteSyslogServerCaCert = remoteSyslogServerCaCert;
             return this;
         }
         @CustomType.Setter
         public Builder remoteSyslogServerPort(Integer remoteSyslogServerPort) {
-            this.remoteSyslogServerPort = Objects.requireNonNull(remoteSyslogServerPort);
+            if (remoteSyslogServerPort == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "remoteSyslogServerPort");
+            }
+            this.remoteSyslogServerPort = remoteSyslogServerPort;
             return this;
         }
         @CustomType.Setter
         public Builder resourceCompartmentId(String resourceCompartmentId) {
-            this.resourceCompartmentId = Objects.requireNonNull(resourceCompartmentId);
+            if (resourceCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "resourceCompartmentId");
+            }
+            this.resourceCompartmentId = resourceCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+            if (resourceId == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "resourceId");
+            }
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceName(String resourceName) {
-            this.resourceName = Objects.requireNonNull(resourceName);
+            if (resourceName == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "resourceName");
+            }
+            this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeAssignmentFrom(String timeAssignmentFrom) {
-            this.timeAssignmentFrom = Objects.requireNonNull(timeAssignmentFrom);
+            if (timeAssignmentFrom == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "timeAssignmentFrom");
+            }
+            this.timeAssignmentFrom = timeAssignmentFrom;
             return this;
         }
         @CustomType.Setter
         public Builder timeAssignmentTo(String timeAssignmentTo) {
-            this.timeAssignmentTo = Objects.requireNonNull(timeAssignmentTo);
+            if (timeAssignmentTo == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "timeAssignmentTo");
+            }
+            this.timeAssignmentTo = timeAssignmentTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfAssignment(String timeOfAssignment) {
-            this.timeOfAssignment = Objects.requireNonNull(timeOfAssignment);
+            if (timeOfAssignment == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "timeOfAssignment");
+            }
+            this.timeOfAssignment = timeOfAssignment;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfDeletion(String timeOfDeletion) {
-            this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
+            if (timeOfDeletion == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "timeOfDeletion");
+            }
+            this.timeOfDeletion = timeOfDeletion;
             return this;
         }
         @CustomType.Setter
         public Builder unassignerId(String unassignerId) {
-            this.unassignerId = Objects.requireNonNull(unassignerId);
+            if (unassignerId == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentResult", "unassignerId");
+            }
+            this.unassignerId = unassignerId;
             return this;
         }
         public GetControlAssignmentResult build() {

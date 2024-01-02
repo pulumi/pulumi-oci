@@ -4,6 +4,7 @@
 package com.pulumi.oci.Artifacts.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Artifacts.outputs.GetContainerRepositoriesContainerRepositoryCollection;
 import com.pulumi.oci.Artifacts.outputs.GetContainerRepositoriesFilter;
 import java.lang.Boolean;
@@ -136,17 +137,24 @@ public final class GetContainerRepositoriesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder containerRepositoryCollections(List<GetContainerRepositoriesContainerRepositoryCollection> containerRepositoryCollections) {
-            this.containerRepositoryCollections = Objects.requireNonNull(containerRepositoryCollections);
+            if (containerRepositoryCollections == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesResult", "containerRepositoryCollections");
+            }
+            this.containerRepositoryCollections = containerRepositoryCollections;
             return this;
         }
         public Builder containerRepositoryCollections(GetContainerRepositoriesContainerRepositoryCollection... containerRepositoryCollections) {
@@ -154,11 +162,13 @@ public final class GetContainerRepositoriesResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetContainerRepositoriesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -167,21 +177,27 @@ public final class GetContainerRepositoriesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isPublic(@Nullable Boolean isPublic) {
+
             this.isPublic = isPublic;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryId(@Nullable String repositoryId) {
+
             this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

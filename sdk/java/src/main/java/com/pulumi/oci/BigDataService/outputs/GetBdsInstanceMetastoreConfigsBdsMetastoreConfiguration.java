@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -173,62 +174,98 @@ public final class GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration {
 
         @CustomType.Setter
         public Builder activateTrigger(Integer activateTrigger) {
-            this.activateTrigger = Objects.requireNonNull(activateTrigger);
+            if (activateTrigger == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration", "activateTrigger");
+            }
+            this.activateTrigger = activateTrigger;
             return this;
         }
         @CustomType.Setter
         public Builder bdsApiKeyId(String bdsApiKeyId) {
-            this.bdsApiKeyId = Objects.requireNonNull(bdsApiKeyId);
+            if (bdsApiKeyId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration", "bdsApiKeyId");
+            }
+            this.bdsApiKeyId = bdsApiKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder bdsApiKeyPassphrase(String bdsApiKeyPassphrase) {
-            this.bdsApiKeyPassphrase = Objects.requireNonNull(bdsApiKeyPassphrase);
+            if (bdsApiKeyPassphrase == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration", "bdsApiKeyPassphrase");
+            }
+            this.bdsApiKeyPassphrase = bdsApiKeyPassphrase;
             return this;
         }
         @CustomType.Setter
         public Builder bdsInstanceId(String bdsInstanceId) {
-            this.bdsInstanceId = Objects.requireNonNull(bdsInstanceId);
+            if (bdsInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration", "bdsInstanceId");
+            }
+            this.bdsInstanceId = bdsInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder clusterAdminPassword(String clusterAdminPassword) {
-            this.clusterAdminPassword = Objects.requireNonNull(clusterAdminPassword);
+            if (clusterAdminPassword == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration", "clusterAdminPassword");
+            }
+            this.clusterAdminPassword = clusterAdminPassword;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder metastoreId(String metastoreId) {
-            this.metastoreId = Objects.requireNonNull(metastoreId);
+            if (metastoreId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration", "metastoreId");
+            }
+            this.metastoreId = metastoreId;
             return this;
         }
         @CustomType.Setter
         public Builder metastoreType(String metastoreType) {
-            this.metastoreType = Objects.requireNonNull(metastoreType);
+            if (metastoreType == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration", "metastoreType");
+            }
+            this.metastoreType = metastoreType;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration build() {

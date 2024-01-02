@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -225,13 +226,27 @@ public final class GetVmClusterRecommendedNetworkNetwork extends com.pulumi.reso
         }
 
         public GetVmClusterRecommendedNetworkNetwork build() {
-            $.cidr = Objects.requireNonNull($.cidr, "expected parameter 'cidr' to be non-null");
-            $.domain = Objects.requireNonNull($.domain, "expected parameter 'domain' to be non-null");
-            $.gateway = Objects.requireNonNull($.gateway, "expected parameter 'gateway' to be non-null");
-            $.netmask = Objects.requireNonNull($.netmask, "expected parameter 'netmask' to be non-null");
-            $.networkType = Objects.requireNonNull($.networkType, "expected parameter 'networkType' to be non-null");
-            $.prefix = Objects.requireNonNull($.prefix, "expected parameter 'prefix' to be non-null");
-            $.vlanId = Objects.requireNonNull($.vlanId, "expected parameter 'vlanId' to be non-null");
+            if ($.cidr == null) {
+                throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkNetwork", "cidr");
+            }
+            if ($.domain == null) {
+                throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkNetwork", "domain");
+            }
+            if ($.gateway == null) {
+                throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkNetwork", "gateway");
+            }
+            if ($.netmask == null) {
+                throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkNetwork", "netmask");
+            }
+            if ($.networkType == null) {
+                throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkNetwork", "networkType");
+            }
+            if ($.prefix == null) {
+                throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkNetwork", "prefix");
+            }
+            if ($.vlanId == null) {
+                throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkNetwork", "vlanId");
+            }
             return $;
         }
     }

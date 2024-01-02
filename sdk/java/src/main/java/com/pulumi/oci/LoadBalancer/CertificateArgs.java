@@ -5,6 +5,7 @@ package com.pulumi.oci.LoadBalancer;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -393,8 +394,12 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public CertificateArgs build() {
-            $.certificateName = Objects.requireNonNull($.certificateName, "expected parameter 'certificateName' to be non-null");
-            $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
+            if ($.certificateName == null) {
+                throw new MissingRequiredPropertyException("CertificateArgs", "certificateName");
+            }
+            if ($.loadBalancerId == null) {
+                throw new MissingRequiredPropertyException("CertificateArgs", "loadBalancerId");
+            }
             return $;
         }
     }

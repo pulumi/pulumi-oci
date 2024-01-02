@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OspGateway.outputs.GetAddressRuleTaxFieldFormat;
 import com.pulumi.oci.OspGateway.outputs.GetAddressRuleTaxFieldLabel;
 import java.lang.Boolean;
@@ -102,7 +103,10 @@ public final class GetAddressRuleTaxField {
 
         @CustomType.Setter
         public Builder formats(List<GetAddressRuleTaxFieldFormat> formats) {
-            this.formats = Objects.requireNonNull(formats);
+            if (formats == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleTaxField", "formats");
+            }
+            this.formats = formats;
             return this;
         }
         public Builder formats(GetAddressRuleTaxFieldFormat... formats) {
@@ -110,12 +114,18 @@ public final class GetAddressRuleTaxField {
         }
         @CustomType.Setter
         public Builder isRequired(Boolean isRequired) {
-            this.isRequired = Objects.requireNonNull(isRequired);
+            if (isRequired == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleTaxField", "isRequired");
+            }
+            this.isRequired = isRequired;
             return this;
         }
         @CustomType.Setter
         public Builder labels(List<GetAddressRuleTaxFieldLabel> labels) {
-            this.labels = Objects.requireNonNull(labels);
+            if (labels == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleTaxField", "labels");
+            }
+            this.labels = labels;
             return this;
         }
         public Builder labels(GetAddressRuleTaxFieldLabel... labels) {
@@ -123,12 +133,18 @@ public final class GetAddressRuleTaxField {
         }
         @CustomType.Setter
         public Builder language(String language) {
-            this.language = Objects.requireNonNull(language);
+            if (language == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleTaxField", "language");
+            }
+            this.language = language;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleTaxField", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetAddressRuleTaxField build() {

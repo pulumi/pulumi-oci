@@ -4,6 +4,7 @@
 package com.pulumi.oci.Bastion.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class SessionKeyDetails {
 
         @CustomType.Setter
         public Builder publicKeyContent(String publicKeyContent) {
-            this.publicKeyContent = Objects.requireNonNull(publicKeyContent);
+            if (publicKeyContent == null) {
+              throw new MissingRequiredPropertyException("SessionKeyDetails", "publicKeyContent");
+            }
+            this.publicKeyContent = publicKeyContent;
             return this;
         }
         public SessionKeyDetails build() {

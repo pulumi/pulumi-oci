@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail;
 import java.lang.Integer;
 import java.util.List;
@@ -42,7 +43,10 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationPeerAutonom
 
         @CustomType.Setter
         public Builder backupDestinationDetails(List<GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails) {
-            this.backupDestinationDetails = Objects.requireNonNull(backupDestinationDetails);
+            if (backupDestinationDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig", "backupDestinationDetails");
+            }
+            this.backupDestinationDetails = backupDestinationDetails;
             return this;
         }
         public Builder backupDestinationDetails(GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail... backupDestinationDetails) {
@@ -50,7 +54,10 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationPeerAutonom
         }
         @CustomType.Setter
         public Builder recoveryWindowInDays(Integer recoveryWindowInDays) {
-            this.recoveryWindowInDays = Objects.requireNonNull(recoveryWindowInDays);
+            if (recoveryWindowInDays == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig", "recoveryWindowInDays");
+            }
+            this.recoveryWindowInDays = recoveryWindowInDays;
             return this;
         }
         public GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig build() {

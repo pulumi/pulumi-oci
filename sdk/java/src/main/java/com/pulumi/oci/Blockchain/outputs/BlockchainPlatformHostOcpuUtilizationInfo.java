@@ -73,16 +73,19 @@ public final class BlockchainPlatformHostOcpuUtilizationInfo {
 
         @CustomType.Setter
         public Builder host(@Nullable String host) {
+
             this.host = host;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuCapacityNumber(@Nullable Double ocpuCapacityNumber) {
+
             this.ocpuCapacityNumber = ocpuCapacityNumber;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuUtilizationNumber(@Nullable Double ocpuUtilizationNumber) {
+
             this.ocpuUtilizationNumber = ocpuUtilizationNumber;
             return this;
         }

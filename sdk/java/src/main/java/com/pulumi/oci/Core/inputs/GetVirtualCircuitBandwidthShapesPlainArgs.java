@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetVirtualCircuitBandwidthShapesFilter;
 import java.lang.String;
 import java.util.List;
@@ -84,7 +85,9 @@ public final class GetVirtualCircuitBandwidthShapesPlainArgs extends com.pulumi.
         }
 
         public GetVirtualCircuitBandwidthShapesPlainArgs build() {
-            $.providerServiceId = Objects.requireNonNull($.providerServiceId, "expected parameter 'providerServiceId' to be non-null");
+            if ($.providerServiceId == null) {
+                throw new MissingRequiredPropertyException("GetVirtualCircuitBandwidthShapesPlainArgs", "providerServiceId");
+            }
             return $;
         }
     }

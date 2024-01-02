@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataLabellingService.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataLabellingService.inputs.GetDatasetsFilter;
 import java.lang.String;
 import java.util.List;
@@ -192,7 +193,9 @@ public final class GetDatasetsPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         public GetDatasetsPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetDatasetsPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey;
 import com.pulumi.oci.Identity.outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken;
 import com.pulumi.oci.Identity.outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey;
@@ -118,7 +119,10 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
 
         @CustomType.Setter
         public Builder apiKeys(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey> apiKeys) {
-            this.apiKeys = Objects.requireNonNull(apiKeys);
+            if (apiKeys == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser", "apiKeys");
+            }
+            this.apiKeys = apiKeys;
             return this;
         }
         public Builder apiKeys(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey... apiKeys) {
@@ -126,7 +130,10 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
         @CustomType.Setter
         public Builder authTokens(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken> authTokens) {
-            this.authTokens = Objects.requireNonNull(authTokens);
+            if (authTokens == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser", "authTokens");
+            }
+            this.authTokens = authTokens;
             return this;
         }
         public Builder authTokens(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken... authTokens) {
@@ -134,7 +141,10 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
         @CustomType.Setter
         public Builder customerSecretKeys(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey> customerSecretKeys) {
-            this.customerSecretKeys = Objects.requireNonNull(customerSecretKeys);
+            if (customerSecretKeys == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser", "customerSecretKeys");
+            }
+            this.customerSecretKeys = customerSecretKeys;
             return this;
         }
         public Builder customerSecretKeys(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey... customerSecretKeys) {
@@ -142,7 +152,10 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
         @CustomType.Setter
         public Builder dbCredentials(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential> dbCredentials) {
-            this.dbCredentials = Objects.requireNonNull(dbCredentials);
+            if (dbCredentials == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser", "dbCredentials");
+            }
+            this.dbCredentials = dbCredentials;
             return this;
         }
         public Builder dbCredentials(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential... dbCredentials) {
@@ -150,7 +163,10 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
         @CustomType.Setter
         public Builder oAuth2clientCredentials(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential> oAuth2clientCredentials) {
-            this.oAuth2clientCredentials = Objects.requireNonNull(oAuth2clientCredentials);
+            if (oAuth2clientCredentials == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser", "oAuth2clientCredentials");
+            }
+            this.oAuth2clientCredentials = oAuth2clientCredentials;
             return this;
         }
         public Builder oAuth2clientCredentials(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential... oAuth2clientCredentials) {
@@ -158,7 +174,10 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
         @CustomType.Setter
         public Builder smtpCredentials(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential> smtpCredentials) {
-            this.smtpCredentials = Objects.requireNonNull(smtpCredentials);
+            if (smtpCredentials == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser", "smtpCredentials");
+            }
+            this.smtpCredentials = smtpCredentials;
             return this;
         }
         public Builder smtpCredentials(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential... smtpCredentials) {

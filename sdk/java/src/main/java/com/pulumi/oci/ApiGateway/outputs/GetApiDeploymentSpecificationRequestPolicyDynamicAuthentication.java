@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSource;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
 
         @CustomType.Setter
         public Builder authenticationServers(List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer> authenticationServers) {
-            this.authenticationServers = Objects.requireNonNull(authenticationServers);
+            if (authenticationServers == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyDynamicAuthentication", "authenticationServers");
+            }
+            this.authenticationServers = authenticationServers;
             return this;
         }
         public Builder authenticationServers(GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer... authenticationServers) {
@@ -66,7 +70,10 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
         }
         @CustomType.Setter
         public Builder selectionSources(List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSource> selectionSources) {
-            this.selectionSources = Objects.requireNonNull(selectionSources);
+            if (selectionSources == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyDynamicAuthentication", "selectionSources");
+            }
+            this.selectionSources = selectionSources;
             return this;
         }
         public Builder selectionSources(GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSource... selectionSources) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.HealthChecks.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.HealthChecks.outputs.GetHttpProbeResultsHttpProbeResultConnection;
 import com.pulumi.oci.HealthChecks.outputs.GetHttpProbeResultsHttpProbeResultDn;
 import java.lang.Boolean;
@@ -380,17 +381,26 @@ public final class GetHttpProbeResultsHttpProbeResult {
 
         @CustomType.Setter
         public Builder connectEnd(Double connectEnd) {
-            this.connectEnd = Objects.requireNonNull(connectEnd);
+            if (connectEnd == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "connectEnd");
+            }
+            this.connectEnd = connectEnd;
             return this;
         }
         @CustomType.Setter
         public Builder connectStart(Double connectStart) {
-            this.connectStart = Objects.requireNonNull(connectStart);
+            if (connectStart == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "connectStart");
+            }
+            this.connectStart = connectStart;
             return this;
         }
         @CustomType.Setter
         public Builder connections(List<GetHttpProbeResultsHttpProbeResultConnection> connections) {
-            this.connections = Objects.requireNonNull(connections);
+            if (connections == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "connections");
+            }
+            this.connections = connections;
             return this;
         }
         public Builder connections(GetHttpProbeResultsHttpProbeResultConnection... connections) {
@@ -398,7 +408,10 @@ public final class GetHttpProbeResultsHttpProbeResult {
         }
         @CustomType.Setter
         public Builder dns(List<GetHttpProbeResultsHttpProbeResultDn> dns) {
-            this.dns = Objects.requireNonNull(dns);
+            if (dns == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "dns");
+            }
+            this.dns = dns;
             return this;
         }
         public Builder dns(GetHttpProbeResultsHttpProbeResultDn... dns) {
@@ -406,102 +419,162 @@ public final class GetHttpProbeResultsHttpProbeResult {
         }
         @CustomType.Setter
         public Builder domainLookupEnd(Double domainLookupEnd) {
-            this.domainLookupEnd = Objects.requireNonNull(domainLookupEnd);
+            if (domainLookupEnd == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "domainLookupEnd");
+            }
+            this.domainLookupEnd = domainLookupEnd;
             return this;
         }
         @CustomType.Setter
         public Builder domainLookupStart(Double domainLookupStart) {
-            this.domainLookupStart = Objects.requireNonNull(domainLookupStart);
+            if (domainLookupStart == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "domainLookupStart");
+            }
+            this.domainLookupStart = domainLookupStart;
             return this;
         }
         @CustomType.Setter
         public Builder duration(Double duration) {
-            this.duration = Objects.requireNonNull(duration);
+            if (duration == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "duration");
+            }
+            this.duration = duration;
             return this;
         }
         @CustomType.Setter
         public Builder encodedBodySize(Integer encodedBodySize) {
-            this.encodedBodySize = Objects.requireNonNull(encodedBodySize);
+            if (encodedBodySize == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "encodedBodySize");
+            }
+            this.encodedBodySize = encodedBodySize;
             return this;
         }
         @CustomType.Setter
         public Builder errorCategory(String errorCategory) {
-            this.errorCategory = Objects.requireNonNull(errorCategory);
+            if (errorCategory == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "errorCategory");
+            }
+            this.errorCategory = errorCategory;
             return this;
         }
         @CustomType.Setter
         public Builder errorMessage(String errorMessage) {
-            this.errorMessage = Objects.requireNonNull(errorMessage);
+            if (errorMessage == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "errorMessage");
+            }
+            this.errorMessage = errorMessage;
             return this;
         }
         @CustomType.Setter
         public Builder fetchStart(Double fetchStart) {
-            this.fetchStart = Objects.requireNonNull(fetchStart);
+            if (fetchStart == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "fetchStart");
+            }
+            this.fetchStart = fetchStart;
             return this;
         }
         @CustomType.Setter
         public Builder isHealthy(Boolean isHealthy) {
-            this.isHealthy = Objects.requireNonNull(isHealthy);
+            if (isHealthy == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "isHealthy");
+            }
+            this.isHealthy = isHealthy;
             return this;
         }
         @CustomType.Setter
         public Builder isTimedOut(Boolean isTimedOut) {
-            this.isTimedOut = Objects.requireNonNull(isTimedOut);
+            if (isTimedOut == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "isTimedOut");
+            }
+            this.isTimedOut = isTimedOut;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder probeConfigurationId(String probeConfigurationId) {
-            this.probeConfigurationId = Objects.requireNonNull(probeConfigurationId);
+            if (probeConfigurationId == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "probeConfigurationId");
+            }
+            this.probeConfigurationId = probeConfigurationId;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder requestStart(Double requestStart) {
-            this.requestStart = Objects.requireNonNull(requestStart);
+            if (requestStart == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "requestStart");
+            }
+            this.requestStart = requestStart;
             return this;
         }
         @CustomType.Setter
         public Builder responseEnd(Double responseEnd) {
-            this.responseEnd = Objects.requireNonNull(responseEnd);
+            if (responseEnd == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "responseEnd");
+            }
+            this.responseEnd = responseEnd;
             return this;
         }
         @CustomType.Setter
         public Builder responseStart(Double responseStart) {
-            this.responseStart = Objects.requireNonNull(responseStart);
+            if (responseStart == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "responseStart");
+            }
+            this.responseStart = responseStart;
             return this;
         }
         @CustomType.Setter
         public Builder secureConnectionStart(Double secureConnectionStart) {
-            this.secureConnectionStart = Objects.requireNonNull(secureConnectionStart);
+            if (secureConnectionStart == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "secureConnectionStart");
+            }
+            this.secureConnectionStart = secureConnectionStart;
             return this;
         }
         @CustomType.Setter
         public Builder startTime(Double startTime) {
-            this.startTime = Objects.requireNonNull(startTime);
+            if (startTime == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "startTime");
+            }
+            this.startTime = startTime;
             return this;
         }
         @CustomType.Setter
         public Builder statusCode(Integer statusCode) {
-            this.statusCode = Objects.requireNonNull(statusCode);
+            if (statusCode == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "statusCode");
+            }
+            this.statusCode = statusCode;
             return this;
         }
         @CustomType.Setter
         public Builder target(String target) {
-            this.target = Objects.requireNonNull(target);
+            if (target == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "target");
+            }
+            this.target = target;
             return this;
         }
         @CustomType.Setter
         public Builder vantagePointName(String vantagePointName) {
-            this.vantagePointName = Objects.requireNonNull(vantagePointName);
+            if (vantagePointName == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResult", "vantagePointName");
+            }
+            this.vantagePointName = vantagePointName;
             return this;
         }
         public GetHttpProbeResultsHttpProbeResult build() {

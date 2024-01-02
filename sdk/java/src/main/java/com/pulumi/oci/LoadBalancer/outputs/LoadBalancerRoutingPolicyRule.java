@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.LoadBalancerRoutingPolicyRuleAction;
 import java.lang.String;
 import java.util.List;
@@ -78,7 +79,10 @@ public final class LoadBalancerRoutingPolicyRule {
 
         @CustomType.Setter
         public Builder actions(List<LoadBalancerRoutingPolicyRuleAction> actions) {
-            this.actions = Objects.requireNonNull(actions);
+            if (actions == null) {
+              throw new MissingRequiredPropertyException("LoadBalancerRoutingPolicyRule", "actions");
+            }
+            this.actions = actions;
             return this;
         }
         public Builder actions(LoadBalancerRoutingPolicyRuleAction... actions) {
@@ -86,12 +90,18 @@ public final class LoadBalancerRoutingPolicyRule {
         }
         @CustomType.Setter
         public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+            if (condition == null) {
+              throw new MissingRequiredPropertyException("LoadBalancerRoutingPolicyRule", "condition");
+            }
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("LoadBalancerRoutingPolicyRule", "name");
+            }
+            this.name = name;
             return this;
         }
         public LoadBalancerRoutingPolicyRule build() {

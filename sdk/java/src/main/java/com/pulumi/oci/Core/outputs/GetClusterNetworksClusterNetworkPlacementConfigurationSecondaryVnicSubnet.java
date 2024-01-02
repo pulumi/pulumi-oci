@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail;
 import java.lang.Boolean;
 import java.lang.String;
@@ -87,12 +88,18 @@ public final class GetClusterNetworksClusterNetworkPlacementConfigurationSeconda
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder ipv6addressIpv6subnetCidrPairDetails(List<GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails) {
-            this.ipv6addressIpv6subnetCidrPairDetails = Objects.requireNonNull(ipv6addressIpv6subnetCidrPairDetails);
+            if (ipv6addressIpv6subnetCidrPairDetails == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet", "ipv6addressIpv6subnetCidrPairDetails");
+            }
+            this.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             return this;
         }
         public Builder ipv6addressIpv6subnetCidrPairDetails(GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail... ipv6addressIpv6subnetCidrPairDetails) {
@@ -100,12 +107,18 @@ public final class GetClusterNetworksClusterNetworkPlacementConfigurationSeconda
         }
         @CustomType.Setter
         public Builder isAssignIpv6ip(Boolean isAssignIpv6ip) {
-            this.isAssignIpv6ip = Objects.requireNonNull(isAssignIpv6ip);
+            if (isAssignIpv6ip == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet", "isAssignIpv6ip");
+            }
+            this.isAssignIpv6ip = isAssignIpv6ip;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         public GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet build() {

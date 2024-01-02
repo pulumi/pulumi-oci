@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -197,62 +198,98 @@ public final class GetManagedDatabaseSqlTuningAdvisorTaskItem {
 
         @CustomType.Setter
         public Builder daysToExpire(Integer daysToExpire) {
-            this.daysToExpire = Objects.requireNonNull(daysToExpire);
+            if (daysToExpire == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTaskItem", "daysToExpire");
+            }
+            this.daysToExpire = daysToExpire;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTaskItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder instanceId(Integer instanceId) {
-            this.instanceId = Objects.requireNonNull(instanceId);
+            if (instanceId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTaskItem", "instanceId");
+            }
+            this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTaskItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder owner(String owner) {
-            this.owner = Objects.requireNonNull(owner);
+            if (owner == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTaskItem", "owner");
+            }
+            this.owner = owner;
             return this;
         }
         @CustomType.Setter
         public Builder recommendationCount(Integer recommendationCount) {
-            this.recommendationCount = Objects.requireNonNull(recommendationCount);
+            if (recommendationCount == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTaskItem", "recommendationCount");
+            }
+            this.recommendationCount = recommendationCount;
             return this;
         }
         @CustomType.Setter
         public Builder sqlTuningAdvisorTaskId(String sqlTuningAdvisorTaskId) {
-            this.sqlTuningAdvisorTaskId = Objects.requireNonNull(sqlTuningAdvisorTaskId);
+            if (sqlTuningAdvisorTaskId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTaskItem", "sqlTuningAdvisorTaskId");
+            }
+            this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
             return this;
         }
         @CustomType.Setter
         public Builder taskStatus(String taskStatus) {
-            this.taskStatus = Objects.requireNonNull(taskStatus);
+            if (taskStatus == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTaskItem", "taskStatus");
+            }
+            this.taskStatus = taskStatus;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTaskItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeExecutionEnded(String timeExecutionEnded) {
-            this.timeExecutionEnded = Objects.requireNonNull(timeExecutionEnded);
+            if (timeExecutionEnded == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTaskItem", "timeExecutionEnded");
+            }
+            this.timeExecutionEnded = timeExecutionEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeExecutionStarted(String timeExecutionStarted) {
-            this.timeExecutionStarted = Objects.requireNonNull(timeExecutionStarted);
+            if (timeExecutionStarted == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTaskItem", "timeExecutionStarted");
+            }
+            this.timeExecutionStarted = timeExecutionStarted;
             return this;
         }
         @CustomType.Setter
         public Builder totalSqlStatements(Integer totalSqlStatements) {
-            this.totalSqlStatements = Objects.requireNonNull(totalSqlStatements);
+            if (totalSqlStatements == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTaskItem", "totalSqlStatements");
+            }
+            this.totalSqlStatements = totalSqlStatements;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTaskItem build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -372,7 +373,9 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
         }
 
         public DeploymentOggDataArgs build() {
-            $.deploymentName = Objects.requireNonNull($.deploymentName, "expected parameter 'deploymentName' to be non-null");
+            if ($.deploymentName == null) {
+                throw new MissingRequiredPropertyException("DeploymentOggDataArgs", "deploymentName");
+            }
             return $;
         }
     }

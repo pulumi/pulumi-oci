@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -156,47 +157,74 @@ public final class GetClusterWorkloadMappingsWorkloadMapping {
 
         @CustomType.Setter
         public Builder clusterId(String clusterId) {
-            this.clusterId = Objects.requireNonNull(clusterId);
+            if (clusterId == null) {
+              throw new MissingRequiredPropertyException("GetClusterWorkloadMappingsWorkloadMapping", "clusterId");
+            }
+            this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetClusterWorkloadMappingsWorkloadMapping", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetClusterWorkloadMappingsWorkloadMapping", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetClusterWorkloadMappingsWorkloadMapping", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder mappedCompartmentId(String mappedCompartmentId) {
-            this.mappedCompartmentId = Objects.requireNonNull(mappedCompartmentId);
+            if (mappedCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetClusterWorkloadMappingsWorkloadMapping", "mappedCompartmentId");
+            }
+            this.mappedCompartmentId = mappedCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder mappedTenancyId(String mappedTenancyId) {
-            this.mappedTenancyId = Objects.requireNonNull(mappedTenancyId);
+            if (mappedTenancyId == null) {
+              throw new MissingRequiredPropertyException("GetClusterWorkloadMappingsWorkloadMapping", "mappedTenancyId");
+            }
+            this.mappedTenancyId = mappedTenancyId;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetClusterWorkloadMappingsWorkloadMapping", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetClusterWorkloadMappingsWorkloadMapping", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetClusterWorkloadMappingsWorkloadMapping", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetClusterWorkloadMappingsWorkloadMapping build() {

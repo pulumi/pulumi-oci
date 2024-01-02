@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
 
         @CustomType.Setter
         public Builder examples(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample> examples) {
-            this.examples = Objects.requireNonNull(examples);
+            if (examples == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation", "examples");
+            }
+            this.examples = examples;
             return this;
         }
         public Builder examples(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample... examples) {
@@ -81,12 +85,18 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
         }
         @CustomType.Setter
         public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+            if (message == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation", "message");
+            }
+            this.message = message;
             return this;
         }
         @CustomType.Setter
         public Builder rationales(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale> rationales) {
-            this.rationales = Objects.requireNonNull(rationales);
+            if (rationales == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation", "rationales");
+            }
+            this.rationales = rationales;
             return this;
         }
         public Builder rationales(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale... rationales) {

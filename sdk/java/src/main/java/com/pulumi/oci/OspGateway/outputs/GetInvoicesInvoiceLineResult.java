@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OspGateway.outputs.GetInvoicesInvoiceLineItem;
 import java.lang.String;
 import java.util.List;
@@ -76,22 +77,34 @@ public final class GetInvoicesInvoiceLineResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder internalInvoiceId(String internalInvoiceId) {
-            this.internalInvoiceId = Objects.requireNonNull(internalInvoiceId);
+            if (internalInvoiceId == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineResult", "internalInvoiceId");
+            }
+            this.internalInvoiceId = internalInvoiceId;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetInvoicesInvoiceLineItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetInvoicesInvoiceLineItem... items) {
@@ -99,7 +112,10 @@ public final class GetInvoicesInvoiceLineResult {
         }
         @CustomType.Setter
         public Builder ospHomeRegion(String ospHomeRegion) {
-            this.ospHomeRegion = Objects.requireNonNull(ospHomeRegion);
+            if (ospHomeRegion == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineResult", "ospHomeRegion");
+            }
+            this.ospHomeRegion = ospHomeRegion;
             return this;
         }
         public GetInvoicesInvoiceLineResult build() {

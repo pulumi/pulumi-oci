@@ -58,6 +58,7 @@ public final class NetworkFirewallPolicyDecryptionRuleCondition {
 
         @CustomType.Setter
         public Builder destinationAddresses(@Nullable List<String> destinationAddresses) {
+
             this.destinationAddresses = destinationAddresses;
             return this;
         }
@@ -66,6 +67,7 @@ public final class NetworkFirewallPolicyDecryptionRuleCondition {
         }
         @CustomType.Setter
         public Builder sourceAddresses(@Nullable List<String> sourceAddresses) {
+
             this.sourceAddresses = sourceAddresses;
             return this;
         }

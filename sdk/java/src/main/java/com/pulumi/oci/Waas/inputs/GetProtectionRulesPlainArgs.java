@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.inputs.GetProtectionRulesFilter;
 import java.lang.String;
 import java.util.List;
@@ -158,7 +159,9 @@ public final class GetProtectionRulesPlainArgs extends com.pulumi.resources.Invo
         }
 
         public GetProtectionRulesPlainArgs build() {
-            $.waasPolicyId = Objects.requireNonNull($.waasPolicyId, "expected parameter 'waasPolicyId' to be non-null");
+            if ($.waasPolicyId == null) {
+                throw new MissingRequiredPropertyException("GetProtectionRulesPlainArgs", "waasPolicyId");
+            }
             return $;
         }
     }

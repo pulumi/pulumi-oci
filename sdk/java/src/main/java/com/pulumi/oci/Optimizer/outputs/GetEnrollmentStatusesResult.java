@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetEnrollmentStatusesEnrollmentStatusCollection;
 import com.pulumi.oci.Optimizer.outputs.GetEnrollmentStatusesFilter;
 import java.lang.String;
@@ -109,12 +110,18 @@ public final class GetEnrollmentStatusesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetEnrollmentStatusesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder enrollmentStatusCollections(List<GetEnrollmentStatusesEnrollmentStatusCollection> enrollmentStatusCollections) {
-            this.enrollmentStatusCollections = Objects.requireNonNull(enrollmentStatusCollections);
+            if (enrollmentStatusCollections == null) {
+              throw new MissingRequiredPropertyException("GetEnrollmentStatusesResult", "enrollmentStatusCollections");
+            }
+            this.enrollmentStatusCollections = enrollmentStatusCollections;
             return this;
         }
         public Builder enrollmentStatusCollections(GetEnrollmentStatusesEnrollmentStatusCollection... enrollmentStatusCollections) {
@@ -122,6 +129,7 @@ public final class GetEnrollmentStatusesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetEnrollmentStatusesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -130,16 +138,21 @@ public final class GetEnrollmentStatusesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetEnrollmentStatusesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -162,47 +163,62 @@ public final class MigrationPlanTargetEnvironment {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder dedicatedVmHost(@Nullable String dedicatedVmHost) {
+
             this.dedicatedVmHost = dedicatedVmHost;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomain(@Nullable String faultDomain) {
+
             this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder msLicense(@Nullable String msLicense) {
+
             this.msLicense = msLicense;
             return this;
         }
         @CustomType.Setter
         public Builder preferredShapeType(@Nullable String preferredShapeType) {
+
             this.preferredShapeType = preferredShapeType;
             return this;
         }
         @CustomType.Setter
         public Builder subnet(String subnet) {
-            this.subnet = Objects.requireNonNull(subnet);
+            if (subnet == null) {
+              throw new MissingRequiredPropertyException("MigrationPlanTargetEnvironment", "subnet");
+            }
+            this.subnet = subnet;
             return this;
         }
         @CustomType.Setter
         public Builder targetCompartmentId(@Nullable String targetCompartmentId) {
+
             this.targetCompartmentId = targetCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder targetEnvironmentType(String targetEnvironmentType) {
-            this.targetEnvironmentType = Objects.requireNonNull(targetEnvironmentType);
+            if (targetEnvironmentType == null) {
+              throw new MissingRequiredPropertyException("MigrationPlanTargetEnvironment", "targetEnvironmentType");
+            }
+            this.targetEnvironmentType = targetEnvironmentType;
             return this;
         }
         @CustomType.Setter
         public Builder vcn(String vcn) {
-            this.vcn = Objects.requireNonNull(vcn);
+            if (vcn == null) {
+              throw new MissingRequiredPropertyException("MigrationPlanTargetEnvironment", "vcn");
+            }
+            this.vcn = vcn;
             return this;
         }
         public MigrationPlanTargetEnvironment build() {

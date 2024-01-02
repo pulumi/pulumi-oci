@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceIngestTimeRulesFilter;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection;
 import java.lang.String;
@@ -157,31 +158,39 @@ public final class GetNamespaceIngestTimeRulesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceIngestTimeRulesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder conditionKind(@Nullable String conditionKind) {
+
             this.conditionKind = conditionKind;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder fieldName(@Nullable String fieldName) {
+
             this.fieldName = fieldName;
             return this;
         }
         @CustomType.Setter
         public Builder fieldValue(@Nullable String fieldValue) {
+
             this.fieldValue = fieldValue;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNamespaceIngestTimeRulesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -190,12 +199,18 @@ public final class GetNamespaceIngestTimeRulesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceIngestTimeRulesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ingestTimeRuleSummaryCollections(List<GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection> ingestTimeRuleSummaryCollections) {
-            this.ingestTimeRuleSummaryCollections = Objects.requireNonNull(ingestTimeRuleSummaryCollections);
+            if (ingestTimeRuleSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceIngestTimeRulesResult", "ingestTimeRuleSummaryCollections");
+            }
+            this.ingestTimeRuleSummaryCollections = ingestTimeRuleSummaryCollections;
             return this;
         }
         public Builder ingestTimeRuleSummaryCollections(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection... ingestTimeRuleSummaryCollections) {
@@ -203,11 +218,15 @@ public final class GetNamespaceIngestTimeRulesResult {
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceIngestTimeRulesResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

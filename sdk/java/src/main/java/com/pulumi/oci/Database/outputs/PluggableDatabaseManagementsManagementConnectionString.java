@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -95,21 +96,27 @@ public final class PluggableDatabaseManagementsManagementConnectionString {
 
         @CustomType.Setter
         public Builder allConnectionStrings(@Nullable Map<String,Object> allConnectionStrings) {
+
             this.allConnectionStrings = allConnectionStrings;
             return this;
         }
         @CustomType.Setter
         public Builder enablePluggabledatabasemanagement(Boolean enablePluggabledatabasemanagement) {
-            this.enablePluggabledatabasemanagement = Objects.requireNonNull(enablePluggabledatabasemanagement);
+            if (enablePluggabledatabasemanagement == null) {
+              throw new MissingRequiredPropertyException("PluggableDatabaseManagementsManagementConnectionString", "enablePluggabledatabasemanagement");
+            }
+            this.enablePluggabledatabasemanagement = enablePluggabledatabasemanagement;
             return this;
         }
         @CustomType.Setter
         public Builder pdbDefault(@Nullable String pdbDefault) {
+
             this.pdbDefault = pdbDefault;
             return this;
         }
         @CustomType.Setter
         public Builder pdbIpDefault(@Nullable String pdbIpDefault) {
+
             this.pdbIpDefault = pdbIpDefault;
             return this;
         }

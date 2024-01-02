@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -67,12 +68,16 @@ public final class ListenerConnectionConfiguration {
 
         @CustomType.Setter
         public Builder backendTcpProxyProtocolVersion(@Nullable Integer backendTcpProxyProtocolVersion) {
+
             this.backendTcpProxyProtocolVersion = backendTcpProxyProtocolVersion;
             return this;
         }
         @CustomType.Setter
         public Builder idleTimeoutInSeconds(String idleTimeoutInSeconds) {
-            this.idleTimeoutInSeconds = Objects.requireNonNull(idleTimeoutInSeconds);
+            if (idleTimeoutInSeconds == null) {
+              throw new MissingRequiredPropertyException("ListenerConnectionConfiguration", "idleTimeoutInSeconds");
+            }
+            this.idleTimeoutInSeconds = idleTimeoutInSeconds;
             return this;
         }
         public ListenerConnectionConfiguration build() {

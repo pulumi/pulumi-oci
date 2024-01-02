@@ -73,16 +73,19 @@ public final class SecurityListEgressSecurityRuleUdpOptions {
 
         @CustomType.Setter
         public Builder max(@Nullable Integer max) {
+
             this.max = max;
             return this;
         }
         @CustomType.Setter
         public Builder min(@Nullable Integer min) {
+
             this.min = min;
             return this;
         }
         @CustomType.Setter
         public Builder sourcePortRange(@Nullable SecurityListEgressSecurityRuleUdpOptionsSourcePortRange sourcePortRange) {
+
             this.sourcePortRange = sourcePortRange;
             return this;
         }

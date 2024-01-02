@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetCostTrackingTagsTagValidator;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -215,67 +216,106 @@ public final class GetCostTrackingTagsTag {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCostTrackingTagsTag", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetCostTrackingTagsTag", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetCostTrackingTagsTag", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetCostTrackingTagsTag", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCostTrackingTagsTag", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCostTracking(Boolean isCostTracking) {
-            this.isCostTracking = Objects.requireNonNull(isCostTracking);
+            if (isCostTracking == null) {
+              throw new MissingRequiredPropertyException("GetCostTrackingTagsTag", "isCostTracking");
+            }
+            this.isCostTracking = isCostTracking;
             return this;
         }
         @CustomType.Setter
         public Builder isRetired(Boolean isRetired) {
-            this.isRetired = Objects.requireNonNull(isRetired);
+            if (isRetired == null) {
+              throw new MissingRequiredPropertyException("GetCostTrackingTagsTag", "isRetired");
+            }
+            this.isRetired = isRetired;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetCostTrackingTagsTag", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetCostTrackingTagsTag", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder tagNamespaceId(String tagNamespaceId) {
-            this.tagNamespaceId = Objects.requireNonNull(tagNamespaceId);
+            if (tagNamespaceId == null) {
+              throw new MissingRequiredPropertyException("GetCostTrackingTagsTag", "tagNamespaceId");
+            }
+            this.tagNamespaceId = tagNamespaceId;
             return this;
         }
         @CustomType.Setter
         public Builder tagNamespaceName(String tagNamespaceName) {
-            this.tagNamespaceName = Objects.requireNonNull(tagNamespaceName);
+            if (tagNamespaceName == null) {
+              throw new MissingRequiredPropertyException("GetCostTrackingTagsTag", "tagNamespaceName");
+            }
+            this.tagNamespaceName = tagNamespaceName;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetCostTrackingTagsTag", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder validators(List<GetCostTrackingTagsTagValidator> validators) {
-            this.validators = Objects.requireNonNull(validators);
+            if (validators == null) {
+              throw new MissingRequiredPropertyException("GetCostTrackingTagsTag", "validators");
+            }
+            this.validators = validators;
             return this;
         }
         public Builder validators(GetCostTrackingTagsTagValidator... validators) {

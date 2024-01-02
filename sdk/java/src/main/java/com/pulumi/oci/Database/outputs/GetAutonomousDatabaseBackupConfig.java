@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetAutonomousDatabaseBackupConfig {
 
         @CustomType.Setter
         public Builder manualBackupBucketName(String manualBackupBucketName) {
-            this.manualBackupBucketName = Objects.requireNonNull(manualBackupBucketName);
+            if (manualBackupBucketName == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupConfig", "manualBackupBucketName");
+            }
+            this.manualBackupBucketName = manualBackupBucketName;
             return this;
         }
         @CustomType.Setter
         public Builder manualBackupType(String manualBackupType) {
-            this.manualBackupType = Objects.requireNonNull(manualBackupType);
+            if (manualBackupType == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupConfig", "manualBackupType");
+            }
+            this.manualBackupType = manualBackupType;
             return this;
         }
         public GetAutonomousDatabaseBackupConfig build() {

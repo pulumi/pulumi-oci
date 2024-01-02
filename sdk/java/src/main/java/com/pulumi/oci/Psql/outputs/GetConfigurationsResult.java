@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetConfigurationsConfigurationCollection;
 import com.pulumi.oci.Psql.outputs.GetConfigurationsFilter;
 import java.lang.String;
@@ -143,12 +144,16 @@ public final class GetConfigurationsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder configurationCollections(List<GetConfigurationsConfigurationCollection> configurationCollections) {
-            this.configurationCollections = Objects.requireNonNull(configurationCollections);
+            if (configurationCollections == null) {
+              throw new MissingRequiredPropertyException("GetConfigurationsResult", "configurationCollections");
+            }
+            this.configurationCollections = configurationCollections;
             return this;
         }
         public Builder configurationCollections(GetConfigurationsConfigurationCollection... configurationCollections) {
@@ -156,21 +161,25 @@ public final class GetConfigurationsResult {
         }
         @CustomType.Setter
         public Builder configurationId(@Nullable String configurationId) {
+
             this.configurationId = configurationId;
             return this;
         }
         @CustomType.Setter
         public Builder dbVersion(@Nullable String dbVersion) {
+
             this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetConfigurationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -179,16 +188,21 @@ public final class GetConfigurationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetConfigurationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder shape(@Nullable String shape) {
+
             this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

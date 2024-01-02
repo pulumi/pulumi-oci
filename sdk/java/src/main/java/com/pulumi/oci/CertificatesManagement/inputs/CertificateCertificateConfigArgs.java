@@ -5,6 +5,7 @@ package com.pulumi.oci.CertificatesManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CertificatesManagement.inputs.CertificateCertificateConfigSubjectAlternativeNameArgs;
 import com.pulumi.oci.CertificatesManagement.inputs.CertificateCertificateConfigSubjectArgs;
 import com.pulumi.oci.CertificatesManagement.inputs.CertificateCertificateConfigValidityArgs;
@@ -423,7 +424,9 @@ public final class CertificateCertificateConfigArgs extends com.pulumi.resources
         }
 
         public CertificateCertificateConfigArgs build() {
-            $.configType = Objects.requireNonNull($.configType, "expected parameter 'configType' to be non-null");
+            if ($.configType == null) {
+                throw new MissingRequiredPropertyException("CertificateCertificateConfigArgs", "configType");
+            }
             return $;
         }
     }

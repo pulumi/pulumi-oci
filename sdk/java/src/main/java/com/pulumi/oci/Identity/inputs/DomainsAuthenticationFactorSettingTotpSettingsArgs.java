@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -856,16 +857,36 @@ public final class DomainsAuthenticationFactorSettingTotpSettingsArgs extends co
         }
 
         public DomainsAuthenticationFactorSettingTotpSettingsArgs build() {
-            $.emailOtpValidityDurationInMins = Objects.requireNonNull($.emailOtpValidityDurationInMins, "expected parameter 'emailOtpValidityDurationInMins' to be non-null");
-            $.emailPasscodeLength = Objects.requireNonNull($.emailPasscodeLength, "expected parameter 'emailPasscodeLength' to be non-null");
-            $.hashingAlgorithm = Objects.requireNonNull($.hashingAlgorithm, "expected parameter 'hashingAlgorithm' to be non-null");
-            $.jwtValidityDurationInSecs = Objects.requireNonNull($.jwtValidityDurationInSecs, "expected parameter 'jwtValidityDurationInSecs' to be non-null");
-            $.keyRefreshIntervalInDays = Objects.requireNonNull($.keyRefreshIntervalInDays, "expected parameter 'keyRefreshIntervalInDays' to be non-null");
-            $.passcodeLength = Objects.requireNonNull($.passcodeLength, "expected parameter 'passcodeLength' to be non-null");
-            $.smsOtpValidityDurationInMins = Objects.requireNonNull($.smsOtpValidityDurationInMins, "expected parameter 'smsOtpValidityDurationInMins' to be non-null");
-            $.smsPasscodeLength = Objects.requireNonNull($.smsPasscodeLength, "expected parameter 'smsPasscodeLength' to be non-null");
-            $.timeStepInSecs = Objects.requireNonNull($.timeStepInSecs, "expected parameter 'timeStepInSecs' to be non-null");
-            $.timeStepTolerance = Objects.requireNonNull($.timeStepTolerance, "expected parameter 'timeStepTolerance' to be non-null");
+            if ($.emailOtpValidityDurationInMins == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingTotpSettingsArgs", "emailOtpValidityDurationInMins");
+            }
+            if ($.emailPasscodeLength == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingTotpSettingsArgs", "emailPasscodeLength");
+            }
+            if ($.hashingAlgorithm == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingTotpSettingsArgs", "hashingAlgorithm");
+            }
+            if ($.jwtValidityDurationInSecs == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingTotpSettingsArgs", "jwtValidityDurationInSecs");
+            }
+            if ($.keyRefreshIntervalInDays == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingTotpSettingsArgs", "keyRefreshIntervalInDays");
+            }
+            if ($.passcodeLength == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingTotpSettingsArgs", "passcodeLength");
+            }
+            if ($.smsOtpValidityDurationInMins == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingTotpSettingsArgs", "smsOtpValidityDurationInMins");
+            }
+            if ($.smsPasscodeLength == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingTotpSettingsArgs", "smsPasscodeLength");
+            }
+            if ($.timeStepInSecs == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingTotpSettingsArgs", "timeStepInSecs");
+            }
+            if ($.timeStepTolerance == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingTotpSettingsArgs", "timeStepTolerance");
+            }
             return $;
         }
     }

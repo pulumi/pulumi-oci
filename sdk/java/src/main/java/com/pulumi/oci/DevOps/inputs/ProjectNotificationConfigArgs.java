@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -86,7 +87,9 @@ public final class ProjectNotificationConfigArgs extends com.pulumi.resources.Re
         }
 
         public ProjectNotificationConfigArgs build() {
-            $.topicId = Objects.requireNonNull($.topicId, "expected parameter 'topicId' to be non-null");
+            if ($.topicId == null) {
+                throw new MissingRequiredPropertyException("ProjectNotificationConfigArgs", "topicId");
+            }
             return $;
         }
     }

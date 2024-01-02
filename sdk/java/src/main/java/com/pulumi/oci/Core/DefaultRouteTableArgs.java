@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.DefaultRouteTableRouteRuleArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -149,7 +150,9 @@ public final class DefaultRouteTableArgs extends com.pulumi.resources.ResourceAr
         }
 
         public DefaultRouteTableArgs build() {
-            $.manageDefaultResourceId = Objects.requireNonNull($.manageDefaultResourceId, "expected parameter 'manageDefaultResourceId' to be non-null");
+            if ($.manageDefaultResourceId == null) {
+                throw new MissingRequiredPropertyException("DefaultRouteTableArgs", "manageDefaultResourceId");
+            }
             return $;
         }
     }

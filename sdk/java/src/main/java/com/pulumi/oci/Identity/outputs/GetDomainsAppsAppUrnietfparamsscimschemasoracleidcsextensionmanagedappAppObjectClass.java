@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -113,32 +114,50 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionm
 
         @CustomType.Setter
         public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+            if (display == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass", "display");
+            }
+            this.display = display;
             return this;
         }
         @CustomType.Setter
         public Builder isAccountObjectClass(Boolean isAccountObjectClass) {
-            this.isAccountObjectClass = Objects.requireNonNull(isAccountObjectClass);
+            if (isAccountObjectClass == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass", "isAccountObjectClass");
+            }
+            this.isAccountObjectClass = isAccountObjectClass;
             return this;
         }
         @CustomType.Setter
         public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+            if (ref == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass", "ref");
+            }
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetDatabaseRegistrationsDatabaseRegistrationCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollection {
 
         @CustomType.Setter
         public Builder items(List<GetDatabaseRegistrationsDatabaseRegistrationCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseRegistrationsDatabaseRegistrationCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetDatabaseRegistrationsDatabaseRegistrationCollectionItem... items) {

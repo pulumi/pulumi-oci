@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetail;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -347,12 +348,18 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
 
         @CustomType.Setter
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
-            this.autonomousDatabaseId = Objects.requireNonNull(autonomousDatabaseId);
+            if (autonomousDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "autonomousDatabaseId");
+            }
+            this.autonomousDatabaseId = autonomousDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder backupDestinationDetails(List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetail> backupDestinationDetails) {
-            this.backupDestinationDetails = Objects.requireNonNull(backupDestinationDetails);
+            if (backupDestinationDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "backupDestinationDetails");
+            }
+            this.backupDestinationDetails = backupDestinationDetails;
             return this;
         }
         public Builder backupDestinationDetails(GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetail... backupDestinationDetails) {
@@ -360,107 +367,170 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseSizeInTbs(Double databaseSizeInTbs) {
-            this.databaseSizeInTbs = Objects.requireNonNull(databaseSizeInTbs);
+            if (databaseSizeInTbs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "databaseSizeInTbs");
+            }
+            this.databaseSizeInTbs = databaseSizeInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+            if (dbVersion == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "dbVersion");
+            }
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAutomatic(Boolean isAutomatic) {
-            this.isAutomatic = Objects.requireNonNull(isAutomatic);
+            if (isAutomatic == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "isAutomatic");
+            }
+            this.isAutomatic = isAutomatic;
             return this;
         }
         @CustomType.Setter
         public Builder isLongTermBackup(Boolean isLongTermBackup) {
-            this.isLongTermBackup = Objects.requireNonNull(isLongTermBackup);
+            if (isLongTermBackup == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "isLongTermBackup");
+            }
+            this.isLongTermBackup = isLongTermBackup;
             return this;
         }
         @CustomType.Setter
         public Builder isRestorable(Boolean isRestorable) {
-            this.isRestorable = Objects.requireNonNull(isRestorable);
+            if (isRestorable == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "isRestorable");
+            }
+            this.isRestorable = isRestorable;
             return this;
         }
         @CustomType.Setter
         public Builder keyStoreId(String keyStoreId) {
-            this.keyStoreId = Objects.requireNonNull(keyStoreId);
+            if (keyStoreId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "keyStoreId");
+            }
+            this.keyStoreId = keyStoreId;
             return this;
         }
         @CustomType.Setter
         public Builder keyStoreWalletName(String keyStoreWalletName) {
-            this.keyStoreWalletName = Objects.requireNonNull(keyStoreWalletName);
+            if (keyStoreWalletName == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "keyStoreWalletName");
+            }
+            this.keyStoreWalletName = keyStoreWalletName;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
-            this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
+            if (kmsKeyVersionId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "kmsKeyVersionId");
+            }
+            this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder retentionPeriodInDays(Integer retentionPeriodInDays) {
-            this.retentionPeriodInDays = Objects.requireNonNull(retentionPeriodInDays);
+            if (retentionPeriodInDays == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "retentionPeriodInDays");
+            }
+            this.retentionPeriodInDays = retentionPeriodInDays;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInTbs(Double sizeInTbs) {
-            this.sizeInTbs = Objects.requireNonNull(sizeInTbs);
+            if (sizeInTbs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "sizeInTbs");
+            }
+            this.sizeInTbs = sizeInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeAvailableTill(String timeAvailableTill) {
-            this.timeAvailableTill = Objects.requireNonNull(timeAvailableTill);
+            if (timeAvailableTill == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "timeAvailableTill");
+            }
+            this.timeAvailableTill = timeAvailableTill;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+            if (timeEnded == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "timeEnded");
+            }
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+            if (vaultId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "vaultId");
+            }
+            this.vaultId = vaultId;
             return this;
         }
         public GetAutonomousDatabaseBackupsAutonomousDatabaseBackup build() {

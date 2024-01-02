@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserConsumerGroupPrivilegeItem;
 import java.lang.String;
 import java.util.List;
@@ -86,12 +87,18 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegeResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserConsumerGroupPrivilegeResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetManagedDatabaseUserConsumerGroupPrivilegeItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserConsumerGroupPrivilegeResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseUserConsumerGroupPrivilegeItem... items) {
@@ -99,17 +106,24 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegeResult {
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserConsumerGroupPrivilegeResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+            if (userName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserConsumerGroupPrivilegeResult", "userName");
+            }
+            this.userName = userName;
             return this;
         }
         public GetManagedDatabaseUserConsumerGroupPrivilegeResult build() {

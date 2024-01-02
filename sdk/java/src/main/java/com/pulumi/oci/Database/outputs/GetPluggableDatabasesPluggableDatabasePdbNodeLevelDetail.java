@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail {
 
         @CustomType.Setter
         public Builder nodeName(String nodeName) {
-            this.nodeName = Objects.requireNonNull(nodeName);
+            if (nodeName == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail", "nodeName");
+            }
+            this.nodeName = nodeName;
             return this;
         }
         @CustomType.Setter
         public Builder openMode(String openMode) {
-            this.openMode = Objects.requireNonNull(openMode);
+            if (openMode == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail", "openMode");
+            }
+            this.openMode = openMode;
             return this;
         }
         public GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail build() {

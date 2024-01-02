@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.outputs.IngressGatewayHostListener;
 import java.lang.String;
 import java.util.List;
@@ -79,6 +80,7 @@ public final class IngressGatewayHost {
 
         @CustomType.Setter
         public Builder hostnames(@Nullable List<String> hostnames) {
+
             this.hostnames = hostnames;
             return this;
         }
@@ -87,7 +89,10 @@ public final class IngressGatewayHost {
         }
         @CustomType.Setter
         public Builder listeners(List<IngressGatewayHostListener> listeners) {
-            this.listeners = Objects.requireNonNull(listeners);
+            if (listeners == null) {
+              throw new MissingRequiredPropertyException("IngressGatewayHost", "listeners");
+            }
+            this.listeners = listeners;
             return this;
         }
         public Builder listeners(IngressGatewayHostListener... listeners) {
@@ -95,7 +100,10 @@ public final class IngressGatewayHost {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("IngressGatewayHost", "name");
+            }
+            this.name = name;
             return this;
         }
         public IngressGatewayHost build() {

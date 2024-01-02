@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRouteLoggingPolicyAccessLog;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRouteLoggingPolicyExecutionLog;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetDeploymentSpecificationRouteLoggingPolicy {
 
         @CustomType.Setter
         public Builder accessLogs(List<GetDeploymentSpecificationRouteLoggingPolicyAccessLog> accessLogs) {
-            this.accessLogs = Objects.requireNonNull(accessLogs);
+            if (accessLogs == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRouteLoggingPolicy", "accessLogs");
+            }
+            this.accessLogs = accessLogs;
             return this;
         }
         public Builder accessLogs(GetDeploymentSpecificationRouteLoggingPolicyAccessLog... accessLogs) {
@@ -66,7 +70,10 @@ public final class GetDeploymentSpecificationRouteLoggingPolicy {
         }
         @CustomType.Setter
         public Builder executionLogs(List<GetDeploymentSpecificationRouteLoggingPolicyExecutionLog> executionLogs) {
-            this.executionLogs = Objects.requireNonNull(executionLogs);
+            if (executionLogs == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRouteLoggingPolicy", "executionLogs");
+            }
+            this.executionLogs = executionLogs;
             return this;
         }
         public Builder executionLogs(GetDeploymentSpecificationRouteLoggingPolicyExecutionLog... executionLogs) {

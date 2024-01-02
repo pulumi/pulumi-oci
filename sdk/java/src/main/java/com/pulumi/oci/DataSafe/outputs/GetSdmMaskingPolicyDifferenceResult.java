@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -204,67 +205,106 @@ public final class GetSdmMaskingPolicyDifferenceResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferenceResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferenceResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder differenceType(String differenceType) {
-            this.differenceType = Objects.requireNonNull(differenceType);
+            if (differenceType == null) {
+              throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferenceResult", "differenceType");
+            }
+            this.differenceType = differenceType;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferenceResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferenceResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferenceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder maskingPolicyId(String maskingPolicyId) {
-            this.maskingPolicyId = Objects.requireNonNull(maskingPolicyId);
+            if (maskingPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferenceResult", "maskingPolicyId");
+            }
+            this.maskingPolicyId = maskingPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder sdmMaskingPolicyDifferenceId(String sdmMaskingPolicyDifferenceId) {
-            this.sdmMaskingPolicyDifferenceId = Objects.requireNonNull(sdmMaskingPolicyDifferenceId);
+            if (sdmMaskingPolicyDifferenceId == null) {
+              throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferenceResult", "sdmMaskingPolicyDifferenceId");
+            }
+            this.sdmMaskingPolicyDifferenceId = sdmMaskingPolicyDifferenceId;
             return this;
         }
         @CustomType.Setter
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
-            this.sensitiveDataModelId = Objects.requireNonNull(sensitiveDataModelId);
+            if (sensitiveDataModelId == null) {
+              throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferenceResult", "sensitiveDataModelId");
+            }
+            this.sensitiveDataModelId = sensitiveDataModelId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferenceResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferenceResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferenceResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreationStarted(String timeCreationStarted) {
-            this.timeCreationStarted = Objects.requireNonNull(timeCreationStarted);
+            if (timeCreationStarted == null) {
+              throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferenceResult", "timeCreationStarted");
+            }
+            this.timeCreationStarted = timeCreationStarted;
             return this;
         }
         public GetSdmMaskingPolicyDifferenceResult build() {

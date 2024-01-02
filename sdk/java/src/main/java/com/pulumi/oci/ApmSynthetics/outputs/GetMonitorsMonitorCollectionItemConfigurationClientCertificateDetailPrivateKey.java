@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetMonitorsMonitorCollectionItemConfigurationClientCertificat
 
         @CustomType.Setter
         public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+            if (content == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey", "content");
+            }
+            this.content = content;
             return this;
         }
         @CustomType.Setter
         public Builder fileName(String fileName) {
-            this.fileName = Objects.requireNonNull(fileName);
+            if (fileName == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey", "fileName");
+            }
+            this.fileName = fileName;
             return this;
         }
         public GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey build() {

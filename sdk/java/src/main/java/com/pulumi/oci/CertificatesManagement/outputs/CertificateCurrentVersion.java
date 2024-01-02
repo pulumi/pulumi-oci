@@ -188,16 +188,19 @@ public final class CertificateCurrentVersion {
 
         @CustomType.Setter
         public Builder certificateId(@Nullable String certificateId) {
+
             this.certificateId = certificateId;
             return this;
         }
         @CustomType.Setter
         public Builder issuerCaVersionNumber(@Nullable String issuerCaVersionNumber) {
+
             this.issuerCaVersionNumber = issuerCaVersionNumber;
             return this;
         }
         @CustomType.Setter
         public Builder revocationStatuses(@Nullable List<CertificateCurrentVersionRevocationStatus> revocationStatuses) {
+
             this.revocationStatuses = revocationStatuses;
             return this;
         }
@@ -206,11 +209,13 @@ public final class CertificateCurrentVersion {
         }
         @CustomType.Setter
         public Builder serialNumber(@Nullable String serialNumber) {
+
             this.serialNumber = serialNumber;
             return this;
         }
         @CustomType.Setter
         public Builder stages(@Nullable List<String> stages) {
+
             this.stages = stages;
             return this;
         }
@@ -219,6 +224,7 @@ public final class CertificateCurrentVersion {
         }
         @CustomType.Setter
         public Builder subjectAlternativeNames(@Nullable List<CertificateCurrentVersionSubjectAlternativeName> subjectAlternativeNames) {
+
             this.subjectAlternativeNames = subjectAlternativeNames;
             return this;
         }
@@ -227,16 +233,19 @@ public final class CertificateCurrentVersion {
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfDeletion(@Nullable String timeOfDeletion) {
+
             this.timeOfDeletion = timeOfDeletion;
             return this;
         }
         @CustomType.Setter
         public Builder validities(@Nullable List<CertificateCurrentVersionValidity> validities) {
+
             this.validities = validities;
             return this;
         }
@@ -245,11 +254,13 @@ public final class CertificateCurrentVersion {
         }
         @CustomType.Setter
         public Builder versionName(@Nullable String versionName) {
+
             this.versionName = versionName;
             return this;
         }
         @CustomType.Setter
         public Builder versionNumber(@Nullable String versionNumber) {
+
             this.versionNumber = versionNumber;
             return this;
         }

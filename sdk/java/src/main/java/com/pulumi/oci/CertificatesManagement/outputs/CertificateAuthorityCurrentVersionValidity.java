@@ -58,11 +58,13 @@ public final class CertificateAuthorityCurrentVersionValidity {
 
         @CustomType.Setter
         public Builder timeOfValidityNotAfter(@Nullable String timeOfValidityNotAfter) {
+
             this.timeOfValidityNotAfter = timeOfValidityNotAfter;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfValidityNotBefore(@Nullable String timeOfValidityNotBefore) {
+
             this.timeOfValidityNotBefore = timeOfValidityNotBefore;
             return this;
         }

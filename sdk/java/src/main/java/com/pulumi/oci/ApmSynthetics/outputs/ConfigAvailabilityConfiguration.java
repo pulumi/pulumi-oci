@@ -58,11 +58,13 @@ public final class ConfigAvailabilityConfiguration {
 
         @CustomType.Setter
         public Builder maxAllowedFailuresPerInterval(@Nullable Integer maxAllowedFailuresPerInterval) {
+
             this.maxAllowedFailuresPerInterval = maxAllowedFailuresPerInterval;
             return this;
         }
         @CustomType.Setter
         public Builder minAllowedRunsPerInterval(@Nullable Integer minAllowedRunsPerInterval) {
+
             this.minAllowedRunsPerInterval = minAllowedRunsPerInterval;
             return this;
         }

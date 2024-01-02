@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -113,7 +114,9 @@ public final class GetComputeImageCapabilitySchemaArgs extends com.pulumi.resour
         }
 
         public GetComputeImageCapabilitySchemaArgs build() {
-            $.computeImageCapabilitySchemaId = Objects.requireNonNull($.computeImageCapabilitySchemaId, "expected parameter 'computeImageCapabilitySchemaId' to be non-null");
+            if ($.computeImageCapabilitySchemaId == null) {
+                throw new MissingRequiredPropertyException("GetComputeImageCapabilitySchemaArgs", "computeImageCapabilitySchemaId");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.ObjectStorage.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ObjectStorage.inputs.ObjectLifecyclePolicyRuleObjectNameFilterArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -312,11 +313,21 @@ public final class ObjectLifecyclePolicyRuleArgs extends com.pulumi.resources.Re
         }
 
         public ObjectLifecyclePolicyRuleArgs build() {
-            $.action = Objects.requireNonNull($.action, "expected parameter 'action' to be non-null");
-            $.isEnabled = Objects.requireNonNull($.isEnabled, "expected parameter 'isEnabled' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
-            $.timeAmount = Objects.requireNonNull($.timeAmount, "expected parameter 'timeAmount' to be non-null");
-            $.timeUnit = Objects.requireNonNull($.timeUnit, "expected parameter 'timeUnit' to be non-null");
+            if ($.action == null) {
+                throw new MissingRequiredPropertyException("ObjectLifecyclePolicyRuleArgs", "action");
+            }
+            if ($.isEnabled == null) {
+                throw new MissingRequiredPropertyException("ObjectLifecyclePolicyRuleArgs", "isEnabled");
+            }
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("ObjectLifecyclePolicyRuleArgs", "name");
+            }
+            if ($.timeAmount == null) {
+                throw new MissingRequiredPropertyException("ObjectLifecyclePolicyRuleArgs", "timeAmount");
+            }
+            if ($.timeUnit == null) {
+                throw new MissingRequiredPropertyException("ObjectLifecyclePolicyRuleArgs", "timeUnit");
+            }
             return $;
         }
     }

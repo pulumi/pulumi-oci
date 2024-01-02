@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOptionDestinationPortRange;
 import com.pulumi.oci.Core.outputs.GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOptionSourcePortRange;
 import java.util.List;
@@ -42,7 +43,10 @@ public final class GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOpti
 
         @CustomType.Setter
         public Builder destinationPortRanges(List<GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOptionDestinationPortRange> destinationPortRanges) {
-            this.destinationPortRanges = Objects.requireNonNull(destinationPortRanges);
+            if (destinationPortRanges == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOption", "destinationPortRanges");
+            }
+            this.destinationPortRanges = destinationPortRanges;
             return this;
         }
         public Builder destinationPortRanges(GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOptionDestinationPortRange... destinationPortRanges) {
@@ -50,7 +54,10 @@ public final class GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOpti
         }
         @CustomType.Setter
         public Builder sourcePortRanges(List<GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOptionSourcePortRange> sourcePortRanges) {
-            this.sourcePortRanges = Objects.requireNonNull(sourcePortRanges);
+            if (sourcePortRanges == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOption", "sourcePortRanges");
+            }
+            this.sourcePortRanges = sourcePortRanges;
             return this;
         }
         public Builder sourcePortRanges(GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOptionSourcePortRange... sourcePortRanges) {

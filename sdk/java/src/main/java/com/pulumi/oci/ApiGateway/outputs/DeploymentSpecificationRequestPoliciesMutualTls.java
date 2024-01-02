@@ -60,6 +60,7 @@ public final class DeploymentSpecificationRequestPoliciesMutualTls {
 
         @CustomType.Setter
         public Builder allowedSans(@Nullable List<String> allowedSans) {
+
             this.allowedSans = allowedSans;
             return this;
         }
@@ -68,6 +69,7 @@ public final class DeploymentSpecificationRequestPoliciesMutualTls {
         }
         @CustomType.Setter
         public Builder isVerifiedCertificateRequired(@Nullable Boolean isVerifiedCertificateRequired) {
+
             this.isVerifiedCertificateRequired = isVerifiedCertificateRequired;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Analytics;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -321,11 +322,21 @@ public final class AnalyticsInstanceVanityUrlArgs extends com.pulumi.resources.R
         }
 
         public AnalyticsInstanceVanityUrlArgs build() {
-            $.analyticsInstanceId = Objects.requireNonNull($.analyticsInstanceId, "expected parameter 'analyticsInstanceId' to be non-null");
-            $.caCertificate = Objects.requireNonNull($.caCertificate, "expected parameter 'caCertificate' to be non-null");
-            $.hosts = Objects.requireNonNull($.hosts, "expected parameter 'hosts' to be non-null");
-            $.privateKey = Objects.requireNonNull($.privateKey, "expected parameter 'privateKey' to be non-null");
-            $.publicCertificate = Objects.requireNonNull($.publicCertificate, "expected parameter 'publicCertificate' to be non-null");
+            if ($.analyticsInstanceId == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstanceVanityUrlArgs", "analyticsInstanceId");
+            }
+            if ($.caCertificate == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstanceVanityUrlArgs", "caCertificate");
+            }
+            if ($.hosts == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstanceVanityUrlArgs", "hosts");
+            }
+            if ($.privateKey == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstanceVanityUrlArgs", "privateKey");
+            }
+            if ($.publicCertificate == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstanceVanityUrlArgs", "publicCertificate");
+            }
             return $;
         }
     }

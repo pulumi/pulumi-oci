@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRule;
 import java.lang.Integer;
 import java.lang.String;
@@ -73,17 +74,26 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
 
         @CustomType.Setter
         public Builder bodyInspectionSizeLimitExceededActionName(String bodyInspectionSizeLimitExceededActionName) {
-            this.bodyInspectionSizeLimitExceededActionName = Objects.requireNonNull(bodyInspectionSizeLimitExceededActionName);
+            if (bodyInspectionSizeLimitExceededActionName == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection", "bodyInspectionSizeLimitExceededActionName");
+            }
+            this.bodyInspectionSizeLimitExceededActionName = bodyInspectionSizeLimitExceededActionName;
             return this;
         }
         @CustomType.Setter
         public Builder bodyInspectionSizeLimitInBytes(Integer bodyInspectionSizeLimitInBytes) {
-            this.bodyInspectionSizeLimitInBytes = Objects.requireNonNull(bodyInspectionSizeLimitInBytes);
+            if (bodyInspectionSizeLimitInBytes == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection", "bodyInspectionSizeLimitInBytes");
+            }
+            this.bodyInspectionSizeLimitInBytes = bodyInspectionSizeLimitInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder rules(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+            if (rules == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection", "rules");
+            }
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRule... rules) {

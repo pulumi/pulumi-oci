@@ -5,6 +5,7 @@ package com.pulumi.oci.OspGateway.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OspGateway.inputs.GetSubscriptionsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -136,8 +137,12 @@ public final class GetSubscriptionsArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         public GetSubscriptionsArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.ospHomeRegion = Objects.requireNonNull($.ospHomeRegion, "expected parameter 'ospHomeRegion' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetSubscriptionsArgs", "compartmentId");
+            }
+            if ($.ospHomeRegion == null) {
+                throw new MissingRequiredPropertyException("GetSubscriptionsArgs", "ospHomeRegion");
+            }
             return $;
         }
     }

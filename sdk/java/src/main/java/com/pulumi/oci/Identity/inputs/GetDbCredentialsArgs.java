@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.GetDbCredentialsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -173,7 +174,9 @@ public final class GetDbCredentialsArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         public GetDbCredentialsArgs build() {
-            $.userId = Objects.requireNonNull($.userId, "expected parameter 'userId' to be non-null");
+            if ($.userId == null) {
+                throw new MissingRequiredPropertyException("GetDbCredentialsArgs", "userId");
+            }
             return $;
         }
     }

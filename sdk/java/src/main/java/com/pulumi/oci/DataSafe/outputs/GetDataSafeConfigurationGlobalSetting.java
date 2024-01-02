@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetDataSafeConfigurationGlobalSetting {
 
         @CustomType.Setter
         public Builder isPaidUsage(Boolean isPaidUsage) {
-            this.isPaidUsage = Objects.requireNonNull(isPaidUsage);
+            if (isPaidUsage == null) {
+              throw new MissingRequiredPropertyException("GetDataSafeConfigurationGlobalSetting", "isPaidUsage");
+            }
+            this.isPaidUsage = isPaidUsage;
             return this;
         }
         @CustomType.Setter
         public Builder offlineRetentionPeriod(Integer offlineRetentionPeriod) {
-            this.offlineRetentionPeriod = Objects.requireNonNull(offlineRetentionPeriod);
+            if (offlineRetentionPeriod == null) {
+              throw new MissingRequiredPropertyException("GetDataSafeConfigurationGlobalSetting", "offlineRetentionPeriod");
+            }
+            this.offlineRetentionPeriod = offlineRetentionPeriod;
             return this;
         }
         @CustomType.Setter
         public Builder onlineRetentionPeriod(Integer onlineRetentionPeriod) {
-            this.onlineRetentionPeriod = Objects.requireNonNull(onlineRetentionPeriod);
+            if (onlineRetentionPeriod == null) {
+              throw new MissingRequiredPropertyException("GetDataSafeConfigurationGlobalSetting", "onlineRetentionPeriod");
+            }
+            this.onlineRetentionPeriod = onlineRetentionPeriod;
             return this;
         }
         public GetDataSafeConfigurationGlobalSetting build() {

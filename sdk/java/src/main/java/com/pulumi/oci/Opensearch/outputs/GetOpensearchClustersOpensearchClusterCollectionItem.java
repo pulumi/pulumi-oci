@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opensearch.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -592,7 +593,10 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
 
         @CustomType.Setter
         public Builder availabilityDomains(List<String> availabilityDomains) {
-            this.availabilityDomains = Objects.requireNonNull(availabilityDomains);
+            if (availabilityDomains == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "availabilityDomains");
+            }
+            this.availabilityDomains = availabilityDomains;
             return this;
         }
         public Builder availabilityDomains(String... availabilityDomains) {
@@ -600,197 +604,314 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dataNodeCount(Integer dataNodeCount) {
-            this.dataNodeCount = Objects.requireNonNull(dataNodeCount);
+            if (dataNodeCount == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "dataNodeCount");
+            }
+            this.dataNodeCount = dataNodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder dataNodeHostBareMetalShape(String dataNodeHostBareMetalShape) {
-            this.dataNodeHostBareMetalShape = Objects.requireNonNull(dataNodeHostBareMetalShape);
+            if (dataNodeHostBareMetalShape == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "dataNodeHostBareMetalShape");
+            }
+            this.dataNodeHostBareMetalShape = dataNodeHostBareMetalShape;
             return this;
         }
         @CustomType.Setter
         public Builder dataNodeHostMemoryGb(Integer dataNodeHostMemoryGb) {
-            this.dataNodeHostMemoryGb = Objects.requireNonNull(dataNodeHostMemoryGb);
+            if (dataNodeHostMemoryGb == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "dataNodeHostMemoryGb");
+            }
+            this.dataNodeHostMemoryGb = dataNodeHostMemoryGb;
             return this;
         }
         @CustomType.Setter
         public Builder dataNodeHostOcpuCount(Integer dataNodeHostOcpuCount) {
-            this.dataNodeHostOcpuCount = Objects.requireNonNull(dataNodeHostOcpuCount);
+            if (dataNodeHostOcpuCount == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "dataNodeHostOcpuCount");
+            }
+            this.dataNodeHostOcpuCount = dataNodeHostOcpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder dataNodeHostType(String dataNodeHostType) {
-            this.dataNodeHostType = Objects.requireNonNull(dataNodeHostType);
+            if (dataNodeHostType == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "dataNodeHostType");
+            }
+            this.dataNodeHostType = dataNodeHostType;
             return this;
         }
         @CustomType.Setter
         public Builder dataNodeStorageGb(Integer dataNodeStorageGb) {
-            this.dataNodeStorageGb = Objects.requireNonNull(dataNodeStorageGb);
+            if (dataNodeStorageGb == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "dataNodeStorageGb");
+            }
+            this.dataNodeStorageGb = dataNodeStorageGb;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder fqdn(String fqdn) {
-            this.fqdn = Objects.requireNonNull(fqdn);
+            if (fqdn == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "fqdn");
+            }
+            this.fqdn = fqdn;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder masterNodeCount(Integer masterNodeCount) {
-            this.masterNodeCount = Objects.requireNonNull(masterNodeCount);
+            if (masterNodeCount == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "masterNodeCount");
+            }
+            this.masterNodeCount = masterNodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder masterNodeHostBareMetalShape(String masterNodeHostBareMetalShape) {
-            this.masterNodeHostBareMetalShape = Objects.requireNonNull(masterNodeHostBareMetalShape);
+            if (masterNodeHostBareMetalShape == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "masterNodeHostBareMetalShape");
+            }
+            this.masterNodeHostBareMetalShape = masterNodeHostBareMetalShape;
             return this;
         }
         @CustomType.Setter
         public Builder masterNodeHostMemoryGb(Integer masterNodeHostMemoryGb) {
-            this.masterNodeHostMemoryGb = Objects.requireNonNull(masterNodeHostMemoryGb);
+            if (masterNodeHostMemoryGb == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "masterNodeHostMemoryGb");
+            }
+            this.masterNodeHostMemoryGb = masterNodeHostMemoryGb;
             return this;
         }
         @CustomType.Setter
         public Builder masterNodeHostOcpuCount(Integer masterNodeHostOcpuCount) {
-            this.masterNodeHostOcpuCount = Objects.requireNonNull(masterNodeHostOcpuCount);
+            if (masterNodeHostOcpuCount == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "masterNodeHostOcpuCount");
+            }
+            this.masterNodeHostOcpuCount = masterNodeHostOcpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder masterNodeHostType(String masterNodeHostType) {
-            this.masterNodeHostType = Objects.requireNonNull(masterNodeHostType);
+            if (masterNodeHostType == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "masterNodeHostType");
+            }
+            this.masterNodeHostType = masterNodeHostType;
             return this;
         }
         @CustomType.Setter
         public Builder opendashboardFqdn(String opendashboardFqdn) {
-            this.opendashboardFqdn = Objects.requireNonNull(opendashboardFqdn);
+            if (opendashboardFqdn == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "opendashboardFqdn");
+            }
+            this.opendashboardFqdn = opendashboardFqdn;
             return this;
         }
         @CustomType.Setter
         public Builder opendashboardNodeCount(Integer opendashboardNodeCount) {
-            this.opendashboardNodeCount = Objects.requireNonNull(opendashboardNodeCount);
+            if (opendashboardNodeCount == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "opendashboardNodeCount");
+            }
+            this.opendashboardNodeCount = opendashboardNodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder opendashboardNodeHostMemoryGb(Integer opendashboardNodeHostMemoryGb) {
-            this.opendashboardNodeHostMemoryGb = Objects.requireNonNull(opendashboardNodeHostMemoryGb);
+            if (opendashboardNodeHostMemoryGb == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "opendashboardNodeHostMemoryGb");
+            }
+            this.opendashboardNodeHostMemoryGb = opendashboardNodeHostMemoryGb;
             return this;
         }
         @CustomType.Setter
         public Builder opendashboardNodeHostOcpuCount(Integer opendashboardNodeHostOcpuCount) {
-            this.opendashboardNodeHostOcpuCount = Objects.requireNonNull(opendashboardNodeHostOcpuCount);
+            if (opendashboardNodeHostOcpuCount == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "opendashboardNodeHostOcpuCount");
+            }
+            this.opendashboardNodeHostOcpuCount = opendashboardNodeHostOcpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder opendashboardPrivateIp(String opendashboardPrivateIp) {
-            this.opendashboardPrivateIp = Objects.requireNonNull(opendashboardPrivateIp);
+            if (opendashboardPrivateIp == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "opendashboardPrivateIp");
+            }
+            this.opendashboardPrivateIp = opendashboardPrivateIp;
             return this;
         }
         @CustomType.Setter
         public Builder opensearchFqdn(String opensearchFqdn) {
-            this.opensearchFqdn = Objects.requireNonNull(opensearchFqdn);
+            if (opensearchFqdn == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "opensearchFqdn");
+            }
+            this.opensearchFqdn = opensearchFqdn;
             return this;
         }
         @CustomType.Setter
         public Builder opensearchPrivateIp(String opensearchPrivateIp) {
-            this.opensearchPrivateIp = Objects.requireNonNull(opensearchPrivateIp);
+            if (opensearchPrivateIp == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "opensearchPrivateIp");
+            }
+            this.opensearchPrivateIp = opensearchPrivateIp;
             return this;
         }
         @CustomType.Setter
         public Builder securityMasterUserName(String securityMasterUserName) {
-            this.securityMasterUserName = Objects.requireNonNull(securityMasterUserName);
+            if (securityMasterUserName == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "securityMasterUserName");
+            }
+            this.securityMasterUserName = securityMasterUserName;
             return this;
         }
         @CustomType.Setter
         public Builder securityMasterUserPasswordHash(String securityMasterUserPasswordHash) {
-            this.securityMasterUserPasswordHash = Objects.requireNonNull(securityMasterUserPasswordHash);
+            if (securityMasterUserPasswordHash == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "securityMasterUserPasswordHash");
+            }
+            this.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
             return this;
         }
         @CustomType.Setter
         public Builder securityMode(String securityMode) {
-            this.securityMode = Objects.requireNonNull(securityMode);
+            if (securityMode == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "securityMode");
+            }
+            this.securityMode = securityMode;
             return this;
         }
         @CustomType.Setter
         public Builder softwareVersion(String softwareVersion) {
-            this.softwareVersion = Objects.requireNonNull(softwareVersion);
+            if (softwareVersion == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "softwareVersion");
+            }
+            this.softwareVersion = softwareVersion;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetCompartmentId(String subnetCompartmentId) {
-            this.subnetCompartmentId = Objects.requireNonNull(subnetCompartmentId);
+            if (subnetCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "subnetCompartmentId");
+            }
+            this.subnetCompartmentId = subnetCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeDeleted(String timeDeleted) {
-            this.timeDeleted = Objects.requireNonNull(timeDeleted);
+            if (timeDeleted == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "timeDeleted");
+            }
+            this.timeDeleted = timeDeleted;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder totalStorageGb(Integer totalStorageGb) {
-            this.totalStorageGb = Objects.requireNonNull(totalStorageGb);
+            if (totalStorageGb == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "totalStorageGb");
+            }
+            this.totalStorageGb = totalStorageGb;
             return this;
         }
         @CustomType.Setter
         public Builder vcnCompartmentId(String vcnCompartmentId) {
-            this.vcnCompartmentId = Objects.requireNonNull(vcnCompartmentId);
+            if (vcnCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "vcnCompartmentId");
+            }
+            this.vcnCompartmentId = vcnCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+            if (vcnId == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "vcnId");
+            }
+            this.vcnId = vcnId;
             return this;
         }
         public GetOpensearchClustersOpensearchClusterCollectionItem build() {

@@ -258,31 +258,37 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberos
 
         @CustomType.Setter
         public Builder defaultEncryptionSaltType(@Nullable String defaultEncryptionSaltType) {
+
             this.defaultEncryptionSaltType = defaultEncryptionSaltType;
             return this;
         }
         @CustomType.Setter
         public Builder masterKey(@Nullable String masterKey) {
+
             this.masterKey = masterKey;
             return this;
         }
         @CustomType.Setter
         public Builder maxRenewableAge(@Nullable Integer maxRenewableAge) {
+
             this.maxRenewableAge = maxRenewableAge;
             return this;
         }
         @CustomType.Setter
         public Builder maxTicketLife(@Nullable Integer maxTicketLife) {
+
             this.maxTicketLife = maxTicketLife;
             return this;
         }
         @CustomType.Setter
         public Builder realmName(@Nullable String realmName) {
+
             this.realmName = realmName;
             return this;
         }
         @CustomType.Setter
         public Builder supportedEncryptionSaltTypes(@Nullable List<String> supportedEncryptionSaltTypes) {
+
             this.supportedEncryptionSaltTypes = supportedEncryptionSaltTypes;
             return this;
         }
@@ -291,6 +297,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberos
         }
         @CustomType.Setter
         public Builder ticketFlags(@Nullable Integer ticketFlags) {
+
             this.ticketFlags = ticketFlags;
             return this;
         }

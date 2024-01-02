@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetPrivateIpArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetPrivateIpArgs build() {
-            $.privateIpId = Objects.requireNonNull($.privateIpId, "expected parameter 'privateIpId' to be non-null");
+            if ($.privateIpId == null) {
+                throw new MissingRequiredPropertyException("GetPrivateIpArgs", "privateIpId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -76,22 +77,34 @@ public final class GetConnectionsConnectionCollectionItemSshDetail {
 
         @CustomType.Setter
         public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+            if (host == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItemSshDetail", "host");
+            }
+            this.host = host;
             return this;
         }
         @CustomType.Setter
         public Builder sshkey(String sshkey) {
-            this.sshkey = Objects.requireNonNull(sshkey);
+            if (sshkey == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItemSshDetail", "sshkey");
+            }
+            this.sshkey = sshkey;
             return this;
         }
         @CustomType.Setter
         public Builder sudoLocation(String sudoLocation) {
-            this.sudoLocation = Objects.requireNonNull(sudoLocation);
+            if (sudoLocation == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItemSshDetail", "sudoLocation");
+            }
+            this.sudoLocation = sudoLocation;
             return this;
         }
         @CustomType.Setter
         public Builder user(String user) {
-            this.user = Objects.requireNonNull(user);
+            if (user == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItemSshDetail", "user");
+            }
+            this.user = user;
             return this;
         }
         public GetConnectionsConnectionCollectionItemSshDetail build() {

@@ -44,6 +44,7 @@ public final class WorkspaceFolderMetadataCountStatistic {
 
         @CustomType.Setter
         public Builder objectTypeCountLists(@Nullable List<WorkspaceFolderMetadataCountStatisticObjectTypeCountList> objectTypeCountLists) {
+
             this.objectTypeCountLists = objectTypeCountLists;
             return this;
         }

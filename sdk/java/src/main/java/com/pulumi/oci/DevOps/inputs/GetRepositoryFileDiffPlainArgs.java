@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -174,10 +175,18 @@ public final class GetRepositoryFileDiffPlainArgs extends com.pulumi.resources.I
         }
 
         public GetRepositoryFileDiffPlainArgs build() {
-            $.baseVersion = Objects.requireNonNull($.baseVersion, "expected parameter 'baseVersion' to be non-null");
-            $.filePath = Objects.requireNonNull($.filePath, "expected parameter 'filePath' to be non-null");
-            $.repositoryId = Objects.requireNonNull($.repositoryId, "expected parameter 'repositoryId' to be non-null");
-            $.targetVersion = Objects.requireNonNull($.targetVersion, "expected parameter 'targetVersion' to be non-null");
+            if ($.baseVersion == null) {
+                throw new MissingRequiredPropertyException("GetRepositoryFileDiffPlainArgs", "baseVersion");
+            }
+            if ($.filePath == null) {
+                throw new MissingRequiredPropertyException("GetRepositoryFileDiffPlainArgs", "filePath");
+            }
+            if ($.repositoryId == null) {
+                throw new MissingRequiredPropertyException("GetRepositoryFileDiffPlainArgs", "repositoryId");
+            }
+            if ($.targetVersion == null) {
+                throw new MissingRequiredPropertyException("GetRepositoryFileDiffPlainArgs", "targetVersion");
+            }
             return $;
         }
     }

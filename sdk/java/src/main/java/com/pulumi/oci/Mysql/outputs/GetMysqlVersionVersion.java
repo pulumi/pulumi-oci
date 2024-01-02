@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlVersionVersionVersion;
 import java.lang.String;
 import java.util.List;
@@ -58,12 +59,18 @@ public final class GetMysqlVersionVersion {
 
         @CustomType.Setter
         public Builder versionFamily(String versionFamily) {
-            this.versionFamily = Objects.requireNonNull(versionFamily);
+            if (versionFamily == null) {
+              throw new MissingRequiredPropertyException("GetMysqlVersionVersion", "versionFamily");
+            }
+            this.versionFamily = versionFamily;
             return this;
         }
         @CustomType.Setter
         public Builder versions(List<GetMysqlVersionVersionVersion> versions) {
-            this.versions = Objects.requireNonNull(versions);
+            if (versions == null) {
+              throw new MissingRequiredPropertyException("GetMysqlVersionVersion", "versions");
+            }
+            this.versions = versions;
             return this;
         }
         public Builder versions(GetMysqlVersionVersionVersion... versions) {

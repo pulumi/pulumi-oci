@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class TargetAssetUserSpecPreemptibleInstanceConfig {
 
         @CustomType.Setter
         public Builder preemptionAction(TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction preemptionAction) {
-            this.preemptionAction = Objects.requireNonNull(preemptionAction);
+            if (preemptionAction == null) {
+              throw new MissingRequiredPropertyException("TargetAssetUserSpecPreemptibleInstanceConfig", "preemptionAction");
+            }
+            this.preemptionAction = preemptionAction;
             return this;
         }
         public TargetAssetUserSpecPreemptibleInstanceConfig build() {

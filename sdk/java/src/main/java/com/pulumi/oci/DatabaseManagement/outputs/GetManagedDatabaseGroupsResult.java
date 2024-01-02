@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseGroupsFilter;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseGroupsManagedDatabaseGroupCollection;
 import java.lang.String;
@@ -109,11 +110,15 @@ public final class GetManagedDatabaseGroupsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseGroupsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseGroupsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -122,12 +127,16 @@ public final class GetManagedDatabaseGroupsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseGroupCollections(List<GetManagedDatabaseGroupsManagedDatabaseGroupCollection> managedDatabaseGroupCollections) {
-            this.managedDatabaseGroupCollections = Objects.requireNonNull(managedDatabaseGroupCollections);
+            if (managedDatabaseGroupCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseGroupsResult", "managedDatabaseGroupCollections");
+            }
+            this.managedDatabaseGroupCollections = managedDatabaseGroupCollections;
             return this;
         }
         public Builder managedDatabaseGroupCollections(GetManagedDatabaseGroupsManagedDatabaseGroupCollection... managedDatabaseGroupCollections) {
@@ -135,11 +144,13 @@ public final class GetManagedDatabaseGroupsResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

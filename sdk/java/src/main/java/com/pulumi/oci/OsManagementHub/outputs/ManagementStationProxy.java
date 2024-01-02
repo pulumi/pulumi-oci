@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -94,11 +95,13 @@ public final class ManagementStationProxy {
 
         @CustomType.Setter
         public Builder forward(@Nullable String forward) {
+
             this.forward = forward;
             return this;
         }
         @CustomType.Setter
         public Builder hosts(@Nullable List<String> hosts) {
+
             this.hosts = hosts;
             return this;
         }
@@ -107,11 +110,15 @@ public final class ManagementStationProxy {
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("ManagementStationProxy", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder port(@Nullable String port) {
+
             this.port = port;
             return this;
         }

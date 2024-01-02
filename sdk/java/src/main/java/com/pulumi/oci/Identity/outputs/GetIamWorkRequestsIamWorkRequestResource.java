@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetIamWorkRequestsIamWorkRequestResource {
 
         @CustomType.Setter
         public Builder actionType(String actionType) {
-            this.actionType = Objects.requireNonNull(actionType);
+            if (actionType == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestsIamWorkRequestResource", "actionType");
+            }
+            this.actionType = actionType;
             return this;
         }
         @CustomType.Setter
         public Builder entityType(String entityType) {
-            this.entityType = Objects.requireNonNull(entityType);
+            if (entityType == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestsIamWorkRequestResource", "entityType");
+            }
+            this.entityType = entityType;
             return this;
         }
         @CustomType.Setter
         public Builder entityUri(String entityUri) {
-            this.entityUri = Objects.requireNonNull(entityUri);
+            if (entityUri == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestsIamWorkRequestResource", "entityUri");
+            }
+            this.entityUri = entityUri;
             return this;
         }
         @CustomType.Setter
         public Builder identifier(String identifier) {
-            this.identifier = Objects.requireNonNull(identifier);
+            if (identifier == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestsIamWorkRequestResource", "identifier");
+            }
+            this.identifier = identifier;
             return this;
         }
         public GetIamWorkRequestsIamWorkRequestResource build() {

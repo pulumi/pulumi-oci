@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -148,47 +149,74 @@ public final class GetRepositoryRefResult {
 
         @CustomType.Setter
         public Builder commitId(String commitId) {
-            this.commitId = Objects.requireNonNull(commitId);
+            if (commitId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryRefResult", "commitId");
+            }
+            this.commitId = commitId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryRefResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryRefResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder fullRefName(String fullRefName) {
-            this.fullRefName = Objects.requireNonNull(fullRefName);
+            if (fullRefName == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryRefResult", "fullRefName");
+            }
+            this.fullRefName = fullRefName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryRefResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder objectId(String objectId) {
-            this.objectId = Objects.requireNonNull(objectId);
+            if (objectId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryRefResult", "objectId");
+            }
+            this.objectId = objectId;
             return this;
         }
         @CustomType.Setter
         public Builder refName(String refName) {
-            this.refName = Objects.requireNonNull(refName);
+            if (refName == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryRefResult", "refName");
+            }
+            this.refName = refName;
             return this;
         }
         @CustomType.Setter
         public Builder refType(String refType) {
-            this.refType = Objects.requireNonNull(refType);
+            if (refType == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryRefResult", "refType");
+            }
+            this.refType = refType;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+            if (repositoryId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryRefResult", "repositoryId");
+            }
+            this.repositoryId = repositoryId;
             return this;
         }
         public GetRepositoryRefResult build() {

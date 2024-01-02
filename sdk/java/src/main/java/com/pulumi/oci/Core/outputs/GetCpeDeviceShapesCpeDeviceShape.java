@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo;
 import java.lang.String;
 import java.util.List;
@@ -78,7 +79,10 @@ public final class GetCpeDeviceShapesCpeDeviceShape {
 
         @CustomType.Setter
         public Builder cpeDeviceInfos(List<GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo> cpeDeviceInfos) {
-            this.cpeDeviceInfos = Objects.requireNonNull(cpeDeviceInfos);
+            if (cpeDeviceInfos == null) {
+              throw new MissingRequiredPropertyException("GetCpeDeviceShapesCpeDeviceShape", "cpeDeviceInfos");
+            }
+            this.cpeDeviceInfos = cpeDeviceInfos;
             return this;
         }
         public Builder cpeDeviceInfos(GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo... cpeDeviceInfos) {
@@ -86,12 +90,18 @@ public final class GetCpeDeviceShapesCpeDeviceShape {
         }
         @CustomType.Setter
         public Builder cpeDeviceShapeId(String cpeDeviceShapeId) {
-            this.cpeDeviceShapeId = Objects.requireNonNull(cpeDeviceShapeId);
+            if (cpeDeviceShapeId == null) {
+              throw new MissingRequiredPropertyException("GetCpeDeviceShapesCpeDeviceShape", "cpeDeviceShapeId");
+            }
+            this.cpeDeviceShapeId = cpeDeviceShapeId;
             return this;
         }
         @CustomType.Setter
         public Builder template(String template) {
-            this.template = Objects.requireNonNull(template);
+            if (template == null) {
+              throw new MissingRequiredPropertyException("GetCpeDeviceShapesCpeDeviceShape", "template");
+            }
+            this.template = template;
             return this;
         }
         public GetCpeDeviceShapesCpeDeviceShape build() {

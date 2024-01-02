@@ -4,6 +4,7 @@
 package com.pulumi.oci.Audit.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -55,17 +56,26 @@ public final class GetConfigurationResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetConfigurationResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetConfigurationResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder retentionPeriodDays(Integer retentionPeriodDays) {
-            this.retentionPeriodDays = Objects.requireNonNull(retentionPeriodDays);
+            if (retentionPeriodDays == null) {
+              throw new MissingRequiredPropertyException("GetConfigurationResult", "retentionPeriodDays");
+            }
+            this.retentionPeriodDays = retentionPeriodDays;
             return this;
         }
         public GetConfigurationResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetCrossConnectsCrossConnectMacsecProperty;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -261,57 +262,90 @@ public final class GetCrossConnectsCrossConnect {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsCrossConnect", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder crossConnectGroupId(String crossConnectGroupId) {
-            this.crossConnectGroupId = Objects.requireNonNull(crossConnectGroupId);
+            if (crossConnectGroupId == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsCrossConnect", "crossConnectGroupId");
+            }
+            this.crossConnectGroupId = crossConnectGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder customerReferenceName(String customerReferenceName) {
-            this.customerReferenceName = Objects.requireNonNull(customerReferenceName);
+            if (customerReferenceName == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsCrossConnect", "customerReferenceName");
+            }
+            this.customerReferenceName = customerReferenceName;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsCrossConnect", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsCrossConnect", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder farCrossConnectOrCrossConnectGroupId(String farCrossConnectOrCrossConnectGroupId) {
-            this.farCrossConnectOrCrossConnectGroupId = Objects.requireNonNull(farCrossConnectOrCrossConnectGroupId);
+            if (farCrossConnectOrCrossConnectGroupId == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsCrossConnect", "farCrossConnectOrCrossConnectGroupId");
+            }
+            this.farCrossConnectOrCrossConnectGroupId = farCrossConnectOrCrossConnectGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsCrossConnect", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsCrossConnect", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isActive(Boolean isActive) {
-            this.isActive = Objects.requireNonNull(isActive);
+            if (isActive == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsCrossConnect", "isActive");
+            }
+            this.isActive = isActive;
             return this;
         }
         @CustomType.Setter
         public Builder locationName(String locationName) {
-            this.locationName = Objects.requireNonNull(locationName);
+            if (locationName == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsCrossConnect", "locationName");
+            }
+            this.locationName = locationName;
             return this;
         }
         @CustomType.Setter
         public Builder macsecProperties(List<GetCrossConnectsCrossConnectMacsecProperty> macsecProperties) {
-            this.macsecProperties = Objects.requireNonNull(macsecProperties);
+            if (macsecProperties == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsCrossConnect", "macsecProperties");
+            }
+            this.macsecProperties = macsecProperties;
             return this;
         }
         public Builder macsecProperties(GetCrossConnectsCrossConnectMacsecProperty... macsecProperties) {
@@ -319,37 +353,58 @@ public final class GetCrossConnectsCrossConnect {
         }
         @CustomType.Setter
         public Builder nearCrossConnectOrCrossConnectGroupId(String nearCrossConnectOrCrossConnectGroupId) {
-            this.nearCrossConnectOrCrossConnectGroupId = Objects.requireNonNull(nearCrossConnectOrCrossConnectGroupId);
+            if (nearCrossConnectOrCrossConnectGroupId == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsCrossConnect", "nearCrossConnectOrCrossConnectGroupId");
+            }
+            this.nearCrossConnectOrCrossConnectGroupId = nearCrossConnectOrCrossConnectGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder ociLogicalDeviceName(String ociLogicalDeviceName) {
-            this.ociLogicalDeviceName = Objects.requireNonNull(ociLogicalDeviceName);
+            if (ociLogicalDeviceName == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsCrossConnect", "ociLogicalDeviceName");
+            }
+            this.ociLogicalDeviceName = ociLogicalDeviceName;
             return this;
         }
         @CustomType.Setter
         public Builder ociPhysicalDeviceName(String ociPhysicalDeviceName) {
-            this.ociPhysicalDeviceName = Objects.requireNonNull(ociPhysicalDeviceName);
+            if (ociPhysicalDeviceName == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsCrossConnect", "ociPhysicalDeviceName");
+            }
+            this.ociPhysicalDeviceName = ociPhysicalDeviceName;
             return this;
         }
         @CustomType.Setter
         public Builder portName(String portName) {
-            this.portName = Objects.requireNonNull(portName);
+            if (portName == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsCrossConnect", "portName");
+            }
+            this.portName = portName;
             return this;
         }
         @CustomType.Setter
         public Builder portSpeedShapeName(String portSpeedShapeName) {
-            this.portSpeedShapeName = Objects.requireNonNull(portSpeedShapeName);
+            if (portSpeedShapeName == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsCrossConnect", "portSpeedShapeName");
+            }
+            this.portSpeedShapeName = portSpeedShapeName;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsCrossConnect", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsCrossConnect", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetCrossConnectsCrossConnect build() {

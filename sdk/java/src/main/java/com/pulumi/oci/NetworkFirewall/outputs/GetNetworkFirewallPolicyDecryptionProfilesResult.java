@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollection;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyDecryptionProfilesFilter;
 import java.lang.String;
@@ -79,7 +80,10 @@ public final class GetNetworkFirewallPolicyDecryptionProfilesResult {
 
         @CustomType.Setter
         public Builder decryptionProfileSummaryCollections(List<GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollection> decryptionProfileSummaryCollections) {
-            this.decryptionProfileSummaryCollections = Objects.requireNonNull(decryptionProfileSummaryCollections);
+            if (decryptionProfileSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionProfilesResult", "decryptionProfileSummaryCollections");
+            }
+            this.decryptionProfileSummaryCollections = decryptionProfileSummaryCollections;
             return this;
         }
         public Builder decryptionProfileSummaryCollections(GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollection... decryptionProfileSummaryCollections) {
@@ -87,11 +91,13 @@ public final class GetNetworkFirewallPolicyDecryptionProfilesResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNetworkFirewallPolicyDecryptionProfilesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -100,12 +106,18 @@ public final class GetNetworkFirewallPolicyDecryptionProfilesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionProfilesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder networkFirewallPolicyId(String networkFirewallPolicyId) {
-            this.networkFirewallPolicyId = Objects.requireNonNull(networkFirewallPolicyId);
+            if (networkFirewallPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionProfilesResult", "networkFirewallPolicyId");
+            }
+            this.networkFirewallPolicyId = networkFirewallPolicyId;
             return this;
         }
         public GetNetworkFirewallPolicyDecryptionProfilesResult build() {

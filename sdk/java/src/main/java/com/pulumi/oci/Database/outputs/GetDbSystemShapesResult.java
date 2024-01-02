@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbSystemShapesDbSystemShape;
 import com.pulumi.oci.Database.outputs.GetDbSystemShapesFilter;
 import java.lang.String;
@@ -79,17 +80,24 @@ public final class GetDbSystemShapesResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemShapes(List<GetDbSystemShapesDbSystemShape> dbSystemShapes) {
-            this.dbSystemShapes = Objects.requireNonNull(dbSystemShapes);
+            if (dbSystemShapes == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesResult", "dbSystemShapes");
+            }
+            this.dbSystemShapes = dbSystemShapes;
             return this;
         }
         public Builder dbSystemShapes(GetDbSystemShapesDbSystemShape... dbSystemShapes) {
@@ -97,6 +105,7 @@ public final class GetDbSystemShapesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDbSystemShapesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -105,7 +114,10 @@ public final class GetDbSystemShapesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetDbSystemShapesResult build() {

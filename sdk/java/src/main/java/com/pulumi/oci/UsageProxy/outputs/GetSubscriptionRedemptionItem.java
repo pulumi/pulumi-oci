@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -169,52 +170,82 @@ public final class GetSubscriptionRedemptionItem {
 
         @CustomType.Setter
         public Builder baseRewards(Double baseRewards) {
-            this.baseRewards = Objects.requireNonNull(baseRewards);
+            if (baseRewards == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedemptionItem", "baseRewards");
+            }
+            this.baseRewards = baseRewards;
             return this;
         }
         @CustomType.Setter
         public Builder fxRate(Double fxRate) {
-            this.fxRate = Objects.requireNonNull(fxRate);
+            if (fxRate == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedemptionItem", "fxRate");
+            }
+            this.fxRate = fxRate;
             return this;
         }
         @CustomType.Setter
         public Builder invoiceCurrency(String invoiceCurrency) {
-            this.invoiceCurrency = Objects.requireNonNull(invoiceCurrency);
+            if (invoiceCurrency == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedemptionItem", "invoiceCurrency");
+            }
+            this.invoiceCurrency = invoiceCurrency;
             return this;
         }
         @CustomType.Setter
         public Builder invoiceNumber(String invoiceNumber) {
-            this.invoiceNumber = Objects.requireNonNull(invoiceNumber);
+            if (invoiceNumber == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedemptionItem", "invoiceNumber");
+            }
+            this.invoiceNumber = invoiceNumber;
             return this;
         }
         @CustomType.Setter
         public Builder invoiceTotalAmount(Double invoiceTotalAmount) {
-            this.invoiceTotalAmount = Objects.requireNonNull(invoiceTotalAmount);
+            if (invoiceTotalAmount == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedemptionItem", "invoiceTotalAmount");
+            }
+            this.invoiceTotalAmount = invoiceTotalAmount;
             return this;
         }
         @CustomType.Setter
         public Builder redeemedRewards(Double redeemedRewards) {
-            this.redeemedRewards = Objects.requireNonNull(redeemedRewards);
+            if (redeemedRewards == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedemptionItem", "redeemedRewards");
+            }
+            this.redeemedRewards = redeemedRewards;
             return this;
         }
         @CustomType.Setter
         public Builder redemptionCode(String redemptionCode) {
-            this.redemptionCode = Objects.requireNonNull(redemptionCode);
+            if (redemptionCode == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedemptionItem", "redemptionCode");
+            }
+            this.redemptionCode = redemptionCode;
             return this;
         }
         @CustomType.Setter
         public Builder redemptionEmail(String redemptionEmail) {
-            this.redemptionEmail = Objects.requireNonNull(redemptionEmail);
+            if (redemptionEmail == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedemptionItem", "redemptionEmail");
+            }
+            this.redemptionEmail = redemptionEmail;
             return this;
         }
         @CustomType.Setter
         public Builder timeInvoiced(String timeInvoiced) {
-            this.timeInvoiced = Objects.requireNonNull(timeInvoiced);
+            if (timeInvoiced == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedemptionItem", "timeInvoiced");
+            }
+            this.timeInvoiced = timeInvoiced;
             return this;
         }
         @CustomType.Setter
         public Builder timeRedeemed(String timeRedeemed) {
-            this.timeRedeemed = Objects.requireNonNull(timeRedeemed);
+            if (timeRedeemed == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRedemptionItem", "timeRedeemed");
+            }
+            this.timeRedeemed = timeRedeemed;
             return this;
         }
         public GetSubscriptionRedemptionItem build() {

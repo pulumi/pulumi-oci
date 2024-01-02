@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalClusterInstancesExternalClusterInstanceCollection;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalClusterInstancesFilter;
 import java.lang.String;
@@ -109,22 +110,28 @@ public final class GetExternalClusterInstancesResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalClusterId(@Nullable String externalClusterId) {
+
             this.externalClusterId = externalClusterId;
             return this;
         }
         @CustomType.Setter
         public Builder externalClusterInstanceCollections(List<GetExternalClusterInstancesExternalClusterInstanceCollection> externalClusterInstanceCollections) {
-            this.externalClusterInstanceCollections = Objects.requireNonNull(externalClusterInstanceCollections);
+            if (externalClusterInstanceCollections == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstancesResult", "externalClusterInstanceCollections");
+            }
+            this.externalClusterInstanceCollections = externalClusterInstanceCollections;
             return this;
         }
         public Builder externalClusterInstanceCollections(GetExternalClusterInstancesExternalClusterInstanceCollection... externalClusterInstanceCollections) {
@@ -132,6 +139,7 @@ public final class GetExternalClusterInstancesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetExternalClusterInstancesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -140,7 +148,10 @@ public final class GetExternalClusterInstancesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstancesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetExternalClusterInstancesResult build() {

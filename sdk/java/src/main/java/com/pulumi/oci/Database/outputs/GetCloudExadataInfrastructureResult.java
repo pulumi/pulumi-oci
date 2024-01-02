@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructureCustomerContact;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructureMaintenanceWindow;
 import java.lang.Double;
@@ -489,47 +490,74 @@ public final class GetCloudExadataInfrastructureResult {
 
         @CustomType.Setter
         public Builder activatedStorageCount(Integer activatedStorageCount) {
-            this.activatedStorageCount = Objects.requireNonNull(activatedStorageCount);
+            if (activatedStorageCount == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "activatedStorageCount");
+            }
+            this.activatedStorageCount = activatedStorageCount;
             return this;
         }
         @CustomType.Setter
         public Builder additionalStorageCount(Integer additionalStorageCount) {
-            this.additionalStorageCount = Objects.requireNonNull(additionalStorageCount);
+            if (additionalStorageCount == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "additionalStorageCount");
+            }
+            this.additionalStorageCount = additionalStorageCount;
             return this;
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder availableStorageSizeInGbs(Integer availableStorageSizeInGbs) {
-            this.availableStorageSizeInGbs = Objects.requireNonNull(availableStorageSizeInGbs);
+            if (availableStorageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "availableStorageSizeInGbs");
+            }
+            this.availableStorageSizeInGbs = availableStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder cloudExadataInfrastructureId(String cloudExadataInfrastructureId) {
-            this.cloudExadataInfrastructureId = Objects.requireNonNull(cloudExadataInfrastructureId);
+            if (cloudExadataInfrastructureId == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "cloudExadataInfrastructureId");
+            }
+            this.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeCount(Integer computeCount) {
-            this.computeCount = Objects.requireNonNull(computeCount);
+            if (computeCount == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "computeCount");
+            }
+            this.computeCount = computeCount;
             return this;
         }
         @CustomType.Setter
         public Builder cpuCount(Integer cpuCount) {
-            this.cpuCount = Objects.requireNonNull(cpuCount);
+            if (cpuCount == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "cpuCount");
+            }
+            this.cpuCount = cpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder customerContacts(List<GetCloudExadataInfrastructureCustomerContact> customerContacts) {
-            this.customerContacts = Objects.requireNonNull(customerContacts);
+            if (customerContacts == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "customerContacts");
+            }
+            this.customerContacts = customerContacts;
             return this;
         }
         public Builder customerContacts(GetCloudExadataInfrastructureCustomerContact... customerContacts) {
@@ -537,52 +565,82 @@ public final class GetCloudExadataInfrastructureResult {
         }
         @CustomType.Setter
         public Builder dataStorageSizeInTbs(Double dataStorageSizeInTbs) {
-            this.dataStorageSizeInTbs = Objects.requireNonNull(dataStorageSizeInTbs);
+            if (dataStorageSizeInTbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "dataStorageSizeInTbs");
+            }
+            this.dataStorageSizeInTbs = dataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
-            this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
+            if (dbNodeStorageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "dbNodeStorageSizeInGbs");
+            }
+            this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder dbServerVersion(String dbServerVersion) {
-            this.dbServerVersion = Objects.requireNonNull(dbServerVersion);
+            if (dbServerVersion == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "dbServerVersion");
+            }
+            this.dbServerVersion = dbServerVersion;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lastMaintenanceRunId(String lastMaintenanceRunId) {
-            this.lastMaintenanceRunId = Objects.requireNonNull(lastMaintenanceRunId);
+            if (lastMaintenanceRunId == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "lastMaintenanceRunId");
+            }
+            this.lastMaintenanceRunId = lastMaintenanceRunId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder maintenanceWindows(List<GetCloudExadataInfrastructureMaintenanceWindow> maintenanceWindows) {
-            this.maintenanceWindows = Objects.requireNonNull(maintenanceWindows);
+            if (maintenanceWindows == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "maintenanceWindows");
+            }
+            this.maintenanceWindows = maintenanceWindows;
             return this;
         }
         public Builder maintenanceWindows(GetCloudExadataInfrastructureMaintenanceWindow... maintenanceWindows) {
@@ -590,72 +648,114 @@ public final class GetCloudExadataInfrastructureResult {
         }
         @CustomType.Setter
         public Builder maxCpuCount(Integer maxCpuCount) {
-            this.maxCpuCount = Objects.requireNonNull(maxCpuCount);
+            if (maxCpuCount == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "maxCpuCount");
+            }
+            this.maxCpuCount = maxCpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder maxDataStorageInTbs(Double maxDataStorageInTbs) {
-            this.maxDataStorageInTbs = Objects.requireNonNull(maxDataStorageInTbs);
+            if (maxDataStorageInTbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "maxDataStorageInTbs");
+            }
+            this.maxDataStorageInTbs = maxDataStorageInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder maxDbNodeStorageInGbs(Integer maxDbNodeStorageInGbs) {
-            this.maxDbNodeStorageInGbs = Objects.requireNonNull(maxDbNodeStorageInGbs);
+            if (maxDbNodeStorageInGbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "maxDbNodeStorageInGbs");
+            }
+            this.maxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder maxMemoryInGbs(Integer maxMemoryInGbs) {
-            this.maxMemoryInGbs = Objects.requireNonNull(maxMemoryInGbs);
+            if (maxMemoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "maxMemoryInGbs");
+            }
+            this.maxMemoryInGbs = maxMemoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder memorySizeInGbs(Integer memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+            if (memorySizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "memorySizeInGbs");
+            }
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder monthlyDbServerVersion(String monthlyDbServerVersion) {
-            this.monthlyDbServerVersion = Objects.requireNonNull(monthlyDbServerVersion);
+            if (monthlyDbServerVersion == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "monthlyDbServerVersion");
+            }
+            this.monthlyDbServerVersion = monthlyDbServerVersion;
             return this;
         }
         @CustomType.Setter
         public Builder monthlyStorageServerVersion(String monthlyStorageServerVersion) {
-            this.monthlyStorageServerVersion = Objects.requireNonNull(monthlyStorageServerVersion);
+            if (monthlyStorageServerVersion == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "monthlyStorageServerVersion");
+            }
+            this.monthlyStorageServerVersion = monthlyStorageServerVersion;
             return this;
         }
         @CustomType.Setter
         public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
-            this.nextMaintenanceRunId = Objects.requireNonNull(nextMaintenanceRunId);
+            if (nextMaintenanceRunId == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "nextMaintenanceRunId");
+            }
+            this.nextMaintenanceRunId = nextMaintenanceRunId;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder storageCount(Integer storageCount) {
-            this.storageCount = Objects.requireNonNull(storageCount);
+            if (storageCount == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "storageCount");
+            }
+            this.storageCount = storageCount;
             return this;
         }
         @CustomType.Setter
         public Builder storageServerVersion(String storageServerVersion) {
-            this.storageServerVersion = Objects.requireNonNull(storageServerVersion);
+            if (storageServerVersion == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "storageServerVersion");
+            }
+            this.storageServerVersion = storageServerVersion;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder totalStorageSizeInGbs(Integer totalStorageSizeInGbs) {
-            this.totalStorageSizeInGbs = Objects.requireNonNull(totalStorageSizeInGbs);
+            if (totalStorageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "totalStorageSizeInGbs");
+            }
+            this.totalStorageSizeInGbs = totalStorageSizeInGbs;
             return this;
         }
         public GetCloudExadataInfrastructureResult build() {

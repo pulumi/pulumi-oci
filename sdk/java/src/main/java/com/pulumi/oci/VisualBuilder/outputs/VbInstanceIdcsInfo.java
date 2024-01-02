@@ -100,26 +100,31 @@ public final class VbInstanceIdcsInfo {
 
         @CustomType.Setter
         public Builder idcsAppDisplayName(@Nullable String idcsAppDisplayName) {
+
             this.idcsAppDisplayName = idcsAppDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAppId(@Nullable String idcsAppId) {
+
             this.idcsAppId = idcsAppId;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAppLocationUrl(@Nullable String idcsAppLocationUrl) {
+
             this.idcsAppLocationUrl = idcsAppLocationUrl;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAppName(@Nullable String idcsAppName) {
+
             this.idcsAppName = idcsAppName;
             return this;
         }
         @CustomType.Setter
         public Builder instancePrimaryAudienceUrl(@Nullable String instancePrimaryAudienceUrl) {
+
             this.instancePrimaryAudienceUrl = instancePrimaryAudienceUrl;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -325,17 +326,26 @@ public final class GetTargetAssetsTargetAssetCollectionItemMigrationAsset {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dependedOnBies(List<String> dependedOnBies) {
-            this.dependedOnBies = Objects.requireNonNull(dependedOnBies);
+            if (dependedOnBies == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "dependedOnBies");
+            }
+            this.dependedOnBies = dependedOnBies;
             return this;
         }
         public Builder dependedOnBies(String... dependedOnBies) {
@@ -343,7 +353,10 @@ public final class GetTargetAssetsTargetAssetCollectionItemMigrationAsset {
         }
         @CustomType.Setter
         public Builder dependsOns(List<String> dependsOns) {
-            this.dependsOns = Objects.requireNonNull(dependsOns);
+            if (dependsOns == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "dependsOns");
+            }
+            this.dependsOns = dependsOns;
             return this;
         }
         public Builder dependsOns(String... dependsOns) {
@@ -351,27 +364,42 @@ public final class GetTargetAssetsTargetAssetCollectionItemMigrationAsset {
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder migrationId(String migrationId) {
-            this.migrationId = Objects.requireNonNull(migrationId);
+            if (migrationId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "migrationId");
+            }
+            this.migrationId = migrationId;
             return this;
         }
         @CustomType.Setter
         public Builder notifications(List<String> notifications) {
-            this.notifications = Objects.requireNonNull(notifications);
+            if (notifications == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "notifications");
+            }
+            this.notifications = notifications;
             return this;
         }
         public Builder notifications(String... notifications) {
@@ -379,62 +407,98 @@ public final class GetTargetAssetsTargetAssetCollectionItemMigrationAsset {
         }
         @CustomType.Setter
         public Builder parentSnapshot(String parentSnapshot) {
-            this.parentSnapshot = Objects.requireNonNull(parentSnapshot);
+            if (parentSnapshot == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "parentSnapshot");
+            }
+            this.parentSnapshot = parentSnapshot;
             return this;
         }
         @CustomType.Setter
         public Builder replicationCompartmentId(String replicationCompartmentId) {
-            this.replicationCompartmentId = Objects.requireNonNull(replicationCompartmentId);
+            if (replicationCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "replicationCompartmentId");
+            }
+            this.replicationCompartmentId = replicationCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder replicationScheduleId(String replicationScheduleId) {
-            this.replicationScheduleId = Objects.requireNonNull(replicationScheduleId);
+            if (replicationScheduleId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "replicationScheduleId");
+            }
+            this.replicationScheduleId = replicationScheduleId;
             return this;
         }
         @CustomType.Setter
         public Builder snapShotBucketName(String snapShotBucketName) {
-            this.snapShotBucketName = Objects.requireNonNull(snapShotBucketName);
+            if (snapShotBucketName == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "snapShotBucketName");
+            }
+            this.snapShotBucketName = snapShotBucketName;
             return this;
         }
         @CustomType.Setter
         public Builder snapshots(Map<String,Object> snapshots) {
-            this.snapshots = Objects.requireNonNull(snapshots);
+            if (snapshots == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "snapshots");
+            }
+            this.snapshots = snapshots;
             return this;
         }
         @CustomType.Setter
         public Builder sourceAssetData(Map<String,Object> sourceAssetData) {
-            this.sourceAssetData = Objects.requireNonNull(sourceAssetData);
+            if (sourceAssetData == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "sourceAssetData");
+            }
+            this.sourceAssetData = sourceAssetData;
             return this;
         }
         @CustomType.Setter
         public Builder sourceAssetId(String sourceAssetId) {
-            this.sourceAssetId = Objects.requireNonNull(sourceAssetId);
+            if (sourceAssetId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "sourceAssetId");
+            }
+            this.sourceAssetId = sourceAssetId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
-            this.tenancyId = Objects.requireNonNull(tenancyId);
+            if (tenancyId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "tenancyId");
+            }
+            this.tenancyId = tenancyId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetTargetAssetsTargetAssetCollectionItemMigrationAsset build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Blockchain.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Blockchain.outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParam;
 import java.lang.String;
 import java.util.List;
@@ -86,12 +87,18 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
 
         @CustomType.Setter
         public Builder ad(String ad) {
-            this.ad = Objects.requireNonNull(ad);
+            if (ad == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn", "ad");
+            }
+            this.ad = ad;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuAllocationParams(List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParam> ocpuAllocationParams) {
-            this.ocpuAllocationParams = Objects.requireNonNull(ocpuAllocationParams);
+            if (ocpuAllocationParams == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn", "ocpuAllocationParams");
+            }
+            this.ocpuAllocationParams = ocpuAllocationParams;
             return this;
         }
         public Builder ocpuAllocationParams(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParam... ocpuAllocationParams) {
@@ -99,12 +106,18 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
         }
         @CustomType.Setter
         public Builder osnKey(String osnKey) {
-            this.osnKey = Objects.requireNonNull(osnKey);
+            if (osnKey == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn", "osnKey");
+            }
+            this.osnKey = osnKey;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn", "state");
+            }
+            this.state = state;
             return this;
         }
         public GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn build() {

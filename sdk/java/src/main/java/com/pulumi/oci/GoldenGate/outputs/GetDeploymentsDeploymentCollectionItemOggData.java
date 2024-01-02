@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -138,47 +139,74 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
 
         @CustomType.Setter
         public Builder adminPassword(String adminPassword) {
-            this.adminPassword = Objects.requireNonNull(adminPassword);
+            if (adminPassword == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemOggData", "adminPassword");
+            }
+            this.adminPassword = adminPassword;
             return this;
         }
         @CustomType.Setter
         public Builder adminUsername(String adminUsername) {
-            this.adminUsername = Objects.requireNonNull(adminUsername);
+            if (adminUsername == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemOggData", "adminUsername");
+            }
+            this.adminUsername = adminUsername;
             return this;
         }
         @CustomType.Setter
         public Builder certificate(String certificate) {
-            this.certificate = Objects.requireNonNull(certificate);
+            if (certificate == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemOggData", "certificate");
+            }
+            this.certificate = certificate;
             return this;
         }
         @CustomType.Setter
         public Builder credentialStore(String credentialStore) {
-            this.credentialStore = Objects.requireNonNull(credentialStore);
+            if (credentialStore == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemOggData", "credentialStore");
+            }
+            this.credentialStore = credentialStore;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentName(String deploymentName) {
-            this.deploymentName = Objects.requireNonNull(deploymentName);
+            if (deploymentName == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemOggData", "deploymentName");
+            }
+            this.deploymentName = deploymentName;
             return this;
         }
         @CustomType.Setter
         public Builder identityDomainId(String identityDomainId) {
-            this.identityDomainId = Objects.requireNonNull(identityDomainId);
+            if (identityDomainId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemOggData", "identityDomainId");
+            }
+            this.identityDomainId = identityDomainId;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemOggData", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder oggVersion(String oggVersion) {
-            this.oggVersion = Objects.requireNonNull(oggVersion);
+            if (oggVersion == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemOggData", "oggVersion");
+            }
+            this.oggVersion = oggVersion;
             return this;
         }
         @CustomType.Setter
         public Builder passwordSecretId(String passwordSecretId) {
-            this.passwordSecretId = Objects.requireNonNull(passwordSecretId);
+            if (passwordSecretId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemOggData", "passwordSecretId");
+            }
+            this.passwordSecretId = passwordSecretId;
             return this;
         }
         public GetDeploymentsDeploymentCollectionItemOggData build() {

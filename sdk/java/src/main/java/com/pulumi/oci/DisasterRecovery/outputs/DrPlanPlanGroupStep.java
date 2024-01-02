@@ -166,46 +166,55 @@ public final class DrPlanPlanGroupStep {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder errorMode(@Nullable String errorMode) {
+
             this.errorMode = errorMode;
             return this;
         }
         @CustomType.Setter
         public Builder groupId(@Nullable String groupId) {
+
             this.groupId = groupId;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
+
             this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder memberId(@Nullable String memberId) {
+
             this.memberId = memberId;
             return this;
         }
         @CustomType.Setter
         public Builder timeout(@Nullable Integer timeout) {
+
             this.timeout = timeout;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder userDefinedSteps(@Nullable List<DrPlanPlanGroupStepUserDefinedStep> userDefinedSteps) {
+
             this.userDefinedSteps = userDefinedSteps;
             return this;
         }

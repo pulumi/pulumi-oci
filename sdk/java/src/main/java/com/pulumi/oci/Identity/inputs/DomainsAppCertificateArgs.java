@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -424,7 +425,9 @@ public final class DomainsAppCertificateArgs extends com.pulumi.resources.Resour
         }
 
         public DomainsAppCertificateArgs build() {
-            $.certAlias = Objects.requireNonNull($.certAlias, "expected parameter 'certAlias' to be non-null");
+            if ($.certAlias == null) {
+                throw new MissingRequiredPropertyException("DomainsAppCertificateArgs", "certAlias");
+            }
             return $;
         }
     }

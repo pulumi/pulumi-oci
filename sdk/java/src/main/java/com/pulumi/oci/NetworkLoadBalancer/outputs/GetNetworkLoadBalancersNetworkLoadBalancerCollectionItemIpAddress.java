@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp;
 import java.lang.Boolean;
 import java.lang.String;
@@ -89,22 +90,34 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAdd
 
         @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+            if (ipAddress == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress", "ipAddress");
+            }
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder ipVersion(String ipVersion) {
-            this.ipVersion = Objects.requireNonNull(ipVersion);
+            if (ipVersion == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress", "ipVersion");
+            }
+            this.ipVersion = ipVersion;
             return this;
         }
         @CustomType.Setter
         public Builder isPublic(Boolean isPublic) {
-            this.isPublic = Objects.requireNonNull(isPublic);
+            if (isPublic == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress", "isPublic");
+            }
+            this.isPublic = isPublic;
             return this;
         }
         @CustomType.Setter
         public Builder reservedIps(List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp> reservedIps) {
-            this.reservedIps = Objects.requireNonNull(reservedIps);
+            if (reservedIps == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress", "reservedIps");
+            }
+            this.reservedIps = reservedIps;
             return this;
         }
         public Builder reservedIps(GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp... reservedIps) {

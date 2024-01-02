@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsSelfRegistrationProfileAfterSubmitTextArgs;
 import com.pulumi.oci.Identity.inputs.DomainsSelfRegistrationProfileConsentTextArgs;
 import com.pulumi.oci.Identity.inputs.DomainsSelfRegistrationProfileDefaultGroupArgs;
@@ -2203,15 +2204,33 @@ public final class DomainsSelfRegistrationProfileArgs extends com.pulumi.resourc
         }
 
         public DomainsSelfRegistrationProfileArgs build() {
-            $.activationEmailRequired = Objects.requireNonNull($.activationEmailRequired, "expected parameter 'activationEmailRequired' to be non-null");
-            $.consentTextPresent = Objects.requireNonNull($.consentTextPresent, "expected parameter 'consentTextPresent' to be non-null");
-            $.displayNames = Objects.requireNonNull($.displayNames, "expected parameter 'displayNames' to be non-null");
-            $.emailTemplate = Objects.requireNonNull($.emailTemplate, "expected parameter 'emailTemplate' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.numberOfDaysRedirectUrlIsValid = Objects.requireNonNull($.numberOfDaysRedirectUrlIsValid, "expected parameter 'numberOfDaysRedirectUrlIsValid' to be non-null");
-            $.redirectUrl = Objects.requireNonNull($.redirectUrl, "expected parameter 'redirectUrl' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
-            $.showOnLoginPage = Objects.requireNonNull($.showOnLoginPage, "expected parameter 'showOnLoginPage' to be non-null");
+            if ($.activationEmailRequired == null) {
+                throw new MissingRequiredPropertyException("DomainsSelfRegistrationProfileArgs", "activationEmailRequired");
+            }
+            if ($.consentTextPresent == null) {
+                throw new MissingRequiredPropertyException("DomainsSelfRegistrationProfileArgs", "consentTextPresent");
+            }
+            if ($.displayNames == null) {
+                throw new MissingRequiredPropertyException("DomainsSelfRegistrationProfileArgs", "displayNames");
+            }
+            if ($.emailTemplate == null) {
+                throw new MissingRequiredPropertyException("DomainsSelfRegistrationProfileArgs", "emailTemplate");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsSelfRegistrationProfileArgs", "idcsEndpoint");
+            }
+            if ($.numberOfDaysRedirectUrlIsValid == null) {
+                throw new MissingRequiredPropertyException("DomainsSelfRegistrationProfileArgs", "numberOfDaysRedirectUrlIsValid");
+            }
+            if ($.redirectUrl == null) {
+                throw new MissingRequiredPropertyException("DomainsSelfRegistrationProfileArgs", "redirectUrl");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsSelfRegistrationProfileArgs", "schemas");
+            }
+            if ($.showOnLoginPage == null) {
+                throw new MissingRequiredPropertyException("DomainsSelfRegistrationProfileArgs", "showOnLoginPage");
+            }
             return $;
         }
     }

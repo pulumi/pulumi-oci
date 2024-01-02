@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -169,52 +170,82 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeAttachmentsBootVolumeAttachment", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder bootVolumeId(String bootVolumeId) {
-            this.bootVolumeId = Objects.requireNonNull(bootVolumeId);
+            if (bootVolumeId == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeAttachmentsBootVolumeAttachment", "bootVolumeId");
+            }
+            this.bootVolumeId = bootVolumeId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeAttachmentsBootVolumeAttachment", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeAttachmentsBootVolumeAttachment", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder encryptionInTransitType(String encryptionInTransitType) {
-            this.encryptionInTransitType = Objects.requireNonNull(encryptionInTransitType);
+            if (encryptionInTransitType == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeAttachmentsBootVolumeAttachment", "encryptionInTransitType");
+            }
+            this.encryptionInTransitType = encryptionInTransitType;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeAttachmentsBootVolumeAttachment", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceId(String instanceId) {
-            this.instanceId = Objects.requireNonNull(instanceId);
+            if (instanceId == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeAttachmentsBootVolumeAttachment", "instanceId");
+            }
+            this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
-            this.isPvEncryptionInTransitEnabled = Objects.requireNonNull(isPvEncryptionInTransitEnabled);
+            if (isPvEncryptionInTransitEnabled == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeAttachmentsBootVolumeAttachment", "isPvEncryptionInTransitEnabled");
+            }
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeAttachmentsBootVolumeAttachment", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeAttachmentsBootVolumeAttachment", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetBootVolumeAttachmentsBootVolumeAttachment build() {

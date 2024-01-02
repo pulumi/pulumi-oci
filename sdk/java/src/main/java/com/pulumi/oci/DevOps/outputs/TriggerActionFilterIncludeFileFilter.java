@@ -44,6 +44,7 @@ public final class TriggerActionFilterIncludeFileFilter {
 
         @CustomType.Setter
         public Builder filePaths(@Nullable List<String> filePaths) {
+
             this.filePaths = filePaths;
             return this;
         }

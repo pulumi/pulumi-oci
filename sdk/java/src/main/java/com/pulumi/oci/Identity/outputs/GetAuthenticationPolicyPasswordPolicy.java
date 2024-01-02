@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.util.Objects;
@@ -113,32 +114,50 @@ public final class GetAuthenticationPolicyPasswordPolicy {
 
         @CustomType.Setter
         public Builder isLowercaseCharactersRequired(Boolean isLowercaseCharactersRequired) {
-            this.isLowercaseCharactersRequired = Objects.requireNonNull(isLowercaseCharactersRequired);
+            if (isLowercaseCharactersRequired == null) {
+              throw new MissingRequiredPropertyException("GetAuthenticationPolicyPasswordPolicy", "isLowercaseCharactersRequired");
+            }
+            this.isLowercaseCharactersRequired = isLowercaseCharactersRequired;
             return this;
         }
         @CustomType.Setter
         public Builder isNumericCharactersRequired(Boolean isNumericCharactersRequired) {
-            this.isNumericCharactersRequired = Objects.requireNonNull(isNumericCharactersRequired);
+            if (isNumericCharactersRequired == null) {
+              throw new MissingRequiredPropertyException("GetAuthenticationPolicyPasswordPolicy", "isNumericCharactersRequired");
+            }
+            this.isNumericCharactersRequired = isNumericCharactersRequired;
             return this;
         }
         @CustomType.Setter
         public Builder isSpecialCharactersRequired(Boolean isSpecialCharactersRequired) {
-            this.isSpecialCharactersRequired = Objects.requireNonNull(isSpecialCharactersRequired);
+            if (isSpecialCharactersRequired == null) {
+              throw new MissingRequiredPropertyException("GetAuthenticationPolicyPasswordPolicy", "isSpecialCharactersRequired");
+            }
+            this.isSpecialCharactersRequired = isSpecialCharactersRequired;
             return this;
         }
         @CustomType.Setter
         public Builder isUppercaseCharactersRequired(Boolean isUppercaseCharactersRequired) {
-            this.isUppercaseCharactersRequired = Objects.requireNonNull(isUppercaseCharactersRequired);
+            if (isUppercaseCharactersRequired == null) {
+              throw new MissingRequiredPropertyException("GetAuthenticationPolicyPasswordPolicy", "isUppercaseCharactersRequired");
+            }
+            this.isUppercaseCharactersRequired = isUppercaseCharactersRequired;
             return this;
         }
         @CustomType.Setter
         public Builder isUsernameContainmentAllowed(Boolean isUsernameContainmentAllowed) {
-            this.isUsernameContainmentAllowed = Objects.requireNonNull(isUsernameContainmentAllowed);
+            if (isUsernameContainmentAllowed == null) {
+              throw new MissingRequiredPropertyException("GetAuthenticationPolicyPasswordPolicy", "isUsernameContainmentAllowed");
+            }
+            this.isUsernameContainmentAllowed = isUsernameContainmentAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder minimumPasswordLength(Integer minimumPasswordLength) {
-            this.minimumPasswordLength = Objects.requireNonNull(minimumPasswordLength);
+            if (minimumPasswordLength == null) {
+              throw new MissingRequiredPropertyException("GetAuthenticationPolicyPasswordPolicy", "minimumPasswordLength");
+            }
+            this.minimumPasswordLength = minimumPasswordLength;
             return this;
         }
         public GetAuthenticationPolicyPasswordPolicy build() {

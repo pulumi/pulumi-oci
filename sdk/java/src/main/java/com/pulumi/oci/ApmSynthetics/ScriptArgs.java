@@ -5,6 +5,7 @@ package com.pulumi.oci.ApmSynthetics;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.inputs.ScriptParameterArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -349,10 +350,18 @@ public final class ScriptArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ScriptArgs build() {
-            $.apmDomainId = Objects.requireNonNull($.apmDomainId, "expected parameter 'apmDomainId' to be non-null");
-            $.content = Objects.requireNonNull($.content, "expected parameter 'content' to be non-null");
-            $.contentType = Objects.requireNonNull($.contentType, "expected parameter 'contentType' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
+            if ($.apmDomainId == null) {
+                throw new MissingRequiredPropertyException("ScriptArgs", "apmDomainId");
+            }
+            if ($.content == null) {
+                throw new MissingRequiredPropertyException("ScriptArgs", "content");
+            }
+            if ($.contentType == null) {
+                throw new MissingRequiredPropertyException("ScriptArgs", "contentType");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ScriptArgs", "displayName");
+            }
             return $;
         }
     }

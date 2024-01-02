@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyAuthorization;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyBodyValidation;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyCor;
@@ -148,7 +149,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
 
         @CustomType.Setter
         public Builder authorizations(List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyAuthorization> authorizations) {
-            this.authorizations = Objects.requireNonNull(authorizations);
+            if (authorizations == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicy", "authorizations");
+            }
+            this.authorizations = authorizations;
             return this;
         }
         public Builder authorizations(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyAuthorization... authorizations) {
@@ -156,7 +160,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
         }
         @CustomType.Setter
         public Builder bodyValidations(List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyBodyValidation> bodyValidations) {
-            this.bodyValidations = Objects.requireNonNull(bodyValidations);
+            if (bodyValidations == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicy", "bodyValidations");
+            }
+            this.bodyValidations = bodyValidations;
             return this;
         }
         public Builder bodyValidations(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyBodyValidation... bodyValidations) {
@@ -164,7 +171,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
         }
         @CustomType.Setter
         public Builder cors(List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyCor> cors) {
-            this.cors = Objects.requireNonNull(cors);
+            if (cors == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicy", "cors");
+            }
+            this.cors = cors;
             return this;
         }
         public Builder cors(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyCor... cors) {
@@ -172,7 +182,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
         }
         @CustomType.Setter
         public Builder headerTransformations(List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformation> headerTransformations) {
-            this.headerTransformations = Objects.requireNonNull(headerTransformations);
+            if (headerTransformations == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicy", "headerTransformations");
+            }
+            this.headerTransformations = headerTransformations;
             return this;
         }
         public Builder headerTransformations(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformation... headerTransformations) {
@@ -180,7 +193,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
         }
         @CustomType.Setter
         public Builder headerValidations(List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidation> headerValidations) {
-            this.headerValidations = Objects.requireNonNull(headerValidations);
+            if (headerValidations == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicy", "headerValidations");
+            }
+            this.headerValidations = headerValidations;
             return this;
         }
         public Builder headerValidations(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidation... headerValidations) {
@@ -188,7 +204,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
         }
         @CustomType.Setter
         public Builder queryParameterTransformations(List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformation> queryParameterTransformations) {
-            this.queryParameterTransformations = Objects.requireNonNull(queryParameterTransformations);
+            if (queryParameterTransformations == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicy", "queryParameterTransformations");
+            }
+            this.queryParameterTransformations = queryParameterTransformations;
             return this;
         }
         public Builder queryParameterTransformations(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformation... queryParameterTransformations) {
@@ -196,7 +215,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
         }
         @CustomType.Setter
         public Builder queryParameterValidations(List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidation> queryParameterValidations) {
-            this.queryParameterValidations = Objects.requireNonNull(queryParameterValidations);
+            if (queryParameterValidations == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicy", "queryParameterValidations");
+            }
+            this.queryParameterValidations = queryParameterValidations;
             return this;
         }
         public Builder queryParameterValidations(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidation... queryParameterValidations) {
@@ -204,7 +226,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
         }
         @CustomType.Setter
         public Builder responseCacheLookups(List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyResponseCacheLookup> responseCacheLookups) {
-            this.responseCacheLookups = Objects.requireNonNull(responseCacheLookups);
+            if (responseCacheLookups == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicy", "responseCacheLookups");
+            }
+            this.responseCacheLookups = responseCacheLookups;
             return this;
         }
         public Builder responseCacheLookups(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyResponseCacheLookup... responseCacheLookups) {

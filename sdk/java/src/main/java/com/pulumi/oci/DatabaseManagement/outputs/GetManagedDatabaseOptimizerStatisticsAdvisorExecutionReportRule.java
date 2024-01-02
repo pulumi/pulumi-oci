@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding;
 import java.lang.String;
 import java.util.List;
@@ -72,12 +73,18 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder findings(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding> findings) {
-            this.findings = Objects.requireNonNull(findings);
+            if (findings == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule", "findings");
+            }
+            this.findings = findings;
             return this;
         }
         public Builder findings(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding... findings) {
@@ -85,7 +92,10 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule build() {

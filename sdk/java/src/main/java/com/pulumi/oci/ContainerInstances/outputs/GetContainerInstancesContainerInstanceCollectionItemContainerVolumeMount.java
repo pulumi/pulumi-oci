@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerInstances.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -60,27 +61,42 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
 
         @CustomType.Setter
         public Builder isReadOnly(Boolean isReadOnly) {
-            this.isReadOnly = Objects.requireNonNull(isReadOnly);
+            if (isReadOnly == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount", "isReadOnly");
+            }
+            this.isReadOnly = isReadOnly;
             return this;
         }
         @CustomType.Setter
         public Builder mountPath(String mountPath) {
-            this.mountPath = Objects.requireNonNull(mountPath);
+            if (mountPath == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount", "mountPath");
+            }
+            this.mountPath = mountPath;
             return this;
         }
         @CustomType.Setter
         public Builder partition(Integer partition) {
-            this.partition = Objects.requireNonNull(partition);
+            if (partition == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount", "partition");
+            }
+            this.partition = partition;
             return this;
         }
         @CustomType.Setter
         public Builder subPath(String subPath) {
-            this.subPath = Objects.requireNonNull(subPath);
+            if (subPath == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount", "subPath");
+            }
+            this.subPath = subPath;
             return this;
         }
         @CustomType.Setter
         public Builder volumeName(String volumeName) {
-            this.volumeName = Objects.requireNonNull(volumeName);
+            if (volumeName == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount", "volumeName");
+            }
+            this.volumeName = volumeName;
             return this;
         }
         public GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount build() {

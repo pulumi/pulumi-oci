@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetInvoicesInvoiceLineItemCurrency {
 
         @CustomType.Setter
         public Builder currencyCode(String currencyCode) {
-            this.currencyCode = Objects.requireNonNull(currencyCode);
+            if (currencyCode == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineItemCurrency", "currencyCode");
+            }
+            this.currencyCode = currencyCode;
             return this;
         }
         @CustomType.Setter
         public Builder currencySymbol(String currencySymbol) {
-            this.currencySymbol = Objects.requireNonNull(currencySymbol);
+            if (currencySymbol == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineItemCurrency", "currencySymbol");
+            }
+            this.currencySymbol = currencySymbol;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineItemCurrency", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder roundDecimalPoint(Double roundDecimalPoint) {
-            this.roundDecimalPoint = Objects.requireNonNull(roundDecimalPoint);
+            if (roundDecimalPoint == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineItemCurrency", "roundDecimalPoint");
+            }
+            this.roundDecimalPoint = roundDecimalPoint;
             return this;
         }
         @CustomType.Setter
         public Builder usdConversion(Double usdConversion) {
-            this.usdConversion = Objects.requireNonNull(usdConversion);
+            if (usdConversion == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineItemCurrency", "usdConversion");
+            }
+            this.usdConversion = usdConversion;
             return this;
         }
         public GetInvoicesInvoiceLineItemCurrency build() {

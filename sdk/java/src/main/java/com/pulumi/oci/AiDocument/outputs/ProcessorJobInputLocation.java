@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiDocument.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiDocument.outputs.ProcessorJobInputLocationObjectLocation;
 import java.lang.String;
 import java.util.List;
@@ -74,11 +75,13 @@ public final class ProcessorJobInputLocation {
 
         @CustomType.Setter
         public Builder data(@Nullable String data) {
+
             this.data = data;
             return this;
         }
         @CustomType.Setter
         public Builder objectLocations(@Nullable List<ProcessorJobInputLocationObjectLocation> objectLocations) {
+
             this.objectLocations = objectLocations;
             return this;
         }
@@ -87,7 +90,10 @@ public final class ProcessorJobInputLocation {
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("ProcessorJobInputLocation", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         public ProcessorJobInputLocation build() {

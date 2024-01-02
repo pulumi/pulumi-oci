@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -52,22 +53,34 @@ public final class GetDbSystemsDbSystemCollectionItemCredentialPasswordDetail {
 
         @CustomType.Setter
         public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+            if (password == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItemCredentialPasswordDetail", "password");
+            }
+            this.password = password;
             return this;
         }
         @CustomType.Setter
         public Builder passwordType(String passwordType) {
-            this.passwordType = Objects.requireNonNull(passwordType);
+            if (passwordType == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItemCredentialPasswordDetail", "passwordType");
+            }
+            this.passwordType = passwordType;
             return this;
         }
         @CustomType.Setter
         public Builder secretId(String secretId) {
-            this.secretId = Objects.requireNonNull(secretId);
+            if (secretId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItemCredentialPasswordDetail", "secretId");
+            }
+            this.secretId = secretId;
             return this;
         }
         @CustomType.Setter
         public Builder secretVersion(String secretVersion) {
-            this.secretVersion = Objects.requireNonNull(secretVersion);
+            if (secretVersion == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItemCredentialPasswordDetail", "secretVersion");
+            }
+            this.secretVersion = secretVersion;
             return this;
         }
         public GetDbSystemsDbSystemCollectionItemCredentialPasswordDetail build() {

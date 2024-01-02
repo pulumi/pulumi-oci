@@ -73,16 +73,19 @@ public final class FusionEnvironmentFamilyFamilyMaintenancePolicy {
 
         @CustomType.Setter
         public Builder concurrentMaintenance(@Nullable String concurrentMaintenance) {
+
             this.concurrentMaintenance = concurrentMaintenance;
             return this;
         }
         @CustomType.Setter
         public Builder isMonthlyPatchingEnabled(@Nullable Boolean isMonthlyPatchingEnabled) {
+
             this.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder quarterlyUpgradeBeginTimes(@Nullable String quarterlyUpgradeBeginTimes) {
+
             this.quarterlyUpgradeBeginTimes = quarterlyUpgradeBeginTimes;
             return this;
         }

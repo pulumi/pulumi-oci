@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDataGuardAssociationsDataGuardAssociation;
 import com.pulumi.oci.Database.outputs.GetDataGuardAssociationsFilter;
 import java.lang.String;
@@ -80,7 +81,10 @@ public final class GetDataGuardAssociationsResult {
 
         @CustomType.Setter
         public Builder dataGuardAssociations(List<GetDataGuardAssociationsDataGuardAssociation> dataGuardAssociations) {
-            this.dataGuardAssociations = Objects.requireNonNull(dataGuardAssociations);
+            if (dataGuardAssociations == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsResult", "dataGuardAssociations");
+            }
+            this.dataGuardAssociations = dataGuardAssociations;
             return this;
         }
         public Builder dataGuardAssociations(GetDataGuardAssociationsDataGuardAssociation... dataGuardAssociations) {
@@ -88,11 +92,15 @@ public final class GetDataGuardAssociationsResult {
         }
         @CustomType.Setter
         public Builder databaseId(String databaseId) {
-            this.databaseId = Objects.requireNonNull(databaseId);
+            if (databaseId == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsResult", "databaseId");
+            }
+            this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDataGuardAssociationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -101,7 +109,10 @@ public final class GetDataGuardAssociationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetDataGuardAssociationsResult build() {

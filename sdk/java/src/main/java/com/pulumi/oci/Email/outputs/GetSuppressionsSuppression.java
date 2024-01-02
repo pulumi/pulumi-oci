@@ -4,6 +4,7 @@
 package com.pulumi.oci.Email.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -154,47 +155,74 @@ public final class GetSuppressionsSuppression {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionsSuppression", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder emailAddress(String emailAddress) {
-            this.emailAddress = Objects.requireNonNull(emailAddress);
+            if (emailAddress == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionsSuppression", "emailAddress");
+            }
+            this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
         public Builder errorDetail(String errorDetail) {
-            this.errorDetail = Objects.requireNonNull(errorDetail);
+            if (errorDetail == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionsSuppression", "errorDetail");
+            }
+            this.errorDetail = errorDetail;
             return this;
         }
         @CustomType.Setter
         public Builder errorSource(String errorSource) {
-            this.errorSource = Objects.requireNonNull(errorSource);
+            if (errorSource == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionsSuppression", "errorSource");
+            }
+            this.errorSource = errorSource;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionsSuppression", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder messageId(String messageId) {
-            this.messageId = Objects.requireNonNull(messageId);
+            if (messageId == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionsSuppression", "messageId");
+            }
+            this.messageId = messageId;
             return this;
         }
         @CustomType.Setter
         public Builder reason(String reason) {
-            this.reason = Objects.requireNonNull(reason);
+            if (reason == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionsSuppression", "reason");
+            }
+            this.reason = reason;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionsSuppression", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastSuppressed(String timeLastSuppressed) {
-            this.timeLastSuppressed = Objects.requireNonNull(timeLastSuppressed);
+            if (timeLastSuppressed == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionsSuppression", "timeLastSuppressed");
+            }
+            this.timeLastSuppressed = timeLastSuppressed;
             return this;
         }
         public GetSuppressionsSuppression build() {

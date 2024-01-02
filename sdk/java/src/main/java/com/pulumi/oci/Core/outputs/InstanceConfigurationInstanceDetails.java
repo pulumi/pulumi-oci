@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsBlockVolume;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsLaunchDetails;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsOption;
@@ -109,6 +110,7 @@ public final class InstanceConfigurationInstanceDetails {
 
         @CustomType.Setter
         public Builder blockVolumes(@Nullable List<InstanceConfigurationInstanceDetailsBlockVolume> blockVolumes) {
+
             this.blockVolumes = blockVolumes;
             return this;
         }
@@ -117,16 +119,21 @@ public final class InstanceConfigurationInstanceDetails {
         }
         @CustomType.Setter
         public Builder instanceType(String instanceType) {
-            this.instanceType = Objects.requireNonNull(instanceType);
+            if (instanceType == null) {
+              throw new MissingRequiredPropertyException("InstanceConfigurationInstanceDetails", "instanceType");
+            }
+            this.instanceType = instanceType;
             return this;
         }
         @CustomType.Setter
         public Builder launchDetails(@Nullable InstanceConfigurationInstanceDetailsLaunchDetails launchDetails) {
+
             this.launchDetails = launchDetails;
             return this;
         }
         @CustomType.Setter
         public Builder options(@Nullable List<InstanceConfigurationInstanceDetailsOption> options) {
+
             this.options = options;
             return this;
         }
@@ -135,6 +142,7 @@ public final class InstanceConfigurationInstanceDetails {
         }
         @CustomType.Setter
         public Builder secondaryVnics(@Nullable List<InstanceConfigurationInstanceDetailsSecondaryVnic> secondaryVnics) {
+
             this.secondaryVnics = secondaryVnics;
             return this;
         }

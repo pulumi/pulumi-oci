@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost;
 import java.lang.Integer;
 import java.lang.String;
@@ -101,12 +102,18 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDe
 
         @CustomType.Setter
         public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+            if (hostName == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail", "hostName");
+            }
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder hosts(List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost> hosts) {
-            this.hosts = Objects.requireNonNull(hosts);
+            if (hosts == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail", "hosts");
+            }
+            this.hosts = hosts;
             return this;
         }
         public Builder hosts(GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost... hosts) {
@@ -114,17 +121,26 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDe
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+            if (serviceName == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail", "serviceName");
+            }
+            this.serviceName = serviceName;
             return this;
         }
         public GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetCloudVmClusterIormConfigCachDbPlan;
 import java.lang.String;
 import java.util.List;
@@ -86,7 +87,10 @@ public final class GetCloudVmClusterIormConfigCach {
 
         @CustomType.Setter
         public Builder dbPlans(List<GetCloudVmClusterIormConfigCachDbPlan> dbPlans) {
-            this.dbPlans = Objects.requireNonNull(dbPlans);
+            if (dbPlans == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClusterIormConfigCach", "dbPlans");
+            }
+            this.dbPlans = dbPlans;
             return this;
         }
         public Builder dbPlans(GetCloudVmClusterIormConfigCachDbPlan... dbPlans) {
@@ -94,17 +98,26 @@ public final class GetCloudVmClusterIormConfigCach {
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClusterIormConfigCach", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder objective(String objective) {
-            this.objective = Objects.requireNonNull(objective);
+            if (objective == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClusterIormConfigCach", "objective");
+            }
+            this.objective = objective;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClusterIormConfigCach", "state");
+            }
+            this.state = state;
             return this;
         }
         public GetCloudVmClusterIormConfigCach build() {

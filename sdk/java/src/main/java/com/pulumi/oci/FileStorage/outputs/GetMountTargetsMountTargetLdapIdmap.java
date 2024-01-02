@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -141,42 +142,66 @@ public final class GetMountTargetsMountTargetLdapIdmap {
 
         @CustomType.Setter
         public Builder cacheLifetimeSeconds(Integer cacheLifetimeSeconds) {
-            this.cacheLifetimeSeconds = Objects.requireNonNull(cacheLifetimeSeconds);
+            if (cacheLifetimeSeconds == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTargetLdapIdmap", "cacheLifetimeSeconds");
+            }
+            this.cacheLifetimeSeconds = cacheLifetimeSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder cacheRefreshIntervalSeconds(Integer cacheRefreshIntervalSeconds) {
-            this.cacheRefreshIntervalSeconds = Objects.requireNonNull(cacheRefreshIntervalSeconds);
+            if (cacheRefreshIntervalSeconds == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTargetLdapIdmap", "cacheRefreshIntervalSeconds");
+            }
+            this.cacheRefreshIntervalSeconds = cacheRefreshIntervalSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder groupSearchBase(String groupSearchBase) {
-            this.groupSearchBase = Objects.requireNonNull(groupSearchBase);
+            if (groupSearchBase == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTargetLdapIdmap", "groupSearchBase");
+            }
+            this.groupSearchBase = groupSearchBase;
             return this;
         }
         @CustomType.Setter
         public Builder negativeCacheLifetimeSeconds(Integer negativeCacheLifetimeSeconds) {
-            this.negativeCacheLifetimeSeconds = Objects.requireNonNull(negativeCacheLifetimeSeconds);
+            if (negativeCacheLifetimeSeconds == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTargetLdapIdmap", "negativeCacheLifetimeSeconds");
+            }
+            this.negativeCacheLifetimeSeconds = negativeCacheLifetimeSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder outboundConnector1id(String outboundConnector1id) {
-            this.outboundConnector1id = Objects.requireNonNull(outboundConnector1id);
+            if (outboundConnector1id == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTargetLdapIdmap", "outboundConnector1id");
+            }
+            this.outboundConnector1id = outboundConnector1id;
             return this;
         }
         @CustomType.Setter
         public Builder outboundConnector2id(String outboundConnector2id) {
-            this.outboundConnector2id = Objects.requireNonNull(outboundConnector2id);
+            if (outboundConnector2id == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTargetLdapIdmap", "outboundConnector2id");
+            }
+            this.outboundConnector2id = outboundConnector2id;
             return this;
         }
         @CustomType.Setter
         public Builder schemaType(String schemaType) {
-            this.schemaType = Objects.requireNonNull(schemaType);
+            if (schemaType == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTargetLdapIdmap", "schemaType");
+            }
+            this.schemaType = schemaType;
             return this;
         }
         @CustomType.Setter
         public Builder userSearchBase(String userSearchBase) {
-            this.userSearchBase = Objects.requireNonNull(userSearchBase);
+            if (userSearchBase == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTargetLdapIdmap", "userSearchBase");
+            }
+            this.userSearchBase = userSearchBase;
             return this;
         }
         public GetMountTargetsMountTargetLdapIdmap build() {

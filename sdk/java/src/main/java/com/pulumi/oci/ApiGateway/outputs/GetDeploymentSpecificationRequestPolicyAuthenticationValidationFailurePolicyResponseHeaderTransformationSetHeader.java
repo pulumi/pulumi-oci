@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationValidati
 
         @CustomType.Setter
         public Builder items(List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeader", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItem... items) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetJobShapesFilter;
 import com.pulumi.oci.DataScience.outputs.GetJobShapesJobShape;
 import java.lang.String;
@@ -72,11 +73,15 @@ public final class GetJobShapesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetJobShapesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetJobShapesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -85,12 +90,18 @@ public final class GetJobShapesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetJobShapesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder jobShapes(List<GetJobShapesJobShape> jobShapes) {
-            this.jobShapes = Objects.requireNonNull(jobShapes);
+            if (jobShapes == null) {
+              throw new MissingRequiredPropertyException("GetJobShapesResult", "jobShapes");
+            }
+            this.jobShapes = jobShapes;
             return this;
         }
         public Builder jobShapes(GetJobShapesJobShape... jobShapes) {

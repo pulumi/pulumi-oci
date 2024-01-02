@@ -5,6 +5,7 @@ package com.pulumi.oci.ServiceMesh.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.inputs.VirtualServiceRouteTableRouteRuleDestinationArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -274,8 +275,12 @@ public final class VirtualServiceRouteTableRouteRuleArgs extends com.pulumi.reso
         }
 
         public VirtualServiceRouteTableRouteRuleArgs build() {
-            $.destinations = Objects.requireNonNull($.destinations, "expected parameter 'destinations' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.destinations == null) {
+                throw new MissingRequiredPropertyException("VirtualServiceRouteTableRouteRuleArgs", "destinations");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("VirtualServiceRouteTableRouteRuleArgs", "type");
+            }
             return $;
         }
     }

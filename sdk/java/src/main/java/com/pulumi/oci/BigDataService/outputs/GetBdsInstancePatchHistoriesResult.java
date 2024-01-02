@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancePatchHistoriesFilter;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancePatchHistoriesPatchHistory;
 import java.lang.String;
@@ -107,11 +108,15 @@ public final class GetBdsInstancePatchHistoriesResult {
 
         @CustomType.Setter
         public Builder bdsInstanceId(String bdsInstanceId) {
-            this.bdsInstanceId = Objects.requireNonNull(bdsInstanceId);
+            if (bdsInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancePatchHistoriesResult", "bdsInstanceId");
+            }
+            this.bdsInstanceId = bdsInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBdsInstancePatchHistoriesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -120,12 +125,18 @@ public final class GetBdsInstancePatchHistoriesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancePatchHistoriesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder patchHistories(List<GetBdsInstancePatchHistoriesPatchHistory> patchHistories) {
-            this.patchHistories = Objects.requireNonNull(patchHistories);
+            if (patchHistories == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancePatchHistoriesResult", "patchHistories");
+            }
+            this.patchHistories = patchHistories;
             return this;
         }
         public Builder patchHistories(GetBdsInstancePatchHistoriesPatchHistory... patchHistories) {
@@ -133,16 +144,19 @@ public final class GetBdsInstancePatchHistoriesResult {
         }
         @CustomType.Setter
         public Builder patchType(@Nullable String patchType) {
+
             this.patchType = patchType;
             return this;
         }
         @CustomType.Setter
         public Builder patchVersion(@Nullable String patchVersion) {
+
             this.patchVersion = patchVersion;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

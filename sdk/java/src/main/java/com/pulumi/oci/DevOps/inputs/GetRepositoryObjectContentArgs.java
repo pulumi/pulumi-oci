@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -150,8 +151,12 @@ public final class GetRepositoryObjectContentArgs extends com.pulumi.resources.I
         }
 
         public GetRepositoryObjectContentArgs build() {
-            $.repositoryId = Objects.requireNonNull($.repositoryId, "expected parameter 'repositoryId' to be non-null");
-            $.sha = Objects.requireNonNull($.sha, "expected parameter 'sha' to be non-null");
+            if ($.repositoryId == null) {
+                throw new MissingRequiredPropertyException("GetRepositoryObjectContentArgs", "repositoryId");
+            }
+            if ($.sha == null) {
+                throw new MissingRequiredPropertyException("GetRepositoryObjectContentArgs", "sha");
+            }
             return $;
         }
     }

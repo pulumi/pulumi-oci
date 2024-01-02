@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetDeploymentDeployPipelineArtifactItemDeployPipelineStage;
 import java.lang.String;
 import java.util.List;
@@ -72,12 +73,18 @@ public final class GetDeploymentDeployPipelineArtifactItem {
 
         @CustomType.Setter
         public Builder deployArtifactId(String deployArtifactId) {
-            this.deployArtifactId = Objects.requireNonNull(deployArtifactId);
+            if (deployArtifactId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentDeployPipelineArtifactItem", "deployArtifactId");
+            }
+            this.deployArtifactId = deployArtifactId;
             return this;
         }
         @CustomType.Setter
         public Builder deployPipelineStages(List<GetDeploymentDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages) {
-            this.deployPipelineStages = Objects.requireNonNull(deployPipelineStages);
+            if (deployPipelineStages == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentDeployPipelineArtifactItem", "deployPipelineStages");
+            }
+            this.deployPipelineStages = deployPipelineStages;
             return this;
         }
         public Builder deployPipelineStages(GetDeploymentDeployPipelineArtifactItemDeployPipelineStage... deployPipelineStages) {
@@ -85,7 +92,10 @@ public final class GetDeploymentDeployPipelineArtifactItem {
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentDeployPipelineArtifactItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         public GetDeploymentDeployPipelineArtifactItem build() {

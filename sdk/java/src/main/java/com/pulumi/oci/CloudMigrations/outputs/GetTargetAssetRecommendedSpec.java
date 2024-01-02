@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetRecommendedSpecAgentConfig;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetRecommendedSpecCreateVnicDetail;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetRecommendedSpecInstanceOption;
@@ -282,7 +283,10 @@ public final class GetTargetAssetRecommendedSpec {
 
         @CustomType.Setter
         public Builder agentConfigs(List<GetTargetAssetRecommendedSpecAgentConfig> agentConfigs) {
-            this.agentConfigs = Objects.requireNonNull(agentConfigs);
+            if (agentConfigs == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpec", "agentConfigs");
+            }
+            this.agentConfigs = agentConfigs;
             return this;
         }
         public Builder agentConfigs(GetTargetAssetRecommendedSpecAgentConfig... agentConfigs) {
@@ -290,22 +294,34 @@ public final class GetTargetAssetRecommendedSpec {
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpec", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder capacityReservationId(String capacityReservationId) {
-            this.capacityReservationId = Objects.requireNonNull(capacityReservationId);
+            if (capacityReservationId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpec", "capacityReservationId");
+            }
+            this.capacityReservationId = capacityReservationId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpec", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createVnicDetails(List<GetTargetAssetRecommendedSpecCreateVnicDetail> createVnicDetails) {
-            this.createVnicDetails = Objects.requireNonNull(createVnicDetails);
+            if (createVnicDetails == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpec", "createVnicDetails");
+            }
+            this.createVnicDetails = createVnicDetails;
             return this;
         }
         public Builder createVnicDetails(GetTargetAssetRecommendedSpecCreateVnicDetail... createVnicDetails) {
@@ -313,37 +329,58 @@ public final class GetTargetAssetRecommendedSpec {
         }
         @CustomType.Setter
         public Builder dedicatedVmHostId(String dedicatedVmHostId) {
-            this.dedicatedVmHostId = Objects.requireNonNull(dedicatedVmHostId);
+            if (dedicatedVmHostId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpec", "dedicatedVmHostId");
+            }
+            this.dedicatedVmHostId = dedicatedVmHostId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpec", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpec", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+            if (faultDomain == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpec", "faultDomain");
+            }
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpec", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostnameLabel(String hostnameLabel) {
-            this.hostnameLabel = Objects.requireNonNull(hostnameLabel);
+            if (hostnameLabel == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpec", "hostnameLabel");
+            }
+            this.hostnameLabel = hostnameLabel;
             return this;
         }
         @CustomType.Setter
         public Builder instanceOptions(List<GetTargetAssetRecommendedSpecInstanceOption> instanceOptions) {
-            this.instanceOptions = Objects.requireNonNull(instanceOptions);
+            if (instanceOptions == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpec", "instanceOptions");
+            }
+            this.instanceOptions = instanceOptions;
             return this;
         }
         public Builder instanceOptions(GetTargetAssetRecommendedSpecInstanceOption... instanceOptions) {
@@ -351,17 +388,26 @@ public final class GetTargetAssetRecommendedSpec {
         }
         @CustomType.Setter
         public Builder ipxeScript(String ipxeScript) {
-            this.ipxeScript = Objects.requireNonNull(ipxeScript);
+            if (ipxeScript == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpec", "ipxeScript");
+            }
+            this.ipxeScript = ipxeScript;
             return this;
         }
         @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
-            this.isPvEncryptionInTransitEnabled = Objects.requireNonNull(isPvEncryptionInTransitEnabled);
+            if (isPvEncryptionInTransitEnabled == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpec", "isPvEncryptionInTransitEnabled");
+            }
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder preemptibleInstanceConfigs(List<GetTargetAssetRecommendedSpecPreemptibleInstanceConfig> preemptibleInstanceConfigs) {
-            this.preemptibleInstanceConfigs = Objects.requireNonNull(preemptibleInstanceConfigs);
+            if (preemptibleInstanceConfigs == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpec", "preemptibleInstanceConfigs");
+            }
+            this.preemptibleInstanceConfigs = preemptibleInstanceConfigs;
             return this;
         }
         public Builder preemptibleInstanceConfigs(GetTargetAssetRecommendedSpecPreemptibleInstanceConfig... preemptibleInstanceConfigs) {
@@ -369,12 +415,18 @@ public final class GetTargetAssetRecommendedSpec {
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpec", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder shapeConfigs(List<GetTargetAssetRecommendedSpecShapeConfig> shapeConfigs) {
-            this.shapeConfigs = Objects.requireNonNull(shapeConfigs);
+            if (shapeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpec", "shapeConfigs");
+            }
+            this.shapeConfigs = shapeConfigs;
             return this;
         }
         public Builder shapeConfigs(GetTargetAssetRecommendedSpecShapeConfig... shapeConfigs) {
@@ -382,7 +434,10 @@ public final class GetTargetAssetRecommendedSpec {
         }
         @CustomType.Setter
         public Builder sourceDetails(List<GetTargetAssetRecommendedSpecSourceDetail> sourceDetails) {
-            this.sourceDetails = Objects.requireNonNull(sourceDetails);
+            if (sourceDetails == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpec", "sourceDetails");
+            }
+            this.sourceDetails = sourceDetails;
             return this;
         }
         public Builder sourceDetails(GetTargetAssetRecommendedSpecSourceDetail... sourceDetails) {

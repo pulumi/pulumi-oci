@@ -5,6 +5,7 @@ package com.pulumi.oci.AiLanguage;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -313,8 +314,12 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public EndpointArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.modelId = Objects.requireNonNull($.modelId, "expected parameter 'modelId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("EndpointArgs", "compartmentId");
+            }
+            if ($.modelId == null) {
+                throw new MissingRequiredPropertyException("EndpointArgs", "modelId");
+            }
             return $;
         }
     }

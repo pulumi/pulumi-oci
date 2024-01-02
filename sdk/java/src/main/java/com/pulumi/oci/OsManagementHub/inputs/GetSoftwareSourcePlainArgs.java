@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetSoftwareSourcePlainArgs extends com.pulumi.resources.Invok
         }
 
         public GetSoftwareSourcePlainArgs build() {
-            $.softwareSourceId = Objects.requireNonNull($.softwareSourceId, "expected parameter 'softwareSourceId' to be non-null");
+            if ($.softwareSourceId == null) {
+                throw new MissingRequiredPropertyException("GetSoftwareSourcePlainArgs", "softwareSourceId");
+            }
             return $;
         }
     }

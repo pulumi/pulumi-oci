@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetBootVolumeAttachmentsBootVolumeAttachment;
 import com.pulumi.oci.Core.outputs.GetBootVolumeAttachmentsFilter;
 import java.lang.String;
@@ -123,12 +124,18 @@ public final class GetBootVolumeAttachmentsResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeAttachmentsResult", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder bootVolumeAttachments(List<GetBootVolumeAttachmentsBootVolumeAttachment> bootVolumeAttachments) {
-            this.bootVolumeAttachments = Objects.requireNonNull(bootVolumeAttachments);
+            if (bootVolumeAttachments == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeAttachmentsResult", "bootVolumeAttachments");
+            }
+            this.bootVolumeAttachments = bootVolumeAttachments;
             return this;
         }
         public Builder bootVolumeAttachments(GetBootVolumeAttachmentsBootVolumeAttachment... bootVolumeAttachments) {
@@ -136,16 +143,21 @@ public final class GetBootVolumeAttachmentsResult {
         }
         @CustomType.Setter
         public Builder bootVolumeId(@Nullable String bootVolumeId) {
+
             this.bootVolumeId = bootVolumeId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeAttachmentsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBootVolumeAttachmentsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -154,11 +166,15 @@ public final class GetBootVolumeAttachmentsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeAttachmentsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceId(@Nullable String instanceId) {
+
             this.instanceId = instanceId;
             return this;
         }

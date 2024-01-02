@@ -4,6 +4,7 @@
 package com.pulumi.oci.Analytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Analytics.outputs.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn;
 import java.lang.String;
 import java.util.List;
@@ -130,11 +131,15 @@ public final class AnalyticsInstanceNetworkEndpointDetails {
 
         @CustomType.Setter
         public Builder networkEndpointType(String networkEndpointType) {
-            this.networkEndpointType = Objects.requireNonNull(networkEndpointType);
+            if (networkEndpointType == null) {
+              throw new MissingRequiredPropertyException("AnalyticsInstanceNetworkEndpointDetails", "networkEndpointType");
+            }
+            this.networkEndpointType = networkEndpointType;
             return this;
         }
         @CustomType.Setter
         public Builder networkSecurityGroupIds(@Nullable List<String> networkSecurityGroupIds) {
+
             this.networkSecurityGroupIds = networkSecurityGroupIds;
             return this;
         }
@@ -143,16 +148,19 @@ public final class AnalyticsInstanceNetworkEndpointDetails {
         }
         @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
+
             this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
+
             this.vcnId = vcnId;
             return this;
         }
         @CustomType.Setter
         public Builder whitelistedIps(@Nullable List<String> whitelistedIps) {
+
             this.whitelistedIps = whitelistedIps;
             return this;
         }
@@ -161,6 +169,7 @@ public final class AnalyticsInstanceNetworkEndpointDetails {
         }
         @CustomType.Setter
         public Builder whitelistedServices(@Nullable List<String> whitelistedServices) {
+
             this.whitelistedServices = whitelistedServices;
             return this;
         }
@@ -169,6 +178,7 @@ public final class AnalyticsInstanceNetworkEndpointDetails {
         }
         @CustomType.Setter
         public Builder whitelistedVcns(@Nullable List<AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn> whitelistedVcns) {
+
             this.whitelistedVcns = whitelistedVcns;
             return this;
         }

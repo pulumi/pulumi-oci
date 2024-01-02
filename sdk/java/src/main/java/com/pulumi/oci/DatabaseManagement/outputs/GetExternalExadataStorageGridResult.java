@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageGridStorageServer;
 import java.lang.Double;
 import java.lang.Object;
@@ -235,62 +236,98 @@ public final class GetExternalExadataStorageGridResult {
 
         @CustomType.Setter
         public Builder additionalDetails(Map<String,Object> additionalDetails) {
-            this.additionalDetails = Objects.requireNonNull(additionalDetails);
+            if (additionalDetails == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageGridResult", "additionalDetails");
+            }
+            this.additionalDetails = additionalDetails;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageGridResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
-            this.exadataInfrastructureId = Objects.requireNonNull(exadataInfrastructureId);
+            if (exadataInfrastructureId == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageGridResult", "exadataInfrastructureId");
+            }
+            this.exadataInfrastructureId = exadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
         public Builder externalExadataStorageGridId(String externalExadataStorageGridId) {
-            this.externalExadataStorageGridId = Objects.requireNonNull(externalExadataStorageGridId);
+            if (externalExadataStorageGridId == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageGridResult", "externalExadataStorageGridId");
+            }
+            this.externalExadataStorageGridId = externalExadataStorageGridId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageGridResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder internalId(String internalId) {
-            this.internalId = Objects.requireNonNull(internalId);
+            if (internalId == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageGridResult", "internalId");
+            }
+            this.internalId = internalId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageGridResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageGridResult", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder serverCount(Double serverCount) {
-            this.serverCount = Objects.requireNonNull(serverCount);
+            if (serverCount == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageGridResult", "serverCount");
+            }
+            this.serverCount = serverCount;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageGridResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageGridResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder storageServers(List<GetExternalExadataStorageGridStorageServer> storageServers) {
-            this.storageServers = Objects.requireNonNull(storageServers);
+            if (storageServers == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageGridResult", "storageServers");
+            }
+            this.storageServers = storageServers;
             return this;
         }
         public Builder storageServers(GetExternalExadataStorageGridStorageServer... storageServers) {
@@ -298,17 +335,26 @@ public final class GetExternalExadataStorageGridResult {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageGridResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageGridResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageGridResult", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetExternalExadataStorageGridResult build() {

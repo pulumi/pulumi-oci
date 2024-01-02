@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude;
 import java.lang.String;
 import java.util.List;
@@ -72,7 +73,10 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
 
         @CustomType.Setter
         public Builder events(List<String> events) {
-            this.events = Objects.requireNonNull(events);
+            if (events == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter", "events");
+            }
+            this.events = events;
             return this;
         }
         public Builder events(String... events) {
@@ -80,7 +84,10 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
         }
         @CustomType.Setter
         public Builder includes(List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude> includes) {
-            this.includes = Objects.requireNonNull(includes);
+            if (includes == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter", "includes");
+            }
+            this.includes = includes;
             return this;
         }
         public Builder includes(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude... includes) {
@@ -88,7 +95,10 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
         }
         @CustomType.Setter
         public Builder triggerSource(String triggerSource) {
-            this.triggerSource = Objects.requireNonNull(triggerSource);
+            if (triggerSource == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter", "triggerSource");
+            }
+            this.triggerSource = triggerSource;
             return this;
         }
         public GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetLocalPeeringGatewaysFilter;
 import com.pulumi.oci.Core.outputs.GetLocalPeeringGatewaysLocalPeeringGateway;
 import java.lang.String;
@@ -95,11 +96,15 @@ public final class GetLocalPeeringGatewaysResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLocalPeeringGatewaysResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetLocalPeeringGatewaysFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -108,12 +113,18 @@ public final class GetLocalPeeringGatewaysResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLocalPeeringGatewaysResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder localPeeringGateways(List<GetLocalPeeringGatewaysLocalPeeringGateway> localPeeringGateways) {
-            this.localPeeringGateways = Objects.requireNonNull(localPeeringGateways);
+            if (localPeeringGateways == null) {
+              throw new MissingRequiredPropertyException("GetLocalPeeringGatewaysResult", "localPeeringGateways");
+            }
+            this.localPeeringGateways = localPeeringGateways;
             return this;
         }
         public Builder localPeeringGateways(GetLocalPeeringGatewaysLocalPeeringGateway... localPeeringGateways) {
@@ -121,6 +132,7 @@ public final class GetLocalPeeringGatewaysResult {
         }
         @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
+
             this.vcnId = vcnId;
             return this;
         }

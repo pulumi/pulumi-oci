@@ -58,11 +58,13 @@ public final class ConfigConfigurationClientCertificateDetailsClientCertificate 
 
         @CustomType.Setter
         public Builder content(@Nullable String content) {
+
             this.content = content;
             return this;
         }
         @CustomType.Setter
         public Builder fileName(@Nullable String fileName) {
+
             this.fileName = fileName;
             return this;
         }

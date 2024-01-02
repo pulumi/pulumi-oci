@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetAnnouncementsAnnouncementCollectionItem {
 
         @CustomType.Setter
         public Builder key(Integer key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetAnnouncementsAnnouncementCollectionItem", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder summary(String summary) {
-            this.summary = Objects.requireNonNull(summary);
+            if (summary == null) {
+              throw new MissingRequiredPropertyException("GetAnnouncementsAnnouncementCollectionItem", "summary");
+            }
+            this.summary = summary;
             return this;
         }
         @CustomType.Setter
         public Builder timeReleased(String timeReleased) {
-            this.timeReleased = Objects.requireNonNull(timeReleased);
+            if (timeReleased == null) {
+              throw new MissingRequiredPropertyException("GetAnnouncementsAnnouncementCollectionItem", "timeReleased");
+            }
+            this.timeReleased = timeReleased;
             return this;
         }
         @CustomType.Setter
         public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+            if (url == null) {
+              throw new MissingRequiredPropertyException("GetAnnouncementsAnnouncementCollectionItem", "url");
+            }
+            this.url = url;
             return this;
         }
         public GetAnnouncementsAnnouncementCollectionItem build() {

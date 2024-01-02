@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetManagedInstanceAutonomouse {
 
         @CustomType.Setter
         public Builder isAutoUpdateEnabled(Boolean isAutoUpdateEnabled) {
-            this.isAutoUpdateEnabled = Objects.requireNonNull(isAutoUpdateEnabled);
+            if (isAutoUpdateEnabled == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceAutonomouse", "isAutoUpdateEnabled");
+            }
+            this.isAutoUpdateEnabled = isAutoUpdateEnabled;
             return this;
         }
         public GetManagedInstanceAutonomouse build() {

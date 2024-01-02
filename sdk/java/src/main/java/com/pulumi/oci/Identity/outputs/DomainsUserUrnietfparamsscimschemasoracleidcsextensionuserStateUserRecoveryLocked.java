@@ -109,11 +109,13 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
 
         @CustomType.Setter
         public Builder lockDate(@Nullable String lockDate) {
+
             this.lockDate = lockDate;
             return this;
         }
         @CustomType.Setter
         public Builder on(@Nullable Boolean on) {
+
             this.on = on;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetMysqlConfigurationsConfigurationInitVariable {
 
         @CustomType.Setter
         public Builder lowerCaseTableNames(String lowerCaseTableNames) {
-            this.lowerCaseTableNames = Objects.requireNonNull(lowerCaseTableNames);
+            if (lowerCaseTableNames == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationInitVariable", "lowerCaseTableNames");
+            }
+            this.lowerCaseTableNames = lowerCaseTableNames;
             return this;
         }
         public GetMysqlConfigurationsConfigurationInitVariable build() {

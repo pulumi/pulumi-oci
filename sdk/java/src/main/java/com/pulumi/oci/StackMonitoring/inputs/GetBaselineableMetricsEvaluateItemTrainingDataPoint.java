@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -91,8 +92,12 @@ public final class GetBaselineableMetricsEvaluateItemTrainingDataPoint extends c
         }
 
         public GetBaselineableMetricsEvaluateItemTrainingDataPoint build() {
-            $.timestamp = Objects.requireNonNull($.timestamp, "expected parameter 'timestamp' to be non-null");
-            $.value = Objects.requireNonNull($.value, "expected parameter 'value' to be non-null");
+            if ($.timestamp == null) {
+                throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateItemTrainingDataPoint", "timestamp");
+            }
+            if ($.value == null) {
+                throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateItemTrainingDataPoint", "value");
+            }
             return $;
         }
     }

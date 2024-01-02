@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetSubscriberPlainArgs extends com.pulumi.resources.InvokeArg
         }
 
         public GetSubscriberPlainArgs build() {
-            $.subscriberId = Objects.requireNonNull($.subscriberId, "expected parameter 'subscriberId' to be non-null");
+            if ($.subscriberId == null) {
+                throw new MissingRequiredPropertyException("GetSubscriberPlainArgs", "subscriberId");
+            }
             return $;
         }
     }

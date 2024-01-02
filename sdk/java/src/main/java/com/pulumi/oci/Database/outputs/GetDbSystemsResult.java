@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbSystemsDbSystem;
 import com.pulumi.oci.Database.outputs.GetDbSystemsFilter;
 import java.lang.String;
@@ -129,22 +130,30 @@ public final class GetDbSystemsResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder backupId(@Nullable String backupId) {
+
             this.backupId = backupId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystems(List<GetDbSystemsDbSystem> dbSystems) {
-            this.dbSystems = Objects.requireNonNull(dbSystems);
+            if (dbSystems == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsResult", "dbSystems");
+            }
+            this.dbSystems = dbSystems;
             return this;
         }
         public Builder dbSystems(GetDbSystemsDbSystem... dbSystems) {
@@ -152,11 +161,13 @@ public final class GetDbSystemsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDbSystemsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -165,11 +176,15 @@ public final class GetDbSystemsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Events.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetRuleArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetRuleArgs build() {
-            $.ruleId = Objects.requireNonNull($.ruleId, "expected parameter 'ruleId' to be non-null");
+            if ($.ruleId == null) {
+                throw new MissingRequiredPropertyException("GetRuleArgs", "ruleId");
+            }
             return $;
         }
     }

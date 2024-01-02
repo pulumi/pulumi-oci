@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -86,22 +87,28 @@ public final class DeployArtifactDeployArtifactSourceHelmVerificationKeySource {
 
         @CustomType.Setter
         public Builder currentPublicKey(@Nullable String currentPublicKey) {
+
             this.currentPublicKey = currentPublicKey;
             return this;
         }
         @CustomType.Setter
         public Builder previousPublicKey(@Nullable String previousPublicKey) {
+
             this.previousPublicKey = previousPublicKey;
             return this;
         }
         @CustomType.Setter
         public Builder vaultSecretId(@Nullable String vaultSecretId) {
+
             this.vaultSecretId = vaultSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder verificationKeySourceType(String verificationKeySourceType) {
-            this.verificationKeySourceType = Objects.requireNonNull(verificationKeySourceType);
+            if (verificationKeySourceType == null) {
+              throw new MissingRequiredPropertyException("DeployArtifactDeployArtifactSourceHelmVerificationKeySource", "verificationKeySourceType");
+            }
+            this.verificationKeySourceType = verificationKeySourceType;
             return this;
         }
         public DeployArtifactDeployArtifactSourceHelmVerificationKeySource build() {

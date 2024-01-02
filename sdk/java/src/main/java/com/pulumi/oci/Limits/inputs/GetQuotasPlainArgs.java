@@ -4,6 +4,7 @@
 package com.pulumi.oci.Limits.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Limits.inputs.GetQuotasFilter;
 import java.lang.String;
 import java.util.List;
@@ -138,7 +139,9 @@ public final class GetQuotasPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetQuotasPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetQuotasPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

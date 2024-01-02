@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner;
@@ -132,7 +133,10 @@ public final class GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamss
 
         @CustomType.Setter
         public Builder appRoles(List<GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole> appRoles) {
-            this.appRoles = Objects.requireNonNull(appRoles);
+            if (appRoles == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup", "appRoles");
+            }
+            this.appRoles = appRoles;
             return this;
         }
         public Builder appRoles(GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole... appRoles) {
@@ -140,17 +144,26 @@ public final class GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamss
         }
         @CustomType.Setter
         public Builder creationMechanism(String creationMechanism) {
-            this.creationMechanism = Objects.requireNonNull(creationMechanism);
+            if (creationMechanism == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup", "creationMechanism");
+            }
+            this.creationMechanism = creationMechanism;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder grants(List<GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant> grants) {
-            this.grants = Objects.requireNonNull(grants);
+            if (grants == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup", "grants");
+            }
+            this.grants = grants;
             return this;
         }
         public Builder grants(GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant... grants) {
@@ -158,7 +171,10 @@ public final class GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamss
         }
         @CustomType.Setter
         public Builder owners(List<GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner> owners) {
-            this.owners = Objects.requireNonNull(owners);
+            if (owners == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup", "owners");
+            }
+            this.owners = owners;
             return this;
         }
         public Builder owners(GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner... owners) {
@@ -166,7 +182,10 @@ public final class GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamss
         }
         @CustomType.Setter
         public Builder passwordPolicies(List<GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy> passwordPolicies) {
-            this.passwordPolicies = Objects.requireNonNull(passwordPolicies);
+            if (passwordPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup", "passwordPolicies");
+            }
+            this.passwordPolicies = passwordPolicies;
             return this;
         }
         public Builder passwordPolicies(GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy... passwordPolicies) {
@@ -174,7 +193,10 @@ public final class GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamss
         }
         @CustomType.Setter
         public Builder syncedFromApps(List<GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp> syncedFromApps) {
-            this.syncedFromApps = Objects.requireNonNull(syncedFromApps);
+            if (syncedFromApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup", "syncedFromApps");
+            }
+            this.syncedFromApps = syncedFromApps;
             return this;
         }
         public Builder syncedFromApps(GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp... syncedFromApps) {

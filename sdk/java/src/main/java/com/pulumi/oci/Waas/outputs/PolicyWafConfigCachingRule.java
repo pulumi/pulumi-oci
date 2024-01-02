@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.PolicyWafConfigCachingRuleCriteria;
 import java.lang.Boolean;
 import java.lang.String;
@@ -137,22 +138,30 @@ public final class PolicyWafConfigCachingRule {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("PolicyWafConfigCachingRule", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder cachingDuration(@Nullable String cachingDuration) {
+
             this.cachingDuration = cachingDuration;
             return this;
         }
         @CustomType.Setter
         public Builder clientCachingDuration(@Nullable String clientCachingDuration) {
+
             this.clientCachingDuration = clientCachingDuration;
             return this;
         }
         @CustomType.Setter
         public Builder criterias(List<PolicyWafConfigCachingRuleCriteria> criterias) {
-            this.criterias = Objects.requireNonNull(criterias);
+            if (criterias == null) {
+              throw new MissingRequiredPropertyException("PolicyWafConfigCachingRule", "criterias");
+            }
+            this.criterias = criterias;
             return this;
         }
         public Builder criterias(PolicyWafConfigCachingRuleCriteria... criterias) {
@@ -160,17 +169,22 @@ public final class PolicyWafConfigCachingRule {
         }
         @CustomType.Setter
         public Builder isClientCachingEnabled(@Nullable Boolean isClientCachingEnabled) {
+
             this.isClientCachingEnabled = isClientCachingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder key(@Nullable String key) {
+
             this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("PolicyWafConfigCachingRule", "name");
+            }
+            this.name = name;
             return this;
         }
         public PolicyWafConfigCachingRule build() {

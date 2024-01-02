@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy;
@@ -435,7 +436,10 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
 
         @CustomType.Setter
         public Builder additionalLanguagePacks(List<String> additionalLanguagePacks) {
-            this.additionalLanguagePacks = Objects.requireNonNull(additionalLanguagePacks);
+            if (additionalLanguagePacks == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "additionalLanguagePacks");
+            }
+            this.additionalLanguagePacks = additionalLanguagePacks;
             return this;
         }
         public Builder additionalLanguagePacks(String... additionalLanguagePacks) {
@@ -443,7 +447,10 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
         }
         @CustomType.Setter
         public Builder appliedPatchBundles(List<String> appliedPatchBundles) {
-            this.appliedPatchBundles = Objects.requireNonNull(appliedPatchBundles);
+            if (appliedPatchBundles == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "appliedPatchBundles");
+            }
+            this.appliedPatchBundles = appliedPatchBundles;
             return this;
         }
         public Builder appliedPatchBundles(String... appliedPatchBundles) {
@@ -451,12 +458,18 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createFusionEnvironmentAdminUserDetails(List<GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail> createFusionEnvironmentAdminUserDetails) {
-            this.createFusionEnvironmentAdminUserDetails = Objects.requireNonNull(createFusionEnvironmentAdminUserDetails);
+            if (createFusionEnvironmentAdminUserDetails == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "createFusionEnvironmentAdminUserDetails");
+            }
+            this.createFusionEnvironmentAdminUserDetails = createFusionEnvironmentAdminUserDetails;
             return this;
         }
         public Builder createFusionEnvironmentAdminUserDetails(GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail... createFusionEnvironmentAdminUserDetails) {
@@ -464,62 +477,98 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder dnsPrefix(String dnsPrefix) {
-            this.dnsPrefix = Objects.requireNonNull(dnsPrefix);
+            if (dnsPrefix == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "dnsPrefix");
+            }
+            this.dnsPrefix = dnsPrefix;
             return this;
         }
         @CustomType.Setter
         public Builder domainId(String domainId) {
-            this.domainId = Objects.requireNonNull(domainId);
+            if (domainId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "domainId");
+            }
+            this.domainId = domainId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder fusionEnvironmentFamilyId(String fusionEnvironmentFamilyId) {
-            this.fusionEnvironmentFamilyId = Objects.requireNonNull(fusionEnvironmentFamilyId);
+            if (fusionEnvironmentFamilyId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "fusionEnvironmentFamilyId");
+            }
+            this.fusionEnvironmentFamilyId = fusionEnvironmentFamilyId;
             return this;
         }
         @CustomType.Setter
         public Builder fusionEnvironmentType(String fusionEnvironmentType) {
-            this.fusionEnvironmentType = Objects.requireNonNull(fusionEnvironmentType);
+            if (fusionEnvironmentType == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "fusionEnvironmentType");
+            }
+            this.fusionEnvironmentType = fusionEnvironmentType;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsDomainUrl(String idcsDomainUrl) {
-            this.idcsDomainUrl = Objects.requireNonNull(idcsDomainUrl);
+            if (idcsDomainUrl == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "idcsDomainUrl");
+            }
+            this.idcsDomainUrl = idcsDomainUrl;
             return this;
         }
         @CustomType.Setter
         public Builder isBreakGlassEnabled(Boolean isBreakGlassEnabled) {
-            this.isBreakGlassEnabled = Objects.requireNonNull(isBreakGlassEnabled);
+            if (isBreakGlassEnabled == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "isBreakGlassEnabled");
+            }
+            this.isBreakGlassEnabled = isBreakGlassEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyInfos(List<GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo> kmsKeyInfos) {
-            this.kmsKeyInfos = Objects.requireNonNull(kmsKeyInfos);
+            if (kmsKeyInfos == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "kmsKeyInfos");
+            }
+            this.kmsKeyInfos = kmsKeyInfos;
             return this;
         }
         public Builder kmsKeyInfos(GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo... kmsKeyInfos) {
@@ -527,17 +576,26 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder lockboxId(String lockboxId) {
-            this.lockboxId = Objects.requireNonNull(lockboxId);
+            if (lockboxId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "lockboxId");
+            }
+            this.lockboxId = lockboxId;
             return this;
         }
         @CustomType.Setter
         public Builder maintenancePolicies(List<GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy> maintenancePolicies) {
-            this.maintenancePolicies = Objects.requireNonNull(maintenancePolicies);
+            if (maintenancePolicies == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "maintenancePolicies");
+            }
+            this.maintenancePolicies = maintenancePolicies;
             return this;
         }
         public Builder maintenancePolicies(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy... maintenancePolicies) {
@@ -545,12 +603,18 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
         }
         @CustomType.Setter
         public Builder publicUrl(String publicUrl) {
-            this.publicUrl = Objects.requireNonNull(publicUrl);
+            if (publicUrl == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "publicUrl");
+            }
+            this.publicUrl = publicUrl;
             return this;
         }
         @CustomType.Setter
         public Builder refreshes(List<GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh> refreshes) {
-            this.refreshes = Objects.requireNonNull(refreshes);
+            if (refreshes == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "refreshes");
+            }
+            this.refreshes = refreshes;
             return this;
         }
         public Builder refreshes(GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh... refreshes) {
@@ -558,7 +622,10 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
         }
         @CustomType.Setter
         public Builder rules(List<GetFusionEnvironmentsFusionEnvironmentCollectionItemRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+            if (rules == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "rules");
+            }
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetFusionEnvironmentsFusionEnvironmentCollectionItemRule... rules) {
@@ -566,12 +633,18 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptionIds(List<String> subscriptionIds) {
-            this.subscriptionIds = Objects.requireNonNull(subscriptionIds);
+            if (subscriptionIds == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "subscriptionIds");
+            }
+            this.subscriptionIds = subscriptionIds;
             return this;
         }
         public Builder subscriptionIds(String... subscriptionIds) {
@@ -579,27 +652,42 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
         }
         @CustomType.Setter
         public Builder systemName(String systemName) {
-            this.systemName = Objects.requireNonNull(systemName);
+            if (systemName == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "systemName");
+            }
+            this.systemName = systemName;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpcomingMaintenance(String timeUpcomingMaintenance) {
-            this.timeUpcomingMaintenance = Objects.requireNonNull(timeUpcomingMaintenance);
+            if (timeUpcomingMaintenance == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "timeUpcomingMaintenance");
+            }
+            this.timeUpcomingMaintenance = timeUpcomingMaintenance;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetFusionEnvironmentsFusionEnvironmentCollectionItem build() {

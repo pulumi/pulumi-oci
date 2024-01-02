@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetails;
 import java.lang.String;
 import java.util.Objects;
@@ -133,37 +134,46 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSource
 
         @CustomType.Setter
         public Builder bootVolumeId(@Nullable String bootVolumeId) {
+
             this.bootVolumeId = bootVolumeId;
             return this;
         }
         @CustomType.Setter
         public Builder bootVolumeSizeInGbs(@Nullable String bootVolumeSizeInGbs) {
+
             this.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder bootVolumeVpusPerGb(@Nullable String bootVolumeVpusPerGb) {
+
             this.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
             return this;
         }
         @CustomType.Setter
         public Builder imageId(@Nullable String imageId) {
+
             this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder instanceSourceImageFilterDetails(@Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetails instanceSourceImageFilterDetails) {
+
             this.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
+
             this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetails", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         public InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetails build() {

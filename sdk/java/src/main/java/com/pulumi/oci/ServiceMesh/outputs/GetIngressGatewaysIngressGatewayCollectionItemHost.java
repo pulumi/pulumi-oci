@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListener;
 import java.lang.String;
 import java.util.List;
@@ -72,7 +73,10 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHost {
 
         @CustomType.Setter
         public Builder hostnames(List<String> hostnames) {
-            this.hostnames = Objects.requireNonNull(hostnames);
+            if (hostnames == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewaysIngressGatewayCollectionItemHost", "hostnames");
+            }
+            this.hostnames = hostnames;
             return this;
         }
         public Builder hostnames(String... hostnames) {
@@ -80,7 +84,10 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHost {
         }
         @CustomType.Setter
         public Builder listeners(List<GetIngressGatewaysIngressGatewayCollectionItemHostListener> listeners) {
-            this.listeners = Objects.requireNonNull(listeners);
+            if (listeners == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewaysIngressGatewayCollectionItemHost", "listeners");
+            }
+            this.listeners = listeners;
             return this;
         }
         public Builder listeners(GetIngressGatewaysIngressGatewayCollectionItemHostListener... listeners) {
@@ -88,7 +95,10 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHost {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewaysIngressGatewayCollectionItemHost", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetIngressGatewaysIngressGatewayCollectionItemHost build() {

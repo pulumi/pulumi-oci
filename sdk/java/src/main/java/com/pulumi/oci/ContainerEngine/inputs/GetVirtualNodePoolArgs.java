@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetVirtualNodePoolArgs extends com.pulumi.resources.InvokeArg
         }
 
         public GetVirtualNodePoolArgs build() {
-            $.virtualNodePoolId = Objects.requireNonNull($.virtualNodePoolId, "expected parameter 'virtualNodePoolId' to be non-null");
+            if ($.virtualNodePoolId == null) {
+                throw new MissingRequiredPropertyException("GetVirtualNodePoolArgs", "virtualNodePoolId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Integration.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Integration.inputs.GetIntegrationInstancesFilter;
 import java.lang.String;
 import java.util.List;
@@ -138,7 +139,9 @@ public final class GetIntegrationInstancesPlainArgs extends com.pulumi.resources
         }
 
         public GetIntegrationInstancesPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetIntegrationInstancesPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

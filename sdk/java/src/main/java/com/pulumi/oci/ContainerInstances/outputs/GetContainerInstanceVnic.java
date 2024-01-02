@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerInstances.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -124,32 +125,50 @@ public final class GetContainerInstanceVnic {
 
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceVnic", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceVnic", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceVnic", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostnameLabel(String hostnameLabel) {
-            this.hostnameLabel = Objects.requireNonNull(hostnameLabel);
+            if (hostnameLabel == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceVnic", "hostnameLabel");
+            }
+            this.hostnameLabel = hostnameLabel;
             return this;
         }
         @CustomType.Setter
         public Builder isPublicIpAssigned(Boolean isPublicIpAssigned) {
-            this.isPublicIpAssigned = Objects.requireNonNull(isPublicIpAssigned);
+            if (isPublicIpAssigned == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceVnic", "isPublicIpAssigned");
+            }
+            this.isPublicIpAssigned = isPublicIpAssigned;
             return this;
         }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceVnic", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
@@ -157,22 +176,34 @@ public final class GetContainerInstanceVnic {
         }
         @CustomType.Setter
         public Builder privateIp(String privateIp) {
-            this.privateIp = Objects.requireNonNull(privateIp);
+            if (privateIp == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceVnic", "privateIp");
+            }
+            this.privateIp = privateIp;
             return this;
         }
         @CustomType.Setter
         public Builder skipSourceDestCheck(Boolean skipSourceDestCheck) {
-            this.skipSourceDestCheck = Objects.requireNonNull(skipSourceDestCheck);
+            if (skipSourceDestCheck == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceVnic", "skipSourceDestCheck");
+            }
+            this.skipSourceDestCheck = skipSourceDestCheck;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceVnic", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder vnicId(String vnicId) {
-            this.vnicId = Objects.requireNonNull(vnicId);
+            if (vnicId == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceVnic", "vnicId");
+            }
+            this.vnicId = vnicId;
             return this;
         }
         public GetContainerInstanceVnic build() {

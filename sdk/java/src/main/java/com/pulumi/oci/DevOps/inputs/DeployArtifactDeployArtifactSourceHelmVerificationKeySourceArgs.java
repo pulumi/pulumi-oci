@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -187,7 +188,9 @@ public final class DeployArtifactDeployArtifactSourceHelmVerificationKeySourceAr
         }
 
         public DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs build() {
-            $.verificationKeySourceType = Objects.requireNonNull($.verificationKeySourceType, "expected parameter 'verificationKeySourceType' to be non-null");
+            if ($.verificationKeySourceType == null) {
+                throw new MissingRequiredPropertyException("DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs", "verificationKeySourceType");
+            }
             return $;
         }
     }

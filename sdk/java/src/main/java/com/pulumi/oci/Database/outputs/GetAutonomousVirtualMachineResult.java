@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -219,72 +220,114 @@ public final class GetAutonomousVirtualMachineResult {
 
         @CustomType.Setter
         public Builder autonomousVirtualMachineId(String autonomousVirtualMachineId) {
-            this.autonomousVirtualMachineId = Objects.requireNonNull(autonomousVirtualMachineId);
+            if (autonomousVirtualMachineId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVirtualMachineResult", "autonomousVirtualMachineId");
+            }
+            this.autonomousVirtualMachineId = autonomousVirtualMachineId;
             return this;
         }
         @CustomType.Setter
         public Builder autonomousVmClusterId(String autonomousVmClusterId) {
-            this.autonomousVmClusterId = Objects.requireNonNull(autonomousVmClusterId);
+            if (autonomousVmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVirtualMachineResult", "autonomousVmClusterId");
+            }
+            this.autonomousVmClusterId = autonomousVmClusterId;
             return this;
         }
         @CustomType.Setter
         public Builder clientIpAddress(String clientIpAddress) {
-            this.clientIpAddress = Objects.requireNonNull(clientIpAddress);
+            if (clientIpAddress == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVirtualMachineResult", "clientIpAddress");
+            }
+            this.clientIpAddress = clientIpAddress;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVirtualMachineResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+            if (cpuCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVirtualMachineResult", "cpuCoreCount");
+            }
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
         public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
-            this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
+            if (dbNodeStorageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVirtualMachineResult", "dbNodeStorageSizeInGbs");
+            }
+            this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder dbServerDisplayName(String dbServerDisplayName) {
-            this.dbServerDisplayName = Objects.requireNonNull(dbServerDisplayName);
+            if (dbServerDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVirtualMachineResult", "dbServerDisplayName");
+            }
+            this.dbServerDisplayName = dbServerDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder dbServerId(String dbServerId) {
-            this.dbServerId = Objects.requireNonNull(dbServerId);
+            if (dbServerId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVirtualMachineResult", "dbServerId");
+            }
+            this.dbServerId = dbServerId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVirtualMachineResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVirtualMachineResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVirtualMachineResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder memorySizeInGbs(Integer memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+            if (memorySizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVirtualMachineResult", "memorySizeInGbs");
+            }
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVirtualMachineResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vmName(String vmName) {
-            this.vmName = Objects.requireNonNull(vmName);
+            if (vmName == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVirtualMachineResult", "vmName");
+            }
+            this.vmName = vmName;
             return this;
         }
         public GetAutonomousVirtualMachineResult build() {

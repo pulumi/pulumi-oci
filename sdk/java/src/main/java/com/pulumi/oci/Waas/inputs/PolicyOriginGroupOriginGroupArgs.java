@@ -5,6 +5,7 @@ package com.pulumi.oci.Waas.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -94,7 +95,9 @@ public final class PolicyOriginGroupOriginGroupArgs extends com.pulumi.resources
         }
 
         public PolicyOriginGroupOriginGroupArgs build() {
-            $.origin = Objects.requireNonNull($.origin, "expected parameter 'origin' to be non-null");
+            if ($.origin == null) {
+                throw new MissingRequiredPropertyException("PolicyOriginGroupOriginGroupArgs", "origin");
+            }
             return $;
         }
     }

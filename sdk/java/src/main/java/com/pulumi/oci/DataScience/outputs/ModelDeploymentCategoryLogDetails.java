@@ -59,11 +59,13 @@ public final class ModelDeploymentCategoryLogDetails {
 
         @CustomType.Setter
         public Builder access(@Nullable ModelDeploymentCategoryLogDetailsAccess access) {
+
             this.access = access;
             return this;
         }
         @CustomType.Setter
         public Builder predict(@Nullable ModelDeploymentCategoryLogDetailsPredict predict) {
+
             this.predict = predict;
             return this;
         }

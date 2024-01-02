@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetDeployStagePlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetDeployStagePlainArgs build() {
-            $.deployStageId = Objects.requireNonNull($.deployStageId, "expected parameter 'deployStageId' to be non-null");
+            if ($.deployStageId == null) {
+                throw new MissingRequiredPropertyException("GetDeployStagePlainArgs", "deployStageId");
+            }
             return $;
         }
     }

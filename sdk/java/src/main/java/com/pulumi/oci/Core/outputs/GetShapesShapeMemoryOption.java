@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.util.Objects;
 
@@ -112,32 +113,50 @@ public final class GetShapesShapeMemoryOption {
 
         @CustomType.Setter
         public Builder defaultPerOcpuInGbs(Double defaultPerOcpuInGbs) {
-            this.defaultPerOcpuInGbs = Objects.requireNonNull(defaultPerOcpuInGbs);
+            if (defaultPerOcpuInGbs == null) {
+              throw new MissingRequiredPropertyException("GetShapesShapeMemoryOption", "defaultPerOcpuInGbs");
+            }
+            this.defaultPerOcpuInGbs = defaultPerOcpuInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder maxInGbs(Double maxInGbs) {
-            this.maxInGbs = Objects.requireNonNull(maxInGbs);
+            if (maxInGbs == null) {
+              throw new MissingRequiredPropertyException("GetShapesShapeMemoryOption", "maxInGbs");
+            }
+            this.maxInGbs = maxInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder maxPerNumaNodeInGbs(Double maxPerNumaNodeInGbs) {
-            this.maxPerNumaNodeInGbs = Objects.requireNonNull(maxPerNumaNodeInGbs);
+            if (maxPerNumaNodeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetShapesShapeMemoryOption", "maxPerNumaNodeInGbs");
+            }
+            this.maxPerNumaNodeInGbs = maxPerNumaNodeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder maxPerOcpuInGbs(Double maxPerOcpuInGbs) {
-            this.maxPerOcpuInGbs = Objects.requireNonNull(maxPerOcpuInGbs);
+            if (maxPerOcpuInGbs == null) {
+              throw new MissingRequiredPropertyException("GetShapesShapeMemoryOption", "maxPerOcpuInGbs");
+            }
+            this.maxPerOcpuInGbs = maxPerOcpuInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder minInGbs(Double minInGbs) {
-            this.minInGbs = Objects.requireNonNull(minInGbs);
+            if (minInGbs == null) {
+              throw new MissingRequiredPropertyException("GetShapesShapeMemoryOption", "minInGbs");
+            }
+            this.minInGbs = minInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder minPerOcpuInGbs(Double minPerOcpuInGbs) {
-            this.minPerOcpuInGbs = Objects.requireNonNull(minPerOcpuInGbs);
+            if (minPerOcpuInGbs == null) {
+              throw new MissingRequiredPropertyException("GetShapesShapeMemoryOption", "minPerOcpuInGbs");
+            }
+            this.minPerOcpuInGbs = minPerOcpuInGbs;
             return this;
         }
         public GetShapesShapeMemoryOption build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Ocvp;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ocvp.inputs.ClusterDatastoreArgs;
 import com.pulumi.oci.Ocvp.inputs.ClusterNetworkConfigurationArgs;
 import java.lang.Boolean;
@@ -714,10 +715,18 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ClusterArgs build() {
-            $.computeAvailabilityDomain = Objects.requireNonNull($.computeAvailabilityDomain, "expected parameter 'computeAvailabilityDomain' to be non-null");
-            $.esxiHostsCount = Objects.requireNonNull($.esxiHostsCount, "expected parameter 'esxiHostsCount' to be non-null");
-            $.networkConfiguration = Objects.requireNonNull($.networkConfiguration, "expected parameter 'networkConfiguration' to be non-null");
-            $.sddcId = Objects.requireNonNull($.sddcId, "expected parameter 'sddcId' to be non-null");
+            if ($.computeAvailabilityDomain == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "computeAvailabilityDomain");
+            }
+            if ($.esxiHostsCount == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "esxiHostsCount");
+            }
+            if ($.networkConfiguration == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "networkConfiguration");
+            }
+            if ($.sddcId == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "sddcId");
+            }
             return $;
         }
     }

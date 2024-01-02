@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetApplicationsApplicationTraceConfig {
 
         @CustomType.Setter
         public Builder domainId(String domainId) {
-            this.domainId = Objects.requireNonNull(domainId);
+            if (domainId == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsApplicationTraceConfig", "domainId");
+            }
+            this.domainId = domainId;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsApplicationTraceConfig", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         public GetApplicationsApplicationTraceConfig build() {

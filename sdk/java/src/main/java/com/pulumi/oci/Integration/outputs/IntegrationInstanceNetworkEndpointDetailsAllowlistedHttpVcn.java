@@ -4,6 +4,7 @@
 package com.pulumi.oci.Integration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -58,6 +59,7 @@ public final class IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn {
 
         @CustomType.Setter
         public Builder allowlistedIps(@Nullable List<String> allowlistedIps) {
+
             this.allowlistedIps = allowlistedIps;
             return this;
         }
@@ -66,7 +68,10 @@ public final class IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn", "id");
+            }
+            this.id = id;
             return this;
         }
         public IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn build() {

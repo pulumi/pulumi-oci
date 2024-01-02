@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetZonesZoneExternalDownstream {
 
         @CustomType.Setter
         public Builder address(String address) {
-            this.address = Objects.requireNonNull(address);
+            if (address == null) {
+              throw new MissingRequiredPropertyException("GetZonesZoneExternalDownstream", "address");
+            }
+            this.address = address;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetZonesZoneExternalDownstream", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder tsigKeyId(String tsigKeyId) {
-            this.tsigKeyId = Objects.requireNonNull(tsigKeyId);
+            if (tsigKeyId == null) {
+              throw new MissingRequiredPropertyException("GetZonesZoneExternalDownstream", "tsigKeyId");
+            }
+            this.tsigKeyId = tsigKeyId;
             return this;
         }
         public GetZonesZoneExternalDownstream build() {

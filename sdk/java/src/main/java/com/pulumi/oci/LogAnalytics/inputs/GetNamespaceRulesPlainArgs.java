@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesFilter;
 import java.lang.String;
 import java.util.List;
@@ -192,8 +193,12 @@ public final class GetNamespaceRulesPlainArgs extends com.pulumi.resources.Invok
         }
 
         public GetNamespaceRulesPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetNamespaceRulesPlainArgs", "compartmentId");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("GetNamespaceRulesPlainArgs", "namespace");
+            }
             return $;
         }
     }

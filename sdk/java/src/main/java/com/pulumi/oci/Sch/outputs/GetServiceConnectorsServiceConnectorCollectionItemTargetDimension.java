@@ -4,6 +4,7 @@
 package com.pulumi.oci.Sch.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Sch.outputs.GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTargetDimen
 
         @CustomType.Setter
         public Builder dimensionValues(List<GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue> dimensionValues) {
-            this.dimensionValues = Objects.requireNonNull(dimensionValues);
+            if (dimensionValues == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTargetDimension", "dimensionValues");
+            }
+            this.dimensionValues = dimensionValues;
             return this;
         }
         public Builder dimensionValues(GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue... dimensionValues) {
@@ -66,7 +70,10 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTargetDimen
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTargetDimension", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetServiceConnectorsServiceConnectorCollectionItemTargetDimension build() {

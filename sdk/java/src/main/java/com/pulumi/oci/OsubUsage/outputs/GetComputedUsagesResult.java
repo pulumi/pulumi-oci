@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsubUsage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsubUsage.outputs.GetComputedUsagesComputedUsage;
 import com.pulumi.oci.OsubUsage.outputs.GetComputedUsagesFilter;
 import java.lang.String;
@@ -117,17 +118,24 @@ public final class GetComputedUsagesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computedProduct(@Nullable String computedProduct) {
+
             this.computedProduct = computedProduct;
             return this;
         }
         @CustomType.Setter
         public Builder computedUsages(List<GetComputedUsagesComputedUsage> computedUsages) {
-            this.computedUsages = Objects.requireNonNull(computedUsages);
+            if (computedUsages == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesResult", "computedUsages");
+            }
+            this.computedUsages = computedUsages;
             return this;
         }
         public Builder computedUsages(GetComputedUsagesComputedUsage... computedUsages) {
@@ -135,6 +143,7 @@ public final class GetComputedUsagesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetComputedUsagesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -143,31 +152,45 @@ public final class GetComputedUsagesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder parentProduct(@Nullable String parentProduct) {
+
             this.parentProduct = parentProduct;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesResult", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
         public Builder timeFrom(String timeFrom) {
-            this.timeFrom = Objects.requireNonNull(timeFrom);
+            if (timeFrom == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesResult", "timeFrom");
+            }
+            this.timeFrom = timeFrom;
             return this;
         }
         @CustomType.Setter
         public Builder timeTo(String timeTo) {
-            this.timeTo = Objects.requireNonNull(timeTo);
+            if (timeTo == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesResult", "timeTo");
+            }
+            this.timeTo = timeTo;
             return this;
         }
         @CustomType.Setter
         public Builder xOneOriginRegion(@Nullable String xOneOriginRegion) {
+
             this.xOneOriginRegion = xOneOriginRegion;
             return this;
         }

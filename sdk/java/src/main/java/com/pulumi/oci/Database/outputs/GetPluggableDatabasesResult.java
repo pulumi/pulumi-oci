@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetPluggableDatabasesFilter;
 import com.pulumi.oci.Database.outputs.GetPluggableDatabasesPluggableDatabase;
 import java.lang.String;
@@ -115,16 +116,19 @@ public final class GetPluggableDatabasesResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseId(@Nullable String databaseId) {
+
             this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPluggableDatabasesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -133,17 +137,24 @@ public final class GetPluggableDatabasesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabasesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder pdbName(@Nullable String pdbName) {
+
             this.pdbName = pdbName;
             return this;
         }
         @CustomType.Setter
         public Builder pluggableDatabases(List<GetPluggableDatabasesPluggableDatabase> pluggableDatabases) {
-            this.pluggableDatabases = Objects.requireNonNull(pluggableDatabases);
+            if (pluggableDatabases == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabasesResult", "pluggableDatabases");
+            }
+            this.pluggableDatabases = pluggableDatabases;
             return this;
         }
         public Builder pluggableDatabases(GetPluggableDatabasesPluggableDatabase... pluggableDatabases) {
@@ -151,6 +162,7 @@ public final class GetPluggableDatabasesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

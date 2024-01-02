@@ -5,6 +5,7 @@ package com.pulumi.oci.ServiceMesh.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -151,7 +152,9 @@ public final class IngressGatewayRouteTableRouteRuleDestinationArgs extends com.
         }
 
         public IngressGatewayRouteTableRouteRuleDestinationArgs build() {
-            $.virtualServiceId = Objects.requireNonNull($.virtualServiceId, "expected parameter 'virtualServiceId' to be non-null");
+            if ($.virtualServiceId == null) {
+                throw new MissingRequiredPropertyException("IngressGatewayRouteTableRouteRuleDestinationArgs", "virtualServiceId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetComputeCapacityTopologiesComputeCapacityTopologyCollection
 
         @CustomType.Setter
         public Builder capacityType(String capacityType) {
-            this.capacityType = Objects.requireNonNull(capacityType);
+            if (capacityType == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologiesComputeCapacityTopologyCollectionItemCapacitySource", "capacityType");
+            }
+            this.capacityType = capacityType;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologiesComputeCapacityTopologyCollectionItemCapacitySource", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         public GetComputeCapacityTopologiesComputeCapacityTopologyCollectionItemCapacitySource build() {

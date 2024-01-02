@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.DiscoveryJobDiscoveryDetailsCredentials;
 import com.pulumi.oci.StackMonitoring.outputs.DiscoveryJobDiscoveryDetailsProperties;
 import com.pulumi.oci.StackMonitoring.outputs.DiscoveryJobDiscoveryDetailsTags;
@@ -131,36 +132,51 @@ public final class DiscoveryJobDiscoveryDetails {
 
         @CustomType.Setter
         public Builder agentId(String agentId) {
-            this.agentId = Objects.requireNonNull(agentId);
+            if (agentId == null) {
+              throw new MissingRequiredPropertyException("DiscoveryJobDiscoveryDetails", "agentId");
+            }
+            this.agentId = agentId;
             return this;
         }
         @CustomType.Setter
         public Builder credentials(@Nullable DiscoveryJobDiscoveryDetailsCredentials credentials) {
+
             this.credentials = credentials;
             return this;
         }
         @CustomType.Setter
         public Builder license(@Nullable String license) {
+
             this.license = license;
             return this;
         }
         @CustomType.Setter
         public Builder properties(DiscoveryJobDiscoveryDetailsProperties properties) {
-            this.properties = Objects.requireNonNull(properties);
+            if (properties == null) {
+              throw new MissingRequiredPropertyException("DiscoveryJobDiscoveryDetails", "properties");
+            }
+            this.properties = properties;
             return this;
         }
         @CustomType.Setter
         public Builder resourceName(String resourceName) {
-            this.resourceName = Objects.requireNonNull(resourceName);
+            if (resourceName == null) {
+              throw new MissingRequiredPropertyException("DiscoveryJobDiscoveryDetails", "resourceName");
+            }
+            this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("DiscoveryJobDiscoveryDetails", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder tags(@Nullable DiscoveryJobDiscoveryDetailsTags tags) {
+
             this.tags = tags;
             return this;
         }

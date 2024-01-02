@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetDomainsAuthenticationFactorSettingIdentityStoreSetting {
 
         @CustomType.Setter
         public Builder mobileNumberEnabled(Boolean mobileNumberEnabled) {
-            this.mobileNumberEnabled = Objects.requireNonNull(mobileNumberEnabled);
+            if (mobileNumberEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingIdentityStoreSetting", "mobileNumberEnabled");
+            }
+            this.mobileNumberEnabled = mobileNumberEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder mobileNumberUpdateEnabled(Boolean mobileNumberUpdateEnabled) {
-            this.mobileNumberUpdateEnabled = Objects.requireNonNull(mobileNumberUpdateEnabled);
+            if (mobileNumberUpdateEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingIdentityStoreSetting", "mobileNumberUpdateEnabled");
+            }
+            this.mobileNumberUpdateEnabled = mobileNumberUpdateEnabled;
             return this;
         }
         public GetDomainsAuthenticationFactorSettingIdentityStoreSetting build() {

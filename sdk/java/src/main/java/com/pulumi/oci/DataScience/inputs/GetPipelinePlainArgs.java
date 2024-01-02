@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetPipelinePlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         public GetPipelinePlainArgs build() {
-            $.pipelineId = Objects.requireNonNull($.pipelineId, "expected parameter 'pipelineId' to be non-null");
+            if ($.pipelineId == null) {
+                throw new MissingRequiredPropertyException("GetPipelinePlainArgs", "pipelineId");
+            }
             return $;
         }
     }

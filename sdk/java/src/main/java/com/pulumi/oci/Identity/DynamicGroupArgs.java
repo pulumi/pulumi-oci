@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -275,9 +276,15 @@ public final class DynamicGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DynamicGroupArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.description = Objects.requireNonNull($.description, "expected parameter 'description' to be non-null");
-            $.matchingRule = Objects.requireNonNull($.matchingRule, "expected parameter 'matchingRule' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("DynamicGroupArgs", "compartmentId");
+            }
+            if ($.description == null) {
+                throw new MissingRequiredPropertyException("DynamicGroupArgs", "description");
+            }
+            if ($.matchingRule == null) {
+                throw new MissingRequiredPropertyException("DynamicGroupArgs", "matchingRule");
+            }
             return $;
         }
     }

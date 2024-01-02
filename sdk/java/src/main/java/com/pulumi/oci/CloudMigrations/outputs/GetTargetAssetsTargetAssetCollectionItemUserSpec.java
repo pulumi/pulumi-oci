@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfig;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetail;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOption;
@@ -282,7 +283,10 @@ public final class GetTargetAssetsTargetAssetCollectionItemUserSpec {
 
         @CustomType.Setter
         public Builder agentConfigs(List<GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfig> agentConfigs) {
-            this.agentConfigs = Objects.requireNonNull(agentConfigs);
+            if (agentConfigs == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpec", "agentConfigs");
+            }
+            this.agentConfigs = agentConfigs;
             return this;
         }
         public Builder agentConfigs(GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfig... agentConfigs) {
@@ -290,22 +294,34 @@ public final class GetTargetAssetsTargetAssetCollectionItemUserSpec {
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpec", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder capacityReservationId(String capacityReservationId) {
-            this.capacityReservationId = Objects.requireNonNull(capacityReservationId);
+            if (capacityReservationId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpec", "capacityReservationId");
+            }
+            this.capacityReservationId = capacityReservationId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpec", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createVnicDetails(List<GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetail> createVnicDetails) {
-            this.createVnicDetails = Objects.requireNonNull(createVnicDetails);
+            if (createVnicDetails == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpec", "createVnicDetails");
+            }
+            this.createVnicDetails = createVnicDetails;
             return this;
         }
         public Builder createVnicDetails(GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetail... createVnicDetails) {
@@ -313,37 +329,58 @@ public final class GetTargetAssetsTargetAssetCollectionItemUserSpec {
         }
         @CustomType.Setter
         public Builder dedicatedVmHostId(String dedicatedVmHostId) {
-            this.dedicatedVmHostId = Objects.requireNonNull(dedicatedVmHostId);
+            if (dedicatedVmHostId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpec", "dedicatedVmHostId");
+            }
+            this.dedicatedVmHostId = dedicatedVmHostId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpec", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpec", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+            if (faultDomain == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpec", "faultDomain");
+            }
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpec", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostnameLabel(String hostnameLabel) {
-            this.hostnameLabel = Objects.requireNonNull(hostnameLabel);
+            if (hostnameLabel == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpec", "hostnameLabel");
+            }
+            this.hostnameLabel = hostnameLabel;
             return this;
         }
         @CustomType.Setter
         public Builder instanceOptions(List<GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOption> instanceOptions) {
-            this.instanceOptions = Objects.requireNonNull(instanceOptions);
+            if (instanceOptions == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpec", "instanceOptions");
+            }
+            this.instanceOptions = instanceOptions;
             return this;
         }
         public Builder instanceOptions(GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOption... instanceOptions) {
@@ -351,17 +388,26 @@ public final class GetTargetAssetsTargetAssetCollectionItemUserSpec {
         }
         @CustomType.Setter
         public Builder ipxeScript(String ipxeScript) {
-            this.ipxeScript = Objects.requireNonNull(ipxeScript);
+            if (ipxeScript == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpec", "ipxeScript");
+            }
+            this.ipxeScript = ipxeScript;
             return this;
         }
         @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
-            this.isPvEncryptionInTransitEnabled = Objects.requireNonNull(isPvEncryptionInTransitEnabled);
+            if (isPvEncryptionInTransitEnabled == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpec", "isPvEncryptionInTransitEnabled");
+            }
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder preemptibleInstanceConfigs(List<GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfig> preemptibleInstanceConfigs) {
-            this.preemptibleInstanceConfigs = Objects.requireNonNull(preemptibleInstanceConfigs);
+            if (preemptibleInstanceConfigs == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpec", "preemptibleInstanceConfigs");
+            }
+            this.preemptibleInstanceConfigs = preemptibleInstanceConfigs;
             return this;
         }
         public Builder preemptibleInstanceConfigs(GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfig... preemptibleInstanceConfigs) {
@@ -369,12 +415,18 @@ public final class GetTargetAssetsTargetAssetCollectionItemUserSpec {
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpec", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder shapeConfigs(List<GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfig> shapeConfigs) {
-            this.shapeConfigs = Objects.requireNonNull(shapeConfigs);
+            if (shapeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpec", "shapeConfigs");
+            }
+            this.shapeConfigs = shapeConfigs;
             return this;
         }
         public Builder shapeConfigs(GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfig... shapeConfigs) {
@@ -382,7 +434,10 @@ public final class GetTargetAssetsTargetAssetCollectionItemUserSpec {
         }
         @CustomType.Setter
         public Builder sourceDetails(List<GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetail> sourceDetails) {
-            this.sourceDetails = Objects.requireNonNull(sourceDetails);
+            if (sourceDetails == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemUserSpec", "sourceDetails");
+            }
+            this.sourceDetails = sourceDetails;
             return this;
         }
         public Builder sourceDetails(GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetail... sourceDetails) {

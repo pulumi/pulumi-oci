@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunsFilter;
 import java.lang.String;
 import java.util.List;
@@ -84,7 +85,9 @@ public final class GetScheduledRunsPlainArgs extends com.pulumi.resources.Invoke
         }
 
         public GetScheduledRunsPlainArgs build() {
-            $.scheduleId = Objects.requireNonNull($.scheduleId, "expected parameter 'scheduleId' to be non-null");
+            if ($.scheduleId == null) {
+                throw new MissingRequiredPropertyException("GetScheduledRunsPlainArgs", "scheduleId");
+            }
             return $;
         }
     }

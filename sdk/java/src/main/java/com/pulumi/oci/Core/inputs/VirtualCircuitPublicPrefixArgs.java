@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class VirtualCircuitPublicPrefixArgs extends com.pulumi.resources.R
         }
 
         public VirtualCircuitPublicPrefixArgs build() {
-            $.cidrBlock = Objects.requireNonNull($.cidrBlock, "expected parameter 'cidrBlock' to be non-null");
+            if ($.cidrBlock == null) {
+                throw new MissingRequiredPropertyException("VirtualCircuitPublicPrefixArgs", "cidrBlock");
+            }
             return $;
         }
     }

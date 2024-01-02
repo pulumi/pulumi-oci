@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -71,12 +72,18 @@ public final class GetDomainsUserAttributesSettingsUserAttributesSettingAttribut
 
         @CustomType.Setter
         public Builder endUserMutability(String endUserMutability) {
-            this.endUserMutability = Objects.requireNonNull(endUserMutability);
+            if (endUserMutability == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSettingAttributeSetting", "endUserMutability");
+            }
+            this.endUserMutability = endUserMutability;
             return this;
         }
         @CustomType.Setter
         public Builder endUserMutabilityCanonicalValues(List<String> endUserMutabilityCanonicalValues) {
-            this.endUserMutabilityCanonicalValues = Objects.requireNonNull(endUserMutabilityCanonicalValues);
+            if (endUserMutabilityCanonicalValues == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSettingAttributeSetting", "endUserMutabilityCanonicalValues");
+            }
+            this.endUserMutabilityCanonicalValues = endUserMutabilityCanonicalValues;
             return this;
         }
         public Builder endUserMutabilityCanonicalValues(String... endUserMutabilityCanonicalValues) {
@@ -84,7 +91,10 @@ public final class GetDomainsUserAttributesSettingsUserAttributesSettingAttribut
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserAttributesSettingsUserAttributesSettingAttributeSetting", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetDomainsUserAttributesSettingsUserAttributesSettingAttributeSetting build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -226,8 +227,12 @@ public final class NotebookSessionNotebookSessionConfigurationDetailsArgs extend
         }
 
         public NotebookSessionNotebookSessionConfigurationDetailsArgs build() {
-            $.shape = Objects.requireNonNull($.shape, "expected parameter 'shape' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.shape == null) {
+                throw new MissingRequiredPropertyException("NotebookSessionNotebookSessionConfigurationDetailsArgs", "shape");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("NotebookSessionNotebookSessionConfigurationDetailsArgs", "subnetId");
+            }
             return $;
         }
     }

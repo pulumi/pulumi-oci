@@ -87,21 +87,25 @@ public final class DeployStageLoadBalancerConfig {
 
         @CustomType.Setter
         public Builder backendPort(@Nullable Integer backendPort) {
+
             this.backendPort = backendPort;
             return this;
         }
         @CustomType.Setter
         public Builder listenerName(@Nullable String listenerName) {
+
             this.listenerName = listenerName;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(@Nullable String loadBalancerId) {
+
             this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

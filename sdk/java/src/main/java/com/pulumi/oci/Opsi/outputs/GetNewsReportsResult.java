@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetNewsReportsFilter;
 import com.pulumi.oci.Opsi.outputs.GetNewsReportsNewsReportCollection;
 import java.lang.Boolean;
@@ -122,16 +123,19 @@ public final class GetNewsReportsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNewsReportsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -140,12 +144,18 @@ public final class GetNewsReportsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNewsReportsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder newsReportCollections(List<GetNewsReportsNewsReportCollection> newsReportCollections) {
-            this.newsReportCollections = Objects.requireNonNull(newsReportCollections);
+            if (newsReportCollections == null) {
+              throw new MissingRequiredPropertyException("GetNewsReportsResult", "newsReportCollections");
+            }
+            this.newsReportCollections = newsReportCollections;
             return this;
         }
         public Builder newsReportCollections(GetNewsReportsNewsReportCollection... newsReportCollections) {
@@ -153,11 +163,13 @@ public final class GetNewsReportsResult {
         }
         @CustomType.Setter
         public Builder newsReportId(@Nullable String newsReportId) {
+
             this.newsReportId = newsReportId;
             return this;
         }
         @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
+
             this.states = states;
             return this;
         }
@@ -166,6 +178,7 @@ public final class GetNewsReportsResult {
         }
         @CustomType.Setter
         public Builder statuses(@Nullable List<String> statuses) {
+
             this.statuses = statuses;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationDataTransferMediumDetailsV2ObjectStorageBucket;
 import java.lang.String;
 import java.util.Objects;
@@ -83,32 +84,40 @@ public final class MigrationDataTransferMediumDetailsV2 {
 
         @CustomType.Setter
         public Builder accessKeyId(@Nullable String accessKeyId) {
+
             this.accessKeyId = accessKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageBucket(@Nullable MigrationDataTransferMediumDetailsV2ObjectStorageBucket objectStorageBucket) {
+
             this.objectStorageBucket = objectStorageBucket;
             return this;
         }
         @CustomType.Setter
         public Builder region(@Nullable String region) {
+
             this.region = region;
             return this;
         }
         @CustomType.Setter
         public Builder secretAccessKey(@Nullable String secretAccessKey) {
+
             this.secretAccessKey = secretAccessKey;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("MigrationDataTransferMediumDetailsV2", "type");
+            }
+            this.type = type;
             return this;
         }
         public MigrationDataTransferMediumDetailsV2 build() {

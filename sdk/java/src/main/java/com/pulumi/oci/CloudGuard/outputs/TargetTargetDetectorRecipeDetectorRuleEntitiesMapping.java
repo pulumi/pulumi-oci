@@ -76,16 +76,19 @@ public final class TargetTargetDetectorRecipeDetectorRuleEntitiesMapping {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder entityType(@Nullable String entityType) {
+
             this.entityType = entityType;
             return this;
         }
         @CustomType.Setter
         public Builder queryField(@Nullable String queryField) {
+
             this.queryField = queryField;
             return this;
         }

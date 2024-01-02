@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -176,57 +177,90 @@ public final class GetBackendsBackendCollectionItem {
 
         @CustomType.Setter
         public Builder backendSetName(String backendSetName) {
-            this.backendSetName = Objects.requireNonNull(backendSetName);
+            if (backendSetName == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackendCollectionItem", "backendSetName");
+            }
+            this.backendSetName = backendSetName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackendCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+            if (ipAddress == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackendCollectionItem", "ipAddress");
+            }
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder isBackup(Boolean isBackup) {
-            this.isBackup = Objects.requireNonNull(isBackup);
+            if (isBackup == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackendCollectionItem", "isBackup");
+            }
+            this.isBackup = isBackup;
             return this;
         }
         @CustomType.Setter
         public Builder isDrain(Boolean isDrain) {
-            this.isDrain = Objects.requireNonNull(isDrain);
+            if (isDrain == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackendCollectionItem", "isDrain");
+            }
+            this.isDrain = isDrain;
             return this;
         }
         @CustomType.Setter
         public Builder isOffline(Boolean isOffline) {
-            this.isOffline = Objects.requireNonNull(isOffline);
+            if (isOffline == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackendCollectionItem", "isOffline");
+            }
+            this.isOffline = isOffline;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackendCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
-            this.networkLoadBalancerId = Objects.requireNonNull(networkLoadBalancerId);
+            if (networkLoadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackendCollectionItem", "networkLoadBalancerId");
+            }
+            this.networkLoadBalancerId = networkLoadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackendCollectionItem", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackendCollectionItem", "targetId");
+            }
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder weight(Integer weight) {
-            this.weight = Objects.requireNonNull(weight);
+            if (weight == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackendCollectionItem", "weight");
+            }
+            this.weight = weight;
             return this;
         }
         public GetBackendsBackendCollectionItem build() {

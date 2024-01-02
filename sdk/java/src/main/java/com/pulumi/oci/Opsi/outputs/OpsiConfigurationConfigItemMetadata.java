@@ -117,26 +117,31 @@ public final class OpsiConfigurationConfigItemMetadata {
 
         @CustomType.Setter
         public Builder configItemType(@Nullable String configItemType) {
+
             this.configItemType = configItemType;
             return this;
         }
         @CustomType.Setter
         public Builder dataType(@Nullable String dataType) {
+
             this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder unitDetails(@Nullable List<OpsiConfigurationConfigItemMetadataUnitDetail> unitDetails) {
+
             this.unitDetails = unitDetails;
             return this;
         }
@@ -145,6 +150,7 @@ public final class OpsiConfigurationConfigItemMetadata {
         }
         @CustomType.Setter
         public Builder valueInputDetails(@Nullable List<OpsiConfigurationConfigItemMetadataValueInputDetail> valueInputDetails) {
+
             this.valueInputDetails = valueInputDetails;
             return this;
         }

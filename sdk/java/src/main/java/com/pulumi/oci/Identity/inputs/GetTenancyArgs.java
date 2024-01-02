@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetTenancyArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetTenancyArgs build() {
-            $.tenancyId = Objects.requireNonNull($.tenancyId, "expected parameter 'tenancyId' to be non-null");
+            if ($.tenancyId == null) {
+                throw new MissingRequiredPropertyException("GetTenancyArgs", "tenancyId");
+            }
             return $;
         }
     }

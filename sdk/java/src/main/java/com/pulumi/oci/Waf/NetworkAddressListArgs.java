@@ -5,6 +5,7 @@ package com.pulumi.oci.Waf;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.inputs.NetworkAddressListVcnAddressArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -359,8 +360,12 @@ public final class NetworkAddressListArgs extends com.pulumi.resources.ResourceA
         }
 
         public NetworkAddressListArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("NetworkAddressListArgs", "compartmentId");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("NetworkAddressListArgs", "type");
+            }
             return $;
         }
     }

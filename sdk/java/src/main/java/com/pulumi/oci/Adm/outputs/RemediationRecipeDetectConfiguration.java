@@ -88,6 +88,7 @@ public final class RemediationRecipeDetectConfiguration {
 
         @CustomType.Setter
         public Builder exclusions(@Nullable List<String> exclusions) {
+
             this.exclusions = exclusions;
             return this;
         }
@@ -96,16 +97,19 @@ public final class RemediationRecipeDetectConfiguration {
         }
         @CustomType.Setter
         public Builder maxPermissibleCvssV2score(@Nullable Double maxPermissibleCvssV2score) {
+
             this.maxPermissibleCvssV2score = maxPermissibleCvssV2score;
             return this;
         }
         @CustomType.Setter
         public Builder maxPermissibleCvssV3score(@Nullable Double maxPermissibleCvssV3score) {
+
             this.maxPermissibleCvssV3score = maxPermissibleCvssV3score;
             return this;
         }
         @CustomType.Setter
         public Builder upgradePolicy(@Nullable String upgradePolicy) {
+
             this.upgradePolicy = upgradePolicy;
             return this;
         }

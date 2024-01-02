@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareS
 
         @CustomType.Setter
         public Builder filterType(String filterType) {
-            this.filterType = Objects.requireNonNull(filterType);
+            if (filterType == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilter", "filterType");
+            }
+            this.filterType = filterType;
             return this;
         }
         @CustomType.Setter
         public Builder packageGroups(List<String> packageGroups) {
-            this.packageGroups = Objects.requireNonNull(packageGroups);
+            if (packageGroups == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilter", "packageGroups");
+            }
+            this.packageGroups = packageGroups;
             return this;
         }
         public Builder packageGroups(String... packageGroups) {

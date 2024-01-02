@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstanceSourceDetailInstanceSourceImageFilterDetail;
 import java.lang.String;
 import java.util.List;
@@ -114,17 +115,26 @@ public final class GetInstanceSourceDetail {
 
         @CustomType.Setter
         public Builder bootVolumeSizeInGbs(String bootVolumeSizeInGbs) {
-            this.bootVolumeSizeInGbs = Objects.requireNonNull(bootVolumeSizeInGbs);
+            if (bootVolumeSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetInstanceSourceDetail", "bootVolumeSizeInGbs");
+            }
+            this.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder bootVolumeVpusPerGb(String bootVolumeVpusPerGb) {
-            this.bootVolumeVpusPerGb = Objects.requireNonNull(bootVolumeVpusPerGb);
+            if (bootVolumeVpusPerGb == null) {
+              throw new MissingRequiredPropertyException("GetInstanceSourceDetail", "bootVolumeVpusPerGb");
+            }
+            this.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
             return this;
         }
         @CustomType.Setter
         public Builder instanceSourceImageFilterDetails(List<GetInstanceSourceDetailInstanceSourceImageFilterDetail> instanceSourceImageFilterDetails) {
-            this.instanceSourceImageFilterDetails = Objects.requireNonNull(instanceSourceImageFilterDetails);
+            if (instanceSourceImageFilterDetails == null) {
+              throw new MissingRequiredPropertyException("GetInstanceSourceDetail", "instanceSourceImageFilterDetails");
+            }
+            this.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
             return this;
         }
         public Builder instanceSourceImageFilterDetails(GetInstanceSourceDetailInstanceSourceImageFilterDetail... instanceSourceImageFilterDetails) {
@@ -132,17 +142,26 @@ public final class GetInstanceSourceDetail {
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceSourceDetail", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceId(String sourceId) {
-            this.sourceId = Objects.requireNonNull(sourceId);
+            if (sourceId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceSourceDetail", "sourceId");
+            }
+            this.sourceId = sourceId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetInstanceSourceDetail", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         public GetInstanceSourceDetail build() {

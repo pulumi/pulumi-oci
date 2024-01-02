@@ -4,6 +4,7 @@
 package com.pulumi.oci.Nosql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Nosql.outputs.GetTablesTableCollectionSchemaColumn;
 import com.pulumi.oci.Nosql.outputs.GetTablesTableCollectionSchemaIdentity;
 import java.lang.Integer;
@@ -62,7 +63,10 @@ public final class GetTablesTableCollectionSchema {
 
         @CustomType.Setter
         public Builder columns(List<GetTablesTableCollectionSchemaColumn> columns) {
-            this.columns = Objects.requireNonNull(columns);
+            if (columns == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollectionSchema", "columns");
+            }
+            this.columns = columns;
             return this;
         }
         public Builder columns(GetTablesTableCollectionSchemaColumn... columns) {
@@ -70,7 +74,10 @@ public final class GetTablesTableCollectionSchema {
         }
         @CustomType.Setter
         public Builder identities(List<GetTablesTableCollectionSchemaIdentity> identities) {
-            this.identities = Objects.requireNonNull(identities);
+            if (identities == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollectionSchema", "identities");
+            }
+            this.identities = identities;
             return this;
         }
         public Builder identities(GetTablesTableCollectionSchemaIdentity... identities) {
@@ -78,7 +85,10 @@ public final class GetTablesTableCollectionSchema {
         }
         @CustomType.Setter
         public Builder primaryKeys(List<String> primaryKeys) {
-            this.primaryKeys = Objects.requireNonNull(primaryKeys);
+            if (primaryKeys == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollectionSchema", "primaryKeys");
+            }
+            this.primaryKeys = primaryKeys;
             return this;
         }
         public Builder primaryKeys(String... primaryKeys) {
@@ -86,7 +96,10 @@ public final class GetTablesTableCollectionSchema {
         }
         @CustomType.Setter
         public Builder shardKeys(List<String> shardKeys) {
-            this.shardKeys = Objects.requireNonNull(shardKeys);
+            if (shardKeys == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollectionSchema", "shardKeys");
+            }
+            this.shardKeys = shardKeys;
             return this;
         }
         public Builder shardKeys(String... shardKeys) {
@@ -94,7 +107,10 @@ public final class GetTablesTableCollectionSchema {
         }
         @CustomType.Setter
         public Builder ttl(Integer ttl) {
-            this.ttl = Objects.requireNonNull(ttl);
+            if (ttl == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollectionSchema", "ttl");
+            }
+            this.ttl = ttl;
             return this;
         }
         public GetTablesTableCollectionSchema build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Adm.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -373,9 +374,15 @@ public final class RemediationRecipeScmConfigurationArgs extends com.pulumi.reso
         }
 
         public RemediationRecipeScmConfigurationArgs build() {
-            $.branch = Objects.requireNonNull($.branch, "expected parameter 'branch' to be non-null");
-            $.isAutomergeEnabled = Objects.requireNonNull($.isAutomergeEnabled, "expected parameter 'isAutomergeEnabled' to be non-null");
-            $.scmType = Objects.requireNonNull($.scmType, "expected parameter 'scmType' to be non-null");
+            if ($.branch == null) {
+                throw new MissingRequiredPropertyException("RemediationRecipeScmConfigurationArgs", "branch");
+            }
+            if ($.isAutomergeEnabled == null) {
+                throw new MissingRequiredPropertyException("RemediationRecipeScmConfigurationArgs", "isAutomergeEnabled");
+            }
+            if ($.scmType == null) {
+                throw new MissingRequiredPropertyException("RemediationRecipeScmConfigurationArgs", "scmType");
+            }
             return $;
         }
     }

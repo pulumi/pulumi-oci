@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -212,67 +213,106 @@ public final class GetManagementAgentInstallKeysManagementAgentInstallKey {
 
         @CustomType.Setter
         public Builder allowedKeyInstallCount(Integer allowedKeyInstallCount) {
-            this.allowedKeyInstallCount = Objects.requireNonNull(allowedKeyInstallCount);
+            if (allowedKeyInstallCount == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentInstallKeysManagementAgentInstallKey", "allowedKeyInstallCount");
+            }
+            this.allowedKeyInstallCount = allowedKeyInstallCount;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentInstallKeysManagementAgentInstallKey", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdByPrincipalId(String createdByPrincipalId) {
-            this.createdByPrincipalId = Objects.requireNonNull(createdByPrincipalId);
+            if (createdByPrincipalId == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentInstallKeysManagementAgentInstallKey", "createdByPrincipalId");
+            }
+            this.createdByPrincipalId = createdByPrincipalId;
             return this;
         }
         @CustomType.Setter
         public Builder currentKeyInstallCount(Integer currentKeyInstallCount) {
-            this.currentKeyInstallCount = Objects.requireNonNull(currentKeyInstallCount);
+            if (currentKeyInstallCount == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentInstallKeysManagementAgentInstallKey", "currentKeyInstallCount");
+            }
+            this.currentKeyInstallCount = currentKeyInstallCount;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentInstallKeysManagementAgentInstallKey", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentInstallKeysManagementAgentInstallKey", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isUnlimited(Boolean isUnlimited) {
-            this.isUnlimited = Objects.requireNonNull(isUnlimited);
+            if (isUnlimited == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentInstallKeysManagementAgentInstallKey", "isUnlimited");
+            }
+            this.isUnlimited = isUnlimited;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentInstallKeysManagementAgentInstallKey", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentInstallKeysManagementAgentInstallKey", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentInstallKeysManagementAgentInstallKey", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentInstallKeysManagementAgentInstallKey", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeExpires(String timeExpires) {
-            this.timeExpires = Objects.requireNonNull(timeExpires);
+            if (timeExpires == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentInstallKeysManagementAgentInstallKey", "timeExpires");
+            }
+            this.timeExpires = timeExpires;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentInstallKeysManagementAgentInstallKey", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetManagementAgentInstallKeysManagementAgentInstallKey build() {

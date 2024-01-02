@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetPipelinesPipelineStepDetailStepConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail;
 import java.lang.Boolean;
@@ -144,7 +145,10 @@ public final class GetPipelinesPipelineStepDetail {
 
         @CustomType.Setter
         public Builder dependsOns(List<String> dependsOns) {
-            this.dependsOns = Objects.requireNonNull(dependsOns);
+            if (dependsOns == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipelineStepDetail", "dependsOns");
+            }
+            this.dependsOns = dependsOns;
             return this;
         }
         public Builder dependsOns(String... dependsOns) {
@@ -152,22 +156,34 @@ public final class GetPipelinesPipelineStepDetail {
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipelineStepDetail", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder isArtifactUploaded(Boolean isArtifactUploaded) {
-            this.isArtifactUploaded = Objects.requireNonNull(isArtifactUploaded);
+            if (isArtifactUploaded == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipelineStepDetail", "isArtifactUploaded");
+            }
+            this.isArtifactUploaded = isArtifactUploaded;
             return this;
         }
         @CustomType.Setter
         public Builder jobId(String jobId) {
-            this.jobId = Objects.requireNonNull(jobId);
+            if (jobId == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipelineStepDetail", "jobId");
+            }
+            this.jobId = jobId;
             return this;
         }
         @CustomType.Setter
         public Builder stepConfigurationDetails(List<GetPipelinesPipelineStepDetailStepConfigurationDetail> stepConfigurationDetails) {
-            this.stepConfigurationDetails = Objects.requireNonNull(stepConfigurationDetails);
+            if (stepConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipelineStepDetail", "stepConfigurationDetails");
+            }
+            this.stepConfigurationDetails = stepConfigurationDetails;
             return this;
         }
         public Builder stepConfigurationDetails(GetPipelinesPipelineStepDetailStepConfigurationDetail... stepConfigurationDetails) {
@@ -175,7 +191,10 @@ public final class GetPipelinesPipelineStepDetail {
         }
         @CustomType.Setter
         public Builder stepInfrastructureConfigurationDetails(List<GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail> stepInfrastructureConfigurationDetails) {
-            this.stepInfrastructureConfigurationDetails = Objects.requireNonNull(stepInfrastructureConfigurationDetails);
+            if (stepInfrastructureConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipelineStepDetail", "stepInfrastructureConfigurationDetails");
+            }
+            this.stepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
             return this;
         }
         public Builder stepInfrastructureConfigurationDetails(GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail... stepInfrastructureConfigurationDetails) {
@@ -183,12 +202,18 @@ public final class GetPipelinesPipelineStepDetail {
         }
         @CustomType.Setter
         public Builder stepName(String stepName) {
-            this.stepName = Objects.requireNonNull(stepName);
+            if (stepName == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipelineStepDetail", "stepName");
+            }
+            this.stepName = stepName;
             return this;
         }
         @CustomType.Setter
         public Builder stepType(String stepType) {
-            this.stepType = Objects.requireNonNull(stepType);
+            if (stepType == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipelineStepDetail", "stepType");
+            }
+            this.stepType = stepType;
             return this;
         }
         public GetPipelinesPipelineStepDetail build() {

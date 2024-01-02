@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetCertificateAuthorityCertificateAuthorityRule {
 
         @CustomType.Setter
         public Builder certificateAuthorityMaxValidityDuration(String certificateAuthorityMaxValidityDuration) {
-            this.certificateAuthorityMaxValidityDuration = Objects.requireNonNull(certificateAuthorityMaxValidityDuration);
+            if (certificateAuthorityMaxValidityDuration == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthorityCertificateAuthorityRule", "certificateAuthorityMaxValidityDuration");
+            }
+            this.certificateAuthorityMaxValidityDuration = certificateAuthorityMaxValidityDuration;
             return this;
         }
         @CustomType.Setter
         public Builder leafCertificateMaxValidityDuration(String leafCertificateMaxValidityDuration) {
-            this.leafCertificateMaxValidityDuration = Objects.requireNonNull(leafCertificateMaxValidityDuration);
+            if (leafCertificateMaxValidityDuration == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthorityCertificateAuthorityRule", "leafCertificateMaxValidityDuration");
+            }
+            this.leafCertificateMaxValidityDuration = leafCertificateMaxValidityDuration;
             return this;
         }
         @CustomType.Setter
         public Builder ruleType(String ruleType) {
-            this.ruleType = Objects.requireNonNull(ruleType);
+            if (ruleType == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthorityCertificateAuthorityRule", "ruleType");
+            }
+            this.ruleType = ruleType;
             return this;
         }
         public GetCertificateAuthorityCertificateAuthorityRule build() {

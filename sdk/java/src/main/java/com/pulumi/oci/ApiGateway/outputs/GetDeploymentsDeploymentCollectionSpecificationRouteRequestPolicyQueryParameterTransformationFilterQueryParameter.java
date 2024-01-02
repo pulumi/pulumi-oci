@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItem;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
 
         @CustomType.Setter
         public Builder items(List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItem... items) {
@@ -66,7 +70,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter build() {

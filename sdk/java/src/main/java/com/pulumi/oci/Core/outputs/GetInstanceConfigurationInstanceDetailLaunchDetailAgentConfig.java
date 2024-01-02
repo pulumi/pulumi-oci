@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig;
 import java.lang.Boolean;
 import java.util.List;
@@ -86,22 +87,34 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfig
 
         @CustomType.Setter
         public Builder areAllPluginsDisabled(Boolean areAllPluginsDisabled) {
-            this.areAllPluginsDisabled = Objects.requireNonNull(areAllPluginsDisabled);
+            if (areAllPluginsDisabled == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfig", "areAllPluginsDisabled");
+            }
+            this.areAllPluginsDisabled = areAllPluginsDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder isManagementDisabled(Boolean isManagementDisabled) {
-            this.isManagementDisabled = Objects.requireNonNull(isManagementDisabled);
+            if (isManagementDisabled == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfig", "isManagementDisabled");
+            }
+            this.isManagementDisabled = isManagementDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder isMonitoringDisabled(Boolean isMonitoringDisabled) {
-            this.isMonitoringDisabled = Objects.requireNonNull(isMonitoringDisabled);
+            if (isMonitoringDisabled == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfig", "isMonitoringDisabled");
+            }
+            this.isMonitoringDisabled = isMonitoringDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder pluginsConfigs(List<GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig> pluginsConfigs) {
-            this.pluginsConfigs = Objects.requireNonNull(pluginsConfigs);
+            if (pluginsConfigs == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfig", "pluginsConfigs");
+            }
+            this.pluginsConfigs = pluginsConfigs;
             return this;
         }
         public Builder pluginsConfigs(GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig... pluginsConfigs) {

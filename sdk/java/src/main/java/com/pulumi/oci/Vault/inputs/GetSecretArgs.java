@@ -5,6 +5,7 @@ package com.pulumi.oci.Vault.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetSecretArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetSecretArgs build() {
-            $.secretId = Objects.requireNonNull($.secretId, "expected parameter 'secretId' to be non-null");
+            if ($.secretId == null) {
+                throw new MissingRequiredPropertyException("GetSecretArgs", "secretId");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Bastion;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -482,9 +483,15 @@ public final class BastionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public BastionArgs build() {
-            $.bastionType = Objects.requireNonNull($.bastionType, "expected parameter 'bastionType' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.targetSubnetId = Objects.requireNonNull($.targetSubnetId, "expected parameter 'targetSubnetId' to be non-null");
+            if ($.bastionType == null) {
+                throw new MissingRequiredPropertyException("BastionArgs", "bastionType");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("BastionArgs", "compartmentId");
+            }
+            if ($.targetSubnetId == null) {
+                throw new MissingRequiredPropertyException("BastionArgs", "targetSubnetId");
+            }
             return $;
         }
     }

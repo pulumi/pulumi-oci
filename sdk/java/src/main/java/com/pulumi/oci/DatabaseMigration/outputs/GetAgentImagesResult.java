@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.GetAgentImagesAgentImageCollection;
 import com.pulumi.oci.DatabaseMigration.outputs.GetAgentImagesFilter;
 import java.lang.String;
@@ -66,7 +67,10 @@ public final class GetAgentImagesResult {
 
         @CustomType.Setter
         public Builder agentImageCollections(List<GetAgentImagesAgentImageCollection> agentImageCollections) {
-            this.agentImageCollections = Objects.requireNonNull(agentImageCollections);
+            if (agentImageCollections == null) {
+              throw new MissingRequiredPropertyException("GetAgentImagesResult", "agentImageCollections");
+            }
+            this.agentImageCollections = agentImageCollections;
             return this;
         }
         public Builder agentImageCollections(GetAgentImagesAgentImageCollection... agentImageCollections) {
@@ -74,6 +78,7 @@ public final class GetAgentImagesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAgentImagesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -82,7 +87,10 @@ public final class GetAgentImagesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAgentImagesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetAgentImagesResult build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -255,8 +256,12 @@ public final class DbSystemsUpgradeArgs extends com.pulumi.resources.ResourceArg
         }
 
         public DbSystemsUpgradeArgs build() {
-            $.action = Objects.requireNonNull($.action, "expected parameter 'action' to be non-null");
-            $.dbSystemId = Objects.requireNonNull($.dbSystemId, "expected parameter 'dbSystemId' to be non-null");
+            if ($.action == null) {
+                throw new MissingRequiredPropertyException("DbSystemsUpgradeArgs", "action");
+            }
+            if ($.dbSystemId == null) {
+                throw new MissingRequiredPropertyException("DbSystemsUpgradeArgs", "dbSystemId");
+            }
             return $;
         }
     }

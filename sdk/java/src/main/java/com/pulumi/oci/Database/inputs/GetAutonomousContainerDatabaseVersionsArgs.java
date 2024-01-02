@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseVersionsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -136,8 +137,12 @@ public final class GetAutonomousContainerDatabaseVersionsArgs extends com.pulumi
         }
 
         public GetAutonomousContainerDatabaseVersionsArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.serviceComponent = Objects.requireNonNull($.serviceComponent, "expected parameter 'serviceComponent' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseVersionsArgs", "compartmentId");
+            }
+            if ($.serviceComponent == null) {
+                throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseVersionsArgs", "serviceComponent");
+            }
             return $;
         }
     }

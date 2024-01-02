@@ -4,6 +4,7 @@
 package com.pulumi.oci.Oda.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Oda.outputs.GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentC
 
         @CustomType.Setter
         public Builder items(List<GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem... items) {

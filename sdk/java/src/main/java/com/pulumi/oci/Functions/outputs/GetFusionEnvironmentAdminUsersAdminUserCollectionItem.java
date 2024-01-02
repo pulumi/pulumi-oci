@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem;
 import java.lang.String;
 import java.util.List;
@@ -126,27 +127,42 @@ public final class GetFusionEnvironmentAdminUsersAdminUserCollectionItem {
 
         @CustomType.Setter
         public Builder emailAddress(String emailAddress) {
-            this.emailAddress = Objects.requireNonNull(emailAddress);
+            if (emailAddress == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentAdminUsersAdminUserCollectionItem", "emailAddress");
+            }
+            this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
         public Builder firstName(String firstName) {
-            this.firstName = Objects.requireNonNull(firstName);
+            if (firstName == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentAdminUsersAdminUserCollectionItem", "firstName");
+            }
+            this.firstName = firstName;
             return this;
         }
         @CustomType.Setter
         public Builder fusionEnvironmentId(String fusionEnvironmentId) {
-            this.fusionEnvironmentId = Objects.requireNonNull(fusionEnvironmentId);
+            if (fusionEnvironmentId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentAdminUsersAdminUserCollectionItem", "fusionEnvironmentId");
+            }
+            this.fusionEnvironmentId = fusionEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentAdminUsersAdminUserCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentAdminUsersAdminUserCollectionItem", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem... items) {
@@ -154,17 +170,26 @@ public final class GetFusionEnvironmentAdminUsersAdminUserCollectionItem {
         }
         @CustomType.Setter
         public Builder lastName(String lastName) {
-            this.lastName = Objects.requireNonNull(lastName);
+            if (lastName == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentAdminUsersAdminUserCollectionItem", "lastName");
+            }
+            this.lastName = lastName;
             return this;
         }
         @CustomType.Setter
         public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+            if (password == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentAdminUsersAdminUserCollectionItem", "password");
+            }
+            this.password = password;
             return this;
         }
         @CustomType.Setter
         public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+            if (username == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentAdminUsersAdminUserCollectionItem", "username");
+            }
+            this.username = username;
             return this;
         }
         public GetFusionEnvironmentAdminUsersAdminUserCollectionItem build() {

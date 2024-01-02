@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -40,12 +41,18 @@ public final class GetSddcsSddcCollectionUpgradeLicense {
 
         @CustomType.Setter
         public Builder licenseKey(String licenseKey) {
-            this.licenseKey = Objects.requireNonNull(licenseKey);
+            if (licenseKey == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionUpgradeLicense", "licenseKey");
+            }
+            this.licenseKey = licenseKey;
             return this;
         }
         @CustomType.Setter
         public Builder licenseType(String licenseType) {
-            this.licenseType = Objects.requireNonNull(licenseType);
+            if (licenseType == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionUpgradeLicense", "licenseType");
+            }
+            this.licenseType = licenseType;
             return this;
         }
         public GetSddcsSddcCollectionUpgradeLicense build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabasesDatabaseParameterItem;
 import java.lang.Boolean;
 import java.lang.String;
@@ -149,37 +150,56 @@ public final class GetManagedDatabasesDatabaseParameterResult {
 
         @CustomType.Setter
         public Builder databaseName(String databaseName) {
-            this.databaseName = Objects.requireNonNull(databaseName);
+            if (databaseName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterResult", "databaseName");
+            }
+            this.databaseName = databaseName;
             return this;
         }
         @CustomType.Setter
         public Builder databaseSubType(String databaseSubType) {
-            this.databaseSubType = Objects.requireNonNull(databaseSubType);
+            if (databaseSubType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterResult", "databaseSubType");
+            }
+            this.databaseSubType = databaseSubType;
             return this;
         }
         @CustomType.Setter
         public Builder databaseType(String databaseType) {
-            this.databaseType = Objects.requireNonNull(databaseType);
+            if (databaseType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterResult", "databaseType");
+            }
+            this.databaseType = databaseType;
             return this;
         }
         @CustomType.Setter
         public Builder databaseVersion(String databaseVersion) {
-            this.databaseVersion = Objects.requireNonNull(databaseVersion);
+            if (databaseVersion == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterResult", "databaseVersion");
+            }
+            this.databaseVersion = databaseVersion;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAllowedValuesIncluded(@Nullable Boolean isAllowedValuesIncluded) {
+
             this.isAllowedValuesIncluded = isAllowedValuesIncluded;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetManagedDatabasesDatabaseParameterItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabasesDatabaseParameterItem... items) {
@@ -187,16 +207,21 @@ public final class GetManagedDatabasesDatabaseParameterResult {
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder source(@Nullable String source) {
+
             this.source = source;
             return this;
         }

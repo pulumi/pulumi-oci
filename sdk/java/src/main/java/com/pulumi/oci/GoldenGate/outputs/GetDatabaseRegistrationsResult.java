@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetDatabaseRegistrationsDatabaseRegistrationCollection;
 import com.pulumi.oci.GoldenGate.outputs.GetDatabaseRegistrationsFilter;
 import java.lang.String;
@@ -109,12 +110,18 @@ public final class GetDatabaseRegistrationsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseRegistrationsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseRegistrationCollections(List<GetDatabaseRegistrationsDatabaseRegistrationCollection> databaseRegistrationCollections) {
-            this.databaseRegistrationCollections = Objects.requireNonNull(databaseRegistrationCollections);
+            if (databaseRegistrationCollections == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseRegistrationsResult", "databaseRegistrationCollections");
+            }
+            this.databaseRegistrationCollections = databaseRegistrationCollections;
             return this;
         }
         public Builder databaseRegistrationCollections(GetDatabaseRegistrationsDatabaseRegistrationCollection... databaseRegistrationCollections) {
@@ -122,11 +129,13 @@ public final class GetDatabaseRegistrationsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDatabaseRegistrationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,11 +144,15 @@ public final class GetDatabaseRegistrationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseRegistrationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

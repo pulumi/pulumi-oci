@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetApiValidationValidationDetailSrc {
 
         @CustomType.Setter
         public Builder items(List<Object> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetApiValidationValidationDetailSrc", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(Object... items) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.OperatorAccessControl.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OperatorAccessControl.outputs.GetControlAssignmentsFilter;
 import com.pulumi.oci.OperatorAccessControl.outputs.GetControlAssignmentsOperatorControlAssignmentCollection;
 import java.lang.String;
@@ -129,11 +130,15 @@ public final class GetControlAssignmentsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetControlAssignmentsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -142,12 +147,18 @@ public final class GetControlAssignmentsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder operatorControlAssignmentCollections(List<GetControlAssignmentsOperatorControlAssignmentCollection> operatorControlAssignmentCollections) {
-            this.operatorControlAssignmentCollections = Objects.requireNonNull(operatorControlAssignmentCollections);
+            if (operatorControlAssignmentCollections == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsResult", "operatorControlAssignmentCollections");
+            }
+            this.operatorControlAssignmentCollections = operatorControlAssignmentCollections;
             return this;
         }
         public Builder operatorControlAssignmentCollections(GetControlAssignmentsOperatorControlAssignmentCollection... operatorControlAssignmentCollections) {
@@ -155,21 +166,25 @@ public final class GetControlAssignmentsResult {
         }
         @CustomType.Setter
         public Builder operatorControlName(@Nullable String operatorControlName) {
+
             this.operatorControlName = operatorControlName;
             return this;
         }
         @CustomType.Setter
         public Builder resourceName(@Nullable String resourceName) {
+
             this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(@Nullable String resourceType) {
+
             this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

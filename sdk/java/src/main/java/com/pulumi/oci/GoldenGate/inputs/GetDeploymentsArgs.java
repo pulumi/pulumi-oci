@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.inputs.GetDeploymentsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -358,7 +359,9 @@ public final class GetDeploymentsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetDeploymentsArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetDeploymentsArgs", "compartmentId");
+            }
             return $;
         }
     }

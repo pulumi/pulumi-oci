@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.inputs.ClusterClusterPodNetworkOptionArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ClusterEndpointConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ClusterImagePolicyConfigArgs;
@@ -512,9 +513,15 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ClusterArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.kubernetesVersion = Objects.requireNonNull($.kubernetesVersion, "expected parameter 'kubernetesVersion' to be non-null");
-            $.vcnId = Objects.requireNonNull($.vcnId, "expected parameter 'vcnId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "compartmentId");
+            }
+            if ($.kubernetesVersion == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "kubernetesVersion");
+            }
+            if ($.vcnId == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "vcnId");
+            }
             return $;
         }
     }

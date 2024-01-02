@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
@@ -377,41 +378,49 @@ public final class LibraryMasingFormatFormatEntry {
 
         @CustomType.Setter
         public Builder columnName(@Nullable String columnName) {
+
             this.columnName = columnName;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder endDate(@Nullable String endDate) {
+
             this.endDate = endDate;
             return this;
         }
         @CustomType.Setter
         public Builder endLength(@Nullable Integer endLength) {
+
             this.endLength = endLength;
             return this;
         }
         @CustomType.Setter
         public Builder endValue(@Nullable Double endValue) {
+
             this.endValue = endValue;
             return this;
         }
         @CustomType.Setter
         public Builder fixedNumber(@Nullable Double fixedNumber) {
+
             this.fixedNumber = fixedNumber;
             return this;
         }
         @CustomType.Setter
         public Builder fixedString(@Nullable String fixedString) {
+
             this.fixedString = fixedString;
             return this;
         }
         @CustomType.Setter
         public Builder groupingColumns(@Nullable List<String> groupingColumns) {
+
             this.groupingColumns = groupingColumns;
             return this;
         }
@@ -420,26 +429,31 @@ public final class LibraryMasingFormatFormatEntry {
         }
         @CustomType.Setter
         public Builder length(@Nullable Integer length) {
+
             this.length = length;
             return this;
         }
         @CustomType.Setter
         public Builder libraryMaskingFormatId(@Nullable String libraryMaskingFormatId) {
+
             this.libraryMaskingFormatId = libraryMaskingFormatId;
             return this;
         }
         @CustomType.Setter
         public Builder pattern(@Nullable String pattern) {
+
             this.pattern = pattern;
             return this;
         }
         @CustomType.Setter
         public Builder postProcessingFunction(@Nullable String postProcessingFunction) {
+
             this.postProcessingFunction = postProcessingFunction;
             return this;
         }
         @CustomType.Setter
         public Builder randomLists(@Nullable List<String> randomLists) {
+
             this.randomLists = randomLists;
             return this;
         }
@@ -448,56 +462,69 @@ public final class LibraryMasingFormatFormatEntry {
         }
         @CustomType.Setter
         public Builder regularExpression(@Nullable String regularExpression) {
+
             this.regularExpression = regularExpression;
             return this;
         }
         @CustomType.Setter
         public Builder replaceWith(@Nullable String replaceWith) {
+
             this.replaceWith = replaceWith;
             return this;
         }
         @CustomType.Setter
         public Builder schemaName(@Nullable String schemaName) {
+
             this.schemaName = schemaName;
             return this;
         }
         @CustomType.Setter
         public Builder sqlExpression(@Nullable String sqlExpression) {
+
             this.sqlExpression = sqlExpression;
             return this;
         }
         @CustomType.Setter
         public Builder startDate(@Nullable String startDate) {
+
             this.startDate = startDate;
             return this;
         }
         @CustomType.Setter
         public Builder startLength(@Nullable Integer startLength) {
+
             this.startLength = startLength;
             return this;
         }
         @CustomType.Setter
         public Builder startPosition(@Nullable Integer startPosition) {
+
             this.startPosition = startPosition;
             return this;
         }
         @CustomType.Setter
         public Builder startValue(@Nullable Double startValue) {
+
             this.startValue = startValue;
             return this;
         }
         @CustomType.Setter
         public Builder tableName(@Nullable String tableName) {
+
             this.tableName = tableName;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("LibraryMasingFormatFormatEntry", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder userDefinedFunction(@Nullable String userDefinedFunction) {
+
             this.userDefinedFunction = userDefinedFunction;
             return this;
         }

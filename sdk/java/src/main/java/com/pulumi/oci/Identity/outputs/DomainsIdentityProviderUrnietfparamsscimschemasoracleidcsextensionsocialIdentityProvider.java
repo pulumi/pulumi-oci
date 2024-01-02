@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -641,16 +642,21 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
 
         @CustomType.Setter
         public Builder accessTokenUrl(@Nullable String accessTokenUrl) {
+
             this.accessTokenUrl = accessTokenUrl;
             return this;
         }
         @CustomType.Setter
         public Builder accountLinkingEnabled(Boolean accountLinkingEnabled) {
-            this.accountLinkingEnabled = Objects.requireNonNull(accountLinkingEnabled);
+            if (accountLinkingEnabled == null) {
+              throw new MissingRequiredPropertyException("DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider", "accountLinkingEnabled");
+            }
+            this.accountLinkingEnabled = accountLinkingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder adminScopes(@Nullable List<String> adminScopes) {
+
             this.adminScopes = adminScopes;
             return this;
         }
@@ -659,56 +665,73 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         }
         @CustomType.Setter
         public Builder authzUrl(@Nullable String authzUrl) {
+
             this.authzUrl = authzUrl;
             return this;
         }
         @CustomType.Setter
         public Builder clientCredentialInPayload(@Nullable Boolean clientCredentialInPayload) {
+
             this.clientCredentialInPayload = clientCredentialInPayload;
             return this;
         }
         @CustomType.Setter
         public Builder clockSkewInSeconds(@Nullable Integer clockSkewInSeconds) {
+
             this.clockSkewInSeconds = clockSkewInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder consumerKey(String consumerKey) {
-            this.consumerKey = Objects.requireNonNull(consumerKey);
+            if (consumerKey == null) {
+              throw new MissingRequiredPropertyException("DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider", "consumerKey");
+            }
+            this.consumerKey = consumerKey;
             return this;
         }
         @CustomType.Setter
         public Builder consumerSecret(String consumerSecret) {
-            this.consumerSecret = Objects.requireNonNull(consumerSecret);
+            if (consumerSecret == null) {
+              throw new MissingRequiredPropertyException("DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider", "consumerSecret");
+            }
+            this.consumerSecret = consumerSecret;
             return this;
         }
         @CustomType.Setter
         public Builder discoveryUrl(@Nullable String discoveryUrl) {
+
             this.discoveryUrl = discoveryUrl;
             return this;
         }
         @CustomType.Setter
         public Builder idAttribute(@Nullable String idAttribute) {
+
             this.idAttribute = idAttribute;
             return this;
         }
         @CustomType.Setter
         public Builder profileUrl(@Nullable String profileUrl) {
+
             this.profileUrl = profileUrl;
             return this;
         }
         @CustomType.Setter
         public Builder redirectUrl(@Nullable String redirectUrl) {
+
             this.redirectUrl = redirectUrl;
             return this;
         }
         @CustomType.Setter
         public Builder registrationEnabled(Boolean registrationEnabled) {
-            this.registrationEnabled = Objects.requireNonNull(registrationEnabled);
+            if (registrationEnabled == null) {
+              throw new MissingRequiredPropertyException("DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider", "registrationEnabled");
+            }
+            this.registrationEnabled = registrationEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder scopes(@Nullable List<String> scopes) {
+
             this.scopes = scopes;
             return this;
         }
@@ -717,11 +740,15 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         }
         @CustomType.Setter
         public Builder serviceProviderName(String serviceProviderName) {
-            this.serviceProviderName = Objects.requireNonNull(serviceProviderName);
+            if (serviceProviderName == null) {
+              throw new MissingRequiredPropertyException("DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider", "serviceProviderName");
+            }
+            this.serviceProviderName = serviceProviderName;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }

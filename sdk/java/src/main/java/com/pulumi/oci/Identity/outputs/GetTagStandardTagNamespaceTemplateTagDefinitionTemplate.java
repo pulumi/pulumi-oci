@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -114,22 +115,34 @@ public final class GetTagStandardTagNamespaceTemplateTagDefinitionTemplate {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetTagStandardTagNamespaceTemplateTagDefinitionTemplate", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder enumMutability(String enumMutability) {
-            this.enumMutability = Objects.requireNonNull(enumMutability);
+            if (enumMutability == null) {
+              throw new MissingRequiredPropertyException("GetTagStandardTagNamespaceTemplateTagDefinitionTemplate", "enumMutability");
+            }
+            this.enumMutability = enumMutability;
             return this;
         }
         @CustomType.Setter
         public Builder isCostTracking(Boolean isCostTracking) {
-            this.isCostTracking = Objects.requireNonNull(isCostTracking);
+            if (isCostTracking == null) {
+              throw new MissingRequiredPropertyException("GetTagStandardTagNamespaceTemplateTagDefinitionTemplate", "isCostTracking");
+            }
+            this.isCostTracking = isCostTracking;
             return this;
         }
         @CustomType.Setter
         public Builder possibleValues(List<String> possibleValues) {
-            this.possibleValues = Objects.requireNonNull(possibleValues);
+            if (possibleValues == null) {
+              throw new MissingRequiredPropertyException("GetTagStandardTagNamespaceTemplateTagDefinitionTemplate", "possibleValues");
+            }
+            this.possibleValues = possibleValues;
             return this;
         }
         public Builder possibleValues(String... possibleValues) {
@@ -137,12 +150,18 @@ public final class GetTagStandardTagNamespaceTemplateTagDefinitionTemplate {
         }
         @CustomType.Setter
         public Builder tagDefinitionName(String tagDefinitionName) {
-            this.tagDefinitionName = Objects.requireNonNull(tagDefinitionName);
+            if (tagDefinitionName == null) {
+              throw new MissingRequiredPropertyException("GetTagStandardTagNamespaceTemplateTagDefinitionTemplate", "tagDefinitionName");
+            }
+            this.tagDefinitionName = tagDefinitionName;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetTagStandardTagNamespaceTemplateTagDefinitionTemplate", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetTagStandardTagNamespaceTemplateTagDefinitionTemplate build() {

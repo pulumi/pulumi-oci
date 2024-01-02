@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -140,42 +141,66 @@ public final class GetSecurityAssessmentStatisticEvaluate {
 
         @CustomType.Setter
         public Builder auditingFindingsCount(Integer auditingFindingsCount) {
-            this.auditingFindingsCount = Objects.requireNonNull(auditingFindingsCount);
+            if (auditingFindingsCount == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentStatisticEvaluate", "auditingFindingsCount");
+            }
+            this.auditingFindingsCount = auditingFindingsCount;
             return this;
         }
         @CustomType.Setter
         public Builder authorizationControlFindingsCount(Integer authorizationControlFindingsCount) {
-            this.authorizationControlFindingsCount = Objects.requireNonNull(authorizationControlFindingsCount);
+            if (authorizationControlFindingsCount == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentStatisticEvaluate", "authorizationControlFindingsCount");
+            }
+            this.authorizationControlFindingsCount = authorizationControlFindingsCount;
             return this;
         }
         @CustomType.Setter
         public Builder dataEncryptionFindingsCount(Integer dataEncryptionFindingsCount) {
-            this.dataEncryptionFindingsCount = Objects.requireNonNull(dataEncryptionFindingsCount);
+            if (dataEncryptionFindingsCount == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentStatisticEvaluate", "dataEncryptionFindingsCount");
+            }
+            this.dataEncryptionFindingsCount = dataEncryptionFindingsCount;
             return this;
         }
         @CustomType.Setter
         public Builder dbConfigurationFindingsCount(Integer dbConfigurationFindingsCount) {
-            this.dbConfigurationFindingsCount = Objects.requireNonNull(dbConfigurationFindingsCount);
+            if (dbConfigurationFindingsCount == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentStatisticEvaluate", "dbConfigurationFindingsCount");
+            }
+            this.dbConfigurationFindingsCount = dbConfigurationFindingsCount;
             return this;
         }
         @CustomType.Setter
         public Builder fineGrainedAccessControlFindingsCount(Integer fineGrainedAccessControlFindingsCount) {
-            this.fineGrainedAccessControlFindingsCount = Objects.requireNonNull(fineGrainedAccessControlFindingsCount);
+            if (fineGrainedAccessControlFindingsCount == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentStatisticEvaluate", "fineGrainedAccessControlFindingsCount");
+            }
+            this.fineGrainedAccessControlFindingsCount = fineGrainedAccessControlFindingsCount;
             return this;
         }
         @CustomType.Setter
         public Builder privilegesAndRolesFindingsCount(Integer privilegesAndRolesFindingsCount) {
-            this.privilegesAndRolesFindingsCount = Objects.requireNonNull(privilegesAndRolesFindingsCount);
+            if (privilegesAndRolesFindingsCount == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentStatisticEvaluate", "privilegesAndRolesFindingsCount");
+            }
+            this.privilegesAndRolesFindingsCount = privilegesAndRolesFindingsCount;
             return this;
         }
         @CustomType.Setter
         public Builder targetsCount(Integer targetsCount) {
-            this.targetsCount = Objects.requireNonNull(targetsCount);
+            if (targetsCount == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentStatisticEvaluate", "targetsCount");
+            }
+            this.targetsCount = targetsCount;
             return this;
         }
         @CustomType.Setter
         public Builder userAccountsFindingsCount(Integer userAccountsFindingsCount) {
-            this.userAccountsFindingsCount = Objects.requireNonNull(userAccountsFindingsCount);
+            if (userAccountsFindingsCount == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentStatisticEvaluate", "userAccountsFindingsCount");
+            }
+            this.userAccountsFindingsCount = userAccountsFindingsCount;
             return this;
         }
         public GetSecurityAssessmentStatisticEvaluate build() {

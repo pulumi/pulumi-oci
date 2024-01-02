@@ -4,6 +4,7 @@
 package com.pulumi.oci.Adm.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Adm.outputs.GetRemediationRunStagesFilter;
 import com.pulumi.oci.Adm.outputs.GetRemediationRunStagesRemediationRunStageCollection;
 import java.lang.String;
@@ -109,6 +110,7 @@ public final class GetRemediationRunStagesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRemediationRunStagesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -117,17 +119,26 @@ public final class GetRemediationRunStagesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStagesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder remediationRunId(String remediationRunId) {
-            this.remediationRunId = Objects.requireNonNull(remediationRunId);
+            if (remediationRunId == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStagesResult", "remediationRunId");
+            }
+            this.remediationRunId = remediationRunId;
             return this;
         }
         @CustomType.Setter
         public Builder remediationRunStageCollections(List<GetRemediationRunStagesRemediationRunStageCollection> remediationRunStageCollections) {
-            this.remediationRunStageCollections = Objects.requireNonNull(remediationRunStageCollections);
+            if (remediationRunStageCollections == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStagesResult", "remediationRunStageCollections");
+            }
+            this.remediationRunStageCollections = remediationRunStageCollections;
             return this;
         }
         public Builder remediationRunStageCollections(GetRemediationRunStagesRemediationRunStageCollection... remediationRunStageCollections) {
@@ -135,11 +146,13 @@ public final class GetRemediationRunStagesResult {
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }

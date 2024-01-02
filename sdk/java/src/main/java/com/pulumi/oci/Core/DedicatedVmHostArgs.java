@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -328,9 +329,15 @@ public final class DedicatedVmHostArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public DedicatedVmHostArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.dedicatedVmHostShape = Objects.requireNonNull($.dedicatedVmHostShape, "expected parameter 'dedicatedVmHostShape' to be non-null");
+            if ($.availabilityDomain == null) {
+                throw new MissingRequiredPropertyException("DedicatedVmHostArgs", "availabilityDomain");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("DedicatedVmHostArgs", "compartmentId");
+            }
+            if ($.dedicatedVmHostShape == null) {
+                throw new MissingRequiredPropertyException("DedicatedVmHostArgs", "dedicatedVmHostShape");
+            }
             return $;
         }
     }

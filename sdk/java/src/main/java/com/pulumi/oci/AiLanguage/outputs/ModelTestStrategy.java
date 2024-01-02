@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiLanguage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiLanguage.outputs.ModelTestStrategyTestingDataset;
 import com.pulumi.oci.AiLanguage.outputs.ModelTestStrategyValidationDataset;
 import java.lang.String;
@@ -74,16 +75,23 @@ public final class ModelTestStrategy {
 
         @CustomType.Setter
         public Builder strategyType(String strategyType) {
-            this.strategyType = Objects.requireNonNull(strategyType);
+            if (strategyType == null) {
+              throw new MissingRequiredPropertyException("ModelTestStrategy", "strategyType");
+            }
+            this.strategyType = strategyType;
             return this;
         }
         @CustomType.Setter
         public Builder testingDataset(ModelTestStrategyTestingDataset testingDataset) {
-            this.testingDataset = Objects.requireNonNull(testingDataset);
+            if (testingDataset == null) {
+              throw new MissingRequiredPropertyException("ModelTestStrategy", "testingDataset");
+            }
+            this.testingDataset = testingDataset;
             return this;
         }
         @CustomType.Setter
         public Builder validationDataset(@Nullable ModelTestStrategyValidationDataset validationDataset) {
+
             this.validationDataset = validationDataset;
             return this;
         }

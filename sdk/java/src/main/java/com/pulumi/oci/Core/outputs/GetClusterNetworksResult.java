@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetClusterNetworksClusterNetwork;
 import com.pulumi.oci.Core.outputs.GetClusterNetworksFilter;
 import java.lang.String;
@@ -109,7 +110,10 @@ public final class GetClusterNetworksResult {
 
         @CustomType.Setter
         public Builder clusterNetworks(List<GetClusterNetworksClusterNetwork> clusterNetworks) {
-            this.clusterNetworks = Objects.requireNonNull(clusterNetworks);
+            if (clusterNetworks == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksResult", "clusterNetworks");
+            }
+            this.clusterNetworks = clusterNetworks;
             return this;
         }
         public Builder clusterNetworks(GetClusterNetworksClusterNetwork... clusterNetworks) {
@@ -117,16 +121,21 @@ public final class GetClusterNetworksResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetClusterNetworksFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,11 +144,15 @@ public final class GetClusterNetworksResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

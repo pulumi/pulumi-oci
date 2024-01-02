@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceProjectMetadata;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceProjectParentRef;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceProjectRegistryMetadata;
@@ -213,32 +214,50 @@ public final class GetWorkspaceProjectResult {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder identifier(String identifier) {
-            this.identifier = Objects.requireNonNull(identifier);
+            if (identifier == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectResult", "identifier");
+            }
+            this.identifier = identifier;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectResult", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder keyMap(Map<String,Object> keyMap) {
-            this.keyMap = Objects.requireNonNull(keyMap);
+            if (keyMap == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectResult", "keyMap");
+            }
+            this.keyMap = keyMap;
             return this;
         }
         @CustomType.Setter
         public Builder metadatas(List<GetWorkspaceProjectMetadata> metadatas) {
-            this.metadatas = Objects.requireNonNull(metadatas);
+            if (metadatas == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectResult", "metadatas");
+            }
+            this.metadatas = metadatas;
             return this;
         }
         public Builder metadatas(GetWorkspaceProjectMetadata... metadatas) {
@@ -246,32 +265,50 @@ public final class GetWorkspaceProjectResult {
         }
         @CustomType.Setter
         public Builder modelType(String modelType) {
-            this.modelType = Objects.requireNonNull(modelType);
+            if (modelType == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectResult", "modelType");
+            }
+            this.modelType = modelType;
             return this;
         }
         @CustomType.Setter
         public Builder modelVersion(String modelVersion) {
-            this.modelVersion = Objects.requireNonNull(modelVersion);
+            if (modelVersion == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectResult", "modelVersion");
+            }
+            this.modelVersion = modelVersion;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder objectStatus(Integer objectStatus) {
-            this.objectStatus = Objects.requireNonNull(objectStatus);
+            if (objectStatus == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectResult", "objectStatus");
+            }
+            this.objectStatus = objectStatus;
             return this;
         }
         @CustomType.Setter
         public Builder objectVersion(Integer objectVersion) {
-            this.objectVersion = Objects.requireNonNull(objectVersion);
+            if (objectVersion == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectResult", "objectVersion");
+            }
+            this.objectVersion = objectVersion;
             return this;
         }
         @CustomType.Setter
         public Builder parentReves(List<GetWorkspaceProjectParentRef> parentReves) {
-            this.parentReves = Objects.requireNonNull(parentReves);
+            if (parentReves == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectResult", "parentReves");
+            }
+            this.parentReves = parentReves;
             return this;
         }
         public Builder parentReves(GetWorkspaceProjectParentRef... parentReves) {
@@ -279,12 +316,18 @@ public final class GetWorkspaceProjectResult {
         }
         @CustomType.Setter
         public Builder projectKey(String projectKey) {
-            this.projectKey = Objects.requireNonNull(projectKey);
+            if (projectKey == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectResult", "projectKey");
+            }
+            this.projectKey = projectKey;
             return this;
         }
         @CustomType.Setter
         public Builder registryMetadatas(List<GetWorkspaceProjectRegistryMetadata> registryMetadatas) {
-            this.registryMetadatas = Objects.requireNonNull(registryMetadatas);
+            if (registryMetadatas == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectResult", "registryMetadatas");
+            }
+            this.registryMetadatas = registryMetadatas;
             return this;
         }
         public Builder registryMetadatas(GetWorkspaceProjectRegistryMetadata... registryMetadatas) {
@@ -292,7 +335,10 @@ public final class GetWorkspaceProjectResult {
         }
         @CustomType.Setter
         public Builder workspaceId(String workspaceId) {
-            this.workspaceId = Objects.requireNonNull(workspaceId);
+            if (workspaceId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceProjectResult", "workspaceId");
+            }
+            this.workspaceId = workspaceId;
             return this;
         }
         public GetWorkspaceProjectResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader;
 import java.lang.Integer;
@@ -102,7 +103,10 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAc
 
         @CustomType.Setter
         public Builder bodies(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody> bodies) {
-            this.bodies = Objects.requireNonNull(bodies);
+            if (bodies == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction", "bodies");
+            }
+            this.bodies = bodies;
             return this;
         }
         public Builder bodies(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody... bodies) {
@@ -110,12 +114,18 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAc
         }
         @CustomType.Setter
         public Builder code(Integer code) {
-            this.code = Objects.requireNonNull(code);
+            if (code == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction", "code");
+            }
+            this.code = code;
             return this;
         }
         @CustomType.Setter
         public Builder headers(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader> headers) {
-            this.headers = Objects.requireNonNull(headers);
+            if (headers == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction", "headers");
+            }
+            this.headers = headers;
             return this;
         }
         public Builder headers(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader... headers) {
@@ -123,12 +133,18 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAc
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction build() {

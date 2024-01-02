@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceStorageOverlappingRecallsFilter;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection;
 import java.lang.String;
@@ -101,6 +102,7 @@ public final class GetNamespaceStorageOverlappingRecallsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNamespaceStorageOverlappingRecallsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -109,17 +111,26 @@ public final class GetNamespaceStorageOverlappingRecallsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageOverlappingRecallsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageOverlappingRecallsResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder overlappingRecallCollections(List<GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection> overlappingRecallCollections) {
-            this.overlappingRecallCollections = Objects.requireNonNull(overlappingRecallCollections);
+            if (overlappingRecallCollections == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageOverlappingRecallsResult", "overlappingRecallCollections");
+            }
+            this.overlappingRecallCollections = overlappingRecallCollections;
             return this;
         }
         public Builder overlappingRecallCollections(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection... overlappingRecallCollections) {
@@ -127,11 +138,13 @@ public final class GetNamespaceStorageOverlappingRecallsResult {
         }
         @CustomType.Setter
         public Builder timeDataEnded(@Nullable String timeDataEnded) {
+
             this.timeDataEnded = timeDataEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeDataStarted(@Nullable String timeDataStarted) {
+
             this.timeDataStarted = timeDataStarted;
             return this;
         }

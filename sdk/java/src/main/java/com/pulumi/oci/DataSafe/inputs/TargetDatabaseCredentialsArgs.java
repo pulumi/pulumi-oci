@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class TargetDatabaseCredentialsArgs extends com.pulumi.resources.Re
         }
 
         public TargetDatabaseCredentialsArgs build() {
-            $.password = Objects.requireNonNull($.password, "expected parameter 'password' to be non-null");
-            $.userName = Objects.requireNonNull($.userName, "expected parameter 'userName' to be non-null");
+            if ($.password == null) {
+                throw new MissingRequiredPropertyException("TargetDatabaseCredentialsArgs", "password");
+            }
+            if ($.userName == null) {
+                throw new MissingRequiredPropertyException("TargetDatabaseCredentialsArgs", "userName");
+            }
             return $;
         }
     }

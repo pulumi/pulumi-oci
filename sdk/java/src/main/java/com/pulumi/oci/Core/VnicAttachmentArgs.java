@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.VnicAttachmentCreateVnicDetailsArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -201,8 +202,12 @@ public final class VnicAttachmentArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public VnicAttachmentArgs build() {
-            $.createVnicDetails = Objects.requireNonNull($.createVnicDetails, "expected parameter 'createVnicDetails' to be non-null");
-            $.instanceId = Objects.requireNonNull($.instanceId, "expected parameter 'instanceId' to be non-null");
+            if ($.createVnicDetails == null) {
+                throw new MissingRequiredPropertyException("VnicAttachmentArgs", "createVnicDetails");
+            }
+            if ($.instanceId == null) {
+                throw new MissingRequiredPropertyException("VnicAttachmentArgs", "instanceId");
+            }
             return $;
         }
     }

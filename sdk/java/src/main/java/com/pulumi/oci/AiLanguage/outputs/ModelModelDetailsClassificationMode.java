@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiLanguage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -58,11 +59,15 @@ public final class ModelModelDetailsClassificationMode {
 
         @CustomType.Setter
         public Builder classificationMode(String classificationMode) {
-            this.classificationMode = Objects.requireNonNull(classificationMode);
+            if (classificationMode == null) {
+              throw new MissingRequiredPropertyException("ModelModelDetailsClassificationMode", "classificationMode");
+            }
+            this.classificationMode = classificationMode;
             return this;
         }
         @CustomType.Setter
         public Builder version(@Nullable String version) {
+
             this.version = version;
             return this;
         }

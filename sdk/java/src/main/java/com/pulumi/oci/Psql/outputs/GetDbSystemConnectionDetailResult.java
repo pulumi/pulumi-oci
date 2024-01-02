@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetDbSystemConnectionDetailInstanceEndpoint;
 import com.pulumi.oci.Psql.outputs.GetDbSystemConnectionDetailPrimaryDbEndpoint;
 import java.lang.String;
@@ -93,22 +94,34 @@ public final class GetDbSystemConnectionDetailResult {
 
         @CustomType.Setter
         public Builder caCertificate(String caCertificate) {
-            this.caCertificate = Objects.requireNonNull(caCertificate);
+            if (caCertificate == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemConnectionDetailResult", "caCertificate");
+            }
+            this.caCertificate = caCertificate;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemConnectionDetailResult", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemConnectionDetailResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceEndpoints(List<GetDbSystemConnectionDetailInstanceEndpoint> instanceEndpoints) {
-            this.instanceEndpoints = Objects.requireNonNull(instanceEndpoints);
+            if (instanceEndpoints == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemConnectionDetailResult", "instanceEndpoints");
+            }
+            this.instanceEndpoints = instanceEndpoints;
             return this;
         }
         public Builder instanceEndpoints(GetDbSystemConnectionDetailInstanceEndpoint... instanceEndpoints) {
@@ -116,7 +129,10 @@ public final class GetDbSystemConnectionDetailResult {
         }
         @CustomType.Setter
         public Builder primaryDbEndpoints(List<GetDbSystemConnectionDetailPrimaryDbEndpoint> primaryDbEndpoints) {
-            this.primaryDbEndpoints = Objects.requireNonNull(primaryDbEndpoints);
+            if (primaryDbEndpoints == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemConnectionDetailResult", "primaryDbEndpoints");
+            }
+            this.primaryDbEndpoints = primaryDbEndpoints;
             return this;
         }
         public Builder primaryDbEndpoints(GetDbSystemConnectionDetailPrimaryDbEndpoint... primaryDbEndpoints) {

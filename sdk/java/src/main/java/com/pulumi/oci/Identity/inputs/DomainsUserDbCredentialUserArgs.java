@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -436,7 +437,9 @@ public final class DomainsUserDbCredentialUserArgs extends com.pulumi.resources.
         }
 
         public DomainsUserDbCredentialUserArgs build() {
-            $.value = Objects.requireNonNull($.value, "expected parameter 'value' to be non-null");
+            if ($.value == null) {
+                throw new MissingRequiredPropertyException("DomainsUserDbCredentialUserArgs", "value");
+            }
             return $;
         }
     }

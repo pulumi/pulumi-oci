@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetResourceActionsFilter;
 import com.pulumi.oci.Optimizer.outputs.GetResourceActionsResourceActionCollection;
 import java.lang.Boolean;
@@ -182,6 +183,7 @@ public final class GetResourceActionsResult {
 
         @CustomType.Setter
         public Builder childTenancyIds(@Nullable List<String> childTenancyIds) {
+
             this.childTenancyIds = childTenancyIds;
             return this;
         }
@@ -190,16 +192,23 @@ public final class GetResourceActionsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
-            this.compartmentIdInSubtree = Objects.requireNonNull(compartmentIdInSubtree);
+            if (compartmentIdInSubtree == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResult", "compartmentIdInSubtree");
+            }
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetResourceActionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -208,37 +217,48 @@ public final class GetResourceActionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder includeOrganization(@Nullable Boolean includeOrganization) {
+
             this.includeOrganization = includeOrganization;
             return this;
         }
         @CustomType.Setter
         public Builder includeResourceMetadata(@Nullable Boolean includeResourceMetadata) {
+
             this.includeResourceMetadata = includeResourceMetadata;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder recommendationId(@Nullable String recommendationId) {
+
             this.recommendationId = recommendationId;
             return this;
         }
         @CustomType.Setter
         public Builder recommendationName(@Nullable String recommendationName) {
+
             this.recommendationName = recommendationName;
             return this;
         }
         @CustomType.Setter
         public Builder resourceActionCollections(List<GetResourceActionsResourceActionCollection> resourceActionCollections) {
-            this.resourceActionCollections = Objects.requireNonNull(resourceActionCollections);
+            if (resourceActionCollections == null) {
+              throw new MissingRequiredPropertyException("GetResourceActionsResult", "resourceActionCollections");
+            }
+            this.resourceActionCollections = resourceActionCollections;
             return this;
         }
         public Builder resourceActionCollections(GetResourceActionsResourceActionCollection... resourceActionCollections) {
@@ -246,16 +266,19 @@ public final class GetResourceActionsResult {
         }
         @CustomType.Setter
         public Builder resourceType(@Nullable String resourceType) {
+
             this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }

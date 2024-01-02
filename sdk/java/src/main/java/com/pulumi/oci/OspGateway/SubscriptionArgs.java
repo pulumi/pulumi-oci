@@ -5,6 +5,7 @@ package com.pulumi.oci.OspGateway;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OspGateway.inputs.SubscriptionSubscriptionArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -235,11 +236,21 @@ public final class SubscriptionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public SubscriptionArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.email = Objects.requireNonNull($.email, "expected parameter 'email' to be non-null");
-            $.ospHomeRegion = Objects.requireNonNull($.ospHomeRegion, "expected parameter 'ospHomeRegion' to be non-null");
-            $.subscription = Objects.requireNonNull($.subscription, "expected parameter 'subscription' to be non-null");
-            $.subscriptionId = Objects.requireNonNull($.subscriptionId, "expected parameter 'subscriptionId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("SubscriptionArgs", "compartmentId");
+            }
+            if ($.email == null) {
+                throw new MissingRequiredPropertyException("SubscriptionArgs", "email");
+            }
+            if ($.ospHomeRegion == null) {
+                throw new MissingRequiredPropertyException("SubscriptionArgs", "ospHomeRegion");
+            }
+            if ($.subscription == null) {
+                throw new MissingRequiredPropertyException("SubscriptionArgs", "subscription");
+            }
+            if ($.subscriptionId == null) {
+                throw new MissingRequiredPropertyException("SubscriptionArgs", "subscriptionId");
+            }
             return $;
         }
     }

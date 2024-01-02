@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class ListingResourceVersionAgreementArgs extends com.pulumi.resour
         }
 
         public ListingResourceVersionAgreementArgs build() {
-            $.listingId = Objects.requireNonNull($.listingId, "expected parameter 'listingId' to be non-null");
-            $.listingResourceVersion = Objects.requireNonNull($.listingResourceVersion, "expected parameter 'listingResourceVersion' to be non-null");
+            if ($.listingId == null) {
+                throw new MissingRequiredPropertyException("ListingResourceVersionAgreementArgs", "listingId");
+            }
+            if ($.listingResourceVersion == null) {
+                throw new MissingRequiredPropertyException("ListingResourceVersionAgreementArgs", "listingResourceVersion");
+            }
             return $;
         }
     }

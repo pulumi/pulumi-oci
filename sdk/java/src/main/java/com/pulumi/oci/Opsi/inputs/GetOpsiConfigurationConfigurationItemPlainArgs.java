@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -194,7 +195,9 @@ public final class GetOpsiConfigurationConfigurationItemPlainArgs extends com.pu
         }
 
         public GetOpsiConfigurationConfigurationItemPlainArgs build() {
-            $.opsiConfigType = Objects.requireNonNull($.opsiConfigType, "expected parameter 'opsiConfigType' to be non-null");
+            if ($.opsiConfigType == null) {
+                throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemPlainArgs", "opsiConfigType");
+            }
             return $;
         }
     }

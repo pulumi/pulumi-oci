@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -300,27 +301,42 @@ public final class GetWorkspaceExportRequestsExportRequestSummaryCollectionItem 
 
         @CustomType.Setter
         public Builder areReferencesIncluded(Boolean areReferencesIncluded) {
-            this.areReferencesIncluded = Objects.requireNonNull(areReferencesIncluded);
+            if (areReferencesIncluded == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsExportRequestSummaryCollectionItem", "areReferencesIncluded");
+            }
+            this.areReferencesIncluded = areReferencesIncluded;
             return this;
         }
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsExportRequestSummaryCollectionItem", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsExportRequestSummaryCollectionItem", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder errorMessages(Map<String,Object> errorMessages) {
-            this.errorMessages = Objects.requireNonNull(errorMessages);
+            if (errorMessages == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsExportRequestSummaryCollectionItem", "errorMessages");
+            }
+            this.errorMessages = errorMessages;
             return this;
         }
         @CustomType.Setter
         public Builder exportedItems(List<GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem> exportedItems) {
-            this.exportedItems = Objects.requireNonNull(exportedItems);
+            if (exportedItems == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsExportRequestSummaryCollectionItem", "exportedItems");
+            }
+            this.exportedItems = exportedItems;
             return this;
         }
         public Builder exportedItems(GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem... exportedItems) {
@@ -328,12 +344,18 @@ public final class GetWorkspaceExportRequestsExportRequestSummaryCollectionItem 
         }
         @CustomType.Setter
         public Builder fileName(String fileName) {
-            this.fileName = Objects.requireNonNull(fileName);
+            if (fileName == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsExportRequestSummaryCollectionItem", "fileName");
+            }
+            this.fileName = fileName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(List<String> filters) {
-            this.filters = Objects.requireNonNull(filters);
+            if (filters == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsExportRequestSummaryCollectionItem", "filters");
+            }
+            this.filters = filters;
             return this;
         }
         public Builder filters(String... filters) {
@@ -341,22 +363,34 @@ public final class GetWorkspaceExportRequestsExportRequestSummaryCollectionItem 
         }
         @CustomType.Setter
         public Builder isObjectOverwriteEnabled(Boolean isObjectOverwriteEnabled) {
-            this.isObjectOverwriteEnabled = Objects.requireNonNull(isObjectOverwriteEnabled);
+            if (isObjectOverwriteEnabled == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsExportRequestSummaryCollectionItem", "isObjectOverwriteEnabled");
+            }
+            this.isObjectOverwriteEnabled = isObjectOverwriteEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsExportRequestSummaryCollectionItem", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsExportRequestSummaryCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder objectKeys(List<String> objectKeys) {
-            this.objectKeys = Objects.requireNonNull(objectKeys);
+            if (objectKeys == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsExportRequestSummaryCollectionItem", "objectKeys");
+            }
+            this.objectKeys = objectKeys;
             return this;
         }
         public Builder objectKeys(String... objectKeys) {
@@ -364,42 +398,66 @@ public final class GetWorkspaceExportRequestsExportRequestSummaryCollectionItem 
         }
         @CustomType.Setter
         public Builder objectStorageRegion(String objectStorageRegion) {
-            this.objectStorageRegion = Objects.requireNonNull(objectStorageRegion);
+            if (objectStorageRegion == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsExportRequestSummaryCollectionItem", "objectStorageRegion");
+            }
+            this.objectStorageRegion = objectStorageRegion;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageTenancyId(String objectStorageTenancyId) {
-            this.objectStorageTenancyId = Objects.requireNonNull(objectStorageTenancyId);
+            if (objectStorageTenancyId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsExportRequestSummaryCollectionItem", "objectStorageTenancyId");
+            }
+            this.objectStorageTenancyId = objectStorageTenancyId;
             return this;
         }
         @CustomType.Setter
         public Builder referencedItems(String referencedItems) {
-            this.referencedItems = Objects.requireNonNull(referencedItems);
+            if (referencedItems == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsExportRequestSummaryCollectionItem", "referencedItems");
+            }
+            this.referencedItems = referencedItems;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsExportRequestSummaryCollectionItem", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder timeEndedInMillis(String timeEndedInMillis) {
-            this.timeEndedInMillis = Objects.requireNonNull(timeEndedInMillis);
+            if (timeEndedInMillis == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsExportRequestSummaryCollectionItem", "timeEndedInMillis");
+            }
+            this.timeEndedInMillis = timeEndedInMillis;
             return this;
         }
         @CustomType.Setter
         public Builder timeStartedInMillis(String timeStartedInMillis) {
-            this.timeStartedInMillis = Objects.requireNonNull(timeStartedInMillis);
+            if (timeStartedInMillis == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsExportRequestSummaryCollectionItem", "timeStartedInMillis");
+            }
+            this.timeStartedInMillis = timeStartedInMillis;
             return this;
         }
         @CustomType.Setter
         public Builder totalExportedObjectCount(Integer totalExportedObjectCount) {
-            this.totalExportedObjectCount = Objects.requireNonNull(totalExportedObjectCount);
+            if (totalExportedObjectCount == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsExportRequestSummaryCollectionItem", "totalExportedObjectCount");
+            }
+            this.totalExportedObjectCount = totalExportedObjectCount;
             return this;
         }
         @CustomType.Setter
         public Builder workspaceId(String workspaceId) {
-            this.workspaceId = Objects.requireNonNull(workspaceId);
+            if (workspaceId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsExportRequestSummaryCollectionItem", "workspaceId");
+            }
+            this.workspaceId = workspaceId;
             return this;
         }
         public GetWorkspaceExportRequestsExportRequestSummaryCollectionItem build() {

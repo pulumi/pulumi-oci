@@ -4,6 +4,7 @@
 package com.pulumi.oci.OperatorAccessControl.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OperatorAccessControl.outputs.GetAccessRequestHistoryItem;
 import java.lang.String;
 import java.util.List;
@@ -64,17 +65,26 @@ public final class GetAccessRequestHistoryResult {
 
         @CustomType.Setter
         public Builder accessRequestId(String accessRequestId) {
-            this.accessRequestId = Objects.requireNonNull(accessRequestId);
+            if (accessRequestId == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestHistoryResult", "accessRequestId");
+            }
+            this.accessRequestId = accessRequestId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestHistoryResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetAccessRequestHistoryItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestHistoryResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetAccessRequestHistoryItem... items) {

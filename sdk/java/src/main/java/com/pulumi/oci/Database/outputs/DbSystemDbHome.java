@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.DbSystemDbHomeDatabase;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -208,66 +209,81 @@ public final class DbSystemDbHome {
 
         @CustomType.Setter
         public Builder createAsync(@Nullable Boolean createAsync) {
+
             this.createAsync = createAsync;
             return this;
         }
         @CustomType.Setter
         public Builder database(DbSystemDbHomeDatabase database) {
-            this.database = Objects.requireNonNull(database);
+            if (database == null) {
+              throw new MissingRequiredPropertyException("DbSystemDbHome", "database");
+            }
+            this.database = database;
             return this;
         }
         @CustomType.Setter
         public Builder databaseSoftwareImageId(@Nullable String databaseSoftwareImageId) {
+
             this.databaseSoftwareImageId = databaseSoftwareImageId;
             return this;
         }
         @CustomType.Setter
         public Builder dbHomeLocation(@Nullable String dbHomeLocation) {
+
             this.dbHomeLocation = dbHomeLocation;
             return this;
         }
         @CustomType.Setter
         public Builder dbVersion(@Nullable String dbVersion) {
+
             this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+
             this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+
             this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lastPatchHistoryEntryId(@Nullable String lastPatchHistoryEntryId) {
+
             this.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }

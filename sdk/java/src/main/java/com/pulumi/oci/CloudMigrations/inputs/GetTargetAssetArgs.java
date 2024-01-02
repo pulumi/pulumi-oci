@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudMigrations.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetTargetAssetArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetTargetAssetArgs build() {
-            $.targetAssetId = Objects.requireNonNull($.targetAssetId, "expected parameter 'targetAssetId' to be non-null");
+            if ($.targetAssetId == null) {
+                throw new MissingRequiredPropertyException("GetTargetAssetArgs", "targetAssetId");
+            }
             return $;
         }
     }

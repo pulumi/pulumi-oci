@@ -5,6 +5,7 @@ package com.pulumi.oci.ApmTraces.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmTraces.inputs.GetQueryQuickPicksFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -99,7 +100,9 @@ public final class GetQueryQuickPicksArgs extends com.pulumi.resources.InvokeArg
         }
 
         public GetQueryQuickPicksArgs build() {
-            $.apmDomainId = Objects.requireNonNull($.apmDomainId, "expected parameter 'apmDomainId' to be non-null");
+            if ($.apmDomainId == null) {
+                throw new MissingRequiredPropertyException("GetQueryQuickPicksArgs", "apmDomainId");
+            }
             return $;
         }
     }

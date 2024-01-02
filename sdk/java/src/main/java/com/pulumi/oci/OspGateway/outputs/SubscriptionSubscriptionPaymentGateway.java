@@ -44,6 +44,7 @@ public final class SubscriptionSubscriptionPaymentGateway {
 
         @CustomType.Setter
         public Builder merchantDefinedData(@Nullable SubscriptionSubscriptionPaymentGatewayMerchantDefinedData merchantDefinedData) {
+
             this.merchantDefinedData = merchantDefinedData;
             return this;
         }

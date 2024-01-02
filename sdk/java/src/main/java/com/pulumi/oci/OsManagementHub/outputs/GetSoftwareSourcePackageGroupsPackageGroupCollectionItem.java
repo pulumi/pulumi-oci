@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -157,42 +158,66 @@ public final class GetSoftwareSourcePackageGroupsPackageGroupCollectionItem {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcePackageGroupsPackageGroupCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayOrder(Integer displayOrder) {
-            this.displayOrder = Objects.requireNonNull(displayOrder);
+            if (displayOrder == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcePackageGroupsPackageGroupCollectionItem", "displayOrder");
+            }
+            this.displayOrder = displayOrder;
             return this;
         }
         @CustomType.Setter
         public Builder groupType(String groupType) {
-            this.groupType = Objects.requireNonNull(groupType);
+            if (groupType == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcePackageGroupsPackageGroupCollectionItem", "groupType");
+            }
+            this.groupType = groupType;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcePackageGroupsPackageGroupCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isDefault(Boolean isDefault) {
-            this.isDefault = Objects.requireNonNull(isDefault);
+            if (isDefault == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcePackageGroupsPackageGroupCollectionItem", "isDefault");
+            }
+            this.isDefault = isDefault;
             return this;
         }
         @CustomType.Setter
         public Builder isUserVisible(Boolean isUserVisible) {
-            this.isUserVisible = Objects.requireNonNull(isUserVisible);
+            if (isUserVisible == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcePackageGroupsPackageGroupCollectionItem", "isUserVisible");
+            }
+            this.isUserVisible = isUserVisible;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcePackageGroupsPackageGroupCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder packages(List<String> packages) {
-            this.packages = Objects.requireNonNull(packages);
+            if (packages == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcePackageGroupsPackageGroupCollectionItem", "packages");
+            }
+            this.packages = packages;
             return this;
         }
         public Builder packages(String... packages) {
@@ -200,7 +225,10 @@ public final class GetSoftwareSourcePackageGroupsPackageGroupCollectionItem {
         }
         @CustomType.Setter
         public Builder repositories(List<String> repositories) {
-            this.repositories = Objects.requireNonNull(repositories);
+            if (repositories == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcePackageGroupsPackageGroupCollectionItem", "repositories");
+            }
+            this.repositories = repositories;
             return this;
         }
         public Builder repositories(String... repositories) {

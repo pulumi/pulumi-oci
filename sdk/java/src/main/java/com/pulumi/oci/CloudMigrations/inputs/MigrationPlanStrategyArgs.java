@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudMigrations.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -262,8 +263,12 @@ public final class MigrationPlanStrategyArgs extends com.pulumi.resources.Resour
         }
 
         public MigrationPlanStrategyArgs build() {
-            $.resourceType = Objects.requireNonNull($.resourceType, "expected parameter 'resourceType' to be non-null");
-            $.strategyType = Objects.requireNonNull($.strategyType, "expected parameter 'strategyType' to be non-null");
+            if ($.resourceType == null) {
+                throw new MissingRequiredPropertyException("MigrationPlanStrategyArgs", "resourceType");
+            }
+            if ($.strategyType == null) {
+                throw new MissingRequiredPropertyException("MigrationPlanStrategyArgs", "strategyType");
+            }
             return $;
         }
     }

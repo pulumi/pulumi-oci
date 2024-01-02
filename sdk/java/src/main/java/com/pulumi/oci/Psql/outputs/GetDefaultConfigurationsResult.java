@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetDefaultConfigurationsDefaultConfigurationCollection;
 import com.pulumi.oci.Psql.outputs.GetDefaultConfigurationsFilter;
 import java.lang.String;
@@ -129,17 +130,22 @@ public final class GetDefaultConfigurationsResult {
 
         @CustomType.Setter
         public Builder configurationId(@Nullable String configurationId) {
+
             this.configurationId = configurationId;
             return this;
         }
         @CustomType.Setter
         public Builder dbVersion(@Nullable String dbVersion) {
+
             this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder defaultConfigurationCollections(List<GetDefaultConfigurationsDefaultConfigurationCollection> defaultConfigurationCollections) {
-            this.defaultConfigurationCollections = Objects.requireNonNull(defaultConfigurationCollections);
+            if (defaultConfigurationCollections == null) {
+              throw new MissingRequiredPropertyException("GetDefaultConfigurationsResult", "defaultConfigurationCollections");
+            }
+            this.defaultConfigurationCollections = defaultConfigurationCollections;
             return this;
         }
         public Builder defaultConfigurationCollections(GetDefaultConfigurationsDefaultConfigurationCollection... defaultConfigurationCollections) {
@@ -147,11 +153,13 @@ public final class GetDefaultConfigurationsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDefaultConfigurationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -160,16 +168,21 @@ public final class GetDefaultConfigurationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDefaultConfigurationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder shape(@Nullable String shape) {
+
             this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

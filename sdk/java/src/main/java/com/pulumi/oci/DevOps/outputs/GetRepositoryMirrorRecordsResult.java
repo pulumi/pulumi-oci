@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryMirrorRecordsFilter;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetRepositoryMirrorRecordsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRepositoryMirrorRecordsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,17 +82,26 @@ public final class GetRepositoryMirrorRecordsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryMirrorRecordsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+            if (repositoryId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryMirrorRecordsResult", "repositoryId");
+            }
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryMirrorRecordCollections(List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection> repositoryMirrorRecordCollections) {
-            this.repositoryMirrorRecordCollections = Objects.requireNonNull(repositoryMirrorRecordCollections);
+            if (repositoryMirrorRecordCollections == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryMirrorRecordsResult", "repositoryMirrorRecordCollections");
+            }
+            this.repositoryMirrorRecordCollections = repositoryMirrorRecordCollections;
             return this;
         }
         public Builder repositoryMirrorRecordCollections(GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection... repositoryMirrorRecordCollections) {

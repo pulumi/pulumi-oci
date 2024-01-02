@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -114,31 +115,41 @@ public final class VmClusterNetworkVmNetworkNode {
 
         @CustomType.Setter
         public Builder dbServerId(@Nullable String dbServerId) {
+
             this.dbServerId = dbServerId;
             return this;
         }
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("VmClusterNetworkVmNetworkNode", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder ip(String ip) {
-            this.ip = Objects.requireNonNull(ip);
+            if (ip == null) {
+              throw new MissingRequiredPropertyException("VmClusterNetworkVmNetworkNode", "ip");
+            }
+            this.ip = ip;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vip(@Nullable String vip) {
+
             this.vip = vip;
             return this;
         }
         @CustomType.Setter
         public Builder vipHostname(@Nullable String vipHostname) {
+
             this.vipHostname = vipHostname;
             return this;
         }

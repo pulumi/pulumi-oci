@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionm
 
         @CustomType.Setter
         public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+            if (display == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle", "display");
+            }
+            this.display = display;
             return this;
         }
         @CustomType.Setter
         public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+            if (ref == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle", "ref");
+            }
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle", "value");
+            }
+            this.value = value;
             return this;
         }
         @CustomType.Setter
         public Builder wellKnownId(String wellKnownId) {
-            this.wellKnownId = Objects.requireNonNull(wellKnownId);
+            if (wellKnownId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle", "wellKnownId");
+            }
+            this.wellKnownId = wellKnownId;
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle build() {

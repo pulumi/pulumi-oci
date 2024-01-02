@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.inputs.ReportDefinitionColumnFilterArgs;
 import com.pulumi.oci.DataSafe.inputs.ReportDefinitionColumnInfoArgs;
 import com.pulumi.oci.DataSafe.inputs.ReportDefinitionColumnSortingArgs;
@@ -456,13 +457,27 @@ public final class ReportDefinitionArgs extends com.pulumi.resources.ResourceArg
         }
 
         public ReportDefinitionArgs build() {
-            $.columnFilters = Objects.requireNonNull($.columnFilters, "expected parameter 'columnFilters' to be non-null");
-            $.columnInfos = Objects.requireNonNull($.columnInfos, "expected parameter 'columnInfos' to be non-null");
-            $.columnSortings = Objects.requireNonNull($.columnSortings, "expected parameter 'columnSortings' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.parentId = Objects.requireNonNull($.parentId, "expected parameter 'parentId' to be non-null");
-            $.summaries = Objects.requireNonNull($.summaries, "expected parameter 'summaries' to be non-null");
+            if ($.columnFilters == null) {
+                throw new MissingRequiredPropertyException("ReportDefinitionArgs", "columnFilters");
+            }
+            if ($.columnInfos == null) {
+                throw new MissingRequiredPropertyException("ReportDefinitionArgs", "columnInfos");
+            }
+            if ($.columnSortings == null) {
+                throw new MissingRequiredPropertyException("ReportDefinitionArgs", "columnSortings");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ReportDefinitionArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ReportDefinitionArgs", "displayName");
+            }
+            if ($.parentId == null) {
+                throw new MissingRequiredPropertyException("ReportDefinitionArgs", "parentId");
+            }
+            if ($.summaries == null) {
+                throw new MissingRequiredPropertyException("ReportDefinitionArgs", "summaries");
+            }
             return $;
         }
     }

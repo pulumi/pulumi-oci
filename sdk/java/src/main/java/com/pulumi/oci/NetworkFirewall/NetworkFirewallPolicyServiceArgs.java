@@ -5,6 +5,7 @@ package com.pulumi.oci.NetworkFirewall;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyServicePortRangeArgs;
 import java.lang.String;
 import java.util.List;
@@ -211,9 +212,15 @@ public final class NetworkFirewallPolicyServiceArgs extends com.pulumi.resources
         }
 
         public NetworkFirewallPolicyServiceArgs build() {
-            $.networkFirewallPolicyId = Objects.requireNonNull($.networkFirewallPolicyId, "expected parameter 'networkFirewallPolicyId' to be non-null");
-            $.portRanges = Objects.requireNonNull($.portRanges, "expected parameter 'portRanges' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.networkFirewallPolicyId == null) {
+                throw new MissingRequiredPropertyException("NetworkFirewallPolicyServiceArgs", "networkFirewallPolicyId");
+            }
+            if ($.portRanges == null) {
+                throw new MissingRequiredPropertyException("NetworkFirewallPolicyServiceArgs", "portRanges");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("NetworkFirewallPolicyServiceArgs", "type");
+            }
             return $;
         }
     }

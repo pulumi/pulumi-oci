@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetAnnouncementsAnnouncementCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetAnnouncementsAnnouncementCollection {
 
         @CustomType.Setter
         public Builder items(List<GetAnnouncementsAnnouncementCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetAnnouncementsAnnouncementCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetAnnouncementsAnnouncementCollectionItem... items) {

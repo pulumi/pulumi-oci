@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -169,52 +170,82 @@ public final class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder errorMessage(String errorMessage) {
-            this.errorMessage = Objects.requireNonNull(errorMessage);
+            if (errorMessage == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem", "errorMessage");
+            }
+            this.errorMessage = errorMessage;
             return this;
         }
         @CustomType.Setter
         public Builder id(Integer id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder owner(String owner) {
-            this.owner = Objects.requireNonNull(owner);
+            if (owner == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem", "owner");
+            }
+            this.owner = owner;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledJobName(String scheduledJobName) {
-            this.scheduledJobName = Objects.requireNonNull(scheduledJobName);
+            if (scheduledJobName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem", "scheduledJobName");
+            }
+            this.scheduledJobName = scheduledJobName;
             return this;
         }
         @CustomType.Setter
         public Builder statementCounts(Integer statementCounts) {
-            this.statementCounts = Objects.requireNonNull(statementCounts);
+            if (statementCounts == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem", "statementCounts");
+            }
+            this.statementCounts = statementCounts;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastModified(String timeLastModified) {
-            this.timeLastModified = Objects.requireNonNull(timeLastModified);
+            if (timeLastModified == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem", "timeLastModified");
+            }
+            this.timeLastModified = timeLastModified;
             return this;
         }
         public GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem build() {

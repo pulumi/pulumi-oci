@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetAuditArchiveRetrievalArgs extends com.pulumi.resources.Inv
         }
 
         public GetAuditArchiveRetrievalArgs build() {
-            $.auditArchiveRetrievalId = Objects.requireNonNull($.auditArchiveRetrievalId, "expected parameter 'auditArchiveRetrievalId' to be non-null");
+            if ($.auditArchiveRetrievalId == null) {
+                throw new MissingRequiredPropertyException("GetAuditArchiveRetrievalArgs", "auditArchiveRetrievalId");
+            }
             return $;
         }
     }

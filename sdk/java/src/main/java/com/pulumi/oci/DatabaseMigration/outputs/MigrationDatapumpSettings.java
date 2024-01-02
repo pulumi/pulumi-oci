@@ -105,26 +105,31 @@ public final class MigrationDatapumpSettings {
 
         @CustomType.Setter
         public Builder dataPumpParameters(@Nullable MigrationDatapumpSettingsDataPumpParameters dataPumpParameters) {
+
             this.dataPumpParameters = dataPumpParameters;
             return this;
         }
         @CustomType.Setter
         public Builder exportDirectoryObject(@Nullable MigrationDatapumpSettingsExportDirectoryObject exportDirectoryObject) {
+
             this.exportDirectoryObject = exportDirectoryObject;
             return this;
         }
         @CustomType.Setter
         public Builder importDirectoryObject(@Nullable MigrationDatapumpSettingsImportDirectoryObject importDirectoryObject) {
+
             this.importDirectoryObject = importDirectoryObject;
             return this;
         }
         @CustomType.Setter
         public Builder jobMode(@Nullable String jobMode) {
+
             this.jobMode = jobMode;
             return this;
         }
         @CustomType.Setter
         public Builder metadataRemaps(@Nullable List<MigrationDatapumpSettingsMetadataRemap> metadataRemaps) {
+
             this.metadataRemaps = metadataRemaps;
             return this;
         }

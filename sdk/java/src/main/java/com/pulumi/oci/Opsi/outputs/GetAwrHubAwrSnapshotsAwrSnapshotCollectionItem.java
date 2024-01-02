@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetAwrHubAwrSnapshotsAwrSnapshotCollectionItem {
 
         @CustomType.Setter
         public Builder items(List<GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSnapshotsAwrSnapshotCollectionItem", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem... items) {

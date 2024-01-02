@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -86,22 +87,34 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTagsFilter(Map<String,Object> definedTagsFilter) {
-            this.definedTagsFilter = Objects.requireNonNull(definedTagsFilter);
+            if (definedTagsFilter == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail", "definedTagsFilter");
+            }
+            this.definedTagsFilter = definedTagsFilter;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystem(String operatingSystem) {
-            this.operatingSystem = Objects.requireNonNull(operatingSystem);
+            if (operatingSystem == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail", "operatingSystem");
+            }
+            this.operatingSystem = operatingSystem;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystemVersion(String operatingSystemVersion) {
-            this.operatingSystemVersion = Objects.requireNonNull(operatingSystemVersion);
+            if (operatingSystemVersion == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail", "operatingSystemVersion");
+            }
+            this.operatingSystemVersion = operatingSystemVersion;
             return this;
         }
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail build() {

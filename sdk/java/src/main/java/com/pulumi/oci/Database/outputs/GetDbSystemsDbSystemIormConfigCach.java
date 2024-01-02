@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbSystemsDbSystemIormConfigCachDbPlan;
 import java.lang.String;
 import java.util.List;
@@ -76,7 +77,10 @@ public final class GetDbSystemsDbSystemIormConfigCach {
 
         @CustomType.Setter
         public Builder dbPlans(List<GetDbSystemsDbSystemIormConfigCachDbPlan> dbPlans) {
-            this.dbPlans = Objects.requireNonNull(dbPlans);
+            if (dbPlans == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemIormConfigCach", "dbPlans");
+            }
+            this.dbPlans = dbPlans;
             return this;
         }
         public Builder dbPlans(GetDbSystemsDbSystemIormConfigCachDbPlan... dbPlans) {
@@ -84,22 +88,34 @@ public final class GetDbSystemsDbSystemIormConfigCach {
         }
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemIormConfigCach", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemIormConfigCach", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder objective(String objective) {
-            this.objective = Objects.requireNonNull(objective);
+            if (objective == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemIormConfigCach", "objective");
+            }
+            this.objective = objective;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemIormConfigCach", "state");
+            }
+            this.state = state;
             return this;
         }
         public GetDbSystemsDbSystemIormConfigCach build() {

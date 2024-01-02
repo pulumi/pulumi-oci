@@ -72,6 +72,7 @@ public final class ContainerInstanceDnsConfig {
 
         @CustomType.Setter
         public Builder nameservers(@Nullable List<String> nameservers) {
+
             this.nameservers = nameservers;
             return this;
         }
@@ -80,6 +81,7 @@ public final class ContainerInstanceDnsConfig {
         }
         @CustomType.Setter
         public Builder options(@Nullable List<String> options) {
+
             this.options = options;
             return this;
         }
@@ -88,6 +90,7 @@ public final class ContainerInstanceDnsConfig {
         }
         @CustomType.Setter
         public Builder searches(@Nullable List<String> searches) {
+
             this.searches = searches;
             return this;
         }

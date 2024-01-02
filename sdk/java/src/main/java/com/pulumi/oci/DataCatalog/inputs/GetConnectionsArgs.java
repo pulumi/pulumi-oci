@@ -5,6 +5,7 @@ package com.pulumi.oci.DataCatalog.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataCatalog.inputs.GetConnectionsFilterArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -554,8 +555,12 @@ public final class GetConnectionsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetConnectionsArgs build() {
-            $.catalogId = Objects.requireNonNull($.catalogId, "expected parameter 'catalogId' to be non-null");
-            $.dataAssetKey = Objects.requireNonNull($.dataAssetKey, "expected parameter 'dataAssetKey' to be non-null");
+            if ($.catalogId == null) {
+                throw new MissingRequiredPropertyException("GetConnectionsArgs", "catalogId");
+            }
+            if ($.dataAssetKey == null) {
+                throw new MissingRequiredPropertyException("GetConnectionsArgs", "dataAssetKey");
+            }
             return $;
         }
     }

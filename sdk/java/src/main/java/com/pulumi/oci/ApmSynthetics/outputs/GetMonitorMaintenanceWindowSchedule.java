@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetMonitorMaintenanceWindowSchedule {
 
         @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+            if (timeEnded == null) {
+              throw new MissingRequiredPropertyException("GetMonitorMaintenanceWindowSchedule", "timeEnded");
+            }
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetMonitorMaintenanceWindowSchedule", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetMonitorMaintenanceWindowSchedule build() {

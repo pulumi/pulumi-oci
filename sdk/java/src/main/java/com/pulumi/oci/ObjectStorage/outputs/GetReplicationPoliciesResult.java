@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ObjectStorage.outputs.GetReplicationPoliciesFilter;
 import com.pulumi.oci.ObjectStorage.outputs.GetReplicationPoliciesReplicationPolicy;
 import java.lang.String;
@@ -78,11 +79,15 @@ public final class GetReplicationPoliciesResult {
 
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetReplicationPoliciesResult", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetReplicationPoliciesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -91,17 +96,26 @@ public final class GetReplicationPoliciesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetReplicationPoliciesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetReplicationPoliciesResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder replicationPolicies(List<GetReplicationPoliciesReplicationPolicy> replicationPolicies) {
-            this.replicationPolicies = Objects.requireNonNull(replicationPolicies);
+            if (replicationPolicies == null) {
+              throw new MissingRequiredPropertyException("GetReplicationPoliciesResult", "replicationPolicies");
+            }
+            this.replicationPolicies = replicationPolicies;
             return this;
         }
         public Builder replicationPolicies(GetReplicationPoliciesReplicationPolicy... replicationPolicies) {

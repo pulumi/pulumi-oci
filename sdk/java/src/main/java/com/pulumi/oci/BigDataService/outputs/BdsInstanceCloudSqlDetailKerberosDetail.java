@@ -58,11 +58,13 @@ public final class BdsInstanceCloudSqlDetailKerberosDetail {
 
         @CustomType.Setter
         public Builder keytabFile(@Nullable String keytabFile) {
+
             this.keytabFile = keytabFile;
             return this;
         }
         @CustomType.Setter
         public Builder principalName(@Nullable String principalName) {
+
             this.principalName = principalName;
             return this;
         }

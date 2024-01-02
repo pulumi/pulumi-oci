@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetExadataIormConfigArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetExadataIormConfigArgs build() {
-            $.dbSystemId = Objects.requireNonNull($.dbSystemId, "expected parameter 'dbSystemId' to be non-null");
+            if ($.dbSystemId == null) {
+                throw new MissingRequiredPropertyException("GetExadataIormConfigArgs", "dbSystemId");
+            }
             return $;
         }
     }

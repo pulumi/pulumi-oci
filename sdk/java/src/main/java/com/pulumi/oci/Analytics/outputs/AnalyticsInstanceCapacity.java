@@ -4,6 +4,7 @@
 package com.pulumi.oci.Analytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class AnalyticsInstanceCapacity {
 
         @CustomType.Setter
         public Builder capacityType(String capacityType) {
-            this.capacityType = Objects.requireNonNull(capacityType);
+            if (capacityType == null) {
+              throw new MissingRequiredPropertyException("AnalyticsInstanceCapacity", "capacityType");
+            }
+            this.capacityType = capacityType;
             return this;
         }
         @CustomType.Setter
         public Builder capacityValue(Integer capacityValue) {
-            this.capacityValue = Objects.requireNonNull(capacityValue);
+            if (capacityValue == null) {
+              throw new MissingRequiredPropertyException("AnalyticsInstanceCapacity", "capacityValue");
+            }
+            this.capacityValue = capacityValue;
             return this;
         }
         public AnalyticsInstanceCapacity build() {

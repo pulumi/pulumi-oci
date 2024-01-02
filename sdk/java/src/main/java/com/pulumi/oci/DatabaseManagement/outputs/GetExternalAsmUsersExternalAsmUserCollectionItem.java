@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetExternalAsmUsersExternalAsmUserCollectionItem {
 
         @CustomType.Setter
         public Builder asmId(String asmId) {
-            this.asmId = Objects.requireNonNull(asmId);
+            if (asmId == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmUsersExternalAsmUserCollectionItem", "asmId");
+            }
+            this.asmId = asmId;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmUsersExternalAsmUserCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder privileges(List<String> privileges) {
-            this.privileges = Objects.requireNonNull(privileges);
+            if (privileges == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmUsersExternalAsmUserCollectionItem", "privileges");
+            }
+            this.privileges = privileges;
             return this;
         }
         public Builder privileges(String... privileges) {

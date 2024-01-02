@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.outputs.GetPoolsPoolCollectionItemConfiguration;
 import com.pulumi.oci.DataFlow.outputs.GetPoolsPoolCollectionItemPoolMetric;
 import com.pulumi.oci.DataFlow.outputs.GetPoolsPoolCollectionItemSchedule;
@@ -259,12 +260,18 @@ public final class GetPoolsPoolCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetPoolsPoolCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder configurations(List<GetPoolsPoolCollectionItemConfiguration> configurations) {
-            this.configurations = Objects.requireNonNull(configurations);
+            if (configurations == null) {
+              throw new MissingRequiredPropertyException("GetPoolsPoolCollectionItem", "configurations");
+            }
+            this.configurations = configurations;
             return this;
         }
         public Builder configurations(GetPoolsPoolCollectionItemConfiguration... configurations) {
@@ -272,52 +279,82 @@ public final class GetPoolsPoolCollectionItem {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetPoolsPoolCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetPoolsPoolCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetPoolsPoolCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetPoolsPoolCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPoolsPoolCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idleTimeoutInMinutes(Integer idleTimeoutInMinutes) {
-            this.idleTimeoutInMinutes = Objects.requireNonNull(idleTimeoutInMinutes);
+            if (idleTimeoutInMinutes == null) {
+              throw new MissingRequiredPropertyException("GetPoolsPoolCollectionItem", "idleTimeoutInMinutes");
+            }
+            this.idleTimeoutInMinutes = idleTimeoutInMinutes;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetPoolsPoolCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder ownerPrincipalId(String ownerPrincipalId) {
-            this.ownerPrincipalId = Objects.requireNonNull(ownerPrincipalId);
+            if (ownerPrincipalId == null) {
+              throw new MissingRequiredPropertyException("GetPoolsPoolCollectionItem", "ownerPrincipalId");
+            }
+            this.ownerPrincipalId = ownerPrincipalId;
             return this;
         }
         @CustomType.Setter
         public Builder ownerUserName(String ownerUserName) {
-            this.ownerUserName = Objects.requireNonNull(ownerUserName);
+            if (ownerUserName == null) {
+              throw new MissingRequiredPropertyException("GetPoolsPoolCollectionItem", "ownerUserName");
+            }
+            this.ownerUserName = ownerUserName;
             return this;
         }
         @CustomType.Setter
         public Builder poolMetrics(List<GetPoolsPoolCollectionItemPoolMetric> poolMetrics) {
-            this.poolMetrics = Objects.requireNonNull(poolMetrics);
+            if (poolMetrics == null) {
+              throw new MissingRequiredPropertyException("GetPoolsPoolCollectionItem", "poolMetrics");
+            }
+            this.poolMetrics = poolMetrics;
             return this;
         }
         public Builder poolMetrics(GetPoolsPoolCollectionItemPoolMetric... poolMetrics) {
@@ -325,7 +362,10 @@ public final class GetPoolsPoolCollectionItem {
         }
         @CustomType.Setter
         public Builder schedules(List<GetPoolsPoolCollectionItemSchedule> schedules) {
-            this.schedules = Objects.requireNonNull(schedules);
+            if (schedules == null) {
+              throw new MissingRequiredPropertyException("GetPoolsPoolCollectionItem", "schedules");
+            }
+            this.schedules = schedules;
             return this;
         }
         public Builder schedules(GetPoolsPoolCollectionItemSchedule... schedules) {
@@ -333,17 +373,26 @@ public final class GetPoolsPoolCollectionItem {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetPoolsPoolCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetPoolsPoolCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetPoolsPoolCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetPoolsPoolCollectionItem build() {

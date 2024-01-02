@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceContainerHealthCheckArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceContainerResourceConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceContainerSecurityContextArgs;
@@ -1017,7 +1018,9 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         public ContainerInstanceContainerArgs build() {
-            $.imageUrl = Objects.requireNonNull($.imageUrl, "expected parameter 'imageUrl' to be non-null");
+            if ($.imageUrl == null) {
+                throw new MissingRequiredPropertyException("ContainerInstanceContainerArgs", "imageUrl");
+            }
             return $;
         }
     }

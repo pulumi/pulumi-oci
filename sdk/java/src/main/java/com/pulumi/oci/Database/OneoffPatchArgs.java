@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -361,10 +362,18 @@ public final class OneoffPatchArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public OneoffPatchArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.dbVersion = Objects.requireNonNull($.dbVersion, "expected parameter 'dbVersion' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.releaseUpdate = Objects.requireNonNull($.releaseUpdate, "expected parameter 'releaseUpdate' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("OneoffPatchArgs", "compartmentId");
+            }
+            if ($.dbVersion == null) {
+                throw new MissingRequiredPropertyException("OneoffPatchArgs", "dbVersion");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("OneoffPatchArgs", "displayName");
+            }
+            if ($.releaseUpdate == null) {
+                throw new MissingRequiredPropertyException("OneoffPatchArgs", "releaseUpdate");
+            }
             return $;
         }
     }

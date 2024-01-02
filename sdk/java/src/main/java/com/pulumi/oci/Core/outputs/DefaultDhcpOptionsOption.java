@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -55,6 +56,7 @@ public final class DefaultDhcpOptionsOption {
 
         @CustomType.Setter
         public Builder customDnsServers(@Nullable List<String> customDnsServers) {
+
             this.customDnsServers = customDnsServers;
             return this;
         }
@@ -63,6 +65,7 @@ public final class DefaultDhcpOptionsOption {
         }
         @CustomType.Setter
         public Builder searchDomainNames(@Nullable List<String> searchDomainNames) {
+
             this.searchDomainNames = searchDomainNames;
             return this;
         }
@@ -71,12 +74,16 @@ public final class DefaultDhcpOptionsOption {
         }
         @CustomType.Setter
         public Builder serverType(@Nullable String serverType) {
+
             this.serverType = serverType;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("DefaultDhcpOptionsOption", "type");
+            }
+            this.type = type;
             return this;
         }
         public DefaultDhcpOptionsOption build() {

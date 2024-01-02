@@ -44,6 +44,7 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy {
 
         @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
+
             this.isEnabled = isEnabled;
             return this;
         }

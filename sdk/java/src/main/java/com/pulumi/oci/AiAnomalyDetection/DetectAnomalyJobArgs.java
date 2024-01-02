@@ -5,6 +5,7 @@ package com.pulumi.oci.AiAnomalyDetection;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiAnomalyDetection.inputs.DetectAnomalyJobInputDetailsArgs;
 import com.pulumi.oci.AiAnomalyDetection.inputs.DetectAnomalyJobOutputDetailsArgs;
 import java.lang.Double;
@@ -313,10 +314,18 @@ public final class DetectAnomalyJobArgs extends com.pulumi.resources.ResourceArg
         }
 
         public DetectAnomalyJobArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.inputDetails = Objects.requireNonNull($.inputDetails, "expected parameter 'inputDetails' to be non-null");
-            $.modelId = Objects.requireNonNull($.modelId, "expected parameter 'modelId' to be non-null");
-            $.outputDetails = Objects.requireNonNull($.outputDetails, "expected parameter 'outputDetails' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("DetectAnomalyJobArgs", "compartmentId");
+            }
+            if ($.inputDetails == null) {
+                throw new MissingRequiredPropertyException("DetectAnomalyJobArgs", "inputDetails");
+            }
+            if ($.modelId == null) {
+                throw new MissingRequiredPropertyException("DetectAnomalyJobArgs", "modelId");
+            }
+            if ($.outputDetails == null) {
+                throw new MissingRequiredPropertyException("DetectAnomalyJobArgs", "outputDetails");
+            }
             return $;
         }
     }

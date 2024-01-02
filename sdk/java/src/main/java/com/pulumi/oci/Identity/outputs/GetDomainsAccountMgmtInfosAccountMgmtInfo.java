@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsAccountMgmtInfosAccountMgmtInfoApp;
 import com.pulumi.oci.Identity.outputs.GetDomainsAccountMgmtInfosAccountMgmtInfoIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsAccountMgmtInfosAccountMgmtInfoIdcsLastModifiedBy;
@@ -592,22 +593,34 @@ public final class GetDomainsAccountMgmtInfosAccountMgmtInfo {
 
         @CustomType.Setter
         public Builder accountMgmtInfoId(String accountMgmtInfoId) {
-            this.accountMgmtInfoId = Objects.requireNonNull(accountMgmtInfoId);
+            if (accountMgmtInfoId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "accountMgmtInfoId");
+            }
+            this.accountMgmtInfoId = accountMgmtInfoId;
             return this;
         }
         @CustomType.Setter
         public Builder accountType(String accountType) {
-            this.accountType = Objects.requireNonNull(accountType);
+            if (accountType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "accountType");
+            }
+            this.accountType = accountType;
             return this;
         }
         @CustomType.Setter
         public Builder active(Boolean active) {
-            this.active = Objects.requireNonNull(active);
+            if (active == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "active");
+            }
+            this.active = active;
             return this;
         }
         @CustomType.Setter
         public Builder apps(List<GetDomainsAccountMgmtInfosAccountMgmtInfoApp> apps) {
-            this.apps = Objects.requireNonNull(apps);
+            if (apps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "apps");
+            }
+            this.apps = apps;
             return this;
         }
         public Builder apps(GetDomainsAccountMgmtInfosAccountMgmtInfoApp... apps) {
@@ -615,7 +628,10 @@ public final class GetDomainsAccountMgmtInfosAccountMgmtInfo {
         }
         @CustomType.Setter
         public Builder attributeSets(List<String> attributeSets) {
-            this.attributeSets = Objects.requireNonNull(attributeSets);
+            if (attributeSets == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "attributeSets");
+            }
+            this.attributeSets = attributeSets;
             return this;
         }
         public Builder attributeSets(String... attributeSets) {
@@ -623,57 +639,90 @@ public final class GetDomainsAccountMgmtInfosAccountMgmtInfo {
         }
         @CustomType.Setter
         public Builder attributes(String attributes) {
-            this.attributes = Objects.requireNonNull(attributes);
+            if (attributes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "attributes");
+            }
+            this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(String authorization) {
-            this.authorization = Objects.requireNonNull(authorization);
+            if (authorization == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "authorization");
+            }
+            this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder compositeKey(String compositeKey) {
-            this.compositeKey = Objects.requireNonNull(compositeKey);
+            if (compositeKey == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "compositeKey");
+            }
+            this.compositeKey = compositeKey;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder doNotBackFillGrants(Boolean doNotBackFillGrants) {
-            this.doNotBackFillGrants = Objects.requireNonNull(doNotBackFillGrants);
+            if (doNotBackFillGrants == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "doNotBackFillGrants");
+            }
+            this.doNotBackFillGrants = doNotBackFillGrants;
             return this;
         }
         @CustomType.Setter
         public Builder doNotPerformActionOnTarget(Boolean doNotPerformActionOnTarget) {
-            this.doNotPerformActionOnTarget = Objects.requireNonNull(doNotPerformActionOnTarget);
+            if (doNotPerformActionOnTarget == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "doNotPerformActionOnTarget");
+            }
+            this.doNotPerformActionOnTarget = doNotPerformActionOnTarget;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder favorite(Boolean favorite) {
-            this.favorite = Objects.requireNonNull(favorite);
+            if (favorite == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "favorite");
+            }
+            this.favorite = favorite;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsAccountMgmtInfosAccountMgmtInfoIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsAccountMgmtInfosAccountMgmtInfoIdcsCreatedBy... idcsCreatedBies) {
@@ -681,12 +730,18 @@ public final class GetDomainsAccountMgmtInfosAccountMgmtInfo {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsAccountMgmtInfosAccountMgmtInfoIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsAccountMgmtInfosAccountMgmtInfoIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -694,12 +749,18 @@ public final class GetDomainsAccountMgmtInfosAccountMgmtInfo {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -707,17 +768,26 @@ public final class GetDomainsAccountMgmtInfosAccountMgmtInfo {
         }
         @CustomType.Setter
         public Builder isAccount(Boolean isAccount) {
-            this.isAccount = Objects.requireNonNull(isAccount);
+            if (isAccount == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "isAccount");
+            }
+            this.isAccount = isAccount;
             return this;
         }
         @CustomType.Setter
         public Builder lastAccessed(String lastAccessed) {
-            this.lastAccessed = Objects.requireNonNull(lastAccessed);
+            if (lastAccessed == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "lastAccessed");
+            }
+            this.lastAccessed = lastAccessed;
             return this;
         }
         @CustomType.Setter
         public Builder matchingOwners(List<GetDomainsAccountMgmtInfosAccountMgmtInfoMatchingOwner> matchingOwners) {
-            this.matchingOwners = Objects.requireNonNull(matchingOwners);
+            if (matchingOwners == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "matchingOwners");
+            }
+            this.matchingOwners = matchingOwners;
             return this;
         }
         public Builder matchingOwners(GetDomainsAccountMgmtInfosAccountMgmtInfoMatchingOwner... matchingOwners) {
@@ -725,7 +795,10 @@ public final class GetDomainsAccountMgmtInfosAccountMgmtInfo {
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsAccountMgmtInfosAccountMgmtInfoMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsAccountMgmtInfosAccountMgmtInfoMeta... metas) {
@@ -733,12 +806,18 @@ public final class GetDomainsAccountMgmtInfosAccountMgmtInfo {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder objectClasses(List<GetDomainsAccountMgmtInfosAccountMgmtInfoObjectClass> objectClasses) {
-            this.objectClasses = Objects.requireNonNull(objectClasses);
+            if (objectClasses == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "objectClasses");
+            }
+            this.objectClasses = objectClasses;
             return this;
         }
         public Builder objectClasses(GetDomainsAccountMgmtInfosAccountMgmtInfoObjectClass... objectClasses) {
@@ -746,17 +825,26 @@ public final class GetDomainsAccountMgmtInfosAccountMgmtInfo {
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder operationContext(String operationContext) {
-            this.operationContext = Objects.requireNonNull(operationContext);
+            if (operationContext == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "operationContext");
+            }
+            this.operationContext = operationContext;
             return this;
         }
         @CustomType.Setter
         public Builder owners(List<GetDomainsAccountMgmtInfosAccountMgmtInfoOwner> owners) {
-            this.owners = Objects.requireNonNull(owners);
+            if (owners == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "owners");
+            }
+            this.owners = owners;
             return this;
         }
         public Builder owners(GetDomainsAccountMgmtInfosAccountMgmtInfoOwner... owners) {
@@ -764,17 +852,26 @@ public final class GetDomainsAccountMgmtInfosAccountMgmtInfo {
         }
         @CustomType.Setter
         public Builder previewOnly(Boolean previewOnly) {
-            this.previewOnly = Objects.requireNonNull(previewOnly);
+            if (previewOnly == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "previewOnly");
+            }
+            this.previewOnly = previewOnly;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(String resourceTypeSchemaVersion) {
-            this.resourceTypeSchemaVersion = Objects.requireNonNull(resourceTypeSchemaVersion);
+            if (resourceTypeSchemaVersion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "resourceTypeSchemaVersion");
+            }
+            this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypes(List<GetDomainsAccountMgmtInfosAccountMgmtInfoResourceType> resourceTypes) {
-            this.resourceTypes = Objects.requireNonNull(resourceTypes);
+            if (resourceTypes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "resourceTypes");
+            }
+            this.resourceTypes = resourceTypes;
             return this;
         }
         public Builder resourceTypes(GetDomainsAccountMgmtInfosAccountMgmtInfoResourceType... resourceTypes) {
@@ -782,7 +879,10 @@ public final class GetDomainsAccountMgmtInfosAccountMgmtInfo {
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -790,22 +890,34 @@ public final class GetDomainsAccountMgmtInfosAccountMgmtInfo {
         }
         @CustomType.Setter
         public Builder syncResponse(String syncResponse) {
-            this.syncResponse = Objects.requireNonNull(syncResponse);
+            if (syncResponse == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "syncResponse");
+            }
+            this.syncResponse = syncResponse;
             return this;
         }
         @CustomType.Setter
         public Builder syncSituation(String syncSituation) {
-            this.syncSituation = Objects.requireNonNull(syncSituation);
+            if (syncSituation == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "syncSituation");
+            }
+            this.syncSituation = syncSituation;
             return this;
         }
         @CustomType.Setter
         public Builder syncTimestamp(String syncTimestamp) {
-            this.syncTimestamp = Objects.requireNonNull(syncTimestamp);
+            if (syncTimestamp == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "syncTimestamp");
+            }
+            this.syncTimestamp = syncTimestamp;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsAccountMgmtInfosAccountMgmtInfoTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsAccountMgmtInfosAccountMgmtInfoTag... tags) {
@@ -813,17 +925,26 @@ public final class GetDomainsAccountMgmtInfosAccountMgmtInfo {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder uid(String uid) {
-            this.uid = Objects.requireNonNull(uid);
+            if (uid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "uid");
+            }
+            this.uid = uid;
             return this;
         }
         @CustomType.Setter
         public Builder userWalletArtifacts(List<GetDomainsAccountMgmtInfosAccountMgmtInfoUserWalletArtifact> userWalletArtifacts) {
-            this.userWalletArtifacts = Objects.requireNonNull(userWalletArtifacts);
+            if (userWalletArtifacts == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfo", "userWalletArtifacts");
+            }
+            this.userWalletArtifacts = userWalletArtifacts;
             return this;
         }
         public Builder userWalletArtifacts(GetDomainsAccountMgmtInfosAccountMgmtInfoUserWalletArtifact... userWalletArtifacts) {

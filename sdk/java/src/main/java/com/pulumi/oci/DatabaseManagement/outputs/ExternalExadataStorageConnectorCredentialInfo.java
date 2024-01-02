@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -100,27 +101,36 @@ public final class ExternalExadataStorageConnectorCredentialInfo {
 
         @CustomType.Setter
         public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+            if (password == null) {
+              throw new MissingRequiredPropertyException("ExternalExadataStorageConnectorCredentialInfo", "password");
+            }
+            this.password = password;
             return this;
         }
         @CustomType.Setter
         public Builder sslTrustStoreLocation(@Nullable String sslTrustStoreLocation) {
+
             this.sslTrustStoreLocation = sslTrustStoreLocation;
             return this;
         }
         @CustomType.Setter
         public Builder sslTrustStorePassword(@Nullable String sslTrustStorePassword) {
+
             this.sslTrustStorePassword = sslTrustStorePassword;
             return this;
         }
         @CustomType.Setter
         public Builder sslTrustStoreType(@Nullable String sslTrustStoreType) {
+
             this.sslTrustStoreType = sslTrustStoreType;
             return this;
         }
         @CustomType.Setter
         public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+            if (username == null) {
+              throw new MissingRequiredPropertyException("ExternalExadataStorageConnectorCredentialInfo", "username");
+            }
+            this.username = username;
             return this;
         }
         public ExternalExadataStorageConnectorCredentialInfo build() {

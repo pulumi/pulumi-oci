@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opa.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opa.outputs.GetOpaInstanceAttachment;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -325,7 +326,10 @@ public final class GetOpaInstanceResult {
 
         @CustomType.Setter
         public Builder attachments(List<GetOpaInstanceAttachment> attachments) {
-            this.attachments = Objects.requireNonNull(attachments);
+            if (attachments == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "attachments");
+            }
+            this.attachments = attachments;
             return this;
         }
         public Builder attachments(GetOpaInstanceAttachment... attachments) {
@@ -333,107 +337,170 @@ public final class GetOpaInstanceResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder consumptionModel(String consumptionModel) {
-            this.consumptionModel = Objects.requireNonNull(consumptionModel);
+            if (consumptionModel == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "consumptionModel");
+            }
+            this.consumptionModel = consumptionModel;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAt(String idcsAt) {
-            this.idcsAt = Objects.requireNonNull(idcsAt);
+            if (idcsAt == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "idcsAt");
+            }
+            this.idcsAt = idcsAt;
             return this;
         }
         @CustomType.Setter
         public Builder identityAppDisplayName(String identityAppDisplayName) {
-            this.identityAppDisplayName = Objects.requireNonNull(identityAppDisplayName);
+            if (identityAppDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "identityAppDisplayName");
+            }
+            this.identityAppDisplayName = identityAppDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder identityAppGuid(String identityAppGuid) {
-            this.identityAppGuid = Objects.requireNonNull(identityAppGuid);
+            if (identityAppGuid == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "identityAppGuid");
+            }
+            this.identityAppGuid = identityAppGuid;
             return this;
         }
         @CustomType.Setter
         public Builder identityAppOpcServiceInstanceGuid(String identityAppOpcServiceInstanceGuid) {
-            this.identityAppOpcServiceInstanceGuid = Objects.requireNonNull(identityAppOpcServiceInstanceGuid);
+            if (identityAppOpcServiceInstanceGuid == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "identityAppOpcServiceInstanceGuid");
+            }
+            this.identityAppOpcServiceInstanceGuid = identityAppOpcServiceInstanceGuid;
             return this;
         }
         @CustomType.Setter
         public Builder identityDomainUrl(String identityDomainUrl) {
-            this.identityDomainUrl = Objects.requireNonNull(identityDomainUrl);
+            if (identityDomainUrl == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "identityDomainUrl");
+            }
+            this.identityDomainUrl = identityDomainUrl;
             return this;
         }
         @CustomType.Setter
         public Builder instanceUrl(String instanceUrl) {
-            this.instanceUrl = Objects.requireNonNull(instanceUrl);
+            if (instanceUrl == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "instanceUrl");
+            }
+            this.instanceUrl = instanceUrl;
             return this;
         }
         @CustomType.Setter
         public Builder isBreakglassEnabled(Boolean isBreakglassEnabled) {
-            this.isBreakglassEnabled = Objects.requireNonNull(isBreakglassEnabled);
+            if (isBreakglassEnabled == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "isBreakglassEnabled");
+            }
+            this.isBreakglassEnabled = isBreakglassEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder meteringType(String meteringType) {
-            this.meteringType = Objects.requireNonNull(meteringType);
+            if (meteringType == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "meteringType");
+            }
+            this.meteringType = meteringType;
             return this;
         }
         @CustomType.Setter
         public Builder opaInstanceId(String opaInstanceId) {
-            this.opaInstanceId = Objects.requireNonNull(opaInstanceId);
+            if (opaInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "opaInstanceId");
+            }
+            this.opaInstanceId = opaInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+            if (shapeName == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "shapeName");
+            }
+            this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetOpaInstanceResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetOpaInstanceResult build() {

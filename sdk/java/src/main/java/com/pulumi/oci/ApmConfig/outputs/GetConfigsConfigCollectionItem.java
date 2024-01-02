@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmConfig.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmConfig.outputs.GetConfigsConfigCollectionItemDimension;
 import com.pulumi.oci.ApmConfig.outputs.GetConfigsConfigCollectionItemInUseBy;
 import com.pulumi.oci.ApmConfig.outputs.GetConfigsConfigCollectionItemMetric;
@@ -327,32 +328,50 @@ public final class GetConfigsConfigCollectionItem {
 
         @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
-            this.apmDomainId = Objects.requireNonNull(apmDomainId);
+            if (apmDomainId == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "apmDomainId");
+            }
+            this.apmDomainId = apmDomainId;
             return this;
         }
         @CustomType.Setter
         public Builder configType(String configType) {
-            this.configType = Objects.requireNonNull(configType);
+            if (configType == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "configType");
+            }
+            this.configType = configType;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder dimensions(List<GetConfigsConfigCollectionItemDimension> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+            if (dimensions == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "dimensions");
+            }
+            this.dimensions = dimensions;
             return this;
         }
         public Builder dimensions(GetConfigsConfigCollectionItemDimension... dimensions) {
@@ -360,42 +379,66 @@ public final class GetConfigsConfigCollectionItem {
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder etag(String etag) {
-            this.etag = Objects.requireNonNull(etag);
+            if (etag == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "etag");
+            }
+            this.etag = etag;
             return this;
         }
         @CustomType.Setter
         public Builder filterId(String filterId) {
-            this.filterId = Objects.requireNonNull(filterId);
+            if (filterId == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "filterId");
+            }
+            this.filterId = filterId;
             return this;
         }
         @CustomType.Setter
         public Builder filterText(String filterText) {
-            this.filterText = Objects.requireNonNull(filterText);
+            if (filterText == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "filterText");
+            }
+            this.filterText = filterText;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder group(String group) {
-            this.group = Objects.requireNonNull(group);
+            if (group == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "group");
+            }
+            this.group = group;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inUseBies(List<GetConfigsConfigCollectionItemInUseBy> inUseBies) {
-            this.inUseBies = Objects.requireNonNull(inUseBies);
+            if (inUseBies == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "inUseBies");
+            }
+            this.inUseBies = inUseBies;
             return this;
         }
         public Builder inUseBies(GetConfigsConfigCollectionItemInUseBy... inUseBies) {
@@ -403,7 +446,10 @@ public final class GetConfigsConfigCollectionItem {
         }
         @CustomType.Setter
         public Builder metrics(List<GetConfigsConfigCollectionItemMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+            if (metrics == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "metrics");
+            }
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetConfigsConfigCollectionItemMetric... metrics) {
@@ -411,22 +457,34 @@ public final class GetConfigsConfigCollectionItem {
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder opcDryRun(String opcDryRun) {
-            this.opcDryRun = Objects.requireNonNull(opcDryRun);
+            if (opcDryRun == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "opcDryRun");
+            }
+            this.opcDryRun = opcDryRun;
             return this;
         }
         @CustomType.Setter
         public Builder options(String options) {
-            this.options = Objects.requireNonNull(options);
+            if (options == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "options");
+            }
+            this.options = options;
             return this;
         }
         @CustomType.Setter
         public Builder rules(List<GetConfigsConfigCollectionItemRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+            if (rules == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "rules");
+            }
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetConfigsConfigCollectionItemRule... rules) {
@@ -434,17 +492,26 @@ public final class GetConfigsConfigCollectionItem {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder updatedBy(String updatedBy) {
-            this.updatedBy = Objects.requireNonNull(updatedBy);
+            if (updatedBy == null) {
+              throw new MissingRequiredPropertyException("GetConfigsConfigCollectionItem", "updatedBy");
+            }
+            this.updatedBy = updatedBy;
             return this;
         }
         public GetConfigsConfigCollectionItem build() {

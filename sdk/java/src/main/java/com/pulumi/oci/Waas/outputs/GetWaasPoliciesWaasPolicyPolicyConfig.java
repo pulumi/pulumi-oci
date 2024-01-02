@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck;
 import com.pulumi.oci.Waas.outputs.GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod;
 import java.lang.Boolean;
@@ -238,22 +239,34 @@ public final class GetWaasPoliciesWaasPolicyPolicyConfig {
 
         @CustomType.Setter
         public Builder certificateId(String certificateId) {
-            this.certificateId = Objects.requireNonNull(certificateId);
+            if (certificateId == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyPolicyConfig", "certificateId");
+            }
+            this.certificateId = certificateId;
             return this;
         }
         @CustomType.Setter
         public Builder cipherGroup(String cipherGroup) {
-            this.cipherGroup = Objects.requireNonNull(cipherGroup);
+            if (cipherGroup == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyPolicyConfig", "cipherGroup");
+            }
+            this.cipherGroup = cipherGroup;
             return this;
         }
         @CustomType.Setter
         public Builder clientAddressHeader(String clientAddressHeader) {
-            this.clientAddressHeader = Objects.requireNonNull(clientAddressHeader);
+            if (clientAddressHeader == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyPolicyConfig", "clientAddressHeader");
+            }
+            this.clientAddressHeader = clientAddressHeader;
             return this;
         }
         @CustomType.Setter
         public Builder healthChecks(List<GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck> healthChecks) {
-            this.healthChecks = Objects.requireNonNull(healthChecks);
+            if (healthChecks == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyPolicyConfig", "healthChecks");
+            }
+            this.healthChecks = healthChecks;
             return this;
         }
         public Builder healthChecks(GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck... healthChecks) {
@@ -261,42 +274,66 @@ public final class GetWaasPoliciesWaasPolicyPolicyConfig {
         }
         @CustomType.Setter
         public Builder isBehindCdn(Boolean isBehindCdn) {
-            this.isBehindCdn = Objects.requireNonNull(isBehindCdn);
+            if (isBehindCdn == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyPolicyConfig", "isBehindCdn");
+            }
+            this.isBehindCdn = isBehindCdn;
             return this;
         }
         @CustomType.Setter
         public Builder isCacheControlRespected(Boolean isCacheControlRespected) {
-            this.isCacheControlRespected = Objects.requireNonNull(isCacheControlRespected);
+            if (isCacheControlRespected == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyPolicyConfig", "isCacheControlRespected");
+            }
+            this.isCacheControlRespected = isCacheControlRespected;
             return this;
         }
         @CustomType.Setter
         public Builder isHttpsEnabled(Boolean isHttpsEnabled) {
-            this.isHttpsEnabled = Objects.requireNonNull(isHttpsEnabled);
+            if (isHttpsEnabled == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyPolicyConfig", "isHttpsEnabled");
+            }
+            this.isHttpsEnabled = isHttpsEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isHttpsForced(Boolean isHttpsForced) {
-            this.isHttpsForced = Objects.requireNonNull(isHttpsForced);
+            if (isHttpsForced == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyPolicyConfig", "isHttpsForced");
+            }
+            this.isHttpsForced = isHttpsForced;
             return this;
         }
         @CustomType.Setter
         public Builder isOriginCompressionEnabled(Boolean isOriginCompressionEnabled) {
-            this.isOriginCompressionEnabled = Objects.requireNonNull(isOriginCompressionEnabled);
+            if (isOriginCompressionEnabled == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyPolicyConfig", "isOriginCompressionEnabled");
+            }
+            this.isOriginCompressionEnabled = isOriginCompressionEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isResponseBufferingEnabled(Boolean isResponseBufferingEnabled) {
-            this.isResponseBufferingEnabled = Objects.requireNonNull(isResponseBufferingEnabled);
+            if (isResponseBufferingEnabled == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyPolicyConfig", "isResponseBufferingEnabled");
+            }
+            this.isResponseBufferingEnabled = isResponseBufferingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isSniEnabled(Boolean isSniEnabled) {
-            this.isSniEnabled = Objects.requireNonNull(isSniEnabled);
+            if (isSniEnabled == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyPolicyConfig", "isSniEnabled");
+            }
+            this.isSniEnabled = isSniEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancingMethods(List<GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod> loadBalancingMethods) {
-            this.loadBalancingMethods = Objects.requireNonNull(loadBalancingMethods);
+            if (loadBalancingMethods == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyPolicyConfig", "loadBalancingMethods");
+            }
+            this.loadBalancingMethods = loadBalancingMethods;
             return this;
         }
         public Builder loadBalancingMethods(GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod... loadBalancingMethods) {
@@ -304,7 +341,10 @@ public final class GetWaasPoliciesWaasPolicyPolicyConfig {
         }
         @CustomType.Setter
         public Builder tlsProtocols(List<String> tlsProtocols) {
-            this.tlsProtocols = Objects.requireNonNull(tlsProtocols);
+            if (tlsProtocols == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyPolicyConfig", "tlsProtocols");
+            }
+            this.tlsProtocols = tlsProtocols;
             return this;
         }
         public Builder tlsProtocols(String... tlsProtocols) {
@@ -312,7 +352,10 @@ public final class GetWaasPoliciesWaasPolicyPolicyConfig {
         }
         @CustomType.Setter
         public Builder websocketPathPrefixes(List<String> websocketPathPrefixes) {
-            this.websocketPathPrefixes = Objects.requireNonNull(websocketPathPrefixes);
+            if (websocketPathPrefixes == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyPolicyConfig", "websocketPathPrefixes");
+            }
+            this.websocketPathPrefixes = websocketPathPrefixes;
             return this;
         }
         public Builder websocketPathPrefixes(String... websocketPathPrefixes) {

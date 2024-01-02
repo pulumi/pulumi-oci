@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.RuleSetItemCondition;
 import com.pulumi.oci.LoadBalancer.outputs.RuleSetItemRedirectUri;
 import java.lang.Boolean;
@@ -329,11 +330,15 @@ public final class RuleSetItem {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("RuleSetItem", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder allowedMethods(@Nullable List<String> allowedMethods) {
+
             this.allowedMethods = allowedMethods;
             return this;
         }
@@ -342,11 +347,13 @@ public final class RuleSetItem {
         }
         @CustomType.Setter
         public Builder areInvalidCharactersAllowed(@Nullable Boolean areInvalidCharactersAllowed) {
+
             this.areInvalidCharactersAllowed = areInvalidCharactersAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder conditions(@Nullable List<RuleSetItemCondition> conditions) {
+
             this.conditions = conditions;
             return this;
         }
@@ -355,46 +362,55 @@ public final class RuleSetItem {
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder header(@Nullable String header) {
+
             this.header = header;
             return this;
         }
         @CustomType.Setter
         public Builder httpLargeHeaderSizeInKb(@Nullable Integer httpLargeHeaderSizeInKb) {
+
             this.httpLargeHeaderSizeInKb = httpLargeHeaderSizeInKb;
             return this;
         }
         @CustomType.Setter
         public Builder prefix(@Nullable String prefix) {
+
             this.prefix = prefix;
             return this;
         }
         @CustomType.Setter
         public Builder redirectUri(@Nullable RuleSetItemRedirectUri redirectUri) {
+
             this.redirectUri = redirectUri;
             return this;
         }
         @CustomType.Setter
         public Builder responseCode(@Nullable Integer responseCode) {
+
             this.responseCode = responseCode;
             return this;
         }
         @CustomType.Setter
         public Builder statusCode(@Nullable Integer statusCode) {
+
             this.statusCode = statusCode;
             return this;
         }
         @CustomType.Setter
         public Builder suffix(@Nullable String suffix) {
+
             this.suffix = suffix;
             return this;
         }
         @CustomType.Setter
         public Builder value(@Nullable String value) {
+
             this.value = value;
             return this;
         }

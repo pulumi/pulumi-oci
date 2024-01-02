@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsOauthPartnerCertificateTagArgs;
 import java.lang.String;
 import java.util.List;
@@ -942,9 +943,15 @@ public final class DomainsOauthPartnerCertificateArgs extends com.pulumi.resourc
         }
 
         public DomainsOauthPartnerCertificateArgs build() {
-            $.certificateAlias = Objects.requireNonNull($.certificateAlias, "expected parameter 'certificateAlias' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.certificateAlias == null) {
+                throw new MissingRequiredPropertyException("DomainsOauthPartnerCertificateArgs", "certificateAlias");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsOauthPartnerCertificateArgs", "idcsEndpoint");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsOauthPartnerCertificateArgs", "schemas");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic;
@@ -147,22 +148,30 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
 
         @CustomType.Setter
         public Builder beginExecIdGreaterThanOrEqualTo(@Nullable String beginExecIdGreaterThanOrEqualTo) {
+
             this.beginExecIdGreaterThanOrEqualTo = beginExecIdGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder endExecIdLessThanOrEqualTo(@Nullable String endExecIdLessThanOrEqualTo) {
+
             this.endExecIdLessThanOrEqualTo = endExecIdLessThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder indexFindings(List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding> indexFindings) {
-            this.indexFindings = Objects.requireNonNull(indexFindings);
+            if (indexFindings == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult", "indexFindings");
+            }
+            this.indexFindings = indexFindings;
             return this;
         }
         public Builder indexFindings(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding... indexFindings) {
@@ -170,12 +179,18 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder objectStatFindings(List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding> objectStatFindings) {
-            this.objectStatFindings = Objects.requireNonNull(objectStatFindings);
+            if (objectStatFindings == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult", "objectStatFindings");
+            }
+            this.objectStatFindings = objectStatFindings;
             return this;
         }
         public Builder objectStatFindings(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding... objectStatFindings) {
@@ -183,17 +198,24 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
         }
         @CustomType.Setter
         public Builder searchPeriod(@Nullable String searchPeriod) {
+
             this.searchPeriod = searchPeriod;
             return this;
         }
         @CustomType.Setter
         public Builder sqlTuningAdvisorTaskId(String sqlTuningAdvisorTaskId) {
-            this.sqlTuningAdvisorTaskId = Objects.requireNonNull(sqlTuningAdvisorTaskId);
+            if (sqlTuningAdvisorTaskId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult", "sqlTuningAdvisorTaskId");
+            }
+            this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
             return this;
         }
         @CustomType.Setter
         public Builder statistics(List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic> statistics) {
-            this.statistics = Objects.requireNonNull(statistics);
+            if (statistics == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult", "statistics");
+            }
+            this.statistics = statistics;
             return this;
         }
         public Builder statistics(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic... statistics) {
@@ -201,7 +223,10 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
         }
         @CustomType.Setter
         public Builder taskInfos(List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo> taskInfos) {
-            this.taskInfos = Objects.requireNonNull(taskInfos);
+            if (taskInfos == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult", "taskInfos");
+            }
+            this.taskInfos = taskInfos;
             return this;
         }
         public Builder taskInfos(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo... taskInfos) {
@@ -209,11 +234,13 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
         }
         @CustomType.Setter
         public Builder timeGreaterThanOrEqualTo(@Nullable String timeGreaterThanOrEqualTo) {
+
             this.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeLessThanOrEqualTo(@Nullable String timeLessThanOrEqualTo) {
+
             this.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
             return this;
         }

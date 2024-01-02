@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Dns.outputs.GetResolverEndpointsFilter;
 import com.pulumi.oci.Dns.outputs.GetResolverEndpointsResolverEndpoint;
 import java.lang.String;
@@ -107,6 +108,7 @@ public final class GetResolverEndpointsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetResolverEndpointsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -115,17 +117,24 @@ public final class GetResolverEndpointsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetResolverEndpointsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder resolverEndpoints(List<GetResolverEndpointsResolverEndpoint> resolverEndpoints) {
-            this.resolverEndpoints = Objects.requireNonNull(resolverEndpoints);
+            if (resolverEndpoints == null) {
+              throw new MissingRequiredPropertyException("GetResolverEndpointsResult", "resolverEndpoints");
+            }
+            this.resolverEndpoints = resolverEndpoints;
             return this;
         }
         public Builder resolverEndpoints(GetResolverEndpointsResolverEndpoint... resolverEndpoints) {
@@ -133,16 +142,23 @@ public final class GetResolverEndpointsResult {
         }
         @CustomType.Setter
         public Builder resolverId(String resolverId) {
-            this.resolverId = Objects.requireNonNull(resolverId);
+            if (resolverId == null) {
+              throw new MissingRequiredPropertyException("GetResolverEndpointsResult", "resolverId");
+            }
+            this.resolverId = resolverId;
             return this;
         }
         @CustomType.Setter
         public Builder scope(String scope) {
-            this.scope = Objects.requireNonNull(scope);
+            if (scope == null) {
+              throw new MissingRequiredPropertyException("GetResolverEndpointsResult", "scope");
+            }
+            this.scope = scope;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

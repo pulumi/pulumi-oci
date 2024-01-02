@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetUserGroupMembershipsFilter;
 import com.pulumi.oci.Identity.outputs.GetUserGroupMembershipsMembership;
 import java.lang.String;
@@ -109,11 +110,15 @@ public final class GetUserGroupMembershipsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetUserGroupMembershipsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetUserGroupMembershipsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -122,17 +127,24 @@ public final class GetUserGroupMembershipsResult {
         }
         @CustomType.Setter
         public Builder groupId(@Nullable String groupId) {
+
             this.groupId = groupId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetUserGroupMembershipsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder memberships(List<GetUserGroupMembershipsMembership> memberships) {
-            this.memberships = Objects.requireNonNull(memberships);
+            if (memberships == null) {
+              throw new MissingRequiredPropertyException("GetUserGroupMembershipsResult", "memberships");
+            }
+            this.memberships = memberships;
             return this;
         }
         public Builder memberships(GetUserGroupMembershipsMembership... memberships) {
@@ -140,6 +152,7 @@ public final class GetUserGroupMembershipsResult {
         }
         @CustomType.Setter
         public Builder userId(@Nullable String userId) {
+
             this.userId = userId;
             return this;
         }

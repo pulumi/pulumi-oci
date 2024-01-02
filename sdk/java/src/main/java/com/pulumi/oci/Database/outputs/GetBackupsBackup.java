@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -295,97 +296,154 @@ public final class GetBackupsBackup {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseEdition(String databaseEdition) {
-            this.databaseEdition = Objects.requireNonNull(databaseEdition);
+            if (databaseEdition == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "databaseEdition");
+            }
+            this.databaseEdition = databaseEdition;
             return this;
         }
         @CustomType.Setter
         public Builder databaseId(String databaseId) {
-            this.databaseId = Objects.requireNonNull(databaseId);
+            if (databaseId == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "databaseId");
+            }
+            this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseSizeInGbs(Double databaseSizeInGbs) {
-            this.databaseSizeInGbs = Objects.requireNonNull(databaseSizeInGbs);
+            if (databaseSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "databaseSizeInGbs");
+            }
+            this.databaseSizeInGbs = databaseSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder keyStoreId(String keyStoreId) {
-            this.keyStoreId = Objects.requireNonNull(keyStoreId);
+            if (keyStoreId == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "keyStoreId");
+            }
+            this.keyStoreId = keyStoreId;
             return this;
         }
         @CustomType.Setter
         public Builder keyStoreWalletName(String keyStoreWalletName) {
-            this.keyStoreWalletName = Objects.requireNonNull(keyStoreWalletName);
+            if (keyStoreWalletName == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "keyStoreWalletName");
+            }
+            this.keyStoreWalletName = keyStoreWalletName;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
-            this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
+            if (kmsKeyVersionId == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "kmsKeyVersionId");
+            }
+            this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+            if (timeEnded == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "timeEnded");
+            }
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+            if (vaultId == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "vaultId");
+            }
+            this.vaultId = vaultId;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetBackupsBackup build() {

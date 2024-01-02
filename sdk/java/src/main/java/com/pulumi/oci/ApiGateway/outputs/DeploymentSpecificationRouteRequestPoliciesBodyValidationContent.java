@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -68,12 +69,18 @@ public final class DeploymentSpecificationRouteRequestPoliciesBodyValidationCont
 
         @CustomType.Setter
         public Builder mediaType(String mediaType) {
-            this.mediaType = Objects.requireNonNull(mediaType);
+            if (mediaType == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRouteRequestPoliciesBodyValidationContent", "mediaType");
+            }
+            this.mediaType = mediaType;
             return this;
         }
         @CustomType.Setter
         public Builder validationType(String validationType) {
-            this.validationType = Objects.requireNonNull(validationType);
+            if (validationType == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRouteRequestPoliciesBodyValidationContent", "validationType");
+            }
+            this.validationType = validationType;
             return this;
         }
         public DeploymentSpecificationRouteRequestPoliciesBodyValidationContent build() {

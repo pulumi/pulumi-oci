@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetManagementAgentCountItemDimension {
 
         @CustomType.Setter
         public Builder availabilityStatus(String availabilityStatus) {
-            this.availabilityStatus = Objects.requireNonNull(availabilityStatus);
+            if (availabilityStatus == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentCountItemDimension", "availabilityStatus");
+            }
+            this.availabilityStatus = availabilityStatus;
             return this;
         }
         @CustomType.Setter
         public Builder hasPlugins(Boolean hasPlugins) {
-            this.hasPlugins = Objects.requireNonNull(hasPlugins);
+            if (hasPlugins == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentCountItemDimension", "hasPlugins");
+            }
+            this.hasPlugins = hasPlugins;
             return this;
         }
         @CustomType.Setter
         public Builder installType(String installType) {
-            this.installType = Objects.requireNonNull(installType);
+            if (installType == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentCountItemDimension", "installType");
+            }
+            this.installType = installType;
             return this;
         }
         @CustomType.Setter
         public Builder platformType(String platformType) {
-            this.platformType = Objects.requireNonNull(platformType);
+            if (platformType == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentCountItemDimension", "platformType");
+            }
+            this.platformType = platformType;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentCountItemDimension", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetManagementAgentCountItemDimension build() {

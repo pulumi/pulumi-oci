@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.GetFirewallsFilter;
 import com.pulumi.oci.Waf.outputs.GetFirewallsWebAppFirewallCollection;
 import java.lang.String;
@@ -123,16 +124,21 @@ public final class GetFirewallsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetFirewallsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetFirewallsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -141,11 +147,13 @@ public final class GetFirewallsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
+
             this.states = states;
             return this;
         }
@@ -154,7 +162,10 @@ public final class GetFirewallsResult {
         }
         @CustomType.Setter
         public Builder webAppFirewallCollections(List<GetFirewallsWebAppFirewallCollection> webAppFirewallCollections) {
-            this.webAppFirewallCollections = Objects.requireNonNull(webAppFirewallCollections);
+            if (webAppFirewallCollections == null) {
+              throw new MissingRequiredPropertyException("GetFirewallsResult", "webAppFirewallCollections");
+            }
+            this.webAppFirewallCollections = webAppFirewallCollections;
             return this;
         }
         public Builder webAppFirewallCollections(GetFirewallsWebAppFirewallCollection... webAppFirewallCollections) {
@@ -162,6 +173,7 @@ public final class GetFirewallsResult {
         }
         @CustomType.Setter
         public Builder webAppFirewallPolicyId(@Nullable String webAppFirewallPolicyId) {
+
             this.webAppFirewallPolicyId = webAppFirewallPolicyId;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Functions.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class GetFusionEnvironmentDataMaskingActivityArgs extends com.pulum
         }
 
         public GetFusionEnvironmentDataMaskingActivityArgs build() {
-            $.dataMaskingActivityId = Objects.requireNonNull($.dataMaskingActivityId, "expected parameter 'dataMaskingActivityId' to be non-null");
-            $.fusionEnvironmentId = Objects.requireNonNull($.fusionEnvironmentId, "expected parameter 'fusionEnvironmentId' to be non-null");
+            if ($.dataMaskingActivityId == null) {
+                throw new MissingRequiredPropertyException("GetFusionEnvironmentDataMaskingActivityArgs", "dataMaskingActivityId");
+            }
+            if ($.fusionEnvironmentId == null) {
+                throw new MissingRequiredPropertyException("GetFusionEnvironmentDataMaskingActivityArgs", "fusionEnvironmentId");
+            }
             return $;
         }
     }

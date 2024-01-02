@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryAuthorsFilter;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryAuthorsRepositoryAuthorCollection;
 import java.lang.String;
@@ -79,6 +80,7 @@ public final class GetRepositoryAuthorsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRepositoryAuthorsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -87,17 +89,24 @@ public final class GetRepositoryAuthorsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryAuthorsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder refName(@Nullable String refName) {
+
             this.refName = refName;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryAuthorCollections(List<GetRepositoryAuthorsRepositoryAuthorCollection> repositoryAuthorCollections) {
-            this.repositoryAuthorCollections = Objects.requireNonNull(repositoryAuthorCollections);
+            if (repositoryAuthorCollections == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryAuthorsResult", "repositoryAuthorCollections");
+            }
+            this.repositoryAuthorCollections = repositoryAuthorCollections;
             return this;
         }
         public Builder repositoryAuthorCollections(GetRepositoryAuthorsRepositoryAuthorCollection... repositoryAuthorCollections) {
@@ -105,7 +114,10 @@ public final class GetRepositoryAuthorsResult {
         }
         @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+            if (repositoryId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryAuthorsResult", "repositoryId");
+            }
+            this.repositoryId = repositoryId;
             return this;
         }
         public GetRepositoryAuthorsResult build() {

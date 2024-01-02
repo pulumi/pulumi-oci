@@ -4,6 +4,7 @@
 package com.pulumi.oci.Limits.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Limits.outputs.GetLimitDefinitionsFilter;
 import com.pulumi.oci.Limits.outputs.GetLimitDefinitionsLimitDefinition;
 import java.lang.String;
@@ -101,11 +102,15 @@ public final class GetLimitDefinitionsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLimitDefinitionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetLimitDefinitionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -114,12 +119,18 @@ public final class GetLimitDefinitionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLimitDefinitionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder limitDefinitions(List<GetLimitDefinitionsLimitDefinition> limitDefinitions) {
-            this.limitDefinitions = Objects.requireNonNull(limitDefinitions);
+            if (limitDefinitions == null) {
+              throw new MissingRequiredPropertyException("GetLimitDefinitionsResult", "limitDefinitions");
+            }
+            this.limitDefinitions = limitDefinitions;
             return this;
         }
         public Builder limitDefinitions(GetLimitDefinitionsLimitDefinition... limitDefinitions) {
@@ -127,11 +138,13 @@ public final class GetLimitDefinitionsResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder serviceName(@Nullable String serviceName) {
+
             this.serviceName = serviceName;
             return this;
         }

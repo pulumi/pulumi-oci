@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.inputs.AutoScalingConfigurationPolicyArgs;
 import com.pulumi.oci.BigDataService.inputs.AutoScalingConfigurationPolicyDetailsArgs;
 import java.lang.Boolean;
@@ -341,10 +342,18 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
         }
 
         public AutoScalingConfigurationArgs build() {
-            $.bdsInstanceId = Objects.requireNonNull($.bdsInstanceId, "expected parameter 'bdsInstanceId' to be non-null");
-            $.clusterAdminPassword = Objects.requireNonNull($.clusterAdminPassword, "expected parameter 'clusterAdminPassword' to be non-null");
-            $.isEnabled = Objects.requireNonNull($.isEnabled, "expected parameter 'isEnabled' to be non-null");
-            $.nodeType = Objects.requireNonNull($.nodeType, "expected parameter 'nodeType' to be non-null");
+            if ($.bdsInstanceId == null) {
+                throw new MissingRequiredPropertyException("AutoScalingConfigurationArgs", "bdsInstanceId");
+            }
+            if ($.clusterAdminPassword == null) {
+                throw new MissingRequiredPropertyException("AutoScalingConfigurationArgs", "clusterAdminPassword");
+            }
+            if ($.isEnabled == null) {
+                throw new MissingRequiredPropertyException("AutoScalingConfigurationArgs", "isEnabled");
+            }
+            if ($.nodeType == null) {
+                throw new MissingRequiredPropertyException("AutoScalingConfigurationArgs", "nodeType");
+            }
             return $;
         }
     }

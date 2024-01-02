@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -199,62 +200,76 @@ public final class StreamCdnConfigConfig {
 
         @CustomType.Setter
         public Builder edgeHostname(@Nullable String edgeHostname) {
+
             this.edgeHostname = edgeHostname;
             return this;
         }
         @CustomType.Setter
         public Builder edgePathPrefix(@Nullable String edgePathPrefix) {
+
             this.edgePathPrefix = edgePathPrefix;
             return this;
         }
         @CustomType.Setter
         public Builder edgeTokenKey(@Nullable String edgeTokenKey) {
+
             this.edgeTokenKey = edgeTokenKey;
             return this;
         }
         @CustomType.Setter
         public Builder edgeTokenSalt(@Nullable String edgeTokenSalt) {
+
             this.edgeTokenSalt = edgeTokenSalt;
             return this;
         }
         @CustomType.Setter
         public Builder isEdgeTokenAuth(@Nullable Boolean isEdgeTokenAuth) {
+
             this.isEdgeTokenAuth = isEdgeTokenAuth;
             return this;
         }
         @CustomType.Setter
         public Builder originAuthSecretKeyA(@Nullable String originAuthSecretKeyA) {
+
             this.originAuthSecretKeyA = originAuthSecretKeyA;
             return this;
         }
         @CustomType.Setter
         public Builder originAuthSecretKeyB(@Nullable String originAuthSecretKeyB) {
+
             this.originAuthSecretKeyB = originAuthSecretKeyB;
             return this;
         }
         @CustomType.Setter
         public Builder originAuthSecretKeyNonceA(@Nullable String originAuthSecretKeyNonceA) {
+
             this.originAuthSecretKeyNonceA = originAuthSecretKeyNonceA;
             return this;
         }
         @CustomType.Setter
         public Builder originAuthSecretKeyNonceB(@Nullable String originAuthSecretKeyNonceB) {
+
             this.originAuthSecretKeyNonceB = originAuthSecretKeyNonceB;
             return this;
         }
         @CustomType.Setter
         public Builder originAuthSignEncryption(@Nullable String originAuthSignEncryption) {
+
             this.originAuthSignEncryption = originAuthSignEncryption;
             return this;
         }
         @CustomType.Setter
         public Builder originAuthSignType(@Nullable String originAuthSignType) {
+
             this.originAuthSignType = originAuthSignType;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("StreamCdnConfigConfig", "type");
+            }
+            this.type = type;
             return this;
         }
         public StreamCdnConfigConfig build() {

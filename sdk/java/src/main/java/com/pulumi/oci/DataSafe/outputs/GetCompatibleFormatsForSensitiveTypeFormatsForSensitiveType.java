@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType {
 
         @CustomType.Setter
         public Builder maskingFormats(List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat> maskingFormats) {
-            this.maskingFormats = Objects.requireNonNull(maskingFormats);
+            if (maskingFormats == null) {
+              throw new MissingRequiredPropertyException("GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType", "maskingFormats");
+            }
+            this.maskingFormats = maskingFormats;
             return this;
         }
         public Builder maskingFormats(GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat... maskingFormats) {
@@ -66,7 +70,10 @@ public final class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType {
         }
         @CustomType.Setter
         public Builder sensitiveTypeId(String sensitiveTypeId) {
-            this.sensitiveTypeId = Objects.requireNonNull(sensitiveTypeId);
+            if (sensitiveTypeId == null) {
+              throw new MissingRequiredPropertyException("GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType", "sensitiveTypeId");
+            }
+            this.sensitiveTypeId = sensitiveTypeId;
             return this;
         }
         public GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType build() {

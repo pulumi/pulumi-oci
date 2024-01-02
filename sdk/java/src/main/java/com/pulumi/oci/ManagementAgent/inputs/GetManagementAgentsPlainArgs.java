@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentsFilter;
 import java.lang.Boolean;
 import java.lang.String;
@@ -449,7 +450,9 @@ public final class GetManagementAgentsPlainArgs extends com.pulumi.resources.Inv
         }
 
         public GetManagementAgentsPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetManagementAgentsPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

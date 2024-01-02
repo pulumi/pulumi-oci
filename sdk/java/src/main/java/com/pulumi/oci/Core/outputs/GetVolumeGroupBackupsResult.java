@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetVolumeGroupBackupsFilter;
 import com.pulumi.oci.Core.outputs.GetVolumeGroupBackupsVolumeGroupBackup;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetVolumeGroupBackupsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVolumeGroupBackupsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +133,18 @@ public final class GetVolumeGroupBackupsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder volumeGroupBackups(List<GetVolumeGroupBackupsVolumeGroupBackup> volumeGroupBackups) {
-            this.volumeGroupBackups = Objects.requireNonNull(volumeGroupBackups);
+            if (volumeGroupBackups == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsResult", "volumeGroupBackups");
+            }
+            this.volumeGroupBackups = volumeGroupBackups;
             return this;
         }
         public Builder volumeGroupBackups(GetVolumeGroupBackupsVolumeGroupBackup... volumeGroupBackups) {
@@ -140,6 +152,7 @@ public final class GetVolumeGroupBackupsResult {
         }
         @CustomType.Setter
         public Builder volumeGroupId(@Nullable String volumeGroupId) {
+
             this.volumeGroupId = volumeGroupId;
             return this;
         }

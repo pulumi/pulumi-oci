@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -86,22 +87,34 @@ public final class GetAutonomousDatabaseLongTermBackupSchedule {
 
         @CustomType.Setter
         public Builder isDisabled(Boolean isDisabled) {
-            this.isDisabled = Objects.requireNonNull(isDisabled);
+            if (isDisabled == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseLongTermBackupSchedule", "isDisabled");
+            }
+            this.isDisabled = isDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder repeatCadence(String repeatCadence) {
-            this.repeatCadence = Objects.requireNonNull(repeatCadence);
+            if (repeatCadence == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseLongTermBackupSchedule", "repeatCadence");
+            }
+            this.repeatCadence = repeatCadence;
             return this;
         }
         @CustomType.Setter
         public Builder retentionPeriodInDays(Integer retentionPeriodInDays) {
-            this.retentionPeriodInDays = Objects.requireNonNull(retentionPeriodInDays);
+            if (retentionPeriodInDays == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseLongTermBackupSchedule", "retentionPeriodInDays");
+            }
+            this.retentionPeriodInDays = retentionPeriodInDays;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfBackup(String timeOfBackup) {
-            this.timeOfBackup = Objects.requireNonNull(timeOfBackup);
+            if (timeOfBackup == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseLongTermBackupSchedule", "timeOfBackup");
+            }
+            this.timeOfBackup = timeOfBackup;
             return this;
         }
         public GetAutonomousDatabaseLongTermBackupSchedule build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsAuthenticationFactorSettingBypassCodeSettingsArgs;
 import com.pulumi.oci.Identity.inputs.DomainsAuthenticationFactorSettingClientAppSettingsArgs;
 import com.pulumi.oci.Identity.inputs.DomainsAuthenticationFactorSettingCompliancePolicyArgs;
@@ -2389,21 +2390,51 @@ public final class DomainsAuthenticationFactorSettingArgs extends com.pulumi.res
         }
 
         public DomainsAuthenticationFactorSettingArgs build() {
-            $.authenticationFactorSettingId = Objects.requireNonNull($.authenticationFactorSettingId, "expected parameter 'authenticationFactorSettingId' to be non-null");
-            $.bypassCodeEnabled = Objects.requireNonNull($.bypassCodeEnabled, "expected parameter 'bypassCodeEnabled' to be non-null");
-            $.bypassCodeSettings = Objects.requireNonNull($.bypassCodeSettings, "expected parameter 'bypassCodeSettings' to be non-null");
-            $.clientAppSettings = Objects.requireNonNull($.clientAppSettings, "expected parameter 'clientAppSettings' to be non-null");
-            $.compliancePolicies = Objects.requireNonNull($.compliancePolicies, "expected parameter 'compliancePolicies' to be non-null");
-            $.endpointRestrictions = Objects.requireNonNull($.endpointRestrictions, "expected parameter 'endpointRestrictions' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.mfaEnrollmentType = Objects.requireNonNull($.mfaEnrollmentType, "expected parameter 'mfaEnrollmentType' to be non-null");
-            $.notificationSettings = Objects.requireNonNull($.notificationSettings, "expected parameter 'notificationSettings' to be non-null");
-            $.pushEnabled = Objects.requireNonNull($.pushEnabled, "expected parameter 'pushEnabled' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
-            $.securityQuestionsEnabled = Objects.requireNonNull($.securityQuestionsEnabled, "expected parameter 'securityQuestionsEnabled' to be non-null");
-            $.smsEnabled = Objects.requireNonNull($.smsEnabled, "expected parameter 'smsEnabled' to be non-null");
-            $.totpEnabled = Objects.requireNonNull($.totpEnabled, "expected parameter 'totpEnabled' to be non-null");
-            $.totpSettings = Objects.requireNonNull($.totpSettings, "expected parameter 'totpSettings' to be non-null");
+            if ($.authenticationFactorSettingId == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingArgs", "authenticationFactorSettingId");
+            }
+            if ($.bypassCodeEnabled == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingArgs", "bypassCodeEnabled");
+            }
+            if ($.bypassCodeSettings == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingArgs", "bypassCodeSettings");
+            }
+            if ($.clientAppSettings == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingArgs", "clientAppSettings");
+            }
+            if ($.compliancePolicies == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingArgs", "compliancePolicies");
+            }
+            if ($.endpointRestrictions == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingArgs", "endpointRestrictions");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingArgs", "idcsEndpoint");
+            }
+            if ($.mfaEnrollmentType == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingArgs", "mfaEnrollmentType");
+            }
+            if ($.notificationSettings == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingArgs", "notificationSettings");
+            }
+            if ($.pushEnabled == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingArgs", "pushEnabled");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingArgs", "schemas");
+            }
+            if ($.securityQuestionsEnabled == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingArgs", "securityQuestionsEnabled");
+            }
+            if ($.smsEnabled == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingArgs", "smsEnabled");
+            }
+            if ($.totpEnabled == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingArgs", "totpEnabled");
+            }
+            if ($.totpSettings == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingArgs", "totpSettings");
+            }
             return $;
         }
     }

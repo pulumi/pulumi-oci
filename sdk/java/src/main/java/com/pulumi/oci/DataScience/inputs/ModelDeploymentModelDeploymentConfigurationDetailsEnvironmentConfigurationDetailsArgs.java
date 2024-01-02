@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -359,7 +360,9 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
         }
 
         public ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs build() {
-            $.environmentConfigurationType = Objects.requireNonNull($.environmentConfigurationType, "expected parameter 'environmentConfigurationType' to be non-null");
+            if ($.environmentConfigurationType == null) {
+                throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs", "environmentConfigurationType");
+            }
             return $;
         }
     }

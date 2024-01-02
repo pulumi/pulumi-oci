@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetVmClusterUpdatesFilter;
 import com.pulumi.oci.Database.outputs.GetVmClusterUpdatesVmClusterUpdate;
 import java.lang.String;
@@ -101,6 +102,7 @@ public final class GetVmClusterUpdatesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVmClusterUpdatesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -109,27 +111,38 @@ public final class GetVmClusterUpdatesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdatesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder updateType(@Nullable String updateType) {
+
             this.updateType = updateType;
             return this;
         }
         @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
-            this.vmClusterId = Objects.requireNonNull(vmClusterId);
+            if (vmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdatesResult", "vmClusterId");
+            }
+            this.vmClusterId = vmClusterId;
             return this;
         }
         @CustomType.Setter
         public Builder vmClusterUpdates(List<GetVmClusterUpdatesVmClusterUpdate> vmClusterUpdates) {
-            this.vmClusterUpdates = Objects.requireNonNull(vmClusterUpdates);
+            if (vmClusterUpdates == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdatesResult", "vmClusterUpdates");
+            }
+            this.vmClusterUpdates = vmClusterUpdates;
             return this;
         }
         public Builder vmClusterUpdates(GetVmClusterUpdatesVmClusterUpdate... vmClusterUpdates) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeek;
 import java.lang.String;
 import java.util.List;
@@ -72,7 +73,10 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperat
 
         @CustomType.Setter
         public Builder dayOfWeeks(List<GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeek> dayOfWeeks) {
-            this.dayOfWeeks = Objects.requireNonNull(dayOfWeeks);
+            if (dayOfWeeks == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperation", "dayOfWeeks");
+            }
+            this.dayOfWeeks = dayOfWeeks;
             return this;
         }
         public Builder dayOfWeeks(GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeek... dayOfWeeks) {
@@ -80,12 +84,18 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperat
         }
         @CustomType.Setter
         public Builder scheduledStartTime(String scheduledStartTime) {
-            this.scheduledStartTime = Objects.requireNonNull(scheduledStartTime);
+            if (scheduledStartTime == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperation", "scheduledStartTime");
+            }
+            this.scheduledStartTime = scheduledStartTime;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledStopTime(String scheduledStopTime) {
-            this.scheduledStopTime = Objects.requireNonNull(scheduledStopTime);
+            if (scheduledStopTime == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperation", "scheduledStopTime");
+            }
+            this.scheduledStopTime = scheduledStopTime;
             return this;
         }
         public GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperation build() {

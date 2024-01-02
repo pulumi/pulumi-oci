@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -87,21 +88,27 @@ public final class BackupDestinationMountTypeDetails {
 
         @CustomType.Setter
         public Builder localMountPointPath(@Nullable String localMountPointPath) {
+
             this.localMountPointPath = localMountPointPath;
             return this;
         }
         @CustomType.Setter
         public Builder mountType(String mountType) {
-            this.mountType = Objects.requireNonNull(mountType);
+            if (mountType == null) {
+              throw new MissingRequiredPropertyException("BackupDestinationMountTypeDetails", "mountType");
+            }
+            this.mountType = mountType;
             return this;
         }
         @CustomType.Setter
         public Builder nfsServerExport(@Nullable String nfsServerExport) {
+
             this.nfsServerExport = nfsServerExport;
             return this;
         }
         @CustomType.Setter
         public Builder nfsServers(@Nullable List<String> nfsServers) {
+
             this.nfsServers = nfsServers;
             return this;
         }

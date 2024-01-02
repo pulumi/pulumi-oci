@@ -72,16 +72,19 @@ public final class DrgRouteDistributionStatementMatchCriteria {
 
         @CustomType.Setter
         public Builder attachmentType(@Nullable String attachmentType) {
+
             this.attachmentType = attachmentType;
             return this;
         }
         @CustomType.Setter
         public Builder drgAttachmentId(@Nullable String drgAttachmentId) {
+
             this.drgAttachmentId = drgAttachmentId;
             return this;
         }
         @CustomType.Setter
         public Builder matchType(@Nullable String matchType) {
+
             this.matchType = matchType;
             return this;
         }

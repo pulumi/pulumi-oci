@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.GetLoadBalancersFilter;
 import com.pulumi.oci.LoadBalancer.outputs.GetLoadBalancersLoadBalancer;
 import java.lang.String;
@@ -115,21 +116,27 @@ public final class GetLoadBalancersResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder detail(@Nullable String detail) {
+
             this.detail = detail;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetLoadBalancersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -138,12 +145,18 @@ public final class GetLoadBalancersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancers(List<GetLoadBalancersLoadBalancer> loadBalancers) {
-            this.loadBalancers = Objects.requireNonNull(loadBalancers);
+            if (loadBalancers == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersResult", "loadBalancers");
+            }
+            this.loadBalancers = loadBalancers;
             return this;
         }
         public Builder loadBalancers(GetLoadBalancersLoadBalancer... loadBalancers) {
@@ -151,6 +164,7 @@ public final class GetLoadBalancersResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

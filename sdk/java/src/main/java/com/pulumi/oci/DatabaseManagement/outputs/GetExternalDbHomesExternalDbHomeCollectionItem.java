@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -184,57 +185,90 @@ public final class GetExternalDbHomesExternalDbHomeCollectionItem {
 
         @CustomType.Setter
         public Builder additionalDetails(Map<String,Object> additionalDetails) {
-            this.additionalDetails = Objects.requireNonNull(additionalDetails);
+            if (additionalDetails == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbHomesExternalDbHomeCollectionItem", "additionalDetails");
+            }
+            this.additionalDetails = additionalDetails;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbHomesExternalDbHomeCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder componentName(String componentName) {
-            this.componentName = Objects.requireNonNull(componentName);
+            if (componentName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbHomesExternalDbHomeCollectionItem", "componentName");
+            }
+            this.componentName = componentName;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbHomesExternalDbHomeCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalDbSystemId(String externalDbSystemId) {
-            this.externalDbSystemId = Objects.requireNonNull(externalDbSystemId);
+            if (externalDbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbHomesExternalDbHomeCollectionItem", "externalDbSystemId");
+            }
+            this.externalDbSystemId = externalDbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder homeDirectory(String homeDirectory) {
-            this.homeDirectory = Objects.requireNonNull(homeDirectory);
+            if (homeDirectory == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbHomesExternalDbHomeCollectionItem", "homeDirectory");
+            }
+            this.homeDirectory = homeDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbHomesExternalDbHomeCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbHomesExternalDbHomeCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbHomesExternalDbHomeCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbHomesExternalDbHomeCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbHomesExternalDbHomeCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetExternalDbHomesExternalDbHomeCollectionItem build() {

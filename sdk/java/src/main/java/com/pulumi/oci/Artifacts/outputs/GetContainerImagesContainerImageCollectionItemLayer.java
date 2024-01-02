@@ -4,6 +4,7 @@
 package com.pulumi.oci.Artifacts.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetContainerImagesContainerImageCollectionItemLayer {
 
         @CustomType.Setter
         public Builder digest(String digest) {
-            this.digest = Objects.requireNonNull(digest);
+            if (digest == null) {
+              throw new MissingRequiredPropertyException("GetContainerImagesContainerImageCollectionItemLayer", "digest");
+            }
+            this.digest = digest;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInBytes(String sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+            if (sizeInBytes == null) {
+              throw new MissingRequiredPropertyException("GetContainerImagesContainerImageCollectionItemLayer", "sizeInBytes");
+            }
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetContainerImagesContainerImageCollectionItemLayer", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetContainerImagesContainerImageCollectionItemLayer build() {

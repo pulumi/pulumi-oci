@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseTools.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -304,7 +305,9 @@ public final class GetDatabaseToolsConnectionsArgs extends com.pulumi.resources.
         }
 
         public GetDatabaseToolsConnectionsArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsArgs", "compartmentId");
+            }
             return $;
         }
     }

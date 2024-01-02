@@ -5,6 +5,7 @@ package com.pulumi.oci.DataIntegration;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.inputs.WorkspaceFolderRegistryMetadataArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -403,9 +404,15 @@ public final class WorkspaceFolderArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public WorkspaceFolderArgs build() {
-            $.identifier = Objects.requireNonNull($.identifier, "expected parameter 'identifier' to be non-null");
-            $.registryMetadata = Objects.requireNonNull($.registryMetadata, "expected parameter 'registryMetadata' to be non-null");
-            $.workspaceId = Objects.requireNonNull($.workspaceId, "expected parameter 'workspaceId' to be non-null");
+            if ($.identifier == null) {
+                throw new MissingRequiredPropertyException("WorkspaceFolderArgs", "identifier");
+            }
+            if ($.registryMetadata == null) {
+                throw new MissingRequiredPropertyException("WorkspaceFolderArgs", "registryMetadata");
+            }
+            if ($.workspaceId == null) {
+                throw new MissingRequiredPropertyException("WorkspaceFolderArgs", "workspaceId");
+            }
             return $;
         }
     }

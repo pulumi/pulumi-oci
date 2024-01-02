@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail
 
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder databaseName(String databaseName) {
-            this.databaseName = Objects.requireNonNull(databaseName);
+            if (databaseName == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail", "databaseName");
+            }
+            this.databaseName = databaseName;
             return this;
         }
         @CustomType.Setter
         public Builder influxVersion(String influxVersion) {
-            this.influxVersion = Objects.requireNonNull(influxVersion);
+            if (influxVersion == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail", "influxVersion");
+            }
+            this.influxVersion = influxVersion;
             return this;
         }
         @CustomType.Setter
         public Builder organizationName(String organizationName) {
-            this.organizationName = Objects.requireNonNull(organizationName);
+            if (organizationName == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail", "organizationName");
+            }
+            this.organizationName = organizationName;
             return this;
         }
         @CustomType.Setter
         public Builder retentionPolicyName(String retentionPolicyName) {
-            this.retentionPolicyName = Objects.requireNonNull(retentionPolicyName);
+            if (retentionPolicyName == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail", "retentionPolicyName");
+            }
+            this.retentionPolicyName = retentionPolicyName;
             return this;
         }
         public GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.GetListenerRulesFilter;
 import com.pulumi.oci.LoadBalancer.outputs.GetListenerRulesListenerRule;
 import java.lang.String;
@@ -78,6 +79,7 @@ public final class GetListenerRulesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetListenerRulesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -86,17 +88,26 @@ public final class GetListenerRulesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetListenerRulesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder listenerName(String listenerName) {
-            this.listenerName = Objects.requireNonNull(listenerName);
+            if (listenerName == null) {
+              throw new MissingRequiredPropertyException("GetListenerRulesResult", "listenerName");
+            }
+            this.listenerName = listenerName;
             return this;
         }
         @CustomType.Setter
         public Builder listenerRules(List<GetListenerRulesListenerRule> listenerRules) {
-            this.listenerRules = Objects.requireNonNull(listenerRules);
+            if (listenerRules == null) {
+              throw new MissingRequiredPropertyException("GetListenerRulesResult", "listenerRules");
+            }
+            this.listenerRules = listenerRules;
             return this;
         }
         public Builder listenerRules(GetListenerRulesListenerRule... listenerRules) {
@@ -104,7 +115,10 @@ public final class GetListenerRulesResult {
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetListenerRulesResult", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         public GetListenerRulesResult build() {

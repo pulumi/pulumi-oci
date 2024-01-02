@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile;
 import java.lang.Boolean;
 import java.lang.String;
@@ -73,12 +74,18 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
 
         @CustomType.Setter
         public Builder consentGranted(Boolean consentGranted) {
-            this.consentGranted = Objects.requireNonNull(consentGranted);
+            if (consentGranted == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser", "consentGranted");
+            }
+            this.consentGranted = consentGranted;
             return this;
         }
         @CustomType.Setter
         public Builder selfRegistrationProfiles(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile> selfRegistrationProfiles) {
-            this.selfRegistrationProfiles = Objects.requireNonNull(selfRegistrationProfiles);
+            if (selfRegistrationProfiles == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser", "selfRegistrationProfiles");
+            }
+            this.selfRegistrationProfiles = selfRegistrationProfiles;
             return this;
         }
         public Builder selfRegistrationProfiles(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile... selfRegistrationProfiles) {
@@ -86,7 +93,10 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
         @CustomType.Setter
         public Builder userToken(String userToken) {
-            this.userToken = Objects.requireNonNull(userToken);
+            if (userToken == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser", "userToken");
+            }
+            this.userToken = userToken;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser build() {

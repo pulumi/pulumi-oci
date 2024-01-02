@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentIgnoredTarget;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -367,37 +368,58 @@ public final class GetUserAssessmentResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ignoredAssessmentIds(List<String> ignoredAssessmentIds) {
-            this.ignoredAssessmentIds = Objects.requireNonNull(ignoredAssessmentIds);
+            if (ignoredAssessmentIds == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "ignoredAssessmentIds");
+            }
+            this.ignoredAssessmentIds = ignoredAssessmentIds;
             return this;
         }
         public Builder ignoredAssessmentIds(String... ignoredAssessmentIds) {
@@ -405,7 +427,10 @@ public final class GetUserAssessmentResult {
         }
         @CustomType.Setter
         public Builder ignoredTargets(List<GetUserAssessmentIgnoredTarget> ignoredTargets) {
-            this.ignoredTargets = Objects.requireNonNull(ignoredTargets);
+            if (ignoredTargets == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "ignoredTargets");
+            }
+            this.ignoredTargets = ignoredTargets;
             return this;
         }
         public Builder ignoredTargets(GetUserAssessmentIgnoredTarget... ignoredTargets) {
@@ -413,57 +438,90 @@ public final class GetUserAssessmentResult {
         }
         @CustomType.Setter
         public Builder isBaseline(Boolean isBaseline) {
-            this.isBaseline = Objects.requireNonNull(isBaseline);
+            if (isBaseline == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "isBaseline");
+            }
+            this.isBaseline = isBaseline;
             return this;
         }
         @CustomType.Setter
         public Builder isDeviatedFromBaseline(Boolean isDeviatedFromBaseline) {
-            this.isDeviatedFromBaseline = Objects.requireNonNull(isDeviatedFromBaseline);
+            if (isDeviatedFromBaseline == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "isDeviatedFromBaseline");
+            }
+            this.isDeviatedFromBaseline = isDeviatedFromBaseline;
             return this;
         }
         @CustomType.Setter
         public Builder lastComparedBaselineId(String lastComparedBaselineId) {
-            this.lastComparedBaselineId = Objects.requireNonNull(lastComparedBaselineId);
+            if (lastComparedBaselineId == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "lastComparedBaselineId");
+            }
+            this.lastComparedBaselineId = lastComparedBaselineId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder schedule(String schedule) {
-            this.schedule = Objects.requireNonNull(schedule);
+            if (schedule == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "schedule");
+            }
+            this.schedule = schedule;
             return this;
         }
         @CustomType.Setter
         public Builder scheduleAssessmentId(String scheduleAssessmentId) {
-            this.scheduleAssessmentId = Objects.requireNonNull(scheduleAssessmentId);
+            if (scheduleAssessmentId == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "scheduleAssessmentId");
+            }
+            this.scheduleAssessmentId = scheduleAssessmentId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder statistics(String statistics) {
-            this.statistics = Objects.requireNonNull(statistics);
+            if (statistics == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "statistics");
+            }
+            this.statistics = statistics;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "targetId");
+            }
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder targetIds(List<String> targetIds) {
-            this.targetIds = Objects.requireNonNull(targetIds);
+            if (targetIds == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "targetIds");
+            }
+            this.targetIds = targetIds;
             return this;
         }
         public Builder targetIds(String... targetIds) {
@@ -471,32 +529,50 @@ public final class GetUserAssessmentResult {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastAssessed(String timeLastAssessed) {
-            this.timeLastAssessed = Objects.requireNonNull(timeLastAssessed);
+            if (timeLastAssessed == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "timeLastAssessed");
+            }
+            this.timeLastAssessed = timeLastAssessed;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder triggeredBy(String triggeredBy) {
-            this.triggeredBy = Objects.requireNonNull(triggeredBy);
+            if (triggeredBy == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "triggeredBy");
+            }
+            this.triggeredBy = triggeredBy;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder userAssessmentId(String userAssessmentId) {
-            this.userAssessmentId = Objects.requireNonNull(userAssessmentId);
+            if (userAssessmentId == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "userAssessmentId");
+            }
+            this.userAssessmentId = userAssessmentId;
             return this;
         }
         public GetUserAssessmentResult build() {

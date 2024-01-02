@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataCatalog.outputs.GetCatalogTypesTypeCollectionItem;
 import java.lang.Integer;
 import java.util.List;
@@ -42,12 +43,18 @@ public final class GetCatalogTypesTypeCollection {
 
         @CustomType.Setter
         public Builder count(Integer count) {
-            this.count = Objects.requireNonNull(count);
+            if (count == null) {
+              throw new MissingRequiredPropertyException("GetCatalogTypesTypeCollection", "count");
+            }
+            this.count = count;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetCatalogTypesTypeCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetCatalogTypesTypeCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetCatalogTypesTypeCollectionItem... items) {

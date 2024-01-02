@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -91,27 +92,42 @@ public final class GetOperationsInsightsWarehouseResourceUsageSummaryResult {
 
         @CustomType.Setter
         public Builder cpuUsed(Double cpuUsed) {
-            this.cpuUsed = Objects.requireNonNull(cpuUsed);
+            if (cpuUsed == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehouseResourceUsageSummaryResult", "cpuUsed");
+            }
+            this.cpuUsed = cpuUsed;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehouseResourceUsageSummaryResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder operationsInsightsWarehouseId(String operationsInsightsWarehouseId) {
-            this.operationsInsightsWarehouseId = Objects.requireNonNull(operationsInsightsWarehouseId);
+            if (operationsInsightsWarehouseId == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehouseResourceUsageSummaryResult", "operationsInsightsWarehouseId");
+            }
+            this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehouseResourceUsageSummaryResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder storageUsedInGbs(Double storageUsedInGbs) {
-            this.storageUsedInGbs = Objects.requireNonNull(storageUsedInGbs);
+            if (storageUsedInGbs == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehouseResourceUsageSummaryResult", "storageUsedInGbs");
+            }
+            this.storageUsedInGbs = storageUsedInGbs;
             return this;
         }
         public GetOperationsInsightsWarehouseResourceUsageSummaryResult build() {

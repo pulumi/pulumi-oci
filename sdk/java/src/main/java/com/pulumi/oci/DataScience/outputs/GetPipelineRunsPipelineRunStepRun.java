@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -126,37 +127,58 @@ public final class GetPipelineRunsPipelineRunStepRun {
 
         @CustomType.Setter
         public Builder jobRunId(String jobRunId) {
-            this.jobRunId = Objects.requireNonNull(jobRunId);
+            if (jobRunId == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRunStepRun", "jobRunId");
+            }
+            this.jobRunId = jobRunId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRunStepRun", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRunStepRun", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder stepName(String stepName) {
-            this.stepName = Objects.requireNonNull(stepName);
+            if (stepName == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRunStepRun", "stepName");
+            }
+            this.stepName = stepName;
             return this;
         }
         @CustomType.Setter
         public Builder stepType(String stepType) {
-            this.stepType = Objects.requireNonNull(stepType);
+            if (stepType == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRunStepRun", "stepType");
+            }
+            this.stepType = stepType;
             return this;
         }
         @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+            if (timeFinished == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRunStepRun", "timeFinished");
+            }
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRunStepRun", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetPipelineRunsPipelineRunStepRun build() {

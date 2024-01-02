@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagement.outputs.GetSoftwareSourcesFilter;
 import com.pulumi.oci.OsManagement.outputs.GetSoftwareSourcesSoftwareSource;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetSoftwareSourcesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSoftwareSourcesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +133,18 @@ public final class GetSoftwareSourcesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder softwareSources(List<GetSoftwareSourcesSoftwareSource> softwareSources) {
-            this.softwareSources = Objects.requireNonNull(softwareSources);
+            if (softwareSources == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesResult", "softwareSources");
+            }
+            this.softwareSources = softwareSources;
             return this;
         }
         public Builder softwareSources(GetSoftwareSourcesSoftwareSource... softwareSources) {
@@ -140,6 +152,7 @@ public final class GetSoftwareSourcesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

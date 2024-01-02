@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRouteBackendRoutingBackendBackend;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRouteBackendRoutingBackendKey;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetDeploymentSpecificationRouteBackendRoutingBackend {
 
         @CustomType.Setter
         public Builder backends(List<GetDeploymentSpecificationRouteBackendRoutingBackendBackend> backends) {
-            this.backends = Objects.requireNonNull(backends);
+            if (backends == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRouteBackendRoutingBackend", "backends");
+            }
+            this.backends = backends;
             return this;
         }
         public Builder backends(GetDeploymentSpecificationRouteBackendRoutingBackendBackend... backends) {
@@ -66,7 +70,10 @@ public final class GetDeploymentSpecificationRouteBackendRoutingBackend {
         }
         @CustomType.Setter
         public Builder keys(List<GetDeploymentSpecificationRouteBackendRoutingBackendKey> keys) {
-            this.keys = Objects.requireNonNull(keys);
+            if (keys == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRouteBackendRoutingBackend", "keys");
+            }
+            this.keys = keys;
             return this;
         }
         public Builder keys(GetDeploymentSpecificationRouteBackendRoutingBackendKey... keys) {

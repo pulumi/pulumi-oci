@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyKey;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -102,12 +103,18 @@ public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationA
 
         @CustomType.Setter
         public Builder isSslVerifyDisabled(Boolean isSslVerifyDisabled) {
-            this.isSslVerifyDisabled = Objects.requireNonNull(isSslVerifyDisabled);
+            if (isSslVerifyDisabled == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKey", "isSslVerifyDisabled");
+            }
+            this.isSslVerifyDisabled = isSslVerifyDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder keys(List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyKey> keys) {
-            this.keys = Objects.requireNonNull(keys);
+            if (keys == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKey", "keys");
+            }
+            this.keys = keys;
             return this;
         }
         public Builder keys(GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyKey... keys) {
@@ -115,17 +122,26 @@ public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationA
         }
         @CustomType.Setter
         public Builder maxCacheDurationInHours(Integer maxCacheDurationInHours) {
-            this.maxCacheDurationInHours = Objects.requireNonNull(maxCacheDurationInHours);
+            if (maxCacheDurationInHours == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKey", "maxCacheDurationInHours");
+            }
+            this.maxCacheDurationInHours = maxCacheDurationInHours;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKey", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder uri(String uri) {
-            this.uri = Objects.requireNonNull(uri);
+            if (uri == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKey", "uri");
+            }
+            this.uri = uri;
             return this;
         }
         public GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKey build() {

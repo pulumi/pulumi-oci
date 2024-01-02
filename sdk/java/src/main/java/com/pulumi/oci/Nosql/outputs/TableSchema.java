@@ -104,6 +104,7 @@ public final class TableSchema {
 
         @CustomType.Setter
         public Builder columns(@Nullable List<TableSchemaColumn> columns) {
+
             this.columns = columns;
             return this;
         }
@@ -112,6 +113,7 @@ public final class TableSchema {
         }
         @CustomType.Setter
         public Builder identities(@Nullable List<TableSchemaIdentity> identities) {
+
             this.identities = identities;
             return this;
         }
@@ -120,6 +122,7 @@ public final class TableSchema {
         }
         @CustomType.Setter
         public Builder primaryKeys(@Nullable List<String> primaryKeys) {
+
             this.primaryKeys = primaryKeys;
             return this;
         }
@@ -128,6 +131,7 @@ public final class TableSchema {
         }
         @CustomType.Setter
         public Builder shardKeys(@Nullable List<String> shardKeys) {
+
             this.shardKeys = shardKeys;
             return this;
         }
@@ -136,6 +140,7 @@ public final class TableSchema {
         }
         @CustomType.Setter
         public Builder ttl(@Nullable Integer ttl) {
+
             this.ttl = ttl;
             return this;
         }

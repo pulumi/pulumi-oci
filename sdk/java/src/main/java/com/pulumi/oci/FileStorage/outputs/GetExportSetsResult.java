@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.outputs.GetExportSetsExportSet;
 import com.pulumi.oci.FileStorage.outputs.GetExportSetsFilter;
 import java.lang.String;
@@ -123,22 +124,32 @@ public final class GetExportSetsResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetExportSetsResult", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExportSetsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder exportSets(List<GetExportSetsExportSet> exportSets) {
-            this.exportSets = Objects.requireNonNull(exportSets);
+            if (exportSets == null) {
+              throw new MissingRequiredPropertyException("GetExportSetsResult", "exportSets");
+            }
+            this.exportSets = exportSets;
             return this;
         }
         public Builder exportSets(GetExportSetsExportSet... exportSets) {
@@ -146,6 +157,7 @@ public final class GetExportSetsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetExportSetsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -154,11 +166,13 @@ public final class GetExportSetsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

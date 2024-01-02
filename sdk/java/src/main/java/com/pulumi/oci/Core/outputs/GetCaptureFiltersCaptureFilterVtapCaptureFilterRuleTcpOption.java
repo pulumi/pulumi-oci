@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange;
 import com.pulumi.oci.Core.outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange;
 import java.util.List;
@@ -42,7 +43,10 @@ public final class GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption 
 
         @CustomType.Setter
         public Builder destinationPortRanges(List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange> destinationPortRanges) {
-            this.destinationPortRanges = Objects.requireNonNull(destinationPortRanges);
+            if (destinationPortRanges == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption", "destinationPortRanges");
+            }
+            this.destinationPortRanges = destinationPortRanges;
             return this;
         }
         public Builder destinationPortRanges(GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange... destinationPortRanges) {
@@ -50,7 +54,10 @@ public final class GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption 
         }
         @CustomType.Setter
         public Builder sourcePortRanges(List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange> sourcePortRanges) {
-            this.sourcePortRanges = Objects.requireNonNull(sourcePortRanges);
+            if (sourcePortRanges == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption", "sourcePortRanges");
+            }
+            this.sourcePortRanges = sourcePortRanges;
             return this;
         }
         public Builder sourcePortRanges(GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange... sourcePortRanges) {

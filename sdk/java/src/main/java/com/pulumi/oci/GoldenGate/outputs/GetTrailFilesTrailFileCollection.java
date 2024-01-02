@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetTrailFilesTrailFileCollectionItem;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetTrailFilesTrailFileCollection {
 
         @CustomType.Setter
         public Builder items(List<GetTrailFilesTrailFileCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetTrailFilesTrailFileCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetTrailFilesTrailFileCollectionItem... items) {
@@ -66,7 +70,10 @@ public final class GetTrailFilesTrailFileCollection {
         }
         @CustomType.Setter
         public Builder timeLastFetched(String timeLastFetched) {
-            this.timeLastFetched = Objects.requireNonNull(timeLastFetched);
+            if (timeLastFetched == null) {
+              throw new MissingRequiredPropertyException("GetTrailFilesTrailFileCollection", "timeLastFetched");
+            }
+            this.timeLastFetched = timeLastFetched;
             return this;
         }
         public GetTrailFilesTrailFileCollection build() {

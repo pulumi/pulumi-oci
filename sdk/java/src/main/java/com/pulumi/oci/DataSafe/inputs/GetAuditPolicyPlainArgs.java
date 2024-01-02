@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetAuditPolicyPlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetAuditPolicyPlainArgs build() {
-            $.auditPolicyId = Objects.requireNonNull($.auditPolicyId, "expected parameter 'auditPolicyId' to be non-null");
+            if ($.auditPolicyId == null) {
+                throw new MissingRequiredPropertyException("GetAuditPolicyPlainArgs", "auditPolicyId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetAddonOptionsAddonOption;
 import com.pulumi.oci.ContainerEngine.outputs.GetAddonOptionsFilter;
 import java.lang.String;
@@ -79,12 +80,16 @@ public final class GetAddonOptionsResult {
 
         @CustomType.Setter
         public Builder addonName(@Nullable String addonName) {
+
             this.addonName = addonName;
             return this;
         }
         @CustomType.Setter
         public Builder addonOptions(List<GetAddonOptionsAddonOption> addonOptions) {
-            this.addonOptions = Objects.requireNonNull(addonOptions);
+            if (addonOptions == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsResult", "addonOptions");
+            }
+            this.addonOptions = addonOptions;
             return this;
         }
         public Builder addonOptions(GetAddonOptionsAddonOption... addonOptions) {
@@ -92,6 +97,7 @@ public final class GetAddonOptionsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAddonOptionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -100,12 +106,18 @@ public final class GetAddonOptionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder kubernetesVersion(String kubernetesVersion) {
-            this.kubernetesVersion = Objects.requireNonNull(kubernetesVersion);
+            if (kubernetesVersion == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsResult", "kubernetesVersion");
+            }
+            this.kubernetesVersion = kubernetesVersion;
             return this;
         }
         public GetAddonOptionsResult build() {

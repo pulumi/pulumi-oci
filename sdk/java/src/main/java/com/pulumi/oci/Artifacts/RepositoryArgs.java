@@ -5,6 +5,7 @@ package com.pulumi.oci.Artifacts;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -313,9 +314,15 @@ public final class RepositoryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public RepositoryArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.isImmutable = Objects.requireNonNull($.isImmutable, "expected parameter 'isImmutable' to be non-null");
-            $.repositoryType = Objects.requireNonNull($.repositoryType, "expected parameter 'repositoryType' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("RepositoryArgs", "compartmentId");
+            }
+            if ($.isImmutable == null) {
+                throw new MissingRequiredPropertyException("RepositoryArgs", "isImmutable");
+            }
+            if ($.repositoryType == null) {
+                throw new MissingRequiredPropertyException("RepositoryArgs", "repositoryType");
+            }
             return $;
         }
     }

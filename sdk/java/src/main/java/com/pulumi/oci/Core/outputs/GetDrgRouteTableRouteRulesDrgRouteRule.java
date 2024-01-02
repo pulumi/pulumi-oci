@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -157,47 +158,74 @@ public final class GetDrgRouteTableRouteRulesDrgRouteRule {
 
         @CustomType.Setter
         public Builder attributes(Map<String,Object> attributes) {
-            this.attributes = Objects.requireNonNull(attributes);
+            if (attributes == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteTableRouteRulesDrgRouteRule", "attributes");
+            }
+            this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder destination(String destination) {
-            this.destination = Objects.requireNonNull(destination);
+            if (destination == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteTableRouteRulesDrgRouteRule", "destination");
+            }
+            this.destination = destination;
             return this;
         }
         @CustomType.Setter
         public Builder destinationType(String destinationType) {
-            this.destinationType = Objects.requireNonNull(destinationType);
+            if (destinationType == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteTableRouteRulesDrgRouteRule", "destinationType");
+            }
+            this.destinationType = destinationType;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteTableRouteRulesDrgRouteRule", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isBlackhole(Boolean isBlackhole) {
-            this.isBlackhole = Objects.requireNonNull(isBlackhole);
+            if (isBlackhole == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteTableRouteRulesDrgRouteRule", "isBlackhole");
+            }
+            this.isBlackhole = isBlackhole;
             return this;
         }
         @CustomType.Setter
         public Builder isConflict(Boolean isConflict) {
-            this.isConflict = Objects.requireNonNull(isConflict);
+            if (isConflict == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteTableRouteRulesDrgRouteRule", "isConflict");
+            }
+            this.isConflict = isConflict;
             return this;
         }
         @CustomType.Setter
         public Builder nextHopDrgAttachmentId(String nextHopDrgAttachmentId) {
-            this.nextHopDrgAttachmentId = Objects.requireNonNull(nextHopDrgAttachmentId);
+            if (nextHopDrgAttachmentId == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteTableRouteRulesDrgRouteRule", "nextHopDrgAttachmentId");
+            }
+            this.nextHopDrgAttachmentId = nextHopDrgAttachmentId;
             return this;
         }
         @CustomType.Setter
         public Builder routeProvenance(String routeProvenance) {
-            this.routeProvenance = Objects.requireNonNull(routeProvenance);
+            if (routeProvenance == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteTableRouteRulesDrgRouteRule", "routeProvenance");
+            }
+            this.routeProvenance = routeProvenance;
             return this;
         }
         @CustomType.Setter
         public Builder routeType(String routeType) {
-            this.routeType = Objects.requireNonNull(routeType);
+            if (routeType == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteTableRouteRulesDrgRouteRule", "routeType");
+            }
+            this.routeType = routeType;
             return this;
         }
         public GetDrgRouteTableRouteRulesDrgRouteRule build() {

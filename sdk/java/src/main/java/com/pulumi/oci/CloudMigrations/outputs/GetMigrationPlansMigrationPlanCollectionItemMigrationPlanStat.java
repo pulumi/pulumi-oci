@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCost;
 import java.lang.Integer;
 import java.lang.String;
@@ -73,12 +74,18 @@ public final class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat
 
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder totalEstimatedCosts(List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCost> totalEstimatedCosts) {
-            this.totalEstimatedCosts = Objects.requireNonNull(totalEstimatedCosts);
+            if (totalEstimatedCosts == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat", "totalEstimatedCosts");
+            }
+            this.totalEstimatedCosts = totalEstimatedCosts;
             return this;
         }
         public Builder totalEstimatedCosts(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCost... totalEstimatedCosts) {
@@ -86,7 +93,10 @@ public final class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat
         }
         @CustomType.Setter
         public Builder vmCount(Integer vmCount) {
-            this.vmCount = Objects.requireNonNull(vmCount);
+            if (vmCount == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat", "vmCount");
+            }
+            this.vmCount = vmCount;
             return this;
         }
         public GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat build() {

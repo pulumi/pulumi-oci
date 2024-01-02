@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetFleetBlocklistsItemTarget {
 
         @CustomType.Setter
         public Builder fleetId(String fleetId) {
-            this.fleetId = Objects.requireNonNull(fleetId);
+            if (fleetId == null) {
+              throw new MissingRequiredPropertyException("GetFleetBlocklistsItemTarget", "fleetId");
+            }
+            this.fleetId = fleetId;
             return this;
         }
         @CustomType.Setter
         public Builder installationKey(String installationKey) {
-            this.installationKey = Objects.requireNonNull(installationKey);
+            if (installationKey == null) {
+              throw new MissingRequiredPropertyException("GetFleetBlocklistsItemTarget", "installationKey");
+            }
+            this.installationKey = installationKey;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceId(String managedInstanceId) {
-            this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
+            if (managedInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetFleetBlocklistsItemTarget", "managedInstanceId");
+            }
+            this.managedInstanceId = managedInstanceId;
             return this;
         }
         public GetFleetBlocklistsItemTarget build() {

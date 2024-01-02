@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningSetsFilter;
 import java.lang.String;
 import java.util.List;
@@ -138,7 +139,9 @@ public final class GetManagedDatabaseSqlTuningSetsPlainArgs extends com.pulumi.r
         }
 
         public GetManagedDatabaseSqlTuningSetsPlainArgs build() {
-            $.managedDatabaseId = Objects.requireNonNull($.managedDatabaseId, "expected parameter 'managedDatabaseId' to be non-null");
+            if ($.managedDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningSetsPlainArgs", "managedDatabaseId");
+            }
             return $;
         }
     }

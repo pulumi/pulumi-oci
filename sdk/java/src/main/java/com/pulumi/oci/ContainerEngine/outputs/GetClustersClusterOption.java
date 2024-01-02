@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterOptionAddOn;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterOptionAdmissionControllerOption;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterOptionKubernetesNetworkConfig;
@@ -118,7 +119,10 @@ public final class GetClustersClusterOption {
 
         @CustomType.Setter
         public Builder addOns(List<GetClustersClusterOptionAddOn> addOns) {
-            this.addOns = Objects.requireNonNull(addOns);
+            if (addOns == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterOption", "addOns");
+            }
+            this.addOns = addOns;
             return this;
         }
         public Builder addOns(GetClustersClusterOptionAddOn... addOns) {
@@ -126,7 +130,10 @@ public final class GetClustersClusterOption {
         }
         @CustomType.Setter
         public Builder admissionControllerOptions(List<GetClustersClusterOptionAdmissionControllerOption> admissionControllerOptions) {
-            this.admissionControllerOptions = Objects.requireNonNull(admissionControllerOptions);
+            if (admissionControllerOptions == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterOption", "admissionControllerOptions");
+            }
+            this.admissionControllerOptions = admissionControllerOptions;
             return this;
         }
         public Builder admissionControllerOptions(GetClustersClusterOptionAdmissionControllerOption... admissionControllerOptions) {
@@ -134,7 +141,10 @@ public final class GetClustersClusterOption {
         }
         @CustomType.Setter
         public Builder kubernetesNetworkConfigs(List<GetClustersClusterOptionKubernetesNetworkConfig> kubernetesNetworkConfigs) {
-            this.kubernetesNetworkConfigs = Objects.requireNonNull(kubernetesNetworkConfigs);
+            if (kubernetesNetworkConfigs == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterOption", "kubernetesNetworkConfigs");
+            }
+            this.kubernetesNetworkConfigs = kubernetesNetworkConfigs;
             return this;
         }
         public Builder kubernetesNetworkConfigs(GetClustersClusterOptionKubernetesNetworkConfig... kubernetesNetworkConfigs) {
@@ -142,7 +152,10 @@ public final class GetClustersClusterOption {
         }
         @CustomType.Setter
         public Builder persistentVolumeConfigs(List<GetClustersClusterOptionPersistentVolumeConfig> persistentVolumeConfigs) {
-            this.persistentVolumeConfigs = Objects.requireNonNull(persistentVolumeConfigs);
+            if (persistentVolumeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterOption", "persistentVolumeConfigs");
+            }
+            this.persistentVolumeConfigs = persistentVolumeConfigs;
             return this;
         }
         public Builder persistentVolumeConfigs(GetClustersClusterOptionPersistentVolumeConfig... persistentVolumeConfigs) {
@@ -150,7 +163,10 @@ public final class GetClustersClusterOption {
         }
         @CustomType.Setter
         public Builder serviceLbConfigs(List<GetClustersClusterOptionServiceLbConfig> serviceLbConfigs) {
-            this.serviceLbConfigs = Objects.requireNonNull(serviceLbConfigs);
+            if (serviceLbConfigs == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterOption", "serviceLbConfigs");
+            }
+            this.serviceLbConfigs = serviceLbConfigs;
             return this;
         }
         public Builder serviceLbConfigs(GetClustersClusterOptionServiceLbConfig... serviceLbConfigs) {
@@ -158,7 +174,10 @@ public final class GetClustersClusterOption {
         }
         @CustomType.Setter
         public Builder serviceLbSubnetIds(List<String> serviceLbSubnetIds) {
-            this.serviceLbSubnetIds = Objects.requireNonNull(serviceLbSubnetIds);
+            if (serviceLbSubnetIds == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterOption", "serviceLbSubnetIds");
+            }
+            this.serviceLbSubnetIds = serviceLbSubnetIds;
             return this;
         }
         public Builder serviceLbSubnetIds(String... serviceLbSubnetIds) {

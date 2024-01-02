@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.GetQueriesQueryCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetQueriesQueryCollection {
 
         @CustomType.Setter
         public Builder items(List<GetQueriesQueryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetQueriesQueryCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetQueriesQueryCollectionItem... items) {

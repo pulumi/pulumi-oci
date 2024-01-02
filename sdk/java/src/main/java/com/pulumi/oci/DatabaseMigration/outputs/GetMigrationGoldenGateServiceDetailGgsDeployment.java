@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetMigrationGoldenGateServiceDetailGgsDeployment {
 
         @CustomType.Setter
         public Builder deploymentId(String deploymentId) {
-            this.deploymentId = Objects.requireNonNull(deploymentId);
+            if (deploymentId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateServiceDetailGgsDeployment", "deploymentId");
+            }
+            this.deploymentId = deploymentId;
             return this;
         }
         @CustomType.Setter
         public Builder ggsAdminCredentialsSecretId(String ggsAdminCredentialsSecretId) {
-            this.ggsAdminCredentialsSecretId = Objects.requireNonNull(ggsAdminCredentialsSecretId);
+            if (ggsAdminCredentialsSecretId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateServiceDetailGgsDeployment", "ggsAdminCredentialsSecretId");
+            }
+            this.ggsAdminCredentialsSecretId = ggsAdminCredentialsSecretId;
             return this;
         }
         public GetMigrationGoldenGateServiceDetailGgsDeployment build() {

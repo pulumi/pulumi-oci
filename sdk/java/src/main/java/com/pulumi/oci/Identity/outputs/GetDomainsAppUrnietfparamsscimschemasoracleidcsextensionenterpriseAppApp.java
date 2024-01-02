@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicy;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResource;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicy;
@@ -102,12 +103,18 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenter
 
         @CustomType.Setter
         public Builder allowAuthzDecisionTtl(Integer allowAuthzDecisionTtl) {
-            this.allowAuthzDecisionTtl = Objects.requireNonNull(allowAuthzDecisionTtl);
+            if (allowAuthzDecisionTtl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp", "allowAuthzDecisionTtl");
+            }
+            this.allowAuthzDecisionTtl = allowAuthzDecisionTtl;
             return this;
         }
         @CustomType.Setter
         public Builder allowAuthzPolicies(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicy> allowAuthzPolicies) {
-            this.allowAuthzPolicies = Objects.requireNonNull(allowAuthzPolicies);
+            if (allowAuthzPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp", "allowAuthzPolicies");
+            }
+            this.allowAuthzPolicies = allowAuthzPolicies;
             return this;
         }
         public Builder allowAuthzPolicies(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicy... allowAuthzPolicies) {
@@ -115,7 +122,10 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenter
         }
         @CustomType.Setter
         public Builder appResources(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResource> appResources) {
-            this.appResources = Objects.requireNonNull(appResources);
+            if (appResources == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp", "appResources");
+            }
+            this.appResources = appResources;
             return this;
         }
         public Builder appResources(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResource... appResources) {
@@ -123,12 +133,18 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenter
         }
         @CustomType.Setter
         public Builder denyAuthzDecisionTtl(Integer denyAuthzDecisionTtl) {
-            this.denyAuthzDecisionTtl = Objects.requireNonNull(denyAuthzDecisionTtl);
+            if (denyAuthzDecisionTtl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp", "denyAuthzDecisionTtl");
+            }
+            this.denyAuthzDecisionTtl = denyAuthzDecisionTtl;
             return this;
         }
         @CustomType.Setter
         public Builder denyAuthzPolicies(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicy> denyAuthzPolicies) {
-            this.denyAuthzPolicies = Objects.requireNonNull(denyAuthzPolicies);
+            if (denyAuthzPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp", "denyAuthzPolicies");
+            }
+            this.denyAuthzPolicies = denyAuthzPolicies;
             return this;
         }
         public Builder denyAuthzPolicies(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicy... denyAuthzPolicies) {

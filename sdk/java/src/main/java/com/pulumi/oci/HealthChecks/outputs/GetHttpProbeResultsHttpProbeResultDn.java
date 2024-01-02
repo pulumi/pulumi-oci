@@ -4,6 +4,7 @@
 package com.pulumi.oci.HealthChecks.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetHttpProbeResultsHttpProbeResultDn {
 
         @CustomType.Setter
         public Builder addresses(List<String> addresses) {
-            this.addresses = Objects.requireNonNull(addresses);
+            if (addresses == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResultDn", "addresses");
+            }
+            this.addresses = addresses;
             return this;
         }
         public Builder addresses(String... addresses) {
@@ -66,7 +70,10 @@ public final class GetHttpProbeResultsHttpProbeResultDn {
         }
         @CustomType.Setter
         public Builder domainLookupDuration(Double domainLookupDuration) {
-            this.domainLookupDuration = Objects.requireNonNull(domainLookupDuration);
+            if (domainLookupDuration == null) {
+              throw new MissingRequiredPropertyException("GetHttpProbeResultsHttpProbeResultDn", "domainLookupDuration");
+            }
+            this.domainLookupDuration = domainLookupDuration;
             return this;
         }
         public GetHttpProbeResultsHttpProbeResultDn build() {

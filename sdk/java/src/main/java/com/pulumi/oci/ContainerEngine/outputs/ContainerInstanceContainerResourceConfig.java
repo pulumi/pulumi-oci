@@ -74,11 +74,13 @@ public final class ContainerInstanceContainerResourceConfig {
 
         @CustomType.Setter
         public Builder memoryLimitInGbs(@Nullable Double memoryLimitInGbs) {
+
             this.memoryLimitInGbs = memoryLimitInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder vcpusLimit(@Nullable Double vcpusLimit) {
+
             this.vcpusLimit = vcpusLimit;
             return this;
         }

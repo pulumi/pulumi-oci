@@ -128,36 +128,43 @@ public final class UserCapability {
 
         @CustomType.Setter
         public Builder canUseApiKeys(@Nullable Boolean canUseApiKeys) {
+
             this.canUseApiKeys = canUseApiKeys;
             return this;
         }
         @CustomType.Setter
         public Builder canUseAuthTokens(@Nullable Boolean canUseAuthTokens) {
+
             this.canUseAuthTokens = canUseAuthTokens;
             return this;
         }
         @CustomType.Setter
         public Builder canUseConsolePassword(@Nullable Boolean canUseConsolePassword) {
+
             this.canUseConsolePassword = canUseConsolePassword;
             return this;
         }
         @CustomType.Setter
         public Builder canUseCustomerSecretKeys(@Nullable Boolean canUseCustomerSecretKeys) {
+
             this.canUseCustomerSecretKeys = canUseCustomerSecretKeys;
             return this;
         }
         @CustomType.Setter
         public Builder canUseDbCredentials(@Nullable Boolean canUseDbCredentials) {
+
             this.canUseDbCredentials = canUseDbCredentials;
             return this;
         }
         @CustomType.Setter
         public Builder canUseOauth2clientCredentials(@Nullable Boolean canUseOauth2clientCredentials) {
+
             this.canUseOauth2clientCredentials = canUseOauth2clientCredentials;
             return this;
         }
         @CustomType.Setter
         public Builder canUseSmtpCredentials(@Nullable Boolean canUseSmtpCredentials) {
+
             this.canUseSmtpCredentials = canUseSmtpCredentials;
             return this;
         }

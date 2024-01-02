@@ -4,6 +4,7 @@
 package com.pulumi.oci.Oda.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Oda.outputs.GetOdaPrivateEndpointsFilter;
 import com.pulumi.oci.Oda.outputs.GetOdaPrivateEndpointsOdaPrivateEndpointCollection;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetOdaPrivateEndpointsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetOdaPrivateEndpointsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +133,18 @@ public final class GetOdaPrivateEndpointsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder odaPrivateEndpointCollections(List<GetOdaPrivateEndpointsOdaPrivateEndpointCollection> odaPrivateEndpointCollections) {
-            this.odaPrivateEndpointCollections = Objects.requireNonNull(odaPrivateEndpointCollections);
+            if (odaPrivateEndpointCollections == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointsResult", "odaPrivateEndpointCollections");
+            }
+            this.odaPrivateEndpointCollections = odaPrivateEndpointCollections;
             return this;
         }
         public Builder odaPrivateEndpointCollections(GetOdaPrivateEndpointsOdaPrivateEndpointCollection... odaPrivateEndpointCollections) {
@@ -140,6 +152,7 @@ public final class GetOdaPrivateEndpointsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

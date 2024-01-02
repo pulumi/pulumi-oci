@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.outputs.GetInvokeRunsFilter;
 import com.pulumi.oci.DataFlow.outputs.GetInvokeRunsRun;
 import java.lang.String;
@@ -163,26 +164,33 @@ public final class GetInvokeRunsResult {
 
         @CustomType.Setter
         public Builder applicationId(@Nullable String applicationId) {
+
             this.applicationId = applicationId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder displayNameStartsWith(@Nullable String displayNameStartsWith) {
+
             this.displayNameStartsWith = displayNameStartsWith;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetInvokeRunsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -191,22 +199,30 @@ public final class GetInvokeRunsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ownerPrincipalId(@Nullable String ownerPrincipalId) {
+
             this.ownerPrincipalId = ownerPrincipalId;
             return this;
         }
         @CustomType.Setter
         public Builder poolId(@Nullable String poolId) {
+
             this.poolId = poolId;
             return this;
         }
         @CustomType.Setter
         public Builder runs(List<GetInvokeRunsRun> runs) {
-            this.runs = Objects.requireNonNull(runs);
+            if (runs == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunsResult", "runs");
+            }
+            this.runs = runs;
             return this;
         }
         public Builder runs(GetInvokeRunsRun... runs) {
@@ -214,11 +230,13 @@ public final class GetInvokeRunsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedGreaterThan(@Nullable String timeCreatedGreaterThan) {
+
             this.timeCreatedGreaterThan = timeCreatedGreaterThan;
             return this;
         }

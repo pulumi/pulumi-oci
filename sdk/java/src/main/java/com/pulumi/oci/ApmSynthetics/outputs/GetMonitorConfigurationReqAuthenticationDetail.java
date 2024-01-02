@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorConfigurationReqAuthenticationDetailAuthHeader;
 import java.lang.String;
 import java.util.List;
@@ -142,7 +143,10 @@ public final class GetMonitorConfigurationReqAuthenticationDetail {
 
         @CustomType.Setter
         public Builder authHeaders(List<GetMonitorConfigurationReqAuthenticationDetailAuthHeader> authHeaders) {
-            this.authHeaders = Objects.requireNonNull(authHeaders);
+            if (authHeaders == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfigurationReqAuthenticationDetail", "authHeaders");
+            }
+            this.authHeaders = authHeaders;
             return this;
         }
         public Builder authHeaders(GetMonitorConfigurationReqAuthenticationDetailAuthHeader... authHeaders) {
@@ -150,37 +154,58 @@ public final class GetMonitorConfigurationReqAuthenticationDetail {
         }
         @CustomType.Setter
         public Builder authRequestMethod(String authRequestMethod) {
-            this.authRequestMethod = Objects.requireNonNull(authRequestMethod);
+            if (authRequestMethod == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfigurationReqAuthenticationDetail", "authRequestMethod");
+            }
+            this.authRequestMethod = authRequestMethod;
             return this;
         }
         @CustomType.Setter
         public Builder authRequestPostBody(String authRequestPostBody) {
-            this.authRequestPostBody = Objects.requireNonNull(authRequestPostBody);
+            if (authRequestPostBody == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfigurationReqAuthenticationDetail", "authRequestPostBody");
+            }
+            this.authRequestPostBody = authRequestPostBody;
             return this;
         }
         @CustomType.Setter
         public Builder authToken(String authToken) {
-            this.authToken = Objects.requireNonNull(authToken);
+            if (authToken == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfigurationReqAuthenticationDetail", "authToken");
+            }
+            this.authToken = authToken;
             return this;
         }
         @CustomType.Setter
         public Builder authUrl(String authUrl) {
-            this.authUrl = Objects.requireNonNull(authUrl);
+            if (authUrl == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfigurationReqAuthenticationDetail", "authUrl");
+            }
+            this.authUrl = authUrl;
             return this;
         }
         @CustomType.Setter
         public Builder authUserName(String authUserName) {
-            this.authUserName = Objects.requireNonNull(authUserName);
+            if (authUserName == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfigurationReqAuthenticationDetail", "authUserName");
+            }
+            this.authUserName = authUserName;
             return this;
         }
         @CustomType.Setter
         public Builder authUserPassword(String authUserPassword) {
-            this.authUserPassword = Objects.requireNonNull(authUserPassword);
+            if (authUserPassword == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfigurationReqAuthenticationDetail", "authUserPassword");
+            }
+            this.authUserPassword = authUserPassword;
             return this;
         }
         @CustomType.Setter
         public Builder oauthScheme(String oauthScheme) {
-            this.oauthScheme = Objects.requireNonNull(oauthScheme);
+            if (oauthScheme == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfigurationReqAuthenticationDetail", "oauthScheme");
+            }
+            this.oauthScheme = oauthScheme;
             return this;
         }
         public GetMonitorConfigurationReqAuthenticationDetail build() {

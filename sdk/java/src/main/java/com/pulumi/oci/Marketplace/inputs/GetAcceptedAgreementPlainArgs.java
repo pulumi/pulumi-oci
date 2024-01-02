@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetAcceptedAgreementPlainArgs extends com.pulumi.resources.In
         }
 
         public GetAcceptedAgreementPlainArgs build() {
-            $.acceptedAgreementId = Objects.requireNonNull($.acceptedAgreementId, "expected parameter 'acceptedAgreementId' to be non-null");
+            if ($.acceptedAgreementId == null) {
+                throw new MissingRequiredPropertyException("GetAcceptedAgreementPlainArgs", "acceptedAgreementId");
+            }
             return $;
         }
     }

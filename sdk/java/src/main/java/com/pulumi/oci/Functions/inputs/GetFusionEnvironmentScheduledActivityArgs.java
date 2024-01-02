@@ -5,6 +5,7 @@ package com.pulumi.oci.Functions.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class GetFusionEnvironmentScheduledActivityArgs extends com.pulumi.
         }
 
         public GetFusionEnvironmentScheduledActivityArgs build() {
-            $.fusionEnvironmentId = Objects.requireNonNull($.fusionEnvironmentId, "expected parameter 'fusionEnvironmentId' to be non-null");
-            $.scheduledActivityId = Objects.requireNonNull($.scheduledActivityId, "expected parameter 'scheduledActivityId' to be non-null");
+            if ($.fusionEnvironmentId == null) {
+                throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivityArgs", "fusionEnvironmentId");
+            }
+            if ($.scheduledActivityId == null) {
+                throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivityArgs", "scheduledActivityId");
+            }
             return $;
         }
     }

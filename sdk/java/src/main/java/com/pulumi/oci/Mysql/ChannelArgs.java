@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.inputs.ChannelSourceArgs;
 import com.pulumi.oci.Mysql.inputs.ChannelTargetArgs;
 import java.lang.Boolean;
@@ -340,8 +341,12 @@ public final class ChannelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ChannelArgs build() {
-            $.source = Objects.requireNonNull($.source, "expected parameter 'source' to be non-null");
-            $.target = Objects.requireNonNull($.target, "expected parameter 'target' to be non-null");
+            if ($.source == null) {
+                throw new MissingRequiredPropertyException("ChannelArgs", "source");
+            }
+            if ($.target == null) {
+                throw new MissingRequiredPropertyException("ChannelArgs", "target");
+            }
             return $;
         }
     }

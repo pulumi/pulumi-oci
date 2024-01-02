@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceCatalog.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetPrivateApplicationPackagePlainArgs extends com.pulumi.reso
         }
 
         public GetPrivateApplicationPackagePlainArgs build() {
-            $.privateApplicationPackageId = Objects.requireNonNull($.privateApplicationPackageId, "expected parameter 'privateApplicationPackageId' to be non-null");
+            if ($.privateApplicationPackageId == null) {
+                throw new MissingRequiredPropertyException("GetPrivateApplicationPackagePlainArgs", "privateApplicationPackageId");
+            }
             return $;
         }
     }

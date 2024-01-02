@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseScheduledOperationDayOfWeek;
 import java.lang.String;
 import java.util.Objects;
@@ -73,16 +74,21 @@ public final class AutonomousDatabaseScheduledOperation {
 
         @CustomType.Setter
         public Builder dayOfWeek(AutonomousDatabaseScheduledOperationDayOfWeek dayOfWeek) {
-            this.dayOfWeek = Objects.requireNonNull(dayOfWeek);
+            if (dayOfWeek == null) {
+              throw new MissingRequiredPropertyException("AutonomousDatabaseScheduledOperation", "dayOfWeek");
+            }
+            this.dayOfWeek = dayOfWeek;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledStartTime(@Nullable String scheduledStartTime) {
+
             this.scheduledStartTime = scheduledStartTime;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledStopTime(@Nullable String scheduledStopTime) {
+
             this.scheduledStopTime = scheduledStopTime;
             return this;
         }

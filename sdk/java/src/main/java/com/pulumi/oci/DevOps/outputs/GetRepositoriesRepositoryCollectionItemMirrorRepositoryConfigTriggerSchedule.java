@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig
 
         @CustomType.Setter
         public Builder customSchedule(String customSchedule) {
-            this.customSchedule = Objects.requireNonNull(customSchedule);
+            if (customSchedule == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule", "customSchedule");
+            }
+            this.customSchedule = customSchedule;
             return this;
         }
         @CustomType.Setter
         public Builder scheduleType(String scheduleType) {
-            this.scheduleType = Objects.requireNonNull(scheduleType);
+            if (scheduleType == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule", "scheduleType");
+            }
+            this.scheduleType = scheduleType;
             return this;
         }
         public GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule build() {

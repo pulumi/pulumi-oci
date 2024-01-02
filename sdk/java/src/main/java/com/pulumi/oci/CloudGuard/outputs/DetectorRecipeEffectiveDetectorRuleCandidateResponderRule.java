@@ -77,16 +77,19 @@ public final class DetectorRecipeEffectiveDetectorRuleCandidateResponderRule {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isPreferred(@Nullable Boolean isPreferred) {
+
             this.isPreferred = isPreferred;
             return this;
         }

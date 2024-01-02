@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetAgentImagesAgentImageCollectionItem {
 
         @CustomType.Setter
         public Builder downloadUrl(String downloadUrl) {
-            this.downloadUrl = Objects.requireNonNull(downloadUrl);
+            if (downloadUrl == null) {
+              throw new MissingRequiredPropertyException("GetAgentImagesAgentImageCollectionItem", "downloadUrl");
+            }
+            this.downloadUrl = downloadUrl;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetAgentImagesAgentImageCollectionItem", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetAgentImagesAgentImageCollectionItem build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabaseRoleFilter;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabaseRoleRole;
 import java.lang.Boolean;
@@ -90,11 +91,13 @@ public final class GetTargetDatabaseRoleResult {
 
         @CustomType.Setter
         public Builder authenticationType(@Nullable String authenticationType) {
+
             this.authenticationType = authenticationType;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetTargetDatabaseRoleFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -103,21 +106,27 @@ public final class GetTargetDatabaseRoleResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseRoleResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isOracleMaintained(@Nullable Boolean isOracleMaintained) {
+
             this.isOracleMaintained = isOracleMaintained;
             return this;
         }
         @CustomType.Setter
         public Builder roleNameContains(@Nullable String roleNameContains) {
+
             this.roleNameContains = roleNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder roleNames(@Nullable List<String> roleNames) {
+
             this.roleNames = roleNames;
             return this;
         }
@@ -126,7 +135,10 @@ public final class GetTargetDatabaseRoleResult {
         }
         @CustomType.Setter
         public Builder roles(List<GetTargetDatabaseRoleRole> roles) {
-            this.roles = Objects.requireNonNull(roles);
+            if (roles == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseRoleResult", "roles");
+            }
+            this.roles = roles;
             return this;
         }
         public Builder roles(GetTargetDatabaseRoleRole... roles) {
@@ -134,7 +146,10 @@ public final class GetTargetDatabaseRoleResult {
         }
         @CustomType.Setter
         public Builder targetDatabaseId(String targetDatabaseId) {
-            this.targetDatabaseId = Objects.requireNonNull(targetDatabaseId);
+            if (targetDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseRoleResult", "targetDatabaseId");
+            }
+            this.targetDatabaseId = targetDatabaseId;
             return this;
         }
         public GetTargetDatabaseRoleResult build() {

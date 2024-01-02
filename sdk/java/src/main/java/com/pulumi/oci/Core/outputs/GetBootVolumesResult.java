@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetBootVolumesBootVolume;
 import com.pulumi.oci.Core.outputs.GetBootVolumesFilter;
 import java.lang.String;
@@ -109,12 +110,16 @@ public final class GetBootVolumesResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder bootVolumes(List<GetBootVolumesBootVolume> bootVolumes) {
-            this.bootVolumes = Objects.requireNonNull(bootVolumes);
+            if (bootVolumes == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumesResult", "bootVolumes");
+            }
+            this.bootVolumes = bootVolumes;
             return this;
         }
         public Builder bootVolumes(GetBootVolumesBootVolume... bootVolumes) {
@@ -122,11 +127,13 @@ public final class GetBootVolumesResult {
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBootVolumesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,11 +142,15 @@ public final class GetBootVolumesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder volumeGroupId(@Nullable String volumeGroupId) {
+
             this.volumeGroupId = volumeGroupId;
             return this;
         }

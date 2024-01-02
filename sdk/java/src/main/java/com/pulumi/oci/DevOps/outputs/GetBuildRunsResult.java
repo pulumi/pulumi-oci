@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunsBuildRunSummaryCollection;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunsFilter;
 import java.lang.String;
@@ -145,12 +146,16 @@ public final class GetBuildRunsResult {
 
         @CustomType.Setter
         public Builder buildPipelineId(@Nullable String buildPipelineId) {
+
             this.buildPipelineId = buildPipelineId;
             return this;
         }
         @CustomType.Setter
         public Builder buildRunSummaryCollections(List<GetBuildRunsBuildRunSummaryCollection> buildRunSummaryCollections) {
-            this.buildRunSummaryCollections = Objects.requireNonNull(buildRunSummaryCollections);
+            if (buildRunSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsResult", "buildRunSummaryCollections");
+            }
+            this.buildRunSummaryCollections = buildRunSummaryCollections;
             return this;
         }
         public Builder buildRunSummaryCollections(GetBuildRunsBuildRunSummaryCollection... buildRunSummaryCollections) {
@@ -158,16 +163,19 @@ public final class GetBuildRunsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBuildRunsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -176,16 +184,19 @@ public final class GetBuildRunsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
+
             this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

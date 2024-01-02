@@ -5,6 +5,7 @@ package com.pulumi.oci.Jms.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetJavaDownloadsJavaLicenseArgs extends com.pulumi.resources.
         }
 
         public GetJavaDownloadsJavaLicenseArgs build() {
-            $.licenseType = Objects.requireNonNull($.licenseType, "expected parameter 'licenseType' to be non-null");
+            if ($.licenseType == null) {
+                throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicenseArgs", "licenseType");
+            }
             return $;
         }
     }

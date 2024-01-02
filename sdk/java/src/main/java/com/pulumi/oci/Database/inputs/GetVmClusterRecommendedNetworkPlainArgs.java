@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.GetVmClusterRecommendedNetworkNetwork;
 import java.lang.Integer;
 import java.lang.Object;
@@ -407,10 +408,18 @@ public final class GetVmClusterRecommendedNetworkPlainArgs extends com.pulumi.re
         }
 
         public GetVmClusterRecommendedNetworkPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.exadataInfrastructureId = Objects.requireNonNull($.exadataInfrastructureId, "expected parameter 'exadataInfrastructureId' to be non-null");
-            $.networks = Objects.requireNonNull($.networks, "expected parameter 'networks' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkPlainArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkPlainArgs", "displayName");
+            }
+            if ($.exadataInfrastructureId == null) {
+                throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkPlainArgs", "exadataInfrastructureId");
+            }
+            if ($.networks == null) {
+                throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkPlainArgs", "networks");
+            }
             return $;
         }
     }

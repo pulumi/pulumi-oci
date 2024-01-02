@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetGroupsFilter;
 import com.pulumi.oci.Identity.outputs.GetGroupsGroup;
 import java.lang.String;
@@ -109,11 +110,15 @@ public final class GetGroupsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetGroupsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetGroupsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -122,7 +127,10 @@ public final class GetGroupsResult {
         }
         @CustomType.Setter
         public Builder groups(List<GetGroupsGroup> groups) {
-            this.groups = Objects.requireNonNull(groups);
+            if (groups == null) {
+              throw new MissingRequiredPropertyException("GetGroupsResult", "groups");
+            }
+            this.groups = groups;
             return this;
         }
         public Builder groups(GetGroupsGroup... groups) {
@@ -130,16 +138,21 @@ public final class GetGroupsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetGroupsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

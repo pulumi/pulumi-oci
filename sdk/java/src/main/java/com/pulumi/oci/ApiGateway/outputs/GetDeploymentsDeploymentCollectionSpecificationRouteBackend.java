@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRouteBackendHeader;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackend;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRouteBackendSelectionSource;
@@ -207,7 +208,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteBackend {
 
         @CustomType.Setter
         public Builder allowedPostLogoutUris(List<String> allowedPostLogoutUris) {
-            this.allowedPostLogoutUris = Objects.requireNonNull(allowedPostLogoutUris);
+            if (allowedPostLogoutUris == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteBackend", "allowedPostLogoutUris");
+            }
+            this.allowedPostLogoutUris = allowedPostLogoutUris;
             return this;
         }
         public Builder allowedPostLogoutUris(String... allowedPostLogoutUris) {
@@ -215,22 +219,34 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteBackend {
         }
         @CustomType.Setter
         public Builder body(String body) {
-            this.body = Objects.requireNonNull(body);
+            if (body == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteBackend", "body");
+            }
+            this.body = body;
             return this;
         }
         @CustomType.Setter
         public Builder connectTimeoutInSeconds(Double connectTimeoutInSeconds) {
-            this.connectTimeoutInSeconds = Objects.requireNonNull(connectTimeoutInSeconds);
+            if (connectTimeoutInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteBackend", "connectTimeoutInSeconds");
+            }
+            this.connectTimeoutInSeconds = connectTimeoutInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder functionId(String functionId) {
-            this.functionId = Objects.requireNonNull(functionId);
+            if (functionId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteBackend", "functionId");
+            }
+            this.functionId = functionId;
             return this;
         }
         @CustomType.Setter
         public Builder headers(List<GetDeploymentsDeploymentCollectionSpecificationRouteBackendHeader> headers) {
-            this.headers = Objects.requireNonNull(headers);
+            if (headers == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteBackend", "headers");
+            }
+            this.headers = headers;
             return this;
         }
         public Builder headers(GetDeploymentsDeploymentCollectionSpecificationRouteBackendHeader... headers) {
@@ -238,22 +254,34 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteBackend {
         }
         @CustomType.Setter
         public Builder isSslVerifyDisabled(Boolean isSslVerifyDisabled) {
-            this.isSslVerifyDisabled = Objects.requireNonNull(isSslVerifyDisabled);
+            if (isSslVerifyDisabled == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteBackend", "isSslVerifyDisabled");
+            }
+            this.isSslVerifyDisabled = isSslVerifyDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder postLogoutState(String postLogoutState) {
-            this.postLogoutState = Objects.requireNonNull(postLogoutState);
+            if (postLogoutState == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteBackend", "postLogoutState");
+            }
+            this.postLogoutState = postLogoutState;
             return this;
         }
         @CustomType.Setter
         public Builder readTimeoutInSeconds(Double readTimeoutInSeconds) {
-            this.readTimeoutInSeconds = Objects.requireNonNull(readTimeoutInSeconds);
+            if (readTimeoutInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteBackend", "readTimeoutInSeconds");
+            }
+            this.readTimeoutInSeconds = readTimeoutInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder routingBackends(List<GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackend> routingBackends) {
-            this.routingBackends = Objects.requireNonNull(routingBackends);
+            if (routingBackends == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteBackend", "routingBackends");
+            }
+            this.routingBackends = routingBackends;
             return this;
         }
         public Builder routingBackends(GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackend... routingBackends) {
@@ -261,7 +289,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteBackend {
         }
         @CustomType.Setter
         public Builder selectionSources(List<GetDeploymentsDeploymentCollectionSpecificationRouteBackendSelectionSource> selectionSources) {
-            this.selectionSources = Objects.requireNonNull(selectionSources);
+            if (selectionSources == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteBackend", "selectionSources");
+            }
+            this.selectionSources = selectionSources;
             return this;
         }
         public Builder selectionSources(GetDeploymentsDeploymentCollectionSpecificationRouteBackendSelectionSource... selectionSources) {
@@ -269,22 +300,34 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteBackend {
         }
         @CustomType.Setter
         public Builder sendTimeoutInSeconds(Double sendTimeoutInSeconds) {
-            this.sendTimeoutInSeconds = Objects.requireNonNull(sendTimeoutInSeconds);
+            if (sendTimeoutInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteBackend", "sendTimeoutInSeconds");
+            }
+            this.sendTimeoutInSeconds = sendTimeoutInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder status(Integer status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteBackend", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteBackend", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+            if (url == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteBackend", "url");
+            }
+            this.url = url;
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRouteBackend build() {

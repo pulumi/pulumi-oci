@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.ContainerInstanceContainerHealthCheck;
 import com.pulumi.oci.ContainerEngine.outputs.ContainerInstanceContainerResourceConfig;
 import com.pulumi.oci.ContainerEngine.outputs.ContainerInstanceContainerSecurityContext;
@@ -395,6 +396,7 @@ public final class ContainerInstanceContainer {
 
         @CustomType.Setter
         public Builder arguments(@Nullable List<String> arguments) {
+
             this.arguments = arguments;
             return this;
         }
@@ -403,11 +405,13 @@ public final class ContainerInstanceContainer {
         }
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder commands(@Nullable List<String> commands) {
+
             this.commands = commands;
             return this;
         }
@@ -416,51 +420,61 @@ public final class ContainerInstanceContainer {
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder containerId(@Nullable String containerId) {
+
             this.containerId = containerId;
             return this;
         }
         @CustomType.Setter
         public Builder containerInstanceId(@Nullable String containerInstanceId) {
+
             this.containerInstanceId = containerInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+
             this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder environmentVariables(@Nullable Map<String,Object> environmentVariables) {
+
             this.environmentVariables = environmentVariables;
             return this;
         }
         @CustomType.Setter
         public Builder exitCode(@Nullable Integer exitCode) {
+
             this.exitCode = exitCode;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomain(@Nullable String faultDomain) {
+
             this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+
             this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder healthChecks(@Nullable List<ContainerInstanceContainerHealthCheck> healthChecks) {
+
             this.healthChecks = healthChecks;
             return this;
         }
@@ -469,56 +483,69 @@ public final class ContainerInstanceContainer {
         }
         @CustomType.Setter
         public Builder imageUrl(String imageUrl) {
-            this.imageUrl = Objects.requireNonNull(imageUrl);
+            if (imageUrl == null) {
+              throw new MissingRequiredPropertyException("ContainerInstanceContainer", "imageUrl");
+            }
+            this.imageUrl = imageUrl;
             return this;
         }
         @CustomType.Setter
         public Builder isResourcePrincipalDisabled(@Nullable Boolean isResourcePrincipalDisabled) {
+
             this.isResourcePrincipalDisabled = isResourcePrincipalDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder resourceConfig(@Nullable ContainerInstanceContainerResourceConfig resourceConfig) {
+
             this.resourceConfig = resourceConfig;
             return this;
         }
         @CustomType.Setter
         public Builder securityContext(@Nullable ContainerInstanceContainerSecurityContext securityContext) {
+
             this.securityContext = securityContext;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+
             this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeTerminated(@Nullable String timeTerminated) {
+
             this.timeTerminated = timeTerminated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
+
             this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder volumeMounts(@Nullable List<ContainerInstanceContainerVolumeMount> volumeMounts) {
+
             this.volumeMounts = volumeMounts;
             return this;
         }
@@ -527,6 +554,7 @@ public final class ContainerInstanceContainer {
         }
         @CustomType.Setter
         public Builder workingDirectory(@Nullable String workingDirectory) {
+
             this.workingDirectory = workingDirectory;
             return this;
         }

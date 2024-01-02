@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -127,37 +128,58 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiono
 
         @CustomType.Setter
         public Builder currentFederationMode(String currentFederationMode) {
-            this.currentFederationMode = Objects.requireNonNull(currentFederationMode);
+            if (currentFederationMode == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp", "currentFederationMode");
+            }
+            this.currentFederationMode = currentFederationMode;
             return this;
         }
         @CustomType.Setter
         public Builder currentSynchronizationMode(String currentSynchronizationMode) {
-            this.currentSynchronizationMode = Objects.requireNonNull(currentSynchronizationMode);
+            if (currentSynchronizationMode == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp", "currentSynchronizationMode");
+            }
+            this.currentSynchronizationMode = currentSynchronizationMode;
             return this;
         }
         @CustomType.Setter
         public Builder enablingNextFedSyncModes(Boolean enablingNextFedSyncModes) {
-            this.enablingNextFedSyncModes = Objects.requireNonNull(enablingNextFedSyncModes);
+            if (enablingNextFedSyncModes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp", "enablingNextFedSyncModes");
+            }
+            this.enablingNextFedSyncModes = enablingNextFedSyncModes;
             return this;
         }
         @CustomType.Setter
         public Builder nextFederationMode(String nextFederationMode) {
-            this.nextFederationMode = Objects.requireNonNull(nextFederationMode);
+            if (nextFederationMode == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp", "nextFederationMode");
+            }
+            this.nextFederationMode = nextFederationMode;
             return this;
         }
         @CustomType.Setter
         public Builder nextSynchronizationMode(String nextSynchronizationMode) {
-            this.nextSynchronizationMode = Objects.requireNonNull(nextSynchronizationMode);
+            if (nextSynchronizationMode == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp", "nextSynchronizationMode");
+            }
+            this.nextSynchronizationMode = nextSynchronizationMode;
             return this;
         }
         @CustomType.Setter
         public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+            if (region == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp", "region");
+            }
+            this.region = region;
             return this;
         }
         @CustomType.Setter
         public Builder serviceInstanceIdentifier(String serviceInstanceIdentifier) {
-            this.serviceInstanceIdentifier = Objects.requireNonNull(serviceInstanceIdentifier);
+            if (serviceInstanceIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp", "serviceInstanceIdentifier");
+            }
+            this.serviceInstanceIdentifier = serviceInstanceIdentifier;
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp build() {

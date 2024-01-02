@@ -4,6 +4,7 @@
 package com.pulumi.oci.Apm.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Apm.outputs.GetApmDomainsApmDomain;
 import com.pulumi.oci.Apm.outputs.GetApmDomainsFilter;
 import java.lang.String;
@@ -109,7 +110,10 @@ public final class GetApmDomainsResult {
 
         @CustomType.Setter
         public Builder apmDomains(List<GetApmDomainsApmDomain> apmDomains) {
-            this.apmDomains = Objects.requireNonNull(apmDomains);
+            if (apmDomains == null) {
+              throw new MissingRequiredPropertyException("GetApmDomainsResult", "apmDomains");
+            }
+            this.apmDomains = apmDomains;
             return this;
         }
         public Builder apmDomains(GetApmDomainsApmDomain... apmDomains) {
@@ -117,16 +121,21 @@ public final class GetApmDomainsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetApmDomainsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetApmDomainsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,11 +144,15 @@ public final class GetApmDomainsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetApmDomainsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

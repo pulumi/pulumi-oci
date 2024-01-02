@@ -86,21 +86,25 @@ public final class ClusterEndpoint {
 
         @CustomType.Setter
         public Builder kubernetes(@Nullable String kubernetes) {
+
             this.kubernetes = kubernetes;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpoint(@Nullable String privateEndpoint) {
+
             this.privateEndpoint = privateEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder publicEndpoint(@Nullable String publicEndpoint) {
+
             this.publicEndpoint = publicEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder vcnHostnameEndpoint(@Nullable String vcnHostnameEndpoint) {
+
             this.vcnHostnameEndpoint = vcnHostnameEndpoint;
             return this;
         }

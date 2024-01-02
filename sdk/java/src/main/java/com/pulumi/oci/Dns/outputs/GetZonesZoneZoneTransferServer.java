@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -86,22 +87,34 @@ public final class GetZonesZoneZoneTransferServer {
 
         @CustomType.Setter
         public Builder address(String address) {
-            this.address = Objects.requireNonNull(address);
+            if (address == null) {
+              throw new MissingRequiredPropertyException("GetZonesZoneZoneTransferServer", "address");
+            }
+            this.address = address;
             return this;
         }
         @CustomType.Setter
         public Builder isTransferDestination(Boolean isTransferDestination) {
-            this.isTransferDestination = Objects.requireNonNull(isTransferDestination);
+            if (isTransferDestination == null) {
+              throw new MissingRequiredPropertyException("GetZonesZoneZoneTransferServer", "isTransferDestination");
+            }
+            this.isTransferDestination = isTransferDestination;
             return this;
         }
         @CustomType.Setter
         public Builder isTransferSource(Boolean isTransferSource) {
-            this.isTransferSource = Objects.requireNonNull(isTransferSource);
+            if (isTransferSource == null) {
+              throw new MissingRequiredPropertyException("GetZonesZoneZoneTransferServer", "isTransferSource");
+            }
+            this.isTransferSource = isTransferSource;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetZonesZoneZoneTransferServer", "port");
+            }
+            this.port = port;
             return this;
         }
         public GetZonesZoneZoneTransferServer build() {

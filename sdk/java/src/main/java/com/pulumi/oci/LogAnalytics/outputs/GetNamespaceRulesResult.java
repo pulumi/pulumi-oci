@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceRulesFilter;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceRulesRuleSummaryCollection;
 import java.lang.String;
@@ -129,16 +130,21 @@ public final class GetNamespaceRulesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceRulesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNamespaceRulesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -147,22 +153,32 @@ public final class GetNamespaceRulesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceRulesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder kind(@Nullable String kind) {
+
             this.kind = kind;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceRulesResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder ruleSummaryCollections(List<GetNamespaceRulesRuleSummaryCollection> ruleSummaryCollections) {
-            this.ruleSummaryCollections = Objects.requireNonNull(ruleSummaryCollections);
+            if (ruleSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceRulesResult", "ruleSummaryCollections");
+            }
+            this.ruleSummaryCollections = ruleSummaryCollections;
             return this;
         }
         public Builder ruleSummaryCollections(GetNamespaceRulesRuleSummaryCollection... ruleSummaryCollections) {
@@ -170,6 +186,7 @@ public final class GetNamespaceRulesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

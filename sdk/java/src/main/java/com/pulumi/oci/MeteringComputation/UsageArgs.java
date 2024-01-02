@@ -5,6 +5,7 @@ package com.pulumi.oci.MeteringComputation;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.inputs.UsageForecastArgs;
 import com.pulumi.oci.MeteringComputation.inputs.UsageGroupByTagArgs;
 import java.lang.Boolean;
@@ -483,10 +484,18 @@ public final class UsageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public UsageArgs build() {
-            $.granularity = Objects.requireNonNull($.granularity, "expected parameter 'granularity' to be non-null");
-            $.tenantId = Objects.requireNonNull($.tenantId, "expected parameter 'tenantId' to be non-null");
-            $.timeUsageEnded = Objects.requireNonNull($.timeUsageEnded, "expected parameter 'timeUsageEnded' to be non-null");
-            $.timeUsageStarted = Objects.requireNonNull($.timeUsageStarted, "expected parameter 'timeUsageStarted' to be non-null");
+            if ($.granularity == null) {
+                throw new MissingRequiredPropertyException("UsageArgs", "granularity");
+            }
+            if ($.tenantId == null) {
+                throw new MissingRequiredPropertyException("UsageArgs", "tenantId");
+            }
+            if ($.timeUsageEnded == null) {
+                throw new MissingRequiredPropertyException("UsageArgs", "timeUsageEnded");
+            }
+            if ($.timeUsageStarted == null) {
+                throw new MissingRequiredPropertyException("UsageArgs", "timeUsageStarted");
+            }
             return $;
         }
     }

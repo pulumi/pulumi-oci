@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetSecurityRecipesFilter;
 import com.pulumi.oci.CloudGuard.outputs.GetSecurityRecipesSecurityRecipeCollection;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetSecurityRecipesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityRecipesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSecurityRecipesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +133,16 @@ public final class GetSecurityRecipesResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder securityRecipeCollections(List<GetSecurityRecipesSecurityRecipeCollection> securityRecipeCollections) {
-            this.securityRecipeCollections = Objects.requireNonNull(securityRecipeCollections);
+            if (securityRecipeCollections == null) {
+              throw new MissingRequiredPropertyException("GetSecurityRecipesResult", "securityRecipeCollections");
+            }
+            this.securityRecipeCollections = securityRecipeCollections;
             return this;
         }
         public Builder securityRecipeCollections(GetSecurityRecipesSecurityRecipeCollection... securityRecipeCollections) {
@@ -140,6 +150,7 @@ public final class GetSecurityRecipesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

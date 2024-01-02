@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetVolumeAttachmentsVolumeAttachmentMultipathDevice {
 
         @CustomType.Setter
         public Builder ipv4(String ipv4) {
-            this.ipv4 = Objects.requireNonNull(ipv4);
+            if (ipv4 == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachmentMultipathDevice", "ipv4");
+            }
+            this.ipv4 = ipv4;
             return this;
         }
         @CustomType.Setter
         public Builder iqn(String iqn) {
-            this.iqn = Objects.requireNonNull(iqn);
+            if (iqn == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachmentMultipathDevice", "iqn");
+            }
+            this.iqn = iqn;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachmentMultipathDevice", "port");
+            }
+            this.port = port;
             return this;
         }
         public GetVolumeAttachmentsVolumeAttachmentMultipathDevice build() {

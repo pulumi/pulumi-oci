@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.inputs.GetPbfListingVersionsFilter;
 import java.lang.Boolean;
 import java.lang.String;
@@ -193,7 +194,9 @@ public final class GetPbfListingVersionsPlainArgs extends com.pulumi.resources.I
         }
 
         public GetPbfListingVersionsPlainArgs build() {
-            $.pbfListingId = Objects.requireNonNull($.pbfListingId, "expected parameter 'pbfListingId' to be non-null");
+            if ($.pbfListingId == null) {
+                throw new MissingRequiredPropertyException("GetPbfListingVersionsPlainArgs", "pbfListingId");
+            }
             return $;
         }
     }

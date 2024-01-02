@@ -5,6 +5,7 @@ package com.pulumi.oci.LogAnalytics;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.inputs.NamespaceScheduledTaskActionArgs;
 import com.pulumi.oci.LogAnalytics.inputs.NamespaceScheduledTaskSchedulesArgs;
 import java.lang.Object;
@@ -425,12 +426,24 @@ public final class NamespaceScheduledTaskArgs extends com.pulumi.resources.Resou
         }
 
         public NamespaceScheduledTaskArgs build() {
-            $.action = Objects.requireNonNull($.action, "expected parameter 'action' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.kind = Objects.requireNonNull($.kind, "expected parameter 'kind' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
-            $.schedules = Objects.requireNonNull($.schedules, "expected parameter 'schedules' to be non-null");
-            $.taskType = Objects.requireNonNull($.taskType, "expected parameter 'taskType' to be non-null");
+            if ($.action == null) {
+                throw new MissingRequiredPropertyException("NamespaceScheduledTaskArgs", "action");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("NamespaceScheduledTaskArgs", "compartmentId");
+            }
+            if ($.kind == null) {
+                throw new MissingRequiredPropertyException("NamespaceScheduledTaskArgs", "kind");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("NamespaceScheduledTaskArgs", "namespace");
+            }
+            if ($.schedules == null) {
+                throw new MissingRequiredPropertyException("NamespaceScheduledTaskArgs", "schedules");
+            }
+            if ($.taskType == null) {
+                throw new MissingRequiredPropertyException("NamespaceScheduledTaskArgs", "taskType");
+            }
             return $;
         }
     }

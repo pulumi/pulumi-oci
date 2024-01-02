@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile;
 import java.lang.Boolean;
 import java.lang.String;
@@ -134,16 +135,21 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
 
         @CustomType.Setter
         public Builder consentGranted(@Nullable Boolean consentGranted) {
+
             this.consentGranted = consentGranted;
             return this;
         }
         @CustomType.Setter
         public Builder selfRegistrationProfile(DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile selfRegistrationProfile) {
-            this.selfRegistrationProfile = Objects.requireNonNull(selfRegistrationProfile);
+            if (selfRegistrationProfile == null) {
+              throw new MissingRequiredPropertyException("DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser", "selfRegistrationProfile");
+            }
+            this.selfRegistrationProfile = selfRegistrationProfile;
             return this;
         }
         @CustomType.Setter
         public Builder userToken(@Nullable String userToken) {
+
             this.userToken = userToken;
             return this;
         }

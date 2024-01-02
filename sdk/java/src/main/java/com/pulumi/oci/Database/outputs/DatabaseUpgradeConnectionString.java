@@ -74,16 +74,19 @@ public final class DatabaseUpgradeConnectionString {
 
         @CustomType.Setter
         public Builder allConnectionStrings(@Nullable Map<String,Object> allConnectionStrings) {
+
             this.allConnectionStrings = allConnectionStrings;
             return this;
         }
         @CustomType.Setter
         public Builder cdbDefault(@Nullable String cdbDefault) {
+
             this.cdbDefault = cdbDefault;
             return this;
         }
         @CustomType.Setter
         public Builder cdbIpDefault(@Nullable String cdbIpDefault) {
+
             this.cdbIpDefault = cdbIpDefault;
             return this;
         }

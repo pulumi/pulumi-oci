@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetIpsecConnectionTunnelErrorPlainArgs extends com.pulumi.res
         }
 
         public GetIpsecConnectionTunnelErrorPlainArgs build() {
-            $.ipsecId = Objects.requireNonNull($.ipsecId, "expected parameter 'ipsecId' to be non-null");
-            $.tunnelId = Objects.requireNonNull($.tunnelId, "expected parameter 'tunnelId' to be non-null");
+            if ($.ipsecId == null) {
+                throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelErrorPlainArgs", "ipsecId");
+            }
+            if ($.tunnelId == null) {
+                throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelErrorPlainArgs", "tunnelId");
+            }
             return $;
         }
     }

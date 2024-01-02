@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -72,17 +73,26 @@ public final class GetRepositoryAuthorItem {
 
         @CustomType.Setter
         public Builder authorName(String authorName) {
-            this.authorName = Objects.requireNonNull(authorName);
+            if (authorName == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryAuthorItem", "authorName");
+            }
+            this.authorName = authorName;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryAuthorItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryAuthorItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         public GetRepositoryAuthorItem build() {

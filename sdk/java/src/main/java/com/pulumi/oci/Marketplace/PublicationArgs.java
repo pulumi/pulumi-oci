@@ -5,6 +5,7 @@ package com.pulumi.oci.Marketplace;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.inputs.PublicationPackageDetailsArgs;
 import com.pulumi.oci.Marketplace.inputs.PublicationSupportContactArgs;
 import java.lang.Boolean;
@@ -425,12 +426,24 @@ public final class PublicationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public PublicationArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.isAgreementAcknowledged = Objects.requireNonNull($.isAgreementAcknowledged, "expected parameter 'isAgreementAcknowledged' to be non-null");
-            $.listingType = Objects.requireNonNull($.listingType, "expected parameter 'listingType' to be non-null");
-            $.packageDetails = Objects.requireNonNull($.packageDetails, "expected parameter 'packageDetails' to be non-null");
-            $.shortDescription = Objects.requireNonNull($.shortDescription, "expected parameter 'shortDescription' to be non-null");
-            $.supportContacts = Objects.requireNonNull($.supportContacts, "expected parameter 'supportContacts' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("PublicationArgs", "compartmentId");
+            }
+            if ($.isAgreementAcknowledged == null) {
+                throw new MissingRequiredPropertyException("PublicationArgs", "isAgreementAcknowledged");
+            }
+            if ($.listingType == null) {
+                throw new MissingRequiredPropertyException("PublicationArgs", "listingType");
+            }
+            if ($.packageDetails == null) {
+                throw new MissingRequiredPropertyException("PublicationArgs", "packageDetails");
+            }
+            if ($.shortDescription == null) {
+                throw new MissingRequiredPropertyException("PublicationArgs", "shortDescription");
+            }
+            if ($.supportContacts == null) {
+                throw new MissingRequiredPropertyException("PublicationArgs", "supportContacts");
+            }
             return $;
         }
     }

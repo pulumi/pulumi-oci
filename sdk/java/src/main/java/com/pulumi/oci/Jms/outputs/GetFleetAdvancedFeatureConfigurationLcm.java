@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction;
 import java.lang.Boolean;
 import java.util.List;
@@ -58,12 +59,18 @@ public final class GetFleetAdvancedFeatureConfigurationLcm {
 
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcm", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder postInstallationActions(List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction> postInstallationActions) {
-            this.postInstallationActions = Objects.requireNonNull(postInstallationActions);
+            if (postInstallationActions == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcm", "postInstallationActions");
+            }
+            this.postInstallationActions = postInstallationActions;
             return this;
         }
         public Builder postInstallationActions(GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction... postInstallationActions) {

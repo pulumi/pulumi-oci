@@ -4,6 +4,7 @@
 package com.pulumi.oci.ComputeCloud.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
 
         @CustomType.Setter
         public Builder capacityStorageTrayCount(Integer capacityStorageTrayCount) {
-            this.capacityStorageTrayCount = Objects.requireNonNull(capacityStorageTrayCount);
+            if (capacityStorageTrayCount == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory", "capacityStorageTrayCount");
+            }
+            this.capacityStorageTrayCount = capacityStorageTrayCount;
             return this;
         }
         @CustomType.Setter
         public Builder computeNodeCount(Integer computeNodeCount) {
-            this.computeNodeCount = Objects.requireNonNull(computeNodeCount);
+            if (computeNodeCount == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory", "computeNodeCount");
+            }
+            this.computeNodeCount = computeNodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder managementNodeCount(Integer managementNodeCount) {
-            this.managementNodeCount = Objects.requireNonNull(managementNodeCount);
+            if (managementNodeCount == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory", "managementNodeCount");
+            }
+            this.managementNodeCount = managementNodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder performanceStorageTrayCount(Integer performanceStorageTrayCount) {
-            this.performanceStorageTrayCount = Objects.requireNonNull(performanceStorageTrayCount);
+            if (performanceStorageTrayCount == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory", "performanceStorageTrayCount");
+            }
+            this.performanceStorageTrayCount = performanceStorageTrayCount;
             return this;
         }
         @CustomType.Setter
         public Builder serialNumber(String serialNumber) {
-            this.serialNumber = Objects.requireNonNull(serialNumber);
+            if (serialNumber == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory", "serialNumber");
+            }
+            this.serialNumber = serialNumber;
             return this;
         }
         public GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory build() {

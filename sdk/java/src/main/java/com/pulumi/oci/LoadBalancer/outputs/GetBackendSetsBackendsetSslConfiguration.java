@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -143,7 +144,10 @@ public final class GetBackendSetsBackendsetSslConfiguration {
 
         @CustomType.Setter
         public Builder certificateIds(List<String> certificateIds) {
-            this.certificateIds = Objects.requireNonNull(certificateIds);
+            if (certificateIds == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetSslConfiguration", "certificateIds");
+            }
+            this.certificateIds = certificateIds;
             return this;
         }
         public Builder certificateIds(String... certificateIds) {
@@ -151,17 +155,26 @@ public final class GetBackendSetsBackendsetSslConfiguration {
         }
         @CustomType.Setter
         public Builder certificateName(String certificateName) {
-            this.certificateName = Objects.requireNonNull(certificateName);
+            if (certificateName == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetSslConfiguration", "certificateName");
+            }
+            this.certificateName = certificateName;
             return this;
         }
         @CustomType.Setter
         public Builder cipherSuiteName(String cipherSuiteName) {
-            this.cipherSuiteName = Objects.requireNonNull(cipherSuiteName);
+            if (cipherSuiteName == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetSslConfiguration", "cipherSuiteName");
+            }
+            this.cipherSuiteName = cipherSuiteName;
             return this;
         }
         @CustomType.Setter
         public Builder protocols(List<String> protocols) {
-            this.protocols = Objects.requireNonNull(protocols);
+            if (protocols == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetSslConfiguration", "protocols");
+            }
+            this.protocols = protocols;
             return this;
         }
         public Builder protocols(String... protocols) {
@@ -169,12 +182,18 @@ public final class GetBackendSetsBackendsetSslConfiguration {
         }
         @CustomType.Setter
         public Builder serverOrderPreference(String serverOrderPreference) {
-            this.serverOrderPreference = Objects.requireNonNull(serverOrderPreference);
+            if (serverOrderPreference == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetSslConfiguration", "serverOrderPreference");
+            }
+            this.serverOrderPreference = serverOrderPreference;
             return this;
         }
         @CustomType.Setter
         public Builder trustedCertificateAuthorityIds(List<String> trustedCertificateAuthorityIds) {
-            this.trustedCertificateAuthorityIds = Objects.requireNonNull(trustedCertificateAuthorityIds);
+            if (trustedCertificateAuthorityIds == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetSslConfiguration", "trustedCertificateAuthorityIds");
+            }
+            this.trustedCertificateAuthorityIds = trustedCertificateAuthorityIds;
             return this;
         }
         public Builder trustedCertificateAuthorityIds(String... trustedCertificateAuthorityIds) {
@@ -182,12 +201,18 @@ public final class GetBackendSetsBackendsetSslConfiguration {
         }
         @CustomType.Setter
         public Builder verifyDepth(Integer verifyDepth) {
-            this.verifyDepth = Objects.requireNonNull(verifyDepth);
+            if (verifyDepth == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetSslConfiguration", "verifyDepth");
+            }
+            this.verifyDepth = verifyDepth;
             return this;
         }
         @CustomType.Setter
         public Builder verifyPeerCertificate(Boolean verifyPeerCertificate) {
-            this.verifyPeerCertificate = Objects.requireNonNull(verifyPeerCertificate);
+            if (verifyPeerCertificate == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetSslConfiguration", "verifyPeerCertificate");
+            }
+            this.verifyPeerCertificate = verifyPeerCertificate;
             return this;
         }
         public GetBackendSetsBackendsetSslConfiguration build() {

@@ -389,16 +389,19 @@ public final class MysqlBackupDbSystemSnapshot {
 
         @CustomType.Setter
         public Builder adminUsername(@Nullable String adminUsername) {
+
             this.adminUsername = adminUsername;
             return this;
         }
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder backupPolicies(@Nullable List<MysqlBackupDbSystemSnapshotBackupPolicy> backupPolicies) {
+
             this.backupPolicies = backupPolicies;
             return this;
         }
@@ -407,36 +410,43 @@ public final class MysqlBackupDbSystemSnapshot {
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder configurationId(@Nullable String configurationId) {
+
             this.configurationId = configurationId;
             return this;
         }
         @CustomType.Setter
         public Builder crashRecovery(@Nullable String crashRecovery) {
+
             this.crashRecovery = crashRecovery;
             return this;
         }
         @CustomType.Setter
         public Builder dataStorageSizeInGb(@Nullable Integer dataStorageSizeInGb) {
+
             this.dataStorageSizeInGb = dataStorageSizeInGb;
             return this;
         }
         @CustomType.Setter
         public Builder databaseManagement(@Nullable String databaseManagement) {
+
             this.databaseManagement = databaseManagement;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+
             this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder deletionPolicies(@Nullable List<MysqlBackupDbSystemSnapshotDeletionPolicy> deletionPolicies) {
+
             this.deletionPolicies = deletionPolicies;
             return this;
         }
@@ -445,16 +455,19 @@ public final class MysqlBackupDbSystemSnapshot {
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder endpoints(@Nullable List<MysqlBackupDbSystemSnapshotEndpoint> endpoints) {
+
             this.endpoints = endpoints;
             return this;
         }
@@ -463,36 +476,43 @@ public final class MysqlBackupDbSystemSnapshot {
         }
         @CustomType.Setter
         public Builder faultDomain(@Nullable String faultDomain) {
+
             this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+
             this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostnameLabel(@Nullable String hostnameLabel) {
+
             this.hostnameLabel = hostnameLabel;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddress(@Nullable String ipAddress) {
+
             this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder isHighlyAvailable(@Nullable Boolean isHighlyAvailable) {
+
             this.isHighlyAvailable = isHighlyAvailable;
             return this;
         }
         @CustomType.Setter
         public Builder maintenances(@Nullable List<MysqlBackupDbSystemSnapshotMaintenance> maintenances) {
+
             this.maintenances = maintenances;
             return this;
         }
@@ -501,26 +521,31 @@ public final class MysqlBackupDbSystemSnapshot {
         }
         @CustomType.Setter
         public Builder mysqlVersion(@Nullable String mysqlVersion) {
+
             this.mysqlVersion = mysqlVersion;
             return this;
         }
         @CustomType.Setter
         public Builder port(@Nullable Integer port) {
+
             this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder portX(@Nullable Integer portX) {
+
             this.portX = portX;
             return this;
         }
         @CustomType.Setter
         public Builder shapeName(@Nullable String shapeName) {
+
             this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
+
             this.subnetId = subnetId;
             return this;
         }

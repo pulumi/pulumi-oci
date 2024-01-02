@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationInstanceDetail;
 import java.lang.Object;
 import java.lang.String;
@@ -154,12 +155,18 @@ public final class GetInstanceConfigurationResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder deferredFields(List<String> deferredFields) {
-            this.deferredFields = Objects.requireNonNull(deferredFields);
+            if (deferredFields == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationResult", "deferredFields");
+            }
+            this.deferredFields = deferredFields;
             return this;
         }
         public Builder deferredFields(String... deferredFields) {
@@ -167,32 +174,50 @@ public final class GetInstanceConfigurationResult {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceConfigurationId(String instanceConfigurationId) {
-            this.instanceConfigurationId = Objects.requireNonNull(instanceConfigurationId);
+            if (instanceConfigurationId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationResult", "instanceConfigurationId");
+            }
+            this.instanceConfigurationId = instanceConfigurationId;
             return this;
         }
         @CustomType.Setter
         public Builder instanceDetails(List<GetInstanceConfigurationInstanceDetail> instanceDetails) {
-            this.instanceDetails = Objects.requireNonNull(instanceDetails);
+            if (instanceDetails == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationResult", "instanceDetails");
+            }
+            this.instanceDetails = instanceDetails;
             return this;
         }
         public Builder instanceDetails(GetInstanceConfigurationInstanceDetail... instanceDetails) {
@@ -200,17 +225,26 @@ public final class GetInstanceConfigurationResult {
         }
         @CustomType.Setter
         public Builder instanceId(String instanceId) {
-            this.instanceId = Objects.requireNonNull(instanceId);
+            if (instanceId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationResult", "instanceId");
+            }
+            this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationResult", "source");
+            }
+            this.source = source;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetInstanceConfigurationResult build() {

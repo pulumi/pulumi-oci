@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -148,9 +149,15 @@ public final class ShapeManagementArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public ShapeManagementArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.imageId = Objects.requireNonNull($.imageId, "expected parameter 'imageId' to be non-null");
-            $.shapeName = Objects.requireNonNull($.shapeName, "expected parameter 'shapeName' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ShapeManagementArgs", "compartmentId");
+            }
+            if ($.imageId == null) {
+                throw new MissingRequiredPropertyException("ShapeManagementArgs", "imageId");
+            }
+            if ($.shapeName == null) {
+                throw new MissingRequiredPropertyException("ShapeManagementArgs", "shapeName");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric;
 import java.lang.Integer;
 import java.util.List;
@@ -48,12 +49,18 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
 
         @CustomType.Setter
         public Builder maxNodeCount(Integer maxNodeCount) {
-            this.maxNodeCount = Objects.requireNonNull(maxNodeCount);
+            if (maxNodeCount == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig", "maxNodeCount");
+            }
+            this.maxNodeCount = maxNodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder metrics(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+            if (metrics == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig", "metrics");
+            }
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric... metrics) {
@@ -61,7 +68,10 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
         }
         @CustomType.Setter
         public Builder stepSize(Integer stepSize) {
-            this.stepSize = Objects.requireNonNull(stepSize);
+            if (stepSize == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig", "stepSize");
+            }
+            this.stepSize = stepSize;
             return this;
         }
         public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig build() {

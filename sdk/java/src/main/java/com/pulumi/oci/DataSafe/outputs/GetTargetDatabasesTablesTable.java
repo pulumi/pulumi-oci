@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetTargetDatabasesTablesTable {
 
         @CustomType.Setter
         public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+            if (schemaName == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTablesTable", "schemaName");
+            }
+            this.schemaName = schemaName;
             return this;
         }
         @CustomType.Setter
         public Builder tableName(String tableName) {
-            this.tableName = Objects.requireNonNull(tableName);
+            if (tableName == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTablesTable", "tableName");
+            }
+            this.tableName = tableName;
             return this;
         }
         public GetTargetDatabasesTablesTable build() {

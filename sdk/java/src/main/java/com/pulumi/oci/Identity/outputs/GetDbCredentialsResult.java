@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDbCredentialsDbCredential;
 import com.pulumi.oci.Identity.outputs.GetDbCredentialsFilter;
 import java.lang.String;
@@ -101,7 +102,10 @@ public final class GetDbCredentialsResult {
 
         @CustomType.Setter
         public Builder dbCredentials(List<GetDbCredentialsDbCredential> dbCredentials) {
-            this.dbCredentials = Objects.requireNonNull(dbCredentials);
+            if (dbCredentials == null) {
+              throw new MissingRequiredPropertyException("GetDbCredentialsResult", "dbCredentials");
+            }
+            this.dbCredentials = dbCredentials;
             return this;
         }
         public Builder dbCredentials(GetDbCredentialsDbCredential... dbCredentials) {
@@ -109,6 +113,7 @@ public final class GetDbCredentialsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDbCredentialsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -117,22 +122,30 @@ public final class GetDbCredentialsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbCredentialsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+            if (userId == null) {
+              throw new MissingRequiredPropertyException("GetDbCredentialsResult", "userId");
+            }
+            this.userId = userId;
             return this;
         }
         public GetDbCredentialsResult build() {

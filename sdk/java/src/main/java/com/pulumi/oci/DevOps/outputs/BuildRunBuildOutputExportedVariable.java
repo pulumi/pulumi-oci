@@ -44,6 +44,7 @@ public final class BuildRunBuildOutputExportedVariable {
 
         @CustomType.Setter
         public Builder items(@Nullable List<BuildRunBuildOutputExportedVariableItem> items) {
+
             this.items = items;
             return this;
         }

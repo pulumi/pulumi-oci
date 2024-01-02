@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetApplicationVipsApplicationVip;
 import com.pulumi.oci.Database.outputs.GetApplicationVipsFilter;
 import java.lang.String;
@@ -109,7 +110,10 @@ public final class GetApplicationVipsResult {
 
         @CustomType.Setter
         public Builder applicationVips(List<GetApplicationVipsApplicationVip> applicationVips) {
-            this.applicationVips = Objects.requireNonNull(applicationVips);
+            if (applicationVips == null) {
+              throw new MissingRequiredPropertyException("GetApplicationVipsResult", "applicationVips");
+            }
+            this.applicationVips = applicationVips;
             return this;
         }
         public Builder applicationVips(GetApplicationVipsApplicationVip... applicationVips) {
@@ -117,16 +121,23 @@ public final class GetApplicationVipsResult {
         }
         @CustomType.Setter
         public Builder cloudVmClusterId(String cloudVmClusterId) {
-            this.cloudVmClusterId = Objects.requireNonNull(cloudVmClusterId);
+            if (cloudVmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetApplicationVipsResult", "cloudVmClusterId");
+            }
+            this.cloudVmClusterId = cloudVmClusterId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetApplicationVipsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetApplicationVipsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,11 +146,15 @@ public final class GetApplicationVipsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetApplicationVipsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

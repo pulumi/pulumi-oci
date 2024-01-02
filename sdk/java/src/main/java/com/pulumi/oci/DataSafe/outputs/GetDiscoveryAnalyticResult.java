@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetDiscoveryAnalyticItem;
 import java.lang.Boolean;
 import java.lang.String;
@@ -107,27 +108,38 @@ public final class GetDiscoveryAnalyticResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryAnalyticResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder groupBy(@Nullable String groupBy) {
+
             this.groupBy = groupBy;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryAnalyticResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetDiscoveryAnalyticItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryAnalyticResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetDiscoveryAnalyticItem... items) {
@@ -135,11 +147,13 @@ public final class GetDiscoveryAnalyticResult {
         }
         @CustomType.Setter
         public Builder sensitiveDataModelId(@Nullable String sensitiveDataModelId) {
+
             this.sensitiveDataModelId = sensitiveDataModelId;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
+
             this.targetId = targetId;
             return this;
         }

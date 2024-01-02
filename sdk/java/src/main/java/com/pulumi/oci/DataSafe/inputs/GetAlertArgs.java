@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetAlertArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetAlertArgs build() {
-            $.alertId = Objects.requireNonNull($.alertId, "expected parameter 'alertId' to be non-null");
+            if ($.alertId == null) {
+                throw new MissingRequiredPropertyException("GetAlertArgs", "alertId");
+            }
             return $;
         }
     }

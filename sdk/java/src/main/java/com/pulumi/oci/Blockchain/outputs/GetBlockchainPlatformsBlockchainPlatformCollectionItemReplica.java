@@ -4,6 +4,7 @@
 package com.pulumi.oci.Blockchain.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica
 
         @CustomType.Setter
         public Builder caCount(Integer caCount) {
-            this.caCount = Objects.requireNonNull(caCount);
+            if (caCount == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica", "caCount");
+            }
+            this.caCount = caCount;
             return this;
         }
         @CustomType.Setter
         public Builder consoleCount(Integer consoleCount) {
-            this.consoleCount = Objects.requireNonNull(consoleCount);
+            if (consoleCount == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica", "consoleCount");
+            }
+            this.consoleCount = consoleCount;
             return this;
         }
         @CustomType.Setter
         public Builder proxyCount(Integer proxyCount) {
-            this.proxyCount = Objects.requireNonNull(proxyCount);
+            if (proxyCount == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica", "proxyCount");
+            }
+            this.proxyCount = proxyCount;
             return this;
         }
         public GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica build() {

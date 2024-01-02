@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser;
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern;
 import java.lang.Boolean;
@@ -413,27 +414,42 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
 
         @CustomType.Setter
         public Builder delimiter(String delimiter) {
-            this.delimiter = Objects.requireNonNull(delimiter);
+            if (delimiter == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "delimiter");
+            }
+            this.delimiter = delimiter;
             return this;
         }
         @CustomType.Setter
         public Builder expression(String expression) {
-            this.expression = Objects.requireNonNull(expression);
+            if (expression == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "expression");
+            }
+            this.expression = expression;
             return this;
         }
         @CustomType.Setter
         public Builder fieldTimeKey(String fieldTimeKey) {
-            this.fieldTimeKey = Objects.requireNonNull(fieldTimeKey);
+            if (fieldTimeKey == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "fieldTimeKey");
+            }
+            this.fieldTimeKey = fieldTimeKey;
             return this;
         }
         @CustomType.Setter
         public Builder formatFirstline(String formatFirstline) {
-            this.formatFirstline = Objects.requireNonNull(formatFirstline);
+            if (formatFirstline == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "formatFirstline");
+            }
+            this.formatFirstline = formatFirstline;
             return this;
         }
         @CustomType.Setter
         public Builder formats(List<String> formats) {
-            this.formats = Objects.requireNonNull(formats);
+            if (formats == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "formats");
+            }
+            this.formats = formats;
             return this;
         }
         public Builder formats(String... formats) {
@@ -441,47 +457,74 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         }
         @CustomType.Setter
         public Builder grokFailureKey(String grokFailureKey) {
-            this.grokFailureKey = Objects.requireNonNull(grokFailureKey);
+            if (grokFailureKey == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "grokFailureKey");
+            }
+            this.grokFailureKey = grokFailureKey;
             return this;
         }
         @CustomType.Setter
         public Builder grokNameKey(String grokNameKey) {
-            this.grokNameKey = Objects.requireNonNull(grokNameKey);
+            if (grokNameKey == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "grokNameKey");
+            }
+            this.grokNameKey = grokNameKey;
             return this;
         }
         @CustomType.Setter
         public Builder isEstimateCurrentEvent(Boolean isEstimateCurrentEvent) {
-            this.isEstimateCurrentEvent = Objects.requireNonNull(isEstimateCurrentEvent);
+            if (isEstimateCurrentEvent == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "isEstimateCurrentEvent");
+            }
+            this.isEstimateCurrentEvent = isEstimateCurrentEvent;
             return this;
         }
         @CustomType.Setter
         public Builder isKeepTimeKey(Boolean isKeepTimeKey) {
-            this.isKeepTimeKey = Objects.requireNonNull(isKeepTimeKey);
+            if (isKeepTimeKey == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "isKeepTimeKey");
+            }
+            this.isKeepTimeKey = isKeepTimeKey;
             return this;
         }
         @CustomType.Setter
         public Builder isMergeCriFields(Boolean isMergeCriFields) {
-            this.isMergeCriFields = Objects.requireNonNull(isMergeCriFields);
+            if (isMergeCriFields == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "isMergeCriFields");
+            }
+            this.isMergeCriFields = isMergeCriFields;
             return this;
         }
         @CustomType.Setter
         public Builder isNullEmptyString(Boolean isNullEmptyString) {
-            this.isNullEmptyString = Objects.requireNonNull(isNullEmptyString);
+            if (isNullEmptyString == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "isNullEmptyString");
+            }
+            this.isNullEmptyString = isNullEmptyString;
             return this;
         }
         @CustomType.Setter
         public Builder isSupportColonlessIdent(Boolean isSupportColonlessIdent) {
-            this.isSupportColonlessIdent = Objects.requireNonNull(isSupportColonlessIdent);
+            if (isSupportColonlessIdent == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "isSupportColonlessIdent");
+            }
+            this.isSupportColonlessIdent = isSupportColonlessIdent;
             return this;
         }
         @CustomType.Setter
         public Builder isWithPriority(Boolean isWithPriority) {
-            this.isWithPriority = Objects.requireNonNull(isWithPriority);
+            if (isWithPriority == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "isWithPriority");
+            }
+            this.isWithPriority = isWithPriority;
             return this;
         }
         @CustomType.Setter
         public Builder keys(List<String> keys) {
-            this.keys = Objects.requireNonNull(keys);
+            if (keys == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "keys");
+            }
+            this.keys = keys;
             return this;
         }
         public Builder keys(String... keys) {
@@ -489,22 +532,34 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         }
         @CustomType.Setter
         public Builder messageFormat(String messageFormat) {
-            this.messageFormat = Objects.requireNonNull(messageFormat);
+            if (messageFormat == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "messageFormat");
+            }
+            this.messageFormat = messageFormat;
             return this;
         }
         @CustomType.Setter
         public Builder messageKey(String messageKey) {
-            this.messageKey = Objects.requireNonNull(messageKey);
+            if (messageKey == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "messageKey");
+            }
+            this.messageKey = messageKey;
             return this;
         }
         @CustomType.Setter
         public Builder multiLineStartRegexp(String multiLineStartRegexp) {
-            this.multiLineStartRegexp = Objects.requireNonNull(multiLineStartRegexp);
+            if (multiLineStartRegexp == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "multiLineStartRegexp");
+            }
+            this.multiLineStartRegexp = multiLineStartRegexp;
             return this;
         }
         @CustomType.Setter
         public Builder nestedParsers(List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser> nestedParsers) {
-            this.nestedParsers = Objects.requireNonNull(nestedParsers);
+            if (nestedParsers == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "nestedParsers");
+            }
+            this.nestedParsers = nestedParsers;
             return this;
         }
         public Builder nestedParsers(GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser... nestedParsers) {
@@ -512,17 +567,26 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         }
         @CustomType.Setter
         public Builder nullValuePattern(String nullValuePattern) {
-            this.nullValuePattern = Objects.requireNonNull(nullValuePattern);
+            if (nullValuePattern == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "nullValuePattern");
+            }
+            this.nullValuePattern = nullValuePattern;
             return this;
         }
         @CustomType.Setter
         public Builder parserType(String parserType) {
-            this.parserType = Objects.requireNonNull(parserType);
+            if (parserType == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "parserType");
+            }
+            this.parserType = parserType;
             return this;
         }
         @CustomType.Setter
         public Builder patterns(List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns) {
-            this.patterns = Objects.requireNonNull(patterns);
+            if (patterns == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "patterns");
+            }
+            this.patterns = patterns;
             return this;
         }
         public Builder patterns(GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern... patterns) {
@@ -530,32 +594,50 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         }
         @CustomType.Setter
         public Builder rfc5424timeFormat(String rfc5424timeFormat) {
-            this.rfc5424timeFormat = Objects.requireNonNull(rfc5424timeFormat);
+            if (rfc5424timeFormat == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "rfc5424timeFormat");
+            }
+            this.rfc5424timeFormat = rfc5424timeFormat;
             return this;
         }
         @CustomType.Setter
         public Builder syslogParserType(String syslogParserType) {
-            this.syslogParserType = Objects.requireNonNull(syslogParserType);
+            if (syslogParserType == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "syslogParserType");
+            }
+            this.syslogParserType = syslogParserType;
             return this;
         }
         @CustomType.Setter
         public Builder timeFormat(String timeFormat) {
-            this.timeFormat = Objects.requireNonNull(timeFormat);
+            if (timeFormat == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "timeFormat");
+            }
+            this.timeFormat = timeFormat;
             return this;
         }
         @CustomType.Setter
         public Builder timeType(String timeType) {
-            this.timeType = Objects.requireNonNull(timeType);
+            if (timeType == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "timeType");
+            }
+            this.timeType = timeType;
             return this;
         }
         @CustomType.Setter
         public Builder timeoutInMilliseconds(Integer timeoutInMilliseconds) {
-            this.timeoutInMilliseconds = Objects.requireNonNull(timeoutInMilliseconds);
+            if (timeoutInMilliseconds == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "timeoutInMilliseconds");
+            }
+            this.timeoutInMilliseconds = timeoutInMilliseconds;
             return this;
         }
         @CustomType.Setter
         public Builder types(Map<String,Object> types) {
-            this.types = Objects.requireNonNull(types);
+            if (types == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "types");
+            }
+            this.types = types;
             return this;
         }
         public GetUnifiedAgentConfigurationServiceConfigurationSourceParser build() {

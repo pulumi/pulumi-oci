@@ -4,6 +4,7 @@
 package com.pulumi.oci.ComputeInstanceAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetInstanceAvailablePluginAvailablePlugin {
 
         @CustomType.Setter
         public Builder isEnabledByDefault(Boolean isEnabledByDefault) {
-            this.isEnabledByDefault = Objects.requireNonNull(isEnabledByDefault);
+            if (isEnabledByDefault == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAvailablePluginAvailablePlugin", "isEnabledByDefault");
+            }
+            this.isEnabledByDefault = isEnabledByDefault;
             return this;
         }
         @CustomType.Setter
         public Builder isSupported(Boolean isSupported) {
-            this.isSupported = Objects.requireNonNull(isSupported);
+            if (isSupported == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAvailablePluginAvailablePlugin", "isSupported");
+            }
+            this.isSupported = isSupported;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAvailablePluginAvailablePlugin", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder summary(String summary) {
-            this.summary = Objects.requireNonNull(summary);
+            if (summary == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAvailablePluginAvailablePlugin", "summary");
+            }
+            this.summary = summary;
             return this;
         }
         public GetInstanceAvailablePluginAvailablePlugin build() {

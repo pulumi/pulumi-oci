@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagC
 
         @CustomType.Setter
         public Builder items(List<GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem... items) {

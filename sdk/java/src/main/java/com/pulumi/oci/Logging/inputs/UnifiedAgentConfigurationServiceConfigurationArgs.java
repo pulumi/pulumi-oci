@@ -5,6 +5,7 @@ package com.pulumi.oci.Logging.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationDestinationArgs;
 import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationSourceArgs;
 import java.lang.String;
@@ -161,9 +162,15 @@ public final class UnifiedAgentConfigurationServiceConfigurationArgs extends com
         }
 
         public UnifiedAgentConfigurationServiceConfigurationArgs build() {
-            $.configurationType = Objects.requireNonNull($.configurationType, "expected parameter 'configurationType' to be non-null");
-            $.destination = Objects.requireNonNull($.destination, "expected parameter 'destination' to be non-null");
-            $.sources = Objects.requireNonNull($.sources, "expected parameter 'sources' to be non-null");
+            if ($.configurationType == null) {
+                throw new MissingRequiredPropertyException("UnifiedAgentConfigurationServiceConfigurationArgs", "configurationType");
+            }
+            if ($.destination == null) {
+                throw new MissingRequiredPropertyException("UnifiedAgentConfigurationServiceConfigurationArgs", "destination");
+            }
+            if ($.sources == null) {
+                throw new MissingRequiredPropertyException("UnifiedAgentConfigurationServiceConfigurationArgs", "sources");
+            }
             return $;
         }
     }

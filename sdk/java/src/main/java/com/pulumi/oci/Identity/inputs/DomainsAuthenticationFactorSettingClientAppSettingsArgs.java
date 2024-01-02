@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -1214,21 +1215,51 @@ public final class DomainsAuthenticationFactorSettingClientAppSettingsArgs exten
         }
 
         public DomainsAuthenticationFactorSettingClientAppSettingsArgs build() {
-            $.deviceProtectionPolicy = Objects.requireNonNull($.deviceProtectionPolicy, "expected parameter 'deviceProtectionPolicy' to be non-null");
-            $.initialLockoutPeriodInSecs = Objects.requireNonNull($.initialLockoutPeriodInSecs, "expected parameter 'initialLockoutPeriodInSecs' to be non-null");
-            $.keyPairLength = Objects.requireNonNull($.keyPairLength, "expected parameter 'keyPairLength' to be non-null");
-            $.lockoutEscalationPattern = Objects.requireNonNull($.lockoutEscalationPattern, "expected parameter 'lockoutEscalationPattern' to be non-null");
-            $.maxFailuresBeforeLockout = Objects.requireNonNull($.maxFailuresBeforeLockout, "expected parameter 'maxFailuresBeforeLockout' to be non-null");
-            $.maxFailuresBeforeWarning = Objects.requireNonNull($.maxFailuresBeforeWarning, "expected parameter 'maxFailuresBeforeWarning' to be non-null");
-            $.maxLockoutIntervalInSecs = Objects.requireNonNull($.maxLockoutIntervalInSecs, "expected parameter 'maxLockoutIntervalInSecs' to be non-null");
-            $.minPinLength = Objects.requireNonNull($.minPinLength, "expected parameter 'minPinLength' to be non-null");
-            $.policyUpdateFreqInDays = Objects.requireNonNull($.policyUpdateFreqInDays, "expected parameter 'policyUpdateFreqInDays' to be non-null");
-            $.requestSigningAlgo = Objects.requireNonNull($.requestSigningAlgo, "expected parameter 'requestSigningAlgo' to be non-null");
-            $.sharedSecretEncoding = Objects.requireNonNull($.sharedSecretEncoding, "expected parameter 'sharedSecretEncoding' to be non-null");
-            $.unlockAppForEachRequestEnabled = Objects.requireNonNull($.unlockAppForEachRequestEnabled, "expected parameter 'unlockAppForEachRequestEnabled' to be non-null");
-            $.unlockAppIntervalInSecs = Objects.requireNonNull($.unlockAppIntervalInSecs, "expected parameter 'unlockAppIntervalInSecs' to be non-null");
-            $.unlockOnAppForegroundEnabled = Objects.requireNonNull($.unlockOnAppForegroundEnabled, "expected parameter 'unlockOnAppForegroundEnabled' to be non-null");
-            $.unlockOnAppStartEnabled = Objects.requireNonNull($.unlockOnAppStartEnabled, "expected parameter 'unlockOnAppStartEnabled' to be non-null");
+            if ($.deviceProtectionPolicy == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingClientAppSettingsArgs", "deviceProtectionPolicy");
+            }
+            if ($.initialLockoutPeriodInSecs == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingClientAppSettingsArgs", "initialLockoutPeriodInSecs");
+            }
+            if ($.keyPairLength == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingClientAppSettingsArgs", "keyPairLength");
+            }
+            if ($.lockoutEscalationPattern == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingClientAppSettingsArgs", "lockoutEscalationPattern");
+            }
+            if ($.maxFailuresBeforeLockout == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingClientAppSettingsArgs", "maxFailuresBeforeLockout");
+            }
+            if ($.maxFailuresBeforeWarning == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingClientAppSettingsArgs", "maxFailuresBeforeWarning");
+            }
+            if ($.maxLockoutIntervalInSecs == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingClientAppSettingsArgs", "maxLockoutIntervalInSecs");
+            }
+            if ($.minPinLength == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingClientAppSettingsArgs", "minPinLength");
+            }
+            if ($.policyUpdateFreqInDays == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingClientAppSettingsArgs", "policyUpdateFreqInDays");
+            }
+            if ($.requestSigningAlgo == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingClientAppSettingsArgs", "requestSigningAlgo");
+            }
+            if ($.sharedSecretEncoding == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingClientAppSettingsArgs", "sharedSecretEncoding");
+            }
+            if ($.unlockAppForEachRequestEnabled == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingClientAppSettingsArgs", "unlockAppForEachRequestEnabled");
+            }
+            if ($.unlockAppIntervalInSecs == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingClientAppSettingsArgs", "unlockAppIntervalInSecs");
+            }
+            if ($.unlockOnAppForegroundEnabled == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingClientAppSettingsArgs", "unlockOnAppForegroundEnabled");
+            }
+            if ($.unlockOnAppStartEnabled == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingClientAppSettingsArgs", "unlockOnAppStartEnabled");
+            }
             return $;
         }
     }

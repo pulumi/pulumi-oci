@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
 
         @CustomType.Setter
         public Builder dbLoginAttempts(Integer dbLoginAttempts) {
-            this.dbLoginAttempts = Objects.requireNonNull(dbLoginAttempts);
+            if (dbLoginAttempts == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser", "dbLoginAttempts");
+            }
+            this.dbLoginAttempts = dbLoginAttempts;
             return this;
         }
         @CustomType.Setter
         public Builder dbUserName(String dbUserName) {
-            this.dbUserName = Objects.requireNonNull(dbUserName);
+            if (dbUserName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser", "dbUserName");
+            }
+            this.dbUserName = dbUserName;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser build() {

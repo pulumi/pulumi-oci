@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -215,37 +216,58 @@ public final class GetComputeCapacityReservationsComputeCapacityReservation {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationsComputeCapacityReservation", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationsComputeCapacityReservation", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationsComputeCapacityReservation", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationsComputeCapacityReservation", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationsComputeCapacityReservation", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationsComputeCapacityReservation", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceReservationConfigs(List<GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig> instanceReservationConfigs) {
-            this.instanceReservationConfigs = Objects.requireNonNull(instanceReservationConfigs);
+            if (instanceReservationConfigs == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationsComputeCapacityReservation", "instanceReservationConfigs");
+            }
+            this.instanceReservationConfigs = instanceReservationConfigs;
             return this;
         }
         public Builder instanceReservationConfigs(GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig... instanceReservationConfigs) {
@@ -253,32 +275,50 @@ public final class GetComputeCapacityReservationsComputeCapacityReservation {
         }
         @CustomType.Setter
         public Builder isDefaultReservation(Boolean isDefaultReservation) {
-            this.isDefaultReservation = Objects.requireNonNull(isDefaultReservation);
+            if (isDefaultReservation == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationsComputeCapacityReservation", "isDefaultReservation");
+            }
+            this.isDefaultReservation = isDefaultReservation;
             return this;
         }
         @CustomType.Setter
         public Builder reservedInstanceCount(String reservedInstanceCount) {
-            this.reservedInstanceCount = Objects.requireNonNull(reservedInstanceCount);
+            if (reservedInstanceCount == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationsComputeCapacityReservation", "reservedInstanceCount");
+            }
+            this.reservedInstanceCount = reservedInstanceCount;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationsComputeCapacityReservation", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationsComputeCapacityReservation", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationsComputeCapacityReservation", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder usedInstanceCount(String usedInstanceCount) {
-            this.usedInstanceCount = Objects.requireNonNull(usedInstanceCount);
+            if (usedInstanceCount == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationsComputeCapacityReservation", "usedInstanceCount");
+            }
+            this.usedInstanceCount = usedInstanceCount;
             return this;
         }
         public GetComputeCapacityReservationsComputeCapacityReservation build() {

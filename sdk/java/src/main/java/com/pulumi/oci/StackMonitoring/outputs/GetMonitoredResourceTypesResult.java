@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceTypesFilter;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceTypesMonitoredResourceTypesCollection;
 import java.lang.Boolean;
@@ -134,11 +135,15 @@ public final class GetMonitoredResourceTypesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTypesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder excludeFields(@Nullable List<String> excludeFields) {
+
             this.excludeFields = excludeFields;
             return this;
         }
@@ -147,6 +152,7 @@ public final class GetMonitoredResourceTypesResult {
         }
         @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
+
             this.fields = fields;
             return this;
         }
@@ -155,6 +161,7 @@ public final class GetMonitoredResourceTypesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMonitoredResourceTypesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -163,22 +170,30 @@ public final class GetMonitoredResourceTypesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTypesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isExcludeSystemTypes(@Nullable Boolean isExcludeSystemTypes) {
+
             this.isExcludeSystemTypes = isExcludeSystemTypes;
             return this;
         }
         @CustomType.Setter
         public Builder metricNamespace(@Nullable String metricNamespace) {
+
             this.metricNamespace = metricNamespace;
             return this;
         }
         @CustomType.Setter
         public Builder monitoredResourceTypesCollections(List<GetMonitoredResourceTypesMonitoredResourceTypesCollection> monitoredResourceTypesCollections) {
-            this.monitoredResourceTypesCollections = Objects.requireNonNull(monitoredResourceTypesCollections);
+            if (monitoredResourceTypesCollections == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTypesResult", "monitoredResourceTypesCollections");
+            }
+            this.monitoredResourceTypesCollections = monitoredResourceTypesCollections;
             return this;
         }
         public Builder monitoredResourceTypesCollections(GetMonitoredResourceTypesMonitoredResourceTypesCollection... monitoredResourceTypesCollections) {
@@ -186,11 +201,13 @@ public final class GetMonitoredResourceTypesResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }

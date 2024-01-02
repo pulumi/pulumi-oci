@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -679,36 +680,45 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
 
         @CustomType.Setter
         public Builder certMatchAttribute(String certMatchAttribute) {
-            this.certMatchAttribute = Objects.requireNonNull(certMatchAttribute);
+            if (certMatchAttribute == null) {
+              throw new MissingRequiredPropertyException("DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider", "certMatchAttribute");
+            }
+            this.certMatchAttribute = certMatchAttribute;
             return this;
         }
         @CustomType.Setter
         public Builder crlCheckOnOcspFailureEnabled(@Nullable Boolean crlCheckOnOcspFailureEnabled) {
+
             this.crlCheckOnOcspFailureEnabled = crlCheckOnOcspFailureEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder crlEnabled(@Nullable Boolean crlEnabled) {
+
             this.crlEnabled = crlEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder crlLocation(@Nullable String crlLocation) {
+
             this.crlLocation = crlLocation;
             return this;
         }
         @CustomType.Setter
         public Builder crlReloadDuration(@Nullable Integer crlReloadDuration) {
+
             this.crlReloadDuration = crlReloadDuration;
             return this;
         }
         @CustomType.Setter
         public Builder ekuValidationEnabled(@Nullable Boolean ekuValidationEnabled) {
+
             this.ekuValidationEnabled = ekuValidationEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder ekuValues(@Nullable List<String> ekuValues) {
+
             this.ekuValues = ekuValues;
             return this;
         }
@@ -717,36 +727,43 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         }
         @CustomType.Setter
         public Builder ocspAllowUnknownResponseStatus(@Nullable Boolean ocspAllowUnknownResponseStatus) {
+
             this.ocspAllowUnknownResponseStatus = ocspAllowUnknownResponseStatus;
             return this;
         }
         @CustomType.Setter
         public Builder ocspEnableSignedResponse(@Nullable Boolean ocspEnableSignedResponse) {
+
             this.ocspEnableSignedResponse = ocspEnableSignedResponse;
             return this;
         }
         @CustomType.Setter
         public Builder ocspEnabled(@Nullable Boolean ocspEnabled) {
+
             this.ocspEnabled = ocspEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder ocspResponderUrl(@Nullable String ocspResponderUrl) {
+
             this.ocspResponderUrl = ocspResponderUrl;
             return this;
         }
         @CustomType.Setter
         public Builder ocspRevalidateTime(@Nullable Integer ocspRevalidateTime) {
+
             this.ocspRevalidateTime = ocspRevalidateTime;
             return this;
         }
         @CustomType.Setter
         public Builder ocspServerName(@Nullable String ocspServerName) {
+
             this.ocspServerName = ocspServerName;
             return this;
         }
         @CustomType.Setter
         public Builder ocspTrustCertChains(@Nullable List<String> ocspTrustCertChains) {
+
             this.ocspTrustCertChains = ocspTrustCertChains;
             return this;
         }
@@ -755,12 +772,16 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         }
         @CustomType.Setter
         public Builder otherCertMatchAttribute(@Nullable String otherCertMatchAttribute) {
+
             this.otherCertMatchAttribute = otherCertMatchAttribute;
             return this;
         }
         @CustomType.Setter
         public Builder signingCertificateChains(List<String> signingCertificateChains) {
-            this.signingCertificateChains = Objects.requireNonNull(signingCertificateChains);
+            if (signingCertificateChains == null) {
+              throw new MissingRequiredPropertyException("DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider", "signingCertificateChains");
+            }
+            this.signingCertificateChains = signingCertificateChains;
             return this;
         }
         public Builder signingCertificateChains(String... signingCertificateChains) {
@@ -768,7 +789,10 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         }
         @CustomType.Setter
         public Builder userMatchAttribute(String userMatchAttribute) {
-            this.userMatchAttribute = Objects.requireNonNull(userMatchAttribute);
+            if (userMatchAttribute == null) {
+              throw new MissingRequiredPropertyException("DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider", "userMatchAttribute");
+            }
+            this.userMatchAttribute = userMatchAttribute;
             return this;
         }
         public DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider build() {

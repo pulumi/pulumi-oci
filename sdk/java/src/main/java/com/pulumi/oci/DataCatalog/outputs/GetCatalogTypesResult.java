@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataCatalog.outputs.GetCatalogTypesFilter;
 import com.pulumi.oci.DataCatalog.outputs.GetCatalogTypesTypeCollection;
 import java.lang.String;
@@ -185,16 +186,21 @@ public final class GetCatalogTypesResult {
 
         @CustomType.Setter
         public Builder catalogId(String catalogId) {
-            this.catalogId = Objects.requireNonNull(catalogId);
+            if (catalogId == null) {
+              throw new MissingRequiredPropertyException("GetCatalogTypesResult", "catalogId");
+            }
+            this.catalogId = catalogId;
             return this;
         }
         @CustomType.Setter
         public Builder externalTypeName(@Nullable String externalTypeName) {
+
             this.externalTypeName = externalTypeName;
             return this;
         }
         @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
+
             this.fields = fields;
             return this;
         }
@@ -203,6 +209,7 @@ public final class GetCatalogTypesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCatalogTypesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -211,42 +218,54 @@ public final class GetCatalogTypesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCatalogTypesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isApproved(@Nullable String isApproved) {
+
             this.isApproved = isApproved;
             return this;
         }
         @CustomType.Setter
         public Builder isInternal(@Nullable String isInternal) {
+
             this.isInternal = isInternal;
             return this;
         }
         @CustomType.Setter
         public Builder isTag(@Nullable String isTag) {
+
             this.isTag = isTag;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder typeCategory(@Nullable String typeCategory) {
+
             this.typeCategory = typeCategory;
             return this;
         }
         @CustomType.Setter
         public Builder typeCollections(List<GetCatalogTypesTypeCollection> typeCollections) {
-            this.typeCollections = Objects.requireNonNull(typeCollections);
+            if (typeCollections == null) {
+              throw new MissingRequiredPropertyException("GetCatalogTypesResult", "typeCollections");
+            }
+            this.typeCollections = typeCollections;
             return this;
         }
         public Builder typeCollections(GetCatalogTypesTypeCollection... typeCollections) {

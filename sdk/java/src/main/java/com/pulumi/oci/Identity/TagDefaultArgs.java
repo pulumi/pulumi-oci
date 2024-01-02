@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -216,9 +217,15 @@ public final class TagDefaultArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public TagDefaultArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.tagDefinitionId = Objects.requireNonNull($.tagDefinitionId, "expected parameter 'tagDefinitionId' to be non-null");
-            $.value = Objects.requireNonNull($.value, "expected parameter 'value' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("TagDefaultArgs", "compartmentId");
+            }
+            if ($.tagDefinitionId == null) {
+                throw new MissingRequiredPropertyException("TagDefaultArgs", "tagDefinitionId");
+            }
+            if ($.value == null) {
+                throw new MissingRequiredPropertyException("TagDefaultArgs", "value");
+            }
             return $;
         }
     }

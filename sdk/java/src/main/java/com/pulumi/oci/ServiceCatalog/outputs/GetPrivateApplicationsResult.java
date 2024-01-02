@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceCatalog.outputs.GetPrivateApplicationsFilter;
 import com.pulumi.oci.ServiceCatalog.outputs.GetPrivateApplicationsPrivateApplicationCollection;
 import java.lang.String;
@@ -101,16 +102,21 @@ public final class GetPrivateApplicationsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPrivateApplicationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -119,12 +125,18 @@ public final class GetPrivateApplicationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder privateApplicationCollections(List<GetPrivateApplicationsPrivateApplicationCollection> privateApplicationCollections) {
-            this.privateApplicationCollections = Objects.requireNonNull(privateApplicationCollections);
+            if (privateApplicationCollections == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationsResult", "privateApplicationCollections");
+            }
+            this.privateApplicationCollections = privateApplicationCollections;
             return this;
         }
         public Builder privateApplicationCollections(GetPrivateApplicationsPrivateApplicationCollection... privateApplicationCollections) {
@@ -132,6 +144,7 @@ public final class GetPrivateApplicationsResult {
         }
         @CustomType.Setter
         public Builder privateApplicationId(@Nullable String privateApplicationId) {
+
             this.privateApplicationId = privateApplicationId;
             return this;
         }

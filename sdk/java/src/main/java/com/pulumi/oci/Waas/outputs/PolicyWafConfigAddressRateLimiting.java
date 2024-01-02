@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.util.Objects;
@@ -87,21 +88,27 @@ public final class PolicyWafConfigAddressRateLimiting {
 
         @CustomType.Setter
         public Builder allowedRatePerAddress(@Nullable Integer allowedRatePerAddress) {
+
             this.allowedRatePerAddress = allowedRatePerAddress;
             return this;
         }
         @CustomType.Setter
         public Builder blockResponseCode(@Nullable Integer blockResponseCode) {
+
             this.blockResponseCode = blockResponseCode;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("PolicyWafConfigAddressRateLimiting", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder maxDelayedCountPerAddress(@Nullable Integer maxDelayedCountPerAddress) {
+
             this.maxDelayedCountPerAddress = maxDelayedCountPerAddress;
             return this;
         }

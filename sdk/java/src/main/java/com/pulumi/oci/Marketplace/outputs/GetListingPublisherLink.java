@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetListingPublisherLink {
 
         @CustomType.Setter
         public Builder href(String href) {
-            this.href = Objects.requireNonNull(href);
+            if (href == null) {
+              throw new MissingRequiredPropertyException("GetListingPublisherLink", "href");
+            }
+            this.href = href;
             return this;
         }
         @CustomType.Setter
         public Builder rel(String rel) {
-            this.rel = Objects.requireNonNull(rel);
+            if (rel == null) {
+              throw new MissingRequiredPropertyException("GetListingPublisherLink", "rel");
+            }
+            this.rel = rel;
             return this;
         }
         public GetListingPublisherLink build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceListOsPatchesFilter;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceListOsPatchesOsPatch;
 import java.lang.String;
@@ -72,11 +73,15 @@ public final class GetBdsInstanceListOsPatchesResult {
 
         @CustomType.Setter
         public Builder bdsInstanceId(String bdsInstanceId) {
-            this.bdsInstanceId = Objects.requireNonNull(bdsInstanceId);
+            if (bdsInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceListOsPatchesResult", "bdsInstanceId");
+            }
+            this.bdsInstanceId = bdsInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBdsInstanceListOsPatchesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -85,12 +90,18 @@ public final class GetBdsInstanceListOsPatchesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceListOsPatchesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder osPatches(List<GetBdsInstanceListOsPatchesOsPatch> osPatches) {
-            this.osPatches = Objects.requireNonNull(osPatches);
+            if (osPatches == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceListOsPatchesResult", "osPatches");
+            }
+            this.osPatches = osPatches;
             return this;
         }
         public Builder osPatches(GetBdsInstanceListOsPatchesOsPatch... osPatches) {

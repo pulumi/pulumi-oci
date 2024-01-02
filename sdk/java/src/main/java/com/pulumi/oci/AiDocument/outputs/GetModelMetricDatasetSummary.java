@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiDocument.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetModelMetricDatasetSummary {
 
         @CustomType.Setter
         public Builder testSampleCount(Integer testSampleCount) {
-            this.testSampleCount = Objects.requireNonNull(testSampleCount);
+            if (testSampleCount == null) {
+              throw new MissingRequiredPropertyException("GetModelMetricDatasetSummary", "testSampleCount");
+            }
+            this.testSampleCount = testSampleCount;
             return this;
         }
         @CustomType.Setter
         public Builder trainingSampleCount(Integer trainingSampleCount) {
-            this.trainingSampleCount = Objects.requireNonNull(trainingSampleCount);
+            if (trainingSampleCount == null) {
+              throw new MissingRequiredPropertyException("GetModelMetricDatasetSummary", "trainingSampleCount");
+            }
+            this.trainingSampleCount = trainingSampleCount;
             return this;
         }
         @CustomType.Setter
         public Builder validationSampleCount(Integer validationSampleCount) {
-            this.validationSampleCount = Objects.requireNonNull(validationSampleCount);
+            if (validationSampleCount == null) {
+              throw new MissingRequiredPropertyException("GetModelMetricDatasetSummary", "validationSampleCount");
+            }
+            this.validationSampleCount = validationSampleCount;
             return this;
         }
         public GetModelMetricDatasetSummary build() {

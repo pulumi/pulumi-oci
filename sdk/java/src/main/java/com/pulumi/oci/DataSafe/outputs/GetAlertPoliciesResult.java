@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetAlertPoliciesAlertPolicyCollection;
 import com.pulumi.oci.DataSafe.outputs.GetAlertPoliciesFilter;
 import java.lang.Boolean;
@@ -160,12 +161,16 @@ public final class GetAlertPoliciesResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder alertPolicyCollections(List<GetAlertPoliciesAlertPolicyCollection> alertPolicyCollections) {
-            this.alertPolicyCollections = Objects.requireNonNull(alertPolicyCollections);
+            if (alertPolicyCollections == null) {
+              throw new MissingRequiredPropertyException("GetAlertPoliciesResult", "alertPolicyCollections");
+            }
+            this.alertPolicyCollections = alertPolicyCollections;
             return this;
         }
         public Builder alertPolicyCollections(GetAlertPoliciesAlertPolicyCollection... alertPolicyCollections) {
@@ -173,26 +178,33 @@ public final class GetAlertPoliciesResult {
         }
         @CustomType.Setter
         public Builder alertPolicyId(@Nullable String alertPolicyId) {
+
             this.alertPolicyId = alertPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAlertPoliciesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAlertPoliciesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -201,31 +213,39 @@ public final class GetAlertPoliciesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAlertPoliciesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isUserDefined(@Nullable Boolean isUserDefined) {
+
             this.isUserDefined = isUserDefined;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
+
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
+
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }

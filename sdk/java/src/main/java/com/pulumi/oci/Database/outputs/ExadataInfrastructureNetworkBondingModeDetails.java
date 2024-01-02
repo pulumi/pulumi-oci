@@ -72,16 +72,19 @@ public final class ExadataInfrastructureNetworkBondingModeDetails {
 
         @CustomType.Setter
         public Builder backupNetworkBondingMode(@Nullable String backupNetworkBondingMode) {
+
             this.backupNetworkBondingMode = backupNetworkBondingMode;
             return this;
         }
         @CustomType.Setter
         public Builder clientNetworkBondingMode(@Nullable String clientNetworkBondingMode) {
+
             this.clientNetworkBondingMode = clientNetworkBondingMode;
             return this;
         }
         @CustomType.Setter
         public Builder drNetworkBondingMode(@Nullable String drNetworkBondingMode) {
+
             this.drNetworkBondingMode = drNetworkBondingMode;
             return this;
         }

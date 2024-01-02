@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsMySmtpCredentialTagArgs;
 import com.pulumi.oci.Identity.inputs.DomainsMySmtpCredentialUserArgs;
 import java.lang.String;
@@ -736,8 +737,12 @@ public final class DomainsMySmtpCredentialArgs extends com.pulumi.resources.Reso
         }
 
         public DomainsMySmtpCredentialArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsMySmtpCredentialArgs", "idcsEndpoint");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsMySmtpCredentialArgs", "schemas");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousExadataInfrastructureOcpuByWorkloadType;
 import java.lang.Double;
 import java.lang.String;
@@ -93,12 +94,18 @@ public final class GetAutonomousExadataInfrastructureOcpuResult {
 
         @CustomType.Setter
         public Builder autonomousExadataInfrastructureId(String autonomousExadataInfrastructureId) {
-            this.autonomousExadataInfrastructureId = Objects.requireNonNull(autonomousExadataInfrastructureId);
+            if (autonomousExadataInfrastructureId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructureOcpuResult", "autonomousExadataInfrastructureId");
+            }
+            this.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
         public Builder byWorkloadTypes(List<GetAutonomousExadataInfrastructureOcpuByWorkloadType> byWorkloadTypes) {
-            this.byWorkloadTypes = Objects.requireNonNull(byWorkloadTypes);
+            if (byWorkloadTypes == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructureOcpuResult", "byWorkloadTypes");
+            }
+            this.byWorkloadTypes = byWorkloadTypes;
             return this;
         }
         public Builder byWorkloadTypes(GetAutonomousExadataInfrastructureOcpuByWorkloadType... byWorkloadTypes) {
@@ -106,17 +113,26 @@ public final class GetAutonomousExadataInfrastructureOcpuResult {
         }
         @CustomType.Setter
         public Builder consumedCpu(Double consumedCpu) {
-            this.consumedCpu = Objects.requireNonNull(consumedCpu);
+            if (consumedCpu == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructureOcpuResult", "consumedCpu");
+            }
+            this.consumedCpu = consumedCpu;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructureOcpuResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder totalCpu(Double totalCpu) {
-            this.totalCpu = Objects.requireNonNull(totalCpu);
+            if (totalCpu == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructureOcpuResult", "totalCpu");
+            }
+            this.totalCpu = totalCpu;
             return this;
         }
         public GetAutonomousExadataInfrastructureOcpuResult build() {

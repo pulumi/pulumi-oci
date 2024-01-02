@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -88,16 +89,21 @@ public final class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails {
 
         @CustomType.Setter
         public Builder cniType(String cniType) {
-            this.cniType = Objects.requireNonNull(cniType);
+            if (cniType == null) {
+              throw new MissingRequiredPropertyException("NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails", "cniType");
+            }
+            this.cniType = cniType;
             return this;
         }
         @CustomType.Setter
         public Builder maxPodsPerNode(@Nullable Integer maxPodsPerNode) {
+
             this.maxPodsPerNode = maxPodsPerNode;
             return this;
         }
         @CustomType.Setter
         public Builder podNsgIds(@Nullable List<String> podNsgIds) {
+
             this.podNsgIds = podNsgIds;
             return this;
         }
@@ -106,6 +112,7 @@ public final class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails {
         }
         @CustomType.Setter
         public Builder podSubnetIds(@Nullable List<String> podSubnetIds) {
+
             this.podSubnetIds = podSubnetIds;
             return this;
         }

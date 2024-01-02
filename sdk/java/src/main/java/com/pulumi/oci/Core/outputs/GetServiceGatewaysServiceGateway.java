@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetServiceGatewaysServiceGatewayService;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -187,42 +188,66 @@ public final class GetServiceGatewaysServiceGateway {
 
         @CustomType.Setter
         public Builder blockTraffic(Boolean blockTraffic) {
-            this.blockTraffic = Objects.requireNonNull(blockTraffic);
+            if (blockTraffic == null) {
+              throw new MissingRequiredPropertyException("GetServiceGatewaysServiceGateway", "blockTraffic");
+            }
+            this.blockTraffic = blockTraffic;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetServiceGatewaysServiceGateway", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetServiceGatewaysServiceGateway", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetServiceGatewaysServiceGateway", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetServiceGatewaysServiceGateway", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetServiceGatewaysServiceGateway", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder routeTableId(String routeTableId) {
-            this.routeTableId = Objects.requireNonNull(routeTableId);
+            if (routeTableId == null) {
+              throw new MissingRequiredPropertyException("GetServiceGatewaysServiceGateway", "routeTableId");
+            }
+            this.routeTableId = routeTableId;
             return this;
         }
         @CustomType.Setter
         public Builder services(List<GetServiceGatewaysServiceGatewayService> services) {
-            this.services = Objects.requireNonNull(services);
+            if (services == null) {
+              throw new MissingRequiredPropertyException("GetServiceGatewaysServiceGateway", "services");
+            }
+            this.services = services;
             return this;
         }
         public Builder services(GetServiceGatewaysServiceGatewayService... services) {
@@ -230,17 +255,26 @@ public final class GetServiceGatewaysServiceGateway {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetServiceGatewaysServiceGateway", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetServiceGatewaysServiceGateway", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+            if (vcnId == null) {
+              throw new MissingRequiredPropertyException("GetServiceGatewaysServiceGateway", "vcnId");
+            }
+            this.vcnId = vcnId;
             return this;
         }
         public GetServiceGatewaysServiceGateway build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Marketplace.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -150,8 +151,12 @@ public final class GetListingPackageArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetListingPackageArgs build() {
-            $.listingId = Objects.requireNonNull($.listingId, "expected parameter 'listingId' to be non-null");
-            $.packageVersion = Objects.requireNonNull($.packageVersion, "expected parameter 'packageVersion' to be non-null");
+            if ($.listingId == null) {
+                throw new MissingRequiredPropertyException("GetListingPackageArgs", "listingId");
+            }
+            if ($.packageVersion == null) {
+                throw new MissingRequiredPropertyException("GetListingPackageArgs", "packageVersion");
+            }
             return $;
         }
     }

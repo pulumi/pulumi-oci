@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.VmClusterRemoveVirtualMachineDbServerArgs;
 import java.lang.String;
 import java.util.List;
@@ -135,8 +136,12 @@ public final class VmClusterRemoveVirtualMachineArgs extends com.pulumi.resource
         }
 
         public VmClusterRemoveVirtualMachineArgs build() {
-            $.dbServers = Objects.requireNonNull($.dbServers, "expected parameter 'dbServers' to be non-null");
-            $.vmClusterId = Objects.requireNonNull($.vmClusterId, "expected parameter 'vmClusterId' to be non-null");
+            if ($.dbServers == null) {
+                throw new MissingRequiredPropertyException("VmClusterRemoveVirtualMachineArgs", "dbServers");
+            }
+            if ($.vmClusterId == null) {
+                throw new MissingRequiredPropertyException("VmClusterRemoveVirtualMachineArgs", "vmClusterId");
+            }
             return $;
         }
     }

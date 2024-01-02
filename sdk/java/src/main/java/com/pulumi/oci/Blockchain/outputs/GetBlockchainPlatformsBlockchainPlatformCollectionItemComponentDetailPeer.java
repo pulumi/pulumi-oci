@@ -4,6 +4,7 @@
 package com.pulumi.oci.Blockchain.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Blockchain.outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParam;
 import java.lang.String;
 import java.util.List;
@@ -128,22 +129,34 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
 
         @CustomType.Setter
         public Builder ad(String ad) {
-            this.ad = Objects.requireNonNull(ad);
+            if (ad == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer", "ad");
+            }
+            this.ad = ad;
             return this;
         }
         @CustomType.Setter
         public Builder alias(String alias) {
-            this.alias = Objects.requireNonNull(alias);
+            if (alias == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer", "alias");
+            }
+            this.alias = alias;
             return this;
         }
         @CustomType.Setter
         public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+            if (host == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer", "host");
+            }
+            this.host = host;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuAllocationParams(List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParam> ocpuAllocationParams) {
-            this.ocpuAllocationParams = Objects.requireNonNull(ocpuAllocationParams);
+            if (ocpuAllocationParams == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer", "ocpuAllocationParams");
+            }
+            this.ocpuAllocationParams = ocpuAllocationParams;
             return this;
         }
         public Builder ocpuAllocationParams(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParam... ocpuAllocationParams) {
@@ -151,17 +164,26 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
         }
         @CustomType.Setter
         public Builder peerKey(String peerKey) {
-            this.peerKey = Objects.requireNonNull(peerKey);
+            if (peerKey == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer", "peerKey");
+            }
+            this.peerKey = peerKey;
             return this;
         }
         @CustomType.Setter
         public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+            if (role == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer", "role");
+            }
+            this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer", "state");
+            }
+            this.state = state;
             return this;
         }
         public GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer build() {

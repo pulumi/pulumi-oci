@@ -5,6 +5,7 @@ package com.pulumi.oci.Psql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.inputs.DbSystemCredentialsPasswordDetailsArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -112,8 +113,12 @@ public final class DbSystemCredentialsArgs extends com.pulumi.resources.Resource
         }
 
         public DbSystemCredentialsArgs build() {
-            $.passwordDetails = Objects.requireNonNull($.passwordDetails, "expected parameter 'passwordDetails' to be non-null");
-            $.username = Objects.requireNonNull($.username, "expected parameter 'username' to be non-null");
+            if ($.passwordDetails == null) {
+                throw new MissingRequiredPropertyException("DbSystemCredentialsArgs", "passwordDetails");
+            }
+            if ($.username == null) {
+                throw new MissingRequiredPropertyException("DbSystemCredentialsArgs", "username");
+            }
             return $;
         }
     }

@@ -87,21 +87,25 @@ public final class AtCustomerCccInfrastructureUpgradeInformation {
 
         @CustomType.Setter
         public Builder currentVersion(@Nullable String currentVersion) {
+
             this.currentVersion = currentVersion;
             return this;
         }
         @CustomType.Setter
         public Builder isActive(@Nullable Boolean isActive) {
+
             this.isActive = isActive;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledUpgradeDuration(@Nullable String scheduledUpgradeDuration) {
+
             this.scheduledUpgradeDuration = scheduledUpgradeDuration;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfScheduledUpgrade(@Nullable String timeOfScheduledUpgrade) {
+
             this.timeOfScheduledUpgrade = timeOfScheduledUpgrade;
             return this;
         }

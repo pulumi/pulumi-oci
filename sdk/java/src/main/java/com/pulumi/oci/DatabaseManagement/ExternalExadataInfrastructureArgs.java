@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -297,9 +298,15 @@ public final class ExternalExadataInfrastructureArgs extends com.pulumi.resource
         }
 
         public ExternalExadataInfrastructureArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.dbSystemIds = Objects.requireNonNull($.dbSystemIds, "expected parameter 'dbSystemIds' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ExternalExadataInfrastructureArgs", "compartmentId");
+            }
+            if ($.dbSystemIds == null) {
+                throw new MissingRequiredPropertyException("ExternalExadataInfrastructureArgs", "dbSystemIds");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ExternalExadataInfrastructureArgs", "displayName");
+            }
             return $;
         }
     }

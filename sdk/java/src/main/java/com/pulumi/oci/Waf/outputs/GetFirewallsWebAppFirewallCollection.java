@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.GetFirewallsWebAppFirewallCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetFirewallsWebAppFirewallCollection {
 
         @CustomType.Setter
         public Builder items(List<GetFirewallsWebAppFirewallCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetFirewallsWebAppFirewallCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetFirewallsWebAppFirewallCollectionItem... items) {

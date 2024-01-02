@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -197,10 +198,18 @@ public final class MonitoredResourcesAssociateMonitoredResourceArgs extends com.
         }
 
         public MonitoredResourcesAssociateMonitoredResourceArgs build() {
-            $.associationType = Objects.requireNonNull($.associationType, "expected parameter 'associationType' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.destinationResourceId = Objects.requireNonNull($.destinationResourceId, "expected parameter 'destinationResourceId' to be non-null");
-            $.sourceResourceId = Objects.requireNonNull($.sourceResourceId, "expected parameter 'sourceResourceId' to be non-null");
+            if ($.associationType == null) {
+                throw new MissingRequiredPropertyException("MonitoredResourcesAssociateMonitoredResourceArgs", "associationType");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("MonitoredResourcesAssociateMonitoredResourceArgs", "compartmentId");
+            }
+            if ($.destinationResourceId == null) {
+                throw new MissingRequiredPropertyException("MonitoredResourcesAssociateMonitoredResourceArgs", "destinationResourceId");
+            }
+            if ($.sourceResourceId == null) {
+                throw new MissingRequiredPropertyException("MonitoredResourcesAssociateMonitoredResourceArgs", "sourceResourceId");
+            }
             return $;
         }
     }

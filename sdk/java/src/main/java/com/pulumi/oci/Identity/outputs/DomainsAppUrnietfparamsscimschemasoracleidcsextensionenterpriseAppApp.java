@@ -220,16 +220,19 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpri
 
         @CustomType.Setter
         public Builder allowAuthzDecisionTtl(@Nullable Integer allowAuthzDecisionTtl) {
+
             this.allowAuthzDecisionTtl = allowAuthzDecisionTtl;
             return this;
         }
         @CustomType.Setter
         public Builder allowAuthzPolicy(@Nullable DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicy allowAuthzPolicy) {
+
             this.allowAuthzPolicy = allowAuthzPolicy;
             return this;
         }
         @CustomType.Setter
         public Builder appResources(@Nullable List<DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResource> appResources) {
+
             this.appResources = appResources;
             return this;
         }
@@ -238,11 +241,13 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpri
         }
         @CustomType.Setter
         public Builder denyAuthzDecisionTtl(@Nullable Integer denyAuthzDecisionTtl) {
+
             this.denyAuthzDecisionTtl = denyAuthzDecisionTtl;
             return this;
         }
         @CustomType.Setter
         public Builder denyAuthzPolicy(@Nullable DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicy denyAuthzPolicy) {
+
             this.denyAuthzPolicy = denyAuthzPolicy;
             return this;
         }

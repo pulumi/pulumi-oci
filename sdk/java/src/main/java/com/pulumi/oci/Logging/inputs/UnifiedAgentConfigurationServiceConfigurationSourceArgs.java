@@ -5,6 +5,7 @@ package com.pulumi.oci.Logging.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserArgs;
 import java.lang.String;
 import java.util.List;
@@ -258,7 +259,9 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
         }
 
         public UnifiedAgentConfigurationServiceConfigurationSourceArgs build() {
-            $.sourceType = Objects.requireNonNull($.sourceType, "expected parameter 'sourceType' to be non-null");
+            if ($.sourceType == null) {
+                throw new MissingRequiredPropertyException("UnifiedAgentConfigurationServiceConfigurationSourceArgs", "sourceType");
+            }
             return $;
         }
     }

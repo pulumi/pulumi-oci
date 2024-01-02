@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetVolumeBackupsFilter;
 import com.pulumi.oci.Core.outputs.GetVolumeBackupsVolumeBackup;
 import java.lang.String;
@@ -137,16 +138,21 @@ public final class GetVolumeBackupsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVolumeBackupsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -155,22 +161,30 @@ public final class GetVolumeBackupsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder sourceVolumeBackupId(@Nullable String sourceVolumeBackupId) {
+
             this.sourceVolumeBackupId = sourceVolumeBackupId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder volumeBackups(List<GetVolumeBackupsVolumeBackup> volumeBackups) {
-            this.volumeBackups = Objects.requireNonNull(volumeBackups);
+            if (volumeBackups == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupsResult", "volumeBackups");
+            }
+            this.volumeBackups = volumeBackups;
             return this;
         }
         public Builder volumeBackups(GetVolumeBackupsVolumeBackup... volumeBackups) {
@@ -178,6 +192,7 @@ public final class GetVolumeBackupsResult {
         }
         @CustomType.Setter
         public Builder volumeId(@Nullable String volumeId) {
+
             this.volumeId = volumeId;
             return this;
         }

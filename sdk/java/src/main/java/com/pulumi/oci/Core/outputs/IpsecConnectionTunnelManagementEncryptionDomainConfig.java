@@ -58,6 +58,7 @@ public final class IpsecConnectionTunnelManagementEncryptionDomainConfig {
 
         @CustomType.Setter
         public Builder cpeTrafficSelectors(@Nullable List<String> cpeTrafficSelectors) {
+
             this.cpeTrafficSelectors = cpeTrafficSelectors;
             return this;
         }
@@ -66,6 +67,7 @@ public final class IpsecConnectionTunnelManagementEncryptionDomainConfig {
         }
         @CustomType.Setter
         public Builder oracleTrafficSelectors(@Nullable List<String> oracleTrafficSelectors) {
+
             this.oracleTrafficSelectors = oracleTrafficSelectors;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -142,27 +143,42 @@ public final class GetExternalAsmServicedDatabase {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmServicedDatabase", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseSubType(String databaseSubType) {
-            this.databaseSubType = Objects.requireNonNull(databaseSubType);
+            if (databaseSubType == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmServicedDatabase", "databaseSubType");
+            }
+            this.databaseSubType = databaseSubType;
             return this;
         }
         @CustomType.Setter
         public Builder databaseType(String databaseType) {
-            this.databaseType = Objects.requireNonNull(databaseType);
+            if (databaseType == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmServicedDatabase", "databaseType");
+            }
+            this.databaseType = databaseType;
             return this;
         }
         @CustomType.Setter
         public Builder dbUniqueName(String dbUniqueName) {
-            this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
+            if (dbUniqueName == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmServicedDatabase", "dbUniqueName");
+            }
+            this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
         public Builder diskGroups(List<String> diskGroups) {
-            this.diskGroups = Objects.requireNonNull(diskGroups);
+            if (diskGroups == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmServicedDatabase", "diskGroups");
+            }
+            this.diskGroups = diskGroups;
             return this;
         }
         public Builder diskGroups(String... diskGroups) {
@@ -170,17 +186,26 @@ public final class GetExternalAsmServicedDatabase {
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmServicedDatabase", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmServicedDatabase", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isManaged(Boolean isManaged) {
-            this.isManaged = Objects.requireNonNull(isManaged);
+            if (isManaged == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmServicedDatabase", "isManaged");
+            }
+            this.isManaged = isManaged;
             return this;
         }
         public GetExternalAsmServicedDatabase build() {

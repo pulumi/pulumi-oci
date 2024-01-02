@@ -75,16 +75,19 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
 
         @CustomType.Setter
         public Builder bgpTopology(@Nullable String bgpTopology) {
+
             this.bgpTopology = bgpTopology;
             return this;
         }
         @CustomType.Setter
         public Builder oracleAsn(@Nullable Integer oracleAsn) {
+
             this.oracleAsn = oracleAsn;
             return this;
         }
         @CustomType.Setter
         public Builder peerInformations(@Nullable List<AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation> peerInformations) {
+
             this.peerInformations = peerInformations;
             return this;
         }

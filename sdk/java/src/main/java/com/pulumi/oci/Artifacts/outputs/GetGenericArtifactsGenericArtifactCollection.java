@@ -4,6 +4,7 @@
 package com.pulumi.oci.Artifacts.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Artifacts.outputs.GetGenericArtifactsGenericArtifactCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetGenericArtifactsGenericArtifactCollection {
 
         @CustomType.Setter
         public Builder items(List<GetGenericArtifactsGenericArtifactCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetGenericArtifactsGenericArtifactCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetGenericArtifactsGenericArtifactCollectionItem... items) {

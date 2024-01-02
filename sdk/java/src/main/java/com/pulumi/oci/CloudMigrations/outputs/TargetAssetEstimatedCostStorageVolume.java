@@ -87,21 +87,25 @@ public final class TargetAssetEstimatedCostStorageVolume {
 
         @CustomType.Setter
         public Builder capacityGb(@Nullable Double capacityGb) {
+
             this.capacityGb = capacityGb;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder totalGbPerMonth(@Nullable Double totalGbPerMonth) {
+
             this.totalGbPerMonth = totalGbPerMonth;
             return this;
         }
         @CustomType.Setter
         public Builder totalGbPerMonthBySubscription(@Nullable Double totalGbPerMonthBySubscription) {
+
             this.totalGbPerMonthBySubscription = totalGbPerMonthBySubscription;
             return this;
         }

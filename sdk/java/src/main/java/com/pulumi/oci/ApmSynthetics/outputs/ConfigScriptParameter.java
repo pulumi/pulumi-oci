@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.outputs.ConfigScriptParameterMonitorScriptParameter;
 import java.lang.Boolean;
 import java.lang.String;
@@ -103,16 +104,19 @@ public final class ConfigScriptParameter {
 
         @CustomType.Setter
         public Builder isOverwritten(@Nullable Boolean isOverwritten) {
+
             this.isOverwritten = isOverwritten;
             return this;
         }
         @CustomType.Setter
         public Builder isSecret(@Nullable Boolean isSecret) {
+
             this.isSecret = isSecret;
             return this;
         }
         @CustomType.Setter
         public Builder monitorScriptParameters(@Nullable List<ConfigScriptParameterMonitorScriptParameter> monitorScriptParameters) {
+
             this.monitorScriptParameters = monitorScriptParameters;
             return this;
         }
@@ -121,12 +125,18 @@ public final class ConfigScriptParameter {
         }
         @CustomType.Setter
         public Builder paramName(String paramName) {
-            this.paramName = Objects.requireNonNull(paramName);
+            if (paramName == null) {
+              throw new MissingRequiredPropertyException("ConfigScriptParameter", "paramName");
+            }
+            this.paramName = paramName;
             return this;
         }
         @CustomType.Setter
         public Builder paramValue(String paramValue) {
-            this.paramValue = Objects.requireNonNull(paramValue);
+            if (paramValue == null) {
+              throw new MissingRequiredPropertyException("ConfigScriptParameter", "paramValue");
+            }
+            this.paramValue = paramValue;
             return this;
         }
         public ConfigScriptParameter build() {

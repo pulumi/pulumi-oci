@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -397,9 +398,15 @@ public final class PrivateEndpointArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public PrivateEndpointArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.dataScienceResourceType = Objects.requireNonNull($.dataScienceResourceType, "expected parameter 'dataScienceResourceType' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("PrivateEndpointArgs", "compartmentId");
+            }
+            if ($.dataScienceResourceType == null) {
+                throw new MissingRequiredPropertyException("PrivateEndpointArgs", "dataScienceResourceType");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("PrivateEndpointArgs", "subnetId");
+            }
             return $;
         }
     }

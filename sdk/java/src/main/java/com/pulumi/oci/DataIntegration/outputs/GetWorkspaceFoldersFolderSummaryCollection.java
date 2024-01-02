@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceFoldersFolderSummaryCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetWorkspaceFoldersFolderSummaryCollection {
 
         @CustomType.Setter
         public Builder items(List<GetWorkspaceFoldersFolderSummaryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceFoldersFolderSummaryCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetWorkspaceFoldersFolderSummaryCollectionItem... items) {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.GetSmtpCredentialsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -99,7 +100,9 @@ public final class GetSmtpCredentialsArgs extends com.pulumi.resources.InvokeArg
         }
 
         public GetSmtpCredentialsArgs build() {
-            $.userId = Objects.requireNonNull($.userId, "expected parameter 'userId' to be non-null");
+            if ($.userId == null) {
+                throw new MissingRequiredPropertyException("GetSmtpCredentialsArgs", "userId");
+            }
             return $;
         }
     }

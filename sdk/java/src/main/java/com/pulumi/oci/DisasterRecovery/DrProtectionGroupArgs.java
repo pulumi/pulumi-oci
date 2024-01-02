@@ -5,6 +5,7 @@ package com.pulumi.oci.DisasterRecovery;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupAssociationArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupLogLocationArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberArgs;
@@ -364,9 +365,15 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
         }
 
         public DrProtectionGroupArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.logLocation = Objects.requireNonNull($.logLocation, "expected parameter 'logLocation' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("DrProtectionGroupArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("DrProtectionGroupArgs", "displayName");
+            }
+            if ($.logLocation == null) {
+                throw new MissingRequiredPropertyException("DrProtectionGroupArgs", "logLocation");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetBootVolumeAutotunePolicy;
 import com.pulumi.oci.Core.outputs.GetBootVolumeBootVolumeReplica;
 import com.pulumi.oci.Core.outputs.GetBootVolumeSourceDetail;
@@ -351,12 +352,18 @@ public final class GetBootVolumeResult {
 
         @CustomType.Setter
         public Builder autoTunedVpusPerGb(String autoTunedVpusPerGb) {
-            this.autoTunedVpusPerGb = Objects.requireNonNull(autoTunedVpusPerGb);
+            if (autoTunedVpusPerGb == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "autoTunedVpusPerGb");
+            }
+            this.autoTunedVpusPerGb = autoTunedVpusPerGb;
             return this;
         }
         @CustomType.Setter
         public Builder autotunePolicies(List<GetBootVolumeAutotunePolicy> autotunePolicies) {
-            this.autotunePolicies = Objects.requireNonNull(autotunePolicies);
+            if (autotunePolicies == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "autotunePolicies");
+            }
+            this.autotunePolicies = autotunePolicies;
             return this;
         }
         public Builder autotunePolicies(GetBootVolumeAutotunePolicy... autotunePolicies) {
@@ -364,22 +371,34 @@ public final class GetBootVolumeResult {
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder backupPolicyId(String backupPolicyId) {
-            this.backupPolicyId = Objects.requireNonNull(backupPolicyId);
+            if (backupPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "backupPolicyId");
+            }
+            this.backupPolicyId = backupPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder bootVolumeId(String bootVolumeId) {
-            this.bootVolumeId = Objects.requireNonNull(bootVolumeId);
+            if (bootVolumeId == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "bootVolumeId");
+            }
+            this.bootVolumeId = bootVolumeId;
             return this;
         }
         @CustomType.Setter
         public Builder bootVolumeReplicas(List<GetBootVolumeBootVolumeReplica> bootVolumeReplicas) {
-            this.bootVolumeReplicas = Objects.requireNonNull(bootVolumeReplicas);
+            if (bootVolumeReplicas == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "bootVolumeReplicas");
+            }
+            this.bootVolumeReplicas = bootVolumeReplicas;
             return this;
         }
         public Builder bootVolumeReplicas(GetBootVolumeBootVolumeReplica... bootVolumeReplicas) {
@@ -387,67 +406,106 @@ public final class GetBootVolumeResult {
         }
         @CustomType.Setter
         public Builder bootVolumeReplicasDeletion(Boolean bootVolumeReplicasDeletion) {
-            this.bootVolumeReplicasDeletion = Objects.requireNonNull(bootVolumeReplicasDeletion);
+            if (bootVolumeReplicasDeletion == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "bootVolumeReplicasDeletion");
+            }
+            this.bootVolumeReplicasDeletion = bootVolumeReplicasDeletion;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imageId(String imageId) {
-            this.imageId = Objects.requireNonNull(imageId);
+            if (imageId == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "imageId");
+            }
+            this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder isAutoTuneEnabled(Boolean isAutoTuneEnabled) {
-            this.isAutoTuneEnabled = Objects.requireNonNull(isAutoTuneEnabled);
+            if (isAutoTuneEnabled == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "isAutoTuneEnabled");
+            }
+            this.isAutoTuneEnabled = isAutoTuneEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isHydrated(Boolean isHydrated) {
-            this.isHydrated = Objects.requireNonNull(isHydrated);
+            if (isHydrated == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "isHydrated");
+            }
+            this.isHydrated = isHydrated;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInGbs(String sizeInGbs) {
-            this.sizeInGbs = Objects.requireNonNull(sizeInGbs);
+            if (sizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "sizeInGbs");
+            }
+            this.sizeInGbs = sizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInMbs(String sizeInMbs) {
-            this.sizeInMbs = Objects.requireNonNull(sizeInMbs);
+            if (sizeInMbs == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "sizeInMbs");
+            }
+            this.sizeInMbs = sizeInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder sourceDetails(List<GetBootVolumeSourceDetail> sourceDetails) {
-            this.sourceDetails = Objects.requireNonNull(sourceDetails);
+            if (sourceDetails == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "sourceDetails");
+            }
+            this.sourceDetails = sourceDetails;
             return this;
         }
         public Builder sourceDetails(GetBootVolumeSourceDetail... sourceDetails) {
@@ -455,27 +513,42 @@ public final class GetBootVolumeResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder volumeGroupId(String volumeGroupId) {
-            this.volumeGroupId = Objects.requireNonNull(volumeGroupId);
+            if (volumeGroupId == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "volumeGroupId");
+            }
+            this.volumeGroupId = volumeGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder vpusPerGb(String vpusPerGb) {
-            this.vpusPerGb = Objects.requireNonNull(vpusPerGb);
+            if (vpusPerGb == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "vpusPerGb");
+            }
+            this.vpusPerGb = vpusPerGb;
             return this;
         }
         public GetBootVolumeResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class MetricExtensionQueryPropertiesOutParamDetails {
 
         @CustomType.Setter
         public Builder outParamPosition(Integer outParamPosition) {
-            this.outParamPosition = Objects.requireNonNull(outParamPosition);
+            if (outParamPosition == null) {
+              throw new MissingRequiredPropertyException("MetricExtensionQueryPropertiesOutParamDetails", "outParamPosition");
+            }
+            this.outParamPosition = outParamPosition;
             return this;
         }
         @CustomType.Setter
         public Builder outParamType(String outParamType) {
-            this.outParamType = Objects.requireNonNull(outParamType);
+            if (outParamType == null) {
+              throw new MissingRequiredPropertyException("MetricExtensionQueryPropertiesOutParamDetails", "outParamType");
+            }
+            this.outParamType = outParamType;
             return this;
         }
         public MetricExtensionQueryPropertiesOutParamDetails build() {

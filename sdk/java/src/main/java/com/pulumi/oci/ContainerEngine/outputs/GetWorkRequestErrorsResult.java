@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetWorkRequestErrorsFilter;
 import com.pulumi.oci.ContainerEngine.outputs.GetWorkRequestErrorsWorkRequestError;
 import java.lang.String;
@@ -78,11 +79,15 @@ public final class GetWorkRequestErrorsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetWorkRequestErrorsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetWorkRequestErrorsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -91,12 +96,18 @@ public final class GetWorkRequestErrorsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetWorkRequestErrorsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder workRequestErrors(List<GetWorkRequestErrorsWorkRequestError> workRequestErrors) {
-            this.workRequestErrors = Objects.requireNonNull(workRequestErrors);
+            if (workRequestErrors == null) {
+              throw new MissingRequiredPropertyException("GetWorkRequestErrorsResult", "workRequestErrors");
+            }
+            this.workRequestErrors = workRequestErrors;
             return this;
         }
         public Builder workRequestErrors(GetWorkRequestErrorsWorkRequestError... workRequestErrors) {
@@ -104,7 +115,10 @@ public final class GetWorkRequestErrorsResult {
         }
         @CustomType.Setter
         public Builder workRequestId(String workRequestId) {
-            this.workRequestId = Objects.requireNonNull(workRequestId);
+            if (workRequestId == null) {
+              throw new MissingRequiredPropertyException("GetWorkRequestErrorsResult", "workRequestId");
+            }
+            this.workRequestId = workRequestId;
             return this;
         }
         public GetWorkRequestErrorsResult build() {

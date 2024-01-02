@@ -5,6 +5,7 @@ package com.pulumi.oci.DataFlow.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetSqlEndpointArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetSqlEndpointArgs build() {
-            $.sqlEndpointId = Objects.requireNonNull($.sqlEndpointId, "expected parameter 'sqlEndpointId' to be non-null");
+            if ($.sqlEndpointId == null) {
+                throw new MissingRequiredPropertyException("GetSqlEndpointArgs", "sqlEndpointId");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.inputs.TargetDatabaseConnectionOptionArgs;
 import com.pulumi.oci.DataSafe.inputs.TargetDatabaseCredentialsArgs;
 import com.pulumi.oci.DataSafe.inputs.TargetDatabaseDatabaseDetailsArgs;
@@ -378,8 +379,12 @@ public final class TargetDatabaseArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public TargetDatabaseArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.databaseDetails = Objects.requireNonNull($.databaseDetails, "expected parameter 'databaseDetails' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("TargetDatabaseArgs", "compartmentId");
+            }
+            if ($.databaseDetails == null) {
+                throw new MissingRequiredPropertyException("TargetDatabaseArgs", "databaseDetails");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -72,17 +73,26 @@ public final class GetPipelineStepDetailStepConfigurationDetail {
 
         @CustomType.Setter
         public Builder commandLineArguments(String commandLineArguments) {
-            this.commandLineArguments = Objects.requireNonNull(commandLineArguments);
+            if (commandLineArguments == null) {
+              throw new MissingRequiredPropertyException("GetPipelineStepDetailStepConfigurationDetail", "commandLineArguments");
+            }
+            this.commandLineArguments = commandLineArguments;
             return this;
         }
         @CustomType.Setter
         public Builder environmentVariables(Map<String,Object> environmentVariables) {
-            this.environmentVariables = Objects.requireNonNull(environmentVariables);
+            if (environmentVariables == null) {
+              throw new MissingRequiredPropertyException("GetPipelineStepDetailStepConfigurationDetail", "environmentVariables");
+            }
+            this.environmentVariables = environmentVariables;
             return this;
         }
         @CustomType.Setter
         public Builder maximumRuntimeInMinutes(String maximumRuntimeInMinutes) {
-            this.maximumRuntimeInMinutes = Objects.requireNonNull(maximumRuntimeInMinutes);
+            if (maximumRuntimeInMinutes == null) {
+              throw new MissingRequiredPropertyException("GetPipelineStepDetailStepConfigurationDetail", "maximumRuntimeInMinutes");
+            }
+            this.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
             return this;
         }
         public GetPipelineStepDetailStepConfigurationDetail build() {

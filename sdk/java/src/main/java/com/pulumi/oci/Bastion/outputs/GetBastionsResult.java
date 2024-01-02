@@ -4,6 +4,7 @@
 package com.pulumi.oci.Bastion.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Bastion.outputs.GetBastionsBastion;
 import com.pulumi.oci.Bastion.outputs.GetBastionsFilter;
 import java.lang.String;
@@ -107,17 +108,22 @@ public final class GetBastionsResult {
 
         @CustomType.Setter
         public Builder bastionId(@Nullable String bastionId) {
+
             this.bastionId = bastionId;
             return this;
         }
         @CustomType.Setter
         public Builder bastionLifecycleState(@Nullable String bastionLifecycleState) {
+
             this.bastionLifecycleState = bastionLifecycleState;
             return this;
         }
         @CustomType.Setter
         public Builder bastions(List<GetBastionsBastion> bastions) {
-            this.bastions = Objects.requireNonNull(bastions);
+            if (bastions == null) {
+              throw new MissingRequiredPropertyException("GetBastionsResult", "bastions");
+            }
+            this.bastions = bastions;
             return this;
         }
         public Builder bastions(GetBastionsBastion... bastions) {
@@ -125,11 +131,15 @@ public final class GetBastionsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBastionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBastionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -138,11 +148,15 @@ public final class GetBastionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBastionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }

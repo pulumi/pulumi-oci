@@ -59,11 +59,13 @@ public final class TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemption
 
         @CustomType.Setter
         public Builder preserveBootVolume(@Nullable Boolean preserveBootVolume) {
+
             this.preserveBootVolume = preserveBootVolume;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }

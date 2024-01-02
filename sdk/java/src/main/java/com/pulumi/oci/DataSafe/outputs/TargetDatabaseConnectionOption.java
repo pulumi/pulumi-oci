@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -76,16 +77,21 @@ public final class TargetDatabaseConnectionOption {
 
         @CustomType.Setter
         public Builder connectionType(String connectionType) {
-            this.connectionType = Objects.requireNonNull(connectionType);
+            if (connectionType == null) {
+              throw new MissingRequiredPropertyException("TargetDatabaseConnectionOption", "connectionType");
+            }
+            this.connectionType = connectionType;
             return this;
         }
         @CustomType.Setter
         public Builder datasafePrivateEndpointId(@Nullable String datasafePrivateEndpointId) {
+
             this.datasafePrivateEndpointId = datasafePrivateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder onPremConnectorId(@Nullable String onPremConnectorId) {
+
             this.onPremConnectorId = onPremConnectorId;
             return this;
         }

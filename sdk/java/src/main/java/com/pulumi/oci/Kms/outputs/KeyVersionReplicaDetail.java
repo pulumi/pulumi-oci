@@ -44,6 +44,7 @@ public final class KeyVersionReplicaDetail {
 
         @CustomType.Setter
         public Builder replicationId(@Nullable String replicationId) {
+
             this.replicationId = replicationId;
             return this;
         }

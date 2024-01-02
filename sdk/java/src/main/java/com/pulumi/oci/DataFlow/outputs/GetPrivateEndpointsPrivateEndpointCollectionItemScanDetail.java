@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail {
 
         @CustomType.Setter
         public Builder fqdn(String fqdn) {
-            this.fqdn = Objects.requireNonNull(fqdn);
+            if (fqdn == null) {
+              throw new MissingRequiredPropertyException("GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail", "fqdn");
+            }
+            this.fqdn = fqdn;
             return this;
         }
         @CustomType.Setter
         public Builder port(String port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail", "port");
+            }
+            this.port = port;
             return this;
         }
         public GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail build() {

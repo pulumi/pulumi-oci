@@ -4,6 +4,7 @@
 package com.pulumi.oci.Sch.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Sch.outputs.ConnectorSourceCursor;
 import com.pulumi.oci.Sch.outputs.ConnectorSourceLogSource;
 import com.pulumi.oci.Sch.outputs.ConnectorSourceMonitoringSource;
@@ -104,16 +105,21 @@ public final class ConnectorSource {
 
         @CustomType.Setter
         public Builder cursor(@Nullable ConnectorSourceCursor cursor) {
+
             this.cursor = cursor;
             return this;
         }
         @CustomType.Setter
         public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+            if (kind == null) {
+              throw new MissingRequiredPropertyException("ConnectorSource", "kind");
+            }
+            this.kind = kind;
             return this;
         }
         @CustomType.Setter
         public Builder logSources(@Nullable List<ConnectorSourceLogSource> logSources) {
+
             this.logSources = logSources;
             return this;
         }
@@ -122,6 +128,7 @@ public final class ConnectorSource {
         }
         @CustomType.Setter
         public Builder monitoringSources(@Nullable List<ConnectorSourceMonitoringSource> monitoringSources) {
+
             this.monitoringSources = monitoringSources;
             return this;
         }
@@ -130,6 +137,7 @@ public final class ConnectorSource {
         }
         @CustomType.Setter
         public Builder streamId(@Nullable String streamId) {
+
             this.streamId = streamId;
             return this;
         }

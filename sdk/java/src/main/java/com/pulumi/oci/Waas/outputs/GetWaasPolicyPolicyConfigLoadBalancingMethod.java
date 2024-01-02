@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -91,22 +92,34 @@ public final class GetWaasPolicyPolicyConfigLoadBalancingMethod {
 
         @CustomType.Setter
         public Builder domain(String domain) {
-            this.domain = Objects.requireNonNull(domain);
+            if (domain == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyPolicyConfigLoadBalancingMethod", "domain");
+            }
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
         public Builder expirationTimeInSeconds(Integer expirationTimeInSeconds) {
-            this.expirationTimeInSeconds = Objects.requireNonNull(expirationTimeInSeconds);
+            if (expirationTimeInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyPolicyConfigLoadBalancingMethod", "expirationTimeInSeconds");
+            }
+            this.expirationTimeInSeconds = expirationTimeInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder method(String method) {
-            this.method = Objects.requireNonNull(method);
+            if (method == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyPolicyConfigLoadBalancingMethod", "method");
+            }
+            this.method = method;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyPolicyConfigLoadBalancingMethod", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetWaasPolicyPolicyConfigLoadBalancingMethod build() {

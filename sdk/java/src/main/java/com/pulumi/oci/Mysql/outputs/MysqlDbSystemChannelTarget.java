@@ -131,26 +131,31 @@ public final class MysqlDbSystemChannelTarget {
 
         @CustomType.Setter
         public Builder applierUsername(@Nullable String applierUsername) {
+
             this.applierUsername = applierUsername;
             return this;
         }
         @CustomType.Setter
         public Builder channelName(@Nullable String channelName) {
+
             this.channelName = channelName;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(@Nullable String dbSystemId) {
+
             this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder delayInSeconds(@Nullable Integer delayInSeconds) {
+
             this.delayInSeconds = delayInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<MysqlDbSystemChannelTargetFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -159,11 +164,13 @@ public final class MysqlDbSystemChannelTarget {
         }
         @CustomType.Setter
         public Builder tablesWithoutPrimaryKeyHandling(@Nullable String tablesWithoutPrimaryKeyHandling) {
+
             this.tablesWithoutPrimaryKeyHandling = tablesWithoutPrimaryKeyHandling;
             return this;
         }
         @CustomType.Setter
         public Builder targetType(@Nullable String targetType) {
+
             this.targetType = targetType;
             return this;
         }

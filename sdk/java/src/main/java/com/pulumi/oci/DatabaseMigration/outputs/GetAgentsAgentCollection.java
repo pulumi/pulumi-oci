@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.GetAgentsAgentCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetAgentsAgentCollection {
 
         @CustomType.Setter
         public Builder items(List<GetAgentsAgentCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetAgentsAgentCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetAgentsAgentCollectionItem... items) {

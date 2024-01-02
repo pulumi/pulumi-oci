@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetBackupDestinationsBackupDestination;
 import com.pulumi.oci.Database.outputs.GetBackupDestinationsFilter;
 import java.lang.String;
@@ -95,7 +96,10 @@ public final class GetBackupDestinationsResult {
 
         @CustomType.Setter
         public Builder backupDestinations(List<GetBackupDestinationsBackupDestination> backupDestinations) {
-            this.backupDestinations = Objects.requireNonNull(backupDestinations);
+            if (backupDestinations == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsResult", "backupDestinations");
+            }
+            this.backupDestinations = backupDestinations;
             return this;
         }
         public Builder backupDestinations(GetBackupDestinationsBackupDestination... backupDestinations) {
@@ -103,11 +107,15 @@ public final class GetBackupDestinationsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBackupDestinationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -116,11 +124,15 @@ public final class GetBackupDestinationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }

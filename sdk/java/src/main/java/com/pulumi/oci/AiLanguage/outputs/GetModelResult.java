@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiLanguage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiLanguage.outputs.GetModelEvaluationResult;
 import com.pulumi.oci.AiLanguage.outputs.GetModelModelDetail;
 import com.pulumi.oci.AiLanguage.outputs.GetModelTestStrategy;
@@ -273,27 +274,42 @@ public final class GetModelResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder evaluationResults(List<GetModelEvaluationResult> evaluationResults) {
-            this.evaluationResults = Objects.requireNonNull(evaluationResults);
+            if (evaluationResults == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "evaluationResults");
+            }
+            this.evaluationResults = evaluationResults;
             return this;
         }
         public Builder evaluationResults(GetModelEvaluationResult... evaluationResults) {
@@ -301,22 +317,34 @@ public final class GetModelResult {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder modelDetails(List<GetModelModelDetail> modelDetails) {
-            this.modelDetails = Objects.requireNonNull(modelDetails);
+            if (modelDetails == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "modelDetails");
+            }
+            this.modelDetails = modelDetails;
             return this;
         }
         public Builder modelDetails(GetModelModelDetail... modelDetails) {
@@ -324,22 +352,34 @@ public final class GetModelResult {
         }
         @CustomType.Setter
         public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+            if (projectId == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "projectId");
+            }
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder testStrategies(List<GetModelTestStrategy> testStrategies) {
-            this.testStrategies = Objects.requireNonNull(testStrategies);
+            if (testStrategies == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "testStrategies");
+            }
+            this.testStrategies = testStrategies;
             return this;
         }
         public Builder testStrategies(GetModelTestStrategy... testStrategies) {
@@ -347,17 +387,26 @@ public final class GetModelResult {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder trainingDatasets(List<GetModelTrainingDataset> trainingDatasets) {
-            this.trainingDatasets = Objects.requireNonNull(trainingDatasets);
+            if (trainingDatasets == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "trainingDatasets");
+            }
+            this.trainingDatasets = trainingDatasets;
             return this;
         }
         public Builder trainingDatasets(GetModelTrainingDataset... trainingDatasets) {
@@ -365,7 +414,10 @@ public final class GetModelResult {
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetModelResult build() {

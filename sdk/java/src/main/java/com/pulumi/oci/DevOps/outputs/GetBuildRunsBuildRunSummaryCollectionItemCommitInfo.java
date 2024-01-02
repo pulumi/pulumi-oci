@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemCommitInfo {
 
         @CustomType.Setter
         public Builder commitHash(String commitHash) {
-            this.commitHash = Objects.requireNonNull(commitHash);
+            if (commitHash == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItemCommitInfo", "commitHash");
+            }
+            this.commitHash = commitHash;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryBranch(String repositoryBranch) {
-            this.repositoryBranch = Objects.requireNonNull(repositoryBranch);
+            if (repositoryBranch == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItemCommitInfo", "repositoryBranch");
+            }
+            this.repositoryBranch = repositoryBranch;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryUrl(String repositoryUrl) {
-            this.repositoryUrl = Objects.requireNonNull(repositoryUrl);
+            if (repositoryUrl == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItemCommitInfo", "repositoryUrl");
+            }
+            this.repositoryUrl = repositoryUrl;
             return this;
         }
         public GetBuildRunsBuildRunSummaryCollectionItemCommitInfo build() {

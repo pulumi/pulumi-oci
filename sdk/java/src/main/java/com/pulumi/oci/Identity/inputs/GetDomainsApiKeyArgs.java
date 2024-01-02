@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -272,8 +273,12 @@ public final class GetDomainsApiKeyArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         public GetDomainsApiKeyArgs build() {
-            $.apiKeyId = Objects.requireNonNull($.apiKeyId, "expected parameter 'apiKeyId' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
+            if ($.apiKeyId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsApiKeyArgs", "apiKeyId");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsApiKeyArgs", "idcsEndpoint");
+            }
             return $;
         }
     }

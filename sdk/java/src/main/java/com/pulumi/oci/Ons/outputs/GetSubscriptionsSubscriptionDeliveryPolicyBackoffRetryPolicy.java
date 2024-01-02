@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ons.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy 
 
         @CustomType.Setter
         public Builder maxRetryDuration(Integer maxRetryDuration) {
-            this.maxRetryDuration = Objects.requireNonNull(maxRetryDuration);
+            if (maxRetryDuration == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy", "maxRetryDuration");
+            }
+            this.maxRetryDuration = maxRetryDuration;
             return this;
         }
         @CustomType.Setter
         public Builder policyType(String policyType) {
-            this.policyType = Objects.requireNonNull(policyType);
+            if (policyType == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy", "policyType");
+            }
+            this.policyType = policyType;
             return this;
         }
         public GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy build() {

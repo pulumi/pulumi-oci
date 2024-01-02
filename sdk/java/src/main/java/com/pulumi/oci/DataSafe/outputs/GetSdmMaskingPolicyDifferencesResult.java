@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetSdmMaskingPolicyDifferencesFilter;
 import com.pulumi.oci.DataSafe.outputs.GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection;
 import java.lang.Boolean;
@@ -150,26 +151,33 @@ public final class GetSdmMaskingPolicyDifferencesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferencesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder differenceAccessLevel(@Nullable String differenceAccessLevel) {
+
             this.differenceAccessLevel = differenceAccessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSdmMaskingPolicyDifferencesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -178,17 +186,24 @@ public final class GetSdmMaskingPolicyDifferencesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferencesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder maskingPolicyId(@Nullable String maskingPolicyId) {
+
             this.maskingPolicyId = maskingPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder sdmMaskingPolicyDifferenceCollections(List<GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection> sdmMaskingPolicyDifferenceCollections) {
-            this.sdmMaskingPolicyDifferenceCollections = Objects.requireNonNull(sdmMaskingPolicyDifferenceCollections);
+            if (sdmMaskingPolicyDifferenceCollections == null) {
+              throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferencesResult", "sdmMaskingPolicyDifferenceCollections");
+            }
+            this.sdmMaskingPolicyDifferenceCollections = sdmMaskingPolicyDifferenceCollections;
             return this;
         }
         public Builder sdmMaskingPolicyDifferenceCollections(GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection... sdmMaskingPolicyDifferenceCollections) {
@@ -196,11 +211,13 @@ public final class GetSdmMaskingPolicyDifferencesResult {
         }
         @CustomType.Setter
         public Builder sensitiveDataModelId(@Nullable String sensitiveDataModelId) {
+
             this.sensitiveDataModelId = sensitiveDataModelId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

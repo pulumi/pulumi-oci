@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential;
 import com.pulumi.oci.Database.outputs.GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString;
 import java.lang.Object;
@@ -243,12 +244,18 @@ public final class GetExternalDatabaseConnectorsExternalDatabaseConnector {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnector", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionCredentials(List<GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential> connectionCredentials) {
-            this.connectionCredentials = Objects.requireNonNull(connectionCredentials);
+            if (connectionCredentials == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnector", "connectionCredentials");
+            }
+            this.connectionCredentials = connectionCredentials;
             return this;
         }
         public Builder connectionCredentials(GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential... connectionCredentials) {
@@ -256,12 +263,18 @@ public final class GetExternalDatabaseConnectorsExternalDatabaseConnector {
         }
         @CustomType.Setter
         public Builder connectionStatus(String connectionStatus) {
-            this.connectionStatus = Objects.requireNonNull(connectionStatus);
+            if (connectionStatus == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnector", "connectionStatus");
+            }
+            this.connectionStatus = connectionStatus;
             return this;
         }
         @CustomType.Setter
         public Builder connectionStrings(List<GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString> connectionStrings) {
-            this.connectionStrings = Objects.requireNonNull(connectionStrings);
+            if (connectionStrings == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnector", "connectionStrings");
+            }
+            this.connectionStrings = connectionStrings;
             return this;
         }
         public Builder connectionStrings(GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString... connectionStrings) {
@@ -269,57 +282,90 @@ public final class GetExternalDatabaseConnectorsExternalDatabaseConnector {
         }
         @CustomType.Setter
         public Builder connectorAgentId(String connectorAgentId) {
-            this.connectorAgentId = Objects.requireNonNull(connectorAgentId);
+            if (connectorAgentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnector", "connectorAgentId");
+            }
+            this.connectorAgentId = connectorAgentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectorType(String connectorType) {
-            this.connectorType = Objects.requireNonNull(connectorType);
+            if (connectorType == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnector", "connectorType");
+            }
+            this.connectorType = connectorType;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnector", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnector", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalDatabaseId(String externalDatabaseId) {
-            this.externalDatabaseId = Objects.requireNonNull(externalDatabaseId);
+            if (externalDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnector", "externalDatabaseId");
+            }
+            this.externalDatabaseId = externalDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnector", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnector", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnector", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnector", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeConnectionStatusLastUpdated(String timeConnectionStatusLastUpdated) {
-            this.timeConnectionStatusLastUpdated = Objects.requireNonNull(timeConnectionStatusLastUpdated);
+            if (timeConnectionStatusLastUpdated == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnector", "timeConnectionStatusLastUpdated");
+            }
+            this.timeConnectionStatusLastUpdated = timeConnectionStatusLastUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsExternalDatabaseConnector", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetExternalDatabaseConnectorsExternalDatabaseConnector build() {

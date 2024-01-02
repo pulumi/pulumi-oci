@@ -5,6 +5,7 @@ package com.pulumi.oci.OspGateway.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -446,7 +447,9 @@ public final class SubscriptionSubscriptionPaymentOptionArgs extends com.pulumi.
         }
 
         public SubscriptionSubscriptionPaymentOptionArgs build() {
-            $.paymentMethod = Objects.requireNonNull($.paymentMethod, "expected parameter 'paymentMethod' to be non-null");
+            if ($.paymentMethod == null) {
+                throw new MissingRequiredPropertyException("SubscriptionSubscriptionPaymentOptionArgs", "paymentMethod");
+            }
             return $;
         }
     }

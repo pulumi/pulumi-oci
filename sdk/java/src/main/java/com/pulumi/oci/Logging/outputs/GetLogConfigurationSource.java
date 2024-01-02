@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -102,27 +103,42 @@ public final class GetLogConfigurationSource {
 
         @CustomType.Setter
         public Builder category(String category) {
-            this.category = Objects.requireNonNull(category);
+            if (category == null) {
+              throw new MissingRequiredPropertyException("GetLogConfigurationSource", "category");
+            }
+            this.category = category;
             return this;
         }
         @CustomType.Setter
         public Builder parameters(Map<String,Object> parameters) {
-            this.parameters = Objects.requireNonNull(parameters);
+            if (parameters == null) {
+              throw new MissingRequiredPropertyException("GetLogConfigurationSource", "parameters");
+            }
+            this.parameters = parameters;
             return this;
         }
         @CustomType.Setter
         public Builder resource(String resource) {
-            this.resource = Objects.requireNonNull(resource);
+            if (resource == null) {
+              throw new MissingRequiredPropertyException("GetLogConfigurationSource", "resource");
+            }
+            this.resource = resource;
             return this;
         }
         @CustomType.Setter
         public Builder service(String service) {
-            this.service = Objects.requireNonNull(service);
+            if (service == null) {
+              throw new MissingRequiredPropertyException("GetLogConfigurationSource", "service");
+            }
+            this.service = service;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetLogConfigurationSource", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         public GetLogConfigurationSource build() {

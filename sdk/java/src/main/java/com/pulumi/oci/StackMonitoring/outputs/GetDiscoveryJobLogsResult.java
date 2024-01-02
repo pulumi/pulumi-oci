@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobLogsDiscoveryJobLogCollection;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobLogsFilter;
 import java.lang.String;
@@ -87,12 +88,18 @@ public final class GetDiscoveryJobLogsResult {
 
         @CustomType.Setter
         public Builder discoveryJobId(String discoveryJobId) {
-            this.discoveryJobId = Objects.requireNonNull(discoveryJobId);
+            if (discoveryJobId == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobLogsResult", "discoveryJobId");
+            }
+            this.discoveryJobId = discoveryJobId;
             return this;
         }
         @CustomType.Setter
         public Builder discoveryJobLogCollections(List<GetDiscoveryJobLogsDiscoveryJobLogCollection> discoveryJobLogCollections) {
-            this.discoveryJobLogCollections = Objects.requireNonNull(discoveryJobLogCollections);
+            if (discoveryJobLogCollections == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobLogsResult", "discoveryJobLogCollections");
+            }
+            this.discoveryJobLogCollections = discoveryJobLogCollections;
             return this;
         }
         public Builder discoveryJobLogCollections(GetDiscoveryJobLogsDiscoveryJobLogCollection... discoveryJobLogCollections) {
@@ -100,6 +107,7 @@ public final class GetDiscoveryJobLogsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDiscoveryJobLogsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -108,11 +116,15 @@ public final class GetDiscoveryJobLogsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobLogsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder logType(@Nullable String logType) {
+
             this.logType = logType;
             return this;
         }

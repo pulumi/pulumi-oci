@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceExportRequestsExportRequestSummaryCollection;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceExportRequestsFilter;
 import java.lang.String;
@@ -127,7 +128,10 @@ public final class GetWorkspaceExportRequestsResult {
 
         @CustomType.Setter
         public Builder exportRequestSummaryCollections(List<GetWorkspaceExportRequestsExportRequestSummaryCollection> exportRequestSummaryCollections) {
-            this.exportRequestSummaryCollections = Objects.requireNonNull(exportRequestSummaryCollections);
+            if (exportRequestSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsResult", "exportRequestSummaryCollections");
+            }
+            this.exportRequestSummaryCollections = exportRequestSummaryCollections;
             return this;
         }
         public Builder exportRequestSummaryCollections(GetWorkspaceExportRequestsExportRequestSummaryCollection... exportRequestSummaryCollections) {
@@ -135,11 +139,13 @@ public final class GetWorkspaceExportRequestsResult {
         }
         @CustomType.Setter
         public Builder exportStatus(@Nullable String exportStatus) {
+
             this.exportStatus = exportStatus;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetWorkspaceExportRequestsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -148,32 +154,42 @@ public final class GetWorkspaceExportRequestsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder projection(@Nullable String projection) {
+
             this.projection = projection;
             return this;
         }
         @CustomType.Setter
         public Builder timeEndedInMillis(@Nullable String timeEndedInMillis) {
+
             this.timeEndedInMillis = timeEndedInMillis;
             return this;
         }
         @CustomType.Setter
         public Builder timeStartedInMillis(@Nullable String timeStartedInMillis) {
+
             this.timeStartedInMillis = timeStartedInMillis;
             return this;
         }
         @CustomType.Setter
         public Builder workspaceId(String workspaceId) {
-            this.workspaceId = Objects.requireNonNull(workspaceId);
+            if (workspaceId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestsResult", "workspaceId");
+            }
+            this.workspaceId = workspaceId;
             return this;
         }
         public GetWorkspaceExportRequestsResult build() {

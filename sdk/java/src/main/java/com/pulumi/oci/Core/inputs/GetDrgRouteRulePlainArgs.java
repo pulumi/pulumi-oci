@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetDrgRouteRulePlainArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetDrgRouteRulePlainArgs build() {
-            $.drgRouteTableId = Objects.requireNonNull($.drgRouteTableId, "expected parameter 'drgRouteTableId' to be non-null");
+            if ($.drgRouteTableId == null) {
+                throw new MissingRequiredPropertyException("GetDrgRouteRulePlainArgs", "drgRouteTableId");
+            }
             return $;
         }
     }

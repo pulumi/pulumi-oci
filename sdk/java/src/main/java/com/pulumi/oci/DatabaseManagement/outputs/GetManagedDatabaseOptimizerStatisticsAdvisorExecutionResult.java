@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport;
 import java.lang.Integer;
@@ -192,7 +193,10 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult {
 
         @CustomType.Setter
         public Builder databases(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase> databases) {
-            this.databases = Objects.requireNonNull(databases);
+            if (databases == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult", "databases");
+            }
+            this.databases = databases;
             return this;
         }
         public Builder databases(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase... databases) {
@@ -200,32 +204,50 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult {
         }
         @CustomType.Setter
         public Builder errorMessage(String errorMessage) {
-            this.errorMessage = Objects.requireNonNull(errorMessage);
+            if (errorMessage == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult", "errorMessage");
+            }
+            this.errorMessage = errorMessage;
             return this;
         }
         @CustomType.Setter
         public Builder executionName(String executionName) {
-            this.executionName = Objects.requireNonNull(executionName);
+            if (executionName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult", "executionName");
+            }
+            this.executionName = executionName;
             return this;
         }
         @CustomType.Setter
         public Builder findings(Integer findings) {
-            this.findings = Objects.requireNonNull(findings);
+            if (findings == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult", "findings");
+            }
+            this.findings = findings;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder reports(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport> reports) {
-            this.reports = Objects.requireNonNull(reports);
+            if (reports == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult", "reports");
+            }
+            this.reports = reports;
             return this;
         }
         public Builder reports(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport... reports) {
@@ -233,27 +255,42 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult {
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder statusMessage(String statusMessage) {
-            this.statusMessage = Objects.requireNonNull(statusMessage);
+            if (statusMessage == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult", "statusMessage");
+            }
+            this.statusMessage = statusMessage;
             return this;
         }
         @CustomType.Setter
         public Builder taskName(String taskName) {
-            this.taskName = Objects.requireNonNull(taskName);
+            if (taskName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult", "taskName");
+            }
+            this.taskName = taskName;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+            if (timeEnd == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult", "timeEnd");
+            }
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+            if (timeStart == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult", "timeStart");
+            }
+            this.timeStart = timeStart;
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult build() {

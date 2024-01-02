@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageServerTopSqlCpuActivityActivity;
 import java.lang.String;
 import java.util.List;
@@ -64,7 +65,10 @@ public final class GetExternalExadataStorageServerTopSqlCpuActivityResult {
 
         @CustomType.Setter
         public Builder activities(List<GetExternalExadataStorageServerTopSqlCpuActivityActivity> activities) {
-            this.activities = Objects.requireNonNull(activities);
+            if (activities == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerTopSqlCpuActivityResult", "activities");
+            }
+            this.activities = activities;
             return this;
         }
         public Builder activities(GetExternalExadataStorageServerTopSqlCpuActivityActivity... activities) {
@@ -72,12 +76,18 @@ public final class GetExternalExadataStorageServerTopSqlCpuActivityResult {
         }
         @CustomType.Setter
         public Builder externalExadataStorageServerId(String externalExadataStorageServerId) {
-            this.externalExadataStorageServerId = Objects.requireNonNull(externalExadataStorageServerId);
+            if (externalExadataStorageServerId == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerTopSqlCpuActivityResult", "externalExadataStorageServerId");
+            }
+            this.externalExadataStorageServerId = externalExadataStorageServerId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerTopSqlCpuActivityResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetExternalExadataStorageServerTopSqlCpuActivityResult build() {

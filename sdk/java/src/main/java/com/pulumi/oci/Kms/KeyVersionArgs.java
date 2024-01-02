@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -199,8 +200,12 @@ public final class KeyVersionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public KeyVersionArgs build() {
-            $.keyId = Objects.requireNonNull($.keyId, "expected parameter 'keyId' to be non-null");
-            $.managementEndpoint = Objects.requireNonNull($.managementEndpoint, "expected parameter 'managementEndpoint' to be non-null");
+            if ($.keyId == null) {
+                throw new MissingRequiredPropertyException("KeyVersionArgs", "keyId");
+            }
+            if ($.managementEndpoint == null) {
+                throw new MissingRequiredPropertyException("KeyVersionArgs", "managementEndpoint");
+            }
             return $;
         }
     }

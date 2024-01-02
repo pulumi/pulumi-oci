@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectionDataAssetsDataAssetCollection;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectionDataAssetsFilter;
 import java.lang.String;
@@ -123,12 +124,18 @@ public final class GetDetectionDataAssetsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dataAssetCollections(List<GetDetectionDataAssetsDataAssetCollection> dataAssetCollections) {
-            this.dataAssetCollections = Objects.requireNonNull(dataAssetCollections);
+            if (dataAssetCollections == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsResult", "dataAssetCollections");
+            }
+            this.dataAssetCollections = dataAssetCollections;
             return this;
         }
         public Builder dataAssetCollections(GetDetectionDataAssetsDataAssetCollection... dataAssetCollections) {
@@ -136,11 +143,13 @@ public final class GetDetectionDataAssetsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDetectionDataAssetsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -149,16 +158,21 @@ public final class GetDetectionDataAssetsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
+
             this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

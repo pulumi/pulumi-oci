@@ -78,16 +78,19 @@ public final class ModelModelTrainingResultRowReductionDetail {
 
         @CustomType.Setter
         public Builder isReductionEnabled(@Nullable Boolean isReductionEnabled) {
+
             this.isReductionEnabled = isReductionEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder reductionMethod(@Nullable String reductionMethod) {
+
             this.reductionMethod = reductionMethod;
             return this;
         }
         @CustomType.Setter
         public Builder reductionPercentage(@Nullable Double reductionPercentage) {
+
             this.reductionPercentage = reductionPercentage;
             return this;
         }

@@ -491,10 +491,10 @@ github.com/nsf/jsondiff v0.0.0-20200515183724-f29ed568f4ce h1:RPclfga2SEJmgMmz2k
 github.com/nsf/jsondiff v0.0.0-20200515183724-f29ed568f4ce/go.mod h1:uFMI8w+ref4v2r9jz+c9i1IfIttS/OkmLfrk1jne5hs=
 github.com/oklog/run v1.1.0 h1:GEenZ1cK0+q0+wsJew9qUg/DyD8k3JzYsZAi5gYi2mA=
 github.com/oklog/run v1.1.0/go.mod h1:sVPdnTZT1zYwAJeCMu2Th4T21pA3FPOQRfWjQlk7DVU=
-github.com/oracle/oci-go-sdk/v65 v65.55.0 h1:enKyHVLdJYDJrc9232w33u5F6t2p8Din4593kn3nh/w=
-github.com/oracle/oci-go-sdk/v65 v65.55.0/go.mod h1:IBEV9l1qBzUpo7zgGaRUhbB05BVfcDGYRFBCPlTcPp0=
-github.com/oracle/terraform-provider-oci v1.0.19-0.20231212224444-7f5a3fd6f69c h1:3MfMRf3ZFqlcw4mvXH0ArSmKWmhjW5YcZyI0tP4E4kA=
-github.com/oracle/terraform-provider-oci v1.0.19-0.20231212224444-7f5a3fd6f69c/go.mod h1:Sb4DBfCK/Q24dhcBIgqYTteXDdlm1/wQy5Lx1bqjBDc=
+github.com/oracle/oci-go-sdk/v65 v65.55.1 h1:82j4YHtqeJJiOPyLKxP4/x3Oi8tv2o1etKMziY7yM7o=
+github.com/oracle/oci-go-sdk/v65 v65.55.1/go.mod h1:IBEV9l1qBzUpo7zgGaRUhbB05BVfcDGYRFBCPlTcPp0=
+github.com/oracle/terraform-provider-oci v1.0.19-0.20240110102131-52439af22c56 h1:dgA9sfs4r6DfB9n48dyYFuGCfM1j8WO8od63qDPfIUQ=
+github.com/oracle/terraform-provider-oci v1.0.19-0.20240110102131-52439af22c56/go.mod h1:pAiRfsErWCAErPXborUrjjIkvDMevsHx+QZ93XX+fNQ=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=

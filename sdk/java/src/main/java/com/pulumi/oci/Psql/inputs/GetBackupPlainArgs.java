@@ -14,14 +14,14 @@ public final class GetBackupPlainArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetBackupPlainArgs Empty = new GetBackupPlainArgs();
 
     /**
-     * unique Backup identifier
+     * A unique identifier for the backup.
      * 
      */
     @Import(name="backupId", required=true)
     private String backupId;
 
     /**
-     * @return unique Backup identifier
+     * @return A unique identifier for the backup.
      * 
      */
     public String backupId() {
@@ -53,7 +53,7 @@ public final class GetBackupPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param backupId unique Backup identifier
+         * @param backupId A unique identifier for the backup.
          * 
          * @return builder
          * 

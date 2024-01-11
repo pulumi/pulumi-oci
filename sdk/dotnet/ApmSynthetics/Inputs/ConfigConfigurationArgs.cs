@@ -49,16 +49,40 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public Input<bool>? IsFailureRetried { get; set; }
 
         /// <summary>
+        /// (Updatable) If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+        /// </summary>
+        [Input("isQueryRecursive")]
+        public Input<bool>? IsQueryRecursive { get; set; }
+
+        /// <summary>
         /// (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
         /// </summary>
         [Input("isRedirectionEnabled")]
         public Input<bool>? IsRedirectionEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) Details of the network configuration.
+        /// (Updatable) Name of the server that will be used to perform DNS lookup.
+        /// </summary>
+        [Input("nameServer")]
+        public Input<string>? NameServer { get; set; }
+
+        /// <summary>
+        /// (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
         /// </summary>
         [Input("networkConfiguration")]
         public Input<Inputs.ConfigConfigurationNetworkConfigurationArgs>? NetworkConfiguration { get; set; }
+
+        /// <summary>
+        /// (Updatable) Type of protocol.
+        /// </summary>
+        [Input("protocol")]
+        public Input<string>? Protocol { get; set; }
+
+        /// <summary>
+        /// (Updatable) DNS record type.
+        /// </summary>
+        [Input("recordType")]
+        public Input<string>? RecordType { get; set; }
 
         /// <summary>
         /// (Updatable) Details for request HTTP authentication.

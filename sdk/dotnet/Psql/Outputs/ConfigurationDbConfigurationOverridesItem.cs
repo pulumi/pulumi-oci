@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class ConfigurationDbConfigurationOverridesItem
     {
         /// <summary>
-        /// Key is the configuration key.
+        /// Configuration variable name.
         /// </summary>
         public readonly string ConfigKey;
         /// <summary>
-        /// User selected configuration value
+        /// User-selected variable value.
         /// </summary>
         public readonly string OverridenConfigValue;
 

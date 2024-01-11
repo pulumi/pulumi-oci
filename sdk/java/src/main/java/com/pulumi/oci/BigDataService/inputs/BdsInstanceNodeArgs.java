@@ -169,6 +169,21 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    @Import(name="nvmes")
+    private @Nullable Output<Integer> nvmes;
+
+    /**
+     * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    public Optional<Output<Integer>> nvmes() {
+        return Optional.ofNullable(this.nvmes);
+    }
+
+    /**
      * The total number of OCPUs available to the node.
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -290,6 +305,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         this.ipAddress = $.ipAddress;
         this.memoryInGbs = $.memoryInGbs;
         this.nodeType = $.nodeType;
+        this.nvmes = $.nvmes;
         this.ocpus = $.ocpus;
         this.shape = $.shape;
         this.sshFingerprint = $.sshFingerprint;
@@ -535,6 +551,27 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder nodeType(String nodeType) {
             return nodeType(Output.of(nodeType));
+        }
+
+        /**
+         * @param nvmes The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nvmes(@Nullable Output<Integer> nvmes) {
+            $.nvmes = nvmes;
+            return this;
+        }
+
+        /**
+         * @param nvmes The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nvmes(Integer nvmes) {
+            return nvmes(Output.of(nvmes));
         }
 
         /**

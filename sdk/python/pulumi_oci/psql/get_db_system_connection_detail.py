@@ -43,7 +43,7 @@ class GetDbSystemConnectionDetailResult:
     @pulumi.getter(name="caCertificate")
     def ca_certificate(self) -> str:
         """
-        The CA certificate to be used by the Posgresql client to connect to the database. The CA certificate is used to authenticate the server identity.  It is issued by PostgreSQL Service Private CA.
+        The CA certificate to be used by the PosgreSQL client to connect to the database. The CA certificate is used to authenticate the server identity.  It is issued by PostgreSQL Service Private CA.
         """
         return pulumi.get(self, "ca_certificate")
 
@@ -64,7 +64,7 @@ class GetDbSystemConnectionDetailResult:
     @pulumi.getter(name="instanceEndpoints")
     def instance_endpoints(self) -> Sequence['outputs.GetDbSystemConnectionDetailInstanceEndpointResult']:
         """
-        The list of DbInstance endpoints in the DbSystem.
+        The list of database instance node endpoints in the database system.
         """
         return pulumi.get(self, "instance_endpoints")
 
@@ -72,7 +72,7 @@ class GetDbSystemConnectionDetailResult:
     @pulumi.getter(name="primaryDbEndpoints")
     def primary_db_endpoints(self) -> Sequence['outputs.GetDbSystemConnectionDetailPrimaryDbEndpointResult']:
         """
-        The node endpoint information.
+        Information about the database instance node endpoint.
         """
         return pulumi.get(self, "primary_db_endpoints")
 
@@ -95,7 +95,7 @@ def get_db_system_connection_detail(db_system_id: Optional[str] = None,
     """
     This data source provides details about a specific Db System Connection Detail resource in Oracle Cloud Infrastructure Psql service.
 
-    Gets the DbSystem connection details.
+    Gets the database system connection details.
 
     ## Example Usage
 
@@ -107,7 +107,7 @@ def get_db_system_connection_detail(db_system_id: Optional[str] = None,
     ```
 
 
-    :param str db_system_id: unique DbSystem identifier
+    :param str db_system_id: A unique identifier for the database system.
     """
     __args__ = dict()
     __args__['dbSystemId'] = db_system_id
@@ -128,7 +128,7 @@ def get_db_system_connection_detail_output(db_system_id: Optional[pulumi.Input[s
     """
     This data source provides details about a specific Db System Connection Detail resource in Oracle Cloud Infrastructure Psql service.
 
-    Gets the DbSystem connection details.
+    Gets the database system connection details.
 
     ## Example Usage
 
@@ -140,6 +140,6 @@ def get_db_system_connection_detail_output(db_system_id: Optional[pulumi.Input[s
     ```
 
 
-    :param str db_system_id: unique DbSystem identifier
+    :param str db_system_id: A unique identifier for the database system.
     """
     ...

@@ -22,23 +22,23 @@ public final class GetBackupsResult {
     private List<GetBackupsBackupCollection> backupCollections;
     private @Nullable String backupId;
     /**
-     * @return Backup compartment identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      * 
      */
     private @Nullable String compartmentId;
     /**
-     * @return Backup display name
+     * @return A user-friendly display name for the backup. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
     private @Nullable List<GetBackupsFilter> filters;
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
      * 
      */
     private @Nullable String id;
     /**
-     * @return The current state of the Backup.
+     * @return The current state of the backup.
      * 
      */
     private @Nullable String state;
@@ -57,14 +57,14 @@ public final class GetBackupsResult {
         return Optional.ofNullable(this.backupId);
     }
     /**
-     * @return Backup compartment identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      * 
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
     /**
-     * @return Backup display name
+     * @return A user-friendly display name for the backup. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {
@@ -74,14 +74,14 @@ public final class GetBackupsResult {
         return this.filters == null ? List.of() : this.filters;
     }
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
      * 
      */
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
     }
     /**
-     * @return The current state of the Backup.
+     * @return The current state of the backup.
      * 
      */
     public Optional<String> state() {

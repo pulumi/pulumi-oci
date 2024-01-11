@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DbSystemManagementPolicy {
     /**
-     * @return (Updatable) Posgresql DB system backup policy
+     * @return (Updatable) PostgreSQL database system backup policy.
      * 
      */
     private @Nullable DbSystemManagementPolicyBackupPolicy backupPolicy;
@@ -25,7 +25,7 @@ public final class DbSystemManagementPolicy {
 
     private DbSystemManagementPolicy() {}
     /**
-     * @return (Updatable) Posgresql DB system backup policy
+     * @return (Updatable) PostgreSQL database system backup policy.
      * 
      */
     public Optional<DbSystemManagementPolicyBackupPolicy> backupPolicy() {

@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Backups in Oracle Cloud Infrastructure Psql service.
 //
-// Returns a list of Backup.
+// Returns a list of backups.
 //
 // ## Example Usage
 //
@@ -58,20 +58,20 @@ func GetBackups(ctx *pulumi.Context, args *GetBackupsArgs, opts ...pulumi.Invoke
 
 // A collection of arguments for invoking getBackups.
 type GetBackupsArgs struct {
-	// unique Backup identifier
+	// A unique identifier for the backup.
 	BackupId *string `pulumi:"backupId"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string            `pulumi:"displayName"`
 	Filters     []GetBackupsFilter `pulumi:"filters"`
-	// unique DbSystem identifier
+	// A unique identifier for the database system.
 	Id *string `pulumi:"id"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State *string `pulumi:"state"`
-	// The End date for getting  backups. An RFC3339 formatted datetime string.
+	// The end date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
 	TimeEnded *string `pulumi:"timeEnded"`
-	// The start date for getting  backups. An RFC3339 formatted datetime string
+	// The start date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
 	TimeStarted *string `pulumi:"timeStarted"`
 }
 
@@ -80,14 +80,14 @@ type GetBackupsResult struct {
 	// The list of backup_collection.
 	BackupCollections []GetBackupsBackupCollection `pulumi:"backupCollections"`
 	BackupId          *string                      `pulumi:"backupId"`
-	// Backup compartment identifier
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// Backup display name
+	// A user-friendly display name for the backup. Avoid entering confidential information.
 	DisplayName *string            `pulumi:"displayName"`
 	Filters     []GetBackupsFilter `pulumi:"filters"`
-	// Unique identifier that is immutable on creation
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
 	Id *string `pulumi:"id"`
-	// The current state of the Backup.
+	// The current state of the backup.
 	State       *string `pulumi:"state"`
 	TimeEnded   *string `pulumi:"timeEnded"`
 	TimeStarted *string `pulumi:"timeStarted"`
@@ -108,20 +108,20 @@ func GetBackupsOutput(ctx *pulumi.Context, args GetBackupsOutputArgs, opts ...pu
 
 // A collection of arguments for invoking getBackups.
 type GetBackupsOutputArgs struct {
-	// unique Backup identifier
+	// A unique identifier for the backup.
 	BackupId pulumi.StringPtrInput `pulumi:"backupId"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput      `pulumi:"displayName"`
 	Filters     GetBackupsFilterArrayInput `pulumi:"filters"`
-	// unique DbSystem identifier
+	// A unique identifier for the database system.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State pulumi.StringPtrInput `pulumi:"state"`
-	// The End date for getting  backups. An RFC3339 formatted datetime string.
+	// The end date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
 	TimeEnded pulumi.StringPtrInput `pulumi:"timeEnded"`
-	// The start date for getting  backups. An RFC3339 formatted datetime string
+	// The start date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
 	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
 }
 
@@ -153,12 +153,12 @@ func (o GetBackupsResultOutput) BackupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetBackupsResult) *string { return v.BackupId }).(pulumi.StringPtrOutput)
 }
 
-// Backup compartment identifier
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
 func (o GetBackupsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetBackupsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// Backup display name
+// A user-friendly display name for the backup. Avoid entering confidential information.
 func (o GetBackupsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetBackupsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -167,12 +167,12 @@ func (o GetBackupsResultOutput) Filters() GetBackupsFilterArrayOutput {
 	return o.ApplyT(func(v GetBackupsResult) []GetBackupsFilter { return v.Filters }).(GetBackupsFilterArrayOutput)
 }
 
-// Unique identifier that is immutable on creation
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
 func (o GetBackupsResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetBackupsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-// The current state of the Backup.
+// The current state of the backup.
 func (o GetBackupsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetBackupsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

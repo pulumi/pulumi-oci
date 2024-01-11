@@ -17,14 +17,14 @@ public final class DbSystemManagementPolicyArgs extends com.pulumi.resources.Res
     public static final DbSystemManagementPolicyArgs Empty = new DbSystemManagementPolicyArgs();
 
     /**
-     * (Updatable) Posgresql DB system backup policy
+     * (Updatable) PostgreSQL database system backup policy.
      * 
      */
     @Import(name="backupPolicy")
     private @Nullable Output<DbSystemManagementPolicyBackupPolicyArgs> backupPolicy;
 
     /**
-     * @return (Updatable) Posgresql DB system backup policy
+     * @return (Updatable) PostgreSQL database system backup policy.
      * 
      */
     public Optional<Output<DbSystemManagementPolicyBackupPolicyArgs>> backupPolicy() {
@@ -72,7 +72,7 @@ public final class DbSystemManagementPolicyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param backupPolicy (Updatable) Posgresql DB system backup policy
+         * @param backupPolicy (Updatable) PostgreSQL database system backup policy.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class DbSystemManagementPolicyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param backupPolicy (Updatable) Posgresql DB system backup policy
+         * @param backupPolicy (Updatable) PostgreSQL database system backup policy.
          * 
          * @return builder
          * 

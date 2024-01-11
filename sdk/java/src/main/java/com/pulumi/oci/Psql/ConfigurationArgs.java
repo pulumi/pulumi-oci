@@ -21,14 +21,14 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
     public static final ConfigurationArgs Empty = new ConfigurationArgs();
 
     /**
-     * (Updatable) Compartment identifier
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment identifier
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
      * 
      */
     public Output<String> compartmentId() {
@@ -36,14 +36,14 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Configuration Overrides for PGSQL instance.
+     * Configuration overrides for a PostgreSQL instance.
      * 
      */
     @Import(name="dbConfigurationOverrides", required=true)
     private Output<ConfigurationDbConfigurationOverridesArgs> dbConfigurationOverrides;
 
     /**
-     * @return Configuration Overrides for PGSQL instance.
+     * @return Configuration overrides for a PostgreSQL instance.
      * 
      */
     public Output<ConfigurationDbConfigurationOverridesArgs> dbConfigurationOverrides() {
@@ -51,14 +51,14 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Version of the Postgresql DB
+     * Version of the PostgreSQL database.
      * 
      */
     @Import(name="dbVersion", required=true)
     private Output<String> dbVersion;
 
     /**
-     * @return Version of the Postgresql DB
+     * @return Version of the PostgreSQL database.
      * 
      */
     public Output<String> dbVersion() {
@@ -66,14 +66,14 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,Object>> definedTags;
 
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
@@ -81,14 +81,14 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Details about the Configuration Set.
+     * (Updatable) Details about the configuration set.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Details about the Configuration Set.
+     * @return (Updatable) Details about the configuration set.
      * 
      */
     public Optional<Output<String>> description() {
@@ -96,14 +96,14 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) configuration display name
+     * (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) configuration display name
+     * @return (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -111,14 +111,14 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -126,14 +126,14 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+     * Memory size in gigabytes with 1GB increment.
      * 
      */
     @Import(name="instanceMemorySizeInGbs", required=true)
     private Output<Integer> instanceMemorySizeInGbs;
 
     /**
-     * @return Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+     * @return Memory size in gigabytes with 1GB increment.
      * 
      */
     public Output<Integer> instanceMemorySizeInGbs() {
@@ -141,14 +141,14 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+     * CPU core count.
      * 
      */
     @Import(name="instanceOcpuCount", required=true)
     private Output<Integer> instanceOcpuCount;
 
     /**
-     * @return CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+     * @return CPU core count.
      * 
      */
     public Output<Integer> instanceOcpuCount() {
@@ -156,14 +156,14 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Compute Shape Name like VM.Standard3.Flex.
+     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      * 
      */
     @Import(name="shape", required=true)
     private Output<String> shape;
 
     /**
-     * @return Compute Shape Name like VM.Standard3.Flex.
+     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      * 
      */
     public Output<String> shape() {
@@ -226,7 +226,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment identifier
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment identifier
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
          * 
          * @return builder
          * 
@@ -247,7 +247,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbConfigurationOverrides Configuration Overrides for PGSQL instance.
+         * @param dbConfigurationOverrides Configuration overrides for a PostgreSQL instance.
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbConfigurationOverrides Configuration Overrides for PGSQL instance.
+         * @param dbConfigurationOverrides Configuration overrides for a PostgreSQL instance.
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbVersion Version of the Postgresql DB
+         * @param dbVersion Version of the PostgreSQL database.
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbVersion Version of the Postgresql DB
+         * @param dbVersion Version of the PostgreSQL database.
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -300,7 +300,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) Details about the Configuration Set.
+         * @param description (Updatable) Details about the configuration set.
          * 
          * @return builder
          * 
@@ -321,7 +321,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) Details about the Configuration Set.
+         * @param description (Updatable) Details about the configuration set.
          * 
          * @return builder
          * 
@@ -331,7 +331,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) configuration display name
+         * @param displayName (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) configuration display name
+         * @param displayName (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -352,7 +352,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -363,7 +363,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -373,7 +373,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceMemorySizeInGbs Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+         * @param instanceMemorySizeInGbs Memory size in gigabytes with 1GB increment.
          * 
          * @return builder
          * 
@@ -384,7 +384,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceMemorySizeInGbs Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+         * @param instanceMemorySizeInGbs Memory size in gigabytes with 1GB increment.
          * 
          * @return builder
          * 
@@ -394,7 +394,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceOcpuCount CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+         * @param instanceOcpuCount CPU core count.
          * 
          * @return builder
          * 
@@ -405,7 +405,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceOcpuCount CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+         * @param instanceOcpuCount CPU core count.
          * 
          * @return builder
          * 
@@ -415,7 +415,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shape Compute Shape Name like VM.Standard3.Flex.
+         * @param shape The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
          * 
          * @return builder
          * 
@@ -426,7 +426,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shape Compute Shape Name like VM.Standard3.Flex.
+         * @param shape The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
          * 
          * @return builder
          * 

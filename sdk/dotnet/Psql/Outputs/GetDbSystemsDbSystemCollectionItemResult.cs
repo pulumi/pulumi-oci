@@ -14,20 +14,21 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class GetDbSystemsDbSystemCollectionItemResult
     {
         /// <summary>
-        /// The DB system username.
+        /// The database system administrator username.
         /// </summary>
         public readonly string AdminUsername;
+        public readonly string ApplyConfig;
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Configuration identifier
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
         /// </summary>
         public readonly string ConfigId;
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemCredentialResult> Credentials;
         /// <summary>
-        /// The major and minor versions of the DbSystem software.
+        /// The major and minor versions of the database system software.
         /// </summary>
         public readonly string DbVersion;
         /// <summary>
@@ -35,7 +36,7 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// Description of the DbInstance.
+        /// Description of the database instance node.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -47,23 +48,23 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// unique DbSystem identifier
+        /// A unique identifier for the database system.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Count of DbInstances in the DbSystem.
+        /// Count of instances, or nodes, in the database system.
         /// </summary>
         public readonly int InstanceCount;
         /// <summary>
-        /// The total amount of memory available to each DbInstance, in gigabytes.
+        /// The total amount of memory available to each database instance node, in gigabytes.
         /// </summary>
         public readonly int InstanceMemorySizeInGbs;
         /// <summary>
-        /// The total number of OCPUs available to each DbInstance.
+        /// The total number of OCPUs available to each database instance node.
         /// </summary>
         public readonly int InstanceOcpuCount;
         /// <summary>
-        /// The list of DbInstances in the DbSystem.
+        /// The list of instances, or nodes, in the database system.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemInstanceResult> Instances;
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemInstancesDetailResult> InstancesDetails;
@@ -72,27 +73,28 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// PostgreSQL DB system management policy
+        /// PostgreSQL database system management policy.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyResult> ManagementPolicies;
         /// <summary>
-        /// DbSystem network details.
+        /// Network details for the database system.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemNetworkDetailResult> NetworkDetails;
+        public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemPatchOperationResult> PatchOperations;
         /// <summary>
-        /// Shape of dbInstance.
+        /// The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
         /// </summary>
         public readonly string Shape;
         /// <summary>
-        /// New source is used to restore the DB system.
+        /// The source used to restore the database system.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemSourceResult> Sources;
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Storage details of the DbSystem.
+        /// Storage details of the database system.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemStorageDetailResult> StorageDetails;
         /// <summary>
@@ -100,21 +102,23 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// Type of the DbSystem.
+        /// Type of the database system.
         /// </summary>
         public readonly string SystemType;
         /// <summary>
-        /// The time the the DbSystem was created. An RFC3339 formatted datetime string
+        /// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the DbSystem was updated. An RFC3339 formatted datetime string
+        /// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeUpdated;
 
         [OutputConstructor]
         private GetDbSystemsDbSystemCollectionItemResult(
             string adminUsername,
+
+            string applyConfig,
 
             string compartmentId,
 
@@ -150,6 +154,8 @@ namespace Pulumi.Oci.Psql.Outputs
 
             ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemNetworkDetailResult> networkDetails,
 
+            ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemPatchOperationResult> patchOperations,
+
             string shape,
 
             ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemSourceResult> sources,
@@ -167,6 +173,7 @@ namespace Pulumi.Oci.Psql.Outputs
             string timeUpdated)
         {
             AdminUsername = adminUsername;
+            ApplyConfig = applyConfig;
             CompartmentId = compartmentId;
             ConfigId = configId;
             Credentials = credentials;
@@ -184,6 +191,7 @@ namespace Pulumi.Oci.Psql.Outputs
             LifecycleDetails = lifecycleDetails;
             ManagementPolicies = managementPolicies;
             NetworkDetails = networkDetails;
+            PatchOperations = patchOperations;
             Shape = shape;
             Sources = sources;
             State = state;

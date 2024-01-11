@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Psql
         /// <summary>
         /// This data source provides details about a specific Db System Primary Db Instance resource in Oracle Cloud Infrastructure Psql service.
         /// 
-        /// Gets the primary DbInstance details.
+        /// Gets the primary database instance node details.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Psql
         /// <summary>
         /// This data source provides details about a specific Db System Primary Db Instance resource in Oracle Cloud Infrastructure Psql service.
         /// 
-        /// Gets the primary DbInstance details.
+        /// Gets the primary database instance node details.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.Psql
     public sealed class GetDbSystemPrimaryDbInstanceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique DbSystem identifier
+        /// A unique identifier for the database system.
         /// </summary>
         [Input("dbSystemId", required: true)]
         public string DbSystemId { get; set; } = null!;
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.Psql
     public sealed class GetDbSystemPrimaryDbInstanceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique DbSystem identifier
+        /// A unique identifier for the database system.
         /// </summary>
         [Input("dbSystemId", required: true)]
         public Input<string> DbSystemId { get; set; } = null!;
@@ -106,7 +106,7 @@ namespace Pulumi.Oci.Psql
     public sealed class GetDbSystemPrimaryDbInstanceResult
     {
         /// <summary>
-        /// Unique identifier of the DbInstance.
+        /// A unique identifier for the primary database instance node.
         /// </summary>
         public readonly string DbInstanceId;
         public readonly string DbSystemId;

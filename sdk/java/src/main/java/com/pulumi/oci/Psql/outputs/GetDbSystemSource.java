@@ -12,12 +12,12 @@ import java.util.Objects;
 @CustomType
 public final class GetDbSystemSource {
     /**
-     * @return DbSystem backup identifier.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
      * 
      */
     private String backupId;
     /**
-     * @return Restore the DB config overrides from backup. Default is false
+     * @return Deprecated. Don&#39;t use.
      * 
      */
     private Boolean isHavingRestoreConfigOverrides;
@@ -29,14 +29,14 @@ public final class GetDbSystemSource {
 
     private GetDbSystemSource() {}
     /**
-     * @return DbSystem backup identifier.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
      * 
      */
     public String backupId() {
         return this.backupId;
     }
     /**
-     * @return Restore the DB config overrides from backup. Default is false
+     * @return Deprecated. Don&#39;t use.
      * 
      */
     public Boolean isHavingRestoreConfigOverrides() {

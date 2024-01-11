@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class DbSystemCredentials {
     /**
-     * @return Details for the DbSystem password. Password can be passed as `VaultSecretPasswordDetails`(Vault) or `PlainTextPasswordDetails`.
+     * @return Details for the database system password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.
      * 
      */
     private DbSystemCredentialsPasswordDetails passwordDetails;
     /**
-     * @return The DB system username.
+     * @return The database system administrator username.
      * 
      */
     private String username;
 
     private DbSystemCredentials() {}
     /**
-     * @return Details for the DbSystem password. Password can be passed as `VaultSecretPasswordDetails`(Vault) or `PlainTextPasswordDetails`.
+     * @return Details for the database system password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.
      * 
      */
     public DbSystemCredentialsPasswordDetails passwordDetails() {
         return this.passwordDetails;
     }
     /**
-     * @return The DB system username.
+     * @return The database system administrator username.
      * 
      */
     public String username() {

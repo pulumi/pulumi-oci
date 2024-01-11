@@ -11,12 +11,12 @@ import java.util.Objects;
 @CustomType
 public final class GetDbSystemInstancesDetail {
     /**
-     * @return Description of the DbInstance.
+     * @return Description of the database instance node.
      * 
      */
     private String description;
     /**
-     * @return Display name of the DbInstance.
+     * @return A user-friendly display name for the database instance node. Avoid entering confidential information.
      * 
      */
     private String displayName;
@@ -24,14 +24,14 @@ public final class GetDbSystemInstancesDetail {
 
     private GetDbSystemInstancesDetail() {}
     /**
-     * @return Description of the DbInstance.
+     * @return Description of the database instance node.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Display name of the DbInstance.
+     * @return A user-friendly display name for the database instance node. Avoid entering confidential information.
      * 
      */
     public String displayName() {

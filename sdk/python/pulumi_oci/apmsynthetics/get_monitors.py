@@ -187,7 +187,7 @@ def get_monitors(apm_domain_id: Optional[str] = None,
     :param str display_name: A filter to return only the resources that match the entire display name.
     :param bool is_maintenance_window_active: A filter to return the monitors whose maintenance window is currently active.
     :param bool is_maintenance_window_set: A filter to return the monitors whose maintenance window is set.
-    :param str monitor_type: A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
+    :param str monitor_type: A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
     :param str script_id: A filter to return only monitors using scriptId.
     :param str status: A filter to return only monitors that match the status given.
     :param str vantage_point: The name of the public or dedicated vantage point.
@@ -256,7 +256,7 @@ def get_monitors_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     :param str display_name: A filter to return only the resources that match the entire display name.
     :param bool is_maintenance_window_active: A filter to return the monitors whose maintenance window is currently active.
     :param bool is_maintenance_window_set: A filter to return the monitors whose maintenance window is set.
-    :param str monitor_type: A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
+    :param str monitor_type: A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
     :param str script_id: A filter to return only monitors using scriptId.
     :param str status: A filter to return only monitors that match the status given.
     :param str vantage_point: The name of the public or dedicated vantage point.

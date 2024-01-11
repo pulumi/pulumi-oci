@@ -60,7 +60,7 @@ class ConfigArgs:
         :param pulumi.Input[str] script_name: Name of the script.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterArgs']]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
         :param pulumi.Input[str] status: (Updatable) Enables or disables the monitor.
-        :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         """
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
@@ -323,7 +323,7 @@ class ConfigArgs:
     @pulumi.getter
     def target(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
         """
         return pulumi.get(self, "target")
 
@@ -389,7 +389,7 @@ class _ConfigState:
         :param pulumi.Input[str] script_name: Name of the script.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterArgs']]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
         :param pulumi.Input[str] status: (Updatable) Enables or disables the monitor.
-        :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
         :param pulumi.Input[str] time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param pulumi.Input[str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
@@ -655,7 +655,7 @@ class _ConfigState:
     @pulumi.getter
     def target(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
         """
         return pulumi.get(self, "target")
 
@@ -798,7 +798,9 @@ class Config(pulumi.CustomResource):
                 is_certificate_validation_enabled=var["monitor_configuration_is_certificate_validation_enabled"],
                 is_default_snapshot_enabled=var["monitor_configuration_is_default_snapshot_enabled"],
                 is_failure_retried=var["monitor_configuration_is_failure_retried"],
+                is_query_recursive=var["monitor_configuration_is_query_recursive"],
                 is_redirection_enabled=var["monitor_configuration_is_redirection_enabled"],
+                name_server=var["monitor_configuration_name_server"],
                 network_configuration=oci.apm_synthetics.ConfigConfigurationNetworkConfigurationArgs(
                     number_of_hops=var["monitor_configuration_network_configuration_number_of_hops"],
                     probe_mode=var["monitor_configuration_network_configuration_probe_mode"],
@@ -806,6 +808,8 @@ class Config(pulumi.CustomResource):
                     protocol=var["monitor_configuration_network_configuration_protocol"],
                     transmission_rate=var["monitor_configuration_network_configuration_transmission_rate"],
                 ),
+                protocol=var["monitor_configuration_protocol"],
+                record_type=var["monitor_configuration_record_type"],
                 req_authentication_details=oci.apm_synthetics.ConfigConfigurationReqAuthenticationDetailsArgs(
                     auth_headers=[oci.apm_synthetics.ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs(
                         header_name=var["monitor_configuration_req_authentication_details_auth_headers_header_name"],
@@ -886,7 +890,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[str] script_name: Name of the script.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigScriptParameterArgs']]]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
         :param pulumi.Input[str] status: (Updatable) Enables or disables the monitor.
-        :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigVantagePointArgs']]]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
                
@@ -944,7 +948,9 @@ class Config(pulumi.CustomResource):
                 is_certificate_validation_enabled=var["monitor_configuration_is_certificate_validation_enabled"],
                 is_default_snapshot_enabled=var["monitor_configuration_is_default_snapshot_enabled"],
                 is_failure_retried=var["monitor_configuration_is_failure_retried"],
+                is_query_recursive=var["monitor_configuration_is_query_recursive"],
                 is_redirection_enabled=var["monitor_configuration_is_redirection_enabled"],
+                name_server=var["monitor_configuration_name_server"],
                 network_configuration=oci.apm_synthetics.ConfigConfigurationNetworkConfigurationArgs(
                     number_of_hops=var["monitor_configuration_network_configuration_number_of_hops"],
                     probe_mode=var["monitor_configuration_network_configuration_probe_mode"],
@@ -952,6 +958,8 @@ class Config(pulumi.CustomResource):
                     protocol=var["monitor_configuration_network_configuration_protocol"],
                     transmission_rate=var["monitor_configuration_network_configuration_transmission_rate"],
                 ),
+                protocol=var["monitor_configuration_protocol"],
+                record_type=var["monitor_configuration_record_type"],
                 req_authentication_details=oci.apm_synthetics.ConfigConfigurationReqAuthenticationDetailsArgs(
                     auth_headers=[oci.apm_synthetics.ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs(
                         header_name=var["monitor_configuration_req_authentication_details_auth_headers_header_name"],
@@ -1147,7 +1155,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[str] script_name: Name of the script.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigScriptParameterArgs']]]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
         :param pulumi.Input[str] status: (Updatable) Enables or disables the monitor.
-        :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
         :param pulumi.Input[str] time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param pulumi.Input[str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
@@ -1327,7 +1335,7 @@ class Config(pulumi.CustomResource):
     @pulumi.getter
     def target(self) -> pulumi.Output[str]:
         """
-        (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
         """
         return pulumi.get(self, "target")
 

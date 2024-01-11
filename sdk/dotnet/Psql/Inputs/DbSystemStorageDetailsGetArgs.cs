@@ -13,25 +13,25 @@ namespace Pulumi.Oci.Psql.Inputs
     public sealed class DbSystemStorageDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+        /// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
-        /// (Updatable) DbSystem Performance Unit
+        /// (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
         /// </summary>
         [Input("iops")]
         public Input<string>? Iops { get; set; }
 
         /// <summary>
-        /// Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+        /// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         /// </summary>
         [Input("isRegionallyDurable", required: true)]
         public Input<bool> IsRegionallyDurable { get; set; } = null!;
 
         /// <summary>
-        /// Type of the DbSystem.
+        /// Type of the database system.
         /// 
         /// 
         /// ** IMPORTANT **

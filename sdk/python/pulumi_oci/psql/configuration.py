@@ -29,16 +29,16 @@ class ConfigurationArgs:
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a Configuration resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier
-        :param pulumi.Input['ConfigurationDbConfigurationOverridesArgs'] db_configuration_overrides: Configuration Overrides for PGSQL instance.
-        :param pulumi.Input[str] db_version: Version of the Postgresql DB
-        :param pulumi.Input[str] display_name: (Updatable) configuration display name
-        :param pulumi.Input[int] instance_memory_size_in_gbs: Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
-        :param pulumi.Input[int] instance_ocpu_count: CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
-        :param pulumi.Input[str] shape: Compute Shape Name like VM.Standard3.Flex.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Details about the Configuration Set.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
+        :param pulumi.Input['ConfigurationDbConfigurationOverridesArgs'] db_configuration_overrides: Configuration overrides for a PostgreSQL instance.
+        :param pulumi.Input[str] db_version: Version of the PostgreSQL database.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
+        :param pulumi.Input[int] instance_memory_size_in_gbs: Memory size in gigabytes with 1GB increment.
+        :param pulumi.Input[int] instance_ocpu_count: CPU core count.
+        :param pulumi.Input[str] shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] description: (Updatable) Details about the configuration set.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
                
                
@@ -65,7 +65,7 @@ class ConfigurationArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) Compartment identifier
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -77,7 +77,7 @@ class ConfigurationArgs:
     @pulumi.getter(name="dbConfigurationOverrides")
     def db_configuration_overrides(self) -> pulumi.Input['ConfigurationDbConfigurationOverridesArgs']:
         """
-        Configuration Overrides for PGSQL instance.
+        Configuration overrides for a PostgreSQL instance.
         """
         return pulumi.get(self, "db_configuration_overrides")
 
@@ -89,7 +89,7 @@ class ConfigurationArgs:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> pulumi.Input[str]:
         """
-        Version of the Postgresql DB
+        Version of the PostgreSQL database.
         """
         return pulumi.get(self, "db_version")
 
@@ -101,7 +101,7 @@ class ConfigurationArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) configuration display name
+        (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -113,7 +113,7 @@ class ConfigurationArgs:
     @pulumi.getter(name="instanceMemorySizeInGbs")
     def instance_memory_size_in_gbs(self) -> pulumi.Input[int]:
         """
-        Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+        Memory size in gigabytes with 1GB increment.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
@@ -125,7 +125,7 @@ class ConfigurationArgs:
     @pulumi.getter(name="instanceOcpuCount")
     def instance_ocpu_count(self) -> pulumi.Input[int]:
         """
-        CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+        CPU core count.
         """
         return pulumi.get(self, "instance_ocpu_count")
 
@@ -137,7 +137,7 @@ class ConfigurationArgs:
     @pulumi.getter
     def shape(self) -> pulumi.Input[str]:
         """
-        Compute Shape Name like VM.Standard3.Flex.
+        The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         """
         return pulumi.get(self, "shape")
 
@@ -149,7 +149,7 @@ class ConfigurationArgs:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -161,7 +161,7 @@ class ConfigurationArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Details about the Configuration Set.
+        (Updatable) Details about the configuration set.
         """
         return pulumi.get(self, "description")
 
@@ -173,7 +173,7 @@ class ConfigurationArgs:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -218,25 +218,25 @@ class _ConfigurationState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Configuration resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier
-        :param pulumi.Input[Sequence[pulumi.Input['ConfigurationConfigurationDetailArgs']]] configuration_details: List of DB Configuration Values.
-        :param pulumi.Input['ConfigurationDbConfigurationOverridesArgs'] db_configuration_overrides: Configuration Overrides for PGSQL instance.
-        :param pulumi.Input[str] db_version: Version of the Postgresql DB
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Details about the Configuration Set.
-        :param pulumi.Input[str] display_name: (Updatable) configuration display name
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] instance_memory_size_in_gbs: Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
-        :param pulumi.Input[int] instance_ocpu_count: CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
+        :param pulumi.Input[Sequence[pulumi.Input['ConfigurationConfigurationDetailArgs']]] configuration_details: List of configuration details.
+        :param pulumi.Input['ConfigurationDbConfigurationOverridesArgs'] db_configuration_overrides: Configuration overrides for a PostgreSQL instance.
+        :param pulumi.Input[str] db_version: Version of the PostgreSQL database.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] description: (Updatable) Details about the configuration set.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[int] instance_memory_size_in_gbs: Memory size in gigabytes with 1GB increment.
+        :param pulumi.Input[int] instance_ocpu_count: CPU core count.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] shape: Compute Shape Name like VM.Standard3.Flex.
-        :param pulumi.Input[str] state: The current state of the Configuration.
+        :param pulumi.Input[str] shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        :param pulumi.Input[str] state: The current state of the configuration.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The time Configuration was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[str] time_created: The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -273,7 +273,7 @@ class _ConfigurationState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Compartment identifier
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -285,7 +285,7 @@ class _ConfigurationState:
     @pulumi.getter(name="configurationDetails")
     def configuration_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigurationConfigurationDetailArgs']]]]:
         """
-        List of DB Configuration Values.
+        List of configuration details.
         """
         return pulumi.get(self, "configuration_details")
 
@@ -297,7 +297,7 @@ class _ConfigurationState:
     @pulumi.getter(name="dbConfigurationOverrides")
     def db_configuration_overrides(self) -> Optional[pulumi.Input['ConfigurationDbConfigurationOverridesArgs']]:
         """
-        Configuration Overrides for PGSQL instance.
+        Configuration overrides for a PostgreSQL instance.
         """
         return pulumi.get(self, "db_configuration_overrides")
 
@@ -309,7 +309,7 @@ class _ConfigurationState:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[pulumi.Input[str]]:
         """
-        Version of the Postgresql DB
+        Version of the PostgreSQL database.
         """
         return pulumi.get(self, "db_version")
 
@@ -321,7 +321,7 @@ class _ConfigurationState:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -333,7 +333,7 @@ class _ConfigurationState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Details about the Configuration Set.
+        (Updatable) Details about the configuration set.
         """
         return pulumi.get(self, "description")
 
@@ -345,7 +345,7 @@ class _ConfigurationState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) configuration display name
+        (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -357,7 +357,7 @@ class _ConfigurationState:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -369,7 +369,7 @@ class _ConfigurationState:
     @pulumi.getter(name="instanceMemorySizeInGbs")
     def instance_memory_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
         """
-        Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+        Memory size in gigabytes with 1GB increment.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
@@ -381,7 +381,7 @@ class _ConfigurationState:
     @pulumi.getter(name="instanceOcpuCount")
     def instance_ocpu_count(self) -> Optional[pulumi.Input[int]]:
         """
-        CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+        CPU core count.
         """
         return pulumi.get(self, "instance_ocpu_count")
 
@@ -405,7 +405,7 @@ class _ConfigurationState:
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
         """
-        Compute Shape Name like VM.Standard3.Flex.
+        The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         """
         return pulumi.get(self, "shape")
 
@@ -417,7 +417,7 @@ class _ConfigurationState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The current state of the Configuration.
+        The current state of the configuration.
         """
         return pulumi.get(self, "state")
 
@@ -445,7 +445,7 @@ class _ConfigurationState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        The time Configuration was created. An RFC3339 formatted datetime string
+        The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -474,7 +474,7 @@ class Configuration(pulumi.CustomResource):
         """
         This resource provides the Configuration resource in Oracle Cloud Infrastructure Psql service.
 
-        Creates a new Configuration Set.
+        Creates a new configuration.
 
         ## Example Usage
 
@@ -515,16 +515,16 @@ class Configuration(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier
-        :param pulumi.Input[pulumi.InputType['ConfigurationDbConfigurationOverridesArgs']] db_configuration_overrides: Configuration Overrides for PGSQL instance.
-        :param pulumi.Input[str] db_version: Version of the Postgresql DB
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Details about the Configuration Set.
-        :param pulumi.Input[str] display_name: (Updatable) configuration display name
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] instance_memory_size_in_gbs: Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
-        :param pulumi.Input[int] instance_ocpu_count: CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
-        :param pulumi.Input[str] shape: Compute Shape Name like VM.Standard3.Flex.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
+        :param pulumi.Input[pulumi.InputType['ConfigurationDbConfigurationOverridesArgs']] db_configuration_overrides: Configuration overrides for a PostgreSQL instance.
+        :param pulumi.Input[str] db_version: Version of the PostgreSQL database.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] description: (Updatable) Details about the configuration set.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[int] instance_memory_size_in_gbs: Memory size in gigabytes with 1GB increment.
+        :param pulumi.Input[int] instance_ocpu_count: CPU core count.
+        :param pulumi.Input[str] shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
                
                
@@ -540,7 +540,7 @@ class Configuration(pulumi.CustomResource):
         """
         This resource provides the Configuration resource in Oracle Cloud Infrastructure Psql service.
 
-        Creates a new Configuration Set.
+        Creates a new configuration.
 
         ## Example Usage
 
@@ -675,25 +675,25 @@ class Configuration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigurationConfigurationDetailArgs']]]] configuration_details: List of DB Configuration Values.
-        :param pulumi.Input[pulumi.InputType['ConfigurationDbConfigurationOverridesArgs']] db_configuration_overrides: Configuration Overrides for PGSQL instance.
-        :param pulumi.Input[str] db_version: Version of the Postgresql DB
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Details about the Configuration Set.
-        :param pulumi.Input[str] display_name: (Updatable) configuration display name
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] instance_memory_size_in_gbs: Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
-        :param pulumi.Input[int] instance_ocpu_count: CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigurationConfigurationDetailArgs']]]] configuration_details: List of configuration details.
+        :param pulumi.Input[pulumi.InputType['ConfigurationDbConfigurationOverridesArgs']] db_configuration_overrides: Configuration overrides for a PostgreSQL instance.
+        :param pulumi.Input[str] db_version: Version of the PostgreSQL database.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] description: (Updatable) Details about the configuration set.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[int] instance_memory_size_in_gbs: Memory size in gigabytes with 1GB increment.
+        :param pulumi.Input[int] instance_ocpu_count: CPU core count.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] shape: Compute Shape Name like VM.Standard3.Flex.
-        :param pulumi.Input[str] state: The current state of the Configuration.
+        :param pulumi.Input[str] shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        :param pulumi.Input[str] state: The current state of the configuration.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The time Configuration was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[str] time_created: The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -720,7 +720,7 @@ class Configuration(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) Compartment identifier
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -728,7 +728,7 @@ class Configuration(pulumi.CustomResource):
     @pulumi.getter(name="configurationDetails")
     def configuration_details(self) -> pulumi.Output[Sequence['outputs.ConfigurationConfigurationDetail']]:
         """
-        List of DB Configuration Values.
+        List of configuration details.
         """
         return pulumi.get(self, "configuration_details")
 
@@ -736,7 +736,7 @@ class Configuration(pulumi.CustomResource):
     @pulumi.getter(name="dbConfigurationOverrides")
     def db_configuration_overrides(self) -> pulumi.Output['outputs.ConfigurationDbConfigurationOverrides']:
         """
-        Configuration Overrides for PGSQL instance.
+        Configuration overrides for a PostgreSQL instance.
         """
         return pulumi.get(self, "db_configuration_overrides")
 
@@ -744,7 +744,7 @@ class Configuration(pulumi.CustomResource):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> pulumi.Output[str]:
         """
-        Version of the Postgresql DB
+        Version of the PostgreSQL database.
         """
         return pulumi.get(self, "db_version")
 
@@ -752,7 +752,7 @@ class Configuration(pulumi.CustomResource):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -760,7 +760,7 @@ class Configuration(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        (Updatable) Details about the Configuration Set.
+        (Updatable) Details about the configuration set.
         """
         return pulumi.get(self, "description")
 
@@ -768,7 +768,7 @@ class Configuration(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) configuration display name
+        (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -776,7 +776,7 @@ class Configuration(pulumi.CustomResource):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -784,7 +784,7 @@ class Configuration(pulumi.CustomResource):
     @pulumi.getter(name="instanceMemorySizeInGbs")
     def instance_memory_size_in_gbs(self) -> pulumi.Output[int]:
         """
-        Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+        Memory size in gigabytes with 1GB increment.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
@@ -792,7 +792,7 @@ class Configuration(pulumi.CustomResource):
     @pulumi.getter(name="instanceOcpuCount")
     def instance_ocpu_count(self) -> pulumi.Output[int]:
         """
-        CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+        CPU core count.
         """
         return pulumi.get(self, "instance_ocpu_count")
 
@@ -808,7 +808,7 @@ class Configuration(pulumi.CustomResource):
     @pulumi.getter
     def shape(self) -> pulumi.Output[str]:
         """
-        Compute Shape Name like VM.Standard3.Flex.
+        The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         """
         return pulumi.get(self, "shape")
 
@@ -816,7 +816,7 @@ class Configuration(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The current state of the Configuration.
+        The current state of the configuration.
         """
         return pulumi.get(self, "state")
 
@@ -836,7 +836,7 @@ class Configuration(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        The time Configuration was created. An RFC3339 formatted datetime string
+        The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 

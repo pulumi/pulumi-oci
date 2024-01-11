@@ -69,7 +69,7 @@ class GetBackupsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        Backup compartment identifier
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -77,7 +77,7 @@ class GetBackupsResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        Backup display name
+        A user-friendly display name for the backup. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -90,7 +90,7 @@ class GetBackupsResult:
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        Unique identifier that is immutable on creation
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
         """
         return pulumi.get(self, "id")
 
@@ -98,7 +98,7 @@ class GetBackupsResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the Backup.
+        The current state of the backup.
         """
         return pulumi.get(self, "state")
 
@@ -142,7 +142,7 @@ def get_backups(backup_id: Optional[str] = None,
     """
     This data source provides the list of Backups in Oracle Cloud Infrastructure Psql service.
 
-    Returns a list of Backup.
+    Returns a list of backups.
 
     ## Example Usage
 
@@ -160,13 +160,13 @@ def get_backups(backup_id: Optional[str] = None,
     ```
 
 
-    :param str backup_id: unique Backup identifier
+    :param str backup_id: A unique identifier for the backup.
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: unique DbSystem identifier
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-    :param str time_ended: The End date for getting  backups. An RFC3339 formatted datetime string.
-    :param str time_started: The start date for getting  backups. An RFC3339 formatted datetime string
+    :param str id: A unique identifier for the database system.
+    :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
+    :param str time_ended: The end date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
+    :param str time_started: The start date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
     """
     __args__ = dict()
     __args__['backupId'] = backup_id
@@ -205,7 +205,7 @@ def get_backups_output(backup_id: Optional[pulumi.Input[Optional[str]]] = None,
     """
     This data source provides the list of Backups in Oracle Cloud Infrastructure Psql service.
 
-    Returns a list of Backup.
+    Returns a list of backups.
 
     ## Example Usage
 
@@ -223,12 +223,12 @@ def get_backups_output(backup_id: Optional[pulumi.Input[Optional[str]]] = None,
     ```
 
 
-    :param str backup_id: unique Backup identifier
+    :param str backup_id: A unique identifier for the backup.
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: unique DbSystem identifier
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-    :param str time_ended: The End date for getting  backups. An RFC3339 formatted datetime string.
-    :param str time_started: The start date for getting  backups. An RFC3339 formatted datetime string
+    :param str id: A unique identifier for the database system.
+    :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
+    :param str time_ended: The end date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
+    :param str time_started: The start date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
     """
     ...

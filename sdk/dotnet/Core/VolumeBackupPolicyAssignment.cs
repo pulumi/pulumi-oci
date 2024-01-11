@@ -12,8 +12,8 @@ namespace Pulumi.Oci.Core
     /// <summary>
     /// This resource provides the Volume Backup Policy Assignment resource in Oracle Cloud Infrastructure Core service.
     /// 
-    /// Assigns a volume backup policy to the specified volume. Note that a given volume can
-    /// only have one backup policy assigned to it. If this operation is used for a volume that already
+    /// Assigns a volume backup policy to the specified volume or volume group. Note that a given volume or volume group can
+    /// only have one backup policy assigned to it. If this operation is used for a volume or volume group that already
     /// has a different backup policy assigned, the prior backup policy will be silently unassigned.
     /// 
     /// ## Example Usage
@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Core
     public partial class VolumeBackupPolicyAssignment : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The OCID of the volume to assign the policy to.
+        /// The OCID of the volume or volume group to assign the policy to.
         /// </summary>
         [Output("assetId")]
         public Output<string> AssetId { get; private set; } = null!;
@@ -115,7 +115,7 @@ namespace Pulumi.Oci.Core
     public sealed class VolumeBackupPolicyAssignmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the volume to assign the policy to.
+        /// The OCID of the volume or volume group to assign the policy to.
         /// </summary>
         [Input("assetId", required: true)]
         public Input<string> AssetId { get; set; } = null!;
@@ -139,7 +139,7 @@ namespace Pulumi.Oci.Core
     public sealed class VolumeBackupPolicyAssignmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the volume to assign the policy to.
+        /// The OCID of the volume or volume group to assign the policy to.
         /// </summary>
         [Input("assetId")]
         public Input<string>? AssetId { get; set; }

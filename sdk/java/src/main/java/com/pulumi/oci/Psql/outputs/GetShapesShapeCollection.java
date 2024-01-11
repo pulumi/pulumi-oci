@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetShapesShapeCollection {
     /**
-     * @return List of dbSystems.
+     * @return List of supported shapes.
      * 
      */
     private List<GetShapesShapeCollectionItem> items;
 
     private GetShapesShapeCollection() {}
     /**
-     * @return List of dbSystems.
+     * @return List of supported shapes.
      * 
      */
     public List<GetShapesShapeCollectionItem> items() {

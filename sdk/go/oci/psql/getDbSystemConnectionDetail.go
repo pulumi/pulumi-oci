@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Db System Connection Detail resource in Oracle Cloud Infrastructure Psql service.
 //
-// Gets the DbSystem connection details.
+// Gets the database system connection details.
 //
 // ## Example Usage
 //
@@ -52,20 +52,20 @@ func GetDbSystemConnectionDetail(ctx *pulumi.Context, args *GetDbSystemConnectio
 
 // A collection of arguments for invoking getDbSystemConnectionDetail.
 type GetDbSystemConnectionDetailArgs struct {
-	// unique DbSystem identifier
+	// A unique identifier for the database system.
 	DbSystemId string `pulumi:"dbSystemId"`
 }
 
 // A collection of values returned by getDbSystemConnectionDetail.
 type GetDbSystemConnectionDetailResult struct {
-	// The CA certificate to be used by the Posgresql client to connect to the database. The CA certificate is used to authenticate the server identity.  It is issued by PostgreSQL Service Private CA.
+	// The CA certificate to be used by the PosgreSQL client to connect to the database. The CA certificate is used to authenticate the server identity.  It is issued by PostgreSQL Service Private CA.
 	CaCertificate string `pulumi:"caCertificate"`
 	DbSystemId    string `pulumi:"dbSystemId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The list of DbInstance endpoints in the DbSystem.
+	// The list of database instance node endpoints in the database system.
 	InstanceEndpoints []GetDbSystemConnectionDetailInstanceEndpoint `pulumi:"instanceEndpoints"`
-	// The node endpoint information.
+	// Information about the database instance node endpoint.
 	PrimaryDbEndpoints []GetDbSystemConnectionDetailPrimaryDbEndpoint `pulumi:"primaryDbEndpoints"`
 }
 
@@ -84,7 +84,7 @@ func GetDbSystemConnectionDetailOutput(ctx *pulumi.Context, args GetDbSystemConn
 
 // A collection of arguments for invoking getDbSystemConnectionDetail.
 type GetDbSystemConnectionDetailOutputArgs struct {
-	// unique DbSystem identifier
+	// A unique identifier for the database system.
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
 }
 
@@ -107,7 +107,7 @@ func (o GetDbSystemConnectionDetailResultOutput) ToGetDbSystemConnectionDetailRe
 	return o
 }
 
-// The CA certificate to be used by the Posgresql client to connect to the database. The CA certificate is used to authenticate the server identity.  It is issued by PostgreSQL Service Private CA.
+// The CA certificate to be used by the PosgreSQL client to connect to the database. The CA certificate is used to authenticate the server identity.  It is issued by PostgreSQL Service Private CA.
 func (o GetDbSystemConnectionDetailResultOutput) CaCertificate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemConnectionDetailResult) string { return v.CaCertificate }).(pulumi.StringOutput)
 }
@@ -121,14 +121,14 @@ func (o GetDbSystemConnectionDetailResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemConnectionDetailResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The list of DbInstance endpoints in the DbSystem.
+// The list of database instance node endpoints in the database system.
 func (o GetDbSystemConnectionDetailResultOutput) InstanceEndpoints() GetDbSystemConnectionDetailInstanceEndpointArrayOutput {
 	return o.ApplyT(func(v GetDbSystemConnectionDetailResult) []GetDbSystemConnectionDetailInstanceEndpoint {
 		return v.InstanceEndpoints
 	}).(GetDbSystemConnectionDetailInstanceEndpointArrayOutput)
 }
 
-// The node endpoint information.
+// Information about the database instance node endpoint.
 func (o GetDbSystemConnectionDetailResultOutput) PrimaryDbEndpoints() GetDbSystemConnectionDetailPrimaryDbEndpointArrayOutput {
 	return o.ApplyT(func(v GetDbSystemConnectionDetailResult) []GetDbSystemConnectionDetailPrimaryDbEndpoint {
 		return v.PrimaryDbEndpoints

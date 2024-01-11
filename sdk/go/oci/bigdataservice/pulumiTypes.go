@@ -5458,6 +5458,8 @@ type BdsInstanceNode struct {
 	MemoryInGbs *int `pulumi:"memoryInGbs"`
 	// The Big Data Service cluster node type.
 	NodeType *string `pulumi:"nodeType"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5508,6 +5510,8 @@ type BdsInstanceNodeArgs struct {
 	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
 	// The Big Data Service cluster node type.
 	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5625,6 +5629,11 @@ func (o BdsInstanceNodeOutput) MemoryInGbs() pulumi.IntPtrOutput {
 // The Big Data Service cluster node type.
 func (o BdsInstanceNodeOutput) NodeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.NodeType }).(pulumi.StringPtrOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o BdsInstanceNodeOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceNode) *int { return v.Nvmes }).(pulumi.IntPtrOutput)
 }
 
 // The total number of OCPUs available to the node.
@@ -14233,6 +14242,8 @@ type GetBdsInstanceNode struct {
 	MemoryInGbs int `pulumi:"memoryInGbs"`
 	// Cluster node type.
 	NodeType string `pulumi:"nodeType"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus int `pulumi:"ocpus"`
 	// Shape of the node.
@@ -14281,6 +14292,8 @@ type GetBdsInstanceNodeArgs struct {
 	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
 	// Cluster node type.
 	NodeType pulumi.StringInput `pulumi:"nodeType"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntInput `pulumi:"ocpus"`
 	// Shape of the node.
@@ -14396,6 +14409,11 @@ func (o GetBdsInstanceNodeOutput) MemoryInGbs() pulumi.IntOutput {
 // Cluster node type.
 func (o GetBdsInstanceNodeOutput) NodeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceNode) string { return v.NodeType }).(pulumi.StringOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o GetBdsInstanceNodeOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceNode) int { return v.Nvmes }).(pulumi.IntOutput)
 }
 
 // The total number of OCPUs available to the node.
@@ -17461,6 +17479,8 @@ type GetBdsInstancesBdsInstanceNode struct {
 	MemoryInGbs int `pulumi:"memoryInGbs"`
 	// Cluster node type.
 	NodeType string `pulumi:"nodeType"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus int `pulumi:"ocpus"`
 	// Shape of the node.
@@ -17509,6 +17529,8 @@ type GetBdsInstancesBdsInstanceNodeArgs struct {
 	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
 	// Cluster node type.
 	NodeType pulumi.StringInput `pulumi:"nodeType"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntInput `pulumi:"ocpus"`
 	// Shape of the node.
@@ -17626,6 +17648,11 @@ func (o GetBdsInstancesBdsInstanceNodeOutput) MemoryInGbs() pulumi.IntOutput {
 // Cluster node type.
 func (o GetBdsInstancesBdsInstanceNodeOutput) NodeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceNode) string { return v.NodeType }).(pulumi.StringOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o GetBdsInstancesBdsInstanceNodeOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceNode) int { return v.Nvmes }).(pulumi.IntOutput)
 }
 
 // The total number of OCPUs available to the node.

@@ -10,6 +10,7 @@ import com.pulumi.oci.Psql.inputs.DbSystemInstanceArgs;
 import com.pulumi.oci.Psql.inputs.DbSystemInstancesDetailArgs;
 import com.pulumi.oci.Psql.inputs.DbSystemManagementPolicyArgs;
 import com.pulumi.oci.Psql.inputs.DbSystemNetworkDetailsArgs;
+import com.pulumi.oci.Psql.inputs.DbSystemPatchOperationArgs;
 import com.pulumi.oci.Psql.inputs.DbSystemSourceArgs;
 import com.pulumi.oci.Psql.inputs.DbSystemStorageDetailsArgs;
 import java.lang.Integer;
@@ -27,14 +28,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     public static final DbSystemState Empty = new DbSystemState();
 
     /**
-     * The DB system username.
+     * The database system administrator username.
      * 
      */
     @Import(name="adminUsername")
     private @Nullable Output<String> adminUsername;
 
     /**
-     * @return The DB system username.
+     * @return The database system administrator username.
      * 
      */
     public Optional<Output<String>> adminUsername() {
@@ -42,14 +43,29 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Compartment identifier
+     * Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
+     * 
+     */
+    @Import(name="applyConfig")
+    private @Nullable Output<String> applyConfig;
+
+    /**
+     * @return Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
+     * 
+     */
+    public Optional<Output<String>> applyConfig() {
+        return Optional.ofNullable(this.applyConfig);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment identifier
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -57,14 +73,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Configuration identifier
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
      * 
      */
     @Import(name="configId")
     private @Nullable Output<String> configId;
 
     /**
-     * @return Configuration identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
      * 
      */
     public Optional<Output<String>> configId() {
@@ -72,14 +88,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Initial DbSystem credentials that the DbSystem will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+     * Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
      * 
      */
     @Import(name="credentials")
     private @Nullable Output<DbSystemCredentialsArgs> credentials;
 
     /**
-     * @return Initial DbSystem credentials that the DbSystem will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+     * @return Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
      * 
      */
     public Optional<Output<DbSystemCredentialsArgs>> credentials() {
@@ -87,14 +103,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Version of DbSystem software.
+     * Version of database system software.
      * 
      */
     @Import(name="dbVersion")
     private @Nullable Output<String> dbVersion;
 
     /**
-     * @return Version of DbSystem software.
+     * @return Version of database system software.
      * 
      */
     public Optional<Output<String>> dbVersion() {
@@ -117,14 +133,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Description of the DbInstance. This field should be input by the user.
+     * A user-provided description of the database instance node.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return Description of the DbInstance. This field should be input by the user.
+     * @return A user-provided description of the database instance node.
      * 
      */
     public Optional<Output<String>> description() {
@@ -132,14 +148,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Display name of the DbInstance.
+     * Display name of the database instance node. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return Display name of the DbInstance.
+     * @return Display name of the database instance node. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -162,14 +178,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Count of DbInstances to be created in the DbSystem.
+     * (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
      * 
      */
     @Import(name="instanceCount")
     private @Nullable Output<Integer> instanceCount;
 
     /**
-     * @return Count of DbInstances to be created in the DbSystem.
+     * @return (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
      * 
      */
     public Optional<Output<Integer>> instanceCount() {
@@ -177,14 +193,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The total amount of memory available to each DbInstance, in gigabytes.
+     * The total amount of memory available to each database instance node, in gigabytes.
      * 
      */
     @Import(name="instanceMemorySizeInGbs")
     private @Nullable Output<Integer> instanceMemorySizeInGbs;
 
     /**
-     * @return The total amount of memory available to each DbInstance, in gigabytes.
+     * @return The total amount of memory available to each database instance node, in gigabytes.
      * 
      */
     public Optional<Output<Integer>> instanceMemorySizeInGbs() {
@@ -192,14 +208,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The total number of OCPUs available to each DbInstance.
+     * The total number of OCPUs available to each database instance node.
      * 
      */
     @Import(name="instanceOcpuCount")
     private @Nullable Output<Integer> instanceOcpuCount;
 
     /**
-     * @return The total number of OCPUs available to each DbInstance.
+     * @return The total number of OCPUs available to each database instance node.
      * 
      */
     public Optional<Output<Integer>> instanceOcpuCount() {
@@ -207,14 +223,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The list of DbInstances in the DbSystem.
+     * The list of instances, or nodes, in the database system.
      * 
      */
     @Import(name="instances")
     private @Nullable Output<List<DbSystemInstanceArgs>> instances;
 
     /**
-     * @return The list of DbInstances in the DbSystem.
+     * @return The list of instances, or nodes, in the database system.
      * 
      */
     public Optional<Output<List<DbSystemInstanceArgs>>> instances() {
@@ -222,14 +238,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Details of DbInstances to be created. Optional parameter. If specified, its size must match instanceCount.
+     * Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
      * 
      */
     @Import(name="instancesDetails")
     private @Nullable Output<List<DbSystemInstancesDetailArgs>> instancesDetails;
 
     /**
-     * @return Details of DbInstances to be created. Optional parameter. If specified, its size must match instanceCount.
+     * @return Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
      * 
      */
     public Optional<Output<List<DbSystemInstancesDetailArgs>>> instancesDetails() {
@@ -252,14 +268,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Posgresql DB system management policy update details
+     * (Updatable) PostgreSQL database system management policy update details.
      * 
      */
     @Import(name="managementPolicy")
     private @Nullable Output<DbSystemManagementPolicyArgs> managementPolicy;
 
     /**
-     * @return (Updatable) Posgresql DB system management policy update details
+     * @return (Updatable) PostgreSQL database system management policy update details.
      * 
      */
     public Optional<Output<DbSystemManagementPolicyArgs>> managementPolicy() {
@@ -267,14 +283,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * DbSystem network details.
+     * Network details for the database system.
      * 
      */
     @Import(name="networkDetails")
     private @Nullable Output<DbSystemNetworkDetailsArgs> networkDetails;
 
     /**
-     * @return DbSystem network details.
+     * @return Network details for the database system.
      * 
      */
     public Optional<Output<DbSystemNetworkDetailsArgs>> networkDetails() {
@@ -282,14 +298,29 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
+     * (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+     * 
+     */
+    @Import(name="patchOperations")
+    private @Nullable Output<List<DbSystemPatchOperationArgs>> patchOperations;
+
+    /**
+     * @return (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+     * 
+     */
+    public Optional<Output<List<DbSystemPatchOperationArgs>>> patchOperations() {
+        return Optional.ofNullable(this.patchOperations);
+    }
+
+    /**
+     * The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
      * 
      */
     @Import(name="shape")
     private @Nullable Output<String> shape;
 
     /**
-     * @return Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
+     * @return The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
      * 
      */
     public Optional<Output<String>> shape() {
@@ -297,14 +328,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * New source is used to restore the DB system.
+     * The source used to restore the database system.
      * 
      */
     @Import(name="source")
     private @Nullable Output<DbSystemSourceArgs> source;
 
     /**
-     * @return New source is used to restore the DB system.
+     * @return The source used to restore the database system.
      * 
      */
     public Optional<Output<DbSystemSourceArgs>> source() {
@@ -312,14 +343,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The current state of the DbSystem.
+     * The current state of the database system.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the DbSystem.
+     * @return The current state of the database system.
      * 
      */
     public Optional<Output<String>> state() {
@@ -327,14 +358,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Storage details of the DbSystem.
+     * (Updatable) Storage details of the database system.
      * 
      */
     @Import(name="storageDetails")
     private @Nullable Output<DbSystemStorageDetailsArgs> storageDetails;
 
     /**
-     * @return (Updatable) Storage details of the DbSystem.
+     * @return (Updatable) Storage details of the database system.
      * 
      */
     public Optional<Output<DbSystemStorageDetailsArgs>> storageDetails() {
@@ -357,7 +388,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Type of the DbSystem.
+     * Type of the database system.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -367,7 +398,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> systemType;
 
     /**
-     * @return Type of the DbSystem.
+     * @return Type of the database system.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -378,14 +409,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The time the the DbSystem was created. An RFC3339 formatted datetime string
+     * The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time the the DbSystem was created. An RFC3339 formatted datetime string
+     * @return The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -393,14 +424,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The time the DbSystem was updated. An RFC3339 formatted datetime string
+     * The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The time the DbSystem was updated. An RFC3339 formatted datetime string
+     * @return The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -411,6 +442,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
 
     private DbSystemState(DbSystemState $) {
         this.adminUsername = $.adminUsername;
+        this.applyConfig = $.applyConfig;
         this.compartmentId = $.compartmentId;
         this.configId = $.configId;
         this.credentials = $.credentials;
@@ -427,6 +459,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         this.lifecycleDetails = $.lifecycleDetails;
         this.managementPolicy = $.managementPolicy;
         this.networkDetails = $.networkDetails;
+        this.patchOperations = $.patchOperations;
         this.shape = $.shape;
         this.source = $.source;
         this.state = $.state;
@@ -456,7 +489,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param adminUsername The DB system username.
+         * @param adminUsername The database system administrator username.
          * 
          * @return builder
          * 
@@ -467,7 +500,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param adminUsername The DB system username.
+         * @param adminUsername The database system administrator username.
          * 
          * @return builder
          * 
@@ -477,7 +510,28 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment identifier
+         * @param applyConfig Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applyConfig(@Nullable Output<String> applyConfig) {
+            $.applyConfig = applyConfig;
+            return this;
+        }
+
+        /**
+         * @param applyConfig Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applyConfig(String applyConfig) {
+            return applyConfig(Output.of(applyConfig));
+        }
+
+        /**
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
          * 
          * @return builder
          * 
@@ -488,7 +542,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment identifier
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
          * 
          * @return builder
          * 
@@ -498,7 +552,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configId Configuration identifier
+         * @param configId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
          * 
          * @return builder
          * 
@@ -509,7 +563,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configId Configuration identifier
+         * @param configId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
          * 
          * @return builder
          * 
@@ -519,7 +573,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param credentials Initial DbSystem credentials that the DbSystem will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+         * @param credentials Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
          * 
          * @return builder
          * 
@@ -530,7 +584,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param credentials Initial DbSystem credentials that the DbSystem will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+         * @param credentials Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
          * 
          * @return builder
          * 
@@ -540,7 +594,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbVersion Version of DbSystem software.
+         * @param dbVersion Version of database system software.
          * 
          * @return builder
          * 
@@ -551,7 +605,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbVersion Version of DbSystem software.
+         * @param dbVersion Version of database system software.
          * 
          * @return builder
          * 
@@ -582,7 +636,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Description of the DbInstance. This field should be input by the user.
+         * @param description A user-provided description of the database instance node.
          * 
          * @return builder
          * 
@@ -593,7 +647,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Description of the DbInstance. This field should be input by the user.
+         * @param description A user-provided description of the database instance node.
          * 
          * @return builder
          * 
@@ -603,7 +657,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName Display name of the DbInstance.
+         * @param displayName Display name of the database instance node. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -614,7 +668,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName Display name of the DbInstance.
+         * @param displayName Display name of the database instance node. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -645,7 +699,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceCount Count of DbInstances to be created in the DbSystem.
+         * @param instanceCount (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
          * 
          * @return builder
          * 
@@ -656,7 +710,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceCount Count of DbInstances to be created in the DbSystem.
+         * @param instanceCount (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
          * 
          * @return builder
          * 
@@ -666,7 +720,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceMemorySizeInGbs The total amount of memory available to each DbInstance, in gigabytes.
+         * @param instanceMemorySizeInGbs The total amount of memory available to each database instance node, in gigabytes.
          * 
          * @return builder
          * 
@@ -677,7 +731,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceMemorySizeInGbs The total amount of memory available to each DbInstance, in gigabytes.
+         * @param instanceMemorySizeInGbs The total amount of memory available to each database instance node, in gigabytes.
          * 
          * @return builder
          * 
@@ -687,7 +741,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceOcpuCount The total number of OCPUs available to each DbInstance.
+         * @param instanceOcpuCount The total number of OCPUs available to each database instance node.
          * 
          * @return builder
          * 
@@ -698,7 +752,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceOcpuCount The total number of OCPUs available to each DbInstance.
+         * @param instanceOcpuCount The total number of OCPUs available to each database instance node.
          * 
          * @return builder
          * 
@@ -708,7 +762,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instances The list of DbInstances in the DbSystem.
+         * @param instances The list of instances, or nodes, in the database system.
          * 
          * @return builder
          * 
@@ -719,7 +773,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instances The list of DbInstances in the DbSystem.
+         * @param instances The list of instances, or nodes, in the database system.
          * 
          * @return builder
          * 
@@ -729,7 +783,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instances The list of DbInstances in the DbSystem.
+         * @param instances The list of instances, or nodes, in the database system.
          * 
          * @return builder
          * 
@@ -739,7 +793,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instancesDetails Details of DbInstances to be created. Optional parameter. If specified, its size must match instanceCount.
+         * @param instancesDetails Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
          * 
          * @return builder
          * 
@@ -750,7 +804,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instancesDetails Details of DbInstances to be created. Optional parameter. If specified, its size must match instanceCount.
+         * @param instancesDetails Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
          * 
          * @return builder
          * 
@@ -760,7 +814,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instancesDetails Details of DbInstances to be created. Optional parameter. If specified, its size must match instanceCount.
+         * @param instancesDetails Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
          * 
          * @return builder
          * 
@@ -791,7 +845,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param managementPolicy (Updatable) Posgresql DB system management policy update details
+         * @param managementPolicy (Updatable) PostgreSQL database system management policy update details.
          * 
          * @return builder
          * 
@@ -802,7 +856,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param managementPolicy (Updatable) Posgresql DB system management policy update details
+         * @param managementPolicy (Updatable) PostgreSQL database system management policy update details.
          * 
          * @return builder
          * 
@@ -812,7 +866,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkDetails DbSystem network details.
+         * @param networkDetails Network details for the database system.
          * 
          * @return builder
          * 
@@ -823,7 +877,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkDetails DbSystem network details.
+         * @param networkDetails Network details for the database system.
          * 
          * @return builder
          * 
@@ -833,7 +887,38 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shape Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
+         * @param patchOperations (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder patchOperations(@Nullable Output<List<DbSystemPatchOperationArgs>> patchOperations) {
+            $.patchOperations = patchOperations;
+            return this;
+        }
+
+        /**
+         * @param patchOperations (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder patchOperations(List<DbSystemPatchOperationArgs> patchOperations) {
+            return patchOperations(Output.of(patchOperations));
+        }
+
+        /**
+         * @param patchOperations (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder patchOperations(DbSystemPatchOperationArgs... patchOperations) {
+            return patchOperations(List.of(patchOperations));
+        }
+
+        /**
+         * @param shape The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
          * 
          * @return builder
          * 
@@ -844,7 +929,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shape Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
+         * @param shape The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
          * 
          * @return builder
          * 
@@ -854,7 +939,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param source New source is used to restore the DB system.
+         * @param source The source used to restore the database system.
          * 
          * @return builder
          * 
@@ -865,7 +950,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param source New source is used to restore the DB system.
+         * @param source The source used to restore the database system.
          * 
          * @return builder
          * 
@@ -875,7 +960,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The current state of the DbSystem.
+         * @param state The current state of the database system.
          * 
          * @return builder
          * 
@@ -886,7 +971,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The current state of the DbSystem.
+         * @param state The current state of the database system.
          * 
          * @return builder
          * 
@@ -896,7 +981,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageDetails (Updatable) Storage details of the DbSystem.
+         * @param storageDetails (Updatable) Storage details of the database system.
          * 
          * @return builder
          * 
@@ -907,7 +992,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageDetails (Updatable) Storage details of the DbSystem.
+         * @param storageDetails (Updatable) Storage details of the database system.
          * 
          * @return builder
          * 
@@ -938,7 +1023,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param systemType Type of the DbSystem.
+         * @param systemType Type of the database system.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -952,7 +1037,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param systemType Type of the DbSystem.
+         * @param systemType Type of the database system.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -965,7 +1050,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated The time the the DbSystem was created. An RFC3339 formatted datetime string
+         * @param timeCreated The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
          * 
          * @return builder
          * 
@@ -976,7 +1061,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated The time the the DbSystem was created. An RFC3339 formatted datetime string
+         * @param timeCreated The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
          * 
          * @return builder
          * 
@@ -986,7 +1071,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated The time the DbSystem was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
          * 
          * @return builder
          * 
@@ -997,7 +1082,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated The time the DbSystem was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
          * 
          * @return builder
          * 

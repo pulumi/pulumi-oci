@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Db Systems in Oracle Cloud Infrastructure Psql service.
 //
-// Returns a list of DbSystems.
+// Returns a list of database systems.
 //
 // ## Example Usage
 //
@@ -60,24 +60,24 @@ type GetDbSystemsArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string              `pulumi:"displayName"`
 	Filters     []GetDbSystemsFilter `pulumi:"filters"`
-	// unique DbSystem identifier
+	// A unique identifier for the database system.
 	Id *string `pulumi:"id"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getDbSystems.
 type GetDbSystemsResult struct {
-	// Compartment identifier
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The list of db_system_collection.
 	DbSystemCollections []GetDbSystemsDbSystemCollection `pulumi:"dbSystemCollections"`
-	// Display name of the DbInstance.
+	// A user-friendly display name for the database instance node. Avoid entering confidential information.
 	DisplayName *string              `pulumi:"displayName"`
 	Filters     []GetDbSystemsFilter `pulumi:"filters"`
-	// Unique identifier that is immutable on creation.
+	// A unique identifier for the database instance node. Immutable on creation.
 	Id *string `pulumi:"id"`
-	// The current state of the DbSystem.
+	// The current state of the database system.
 	State *string `pulumi:"state"`
 }
 
@@ -101,9 +101,9 @@ type GetDbSystemsOutputArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput        `pulumi:"displayName"`
 	Filters     GetDbSystemsFilterArrayInput `pulumi:"filters"`
-	// unique DbSystem identifier
+	// A unique identifier for the database system.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -126,7 +126,7 @@ func (o GetDbSystemsResultOutput) ToGetDbSystemsResultOutputWithContext(ctx cont
 	return o
 }
 
-// Compartment identifier
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
 func (o GetDbSystemsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbSystemsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -136,7 +136,7 @@ func (o GetDbSystemsResultOutput) DbSystemCollections() GetDbSystemsDbSystemColl
 	return o.ApplyT(func(v GetDbSystemsResult) []GetDbSystemsDbSystemCollection { return v.DbSystemCollections }).(GetDbSystemsDbSystemCollectionArrayOutput)
 }
 
-// Display name of the DbInstance.
+// A user-friendly display name for the database instance node. Avoid entering confidential information.
 func (o GetDbSystemsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbSystemsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -145,12 +145,12 @@ func (o GetDbSystemsResultOutput) Filters() GetDbSystemsFilterArrayOutput {
 	return o.ApplyT(func(v GetDbSystemsResult) []GetDbSystemsFilter { return v.Filters }).(GetDbSystemsFilterArrayOutput)
 }
 
-// Unique identifier that is immutable on creation.
+// A unique identifier for the database instance node. Immutable on creation.
 func (o GetDbSystemsResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbSystemsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-// The current state of the DbSystem.
+// The current state of the database system.
 func (o GetDbSystemsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbSystemsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

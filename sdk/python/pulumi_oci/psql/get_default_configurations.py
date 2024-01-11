@@ -58,7 +58,7 @@ class GetDefaultConfigurationsResult:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[str]:
         """
-        Version of the Postgresql DB
+        Version of the PostgreSQL database.
         """
         return pulumi.get(self, "db_version")
 
@@ -74,7 +74,7 @@ class GetDefaultConfigurationsResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        Config display name
+        A user-friendly display name for the configuration.
         """
         return pulumi.get(self, "display_name")
 
@@ -95,7 +95,7 @@ class GetDefaultConfigurationsResult:
     @pulumi.getter
     def shape(self) -> Optional[str]:
         """
-        Compute Shape Name like VM.Standard3.Flex.
+        The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         """
         return pulumi.get(self, "shape")
 
@@ -103,7 +103,7 @@ class GetDefaultConfigurationsResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the Configuration.
+        The current state of the configuration.
         """
         return pulumi.get(self, "state")
 
@@ -134,7 +134,7 @@ def get_default_configurations(configuration_id: Optional[str] = None,
     """
     This data source provides the list of Default Configurations in Oracle Cloud Infrastructure Psql service.
 
-    Returns a list of Default Configurations.
+    Returns a list of default configurations.
 
     ## Example Usage
 
@@ -150,11 +150,11 @@ def get_default_configurations(configuration_id: Optional[str] = None,
     ```
 
 
-    :param str configuration_id: unique Configuration identifier
-    :param str db_version: Verison of the Postgresql DB like 14.5
+    :param str configuration_id: A unique identifier for the configuration.
+    :param str db_version: Verison of the PostgreSQL database, such as 14.9.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str shape: Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+    :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
     """
     __args__ = dict()
     __args__['configurationId'] = configuration_id
@@ -188,7 +188,7 @@ def get_default_configurations_output(configuration_id: Optional[pulumi.Input[Op
     """
     This data source provides the list of Default Configurations in Oracle Cloud Infrastructure Psql service.
 
-    Returns a list of Default Configurations.
+    Returns a list of default configurations.
 
     ## Example Usage
 
@@ -204,10 +204,10 @@ def get_default_configurations_output(configuration_id: Optional[pulumi.Input[Op
     ```
 
 
-    :param str configuration_id: unique Configuration identifier
-    :param str db_version: Verison of the Postgresql DB like 14.5
+    :param str configuration_id: A unique identifier for the configuration.
+    :param str db_version: Verison of the PostgreSQL database, such as 14.9.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str shape: Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+    :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
     """
     ...

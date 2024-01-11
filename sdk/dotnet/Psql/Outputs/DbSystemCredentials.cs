@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class DbSystemCredentials
     {
         /// <summary>
-        /// Details for the DbSystem password. Password can be passed as `VaultSecretPasswordDetails`(Vault) or `PlainTextPasswordDetails`.
+        /// Details for the database system password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.
         /// </summary>
         public readonly Outputs.DbSystemCredentialsPasswordDetails PasswordDetails;
         /// <summary>
-        /// The DB system username.
+        /// The database system administrator username.
         /// </summary>
         public readonly string Username;
 

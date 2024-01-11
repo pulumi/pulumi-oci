@@ -13,13 +13,13 @@ namespace Pulumi.Oci.Psql.Inputs
     public sealed class BackupDbSystemDetailArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The major and minor versions of the DbSystem software.
+        /// The major and minor versions of the database system software.
         /// </summary>
         [Input("dbVersion")]
         public Input<string>? DbVersion { get; set; }
 
         /// <summary>
-        /// Type of the DbSystem.
+        /// Type of the database system.
         /// </summary>
         [Input("systemType")]
         public Input<string>? SystemType { get; set; }

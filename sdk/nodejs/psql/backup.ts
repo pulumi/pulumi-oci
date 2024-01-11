@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Backup resource in Oracle Cloud Infrastructure Psql service.
  *
- * Creates a new Backup.
+ * Creates a new backup.
  *
  * ## Example Usage
  *
@@ -69,19 +69,19 @@ export class Backup extends pulumi.CustomResource {
     }
 
     /**
-     * Backup size in GB.
+     * The size of the backup, in gigabytes.
      */
     public /*out*/ readonly backupSize!: pulumi.Output<number>;
     /**
-     * (Updatable) Compartment identifier
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * Information about the DbSystem associated to a backup.
+     * Information about the database system associated with a backup.
      */
     public /*out*/ readonly dbSystemDetails!: pulumi.Output<outputs.Psql.BackupDbSystemDetail[]>;
     /**
-     * Posgresql DbSystem identifier
+     * The ID of the database system.
      */
     public readonly dbSystemId!: pulumi.Output<string>;
     /**
@@ -89,11 +89,11 @@ export class Backup extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) Backup description
+     * (Updatable) A description for the backup.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) Backup display name.
+     * (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -121,11 +121,11 @@ export class Backup extends pulumi.CustomResource {
      */
     public readonly retentionPeriod!: pulumi.Output<number>;
     /**
-     * Specifies whether the backup was created manually, or via scheduled backup policy
+     * Specifies whether the backup was created manually, or by a management policy.
      */
     public /*out*/ readonly sourceType!: pulumi.Output<string>;
     /**
-     * The current state of the Backup.
+     * The current state of the backup.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
@@ -133,11 +133,11 @@ export class Backup extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The time the the Backup was created. An RFC3339 formatted datetime string
+     * The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The time the Backup was updated. An RFC3339 formatted datetime string
+     * The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
 
@@ -210,19 +210,19 @@ export class Backup extends pulumi.CustomResource {
  */
 export interface BackupState {
     /**
-     * Backup size in GB.
+     * The size of the backup, in gigabytes.
      */
     backupSize?: pulumi.Input<number>;
     /**
-     * (Updatable) Compartment identifier
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * Information about the DbSystem associated to a backup.
+     * Information about the database system associated with a backup.
      */
     dbSystemDetails?: pulumi.Input<pulumi.Input<inputs.Psql.BackupDbSystemDetail>[]>;
     /**
-     * Posgresql DbSystem identifier
+     * The ID of the database system.
      */
     dbSystemId?: pulumi.Input<string>;
     /**
@@ -230,11 +230,11 @@ export interface BackupState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Backup description
+     * (Updatable) A description for the backup.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) Backup display name.
+     * (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -262,11 +262,11 @@ export interface BackupState {
      */
     retentionPeriod?: pulumi.Input<number>;
     /**
-     * Specifies whether the backup was created manually, or via scheduled backup policy
+     * Specifies whether the backup was created manually, or by a management policy.
      */
     sourceType?: pulumi.Input<string>;
     /**
-     * The current state of the Backup.
+     * The current state of the backup.
      */
     state?: pulumi.Input<string>;
     /**
@@ -274,11 +274,11 @@ export interface BackupState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The time the the Backup was created. An RFC3339 formatted datetime string
+     * The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The time the Backup was updated. An RFC3339 formatted datetime string
+     * The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     timeUpdated?: pulumi.Input<string>;
 }
@@ -288,11 +288,11 @@ export interface BackupState {
  */
 export interface BackupArgs {
     /**
-     * (Updatable) Compartment identifier
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * Posgresql DbSystem identifier
+     * The ID of the database system.
      */
     dbSystemId: pulumi.Input<string>;
     /**
@@ -300,11 +300,11 @@ export interface BackupArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Backup description
+     * (Updatable) A description for the backup.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) Backup display name.
+     * (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
      */
     displayName: pulumi.Input<string>;
     /**

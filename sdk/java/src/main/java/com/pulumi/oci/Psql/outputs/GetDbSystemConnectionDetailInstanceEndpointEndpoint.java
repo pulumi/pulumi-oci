@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetDbSystemConnectionDetailInstanceEndpointEndpoint {
     /**
-     * @return The FQDN of the endpoint
+     * @return The FQDN of the endpoint.
      * 
      */
     private String fqdn;
     /**
-     * @return The IP Address of the endpoint
+     * @return The IP address of the endpoint.
      * 
      */
     private String ipAddress;
     /**
-     * @return The port Address of the endpoint
+     * @return The port address of the endpoint.
      * 
      */
     private Integer port;
 
     private GetDbSystemConnectionDetailInstanceEndpointEndpoint() {}
     /**
-     * @return The FQDN of the endpoint
+     * @return The FQDN of the endpoint.
      * 
      */
     public String fqdn() {
         return this.fqdn;
     }
     /**
-     * @return The IP Address of the endpoint
+     * @return The IP address of the endpoint.
      * 
      */
     public String ipAddress() {
         return this.ipAddress;
     }
     /**
-     * @return The port Address of the endpoint
+     * @return The port address of the endpoint.
      * 
      */
     public Integer port() {

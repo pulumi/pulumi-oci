@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Psql
     /// <summary>
     /// This resource provides the Backup resource in Oracle Cloud Infrastructure Psql service.
     /// 
-    /// Creates a new Backup.
+    /// Creates a new backup.
     /// 
     /// ## Example Usage
     /// 
@@ -56,25 +56,25 @@ namespace Pulumi.Oci.Psql
     public partial class Backup : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Backup size in GB.
+        /// The size of the backup, in gigabytes.
         /// </summary>
         [Output("backupSize")]
         public Output<int> BackupSize { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Compartment identifier
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// Information about the DbSystem associated to a backup.
+        /// Information about the database system associated with a backup.
         /// </summary>
         [Output("dbSystemDetails")]
         public Output<ImmutableArray<Outputs.BackupDbSystemDetail>> DbSystemDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Posgresql DbSystem identifier
+        /// The ID of the database system.
         /// </summary>
         [Output("dbSystemId")]
         public Output<string> DbSystemId { get; private set; } = null!;
@@ -86,13 +86,13 @@ namespace Pulumi.Oci.Psql
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Backup description
+        /// (Updatable) A description for the backup.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Backup display name.
+        /// (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -132,13 +132,13 @@ namespace Pulumi.Oci.Psql
         public Output<int> RetentionPeriod { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies whether the backup was created manually, or via scheduled backup policy
+        /// Specifies whether the backup was created manually, or by a management policy.
         /// </summary>
         [Output("sourceType")]
         public Output<string> SourceType { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the Backup.
+        /// The current state of the backup.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -150,13 +150,13 @@ namespace Pulumi.Oci.Psql
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The time the the Backup was created. An RFC3339 formatted datetime string
+        /// The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The time the Backup was updated. An RFC3339 formatted datetime string
+        /// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -208,13 +208,13 @@ namespace Pulumi.Oci.Psql
     public sealed class BackupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment identifier
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// Posgresql DbSystem identifier
+        /// The ID of the database system.
         /// </summary>
         [Input("dbSystemId", required: true)]
         public Input<string> DbSystemId { get; set; } = null!;
@@ -232,13 +232,13 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// (Updatable) Backup description
+        /// (Updatable) A description for the backup.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Backup display name.
+        /// (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -274,13 +274,13 @@ namespace Pulumi.Oci.Psql
     public sealed class BackupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Backup size in GB.
+        /// The size of the backup, in gigabytes.
         /// </summary>
         [Input("backupSize")]
         public Input<int>? BackupSize { get; set; }
 
         /// <summary>
-        /// (Updatable) Compartment identifier
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -289,7 +289,7 @@ namespace Pulumi.Oci.Psql
         private InputList<Inputs.BackupDbSystemDetailGetArgs>? _dbSystemDetails;
 
         /// <summary>
-        /// Information about the DbSystem associated to a backup.
+        /// Information about the database system associated with a backup.
         /// </summary>
         public InputList<Inputs.BackupDbSystemDetailGetArgs> DbSystemDetails
         {
@@ -298,7 +298,7 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// Posgresql DbSystem identifier
+        /// The ID of the database system.
         /// </summary>
         [Input("dbSystemId")]
         public Input<string>? DbSystemId { get; set; }
@@ -316,13 +316,13 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// (Updatable) Backup description
+        /// (Updatable) A description for the backup.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Backup display name.
+        /// (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -368,13 +368,13 @@ namespace Pulumi.Oci.Psql
         public Input<int>? RetentionPeriod { get; set; }
 
         /// <summary>
-        /// Specifies whether the backup was created manually, or via scheduled backup policy
+        /// Specifies whether the backup was created manually, or by a management policy.
         /// </summary>
         [Input("sourceType")]
         public Input<string>? SourceType { get; set; }
 
         /// <summary>
-        /// The current state of the Backup.
+        /// The current state of the backup.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -392,13 +392,13 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// The time the the Backup was created. An RFC3339 formatted datetime string
+        /// The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The time the Backup was updated. An RFC3339 formatted datetime string
+        /// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

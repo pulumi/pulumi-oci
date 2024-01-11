@@ -13,25 +13,25 @@ namespace Pulumi.Oci.Psql.Inputs
     public sealed class DbSystemInstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+        /// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
-        /// Description of the DbInstance. This field should be input by the user.
+        /// A user-provided description of the database instance node.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Display name of the DbInstance.
+        /// Display name of the database instance node. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// Unique identifier that is immutable on creation.
+        /// A unique identifier for the database instance node. Immutable on creation.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
@@ -43,19 +43,19 @@ namespace Pulumi.Oci.Psql.Inputs
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// The current state of the DbSystem.
+        /// The current state of the database system.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The time the the DbSystem was created. An RFC3339 formatted datetime string
+        /// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The time the DbSystem was updated. An RFC3339 formatted datetime string
+        /// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

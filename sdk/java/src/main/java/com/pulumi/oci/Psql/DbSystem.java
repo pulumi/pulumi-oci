@@ -14,6 +14,7 @@ import com.pulumi.oci.Psql.outputs.DbSystemInstance;
 import com.pulumi.oci.Psql.outputs.DbSystemInstancesDetail;
 import com.pulumi.oci.Psql.outputs.DbSystemManagementPolicy;
 import com.pulumi.oci.Psql.outputs.DbSystemNetworkDetails;
+import com.pulumi.oci.Psql.outputs.DbSystemPatchOperation;
 import com.pulumi.oci.Psql.outputs.DbSystemSource;
 import com.pulumi.oci.Psql.outputs.DbSystemStorageDetails;
 import com.pulumi.oci.Utilities;
@@ -28,7 +29,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Db System resource in Oracle Cloud Infrastructure Psql service.
  * 
- * Creates a new DbSystem.
+ * Creates a new database system.
  * 
  * ## Example Usage
  * ```java
@@ -47,6 +48,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Psql.inputs.DbSystemManagementPolicyArgs;
  * import com.pulumi.oci.Psql.inputs.DbSystemManagementPolicyBackupPolicyArgs;
  * import com.pulumi.oci.Psql.inputs.DbSystemSourceArgs;
+ * import com.pulumi.oci.Psql.inputs.DbSystemPatchOperationArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -77,6 +79,7 @@ import javax.annotation.Nullable;
  *                 .iops(var_.db_system_storage_details_iops())
  *                 .build())
  *             .configId(oci_apm_config_config.test_config().id())
+ *             .applyConfig(var_.db_system_apply_config_type())
  *             .credentials(DbSystemCredentialsArgs.builder()
  *                 .passwordDetails(DbSystemCredentialsPasswordDetailsArgs.builder()
  *                     .passwordType(var_.db_system_credentials_password_details_password_type())
@@ -113,6 +116,11 @@ import javax.annotation.Nullable;
  *                 .isHavingRestoreConfigOverrides(var_.db_system_source_is_having_restore_config_overrides())
  *                 .build())
  *             .systemType(var_.db_system_system_type())
+ *             .patchOperations(DbSystemPatchOperationArgs.builder()
+ *                 .operation(var_.db_system_patch_operations_operation())
+ *                 .selection(var_.db_system_patch_operations_selection())
+ *                 .value(var_.db_system_patch_operations_value())
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -131,70 +139,84 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Psql/dbSystem:DbSystem")
 public class DbSystem extends com.pulumi.resources.CustomResource {
     /**
-     * The DB system username.
+     * The database system administrator username.
      * 
      */
     @Export(name="adminUsername", refs={String.class}, tree="[0]")
     private Output<String> adminUsername;
 
     /**
-     * @return The DB system username.
+     * @return The database system administrator username.
      * 
      */
     public Output<String> adminUsername() {
         return this.adminUsername;
     }
     /**
-     * (Updatable) Compartment identifier
+     * Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
+     * 
+     */
+    @Export(name="applyConfig", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> applyConfig;
+
+    /**
+     * @return Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
+     * 
+     */
+    public Output<Optional<String>> applyConfig() {
+        return Codegen.optional(this.applyConfig);
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment identifier
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * Configuration identifier
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
      * 
      */
     @Export(name="configId", refs={String.class}, tree="[0]")
     private Output<String> configId;
 
     /**
-     * @return Configuration identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
      * 
      */
     public Output<String> configId() {
         return this.configId;
     }
     /**
-     * Initial DbSystem credentials that the DbSystem will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+     * Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
      * 
      */
     @Export(name="credentials", refs={DbSystemCredentials.class}, tree="[0]")
     private Output</* @Nullable */ DbSystemCredentials> credentials;
 
     /**
-     * @return Initial DbSystem credentials that the DbSystem will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+     * @return Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
      * 
      */
     public Output<Optional<DbSystemCredentials>> credentials() {
         return Codegen.optional(this.credentials);
     }
     /**
-     * Version of DbSystem software.
+     * Version of database system software.
      * 
      */
     @Export(name="dbVersion", refs={String.class}, tree="[0]")
     private Output<String> dbVersion;
 
     /**
-     * @return Version of DbSystem software.
+     * @return Version of database system software.
      * 
      */
     public Output<String> dbVersion() {
@@ -215,28 +237,28 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * Description of the DbInstance. This field should be input by the user.
+     * A user-provided description of the database instance node.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return Description of the DbInstance. This field should be input by the user.
+     * @return A user-provided description of the database instance node.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * Display name of the DbInstance.
+     * Display name of the database instance node. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return Display name of the DbInstance.
+     * @return Display name of the database instance node. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -257,70 +279,70 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * Count of DbInstances to be created in the DbSystem.
+     * (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
      * 
      */
     @Export(name="instanceCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> instanceCount;
 
     /**
-     * @return Count of DbInstances to be created in the DbSystem.
+     * @return (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
      * 
      */
     public Output<Integer> instanceCount() {
         return this.instanceCount;
     }
     /**
-     * The total amount of memory available to each DbInstance, in gigabytes.
+     * The total amount of memory available to each database instance node, in gigabytes.
      * 
      */
     @Export(name="instanceMemorySizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> instanceMemorySizeInGbs;
 
     /**
-     * @return The total amount of memory available to each DbInstance, in gigabytes.
+     * @return The total amount of memory available to each database instance node, in gigabytes.
      * 
      */
     public Output<Integer> instanceMemorySizeInGbs() {
         return this.instanceMemorySizeInGbs;
     }
     /**
-     * The total number of OCPUs available to each DbInstance.
+     * The total number of OCPUs available to each database instance node.
      * 
      */
     @Export(name="instanceOcpuCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> instanceOcpuCount;
 
     /**
-     * @return The total number of OCPUs available to each DbInstance.
+     * @return The total number of OCPUs available to each database instance node.
      * 
      */
     public Output<Integer> instanceOcpuCount() {
         return this.instanceOcpuCount;
     }
     /**
-     * The list of DbInstances in the DbSystem.
+     * The list of instances, or nodes, in the database system.
      * 
      */
     @Export(name="instances", refs={List.class,DbSystemInstance.class}, tree="[0,1]")
     private Output<List<DbSystemInstance>> instances;
 
     /**
-     * @return The list of DbInstances in the DbSystem.
+     * @return The list of instances, or nodes, in the database system.
      * 
      */
     public Output<List<DbSystemInstance>> instances() {
         return this.instances;
     }
     /**
-     * Details of DbInstances to be created. Optional parameter. If specified, its size must match instanceCount.
+     * Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
      * 
      */
     @Export(name="instancesDetails", refs={List.class,DbSystemInstancesDetail.class}, tree="[0,1]")
     private Output<List<DbSystemInstancesDetail>> instancesDetails;
 
     /**
-     * @return Details of DbInstances to be created. Optional parameter. If specified, its size must match instanceCount.
+     * @return Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
      * 
      */
     public Output<List<DbSystemInstancesDetail>> instancesDetails() {
@@ -341,84 +363,98 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * (Updatable) Posgresql DB system management policy update details
+     * (Updatable) PostgreSQL database system management policy update details.
      * 
      */
     @Export(name="managementPolicy", refs={DbSystemManagementPolicy.class}, tree="[0]")
     private Output<DbSystemManagementPolicy> managementPolicy;
 
     /**
-     * @return (Updatable) Posgresql DB system management policy update details
+     * @return (Updatable) PostgreSQL database system management policy update details.
      * 
      */
     public Output<DbSystemManagementPolicy> managementPolicy() {
         return this.managementPolicy;
     }
     /**
-     * DbSystem network details.
+     * Network details for the database system.
      * 
      */
     @Export(name="networkDetails", refs={DbSystemNetworkDetails.class}, tree="[0]")
     private Output<DbSystemNetworkDetails> networkDetails;
 
     /**
-     * @return DbSystem network details.
+     * @return Network details for the database system.
      * 
      */
     public Output<DbSystemNetworkDetails> networkDetails() {
         return this.networkDetails;
     }
     /**
-     * Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
+     * (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+     * 
+     */
+    @Export(name="patchOperations", refs={List.class,DbSystemPatchOperation.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<DbSystemPatchOperation>> patchOperations;
+
+    /**
+     * @return (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+     * 
+     */
+    public Output<Optional<List<DbSystemPatchOperation>>> patchOperations() {
+        return Codegen.optional(this.patchOperations);
+    }
+    /**
+     * The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
      * 
      */
     @Export(name="shape", refs={String.class}, tree="[0]")
     private Output<String> shape;
 
     /**
-     * @return Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
+     * @return The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
      * 
      */
     public Output<String> shape() {
         return this.shape;
     }
     /**
-     * New source is used to restore the DB system.
+     * The source used to restore the database system.
      * 
      */
     @Export(name="source", refs={DbSystemSource.class}, tree="[0]")
     private Output<DbSystemSource> source;
 
     /**
-     * @return New source is used to restore the DB system.
+     * @return The source used to restore the database system.
      * 
      */
     public Output<DbSystemSource> source() {
         return this.source;
     }
     /**
-     * The current state of the DbSystem.
+     * The current state of the database system.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the DbSystem.
+     * @return The current state of the database system.
      * 
      */
     public Output<String> state() {
         return this.state;
     }
     /**
-     * (Updatable) Storage details of the DbSystem.
+     * (Updatable) Storage details of the database system.
      * 
      */
     @Export(name="storageDetails", refs={DbSystemStorageDetails.class}, tree="[0]")
     private Output<DbSystemStorageDetails> storageDetails;
 
     /**
-     * @return (Updatable) Storage details of the DbSystem.
+     * @return (Updatable) Storage details of the database system.
      * 
      */
     public Output<DbSystemStorageDetails> storageDetails() {
@@ -439,7 +475,7 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * Type of the DbSystem.
+     * Type of the database system.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -449,7 +485,7 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
     private Output<String> systemType;
 
     /**
-     * @return Type of the DbSystem.
+     * @return Type of the database system.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -459,28 +495,28 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.systemType;
     }
     /**
-     * The time the the DbSystem was created. An RFC3339 formatted datetime string
+     * The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The time the the DbSystem was created. An RFC3339 formatted datetime string
+     * @return The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The time the DbSystem was updated. An RFC3339 formatted datetime string
+     * The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The time the DbSystem was updated. An RFC3339 formatted datetime string
+     * @return The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Output<String> timeUpdated() {

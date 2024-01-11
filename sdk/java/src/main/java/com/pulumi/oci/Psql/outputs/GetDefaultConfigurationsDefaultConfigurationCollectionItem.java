@@ -14,17 +14,17 @@ import java.util.Objects;
 @CustomType
 public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
     /**
-     * @return List of DB default Configuration Values.
+     * @return List of default configuration values for databases.
      * 
      */
     private List<GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetail> configurationDetails;
     /**
-     * @return Verison of the Postgresql DB like 14.5
+     * @return Verison of the PostgreSQL database, such as 14.9.
      * 
      */
     private String dbVersion;
     /**
-     * @return Config description
+     * @return A description for the configuration.
      * 
      */
     private String description;
@@ -34,17 +34,17 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
      */
     private String displayName;
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return A unique identifier for the configuration.
      * 
      */
     private String id;
     /**
-     * @return Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+     * @return Memory size in gigabytes with 1GB increment.
      * 
      */
     private Integer instanceMemorySizeInGbs;
     /**
-     * @return CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+     * @return CPU core count. Minimum value is 1.
      * 
      */
     private Integer instanceOcpuCount;
@@ -54,38 +54,38 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
      */
     private String lifecycleDetails;
     /**
-     * @return Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      * 
      */
     private String shape;
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      * 
      */
     private String state;
     /**
-     * @return The time Configuration was created. An RFC3339 formatted datetime string
+     * @return The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String timeCreated;
 
     private GetDefaultConfigurationsDefaultConfigurationCollectionItem() {}
     /**
-     * @return List of DB default Configuration Values.
+     * @return List of default configuration values for databases.
      * 
      */
     public List<GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetail> configurationDetails() {
         return this.configurationDetails;
     }
     /**
-     * @return Verison of the Postgresql DB like 14.5
+     * @return Verison of the PostgreSQL database, such as 14.9.
      * 
      */
     public String dbVersion() {
         return this.dbVersion;
     }
     /**
-     * @return Config description
+     * @return A description for the configuration.
      * 
      */
     public String description() {
@@ -99,21 +99,21 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
         return this.displayName;
     }
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return A unique identifier for the configuration.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+     * @return Memory size in gigabytes with 1GB increment.
      * 
      */
     public Integer instanceMemorySizeInGbs() {
         return this.instanceMemorySizeInGbs;
     }
     /**
-     * @return CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+     * @return CPU core count. Minimum value is 1.
      * 
      */
     public Integer instanceOcpuCount() {
@@ -127,21 +127,21 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
         return this.lifecycleDetails;
     }
     /**
-     * @return Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      * 
      */
     public String shape() {
         return this.shape;
     }
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return The time Configuration was created. An RFC3339 formatted datetime string
+     * @return The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public String timeCreated() {

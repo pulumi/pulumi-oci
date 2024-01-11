@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Psql
         /// <summary>
         /// This data source provides details about a specific Db System Connection Detail resource in Oracle Cloud Infrastructure Psql service.
         /// 
-        /// Gets the DbSystem connection details.
+        /// Gets the database system connection details.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Psql
         /// <summary>
         /// This data source provides details about a specific Db System Connection Detail resource in Oracle Cloud Infrastructure Psql service.
         /// 
-        /// Gets the DbSystem connection details.
+        /// Gets the database system connection details.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.Psql
     public sealed class GetDbSystemConnectionDetailArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique DbSystem identifier
+        /// A unique identifier for the database system.
         /// </summary>
         [Input("dbSystemId", required: true)]
         public string DbSystemId { get; set; } = null!;
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.Psql
     public sealed class GetDbSystemConnectionDetailInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique DbSystem identifier
+        /// A unique identifier for the database system.
         /// </summary>
         [Input("dbSystemId", required: true)]
         public Input<string> DbSystemId { get; set; } = null!;
@@ -106,7 +106,7 @@ namespace Pulumi.Oci.Psql
     public sealed class GetDbSystemConnectionDetailResult
     {
         /// <summary>
-        /// The CA certificate to be used by the Posgresql client to connect to the database. The CA certificate is used to authenticate the server identity.  It is issued by PostgreSQL Service Private CA.
+        /// The CA certificate to be used by the PosgreSQL client to connect to the database. The CA certificate is used to authenticate the server identity.  It is issued by PostgreSQL Service Private CA.
         /// </summary>
         public readonly string CaCertificate;
         public readonly string DbSystemId;
@@ -115,11 +115,11 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The list of DbInstance endpoints in the DbSystem.
+        /// The list of database instance node endpoints in the database system.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbSystemConnectionDetailInstanceEndpointResult> InstanceEndpoints;
         /// <summary>
-        /// The node endpoint information.
+        /// Information about the database instance node endpoint.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbSystemConnectionDetailPrimaryDbEndpointResult> PrimaryDbEndpoints;
 

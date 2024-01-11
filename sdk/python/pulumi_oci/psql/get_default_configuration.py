@@ -64,7 +64,7 @@ class GetDefaultConfigurationResult:
     @pulumi.getter(name="configurationDetails")
     def configuration_details(self) -> Sequence['outputs.GetDefaultConfigurationConfigurationDetailResult']:
         """
-        List of DB default Configuration Values.
+        List of default configuration values for databases.
         """
         return pulumi.get(self, "configuration_details")
 
@@ -72,7 +72,7 @@ class GetDefaultConfigurationResult:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> str:
         """
-        Version of the Postgresql DB
+        Version of the PostgreSQL database.
         """
         return pulumi.get(self, "db_version")
 
@@ -85,7 +85,7 @@ class GetDefaultConfigurationResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        Config description
+        A description for the configuration.
         """
         return pulumi.get(self, "description")
 
@@ -93,7 +93,7 @@ class GetDefaultConfigurationResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Config display name
+        A user-friendly display name for the configuration.
         """
         return pulumi.get(self, "display_name")
 
@@ -109,7 +109,7 @@ class GetDefaultConfigurationResult:
     @pulumi.getter(name="instanceMemorySizeInGbs")
     def instance_memory_size_in_gbs(self) -> int:
         """
-        Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+        Memory size in gigabytes with 1GB increment.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
@@ -117,7 +117,7 @@ class GetDefaultConfigurationResult:
     @pulumi.getter(name="instanceOcpuCount")
     def instance_ocpu_count(self) -> int:
         """
-        CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+        CPU core count. Minimum value is 1.
         """
         return pulumi.get(self, "instance_ocpu_count")
 
@@ -133,7 +133,7 @@ class GetDefaultConfigurationResult:
     @pulumi.getter
     def shape(self) -> str:
         """
-        Compute Shape Name like VM.Standard3.Flex.
+        The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         """
         return pulumi.get(self, "shape")
 
@@ -141,7 +141,7 @@ class GetDefaultConfigurationResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the Configuration.
+        The current state of the configuration.
         """
         return pulumi.get(self, "state")
 
@@ -149,7 +149,7 @@ class GetDefaultConfigurationResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time Configuration was created. An RFC3339 formatted datetime string
+        The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -179,7 +179,7 @@ def get_default_configuration(default_configuration_id: Optional[str] = None,
     """
     This data source provides details about a specific Default Configuration resource in Oracle Cloud Infrastructure Psql service.
 
-    Gets a Default Configuration by identifier
+    Gets a default configuration by identifier.
 
     ## Example Usage
 
@@ -191,7 +191,7 @@ def get_default_configuration(default_configuration_id: Optional[str] = None,
     ```
 
 
-    :param str default_configuration_id: unique Configuration identifier
+    :param str default_configuration_id: A unique identifier for the configuration.
     """
     __args__ = dict()
     __args__['defaultConfigurationId'] = default_configuration_id
@@ -219,7 +219,7 @@ def get_default_configuration_output(default_configuration_id: Optional[pulumi.I
     """
     This data source provides details about a specific Default Configuration resource in Oracle Cloud Infrastructure Psql service.
 
-    Gets a Default Configuration by identifier
+    Gets a default configuration by identifier.
 
     ## Example Usage
 
@@ -231,6 +231,6 @@ def get_default_configuration_output(default_configuration_id: Optional[pulumi.I
     ```
 
 
-    :param str default_configuration_id: unique Configuration identifier
+    :param str default_configuration_id: A unique identifier for the configuration.
     """
     ...

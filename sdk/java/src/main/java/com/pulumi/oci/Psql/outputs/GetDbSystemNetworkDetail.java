@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetDbSystemNetworkDetail {
     /**
-     * @return List of customer NetworkSecurityGroup identifiers
+     * @return List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
      * 
      */
     private List<String> nsgIds;
     /**
-     * @return Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+     * @return Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
      * 
      */
     private String primaryDbEndpointPrivateIp;
     /**
-     * @return Customer Subnet identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
      * 
      */
     private String subnetId;
 
     private GetDbSystemNetworkDetail() {}
     /**
-     * @return List of customer NetworkSecurityGroup identifiers
+     * @return List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
      * 
      */
     public List<String> nsgIds() {
         return this.nsgIds;
     }
     /**
-     * @return Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+     * @return Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
      * 
      */
     public String primaryDbEndpointPrivateIp() {
         return this.primaryDbEndpointPrivateIp;
     }
     /**
-     * @return Customer Subnet identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
      * 
      */
     public String subnetId() {

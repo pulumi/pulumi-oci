@@ -37,7 +37,7 @@ class VolumeArgs:
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the volume.
         :param pulumi.Input[Sequence[pulumi.Input['VolumeAutotunePolicyArgs']]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
-        :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
+        :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a volume.
         :param pulumi.Input[Sequence[pulumi.Input['VolumeBlockVolumeReplicaArgs']]] block_volume_replicas: (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -128,7 +128,7 @@ class VolumeArgs:
     @pulumi.getter(name="backupPolicyId")
     def backup_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
+        If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a volume.
         """
         warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
         pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
@@ -313,7 +313,7 @@ class _VolumeState:
         :param pulumi.Input[str] auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this volume is effectively tuned to.
         :param pulumi.Input[Sequence[pulumi.Input['VolumeAutotunePolicyArgs']]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
+        :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a volume.
         :param pulumi.Input[Sequence[pulumi.Input['VolumeBlockVolumeReplicaArgs']]] block_volume_replicas: (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the volume.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -424,7 +424,7 @@ class _VolumeState:
     @pulumi.getter(name="backupPolicyId")
     def backup_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
+        If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a volume.
         """
         warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
         pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
@@ -740,7 +740,7 @@ class Volume(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeAutotunePolicyArgs']]]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
+        :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a volume.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeBlockVolumeReplicaArgs']]]] block_volume_replicas: (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the volume.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -932,7 +932,7 @@ class Volume(pulumi.CustomResource):
         :param pulumi.Input[str] auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this volume is effectively tuned to.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeAutotunePolicyArgs']]]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
+        :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a volume.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeBlockVolumeReplicaArgs']]]] block_volume_replicas: (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the volume.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -1008,7 +1008,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="backupPolicyId")
     def backup_policy_id(self) -> pulumi.Output[str]:
         """
-        If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
+        If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a volume.
         """
         warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
         pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")

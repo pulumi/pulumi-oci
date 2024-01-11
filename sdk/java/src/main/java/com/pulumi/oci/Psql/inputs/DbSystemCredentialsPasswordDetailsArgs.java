@@ -17,14 +17,14 @@ public final class DbSystemCredentialsPasswordDetailsArgs extends com.pulumi.res
     public static final DbSystemCredentialsPasswordDetailsArgs Empty = new DbSystemCredentialsPasswordDetailsArgs();
 
     /**
-     * The dbSystem password.
+     * The database system password.
      * 
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
-     * @return The dbSystem password.
+     * @return The database system password.
      * 
      */
     public Optional<Output<String>> password() {
@@ -32,14 +32,14 @@ public final class DbSystemCredentialsPasswordDetailsArgs extends com.pulumi.res
     }
 
     /**
-     * Password type
+     * The password type.
      * 
      */
     @Import(name="passwordType", required=true)
     private Output<String> passwordType;
 
     /**
-     * @return Password type
+     * @return The password type.
      * 
      */
     public Output<String> passwordType() {
@@ -47,14 +47,14 @@ public final class DbSystemCredentialsPasswordDetailsArgs extends com.pulumi.res
     }
 
     /**
-     * The OCID of secret where the password is stored.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret where the password is stored.
      * 
      */
     @Import(name="secretId")
     private @Nullable Output<String> secretId;
 
     /**
-     * @return The OCID of secret where the password is stored.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret where the password is stored.
      * 
      */
     public Optional<Output<String>> secretId() {
@@ -62,14 +62,14 @@ public final class DbSystemCredentialsPasswordDetailsArgs extends com.pulumi.res
     }
 
     /**
-     * The secret version where the password is stored.
+     * The secret version of the stored password.
      * 
      */
     @Import(name="secretVersion")
     private @Nullable Output<String> secretVersion;
 
     /**
-     * @return The secret version where the password is stored.
+     * @return The secret version of the stored password.
      * 
      */
     public Optional<Output<String>> secretVersion() {
@@ -104,7 +104,7 @@ public final class DbSystemCredentialsPasswordDetailsArgs extends com.pulumi.res
         }
 
         /**
-         * @param password The dbSystem password.
+         * @param password The database system password.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class DbSystemCredentialsPasswordDetailsArgs extends com.pulumi.res
         }
 
         /**
-         * @param password The dbSystem password.
+         * @param password The database system password.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class DbSystemCredentialsPasswordDetailsArgs extends com.pulumi.res
         }
 
         /**
-         * @param passwordType Password type
+         * @param passwordType The password type.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class DbSystemCredentialsPasswordDetailsArgs extends com.pulumi.res
         }
 
         /**
-         * @param passwordType Password type
+         * @param passwordType The password type.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class DbSystemCredentialsPasswordDetailsArgs extends com.pulumi.res
         }
 
         /**
-         * @param secretId The OCID of secret where the password is stored.
+         * @param secretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret where the password is stored.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class DbSystemCredentialsPasswordDetailsArgs extends com.pulumi.res
         }
 
         /**
-         * @param secretId The OCID of secret where the password is stored.
+         * @param secretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret where the password is stored.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class DbSystemCredentialsPasswordDetailsArgs extends com.pulumi.res
         }
 
         /**
-         * @param secretVersion The secret version where the password is stored.
+         * @param secretVersion The secret version of the stored password.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class DbSystemCredentialsPasswordDetailsArgs extends com.pulumi.res
         }
 
         /**
-         * @param secretVersion The secret version where the password is stored.
+         * @param secretVersion The secret version of the stored password.
          * 
          * @return builder
          * 

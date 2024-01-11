@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDbSystemsDbSystemCollectionItemInstancesDetail {
     /**
-     * @return Description of the DbInstance.
+     * @return Description of the database instance node.
      * 
      */
     private String description;
@@ -24,7 +24,7 @@ public final class GetDbSystemsDbSystemCollectionItemInstancesDetail {
 
     private GetDbSystemsDbSystemCollectionItemInstancesDetail() {}
     /**
-     * @return Description of the DbInstance.
+     * @return Description of the database instance node.
      * 
      */
     public String description() {

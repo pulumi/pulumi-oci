@@ -22,6 +22,7 @@ class DbSystemArgs:
                  network_details: pulumi.Input['DbSystemNetworkDetailsArgs'],
                  shape: pulumi.Input[str],
                  storage_details: pulumi.Input['DbSystemStorageDetailsArgs'],
+                 apply_config: Optional[pulumi.Input[str]] = None,
                  config_id: Optional[pulumi.Input[str]] = None,
                  credentials: Optional[pulumi.Input['DbSystemCredentialsArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -32,28 +33,31 @@ class DbSystemArgs:
                  instance_ocpu_count: Optional[pulumi.Input[int]] = None,
                  instances_details: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]]] = None,
                  management_policy: Optional[pulumi.Input['DbSystemManagementPolicyArgs']] = None,
+                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]]] = None,
                  source: Optional[pulumi.Input['DbSystemSourceArgs']] = None,
                  system_type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a DbSystem resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier
-        :param pulumi.Input[str] db_version: Version of DbSystem software.
-        :param pulumi.Input[str] display_name: Display name of the DbInstance.
-        :param pulumi.Input['DbSystemNetworkDetailsArgs'] network_details: DbSystem network details.
-        :param pulumi.Input[str] shape: Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
-        :param pulumi.Input['DbSystemStorageDetailsArgs'] storage_details: (Updatable) Storage details of the DbSystem.
-        :param pulumi.Input[str] config_id: Configuration identifier
-        :param pulumi.Input['DbSystemCredentialsArgs'] credentials: Initial DbSystem credentials that the DbSystem will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
+        :param pulumi.Input[str] db_version: Version of database system software.
+        :param pulumi.Input[str] display_name: Display name of the database instance node. Avoid entering confidential information.
+        :param pulumi.Input['DbSystemNetworkDetailsArgs'] network_details: Network details for the database system.
+        :param pulumi.Input[str] shape: The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+        :param pulumi.Input['DbSystemStorageDetailsArgs'] storage_details: (Updatable) Storage details of the database system.
+        :param pulumi.Input[str] apply_config: Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
+        :param pulumi.Input[str] config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+        :param pulumi.Input['DbSystemCredentialsArgs'] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: Description of the DbInstance. This field should be input by the user.
+        :param pulumi.Input[str] description: A user-provided description of the database instance node.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] instance_count: Count of DbInstances to be created in the DbSystem.
-        :param pulumi.Input[int] instance_memory_size_in_gbs: The total amount of memory available to each DbInstance, in gigabytes.
-        :param pulumi.Input[int] instance_ocpu_count: The total number of OCPUs available to each DbInstance.
-        :param pulumi.Input[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]] instances_details: Details of DbInstances to be created. Optional parameter. If specified, its size must match instanceCount.
-        :param pulumi.Input['DbSystemManagementPolicyArgs'] management_policy: (Updatable) Posgresql DB system management policy update details
-        :param pulumi.Input['DbSystemSourceArgs'] source: New source is used to restore the DB system.
-        :param pulumi.Input[str] system_type: Type of the DbSystem.
+        :param pulumi.Input[int] instance_count: (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
+        :param pulumi.Input[int] instance_memory_size_in_gbs: The total amount of memory available to each database instance node, in gigabytes.
+        :param pulumi.Input[int] instance_ocpu_count: The total number of OCPUs available to each database instance node.
+        :param pulumi.Input[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]] instances_details: Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
+        :param pulumi.Input['DbSystemManagementPolicyArgs'] management_policy: (Updatable) PostgreSQL database system management policy update details.
+        :param pulumi.Input[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]] patch_operations: (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+        :param pulumi.Input['DbSystemSourceArgs'] source: The source used to restore the database system.
+        :param pulumi.Input[str] system_type: Type of the database system.
                
                
                ** IMPORTANT **
@@ -65,6 +69,8 @@ class DbSystemArgs:
         pulumi.set(__self__, "network_details", network_details)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "storage_details", storage_details)
+        if apply_config is not None:
+            pulumi.set(__self__, "apply_config", apply_config)
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
         if credentials is not None:
@@ -85,6 +91,8 @@ class DbSystemArgs:
             pulumi.set(__self__, "instances_details", instances_details)
         if management_policy is not None:
             pulumi.set(__self__, "management_policy", management_policy)
+        if patch_operations is not None:
+            pulumi.set(__self__, "patch_operations", patch_operations)
         if source is not None:
             pulumi.set(__self__, "source", source)
         if system_type is not None:
@@ -94,7 +102,7 @@ class DbSystemArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) Compartment identifier
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -106,7 +114,7 @@ class DbSystemArgs:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> pulumi.Input[str]:
         """
-        Version of DbSystem software.
+        Version of database system software.
         """
         return pulumi.get(self, "db_version")
 
@@ -118,7 +126,7 @@ class DbSystemArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        Display name of the DbInstance.
+        Display name of the database instance node. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -130,7 +138,7 @@ class DbSystemArgs:
     @pulumi.getter(name="networkDetails")
     def network_details(self) -> pulumi.Input['DbSystemNetworkDetailsArgs']:
         """
-        DbSystem network details.
+        Network details for the database system.
         """
         return pulumi.get(self, "network_details")
 
@@ -142,7 +150,7 @@ class DbSystemArgs:
     @pulumi.getter
     def shape(self) -> pulumi.Input[str]:
         """
-        Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
+        The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         """
         return pulumi.get(self, "shape")
 
@@ -154,7 +162,7 @@ class DbSystemArgs:
     @pulumi.getter(name="storageDetails")
     def storage_details(self) -> pulumi.Input['DbSystemStorageDetailsArgs']:
         """
-        (Updatable) Storage details of the DbSystem.
+        (Updatable) Storage details of the database system.
         """
         return pulumi.get(self, "storage_details")
 
@@ -163,10 +171,22 @@ class DbSystemArgs:
         pulumi.set(self, "storage_details", value)
 
     @property
+    @pulumi.getter(name="applyConfig")
+    def apply_config(self) -> Optional[pulumi.Input[str]]:
+        """
+        Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
+        """
+        return pulumi.get(self, "apply_config")
+
+    @apply_config.setter
+    def apply_config(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "apply_config", value)
+
+    @property
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Configuration identifier
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
         """
         return pulumi.get(self, "config_id")
 
@@ -178,7 +198,7 @@ class DbSystemArgs:
     @pulumi.getter
     def credentials(self) -> Optional[pulumi.Input['DbSystemCredentialsArgs']]:
         """
-        Initial DbSystem credentials that the DbSystem will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+        Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
         """
         return pulumi.get(self, "credentials")
 
@@ -202,7 +222,7 @@ class DbSystemArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        Description of the DbInstance. This field should be input by the user.
+        A user-provided description of the database instance node.
         """
         return pulumi.get(self, "description")
 
@@ -226,7 +246,7 @@ class DbSystemArgs:
     @pulumi.getter(name="instanceCount")
     def instance_count(self) -> Optional[pulumi.Input[int]]:
         """
-        Count of DbInstances to be created in the DbSystem.
+        (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
         """
         return pulumi.get(self, "instance_count")
 
@@ -238,7 +258,7 @@ class DbSystemArgs:
     @pulumi.getter(name="instanceMemorySizeInGbs")
     def instance_memory_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
         """
-        The total amount of memory available to each DbInstance, in gigabytes.
+        The total amount of memory available to each database instance node, in gigabytes.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
@@ -250,7 +270,7 @@ class DbSystemArgs:
     @pulumi.getter(name="instanceOcpuCount")
     def instance_ocpu_count(self) -> Optional[pulumi.Input[int]]:
         """
-        The total number of OCPUs available to each DbInstance.
+        The total number of OCPUs available to each database instance node.
         """
         return pulumi.get(self, "instance_ocpu_count")
 
@@ -262,7 +282,7 @@ class DbSystemArgs:
     @pulumi.getter(name="instancesDetails")
     def instances_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]]]:
         """
-        Details of DbInstances to be created. Optional parameter. If specified, its size must match instanceCount.
+        Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
         """
         return pulumi.get(self, "instances_details")
 
@@ -274,7 +294,7 @@ class DbSystemArgs:
     @pulumi.getter(name="managementPolicy")
     def management_policy(self) -> Optional[pulumi.Input['DbSystemManagementPolicyArgs']]:
         """
-        (Updatable) Posgresql DB system management policy update details
+        (Updatable) PostgreSQL database system management policy update details.
         """
         return pulumi.get(self, "management_policy")
 
@@ -283,10 +303,22 @@ class DbSystemArgs:
         pulumi.set(self, "management_policy", value)
 
     @property
+    @pulumi.getter(name="patchOperations")
+    def patch_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]]]:
+        """
+        (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+        """
+        return pulumi.get(self, "patch_operations")
+
+    @patch_operations.setter
+    def patch_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]]]):
+        pulumi.set(self, "patch_operations", value)
+
+    @property
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input['DbSystemSourceArgs']]:
         """
-        New source is used to restore the DB system.
+        The source used to restore the database system.
         """
         return pulumi.get(self, "source")
 
@@ -298,7 +330,7 @@ class DbSystemArgs:
     @pulumi.getter(name="systemType")
     def system_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Type of the DbSystem.
+        Type of the database system.
 
 
         ** IMPORTANT **
@@ -315,6 +347,7 @@ class DbSystemArgs:
 class _DbSystemState:
     def __init__(__self__, *,
                  admin_username: Optional[pulumi.Input[str]] = None,
+                 apply_config: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  config_id: Optional[pulumi.Input[str]] = None,
                  credentials: Optional[pulumi.Input['DbSystemCredentialsArgs']] = None,
@@ -331,6 +364,7 @@ class _DbSystemState:
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  management_policy: Optional[pulumi.Input['DbSystemManagementPolicyArgs']] = None,
                  network_details: Optional[pulumi.Input['DbSystemNetworkDetailsArgs']] = None,
+                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input['DbSystemSourceArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -341,38 +375,42 @@ class _DbSystemState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DbSystem resources.
-        :param pulumi.Input[str] admin_username: The DB system username.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier
-        :param pulumi.Input[str] config_id: Configuration identifier
-        :param pulumi.Input['DbSystemCredentialsArgs'] credentials: Initial DbSystem credentials that the DbSystem will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
-        :param pulumi.Input[str] db_version: Version of DbSystem software.
+        :param pulumi.Input[str] admin_username: The database system administrator username.
+        :param pulumi.Input[str] apply_config: Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
+        :param pulumi.Input[str] config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+        :param pulumi.Input['DbSystemCredentialsArgs'] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+        :param pulumi.Input[str] db_version: Version of database system software.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: Description of the DbInstance. This field should be input by the user.
-        :param pulumi.Input[str] display_name: Display name of the DbInstance.
+        :param pulumi.Input[str] description: A user-provided description of the database instance node.
+        :param pulumi.Input[str] display_name: Display name of the database instance node. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] instance_count: Count of DbInstances to be created in the DbSystem.
-        :param pulumi.Input[int] instance_memory_size_in_gbs: The total amount of memory available to each DbInstance, in gigabytes.
-        :param pulumi.Input[int] instance_ocpu_count: The total number of OCPUs available to each DbInstance.
-        :param pulumi.Input[Sequence[pulumi.Input['DbSystemInstanceArgs']]] instances: The list of DbInstances in the DbSystem.
-        :param pulumi.Input[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]] instances_details: Details of DbInstances to be created. Optional parameter. If specified, its size must match instanceCount.
+        :param pulumi.Input[int] instance_count: (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
+        :param pulumi.Input[int] instance_memory_size_in_gbs: The total amount of memory available to each database instance node, in gigabytes.
+        :param pulumi.Input[int] instance_ocpu_count: The total number of OCPUs available to each database instance node.
+        :param pulumi.Input[Sequence[pulumi.Input['DbSystemInstanceArgs']]] instances: The list of instances, or nodes, in the database system.
+        :param pulumi.Input[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]] instances_details: Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input['DbSystemManagementPolicyArgs'] management_policy: (Updatable) Posgresql DB system management policy update details
-        :param pulumi.Input['DbSystemNetworkDetailsArgs'] network_details: DbSystem network details.
-        :param pulumi.Input[str] shape: Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
-        :param pulumi.Input['DbSystemSourceArgs'] source: New source is used to restore the DB system.
-        :param pulumi.Input[str] state: The current state of the DbSystem.
-        :param pulumi.Input['DbSystemStorageDetailsArgs'] storage_details: (Updatable) Storage details of the DbSystem.
+        :param pulumi.Input['DbSystemManagementPolicyArgs'] management_policy: (Updatable) PostgreSQL database system management policy update details.
+        :param pulumi.Input['DbSystemNetworkDetailsArgs'] network_details: Network details for the database system.
+        :param pulumi.Input[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]] patch_operations: (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+        :param pulumi.Input[str] shape: The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+        :param pulumi.Input['DbSystemSourceArgs'] source: The source used to restore the database system.
+        :param pulumi.Input[str] state: The current state of the database system.
+        :param pulumi.Input['DbSystemStorageDetailsArgs'] storage_details: (Updatable) Storage details of the database system.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] system_type: Type of the DbSystem.
+        :param pulumi.Input[str] system_type: Type of the database system.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The time the the DbSystem was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the DbSystem was updated. An RFC3339 formatted datetime string
+        :param pulumi.Input[str] time_created: The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[str] time_updated: The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         if admin_username is not None:
             pulumi.set(__self__, "admin_username", admin_username)
+        if apply_config is not None:
+            pulumi.set(__self__, "apply_config", apply_config)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if config_id is not None:
@@ -405,6 +443,8 @@ class _DbSystemState:
             pulumi.set(__self__, "management_policy", management_policy)
         if network_details is not None:
             pulumi.set(__self__, "network_details", network_details)
+        if patch_operations is not None:
+            pulumi.set(__self__, "patch_operations", patch_operations)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if source is not None:
@@ -426,7 +466,7 @@ class _DbSystemState:
     @pulumi.getter(name="adminUsername")
     def admin_username(self) -> Optional[pulumi.Input[str]]:
         """
-        The DB system username.
+        The database system administrator username.
         """
         return pulumi.get(self, "admin_username")
 
@@ -435,10 +475,22 @@ class _DbSystemState:
         pulumi.set(self, "admin_username", value)
 
     @property
+    @pulumi.getter(name="applyConfig")
+    def apply_config(self) -> Optional[pulumi.Input[str]]:
+        """
+        Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
+        """
+        return pulumi.get(self, "apply_config")
+
+    @apply_config.setter
+    def apply_config(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "apply_config", value)
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Compartment identifier
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -450,7 +502,7 @@ class _DbSystemState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Configuration identifier
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
         """
         return pulumi.get(self, "config_id")
 
@@ -462,7 +514,7 @@ class _DbSystemState:
     @pulumi.getter
     def credentials(self) -> Optional[pulumi.Input['DbSystemCredentialsArgs']]:
         """
-        Initial DbSystem credentials that the DbSystem will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+        Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
         """
         return pulumi.get(self, "credentials")
 
@@ -474,7 +526,7 @@ class _DbSystemState:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[pulumi.Input[str]]:
         """
-        Version of DbSystem software.
+        Version of database system software.
         """
         return pulumi.get(self, "db_version")
 
@@ -498,7 +550,7 @@ class _DbSystemState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        Description of the DbInstance. This field should be input by the user.
+        A user-provided description of the database instance node.
         """
         return pulumi.get(self, "description")
 
@@ -510,7 +562,7 @@ class _DbSystemState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        Display name of the DbInstance.
+        Display name of the database instance node. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -534,7 +586,7 @@ class _DbSystemState:
     @pulumi.getter(name="instanceCount")
     def instance_count(self) -> Optional[pulumi.Input[int]]:
         """
-        Count of DbInstances to be created in the DbSystem.
+        (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
         """
         return pulumi.get(self, "instance_count")
 
@@ -546,7 +598,7 @@ class _DbSystemState:
     @pulumi.getter(name="instanceMemorySizeInGbs")
     def instance_memory_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
         """
-        The total amount of memory available to each DbInstance, in gigabytes.
+        The total amount of memory available to each database instance node, in gigabytes.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
@@ -558,7 +610,7 @@ class _DbSystemState:
     @pulumi.getter(name="instanceOcpuCount")
     def instance_ocpu_count(self) -> Optional[pulumi.Input[int]]:
         """
-        The total number of OCPUs available to each DbInstance.
+        The total number of OCPUs available to each database instance node.
         """
         return pulumi.get(self, "instance_ocpu_count")
 
@@ -570,7 +622,7 @@ class _DbSystemState:
     @pulumi.getter
     def instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemInstanceArgs']]]]:
         """
-        The list of DbInstances in the DbSystem.
+        The list of instances, or nodes, in the database system.
         """
         return pulumi.get(self, "instances")
 
@@ -582,7 +634,7 @@ class _DbSystemState:
     @pulumi.getter(name="instancesDetails")
     def instances_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]]]:
         """
-        Details of DbInstances to be created. Optional parameter. If specified, its size must match instanceCount.
+        Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
         """
         return pulumi.get(self, "instances_details")
 
@@ -606,7 +658,7 @@ class _DbSystemState:
     @pulumi.getter(name="managementPolicy")
     def management_policy(self) -> Optional[pulumi.Input['DbSystemManagementPolicyArgs']]:
         """
-        (Updatable) Posgresql DB system management policy update details
+        (Updatable) PostgreSQL database system management policy update details.
         """
         return pulumi.get(self, "management_policy")
 
@@ -618,7 +670,7 @@ class _DbSystemState:
     @pulumi.getter(name="networkDetails")
     def network_details(self) -> Optional[pulumi.Input['DbSystemNetworkDetailsArgs']]:
         """
-        DbSystem network details.
+        Network details for the database system.
         """
         return pulumi.get(self, "network_details")
 
@@ -627,10 +679,22 @@ class _DbSystemState:
         pulumi.set(self, "network_details", value)
 
     @property
+    @pulumi.getter(name="patchOperations")
+    def patch_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]]]:
+        """
+        (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+        """
+        return pulumi.get(self, "patch_operations")
+
+    @patch_operations.setter
+    def patch_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]]]):
+        pulumi.set(self, "patch_operations", value)
+
+    @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
         """
-        Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
+        The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         """
         return pulumi.get(self, "shape")
 
@@ -642,7 +706,7 @@ class _DbSystemState:
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input['DbSystemSourceArgs']]:
         """
-        New source is used to restore the DB system.
+        The source used to restore the database system.
         """
         return pulumi.get(self, "source")
 
@@ -654,7 +718,7 @@ class _DbSystemState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The current state of the DbSystem.
+        The current state of the database system.
         """
         return pulumi.get(self, "state")
 
@@ -666,7 +730,7 @@ class _DbSystemState:
     @pulumi.getter(name="storageDetails")
     def storage_details(self) -> Optional[pulumi.Input['DbSystemStorageDetailsArgs']]:
         """
-        (Updatable) Storage details of the DbSystem.
+        (Updatable) Storage details of the database system.
         """
         return pulumi.get(self, "storage_details")
 
@@ -690,7 +754,7 @@ class _DbSystemState:
     @pulumi.getter(name="systemType")
     def system_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Type of the DbSystem.
+        Type of the database system.
 
 
         ** IMPORTANT **
@@ -706,7 +770,7 @@ class _DbSystemState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        The time the the DbSystem was created. An RFC3339 formatted datetime string
+        The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -718,7 +782,7 @@ class _DbSystemState:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
-        The time the DbSystem was updated. An RFC3339 formatted datetime string
+        The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -732,6 +796,7 @@ class DbSystem(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 apply_config: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  config_id: Optional[pulumi.Input[str]] = None,
                  credentials: Optional[pulumi.Input[pulumi.InputType['DbSystemCredentialsArgs']]] = None,
@@ -746,6 +811,7 @@ class DbSystem(pulumi.CustomResource):
                  instances_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemInstancesDetailArgs']]]]] = None,
                  management_policy: Optional[pulumi.Input[pulumi.InputType['DbSystemManagementPolicyArgs']]] = None,
                  network_details: Optional[pulumi.Input[pulumi.InputType['DbSystemNetworkDetailsArgs']]] = None,
+                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemPatchOperationArgs']]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input[pulumi.InputType['DbSystemSourceArgs']]] = None,
                  storage_details: Optional[pulumi.Input[pulumi.InputType['DbSystemStorageDetailsArgs']]] = None,
@@ -754,7 +820,7 @@ class DbSystem(pulumi.CustomResource):
         """
         This resource provides the Db System resource in Oracle Cloud Infrastructure Psql service.
 
-        Creates a new DbSystem.
+        Creates a new database system.
 
         ## Example Usage
 
@@ -779,6 +845,7 @@ class DbSystem(pulumi.CustomResource):
                 iops=var["db_system_storage_details_iops"],
             ),
             config_id=oci_apm_config_config["test_config"]["id"],
+            apply_config=var["db_system_apply_config_type"],
             credentials=oci.psql.DbSystemCredentialsArgs(
                 password_details=oci.psql.DbSystemCredentialsPasswordDetailsArgs(
                     password_type=var["db_system_credentials_password_details_password_type"],
@@ -818,7 +885,12 @@ class DbSystem(pulumi.CustomResource):
                 backup_id=oci_psql_backup["test_backup"]["id"],
                 is_having_restore_config_overrides=var["db_system_source_is_having_restore_config_overrides"],
             ),
-            system_type=var["db_system_system_type"])
+            system_type=var["db_system_system_type"],
+            patch_operations=[oci.psql.DbSystemPatchOperationArgs(
+                operation=var["db_system_patch_operations_operation"],
+                selection=var["db_system_patch_operations_selection"],
+                value=var["db_system_patch_operations_value"],
+            )])
         ```
 
         ## Import
@@ -831,24 +903,26 @@ class DbSystem(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier
-        :param pulumi.Input[str] config_id: Configuration identifier
-        :param pulumi.Input[pulumi.InputType['DbSystemCredentialsArgs']] credentials: Initial DbSystem credentials that the DbSystem will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
-        :param pulumi.Input[str] db_version: Version of DbSystem software.
+        :param pulumi.Input[str] apply_config: Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
+        :param pulumi.Input[str] config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+        :param pulumi.Input[pulumi.InputType['DbSystemCredentialsArgs']] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+        :param pulumi.Input[str] db_version: Version of database system software.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: Description of the DbInstance. This field should be input by the user.
-        :param pulumi.Input[str] display_name: Display name of the DbInstance.
+        :param pulumi.Input[str] description: A user-provided description of the database instance node.
+        :param pulumi.Input[str] display_name: Display name of the database instance node. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] instance_count: Count of DbInstances to be created in the DbSystem.
-        :param pulumi.Input[int] instance_memory_size_in_gbs: The total amount of memory available to each DbInstance, in gigabytes.
-        :param pulumi.Input[int] instance_ocpu_count: The total number of OCPUs available to each DbInstance.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemInstancesDetailArgs']]]] instances_details: Details of DbInstances to be created. Optional parameter. If specified, its size must match instanceCount.
-        :param pulumi.Input[pulumi.InputType['DbSystemManagementPolicyArgs']] management_policy: (Updatable) Posgresql DB system management policy update details
-        :param pulumi.Input[pulumi.InputType['DbSystemNetworkDetailsArgs']] network_details: DbSystem network details.
-        :param pulumi.Input[str] shape: Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
-        :param pulumi.Input[pulumi.InputType['DbSystemSourceArgs']] source: New source is used to restore the DB system.
-        :param pulumi.Input[pulumi.InputType['DbSystemStorageDetailsArgs']] storage_details: (Updatable) Storage details of the DbSystem.
-        :param pulumi.Input[str] system_type: Type of the DbSystem.
+        :param pulumi.Input[int] instance_count: (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
+        :param pulumi.Input[int] instance_memory_size_in_gbs: The total amount of memory available to each database instance node, in gigabytes.
+        :param pulumi.Input[int] instance_ocpu_count: The total number of OCPUs available to each database instance node.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemInstancesDetailArgs']]]] instances_details: Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
+        :param pulumi.Input[pulumi.InputType['DbSystemManagementPolicyArgs']] management_policy: (Updatable) PostgreSQL database system management policy update details.
+        :param pulumi.Input[pulumi.InputType['DbSystemNetworkDetailsArgs']] network_details: Network details for the database system.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemPatchOperationArgs']]]] patch_operations: (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+        :param pulumi.Input[str] shape: The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+        :param pulumi.Input[pulumi.InputType['DbSystemSourceArgs']] source: The source used to restore the database system.
+        :param pulumi.Input[pulumi.InputType['DbSystemStorageDetailsArgs']] storage_details: (Updatable) Storage details of the database system.
+        :param pulumi.Input[str] system_type: Type of the database system.
                
                
                ** IMPORTANT **
@@ -863,7 +937,7 @@ class DbSystem(pulumi.CustomResource):
         """
         This resource provides the Db System resource in Oracle Cloud Infrastructure Psql service.
 
-        Creates a new DbSystem.
+        Creates a new database system.
 
         ## Example Usage
 
@@ -888,6 +962,7 @@ class DbSystem(pulumi.CustomResource):
                 iops=var["db_system_storage_details_iops"],
             ),
             config_id=oci_apm_config_config["test_config"]["id"],
+            apply_config=var["db_system_apply_config_type"],
             credentials=oci.psql.DbSystemCredentialsArgs(
                 password_details=oci.psql.DbSystemCredentialsPasswordDetailsArgs(
                     password_type=var["db_system_credentials_password_details_password_type"],
@@ -927,7 +1002,12 @@ class DbSystem(pulumi.CustomResource):
                 backup_id=oci_psql_backup["test_backup"]["id"],
                 is_having_restore_config_overrides=var["db_system_source_is_having_restore_config_overrides"],
             ),
-            system_type=var["db_system_system_type"])
+            system_type=var["db_system_system_type"],
+            patch_operations=[oci.psql.DbSystemPatchOperationArgs(
+                operation=var["db_system_patch_operations_operation"],
+                selection=var["db_system_patch_operations_selection"],
+                value=var["db_system_patch_operations_value"],
+            )])
         ```
 
         ## Import
@@ -953,6 +1033,7 @@ class DbSystem(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 apply_config: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  config_id: Optional[pulumi.Input[str]] = None,
                  credentials: Optional[pulumi.Input[pulumi.InputType['DbSystemCredentialsArgs']]] = None,
@@ -967,6 +1048,7 @@ class DbSystem(pulumi.CustomResource):
                  instances_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemInstancesDetailArgs']]]]] = None,
                  management_policy: Optional[pulumi.Input[pulumi.InputType['DbSystemManagementPolicyArgs']]] = None,
                  network_details: Optional[pulumi.Input[pulumi.InputType['DbSystemNetworkDetailsArgs']]] = None,
+                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemPatchOperationArgs']]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input[pulumi.InputType['DbSystemSourceArgs']]] = None,
                  storage_details: Optional[pulumi.Input[pulumi.InputType['DbSystemStorageDetailsArgs']]] = None,
@@ -980,6 +1062,7 @@ class DbSystem(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DbSystemArgs.__new__(DbSystemArgs)
 
+            __props__.__dict__["apply_config"] = apply_config
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -1002,6 +1085,7 @@ class DbSystem(pulumi.CustomResource):
             if network_details is None and not opts.urn:
                 raise TypeError("Missing required property 'network_details'")
             __props__.__dict__["network_details"] = network_details
+            __props__.__dict__["patch_operations"] = patch_operations
             if shape is None and not opts.urn:
                 raise TypeError("Missing required property 'shape'")
             __props__.__dict__["shape"] = shape
@@ -1028,6 +1112,7 @@ class DbSystem(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             admin_username: Optional[pulumi.Input[str]] = None,
+            apply_config: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             config_id: Optional[pulumi.Input[str]] = None,
             credentials: Optional[pulumi.Input[pulumi.InputType['DbSystemCredentialsArgs']]] = None,
@@ -1044,6 +1129,7 @@ class DbSystem(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             management_policy: Optional[pulumi.Input[pulumi.InputType['DbSystemManagementPolicyArgs']]] = None,
             network_details: Optional[pulumi.Input[pulumi.InputType['DbSystemNetworkDetailsArgs']]] = None,
+            patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemPatchOperationArgs']]]]] = None,
             shape: Optional[pulumi.Input[str]] = None,
             source: Optional[pulumi.Input[pulumi.InputType['DbSystemSourceArgs']]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -1059,41 +1145,44 @@ class DbSystem(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] admin_username: The DB system username.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier
-        :param pulumi.Input[str] config_id: Configuration identifier
-        :param pulumi.Input[pulumi.InputType['DbSystemCredentialsArgs']] credentials: Initial DbSystem credentials that the DbSystem will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
-        :param pulumi.Input[str] db_version: Version of DbSystem software.
+        :param pulumi.Input[str] admin_username: The database system administrator username.
+        :param pulumi.Input[str] apply_config: Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
+        :param pulumi.Input[str] config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+        :param pulumi.Input[pulumi.InputType['DbSystemCredentialsArgs']] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+        :param pulumi.Input[str] db_version: Version of database system software.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: Description of the DbInstance. This field should be input by the user.
-        :param pulumi.Input[str] display_name: Display name of the DbInstance.
+        :param pulumi.Input[str] description: A user-provided description of the database instance node.
+        :param pulumi.Input[str] display_name: Display name of the database instance node. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] instance_count: Count of DbInstances to be created in the DbSystem.
-        :param pulumi.Input[int] instance_memory_size_in_gbs: The total amount of memory available to each DbInstance, in gigabytes.
-        :param pulumi.Input[int] instance_ocpu_count: The total number of OCPUs available to each DbInstance.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemInstanceArgs']]]] instances: The list of DbInstances in the DbSystem.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemInstancesDetailArgs']]]] instances_details: Details of DbInstances to be created. Optional parameter. If specified, its size must match instanceCount.
+        :param pulumi.Input[int] instance_count: (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
+        :param pulumi.Input[int] instance_memory_size_in_gbs: The total amount of memory available to each database instance node, in gigabytes.
+        :param pulumi.Input[int] instance_ocpu_count: The total number of OCPUs available to each database instance node.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemInstanceArgs']]]] instances: The list of instances, or nodes, in the database system.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemInstancesDetailArgs']]]] instances_details: Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[pulumi.InputType['DbSystemManagementPolicyArgs']] management_policy: (Updatable) Posgresql DB system management policy update details
-        :param pulumi.Input[pulumi.InputType['DbSystemNetworkDetailsArgs']] network_details: DbSystem network details.
-        :param pulumi.Input[str] shape: Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
-        :param pulumi.Input[pulumi.InputType['DbSystemSourceArgs']] source: New source is used to restore the DB system.
-        :param pulumi.Input[str] state: The current state of the DbSystem.
-        :param pulumi.Input[pulumi.InputType['DbSystemStorageDetailsArgs']] storage_details: (Updatable) Storage details of the DbSystem.
+        :param pulumi.Input[pulumi.InputType['DbSystemManagementPolicyArgs']] management_policy: (Updatable) PostgreSQL database system management policy update details.
+        :param pulumi.Input[pulumi.InputType['DbSystemNetworkDetailsArgs']] network_details: Network details for the database system.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemPatchOperationArgs']]]] patch_operations: (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+        :param pulumi.Input[str] shape: The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+        :param pulumi.Input[pulumi.InputType['DbSystemSourceArgs']] source: The source used to restore the database system.
+        :param pulumi.Input[str] state: The current state of the database system.
+        :param pulumi.Input[pulumi.InputType['DbSystemStorageDetailsArgs']] storage_details: (Updatable) Storage details of the database system.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] system_type: Type of the DbSystem.
+        :param pulumi.Input[str] system_type: Type of the database system.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The time the the DbSystem was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the DbSystem was updated. An RFC3339 formatted datetime string
+        :param pulumi.Input[str] time_created: The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[str] time_updated: The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _DbSystemState.__new__(_DbSystemState)
 
         __props__.__dict__["admin_username"] = admin_username
+        __props__.__dict__["apply_config"] = apply_config
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["config_id"] = config_id
         __props__.__dict__["credentials"] = credentials
@@ -1110,6 +1199,7 @@ class DbSystem(pulumi.CustomResource):
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["management_policy"] = management_policy
         __props__.__dict__["network_details"] = network_details
+        __props__.__dict__["patch_operations"] = patch_operations
         __props__.__dict__["shape"] = shape
         __props__.__dict__["source"] = source
         __props__.__dict__["state"] = state
@@ -1124,15 +1214,23 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="adminUsername")
     def admin_username(self) -> pulumi.Output[str]:
         """
-        The DB system username.
+        The database system administrator username.
         """
         return pulumi.get(self, "admin_username")
+
+    @property
+    @pulumi.getter(name="applyConfig")
+    def apply_config(self) -> pulumi.Output[Optional[str]]:
+        """
+        Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
+        """
+        return pulumi.get(self, "apply_config")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) Compartment identifier
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1140,7 +1238,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[str]:
         """
-        Configuration identifier
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
         """
         return pulumi.get(self, "config_id")
 
@@ -1148,7 +1246,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter
     def credentials(self) -> pulumi.Output[Optional['outputs.DbSystemCredentials']]:
         """
-        Initial DbSystem credentials that the DbSystem will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+        Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
         """
         return pulumi.get(self, "credentials")
 
@@ -1156,7 +1254,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> pulumi.Output[str]:
         """
-        Version of DbSystem software.
+        Version of database system software.
         """
         return pulumi.get(self, "db_version")
 
@@ -1172,7 +1270,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        Description of the DbInstance. This field should be input by the user.
+        A user-provided description of the database instance node.
         """
         return pulumi.get(self, "description")
 
@@ -1180,7 +1278,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        Display name of the DbInstance.
+        Display name of the database instance node. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -1196,7 +1294,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="instanceCount")
     def instance_count(self) -> pulumi.Output[int]:
         """
-        Count of DbInstances to be created in the DbSystem.
+        (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
         """
         return pulumi.get(self, "instance_count")
 
@@ -1204,7 +1302,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="instanceMemorySizeInGbs")
     def instance_memory_size_in_gbs(self) -> pulumi.Output[int]:
         """
-        The total amount of memory available to each DbInstance, in gigabytes.
+        The total amount of memory available to each database instance node, in gigabytes.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
@@ -1212,7 +1310,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="instanceOcpuCount")
     def instance_ocpu_count(self) -> pulumi.Output[int]:
         """
-        The total number of OCPUs available to each DbInstance.
+        The total number of OCPUs available to each database instance node.
         """
         return pulumi.get(self, "instance_ocpu_count")
 
@@ -1220,7 +1318,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter
     def instances(self) -> pulumi.Output[Sequence['outputs.DbSystemInstance']]:
         """
-        The list of DbInstances in the DbSystem.
+        The list of instances, or nodes, in the database system.
         """
         return pulumi.get(self, "instances")
 
@@ -1228,7 +1326,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="instancesDetails")
     def instances_details(self) -> pulumi.Output[Sequence['outputs.DbSystemInstancesDetail']]:
         """
-        Details of DbInstances to be created. Optional parameter. If specified, its size must match instanceCount.
+        Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
         """
         return pulumi.get(self, "instances_details")
 
@@ -1244,7 +1342,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="managementPolicy")
     def management_policy(self) -> pulumi.Output['outputs.DbSystemManagementPolicy']:
         """
-        (Updatable) Posgresql DB system management policy update details
+        (Updatable) PostgreSQL database system management policy update details.
         """
         return pulumi.get(self, "management_policy")
 
@@ -1252,15 +1350,23 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="networkDetails")
     def network_details(self) -> pulumi.Output['outputs.DbSystemNetworkDetails']:
         """
-        DbSystem network details.
+        Network details for the database system.
         """
         return pulumi.get(self, "network_details")
+
+    @property
+    @pulumi.getter(name="patchOperations")
+    def patch_operations(self) -> pulumi.Output[Optional[Sequence['outputs.DbSystemPatchOperation']]]:
+        """
+        (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+        """
+        return pulumi.get(self, "patch_operations")
 
     @property
     @pulumi.getter
     def shape(self) -> pulumi.Output[str]:
         """
-        Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
+        The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         """
         return pulumi.get(self, "shape")
 
@@ -1268,7 +1374,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter
     def source(self) -> pulumi.Output['outputs.DbSystemSource']:
         """
-        New source is used to restore the DB system.
+        The source used to restore the database system.
         """
         return pulumi.get(self, "source")
 
@@ -1276,7 +1382,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The current state of the DbSystem.
+        The current state of the database system.
         """
         return pulumi.get(self, "state")
 
@@ -1284,7 +1390,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="storageDetails")
     def storage_details(self) -> pulumi.Output['outputs.DbSystemStorageDetails']:
         """
-        (Updatable) Storage details of the DbSystem.
+        (Updatable) Storage details of the database system.
         """
         return pulumi.get(self, "storage_details")
 
@@ -1300,7 +1406,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="systemType")
     def system_type(self) -> pulumi.Output[str]:
         """
-        Type of the DbSystem.
+        Type of the database system.
 
 
         ** IMPORTANT **
@@ -1312,7 +1418,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        The time the the DbSystem was created. An RFC3339 formatted datetime string
+        The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -1320,7 +1426,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[str]:
         """
-        The time the DbSystem was updated. An RFC3339 formatted datetime string
+        The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 

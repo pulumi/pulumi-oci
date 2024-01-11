@@ -115,6 +115,21 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+     * 
+     */
+    @Import(name="isQueryRecursive")
+    private @Nullable Output<Boolean> isQueryRecursive;
+
+    /**
+     * @return (Updatable) If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+     * 
+     */
+    public Optional<Output<Boolean>> isQueryRecursive() {
+        return Optional.ofNullable(this.isQueryRecursive);
+    }
+
+    /**
      * (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
      * 
      */
@@ -130,18 +145,63 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Details of the network configuration.
+     * (Updatable) Name of the server that will be used to perform DNS lookup.
+     * 
+     */
+    @Import(name="nameServer")
+    private @Nullable Output<String> nameServer;
+
+    /**
+     * @return (Updatable) Name of the server that will be used to perform DNS lookup.
+     * 
+     */
+    public Optional<Output<String>> nameServer() {
+        return Optional.ofNullable(this.nameServer);
+    }
+
+    /**
+     * (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
      * 
      */
     @Import(name="networkConfiguration")
     private @Nullable Output<ConfigConfigurationNetworkConfigurationArgs> networkConfiguration;
 
     /**
-     * @return (Updatable) Details of the network configuration.
+     * @return (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
      * 
      */
     public Optional<Output<ConfigConfigurationNetworkConfigurationArgs>> networkConfiguration() {
         return Optional.ofNullable(this.networkConfiguration);
+    }
+
+    /**
+     * (Updatable) Type of protocol.
+     * 
+     */
+    @Import(name="protocol")
+    private @Nullable Output<String> protocol;
+
+    /**
+     * @return (Updatable) Type of protocol.
+     * 
+     */
+    public Optional<Output<String>> protocol() {
+        return Optional.ofNullable(this.protocol);
+    }
+
+    /**
+     * (Updatable) DNS record type.
+     * 
+     */
+    @Import(name="recordType")
+    private @Nullable Output<String> recordType;
+
+    /**
+     * @return (Updatable) DNS record type.
+     * 
+     */
+    public Optional<Output<String>> recordType() {
+        return Optional.ofNullable(this.recordType);
     }
 
     /**
@@ -288,8 +348,12 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         this.isCertificateValidationEnabled = $.isCertificateValidationEnabled;
         this.isDefaultSnapshotEnabled = $.isDefaultSnapshotEnabled;
         this.isFailureRetried = $.isFailureRetried;
+        this.isQueryRecursive = $.isQueryRecursive;
         this.isRedirectionEnabled = $.isRedirectionEnabled;
+        this.nameServer = $.nameServer;
         this.networkConfiguration = $.networkConfiguration;
+        this.protocol = $.protocol;
+        this.recordType = $.recordType;
         this.reqAuthenticationDetails = $.reqAuthenticationDetails;
         this.reqAuthenticationScheme = $.reqAuthenticationScheme;
         this.requestHeaders = $.requestHeaders;
@@ -446,6 +510,27 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param isQueryRecursive (Updatable) If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isQueryRecursive(@Nullable Output<Boolean> isQueryRecursive) {
+            $.isQueryRecursive = isQueryRecursive;
+            return this;
+        }
+
+        /**
+         * @param isQueryRecursive (Updatable) If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isQueryRecursive(Boolean isQueryRecursive) {
+            return isQueryRecursive(Output.of(isQueryRecursive));
+        }
+
+        /**
          * @param isRedirectionEnabled (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
          * 
          * @return builder
@@ -467,7 +552,28 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param networkConfiguration (Updatable) Details of the network configuration.
+         * @param nameServer (Updatable) Name of the server that will be used to perform DNS lookup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nameServer(@Nullable Output<String> nameServer) {
+            $.nameServer = nameServer;
+            return this;
+        }
+
+        /**
+         * @param nameServer (Updatable) Name of the server that will be used to perform DNS lookup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nameServer(String nameServer) {
+            return nameServer(Output.of(nameServer));
+        }
+
+        /**
+         * @param networkConfiguration (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
          * 
          * @return builder
          * 
@@ -478,13 +584,55 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param networkConfiguration (Updatable) Details of the network configuration.
+         * @param networkConfiguration (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
          * 
          * @return builder
          * 
          */
         public Builder networkConfiguration(ConfigConfigurationNetworkConfigurationArgs networkConfiguration) {
             return networkConfiguration(Output.of(networkConfiguration));
+        }
+
+        /**
+         * @param protocol (Updatable) Type of protocol.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder protocol(@Nullable Output<String> protocol) {
+            $.protocol = protocol;
+            return this;
+        }
+
+        /**
+         * @param protocol (Updatable) Type of protocol.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder protocol(String protocol) {
+            return protocol(Output.of(protocol));
+        }
+
+        /**
+         * @param recordType (Updatable) DNS record type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recordType(@Nullable Output<String> recordType) {
+            $.recordType = recordType;
+            return this;
+        }
+
+        /**
+         * @param recordType (Updatable) DNS record type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recordType(String recordType) {
+            return recordType(Output.of(recordType));
         }
 
         /**

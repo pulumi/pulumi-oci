@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class GetBackupsBackupCollectionItemResult
     {
         /// <summary>
-        /// Backup size in GB.
+        /// The size of the backup, in gigabytes.
         /// </summary>
         public readonly int BackupSize;
         /// <summary>
@@ -22,11 +22,11 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Information about the DbSystem associated to a backup.
+        /// Information about the database system associated with a backup.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBackupsBackupCollectionItemDbSystemDetailResult> DbSystemDetails;
         /// <summary>
-        /// The source DbSystem OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup's source database system.
         /// </summary>
         public readonly string DbSystemId;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// Backup description
+        /// A description for the backup.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// unique DbSystem identifier
+        /// A unique identifier for the database system.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -66,11 +66,11 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly int RetentionPeriod;
         /// <summary>
-        /// Specifies whether the backup was created manually, or via scheduled backup policy
+        /// Specifies whether the backup was created manually, or by a management policy.
         /// </summary>
         public readonly string SourceType;
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -78,11 +78,11 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The time the the Backup was created. An RFC3339 formatted datetime string
+        /// The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the Backup was updated. An RFC3339 formatted datetime string
+        /// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeUpdated;
 

@@ -3838,13 +3838,29 @@ export namespace ApmSynthetics {
          */
         isFailureRetried?: pulumi.Input<boolean>;
         /**
+         * (Updatable) If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+         */
+        isQueryRecursive?: pulumi.Input<boolean>;
+        /**
          * (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
          */
         isRedirectionEnabled?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Details of the network configuration.
+         * (Updatable) Name of the server that will be used to perform DNS lookup.
+         */
+        nameServer?: pulumi.Input<string>;
+        /**
+         * (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
          */
         networkConfiguration?: pulumi.Input<inputs.ApmSynthetics.ConfigConfigurationNetworkConfiguration>;
+        /**
+         * (Updatable) Type of protocol.
+         */
+        protocol?: pulumi.Input<string>;
+        /**
+         * (Updatable) DNS record type.
+         */
+        recordType?: pulumi.Input<string>;
         /**
          * (Updatable) Details for request HTTP authentication.
          */
@@ -4155,6 +4171,42 @@ export namespace ApmSynthetics {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetOnPremiseVantagePointWorkersFilter {
+        /**
+         * A filter to return only the resources that match the entire name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOnPremiseVantagePointWorkersFilterArgs {
+        /**
+         * A filter to return only the resources that match the entire name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetOnPremiseVantagePointsFilter {
+        /**
+         * A filter to return only the resources that match the entire name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOnPremiseVantagePointsFilterArgs {
+        /**
+         * A filter to return only the resources that match the entire name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetScriptsFilter {
         name: string;
         regex?: boolean;
@@ -4183,6 +4235,97 @@ export namespace ApmSynthetics {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface OnPremiseVantagePointWorkerIdentityInfo {
+        /**
+         * Domain short id of the On-premise VP worker.
+         */
+        apmShortId?: pulumi.Input<string>;
+        /**
+         * Collector endpoint of the On-premise VP worker.
+         */
+        collectorEndPoint?: pulumi.Input<string>;
+        /**
+         * Domain region of the On-premise VP worker.
+         */
+        regionName?: pulumi.Input<string>;
+    }
+
+    export interface OnPremiseVantagePointWorkerMonitorList {
+        /**
+         * Unique name that can be edited. The name should not contain any confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * If isRunNow is enabled, then the monitor will run immediately.
+         */
+        isRunNow?: pulumi.Input<boolean>;
+        /**
+         * Type of monitor.
+         */
+        monitorType?: pulumi.Input<string>;
+        /**
+         * The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+         */
+        timeAssigned?: pulumi.Input<string>;
+    }
+
+    export interface OnPremiseVantagePointWorkerVersionDetail {
+        /**
+         * Latest image version of the On-premise VP worker.
+         */
+        latestVersion?: pulumi.Input<string>;
+        /**
+         * Minimum supported image version of the On-premise VP worker.
+         */
+        minSupportedVersion?: pulumi.Input<string>;
+        /**
+         * Image version of the On-premise VP worker.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface OnPremiseVantagePointWorkersSummary {
+        /**
+         * Number of available workers in a specific On-premise vantage point.
+         */
+        available?: pulumi.Input<number>;
+        /**
+         * List of available capabilities in a specific On-premise vantage point.
+         */
+        availableCapabilities?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.OnPremiseVantagePointWorkersSummaryAvailableCapability>[]>;
+        /**
+         * Number of disabled workers in a specific On-premise vantage point.
+         */
+        disabled?: pulumi.Input<number>;
+        /**
+         * Minimum version among the workers in a specific On-premise vantage point.
+         */
+        minVersion?: pulumi.Input<string>;
+        /**
+         * Total number of workers in a specific On-premise vantage point.
+         */
+        total?: pulumi.Input<number>;
+        /**
+         * Number of occupied workers in a specific On-premise vantage point.
+         */
+        used?: pulumi.Input<number>;
+    }
+
+    export interface OnPremiseVantagePointWorkersSummaryAvailableCapability {
+        /**
+         * Capability of an On-premise vantage point worker.
+         */
+        capability?: pulumi.Input<string>;
+        /**
+         * Count of available capability in a specific On-premise vantage point.
+         */
+        onPremiseVantagePointCount?: pulumi.Input<number>;
     }
 
     export interface ScriptMonitorStatusCountMap {
@@ -5242,6 +5385,10 @@ export namespace BigDataService {
          * The Big Data Service cluster node type.
          */
         nodeType?: pulumi.Input<string>;
+        /**
+         * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         */
+        nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
          * ** IMPORTANT **
@@ -67310,120 +67457,120 @@ export namespace OsubUsage {
 export namespace Psql {
     export interface BackupDbSystemDetail {
         /**
-         * The major and minor versions of the DbSystem software.
+         * The major and minor versions of the database system software.
          */
         dbVersion?: pulumi.Input<string>;
         /**
-         * Type of the DbSystem.
+         * Type of the database system.
          */
         systemType?: pulumi.Input<string>;
     }
 
     export interface ConfigurationConfigurationDetail {
         /**
-         * List of configuration overriden values
+         * List of configuration overridden values.
          */
         items?: pulumi.Input<pulumi.Input<inputs.Psql.ConfigurationConfigurationDetailItem>[]>;
     }
 
     export interface ConfigurationConfigurationDetailItem {
         /**
-         * Range or list of allowed values
+         * Range or list of allowed values.
          */
         allowedValues?: pulumi.Input<string>;
         /**
-         * Key is the configuration key.
+         * Configuration variable name.
          */
         configKey?: pulumi.Input<string>;
         /**
-         * Describes about the Datatype value.
+         * Data type of the variable.
          */
         dataType?: pulumi.Input<string>;
         /**
-         * Default value
+         * Default value for the configuration variable.
          */
         defaultConfigValue?: pulumi.Input<string>;
         /**
-         * (Updatable) Details about the Configuration Set.
+         * (Updatable) Details about the configuration set.
          */
         description?: pulumi.Input<string>;
         /**
-         * This flags tells whether the value is overridable or not.
+         * Whether the value can be overridden or not.
          */
         isOverridable?: pulumi.Input<boolean>;
         /**
-         * If true, modfying this configuration value will requires restart.
+         * If true, modifying this configuration value will require a restart of the database.
          */
         isRestartRequired?: pulumi.Input<boolean>;
         /**
-         * User selected configuration value
+         * User-selected variable value.
          */
         overridenConfigValue?: pulumi.Input<string>;
     }
 
     export interface ConfigurationDbConfigurationOverrides {
         /**
-         * List of configuration overriden values
+         * List of configuration overridden values.
          */
         items: pulumi.Input<pulumi.Input<inputs.Psql.ConfigurationDbConfigurationOverridesItem>[]>;
     }
 
     export interface ConfigurationDbConfigurationOverridesItem {
         /**
-         * Key is the configuration key.
+         * Configuration variable name.
          */
         configKey: pulumi.Input<string>;
         /**
-         * User selected configuration value
+         * User-selected variable value.
          */
         overridenConfigValue: pulumi.Input<string>;
     }
 
     export interface DbSystemCredentials {
         /**
-         * Details for the DbSystem password. Password can be passed as `VaultSecretPasswordDetails`(Vault) or `PlainTextPasswordDetails`.
+         * Details for the database system password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.
          */
         passwordDetails: pulumi.Input<inputs.Psql.DbSystemCredentialsPasswordDetails>;
         /**
-         * The DB system username.
+         * The database system administrator username.
          */
         username: pulumi.Input<string>;
     }
 
     export interface DbSystemCredentialsPasswordDetails {
         /**
-         * The dbSystem password.
+         * The database system password.
          */
         password?: pulumi.Input<string>;
         /**
-         * Password type
+         * The password type.
          */
         passwordType: pulumi.Input<string>;
         /**
-         * The OCID of secret where the password is stored.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret where the password is stored.
          */
         secretId?: pulumi.Input<string>;
         /**
-         * The secret version where the password is stored.
+         * The secret version of the stored password.
          */
         secretVersion?: pulumi.Input<string>;
     }
 
     export interface DbSystemInstance {
         /**
-         * Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+         * Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
          */
         availabilityDomain?: pulumi.Input<string>;
         /**
-         * Description of the DbInstance. This field should be input by the user.
+         * A user-provided description of the database instance node.
          */
         description?: pulumi.Input<string>;
         /**
-         * Display name of the DbInstance.
+         * Display name of the database instance node. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * Unique identifier that is immutable on creation.
+         * A unique identifier for the database instance node. Immutable on creation.
          */
         id?: pulumi.Input<string>;
         /**
@@ -67431,37 +67578,37 @@ export namespace Psql {
          */
         lifecycleDetails?: pulumi.Input<string>;
         /**
-         * The current state of the DbSystem.
+         * The current state of the database system.
          */
         state?: pulumi.Input<string>;
         /**
-         * The time the the DbSystem was created. An RFC3339 formatted datetime string
+         * The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
          */
         timeCreated?: pulumi.Input<string>;
         /**
-         * The time the DbSystem was updated. An RFC3339 formatted datetime string
+         * The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
          */
         timeUpdated?: pulumi.Input<string>;
     }
 
     export interface DbSystemInstancesDetail {
         /**
-         * Description of the DbInstance. This field should be input by the user.
+         * A user-provided description of the database instance node.
          */
         description?: pulumi.Input<string>;
         /**
-         * Display name of the DbInstance.
+         * Display name of the database instance node. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * Private IP in customer subnet that will be assigned to the DbInstance. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+         * Private IP in customer subnet that will be assigned to the database instance node. This value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
          */
         privateIp?: pulumi.Input<string>;
     }
 
     export interface DbSystemManagementPolicy {
         /**
-         * (Updatable) Posgresql DB system backup policy
+         * (Updatable) PostgreSQL database system backup policy.
          */
         backupPolicy?: pulumi.Input<inputs.Psql.DbSystemManagementPolicyBackupPolicy>;
         /**
@@ -67472,49 +67619,67 @@ export namespace Psql {
 
     export interface DbSystemManagementPolicyBackupPolicy {
         /**
-         * (Updatable) Hour of the day when backup starts.
+         * (Updatable) Hour of the day when the backup starts.
          */
         backupStart?: pulumi.Input<string>;
         /**
-         * (Updatable) Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+         * (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
          */
         daysOfTheMonths?: pulumi.Input<pulumi.Input<number>[]>;
         /**
-         * (Updatable) Weekly days
+         * (Updatable) The day of the week that the backup starts.
          */
         daysOfTheWeeks?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) Backup policy kind
+         * (Updatable) The kind of backup policy.
          */
         kind?: pulumi.Input<string>;
         /**
-         * (Updatable) How many days the customers data should be stored after the db system deletion.
+         * (Updatable) How many days the data should be stored after the database system deletion.
          */
         retentionDays?: pulumi.Input<number>;
     }
 
     export interface DbSystemNetworkDetails {
         /**
-         * List of customer NetworkSecurityGroup identifiers
+         * List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
          */
         nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+         * Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
          */
         primaryDbEndpointPrivateIp?: pulumi.Input<string>;
         /**
-         * Customer Subnet identifier
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
          */
         subnetId: pulumi.Input<string>;
     }
 
+    export interface DbSystemPatchOperation {
+        from?: pulumi.Input<string>;
+        /**
+         * The operation can be one of these values: `INSERT`, `REMOVE`.
+         */
+        operation: pulumi.Input<string>;
+        position?: pulumi.Input<string>;
+        selectedItem?: pulumi.Input<string>;
+        /**
+         * In case of `INSERT`, selection is `instances`. In case of `REMOVE`, selection is `instances[?id == '${var.instance_id}']`.
+         */
+        selection: pulumi.Input<string>;
+        /**
+         * Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
+         */
+        value?: pulumi.Input<{[key: string]: any}>;
+    }
+
     export interface DbSystemSource {
         /**
-         * DbSystem backup identifier.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
          */
         backupId?: pulumi.Input<string>;
         /**
-         * Restore the DB config overrides from backup. Default is false
+         * Deprecated. Don't use.
          */
         isHavingRestoreConfigOverrides?: pulumi.Input<boolean>;
         /**
@@ -67525,19 +67690,19 @@ export namespace Psql {
 
     export interface DbSystemStorageDetails {
         /**
-         * Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+         * Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
          */
         availabilityDomain?: pulumi.Input<string>;
         /**
-         * (Updatable) DbSystem Performance Unit
+         * (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
          */
         iops?: pulumi.Input<string>;
         /**
-         * Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+         * Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
          */
         isRegionallyDurable: pulumi.Input<boolean>;
         /**
-         * Type of the DbSystem.
+         * Type of the database system.
          *
          *
          * ** IMPORTANT **

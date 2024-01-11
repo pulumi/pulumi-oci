@@ -67,7 +67,7 @@ export interface GetMonitorsArgs {
      */
     isMaintenanceWindowSet?: boolean;
     /**
-     * A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
+     * A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
      */
     monitorType?: string;
     /**
@@ -167,7 +167,7 @@ export interface GetMonitorsOutputArgs {
      */
     isMaintenanceWindowSet?: pulumi.Input<boolean>;
     /**
-     * A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
+     * A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
      */
     monitorType?: pulumi.Input<string>;
     /**

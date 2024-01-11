@@ -16,7 +16,7 @@ import java.util.Objects;
 @CustomType
 public final class GetBackupsBackupCollectionItem {
     /**
-     * @return Backup size in GB.
+     * @return The size of the backup, in gigabytes.
      * 
      */
     private Integer backupSize;
@@ -26,12 +26,12 @@ public final class GetBackupsBackupCollectionItem {
      */
     private String compartmentId;
     /**
-     * @return Information about the DbSystem associated to a backup.
+     * @return Information about the database system associated with a backup.
      * 
      */
     private List<GetBackupsBackupCollectionItemDbSystemDetail> dbSystemDetails;
     /**
-     * @return The source DbSystem OCID.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup&#39;s source database system.
      * 
      */
     private String dbSystemId;
@@ -41,7 +41,7 @@ public final class GetBackupsBackupCollectionItem {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return Backup description
+     * @return A description for the backup.
      * 
      */
     private String description;
@@ -56,7 +56,7 @@ public final class GetBackupsBackupCollectionItem {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return unique DbSystem identifier
+     * @return A unique identifier for the database system.
      * 
      */
     private String id;
@@ -81,12 +81,12 @@ public final class GetBackupsBackupCollectionItem {
      */
     private Integer retentionPeriod;
     /**
-     * @return Specifies whether the backup was created manually, or via scheduled backup policy
+     * @return Specifies whether the backup was created manually, or by a management policy.
      * 
      */
     private String sourceType;
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      * 
      */
     private String state;
@@ -96,19 +96,19 @@ public final class GetBackupsBackupCollectionItem {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The time the the Backup was created. An RFC3339 formatted datetime string
+     * @return The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String timeCreated;
     /**
-     * @return The time the Backup was updated. An RFC3339 formatted datetime string
+     * @return The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String timeUpdated;
 
     private GetBackupsBackupCollectionItem() {}
     /**
-     * @return Backup size in GB.
+     * @return The size of the backup, in gigabytes.
      * 
      */
     public Integer backupSize() {
@@ -122,14 +122,14 @@ public final class GetBackupsBackupCollectionItem {
         return this.compartmentId;
     }
     /**
-     * @return Information about the DbSystem associated to a backup.
+     * @return Information about the database system associated with a backup.
      * 
      */
     public List<GetBackupsBackupCollectionItemDbSystemDetail> dbSystemDetails() {
         return this.dbSystemDetails;
     }
     /**
-     * @return The source DbSystem OCID.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup&#39;s source database system.
      * 
      */
     public String dbSystemId() {
@@ -143,7 +143,7 @@ public final class GetBackupsBackupCollectionItem {
         return this.definedTags;
     }
     /**
-     * @return Backup description
+     * @return A description for the backup.
      * 
      */
     public String description() {
@@ -164,7 +164,7 @@ public final class GetBackupsBackupCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return unique DbSystem identifier
+     * @return A unique identifier for the database system.
      * 
      */
     public String id() {
@@ -199,14 +199,14 @@ public final class GetBackupsBackupCollectionItem {
         return this.retentionPeriod;
     }
     /**
-     * @return Specifies whether the backup was created manually, or via scheduled backup policy
+     * @return Specifies whether the backup was created manually, or by a management policy.
      * 
      */
     public String sourceType() {
         return this.sourceType;
     }
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      * 
      */
     public String state() {
@@ -220,14 +220,14 @@ public final class GetBackupsBackupCollectionItem {
         return this.systemTags;
     }
     /**
-     * @return The time the the Backup was created. An RFC3339 formatted datetime string
+     * @return The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time the Backup was updated. An RFC3339 formatted datetime string
+     * @return The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public String timeUpdated() {

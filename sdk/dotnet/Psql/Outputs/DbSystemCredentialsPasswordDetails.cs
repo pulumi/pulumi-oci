@@ -14,19 +14,19 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class DbSystemCredentialsPasswordDetails
     {
         /// <summary>
-        /// The dbSystem password.
+        /// The database system password.
         /// </summary>
         public readonly string? Password;
         /// <summary>
-        /// Password type
+        /// The password type.
         /// </summary>
         public readonly string PasswordType;
         /// <summary>
-        /// The OCID of secret where the password is stored.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret where the password is stored.
         /// </summary>
         public readonly string? SecretId;
         /// <summary>
-        /// The secret version where the password is stored.
+        /// The secret version of the stored password.
         /// </summary>
         public readonly string? SecretVersion;
 

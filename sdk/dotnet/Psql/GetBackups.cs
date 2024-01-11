@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Psql
         /// <summary>
         /// This data source provides the list of Backups in Oracle Cloud Infrastructure Psql service.
         /// 
-        /// Returns a list of Backup.
+        /// Returns a list of backups.
         /// 
         /// 
         /// {{% examples %}}
@@ -51,7 +51,7 @@ namespace Pulumi.Oci.Psql
         /// <summary>
         /// This data source provides the list of Backups in Oracle Cloud Infrastructure Psql service.
         /// 
-        /// Returns a list of Backup.
+        /// Returns a list of backups.
         /// 
         /// 
         /// {{% examples %}}
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.Psql
     public sealed class GetBackupsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique Backup identifier
+        /// A unique identifier for the backup.
         /// </summary>
         [Input("backupId")]
         public string? BackupId { get; set; }
@@ -116,25 +116,25 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// unique DbSystem identifier
+        /// A unique identifier for the database system.
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
 
         /// <summary>
-        /// The End date for getting  backups. An RFC3339 formatted datetime string.
+        /// The end date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
         /// </summary>
         [Input("timeEnded")]
         public string? TimeEnded { get; set; }
 
         /// <summary>
-        /// The start date for getting  backups. An RFC3339 formatted datetime string
+        /// The start date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
         /// </summary>
         [Input("timeStarted")]
         public string? TimeStarted { get; set; }
@@ -148,7 +148,7 @@ namespace Pulumi.Oci.Psql
     public sealed class GetBackupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique Backup identifier
+        /// A unique identifier for the backup.
         /// </summary>
         [Input("backupId")]
         public Input<string>? BackupId { get; set; }
@@ -174,25 +174,25 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// unique DbSystem identifier
+        /// A unique identifier for the database system.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The End date for getting  backups. An RFC3339 formatted datetime string.
+        /// The end date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
         /// </summary>
         [Input("timeEnded")]
         public Input<string>? TimeEnded { get; set; }
 
         /// <summary>
-        /// The start date for getting  backups. An RFC3339 formatted datetime string
+        /// The start date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
         /// </summary>
         [Input("timeStarted")]
         public Input<string>? TimeStarted { get; set; }
@@ -213,20 +213,20 @@ namespace Pulumi.Oci.Psql
         public readonly ImmutableArray<Outputs.GetBackupsBackupCollectionResult> BackupCollections;
         public readonly string? BackupId;
         /// <summary>
-        /// Backup compartment identifier
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
-        /// Backup display name
+        /// A user-friendly display name for the backup. Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetBackupsFilterResult> Filters;
         /// <summary>
-        /// Unique identifier that is immutable on creation
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
         /// </summary>
         public readonly string? Id;
         /// <summary>
-        /// The current state of the Backup.
+        /// The current state of the backup.
         /// </summary>
         public readonly string? State;
         public readonly string? TimeEnded;

@@ -37,16 +37,24 @@ public final class VolumeGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
+     * If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `oci.Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
+     * 
+     * @deprecated
+     * The &#39;backup_policy_id&#39; field has been deprecated. Please use the &#39;oci_core_volume_backup_policy_assignment&#39; resource instead.
      * 
      */
+    @Deprecated /* The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead. */
     @Import(name="backupPolicyId")
     private @Nullable Output<String> backupPolicyId;
 
     /**
-     * @return If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
+     * @return If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `oci.Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
+     * 
+     * @deprecated
+     * The &#39;backup_policy_id&#39; field has been deprecated. Please use the &#39;oci_core_volume_backup_policy_assignment&#39; resource instead.
      * 
      */
+    @Deprecated /* The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead. */
     public Optional<Output<String>> backupPolicyId() {
         return Optional.ofNullable(this.backupPolicyId);
     }
@@ -312,22 +320,30 @@ public final class VolumeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupPolicyId If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
+         * @param backupPolicyId If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `oci.Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;backup_policy_id&#39; field has been deprecated. Please use the &#39;oci_core_volume_backup_policy_assignment&#39; resource instead.
+         * 
          */
+        @Deprecated /* The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead. */
         public Builder backupPolicyId(@Nullable Output<String> backupPolicyId) {
             $.backupPolicyId = backupPolicyId;
             return this;
         }
 
         /**
-         * @param backupPolicyId If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
+         * @param backupPolicyId If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `oci.Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;backup_policy_id&#39; field has been deprecated. Please use the &#39;oci_core_volume_backup_policy_assignment&#39; resource instead.
+         * 
          */
+        @Deprecated /* The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead. */
         public Builder backupPolicyId(String backupPolicyId) {
             return backupPolicyId(Output.of(backupPolicyId));
         }

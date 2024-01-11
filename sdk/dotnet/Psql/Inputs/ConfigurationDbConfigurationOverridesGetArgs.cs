@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Psql.Inputs
         private InputList<Inputs.ConfigurationDbConfigurationOverridesItemGetArgs>? _items;
 
         /// <summary>
-        /// List of configuration overriden values
+        /// List of configuration overridden values.
         /// </summary>
         public InputList<Inputs.ConfigurationDbConfigurationOverridesItemGetArgs> Items
         {

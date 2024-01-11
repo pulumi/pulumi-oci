@@ -21,6 +21,12 @@ public final class GetVolumeGroupsVolumeGroup {
      * 
      */
     private String availabilityDomain;
+    /**
+     * @deprecated
+     * The &#39;backup_policy_id&#39; field has been deprecated. Please use the &#39;oci_core_volume_backup_policy_assignment&#39; resource instead.
+     * 
+     */
+    @Deprecated /* The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead. */
     private String backupPolicyId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -98,6 +104,12 @@ public final class GetVolumeGroupsVolumeGroup {
     public String availabilityDomain() {
         return this.availabilityDomain;
     }
+    /**
+     * @deprecated
+     * The &#39;backup_policy_id&#39; field has been deprecated. Please use the &#39;oci_core_volume_backup_policy_assignment&#39; resource instead.
+     * 
+     */
+    @Deprecated /* The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead. */
     public String backupPolicyId() {
         return this.backupPolicyId;
     }

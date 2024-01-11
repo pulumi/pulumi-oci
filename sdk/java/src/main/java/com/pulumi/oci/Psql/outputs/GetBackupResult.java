@@ -17,22 +17,22 @@ import java.util.Objects;
 public final class GetBackupResult {
     private String backupId;
     /**
-     * @return Backup size in GB.
+     * @return The size of the backup, in gigabytes.
      * 
      */
     private Integer backupSize;
     /**
-     * @return Backup compartment identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      * 
      */
     private String compartmentId;
     /**
-     * @return Information about the DbSystem associated to a backup.
+     * @return Information about the database system associated with a backup.
      * 
      */
     private List<GetBackupDbSystemDetail> dbSystemDetails;
     /**
-     * @return The source DbSystem OCID.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup&#39;s source database system.
      * 
      */
     private String dbSystemId;
@@ -42,12 +42,12 @@ public final class GetBackupResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return Backup description
+     * @return A description for the backup.
      * 
      */
     private String description;
     /**
-     * @return Backup display name
+     * @return A user-friendly display name for the backup. Avoid entering confidential information.
      * 
      */
     private String displayName;
@@ -57,7 +57,7 @@ public final class GetBackupResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
      * 
      */
     private String id;
@@ -82,12 +82,12 @@ public final class GetBackupResult {
      */
     private Integer retentionPeriod;
     /**
-     * @return Specifies whether the backup was created manually, or via scheduled backup policy
+     * @return Specifies whether the backup was created manually, or by a management policy.
      * 
      */
     private String sourceType;
     /**
-     * @return The current state of the Backup.
+     * @return The current state of the backup.
      * 
      */
     private String state;
@@ -97,12 +97,12 @@ public final class GetBackupResult {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The time the the Backup was created. An RFC3339 formatted datetime string
+     * @return The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String timeCreated;
     /**
-     * @return The time the Backup was updated. An RFC3339 formatted datetime string
+     * @return The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String timeUpdated;
@@ -112,28 +112,28 @@ public final class GetBackupResult {
         return this.backupId;
     }
     /**
-     * @return Backup size in GB.
+     * @return The size of the backup, in gigabytes.
      * 
      */
     public Integer backupSize() {
         return this.backupSize;
     }
     /**
-     * @return Backup compartment identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Information about the DbSystem associated to a backup.
+     * @return Information about the database system associated with a backup.
      * 
      */
     public List<GetBackupDbSystemDetail> dbSystemDetails() {
         return this.dbSystemDetails;
     }
     /**
-     * @return The source DbSystem OCID.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup&#39;s source database system.
      * 
      */
     public String dbSystemId() {
@@ -147,14 +147,14 @@ public final class GetBackupResult {
         return this.definedTags;
     }
     /**
-     * @return Backup description
+     * @return A description for the backup.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Backup display name
+     * @return A user-friendly display name for the backup. Avoid entering confidential information.
      * 
      */
     public String displayName() {
@@ -168,7 +168,7 @@ public final class GetBackupResult {
         return this.freeformTags;
     }
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
      * 
      */
     public String id() {
@@ -203,14 +203,14 @@ public final class GetBackupResult {
         return this.retentionPeriod;
     }
     /**
-     * @return Specifies whether the backup was created manually, or via scheduled backup policy
+     * @return Specifies whether the backup was created manually, or by a management policy.
      * 
      */
     public String sourceType() {
         return this.sourceType;
     }
     /**
-     * @return The current state of the Backup.
+     * @return The current state of the backup.
      * 
      */
     public String state() {
@@ -224,14 +224,14 @@ public final class GetBackupResult {
         return this.systemTags;
     }
     /**
-     * @return The time the the Backup was created. An RFC3339 formatted datetime string
+     * @return The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time the Backup was updated. An RFC3339 formatted datetime string
+     * @return The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public String timeUpdated() {

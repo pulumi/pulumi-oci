@@ -18,14 +18,14 @@ public final class DbSystemSourceArgs extends com.pulumi.resources.ResourceArgs 
     public static final DbSystemSourceArgs Empty = new DbSystemSourceArgs();
 
     /**
-     * DbSystem backup identifier.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
      * 
      */
     @Import(name="backupId")
     private @Nullable Output<String> backupId;
 
     /**
-     * @return DbSystem backup identifier.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
      * 
      */
     public Optional<Output<String>> backupId() {
@@ -33,14 +33,14 @@ public final class DbSystemSourceArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Restore the DB config overrides from backup. Default is false
+     * Deprecated. Don&#39;t use.
      * 
      */
     @Import(name="isHavingRestoreConfigOverrides")
     private @Nullable Output<Boolean> isHavingRestoreConfigOverrides;
 
     /**
-     * @return Restore the DB config overrides from backup. Default is false
+     * @return Deprecated. Don&#39;t use.
      * 
      */
     public Optional<Output<Boolean>> isHavingRestoreConfigOverrides() {
@@ -89,7 +89,7 @@ public final class DbSystemSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param backupId DbSystem backup identifier.
+         * @param backupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class DbSystemSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param backupId DbSystem backup identifier.
+         * @param backupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
          * 
          * @return builder
          * 
@@ -110,7 +110,7 @@ public final class DbSystemSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param isHavingRestoreConfigOverrides Restore the DB config overrides from backup. Default is false
+         * @param isHavingRestoreConfigOverrides Deprecated. Don&#39;t use.
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class DbSystemSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param isHavingRestoreConfigOverrides Restore the DB config overrides from backup. Default is false
+         * @param isHavingRestoreConfigOverrides Deprecated. Don&#39;t use.
          * 
          * @return builder
          * 

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Configurations in Oracle Cloud Infrastructure Psql service.
  *
- * Returns a list of Configurations.
+ * Returns a list of configurations.
  *
  * ## Example Usage
  *
@@ -51,11 +51,11 @@ export interface GetConfigurationsArgs {
      */
     compartmentId?: string;
     /**
-     * unique Configuration identifier
+     * A unique identifier for the configuration.
      */
     configurationId?: string;
     /**
-     * Verison of the Postgresql DB like 14.5
+     * Verison of the PostgreSQL database, such as 14.9.
      */
     dbVersion?: string;
     /**
@@ -64,11 +64,11 @@ export interface GetConfigurationsArgs {
     displayName?: string;
     filters?: inputs.Psql.GetConfigurationsFilter[];
     /**
-     * Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      */
     shape?: string;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      */
     state?: string;
 }
@@ -78,7 +78,7 @@ export interface GetConfigurationsArgs {
  */
 export interface GetConfigurationsResult {
     /**
-     * Config compartment identifier
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
      */
     readonly compartmentId?: string;
     /**
@@ -87,11 +87,11 @@ export interface GetConfigurationsResult {
     readonly configurationCollections: outputs.Psql.GetConfigurationsConfigurationCollection[];
     readonly configurationId?: string;
     /**
-     * Version of the Postgresql DB
+     * Version of the PostgreSQL database.
      */
     readonly dbVersion?: string;
     /**
-     * Config display name
+     * A user-friendly display name for the configuration. Avoid entering confidential information.
      */
     readonly displayName?: string;
     readonly filters?: outputs.Psql.GetConfigurationsFilter[];
@@ -100,18 +100,18 @@ export interface GetConfigurationsResult {
      */
     readonly id: string;
     /**
-     * Compute Shape Name like VM.Standard3.Flex.
+     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      */
     readonly shape?: string;
     /**
-     * The current state of the Configuration.
+     * The current state of the configuration.
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Configurations in Oracle Cloud Infrastructure Psql service.
  *
- * Returns a list of Configurations.
+ * Returns a list of configurations.
  *
  * ## Example Usage
  *
@@ -142,11 +142,11 @@ export interface GetConfigurationsOutputArgs {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * unique Configuration identifier
+     * A unique identifier for the configuration.
      */
     configurationId?: pulumi.Input<string>;
     /**
-     * Verison of the Postgresql DB like 14.5
+     * Verison of the PostgreSQL database, such as 14.9.
      */
     dbVersion?: pulumi.Input<string>;
     /**
@@ -155,11 +155,11 @@ export interface GetConfigurationsOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Psql.GetConfigurationsFilterArgs>[]>;
     /**
-     * Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      */
     shape?: pulumi.Input<string>;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      */
     state?: pulumi.Input<string>;
 }

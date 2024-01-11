@@ -15,14 +15,14 @@ public final class GetDbSystemPrimaryDbInstanceArgs extends com.pulumi.resources
     public static final GetDbSystemPrimaryDbInstanceArgs Empty = new GetDbSystemPrimaryDbInstanceArgs();
 
     /**
-     * unique DbSystem identifier
+     * A unique identifier for the database system.
      * 
      */
     @Import(name="dbSystemId", required=true)
     private Output<String> dbSystemId;
 
     /**
-     * @return unique DbSystem identifier
+     * @return A unique identifier for the database system.
      * 
      */
     public Output<String> dbSystemId() {
@@ -54,7 +54,7 @@ public final class GetDbSystemPrimaryDbInstanceArgs extends com.pulumi.resources
         }
 
         /**
-         * @param dbSystemId unique DbSystem identifier
+         * @param dbSystemId A unique identifier for the database system.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetDbSystemPrimaryDbInstanceArgs extends com.pulumi.resources
         }
 
         /**
-         * @param dbSystemId unique DbSystem identifier
+         * @param dbSystemId A unique identifier for the database system.
          * 
          * @return builder
          * 

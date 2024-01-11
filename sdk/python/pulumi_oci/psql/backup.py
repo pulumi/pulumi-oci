@@ -25,11 +25,11 @@ class BackupArgs:
                  retention_period: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a Backup resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier
-        :param pulumi.Input[str] db_system_id: Posgresql DbSystem identifier
-        :param pulumi.Input[str] display_name: (Updatable) Backup display name.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
+        :param pulumi.Input[str] db_system_id: The ID of the database system.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Backup description
+        :param pulumi.Input[str] description: (Updatable) A description for the backup.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] retention_period: (Updatable) Backup retention period in days.
                
@@ -53,7 +53,7 @@ class BackupArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) Compartment identifier
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -65,7 +65,7 @@ class BackupArgs:
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> pulumi.Input[str]:
         """
-        Posgresql DbSystem identifier
+        The ID of the database system.
         """
         return pulumi.get(self, "db_system_id")
 
@@ -77,7 +77,7 @@ class BackupArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Backup display name.
+        (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -101,7 +101,7 @@ class BackupArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Backup description
+        (Updatable) A description for the backup.
         """
         return pulumi.get(self, "description")
 
@@ -160,13 +160,13 @@ class _BackupState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Backup resources.
-        :param pulumi.Input[int] backup_size: Backup size in GB.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier
-        :param pulumi.Input[Sequence[pulumi.Input['BackupDbSystemDetailArgs']]] db_system_details: Information about the DbSystem associated to a backup.
-        :param pulumi.Input[str] db_system_id: Posgresql DbSystem identifier
+        :param pulumi.Input[int] backup_size: The size of the backup, in gigabytes.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
+        :param pulumi.Input[Sequence[pulumi.Input['BackupDbSystemDetailArgs']]] db_system_details: Information about the database system associated with a backup.
+        :param pulumi.Input[str] db_system_id: The ID of the database system.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Backup description
-        :param pulumi.Input[str] display_name: (Updatable) Backup display name.
+        :param pulumi.Input[str] description: (Updatable) A description for the backup.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] last_accepted_request_token: lastAcceptedRequestToken from MP.
         :param pulumi.Input[str] last_completed_request_token: lastCompletedRequestToken from MP.
@@ -176,11 +176,11 @@ class _BackupState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] source_type: Specifies whether the backup was created manually, or via scheduled backup policy
-        :param pulumi.Input[str] state: The current state of the Backup.
+        :param pulumi.Input[str] source_type: Specifies whether the backup was created manually, or by a management policy.
+        :param pulumi.Input[str] state: The current state of the backup.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the the Backup was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the Backup was updated. An RFC3339 formatted datetime string
+        :param pulumi.Input[str] time_created: The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[str] time_updated: The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         if backup_size is not None:
             pulumi.set(__self__, "backup_size", backup_size)
@@ -221,7 +221,7 @@ class _BackupState:
     @pulumi.getter(name="backupSize")
     def backup_size(self) -> Optional[pulumi.Input[int]]:
         """
-        Backup size in GB.
+        The size of the backup, in gigabytes.
         """
         return pulumi.get(self, "backup_size")
 
@@ -233,7 +233,7 @@ class _BackupState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Compartment identifier
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -245,7 +245,7 @@ class _BackupState:
     @pulumi.getter(name="dbSystemDetails")
     def db_system_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BackupDbSystemDetailArgs']]]]:
         """
-        Information about the DbSystem associated to a backup.
+        Information about the database system associated with a backup.
         """
         return pulumi.get(self, "db_system_details")
 
@@ -257,7 +257,7 @@ class _BackupState:
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Posgresql DbSystem identifier
+        The ID of the database system.
         """
         return pulumi.get(self, "db_system_id")
 
@@ -281,7 +281,7 @@ class _BackupState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Backup description
+        (Updatable) A description for the backup.
         """
         return pulumi.get(self, "description")
 
@@ -293,7 +293,7 @@ class _BackupState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Backup display name.
+        (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -369,7 +369,7 @@ class _BackupState:
     @pulumi.getter(name="sourceType")
     def source_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Specifies whether the backup was created manually, or via scheduled backup policy
+        Specifies whether the backup was created manually, or by a management policy.
         """
         return pulumi.get(self, "source_type")
 
@@ -381,7 +381,7 @@ class _BackupState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The current state of the Backup.
+        The current state of the backup.
         """
         return pulumi.get(self, "state")
 
@@ -405,7 +405,7 @@ class _BackupState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        The time the the Backup was created. An RFC3339 formatted datetime string
+        The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -417,7 +417,7 @@ class _BackupState:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
-        The time the Backup was updated. An RFC3339 formatted datetime string
+        The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -442,7 +442,7 @@ class Backup(pulumi.CustomResource):
         """
         This resource provides the Backup resource in Oracle Cloud Infrastructure Psql service.
 
-        Creates a new Backup.
+        Creates a new backup.
 
         ## Example Usage
 
@@ -474,11 +474,11 @@ class Backup(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier
-        :param pulumi.Input[str] db_system_id: Posgresql DbSystem identifier
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
+        :param pulumi.Input[str] db_system_id: The ID of the database system.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Backup description
-        :param pulumi.Input[str] display_name: (Updatable) Backup display name.
+        :param pulumi.Input[str] description: (Updatable) A description for the backup.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] retention_period: (Updatable) Backup retention period in days.
                
@@ -495,7 +495,7 @@ class Backup(pulumi.CustomResource):
         """
         This resource provides the Backup resource in Oracle Cloud Infrastructure Psql service.
 
-        Creates a new Backup.
+        Creates a new backup.
 
         ## Example Usage
 
@@ -613,13 +613,13 @@ class Backup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] backup_size: Backup size in GB.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BackupDbSystemDetailArgs']]]] db_system_details: Information about the DbSystem associated to a backup.
-        :param pulumi.Input[str] db_system_id: Posgresql DbSystem identifier
+        :param pulumi.Input[int] backup_size: The size of the backup, in gigabytes.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BackupDbSystemDetailArgs']]]] db_system_details: Information about the database system associated with a backup.
+        :param pulumi.Input[str] db_system_id: The ID of the database system.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Backup description
-        :param pulumi.Input[str] display_name: (Updatable) Backup display name.
+        :param pulumi.Input[str] description: (Updatable) A description for the backup.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] last_accepted_request_token: lastAcceptedRequestToken from MP.
         :param pulumi.Input[str] last_completed_request_token: lastCompletedRequestToken from MP.
@@ -629,11 +629,11 @@ class Backup(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] source_type: Specifies whether the backup was created manually, or via scheduled backup policy
-        :param pulumi.Input[str] state: The current state of the Backup.
+        :param pulumi.Input[str] source_type: Specifies whether the backup was created manually, or by a management policy.
+        :param pulumi.Input[str] state: The current state of the backup.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the the Backup was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the Backup was updated. An RFC3339 formatted datetime string
+        :param pulumi.Input[str] time_created: The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[str] time_updated: The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -662,7 +662,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="backupSize")
     def backup_size(self) -> pulumi.Output[int]:
         """
-        Backup size in GB.
+        The size of the backup, in gigabytes.
         """
         return pulumi.get(self, "backup_size")
 
@@ -670,7 +670,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) Compartment identifier
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -678,7 +678,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="dbSystemDetails")
     def db_system_details(self) -> pulumi.Output[Sequence['outputs.BackupDbSystemDetail']]:
         """
-        Information about the DbSystem associated to a backup.
+        Information about the database system associated with a backup.
         """
         return pulumi.get(self, "db_system_details")
 
@@ -686,7 +686,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> pulumi.Output[str]:
         """
-        Posgresql DbSystem identifier
+        The ID of the database system.
         """
         return pulumi.get(self, "db_system_id")
 
@@ -702,7 +702,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        (Updatable) Backup description
+        (Updatable) A description for the backup.
         """
         return pulumi.get(self, "description")
 
@@ -710,7 +710,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) Backup display name.
+        (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -762,7 +762,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Output[str]:
         """
-        Specifies whether the backup was created manually, or via scheduled backup policy
+        Specifies whether the backup was created manually, or by a management policy.
         """
         return pulumi.get(self, "source_type")
 
@@ -770,7 +770,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The current state of the Backup.
+        The current state of the backup.
         """
         return pulumi.get(self, "state")
 
@@ -786,7 +786,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        The time the the Backup was created. An RFC3339 formatted datetime string
+        The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -794,7 +794,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[str]:
         """
-        The time the Backup was updated. An RFC3339 formatted datetime string
+        The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 

@@ -14,19 +14,19 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class DbSystemInstance
     {
         /// <summary>
-        /// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+        /// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         /// </summary>
         public readonly string? AvailabilityDomain;
         /// <summary>
-        /// Description of the DbInstance. This field should be input by the user.
+        /// A user-provided description of the database instance node.
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// Display name of the DbInstance.
+        /// Display name of the database instance node. Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// Unique identifier that is immutable on creation.
+        /// A unique identifier for the database instance node. Immutable on creation.
         /// </summary>
         public readonly string? Id;
         /// <summary>
@@ -34,15 +34,15 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly string? LifecycleDetails;
         /// <summary>
-        /// The current state of the DbSystem.
+        /// The current state of the database system.
         /// </summary>
         public readonly string? State;
         /// <summary>
-        /// The time the the DbSystem was created. An RFC3339 formatted datetime string
+        /// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string? TimeCreated;
         /// <summary>
-        /// The time the DbSystem was updated. An RFC3339 formatted datetime string
+        /// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string? TimeUpdated;
 

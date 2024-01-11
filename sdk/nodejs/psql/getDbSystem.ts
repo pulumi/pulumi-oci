@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Db System resource in Oracle Cloud Infrastructure Psql service.
  *
- * Gets a DbSystem by identifier
+ * Gets a database system by identifier.
  *
  * ## Example Usage
  *
@@ -37,11 +37,11 @@ export function getDbSystem(args: GetDbSystemArgs, opts?: pulumi.InvokeOptions):
  */
 export interface GetDbSystemArgs {
     /**
-     * unique DbSystem identifier
+     * A unique identifier for the database system.
      */
     dbSystemId: string;
     /**
-     * A filter to exclude DB config  when this query param is set to OverrideDbConfig
+     * A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.
      */
     excludedFields?: string;
 }
@@ -51,21 +51,22 @@ export interface GetDbSystemArgs {
  */
 export interface GetDbSystemResult {
     /**
-     * The DB system username.
+     * The database system administrator username.
      */
     readonly adminUsername: string;
+    readonly applyConfig: string;
     /**
-     * Compartment identifier
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
      */
     readonly compartmentId: string;
     /**
-     * Configuration identifier
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
      */
     readonly configId: string;
     readonly credentials: outputs.Psql.GetDbSystemCredential[];
     readonly dbSystemId: string;
     /**
-     * The major and minor versions of the DbSystem software.
+     * The major and minor versions of the database system software.
      */
     readonly dbVersion: string;
     /**
@@ -73,11 +74,11 @@ export interface GetDbSystemResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * Description of the DbInstance.
+     * Description of the database instance node.
      */
     readonly description: string;
     /**
-     * Display name of the DbInstance.
+     * A user-friendly display name for the database instance node. Avoid entering confidential information.
      */
     readonly displayName: string;
     readonly excludedFields?: string;
@@ -86,23 +87,23 @@ export interface GetDbSystemResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * Unique identifier that is immutable on creation.
+     * A unique identifier for the database instance node. Immutable on creation.
      */
     readonly id: string;
     /**
-     * Count of DbInstances in the DbSystem.
+     * Count of instances, or nodes, in the database system.
      */
     readonly instanceCount: number;
     /**
-     * The total amount of memory available to each DbInstance, in gigabytes.
+     * The total amount of memory available to each database instance node, in gigabytes.
      */
     readonly instanceMemorySizeInGbs: number;
     /**
-     * The total number of OCPUs available to each DbInstance.
+     * The total number of OCPUs available to each database instance node.
      */
     readonly instanceOcpuCount: number;
     /**
-     * The list of DbInstances in the DbSystem.
+     * The list of instances, or nodes, in the database system.
      */
     readonly instances: outputs.Psql.GetDbSystemInstance[];
     readonly instancesDetails: outputs.Psql.GetDbSystemInstancesDetail[];
@@ -111,27 +112,28 @@ export interface GetDbSystemResult {
      */
     readonly lifecycleDetails: string;
     /**
-     * PostgreSQL DB system management policy
+     * PostgreSQL database system management policy.
      */
     readonly managementPolicies: outputs.Psql.GetDbSystemManagementPolicy[];
     /**
-     * DbSystem network details.
+     * Network details for the database system.
      */
     readonly networkDetails: outputs.Psql.GetDbSystemNetworkDetail[];
+    readonly patchOperations: outputs.Psql.GetDbSystemPatchOperation[];
     /**
-     * Shape of dbInstance.
+     * The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
      */
     readonly shape: string;
     /**
-     * New source is used to restore the DB system.
+     * The source used to restore the database system.
      */
     readonly sources: outputs.Psql.GetDbSystemSource[];
     /**
-     * The current state of the DbSystem.
+     * The current state of the database system.
      */
     readonly state: string;
     /**
-     * Storage details of the DbSystem.
+     * Storage details of the database system.
      */
     readonly storageDetails: outputs.Psql.GetDbSystemStorageDetail[];
     /**
@@ -139,22 +141,22 @@ export interface GetDbSystemResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * Type of the DbSystem.
+     * Type of the database system.
      */
     readonly systemType: string;
     /**
-     * The time the the DbSystem was created. An RFC3339 formatted datetime string
+     * The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     readonly timeCreated: string;
     /**
-     * The time the DbSystem was updated. An RFC3339 formatted datetime string
+     * The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     readonly timeUpdated: string;
 }
 /**
  * This data source provides details about a specific Db System resource in Oracle Cloud Infrastructure Psql service.
  *
- * Gets a DbSystem by identifier
+ * Gets a database system by identifier.
  *
  * ## Example Usage
  *
@@ -177,11 +179,11 @@ export function getDbSystemOutput(args: GetDbSystemOutputArgs, opts?: pulumi.Inv
  */
 export interface GetDbSystemOutputArgs {
     /**
-     * unique DbSystem identifier
+     * A unique identifier for the database system.
      */
     dbSystemId: pulumi.Input<string>;
     /**
-     * A filter to exclude DB config  when this query param is set to OverrideDbConfig
+     * A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.
      */
     excludedFields?: pulumi.Input<string>;
 }

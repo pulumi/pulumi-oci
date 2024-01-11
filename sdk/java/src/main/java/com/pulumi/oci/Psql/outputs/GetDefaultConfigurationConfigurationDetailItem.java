@@ -12,86 +12,86 @@ import java.util.Objects;
 @CustomType
 public final class GetDefaultConfigurationConfigurationDetailItem {
     /**
-     * @return Range or list of allowed values
+     * @return Range or list of allowed values.
      * 
      */
     private String allowedValues;
     /**
-     * @return Key is the configuration key.
+     * @return The configuration variable name.
      * 
      */
     private String configKey;
     /**
-     * @return Describes about the Datatype value.
+     * @return Data type of the variable.
      * 
      */
     private String dataType;
     /**
-     * @return Default value
+     * @return Default value for the variable.
      * 
      */
     private String defaultConfigValue;
     /**
-     * @return Config description
+     * @return A description for the configuration.
      * 
      */
     private String description;
     /**
-     * @return This flags tells whether the value is overridable or not.
+     * @return Whether the value can be overridden or not.
      * 
      */
     private Boolean isOverridable;
     /**
-     * @return If true, modfying this configuration value will requires restart.
+     * @return If true, modifying this configuration value will require a restart.
      * 
      */
     private Boolean isRestartRequired;
 
     private GetDefaultConfigurationConfigurationDetailItem() {}
     /**
-     * @return Range or list of allowed values
+     * @return Range or list of allowed values.
      * 
      */
     public String allowedValues() {
         return this.allowedValues;
     }
     /**
-     * @return Key is the configuration key.
+     * @return The configuration variable name.
      * 
      */
     public String configKey() {
         return this.configKey;
     }
     /**
-     * @return Describes about the Datatype value.
+     * @return Data type of the variable.
      * 
      */
     public String dataType() {
         return this.dataType;
     }
     /**
-     * @return Default value
+     * @return Default value for the variable.
      * 
      */
     public String defaultConfigValue() {
         return this.defaultConfigValue;
     }
     /**
-     * @return Config description
+     * @return A description for the configuration.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return This flags tells whether the value is overridable or not.
+     * @return Whether the value can be overridden or not.
      * 
      */
     public Boolean isOverridable() {
         return this.isOverridable;
     }
     /**
-     * @return If true, modfying this configuration value will requires restart.
+     * @return If true, modifying this configuration value will require a restart.
      * 
      */
     public Boolean isRestartRequired() {

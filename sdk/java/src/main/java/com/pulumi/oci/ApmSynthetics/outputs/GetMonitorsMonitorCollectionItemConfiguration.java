@@ -50,15 +50,35 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
      */
     private Boolean isFailureRetried;
     /**
+     * @return If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+     * 
+     */
+    private Boolean isQueryRecursive;
+    /**
      * @return If redirection is enabled, then redirects will be allowed while accessing target URL.
      * 
      */
     private Boolean isRedirectionEnabled;
     /**
-     * @return Details of the network configuration.
+     * @return Name of the server that will be used to perform DNS lookup.
+     * 
+     */
+    private String nameServer;
+    /**
+     * @return Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
      * 
      */
     private List<GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration> networkConfigurations;
+    /**
+     * @return Type of protocol.
+     * 
+     */
+    private String protocol;
+    /**
+     * @return DNS record type.
+     * 
+     */
+    private String recordType;
     /**
      * @return Details for request HTTP authentication.
      * 
@@ -149,6 +169,13 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         return this.isFailureRetried;
     }
     /**
+     * @return If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+     * 
+     */
+    public Boolean isQueryRecursive() {
+        return this.isQueryRecursive;
+    }
+    /**
      * @return If redirection is enabled, then redirects will be allowed while accessing target URL.
      * 
      */
@@ -156,11 +183,32 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         return this.isRedirectionEnabled;
     }
     /**
-     * @return Details of the network configuration.
+     * @return Name of the server that will be used to perform DNS lookup.
+     * 
+     */
+    public String nameServer() {
+        return this.nameServer;
+    }
+    /**
+     * @return Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
      * 
      */
     public List<GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration> networkConfigurations() {
         return this.networkConfigurations;
+    }
+    /**
+     * @return Type of protocol.
+     * 
+     */
+    public String protocol() {
+        return this.protocol;
+    }
+    /**
+     * @return DNS record type.
+     * 
+     */
+    public String recordType() {
+        return this.recordType;
     }
     /**
      * @return Details for request HTTP authentication.
@@ -241,8 +289,12 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         private Boolean isCertificateValidationEnabled;
         private Boolean isDefaultSnapshotEnabled;
         private Boolean isFailureRetried;
+        private Boolean isQueryRecursive;
         private Boolean isRedirectionEnabled;
+        private String nameServer;
         private List<GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration> networkConfigurations;
+        private String protocol;
+        private String recordType;
         private List<GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail> reqAuthenticationDetails;
         private String reqAuthenticationScheme;
         private List<GetMonitorsMonitorCollectionItemConfigurationRequestHeader> requestHeaders;
@@ -261,8 +313,12 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
     	      this.isCertificateValidationEnabled = defaults.isCertificateValidationEnabled;
     	      this.isDefaultSnapshotEnabled = defaults.isDefaultSnapshotEnabled;
     	      this.isFailureRetried = defaults.isFailureRetried;
+    	      this.isQueryRecursive = defaults.isQueryRecursive;
     	      this.isRedirectionEnabled = defaults.isRedirectionEnabled;
+    	      this.nameServer = defaults.nameServer;
     	      this.networkConfigurations = defaults.networkConfigurations;
+    	      this.protocol = defaults.protocol;
+    	      this.recordType = defaults.recordType;
     	      this.reqAuthenticationDetails = defaults.reqAuthenticationDetails;
     	      this.reqAuthenticationScheme = defaults.reqAuthenticationScheme;
     	      this.requestHeaders = defaults.requestHeaders;
@@ -329,11 +385,27 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
             return this;
         }
         @CustomType.Setter
+        public Builder isQueryRecursive(Boolean isQueryRecursive) {
+            if (isQueryRecursive == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "isQueryRecursive");
+            }
+            this.isQueryRecursive = isQueryRecursive;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isRedirectionEnabled(Boolean isRedirectionEnabled) {
             if (isRedirectionEnabled == null) {
               throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "isRedirectionEnabled");
             }
             this.isRedirectionEnabled = isRedirectionEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder nameServer(String nameServer) {
+            if (nameServer == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "nameServer");
+            }
+            this.nameServer = nameServer;
             return this;
         }
         @CustomType.Setter
@@ -346,6 +418,22 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         }
         public Builder networkConfigurations(GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration... networkConfigurations) {
             return networkConfigurations(List.of(networkConfigurations));
+        }
+        @CustomType.Setter
+        public Builder protocol(String protocol) {
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "protocol");
+            }
+            this.protocol = protocol;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder recordType(String recordType) {
+            if (recordType == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "recordType");
+            }
+            this.recordType = recordType;
+            return this;
         }
         @CustomType.Setter
         public Builder reqAuthenticationDetails(List<GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail> reqAuthenticationDetails) {
@@ -442,8 +530,12 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
             _resultValue.isCertificateValidationEnabled = isCertificateValidationEnabled;
             _resultValue.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
             _resultValue.isFailureRetried = isFailureRetried;
+            _resultValue.isQueryRecursive = isQueryRecursive;
             _resultValue.isRedirectionEnabled = isRedirectionEnabled;
+            _resultValue.nameServer = nameServer;
             _resultValue.networkConfigurations = networkConfigurations;
+            _resultValue.protocol = protocol;
+            _resultValue.recordType = recordType;
             _resultValue.reqAuthenticationDetails = reqAuthenticationDetails;
             _resultValue.reqAuthenticationScheme = reqAuthenticationScheme;
             _resultValue.requestHeaders = requestHeaders;

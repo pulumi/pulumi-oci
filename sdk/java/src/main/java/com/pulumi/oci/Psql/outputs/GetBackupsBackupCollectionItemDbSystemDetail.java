@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetBackupsBackupCollectionItemDbSystemDetail {
     /**
-     * @return The major and minor versions of the DbSystem software.
+     * @return The major and minor versions of the database system software.
      * 
      */
     private String dbVersion;
     /**
-     * @return Type of the DbSystem.
+     * @return Type of the database system.
      * 
      */
     private String systemType;
 
     private GetBackupsBackupCollectionItemDbSystemDetail() {}
     /**
-     * @return The major and minor versions of the DbSystem software.
+     * @return The major and minor versions of the database system software.
      * 
      */
     public String dbVersion() {
         return this.dbVersion;
     }
     /**
-     * @return Type of the DbSystem.
+     * @return Type of the database system.
      * 
      */
     public String systemType() {

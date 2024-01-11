@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Core
         public Output<string> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
-        /// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
+        /// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `oci.Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
         /// </summary>
         [Output("backupPolicyId")]
         public Output<string> BackupPolicyId { get; private set; } = null!;
@@ -213,7 +213,7 @@ namespace Pulumi.Oci.Core
         public Input<string> AvailabilityDomain { get; set; } = null!;
 
         /// <summary>
-        /// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
+        /// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `oci.Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
         /// </summary>
         [Input("backupPolicyId")]
         public Input<string>? BackupPolicyId { get; set; }
@@ -309,7 +309,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
-        /// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
+        /// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `oci.Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
         /// </summary>
         [Input("backupPolicyId")]
         public Input<string>? BackupPolicyId { get; set; }

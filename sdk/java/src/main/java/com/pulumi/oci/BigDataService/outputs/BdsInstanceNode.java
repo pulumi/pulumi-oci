@@ -65,6 +65,11 @@ public final class BdsInstanceNode {
      */
     private @Nullable String nodeType;
     /**
+     * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    private @Nullable Integer nvmes;
+    /**
      * @return The total number of OCPUs available to the node.
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -174,6 +179,13 @@ public final class BdsInstanceNode {
         return Optional.ofNullable(this.nodeType);
     }
     /**
+     * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    public Optional<Integer> nvmes() {
+        return Optional.ofNullable(this.nvmes);
+    }
+    /**
      * @return The total number of OCPUs available to the node.
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -244,6 +256,7 @@ public final class BdsInstanceNode {
         private @Nullable String ipAddress;
         private @Nullable Integer memoryInGbs;
         private @Nullable String nodeType;
+        private @Nullable Integer nvmes;
         private @Nullable Integer ocpus;
         private @Nullable String shape;
         private @Nullable String sshFingerprint;
@@ -264,6 +277,7 @@ public final class BdsInstanceNode {
     	      this.ipAddress = defaults.ipAddress;
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.nodeType = defaults.nodeType;
+    	      this.nvmes = defaults.nvmes;
     	      this.ocpus = defaults.ocpus;
     	      this.shape = defaults.shape;
     	      this.sshFingerprint = defaults.sshFingerprint;
@@ -337,6 +351,12 @@ public final class BdsInstanceNode {
             return this;
         }
         @CustomType.Setter
+        public Builder nvmes(@Nullable Integer nvmes) {
+
+            this.nvmes = nvmes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder ocpus(@Nullable Integer ocpus) {
 
             this.ocpus = ocpus;
@@ -390,6 +410,7 @@ public final class BdsInstanceNode {
             _resultValue.ipAddress = ipAddress;
             _resultValue.memoryInGbs = memoryInGbs;
             _resultValue.nodeType = nodeType;
+            _resultValue.nvmes = nvmes;
             _resultValue.ocpus = ocpus;
             _resultValue.shape = shape;
             _resultValue.sshFingerprint = sshFingerprint;

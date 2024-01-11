@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class GetShapesShapeCollectionResult
     {
         /// <summary>
-        /// List of dbSystems.
+        /// List of supported shapes.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetShapesShapeCollectionItemResult> Items;
 

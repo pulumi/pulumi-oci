@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 public final class GetDefaultConfigurationsResult {
     private @Nullable String configurationId;
     /**
-     * @return Version of the Postgresql DB
+     * @return Version of the PostgreSQL database.
      * 
      */
     private @Nullable String dbVersion;
@@ -27,7 +27,7 @@ public final class GetDefaultConfigurationsResult {
      */
     private List<GetDefaultConfigurationsDefaultConfigurationCollection> defaultConfigurationCollections;
     /**
-     * @return Config display name
+     * @return A user-friendly display name for the configuration.
      * 
      */
     private @Nullable String displayName;
@@ -38,12 +38,12 @@ public final class GetDefaultConfigurationsResult {
      */
     private String id;
     /**
-     * @return Compute Shape Name like VM.Standard3.Flex.
+     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      * 
      */
     private @Nullable String shape;
     /**
-     * @return The current state of the Configuration.
+     * @return The current state of the configuration.
      * 
      */
     private @Nullable String state;
@@ -53,7 +53,7 @@ public final class GetDefaultConfigurationsResult {
         return Optional.ofNullable(this.configurationId);
     }
     /**
-     * @return Version of the Postgresql DB
+     * @return Version of the PostgreSQL database.
      * 
      */
     public Optional<String> dbVersion() {
@@ -67,7 +67,7 @@ public final class GetDefaultConfigurationsResult {
         return this.defaultConfigurationCollections;
     }
     /**
-     * @return Config display name
+     * @return A user-friendly display name for the configuration.
      * 
      */
     public Optional<String> displayName() {
@@ -84,14 +84,14 @@ public final class GetDefaultConfigurationsResult {
         return this.id;
     }
     /**
-     * @return Compute Shape Name like VM.Standard3.Flex.
+     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      * 
      */
     public Optional<String> shape() {
         return Optional.ofNullable(this.shape);
     }
     /**
-     * @return The current state of the Configuration.
+     * @return The current state of the configuration.
      * 
      */
     public Optional<String> state() {

@@ -15,6 +15,14 @@ import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorPlainArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorsArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorsPlainArgs;
+import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointArgs;
+import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointPlainArgs;
+import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkerArgs;
+import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkerPlainArgs;
+import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkersArgs;
+import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkersPlainArgs;
+import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointsArgs;
+import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointsPlainArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.GetResultArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.GetResultPlainArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.GetScriptArgs;
@@ -29,6 +37,10 @@ import com.pulumi.oci.ApmSynthetics.outputs.GetDedicatedVantagePointResult;
 import com.pulumi.oci.ApmSynthetics.outputs.GetDedicatedVantagePointsResult;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorResult;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsResult;
+import com.pulumi.oci.ApmSynthetics.outputs.GetOnPremiseVantagePointResult;
+import com.pulumi.oci.ApmSynthetics.outputs.GetOnPremiseVantagePointWorkerResult;
+import com.pulumi.oci.ApmSynthetics.outputs.GetOnPremiseVantagePointWorkersResult;
+import com.pulumi.oci.ApmSynthetics.outputs.GetOnPremiseVantagePointsResult;
 import com.pulumi.oci.ApmSynthetics.outputs.GetResultResult;
 import com.pulumi.oci.ApmSynthetics.outputs.GetScriptResult;
 import com.pulumi.oci.ApmSynthetics.outputs.GetScriptsResult;
@@ -709,6 +721,670 @@ public final class ApmSyntheticsFunctions {
      */
     public static CompletableFuture<GetMonitorsResult> getMonitorsPlain(GetMonitorsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ApmSynthetics/getMonitors:getMonitors", TypeShape.of(GetMonitorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Gets the details of the On-premise vantage point identified by the OCID.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremiseVantagePoint = ApmSyntheticsFunctions.getOnPremiseVantagePoint(GetOnPremiseVantagePointArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOnPremiseVantagePointResult> getOnPremiseVantagePoint(GetOnPremiseVantagePointArgs args) {
+        return getOnPremiseVantagePoint(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Gets the details of the On-premise vantage point identified by the OCID.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremiseVantagePoint = ApmSyntheticsFunctions.getOnPremiseVantagePoint(GetOnPremiseVantagePointArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOnPremiseVantagePointResult> getOnPremiseVantagePointPlain(GetOnPremiseVantagePointPlainArgs args) {
+        return getOnPremiseVantagePointPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Gets the details of the On-premise vantage point identified by the OCID.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremiseVantagePoint = ApmSyntheticsFunctions.getOnPremiseVantagePoint(GetOnPremiseVantagePointArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOnPremiseVantagePointResult> getOnPremiseVantagePoint(GetOnPremiseVantagePointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApmSynthetics/getOnPremiseVantagePoint:getOnPremiseVantagePoint", TypeShape.of(GetOnPremiseVantagePointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Gets the details of the On-premise vantage point identified by the OCID.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremiseVantagePoint = ApmSyntheticsFunctions.getOnPremiseVantagePoint(GetOnPremiseVantagePointArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOnPremiseVantagePointResult> getOnPremiseVantagePointPlain(GetOnPremiseVantagePointPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ApmSynthetics/getOnPremiseVantagePoint:getOnPremiseVantagePoint", TypeShape.of(GetOnPremiseVantagePointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Gets the details of the worker identified by the OCID.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremiseVantagePointWorker = ApmSyntheticsFunctions.getOnPremiseVantagePointWorker(GetOnPremiseVantagePointWorkerArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
+     *             .workerId(oci_apm_synthetics_worker.test_worker().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOnPremiseVantagePointWorkerResult> getOnPremiseVantagePointWorker(GetOnPremiseVantagePointWorkerArgs args) {
+        return getOnPremiseVantagePointWorker(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Gets the details of the worker identified by the OCID.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremiseVantagePointWorker = ApmSyntheticsFunctions.getOnPremiseVantagePointWorker(GetOnPremiseVantagePointWorkerArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
+     *             .workerId(oci_apm_synthetics_worker.test_worker().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOnPremiseVantagePointWorkerResult> getOnPremiseVantagePointWorkerPlain(GetOnPremiseVantagePointWorkerPlainArgs args) {
+        return getOnPremiseVantagePointWorkerPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Gets the details of the worker identified by the OCID.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremiseVantagePointWorker = ApmSyntheticsFunctions.getOnPremiseVantagePointWorker(GetOnPremiseVantagePointWorkerArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
+     *             .workerId(oci_apm_synthetics_worker.test_worker().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOnPremiseVantagePointWorkerResult> getOnPremiseVantagePointWorker(GetOnPremiseVantagePointWorkerArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApmSynthetics/getOnPremiseVantagePointWorker:getOnPremiseVantagePointWorker", TypeShape.of(GetOnPremiseVantagePointWorkerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Gets the details of the worker identified by the OCID.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremiseVantagePointWorker = ApmSyntheticsFunctions.getOnPremiseVantagePointWorker(GetOnPremiseVantagePointWorkerArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
+     *             .workerId(oci_apm_synthetics_worker.test_worker().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOnPremiseVantagePointWorkerResult> getOnPremiseVantagePointWorkerPlain(GetOnPremiseVantagePointWorkerPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ApmSynthetics/getOnPremiseVantagePointWorker:getOnPremiseVantagePointWorker", TypeShape.of(GetOnPremiseVantagePointWorkerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Returns a list of workers.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremiseVantagePointWorkers = ApmSyntheticsFunctions.getOnPremiseVantagePointWorkers(GetOnPremiseVantagePointWorkersArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
+     *             .capability(var_.on_premise_vantage_point_worker_capability())
+     *             .displayName(var_.on_premise_vantage_point_worker_display_name())
+     *             .name(var_.on_premise_vantage_point_worker_name())
+     *             .status(var_.on_premise_vantage_point_worker_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOnPremiseVantagePointWorkersResult> getOnPremiseVantagePointWorkers(GetOnPremiseVantagePointWorkersArgs args) {
+        return getOnPremiseVantagePointWorkers(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Returns a list of workers.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremiseVantagePointWorkers = ApmSyntheticsFunctions.getOnPremiseVantagePointWorkers(GetOnPremiseVantagePointWorkersArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
+     *             .capability(var_.on_premise_vantage_point_worker_capability())
+     *             .displayName(var_.on_premise_vantage_point_worker_display_name())
+     *             .name(var_.on_premise_vantage_point_worker_name())
+     *             .status(var_.on_premise_vantage_point_worker_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOnPremiseVantagePointWorkersResult> getOnPremiseVantagePointWorkersPlain(GetOnPremiseVantagePointWorkersPlainArgs args) {
+        return getOnPremiseVantagePointWorkersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Returns a list of workers.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremiseVantagePointWorkers = ApmSyntheticsFunctions.getOnPremiseVantagePointWorkers(GetOnPremiseVantagePointWorkersArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
+     *             .capability(var_.on_premise_vantage_point_worker_capability())
+     *             .displayName(var_.on_premise_vantage_point_worker_display_name())
+     *             .name(var_.on_premise_vantage_point_worker_name())
+     *             .status(var_.on_premise_vantage_point_worker_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOnPremiseVantagePointWorkersResult> getOnPremiseVantagePointWorkers(GetOnPremiseVantagePointWorkersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApmSynthetics/getOnPremiseVantagePointWorkers:getOnPremiseVantagePointWorkers", TypeShape.of(GetOnPremiseVantagePointWorkersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Returns a list of workers.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremiseVantagePointWorkers = ApmSyntheticsFunctions.getOnPremiseVantagePointWorkers(GetOnPremiseVantagePointWorkersArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
+     *             .capability(var_.on_premise_vantage_point_worker_capability())
+     *             .displayName(var_.on_premise_vantage_point_worker_display_name())
+     *             .name(var_.on_premise_vantage_point_worker_name())
+     *             .status(var_.on_premise_vantage_point_worker_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOnPremiseVantagePointWorkersResult> getOnPremiseVantagePointWorkersPlain(GetOnPremiseVantagePointWorkersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ApmSynthetics/getOnPremiseVantagePointWorkers:getOnPremiseVantagePointWorkers", TypeShape.of(GetOnPremiseVantagePointWorkersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Returns a list of On-premise vantage points.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremiseVantagePoints = ApmSyntheticsFunctions.getOnPremiseVantagePoints(GetOnPremiseVantagePointsArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .displayName(var_.on_premise_vantage_point_display_name())
+     *             .name(var_.on_premise_vantage_point_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOnPremiseVantagePointsResult> getOnPremiseVantagePoints(GetOnPremiseVantagePointsArgs args) {
+        return getOnPremiseVantagePoints(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Returns a list of On-premise vantage points.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremiseVantagePoints = ApmSyntheticsFunctions.getOnPremiseVantagePoints(GetOnPremiseVantagePointsArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .displayName(var_.on_premise_vantage_point_display_name())
+     *             .name(var_.on_premise_vantage_point_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOnPremiseVantagePointsResult> getOnPremiseVantagePointsPlain(GetOnPremiseVantagePointsPlainArgs args) {
+        return getOnPremiseVantagePointsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Returns a list of On-premise vantage points.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremiseVantagePoints = ApmSyntheticsFunctions.getOnPremiseVantagePoints(GetOnPremiseVantagePointsArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .displayName(var_.on_premise_vantage_point_display_name())
+     *             .name(var_.on_premise_vantage_point_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOnPremiseVantagePointsResult> getOnPremiseVantagePoints(GetOnPremiseVantagePointsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApmSynthetics/getOnPremiseVantagePoints:getOnPremiseVantagePoints", TypeShape.of(GetOnPremiseVantagePointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Returns a list of On-premise vantage points.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremiseVantagePoints = ApmSyntheticsFunctions.getOnPremiseVantagePoints(GetOnPremiseVantagePointsArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .displayName(var_.on_premise_vantage_point_display_name())
+     *             .name(var_.on_premise_vantage_point_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOnPremiseVantagePointsResult> getOnPremiseVantagePointsPlain(GetOnPremiseVantagePointsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ApmSynthetics/getOnPremiseVantagePoints:getOnPremiseVantagePoints", TypeShape.of(GetOnPremiseVantagePointsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Result resource in Oracle Cloud Infrastructure Apm Synthetics service.

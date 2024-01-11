@@ -16,14 +16,14 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
     public static final DbSystemInstanceArgs Empty = new DbSystemInstanceArgs();
 
     /**
-     * Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+     * Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
      * 
      */
     @Import(name="availabilityDomain")
     private @Nullable Output<String> availabilityDomain;
 
     /**
-     * @return Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+     * @return Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
      * 
      */
     public Optional<Output<String>> availabilityDomain() {
@@ -31,14 +31,14 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Description of the DbInstance. This field should be input by the user.
+     * A user-provided description of the database instance node.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return Description of the DbInstance. This field should be input by the user.
+     * @return A user-provided description of the database instance node.
      * 
      */
     public Optional<Output<String>> description() {
@@ -46,14 +46,14 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Display name of the DbInstance.
+     * Display name of the database instance node. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return Display name of the DbInstance.
+     * @return Display name of the database instance node. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -61,14 +61,14 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Unique identifier that is immutable on creation.
+     * A unique identifier for the database instance node. Immutable on creation.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return Unique identifier that is immutable on creation.
+     * @return A unique identifier for the database instance node. Immutable on creation.
      * 
      */
     public Optional<Output<String>> id() {
@@ -91,14 +91,14 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The current state of the DbSystem.
+     * The current state of the database system.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the DbSystem.
+     * @return The current state of the database system.
      * 
      */
     public Optional<Output<String>> state() {
@@ -106,14 +106,14 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The time the the DbSystem was created. An RFC3339 formatted datetime string
+     * The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time the the DbSystem was created. An RFC3339 formatted datetime string
+     * @return The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -121,14 +121,14 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The time the DbSystem was updated. An RFC3339 formatted datetime string
+     * The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The time the DbSystem was updated. An RFC3339 formatted datetime string
+     * @return The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -167,7 +167,7 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param availabilityDomain Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+         * @param availabilityDomain Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param availabilityDomain Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+         * @param availabilityDomain Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param description Description of the DbInstance. This field should be input by the user.
+         * @param description A user-provided description of the database instance node.
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param description Description of the DbInstance. This field should be input by the user.
+         * @param description A user-provided description of the database instance node.
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param displayName Display name of the DbInstance.
+         * @param displayName Display name of the database instance node. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param displayName Display name of the DbInstance.
+         * @param displayName Display name of the database instance node. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param id Unique identifier that is immutable on creation.
+         * @param id A unique identifier for the database instance node. Immutable on creation.
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param id Unique identifier that is immutable on creation.
+         * @param id A unique identifier for the database instance node. Immutable on creation.
          * 
          * @return builder
          * 
@@ -272,7 +272,7 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param state The current state of the DbSystem.
+         * @param state The current state of the database system.
          * 
          * @return builder
          * 
@@ -283,7 +283,7 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param state The current state of the DbSystem.
+         * @param state The current state of the database system.
          * 
          * @return builder
          * 
@@ -293,7 +293,7 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeCreated The time the the DbSystem was created. An RFC3339 formatted datetime string
+         * @param timeCreated The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
          * 
          * @return builder
          * 
@@ -304,7 +304,7 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeCreated The time the the DbSystem was created. An RFC3339 formatted datetime string
+         * @param timeCreated The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
          * 
          * @return builder
          * 
@@ -314,7 +314,7 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeUpdated The time the DbSystem was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
          * 
          * @return builder
          * 
@@ -325,7 +325,7 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeUpdated The time the DbSystem was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
          * 
          * @return builder
          * 

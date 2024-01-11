@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class GetDbSystemConnectionDetailInstanceEndpointResult
     {
         /// <summary>
-        /// Unique identifier of the DbInstance.
+        /// Unique identifier of the database instance node.
         /// </summary>
         public readonly string DbInstanceId;
         /// <summary>
-        /// The node endpoint information.
+        /// Information about the database instance node endpoint.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbSystemConnectionDetailInstanceEndpointEndpointResult> Endpoints;
 

@@ -51,15 +51,35 @@ public final class ConfigConfiguration {
      */
     private @Nullable Boolean isFailureRetried;
     /**
+     * @return (Updatable) If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+     * 
+     */
+    private @Nullable Boolean isQueryRecursive;
+    /**
      * @return (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
      * 
      */
     private @Nullable Boolean isRedirectionEnabled;
     /**
-     * @return (Updatable) Details of the network configuration.
+     * @return (Updatable) Name of the server that will be used to perform DNS lookup.
+     * 
+     */
+    private @Nullable String nameServer;
+    /**
+     * @return (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
      * 
      */
     private @Nullable ConfigConfigurationNetworkConfiguration networkConfiguration;
+    /**
+     * @return (Updatable) Type of protocol.
+     * 
+     */
+    private @Nullable String protocol;
+    /**
+     * @return (Updatable) DNS record type.
+     * 
+     */
+    private @Nullable String recordType;
     /**
      * @return (Updatable) Details for request HTTP authentication.
      * 
@@ -150,6 +170,13 @@ public final class ConfigConfiguration {
         return Optional.ofNullable(this.isFailureRetried);
     }
     /**
+     * @return (Updatable) If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+     * 
+     */
+    public Optional<Boolean> isQueryRecursive() {
+        return Optional.ofNullable(this.isQueryRecursive);
+    }
+    /**
      * @return (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
      * 
      */
@@ -157,11 +184,32 @@ public final class ConfigConfiguration {
         return Optional.ofNullable(this.isRedirectionEnabled);
     }
     /**
-     * @return (Updatable) Details of the network configuration.
+     * @return (Updatable) Name of the server that will be used to perform DNS lookup.
+     * 
+     */
+    public Optional<String> nameServer() {
+        return Optional.ofNullable(this.nameServer);
+    }
+    /**
+     * @return (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
      * 
      */
     public Optional<ConfigConfigurationNetworkConfiguration> networkConfiguration() {
         return Optional.ofNullable(this.networkConfiguration);
+    }
+    /**
+     * @return (Updatable) Type of protocol.
+     * 
+     */
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
+    }
+    /**
+     * @return (Updatable) DNS record type.
+     * 
+     */
+    public Optional<String> recordType() {
+        return Optional.ofNullable(this.recordType);
     }
     /**
      * @return (Updatable) Details for request HTTP authentication.
@@ -242,8 +290,12 @@ public final class ConfigConfiguration {
         private @Nullable Boolean isCertificateValidationEnabled;
         private @Nullable Boolean isDefaultSnapshotEnabled;
         private @Nullable Boolean isFailureRetried;
+        private @Nullable Boolean isQueryRecursive;
         private @Nullable Boolean isRedirectionEnabled;
+        private @Nullable String nameServer;
         private @Nullable ConfigConfigurationNetworkConfiguration networkConfiguration;
+        private @Nullable String protocol;
+        private @Nullable String recordType;
         private @Nullable ConfigConfigurationReqAuthenticationDetails reqAuthenticationDetails;
         private @Nullable String reqAuthenticationScheme;
         private @Nullable List<ConfigConfigurationRequestHeader> requestHeaders;
@@ -262,8 +314,12 @@ public final class ConfigConfiguration {
     	      this.isCertificateValidationEnabled = defaults.isCertificateValidationEnabled;
     	      this.isDefaultSnapshotEnabled = defaults.isDefaultSnapshotEnabled;
     	      this.isFailureRetried = defaults.isFailureRetried;
+    	      this.isQueryRecursive = defaults.isQueryRecursive;
     	      this.isRedirectionEnabled = defaults.isRedirectionEnabled;
+    	      this.nameServer = defaults.nameServer;
     	      this.networkConfiguration = defaults.networkConfiguration;
+    	      this.protocol = defaults.protocol;
+    	      this.recordType = defaults.recordType;
     	      this.reqAuthenticationDetails = defaults.reqAuthenticationDetails;
     	      this.reqAuthenticationScheme = defaults.reqAuthenticationScheme;
     	      this.requestHeaders = defaults.requestHeaders;
@@ -312,15 +368,39 @@ public final class ConfigConfiguration {
             return this;
         }
         @CustomType.Setter
+        public Builder isQueryRecursive(@Nullable Boolean isQueryRecursive) {
+
+            this.isQueryRecursive = isQueryRecursive;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isRedirectionEnabled(@Nullable Boolean isRedirectionEnabled) {
 
             this.isRedirectionEnabled = isRedirectionEnabled;
             return this;
         }
         @CustomType.Setter
+        public Builder nameServer(@Nullable String nameServer) {
+
+            this.nameServer = nameServer;
+            return this;
+        }
+        @CustomType.Setter
         public Builder networkConfiguration(@Nullable ConfigConfigurationNetworkConfiguration networkConfiguration) {
 
             this.networkConfiguration = networkConfiguration;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder protocol(@Nullable String protocol) {
+
+            this.protocol = protocol;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder recordType(@Nullable String recordType) {
+
+            this.recordType = recordType;
             return this;
         }
         @CustomType.Setter
@@ -397,8 +477,12 @@ public final class ConfigConfiguration {
             _resultValue.isCertificateValidationEnabled = isCertificateValidationEnabled;
             _resultValue.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
             _resultValue.isFailureRetried = isFailureRetried;
+            _resultValue.isQueryRecursive = isQueryRecursive;
             _resultValue.isRedirectionEnabled = isRedirectionEnabled;
+            _resultValue.nameServer = nameServer;
             _resultValue.networkConfiguration = networkConfiguration;
+            _resultValue.protocol = protocol;
+            _resultValue.recordType = recordType;
             _resultValue.reqAuthenticationDetails = reqAuthenticationDetails;
             _resultValue.reqAuthenticationScheme = reqAuthenticationScheme;
             _resultValue.requestHeaders = requestHeaders;

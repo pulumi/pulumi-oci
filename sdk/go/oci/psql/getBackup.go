@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Backup resource in Oracle Cloud Infrastructure Psql service.
 //
-// # Gets a Backup by identifier
+// Gets a backup by identifier.
 //
 // ## Example Usage
 //
@@ -52,30 +52,30 @@ func LookupBackup(ctx *pulumi.Context, args *LookupBackupArgs, opts ...pulumi.In
 
 // A collection of arguments for invoking getBackup.
 type LookupBackupArgs struct {
-	// unique Backup identifier
+	// A unique identifier for the backup.
 	BackupId string `pulumi:"backupId"`
 }
 
 // A collection of values returned by getBackup.
 type LookupBackupResult struct {
 	BackupId string `pulumi:"backupId"`
-	// Backup size in GB.
+	// The size of the backup, in gigabytes.
 	BackupSize int `pulumi:"backupSize"`
-	// Backup compartment identifier
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Information about the DbSystem associated to a backup.
+	// Information about the database system associated with a backup.
 	DbSystemDetails []GetBackupDbSystemDetail `pulumi:"dbSystemDetails"`
-	// The source DbSystem OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup's source database system.
 	DbSystemId string `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// Backup description
+	// A description for the backup.
 	Description string `pulumi:"description"`
-	// Backup display name
+	// A user-friendly display name for the backup. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Unique identifier that is immutable on creation
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
 	Id string `pulumi:"id"`
 	// lastAcceptedRequestToken from MP.
 	LastAcceptedRequestToken string `pulumi:"lastAcceptedRequestToken"`
@@ -85,15 +85,15 @@ type LookupBackupResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Backup retention period in days.
 	RetentionPeriod int `pulumi:"retentionPeriod"`
-	// Specifies whether the backup was created manually, or via scheduled backup policy
+	// Specifies whether the backup was created manually, or by a management policy.
 	SourceType string `pulumi:"sourceType"`
-	// The current state of the Backup.
+	// The current state of the backup.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the the Backup was created. An RFC3339 formatted datetime string
+	// The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the Backup was updated. An RFC3339 formatted datetime string
+	// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -112,7 +112,7 @@ func LookupBackupOutput(ctx *pulumi.Context, args LookupBackupOutputArgs, opts .
 
 // A collection of arguments for invoking getBackup.
 type LookupBackupOutputArgs struct {
-	// unique Backup identifier
+	// A unique identifier for the backup.
 	BackupId pulumi.StringInput `pulumi:"backupId"`
 }
 
@@ -139,22 +139,22 @@ func (o LookupBackupResultOutput) BackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBackupResult) string { return v.BackupId }).(pulumi.StringOutput)
 }
 
-// Backup size in GB.
+// The size of the backup, in gigabytes.
 func (o LookupBackupResultOutput) BackupSize() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupBackupResult) int { return v.BackupSize }).(pulumi.IntOutput)
 }
 
-// Backup compartment identifier
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
 func (o LookupBackupResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBackupResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Information about the DbSystem associated to a backup.
+// Information about the database system associated with a backup.
 func (o LookupBackupResultOutput) DbSystemDetails() GetBackupDbSystemDetailArrayOutput {
 	return o.ApplyT(func(v LookupBackupResult) []GetBackupDbSystemDetail { return v.DbSystemDetails }).(GetBackupDbSystemDetailArrayOutput)
 }
 
-// The source DbSystem OCID.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup's source database system.
 func (o LookupBackupResultOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBackupResult) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
@@ -164,12 +164,12 @@ func (o LookupBackupResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupBackupResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// Backup description
+// A description for the backup.
 func (o LookupBackupResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBackupResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Backup display name
+// A user-friendly display name for the backup. Avoid entering confidential information.
 func (o LookupBackupResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBackupResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -179,7 +179,7 @@ func (o LookupBackupResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupBackupResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Unique identifier that is immutable on creation
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
 func (o LookupBackupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBackupResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -204,12 +204,12 @@ func (o LookupBackupResultOutput) RetentionPeriod() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupBackupResult) int { return v.RetentionPeriod }).(pulumi.IntOutput)
 }
 
-// Specifies whether the backup was created manually, or via scheduled backup policy
+// Specifies whether the backup was created manually, or by a management policy.
 func (o LookupBackupResultOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBackupResult) string { return v.SourceType }).(pulumi.StringOutput)
 }
 
-// The current state of the Backup.
+// The current state of the backup.
 func (o LookupBackupResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBackupResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -219,12 +219,12 @@ func (o LookupBackupResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupBackupResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time the the Backup was created. An RFC3339 formatted datetime string
+// The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o LookupBackupResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBackupResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the Backup was updated. An RFC3339 formatted datetime string
+// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o LookupBackupResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBackupResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }

@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Default Configuration resource in Oracle Cloud Infrastructure Psql service.
 //
-// # Gets a Default Configuration by identifier
+// Gets a default configuration by identifier.
 //
 // ## Example Usage
 //
@@ -52,34 +52,34 @@ func GetDefaultConfiguration(ctx *pulumi.Context, args *GetDefaultConfigurationA
 
 // A collection of arguments for invoking getDefaultConfiguration.
 type GetDefaultConfigurationArgs struct {
-	// unique Configuration identifier
+	// A unique identifier for the configuration.
 	DefaultConfigurationId string `pulumi:"defaultConfigurationId"`
 }
 
 // A collection of values returned by getDefaultConfiguration.
 type GetDefaultConfigurationResult struct {
-	// List of DB default Configuration Values.
+	// List of default configuration values for databases.
 	ConfigurationDetails []GetDefaultConfigurationConfigurationDetail `pulumi:"configurationDetails"`
-	// Version of the Postgresql DB
+	// Version of the PostgreSQL database.
 	DbVersion              string `pulumi:"dbVersion"`
 	DefaultConfigurationId string `pulumi:"defaultConfigurationId"`
-	// Config description
+	// A description for the configuration.
 	Description string `pulumi:"description"`
-	// Config display name
+	// A user-friendly display name for the configuration.
 	DisplayName string `pulumi:"displayName"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+	// Memory size in gigabytes with 1GB increment.
 	InstanceMemorySizeInGbs int `pulumi:"instanceMemorySizeInGbs"`
-	// CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+	// CPU core count. Minimum value is 1.
 	InstanceOcpuCount int `pulumi:"instanceOcpuCount"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// Compute Shape Name like VM.Standard3.Flex.
+	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
 	Shape string `pulumi:"shape"`
-	// The current state of the Configuration.
+	// The current state of the configuration.
 	State string `pulumi:"state"`
-	// The time Configuration was created. An RFC3339 formatted datetime string
+	// The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 }
 
@@ -98,7 +98,7 @@ func GetDefaultConfigurationOutput(ctx *pulumi.Context, args GetDefaultConfigura
 
 // A collection of arguments for invoking getDefaultConfiguration.
 type GetDefaultConfigurationOutputArgs struct {
-	// unique Configuration identifier
+	// A unique identifier for the configuration.
 	DefaultConfigurationId pulumi.StringInput `pulumi:"defaultConfigurationId"`
 }
 
@@ -121,14 +121,14 @@ func (o GetDefaultConfigurationResultOutput) ToGetDefaultConfigurationResultOutp
 	return o
 }
 
-// List of DB default Configuration Values.
+// List of default configuration values for databases.
 func (o GetDefaultConfigurationResultOutput) ConfigurationDetails() GetDefaultConfigurationConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationResult) []GetDefaultConfigurationConfigurationDetail {
 		return v.ConfigurationDetails
 	}).(GetDefaultConfigurationConfigurationDetailArrayOutput)
 }
 
-// Version of the Postgresql DB
+// Version of the PostgreSQL database.
 func (o GetDefaultConfigurationResultOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationResult) string { return v.DbVersion }).(pulumi.StringOutput)
 }
@@ -137,12 +137,12 @@ func (o GetDefaultConfigurationResultOutput) DefaultConfigurationId() pulumi.Str
 	return o.ApplyT(func(v GetDefaultConfigurationResult) string { return v.DefaultConfigurationId }).(pulumi.StringOutput)
 }
 
-// Config description
+// A description for the configuration.
 func (o GetDefaultConfigurationResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Config display name
+// A user-friendly display name for the configuration.
 func (o GetDefaultConfigurationResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -152,12 +152,12 @@ func (o GetDefaultConfigurationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+// Memory size in gigabytes with 1GB increment.
 func (o GetDefaultConfigurationResultOutput) InstanceMemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationResult) int { return v.InstanceMemorySizeInGbs }).(pulumi.IntOutput)
 }
 
-// CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+// CPU core count. Minimum value is 1.
 func (o GetDefaultConfigurationResultOutput) InstanceOcpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationResult) int { return v.InstanceOcpuCount }).(pulumi.IntOutput)
 }
@@ -167,17 +167,17 @@ func (o GetDefaultConfigurationResultOutput) LifecycleDetails() pulumi.StringOut
 	return o.ApplyT(func(v GetDefaultConfigurationResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// Compute Shape Name like VM.Standard3.Flex.
+// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
 func (o GetDefaultConfigurationResultOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationResult) string { return v.Shape }).(pulumi.StringOutput)
 }
 
-// The current state of the Configuration.
+// The current state of the configuration.
 func (o GetDefaultConfigurationResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationResult) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The time Configuration was created. An RFC3339 formatted datetime string
+// The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o GetDefaultConfigurationResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }

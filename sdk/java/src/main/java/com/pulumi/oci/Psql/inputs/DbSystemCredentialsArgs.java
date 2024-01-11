@@ -16,14 +16,14 @@ public final class DbSystemCredentialsArgs extends com.pulumi.resources.Resource
     public static final DbSystemCredentialsArgs Empty = new DbSystemCredentialsArgs();
 
     /**
-     * Details for the DbSystem password. Password can be passed as `VaultSecretPasswordDetails`(Vault) or `PlainTextPasswordDetails`.
+     * Details for the database system password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.
      * 
      */
     @Import(name="passwordDetails", required=true)
     private Output<DbSystemCredentialsPasswordDetailsArgs> passwordDetails;
 
     /**
-     * @return Details for the DbSystem password. Password can be passed as `VaultSecretPasswordDetails`(Vault) or `PlainTextPasswordDetails`.
+     * @return Details for the database system password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.
      * 
      */
     public Output<DbSystemCredentialsPasswordDetailsArgs> passwordDetails() {
@@ -31,14 +31,14 @@ public final class DbSystemCredentialsArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The DB system username.
+     * The database system administrator username.
      * 
      */
     @Import(name="username", required=true)
     private Output<String> username;
 
     /**
-     * @return The DB system username.
+     * @return The database system administrator username.
      * 
      */
     public Output<String> username() {
@@ -71,7 +71,7 @@ public final class DbSystemCredentialsArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param passwordDetails Details for the DbSystem password. Password can be passed as `VaultSecretPasswordDetails`(Vault) or `PlainTextPasswordDetails`.
+         * @param passwordDetails Details for the database system password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class DbSystemCredentialsArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param passwordDetails Details for the DbSystem password. Password can be passed as `VaultSecretPasswordDetails`(Vault) or `PlainTextPasswordDetails`.
+         * @param passwordDetails Details for the database system password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class DbSystemCredentialsArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param username The DB system username.
+         * @param username The database system administrator username.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class DbSystemCredentialsArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param username The DB system username.
+         * @param username The database system administrator username.
          * 
          * @return builder
          * 

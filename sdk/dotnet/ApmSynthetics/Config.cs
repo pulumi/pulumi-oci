@@ -68,7 +68,9 @@ namespace Pulumi.Oci.ApmSynthetics
     ///             IsCertificateValidationEnabled = @var.Monitor_configuration_is_certificate_validation_enabled,
     ///             IsDefaultSnapshotEnabled = @var.Monitor_configuration_is_default_snapshot_enabled,
     ///             IsFailureRetried = @var.Monitor_configuration_is_failure_retried,
+    ///             IsQueryRecursive = @var.Monitor_configuration_is_query_recursive,
     ///             IsRedirectionEnabled = @var.Monitor_configuration_is_redirection_enabled,
+    ///             NameServer = @var.Monitor_configuration_name_server,
     ///             NetworkConfiguration = new Oci.ApmSynthetics.Inputs.ConfigConfigurationNetworkConfigurationArgs
     ///             {
     ///                 NumberOfHops = @var.Monitor_configuration_network_configuration_number_of_hops,
@@ -77,6 +79,8 @@ namespace Pulumi.Oci.ApmSynthetics
     ///                 Protocol = @var.Monitor_configuration_network_configuration_protocol,
     ///                 TransmissionRate = @var.Monitor_configuration_network_configuration_transmission_rate,
     ///             },
+    ///             Protocol = @var.Monitor_configuration_protocol,
+    ///             RecordType = @var.Monitor_configuration_record_type,
     ///             ReqAuthenticationDetails = new Oci.ApmSynthetics.Inputs.ConfigConfigurationReqAuthenticationDetailsArgs
     ///             {
     ///                 AuthHeaders = new[]
@@ -271,7 +275,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        /// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
         /// </summary>
         [Output("target")]
         public Output<string> Target { get; private set; } = null!;
@@ -477,7 +481,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        /// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
         /// </summary>
         [Input("target")]
         public Input<string>? Target { get; set; }
@@ -633,7 +637,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        /// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
         /// </summary>
         [Input("target")]
         public Input<string>? Target { get; set; }

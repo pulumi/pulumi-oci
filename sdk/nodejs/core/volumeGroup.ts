@@ -76,7 +76,9 @@ export class VolumeGroup extends pulumi.CustomResource {
      */
     public readonly availabilityDomain!: pulumi.Output<string>;
     /**
-     * If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
+     * If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `oci.Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
+     *
+     * @deprecated The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
      */
     public readonly backupPolicyId!: pulumi.Output<string>;
     /**
@@ -205,7 +207,9 @@ export interface VolumeGroupState {
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
-     * If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
+     * If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `oci.Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
+     *
+     * @deprecated The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
      */
     backupPolicyId?: pulumi.Input<string>;
     /**
@@ -273,7 +277,9 @@ export interface VolumeGroupArgs {
      */
     availabilityDomain: pulumi.Input<string>;
     /**
-     * If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
+     * If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `oci.Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
+     *
+     * @deprecated The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
      */
     backupPolicyId?: pulumi.Input<string>;
     /**

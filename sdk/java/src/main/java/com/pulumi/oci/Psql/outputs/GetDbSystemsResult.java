@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetDbSystemsResult {
     /**
-     * @return Compartment identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
      * 
      */
     private @Nullable String compartmentId;
@@ -26,25 +26,25 @@ public final class GetDbSystemsResult {
      */
     private List<GetDbSystemsDbSystemCollection> dbSystemCollections;
     /**
-     * @return Display name of the DbInstance.
+     * @return A user-friendly display name for the database instance node. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
     private @Nullable List<GetDbSystemsFilter> filters;
     /**
-     * @return Unique identifier that is immutable on creation.
+     * @return A unique identifier for the database instance node. Immutable on creation.
      * 
      */
     private @Nullable String id;
     /**
-     * @return The current state of the DbSystem.
+     * @return The current state of the database system.
      * 
      */
     private @Nullable String state;
 
     private GetDbSystemsResult() {}
     /**
-     * @return Compartment identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
      * 
      */
     public Optional<String> compartmentId() {
@@ -58,7 +58,7 @@ public final class GetDbSystemsResult {
         return this.dbSystemCollections;
     }
     /**
-     * @return Display name of the DbInstance.
+     * @return A user-friendly display name for the database instance node. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {
@@ -68,14 +68,14 @@ public final class GetDbSystemsResult {
         return this.filters == null ? List.of() : this.filters;
     }
     /**
-     * @return Unique identifier that is immutable on creation.
+     * @return A unique identifier for the database instance node. Immutable on creation.
      * 
      */
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
     }
     /**
-     * @return The current state of the DbSystem.
+     * @return The current state of the database system.
      * 
      */
     public Optional<String> state() {

@@ -18,14 +18,14 @@ public final class DbSystemNetworkDetailsArgs extends com.pulumi.resources.Resou
     public static final DbSystemNetworkDetailsArgs Empty = new DbSystemNetworkDetailsArgs();
 
     /**
-     * List of customer NetworkSecurityGroup identifiers
+     * List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
      * 
      */
     @Import(name="nsgIds")
     private @Nullable Output<List<String>> nsgIds;
 
     /**
-     * @return List of customer NetworkSecurityGroup identifiers
+     * @return List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
      * 
      */
     public Optional<Output<List<String>>> nsgIds() {
@@ -33,14 +33,14 @@ public final class DbSystemNetworkDetailsArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+     * Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
      * 
      */
     @Import(name="primaryDbEndpointPrivateIp")
     private @Nullable Output<String> primaryDbEndpointPrivateIp;
 
     /**
-     * @return Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+     * @return Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
      * 
      */
     public Optional<Output<String>> primaryDbEndpointPrivateIp() {
@@ -48,14 +48,14 @@ public final class DbSystemNetworkDetailsArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * Customer Subnet identifier
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
      * 
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
-     * @return Customer Subnet identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
      * 
      */
     public Output<String> subnetId() {
@@ -89,7 +89,7 @@ public final class DbSystemNetworkDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param nsgIds List of customer NetworkSecurityGroup identifiers
+         * @param nsgIds List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class DbSystemNetworkDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param nsgIds List of customer NetworkSecurityGroup identifiers
+         * @param nsgIds List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
          * 
          * @return builder
          * 
@@ -110,7 +110,7 @@ public final class DbSystemNetworkDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param nsgIds List of customer NetworkSecurityGroup identifiers
+         * @param nsgIds List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class DbSystemNetworkDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param primaryDbEndpointPrivateIp Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+         * @param primaryDbEndpointPrivateIp Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class DbSystemNetworkDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param primaryDbEndpointPrivateIp Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+         * @param primaryDbEndpointPrivateIp Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class DbSystemNetworkDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param subnetId Customer Subnet identifier
+         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class DbSystemNetworkDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param subnetId Customer Subnet identifier
+         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
          * 
          * @return builder
          * 

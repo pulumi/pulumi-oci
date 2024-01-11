@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ConfigurationConfigurationDetail {
     /**
-     * @return List of configuration overriden values
+     * @return List of configuration overridden values.
      * 
      */
     private @Nullable List<ConfigurationConfigurationDetailItem> items;
 
     private ConfigurationConfigurationDetail() {}
     /**
-     * @return List of configuration overriden values
+     * @return List of configuration overridden values.
      * 
      */
     public List<ConfigurationConfigurationDetailItem> items() {

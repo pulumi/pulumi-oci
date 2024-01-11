@@ -35,6 +35,26 @@ export const getMonitors: typeof import("./getMonitors").getMonitors = null as a
 export const getMonitorsOutput: typeof import("./getMonitors").getMonitorsOutput = null as any;
 utilities.lazyLoad(exports, ["getMonitors","getMonitorsOutput"], () => require("./getMonitors"));
 
+export { GetOnPremiseVantagePointArgs, GetOnPremiseVantagePointResult, GetOnPremiseVantagePointOutputArgs } from "./getOnPremiseVantagePoint";
+export const getOnPremiseVantagePoint: typeof import("./getOnPremiseVantagePoint").getOnPremiseVantagePoint = null as any;
+export const getOnPremiseVantagePointOutput: typeof import("./getOnPremiseVantagePoint").getOnPremiseVantagePointOutput = null as any;
+utilities.lazyLoad(exports, ["getOnPremiseVantagePoint","getOnPremiseVantagePointOutput"], () => require("./getOnPremiseVantagePoint"));
+
+export { GetOnPremiseVantagePointWorkerArgs, GetOnPremiseVantagePointWorkerResult, GetOnPremiseVantagePointWorkerOutputArgs } from "./getOnPremiseVantagePointWorker";
+export const getOnPremiseVantagePointWorker: typeof import("./getOnPremiseVantagePointWorker").getOnPremiseVantagePointWorker = null as any;
+export const getOnPremiseVantagePointWorkerOutput: typeof import("./getOnPremiseVantagePointWorker").getOnPremiseVantagePointWorkerOutput = null as any;
+utilities.lazyLoad(exports, ["getOnPremiseVantagePointWorker","getOnPremiseVantagePointWorkerOutput"], () => require("./getOnPremiseVantagePointWorker"));
+
+export { GetOnPremiseVantagePointWorkersArgs, GetOnPremiseVantagePointWorkersResult, GetOnPremiseVantagePointWorkersOutputArgs } from "./getOnPremiseVantagePointWorkers";
+export const getOnPremiseVantagePointWorkers: typeof import("./getOnPremiseVantagePointWorkers").getOnPremiseVantagePointWorkers = null as any;
+export const getOnPremiseVantagePointWorkersOutput: typeof import("./getOnPremiseVantagePointWorkers").getOnPremiseVantagePointWorkersOutput = null as any;
+utilities.lazyLoad(exports, ["getOnPremiseVantagePointWorkers","getOnPremiseVantagePointWorkersOutput"], () => require("./getOnPremiseVantagePointWorkers"));
+
+export { GetOnPremiseVantagePointsArgs, GetOnPremiseVantagePointsResult, GetOnPremiseVantagePointsOutputArgs } from "./getOnPremiseVantagePoints";
+export const getOnPremiseVantagePoints: typeof import("./getOnPremiseVantagePoints").getOnPremiseVantagePoints = null as any;
+export const getOnPremiseVantagePointsOutput: typeof import("./getOnPremiseVantagePoints").getOnPremiseVantagePointsOutput = null as any;
+utilities.lazyLoad(exports, ["getOnPremiseVantagePoints","getOnPremiseVantagePointsOutput"], () => require("./getOnPremiseVantagePoints"));
+
 export { GetResultArgs, GetResultResult, GetResultOutputArgs } from "./getResult";
 export const getResult: typeof import("./getResult").getResult = null as any;
 export const getResultOutput: typeof import("./getResult").getResultOutput = null as any;
@@ -60,6 +80,16 @@ export const getVantagePoints: typeof import("./getVantagePoints").getVantagePoi
 export const getVantagePointsOutput: typeof import("./getVantagePoints").getVantagePointsOutput = null as any;
 utilities.lazyLoad(exports, ["getVantagePoints","getVantagePointsOutput"], () => require("./getVantagePoints"));
 
+export { OnPremiseVantagePointArgs, OnPremiseVantagePointState } from "./onPremiseVantagePoint";
+export type OnPremiseVantagePoint = import("./onPremiseVantagePoint").OnPremiseVantagePoint;
+export const OnPremiseVantagePoint: typeof import("./onPremiseVantagePoint").OnPremiseVantagePoint = null as any;
+utilities.lazyLoad(exports, ["OnPremiseVantagePoint"], () => require("./onPremiseVantagePoint"));
+
+export { OnPremiseVantagePointWorkerArgs, OnPremiseVantagePointWorkerState } from "./onPremiseVantagePointWorker";
+export type OnPremiseVantagePointWorker = import("./onPremiseVantagePointWorker").OnPremiseVantagePointWorker;
+export const OnPremiseVantagePointWorker: typeof import("./onPremiseVantagePointWorker").OnPremiseVantagePointWorker = null as any;
+utilities.lazyLoad(exports, ["OnPremiseVantagePointWorker"], () => require("./onPremiseVantagePointWorker"));
+
 export { ScriptArgs, ScriptState } from "./script";
 export type Script = import("./script").Script;
 export const Script: typeof import("./script").Script = null as any;
@@ -74,6 +104,10 @@ const _module = {
                 return new Config(name, <any>undefined, { urn })
             case "oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint":
                 return new DedicatedVantagePoint(name, <any>undefined, { urn })
+            case "oci:ApmSynthetics/onPremiseVantagePoint:OnPremiseVantagePoint":
+                return new OnPremiseVantagePoint(name, <any>undefined, { urn })
+            case "oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker":
+                return new OnPremiseVantagePointWorker(name, <any>undefined, { urn })
             case "oci:ApmSynthetics/script:Script":
                 return new Script(name, <any>undefined, { urn })
             default:
@@ -83,4 +117,6 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "ApmSynthetics/config", _module)
 pulumi.runtime.registerResourceModule("oci", "ApmSynthetics/dedicatedVantagePoint", _module)
+pulumi.runtime.registerResourceModule("oci", "ApmSynthetics/onPremiseVantagePoint", _module)
+pulumi.runtime.registerResourceModule("oci", "ApmSynthetics/onPremiseVantagePointWorker", _module)
 pulumi.runtime.registerResourceModule("oci", "ApmSynthetics/script", _module)

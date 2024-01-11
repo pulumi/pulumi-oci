@@ -87,14 +87,14 @@ public final class GetMonitorsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
+     * A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
      * 
      */
     @Import(name="monitorType")
     private @Nullable Output<String> monitorType;
 
     /**
-     * @return A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
+     * @return A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
      * 
      */
     public Optional<Output<String>> monitorType() {
@@ -276,7 +276,7 @@ public final class GetMonitorsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param monitorType A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
+         * @param monitorType A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
          * 
          * @return builder
          * 
@@ -287,7 +287,7 @@ public final class GetMonitorsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param monitorType A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
+         * @param monitorType A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
          * 
          * @return builder
          * 

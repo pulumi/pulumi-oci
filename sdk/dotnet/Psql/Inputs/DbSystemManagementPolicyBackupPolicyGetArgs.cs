@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Psql.Inputs
     public sealed class DbSystemManagementPolicyBackupPolicyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Hour of the day when backup starts.
+        /// (Updatable) Hour of the day when the backup starts.
         /// </summary>
         [Input("backupStart")]
         public Input<string>? BackupStart { get; set; }
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Psql.Inputs
         private InputList<int>? _daysOfTheMonths;
 
         /// <summary>
-        /// (Updatable) Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+        /// (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
         /// </summary>
         public InputList<int> DaysOfTheMonths
         {
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Psql.Inputs
         private InputList<string>? _daysOfTheWeeks;
 
         /// <summary>
-        /// (Updatable) Weekly days
+        /// (Updatable) The day of the week that the backup starts.
         /// </summary>
         public InputList<string> DaysOfTheWeeks
         {
@@ -43,13 +43,13 @@ namespace Pulumi.Oci.Psql.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Backup policy kind
+        /// (Updatable) The kind of backup policy.
         /// </summary>
         [Input("kind")]
         public Input<string>? Kind { get; set; }
 
         /// <summary>
-        /// (Updatable) How many days the customers data should be stored after the db system deletion.
+        /// (Updatable) How many days the data should be stored after the database system deletion.
         /// </summary>
         [Input("retentionDays")]
         public Input<int>? RetentionDays { get; set; }

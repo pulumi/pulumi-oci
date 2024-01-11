@@ -14,19 +14,19 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class GetDbSystemsDbSystemCollectionItemStorageDetailResult
     {
         /// <summary>
-        /// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+        /// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
-        /// DbSystem Performance Unit
+        /// Guaranteed input/output storage requests per second (IOPS) available to the database system.
         /// </summary>
         public readonly string Iops;
         /// <summary>
-        /// Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+        /// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         /// </summary>
         public readonly bool IsRegionallyDurable;
         /// <summary>
-        /// Type of the DbSystem.
+        /// Type of the database system.
         /// </summary>
         public readonly string SystemType;
 

@@ -38,13 +38,29 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly bool? IsFailureRetried;
         /// <summary>
+        /// (Updatable) If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+        /// </summary>
+        public readonly bool? IsQueryRecursive;
+        /// <summary>
         /// (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
         /// </summary>
         public readonly bool? IsRedirectionEnabled;
         /// <summary>
-        /// (Updatable) Details of the network configuration.
+        /// (Updatable) Name of the server that will be used to perform DNS lookup.
+        /// </summary>
+        public readonly string? NameServer;
+        /// <summary>
+        /// (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
         /// </summary>
         public readonly Outputs.ConfigConfigurationNetworkConfiguration? NetworkConfiguration;
+        /// <summary>
+        /// (Updatable) Type of protocol.
+        /// </summary>
+        public readonly string? Protocol;
+        /// <summary>
+        /// (Updatable) DNS record type.
+        /// </summary>
+        public readonly string? RecordType;
         /// <summary>
         /// (Updatable) Details for request HTTP authentication.
         /// </summary>
@@ -96,9 +112,17 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
 
             bool? isFailureRetried,
 
+            bool? isQueryRecursive,
+
             bool? isRedirectionEnabled,
 
+            string? nameServer,
+
             Outputs.ConfigConfigurationNetworkConfiguration? networkConfiguration,
+
+            string? protocol,
+
+            string? recordType,
 
             Outputs.ConfigConfigurationReqAuthenticationDetails? reqAuthenticationDetails,
 
@@ -124,8 +148,12 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
             IsCertificateValidationEnabled = isCertificateValidationEnabled;
             IsDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
             IsFailureRetried = isFailureRetried;
+            IsQueryRecursive = isQueryRecursive;
             IsRedirectionEnabled = isRedirectionEnabled;
+            NameServer = nameServer;
             NetworkConfiguration = networkConfiguration;
+            Protocol = protocol;
+            RecordType = recordType;
             ReqAuthenticationDetails = reqAuthenticationDetails;
             ReqAuthenticationScheme = reqAuthenticationScheme;
             RequestHeaders = requestHeaders;

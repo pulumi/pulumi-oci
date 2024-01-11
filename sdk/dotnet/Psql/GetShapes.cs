@@ -138,7 +138,7 @@ namespace Pulumi.Oci.Psql
         public readonly string? CompartmentId;
         public readonly ImmutableArray<Outputs.GetShapesFilterResult> Filters;
         /// <summary>
-        /// Unique identifier for the shape
+        /// A unique identifier for the shape.
         /// </summary>
         public readonly string? Id;
         /// <summary>

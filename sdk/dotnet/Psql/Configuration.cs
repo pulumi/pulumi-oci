@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Psql
     /// <summary>
     /// This resource provides the Configuration resource in Oracle Cloud Infrastructure Psql service.
     /// 
-    /// Creates a new Configuration Set.
+    /// Creates a new configuration.
     /// 
     /// ## Example Usage
     /// 
@@ -70,61 +70,61 @@ namespace Pulumi.Oci.Psql
     public partial class Configuration : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Compartment identifier
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// List of DB Configuration Values.
+        /// List of configuration details.
         /// </summary>
         [Output("configurationDetails")]
         public Output<ImmutableArray<Outputs.ConfigurationConfigurationDetail>> ConfigurationDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Configuration Overrides for PGSQL instance.
+        /// Configuration overrides for a PostgreSQL instance.
         /// </summary>
         [Output("dbConfigurationOverrides")]
         public Output<Outputs.ConfigurationDbConfigurationOverrides> DbConfigurationOverrides { get; private set; } = null!;
 
         /// <summary>
-        /// Version of the Postgresql DB
+        /// Version of the PostgreSQL database.
         /// </summary>
         [Output("dbVersion")]
         public Output<string> DbVersion { get; private set; } = null!;
 
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Details about the Configuration Set.
+        /// (Updatable) Details about the configuration set.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) configuration display name
+        /// (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+        /// Memory size in gigabytes with 1GB increment.
         /// </summary>
         [Output("instanceMemorySizeInGbs")]
         public Output<int> InstanceMemorySizeInGbs { get; private set; } = null!;
 
         /// <summary>
-        /// CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+        /// CPU core count.
         /// </summary>
         [Output("instanceOcpuCount")]
         public Output<int> InstanceOcpuCount { get; private set; } = null!;
@@ -136,13 +136,13 @@ namespace Pulumi.Oci.Psql
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Compute Shape Name like VM.Standard3.Flex.
+        /// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         /// </summary>
         [Output("shape")]
         public Output<string> Shape { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the Configuration.
+        /// The current state of the configuration.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -158,7 +158,7 @@ namespace Pulumi.Oci.Psql
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The time Configuration was created. An RFC3339 formatted datetime string
+        /// The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
@@ -210,19 +210,19 @@ namespace Pulumi.Oci.Psql
     public sealed class ConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment identifier
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// Configuration Overrides for PGSQL instance.
+        /// Configuration overrides for a PostgreSQL instance.
         /// </summary>
         [Input("dbConfigurationOverrides", required: true)]
         public Input<Inputs.ConfigurationDbConfigurationOverridesArgs> DbConfigurationOverrides { get; set; } = null!;
 
         /// <summary>
-        /// Version of the Postgresql DB
+        /// Version of the PostgreSQL database.
         /// </summary>
         [Input("dbVersion", required: true)]
         public Input<string> DbVersion { get; set; } = null!;
@@ -231,7 +231,7 @@ namespace Pulumi.Oci.Psql
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -240,13 +240,13 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// (Updatable) Details about the Configuration Set.
+        /// (Updatable) Details about the configuration set.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) configuration display name
+        /// (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -255,7 +255,7 @@ namespace Pulumi.Oci.Psql
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -264,19 +264,19 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+        /// Memory size in gigabytes with 1GB increment.
         /// </summary>
         [Input("instanceMemorySizeInGbs", required: true)]
         public Input<int> InstanceMemorySizeInGbs { get; set; } = null!;
 
         /// <summary>
-        /// CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+        /// CPU core count.
         /// </summary>
         [Input("instanceOcpuCount", required: true)]
         public Input<int> InstanceOcpuCount { get; set; } = null!;
 
         /// <summary>
-        /// Compute Shape Name like VM.Standard3.Flex.
+        /// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         /// </summary>
         [Input("shape", required: true)]
         public Input<string> Shape { get; set; } = null!;
@@ -306,7 +306,7 @@ namespace Pulumi.Oci.Psql
     public sealed class ConfigurationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment identifier
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -315,7 +315,7 @@ namespace Pulumi.Oci.Psql
         private InputList<Inputs.ConfigurationConfigurationDetailGetArgs>? _configurationDetails;
 
         /// <summary>
-        /// List of DB Configuration Values.
+        /// List of configuration details.
         /// </summary>
         public InputList<Inputs.ConfigurationConfigurationDetailGetArgs> ConfigurationDetails
         {
@@ -324,13 +324,13 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// Configuration Overrides for PGSQL instance.
+        /// Configuration overrides for a PostgreSQL instance.
         /// </summary>
         [Input("dbConfigurationOverrides")]
         public Input<Inputs.ConfigurationDbConfigurationOverridesGetArgs>? DbConfigurationOverrides { get; set; }
 
         /// <summary>
-        /// Version of the Postgresql DB
+        /// Version of the PostgreSQL database.
         /// </summary>
         [Input("dbVersion")]
         public Input<string>? DbVersion { get; set; }
@@ -339,7 +339,7 @@ namespace Pulumi.Oci.Psql
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -348,13 +348,13 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// (Updatable) Details about the Configuration Set.
+        /// (Updatable) Details about the configuration set.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) configuration display name
+        /// (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -363,7 +363,7 @@ namespace Pulumi.Oci.Psql
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -372,13 +372,13 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+        /// Memory size in gigabytes with 1GB increment.
         /// </summary>
         [Input("instanceMemorySizeInGbs")]
         public Input<int>? InstanceMemorySizeInGbs { get; set; }
 
         /// <summary>
-        /// CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+        /// CPU core count.
         /// </summary>
         [Input("instanceOcpuCount")]
         public Input<int>? InstanceOcpuCount { get; set; }
@@ -390,13 +390,13 @@ namespace Pulumi.Oci.Psql
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// Compute Shape Name like VM.Standard3.Flex.
+        /// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }
 
         /// <summary>
-        /// The current state of the Configuration.
+        /// The current state of the configuration.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -418,7 +418,7 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// The time Configuration was created. An RFC3339 formatted datetime string
+        /// The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }

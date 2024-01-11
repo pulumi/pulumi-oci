@@ -16,14 +16,14 @@ public final class DbSystemInstancesDetailArgs extends com.pulumi.resources.Reso
     public static final DbSystemInstancesDetailArgs Empty = new DbSystemInstancesDetailArgs();
 
     /**
-     * Description of the DbInstance. This field should be input by the user.
+     * A user-provided description of the database instance node.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return Description of the DbInstance. This field should be input by the user.
+     * @return A user-provided description of the database instance node.
      * 
      */
     public Optional<Output<String>> description() {
@@ -31,14 +31,14 @@ public final class DbSystemInstancesDetailArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * Display name of the DbInstance.
+     * Display name of the database instance node. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return Display name of the DbInstance.
+     * @return Display name of the database instance node. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -46,14 +46,14 @@ public final class DbSystemInstancesDetailArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * Private IP in customer subnet that will be assigned to the DbInstance. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+     * Private IP in customer subnet that will be assigned to the database instance node. This value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
      * 
      */
     @Import(name="privateIp")
     private @Nullable Output<String> privateIp;
 
     /**
-     * @return Private IP in customer subnet that will be assigned to the DbInstance. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+     * @return Private IP in customer subnet that will be assigned to the database instance node. This value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
      * 
      */
     public Optional<Output<String>> privateIp() {
@@ -87,7 +87,7 @@ public final class DbSystemInstancesDetailArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param description Description of the DbInstance. This field should be input by the user.
+         * @param description A user-provided description of the database instance node.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class DbSystemInstancesDetailArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param description Description of the DbInstance. This field should be input by the user.
+         * @param description A user-provided description of the database instance node.
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class DbSystemInstancesDetailArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param displayName Display name of the DbInstance.
+         * @param displayName Display name of the database instance node. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class DbSystemInstancesDetailArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param displayName Display name of the DbInstance.
+         * @param displayName Display name of the database instance node. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class DbSystemInstancesDetailArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param privateIp Private IP in customer subnet that will be assigned to the DbInstance. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+         * @param privateIp Private IP in customer subnet that will be assigned to the database instance node. This value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class DbSystemInstancesDetailArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param privateIp Private IP in customer subnet that will be assigned to the DbInstance. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+         * @param privateIp Private IP in customer subnet that will be assigned to the database instance node. This value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
          * 
          * @return builder
          * 

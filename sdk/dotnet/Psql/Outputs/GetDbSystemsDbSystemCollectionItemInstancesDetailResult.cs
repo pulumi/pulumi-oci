@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class GetDbSystemsDbSystemCollectionItemInstancesDetailResult
     {
         /// <summary>
-        /// Description of the DbInstance.
+        /// Description of the database instance node.
         /// </summary>
         public readonly string Description;
         /// <summary>

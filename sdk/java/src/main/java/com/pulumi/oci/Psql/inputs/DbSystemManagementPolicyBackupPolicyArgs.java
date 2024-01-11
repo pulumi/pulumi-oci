@@ -18,14 +18,14 @@ public final class DbSystemManagementPolicyBackupPolicyArgs extends com.pulumi.r
     public static final DbSystemManagementPolicyBackupPolicyArgs Empty = new DbSystemManagementPolicyBackupPolicyArgs();
 
     /**
-     * (Updatable) Hour of the day when backup starts.
+     * (Updatable) Hour of the day when the backup starts.
      * 
      */
     @Import(name="backupStart")
     private @Nullable Output<String> backupStart;
 
     /**
-     * @return (Updatable) Hour of the day when backup starts.
+     * @return (Updatable) Hour of the day when the backup starts.
      * 
      */
     public Optional<Output<String>> backupStart() {
@@ -33,14 +33,14 @@ public final class DbSystemManagementPolicyBackupPolicyArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+     * (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
      * 
      */
     @Import(name="daysOfTheMonths")
     private @Nullable Output<List<Integer>> daysOfTheMonths;
 
     /**
-     * @return (Updatable) Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+     * @return (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
      * 
      */
     public Optional<Output<List<Integer>>> daysOfTheMonths() {
@@ -48,14 +48,14 @@ public final class DbSystemManagementPolicyBackupPolicyArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) Weekly days
+     * (Updatable) The day of the week that the backup starts.
      * 
      */
     @Import(name="daysOfTheWeeks")
     private @Nullable Output<List<String>> daysOfTheWeeks;
 
     /**
-     * @return (Updatable) Weekly days
+     * @return (Updatable) The day of the week that the backup starts.
      * 
      */
     public Optional<Output<List<String>>> daysOfTheWeeks() {
@@ -63,14 +63,14 @@ public final class DbSystemManagementPolicyBackupPolicyArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) Backup policy kind
+     * (Updatable) The kind of backup policy.
      * 
      */
     @Import(name="kind")
     private @Nullable Output<String> kind;
 
     /**
-     * @return (Updatable) Backup policy kind
+     * @return (Updatable) The kind of backup policy.
      * 
      */
     public Optional<Output<String>> kind() {
@@ -78,14 +78,14 @@ public final class DbSystemManagementPolicyBackupPolicyArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) How many days the customers data should be stored after the db system deletion.
+     * (Updatable) How many days the data should be stored after the database system deletion.
      * 
      */
     @Import(name="retentionDays")
     private @Nullable Output<Integer> retentionDays;
 
     /**
-     * @return (Updatable) How many days the customers data should be stored after the db system deletion.
+     * @return (Updatable) How many days the data should be stored after the database system deletion.
      * 
      */
     public Optional<Output<Integer>> retentionDays() {
@@ -121,7 +121,7 @@ public final class DbSystemManagementPolicyBackupPolicyArgs extends com.pulumi.r
         }
 
         /**
-         * @param backupStart (Updatable) Hour of the day when backup starts.
+         * @param backupStart (Updatable) Hour of the day when the backup starts.
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class DbSystemManagementPolicyBackupPolicyArgs extends com.pulumi.r
         }
 
         /**
-         * @param backupStart (Updatable) Hour of the day when backup starts.
+         * @param backupStart (Updatable) Hour of the day when the backup starts.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class DbSystemManagementPolicyBackupPolicyArgs extends com.pulumi.r
         }
 
         /**
-         * @param daysOfTheMonths (Updatable) Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+         * @param daysOfTheMonths (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class DbSystemManagementPolicyBackupPolicyArgs extends com.pulumi.r
         }
 
         /**
-         * @param daysOfTheMonths (Updatable) Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+         * @param daysOfTheMonths (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class DbSystemManagementPolicyBackupPolicyArgs extends com.pulumi.r
         }
 
         /**
-         * @param daysOfTheMonths (Updatable) Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+         * @param daysOfTheMonths (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class DbSystemManagementPolicyBackupPolicyArgs extends com.pulumi.r
         }
 
         /**
-         * @param daysOfTheWeeks (Updatable) Weekly days
+         * @param daysOfTheWeeks (Updatable) The day of the week that the backup starts.
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class DbSystemManagementPolicyBackupPolicyArgs extends com.pulumi.r
         }
 
         /**
-         * @param daysOfTheWeeks (Updatable) Weekly days
+         * @param daysOfTheWeeks (Updatable) The day of the week that the backup starts.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class DbSystemManagementPolicyBackupPolicyArgs extends com.pulumi.r
         }
 
         /**
-         * @param daysOfTheWeeks (Updatable) Weekly days
+         * @param daysOfTheWeeks (Updatable) The day of the week that the backup starts.
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class DbSystemManagementPolicyBackupPolicyArgs extends com.pulumi.r
         }
 
         /**
-         * @param kind (Updatable) Backup policy kind
+         * @param kind (Updatable) The kind of backup policy.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class DbSystemManagementPolicyBackupPolicyArgs extends com.pulumi.r
         }
 
         /**
-         * @param kind (Updatable) Backup policy kind
+         * @param kind (Updatable) The kind of backup policy.
          * 
          * @return builder
          * 
@@ -225,7 +225,7 @@ public final class DbSystemManagementPolicyBackupPolicyArgs extends com.pulumi.r
         }
 
         /**
-         * @param retentionDays (Updatable) How many days the customers data should be stored after the db system deletion.
+         * @param retentionDays (Updatable) How many days the data should be stored after the database system deletion.
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class DbSystemManagementPolicyBackupPolicyArgs extends com.pulumi.r
         }
 
         /**
-         * @param retentionDays (Updatable) How many days the customers data should be stored after the db system deletion.
+         * @param retentionDays (Updatable) How many days the data should be stored after the database system deletion.
          * 
          * @return builder
          * 

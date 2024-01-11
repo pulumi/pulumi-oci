@@ -21,14 +21,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     public static final BackupState Empty = new BackupState();
 
     /**
-     * Backup size in GB.
+     * The size of the backup, in gigabytes.
      * 
      */
     @Import(name="backupSize")
     private @Nullable Output<Integer> backupSize;
 
     /**
-     * @return Backup size in GB.
+     * @return The size of the backup, in gigabytes.
      * 
      */
     public Optional<Output<Integer>> backupSize() {
@@ -36,14 +36,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Compartment identifier
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment identifier
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -51,14 +51,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Information about the DbSystem associated to a backup.
+     * Information about the database system associated with a backup.
      * 
      */
     @Import(name="dbSystemDetails")
     private @Nullable Output<List<BackupDbSystemDetailArgs>> dbSystemDetails;
 
     /**
-     * @return Information about the DbSystem associated to a backup.
+     * @return Information about the database system associated with a backup.
      * 
      */
     public Optional<Output<List<BackupDbSystemDetailArgs>>> dbSystemDetails() {
@@ -66,14 +66,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Posgresql DbSystem identifier
+     * The ID of the database system.
      * 
      */
     @Import(name="dbSystemId")
     private @Nullable Output<String> dbSystemId;
 
     /**
-     * @return Posgresql DbSystem identifier
+     * @return The ID of the database system.
      * 
      */
     public Optional<Output<String>> dbSystemId() {
@@ -96,14 +96,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Backup description
+     * (Updatable) A description for the backup.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Backup description
+     * @return (Updatable) A description for the backup.
      * 
      */
     public Optional<Output<String>> description() {
@@ -111,14 +111,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Backup display name.
+     * (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) Backup display name.
+     * @return (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -207,14 +207,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Specifies whether the backup was created manually, or via scheduled backup policy
+     * Specifies whether the backup was created manually, or by a management policy.
      * 
      */
     @Import(name="sourceType")
     private @Nullable Output<String> sourceType;
 
     /**
-     * @return Specifies whether the backup was created manually, or via scheduled backup policy
+     * @return Specifies whether the backup was created manually, or by a management policy.
      * 
      */
     public Optional<Output<String>> sourceType() {
@@ -222,14 +222,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The current state of the Backup.
+     * The current state of the backup.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the Backup.
+     * @return The current state of the backup.
      * 
      */
     public Optional<Output<String>> state() {
@@ -252,14 +252,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The time the the Backup was created. An RFC3339 formatted datetime string
+     * The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time the the Backup was created. An RFC3339 formatted datetime string
+     * @return The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -267,14 +267,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The time the Backup was updated. An RFC3339 formatted datetime string
+     * The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The time the Backup was updated. An RFC3339 formatted datetime string
+     * @return The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -322,7 +322,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupSize Backup size in GB.
+         * @param backupSize The size of the backup, in gigabytes.
          * 
          * @return builder
          * 
@@ -333,7 +333,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupSize Backup size in GB.
+         * @param backupSize The size of the backup, in gigabytes.
          * 
          * @return builder
          * 
@@ -343,7 +343,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment identifier
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
          * 
          * @return builder
          * 
@@ -354,7 +354,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment identifier
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
          * 
          * @return builder
          * 
@@ -364,7 +364,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbSystemDetails Information about the DbSystem associated to a backup.
+         * @param dbSystemDetails Information about the database system associated with a backup.
          * 
          * @return builder
          * 
@@ -375,7 +375,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbSystemDetails Information about the DbSystem associated to a backup.
+         * @param dbSystemDetails Information about the database system associated with a backup.
          * 
          * @return builder
          * 
@@ -385,7 +385,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbSystemDetails Information about the DbSystem associated to a backup.
+         * @param dbSystemDetails Information about the database system associated with a backup.
          * 
          * @return builder
          * 
@@ -395,7 +395,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbSystemId Posgresql DbSystem identifier
+         * @param dbSystemId The ID of the database system.
          * 
          * @return builder
          * 
@@ -406,7 +406,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbSystemId Posgresql DbSystem identifier
+         * @param dbSystemId The ID of the database system.
          * 
          * @return builder
          * 
@@ -437,7 +437,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) Backup description
+         * @param description (Updatable) A description for the backup.
          * 
          * @return builder
          * 
@@ -448,7 +448,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) Backup description
+         * @param description (Updatable) A description for the backup.
          * 
          * @return builder
          * 
@@ -458,7 +458,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Backup display name.
+         * @param displayName (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -469,7 +469,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Backup display name.
+         * @param displayName (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -590,7 +590,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceType Specifies whether the backup was created manually, or via scheduled backup policy
+         * @param sourceType Specifies whether the backup was created manually, or by a management policy.
          * 
          * @return builder
          * 
@@ -601,7 +601,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceType Specifies whether the backup was created manually, or via scheduled backup policy
+         * @param sourceType Specifies whether the backup was created manually, or by a management policy.
          * 
          * @return builder
          * 
@@ -611,7 +611,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The current state of the Backup.
+         * @param state The current state of the backup.
          * 
          * @return builder
          * 
@@ -622,7 +622,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The current state of the Backup.
+         * @param state The current state of the backup.
          * 
          * @return builder
          * 
@@ -653,7 +653,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated The time the the Backup was created. An RFC3339 formatted datetime string
+         * @param timeCreated The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
          * 
          * @return builder
          * 
@@ -664,7 +664,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated The time the the Backup was created. An RFC3339 formatted datetime string
+         * @param timeCreated The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
          * 
          * @return builder
          * 
@@ -674,7 +674,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated The time the Backup was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
          * 
          * @return builder
          * 
@@ -685,7 +685,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated The time the Backup was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
          * 
          * @return builder
          * 

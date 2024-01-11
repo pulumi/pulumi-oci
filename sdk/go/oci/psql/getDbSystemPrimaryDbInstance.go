@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Db System Primary Db Instance resource in Oracle Cloud Infrastructure Psql service.
 //
-// Gets the primary DbInstance details.
+// Gets the primary database instance node details.
 //
 // ## Example Usage
 //
@@ -52,13 +52,13 @@ func GetDbSystemPrimaryDbInstance(ctx *pulumi.Context, args *GetDbSystemPrimaryD
 
 // A collection of arguments for invoking getDbSystemPrimaryDbInstance.
 type GetDbSystemPrimaryDbInstanceArgs struct {
-	// unique DbSystem identifier
+	// A unique identifier for the database system.
 	DbSystemId string `pulumi:"dbSystemId"`
 }
 
 // A collection of values returned by getDbSystemPrimaryDbInstance.
 type GetDbSystemPrimaryDbInstanceResult struct {
-	// Unique identifier of the DbInstance.
+	// A unique identifier for the primary database instance node.
 	DbInstanceId string `pulumi:"dbInstanceId"`
 	DbSystemId   string `pulumi:"dbSystemId"`
 	// The provider-assigned unique ID for this managed resource.
@@ -80,7 +80,7 @@ func GetDbSystemPrimaryDbInstanceOutput(ctx *pulumi.Context, args GetDbSystemPri
 
 // A collection of arguments for invoking getDbSystemPrimaryDbInstance.
 type GetDbSystemPrimaryDbInstanceOutputArgs struct {
-	// unique DbSystem identifier
+	// A unique identifier for the database system.
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
 }
 
@@ -103,7 +103,7 @@ func (o GetDbSystemPrimaryDbInstanceResultOutput) ToGetDbSystemPrimaryDbInstance
 	return o
 }
 
-// Unique identifier of the DbInstance.
+// A unique identifier for the primary database instance node.
 func (o GetDbSystemPrimaryDbInstanceResultOutput) DbInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemPrimaryDbInstanceResult) string { return v.DbInstanceId }).(pulumi.StringOutput)
 }

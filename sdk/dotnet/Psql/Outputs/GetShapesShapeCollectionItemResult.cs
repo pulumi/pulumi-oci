@@ -18,15 +18,15 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The amount of memory in GB
+        /// The amount of memory in gigabytes.
         /// </summary>
         public readonly int MemorySizeInGbs;
         /// <summary>
-        /// The number of OCPUs
+        /// The number of OCPUs.
         /// </summary>
         public readonly int OcpuCount;
         /// <summary>
-        /// The Compute Shape Name like VM.Standard.E4.Flex
+        /// The name of the Compute VM shape. Example: `VM.Standard.E4.Flex`
         /// </summary>
         public readonly string Shape;
 

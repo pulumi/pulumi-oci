@@ -23,6 +23,7 @@ __all__ = [
     'DbSystemManagementPolicy',
     'DbSystemManagementPolicyBackupPolicy',
     'DbSystemNetworkDetails',
+    'DbSystemPatchOperation',
     'DbSystemSource',
     'DbSystemStorageDetails',
     'GetBackupDbSystemDetailResult',
@@ -51,6 +52,7 @@ __all__ = [
     'GetDbSystemManagementPolicyResult',
     'GetDbSystemManagementPolicyBackupPolicyResult',
     'GetDbSystemNetworkDetailResult',
+    'GetDbSystemPatchOperationResult',
     'GetDbSystemSourceResult',
     'GetDbSystemStorageDetailResult',
     'GetDbSystemsDbSystemCollectionResult',
@@ -62,6 +64,7 @@ __all__ = [
     'GetDbSystemsDbSystemCollectionItemManagementPolicyResult',
     'GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult',
     'GetDbSystemsDbSystemCollectionItemNetworkDetailResult',
+    'GetDbSystemsDbSystemCollectionItemPatchOperationResult',
     'GetDbSystemsDbSystemCollectionItemSourceResult',
     'GetDbSystemsDbSystemCollectionItemStorageDetailResult',
     'GetDbSystemsFilterResult',
@@ -102,8 +105,8 @@ class BackupDbSystemDetail(dict):
                  db_version: Optional[str] = None,
                  system_type: Optional[str] = None):
         """
-        :param str db_version: The major and minor versions of the DbSystem software.
-        :param str system_type: Type of the DbSystem.
+        :param str db_version: The major and minor versions of the database system software.
+        :param str system_type: Type of the database system.
         """
         if db_version is not None:
             pulumi.set(__self__, "db_version", db_version)
@@ -114,7 +117,7 @@ class BackupDbSystemDetail(dict):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[str]:
         """
-        The major and minor versions of the DbSystem software.
+        The major and minor versions of the database system software.
         """
         return pulumi.get(self, "db_version")
 
@@ -122,7 +125,7 @@ class BackupDbSystemDetail(dict):
     @pulumi.getter(name="systemType")
     def system_type(self) -> Optional[str]:
         """
-        Type of the DbSystem.
+        Type of the database system.
         """
         return pulumi.get(self, "system_type")
 
@@ -132,7 +135,7 @@ class ConfigurationConfigurationDetail(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.ConfigurationConfigurationDetailItem']] = None):
         """
-        :param Sequence['ConfigurationConfigurationDetailItemArgs'] items: List of configuration overriden values
+        :param Sequence['ConfigurationConfigurationDetailItemArgs'] items: List of configuration overridden values.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -141,7 +144,7 @@ class ConfigurationConfigurationDetail(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.ConfigurationConfigurationDetailItem']]:
         """
-        List of configuration overriden values
+        List of configuration overridden values.
         """
         return pulumi.get(self, "items")
 
@@ -187,14 +190,14 @@ class ConfigurationConfigurationDetailItem(dict):
                  is_restart_required: Optional[bool] = None,
                  overriden_config_value: Optional[str] = None):
         """
-        :param str allowed_values: Range or list of allowed values
-        :param str config_key: Key is the configuration key.
-        :param str data_type: Describes about the Datatype value.
-        :param str default_config_value: Default value
-        :param str description: (Updatable) Details about the Configuration Set.
-        :param bool is_overridable: This flags tells whether the value is overridable or not.
-        :param bool is_restart_required: If true, modfying this configuration value will requires restart.
-        :param str overriden_config_value: User selected configuration value
+        :param str allowed_values: Range or list of allowed values.
+        :param str config_key: Configuration variable name.
+        :param str data_type: Data type of the variable.
+        :param str default_config_value: Default value for the configuration variable.
+        :param str description: (Updatable) Details about the configuration set.
+        :param bool is_overridable: Whether the value can be overridden or not.
+        :param bool is_restart_required: If true, modifying this configuration value will require a restart of the database.
+        :param str overriden_config_value: User-selected variable value.
         """
         if allowed_values is not None:
             pulumi.set(__self__, "allowed_values", allowed_values)
@@ -217,7 +220,7 @@ class ConfigurationConfigurationDetailItem(dict):
     @pulumi.getter(name="allowedValues")
     def allowed_values(self) -> Optional[str]:
         """
-        Range or list of allowed values
+        Range or list of allowed values.
         """
         return pulumi.get(self, "allowed_values")
 
@@ -225,7 +228,7 @@ class ConfigurationConfigurationDetailItem(dict):
     @pulumi.getter(name="configKey")
     def config_key(self) -> Optional[str]:
         """
-        Key is the configuration key.
+        Configuration variable name.
         """
         return pulumi.get(self, "config_key")
 
@@ -233,7 +236,7 @@ class ConfigurationConfigurationDetailItem(dict):
     @pulumi.getter(name="dataType")
     def data_type(self) -> Optional[str]:
         """
-        Describes about the Datatype value.
+        Data type of the variable.
         """
         return pulumi.get(self, "data_type")
 
@@ -241,7 +244,7 @@ class ConfigurationConfigurationDetailItem(dict):
     @pulumi.getter(name="defaultConfigValue")
     def default_config_value(self) -> Optional[str]:
         """
-        Default value
+        Default value for the configuration variable.
         """
         return pulumi.get(self, "default_config_value")
 
@@ -249,7 +252,7 @@ class ConfigurationConfigurationDetailItem(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) Details about the Configuration Set.
+        (Updatable) Details about the configuration set.
         """
         return pulumi.get(self, "description")
 
@@ -257,7 +260,7 @@ class ConfigurationConfigurationDetailItem(dict):
     @pulumi.getter(name="isOverridable")
     def is_overridable(self) -> Optional[bool]:
         """
-        This flags tells whether the value is overridable or not.
+        Whether the value can be overridden or not.
         """
         return pulumi.get(self, "is_overridable")
 
@@ -265,7 +268,7 @@ class ConfigurationConfigurationDetailItem(dict):
     @pulumi.getter(name="isRestartRequired")
     def is_restart_required(self) -> Optional[bool]:
         """
-        If true, modfying this configuration value will requires restart.
+        If true, modifying this configuration value will require a restart of the database.
         """
         return pulumi.get(self, "is_restart_required")
 
@@ -273,7 +276,7 @@ class ConfigurationConfigurationDetailItem(dict):
     @pulumi.getter(name="overridenConfigValue")
     def overriden_config_value(self) -> Optional[str]:
         """
-        User selected configuration value
+        User-selected variable value.
         """
         return pulumi.get(self, "overriden_config_value")
 
@@ -283,7 +286,7 @@ class ConfigurationDbConfigurationOverrides(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.ConfigurationDbConfigurationOverridesItem']):
         """
-        :param Sequence['ConfigurationDbConfigurationOverridesItemArgs'] items: List of configuration overriden values
+        :param Sequence['ConfigurationDbConfigurationOverridesItemArgs'] items: List of configuration overridden values.
         """
         pulumi.set(__self__, "items", items)
 
@@ -291,7 +294,7 @@ class ConfigurationDbConfigurationOverrides(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.ConfigurationDbConfigurationOverridesItem']:
         """
-        List of configuration overriden values
+        List of configuration overridden values.
         """
         return pulumi.get(self, "items")
 
@@ -321,8 +324,8 @@ class ConfigurationDbConfigurationOverridesItem(dict):
                  config_key: str,
                  overriden_config_value: str):
         """
-        :param str config_key: Key is the configuration key.
-        :param str overriden_config_value: User selected configuration value
+        :param str config_key: Configuration variable name.
+        :param str overriden_config_value: User-selected variable value.
         """
         pulumi.set(__self__, "config_key", config_key)
         pulumi.set(__self__, "overriden_config_value", overriden_config_value)
@@ -331,7 +334,7 @@ class ConfigurationDbConfigurationOverridesItem(dict):
     @pulumi.getter(name="configKey")
     def config_key(self) -> str:
         """
-        Key is the configuration key.
+        Configuration variable name.
         """
         return pulumi.get(self, "config_key")
 
@@ -339,7 +342,7 @@ class ConfigurationDbConfigurationOverridesItem(dict):
     @pulumi.getter(name="overridenConfigValue")
     def overriden_config_value(self) -> str:
         """
-        User selected configuration value
+        User-selected variable value.
         """
         return pulumi.get(self, "overriden_config_value")
 
@@ -367,8 +370,8 @@ class DbSystemCredentials(dict):
                  password_details: 'outputs.DbSystemCredentialsPasswordDetails',
                  username: str):
         """
-        :param 'DbSystemCredentialsPasswordDetailsArgs' password_details: Details for the DbSystem password. Password can be passed as `VaultSecretPasswordDetails`(Vault) or `PlainTextPasswordDetails`.
-        :param str username: The DB system username.
+        :param 'DbSystemCredentialsPasswordDetailsArgs' password_details: Details for the database system password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.
+        :param str username: The database system administrator username.
         """
         pulumi.set(__self__, "password_details", password_details)
         pulumi.set(__self__, "username", username)
@@ -377,7 +380,7 @@ class DbSystemCredentials(dict):
     @pulumi.getter(name="passwordDetails")
     def password_details(self) -> 'outputs.DbSystemCredentialsPasswordDetails':
         """
-        Details for the DbSystem password. Password can be passed as `VaultSecretPasswordDetails`(Vault) or `PlainTextPasswordDetails`.
+        Details for the database system password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.
         """
         return pulumi.get(self, "password_details")
 
@@ -385,7 +388,7 @@ class DbSystemCredentials(dict):
     @pulumi.getter
     def username(self) -> str:
         """
-        The DB system username.
+        The database system administrator username.
         """
         return pulumi.get(self, "username")
 
@@ -419,10 +422,10 @@ class DbSystemCredentialsPasswordDetails(dict):
                  secret_id: Optional[str] = None,
                  secret_version: Optional[str] = None):
         """
-        :param str password_type: Password type
-        :param str password: The dbSystem password.
-        :param str secret_id: The OCID of secret where the password is stored.
-        :param str secret_version: The secret version where the password is stored.
+        :param str password_type: The password type.
+        :param str password: The database system password.
+        :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret where the password is stored.
+        :param str secret_version: The secret version of the stored password.
         """
         pulumi.set(__self__, "password_type", password_type)
         if password is not None:
@@ -436,7 +439,7 @@ class DbSystemCredentialsPasswordDetails(dict):
     @pulumi.getter(name="passwordType")
     def password_type(self) -> str:
         """
-        Password type
+        The password type.
         """
         return pulumi.get(self, "password_type")
 
@@ -444,7 +447,7 @@ class DbSystemCredentialsPasswordDetails(dict):
     @pulumi.getter
     def password(self) -> Optional[str]:
         """
-        The dbSystem password.
+        The database system password.
         """
         return pulumi.get(self, "password")
 
@@ -452,7 +455,7 @@ class DbSystemCredentialsPasswordDetails(dict):
     @pulumi.getter(name="secretId")
     def secret_id(self) -> Optional[str]:
         """
-        The OCID of secret where the password is stored.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret where the password is stored.
         """
         return pulumi.get(self, "secret_id")
 
@@ -460,7 +463,7 @@ class DbSystemCredentialsPasswordDetails(dict):
     @pulumi.getter(name="secretVersion")
     def secret_version(self) -> Optional[str]:
         """
-        The secret version where the password is stored.
+        The secret version of the stored password.
         """
         return pulumi.get(self, "secret_version")
 
@@ -502,14 +505,14 @@ class DbSystemInstance(dict):
                  time_created: Optional[str] = None,
                  time_updated: Optional[str] = None):
         """
-        :param str availability_domain: Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
-        :param str description: Description of the DbInstance. This field should be input by the user.
-        :param str display_name: Display name of the DbInstance.
-        :param str id: Unique identifier that is immutable on creation.
+        :param str availability_domain: Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
+        :param str description: A user-provided description of the database instance node.
+        :param str display_name: Display name of the database instance node. Avoid entering confidential information.
+        :param str id: A unique identifier for the database instance node. Immutable on creation.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str state: The current state of the DbSystem.
-        :param str time_created: The time the the DbSystem was created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the DbSystem was updated. An RFC3339 formatted datetime string
+        :param str state: The current state of the database system.
+        :param str time_created: The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param str time_updated: The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -532,7 +535,7 @@ class DbSystemInstance(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
         """
-        Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+        Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -540,7 +543,7 @@ class DbSystemInstance(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        Description of the DbInstance. This field should be input by the user.
+        A user-provided description of the database instance node.
         """
         return pulumi.get(self, "description")
 
@@ -548,7 +551,7 @@ class DbSystemInstance(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        Display name of the DbInstance.
+        Display name of the database instance node. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -556,7 +559,7 @@ class DbSystemInstance(dict):
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        Unique identifier that is immutable on creation.
+        A unique identifier for the database instance node. Immutable on creation.
         """
         return pulumi.get(self, "id")
 
@@ -572,7 +575,7 @@ class DbSystemInstance(dict):
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the DbSystem.
+        The current state of the database system.
         """
         return pulumi.get(self, "state")
 
@@ -580,7 +583,7 @@ class DbSystemInstance(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[str]:
         """
-        The time the the DbSystem was created. An RFC3339 formatted datetime string
+        The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -588,7 +591,7 @@ class DbSystemInstance(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[str]:
         """
-        The time the DbSystem was updated. An RFC3339 formatted datetime string
+        The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -619,9 +622,9 @@ class DbSystemInstancesDetail(dict):
                  display_name: Optional[str] = None,
                  private_ip: Optional[str] = None):
         """
-        :param str description: Description of the DbInstance. This field should be input by the user.
-        :param str display_name: Display name of the DbInstance.
-        :param str private_ip: Private IP in customer subnet that will be assigned to the DbInstance. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+        :param str description: A user-provided description of the database instance node.
+        :param str display_name: Display name of the database instance node. Avoid entering confidential information.
+        :param str private_ip: Private IP in customer subnet that will be assigned to the database instance node. This value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -634,7 +637,7 @@ class DbSystemInstancesDetail(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        Description of the DbInstance. This field should be input by the user.
+        A user-provided description of the database instance node.
         """
         return pulumi.get(self, "description")
 
@@ -642,7 +645,7 @@ class DbSystemInstancesDetail(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        Display name of the DbInstance.
+        Display name of the database instance node. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -650,7 +653,7 @@ class DbSystemInstancesDetail(dict):
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional[str]:
         """
-        Private IP in customer subnet that will be assigned to the DbInstance. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+        Private IP in customer subnet that will be assigned to the database instance node. This value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
         """
         return pulumi.get(self, "private_ip")
 
@@ -680,7 +683,7 @@ class DbSystemManagementPolicy(dict):
                  backup_policy: Optional['outputs.DbSystemManagementPolicyBackupPolicy'] = None,
                  maintenance_window_start: Optional[str] = None):
         """
-        :param 'DbSystemManagementPolicyBackupPolicyArgs' backup_policy: (Updatable) Posgresql DB system backup policy
+        :param 'DbSystemManagementPolicyBackupPolicyArgs' backup_policy: (Updatable) PostgreSQL database system backup policy.
         :param str maintenance_window_start: (Updatable) The start of the maintenance window.
         """
         if backup_policy is not None:
@@ -692,7 +695,7 @@ class DbSystemManagementPolicy(dict):
     @pulumi.getter(name="backupPolicy")
     def backup_policy(self) -> Optional['outputs.DbSystemManagementPolicyBackupPolicy']:
         """
-        (Updatable) Posgresql DB system backup policy
+        (Updatable) PostgreSQL database system backup policy.
         """
         return pulumi.get(self, "backup_policy")
 
@@ -737,11 +740,11 @@ class DbSystemManagementPolicyBackupPolicy(dict):
                  kind: Optional[str] = None,
                  retention_days: Optional[int] = None):
         """
-        :param str backup_start: (Updatable) Hour of the day when backup starts.
-        :param Sequence[int] days_of_the_months: (Updatable) Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
-        :param Sequence[str] days_of_the_weeks: (Updatable) Weekly days
-        :param str kind: (Updatable) Backup policy kind
-        :param int retention_days: (Updatable) How many days the customers data should be stored after the db system deletion.
+        :param str backup_start: (Updatable) Hour of the day when the backup starts.
+        :param Sequence[int] days_of_the_months: (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
+        :param Sequence[str] days_of_the_weeks: (Updatable) The day of the week that the backup starts.
+        :param str kind: (Updatable) The kind of backup policy.
+        :param int retention_days: (Updatable) How many days the data should be stored after the database system deletion.
         """
         if backup_start is not None:
             pulumi.set(__self__, "backup_start", backup_start)
@@ -758,7 +761,7 @@ class DbSystemManagementPolicyBackupPolicy(dict):
     @pulumi.getter(name="backupStart")
     def backup_start(self) -> Optional[str]:
         """
-        (Updatable) Hour of the day when backup starts.
+        (Updatable) Hour of the day when the backup starts.
         """
         return pulumi.get(self, "backup_start")
 
@@ -766,7 +769,7 @@ class DbSystemManagementPolicyBackupPolicy(dict):
     @pulumi.getter(name="daysOfTheMonths")
     def days_of_the_months(self) -> Optional[Sequence[int]]:
         """
-        (Updatable) Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+        (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
         """
         return pulumi.get(self, "days_of_the_months")
 
@@ -774,7 +777,7 @@ class DbSystemManagementPolicyBackupPolicy(dict):
     @pulumi.getter(name="daysOfTheWeeks")
     def days_of_the_weeks(self) -> Optional[Sequence[str]]:
         """
-        (Updatable) Weekly days
+        (Updatable) The day of the week that the backup starts.
         """
         return pulumi.get(self, "days_of_the_weeks")
 
@@ -782,7 +785,7 @@ class DbSystemManagementPolicyBackupPolicy(dict):
     @pulumi.getter
     def kind(self) -> Optional[str]:
         """
-        (Updatable) Backup policy kind
+        (Updatable) The kind of backup policy.
         """
         return pulumi.get(self, "kind")
 
@@ -790,7 +793,7 @@ class DbSystemManagementPolicyBackupPolicy(dict):
     @pulumi.getter(name="retentionDays")
     def retention_days(self) -> Optional[int]:
         """
-        (Updatable) How many days the customers data should be stored after the db system deletion.
+        (Updatable) How many days the data should be stored after the database system deletion.
         """
         return pulumi.get(self, "retention_days")
 
@@ -823,9 +826,9 @@ class DbSystemNetworkDetails(dict):
                  nsg_ids: Optional[Sequence[str]] = None,
                  primary_db_endpoint_private_ip: Optional[str] = None):
         """
-        :param str subnet_id: Customer Subnet identifier
-        :param Sequence[str] nsg_ids: List of customer NetworkSecurityGroup identifiers
-        :param str primary_db_endpoint_private_ip: Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
+        :param Sequence[str] nsg_ids: List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+        :param str primary_db_endpoint_private_ip: Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
         if nsg_ids is not None:
@@ -837,7 +840,7 @@ class DbSystemNetworkDetails(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        Customer Subnet identifier
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -845,7 +848,7 @@ class DbSystemNetworkDetails(dict):
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[Sequence[str]]:
         """
-        List of customer NetworkSecurityGroup identifiers
+        List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -853,9 +856,93 @@ class DbSystemNetworkDetails(dict):
     @pulumi.getter(name="primaryDbEndpointPrivateIp")
     def primary_db_endpoint_private_ip(self) -> Optional[str]:
         """
-        Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+        Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
         """
         return pulumi.get(self, "primary_db_endpoint_private_ip")
+
+
+@pulumi.output_type
+class DbSystemPatchOperation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "from":
+            suggest = "from_"
+        elif key == "selectedItem":
+            suggest = "selected_item"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbSystemPatchOperation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbSystemPatchOperation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbSystemPatchOperation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 operation: str,
+                 selection: str,
+                 from_: Optional[str] = None,
+                 position: Optional[str] = None,
+                 selected_item: Optional[str] = None,
+                 value: Optional[Mapping[str, Any]] = None):
+        """
+        :param str operation: The operation can be one of these values: `INSERT`, `REMOVE`.
+        :param str selection: In case of `INSERT`, selection is `instances`. In case of `REMOVE`, selection is `instances[?id == '${var.instance_id}']`.
+        :param Mapping[str, Any] value: Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
+        """
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "selection", selection)
+        if from_ is not None:
+            pulumi.set(__self__, "from_", from_)
+        if position is not None:
+            pulumi.set(__self__, "position", position)
+        if selected_item is not None:
+            pulumi.set(__self__, "selected_item", selected_item)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def operation(self) -> str:
+        """
+        The operation can be one of these values: `INSERT`, `REMOVE`.
+        """
+        return pulumi.get(self, "operation")
+
+    @property
+    @pulumi.getter
+    def selection(self) -> str:
+        """
+        In case of `INSERT`, selection is `instances`. In case of `REMOVE`, selection is `instances[?id == '${var.instance_id}']`.
+        """
+        return pulumi.get(self, "selection")
+
+    @property
+    @pulumi.getter(name="from")
+    def from_(self) -> Optional[str]:
+        return pulumi.get(self, "from_")
+
+    @property
+    @pulumi.getter
+    def position(self) -> Optional[str]:
+        return pulumi.get(self, "position")
+
+    @property
+    @pulumi.getter(name="selectedItem")
+    def selected_item(self) -> Optional[str]:
+        return pulumi.get(self, "selected_item")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[Mapping[str, Any]]:
+        """
+        Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -887,8 +974,8 @@ class DbSystemSource(dict):
                  is_having_restore_config_overrides: Optional[bool] = None):
         """
         :param str source_type: The source descriminator.
-        :param str backup_id: DbSystem backup identifier.
-        :param bool is_having_restore_config_overrides: Restore the DB config overrides from backup. Default is false
+        :param str backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
+        :param bool is_having_restore_config_overrides: Deprecated. Don't use.
         """
         pulumi.set(__self__, "source_type", source_type)
         if backup_id is not None:
@@ -908,7 +995,7 @@ class DbSystemSource(dict):
     @pulumi.getter(name="backupId")
     def backup_id(self) -> Optional[str]:
         """
-        DbSystem backup identifier.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
         """
         return pulumi.get(self, "backup_id")
 
@@ -916,7 +1003,7 @@ class DbSystemSource(dict):
     @pulumi.getter(name="isHavingRestoreConfigOverrides")
     def is_having_restore_config_overrides(self) -> Optional[bool]:
         """
-        Restore the DB config overrides from backup. Default is false
+        Deprecated. Don't use.
         """
         return pulumi.get(self, "is_having_restore_config_overrides")
 
@@ -950,14 +1037,14 @@ class DbSystemStorageDetails(dict):
                  availability_domain: Optional[str] = None,
                  iops: Optional[str] = None):
         """
-        :param bool is_regionally_durable: Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
-        :param str system_type: Type of the DbSystem.
+        :param bool is_regionally_durable: Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
+        :param str system_type: Type of the database system.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param str availability_domain: Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
-        :param str iops: (Updatable) DbSystem Performance Unit
+        :param str availability_domain: Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
+        :param str iops: (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
         """
         pulumi.set(__self__, "is_regionally_durable", is_regionally_durable)
         pulumi.set(__self__, "system_type", system_type)
@@ -970,7 +1057,7 @@ class DbSystemStorageDetails(dict):
     @pulumi.getter(name="isRegionallyDurable")
     def is_regionally_durable(self) -> bool:
         """
-        Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+        Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         """
         return pulumi.get(self, "is_regionally_durable")
 
@@ -978,7 +1065,7 @@ class DbSystemStorageDetails(dict):
     @pulumi.getter(name="systemType")
     def system_type(self) -> str:
         """
-        Type of the DbSystem.
+        Type of the database system.
 
 
         ** IMPORTANT **
@@ -990,7 +1077,7 @@ class DbSystemStorageDetails(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
         """
-        Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+        Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -998,7 +1085,7 @@ class DbSystemStorageDetails(dict):
     @pulumi.getter
     def iops(self) -> Optional[str]:
         """
-        (Updatable) DbSystem Performance Unit
+        (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
         """
         return pulumi.get(self, "iops")
 
@@ -1009,8 +1096,8 @@ class GetBackupDbSystemDetailResult(dict):
                  db_version: str,
                  system_type: str):
         """
-        :param str db_version: The major and minor versions of the DbSystem software.
-        :param str system_type: Type of the DbSystem.
+        :param str db_version: The major and minor versions of the database system software.
+        :param str system_type: Type of the database system.
         """
         pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "system_type", system_type)
@@ -1019,7 +1106,7 @@ class GetBackupDbSystemDetailResult(dict):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> str:
         """
-        The major and minor versions of the DbSystem software.
+        The major and minor versions of the database system software.
         """
         return pulumi.get(self, "db_version")
 
@@ -1027,7 +1114,7 @@ class GetBackupDbSystemDetailResult(dict):
     @pulumi.getter(name="systemType")
     def system_type(self) -> str:
         """
-        Type of the DbSystem.
+        Type of the database system.
         """
         return pulumi.get(self, "system_type")
 
@@ -1066,24 +1153,24 @@ class GetBackupsBackupCollectionItemResult(dict):
                  time_created: str,
                  time_updated: str):
         """
-        :param int backup_size: Backup size in GB.
+        :param int backup_size: The size of the backup, in gigabytes.
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Sequence['GetBackupsBackupCollectionItemDbSystemDetailArgs'] db_system_details: Information about the DbSystem associated to a backup.
-        :param str db_system_id: The source DbSystem OCID.
+        :param Sequence['GetBackupsBackupCollectionItemDbSystemDetailArgs'] db_system_details: Information about the database system associated with a backup.
+        :param str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup's source database system.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: Backup description
+        :param str description: A description for the backup.
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: unique DbSystem identifier
+        :param str id: A unique identifier for the database system.
         :param str last_accepted_request_token: lastAcceptedRequestToken from MP.
         :param str last_completed_request_token: lastCompletedRequestToken from MP.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param int retention_period: Backup retention period in days.
-        :param str source_type: Specifies whether the backup was created manually, or via scheduled backup policy
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param str source_type: Specifies whether the backup was created manually, or by a management policy.
+        :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the the Backup was created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the Backup was updated. An RFC3339 formatted datetime string
+        :param str time_created: The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param str time_updated: The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "backup_size", backup_size)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -1108,7 +1195,7 @@ class GetBackupsBackupCollectionItemResult(dict):
     @pulumi.getter(name="backupSize")
     def backup_size(self) -> int:
         """
-        Backup size in GB.
+        The size of the backup, in gigabytes.
         """
         return pulumi.get(self, "backup_size")
 
@@ -1124,7 +1211,7 @@ class GetBackupsBackupCollectionItemResult(dict):
     @pulumi.getter(name="dbSystemDetails")
     def db_system_details(self) -> Sequence['outputs.GetBackupsBackupCollectionItemDbSystemDetailResult']:
         """
-        Information about the DbSystem associated to a backup.
+        Information about the database system associated with a backup.
         """
         return pulumi.get(self, "db_system_details")
 
@@ -1132,7 +1219,7 @@ class GetBackupsBackupCollectionItemResult(dict):
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> str:
         """
-        The source DbSystem OCID.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup's source database system.
         """
         return pulumi.get(self, "db_system_id")
 
@@ -1148,7 +1235,7 @@ class GetBackupsBackupCollectionItemResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        Backup description
+        A description for the backup.
         """
         return pulumi.get(self, "description")
 
@@ -1172,7 +1259,7 @@ class GetBackupsBackupCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        unique DbSystem identifier
+        A unique identifier for the database system.
         """
         return pulumi.get(self, "id")
 
@@ -1212,7 +1299,7 @@ class GetBackupsBackupCollectionItemResult(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        Specifies whether the backup was created manually, or via scheduled backup policy
+        Specifies whether the backup was created manually, or by a management policy.
         """
         return pulumi.get(self, "source_type")
 
@@ -1220,7 +1307,7 @@ class GetBackupsBackupCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         """
         return pulumi.get(self, "state")
 
@@ -1236,7 +1323,7 @@ class GetBackupsBackupCollectionItemResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the the Backup was created. An RFC3339 formatted datetime string
+        The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -1244,7 +1331,7 @@ class GetBackupsBackupCollectionItemResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the Backup was updated. An RFC3339 formatted datetime string
+        The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -1255,8 +1342,8 @@ class GetBackupsBackupCollectionItemDbSystemDetailResult(dict):
                  db_version: str,
                  system_type: str):
         """
-        :param str db_version: The major and minor versions of the DbSystem software.
-        :param str system_type: Type of the DbSystem.
+        :param str db_version: The major and minor versions of the database system software.
+        :param str system_type: Type of the database system.
         """
         pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "system_type", system_type)
@@ -1265,7 +1352,7 @@ class GetBackupsBackupCollectionItemDbSystemDetailResult(dict):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> str:
         """
-        The major and minor versions of the DbSystem software.
+        The major and minor versions of the database system software.
         """
         return pulumi.get(self, "db_version")
 
@@ -1273,7 +1360,7 @@ class GetBackupsBackupCollectionItemDbSystemDetailResult(dict):
     @pulumi.getter(name="systemType")
     def system_type(self) -> str:
         """
-        Type of the DbSystem.
+        Type of the database system.
         """
         return pulumi.get(self, "system_type")
 
@@ -1335,14 +1422,14 @@ class GetConfigurationConfigurationDetailItemResult(dict):
                  is_restart_required: bool,
                  overriden_config_value: str):
         """
-        :param str allowed_values: Range or list of allowed values
-        :param str config_key: Key is the configuration key.
-        :param str data_type: Describes about the Datatype value.
-        :param str default_config_value: Default value
-        :param str description: Config description
-        :param bool is_overridable: This flags tells whether the value is overridable or not.
-        :param bool is_restart_required: If true, modfying this configuration value will requires restart.
-        :param str overriden_config_value: User selected configuration value
+        :param str allowed_values: Range or list of allowed values.
+        :param str config_key: The configuration variable name.
+        :param str data_type: Data type of the variable.
+        :param str default_config_value: Default value for the configuration variable.
+        :param str description: A description for the configuration.
+        :param bool is_overridable: Whether the value can be overridden or not.
+        :param bool is_restart_required: If true, modifying this configuration value will require a restart of the database.
+        :param str overriden_config_value: User-selected configuration variable value.
         """
         pulumi.set(__self__, "allowed_values", allowed_values)
         pulumi.set(__self__, "config_key", config_key)
@@ -1357,7 +1444,7 @@ class GetConfigurationConfigurationDetailItemResult(dict):
     @pulumi.getter(name="allowedValues")
     def allowed_values(self) -> str:
         """
-        Range or list of allowed values
+        Range or list of allowed values.
         """
         return pulumi.get(self, "allowed_values")
 
@@ -1365,7 +1452,7 @@ class GetConfigurationConfigurationDetailItemResult(dict):
     @pulumi.getter(name="configKey")
     def config_key(self) -> str:
         """
-        Key is the configuration key.
+        The configuration variable name.
         """
         return pulumi.get(self, "config_key")
 
@@ -1373,7 +1460,7 @@ class GetConfigurationConfigurationDetailItemResult(dict):
     @pulumi.getter(name="dataType")
     def data_type(self) -> str:
         """
-        Describes about the Datatype value.
+        Data type of the variable.
         """
         return pulumi.get(self, "data_type")
 
@@ -1381,7 +1468,7 @@ class GetConfigurationConfigurationDetailItemResult(dict):
     @pulumi.getter(name="defaultConfigValue")
     def default_config_value(self) -> str:
         """
-        Default value
+        Default value for the configuration variable.
         """
         return pulumi.get(self, "default_config_value")
 
@@ -1389,7 +1476,7 @@ class GetConfigurationConfigurationDetailItemResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        Config description
+        A description for the configuration.
         """
         return pulumi.get(self, "description")
 
@@ -1397,7 +1484,7 @@ class GetConfigurationConfigurationDetailItemResult(dict):
     @pulumi.getter(name="isOverridable")
     def is_overridable(self) -> bool:
         """
-        This flags tells whether the value is overridable or not.
+        Whether the value can be overridden or not.
         """
         return pulumi.get(self, "is_overridable")
 
@@ -1405,7 +1492,7 @@ class GetConfigurationConfigurationDetailItemResult(dict):
     @pulumi.getter(name="isRestartRequired")
     def is_restart_required(self) -> bool:
         """
-        If true, modfying this configuration value will requires restart.
+        If true, modifying this configuration value will require a restart of the database.
         """
         return pulumi.get(self, "is_restart_required")
 
@@ -1413,7 +1500,7 @@ class GetConfigurationConfigurationDetailItemResult(dict):
     @pulumi.getter(name="overridenConfigValue")
     def overriden_config_value(self) -> str:
         """
-        User selected configuration value
+        User-selected configuration variable value.
         """
         return pulumi.get(self, "overriden_config_value")
 
@@ -1442,8 +1529,8 @@ class GetConfigurationDbConfigurationOverrideItemResult(dict):
                  config_key: str,
                  overriden_config_value: str):
         """
-        :param str config_key: Key is the configuration key.
-        :param str overriden_config_value: User selected configuration value
+        :param str config_key: The configuration variable name.
+        :param str overriden_config_value: User-selected configuration variable value.
         """
         pulumi.set(__self__, "config_key", config_key)
         pulumi.set(__self__, "overriden_config_value", overriden_config_value)
@@ -1452,7 +1539,7 @@ class GetConfigurationDbConfigurationOverrideItemResult(dict):
     @pulumi.getter(name="configKey")
     def config_key(self) -> str:
         """
-        Key is the configuration key.
+        The configuration variable name.
         """
         return pulumi.get(self, "config_key")
 
@@ -1460,7 +1547,7 @@ class GetConfigurationDbConfigurationOverrideItemResult(dict):
     @pulumi.getter(name="overridenConfigValue")
     def overriden_config_value(self) -> str:
         """
-        User selected configuration value
+        User-selected configuration variable value.
         """
         return pulumi.get(self, "overriden_config_value")
 
@@ -1504,20 +1591,20 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
                  time_created: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Sequence['GetConfigurationsConfigurationCollectionItemConfigurationDetailArgs'] configuration_details: List of DB Configuration Values.
-        :param str db_version: Verison of the Postgresql DB like 14.5
+        :param Sequence['GetConfigurationsConfigurationCollectionItemConfigurationDetailArgs'] configuration_details: List of configuration details.
+        :param str db_version: Verison of the PostgreSQL database, such as 14.9.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: Config description
+        :param str description: A description for the configuration.
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: Unique identifier that is immutable on creation
-        :param int instance_memory_size_in_gbs: Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
-        :param int instance_ocpu_count: CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+        :param str id: A unique identifier for the configuration. Immutable on creation.
+        :param int instance_memory_size_in_gbs: Memory size in gigabytes with 1GB increment.
+        :param int instance_ocpu_count: CPU core count.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str shape: Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param str shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time Configuration was created. An RFC3339 formatted datetime string
+        :param str time_created: The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "configuration_details", configuration_details)
@@ -1548,7 +1635,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
     @pulumi.getter(name="configurationDetails")
     def configuration_details(self) -> Sequence['outputs.GetConfigurationsConfigurationCollectionItemConfigurationDetailResult']:
         """
-        List of DB Configuration Values.
+        List of configuration details.
         """
         return pulumi.get(self, "configuration_details")
 
@@ -1561,7 +1648,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> str:
         """
-        Verison of the Postgresql DB like 14.5
+        Verison of the PostgreSQL database, such as 14.9.
         """
         return pulumi.get(self, "db_version")
 
@@ -1577,7 +1664,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        Config description
+        A description for the configuration.
         """
         return pulumi.get(self, "description")
 
@@ -1601,7 +1688,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        Unique identifier that is immutable on creation
+        A unique identifier for the configuration. Immutable on creation.
         """
         return pulumi.get(self, "id")
 
@@ -1609,7 +1696,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
     @pulumi.getter(name="instanceMemorySizeInGbs")
     def instance_memory_size_in_gbs(self) -> int:
         """
-        Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+        Memory size in gigabytes with 1GB increment.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
@@ -1617,7 +1704,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
     @pulumi.getter(name="instanceOcpuCount")
     def instance_ocpu_count(self) -> int:
         """
-        CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+        CPU core count.
         """
         return pulumi.get(self, "instance_ocpu_count")
 
@@ -1633,7 +1720,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
     @pulumi.getter
     def shape(self) -> str:
         """
-        Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+        The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         """
         return pulumi.get(self, "shape")
 
@@ -1641,7 +1728,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         """
         return pulumi.get(self, "state")
 
@@ -1657,7 +1744,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time Configuration was created. An RFC3339 formatted datetime string
+        The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -1692,14 +1779,14 @@ class GetConfigurationsConfigurationCollectionItemConfigurationDetailItemResult(
                  is_restart_required: bool,
                  overriden_config_value: str):
         """
-        :param str allowed_values: Range or list of allowed values
-        :param str config_key: Key is the configuration key.
-        :param str data_type: Describes about the Datatype value.
-        :param str default_config_value: Default value
-        :param str description: Config description
-        :param bool is_overridable: This flags tells whether the value is overridable or not.
-        :param bool is_restart_required: If true, modfying this configuration value will requires restart.
-        :param str overriden_config_value: User selected configuration value
+        :param str allowed_values: Range or list of allowed values.
+        :param str config_key: The configuration variable name.
+        :param str data_type: Data type of the variable.
+        :param str default_config_value: Default value for the configuration variable.
+        :param str description: A description for the configuration.
+        :param bool is_overridable: Whether the value can be overridden or not.
+        :param bool is_restart_required: If true, modifying this configuration value will require a restart of the database.
+        :param str overriden_config_value: User-selected configuration variable value.
         """
         pulumi.set(__self__, "allowed_values", allowed_values)
         pulumi.set(__self__, "config_key", config_key)
@@ -1714,7 +1801,7 @@ class GetConfigurationsConfigurationCollectionItemConfigurationDetailItemResult(
     @pulumi.getter(name="allowedValues")
     def allowed_values(self) -> str:
         """
-        Range or list of allowed values
+        Range or list of allowed values.
         """
         return pulumi.get(self, "allowed_values")
 
@@ -1722,7 +1809,7 @@ class GetConfigurationsConfigurationCollectionItemConfigurationDetailItemResult(
     @pulumi.getter(name="configKey")
     def config_key(self) -> str:
         """
-        Key is the configuration key.
+        The configuration variable name.
         """
         return pulumi.get(self, "config_key")
 
@@ -1730,7 +1817,7 @@ class GetConfigurationsConfigurationCollectionItemConfigurationDetailItemResult(
     @pulumi.getter(name="dataType")
     def data_type(self) -> str:
         """
-        Describes about the Datatype value.
+        Data type of the variable.
         """
         return pulumi.get(self, "data_type")
 
@@ -1738,7 +1825,7 @@ class GetConfigurationsConfigurationCollectionItemConfigurationDetailItemResult(
     @pulumi.getter(name="defaultConfigValue")
     def default_config_value(self) -> str:
         """
-        Default value
+        Default value for the configuration variable.
         """
         return pulumi.get(self, "default_config_value")
 
@@ -1746,7 +1833,7 @@ class GetConfigurationsConfigurationCollectionItemConfigurationDetailItemResult(
     @pulumi.getter
     def description(self) -> str:
         """
-        Config description
+        A description for the configuration.
         """
         return pulumi.get(self, "description")
 
@@ -1754,7 +1841,7 @@ class GetConfigurationsConfigurationCollectionItemConfigurationDetailItemResult(
     @pulumi.getter(name="isOverridable")
     def is_overridable(self) -> bool:
         """
-        This flags tells whether the value is overridable or not.
+        Whether the value can be overridden or not.
         """
         return pulumi.get(self, "is_overridable")
 
@@ -1762,7 +1849,7 @@ class GetConfigurationsConfigurationCollectionItemConfigurationDetailItemResult(
     @pulumi.getter(name="isRestartRequired")
     def is_restart_required(self) -> bool:
         """
-        If true, modfying this configuration value will requires restart.
+        If true, modifying this configuration value will require a restart of the database.
         """
         return pulumi.get(self, "is_restart_required")
 
@@ -1770,7 +1857,7 @@ class GetConfigurationsConfigurationCollectionItemConfigurationDetailItemResult(
     @pulumi.getter(name="overridenConfigValue")
     def overriden_config_value(self) -> str:
         """
-        User selected configuration value
+        User-selected configuration variable value.
         """
         return pulumi.get(self, "overriden_config_value")
 
@@ -1799,8 +1886,8 @@ class GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideItemRes
                  config_key: str,
                  overriden_config_value: str):
         """
-        :param str config_key: Key is the configuration key.
-        :param str overriden_config_value: User selected configuration value
+        :param str config_key: The configuration variable name.
+        :param str overriden_config_value: User-selected configuration variable value.
         """
         pulumi.set(__self__, "config_key", config_key)
         pulumi.set(__self__, "overriden_config_value", overriden_config_value)
@@ -1809,7 +1896,7 @@ class GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideItemRes
     @pulumi.getter(name="configKey")
     def config_key(self) -> str:
         """
-        Key is the configuration key.
+        The configuration variable name.
         """
         return pulumi.get(self, "config_key")
 
@@ -1817,7 +1904,7 @@ class GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideItemRes
     @pulumi.getter(name="overridenConfigValue")
     def overriden_config_value(self) -> str:
         """
-        User selected configuration value
+        User-selected configuration variable value.
         """
         return pulumi.get(self, "overriden_config_value")
 
@@ -1855,8 +1942,8 @@ class GetDbSystemConnectionDetailInstanceEndpointResult(dict):
                  db_instance_id: str,
                  endpoints: Sequence['outputs.GetDbSystemConnectionDetailInstanceEndpointEndpointResult']):
         """
-        :param str db_instance_id: Unique identifier of the DbInstance.
-        :param Sequence['GetDbSystemConnectionDetailInstanceEndpointEndpointArgs'] endpoints: The node endpoint information.
+        :param str db_instance_id: Unique identifier of the database instance node.
+        :param Sequence['GetDbSystemConnectionDetailInstanceEndpointEndpointArgs'] endpoints: Information about the database instance node endpoint.
         """
         pulumi.set(__self__, "db_instance_id", db_instance_id)
         pulumi.set(__self__, "endpoints", endpoints)
@@ -1865,7 +1952,7 @@ class GetDbSystemConnectionDetailInstanceEndpointResult(dict):
     @pulumi.getter(name="dbInstanceId")
     def db_instance_id(self) -> str:
         """
-        Unique identifier of the DbInstance.
+        Unique identifier of the database instance node.
         """
         return pulumi.get(self, "db_instance_id")
 
@@ -1873,7 +1960,7 @@ class GetDbSystemConnectionDetailInstanceEndpointResult(dict):
     @pulumi.getter
     def endpoints(self) -> Sequence['outputs.GetDbSystemConnectionDetailInstanceEndpointEndpointResult']:
         """
-        The node endpoint information.
+        Information about the database instance node endpoint.
         """
         return pulumi.get(self, "endpoints")
 
@@ -1885,9 +1972,9 @@ class GetDbSystemConnectionDetailInstanceEndpointEndpointResult(dict):
                  ip_address: str,
                  port: int):
         """
-        :param str fqdn: The FQDN of the endpoint
-        :param str ip_address: The IP Address of the endpoint
-        :param int port: The port Address of the endpoint
+        :param str fqdn: The FQDN of the endpoint.
+        :param str ip_address: The IP address of the endpoint.
+        :param int port: The port address of the endpoint.
         """
         pulumi.set(__self__, "fqdn", fqdn)
         pulumi.set(__self__, "ip_address", ip_address)
@@ -1897,7 +1984,7 @@ class GetDbSystemConnectionDetailInstanceEndpointEndpointResult(dict):
     @pulumi.getter
     def fqdn(self) -> str:
         """
-        The FQDN of the endpoint
+        The FQDN of the endpoint.
         """
         return pulumi.get(self, "fqdn")
 
@@ -1905,7 +1992,7 @@ class GetDbSystemConnectionDetailInstanceEndpointEndpointResult(dict):
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> str:
         """
-        The IP Address of the endpoint
+        The IP address of the endpoint.
         """
         return pulumi.get(self, "ip_address")
 
@@ -1913,7 +2000,7 @@ class GetDbSystemConnectionDetailInstanceEndpointEndpointResult(dict):
     @pulumi.getter
     def port(self) -> int:
         """
-        The port Address of the endpoint
+        The port address of the endpoint.
         """
         return pulumi.get(self, "port")
 
@@ -1925,9 +2012,9 @@ class GetDbSystemConnectionDetailPrimaryDbEndpointResult(dict):
                  ip_address: str,
                  port: int):
         """
-        :param str fqdn: The FQDN of the endpoint
-        :param str ip_address: The IP Address of the endpoint
-        :param int port: The port Address of the endpoint
+        :param str fqdn: The FQDN of the endpoint.
+        :param str ip_address: The IP address of the endpoint.
+        :param int port: The port address of the endpoint.
         """
         pulumi.set(__self__, "fqdn", fqdn)
         pulumi.set(__self__, "ip_address", ip_address)
@@ -1937,7 +2024,7 @@ class GetDbSystemConnectionDetailPrimaryDbEndpointResult(dict):
     @pulumi.getter
     def fqdn(self) -> str:
         """
-        The FQDN of the endpoint
+        The FQDN of the endpoint.
         """
         return pulumi.get(self, "fqdn")
 
@@ -1945,7 +2032,7 @@ class GetDbSystemConnectionDetailPrimaryDbEndpointResult(dict):
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> str:
         """
-        The IP Address of the endpoint
+        The IP address of the endpoint.
         """
         return pulumi.get(self, "ip_address")
 
@@ -1953,7 +2040,7 @@ class GetDbSystemConnectionDetailPrimaryDbEndpointResult(dict):
     @pulumi.getter
     def port(self) -> int:
         """
-        The port Address of the endpoint
+        The port address of the endpoint.
         """
         return pulumi.get(self, "port")
 
@@ -2022,14 +2109,14 @@ class GetDbSystemInstanceResult(dict):
                  time_created: str,
                  time_updated: str):
         """
-        :param str availability_domain: Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
-        :param str description: Description of the DbInstance.
-        :param str display_name: Display name of the DbInstance.
-        :param str id: Unique identifier that is immutable on creation.
+        :param str availability_domain: Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
+        :param str description: Description of the database instance node.
+        :param str display_name: A user-friendly display name for the database instance node. Avoid entering confidential information.
+        :param str id: A unique identifier for the database instance node. Immutable on creation.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str state: The current state of the DbSystem.
-        :param str time_created: The time the the DbSystem was created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the DbSystem was updated. An RFC3339 formatted datetime string
+        :param str state: The current state of the database system.
+        :param str time_created: The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param str time_updated: The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "description", description)
@@ -2044,7 +2131,7 @@ class GetDbSystemInstanceResult(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
         """
-        Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+        Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -2052,7 +2139,7 @@ class GetDbSystemInstanceResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        Description of the DbInstance.
+        Description of the database instance node.
         """
         return pulumi.get(self, "description")
 
@@ -2060,7 +2147,7 @@ class GetDbSystemInstanceResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Display name of the DbInstance.
+        A user-friendly display name for the database instance node. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -2068,7 +2155,7 @@ class GetDbSystemInstanceResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        Unique identifier that is immutable on creation.
+        A unique identifier for the database instance node. Immutable on creation.
         """
         return pulumi.get(self, "id")
 
@@ -2084,7 +2171,7 @@ class GetDbSystemInstanceResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the DbSystem.
+        The current state of the database system.
         """
         return pulumi.get(self, "state")
 
@@ -2092,7 +2179,7 @@ class GetDbSystemInstanceResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the the DbSystem was created. An RFC3339 formatted datetime string
+        The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -2100,7 +2187,7 @@ class GetDbSystemInstanceResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the DbSystem was updated. An RFC3339 formatted datetime string
+        The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -2112,8 +2199,8 @@ class GetDbSystemInstancesDetailResult(dict):
                  display_name: str,
                  private_ip: str):
         """
-        :param str description: Description of the DbInstance.
-        :param str display_name: Display name of the DbInstance.
+        :param str description: Description of the database instance node.
+        :param str display_name: A user-friendly display name for the database instance node. Avoid entering confidential information.
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
@@ -2123,7 +2210,7 @@ class GetDbSystemInstancesDetailResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        Description of the DbInstance.
+        Description of the database instance node.
         """
         return pulumi.get(self, "description")
 
@@ -2131,7 +2218,7 @@ class GetDbSystemInstancesDetailResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Display name of the DbInstance.
+        A user-friendly display name for the database instance node. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -2147,7 +2234,7 @@ class GetDbSystemManagementPolicyResult(dict):
                  backup_policies: Sequence['outputs.GetDbSystemManagementPolicyBackupPolicyResult'],
                  maintenance_window_start: str):
         """
-        :param Sequence['GetDbSystemManagementPolicyBackupPolicyArgs'] backup_policies: Posgresql DB system backup policy
+        :param Sequence['GetDbSystemManagementPolicyBackupPolicyArgs'] backup_policies: PostgreSQL database system backup policy.
         :param str maintenance_window_start: The start of the maintenance window.
         """
         pulumi.set(__self__, "backup_policies", backup_policies)
@@ -2157,7 +2244,7 @@ class GetDbSystemManagementPolicyResult(dict):
     @pulumi.getter(name="backupPolicies")
     def backup_policies(self) -> Sequence['outputs.GetDbSystemManagementPolicyBackupPolicyResult']:
         """
-        Posgresql DB system backup policy
+        PostgreSQL database system backup policy.
         """
         return pulumi.get(self, "backup_policies")
 
@@ -2179,11 +2266,11 @@ class GetDbSystemManagementPolicyBackupPolicyResult(dict):
                  kind: str,
                  retention_days: int):
         """
-        :param str backup_start: Hour of the day when backup starts.
-        :param Sequence[int] days_of_the_months: Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
-        :param Sequence[str] days_of_the_weeks: Weekly days
-        :param str kind: Backup policy kind
-        :param int retention_days: How many days the customers data should be stored after the db system deletion.
+        :param str backup_start: Hour of the day when the backup starts.
+        :param Sequence[int] days_of_the_months: Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
+        :param Sequence[str] days_of_the_weeks: The day of the week that the backup starts.
+        :param str kind: The kind of backup policy.
+        :param int retention_days: How many days the data should be stored after the database system deletion.
         """
         pulumi.set(__self__, "backup_start", backup_start)
         pulumi.set(__self__, "days_of_the_months", days_of_the_months)
@@ -2195,7 +2282,7 @@ class GetDbSystemManagementPolicyBackupPolicyResult(dict):
     @pulumi.getter(name="backupStart")
     def backup_start(self) -> str:
         """
-        Hour of the day when backup starts.
+        Hour of the day when the backup starts.
         """
         return pulumi.get(self, "backup_start")
 
@@ -2203,7 +2290,7 @@ class GetDbSystemManagementPolicyBackupPolicyResult(dict):
     @pulumi.getter(name="daysOfTheMonths")
     def days_of_the_months(self) -> Sequence[int]:
         """
-        Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+        Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
         """
         return pulumi.get(self, "days_of_the_months")
 
@@ -2211,7 +2298,7 @@ class GetDbSystemManagementPolicyBackupPolicyResult(dict):
     @pulumi.getter(name="daysOfTheWeeks")
     def days_of_the_weeks(self) -> Sequence[str]:
         """
-        Weekly days
+        The day of the week that the backup starts.
         """
         return pulumi.get(self, "days_of_the_weeks")
 
@@ -2219,7 +2306,7 @@ class GetDbSystemManagementPolicyBackupPolicyResult(dict):
     @pulumi.getter
     def kind(self) -> str:
         """
-        Backup policy kind
+        The kind of backup policy.
         """
         return pulumi.get(self, "kind")
 
@@ -2227,7 +2314,7 @@ class GetDbSystemManagementPolicyBackupPolicyResult(dict):
     @pulumi.getter(name="retentionDays")
     def retention_days(self) -> int:
         """
-        How many days the customers data should be stored after the db system deletion.
+        How many days the data should be stored after the database system deletion.
         """
         return pulumi.get(self, "retention_days")
 
@@ -2239,9 +2326,9 @@ class GetDbSystemNetworkDetailResult(dict):
                  primary_db_endpoint_private_ip: str,
                  subnet_id: str):
         """
-        :param Sequence[str] nsg_ids: List of customer NetworkSecurityGroup identifiers
-        :param str primary_db_endpoint_private_ip: Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
-        :param str subnet_id: Customer Subnet identifier
+        :param Sequence[str] nsg_ids: List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+        :param str primary_db_endpoint_private_ip: Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
         """
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "primary_db_endpoint_private_ip", primary_db_endpoint_private_ip)
@@ -2251,7 +2338,7 @@ class GetDbSystemNetworkDetailResult(dict):
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
-        List of customer NetworkSecurityGroup identifiers
+        List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -2259,7 +2346,7 @@ class GetDbSystemNetworkDetailResult(dict):
     @pulumi.getter(name="primaryDbEndpointPrivateIp")
     def primary_db_endpoint_private_ip(self) -> str:
         """
-        Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+        Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
         """
         return pulumi.get(self, "primary_db_endpoint_private_ip")
 
@@ -2267,9 +2354,56 @@ class GetDbSystemNetworkDetailResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        Customer Subnet identifier
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
         """
         return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetDbSystemPatchOperationResult(dict):
+    def __init__(__self__, *,
+                 from_: str,
+                 operation: str,
+                 position: str,
+                 selected_item: str,
+                 selection: str,
+                 value: Mapping[str, Any]):
+        pulumi.set(__self__, "from_", from_)
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "position", position)
+        pulumi.set(__self__, "selected_item", selected_item)
+        pulumi.set(__self__, "selection", selection)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="from")
+    def from_(self) -> str:
+        return pulumi.get(self, "from_")
+
+    @property
+    @pulumi.getter
+    def operation(self) -> str:
+        return pulumi.get(self, "operation")
+
+    @property
+    @pulumi.getter
+    def position(self) -> str:
+        return pulumi.get(self, "position")
+
+    @property
+    @pulumi.getter(name="selectedItem")
+    def selected_item(self) -> str:
+        return pulumi.get(self, "selected_item")
+
+    @property
+    @pulumi.getter
+    def selection(self) -> str:
+        return pulumi.get(self, "selection")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Mapping[str, Any]:
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -2279,8 +2413,8 @@ class GetDbSystemSourceResult(dict):
                  is_having_restore_config_overrides: bool,
                  source_type: str):
         """
-        :param str backup_id: DbSystem backup identifier.
-        :param bool is_having_restore_config_overrides: Restore the DB config overrides from backup. Default is false
+        :param str backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
+        :param bool is_having_restore_config_overrides: Deprecated. Don't use.
         :param str source_type: The source descriminator.
         """
         pulumi.set(__self__, "backup_id", backup_id)
@@ -2291,7 +2425,7 @@ class GetDbSystemSourceResult(dict):
     @pulumi.getter(name="backupId")
     def backup_id(self) -> str:
         """
-        DbSystem backup identifier.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
         """
         return pulumi.get(self, "backup_id")
 
@@ -2299,7 +2433,7 @@ class GetDbSystemSourceResult(dict):
     @pulumi.getter(name="isHavingRestoreConfigOverrides")
     def is_having_restore_config_overrides(self) -> bool:
         """
-        Restore the DB config overrides from backup. Default is false
+        Deprecated. Don't use.
         """
         return pulumi.get(self, "is_having_restore_config_overrides")
 
@@ -2320,10 +2454,10 @@ class GetDbSystemStorageDetailResult(dict):
                  is_regionally_durable: bool,
                  system_type: str):
         """
-        :param str availability_domain: Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
-        :param str iops: DbSystem Performance Unit
-        :param bool is_regionally_durable: Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
-        :param str system_type: Type of the DbSystem.
+        :param str availability_domain: Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
+        :param str iops: Guaranteed input/output storage requests per second (IOPS) available to the database system.
+        :param bool is_regionally_durable: Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
+        :param str system_type: Type of the database system.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "iops", iops)
@@ -2334,7 +2468,7 @@ class GetDbSystemStorageDetailResult(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
         """
-        Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+        Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -2342,7 +2476,7 @@ class GetDbSystemStorageDetailResult(dict):
     @pulumi.getter
     def iops(self) -> str:
         """
-        DbSystem Performance Unit
+        Guaranteed input/output storage requests per second (IOPS) available to the database system.
         """
         return pulumi.get(self, "iops")
 
@@ -2350,7 +2484,7 @@ class GetDbSystemStorageDetailResult(dict):
     @pulumi.getter(name="isRegionallyDurable")
     def is_regionally_durable(self) -> bool:
         """
-        Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+        Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         """
         return pulumi.get(self, "is_regionally_durable")
 
@@ -2358,7 +2492,7 @@ class GetDbSystemStorageDetailResult(dict):
     @pulumi.getter(name="systemType")
     def system_type(self) -> str:
         """
-        Type of the DbSystem.
+        Type of the database system.
         """
         return pulumi.get(self, "system_type")
 
@@ -2379,6 +2513,7 @@ class GetDbSystemsDbSystemCollectionResult(dict):
 class GetDbSystemsDbSystemCollectionItemResult(dict):
     def __init__(__self__, *,
                  admin_username: str,
+                 apply_config: str,
                  compartment_id: str,
                  config_id: str,
                  credentials: Sequence['outputs.GetDbSystemsDbSystemCollectionItemCredentialResult'],
@@ -2396,6 +2531,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
                  lifecycle_details: str,
                  management_policies: Sequence['outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyResult'],
                  network_details: Sequence['outputs.GetDbSystemsDbSystemCollectionItemNetworkDetailResult'],
+                 patch_operations: Sequence['outputs.GetDbSystemsDbSystemCollectionItemPatchOperationResult'],
                  shape: str,
                  sources: Sequence['outputs.GetDbSystemsDbSystemCollectionItemSourceResult'],
                  state: str,
@@ -2405,32 +2541,33 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
                  time_created: str,
                  time_updated: str):
         """
-        :param str admin_username: The DB system username.
+        :param str admin_username: The database system administrator username.
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param str config_id: Configuration identifier
-        :param str db_version: The major and minor versions of the DbSystem software.
+        :param str config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+        :param str db_version: The major and minor versions of the database system software.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: Description of the DbInstance.
+        :param str description: Description of the database instance node.
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: unique DbSystem identifier
-        :param int instance_count: Count of DbInstances in the DbSystem.
-        :param int instance_memory_size_in_gbs: The total amount of memory available to each DbInstance, in gigabytes.
-        :param int instance_ocpu_count: The total number of OCPUs available to each DbInstance.
-        :param Sequence['GetDbSystemsDbSystemCollectionItemInstanceArgs'] instances: The list of DbInstances in the DbSystem.
+        :param str id: A unique identifier for the database system.
+        :param int instance_count: Count of instances, or nodes, in the database system.
+        :param int instance_memory_size_in_gbs: The total amount of memory available to each database instance node, in gigabytes.
+        :param int instance_ocpu_count: The total number of OCPUs available to each database instance node.
+        :param Sequence['GetDbSystemsDbSystemCollectionItemInstanceArgs'] instances: The list of instances, or nodes, in the database system.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param Sequence['GetDbSystemsDbSystemCollectionItemManagementPolicyArgs'] management_policies: PostgreSQL DB system management policy
-        :param Sequence['GetDbSystemsDbSystemCollectionItemNetworkDetailArgs'] network_details: DbSystem network details.
-        :param str shape: Shape of dbInstance.
-        :param Sequence['GetDbSystemsDbSystemCollectionItemSourceArgs'] sources: New source is used to restore the DB system.
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-        :param Sequence['GetDbSystemsDbSystemCollectionItemStorageDetailArgs'] storage_details: Storage details of the DbSystem.
+        :param Sequence['GetDbSystemsDbSystemCollectionItemManagementPolicyArgs'] management_policies: PostgreSQL database system management policy.
+        :param Sequence['GetDbSystemsDbSystemCollectionItemNetworkDetailArgs'] network_details: Network details for the database system.
+        :param str shape: The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
+        :param Sequence['GetDbSystemsDbSystemCollectionItemSourceArgs'] sources: The source used to restore the database system.
+        :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
+        :param Sequence['GetDbSystemsDbSystemCollectionItemStorageDetailArgs'] storage_details: Storage details of the database system.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str system_type: Type of the DbSystem.
-        :param str time_created: The time the the DbSystem was created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the DbSystem was updated. An RFC3339 formatted datetime string
+        :param str system_type: Type of the database system.
+        :param str time_created: The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param str time_updated: The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "admin_username", admin_username)
+        pulumi.set(__self__, "apply_config", apply_config)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "credentials", credentials)
@@ -2448,6 +2585,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "management_policies", management_policies)
         pulumi.set(__self__, "network_details", network_details)
+        pulumi.set(__self__, "patch_operations", patch_operations)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "sources", sources)
         pulumi.set(__self__, "state", state)
@@ -2461,9 +2599,14 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
     @pulumi.getter(name="adminUsername")
     def admin_username(self) -> str:
         """
-        The DB system username.
+        The database system administrator username.
         """
         return pulumi.get(self, "admin_username")
+
+    @property
+    @pulumi.getter(name="applyConfig")
+    def apply_config(self) -> str:
+        return pulumi.get(self, "apply_config")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2477,7 +2620,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
     @pulumi.getter(name="configId")
     def config_id(self) -> str:
         """
-        Configuration identifier
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
         """
         return pulumi.get(self, "config_id")
 
@@ -2490,7 +2633,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> str:
         """
-        The major and minor versions of the DbSystem software.
+        The major and minor versions of the database system software.
         """
         return pulumi.get(self, "db_version")
 
@@ -2506,7 +2649,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        Description of the DbInstance.
+        Description of the database instance node.
         """
         return pulumi.get(self, "description")
 
@@ -2530,7 +2673,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        unique DbSystem identifier
+        A unique identifier for the database system.
         """
         return pulumi.get(self, "id")
 
@@ -2538,7 +2681,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
     @pulumi.getter(name="instanceCount")
     def instance_count(self) -> int:
         """
-        Count of DbInstances in the DbSystem.
+        Count of instances, or nodes, in the database system.
         """
         return pulumi.get(self, "instance_count")
 
@@ -2546,7 +2689,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
     @pulumi.getter(name="instanceMemorySizeInGbs")
     def instance_memory_size_in_gbs(self) -> int:
         """
-        The total amount of memory available to each DbInstance, in gigabytes.
+        The total amount of memory available to each database instance node, in gigabytes.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
@@ -2554,7 +2697,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
     @pulumi.getter(name="instanceOcpuCount")
     def instance_ocpu_count(self) -> int:
         """
-        The total number of OCPUs available to each DbInstance.
+        The total number of OCPUs available to each database instance node.
         """
         return pulumi.get(self, "instance_ocpu_count")
 
@@ -2562,7 +2705,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
     @pulumi.getter
     def instances(self) -> Sequence['outputs.GetDbSystemsDbSystemCollectionItemInstanceResult']:
         """
-        The list of DbInstances in the DbSystem.
+        The list of instances, or nodes, in the database system.
         """
         return pulumi.get(self, "instances")
 
@@ -2583,7 +2726,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
     @pulumi.getter(name="managementPolicies")
     def management_policies(self) -> Sequence['outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyResult']:
         """
-        PostgreSQL DB system management policy
+        PostgreSQL database system management policy.
         """
         return pulumi.get(self, "management_policies")
 
@@ -2591,15 +2734,20 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
     @pulumi.getter(name="networkDetails")
     def network_details(self) -> Sequence['outputs.GetDbSystemsDbSystemCollectionItemNetworkDetailResult']:
         """
-        DbSystem network details.
+        Network details for the database system.
         """
         return pulumi.get(self, "network_details")
+
+    @property
+    @pulumi.getter(name="patchOperations")
+    def patch_operations(self) -> Sequence['outputs.GetDbSystemsDbSystemCollectionItemPatchOperationResult']:
+        return pulumi.get(self, "patch_operations")
 
     @property
     @pulumi.getter
     def shape(self) -> str:
         """
-        Shape of dbInstance.
+        The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
         """
         return pulumi.get(self, "shape")
 
@@ -2607,7 +2755,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
     @pulumi.getter
     def sources(self) -> Sequence['outputs.GetDbSystemsDbSystemCollectionItemSourceResult']:
         """
-        New source is used to restore the DB system.
+        The source used to restore the database system.
         """
         return pulumi.get(self, "sources")
 
@@ -2615,7 +2763,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         """
         return pulumi.get(self, "state")
 
@@ -2623,7 +2771,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
     @pulumi.getter(name="storageDetails")
     def storage_details(self) -> Sequence['outputs.GetDbSystemsDbSystemCollectionItemStorageDetailResult']:
         """
-        Storage details of the DbSystem.
+        Storage details of the database system.
         """
         return pulumi.get(self, "storage_details")
 
@@ -2639,7 +2787,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
     @pulumi.getter(name="systemType")
     def system_type(self) -> str:
         """
-        Type of the DbSystem.
+        Type of the database system.
         """
         return pulumi.get(self, "system_type")
 
@@ -2647,7 +2795,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the the DbSystem was created. An RFC3339 formatted datetime string
+        The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -2655,7 +2803,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the DbSystem was updated. An RFC3339 formatted datetime string
+        The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -2724,14 +2872,14 @@ class GetDbSystemsDbSystemCollectionItemInstanceResult(dict):
                  time_created: str,
                  time_updated: str):
         """
-        :param str availability_domain: Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
-        :param str description: Description of the DbInstance.
+        :param str availability_domain: Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
+        :param str description: Description of the database instance node.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param str id: unique DbSystem identifier
+        :param str id: A unique identifier for the database system.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-        :param str time_created: The time the the DbSystem was created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the DbSystem was updated. An RFC3339 formatted datetime string
+        :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
+        :param str time_created: The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param str time_updated: The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "description", description)
@@ -2746,7 +2894,7 @@ class GetDbSystemsDbSystemCollectionItemInstanceResult(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
         """
-        Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+        Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -2754,7 +2902,7 @@ class GetDbSystemsDbSystemCollectionItemInstanceResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        Description of the DbInstance.
+        Description of the database instance node.
         """
         return pulumi.get(self, "description")
 
@@ -2770,7 +2918,7 @@ class GetDbSystemsDbSystemCollectionItemInstanceResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        unique DbSystem identifier
+        A unique identifier for the database system.
         """
         return pulumi.get(self, "id")
 
@@ -2786,7 +2934,7 @@ class GetDbSystemsDbSystemCollectionItemInstanceResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         """
         return pulumi.get(self, "state")
 
@@ -2794,7 +2942,7 @@ class GetDbSystemsDbSystemCollectionItemInstanceResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the the DbSystem was created. An RFC3339 formatted datetime string
+        The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -2802,7 +2950,7 @@ class GetDbSystemsDbSystemCollectionItemInstanceResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the DbSystem was updated. An RFC3339 formatted datetime string
+        The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -2814,7 +2962,7 @@ class GetDbSystemsDbSystemCollectionItemInstancesDetailResult(dict):
                  display_name: str,
                  private_ip: str):
         """
-        :param str description: Description of the DbInstance.
+        :param str description: Description of the database instance node.
         :param str display_name: A filter to return only resources that match the entire display name given.
         """
         pulumi.set(__self__, "description", description)
@@ -2825,7 +2973,7 @@ class GetDbSystemsDbSystemCollectionItemInstancesDetailResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        Description of the DbInstance.
+        Description of the database instance node.
         """
         return pulumi.get(self, "description")
 
@@ -2849,7 +2997,7 @@ class GetDbSystemsDbSystemCollectionItemManagementPolicyResult(dict):
                  backup_policies: Sequence['outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult'],
                  maintenance_window_start: str):
         """
-        :param Sequence['GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArgs'] backup_policies: Posgresql DB system backup policy
+        :param Sequence['GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArgs'] backup_policies: PostgreSQL database system backup policy.
         :param str maintenance_window_start: The start of the maintenance window.
         """
         pulumi.set(__self__, "backup_policies", backup_policies)
@@ -2859,7 +3007,7 @@ class GetDbSystemsDbSystemCollectionItemManagementPolicyResult(dict):
     @pulumi.getter(name="backupPolicies")
     def backup_policies(self) -> Sequence['outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult']:
         """
-        Posgresql DB system backup policy
+        PostgreSQL database system backup policy.
         """
         return pulumi.get(self, "backup_policies")
 
@@ -2881,11 +3029,11 @@ class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult(dict)
                  kind: str,
                  retention_days: int):
         """
-        :param str backup_start: Hour of the day when backup starts.
-        :param Sequence[int] days_of_the_months: Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
-        :param Sequence[str] days_of_the_weeks: Weekly days
-        :param str kind: Backup policy kind
-        :param int retention_days: How many days the customers data should be stored after the db system deletion.
+        :param str backup_start: Hour of the day when the backup starts.
+        :param Sequence[int] days_of_the_months: Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
+        :param Sequence[str] days_of_the_weeks: The day of the week that the backup starts.
+        :param str kind: The kind of backup policy.
+        :param int retention_days: How many days the data should be stored after the database system deletion.
         """
         pulumi.set(__self__, "backup_start", backup_start)
         pulumi.set(__self__, "days_of_the_months", days_of_the_months)
@@ -2897,7 +3045,7 @@ class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult(dict)
     @pulumi.getter(name="backupStart")
     def backup_start(self) -> str:
         """
-        Hour of the day when backup starts.
+        Hour of the day when the backup starts.
         """
         return pulumi.get(self, "backup_start")
 
@@ -2905,7 +3053,7 @@ class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult(dict)
     @pulumi.getter(name="daysOfTheMonths")
     def days_of_the_months(self) -> Sequence[int]:
         """
-        Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+        Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
         """
         return pulumi.get(self, "days_of_the_months")
 
@@ -2913,7 +3061,7 @@ class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult(dict)
     @pulumi.getter(name="daysOfTheWeeks")
     def days_of_the_weeks(self) -> Sequence[str]:
         """
-        Weekly days
+        The day of the week that the backup starts.
         """
         return pulumi.get(self, "days_of_the_weeks")
 
@@ -2921,7 +3069,7 @@ class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult(dict)
     @pulumi.getter
     def kind(self) -> str:
         """
-        Backup policy kind
+        The kind of backup policy.
         """
         return pulumi.get(self, "kind")
 
@@ -2929,7 +3077,7 @@ class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult(dict)
     @pulumi.getter(name="retentionDays")
     def retention_days(self) -> int:
         """
-        How many days the customers data should be stored after the db system deletion.
+        How many days the data should be stored after the database system deletion.
         """
         return pulumi.get(self, "retention_days")
 
@@ -2941,9 +3089,9 @@ class GetDbSystemsDbSystemCollectionItemNetworkDetailResult(dict):
                  primary_db_endpoint_private_ip: str,
                  subnet_id: str):
         """
-        :param Sequence[str] nsg_ids: List of customer NetworkSecurityGroup identifiers
-        :param str primary_db_endpoint_private_ip: Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
-        :param str subnet_id: Customer Subnet identifier
+        :param Sequence[str] nsg_ids: List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+        :param str primary_db_endpoint_private_ip: Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
         """
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "primary_db_endpoint_private_ip", primary_db_endpoint_private_ip)
@@ -2953,7 +3101,7 @@ class GetDbSystemsDbSystemCollectionItemNetworkDetailResult(dict):
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
-        List of customer NetworkSecurityGroup identifiers
+        List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -2961,7 +3109,7 @@ class GetDbSystemsDbSystemCollectionItemNetworkDetailResult(dict):
     @pulumi.getter(name="primaryDbEndpointPrivateIp")
     def primary_db_endpoint_private_ip(self) -> str:
         """
-        Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+        Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
         """
         return pulumi.get(self, "primary_db_endpoint_private_ip")
 
@@ -2969,9 +3117,56 @@ class GetDbSystemsDbSystemCollectionItemNetworkDetailResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        Customer Subnet identifier
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
         """
         return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetDbSystemsDbSystemCollectionItemPatchOperationResult(dict):
+    def __init__(__self__, *,
+                 from_: str,
+                 operation: str,
+                 position: str,
+                 selected_item: str,
+                 selection: str,
+                 value: Mapping[str, Any]):
+        pulumi.set(__self__, "from_", from_)
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "position", position)
+        pulumi.set(__self__, "selected_item", selected_item)
+        pulumi.set(__self__, "selection", selection)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="from")
+    def from_(self) -> str:
+        return pulumi.get(self, "from_")
+
+    @property
+    @pulumi.getter
+    def operation(self) -> str:
+        return pulumi.get(self, "operation")
+
+    @property
+    @pulumi.getter
+    def position(self) -> str:
+        return pulumi.get(self, "position")
+
+    @property
+    @pulumi.getter(name="selectedItem")
+    def selected_item(self) -> str:
+        return pulumi.get(self, "selected_item")
+
+    @property
+    @pulumi.getter
+    def selection(self) -> str:
+        return pulumi.get(self, "selection")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Mapping[str, Any]:
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -2981,8 +3176,8 @@ class GetDbSystemsDbSystemCollectionItemSourceResult(dict):
                  is_having_restore_config_overrides: bool,
                  source_type: str):
         """
-        :param str backup_id: DbSystem backup identifier.
-        :param bool is_having_restore_config_overrides: Restore the DB config overrides from backup. Default is false
+        :param str backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
+        :param bool is_having_restore_config_overrides: Deprecated. Don't use.
         :param str source_type: The source descriminator.
         """
         pulumi.set(__self__, "backup_id", backup_id)
@@ -2993,7 +3188,7 @@ class GetDbSystemsDbSystemCollectionItemSourceResult(dict):
     @pulumi.getter(name="backupId")
     def backup_id(self) -> str:
         """
-        DbSystem backup identifier.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
         """
         return pulumi.get(self, "backup_id")
 
@@ -3001,7 +3196,7 @@ class GetDbSystemsDbSystemCollectionItemSourceResult(dict):
     @pulumi.getter(name="isHavingRestoreConfigOverrides")
     def is_having_restore_config_overrides(self) -> bool:
         """
-        Restore the DB config overrides from backup. Default is false
+        Deprecated. Don't use.
         """
         return pulumi.get(self, "is_having_restore_config_overrides")
 
@@ -3022,10 +3217,10 @@ class GetDbSystemsDbSystemCollectionItemStorageDetailResult(dict):
                  is_regionally_durable: bool,
                  system_type: str):
         """
-        :param str availability_domain: Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
-        :param str iops: DbSystem Performance Unit
-        :param bool is_regionally_durable: Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
-        :param str system_type: Type of the DbSystem.
+        :param str availability_domain: Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
+        :param str iops: Guaranteed input/output storage requests per second (IOPS) available to the database system.
+        :param bool is_regionally_durable: Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
+        :param str system_type: Type of the database system.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "iops", iops)
@@ -3036,7 +3231,7 @@ class GetDbSystemsDbSystemCollectionItemStorageDetailResult(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
         """
-        Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+        Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -3044,7 +3239,7 @@ class GetDbSystemsDbSystemCollectionItemStorageDetailResult(dict):
     @pulumi.getter
     def iops(self) -> str:
         """
-        DbSystem Performance Unit
+        Guaranteed input/output storage requests per second (IOPS) available to the database system.
         """
         return pulumi.get(self, "iops")
 
@@ -3052,7 +3247,7 @@ class GetDbSystemsDbSystemCollectionItemStorageDetailResult(dict):
     @pulumi.getter(name="isRegionallyDurable")
     def is_regionally_durable(self) -> bool:
         """
-        Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+        Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         """
         return pulumi.get(self, "is_regionally_durable")
 
@@ -3060,7 +3255,7 @@ class GetDbSystemsDbSystemCollectionItemStorageDetailResult(dict):
     @pulumi.getter(name="systemType")
     def system_type(self) -> str:
         """
-        Type of the DbSystem.
+        Type of the database system.
         """
         return pulumi.get(self, "system_type")
 
@@ -3121,13 +3316,13 @@ class GetDefaultConfigurationConfigurationDetailItemResult(dict):
                  is_overridable: bool,
                  is_restart_required: bool):
         """
-        :param str allowed_values: Range or list of allowed values
-        :param str config_key: Key is the configuration key.
-        :param str data_type: Describes about the Datatype value.
-        :param str default_config_value: Default value
-        :param str description: Config description
-        :param bool is_overridable: This flags tells whether the value is overridable or not.
-        :param bool is_restart_required: If true, modfying this configuration value will requires restart.
+        :param str allowed_values: Range or list of allowed values.
+        :param str config_key: The configuration variable name.
+        :param str data_type: Data type of the variable.
+        :param str default_config_value: Default value for the variable.
+        :param str description: A description for the configuration.
+        :param bool is_overridable: Whether the value can be overridden or not.
+        :param bool is_restart_required: If true, modifying this configuration value will require a restart.
         """
         pulumi.set(__self__, "allowed_values", allowed_values)
         pulumi.set(__self__, "config_key", config_key)
@@ -3141,7 +3336,7 @@ class GetDefaultConfigurationConfigurationDetailItemResult(dict):
     @pulumi.getter(name="allowedValues")
     def allowed_values(self) -> str:
         """
-        Range or list of allowed values
+        Range or list of allowed values.
         """
         return pulumi.get(self, "allowed_values")
 
@@ -3149,7 +3344,7 @@ class GetDefaultConfigurationConfigurationDetailItemResult(dict):
     @pulumi.getter(name="configKey")
     def config_key(self) -> str:
         """
-        Key is the configuration key.
+        The configuration variable name.
         """
         return pulumi.get(self, "config_key")
 
@@ -3157,7 +3352,7 @@ class GetDefaultConfigurationConfigurationDetailItemResult(dict):
     @pulumi.getter(name="dataType")
     def data_type(self) -> str:
         """
-        Describes about the Datatype value.
+        Data type of the variable.
         """
         return pulumi.get(self, "data_type")
 
@@ -3165,7 +3360,7 @@ class GetDefaultConfigurationConfigurationDetailItemResult(dict):
     @pulumi.getter(name="defaultConfigValue")
     def default_config_value(self) -> str:
         """
-        Default value
+        Default value for the variable.
         """
         return pulumi.get(self, "default_config_value")
 
@@ -3173,7 +3368,7 @@ class GetDefaultConfigurationConfigurationDetailItemResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        Config description
+        A description for the configuration.
         """
         return pulumi.get(self, "description")
 
@@ -3181,7 +3376,7 @@ class GetDefaultConfigurationConfigurationDetailItemResult(dict):
     @pulumi.getter(name="isOverridable")
     def is_overridable(self) -> bool:
         """
-        This flags tells whether the value is overridable or not.
+        Whether the value can be overridden or not.
         """
         return pulumi.get(self, "is_overridable")
 
@@ -3189,7 +3384,7 @@ class GetDefaultConfigurationConfigurationDetailItemResult(dict):
     @pulumi.getter(name="isRestartRequired")
     def is_restart_required(self) -> bool:
         """
-        If true, modfying this configuration value will requires restart.
+        If true, modifying this configuration value will require a restart.
         """
         return pulumi.get(self, "is_restart_required")
 
@@ -3227,17 +3422,17 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(dict):
                  state: str,
                  time_created: str):
         """
-        :param Sequence['GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailArgs'] configuration_details: List of DB default Configuration Values.
-        :param str db_version: Verison of the Postgresql DB like 14.5
-        :param str description: Config description
+        :param Sequence['GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailArgs'] configuration_details: List of default configuration values for databases.
+        :param str db_version: Verison of the PostgreSQL database, such as 14.9.
+        :param str description: A description for the configuration.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param str id: Unique identifier that is immutable on creation
-        :param int instance_memory_size_in_gbs: Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
-        :param int instance_ocpu_count: CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+        :param str id: A unique identifier for the configuration.
+        :param int instance_memory_size_in_gbs: Memory size in gigabytes with 1GB increment.
+        :param int instance_ocpu_count: CPU core count. Minimum value is 1.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str shape: Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-        :param str time_created: The time Configuration was created. An RFC3339 formatted datetime string
+        :param str shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
+        :param str time_created: The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "configuration_details", configuration_details)
         pulumi.set(__self__, "db_version", db_version)
@@ -3255,7 +3450,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(dict):
     @pulumi.getter(name="configurationDetails")
     def configuration_details(self) -> Sequence['outputs.GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailResult']:
         """
-        List of DB default Configuration Values.
+        List of default configuration values for databases.
         """
         return pulumi.get(self, "configuration_details")
 
@@ -3263,7 +3458,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(dict):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> str:
         """
-        Verison of the Postgresql DB like 14.5
+        Verison of the PostgreSQL database, such as 14.9.
         """
         return pulumi.get(self, "db_version")
 
@@ -3271,7 +3466,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        Config description
+        A description for the configuration.
         """
         return pulumi.get(self, "description")
 
@@ -3287,7 +3482,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        Unique identifier that is immutable on creation
+        A unique identifier for the configuration.
         """
         return pulumi.get(self, "id")
 
@@ -3295,7 +3490,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(dict):
     @pulumi.getter(name="instanceMemorySizeInGbs")
     def instance_memory_size_in_gbs(self) -> int:
         """
-        Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+        Memory size in gigabytes with 1GB increment.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
@@ -3303,7 +3498,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(dict):
     @pulumi.getter(name="instanceOcpuCount")
     def instance_ocpu_count(self) -> int:
         """
-        CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+        CPU core count. Minimum value is 1.
         """
         return pulumi.get(self, "instance_ocpu_count")
 
@@ -3319,7 +3514,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(dict):
     @pulumi.getter
     def shape(self) -> str:
         """
-        Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+        The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         """
         return pulumi.get(self, "shape")
 
@@ -3327,7 +3522,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         """
         return pulumi.get(self, "state")
 
@@ -3335,7 +3530,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time Configuration was created. An RFC3339 formatted datetime string
+        The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -3369,13 +3564,13 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDet
                  is_overridable: bool,
                  is_restart_required: bool):
         """
-        :param str allowed_values: Range or list of allowed values
-        :param str config_key: Key is the configuration key.
-        :param str data_type: Describes about the Datatype value.
-        :param str default_config_value: Default value
-        :param str description: Config description
-        :param bool is_overridable: This flags tells whether the value is overridable or not.
-        :param bool is_restart_required: If true, modfying this configuration value will requires restart.
+        :param str allowed_values: Range or list of allowed values.
+        :param str config_key: The configuration variable name.
+        :param str data_type: Data type of the variable.
+        :param str default_config_value: Default value for the variable.
+        :param str description: A description for the configuration.
+        :param bool is_overridable: Whether the value can be overridden or not.
+        :param bool is_restart_required: If true, modifying this configuration value will require a restart.
         """
         pulumi.set(__self__, "allowed_values", allowed_values)
         pulumi.set(__self__, "config_key", config_key)
@@ -3389,7 +3584,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDet
     @pulumi.getter(name="allowedValues")
     def allowed_values(self) -> str:
         """
-        Range or list of allowed values
+        Range or list of allowed values.
         """
         return pulumi.get(self, "allowed_values")
 
@@ -3397,7 +3592,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDet
     @pulumi.getter(name="configKey")
     def config_key(self) -> str:
         """
-        Key is the configuration key.
+        The configuration variable name.
         """
         return pulumi.get(self, "config_key")
 
@@ -3405,7 +3600,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDet
     @pulumi.getter(name="dataType")
     def data_type(self) -> str:
         """
-        Describes about the Datatype value.
+        Data type of the variable.
         """
         return pulumi.get(self, "data_type")
 
@@ -3413,7 +3608,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDet
     @pulumi.getter(name="defaultConfigValue")
     def default_config_value(self) -> str:
         """
-        Default value
+        Default value for the variable.
         """
         return pulumi.get(self, "default_config_value")
 
@@ -3421,7 +3616,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDet
     @pulumi.getter
     def description(self) -> str:
         """
-        Config description
+        A description for the configuration.
         """
         return pulumi.get(self, "description")
 
@@ -3429,7 +3624,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDet
     @pulumi.getter(name="isOverridable")
     def is_overridable(self) -> bool:
         """
-        This flags tells whether the value is overridable or not.
+        Whether the value can be overridden or not.
         """
         return pulumi.get(self, "is_overridable")
 
@@ -3437,7 +3632,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDet
     @pulumi.getter(name="isRestartRequired")
     def is_restart_required(self) -> bool:
         """
-        If true, modfying this configuration value will requires restart.
+        If true, modifying this configuration value will require a restart.
         """
         return pulumi.get(self, "is_restart_required")
 
@@ -3501,7 +3696,7 @@ class GetShapesShapeCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetShapesShapeCollectionItemResult']):
         """
-        :param Sequence['GetShapesShapeCollectionItemArgs'] items: List of dbSystems.
+        :param Sequence['GetShapesShapeCollectionItemArgs'] items: List of supported shapes.
         """
         pulumi.set(__self__, "items", items)
 
@@ -3509,7 +3704,7 @@ class GetShapesShapeCollectionResult(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetShapesShapeCollectionItemResult']:
         """
-        List of dbSystems.
+        List of supported shapes.
         """
         return pulumi.get(self, "items")
 
@@ -3523,9 +3718,9 @@ class GetShapesShapeCollectionItemResult(dict):
                  shape: str):
         """
         :param str id: A filter to return the feature by the shape name.
-        :param int memory_size_in_gbs: The amount of memory in GB
-        :param int ocpu_count: The number of OCPUs
-        :param str shape: The Compute Shape Name like VM.Standard.E4.Flex
+        :param int memory_size_in_gbs: The amount of memory in gigabytes.
+        :param int ocpu_count: The number of OCPUs.
+        :param str shape: The name of the Compute VM shape. Example: `VM.Standard.E4.Flex`
         """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
@@ -3544,7 +3739,7 @@ class GetShapesShapeCollectionItemResult(dict):
     @pulumi.getter(name="memorySizeInGbs")
     def memory_size_in_gbs(self) -> int:
         """
-        The amount of memory in GB
+        The amount of memory in gigabytes.
         """
         return pulumi.get(self, "memory_size_in_gbs")
 
@@ -3552,7 +3747,7 @@ class GetShapesShapeCollectionItemResult(dict):
     @pulumi.getter(name="ocpuCount")
     def ocpu_count(self) -> int:
         """
-        The number of OCPUs
+        The number of OCPUs.
         """
         return pulumi.get(self, "ocpu_count")
 
@@ -3560,7 +3755,7 @@ class GetShapesShapeCollectionItemResult(dict):
     @pulumi.getter
     def shape(self) -> str:
         """
-        The Compute Shape Name like VM.Standard.E4.Flex
+        The name of the Compute VM shape. Example: `VM.Standard.E4.Flex`
         """
         return pulumi.get(self, "shape")
 

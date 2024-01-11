@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Psql
         /// <summary>
         /// This data source provides details about a specific Default Configuration resource in Oracle Cloud Infrastructure Psql service.
         /// 
-        /// Gets a Default Configuration by identifier
+        /// Gets a default configuration by identifier.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Psql
         /// <summary>
         /// This data source provides details about a specific Default Configuration resource in Oracle Cloud Infrastructure Psql service.
         /// 
-        /// Gets a Default Configuration by identifier
+        /// Gets a default configuration by identifier.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.Psql
     public sealed class GetDefaultConfigurationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique Configuration identifier
+        /// A unique identifier for the configuration.
         /// </summary>
         [Input("defaultConfigurationId", required: true)]
         public string DefaultConfigurationId { get; set; } = null!;
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.Psql
     public sealed class GetDefaultConfigurationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique Configuration identifier
+        /// A unique identifier for the configuration.
         /// </summary>
         [Input("defaultConfigurationId", required: true)]
         public Input<string> DefaultConfigurationId { get; set; } = null!;
@@ -106,20 +106,20 @@ namespace Pulumi.Oci.Psql
     public sealed class GetDefaultConfigurationResult
     {
         /// <summary>
-        /// List of DB default Configuration Values.
+        /// List of default configuration values for databases.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDefaultConfigurationConfigurationDetailResult> ConfigurationDetails;
         /// <summary>
-        /// Version of the Postgresql DB
+        /// Version of the PostgreSQL database.
         /// </summary>
         public readonly string DbVersion;
         public readonly string DefaultConfigurationId;
         /// <summary>
-        /// Config description
+        /// A description for the configuration.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Config display name
+        /// A user-friendly display name for the configuration.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -127,11 +127,11 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+        /// Memory size in gigabytes with 1GB increment.
         /// </summary>
         public readonly int InstanceMemorySizeInGbs;
         /// <summary>
-        /// CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+        /// CPU core count. Minimum value is 1.
         /// </summary>
         public readonly int InstanceOcpuCount;
         /// <summary>
@@ -139,15 +139,15 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Compute Shape Name like VM.Standard3.Flex.
+        /// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         /// </summary>
         public readonly string Shape;
         /// <summary>
-        /// The current state of the Configuration.
+        /// The current state of the configuration.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// The time Configuration was created. An RFC3339 formatted datetime string
+        /// The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
 

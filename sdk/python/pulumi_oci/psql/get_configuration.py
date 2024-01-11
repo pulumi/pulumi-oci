@@ -79,7 +79,7 @@ class GetConfigurationResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Config compartment identifier
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -87,7 +87,7 @@ class GetConfigurationResult:
     @pulumi.getter(name="configurationDetails")
     def configuration_details(self) -> Sequence['outputs.GetConfigurationConfigurationDetailResult']:
         """
-        List of DB Configuration Values.
+        List of configuration details.
         """
         return pulumi.get(self, "configuration_details")
 
@@ -105,7 +105,7 @@ class GetConfigurationResult:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> str:
         """
-        Version of the Postgresql DB
+        Version of the PostgreSQL database.
         """
         return pulumi.get(self, "db_version")
 
@@ -121,7 +121,7 @@ class GetConfigurationResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        Config description
+        A description for the configuration.
         """
         return pulumi.get(self, "description")
 
@@ -129,7 +129,7 @@ class GetConfigurationResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Config display name
+        A user-friendly display name for the configuration. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -145,7 +145,7 @@ class GetConfigurationResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        Unique identifier that is immutable on creation
+        A unique identifier for the configuration. Immutable on creation.
         """
         return pulumi.get(self, "id")
 
@@ -153,7 +153,7 @@ class GetConfigurationResult:
     @pulumi.getter(name="instanceMemorySizeInGbs")
     def instance_memory_size_in_gbs(self) -> int:
         """
-        Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+        Memory size in gigabytes with 1GB increment.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
@@ -161,7 +161,7 @@ class GetConfigurationResult:
     @pulumi.getter(name="instanceOcpuCount")
     def instance_ocpu_count(self) -> int:
         """
-        CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+        CPU core count.
         """
         return pulumi.get(self, "instance_ocpu_count")
 
@@ -177,7 +177,7 @@ class GetConfigurationResult:
     @pulumi.getter
     def shape(self) -> str:
         """
-        Compute Shape Name like VM.Standard3.Flex.
+        The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         """
         return pulumi.get(self, "shape")
 
@@ -185,7 +185,7 @@ class GetConfigurationResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the Configuration.
+        The current state of the configuration.
         """
         return pulumi.get(self, "state")
 
@@ -201,7 +201,7 @@ class GetConfigurationResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time Configuration was created. An RFC3339 formatted datetime string
+        The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -236,7 +236,7 @@ def get_configuration(configuration_id: Optional[str] = None,
     """
     This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Psql service.
 
-    Gets a Configuration by identifier
+    Gets a configuration by identifier.
 
     ## Example Usage
 
@@ -248,7 +248,7 @@ def get_configuration(configuration_id: Optional[str] = None,
     ```
 
 
-    :param str configuration_id: unique Configuration identifier
+    :param str configuration_id: A unique identifier for the configuration.
     """
     __args__ = dict()
     __args__['configurationId'] = configuration_id
@@ -281,7 +281,7 @@ def get_configuration_output(configuration_id: Optional[pulumi.Input[str]] = Non
     """
     This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Psql service.
 
-    Gets a Configuration by identifier
+    Gets a configuration by identifier.
 
     ## Example Usage
 
@@ -293,6 +293,6 @@ def get_configuration_output(configuration_id: Optional[pulumi.Input[str]] = Non
     ```
 
 
-    :param str configuration_id: unique Configuration identifier
+    :param str configuration_id: A unique identifier for the configuration.
     """
     ...

@@ -64,6 +64,11 @@ public final class GetBdsInstanceNode {
      */
     private String nodeType;
     /**
+     * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    private Integer nvmes;
+    /**
      * @return The total number of OCPUs available to the node.
      * 
      */
@@ -171,6 +176,13 @@ public final class GetBdsInstanceNode {
         return this.nodeType;
     }
     /**
+     * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    public Integer nvmes() {
+        return this.nvmes;
+    }
+    /**
      * @return The total number of OCPUs available to the node.
      * 
      */
@@ -239,6 +251,7 @@ public final class GetBdsInstanceNode {
         private String ipAddress;
         private Integer memoryInGbs;
         private String nodeType;
+        private Integer nvmes;
         private Integer ocpus;
         private String shape;
         private String sshFingerprint;
@@ -259,6 +272,7 @@ public final class GetBdsInstanceNode {
     	      this.ipAddress = defaults.ipAddress;
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.nodeType = defaults.nodeType;
+    	      this.nvmes = defaults.nvmes;
     	      this.ocpus = defaults.ocpus;
     	      this.shape = defaults.shape;
     	      this.sshFingerprint = defaults.sshFingerprint;
@@ -352,6 +366,14 @@ public final class GetBdsInstanceNode {
             return this;
         }
         @CustomType.Setter
+        public Builder nvmes(Integer nvmes) {
+            if (nvmes == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "nvmes");
+            }
+            this.nvmes = nvmes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder ocpus(Integer ocpus) {
             if (ocpus == null) {
               throw new MissingRequiredPropertyException("GetBdsInstanceNode", "ocpus");
@@ -419,6 +441,7 @@ public final class GetBdsInstanceNode {
             _resultValue.ipAddress = ipAddress;
             _resultValue.memoryInGbs = memoryInGbs;
             _resultValue.nodeType = nodeType;
+            _resultValue.nvmes = nvmes;
             _resultValue.ocpus = ocpus;
             _resultValue.shape = shape;
             _resultValue.sshFingerprint = sshFingerprint;

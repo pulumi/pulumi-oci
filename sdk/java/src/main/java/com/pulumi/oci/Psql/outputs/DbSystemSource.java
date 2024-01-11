@@ -14,12 +14,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DbSystemSource {
     /**
-     * @return DbSystem backup identifier.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
      * 
      */
     private @Nullable String backupId;
     /**
-     * @return Restore the DB config overrides from backup. Default is false
+     * @return Deprecated. Don&#39;t use.
      * 
      */
     private @Nullable Boolean isHavingRestoreConfigOverrides;
@@ -31,14 +31,14 @@ public final class DbSystemSource {
 
     private DbSystemSource() {}
     /**
-     * @return DbSystem backup identifier.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
      * 
      */
     public Optional<String> backupId() {
         return Optional.ofNullable(this.backupId);
     }
     /**
-     * @return Restore the DB config overrides from backup. Default is false
+     * @return Deprecated. Don&#39;t use.
      * 
      */
     public Optional<Boolean> isHavingRestoreConfigOverrides() {

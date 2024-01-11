@@ -18,14 +18,14 @@ public final class GetBackupsArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetBackupsArgs Empty = new GetBackupsArgs();
 
     /**
-     * unique Backup identifier
+     * A unique identifier for the backup.
      * 
      */
     @Import(name="backupId")
     private @Nullable Output<String> backupId;
 
     /**
-     * @return unique Backup identifier
+     * @return A unique identifier for the backup.
      * 
      */
     public Optional<Output<String>> backupId() {
@@ -70,14 +70,14 @@ public final class GetBackupsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * unique DbSystem identifier
+     * A unique identifier for the database system.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return unique DbSystem identifier
+     * @return A unique identifier for the database system.
      * 
      */
     public Optional<Output<String>> id() {
@@ -85,14 +85,14 @@ public final class GetBackupsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      * 
      */
     public Optional<Output<String>> state() {
@@ -100,14 +100,14 @@ public final class GetBackupsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The End date for getting  backups. An RFC3339 formatted datetime string.
+     * The end date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
      * 
      */
     @Import(name="timeEnded")
     private @Nullable Output<String> timeEnded;
 
     /**
-     * @return The End date for getting  backups. An RFC3339 formatted datetime string.
+     * @return The end date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeEnded() {
@@ -115,14 +115,14 @@ public final class GetBackupsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The start date for getting  backups. An RFC3339 formatted datetime string
+     * The start date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
      * 
      */
     @Import(name="timeStarted")
     private @Nullable Output<String> timeStarted;
 
     /**
-     * @return The start date for getting  backups. An RFC3339 formatted datetime string
+     * @return The start date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeStarted() {
@@ -161,7 +161,7 @@ public final class GetBackupsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param backupId unique Backup identifier
+         * @param backupId A unique identifier for the backup.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class GetBackupsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param backupId unique Backup identifier
+         * @param backupId A unique identifier for the backup.
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class GetBackupsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param id unique DbSystem identifier
+         * @param id A unique identifier for the database system.
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class GetBackupsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param id unique DbSystem identifier
+         * @param id A unique identifier for the database system.
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class GetBackupsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class GetBackupsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class GetBackupsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param timeEnded The End date for getting  backups. An RFC3339 formatted datetime string.
+         * @param timeEnded The end date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class GetBackupsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param timeEnded The End date for getting  backups. An RFC3339 formatted datetime string.
+         * @param timeEnded The end date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
          * 
          * @return builder
          * 
@@ -300,7 +300,7 @@ public final class GetBackupsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param timeStarted The start date for getting  backups. An RFC3339 formatted datetime string
+         * @param timeStarted The start date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
          * 
          * @return builder
          * 
@@ -311,7 +311,7 @@ public final class GetBackupsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param timeStarted The start date for getting  backups. An RFC3339 formatted datetime string
+         * @param timeStarted The start date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
          * 
          * @return builder
          * 

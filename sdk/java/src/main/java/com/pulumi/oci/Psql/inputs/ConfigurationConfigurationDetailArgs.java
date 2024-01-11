@@ -17,14 +17,14 @@ public final class ConfigurationConfigurationDetailArgs extends com.pulumi.resou
     public static final ConfigurationConfigurationDetailArgs Empty = new ConfigurationConfigurationDetailArgs();
 
     /**
-     * List of configuration overriden values
+     * List of configuration overridden values.
      * 
      */
     @Import(name="items")
     private @Nullable Output<List<ConfigurationConfigurationDetailItemArgs>> items;
 
     /**
-     * @return List of configuration overriden values
+     * @return List of configuration overridden values.
      * 
      */
     public Optional<Output<List<ConfigurationConfigurationDetailItemArgs>>> items() {
@@ -56,7 +56,7 @@ public final class ConfigurationConfigurationDetailArgs extends com.pulumi.resou
         }
 
         /**
-         * @param items List of configuration overriden values
+         * @param items List of configuration overridden values.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class ConfigurationConfigurationDetailArgs extends com.pulumi.resou
         }
 
         /**
-         * @param items List of configuration overriden values
+         * @param items List of configuration overridden values.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class ConfigurationConfigurationDetailArgs extends com.pulumi.resou
         }
 
         /**
-         * @param items List of configuration overriden values
+         * @param items List of configuration overridden values.
          * 
          * @return builder
          * 

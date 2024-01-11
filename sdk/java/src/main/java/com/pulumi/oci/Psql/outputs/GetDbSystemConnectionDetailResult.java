@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDbSystemConnectionDetailResult {
     /**
-     * @return The CA certificate to be used by the Posgresql client to connect to the database. The CA certificate is used to authenticate the server identity.  It is issued by PostgreSQL Service Private CA.
+     * @return The CA certificate to be used by the PosgreSQL client to connect to the database. The CA certificate is used to authenticate the server identity.  It is issued by PostgreSQL Service Private CA.
      * 
      */
     private String caCertificate;
@@ -25,19 +25,19 @@ public final class GetDbSystemConnectionDetailResult {
      */
     private String id;
     /**
-     * @return The list of DbInstance endpoints in the DbSystem.
+     * @return The list of database instance node endpoints in the database system.
      * 
      */
     private List<GetDbSystemConnectionDetailInstanceEndpoint> instanceEndpoints;
     /**
-     * @return The node endpoint information.
+     * @return Information about the database instance node endpoint.
      * 
      */
     private List<GetDbSystemConnectionDetailPrimaryDbEndpoint> primaryDbEndpoints;
 
     private GetDbSystemConnectionDetailResult() {}
     /**
-     * @return The CA certificate to be used by the Posgresql client to connect to the database. The CA certificate is used to authenticate the server identity.  It is issued by PostgreSQL Service Private CA.
+     * @return The CA certificate to be used by the PosgreSQL client to connect to the database. The CA certificate is used to authenticate the server identity.  It is issued by PostgreSQL Service Private CA.
      * 
      */
     public String caCertificate() {
@@ -54,14 +54,14 @@ public final class GetDbSystemConnectionDetailResult {
         return this.id;
     }
     /**
-     * @return The list of DbInstance endpoints in the DbSystem.
+     * @return The list of database instance node endpoints in the database system.
      * 
      */
     public List<GetDbSystemConnectionDetailInstanceEndpoint> instanceEndpoints() {
         return this.instanceEndpoints;
     }
     /**
-     * @return The node endpoint information.
+     * @return Information about the database instance node endpoint.
      * 
      */
     public List<GetDbSystemConnectionDetailPrimaryDbEndpoint> primaryDbEndpoints() {

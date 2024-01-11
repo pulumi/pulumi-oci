@@ -14,14 +14,14 @@ public final class GetConfigurationPlainArgs extends com.pulumi.resources.Invoke
     public static final GetConfigurationPlainArgs Empty = new GetConfigurationPlainArgs();
 
     /**
-     * unique Configuration identifier
+     * A unique identifier for the configuration.
      * 
      */
     @Import(name="configurationId", required=true)
     private String configurationId;
 
     /**
-     * @return unique Configuration identifier
+     * @return A unique identifier for the configuration.
      * 
      */
     public String configurationId() {
@@ -53,7 +53,7 @@ public final class GetConfigurationPlainArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param configurationId unique Configuration identifier
+         * @param configurationId A unique identifier for the configuration.
          * 
          * @return builder
          * 

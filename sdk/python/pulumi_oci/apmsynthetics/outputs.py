@@ -29,6 +29,11 @@ __all__ = [
     'ConfigVantagePoint',
     'DedicatedVantagePointDvpStackDetails',
     'DedicatedVantagePointMonitorStatusCountMap',
+    'OnPremiseVantagePointWorkerIdentityInfo',
+    'OnPremiseVantagePointWorkerMonitorList',
+    'OnPremiseVantagePointWorkerVersionDetail',
+    'OnPremiseVantagePointWorkersSummary',
+    'OnPremiseVantagePointWorkersSummaryAvailableCapability',
     'ScriptMonitorStatusCountMap',
     'ScriptParameter',
     'ScriptParameterScriptParameter',
@@ -74,6 +79,22 @@ __all__ = [
     'GetMonitorsMonitorCollectionItemScriptParameterResult',
     'GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterResult',
     'GetMonitorsMonitorCollectionItemVantagePointResult',
+    'GetOnPremiseVantagePointWorkerIdentityInfoResult',
+    'GetOnPremiseVantagePointWorkerMonitorListResult',
+    'GetOnPremiseVantagePointWorkerVersionDetailResult',
+    'GetOnPremiseVantagePointWorkersFilterResult',
+    'GetOnPremiseVantagePointWorkersSummaryResult',
+    'GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityResult',
+    'GetOnPremiseVantagePointWorkersWorkerCollectionResult',
+    'GetOnPremiseVantagePointWorkersWorkerCollectionItemResult',
+    'GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoResult',
+    'GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListResult',
+    'GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailResult',
+    'GetOnPremiseVantagePointsFilterResult',
+    'GetOnPremiseVantagePointsOnPremiseVantagePointCollectionResult',
+    'GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemResult',
+    'GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryResult',
+    'GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityResult',
     'GetResultResultDataSetResult',
     'GetScriptMonitorStatusCountMapResult',
     'GetScriptParameterResult',
@@ -159,10 +180,16 @@ class ConfigConfiguration(dict):
             suggest = "is_default_snapshot_enabled"
         elif key == "isFailureRetried":
             suggest = "is_failure_retried"
+        elif key == "isQueryRecursive":
+            suggest = "is_query_recursive"
         elif key == "isRedirectionEnabled":
             suggest = "is_redirection_enabled"
+        elif key == "nameServer":
+            suggest = "name_server"
         elif key == "networkConfiguration":
             suggest = "network_configuration"
+        elif key == "recordType":
+            suggest = "record_type"
         elif key == "reqAuthenticationDetails":
             suggest = "req_authentication_details"
         elif key == "reqAuthenticationScheme":
@@ -200,8 +227,12 @@ class ConfigConfiguration(dict):
                  is_certificate_validation_enabled: Optional[bool] = None,
                  is_default_snapshot_enabled: Optional[bool] = None,
                  is_failure_retried: Optional[bool] = None,
+                 is_query_recursive: Optional[bool] = None,
                  is_redirection_enabled: Optional[bool] = None,
+                 name_server: Optional[str] = None,
                  network_configuration: Optional['outputs.ConfigConfigurationNetworkConfiguration'] = None,
+                 protocol: Optional[str] = None,
+                 record_type: Optional[str] = None,
                  req_authentication_details: Optional['outputs.ConfigConfigurationReqAuthenticationDetails'] = None,
                  req_authentication_scheme: Optional[str] = None,
                  request_headers: Optional[Sequence['outputs.ConfigConfigurationRequestHeader']] = None,
@@ -218,8 +249,12 @@ class ConfigConfiguration(dict):
         :param bool is_certificate_validation_enabled: (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
         :param bool is_default_snapshot_enabled: (Updatable) If disabled, auto snapshots are not collected.
         :param bool is_failure_retried: (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
+        :param bool is_query_recursive: (Updatable) If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
         :param bool is_redirection_enabled: (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
-        :param 'ConfigConfigurationNetworkConfigurationArgs' network_configuration: (Updatable) Details of the network configuration.
+        :param str name_server: (Updatable) Name of the server that will be used to perform DNS lookup.
+        :param 'ConfigConfigurationNetworkConfigurationArgs' network_configuration: (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
+        :param str protocol: (Updatable) Type of protocol.
+        :param str record_type: (Updatable) DNS record type.
         :param 'ConfigConfigurationReqAuthenticationDetailsArgs' req_authentication_details: (Updatable) Details for request HTTP authentication.
         :param str req_authentication_scheme: (Updatable) Request HTTP authentication scheme.
         :param Sequence['ConfigConfigurationRequestHeaderArgs'] request_headers: (Updatable) List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
@@ -242,10 +277,18 @@ class ConfigConfiguration(dict):
             pulumi.set(__self__, "is_default_snapshot_enabled", is_default_snapshot_enabled)
         if is_failure_retried is not None:
             pulumi.set(__self__, "is_failure_retried", is_failure_retried)
+        if is_query_recursive is not None:
+            pulumi.set(__self__, "is_query_recursive", is_query_recursive)
         if is_redirection_enabled is not None:
             pulumi.set(__self__, "is_redirection_enabled", is_redirection_enabled)
+        if name_server is not None:
+            pulumi.set(__self__, "name_server", name_server)
         if network_configuration is not None:
             pulumi.set(__self__, "network_configuration", network_configuration)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if record_type is not None:
+            pulumi.set(__self__, "record_type", record_type)
         if req_authentication_details is not None:
             pulumi.set(__self__, "req_authentication_details", req_authentication_details)
         if req_authentication_scheme is not None:
@@ -314,6 +357,14 @@ class ConfigConfiguration(dict):
         return pulumi.get(self, "is_failure_retried")
 
     @property
+    @pulumi.getter(name="isQueryRecursive")
+    def is_query_recursive(self) -> Optional[bool]:
+        """
+        (Updatable) If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+        """
+        return pulumi.get(self, "is_query_recursive")
+
+    @property
     @pulumi.getter(name="isRedirectionEnabled")
     def is_redirection_enabled(self) -> Optional[bool]:
         """
@@ -322,12 +373,36 @@ class ConfigConfiguration(dict):
         return pulumi.get(self, "is_redirection_enabled")
 
     @property
+    @pulumi.getter(name="nameServer")
+    def name_server(self) -> Optional[str]:
+        """
+        (Updatable) Name of the server that will be used to perform DNS lookup.
+        """
+        return pulumi.get(self, "name_server")
+
+    @property
     @pulumi.getter(name="networkConfiguration")
     def network_configuration(self) -> Optional['outputs.ConfigConfigurationNetworkConfiguration']:
         """
-        (Updatable) Details of the network configuration.
+        (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
         """
         return pulumi.get(self, "network_configuration")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[str]:
+        """
+        (Updatable) Type of protocol.
+        """
+        return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter(name="recordType")
+    def record_type(self) -> Optional[str]:
+        """
+        (Updatable) DNS record type.
+        """
+        return pulumi.get(self, "record_type")
 
     @property
     @pulumi.getter(name="reqAuthenticationDetails")
@@ -1358,6 +1433,368 @@ class DedicatedVantagePointMonitorStatusCountMap(dict):
 
 
 @pulumi.output_type
+class OnPremiseVantagePointWorkerIdentityInfo(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "apmShortId":
+            suggest = "apm_short_id"
+        elif key == "collectorEndPoint":
+            suggest = "collector_end_point"
+        elif key == "regionName":
+            suggest = "region_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OnPremiseVantagePointWorkerIdentityInfo. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OnPremiseVantagePointWorkerIdentityInfo.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OnPremiseVantagePointWorkerIdentityInfo.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 apm_short_id: Optional[str] = None,
+                 collector_end_point: Optional[str] = None,
+                 region_name: Optional[str] = None):
+        """
+        :param str apm_short_id: Domain short id of the On-premise VP worker.
+        :param str collector_end_point: Collector endpoint of the On-premise VP worker.
+        :param str region_name: Domain region of the On-premise VP worker.
+        """
+        if apm_short_id is not None:
+            pulumi.set(__self__, "apm_short_id", apm_short_id)
+        if collector_end_point is not None:
+            pulumi.set(__self__, "collector_end_point", collector_end_point)
+        if region_name is not None:
+            pulumi.set(__self__, "region_name", region_name)
+
+    @property
+    @pulumi.getter(name="apmShortId")
+    def apm_short_id(self) -> Optional[str]:
+        """
+        Domain short id of the On-premise VP worker.
+        """
+        return pulumi.get(self, "apm_short_id")
+
+    @property
+    @pulumi.getter(name="collectorEndPoint")
+    def collector_end_point(self) -> Optional[str]:
+        """
+        Collector endpoint of the On-premise VP worker.
+        """
+        return pulumi.get(self, "collector_end_point")
+
+    @property
+    @pulumi.getter(name="regionName")
+    def region_name(self) -> Optional[str]:
+        """
+        Domain region of the On-premise VP worker.
+        """
+        return pulumi.get(self, "region_name")
+
+
+@pulumi.output_type
+class OnPremiseVantagePointWorkerMonitorList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+        elif key == "isRunNow":
+            suggest = "is_run_now"
+        elif key == "monitorType":
+            suggest = "monitor_type"
+        elif key == "timeAssigned":
+            suggest = "time_assigned"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OnPremiseVantagePointWorkerMonitorList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OnPremiseVantagePointWorkerMonitorList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OnPremiseVantagePointWorkerMonitorList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 is_run_now: Optional[bool] = None,
+                 monitor_type: Optional[str] = None,
+                 time_assigned: Optional[str] = None):
+        """
+        :param str display_name: Unique name that can be edited. The name should not contain any confidential information.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+        :param bool is_run_now: If isRunNow is enabled, then the monitor will run immediately.
+        :param str monitor_type: Type of monitor.
+        :param str time_assigned: The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_run_now is not None:
+            pulumi.set(__self__, "is_run_now", is_run_now)
+        if monitor_type is not None:
+            pulumi.set(__self__, "monitor_type", monitor_type)
+        if time_assigned is not None:
+            pulumi.set(__self__, "time_assigned", time_assigned)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        Unique name that can be edited. The name should not contain any confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isRunNow")
+    def is_run_now(self) -> Optional[bool]:
+        """
+        If isRunNow is enabled, then the monitor will run immediately.
+        """
+        return pulumi.get(self, "is_run_now")
+
+    @property
+    @pulumi.getter(name="monitorType")
+    def monitor_type(self) -> Optional[str]:
+        """
+        Type of monitor.
+        """
+        return pulumi.get(self, "monitor_type")
+
+    @property
+    @pulumi.getter(name="timeAssigned")
+    def time_assigned(self) -> Optional[str]:
+        """
+        The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_assigned")
+
+
+@pulumi.output_type
+class OnPremiseVantagePointWorkerVersionDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "latestVersion":
+            suggest = "latest_version"
+        elif key == "minSupportedVersion":
+            suggest = "min_supported_version"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OnPremiseVantagePointWorkerVersionDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OnPremiseVantagePointWorkerVersionDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OnPremiseVantagePointWorkerVersionDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 latest_version: Optional[str] = None,
+                 min_supported_version: Optional[str] = None,
+                 version: Optional[str] = None):
+        """
+        :param str latest_version: Latest image version of the On-premise VP worker.
+        :param str min_supported_version: Minimum supported image version of the On-premise VP worker.
+        :param str version: Image version of the On-premise VP worker.
+        """
+        if latest_version is not None:
+            pulumi.set(__self__, "latest_version", latest_version)
+        if min_supported_version is not None:
+            pulumi.set(__self__, "min_supported_version", min_supported_version)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="latestVersion")
+    def latest_version(self) -> Optional[str]:
+        """
+        Latest image version of the On-premise VP worker.
+        """
+        return pulumi.get(self, "latest_version")
+
+    @property
+    @pulumi.getter(name="minSupportedVersion")
+    def min_supported_version(self) -> Optional[str]:
+        """
+        Minimum supported image version of the On-premise VP worker.
+        """
+        return pulumi.get(self, "min_supported_version")
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[str]:
+        """
+        Image version of the On-premise VP worker.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class OnPremiseVantagePointWorkersSummary(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "availableCapabilities":
+            suggest = "available_capabilities"
+        elif key == "minVersion":
+            suggest = "min_version"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OnPremiseVantagePointWorkersSummary. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OnPremiseVantagePointWorkersSummary.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OnPremiseVantagePointWorkersSummary.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 available: Optional[int] = None,
+                 available_capabilities: Optional[Sequence['outputs.OnPremiseVantagePointWorkersSummaryAvailableCapability']] = None,
+                 disabled: Optional[int] = None,
+                 min_version: Optional[str] = None,
+                 total: Optional[int] = None,
+                 used: Optional[int] = None):
+        """
+        :param int available: Number of available workers in a specific On-premise vantage point.
+        :param Sequence['OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs'] available_capabilities: List of available capabilities in a specific On-premise vantage point.
+        :param int disabled: Number of disabled workers in a specific On-premise vantage point.
+        :param str min_version: Minimum version among the workers in a specific On-premise vantage point.
+        :param int total: Total number of workers in a specific On-premise vantage point.
+        :param int used: Number of occupied workers in a specific On-premise vantage point.
+        """
+        if available is not None:
+            pulumi.set(__self__, "available", available)
+        if available_capabilities is not None:
+            pulumi.set(__self__, "available_capabilities", available_capabilities)
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if min_version is not None:
+            pulumi.set(__self__, "min_version", min_version)
+        if total is not None:
+            pulumi.set(__self__, "total", total)
+        if used is not None:
+            pulumi.set(__self__, "used", used)
+
+    @property
+    @pulumi.getter
+    def available(self) -> Optional[int]:
+        """
+        Number of available workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "available")
+
+    @property
+    @pulumi.getter(name="availableCapabilities")
+    def available_capabilities(self) -> Optional[Sequence['outputs.OnPremiseVantagePointWorkersSummaryAvailableCapability']]:
+        """
+        List of available capabilities in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "available_capabilities")
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> Optional[int]:
+        """
+        Number of disabled workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "disabled")
+
+    @property
+    @pulumi.getter(name="minVersion")
+    def min_version(self) -> Optional[str]:
+        """
+        Minimum version among the workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "min_version")
+
+    @property
+    @pulumi.getter
+    def total(self) -> Optional[int]:
+        """
+        Total number of workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "total")
+
+    @property
+    @pulumi.getter
+    def used(self) -> Optional[int]:
+        """
+        Number of occupied workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "used")
+
+
+@pulumi.output_type
+class OnPremiseVantagePointWorkersSummaryAvailableCapability(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "onPremiseVantagePointCount":
+            suggest = "on_premise_vantage_point_count"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OnPremiseVantagePointWorkersSummaryAvailableCapability. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OnPremiseVantagePointWorkersSummaryAvailableCapability.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OnPremiseVantagePointWorkersSummaryAvailableCapability.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 capability: Optional[str] = None,
+                 on_premise_vantage_point_count: Optional[int] = None):
+        """
+        :param str capability: Capability of an On-premise vantage point worker.
+        :param int on_premise_vantage_point_count: Count of available capability in a specific On-premise vantage point.
+        """
+        if capability is not None:
+            pulumi.set(__self__, "capability", capability)
+        if on_premise_vantage_point_count is not None:
+            pulumi.set(__self__, "on_premise_vantage_point_count", on_premise_vantage_point_count)
+
+    @property
+    @pulumi.getter
+    def capability(self) -> Optional[str]:
+        """
+        Capability of an On-premise vantage point worker.
+        """
+        return pulumi.get(self, "capability")
+
+    @property
+    @pulumi.getter(name="onPremiseVantagePointCount")
+    def on_premise_vantage_point_count(self) -> Optional[int]:
+        """
+        Count of available capability in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "on_premise_vantage_point_count")
+
+
+@pulumi.output_type
 class ScriptMonitorStatusCountMap(dict):
     def __init__(__self__, *,
                  disabled: Optional[int] = None,
@@ -2009,8 +2446,12 @@ class GetMonitorConfigurationResult(dict):
                  is_certificate_validation_enabled: bool,
                  is_default_snapshot_enabled: bool,
                  is_failure_retried: bool,
+                 is_query_recursive: bool,
                  is_redirection_enabled: bool,
+                 name_server: str,
                  network_configurations: Sequence['outputs.GetMonitorConfigurationNetworkConfigurationResult'],
+                 protocol: str,
+                 record_type: str,
                  req_authentication_details: Sequence['outputs.GetMonitorConfigurationReqAuthenticationDetailResult'],
                  req_authentication_scheme: str,
                  request_headers: Sequence['outputs.GetMonitorConfigurationRequestHeaderResult'],
@@ -2027,8 +2468,12 @@ class GetMonitorConfigurationResult(dict):
         :param bool is_certificate_validation_enabled: If certificate validation is enabled, then the call will fail in case of certification errors.
         :param bool is_default_snapshot_enabled: If disabled, auto snapshots are not collected.
         :param bool is_failure_retried: If isFailureRetried is enabled, then a failed call will be retried.
+        :param bool is_query_recursive: If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
         :param bool is_redirection_enabled: If redirection is enabled, then redirects will be allowed while accessing target URL.
-        :param Sequence['GetMonitorConfigurationNetworkConfigurationArgs'] network_configurations: Details of the network configuration.
+        :param str name_server: Name of the server that will be used to perform DNS lookup.
+        :param Sequence['GetMonitorConfigurationNetworkConfigurationArgs'] network_configurations: Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
+        :param str protocol: Type of protocol.
+        :param str record_type: DNS record type.
         :param Sequence['GetMonitorConfigurationReqAuthenticationDetailArgs'] req_authentication_details: Details for request HTTP authentication.
         :param str req_authentication_scheme: Request HTTP authentication scheme.
         :param Sequence['GetMonitorConfigurationRequestHeaderArgs'] request_headers: List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
@@ -2045,8 +2490,12 @@ class GetMonitorConfigurationResult(dict):
         pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
         pulumi.set(__self__, "is_default_snapshot_enabled", is_default_snapshot_enabled)
         pulumi.set(__self__, "is_failure_retried", is_failure_retried)
+        pulumi.set(__self__, "is_query_recursive", is_query_recursive)
         pulumi.set(__self__, "is_redirection_enabled", is_redirection_enabled)
+        pulumi.set(__self__, "name_server", name_server)
         pulumi.set(__self__, "network_configurations", network_configurations)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "record_type", record_type)
         pulumi.set(__self__, "req_authentication_details", req_authentication_details)
         pulumi.set(__self__, "req_authentication_scheme", req_authentication_scheme)
         pulumi.set(__self__, "request_headers", request_headers)
@@ -2106,6 +2555,14 @@ class GetMonitorConfigurationResult(dict):
         return pulumi.get(self, "is_failure_retried")
 
     @property
+    @pulumi.getter(name="isQueryRecursive")
+    def is_query_recursive(self) -> bool:
+        """
+        If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+        """
+        return pulumi.get(self, "is_query_recursive")
+
+    @property
     @pulumi.getter(name="isRedirectionEnabled")
     def is_redirection_enabled(self) -> bool:
         """
@@ -2114,12 +2571,36 @@ class GetMonitorConfigurationResult(dict):
         return pulumi.get(self, "is_redirection_enabled")
 
     @property
+    @pulumi.getter(name="nameServer")
+    def name_server(self) -> str:
+        """
+        Name of the server that will be used to perform DNS lookup.
+        """
+        return pulumi.get(self, "name_server")
+
+    @property
     @pulumi.getter(name="networkConfigurations")
     def network_configurations(self) -> Sequence['outputs.GetMonitorConfigurationNetworkConfigurationResult']:
         """
-        Details of the network configuration.
+        Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
         """
         return pulumi.get(self, "network_configurations")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> str:
+        """
+        Type of protocol.
+        """
+        return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter(name="recordType")
+    def record_type(self) -> str:
+        """
+        DNS record type.
+        """
+        return pulumi.get(self, "record_type")
 
     @property
     @pulumi.getter(name="reqAuthenticationDetails")
@@ -2805,14 +3286,14 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         :param bool is_run_now: If isRunNow is enabled, then the monitor will run immediately.
         :param bool is_run_once: If runOnce is enabled, then the monitor will run once.
         :param Sequence['GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs'] maintenance_window_schedules: Details required to schedule maintenance window.
-        :param str monitor_type: A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
+        :param str monitor_type: A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
         :param int repeat_interval_in_seconds: Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         :param str scheduling_policy: Scheduling policy to decide the distribution of monitor executions on vantage points.
         :param str script_id: A filter to return only monitors using scriptId.
         :param str script_name: Name of the script.
         :param Sequence['GetMonitorsMonitorCollectionItemScriptParameterArgs'] script_parameters: List of script parameters. Example: `[{"monitorScriptParameter": {"paramName": "userid", "paramValue":"testuser"}, "isSecret": false, "isOverwritten": false}]`
         :param str status: A filter to return only monitors that match the status given.
-        :param str target: Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        :param str target: Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
         :param str time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         :param int timeout_in_seconds: Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
@@ -2936,7 +3417,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
     @pulumi.getter(name="monitorType")
     def monitor_type(self) -> str:
         """
-        A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
+        A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
         """
         return pulumi.get(self, "monitor_type")
 
@@ -2992,7 +3473,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
     @pulumi.getter
     def target(self) -> str:
         """
-        Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
         """
         return pulumi.get(self, "target")
 
@@ -3075,8 +3556,12 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
                  is_certificate_validation_enabled: bool,
                  is_default_snapshot_enabled: bool,
                  is_failure_retried: bool,
+                 is_query_recursive: bool,
                  is_redirection_enabled: bool,
+                 name_server: str,
                  network_configurations: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationResult'],
+                 protocol: str,
+                 record_type: str,
                  req_authentication_details: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailResult'],
                  req_authentication_scheme: str,
                  request_headers: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationRequestHeaderResult'],
@@ -3093,8 +3578,12 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         :param bool is_certificate_validation_enabled: If certificate validation is enabled, then the call will fail in case of certification errors.
         :param bool is_default_snapshot_enabled: If disabled, auto snapshots are not collected.
         :param bool is_failure_retried: If isFailureRetried is enabled, then a failed call will be retried.
+        :param bool is_query_recursive: If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
         :param bool is_redirection_enabled: If redirection is enabled, then redirects will be allowed while accessing target URL.
-        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs'] network_configurations: Details of the network configuration.
+        :param str name_server: Name of the server that will be used to perform DNS lookup.
+        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs'] network_configurations: Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
+        :param str protocol: Type of protocol.
+        :param str record_type: DNS record type.
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArgs'] req_authentication_details: Details for request HTTP authentication.
         :param str req_authentication_scheme: Request HTTP authentication scheme.
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArgs'] request_headers: List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
@@ -3111,8 +3600,12 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
         pulumi.set(__self__, "is_default_snapshot_enabled", is_default_snapshot_enabled)
         pulumi.set(__self__, "is_failure_retried", is_failure_retried)
+        pulumi.set(__self__, "is_query_recursive", is_query_recursive)
         pulumi.set(__self__, "is_redirection_enabled", is_redirection_enabled)
+        pulumi.set(__self__, "name_server", name_server)
         pulumi.set(__self__, "network_configurations", network_configurations)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "record_type", record_type)
         pulumi.set(__self__, "req_authentication_details", req_authentication_details)
         pulumi.set(__self__, "req_authentication_scheme", req_authentication_scheme)
         pulumi.set(__self__, "request_headers", request_headers)
@@ -3172,6 +3665,14 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         return pulumi.get(self, "is_failure_retried")
 
     @property
+    @pulumi.getter(name="isQueryRecursive")
+    def is_query_recursive(self) -> bool:
+        """
+        If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+        """
+        return pulumi.get(self, "is_query_recursive")
+
+    @property
     @pulumi.getter(name="isRedirectionEnabled")
     def is_redirection_enabled(self) -> bool:
         """
@@ -3180,12 +3681,36 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         return pulumi.get(self, "is_redirection_enabled")
 
     @property
+    @pulumi.getter(name="nameServer")
+    def name_server(self) -> str:
+        """
+        Name of the server that will be used to perform DNS lookup.
+        """
+        return pulumi.get(self, "name_server")
+
+    @property
     @pulumi.getter(name="networkConfigurations")
     def network_configurations(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationResult']:
         """
-        Details of the network configuration.
+        Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
         """
         return pulumi.get(self, "network_configurations")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> str:
+        """
+        Type of protocol.
+        """
+        return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter(name="recordType")
+    def record_type(self) -> str:
+        """
+        DNS record type.
+        """
+        return pulumi.get(self, "record_type")
 
     @property
     @pulumi.getter(name="reqAuthenticationDetails")
@@ -3785,6 +4310,968 @@ class GetMonitorsMonitorCollectionItemVantagePointResult(dict):
         Name of the vantage point.
         """
         return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetOnPremiseVantagePointWorkerIdentityInfoResult(dict):
+    def __init__(__self__, *,
+                 apm_short_id: str,
+                 collector_end_point: str,
+                 region_name: str):
+        """
+        :param str apm_short_id: Domain short id of the On-premise VP worker.
+        :param str collector_end_point: Collector endpoint of the On-premise VP worker.
+        :param str region_name: Domain region of the On-premise VP worker.
+        """
+        pulumi.set(__self__, "apm_short_id", apm_short_id)
+        pulumi.set(__self__, "collector_end_point", collector_end_point)
+        pulumi.set(__self__, "region_name", region_name)
+
+    @property
+    @pulumi.getter(name="apmShortId")
+    def apm_short_id(self) -> str:
+        """
+        Domain short id of the On-premise VP worker.
+        """
+        return pulumi.get(self, "apm_short_id")
+
+    @property
+    @pulumi.getter(name="collectorEndPoint")
+    def collector_end_point(self) -> str:
+        """
+        Collector endpoint of the On-premise VP worker.
+        """
+        return pulumi.get(self, "collector_end_point")
+
+    @property
+    @pulumi.getter(name="regionName")
+    def region_name(self) -> str:
+        """
+        Domain region of the On-premise VP worker.
+        """
+        return pulumi.get(self, "region_name")
+
+
+@pulumi.output_type
+class GetOnPremiseVantagePointWorkerMonitorListResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str,
+                 is_run_now: bool,
+                 monitor_type: str,
+                 time_assigned: str):
+        """
+        :param str display_name: Unique name that can be edited. The name should not contain any confidential information.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+        :param bool is_run_now: If isRunNow is enabled, then the monitor will run immediately.
+        :param str monitor_type: Type of monitor.
+        :param str time_assigned: The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_run_now", is_run_now)
+        pulumi.set(__self__, "monitor_type", monitor_type)
+        pulumi.set(__self__, "time_assigned", time_assigned)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        Unique name that can be edited. The name should not contain any confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isRunNow")
+    def is_run_now(self) -> bool:
+        """
+        If isRunNow is enabled, then the monitor will run immediately.
+        """
+        return pulumi.get(self, "is_run_now")
+
+    @property
+    @pulumi.getter(name="monitorType")
+    def monitor_type(self) -> str:
+        """
+        Type of monitor.
+        """
+        return pulumi.get(self, "monitor_type")
+
+    @property
+    @pulumi.getter(name="timeAssigned")
+    def time_assigned(self) -> str:
+        """
+        The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_assigned")
+
+
+@pulumi.output_type
+class GetOnPremiseVantagePointWorkerVersionDetailResult(dict):
+    def __init__(__self__, *,
+                 latest_version: str,
+                 min_supported_version: str,
+                 version: str):
+        """
+        :param str latest_version: Latest image version of the On-premise VP worker.
+        :param str min_supported_version: Minimum supported image version of the On-premise VP worker.
+        :param str version: Current image version of the On-premise VP worker.
+        """
+        pulumi.set(__self__, "latest_version", latest_version)
+        pulumi.set(__self__, "min_supported_version", min_supported_version)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="latestVersion")
+    def latest_version(self) -> str:
+        """
+        Latest image version of the On-premise VP worker.
+        """
+        return pulumi.get(self, "latest_version")
+
+    @property
+    @pulumi.getter(name="minSupportedVersion")
+    def min_supported_version(self) -> str:
+        """
+        Minimum supported image version of the On-premise VP worker.
+        """
+        return pulumi.get(self, "min_supported_version")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        Current image version of the On-premise VP worker.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetOnPremiseVantagePointWorkersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to return only the resources that match the entire name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only the resources that match the entire name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetOnPremiseVantagePointWorkersSummaryResult(dict):
+    def __init__(__self__, *,
+                 available: int,
+                 available_capabilities: Sequence['outputs.GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityResult'],
+                 disabled: int,
+                 min_version: str,
+                 total: int,
+                 used: int):
+        """
+        :param int available: Number of available workers in a specific On-premise vantage point.
+        :param Sequence['GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs'] available_capabilities: List of available capabilities in a specific On-premise vantage point.
+        :param int disabled: Number of disabled workers in a specific On-premise vantage point.
+        :param str min_version: Minimum version among the workers in a specific On-premise vantage point.
+        :param int total: Total number of workers in a specific On-premise vantage point.
+        :param int used: Number of occupied workers in a specific On-premise vantage point.
+        """
+        pulumi.set(__self__, "available", available)
+        pulumi.set(__self__, "available_capabilities", available_capabilities)
+        pulumi.set(__self__, "disabled", disabled)
+        pulumi.set(__self__, "min_version", min_version)
+        pulumi.set(__self__, "total", total)
+        pulumi.set(__self__, "used", used)
+
+    @property
+    @pulumi.getter
+    def available(self) -> int:
+        """
+        Number of available workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "available")
+
+    @property
+    @pulumi.getter(name="availableCapabilities")
+    def available_capabilities(self) -> Sequence['outputs.GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityResult']:
+        """
+        List of available capabilities in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "available_capabilities")
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> int:
+        """
+        Number of disabled workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "disabled")
+
+    @property
+    @pulumi.getter(name="minVersion")
+    def min_version(self) -> str:
+        """
+        Minimum version among the workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "min_version")
+
+    @property
+    @pulumi.getter
+    def total(self) -> int:
+        """
+        Total number of workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "total")
+
+    @property
+    @pulumi.getter
+    def used(self) -> int:
+        """
+        Number of occupied workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "used")
+
+
+@pulumi.output_type
+class GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityResult(dict):
+    def __init__(__self__, *,
+                 capability: str,
+                 on_premise_vantage_point_count: int):
+        """
+        :param str capability: Capability of an On-premise vantage point worker.
+        :param int on_premise_vantage_point_count: Count of available capability in a specific On-premise vantage point.
+        """
+        pulumi.set(__self__, "capability", capability)
+        pulumi.set(__self__, "on_premise_vantage_point_count", on_premise_vantage_point_count)
+
+    @property
+    @pulumi.getter
+    def capability(self) -> str:
+        """
+        Capability of an On-premise vantage point worker.
+        """
+        return pulumi.get(self, "capability")
+
+    @property
+    @pulumi.getter(name="onPremiseVantagePointCount")
+    def on_premise_vantage_point_count(self) -> int:
+        """
+        Count of available capability in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "on_premise_vantage_point_count")
+
+
+@pulumi.output_type
+class GetOnPremiseVantagePointWorkersWorkerCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOnPremiseVantagePointWorkersWorkerCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOnPremiseVantagePointWorkersWorkerCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOnPremiseVantagePointWorkersWorkerCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 apm_domain_id: str,
+                 configuration_details: str,
+                 defined_tags: Mapping[str, Any],
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 geo_info: str,
+                 id: str,
+                 identity_infos: Sequence['outputs.GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoResult'],
+                 monitor_lists: Sequence['outputs.GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListResult'],
+                 name: str,
+                 on_premise_vantage_point_id: str,
+                 opvp_id: str,
+                 opvp_name: str,
+                 priority: int,
+                 resource_principal_token_public_key: str,
+                 runtime_id: str,
+                 status: str,
+                 time_created: str,
+                 time_last_sync_up: str,
+                 time_updated: str,
+                 version: str,
+                 version_details: Sequence['outputs.GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailResult'],
+                 worker_type: str):
+        """
+        :param str apm_domain_id: The APM domain ID the request is intended for.
+        :param str configuration_details: Configuration details of the On-premise VP worker.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str display_name: A filter to return only the resources that match the entire display name.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str geo_info: Geographical information of the On-premise VP worker.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+        :param Sequence['GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArgs'] identity_infos: Domain details of the On-premise VP worker.
+        :param Sequence['GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArgs'] monitor_lists: Monitors list assigned to the On-premise VP worker.
+        :param str name: A filter to return only the resources that match the entire name.
+        :param str on_premise_vantage_point_id: The OCID of the On-premise vantage point.
+        :param str opvp_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise vantage point.
+        :param str opvp_name: On-premise vantage point name.
+        :param int priority: Priority of the On-premise VP worker to schedule monitors.
+        :param str runtime_id: The runtime assigned id of the On-premise VP worker.
+        :param str status: A filter to return only On-premise VP workers that match the status given.
+        :param str time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        :param str time_last_sync_up: The time the resource was last synced, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        :param str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
+        :param str version: Current image version of the On-premise VP worker.
+        :param Sequence['GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArgs'] version_details: Image version details of the On-premise VP worker.
+        :param str worker_type: Type of the On-premise VP worker.
+        """
+        pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+        pulumi.set(__self__, "configuration_details", configuration_details)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "geo_info", geo_info)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "identity_infos", identity_infos)
+        pulumi.set(__self__, "monitor_lists", monitor_lists)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "on_premise_vantage_point_id", on_premise_vantage_point_id)
+        pulumi.set(__self__, "opvp_id", opvp_id)
+        pulumi.set(__self__, "opvp_name", opvp_name)
+        pulumi.set(__self__, "priority", priority)
+        pulumi.set(__self__, "resource_principal_token_public_key", resource_principal_token_public_key)
+        pulumi.set(__self__, "runtime_id", runtime_id)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_sync_up", time_last_sync_up)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "version", version)
+        pulumi.set(__self__, "version_details", version_details)
+        pulumi.set(__self__, "worker_type", worker_type)
+
+    @property
+    @pulumi.getter(name="apmDomainId")
+    def apm_domain_id(self) -> str:
+        """
+        The APM domain ID the request is intended for.
+        """
+        return pulumi.get(self, "apm_domain_id")
+
+    @property
+    @pulumi.getter(name="configurationDetails")
+    def configuration_details(self) -> str:
+        """
+        Configuration details of the On-premise VP worker.
+        """
+        return pulumi.get(self, "configuration_details")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="geoInfo")
+    def geo_info(self) -> str:
+        """
+        Geographical information of the On-premise VP worker.
+        """
+        return pulumi.get(self, "geo_info")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="identityInfos")
+    def identity_infos(self) -> Sequence['outputs.GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoResult']:
+        """
+        Domain details of the On-premise VP worker.
+        """
+        return pulumi.get(self, "identity_infos")
+
+    @property
+    @pulumi.getter(name="monitorLists")
+    def monitor_lists(self) -> Sequence['outputs.GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListResult']:
+        """
+        Monitors list assigned to the On-premise VP worker.
+        """
+        return pulumi.get(self, "monitor_lists")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only the resources that match the entire name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="onPremiseVantagePointId")
+    def on_premise_vantage_point_id(self) -> str:
+        """
+        The OCID of the On-premise vantage point.
+        """
+        return pulumi.get(self, "on_premise_vantage_point_id")
+
+    @property
+    @pulumi.getter(name="opvpId")
+    def opvp_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise vantage point.
+        """
+        return pulumi.get(self, "opvp_id")
+
+    @property
+    @pulumi.getter(name="opvpName")
+    def opvp_name(self) -> str:
+        """
+        On-premise vantage point name.
+        """
+        return pulumi.get(self, "opvp_name")
+
+    @property
+    @pulumi.getter
+    def priority(self) -> int:
+        """
+        Priority of the On-premise VP worker to schedule monitors.
+        """
+        return pulumi.get(self, "priority")
+
+    @property
+    @pulumi.getter(name="resourcePrincipalTokenPublicKey")
+    def resource_principal_token_public_key(self) -> str:
+        return pulumi.get(self, "resource_principal_token_public_key")
+
+    @property
+    @pulumi.getter(name="runtimeId")
+    def runtime_id(self) -> str:
+        """
+        The runtime assigned id of the On-premise VP worker.
+        """
+        return pulumi.get(self, "runtime_id")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        A filter to return only On-premise VP workers that match the status given.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLastSyncUp")
+    def time_last_sync_up(self) -> str:
+        """
+        The time the resource was last synced, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_last_sync_up")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        Current image version of the On-premise VP worker.
+        """
+        return pulumi.get(self, "version")
+
+    @property
+    @pulumi.getter(name="versionDetails")
+    def version_details(self) -> Sequence['outputs.GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailResult']:
+        """
+        Image version details of the On-premise VP worker.
+        """
+        return pulumi.get(self, "version_details")
+
+    @property
+    @pulumi.getter(name="workerType")
+    def worker_type(self) -> str:
+        """
+        Type of the On-premise VP worker.
+        """
+        return pulumi.get(self, "worker_type")
+
+
+@pulumi.output_type
+class GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoResult(dict):
+    def __init__(__self__, *,
+                 apm_short_id: str,
+                 collector_end_point: str,
+                 region_name: str):
+        """
+        :param str apm_short_id: Domain short id of the On-premise VP worker.
+        :param str collector_end_point: Collector endpoint of the On-premise VP worker.
+        :param str region_name: Domain region of the On-premise VP worker.
+        """
+        pulumi.set(__self__, "apm_short_id", apm_short_id)
+        pulumi.set(__self__, "collector_end_point", collector_end_point)
+        pulumi.set(__self__, "region_name", region_name)
+
+    @property
+    @pulumi.getter(name="apmShortId")
+    def apm_short_id(self) -> str:
+        """
+        Domain short id of the On-premise VP worker.
+        """
+        return pulumi.get(self, "apm_short_id")
+
+    @property
+    @pulumi.getter(name="collectorEndPoint")
+    def collector_end_point(self) -> str:
+        """
+        Collector endpoint of the On-premise VP worker.
+        """
+        return pulumi.get(self, "collector_end_point")
+
+    @property
+    @pulumi.getter(name="regionName")
+    def region_name(self) -> str:
+        """
+        Domain region of the On-premise VP worker.
+        """
+        return pulumi.get(self, "region_name")
+
+
+@pulumi.output_type
+class GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str,
+                 is_run_now: bool,
+                 monitor_type: str,
+                 time_assigned: str):
+        """
+        :param str display_name: A filter to return only the resources that match the entire display name.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+        :param bool is_run_now: If isRunNow is enabled, then the monitor will run immediately.
+        :param str monitor_type: Type of monitor.
+        :param str time_assigned: The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_run_now", is_run_now)
+        pulumi.set(__self__, "monitor_type", monitor_type)
+        pulumi.set(__self__, "time_assigned", time_assigned)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isRunNow")
+    def is_run_now(self) -> bool:
+        """
+        If isRunNow is enabled, then the monitor will run immediately.
+        """
+        return pulumi.get(self, "is_run_now")
+
+    @property
+    @pulumi.getter(name="monitorType")
+    def monitor_type(self) -> str:
+        """
+        Type of monitor.
+        """
+        return pulumi.get(self, "monitor_type")
+
+    @property
+    @pulumi.getter(name="timeAssigned")
+    def time_assigned(self) -> str:
+        """
+        The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_assigned")
+
+
+@pulumi.output_type
+class GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailResult(dict):
+    def __init__(__self__, *,
+                 latest_version: str,
+                 min_supported_version: str,
+                 version: str):
+        """
+        :param str latest_version: Latest image version of the On-premise VP worker.
+        :param str min_supported_version: Minimum supported image version of the On-premise VP worker.
+        :param str version: Current image version of the On-premise VP worker.
+        """
+        pulumi.set(__self__, "latest_version", latest_version)
+        pulumi.set(__self__, "min_supported_version", min_supported_version)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="latestVersion")
+    def latest_version(self) -> str:
+        """
+        Latest image version of the On-premise VP worker.
+        """
+        return pulumi.get(self, "latest_version")
+
+    @property
+    @pulumi.getter(name="minSupportedVersion")
+    def min_supported_version(self) -> str:
+        """
+        Minimum supported image version of the On-premise VP worker.
+        """
+        return pulumi.get(self, "min_supported_version")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        Current image version of the On-premise VP worker.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetOnPremiseVantagePointsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to return only the resources that match the entire name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only the resources that match the entire name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetOnPremiseVantagePointsOnPremiseVantagePointCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 apm_domain_id: str,
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 name: str,
+                 time_created: str,
+                 time_updated: str,
+                 type: str,
+                 workers_summaries: Sequence['outputs.GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryResult']):
+        """
+        :param str apm_domain_id: The APM domain ID the request is intended for.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str description: A short description about the On-premise vantage point.
+        :param str display_name: A filter to return only the resources that match the entire display name.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise vantage point.
+        :param str name: A filter to return only the resources that match the entire name.
+        :param str time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        :param str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
+        :param str type: Type of On-premise vantage point.
+        :param Sequence['GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArgs'] workers_summaries: Details of the workers in a specific On-premise vantage point.
+        """
+        pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "workers_summaries", workers_summaries)
+
+    @property
+    @pulumi.getter(name="apmDomainId")
+    def apm_domain_id(self) -> str:
+        """
+        The APM domain ID the request is intended for.
+        """
+        return pulumi.get(self, "apm_domain_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A short description about the On-premise vantage point.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise vantage point.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only the resources that match the entire name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of On-premise vantage point.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="workersSummaries")
+    def workers_summaries(self) -> Sequence['outputs.GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryResult']:
+        """
+        Details of the workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "workers_summaries")
+
+
+@pulumi.output_type
+class GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryResult(dict):
+    def __init__(__self__, *,
+                 available: int,
+                 available_capabilities: Sequence['outputs.GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityResult'],
+                 disabled: int,
+                 min_version: str,
+                 total: int,
+                 used: int):
+        """
+        :param int available: Number of available workers in a specific On-premise vantage point.
+        :param Sequence['GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArgs'] available_capabilities: List of available capabilities in a specific On-premise vantage point.
+        :param int disabled: Number of disabled workers in a specific On-premise vantage point.
+        :param str min_version: Minimum version among the workers in a specific On-premise vantage point.
+        :param int total: Total number of workers in a specific On-premise vantage point.
+        :param int used: Number of occupied workers in a specific On-premise vantage point.
+        """
+        pulumi.set(__self__, "available", available)
+        pulumi.set(__self__, "available_capabilities", available_capabilities)
+        pulumi.set(__self__, "disabled", disabled)
+        pulumi.set(__self__, "min_version", min_version)
+        pulumi.set(__self__, "total", total)
+        pulumi.set(__self__, "used", used)
+
+    @property
+    @pulumi.getter
+    def available(self) -> int:
+        """
+        Number of available workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "available")
+
+    @property
+    @pulumi.getter(name="availableCapabilities")
+    def available_capabilities(self) -> Sequence['outputs.GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityResult']:
+        """
+        List of available capabilities in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "available_capabilities")
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> int:
+        """
+        Number of disabled workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "disabled")
+
+    @property
+    @pulumi.getter(name="minVersion")
+    def min_version(self) -> str:
+        """
+        Minimum version among the workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "min_version")
+
+    @property
+    @pulumi.getter
+    def total(self) -> int:
+        """
+        Total number of workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "total")
+
+    @property
+    @pulumi.getter
+    def used(self) -> int:
+        """
+        Number of occupied workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "used")
+
+
+@pulumi.output_type
+class GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityResult(dict):
+    def __init__(__self__, *,
+                 capability: str,
+                 on_premise_vantage_point_count: int):
+        """
+        :param str capability: Capability of an On-premise vantage point worker.
+        :param int on_premise_vantage_point_count: Count of available capability in a specific On-premise vantage point.
+        """
+        pulumi.set(__self__, "capability", capability)
+        pulumi.set(__self__, "on_premise_vantage_point_count", on_premise_vantage_point_count)
+
+    @property
+    @pulumi.getter
+    def capability(self) -> str:
+        """
+        Capability of an On-premise vantage point worker.
+        """
+        return pulumi.get(self, "capability")
+
+    @property
+    @pulumi.getter(name="onPremiseVantagePointCount")
+    def on_premise_vantage_point_count(self) -> int:
+        """
+        Count of available capability in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "on_premise_vantage_point_count")
 
 
 @pulumi.output_type

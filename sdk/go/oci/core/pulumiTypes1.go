@@ -25966,7 +25966,8 @@ func (o GetVolumeGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetVolumeGrou
 type GetVolumeGroupsVolumeGroup struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	BackupPolicyId     string `pulumi:"backupPolicyId"`
+	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
+	BackupPolicyId string `pulumi:"backupPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -26011,7 +26012,8 @@ type GetVolumeGroupsVolumeGroupInput interface {
 type GetVolumeGroupsVolumeGroupArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
-	BackupPolicyId     pulumi.StringInput `pulumi:"backupPolicyId"`
+	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
+	BackupPolicyId pulumi.StringInput `pulumi:"backupPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -26098,6 +26100,7 @@ func (o GetVolumeGroupsVolumeGroupOutput) AvailabilityDomain() pulumi.StringOutp
 	return o.ApplyT(func(v GetVolumeGroupsVolumeGroup) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
 func (o GetVolumeGroupsVolumeGroupOutput) BackupPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumeGroupsVolumeGroup) string { return v.BackupPolicyId }).(pulumi.StringOutput)
 }

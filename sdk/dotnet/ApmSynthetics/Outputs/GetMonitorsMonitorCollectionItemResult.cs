@@ -58,7 +58,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult> MaintenanceWindowSchedules;
         /// <summary>
-        /// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
+        /// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
         /// </summary>
         public readonly string MonitorType;
         /// <summary>
@@ -86,7 +86,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        /// Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
         /// </summary>
         public readonly string Target;
         /// <summary>

@@ -93,7 +93,7 @@ type BootVolume struct {
 	AutotunePolicies BootVolumeAutotunePolicyArrayOutput `pulumi:"autotunePolicies"`
 	// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
-	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
+	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a boot volume.
 	//
 	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
 	BackupPolicyId pulumi.StringOutput `pulumi:"backupPolicyId"`
@@ -180,7 +180,7 @@ type bootVolumeState struct {
 	AutotunePolicies []BootVolumeAutotunePolicy `pulumi:"autotunePolicies"`
 	// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
-	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
+	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a boot volume.
 	//
 	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
 	BackupPolicyId *string `pulumi:"backupPolicyId"`
@@ -229,7 +229,7 @@ type BootVolumeState struct {
 	AutotunePolicies BootVolumeAutotunePolicyArrayInput
 	// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringPtrInput
-	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
+	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a boot volume.
 	//
 	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
 	BackupPolicyId pulumi.StringPtrInput
@@ -280,7 +280,7 @@ type bootVolumeArgs struct {
 	AutotunePolicies []BootVolumeAutotunePolicy `pulumi:"autotunePolicies"`
 	// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
+	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a boot volume.
 	//
 	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
 	BackupPolicyId *string `pulumi:"backupPolicyId"`
@@ -314,7 +314,7 @@ type BootVolumeArgs struct {
 	AutotunePolicies BootVolumeAutotunePolicyArrayInput
 	// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput
-	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
+	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a boot volume.
 	//
 	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
 	BackupPolicyId pulumi.StringPtrInput
@@ -444,7 +444,7 @@ func (o BootVolumeOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *BootVolume) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
-// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
+// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a boot volume.
 //
 // Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
 func (o BootVolumeOutput) BackupPolicyId() pulumi.StringOutput {

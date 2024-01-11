@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDbSystemConnectionDetailInstanceEndpoint {
     /**
-     * @return Unique identifier of the DbInstance.
+     * @return Unique identifier of the database instance node.
      * 
      */
     private String dbInstanceId;
     /**
-     * @return The node endpoint information.
+     * @return Information about the database instance node endpoint.
      * 
      */
     private List<GetDbSystemConnectionDetailInstanceEndpointEndpoint> endpoints;
 
     private GetDbSystemConnectionDetailInstanceEndpoint() {}
     /**
-     * @return Unique identifier of the DbInstance.
+     * @return Unique identifier of the database instance node.
      * 
      */
     public String dbInstanceId() {
         return this.dbInstanceId;
     }
     /**
-     * @return The node endpoint information.
+     * @return Information about the database instance node endpoint.
      * 
      */
     public List<GetDbSystemConnectionDetailInstanceEndpointEndpoint> endpoints() {

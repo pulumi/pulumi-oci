@@ -22,7 +22,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Configuration resource in Oracle Cloud Infrastructure Psql service.
  * 
- * Creates a new Configuration Set.
+ * Creates a new configuration.
  * 
  * ## Example Usage
  * ```java
@@ -82,140 +82,140 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Psql/configuration:Configuration")
 public class Configuration extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Compartment identifier
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment identifier
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * List of DB Configuration Values.
+     * List of configuration details.
      * 
      */
     @Export(name="configurationDetails", refs={List.class,ConfigurationConfigurationDetail.class}, tree="[0,1]")
     private Output<List<ConfigurationConfigurationDetail>> configurationDetails;
 
     /**
-     * @return List of DB Configuration Values.
+     * @return List of configuration details.
      * 
      */
     public Output<List<ConfigurationConfigurationDetail>> configurationDetails() {
         return this.configurationDetails;
     }
     /**
-     * Configuration Overrides for PGSQL instance.
+     * Configuration overrides for a PostgreSQL instance.
      * 
      */
     @Export(name="dbConfigurationOverrides", refs={ConfigurationDbConfigurationOverrides.class}, tree="[0]")
     private Output<ConfigurationDbConfigurationOverrides> dbConfigurationOverrides;
 
     /**
-     * @return Configuration Overrides for PGSQL instance.
+     * @return Configuration overrides for a PostgreSQL instance.
      * 
      */
     public Output<ConfigurationDbConfigurationOverrides> dbConfigurationOverrides() {
         return this.dbConfigurationOverrides;
     }
     /**
-     * Version of the Postgresql DB
+     * Version of the PostgreSQL database.
      * 
      */
     @Export(name="dbVersion", refs={String.class}, tree="[0]")
     private Output<String> dbVersion;
 
     /**
-     * @return Version of the Postgresql DB
+     * @return Version of the PostgreSQL database.
      * 
      */
     public Output<String> dbVersion() {
         return this.dbVersion;
     }
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,Object>> definedTags() {
         return this.definedTags;
     }
     /**
-     * (Updatable) Details about the Configuration Set.
+     * (Updatable) Details about the configuration set.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) Details about the Configuration Set.
+     * @return (Updatable) Details about the configuration set.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * (Updatable) configuration display name
+     * (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) configuration display name
+     * @return (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
     }
     /**
-     * Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+     * Memory size in gigabytes with 1GB increment.
      * 
      */
     @Export(name="instanceMemorySizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> instanceMemorySizeInGbs;
 
     /**
-     * @return Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+     * @return Memory size in gigabytes with 1GB increment.
      * 
      */
     public Output<Integer> instanceMemorySizeInGbs() {
         return this.instanceMemorySizeInGbs;
     }
     /**
-     * CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+     * CPU core count.
      * 
      */
     @Export(name="instanceOcpuCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> instanceOcpuCount;
 
     /**
-     * @return CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+     * @return CPU core count.
      * 
      */
     public Output<Integer> instanceOcpuCount() {
@@ -236,28 +236,28 @@ public class Configuration extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * Compute Shape Name like VM.Standard3.Flex.
+     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      * 
      */
     @Export(name="shape", refs={String.class}, tree="[0]")
     private Output<String> shape;
 
     /**
-     * @return Compute Shape Name like VM.Standard3.Flex.
+     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      * 
      */
     public Output<String> shape() {
         return this.shape;
     }
     /**
-     * The current state of the Configuration.
+     * The current state of the configuration.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the Configuration.
+     * @return The current state of the configuration.
      * 
      */
     public Output<String> state() {
@@ -284,14 +284,14 @@ public class Configuration extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The time Configuration was created. An RFC3339 formatted datetime string
+     * The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The time Configuration was created. An RFC3339 formatted datetime string
+     * @return The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Output<String> timeCreated() {
